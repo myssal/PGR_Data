@@ -727,7 +727,12 @@ function XUiMainRightMid:OnBtnGuildClick()
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnGuild)
     --self.RootUi:ChangeLowPowerState(self.RootUi.LowPowerState.None)
-    XDataCenter.GuildDormManager.EnterGuildDorm()
+    XDataCenter.GuildDormManager.EnterGuildDorm(nil, nil, function()
+        --工会在场景加载完成才会打开界面，需要在加载场景时就暂停陀螺仪动画，否则陀螺仪动画会影响公会场景
+        if self.RootUi and self.RootUi.SwitchableScene then
+            self.RootUi.SwitchableScene:Stop()
+        end
+    end)
 end
 
 function XUiMainRightMid:OnCheckGuildRedPoint(count)

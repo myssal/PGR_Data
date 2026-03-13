@@ -30,12 +30,25 @@ function XUiLuckyTenant2GameGridRound:Update(data, currentRound, questList, inde
         return
     end
 
+    -- 虚假轮次占位：仅显示 "..."
+    if data.IsPlaceholder then
+        if self.TxtRound then
+            self.TxtRound.text = ". . ."
+        end
+        if self.ImgBgNow then self.ImgBgNow.gameObject:SetActiveEx(false) end
+        if self.ImgBgComplete then self.ImgBgComplete.gameObject:SetActiveEx(false) end
+        if self.ImgBgNormal then self.ImgBgNormal.gameObject:SetActiveEx(true) end
+        if self.Perfect then self.Perfect.gameObject:SetActiveEx(false) end
+        if self.Normal then self.Normal.gameObject:SetActiveEx(false) end
+        return
+    end
+
     -- 判断是否为当前回合所在的 quest（直接使用 Control 传递的值）
     local isCurrentQuest = data.IsCurrentQuest == true
 
     -- 只显示次序（第几个阶段），不显示 quest 的回合数；当前(浅色背景)字色 #326398，非当前(深色背景)字色 #6c92be
     if self.TxtRound then
-        local order = (index and index > 0) and index or 1
+        local order = (data.Index and data.Index > 0) and data.Index or 1
         self.TxtRound.text = XUiHelper.GetText("LuckyTenant2Round", tostring(order))
         self.TxtRound.color = isCurrentQuest and XUiHelper.Hexcolor2Color("326398") or XUiHelper.Hexcolor2Color("6c92be")
     end

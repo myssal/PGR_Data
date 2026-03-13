@@ -275,7 +275,10 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
         self.WeaponGrid = self.WeaponGrid or XUiGridEquip.New(self.GridWeapon, self.Parent, function ()
             XLuaUiManager.Open("UiTeamPrefabWeapon", self.TeamPrefab, self.Pos)
         end)
-        local usingWeaponId = (weaponData and weaponData.EquipId) or XMVCA.XEquip:GetCharacterWeaponId(characterId)
+        local usingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
+            if weaponData then
+                usingWeaponId = weaponData.EquipId
+            end
         local xWeaponEquip = XMVCA.XEquip:GetEquip(usingWeaponId)
         if xWeaponEquip then
             self.WeaponGrid:Refresh(usingWeaponId)
@@ -284,7 +287,10 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
             self.BtnEquipResonance1:SetButtonState(CS.UiButtonState.Disable)
             self.BtnEquipResonance2:SetButtonState(CS.UiButtonState.Disable)
             self.BtnEquipResonance3:SetButtonState(CS.UiButtonState.Disable)
-            local resonanceDict = weaponData and weaponData.ResonanceDict
+			local resonanceDict = nil
+            if weaponData then
+                resonanceDict = weaponData.ResonanceDict
+            end
             local isHasResonance = not XTool.IsTableEmpty(resonanceDict)
             if isHasResonance then
                 local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
@@ -299,9 +305,12 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
                     self["BtnEquipResonance"..i]:SetButtonState(CS.UiButtonState.Normal)
                 end
             end
-            -- 武器谐振
+			-- 武器谐振
             self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Disable)
-            local hasOverrunSuitId = weaponData and XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)
+            local hasOverrunSuitId = false
+            if weaponData then
+                hasOverrunSuitId = XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)
+            end
             if xWeaponEquip:CanOverrun() and hasOverrunSuitId then
                 local icon = XMVCA.XEquip:GetEquipSuitIconPath(weaponData.WeaponOverrunSuitId)
                 self.BtnOverrunBlind:SetRawImage(icon)
@@ -339,8 +348,11 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
                 self.IsYellowConflict = true
             end
     
-            -- 武器谐振黄标:预设里没解锁，但是实际装备有
-            local isWeaponOverrunConfilict = (not XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)) and (XTool.IsNumberValid(xWeaponEquip:GetOverrunChoseSuit()))
+			-- 武器谐振黄标:预设里没解锁，但是实际装备有
+            local isWeaponOverrunConfilict = false
+            if weaponData then
+                isWeaponOverrunConfilict = (not XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)) and (XTool.IsNumberValid(xWeaponEquip:GetOverrunChoseSuit()))
+            end
             self.BtnOverrunBlind:ShowTag(isWeaponOverrunConfilict)
             if isWeaponOverrunConfilict then
                 self.IsYellowConflict = true

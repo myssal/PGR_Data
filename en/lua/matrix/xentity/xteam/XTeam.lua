@@ -672,6 +672,10 @@ function XTeam:CheckAmplifierAndSameElement()
 end
 
 function XTeam:AutoSelectGeneralSkill(defaultSkillIds)
+    if not self._GenernalSkills then
+        self._GenernalSkills = {}
+    end
+    
     if not XTool.IsTableEmpty(defaultSkillIds) then
         local aimSkillId = 0
         for index, value in ipairs(defaultSkillIds) do

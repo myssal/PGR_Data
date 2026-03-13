@@ -45,6 +45,7 @@ function XLuckyTenant2OperationDeletePiece:Do(ctx)
     -- 验证已在基类中完成，这里直接执行
     -- 在删除前获取棋子信息并执行「删除时效果」（Type204/208/507/502 统一在 XLuckyTenant2OnDeleteEffects）
     local piece = ctx:FindPieceByUid(self._PieceUid)
+    self._PieceId = piece and piece:GetId() or 0  -- 供 GetAnimationData 使用（区分宝盒/非宝盒特效）
     local baseValue = piece and piece:GetBaseValue() or 0
     XLuckyTenant2OnDeleteEffects.ApplyOnDeleteEffects(ctx, piece, baseValue, {
         x = self._X,
@@ -76,6 +77,7 @@ function XLuckyTenant2OperationDeletePiece:GetAnimationData()
             x = self._X,
             y = self._Y,
             fromPieceUid = self._FromPieceUid,  -- 来源棋子UID（用于晃动动画）
+            pieceId = self._PieceId or 0,       -- 被删棋子ID（用于区分宝盒/非宝盒消除特效）
         }
     end
     return nil

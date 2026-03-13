@@ -18,7 +18,7 @@ end
 function XUiLuckyTenant2Main:InitComponents()
     -- Back Mainui Help
     self:BindExitBtns()
-    self:BindHelpBtn(self.BtnHelp, "UiLuckyTenant2MainHelpKey")
+    self:BindHelpBtn(self.BtnHelp, self._Control:GetUiData().HelpKey)
 
     -- Button
     self.BtnTask:AddEventListener(function() self:OnBtnTaskClick() end)
@@ -56,8 +56,6 @@ function XUiLuckyTenant2Main:InitComponents()
     end
 
     self._CurrentChapterData = nil
-
-    self.Grid256New = self.Grid256New or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/CommonTaskRewardLeft/PanelItem/Grid256New", "RectTransform")
 end
 
 function XUiLuckyTenant2Main:OnEnable()

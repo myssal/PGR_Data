@@ -1,1 +1,337 @@
-[]
+[
+    {
+        "Id": 1,
+        "Priority": 100,
+        "Name": "生日快乐",
+        "NameEN": "HAPPY BIRTHDAY",
+        "IsAgency": false,
+        "SkipId": 89053,
+        "TimeId": 518,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainBrithday01.png",
+        "LeftTimeFun": "GetBirthday",
+        "EventId": "EVENT_PLAYER_SET_BIRTHDAY",
+        "Conditions": [
+            32003
+        ]
+    },
+    {
+        "Id": 4,
+        "Priority": 97,
+        "Name": "回归",
+        "NameEN": "WELCOME BACK",
+        "IsAgency": false,
+        "SkipId": 89002,
+        "TimeId": 14101,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSpRegression0301.png",
+        "LeftTimeFun": "GetRegression3rd",
+        "EventId": "EVENT_REGRESSION3_ACTIVITY_STATUS_CHANGE",
+        "Conditions": [
+            32002
+        ],
+        "RedPointConditions": [
+            "CONDITION_REGRESSION3_ALL"
+        ]
+    },
+    {
+        "Id": 5,
+        "Priority": 86,
+        "Name": "预下载",
+        "NameEN": "PRE DOWNLOAD",
+        "IsAgency": false,
+        "SkipId": 89042,
+        "TimeId": 903,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainDownload.png",
+        "Conditions": [
+            860748
+        ],
+        "RedPointConditions": [
+            "CONDITION_PRELOAD_NEW_VERSION"
+        ]
+    },
+    {
+        "Id": 6,
+        "Priority": 0,
+        "Name": "眷慕心声",
+        "NameEN": "Dearest Whispers",
+        "IsAgency": false,
+        "SkipId": 189064,
+        "TimeId": 0,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/Mainlovergift2024520.png",
+        "Conditions": [
+            30404
+        ]
+    },
+    {
+        "Id": 7,
+        "Priority": 0,
+        "Name": "蒲牢小店",
+        "NameEN": "PULAO'S DESSERTS",
+        "IsAgency": false,
+        "SkipId": 189065,
+        "TimeId": 0,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainPulaoDesserts.png",
+        "RedPointConditions": [
+            "CONDITION_DAILY_RESET"
+        ]
+    },
+    {
+        "Id": 8,
+        "Priority": 0,
+        "Name": "夕浪遗珍",
+        "NameEN": "Wandering Waves",
+        "IsAgency": false,
+        "SkipId": 89026,
+        "TimeId": 39450,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainTurntable03.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "Conditions": [
+            30406
+        ],
+        "RedPointConditions": [
+            "CONDITION_TURNTABLE_SUMMARY"
+        ]
+    },
+    {
+        "Id": 9,
+        "Priority": 88,
+        "Name": "夜华流素",
+        "NameEN": "Nighttime Radiance",
+        "IsAgency": false,
+        "SkipId": 89056,
+        "TimeId": 42201,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainAccumulateExpend.png",
+        "LeftTimeFun": "GetAccumulateDraw",
+        "EventId": "EVENT_ACCUMULATE_DRWA_UPDATE",
+        "Conditions": [
+            774800
+        ],
+        "RedPointConditions": [
+            "CONDITION_ACCUMULATE_EXPEND_MAIN"
+        ]
+    },
+    {
+        "Id": 10,
+        "Priority": 87,
+        "Name": "华彩映岁",
+        "NameEN": "A Splendid Welcome",
+        "IsAgency": false,
+        "SkipId": 20226,
+        "TimeId": 44203,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainActivityShop04.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "Conditions": [
+            770400
+        ]
+    },
+    {
+        "Id": 11,
+        "Priority": 0,
+        "Name": "甜蜜速递",
+        "NameEN": "Amber Sea",
+        "IsAgency": false,
+        "SkipId": 90037,
+        "TimeId": 39201,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSlotmachine.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "Conditions": [
+            30406
+        ],
+        "RedPointConditions": [
+            "CONDITION_SLOT_MACHINE_RED"
+        ]
+    },
+    {
+        "Id": 12,
+        "Priority": 0,
+        "Name": "灿星补给",
+        "NameEN": "SUPPLY",
+        "IsAgency": false,
+        "SkipId": 20230,
+        "TimeId": 32909,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSupply01.png",
+        "Conditions": [
+            770402
+        ]
+    },
+    {
+        "Id": 13,
+        "Priority": 98,
+        "Name": "疾雷手册",
+        "NameEN": "MANUAL",
+        "ManagerName": "XWheelchairManual",
+        "IsAgency": true,
+        "SkipId": 89078,
+        "TimeId": 906,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainWheelChair.png",
+        "RedPointRefreshEventId": "EVENT_WHEELCHAIRMANUAL_REFRESH_MAINLEFTENTRANCE_REDDOT",
+        "Conditions": [
+            770305
+        ],
+        "RedPointConditions": [
+            "CONDITION_WHEELCHAIRMANUAL_MAIN"
+        ]
+    },
+    {
+        "Id": 15,
+        "Priority": 0,
+        "Name": "归途之旅",
+        "NameEN": "WELCOME BACK",
+        "IsAgency": false,
+        "SkipId": 89081,
+        "TimeId": 41950,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainHoldRegression.png",
+        "LeftTimeFun": "GetReCall",
+        "EventId": "EVENT_RECALL_OPEN_STATUS_UPDATE",
+        "Conditions": [
+            774800
+        ],
+        "RedPointConditions": [
+            "CONDITION_RECALL_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 16,
+        "Priority": 0,
+        "Name": "昭星载梦",
+        "NameEN": "Starlit Dreams",
+        "IsAgency": false,
+        "SkipId": 89047,
+        "TimeId": 42713,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/Main5thImg.png",
+        "Conditions": [
+            860740
+        ],
+        "RedPointConditions": [
+            "CONDITION_ANNIVERSARY_REPEATCHALLENGE",
+            "CONDITION_ANNIVERSARY_DRAW",
+            "CONDITION_SUMMER_SIGNIN_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 17,
+        "Priority": 0,
+        "Name": "妄婪研发",
+        "NameEN": "RESEARCH",
+        "IsAgency": false,
+        "SkipId": 20239,
+        "TimeId": 34210,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainGachaCanLiver01.png",
+        "Conditions": [
+            1050100
+        ],
+        "RedPointConditions": [
+            "CONDITION_GACHACANLIVER_MAIN"
+        ]
+    },
+    {
+        "Id": 18,
+        "Priority": 85,
+        "Name": "韶影洄廊",
+        "NameEN": "Passage of the Past",
+        "IsAgency": false,
+        "SkipId": 90017,
+        "TimeId": 0,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainVersionGift01.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "Conditions": [
+            870003
+        ],
+        "RedPointConditions": [
+            "CONDITION_VERSIONGIFT_TASK",
+            "CONDITION_VERSIONGIFT_REWARD"
+        ]
+    },
+    {
+        "Id": 19,
+        "Priority": 89,
+        "Name": "霁月献春",
+        "NameEN": "Blissful Gift",
+        "IsAgency": false,
+        "SkipId": 90022,
+        "TimeId": 44112,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainWeeklyChallenge.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "Conditions": [
+            774800
+        ],
+        "RedPointConditions": [
+            "CONDITION_WEEK_CHALLENGE"
+        ]
+    },
+    {
+        "Id": 20,
+        "Priority": 0,
+        "Name": "夏浪合击",
+        "NameEN": "Beach Bash",
+        "IsAgency": false,
+        "SkipId": 189069,
+        "TimeId": 39402,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainWatermelon.png",
+        "RedPointConditions": [
+            "CONDITION_DAILY_RESET"
+        ]
+    },
+    {
+        "Id": 22,
+        "Priority": 97,
+        "Name": "新锐武备",
+        "NameEN": "Novice Arsenal",
+        "IsAgency": false,
+        "SkipId": 50050,
+        "TimeId": 24,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainQiriqiandaoNew.png",
+        "Conditions": [
+            863105
+        ]
+    },
+    {
+        "Id": 23,
+        "Priority": 0,
+        "Name": "圣诞祝颂",
+        "NameEN": "Christmas Bliss",
+        "IsAgency": false,
+        "SkipId": 189071,
+        "TimeId": 43410,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainChristmas.png",
+        "RedPointConditions": [
+            "CONDITION_DAILY_RESET"
+        ]
+    },
+    {
+        "Id": 24,
+        "Priority": 0,
+        "Name": "琅函岁祝",
+        "NameEN": "Auspicious Treasury",
+        "IsAgency": false,
+        "SkipId": 1300626,
+        "TimeId": 44301,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainAccumulateExpend.png",
+        "LeftTimeFun": "GetAccumulateExpendShopLeftTime",
+        "Conditions": [
+            774800
+        ],
+        "RedPointConditions": [
+            "CONDITION_ACCUMULATE_EXPEND_SHOP_NOTIFY"
+        ]
+    }
+]

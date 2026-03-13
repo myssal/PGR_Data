@@ -183,7 +183,7 @@ end
 
 ---播放删除棋子动画
 ---@param ui XUiLuckyTenant2Game UI 实例
----@param animData table 动画数据
+---@param animData table 动画数据（含 pieceId 用于区分宝盒/非宝盒消除特效）
 function XLuckyTenant2AnimationGroup:_PlayDeletePieceAnimation(ui, animData)
     if not ui or not animData then
         return
@@ -193,9 +193,10 @@ function XLuckyTenant2AnimationGroup:_PlayDeletePieceAnimation(ui, animData)
     local x = animData.x or 0
     local y = animData.y or 0
     local fromPieceUid = animData.fromPieceUid or 0
+    local pieceId = animData.pieceId or 0
     
     if pieceUid > 0 and ui.PlayAnimationDeletePiece then
-        ui:PlayAnimationDeletePiece(pieceUid, x, y, fromPieceUid)
+        ui:PlayAnimationDeletePiece(pieceUid, x, y, fromPieceUid, pieceId, self._SkillId)
     end
 end
 
@@ -210,7 +211,7 @@ function XLuckyTenant2AnimationGroup:_PlayUpdatePieceAnimation(ui, animData)
     local pieceUid = animData.pieceUid or 0
     
     if pieceUid > 0 and ui.PlayAnimationUpdatePiece then
-        ui:PlayAnimationUpdatePiece(pieceUid)
+        ui:PlayAnimationUpdatePiece(pieceUid, self._SkillId)
     end
 end
 
@@ -224,8 +225,9 @@ function XLuckyTenant2AnimationGroup:_PlayActivateSkillEnableAnimation(ui, animD
     local pieceUid = animData.pieceUid or 0
     local x = animData.x or 0
     local y = animData.y or 0
+    local skillId = self._SkillId or 0
     if (pieceUid > 0 or (x > 0 and y > 0)) and ui.PlayAnimationActivateSkillEnable then
-        ui:PlayAnimationActivateSkillEnable(pieceUid, x, y)
+        ui:PlayAnimationActivateSkillEnable(pieceUid, x, y, skillId)
     end
 end
 
@@ -239,8 +241,9 @@ function XLuckyTenant2AnimationGroup:_PlayAffectedBySkillEnableAnimation(ui, ani
     local pieceUid = animData.pieceUid or 0
     local x = animData.x or 0
     local y = animData.y or 0
+    local skillId = self._SkillId or 0
     if (pieceUid > 0 or (x > 0 and y > 0)) and ui.PlayAnimationAffectedBySkillEnable then
-        ui:PlayAnimationAffectedBySkillEnable(pieceUid, x, y)
+        ui:PlayAnimationAffectedBySkillEnable(pieceUid, x, y, skillId)
     end
 end
 

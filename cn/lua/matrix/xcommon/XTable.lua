@@ -1757,9 +1757,10 @@ XTable = {
         Id = ValueTypeint,
         SubIds = Type1ValueTypeint,
     },
-    XTableRewardPrefab = {
-        RewardId = ValueTypeint,
-        ShowPrefabUrl = ValueTypestring,
+    XTableCharacterPopupGetCharacterController = {
+        CharacterId = ValueTypeint,
+        TxtTypeColor = ValueTypestring,
+        ShowImgUrl = ValueTypestring,
     },
     XTableRewardGoods = {
         Id = ValueTypeint,
@@ -22107,8 +22108,9 @@ XTable = {
         BuffIds = Type1ValueTypeint,
         BuffDesc = Type1ValueTypestring,
         StageId = Type1ValueTypeint,
-        MarkId = ValueTypeint,
-        IsAbandoned = ValueTypebool,
+        MarkId = Type1ValueTypeint,
+        ActiveAutoFightStageStr = Type1ValueTypestring,
+        AutoFight = Type1ValueTypeint,
     },
     XTableAreaDistributeType = {
         Id = ValueTypeint,

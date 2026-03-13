@@ -101,14 +101,14 @@
     },
     {
         "Key": "RobotHeadPortraits",
-        "Desc": "List of Portraits available for Robots",
+        "Desc": "机器人可选头像列表",
         "Values": [
             9000001
         ]
     },
     {
         "Key": "RobotHeadHeadFrames",
-        "Desc": "List of Portrait Frames available for Robots",
+        "Desc": "机器人可选头像框列表",
         "Values": [
             9090008
         ]
@@ -285,42 +285,42 @@
     },
     {
         "Key": "KLoseMin",
-        "Desc": "Minimum Restart K Value Penalty",
+        "Desc": "最小重开惩罚K值",
         "Values": [
             2
         ]
     },
     {
         "Key": "PveTimeId",
-        "Desc": "PVE Mode Starting Time",
+        "Desc": "PVE模式开启时间",
         "Values": [
             34
         ]
     },
     {
         "Key": "PveVersion",
-        "Desc": "PVE Mode Version Number",
+        "Desc": "PVE模式版本号",
         "Values": [
             5
         ]
     },
     {
         "Key": "SkipSotryPage",
-        "Desc": "Codex Redirect Tag",
+        "Desc": "图鉴跳转页签",
         "Values": [
             16
         ]
     },
     {
         "Key": "MainVideoId",
-        "Desc": "Main Screen Video ID",
+        "Desc": "主界面videoId",
         "Values": [
             20004
         ]
     },
     {
         "Key": "ShopShowRewards",
-        "Desc": "Groups of 2: The 1st part is the ID, the 2nd is the quantity.",
+        "Desc": "两个一组，第一个是id，第二是数量",
         "Values": [
             50005,
             2250,
@@ -332,28 +332,28 @@
     },
     {
         "Key": "PveSlideButton",
-        "Desc": "PVE Clue Board +/- buttons; click {参数1} times to reach max/min value.",
+        "Desc": "pve线索板+-按钮，点{参数1}下到最大/最小值",
         "Values": [
             20
         ]
     },
     {
         "Key": "Theatre5LimitShop",
-        "Desc": "PVE limited-time shop ID corresponding to taskshop table ID",
+        "Desc": "pve限时商店id对应的taskshop表id",
         "Values": [
             1
         ]
     },
     {
         "Key": "PveWorldId",
-        "Desc": "PVE world ID to be loaded",
+        "Desc": "pve读取的worldid",
         "Values": [
             200
         ]
     },
     {
         "Key": "ClueBoardMaskMinAndMax",
-        "Desc": "PvE clue board zoom aperture configuration",
+        "Desc": "pve线索板缩放光圈变化的配置",
         "Values": [
             1000,
             2000
@@ -361,28 +361,28 @@
     },
     {
         "Key": "PvpLevelGroup",
-        "Desc": "PvP Level Configuration Set",
+        "Desc": "pvp使用等级配置组",
         "Values": [
             1
         ]
     },
     {
         "Key": "RelicRefresh",
-        "Desc": "Accessory Refresh Attempts",
+        "Desc": "饰品可刷新次数",
         "Values": [
             1
         ]
     },
     {
         "Key": "StrengthenRate",
-        "Desc": "Enhanced Rune Price Multiplier",
+        "Desc": "符纹强化后价格倍率",
         "Values": [
             20000
         ]
     },
     {
         "Key": "MinPvpFinishScores",
-        "Desc": "The guarantee system triggers after clearing with 10 wins (guarantee scores vary by remaining HP)",
+        "Desc": "10胜通关进行保底(不同血量保底分数不同)",
         "Values": [
             10,
             10,
@@ -393,21 +393,21 @@
     },
     {
         "Key": "MissionFreshCnt",
-        "Desc": "Refresh Limit per Slot in Mission Selection",
+        "Desc": "任务选择界面每个槽位的刷新次数",
         "Values": [
             1
         ]
     },
     {
         "Key": "CharacterInitExp",
-        "Desc": "PvP/PvE Character Initial EXP",
+        "Desc": "pvp/pve角色初始化经验",
         "Values": [
             0
         ]
     },
     {
         "Key": "PvpMultiplierLimit",
-        "Desc": "PvP Multiplier Limit",
+        "Desc": "pvp倍率限制",
         "Values": [
             0,
             0,
@@ -418,7 +418,7 @@
     },
     {
         "Key": "PveMultiplierLimit",
-        "Desc": "PvE Multiplier Limit",
+        "Desc": "pve倍率限制",
         "Values": [
             0,
             0,
@@ -429,7 +429,7 @@
     },
     {
         "Key": "MissionLevelUpForRound",
-        "Desc": "Upgrades Per Turn",
+        "Desc": "每回合升级次数",
         "Values": [
             1
         ]

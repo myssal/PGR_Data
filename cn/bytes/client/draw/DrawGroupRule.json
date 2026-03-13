@@ -1070,5 +1070,91 @@
         "EventRuleTitles": [
             "占S级出率"
         ]
+    },
+    {
+        "Id": 35,
+        "TitleCN": "淬炼活动角色",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体"
+        ],
+        "BaseRuleTitles": [
+            "10连保底A级",
+            "60连保底S级",
+            "卡池保底继承规则",
+            "阶段奖励规则"
+        ],
+        "BaseRules": [
+            "每研发10次，必有A级或以上泛用机体加入队伍。",
+            "每研发60次，必有S级泛用机体加入队伍。",
+            "名字类型相同的卡池继承保底，否则不继承。例如【淬炼活动角色池】结束后，新的【淬炼活动角色池】继承保底。",
+            "淬炼卡池里的【活动角色池】和【命运活动角色池】共享阶段奖励进度，玩家在任意卡池内进行抽取都会增加阶段奖励进度。阶段奖励进度不会被继承，在当期淬炼卡池结束后进度将会被清零。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。"
+        ],
+        "DrawRules": [
+            "<color=#ff5f2d>S级角色</color>",
+            "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
+        ]
+    },
+    {
+        "Id": 36,
+        "TitleCN": "命运淬炼活动角色",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "1.每10回必有A级或以上泛用机体",
+            "2.每80~100回必有S级泛用机体",
+            "3.综合概率与主题角色池一致",
+            "4.S级角色基础掉落概率提升"
+        ],
+        "BaseRuleTitles": [
+            "浮动保底",
+            "基础掉率（不含保底）",
+            "综合掉率（含保底）",
+            "卡池保底继承规则",
+            "阶段奖励规则"
+        ],
+        "BaseRules": [
+            "系统会在80-100随机一个值，比如随机到90，那么本次S级保底次数为90，抽出S级后重新随机保底次数。",
+            "S级泛用机体基础掉率1.5%。",
+            "S级泛用机体综合掉率和其他卡池一致（1.9%）",
+            "名字类型相同的卡池继承保底，否则不继承。例如【命运淬炼活动角色池】结束后，新的【命运淬炼活动角色池】继承保底。",
+            "淬炼卡池里的【活动角色池】和【命运活动角色池】共享阶段奖励进度，玩家在任意卡池内进行抽取都会增加阶段奖励进度。阶段奖励进度不会被继承，在当期淬炼卡池结束后进度将会被清零。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。"
+        ],
+        "DrawRules": [
+            "<color=#ff5f2d>S级角色</color>",
+            "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
+        ]
     }
 ]

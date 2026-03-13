@@ -1085,6 +1085,13 @@ end
 
 ---DashLoop检查
 function XChar8052:DashLoopTickCheck()
+    local suc, curAction = self._proxy:TryGetCurrentAction(self._uuid) --获取当前的Action
+    if suc then
+        if (curAction == 805241 or curAction == 805242) and self.dashMode ~= XChar8052.DashMode.Loop then --在这两个技能过程中但状态不在Loop的话就切到Loop
+            self.dashMode = XChar8052.DashMode.Loop
+        end
+    end
+    
     if self.dashMode ~= XChar8052.DashMode.Loop then --不在循环中跳过
         return
     end
@@ -1724,6 +1731,9 @@ end
 
 ---向Npc发射Dash的导弹
 function XChar8052:DashFireBulletToNpc(npc)
+    if not self._proxy:CheckNpc(npc) then --Npc合法性检查
+        return
+    end
     self._proxy:LaunchMissile(self._uuid,npc,80525806,80525013,1)
 end
 

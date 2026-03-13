@@ -118,20 +118,40 @@ local function ApplyType208(ctx, piece, model, game, bondsListCached)
     local bondIdStr = piece:GetBondId() or ""
     local skillId, skillConfig, bondId = nil, nil, nil
 
-    -- 子虫：从棋子配置 StateSkillId 遍历得到 Type208，不判断羁绊
+    -- 子虫：优先从运行时感染状态查找 Type208，其次从配置 StateSkillId 查找
     if pieceId == PieceId.Subworm and (not bondIdStr or bondIdStr == "") then
-        local config = model:GetLuckyTenant2ChessConfigById(pieceId)
-        if config then
-            local raw = config.StateSkillId
-            local stateSkillIds = (type(raw) == "number" and raw > 0) and { raw } or (raw or {})
-            for i = 1, #stateSkillIds do
-                local stateSkillId = stateSkillIds[i]
+        -- 1. 优先检查运行时感染状态（由207技能挂上）
+        if piece:HasState(TriggerState.Infection) then
+            local infectionState = piece:GetState(TriggerState.Infection)
+            if infectionState then
+                local stateSkillId = infectionState:GetSkillId()
                 if stateSkillId and stateSkillId > 0 then
-                    local actualSkillId, cfg = SkillExecutor.ResolveStateSkillId(stateSkillId, model)
-                    if cfg and cfg.Type == SkillType.Type208 then
-                        skillId = actualSkillId or stateSkillId
-                        skillConfig = cfg
-                        break
+                    skillConfig = model:GetLuckyTenant2ChessSkillConfigById(stateSkillId)
+                    if skillConfig and skillConfig.Type == SkillType.Type208 then
+                        skillId = stateSkillId
+                        if XMVCA.XLuckyTenant2 then
+                            XMVCA.XLuckyTenant2:Print("[ApplyType208] 从感染状态获取208技能, skillId=", skillId)
+                        end
+                    end
+                end
+            end
+        end
+
+        -- 2. 如果没有找到，再从配置表 StateSkillId 查找
+        if not skillId then
+            local config = model:GetLuckyTenant2ChessConfigById(pieceId)
+            if config then
+                local raw = config.StateSkillId
+                local stateSkillIds = (type(raw) == "number" and raw > 0) and { raw } or (raw or {})
+                for i = 1, #stateSkillIds do
+                    local stateSkillId = stateSkillIds[i]
+                    if stateSkillId and stateSkillId > 0 then
+                        local actualSkillId, cfg = SkillExecutor.ResolveStateSkillId(stateSkillId, model)
+                        if cfg and cfg.Type == SkillType.Type208 then
+                            skillId = actualSkillId or stateSkillId
+                            skillConfig = cfg
+                            break
+                        end
                     end
                 end
             end
@@ -299,7 +319,7 @@ local function ApplyType602(ctx, piece, model, game)
                         local addValue = params[1] or 0
                         if addValue > 0 then
                             adjPiece:AddValue(addValue)
-                        end
+                        end 
                         break
                     end
                 end

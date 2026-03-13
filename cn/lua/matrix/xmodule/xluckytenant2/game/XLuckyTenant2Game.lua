@@ -81,6 +81,9 @@ function XLuckyTenant2Game:Ctor()
         SelectPiece = {},
         DeletePiece = {}
     }
+
+    -- 按技能类型缓存的 skillId（如 Type208），惰性计算、避免重复遍历配置
+    self._CachedSkillIdByType = {}  -- { [skillType] = skillId | false } false 表示已查过但不存在
 end
 
 -- ==================== 初始化 ====================
@@ -149,6 +152,19 @@ function XLuckyTenant2Game:InitRoleMaxLevel(model)
             if roleMaxLevel and roleMaxLevel > 0 then
                 local XLuckyTenant2Piece = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Piece")
                 XLuckyTenant2Piece.SetRoleMaxLevel(roleMaxLevel)
+                break
+            end
+        end
+    end
+
+    -- 从401的params[1]读取武器等级上限
+    for _, skillConfig in pairs(allSkillConfigs) do
+        if skillConfig and skillConfig.Type == SkillType.Type401 then
+            local params = skillConfig.Params or {}
+            local weaponMaxLevel = params[1]
+            if weaponMaxLevel and weaponMaxLevel > 0 then
+                local XLuckyTenant2Piece = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Piece")
+                XLuckyTenant2Piece.SetWeaponMaxLevel(weaponMaxLevel)
                 break
             end
         end
@@ -336,6 +352,32 @@ function XLuckyTenant2Game:GrantQuestRewardPieces(model, quest)
     end
 end
 
+---按技能类型查找第一个对应的 skillId（带缓存，避免重复遍历配置）
+---@param model XLuckyTenant2Model 配置模型
+---@param skillType number 技能类型（如 SkillType.Type208）
+---@return number|nil
+function XLuckyTenant2Game:GetFirstSkillIdByType(model, skillType)
+    if not model or not skillType then
+        return nil
+    end
+    local cache = self._CachedSkillIdByType
+    if cache[skillType] ~= nil then
+        return (cache[skillType] ~= false) and cache[skillType] or nil
+    end
+    local allSkillConfigs = model:GetLuckyTenant2ChessSkillConfigs()
+    local skillId = nil
+    if allSkillConfigs then
+        for sid, cfg in pairs(allSkillConfigs) do
+            if cfg and cfg.Type == skillType then
+                skillId = (type(sid) == "number") and sid or tonumber(sid)
+                break
+            end
+        end
+    end
+    self._CachedSkillIdByType[skillType] = skillId or false
+    return skillId
+end
+
 ---应用怪物羁绊技能到新创建的棋子（Type203/205/207）
 ---@param piece XLuckyTenant2Piece 新创建的棋子
 ---@param model XLuckyTenant2Model 配置模型
@@ -417,8 +459,33 @@ function XLuckyTenant2Game:ApplyMonsterSkillsToNewPiece(piece, model)
                         end
                     end
 
-                    -- 可以在这里添加Type205、Type207等其他技能的处理
-                    -- Type205/Type207主要影响状态，在AddNewPieceWithDeathSkill中已处理，这里不需要重复
+                    -- Type207：给子虫挂上208感染状态
+                    if skillType == SkillTypeEnum.Type207 then
+                        local bugPieceId = params[1] or 0  -- 子虫棋子ID（0表示所有子虫）
+
+                        -- 检查棋子是否是子虫（BondId为空）
+                        local bondId = piece:GetBondId() or ""
+                        local isChildBug = (bondId == "" or bondId == "0")
+                        local idMatch = (bugPieceId == 0 or bugPieceId == pieceId)
+
+                        if isChildBug and idMatch then
+                            -- 按技能类型查找 Type208 对应的 skillId（带缓存），然后应用
+                            local skill208Id = self:GetFirstSkillIdByType(model, SkillTypeEnum.Type208)
+
+                            if skill208Id then
+                                -- 给子虫挂上感染状态（TriggerState.Infection），关联208技能ID
+                                local TriggerState = XLuckyTenant2Enum.TriggerState
+                                piece:AddStateByType(TriggerState.Infection, skill208Id, -1)
+
+                                if XMVCA.XLuckyTenant2 then
+                                    XMVCA.XLuckyTenant2:Print(string.format(
+                                        "[ApplyMonsterSkillsToNewPiece] Type207: 给子虫挂上208感染状态, pieceId=%d, skill208Id=%d",
+                                        pieceId, skill208Id
+                                    ))
+                                end
+                            end
+                        end
+                    end
                 end
             end
         end
@@ -1015,21 +1082,33 @@ function XLuckyTenant2Game:_ExecuteSkillOperationsAndCreateAnimation(skillData, 
     local skill = skillData.skill
     local piece = skillData.piece
 
-    -- 保存当前操作包（该技能产生的所有操作）
-    context.proxy:SaveOperationPackage()
-
-    -- 获取最后保存的操作包（即当前技能的操作）
+    -- 保存当前操作包（仅当本技能产生过操作时才会 push；Type103 等只改数值不调 proxy 的技能不会 push）
     local ManyOperationPackages = context.proxy.ManyOperationPackages
-    if #ManyOperationPackages == 0 then
-        return -- 没有操作，不需要创建动画组
+    local countBefore = #ManyOperationPackages
+    context.proxy:SaveOperationPackage()
+    local extraAnimations = context.proxy:GetAndClearExtraAnimations()
+    -- 若本技能未产生任何操作且无额外动画（如 Type103 只改数值），则不应复用上一个技能的包创建动画组
+    if #ManyOperationPackages <= countBefore and (not extraAnimations or #extraAnimations == 0) then
+        return
     end
 
-    local operationPackage = ManyOperationPackages[#ManyOperationPackages]
-
-    -- 执行操作并收集动画数据（注意：延迟删除会在所有技能执行完毕后统一处理）
-    local XLuckyTenant2OperationContext = require("XModule/XLuckyTenant2/Game/Operation/XLuckyTenant2OperationContext")
-    local ctx = XLuckyTenant2OperationContext.New(self, context.model, context.proxy, context.animationGroups)
-    local animationDataList = operationPackage:Do(ctx)
+    local animationDataList = nil
+    if #ManyOperationPackages > countBefore then
+        local operationPackage = ManyOperationPackages[#ManyOperationPackages]
+        -- 执行操作并收集动画数据（注意：延迟删除会在所有技能执行完毕后统一处理）
+        local XLuckyTenant2OperationContext = require("XModule/XLuckyTenant2/Game/Operation/XLuckyTenant2OperationContext")
+        local ctx = XLuckyTenant2OperationContext.New(self, context.model, context.proxy, context.animationGroups)
+        animationDataList = operationPackage:Do(ctx)
+    end
+    -- 合并本技能仅播放的额外动画（如 Type508 原地生成新宝盒，不经过 Operation 但需播生成动画）
+    if extraAnimations and #extraAnimations > 0 then
+        if not animationDataList then
+            animationDataList = {}
+        end
+        for _, anim in ipairs(extraAnimations) do
+            animationDataList[#animationDataList + 1] = anim
+        end
+    end
 
     -- 注意：不在这里执行延迟删除，延迟删除会在 ExecuteRoundCalculation 的最后统一执行
     -- 这样可以避免在执行动画期间删除棋子，影响后续技能的触发
@@ -1110,6 +1189,10 @@ function XLuckyTenant2Game:_ExecuteSkillOperationsAndCreateAnimation(skillData, 
         local XLuckyTenant2AnimationGroup = require("XModule/XLuckyTenant2/Game/Animation/XLuckyTenant2AnimationGroup")
         local isFirst = (#context.animationGroups == 0) -- 第一个动画组立即开始，不需要等待间隔
         local animationGroup = XLuckyTenant2AnimationGroup.New(skillId, pieceUid, enrichedList, isFirst)
+        -- 含有格子特效（UpdatePiece/DeletePiece）的组延长最小显示时间，确保特效播完再进入下一步
+        if #updatePieceList > 0 or #deletePieceList > 0 then
+            animationGroup:SetMinDisplayTime(1.5)
+        end
 
         -- 添加到动画组列表
         context.animationGroups[#context.animationGroups + 1] = animationGroup
@@ -2167,16 +2250,25 @@ function XLuckyTenant2Game:Resume(model, record)
             end
         end
     end
+    -- 恢复背包后初始化道具到 _Props（Bag:Init 在 isResumeGame 时跳过了 InitProps）
+    self._Bag:InitProps(self, model)
 
     -- 恢复棋盘数据
     local chessboard = record.ChessBoard
     if chessboard then
+        local PropId = XLuckyTenant2Enum.PropId
         for i = 1, #chessboard do
             local uid = chessboard[i]
             if uid and uid > 0 then
                 local piece = self._Bag:GetPieceByUid(uid)
                 if piece then
-                    self._ChessBoard:SetPieceByIndex(piece, i)
+                    -- 过滤道具（刷新/删除道具不放到棋盘上）
+                    local pieceId = piece:GetId()
+                    if pieceId == PropId.RefreshProp or pieceId == PropId.DeleteProp then
+                        XLog.Debug("[XLuckyTenant2Game] 恢复棋盘跳过道具: Uid=" .. tostring(uid) .. ", PieceId=" .. tostring(pieceId))
+                    else
+                        self._ChessBoard:SetPieceByIndex(piece, i)
+                    end
                 else
                     XLog.Warning("[XLuckyTenant2Game] 恢复棋盘失败，找不到棋子: Uid=" .. tostring(uid))
                 end

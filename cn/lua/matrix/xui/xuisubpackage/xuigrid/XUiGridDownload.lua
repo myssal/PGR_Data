@@ -11,34 +11,24 @@ function XUiGridDownload:OnStart(isPreview)
 end
 
 function XUiGridDownload:InitCb()
-    if self.BtnDownLoad then
-        self.BtnDownLoad.CallBack = function() 
-            self:OnBtnDownLoadClick()
-        end
+    self.BtnDownLoad.CallBack = function() 
+        self:OnBtnDownLoadClick()
     end
 
-    if self.BtnPause then
-        self.BtnPause.CallBack = function()
-            self:OnBtnPauseClick()
-        end
+    self.BtnPause.CallBack = function()
+        self:OnBtnPauseClick()
     end
 
-    if self.BtnDownLoading then
-        self.BtnDownLoading.CallBack = function()
-            self:OnBtnDownLoadingClick()
-        end
+    self.BtnDownLoading.CallBack = function()
+        self:OnBtnDownLoadingClick()
     end
     
-    if self.BtnPrepare then
-        self.BtnPrepare.CallBack = function()
-            self:OnBtnPrepareClick()
-        end
+    self.BtnPrepare.CallBack = function()
+        self:OnBtnPrepareClick()
     end
 
-    if self.BtnDelete then
-        self.BtnDelete.CallBack = function()
-            self:OnBtnDeleteClick()
-        end
+    self.BtnDelete.CallBack = function()
+        self:OnBtnDeleteClick()
     end
 
     local DOWNLOAD_STATE = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
@@ -50,7 +40,6 @@ function XUiGridDownload:InitCb()
             [DOWNLOAD_STATE.DOWNLOADING]      = { BtnPause = true },
             [DOWNLOAD_STATE.COMPLETE]         = { BtnComplete = true },
             [DOWNLOAD_STATE.PREPARE_DOWNLOAD] = { BtnPrepare = true },
-            [DOWNLOAD_STATE.UNINSTALLED]      = { BtnPause = true },
         },
         [false] = { -- IsPreview = false
             [DOWNLOAD_STATE.PAUSE]            = { BtnPause = true, BtnDelete = function(id) return XMVCA.XSubPackage:CheckSubpackageCanUninstall(id) and XMVCA.XSubPackage:GetSubpackageTemplate(id).AllowDelete end },
@@ -74,14 +63,12 @@ function XUiGridDownload:RefreshButtons(state, subpackageId)
     self.BtnPrepare.gameObject:SetActiveEx(config.BtnPrepare or false)
 
     local deleteVisible = config.BtnDelete
-    if self.BtnDelete then
-        if type(deleteVisible) == "function" then
-            self.BtnDelete.gameObject:SetActiveEx(deleteVisible(subpackageId))
-        elseif type(deleteVisible) == "boolean" then
-            self.BtnDelete.gameObject:SetActiveEx(deleteVisible)
-        else
-            self.BtnDelete.gameObject:SetActiveEx(false)
-        end
+    if type(deleteVisible) == "function" then
+        self.BtnDelete.gameObject:SetActiveEx(deleteVisible(subpackageId))
+    elseif type(deleteVisible) == "boolean" then
+        self.BtnDelete.gameObject:SetActiveEx(deleteVisible)
+    else
+        self.BtnDelete.gameObject:SetActiveEx(false)
     end
 end
 

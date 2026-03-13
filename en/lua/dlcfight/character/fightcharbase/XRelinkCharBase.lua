@@ -753,6 +753,17 @@ end
 function XRelinkCharBase:OnNpcReviveEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
     if npcUUID == self._uuid then
         self:OnSelfReviveEvent()
+
+        local template = self._proxy:GetNpcTemplate(self._uuid)
+        if template.Id == 1051 or template.Id == 1056 then
+            if self._proxy:CheckNpcOnAir(self._uuid) then
+                if self._proxy:CheckBuffByKind(self._uuid, 10513101) then
+                    self._proxy:CastAction(self._uuid, 1051057)
+                else
+                    self._proxy:CastAction(self._uuid, 1051010)
+                end
+            end
+        end
     end
 end
 

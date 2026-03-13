@@ -34,8 +34,9 @@ function XUiLuckyTenant2PopupStageDetail:InitComponents()
 
     -- DynamicTable
     self.DynamicTableNormal = XUiHelper.DynamicTableNormal(self, self.PanelList, XUiLuckyTenant2PopupStageDetailGrid)
-    if self.GridPiece then
-        self.GridPiece.gameObject:SetActiveEx(false)
+    local grid = self.DynamicTableNormal:GetImpl().Grid
+    if grid then
+        grid.gameObject:SetActiveEx(false)
     end
 
     -- 初始化羁绊详情面板

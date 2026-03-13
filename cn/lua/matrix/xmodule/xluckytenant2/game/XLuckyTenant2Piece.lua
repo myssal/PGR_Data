@@ -21,6 +21,21 @@ function XLuckyTenant2Piece.GetRoleMaxLevel()
     return _CachedRoleMaxLevel or XLuckyTenant2Enum.GameConstants.MAX_ROLE_LEVEL
 end
 
+-- 类变量：缓存武器等级上限（从Type401技能配置读取）
+local _CachedWeaponMaxLevel = XLuckyTenant2Enum.GameConstants.MAX_PIECE_LEVEL
+
+---设置武器等级上限（从Type401技能配置读取）
+---@param maxLevel number 武器最大等级
+function XLuckyTenant2Piece.SetWeaponMaxLevel(maxLevel)
+    _CachedWeaponMaxLevel = maxLevel
+end
+
+---获取武器等级上限
+---@return number 武器最大等级
+function XLuckyTenant2Piece.GetWeaponMaxLevel()
+    return _CachedWeaponMaxLevel or XLuckyTenant2Enum.GameConstants.MAX_PIECE_LEVEL
+end
+
 function XLuckyTenant2Piece:Ctor(uid, config)
     self._Id = 0
     self._Uid = 0
@@ -202,8 +217,15 @@ function XLuckyTenant2Piece:SetLevel(level)
 
     -- 根据羁绊类型确定等级上限（角色羁绊棋子使用缓存的上限，其他棋子最大等级99）
     local maxLevel = constants.MAX_PIECE_LEVEL
-    if self._BondId and tonumber(self._BondId) == XLuckyTenant2Enum.Bond.Role then
-        maxLevel = XLuckyTenant2Piece.GetRoleMaxLevel()
+    local bondId = tonumber(self:GetBondId())
+    if bondId then
+        if bondId == XLuckyTenant2Enum.Bond.Role then
+            maxLevel = XLuckyTenant2Piece.GetRoleMaxLevel()
+        elseif bondId == XLuckyTenant2Enum.Bond.Weapon then
+            maxLevel = XLuckyTenant2Piece.GetWeaponMaxLevel()
+        else
+            maxLevel = constants.MAX_PIECE_LEVEL
+        end
     end
 
     self._Level = math.min(maxLevel, math.max(constants.MIN_PIECE_LEVEL, level))

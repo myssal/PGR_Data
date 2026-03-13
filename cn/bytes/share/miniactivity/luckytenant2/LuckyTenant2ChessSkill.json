@@ -2,7 +2,7 @@
     {
         "Id": 1001,
         "Type": 101,
-        "Desc": "[<color=#f57c05>金融</color>]可被传染帕弥什；\\n感染后每{0}回合在相邻空位产生{2}枚<color=#000000>金币</color>",
+        "Desc": "[<color=#f57c05>金融</color>]可被传染<color=#f83d50>帕弥什</color>；\\n被传染后每{0}回合在相邻空位产生{2}枚<color=#000000>金币</color>",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -17,7 +17,7 @@
     {
         "Id": 1002,
         "Type": 102,
-        "Desc": "感染帕弥什中；\\n每{0}回合在相邻的空位产生{2}枚<color=#000000>金币</color>",
+        "Desc": "被传染<color=#f83d50>帕弥什</color>中；\\n每{0}回合在相邻的空位产生{2}枚<color=#000000>金币</color>",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -40,7 +40,7 @@
         "EffectJustOnFirstRound": 0,
         "Params": [
             2,
-            2
+            4
         ]
     },
     {
@@ -54,7 +54,7 @@
         "EffectJustOnFirstRound": 0,
         "Params": [
             2,
-            2
+            4
         ]
     },
     {
@@ -117,7 +117,7 @@
     {
         "Id": 2004,
         "Type": 204,
-        "Desc": "当[<color=#5f1fdf>侵蚀</color>]、<color=#000000>赤bug</color>在死亡或被消除时，额外得{0}倍基础金币收益",
+        "Desc": "当<color=#000000>赤bug</color>在死亡或被消除时，额外得{0}倍基础金币收益",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -145,7 +145,7 @@
     {
         "Id": 2006,
         "Type": 207,
-        "Desc": "当<color=#000000>赤bug</color>死亡或被消除时，可传染相邻棋子帕弥什；每成功传染1枚+{0}金币收益",
+        "Desc": "当<color=#000000>赤bug</color>死亡或被消除时，可传染相邻棋子<color=#f83d50>帕弥什</color>；每成功传染1枚棋子+{0}金币收益",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -162,7 +162,7 @@
     {
         "Id": 2008,
         "Type": 208,
-        "Desc": "死亡时可传染相邻棋子帕弥什；每成功传染1枚棋子+{0}金币收益",
+        "Desc": "死亡时可传染相邻棋子<color=#f83d50>帕弥什</color>；每成功传染1枚棋子+{0}金币收益",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -238,7 +238,7 @@
     {
         "Id": 3003,
         "Type": 303,
-        "Desc": "[<color=#49c10e>人才</color>]升级的倒计回上限-{0}",
+        "Desc": "[<color=#49c10e>人才</color>]升级的倒计时上限-{0}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -268,7 +268,7 @@
     {
         "Id": 3005,
         "Type": 305,
-        "Desc": "[<color=#49c10e>人才</color>]可发动双消；\\n成功消除时，可再次消除{0}次；\\n消除相邻棋子数量+{1}",
+        "Desc": "[<color=#49c10e>人才</color>]可发动双消；\\n成功消除时，可再次消除{0}次；\\n消除数量+{1}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -296,7 +296,7 @@
     {
         "Id": 4001,
         "Type": 401,
-        "Desc": "相邻2枚同品质[<color=#0761f6>武器</color>]，可融合提升品质；\\n属性叠加，上限lv.{0}",
+        "Desc": "相邻2枚同品质[<color=#0761f6>武器</color>]，可融合提升品质；\\n属性叠加，融合上限lv.{0}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -339,7 +339,7 @@
     {
         "Id": 4004,
         "Type": 404,
-        "Desc": "[<color=#0761f6>武器</color>]可被传染帕弥什；\\n可融合任意相邻[<color=#0761f6>武器</color>]，且等级额外+{0}",
+        "Desc": "[<color=#0761f6>武器</color>]可被传染<color=#f83d50>帕弥什</color>；\\n可融合任意相邻[<color=#0761f6>武器</color>]，且等级额外+{0}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -367,7 +367,7 @@
     {
         "Id": 4006,
         "Type": 407,
-        "Desc": "[<color=#0761f6>武器</color>]让相邻{0}枚棋子倒计时清零；\\n成功后自身等级+{1}",
+        "Desc": "[<color=#0761f6>武器</color>]有{2}%概率让相邻{0}枚棋子倒计时清零；\\n成功后自身等级+{1}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -375,7 +375,8 @@
         "EffectJustOnFirstRound": 0,
         "Params": [
             1,
-            2
+            2,
+            50
         ]
     },
     {
@@ -388,7 +389,7 @@
         "IsEffectUponJoining": 0,
         "EffectJustOnFirstRound": 0,
         "Params": [
-            3,
+            4,
             1,
             2
         ]
@@ -410,7 +411,7 @@
     {
         "Id": 5003,
         "Type": 503,
-        "Desc": "[<color=#00afe9>盲盒</color>]消失倒计回合的上限-{0}",
+        "Desc": "[<color=#00afe9>盲盒</color>]消失倒计时的上限-{0}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -436,7 +437,7 @@
     {
         "Id": 5005,
         "Type": 505,
-        "Desc": "[<color=#00afe9>盲盒</color>]可被传染帕弥什；\\n感染后自身倒计时-{0}；\\n仅产出[<color=#5f1fdf>侵蚀</color>]，{1}%概率另得1枚[<color=#f83d50>红雾</color>]",
+        "Desc": "[<color=#00afe9>盲盒</color>]可被传染<color=#f83d50>帕弥什</color>；\\n被传染后自身倒计时-{0}；\\n仅产出[<color=#5f1fdf>侵蚀</color>]，{1}%概率另得1枚[<color=#f83d50>红雾</color>]",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -451,7 +452,7 @@
     {
         "Id": 5006,
         "Type": 506,
-        "Desc": "感染帕弥什中；\\n仅产出[<color=#5f1fdf>侵蚀</color>]棋子，{1}%概率额外产出1枚[<color=#f83d50>红雾</color>]",
+        "Desc": "被传染<color=#f83d50>帕弥什</color>中；\\n仅产出[<color=#5f1fdf>侵蚀</color>]棋子，{1}%概率额外产出1枚[<color=#f83d50>红雾</color>]",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -486,7 +487,7 @@
         "IsEffectUponJoining": 0,
         "EffectJustOnFirstRound": 0,
         "Params": [
-            3,
+            4,
             1,
             2
         ]
@@ -494,7 +495,7 @@
     {
         "Id": 6001,
         "Type": 601,
-        "Desc": "[<color=#f83d50>红雾</color>]每回合传染相邻棋子",
+        "Desc": "[<color=#f83d50>红雾</color>]每回合传染相邻棋子<color=#f83d50>帕弥什</color>",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -522,7 +523,7 @@
     {
         "Id": 6003,
         "Type": 603,
-        "Desc": "[<color=#f83d50>红雾</color>]相邻棋子存在倒计回合时，\\n[<color=#f83d50>红雾</color>]有{0}%概率清零倒计时，且基础金币+{1}",
+        "Desc": "[<color=#f83d50>红雾</color>]相邻棋子存在倒计时时，\\n[<color=#f83d50>红雾</color>]有{0}%概率清零倒计时，且基础金币+{1}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -536,7 +537,7 @@
     {
         "Id": 4007,
         "Type": 408,
-        "Desc": "感染帕弥什中；\\n可融合任意相邻[<color=#0761f6>武器</color>]，且等级额外+{0}",
+        "Desc": "被传染<color=#f83d50>帕弥什</color>中；\\n可融合任意相邻[<color=#0761f6>武器</color>]，且等级额外+{0}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,

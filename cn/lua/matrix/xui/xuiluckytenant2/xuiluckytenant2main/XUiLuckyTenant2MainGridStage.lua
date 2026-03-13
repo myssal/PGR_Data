@@ -98,8 +98,8 @@ function XUiLuckyTenant2MainGridStage:Update(data)
     end
     
     -- 进行中标记
-    if self.TagOngoing then
-        self.TagOngoing.gameObject:SetActiveEx(data.IsPlaying or false)
+    if self.PanelOngoing then
+        self.PanelOngoing.gameObject:SetActiveEx(data.IsPlaying or false)
     end
     
     -- 标题（使用序号格式，如 "01"）

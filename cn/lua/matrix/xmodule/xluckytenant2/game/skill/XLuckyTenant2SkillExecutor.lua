@@ -1,6 +1,7 @@
 local XLuckyTenant2Enum = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Enum")
 local SkillType = XLuckyTenant2Enum.Skill
 local XLuckyTenant2BondSkills = require("XModule/XLuckyTenant2/Game/XLuckyTenant2BondSkills")
+local XLuckyTenant2Piece = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Piece")
 
 ---技能执行上下文
 ---@class XLuckyTenant2SkillContext
@@ -292,7 +293,7 @@ _SkillExecutors[SkillType.Type301] = function(skill, context)
         -- XMVCA.XLuckyTenant2:Print("[Type301] 参数验证失败")
         return false
     end
-    
+
     local skillMode = skill:GetSkillMode()
     if skillMode == 0 then
         skillMode = 1
@@ -304,7 +305,6 @@ _SkillExecutors[SkillType.Type301] = function(skill, context)
         local rounds = params[1] or 0     -- 每N回合
         local levelDelta = params[2] or 0 -- 等级+M
         -- 使用缓存的角色等级上限（从配置表params[3]读取）
-        local XLuckyTenant2Piece = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Piece")
         local maxLevel = XLuckyTenant2Piece.GetRoleMaxLevel()
 
         -- XMVCA.XLuckyTenant2:Print("[Type301-Mode1] rounds:", rounds, "levelDelta:", levelDelta, "maxLevel:", maxLevel)
@@ -609,7 +609,6 @@ _SkillExecutors[SkillType.Type304] = function(skill, context)
         if levelIncrease > 0 then
             -- 检查等级上限（角色羁绊棋子使用缓存的上限）
             local currentLevel = piece:GetLevel() or 0
-            local XLuckyTenant2Piece = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Piece")
             local maxLevel = XLuckyTenant2Piece.GetRoleMaxLevel()
             local actualIncrease = math.min(levelIncrease, maxLevel - currentLevel)
             if actualIncrease > 0 then
@@ -1257,6 +1256,14 @@ _SkillExecutors[SkillType.Type508] = function(skill, context)
                             XMVCA.XLuckyTenant2:Print(string.format("[Type508] ❌ 错误：新宝盒放置失败！位置(%d,%d)", x, y))
                         end
 
+                        -- 原地生成新宝盒不经过 Operation，需补一条生成动画
+                        context.proxy:AddExtraAnimation({
+                            type = XLuckyTenant2Enum.AnimationType.AddPiece,
+                            pieceId = newPieceId,
+                            x = x,
+                            y = y,
+                        })
+
                         if oldInfectionState then
                             local oldInfectionSkillId = oldInfectionState:GetSkillId()
                             context.proxy:ApplyState(newPiece, TriggerState.Infection, oldInfectionSkillId, -1)
@@ -1778,6 +1785,12 @@ _SkillExecutors[SkillType.Type401] = function(skill, context)
         return false
     end
 
+    -- 判断武器等级是否满级, 满级的情况下, 不再执行401技能
+    local maxLevel = params[1] or XLuckyTenant2Enum.GameConstants.MAX_PIECE_LEVEL
+    if piece:GetLevel() >= maxLevel then
+        return false
+    end
+
     -- 检查是否已在本回合执行过（防止同一回合内多次融合）
     -- 使用 pieceUid + skillId 作为key，确保不同技能的防重复标记不会互相影响
     local pieceUid = piece:GetUid()
@@ -1825,12 +1838,12 @@ _SkillExecutors[SkillType.Type401] = function(skill, context)
             end
         end
         for _, adjPiece in ipairs(adjacentPieces) do
-            if adjPiece and adjPiece:GetPieceType() == XLuckyTenant2Enum.PieceType.Weapon then
+            if adjPiece and adjPiece:GetPieceType() == XLuckyTenant2Enum.PieceType.Weapon and adjPiece:GetLevel() < maxLevel then
                 local adjValue = adjPiece:GetBaseValue() or 0
                 local newLevel = (piece:GetLevel() or 0) + extraLevel
                 local newValue = (piece:GetBaseValue() or 0) + adjValue
                 local adjQuality = adjPiece:GetQuality()
-                
+
                 -- 计算新品质
                 local currentQuality = piece:GetQuality()
                 local newQuality = currentQuality
@@ -1897,7 +1910,7 @@ _SkillExecutors[SkillType.Type401] = function(skill, context)
             local adjQuality = adjPiece:GetQuality()
 
             -- 如果品质相同，执行融合
-            if adjQuality == currentQuality then
+            if adjQuality == currentQuality and adjPiece:GetLevel() < maxLevel then
                 -- 融合逻辑：品质+1，等级求和，基础金币求和
                 local maxQuality = 5 -- 最高品质
                 local newQuality = math.min(currentQuality + 1, maxQuality)
@@ -2006,6 +2019,12 @@ _SkillExecutors[SkillType.Type406] = function(skill, context)
         return false
     end
 
+    -- 判断武器等级是否满级, 满级的情况下, 不再执行406技能
+    local maxLevel = XLuckyTenant2Piece.GetWeaponMaxLevel()
+    if piece:GetLevel() >= maxLevel then
+        return false
+    end
+
     if piece:GetPieceType() ~= XLuckyTenant2Enum.PieceType.Weapon then
         return false
     end
@@ -2054,6 +2073,12 @@ _SkillExecutors[SkillType.Type407] = function(skill, context)
         return false
     end
 
+    -- 判断武器等级是否满级, 满级的情况下, 不再执行407技能
+    local maxLevel = XLuckyTenant2Piece.GetWeaponMaxLevel()
+    if piece:GetLevel() >= maxLevel then
+        return false
+    end
+
     -- 检查棋子类型是否为武器
     if piece:GetPieceType() ~= XLuckyTenant2Enum.PieceType.Weapon then
         return false
@@ -2066,6 +2091,15 @@ _SkillExecutors[SkillType.Type407] = function(skill, context)
     local markKey = pieceUid .. "_" .. skillId
     if context.proxy:MarkRoundSkillExecuted(markKey) then
         return false -- 已在本回合执行过
+    end
+
+    -- 407技能增加: 触发概率检查, 如果触发概率为0, 则不执行技能
+    local triggerPercent = params[3] or 0 -- 触发的概率, 百分比
+    if triggerPercent <= 0 or triggerPercent > 100 then
+        return false
+    end
+    if math.random(1, 100) > triggerPercent then
+        return false
     end
 
     local adjacentCount = params[1] or 1 -- 影响的相邻数量

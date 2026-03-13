@@ -616,6 +616,16 @@ function XLuckyTenant2Agency:IsInStageAndRound(stageId, round)
     return isInStage and isInRound
 end
 
+---该关卡是否已弹出过图文指引（由 SaveUtil 持久化，与 Control 内 TryShowStageTutorial 记录一致）
+---@param stageId number 关卡ID
+---@return boolean
+function XLuckyTenant2Agency:IsStageTutorialShown(stageId)
+    if not self._Model then
+        return false
+    end
+    return self._Model:IsStageTutorialShown(stageId)
+end
+
 ---获取关卡已游玩标记的Key
 ---@param stageId number 关卡ID
 ---@return string

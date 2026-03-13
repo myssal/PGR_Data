@@ -246,7 +246,10 @@ end
     Base.ChangeDamageBeforeCalc( self, eventArgs)
     self._uuid = self._proxy:GetSelfNpcId()
     ----超解伤害修正
+---
     if eventArgs.Id == 1052001 then
+        --XLog.Warning("暴击与否："..eventArgs.isCrit)
+        --XLog.Warning(eventArgs)
         --self.CustomPower1 = self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup1) -- 确认消耗后的能量状况
         local CurCustomPower1 =  self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup1) --获取当前的能量
         local HasCustomPower, customPower = self._proxy:TryGetBBInt(1,self._uuid, 1052001) --获取黑板记录的峰值
@@ -256,12 +259,13 @@ end
             --XLog.Warning("强化修正前伤害倍率："..eventArgs.PhysicalPermyraid)
             local FinalDMGRate = eventArgs.PhysicalPermyraid * (1 +(customPower-CurCustomPower1)* OverReleaseCoe *(1+OverReleaseCoeAdd))
             --XLog.Warning("强化修正后伤害倍率："..FinalDMGRate)
-            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate , eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrit)
+            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate , eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
+
         else
             --XLog.Warning("修正前伤害倍率："..eventArgs.PhysicalPermyraid)
             local FinalDMGRate = eventArgs.PhysicalPermyraid * (1 +(customPower-CurCustomPower1)* OverReleaseCoe)
             --XLog.Warning("修正后伤害倍率："..FinalDMGRate)
-            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrit)
+            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
         end
         self._proxy:SetBBInt(1, self._uuid, self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup1)) -- 清除黑板中的峰值
     end
@@ -271,7 +275,7 @@ end
         --XLog.Warning("修正前伤害倍率：".. eventArgs.PhysicalPermyraid)
         local FinalDMGRate =  eventArgs.PhysicalPermyraid * (1 + (100 * BladeReleaseCoe))
         --XLog.Warning("修正后伤害倍率："..FinalDMGRate)
-        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrit)
+        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
     end
 
 ----防御减伤相关逻辑处理

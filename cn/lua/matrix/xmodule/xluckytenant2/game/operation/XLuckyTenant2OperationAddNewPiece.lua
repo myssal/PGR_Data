@@ -86,6 +86,12 @@ function XLuckyTenant2OperationAddNewPiece:Do(ctx)
         ctx:AddPieceToChessBoard(piece)
     end
     
+    -- 用棋子最终位置更新，供 GetAnimationData 使用（添加到空位或占位时位置由棋盘决定）
+    local px, py = piece:GetPosition()
+    if px and py then
+        self._X, self._Y = px, py
+    end
+    
     if XMVCA.XLuckyTenant2 then
         local pieceName = ctx.model:GetLuckyTenant2ChessConfigById(self._PieceId)
         pieceName = pieceName and pieceName.Name or "未知"

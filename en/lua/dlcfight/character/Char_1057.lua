@@ -258,7 +258,7 @@ function XCharR5Nanami2:ChangeDamageBeforeCalc(eventArgs)
         local hasOverReleaseDamageModifyCoe,OverReleaseDamageModifyCoe = self:TryGetBBFloat(1057001)
         local hasCustomPower2,CustomPower2 = self:TryGetBBInt(1057002)
         local FinalDMGRate = math.floor(eventArgs.PhysicalPermyraid *(1+(CustomPower2 * OverReleaseDamageModifyCoe)))
-        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrit)
+        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
         --XLog.Warning("修正后："..FinalDMGRate)
     end
 end

@@ -44,6 +44,7 @@ function XUiPanelCharacter:Refresh()
     
     if self.BtnSelf then
         self.BtnSelf:ShowReddot(isAchieved)
+        self.BtnSelf.gameObject:SetActiveEx(isFinish)
     end
 
     if self.TxtReceive then
@@ -90,10 +91,13 @@ function XUiPanelCharacter:OnBtnClick()
     if not task then return end
     
     if task.State == XDataCenter.TaskManager.TaskState.Achieved then
-        XDataCenter.TaskManager.FinishTask(taskId, function(rewardIds)
-            if self.Config.RewardId then
-                XRewardManager.ShowRewardUi(self.Config.RewardId)
-            end
+        local isOwnCharacter = XMVCA.XCharacter:IsOwnCharacter(self.CharacterId)
+        XDataCenter.TaskManager.FinishTask(taskId, function(rewardGoodsList)
+            XLuaUiManager.OpenWithCloseCallback("UiCommonPopupGetCharacter", function()
+                if isOwnCharacter then
+                    XUiManager.OpenUiObtain(rewardGoodsList)
+                end
+            end, self.CharacterId)
             self:Refresh()
         end)
     elseif task.State ~= XDataCenter.TaskManager.TaskState.Finish then

@@ -64,15 +64,13 @@ function XUiPanelAprilFoolsSignBoard:_PlayAction(element, isCross)
     --self.RoleModel:LoadCharacterUiEffect(tonumber(element.SignBoardConfig.RoleId), actionId)
 end
 
-function XUiPanelAprilFoolsSignBoard:AOPAfterOperationShowEnd()
-    -- 踢飞按钮跟随一起隐藏
-    self.Parent:SetBtnExpelActive(false)
-end
-
 function XUiPanelAprilFoolsSignBoard:AOPAfterOperationShowBegin()
     -- 显示“一键踢飞”
-    self.Parent:SetBtnExpelActive(true)
     self.Parent:SetPanelQuitActive(true)
+
+    if self.PanelChat then
+        self.PanelChat.gameObject:SetActiveEx(false)
+    end
 end
 
 --endregion
@@ -94,7 +92,7 @@ function XUiPanelAprilFoolsSignBoard:OnTickOutShow(actionId, content, contentSho
         self._SpecialContentShowTimeId = XScheduleManager.ScheduleOnce(function()
             self.PanelChat.gameObject:SetActiveEx(false)
             self:_SafeClearAprilFoolsTickOutAnimMask()
-
+            self.Parent:SetBtnExpelActiveEnable(true)
             if cb then
                 cb()
             end

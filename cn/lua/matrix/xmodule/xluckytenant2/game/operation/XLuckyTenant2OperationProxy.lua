@@ -39,6 +39,9 @@ function XLuckyTenant2OperationProxy:Ctor(game, model)
     ---@type number[] 技能参数
     self.Params = {}
     
+    ---@type table[] 本技能仅需播放的动画（如 Type508 原地生成新宝盒，不经过 Operation 但需播生成动画）
+    self._ExtraAnimations = {}
+    
     ---@type XLuckyTenant2Piece[] 这部分棋子已经从棋盘和背包上移除，但要等到本轮次结束后才真正移除
     self._ToDelete = {}
     
@@ -66,6 +69,22 @@ function XLuckyTenant2OperationProxy:SaveOperationPackage()
         self.ManyOperationPackages[#self.ManyOperationPackages + 1] = self.OperationPackage
         self.OperationPackage = XLuckyTenant2OperationPackage.New()  -- 重置操作包
     end
+end
+
+---添加仅播放动画的数据（不经过 Operation，如 Type508 原地生成新宝盒）
+---@param animData table 格式同 GetAnimationData，如 { type = AnimationType.AddPiece, pieceId = x, x = x, y = y }
+function XLuckyTenant2OperationProxy:AddExtraAnimation(animData)
+    if animData and animData.type then
+        self._ExtraAnimations[#self._ExtraAnimations + 1] = animData
+    end
+end
+
+---取出并清空本技能累积的额外动画（由 Game 在创建动画组时合并）
+---@return table[]
+function XLuckyTenant2OperationProxy:GetAndClearExtraAnimations()
+    local list = self._ExtraAnimations
+    self._ExtraAnimations = {}
+    return list
 end
 
 ---执行所有操作包中的操作

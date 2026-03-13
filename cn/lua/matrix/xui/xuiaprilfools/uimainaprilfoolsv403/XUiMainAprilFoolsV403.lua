@@ -15,6 +15,11 @@ local CameraIndex = {
     MainLeftCalendarEnter = 5,
 }
 
+local RecordBtnIndex = {
+    Expel = 1,
+    Quit = 2,
+}
+
 function XUiMainAprilFoolsV403:OnAwake()
     XDataCenter.FunctionEventManager.SetMainEventIsEnd(false)
     -- 设置修复-设置关掉空花高帧（开启游戏调用一次）
@@ -27,10 +32,13 @@ end
 function XUiMainAprilFoolsV403:OnStart(...)
     self:InitPanel()
     self.PanelQuit.gameObject:SetActiveEx(false)
-    self:SetBtnExpelActive(false)
+    self:SetBtnExpelActive(true)
+    self:SetBtnExpelActiveEnable(true)
+    
     self.BtnQuit:AddEventListener(function()
         XMVCA.XAprilFoolDay:RequestFoolsDayClearOutComplete()
         XLuaUiManager.RunMain()
+        self._Control:RecordAprilFoolDayMainUiBtnClick(RecordBtnIndex.Quit)
     end)
     self.BtnExpel:AddEventListener(handler(self, self.OnBtnExpelClick))
     
@@ -225,11 +233,19 @@ function XUiMainAprilFoolsV403:SetBtnExpelActive(active)
     self.BtnExpel.gameObject:SetActiveEx(active)
 end
 
+function XUiMainAprilFoolsV403:SetBtnExpelActiveEnable(enable)
+    self.BtnExpel:SetButtonState(enable and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
+    self._BtnExpelEnable = enable
+end
+
 function XUiMainAprilFoolsV403:SetPanelQuitActive(active)
     self.PanelQuit.gameObject:SetActiveEx(active)
 end
 
 function XUiMainAprilFoolsV403:OnBtnExpelClick()
+    if not self._BtnExpelEnable then
+        return
+    end
     -- 暂停当前动画
     self.Other:Stop()
     
@@ -238,8 +254,11 @@ function XUiMainAprilFoolsV403:OnBtnExpelClick()
     
     self.Other:OnTickOutShow(newTimes)
     
-    self:SetBtnExpelActive(false)
+    self:SetBtnExpelActiveEnable(false)
     self:SetPanelQuitActive(true)
+    
+    -- 记录埋点
+    self._Control:RecordAprilFoolDayMainUiBtnClick(RecordBtnIndex.Expel)
 end
 
 --region 给非XUiNode的子节点访问

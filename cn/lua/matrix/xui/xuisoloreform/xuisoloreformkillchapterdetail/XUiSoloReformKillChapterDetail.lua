@@ -11,7 +11,6 @@ function XUiSoloReformKillChapterDetail:OnStart(chapterId, defaultSelectStage)
     self.IsKillMode = true
     self.Super.OnStart(self, chapterId, defaultSelectStage)
     self.PanelReform.gameObject:SetActiveEx(false)
-    self.BtnHelp.gameObject:SetActiveEx(false)
 end
 
 function XUiSoloReformKillChapterDetail:InitPanel()
@@ -117,7 +116,7 @@ function XUiSoloReformKillChapterDetail:RefreshGridItem(stageItemGo, stageId)
     local rimgBossGroup = { stageItemUi.RImgBoss, stageItemUi.RImgBossNormal, stageItemUi.RImgBossSelect, stageItemUi
         .RImgBossDisable }
     for _, value in pairs(rimgBossGroup) do
-        value:SetRawImage(stageCfg.Icon)
+        value:SetRawImage(stageCfg.Img)
     end
 end
 

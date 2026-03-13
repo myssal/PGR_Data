@@ -281,9 +281,6 @@ function XFubenAgency:CallAllCustomFunc(funcKey, ...)
     end
 end
 
-function XFubenAgency:GetFubenSettling()
-    return self._Model:GetFubenSettling() 
-end
 function XFubenAgency:GetFightBeginData()
     return self._Model:GetBeginData()
 end

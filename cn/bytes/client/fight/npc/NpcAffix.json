@@ -6725,7 +6725,7 @@
         "Name": "雷虫",
         "Level": 1,
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiChong001.png",
-        "Description": "该单位可受到雷虫伤害影响,御能点数可以控制电力，每5点御能增加雷虫生成间隔0.5秒，并将受到爆炸伤害的5%转移给敌人",
+        "Description": "\"该单位可受到雷虫伤害影响,御能点数可以控制电力，每5点御能增加雷虫生成间隔0.5秒，并将受到爆炸伤害的5%转移给敌人\"",
         "ShowType": 1,
         "Priority": 1,
         "ShowNumType": 0,
@@ -12056,7 +12056,7 @@
         "ShowNameType": 1,
         "TranslateId": 250,
         "Effect": "FxUiFightGeneral",
-        "FadeEffect": "FxUiFightIconDisappear4"
+        "FadeEffect": "FxUiFightIconDisappear10"
     },
     {
         "Id": 123094,
@@ -12072,7 +12072,7 @@
         "ShowNameType": 1,
         "TranslateId": 250,
         "Effect": "FxUiFightGeneral",
-        "FadeEffect": "FxUiFightIconDisappear4"
+        "FadeEffect": "FxUiFightIconDisappear10"
     },
     {
         "Id": 123095,
@@ -12088,7 +12088,7 @@
         "ShowNameType": 1,
         "TranslateId": 250,
         "Effect": "FxUiFightGeneral",
-        "FadeEffect": "FxUiFightIconDisappear4"
+        "FadeEffect": "FxUiFightIconDisappear10"
     },
     {
         "Id": 123096,
@@ -12104,7 +12104,7 @@
         "ShowNameType": 1,
         "TranslateId": 250,
         "Effect": "FxUiFightGeneral",
-        "FadeEffect": "FxUiFightIconDisappear4"
+        "FadeEffect": "FxUiFightIconDisappear10"
     },
     {
         "Id": 109372,
@@ -12962,6 +12962,20 @@
     },
     {
         "Id": 163002,
+        "Name": "虚空崩解",
+        "Level": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZengshangFuzhuKong.png",
+        "Description": "空属性伤害加成提升",
+        "ShowType": 1,
+        "Priority": 50,
+        "ShowNumType": 0,
+        "ShowTimeType": 1,
+        "AssetUrl": "Assets/Product/Ui/UiFightPrefab/UiFightAffixTemplate/AffixTemplateBlue.prefab",
+        "ShowNameType": 1,
+        "TranslateId": 150
+    },
+    {
+        "Id": 154020,
         "Name": "虚空崩解",
         "Level": 1,
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZengshangFuzhuKong.png",
@@ -14243,6 +14257,20 @@
     },
     {
         "Id": 114189,
+        "Name": "增幅型职业技",
+        "Level": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZengfuMain.png",
+        "Description": "攻击力提升，增幅型对应属性伤害及效应伤害加成提升",
+        "ShowType": 1,
+        "Priority": 50,
+        "ShowNumType": 1,
+        "ShowTimeType": 1,
+        "AssetUrl": "Assets/Product/Ui/UiFightPrefab/UiFightAffixTemplate/AffixTemplateBlue.prefab",
+        "ShowNameType": 1,
+        "TranslateId": 0
+    },
+    {
+        "Id": 154024,
         "Name": "增幅型职业技",
         "Level": 1,
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZengfuMain.png",

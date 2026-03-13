@@ -2977,6 +2977,45 @@
         "IsShowExplain": false
     },
     {
+        "SkipId": 40161,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 163,
+        "Explain": "4.3版本预热打脸",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 40162,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 164,
+        "Explain": "4.3版本涂装打脸图",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 40163,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 162,
+        "Explain": "4.3涅缇娅好感领取打脸图",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
         "SkipId": 40756,
         "Origin": 7,
         "UiName": "OnOpenRepeatChallengeActivity",
@@ -16447,7 +16486,7 @@
         "Explain": "前往与成员交流",
         "IsRecord": false,
         "ConditionId": 0,
-        "FunctionalId": 2001,
+        "FunctionalId": 1400,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
@@ -16460,7 +16499,7 @@
         "Explain": "前往与成员交流",
         "IsRecord": false,
         "ConditionId": 0,
-        "FunctionalId": 2001,
+        "FunctionalId": 1400,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
@@ -16473,7 +16512,7 @@
         "Explain": "前往与成员交流",
         "IsRecord": false,
         "ConditionId": 0,
-        "FunctionalId": 2001,
+        "FunctionalId": 1400,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
@@ -16486,7 +16525,7 @@
         "Explain": "前往与成员交流",
         "IsRecord": false,
         "ConditionId": 0,
-        "FunctionalId": 2001,
+        "FunctionalId": 1400,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
@@ -16499,7 +16538,7 @@
         "Explain": "前往与成员交流",
         "IsRecord": false,
         "ConditionId": 0,
-        "FunctionalId": 2001,
+        "FunctionalId": 1400,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
@@ -16512,7 +16551,7 @@
         "Explain": "前往与成员交流",
         "IsRecord": false,
         "ConditionId": 0,
-        "FunctionalId": 2001,
+        "FunctionalId": 1400,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
@@ -16525,7 +16564,7 @@
         "Explain": "前往与成员交流",
         "IsRecord": false,
         "ConditionId": 0,
-        "FunctionalId": 2001,
+        "FunctionalId": 1400,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
@@ -16538,7 +16577,7 @@
         "Explain": "前往与成员交流",
         "IsRecord": false,
         "ConditionId": 0,
-        "FunctionalId": 2001,
+        "FunctionalId": 1400,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
@@ -18938,7 +18977,7 @@
         "Explain": "前往与成员交流",
         "IsRecord": false,
         "ConditionId": 0,
-        "FunctionalId": 2001,
+        "FunctionalId": 1400,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
@@ -19531,7 +19570,7 @@
         "Explain": "前往看板（信赖度）",
         "IsRecord": false,
         "ConditionId": 0,
-        "FunctionalId": 2001,
+        "FunctionalId": 1400,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
@@ -30583,9 +30622,9 @@
     },
     {
         "SkipId": 20329,
-        "Origin": 6,
+        "Origin": 7,
         "UiName": "SkipToCharacterStory",
-        "ParamId": 162,
+        "ParamId": 0,
         "Explain": "【v4.3涅缇娅】限时通关好感剧情领取角色跳转",
         "IsRecord": false,
         "ConditionId": 0,
@@ -30595,6 +30634,55 @@
         "IsShowExplain": false,
         "CustomParams": [
             1391003
+        ]
+    },
+    {
+        "SkipId": 20330,
+        "Origin": 6,
+        "UiName": "UiFavorabilityStory",
+        "ParamId": 0,
+        "Explain": "前往罗塞塔好感度剧情",
+        "IsRecord": true,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1141004
+        ]
+    },
+    {
+        "SkipId": 20331,
+        "Origin": 6,
+        "UiName": "UiFavorabilityStory",
+        "ParamId": 0,
+        "Explain": "前往涅缇娅好感度剧情",
+        "IsRecord": true,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1391003
+        ]
+    },
+    {
+        "SkipId": 20332,
+        "Origin": 6,
+        "UiName": "UiWelfare",
+        "ParamId": 0,
+        "Explain": "Placeholder_完成“诡魇轮骰”活动任务",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            106
         ]
     },
     {

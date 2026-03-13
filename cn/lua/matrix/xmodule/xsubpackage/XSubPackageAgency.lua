@@ -76,10 +76,6 @@ function XSubPackageAgency:GetSubIndexInfo()
     return self._SubIndexInfo
 end
 
-function XSubPackageAgency:GetFileToResIds()
-    return self._FileToResIds
-end
-
 function XSubPackageAgency:InitRpc()
 end
 
@@ -632,13 +628,7 @@ function XSubPackageAgency:UninstallResourceById(resId, cb)
 
     -- 如果正在进行批量卸载（锁住了），则不允许单独插队
     if self._IsUninstalling then
-        XUiManager.TipText("正在卸载资源，请稍候...")
-        return
-    end
-
-    -- 正在下载中，不允许卸载（避免下载与卸载并发导致状态异常）
-    if self._IsDownloading or XTool.IsNumberValid(self._DownloadingResId) then
-        XUiManager.TipText("SubpackageUninstallRejectDownloading")
+        XLog.Warning("正在卸载资源，请稍候...")
         return
     end
 
@@ -662,11 +652,6 @@ function XSubPackageAgency:UninstallResourceById(resId, cb)
         end
         XEventManager.DispatchEvent(XEventId.EVENT_RES_UPDATE, resId, 0)
         
-        -- 卸载后销毁下载器，确保下次下载时重新创建并注册新的 TaskGroup
-        if self._DownloadCenter then
-            self._DownloadCenter = nil
-        end
-
         self._IsUninstalling = false -- 解锁
         XLog.Warning(string.format("[XSubPackageAgency] 单资源异步卸载完成 ResId=%d", resId))
         if cb then cb() end
@@ -688,13 +673,7 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
     if not subpackageId or subpackageId <= 0 then return end
 
     if self._IsUninstalling then
-        XUiManager.TipText("正在卸载资源，请稍候...")
-        return
-    end
-
-    -- 正在下载中，不允许卸载（避免下载与卸载并发导致状态异常）
-    if self._IsDownloading or XTool.IsNumberValid(self._DownloadingResId) then
-        XUiManager.TipText("SubpackageUninstallRejectDownloading")
+        XLog.Warning("正在卸载资源，请稍候...")
         return
     end
 
@@ -732,11 +711,6 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
         end
         XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_COMPLETE)
         
-        -- 卸载后销毁下载器，确保下次下载时重新创建并注册新的 TaskGroup
-        if self._DownloadCenter then
-            self._DownloadCenter = nil
-        end
-
         self._IsUninstalling = false
         XLog.Warning("[XSubPackageAgency] 卸载完成")
         -- 用户卸载分包，标记为非激活状态
@@ -746,11 +720,11 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
     end)
 end
 
--- [修复] 内部辅助：检查某个物理文件是否被"当前操作目标以外"的活跃资源占用
--- @param physicalFileName 物理文件名（hash名，即 info[1]），与 _FileToResIds 的 key 维度一致
+-- [新增] 内部辅助：检查某个文件是否被“当前操作目标以外”的活跃资源占用
+-- @param fileName 文件名
 -- @param excludeResIds table 需要排除的资源ID列表（通常是当前要卸载的分包包含的所有ResId）
-function XSubPackageAgency:_IsFileProtected(physicalFileName, excludeResIds)
-    local owners = self._FileToResIds[physicalFileName]
+function XSubPackageAgency:_IsFileProtected(fileName, excludeResIds)
+    local owners = self._FileToResIds[fileName]
     if not owners then return false end
 
     for _, ownerResId in ipairs(owners) do
@@ -796,10 +770,9 @@ function XSubPackageAgency:GetUninstallableFileInfoBySubpackageId(subpackageId)
             local indexInfo = self._SubIndexInfo[resId]
             if indexInfo then
                 local deletableFiles = {}
-                for assetPath, info in pairs(indexInfo) do
-                    local physicalFileName = info[1]
-                    -- 判定逻辑：传入物理文件名（与 _FileToResIds 的 key 维度一致）
-                    if not self:_IsFileProtected(physicalFileName, currentSubResIds) and CS.System.IO.File.Exists(self:GetSavePath(physicalFileName)) then
+                for fileName, info in pairs(indexInfo) do
+                    -- 这里的判定逻辑必须与 CheckSubpackageCanUninstall 完全一致
+                    if not self:_IsFileProtected(fileName, currentSubResIds) and CS.System.IO.File.Exists(self:GetSavePath(info[1])) then
                         -- info[1] 通常是文件的全路径或相对路径名
                         table.insert(deletableFiles, info[1])
                     end
@@ -864,12 +837,12 @@ function XSubPackageAgency:_UninstallResCore(resId)
     local deleteCount = 0
     local batchCounter = 0 
     
-    for assetPath, info in pairs(indexInfo) do
-        local physicalFileName = info[1]
-        local savePath = self:GetSavePath(physicalFileName)
-
-        -- 2. 依赖检查：传入物理文件名（与 _FileToResIds 的 key 维度一致）
-        if not self:_IsFileProtected(physicalFileName, allRelatedResIds) then
+    for fileName, info in pairs(indexInfo) do
+        local savePath = self:GetSavePath(info[1])
+        
+        -- 2. 依赖检查：调用统一的私有函数
+        -- 此时我们判定“物理删除”的标准是：该文件是否被【除本 ResId 以外】的其他活跃资源引用
+        if not self:_IsFileProtected(fileName, allRelatedResIds) then
             -- 3. 物理删除
             CS.XFileTool.DeleteFile(savePath)
             deleteCount = deleteCount + 1
@@ -897,12 +870,6 @@ function XSubPackageAgency:_UninstallResCore(resId)
             end
         end
     end
-
-    -- 补调新 XResource 的 FileInitComplete，确保状态正确初始化
-    local newResItem = self._Model:GetResourceItem(resId)
-    if newResItem then
-        newResItem:FileInitComplete()
-    end
 end
 
 function XSubPackageAgency:ResolveResIndex()
@@ -922,25 +889,12 @@ function XSubPackageAgency:ResolveResIndex()
     for resId, indexInfo in pairs(self._SubIndexInfo) do
         if resId and resId > 0 then
             
-            -- 【修复】构建 物理文件名(hash) -> ResIdList 的映射
-            -- key 必须是 info[1]（物理文件名），而非 assetPath（indexInfo 的 key）
-            -- 因为不同 assetPath 可能映射到同一个物理文件，按 assetPath 建索引会遗漏跨 assetPath 的共享
-            for assetPath, info in pairs(indexInfo) do
-                local physicalFileName = info[1]
-                if not self._FileToResIds[physicalFileName] then
-                    self._FileToResIds[physicalFileName] = {}
+            -- 【新增逻辑】构建文件 -> ResIdList 的映射
+            for fileName, info in pairs(indexInfo) do
+                if not self._FileToResIds[fileName] then
+                    self._FileToResIds[fileName] = {}
                 end
-                -- 去重：同一 resId 下多个 assetPath 可能指向同一物理文件
-                local alreadyExists = false
-                for _, existingResId in ipairs(self._FileToResIds[physicalFileName]) do
-                    if existingResId == resId then
-                        alreadyExists = true
-                        break
-                    end
-                end
-                if not alreadyExists then
-                    table.insert(self._FileToResIds[physicalFileName], resId)
-                end
+                table.insert(self._FileToResIds[fileName], resId)
             end
 
             -- 原有的 Item 初始化逻辑
@@ -1537,7 +1491,6 @@ function XSubPackageAgency:OnLoginOut()
         return
     end
 
-    self._IsUninstalling = false
     self:PauseAll()
 end
 

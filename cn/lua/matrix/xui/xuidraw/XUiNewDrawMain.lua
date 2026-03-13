@@ -1039,6 +1039,7 @@ end
 function XUiNewDrawMain:UpdateOptionalBtn()
     local isShow = not self:CheckIsNewDraw() 
                    and not XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId)
+                   and not XDataCenter.DrawManager:CheckIsHideOptionalBtnGroupId(self.GroupId)
                    and not (self.CurBanner and self.CurBanner.TargetBtnDetails)
     self.BtnOptionalDraw.gameObject:SetActiveEx(isShow)
 end

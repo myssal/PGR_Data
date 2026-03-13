@@ -41,6 +41,7 @@ XDrawManagerCreator = function()
     local DrawNewGroupIds = nil
     local DrawDiscountGroupIds = nil
     local DrawDevilMayCryGroupIds = nil
+    local DrawHideOptionalBtnGroupIds = nil
 
     -- 可肝卡池相关数据
     local CanLiverActivityId = nil
@@ -838,6 +839,19 @@ XDrawManagerCreator = function()
             end
         end
         return DrawDevilMayCryGroupIds[groupId]
+    end
+
+    function XDrawManager:CheckIsHideOptionalBtnGroupId(groupId)
+        if not DrawHideOptionalBtnGroupIds then
+            DrawHideOptionalBtnGroupIds = {}
+            local ids = XDrawConfigs.GetDrawClientConfigs("DrawHideOptionalBtnGroupIds")
+            if ids then
+                for _, v in pairs(ids) do
+                    DrawHideOptionalBtnGroupIds[tonumber(v)] = true
+                end
+            end
+        end
+        return DrawHideOptionalBtnGroupIds[groupId]
     end
 
     -- 可领次数，指立即点击按钮可领但是还没领的

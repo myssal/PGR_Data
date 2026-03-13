@@ -63,8 +63,8 @@ function XUiHelperFashionSuit:RegistHandler(fashionType, funcType, func)
     self._Handlers[fashionType][funcType] = handler(self, func)
 end
 
-function XUiHelperFashionSuit:ApplyHandler(funcType, ...)
-    local type = self:IsWeapon() and FashionType.Weapon or FashionType.Character
+function XUiHelperFashionSuit:ApplyHandler(funcType)
+    local type = (not self:IsEnableGroupSales() and self:IsWeapon()) and FashionType.Weapon or FashionType.Character
     local dict = self._Handlers[type]
     if not dict then
         XLog.Error(string.format("涂装类型未注册：%s", type))
@@ -74,7 +74,8 @@ function XUiHelperFashionSuit:ApplyHandler(funcType, ...)
     if not func then
         XLog.Error(string.format("方法类型未注册：%s", funcType))
     end
-    return func(...)
+    local id = type == FashionType.Weapon and self._Context.WeaponFashionId or self._Context.FashionId
+    return func(id)
 end
 
 ---是否开启整套购买
@@ -89,36 +90,32 @@ end
 
 ---@return string
 function XUiHelperFashionSuit:GetName()
-    return self:ApplyHandler(FuncType.GetName, self._Context.SourceId)
+    return self:ApplyHandler(FuncType.GetName)
 end
 
 ---@return string
 function XUiHelperFashionSuit:GetCharacterName()
-    return self:ApplyHandler(FuncType.GetCharacterName, self._Context.SourceId)
+    return self:ApplyHandler(FuncType.GetCharacterName)
 end
 
 ---@return string
 function XUiHelperFashionSuit:GetDesc()
-    return self:ApplyHandler(FuncType.GetDesc, self._Context.SourceId)
+    return self:ApplyHandler(FuncType.GetDesc)
 end
 
 ---@return table
 function XUiHelperFashionSuit:GetRewards()
-    return self:ApplyHandler(FuncType.GetRewards, self._Context.SourceId)
+    return self:ApplyHandler(FuncType.GetRewards)
 end
 
 ---@return boolean
 function XUiHelperFashionSuit:IsBtnPicVisible()
-    return self:ApplyHandler(FuncType.IsBtnPicVisible, self._Context.SourceId)
+    return self:ApplyHandler(FuncType.IsBtnPicVisible)
 end
 
 ---@return boolean
 function XUiHelperFashionSuit:IsTagNewVisible()
-    return self:ApplyHandler(FuncType.IsTagNewVisible, self._Context.SourceId)
-end
-
-function XUiHelperFashionSuit:UseFashion(cb)
-    self:ApplyHandler(FuncType.UseFashion, cb)
+    return self:ApplyHandler(FuncType.IsTagNewVisible)
 end
 
 --region 枚举方法

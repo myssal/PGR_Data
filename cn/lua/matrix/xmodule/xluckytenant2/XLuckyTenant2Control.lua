@@ -17,13 +17,16 @@ function XLuckyTenant2Control:OnInit()
     self._Game = false
     ---@type number|nil 结算时的StageId
     self._SettlementStageId = nil
-    
+
     -- Toast队列相关
-    self._ToastQueue = {}  -- Toast消息队列
-    self._IsShowingToast = false  -- 是否正在显示Toast
-    
+    self._ToastQueue = {}        -- Toast消息队列
+    self._IsShowingToast = false -- 是否正在显示Toast
+
     -- 本局游戏中已获得的棋子ID集合（用于判断"新"标记）
     self._ObtainedChessIds = {}
+
+    -- 若打开了关卡图文教程，则延迟第一次选棋界面弹出，直到教程关闭
+    self._PendingSelectPieceUntilTutorialClosed = false
 
     self._UiData = {
         HelpKey = self._Model:GetHelpKey(),
@@ -124,9 +127,9 @@ function XLuckyTenant2Control:GetSkillDescById(skillId)
         local formatParams = params
         if skillType == SkillType.Type205 or skillType == SkillType.Type207 then
             -- 跳过第一个参数（子虫ID），从第二个参数开始格式化
-            formatParams = {table.unpack(params, 2)}
+            formatParams = { table.unpack(params, 2) }
         end
-        
+
         local success, formattedDesc = pcall(function()
             return XUiHelper.FormatText(skillDesc, table.unpack(formatParams))
         end)
@@ -151,7 +154,7 @@ function XLuckyTenant2Control:GetBondQualityBgBySkillId(skillId)
     for _, config in ipairs(configs) do
         if config.SkillId == skillId then
             local level = config.Level or 0
-            local qualityId = level  -- 支持等级 0 使用配置表 quality id=0
+            local qualityId = level -- 支持等级 0 使用配置表 quality id=0
             return self._Model:GetLuckyTenant2BondQualityBgById(qualityId) or ""
         end
     end
@@ -180,25 +183,25 @@ function XLuckyTenant2Control:AppendStateSkillDisplayIfMissing(piece, data, roun
         return
     end
     if type(stateSkillIds) ~= "table" then
-        stateSkillIds = {stateSkillIds}
+        stateSkillIds = { stateSkillIds }
     end
-    
+
     local SkillExecutor = require("XModule/XLuckyTenant2/Game/Skill/XLuckyTenant2SkillExecutor")
     local SkillType = XLuckyTenant2Enum.Skill
     local displaySkillTypes = {
-        [SkillType.Type210] = true,  -- 子虫死亡倒计时
-        [SkillType.Type508] = true,  -- 宝盒死亡倒计时
-        [SkillType.Type208] = true,  -- 子虫死亡传染（显示图标，不显示回合数）
+        [SkillType.Type210] = true, -- 子虫死亡倒计时
+        [SkillType.Type508] = true, -- 宝盒死亡倒计时
+        [SkillType.Type208] = true, -- 子虫死亡传染（显示图标，不显示回合数）
         -- 注意：Type102/Type405/Type506是条件状态技能，只有在实际被感染时才通过data.States显示
         -- 注意：Type201/Type101等周期性生产技能现在使用Production状态，不再需要特殊显示逻辑
     }
-    
+
     -- 不显示回合数的技能类型（只显示状态图标）
     local noRoundDisplaySkills = {
-        [SkillType.Type208] = true,  -- 死亡时触发，不是倒计时
-        [SkillType.Type405] = true,  -- 永久感染状态，不是倒计时
+        [SkillType.Type208] = true, -- 死亡时触发，不是倒计时
+        [SkillType.Type405] = true, -- 永久感染状态，不是倒计时
     }
-    
+
     -- 已有状态可能存的是 skillType 或 skillId，用 ResolveStateSkillId 统一成实际 skillId 再去重
     local existingSkillIdMap = {}
     if data.States then
@@ -210,7 +213,7 @@ function XLuckyTenant2Control:AppendStateSkillDisplayIfMissing(piece, data, roun
             end
         end
     end
-    
+
     for _, stateSkillId in ipairs(stateSkillIds) do
         if stateSkillId and stateSkillId > 0 then
             -- 配置里可能是 skillType 或 skillId，用已有逻辑统一解析
@@ -221,12 +224,12 @@ function XLuckyTenant2Control:AppendStateSkillDisplayIfMissing(piece, data, roun
                 if displaySkillTypes[skillType] then
                     local params = skillConfig.Params or {}
                     local displayRound = params[1] or 0
-                    
+
                     -- 不显示回合数的技能，设置 Round = nil
                     if noRoundDisplaySkills[skillType] then
                         displayRound = nil
                     end
-                    
+
                     data.States = data.States or {}
                     data.States[#data.States + 1] = {
                         StateType = 0,
@@ -258,17 +261,17 @@ function XLuckyTenant2Control:AppendRoleUpgradeStateIfMissing(piece, data)
     if hasUpgrade then
         return
     end
-    
+
     local bondIdStr = piece:GetBondId()
     if not bondIdStr or bondIdStr == "" then
         return
     end
-    
+
     local bondManager = self._Game:GetBondManager()
     if not bondManager then
         return
     end
-    
+
     local SkillType = XLuckyTenant2Enum.Skill
     local rounds = 0
     local levelDelta = 0
@@ -276,7 +279,7 @@ function XLuckyTenant2Control:AppendRoleUpgradeStateIfMissing(piece, data)
     local maxReduceRounds = 0
     local hasMode1 = false
     local mode1SkillId = 0
-    
+
     for bondIdStr in string.gmatch(bondIdStr, "([^|]+)") do
         local bondId = tonumber(bondIdStr)
         if bondId then
@@ -323,26 +326,26 @@ function XLuckyTenant2Control:AppendRoleUpgradeStateIfMissing(piece, data)
             end
         end
     end
-    
+
     if not hasMode1 then
         return
     end
     if rounds <= 0 or levelDelta <= 0 then
         return
     end
-    
+
     local currentLevel = piece:GetLevel() or 0
     if currentLevel >= maxLevel then
         return
     end
-    
+
     local actualRounds = rounds
     if maxReduceRounds > 0 then
         actualRounds = math.max(1, rounds - maxReduceRounds)
     end
-    
+
     local desc = self:GetSkillDescById(mode1SkillId)
-    
+
     local stateData = {
         StateType = TriggerState.Upgrade,
         Round = actualRounds,
@@ -403,7 +406,7 @@ function XLuckyTenant2Control:StartGame(stageId, seed, isFirstTimeEntering, reco
         XLog.Error("record.ChessBoard = " .. tostring(record.ChessBoard and #record.ChessBoard or "nil"))
         XLog.Error("===============================================")
     end
-    
+
     XMVCA.XLuckyTenant2:ClearLog()
     self:SetStageHasPlayed(stageId)
     -- 清除已获得棋子记录（新游戏开始）
@@ -451,7 +454,7 @@ function XLuckyTenant2Control:StartGame(stageId, seed, isFirstTimeEntering, reco
             end
         end
     end
-    
+
     -- 标记初始背包中的棋子为已获得
     if self._Game then
         local bag = self._Game:GetBag()
@@ -464,6 +467,29 @@ function XLuckyTenant2Control:StartGame(stageId, seed, isFirstTimeEntering, reco
             end
         end
     end
+
+    -- 第一次进入关卡时，根据配置的图文教程页数打开教学界面，并用 SaveUtil 记录已展示
+    self:TryShowStageTutorial(stageId)
+end
+
+---首次进入关卡时尝试展示图文教程（未展示过且配置了 TutorialPage 时打开，关闭时写入 SaveUtil）
+---若打开了教程，则延迟第一次选棋界面弹出，直到教程关闭后再弹出
+---@param stageId number
+function XLuckyTenant2Control:TryShowStageTutorial(stageId)
+    if not stageId or self._Model:IsStageTutorialShown(stageId) then
+        return
+    end
+    local tutorialPage = self._Model:GetLuckyTenant2StageTutorialPageById(stageId)
+    if not tutorialPage or tutorialPage <= 0 then
+        return
+    end
+    self._PendingSelectPieceUntilTutorialClosed = true
+    local helpKey = self._Model:GetHelpKey()
+    XUiManager.ShowHelpTip(helpKey, nil, tutorialPage, function()
+        self._Model:SetStageTutorialShown(stageId)
+        self._PendingSelectPieceUntilTutorialClosed = false
+        self:StartSelectPiece()
+    end)
 end
 
 ---更新游戏状态
@@ -493,14 +519,14 @@ function XLuckyTenant2Control:Roll()
     if not self._Game then
         return
     end
-    
+
     local animationGroups = {}
     self._UiData.IsRoundCountdownApplied = false
     self._Game:PlacePiecesOnBoard(self._Model)
     self._UiData.AnimationGroups = animationGroups
     -- 保存开始roll之前的棋盘（在ExecuteRoundCalculation之前，保存删除前的状态）
     self:UpdateUiData(false)
-    
+
     -- 数据和动画分离：保存棋盘数据快照，供动画播放期间使用
     local snapshot = {}
     local snapshotCount = 0
@@ -517,10 +543,10 @@ function XLuckyTenant2Control:Roll()
         end
     end
     self._UiData.ChessboardSnapshot = snapshot
-    
+
     -- 动画开始前先将快照倒计时-1，避免依赖UI层时机
     self:ApplyRoundCountdownForAnimation()
-    
+
     self:UpdateIcon4Animation()
     self._Game:ExecuteRoundCalculation(self._Model, animationGroups)
     self:InsertRollAnimation(animationGroups)
@@ -539,7 +565,7 @@ function XLuckyTenant2Control:ApplyRoundCountdownForAnimation()
     if not snapshot then
         return
     end
-    
+
     local totalAdjusted = 0
     for i = 1, #snapshot do
         local data = snapshot[i]
@@ -558,7 +584,7 @@ function XLuckyTenant2Control:ApplyRoundCountdownForAnimation()
             end
         end
     end
-    
+
     uiData.IsRoundCountdownApplied = true
 end
 
@@ -584,7 +610,7 @@ function XLuckyTenant2Control:UpdateUiData(isDirty)
     if not self._Game then
         return
     end
-    
+
     local game = self._Game
     local uiData = self._UiData
     self:UpdateGameState()
@@ -596,10 +622,10 @@ function XLuckyTenant2Control:UpdateUiData(isDirty)
 
     uiData.Score = game:GetTotalScore()
     uiData.AddScore = game:GetScoreThisRound()
-    
+
     -- 更新羁绊得分记录数据
     self:UpdateBondsIncome()
-    
+
     self:UpdateChessboard()
     self:UpdateInfo()
 end
@@ -609,18 +635,18 @@ function XLuckyTenant2Control:UpdateInfo()
     if not self._Game then
         return
     end
-    
+
     local game = self._Game
     local uiData = self._UiData
     uiData.Round = game:GetRound()
-    
+
     -- 更新总回合数
     local stageId = self._Model:GetPlayingStageId()
     -- 如果 Model 中的 stageId 为 0，尝试从 Game 中获取
     if not stageId or stageId <= 0 then
         stageId = game:GetStageId()
     end
-    
+
     if stageId and stageId > 0 then
         local totalRound = self._Model:GetRoundsToPerfectClear(stageId) or 0
         -- 获取 quest 列表中的最大回合数
@@ -641,7 +667,7 @@ function XLuckyTenant2Control:UpdateInfo()
             uiData.TotalRound = totalRound
         end
     end
-    
+
     -- 获取任务进度
     local questCompletedAmount, questTotalAmount = game:GetQuestProgress()
     uiData.QuestCompletedAmount = questCompletedAmount
@@ -661,28 +687,28 @@ function XLuckyTenant2Control:UpdateQuest()
     if not self._Game then
         return
     end
-    
+
     local game = self._Game
     local quest = game:GetCurrentQuest()
     local uiData = self._UiData
-    
+
     if not quest then
         uiData.QuestRewards = {}
         uiData.QuestDesc = ""
         return
     end
-    
+
     uiData.QuestDesc = quest.Desc
     local questRewards = self._UiData.QuestRewards
     local rewardPieces = quest.RewardPieces
-    
+
     -- 调整奖励数组大小
     if #questRewards ~= #rewardPieces then
         for i = #questRewards, 1, -1 do
             questRewards[i] = nil
         end
     end
-    
+
     local rewardAmount = quest.RewardPiecesAmount
     for i = 1, #rewardPieces do
         local pieceId = rewardPieces[i]
@@ -714,13 +740,13 @@ function XLuckyTenant2Control:UpdateQuestList()
     if not self._Game then
         return
     end
-    
+
     local game = self._Game
     local uiData = self._UiData
     local currentRound = game:GetRound()
     local allQuests = game:GetAllQuest()
     local quests = uiData.Quests
-    
+
     -- 调整数组大小
     if #quests ~= #allQuests then
         for i = #quests, 1, -1 do
@@ -735,29 +761,30 @@ function XLuckyTenant2Control:UpdateQuestList()
             }
         end
     end
-    
+
     -- 获取关卡配置中的静态 quest 数据
     local stageId = game:GetStageId()
     local questConfigs = self._Model:GetStageTasks(stageId)
-    
+
     -- 更新 quest 数据和标识当前 quest
     local currentQuestIndex = 0
     for i = 1, #allQuests do
         local quest = allQuests[i]
         local questData = quests[i]
         questData.Round = quest.Round or 0
-        
+        questData.Index = i
+
         -- 从配置表中读取静态的 PerfectClear 和 NormalClear（表示 quest 类型标记：显示为"完美通关目标"或"普通通关目标"）
         -- 注意：这与 Game._Quest[i].PerfectClear（运行时完成状态）不同
         local questConfig = questConfigs[i]
         if questConfig then
-            questData.PerfectClear = questConfig.PerfectClear or false  -- 静态类型：是否为完美通关目标
-            questData.NormalClear = questConfig.NormalClear or false    -- 静态类型：是否为普通通关目标
+            questData.PerfectClear = questConfig.PerfectClear or false -- 静态类型：是否为完美通关目标
+            questData.NormalClear = questConfig.NormalClear or false   -- 静态类型：是否为普通通关目标
         else
             questData.PerfectClear = false
             questData.NormalClear = false
         end
-        
+
         -- 找到当前回合所在的 quest
         -- 如果当前回合数 <= quest.Round，且还没有找到当前 quest，则标记为当前 quest
         if currentQuestIndex == 0 and currentRound <= questData.Round then
@@ -767,7 +794,33 @@ function XLuckyTenant2Control:UpdateQuestList()
             questData.IsCurrentQuest = false
         end
     end
-    
+
+    -- 实现虚假轮次，加入一个IsPlaceholder，跳过当前quest之后2个quest到最后一个quest之间的所有quest
+    -- 首先清掉当前quest之后2个quest到最后一个quest之间的所有quest
+    local isRemove = false
+    for i = #quests - 1, currentQuestIndex + 2, -1 do
+        isRemove = true
+        table.remove(quests, i)
+    end
+    if isRemove then
+        -- 加入一个IsPlaceholder
+        table.insert(quests, currentQuestIndex + 2, {
+            IsPlaceholder = true
+        })
+    end
+
+    -- 移除当前轮次之前2个quest之后的所有quest
+    for i = 1, currentQuestIndex - 2 do
+        table.remove(quests, 1)
+    end
+
+    -- 逆序 quest（只遍历到一半，否则会交换两次等于没逆序）
+    local len = #quests
+    for i = 1, math.floor(len / 2) do
+        local j = len - i + 1
+        quests[i], quests[j] = quests[j], quests[i]
+    end
+
     -- 如果没有找到当前 quest（可能已经完成所有 quest），标记最后一个为当前 quest
     if currentQuestIndex == 0 and #quests > 0 then
         quests[#quests].IsCurrentQuest = true
@@ -833,38 +886,38 @@ function XLuckyTenant2Control:UpdateBondsIncome()
     if not self._Game then
         return
     end
-    
+
     local uiData = self._UiData
     local bondsIncomeData = uiData.BondsIncome
-    
+
     -- 获取当前回合的羁绊得分记录
     local bondsIncomeThisRound = self._Game:GetBondsIncomeThisRound() or {}
-    
+
     -- 清空数组
     for i = #bondsIncomeData, 1, -1 do
         bondsIncomeData[i] = nil
     end
-    
+
     -- 获取所有羁绊配置
     local bondManager = self._Game:GetBondManager()
     if not bondManager then
         -- bondManager不存在，直接返回（不添加任何数据）
         return
     end
-    
+
     -- 确保羁绊等级已刷新（在获取羁绊列表前）
     local bag = self._Game:GetBag()
     if bag then
         bondManager:RefreshBondLevels(bag, self._Model)
     end
-    
+
     local allBonds = bondManager:GetAllBonds()
-    
+
     -- 如果没有羁绊，直接返回（不添加任何数据）
     if not allBonds or #allBonds == 0 then
         return
     end
-    
+
     -- 转换为 UI 数据格式（仅显示应显示的羁绊：等级>0 必显示，等级=0 受关卡 ShowBondId 控制）
     for _, bond in ipairs(allBonds) do
         local bondId = bond:GetBondId()
@@ -889,9 +942,9 @@ function XLuckyTenant2Control:UpdateBondsIncome()
                 Name = bondConfig.BondName or "",
                 Icon = bondConfig.Icon or "",
                 Level = level,
-                LevelColor = GetBondLevelColorHex(level),  -- 当前羁绊等级对应 icon/字色
-                PieceCount = pieceCount,  -- 棋子数量或类型数量（与羁绊列表 TxtLv 一致）
-                Score = score,  -- 可能为0（如果没有得分记录）
+                LevelColor = GetBondLevelColorHex(level), -- 当前羁绊等级对应 icon/字色
+                PieceCount = pieceCount,                  -- 棋子数量或类型数量（与羁绊列表 TxtLv 一致）
+                Score = score,                            -- 可能为0（如果没有得分记录）
                 ImageBg = imageBg,
             }
             bondsIncomeData[#bondsIncomeData + 1] = bondIncomeData
@@ -920,12 +973,12 @@ function XLuckyTenant2Control:UpdateBonds()
     if not self._Game then
         return
     end
-    
+
     local bondManager = self._Game:GetBondManager()
     if not bondManager then
         return
     end
-    
+
     local uiData = self._UiData
     local bondsData = uiData.Bonds
     local allBonds = bondManager:GetAllBonds()
@@ -942,14 +995,13 @@ function XLuckyTenant2Control:UpdateBonds()
         -- 获取羁绊配置
         local bondConfig = self._Model:GetLuckyTenant2BondConfigById(bondId)
         if bondConfig then
-
             -- 获取羁绊技能配置，用于生成等级文本
             local levelText = ""
             local bondSkillConfigs = self._Model:GetLuckyTenant2BondSkillConfigsByBondId(bondId)
-            
+
             if bondSkillConfigs and #bondSkillConfigs > 0 then
                 -- 从所有配置中收集 SkillRequire 值（每个 level 只取第一个配置）
-                local skillRequireMap = {}  -- {level: skillRequire}
+                local skillRequireMap = {} -- {level: skillRequire}
                 for _, bondSkillConfig in ipairs(bondSkillConfigs) do
                     local skillRequire = bondSkillConfig.SkillRequire
                     local configLevel = bondSkillConfig.Level
@@ -960,14 +1012,14 @@ function XLuckyTenant2Control:UpdateBonds()
                         end
                     end
                 end
-                
+
                 -- 转换为列表并按 level 排序
                 local allSkillRequires = {}
                 for configLevel, skillRequire in pairs(skillRequireMap) do
-                    table.insert(allSkillRequires, {level = configLevel, require = skillRequire})
+                    table.insert(allSkillRequires, { level = configLevel, require = skillRequire })
                 end
                 table.sort(allSkillRequires, function(a, b) return a.level < b.level end)
-                
+
                 if #allSkillRequires > 0 then
                     -- 生成等级文本，每个等级数字使用对应等级颜色（0~4 见 BondLevelColors），已激活用该等级色，未激活用 0 级灰色
                     local levelParts = {}
@@ -990,18 +1042,18 @@ function XLuckyTenant2Control:UpdateBonds()
                     end
                 end
             end
-            
+
             -- 如果仍然为空，尝试使用 UpgradeRequireDesc 作为备选
             if levelText == "" and bondConfig.UpgradeRequireDesc and bondConfig.UpgradeRequireDesc ~= "" then
                 levelText = bondConfig.UpgradeRequireDesc
             end
-            
+
             -- 如果仍然为空，使用默认的等级文本（根据 CalculateLevel 的逻辑，默认是 2/4/6/9）
             if levelText == "" then
                 levelText = ""
                 XLog.Warning("羁绊等级文本为空，bondId:", bondId)
             end
-            
+
             ---@class XUiLuckyTenant2GameGridBondsData
             local bondData = {}
             bondData.BondId = bondId
@@ -1009,11 +1061,11 @@ function XLuckyTenant2Control:UpdateBonds()
             bondData.Icon = bond:GetIcon() or bondConfig.Icon or ""
             bondData.Level = level
             bondData.LevelText = levelText
-            bondData.LevelColor = GetBondLevelColorHex(level)  -- 当前羁绊等级对应 icon/字色
+            bondData.LevelColor = GetBondLevelColorHex(level) -- 当前羁绊等级对应 icon/字色
             -- 根据羁绊等级取品质背景（等级 0 使用配置表里的 quality id=0）
             local qualityId = level or 0
             bondData.ImageBg = self._Model:GetLuckyTenant2BondQualityBgById(qualityId) or ""
-            
+
             -- 计算当前羁绊的棋子数量（根据升级要求类型：类型数量或总数量）
             local bag = self._Game:GetBag()
             local pieceCount = 0
@@ -1021,7 +1073,7 @@ function XLuckyTenant2Control:UpdateBonds()
                 pieceCount = bond:CalculateSatisfyCount(bag)
             end
             bondData.PieceCount = pieceCount
-            
+
             -- 获取技能列表（用于显示 Buff 列表）
             -- 总是获取所有等级的 Buffs，然后根据每个 Buff 的等级判断是否拥有
             bondData.Buffs = self:GetBondAllSkills(bondId)
@@ -1037,7 +1089,7 @@ function XLuckyTenant2Control:UpdateBonds()
                     bondData.Buffs[i].LevelColor = GetBondLevelColorHex(buffLevel)
                 end
             end
-            
+
             -- 获取关联的棋子列表（用于显示关联棋子列表）
             bondData.ChessRequires = self:GetBondRelatedChessList(bondId)
             tempList[#tempList + 1] = bondData
@@ -1070,7 +1122,7 @@ function XLuckyTenant2Control:RefreshBondLevels()
     if not self._Game then
         return
     end
-    
+
     local bondManager = self._Game:GetBondManager()
     local bag = self._Game:GetBag()
     if bondManager and bag then
@@ -1081,16 +1133,16 @@ function XLuckyTenant2Control:RefreshBondLevels()
             local bondId = bond:GetBondId()
             oldLevels[bondId] = bond:GetLevel()
         end
-        
+
         -- 刷新羁绊等级
         bondManager:RefreshBondLevels(bag, self._Model)
-        
+
         -- 检查等级变化并显示Toast
         for _, bond in ipairs(allBonds) do
             local bondId = bond:GetBondId()
             local newLevel = bond:GetLevel()
             local oldLevel = oldLevels[bondId] or 0
-            
+
             if oldLevel ~= newLevel then
                 self:OnBondLevelChanged(bondId, oldLevel, newLevel)
             end
@@ -1104,13 +1156,13 @@ function XLuckyTenant2Control:RefreshBondLevelsWithoutToast()
     if not self._Game then
         return nil
     end
-    
+
     local bondManager = self._Game:GetBondManager()
     local bag = self._Game:GetBag()
     if not bondManager or not bag then
         return nil
     end
-    
+
     -- 记录刷新前的等级
     local oldLevels = {}
     local allBonds = bondManager:GetAllBonds()
@@ -1118,17 +1170,17 @@ function XLuckyTenant2Control:RefreshBondLevelsWithoutToast()
         local bondId = bond:GetBondId()
         oldLevels[bondId] = bond:GetLevel()
     end
-    
+
     -- 刷新羁绊等级
     bondManager:RefreshBondLevels(bag, self._Model)
-    
+
     -- 记录等级变化
     local changes = {}
     for _, bond in ipairs(allBonds) do
         local bondId = bond:GetBondId()
         local newLevel = bond:GetLevel()
         local oldLevel = oldLevels[bondId] or 0
-        
+
         if oldLevel ~= newLevel then
             table.insert(changes, {
                 bondId = bondId,
@@ -1137,7 +1189,7 @@ function XLuckyTenant2Control:RefreshBondLevelsWithoutToast()
             })
         end
     end
-    
+
     return #changes > 0 and changes or nil
 end
 
@@ -1147,7 +1199,7 @@ function XLuckyTenant2Control:ApplyBondLevelChanges(changes)
     if not changes or #changes == 0 then
         return
     end
-    
+
     for _, change in ipairs(changes) do
         self:OnBondLevelChanged(change.bondId, change.oldLevel, change.newLevel)
     end
@@ -1158,7 +1210,7 @@ function XLuckyTenant2Control:UpdateBagAmount()
     if not self._Game then
         return
     end
-    
+
     local game = self._Game
     local uiData = self._UiData
     uiData.PiecesAmount = game:GetBag():GetPiecesAmount()
@@ -1169,7 +1221,11 @@ function XLuckyTenant2Control:StartSelectPiece()
     if not self._Game then
         return
     end
-    
+    -- 若当前因图文教程而延迟选棋界面，等教程关闭后再由 TryShowStageTutorial 的 closeCb 调用本方法
+    if self._PendingSelectPieceUntilTutorialClosed then
+        return
+    end
+
     if self._Game:HasSupplyChess() then
         -- 恢复选棋（已有补充棋子，不需要请求服务器）
         self._Game:ClearHasSupplyChess()
@@ -1179,7 +1235,7 @@ function XLuckyTenant2Control:StartSelectPiece()
         XLuaUiManager.Open("UiLuckyTenant2Chess")
         return
     end
-    
+
     -- 开始新回合选棋
     self._Game:EnterNextRound(self._Model)
     self._Model:SetPlayingStageRound(self._Game:GetRound())
@@ -1194,11 +1250,11 @@ function XLuckyTenant2Control:UpdateSelectPiece()
     if not self._Game then
         return
     end
-    
+
     local pieces = self._Game:GetOptionsThisRound(self._Model)
     local pieceData = {}
     self._UiData.SelectPiecesData.Pieces = pieceData
-    
+
     -- 遍历所有棋子，只保留有效的（非nil）棋子，并重新分配索引
     local validIndex = 1
     for i = 1, #pieces do
@@ -1212,7 +1268,7 @@ function XLuckyTenant2Control:UpdateSelectPiece()
             data.Value = piece:GetTotalValue()
             data.ValueUponDeletion = piece:GetValueUponDeletion()
             data.Desc = self._Model:GetLuckyTenant2ChessDescById(piece:GetId()) or {}
-            data.IsFromSelectPiece = true  -- 标记来自选棋界面
+            data.IsFromSelectPiece = true -- 标记来自选棋界面
             local quality = piece:GetQuality()
             data.Quality = self._Model:GetQualityIconQuad(quality)
             data.QualityValue = quality
@@ -1222,6 +1278,7 @@ function XLuckyTenant2Control:UpdateSelectPiece()
             data.TypeName = self._Model:GetLuckyTenant2ChessTypeNameById(piece:GetPieceType())
             data.Level = piece:GetLevel()
             data.IsCanUpgrade = piece._CanUpgrade or false
+            data.IsNew = self:IsChessNew(piece:GetId())
             pieceData[validIndex] = data
             validIndex = validIndex + 1
         end
@@ -1250,10 +1307,10 @@ function XLuckyTenant2Control:UpdateChessboard()
     if not self._Game then
         return
     end
-    
+
     local game = self._Game
     local uiData = self._UiData
-    
+
     -- 如果有快照且处于动画状态，使用快照数据（数据和动画分离）
     if uiData.ChessboardSnapshot and uiData.GameState == XLuckyTenant2Enum.GameState.Animation then
         -- 使用快照数据，将快照数据复制到Chessboard供UI使用
@@ -1280,15 +1337,15 @@ function XLuckyTenant2Control:UpdateChessboard()
         end
         return
     end
-    
+
     local chessboard = game:GetChessBoard()
     local pieces = chessboard:GetAllPieces()
     local dataChessboard = uiData.Chessboard
-    
+
     -- 初始化棋盘数据数组大小
     local piecesAmount = chessboard:GetPiecesAmount()
     self:UpdateChessboardSize(piecesAmount)
-    
+
     -- 创建一个位置映射，用于快速查找棋子
     local pieceMapByIndex = {}
     for _, piece in ipairs(pieces) do
@@ -1298,7 +1355,7 @@ function XLuckyTenant2Control:UpdateChessboard()
             pieceMapByIndex[index] = piece
         end
     end
-    
+
     -- 收集所有已开始播放的动画组中被标记为删除的棋子UID（延迟消除状态）
     -- 只有在动画组状态为 "playing" 或 "finished" 时，才标记为 IsDead
     -- 这样 PanelDead 只在动画开始播放后才显示
@@ -1314,7 +1371,7 @@ function XLuckyTenant2Control:UpdateChessboard()
                         if animData.type == XLuckyTenant2Enum.AnimationType.DeletePiece and animData.pieceUid then
                             if animationGroup._State == "playing" or animationGroup._State == "finished" then
                                 deletedPieceUids[animData.pieceUid] = true
-                                table.insert(debugLogUids, {uid = animData.pieceUid, state = animationGroup._State, index = i})
+                                table.insert(debugLogUids, { uid = animData.pieceUid, state = animationGroup._State, index = i })
                             end
                         end
                     end
@@ -1322,15 +1379,15 @@ function XLuckyTenant2Control:UpdateChessboard()
             end
         end
     end
-    
-    
+
+
     -- 填充棋盘数据
     for i = 1, piecesAmount do
         local piece = pieceMapByIndex[i]
         local x, y = chessboard:GetXY(i)
         ---@class XUiLuckyTenant2GameGridChessData
         local data = dataChessboard[i]
-        
+
         if piece then
             -- 填充棋子UI数据
             data.IsValid = true
@@ -1344,29 +1401,29 @@ function XLuckyTenant2Control:UpdateChessboard()
             data.Value = piece:GetTotalValue()
             data.Level = piece:GetLevel()
             data.IsCanUpgrade = piece._CanUpgrade or false
-            
+
             -- 获取状态信息（倒计时）
             local states = piece:GetAllStates()
             data.States = {}
             local round = nil
-    for _, state in ipairs(states) do
-        local skillId = state:GetSkillId()
-        local remainRounds = state:GetRemainRounds()
-        data.States[#data.States + 1] = {
-            StateType = state:GetStateType(),
-            Round = remainRounds,
-            Desc = self:GetSkillDescById(skillId),
-            SkillId = skillId,
-            ImageBg = self:GetBondQualityBgBySkillId(skillId) or "",
-        }
-        if remainRounds and remainRounds > 0 and not round then
+            for _, state in ipairs(states) do
+                local skillId = state:GetSkillId()
+                local remainRounds = state:GetRemainRounds()
+                data.States[#data.States + 1] = {
+                    StateType = state:GetStateType(),
+                    Round = remainRounds,
+                    Desc = self:GetSkillDescById(skillId),
+                    SkillId = skillId,
+                    ImageBg = self:GetBondQualityBgBySkillId(skillId) or "",
+                }
+                if remainRounds and remainRounds > 0 and not round then
                     round = remainRounds
                 end
             end
             self:AppendRoleUpgradeStateIfMissing(piece, data)
             self:AppendStateSkillDisplayIfMissing(piece, data, game:GetRound())
             data.Round = round or data.Round
-            
+
             data.X = x
             data.Y = y
             data.Position = i
@@ -1518,11 +1575,11 @@ end
 function XLuckyTenant2Control:UpdateIcon4Animation()
     self._UiData.Icon4Animation = {}
     local result = self._UiData.Icon4Animation
-    
+
     if not self._Game then
         return
     end
-    
+
     local bag = self._Game:GetBag()
     local pieces = bag:GetPieces()
     for uid, piece in pairs(pieces) do
@@ -1546,18 +1603,18 @@ function XLuckyTenant2Control:SelectPiece(index)
     if XMVCA.XLuckyTenant2:IsRequesting() then
         return
     end
-    
+
     local success, piece = self._Game:SelectPiece(self._Model, index)
     if not success then
         XLog.Error("[XLuckyTenant2Control] 选择棋子失败，index:" .. tostring(index))
         return
     end
-    
+
     -- 标记棋子为已获得（用于"新"标记）
     if piece then
         self:MarkChessAsObtained(piece:GetId())
     end
-    
+
     -- 选择棋子后立即刷新羁绊等级与数值（但不显示Toast）
     if XMVCA.XLuckyTenant2 then
     end
@@ -1575,12 +1632,12 @@ function XLuckyTenant2Control:SelectPiece(index)
     self:UpdateBonds()
     -- 返回棋盘界面前刷新棋盘数据（确保倒计时及时更新）
     self:UpdateChessboard()
-    
+
     -- 关闭选棋界面后，再显示Toast
     if bondLevelChanges then
         self:ApplyBondLevelChanges(bondLevelChanges)
     end
-    
+
     -- 状态推进由 Control 层管理，根据在线/离线状态决定推进时机
     if XMVCA.XLuckyTenant2:IsOffline() then
         -- 离线状态下，选择棋子后立即推进状态
@@ -1600,7 +1657,7 @@ function XLuckyTenant2Control:DeletePiece(uid)
     if not self._Game then
         return
     end
-    self._Game:DeletePieceByUid(uid, true)  -- true表示来自玩家操作
+    self._Game:DeletePieceByUid(uid, true) -- true表示来自玩家操作
     -- 删除棋子后立即刷新羁绊等级与数值
     self:RefreshBondLevels()
     self._Game:_ProcessBondLevelChanges(self._Model)
@@ -1631,7 +1688,7 @@ function XLuckyTenant2Control:RefreshSelectPiece(useProp)
     if not self._Game then
         return
     end
-    
+
     self._UiData.IsPropDirty = true
     -- 标记需要刷新选项
     self._Game._IsDirtyPiecesToSelect = true
@@ -1646,23 +1703,23 @@ function XLuckyTenant2Control:RefreshSelectPiecesByProp()
     if not self._Game then
         return false
     end
-    
+
     -- 检查随机池大小，如果只有3个则无法刷新选项
     local game = self._Game
     local needAmount = game._AmountOfPiecesToSelect or 3
     local randomBucketSize = #(game._PiecesRandomBucket or {})
     local fixedBucketSize = #(game._PiecesFixedBucket or {})
-    
+
     -- 如果随机池大小正好等于需要的数量，且没有固定池，则无法刷新
     if randomBucketSize == needAmount and fixedBucketSize == 0 then
         XLog.Warning("[XLuckyTenant2Control] 随机池里只有" .. tostring(needAmount) .. "个棋子，无法刷新选项")
         XUiManager.TipText("LuckyTenantRefreshNotAvailable")
         return false
     end
-    
+
     if game:GetFreeRefreshTimes() > 0 then
         game:ReduceFreeRefreshTimes()
-        self:RefreshSelectPiece(false)  -- 不使用道具，使用免费次数
+        self:RefreshSelectPiece(false) -- 不使用道具，使用免费次数
         return true
     end
 
@@ -1677,7 +1734,7 @@ function XLuckyTenant2Control:RefreshSelectPiecesByProp()
             return true
         end
     end
-    
+
     XUiManager.TipText("LuckyTenantPropNotEnough")
     return false
 end
@@ -1709,7 +1766,7 @@ function XLuckyTenant2Control:UpdateBag()
         end
         return
     end
-    
+
     local selectedPieceLastTime = self._UiData.SelectedBagPiece
     local selectedUid = nil
     if selectedPieceLastTime then
@@ -1725,14 +1782,14 @@ function XLuckyTenant2Control:UpdateBag()
     for i = #uiData, 1, -1 do
         uiData[i] = nil
     end
-    
+
     if not self._Game then
         return
     end
-    
+
     local bag = self._Game:GetBag()
     local pieces = bag:GetPieces()
-    
+
     -- 按类型分组（过滤掉道具，不显示在背包UI中）
     local dictionary = {}
     for uid, piece in pairs(pieces) do
@@ -1748,10 +1805,10 @@ function XLuckyTenant2Control:UpdateBag()
             table.insert(array, piece)
         end
     end
-    
+
     -- 获取当前回合数（用于计算状态剩余回合）
     local currentRound = self._Game:GetRound()
-    
+
     -- 为每个类型创建分组数据
     for pieceType, piecesOfType in pairs(dictionary) do
         local piecesData = {}
@@ -1766,7 +1823,7 @@ function XLuckyTenant2Control:UpdateBag()
                     break
                 end
             end
-            
+
             ---@class XUiLuckyTenant2ChessBagGridData
             local pieceData = {
                 Name = piece:GetName(),
@@ -1786,7 +1843,7 @@ function XLuckyTenant2Control:UpdateBag()
             }
             piecesData[#piecesData + 1] = pieceData
         end
-        
+
         -- 排序（按品质和UID）
         table.sort(piecesData, function(a, b)
             if a.QualityValue ~= b.QualityValue then
@@ -1794,7 +1851,7 @@ function XLuckyTenant2Control:UpdateBag()
             end
             return a.Uid < b.Uid
         end)
-        
+
         -- 分组标题与图标使用羁绊名和羁绊图标（取该组第一个棋子的羁绊）
         local bondId = tonumber(piecesOfType[1]:GetBondId())
         local typeDesc = self._Model:GetLuckyTenant2BondNameById(bondId) or self._Model:GetLuckyTenant2ChessTypeNameById(pieceType) or ""
@@ -1809,12 +1866,12 @@ function XLuckyTenant2Control:UpdateBag()
         }
         uiData[#uiData + 1] = groupData
     end
-    
+
     -- 按类型ID排序分组
     table.sort(uiData, function(a, b)
         return a.Type < b.Type
     end)
-    
+
     -- 更新棋子数量
     self._UiData.PiecesAmount = bag:GetPiecesAmount()
 end
@@ -1825,10 +1882,10 @@ function XLuckyTenant2Control:UpdateBagGridSelectedState()
     if not selectedPiece or not selectedPiece.Uid then
         return
     end
-    
+
     local bagData = self._UiData.Bag
     local selectedUid = selectedPiece.Uid
-    
+
     -- 遍历所有分组，找到并更新选中状态
     for _, groupData in ipairs(bagData) do
         if groupData.Pieces then
@@ -1844,7 +1901,7 @@ function XLuckyTenant2Control:OnStagePassed()
     if not self._Game then
         return
     end
-    
+
     local game = self._Game
     local record = game:GetRecord4Server()
     -- 确保 record 包含有效的 StageId 及通关数据（GetRecord4Server 仅有 StageId/SelectPiece/DeletePiece，需补全）
@@ -1871,7 +1928,7 @@ end
 ---更新结算数据
 function XLuckyTenant2Control:UpdateSettlement()
     local settlementData = self._UiData.Settlement
-    
+
     if self._Game then
         -- 从Game获取数据
         settlementData.Score = self._Game:GetTotalScore() or 0
@@ -1879,7 +1936,7 @@ function XLuckyTenant2Control:UpdateSettlement()
         local questCompletedAmount, questTotalAmount = self._Game:GetQuestProgress()
         settlementData.QuestCompletedAmount = questCompletedAmount or 0
         settlementData.QuestTotalAmount = questTotalAmount or 0
-        
+
         local GameState = XLuckyTenant2Enum.GameState
         local gameState = self._Game:GetState()
         settlementData.IsPerfectClear = (gameState == GameState.PerfectClear)
@@ -1893,7 +1950,7 @@ function XLuckyTenant2Control:UpdateSettlement()
         settlementData.QuestTotalAmount = self._UiData.QuestTotalAmount or 0
         settlementData.IsNormalClear = self._UiData.IsNormalClear or false
     end
-    
+
     -- 从Model的record获取IsNewRecord信息（无论Game是否存在）
     local stageId = self._SettlementStageId or self._Model:GetPlayingStageId()
     if stageId and stageId > 0 then
@@ -1973,7 +2030,7 @@ function XLuckyTenant2Control:GetTargetQuestScore()
         end
         return 0
     end
-    
+
     local game = self._Game
     -- 使用当前任务的目标分数
     local currentQuest = game:GetCurrentQuest()
@@ -1990,29 +2047,52 @@ function XLuckyTenant2Control:GetTargetQuestScore()
     end
 end
 
+---获取上一个目标任务（Round <= round 的最后一个，即已到达或已过的目标）
+---@param round number|nil 回合数（可选，默认使用当前回合）
+---@return table|nil 上一个 quest，含 Round、Score、Desc、RewardPieces 等
+function XLuckyTenant2Control:GetLastTargetQuest(round)
+    if not self._Game then
+        return nil
+    end
+    local game = self._Game
+    round = round or game:GetRound()
+    local allQuests = game:GetAllQuest()
+    if not allQuests or #allQuests == 0 then
+        return nil
+    end
+    -- 从后往前找第一个 Round <= round 的 quest
+    for i = #allQuests, 1, -1 do
+        local quest = allQuests[i]
+        if quest and quest.Round and quest.Round <= round then
+            return quest
+        end
+    end
+    return nil
+end
+
 ---获取下一个quest的回合数（用于计算剩余回合数）
 ---@return number 下一个quest的回合数，如果没有则返回总回合数
 function XLuckyTenant2Control:GetNextQuestRound()
     if not self._Game then
         return 0
     end
-    
+
     local game = self._Game
     local currentRound = game:GetRound()
     local allQuests = game:GetAllQuest()
-    
+
     if not allQuests or #allQuests == 0 then
         return 0
     end
-    
+
     -- 找到下一个quest（第一个回合数 > 当前回合的quest）
     for i = 1, #allQuests do
         local quest = allQuests[i]
-        if quest and quest.Round > currentRound then
+        if quest and quest.Round >= currentRound then
             return quest.Round
         end
     end
-    
+
     -- 如果没有下一个quest，返回最后一个quest的回合数
     local lastQuest = allQuests[#allQuests]
     return lastQuest and lastQuest.Round or 0
@@ -2092,19 +2172,19 @@ function XLuckyTenant2Control:GetBondPassiveSkillDesc(bondId, bondLevel)
     if not bondId then
         return {}
     end
-    
+
     -- 使用当前等级，如果等级为0或不存在，则使用等级1
     local level = bondLevel or 1
     if level <= 0 then
         level = 1
     end
-    
+
     -- 获取该羁绊在当前等级下的技能配置
     local bondSkillConfigs = self._Model:GetLuckyTenant2BondSkillConfigsByBondIdAndMaxLevel(bondId, level)
-    
+
     -- 收集所有被动技能的描述
     local passiveSkillDescs = {}
-    
+
     -- 查找当前等级下的所有被动技能
     for _, bondSkillConfig in ipairs(bondSkillConfigs) do
         if bondSkillConfig.IsPassive then
@@ -2120,9 +2200,9 @@ function XLuckyTenant2Control:GetBondPassiveSkillDesc(bondId, bondLevel)
                         local formatParams = params
                         if skillType == SkillType.Type205 or skillType == SkillType.Type207 then
                             -- 跳过第一个参数（子虫ID），从第二个参数开始格式化
-                            formatParams = {table.unpack(params, 2)}
+                            formatParams = { table.unpack(params, 2) }
                         end
-                        
+
                         -- 使用pcall安全地调用FormatText，避免格式化错误导致崩溃
                         local success, formattedDesc = pcall(function()
                             return XUiHelper.FormatText(skillDesc, table.unpack(formatParams))
@@ -2132,7 +2212,7 @@ function XLuckyTenant2Control:GetBondPassiveSkillDesc(bondId, bondLevel)
                         else
                             -- 格式化失败，使用原始描述并记录错误
                             XLog.Warning("[XLuckyTenant2Control] GetBondPassiveSkillDesc格式化技能描述失败，skillId:", skillId, "skillDesc:", skillDesc, "params:", params)
-                            table.insert(passiveSkillDescs, skillDesc)  -- 使用原始描述
+                            table.insert(passiveSkillDescs, skillDesc) -- 使用原始描述
                         end
                     else
                         table.insert(passiveSkillDescs, skillDesc)
@@ -2141,7 +2221,7 @@ function XLuckyTenant2Control:GetBondPassiveSkillDesc(bondId, bondLevel)
             end
         end
     end
-    
+
     -- 如果没有找到当前等级的被动技能，尝试使用等级1的被动技能（作为默认）
     if #passiveSkillDescs == 0 and level ~= 1 then
         local level1Configs = self._Model:GetLuckyTenant2BondSkillConfigsByBondIdAndMaxLevel(bondId, 1)
@@ -2175,7 +2255,7 @@ function XLuckyTenant2Control:GetBondPassiveSkillDesc(bondId, bondLevel)
     for i = 1, #passiveSkillDescs do
         passiveSkillDescs[i] = XUiHelper.ReplaceTextNewLine(passiveSkillDescs[i])
     end
-    
+
     -- 返回所有被动技能描述数组
     return passiveSkillDescs
 end
@@ -2187,12 +2267,12 @@ function XLuckyTenant2Control:GetBondUpgradeRequireDesc(bondId)
     if not bondId or not self._Model then
         return ""
     end
-    
+
     local bondConfig = self._Model:GetLuckyTenant2BondConfigById(bondId)
     if bondConfig and bondConfig.UpgradeRequireDesc and bondConfig.UpgradeRequireDesc ~= "" then
         return bondConfig.UpgradeRequireDesc
     end
-    
+
     return ""
 end
 
@@ -2205,10 +2285,10 @@ function XLuckyTenant2Control:GetBondActiveSkills(bondId, bondLevel)
     if not bondId or bondLevel <= 0 then
         return result
     end
-    
+
     -- 获取该羁绊在当前等级下的技能配置
     local bondSkillConfigs = self._Model:GetLuckyTenant2BondSkillConfigsByBondIdAndMaxLevel(bondId, bondLevel)
-    
+
     local index = 1
     for _, bondSkillConfig in ipairs(bondSkillConfigs) do
         -- 显示所有技能（无论是否被动）
@@ -2240,7 +2320,7 @@ function XLuckyTenant2Control:GetBondActiveSkills(bondId, bondLevel)
             end
         end
     end
-    
+
     return result
 end
 
@@ -2252,10 +2332,10 @@ function XLuckyTenant2Control:GetBondAllSkills(bondId)
     if not bondId then
         return result
     end
-    
+
     -- 获取该羁绊的所有技能配置（不限制等级）
     local bondSkillConfigs = self._Model:GetLuckyTenant2BondSkillConfigsByBondId(bondId)
-    
+
     local index = 1
     for _, bondSkillConfig in ipairs(bondSkillConfigs) do
         -- 过滤掉被动技能（被动技能不应该显示在Buffs列表中）
@@ -2274,9 +2354,9 @@ function XLuckyTenant2Control:GetBondAllSkills(bondId)
                         local formatParams = params
                         if skillType == SkillType.Type205 or skillType == SkillType.Type207 then
                             -- 跳过第一个参数（子虫ID），从第二个参数开始格式化
-                            formatParams = {table.unpack(params, 2)}
+                            formatParams = { table.unpack(params, 2) }
                         end
-                        
+
                         -- 使用pcall安全地调用FormatText，避免格式化错误导致崩溃
                         local success, formattedDesc = pcall(function()
                             return XUiHelper.FormatText(skillDesc, table.unpack(formatParams))
@@ -2290,21 +2370,21 @@ function XLuckyTenant2Control:GetBondAllSkills(bondId)
                         end
                     end
                     local level = bondSkillConfig.Level or 0
-                    local qualityId = level  -- 支持等级 0 使用配置表 quality id=0
+                    local qualityId = level -- 支持等级 0 使用配置表 quality id=0
                     local imageBg = self._Model:GetLuckyTenant2BondQualityBgById(qualityId) or ""
                     table.insert(result, {
                         Index = index,
                         Desc = skillDesc,
                         Require = bondSkillConfig.SkillRequire, -- 需求数量（棋子数量/类型数量）
-                        Level = level, -- 技能等级
-                        ImageBg = imageBg, -- 根据羁绊等级的品质背景
+                        Level = level,                          -- 技能等级
+                        ImageBg = imageBg,                      -- 根据羁绊等级的品质背景
                     })
                     index = index + 1
                 end
             end
         end
     end
-    
+
     return result
 end
 
@@ -2316,16 +2396,16 @@ function XLuckyTenant2Control:GetBondRelatedChessList(bondId)
     if not bondId then
         return result
     end
-    
+
     -- 获取羁绊配置中的关联棋子ID列表（字符串，用|分隔）
     local relatedChessStr = self._Model:GetLuckyTenant2BondRelatedChessById(bondId) or ""
     if relatedChessStr == "" then
         return result
     end
-    
+
     -- 解析棋子ID列表（用|分隔），并去重
     local chessIds = {}
-    local chessIdSet = {}  -- 用于去重
+    local chessIdSet = {} -- 用于去重
     for chessIdStr in string.gmatch(relatedChessStr, "([^|]+)") do
         local chessId = tonumber(chessIdStr)
         if chessId and chessId > 0 and not chessIdSet[chessId] then
@@ -2333,7 +2413,7 @@ function XLuckyTenant2Control:GetBondRelatedChessList(bondId)
             table.insert(chessIds, chessId)
         end
     end
-    
+
     -- 获取背包中的棋子数量（用于判断是否拥有）
     local bag = nil
     if self._Game then
@@ -2349,7 +2429,7 @@ function XLuckyTenant2Control:GetBondRelatedChessList(bondId)
             end
         end
     end
-    
+
     -- 构建棋子数据列表
     for _, chessId in ipairs(chessIds) do
         local chessConfig = self._Model:GetLuckyTenant2ChessConfigById(chessId)
@@ -2364,7 +2444,7 @@ function XLuckyTenant2Control:GetBondRelatedChessList(bondId)
             table.insert(result, chessData)
         end
     end
-    
+
     return result
 end
 
@@ -2379,12 +2459,12 @@ function XLuckyTenant2Control:SelectBagPiece(data)
         return
     end
     data.IsSelected = true
-    
+
     -- 更新选中棋子的完整数据（包括状态等信息）
     if data.Uid then
         self:UpdateBagPieceDetailData(data)
     end
-    
+
     self._UiData.SelectedBagPiece = data
 end
 
@@ -2395,12 +2475,12 @@ function XLuckyTenant2Control:GetPieceBondsText(piece)
     if not piece then
         return ""
     end
-    
+
     local bondIdStr = piece:GetBondId()
     if not bondIdStr or bondIdStr == "" then
         return ""
     end
-    
+
     local bondNames = {}
     -- 解析羁绊ID（可能用|分隔多个羁绊）
     for bondIdStr in string.gmatch(bondIdStr, "([^|]+)") do
@@ -2412,11 +2492,11 @@ function XLuckyTenant2Control:GetPieceBondsText(piece)
             end
         end
     end
-    
+
     if #bondNames > 0 then
         return table.concat(bondNames, "、")
     end
-    
+
     return ""
 end
 
@@ -2427,7 +2507,7 @@ function XLuckyTenant2Control:GetPieceBondsTextByData(data)
     if not data then
         return ""
     end
-    
+
     local piece = nil
     if self._Game then
         if data.Position then
@@ -2443,19 +2523,19 @@ function XLuckyTenant2Control:GetPieceBondsTextByData(data)
                 piece = bag:GetPieceByUid(data.Uid)
             end
         end
-        
+
         if piece then
             return self:GetPieceBondsText(piece)
         end
     end
-    
+
     -- 如果没有找到棋子实例，尝试从配置读取（选棋界面的未拥有棋子）
     if data.Id then
         local bondIdStr = self._Model:GetLuckyTenant2ChessBondIdById(data.Id)
         if not bondIdStr or bondIdStr == "" then
             return ""
         end
-        
+
         local bondNames = {}
         -- 解析羁绊ID（可能用|分隔多个羁绊）
         for bondIdStr in string.gmatch(bondIdStr, "([^|]+)") do
@@ -2467,12 +2547,12 @@ function XLuckyTenant2Control:GetPieceBondsTextByData(data)
                 end
             end
         end
-        
+
         if #bondNames > 0 then
             return table.concat(bondNames, "、")
         end
     end
-    
+
     return ""
 end
 
@@ -2511,7 +2591,7 @@ function XLuckyTenant2Control:BuildChessDetailDataByChessId(chessId)
     if not config then
         return nil
     end
-    
+
     local canBeEliminatedValue = nil
     if config.CanBeEliminated ~= nil then
         canBeEliminatedValue = tonumber(config.CanBeEliminated)
@@ -2521,7 +2601,7 @@ function XLuckyTenant2Control:BuildChessDetailDataByChessId(chessId)
     else
         canBeEliminatedValue = 0
     end
-    
+
     return {
         Id = chessId,
         Name = self._Model:GetLuckyTenant2ChessNameById(chessId),
@@ -2546,13 +2626,13 @@ function XLuckyTenant2Control:UpdateBagPieceDetailData(data)
     if not self._Game or not data or not data.Uid then
         return
     end
-    
+
     local bag = self._Game:GetBag()
     local piece = bag:GetPieceByUid(data.Uid)
     if not piece then
         return
     end
-    
+
     -- 填充完整的棋子详情数据
     data.Uid = piece:GetUid()
     data.Id = piece:GetId()
@@ -2567,13 +2647,13 @@ function XLuckyTenant2Control:UpdateBagPieceDetailData(data)
     data.IsCanDelete = piece:IsCanDelete() and 1 or 0
     data.Level = piece:GetLevel()
     data.IsCanUpgrade = piece._CanUpgrade or false
-    
+
     -- 获取棋子对应的羁绊名字
     data.BondsText = self:GetPieceBondsText(piece)
-    
+
     -- 判断是否是新棋子
     data.IsNew = self:IsChessNew(piece:GetId())
-    
+
     -- 获取状态信息
     local pieceStates = piece:GetAllStates()
     data.States = {}
@@ -2621,7 +2701,7 @@ function XLuckyTenant2Control:UpdatePieceDataOnChessboard(data)
     if not self._Game or not data then
         return
     end
-    
+
     local position = data.Position
     if position then
         local chessboard = self._Game:GetChessBoard()
@@ -2641,10 +2721,10 @@ function XLuckyTenant2Control:UpdatePieceDataOnChessboard(data)
             data.IsCanDelete = piece:IsCanDelete()
             data.IsCanUpgrade = piece._CanUpgrade or false
             data.Level = piece:GetLevel()
-            
+
             -- 获取棋子对应的羁绊名字
             data.BondsText = self:GetPieceBondsText(piece)
-            
+
             -- 获取状态信息
             local pieceStates = piece:GetAllStates()
             data.States = {}
@@ -2681,7 +2761,7 @@ function XLuckyTenant2Control:UpdateStageList()
     local stages = self._UiData.Stages
     ---@type XTable.XTableLuckyTenant2Stage[]
     local configs = self._Model:GetStages()
-    
+
     for i = 1, #configs do
         local config = configs[i]
         local id = config.Id
@@ -2699,11 +2779,11 @@ function XLuckyTenant2Control:UpdateStageList()
         scoreToNormalClear = scoreToNormalClear or 0
         roundsToPerfectClear = roundsToPerfectClear or 0
         scoreToPerfectClear = scoreToPerfectClear or 0
-        
+
         local isClear = self._Model:IsStagePassed(id)
         local isNormalClear = bestRound >= roundsToNormalClear and bestScore >= scoreToNormalClear and isClear
         local isPerfectClear = bestRound >= roundsToPerfectClear and bestScore >= scoreToPerfectClear and isClear
-        
+
         local isPlaying = false
         local playingRound = false
         local playingStageId = self._Model:GetPlayingStageId()
@@ -2716,7 +2796,7 @@ function XLuckyTenant2Control:UpdateStageList()
                 isOtherStagePlaying = true
             end
         end
-        
+
         local isNew = false
         local key = XMVCA.XLuckyTenant2:GetKeyHasPlayed(id)
         if XSaveTool.GetData(key) == nil then
@@ -2730,7 +2810,7 @@ function XLuckyTenant2Control:UpdateStageList()
                 isOnTime = false
             end
         end
-        
+
         local isPreStagePass = true
         local preStageId = config.PreStage
         if preStageId and preStageId > 0 then
@@ -2738,7 +2818,7 @@ function XLuckyTenant2Control:UpdateStageList()
                 isPreStagePass = false
             end
         end
-        
+
         local isCanChallenge = isOnTime and isPreStagePass
 
         ---@class XUiLuckyTenant2MainStageGridData
@@ -2763,7 +2843,7 @@ function XLuckyTenant2Control:UpdateStageList()
         }
         stages[i] = stage
     end
-    
+
     table.sort(stages, function(a, b)
         return a.Id < b.Id
     end)
@@ -2774,23 +2854,23 @@ end
 function XLuckyTenant2Control:GetUiMain()
     self:UpdateStageList()
     local uiData = self._UiData
-    
+
     -- 格式化剩余时间
     local timeStr = "00:00:00"
     if uiData.RemainTime and uiData.RemainTime > 0 then
         timeStr = XUiHelper.GetTime(uiData.RemainTime, XUiHelper.TimeFormatType.ACTIVITY)
     end
-    
+
     -- 获取所有关卡数据（按ID索引）
     local allStagesMap = {}
     for _, stage in ipairs(uiData.Stages or {}) do
         allStagesMap[stage.Id] = stage
     end
-    
+
     -- 获取章节配置
     local chapterConfigs = self._Model:GetChapters()
     local chapters = {}
-    
+
     if #chapterConfigs > 0 then
         -- 有章节配置，按章节组织关卡
         for _, chapterConfig in ipairs(chapterConfigs) do
@@ -2800,7 +2880,7 @@ function XLuckyTenant2Control:GetUiMain()
                 Name = chapterConfig.Name or "",
                 Stages = {},
             }
-            
+
             -- 根据章节配置的StageId数组，获取对应的关卡数据
             if chapterConfig.StageId then
                 for index, stageId in ipairs(chapterConfig.StageId) do
@@ -2812,9 +2892,9 @@ function XLuckyTenant2Control:GetUiMain()
                     end
                 end
             end
-            
+
             chapters[#chapters + 1] = chapterData
-    end
+        end
     else
         -- 没有章节配置，所有关卡放在一个默认章节下
         local defaultStages = uiData.Stages or {}
@@ -2829,7 +2909,7 @@ function XLuckyTenant2Control:GetUiMain()
         }
         chapters[#chapters + 1] = chapterData
     end
-    
+
     -- 主界面展示奖励：使用 Activity 表 RewardId 通过 XRewardManager.GetRewardList 获取
     local rewards = {}
     local activityConfig = self._Model:GetActivityConfig()
@@ -2860,19 +2940,19 @@ function XLuckyTenant2Control:UpdateStageDetail(stageId)
     local roundsToPerfectClear = self._Model:GetRoundsToPerfectClear(stageId)
     data.IsMax = (bestRound >= roundsToPerfectClear and bestRound > 0)
     data.IsPlaying = (self._Model:GetPlayingStageId() == stageId)
-    
+
     -- 如果已经是当前关卡，只更新记录数据
     if data.Id == stageId then
         return
     end
-    
+
     ---@type XTable.XTableLuckyTenant2Stage
     local stageConfig = self._Model:GetLuckyTenant2StageConfigById(stageId)
     if not stageConfig then
         XLog.Warning("[XLuckyTenant2Control] UpdateStageDetail stageId not found:", tostring(stageId))
         return
     end
-    
+
     data.RoundsToPerfectClear = roundsToPerfectClear
     data.QuestAmount = self._Model:GetQuestAmount(stageId)
     data.Id = stageConfig.Id
@@ -2904,14 +2984,14 @@ function XLuckyTenant2Control:UpdateStageDetail(stageId)
             end
         end
     end
-    
+
     -- 解析ShowBondId字符串（用|分隔）
     local showBondIdStr = stageConfig.ShowBondId or ""
     local bondIds = {}
     if showBondIdStr ~= "" then
         bondIds = string.Split(showBondIdStr, "|")
     end
-    
+
     -- 准备羁绊数据
     for i, bondIdStr in ipairs(bondIds) do
         local bondId = tonumber(bondIdStr)
@@ -2938,7 +3018,7 @@ function XLuckyTenant2Control:GetBondDetailDataForStagePopup(bondId)
     if not bondConfig then
         return nil
     end
-    
+
     -- 准备羁绊详情数据（Name/Icon 与游戏内羁绊列表一致，便于 BondsDetail 共用）
     local bondData = {
         BondId = bondId,
@@ -2947,12 +3027,12 @@ function XLuckyTenant2Control:GetBondDetailDataForStagePopup(bondId)
         BondDesc = bondConfig.BondDesc or "",
         Icon = self._Model:GetLuckyTenant2BondIconById(bondId) or bondConfig.Icon or "",
         BondIcon = bondConfig.Icon or "",
-        CurrentLevel = 0,  -- 关卡详情中没有当前等级，显示为0
-        PieceCount = 0,    -- 关卡详情中没有棋子数量
-        Buffs = {},        -- 显示该羁绊的所有技能
+        CurrentLevel = 0,   -- 关卡详情中没有当前等级，显示为0
+        PieceCount = 0,     -- 关卡详情中没有棋子数量
+        Buffs = {},         -- 显示该羁绊的所有技能
         ChessRequires = {}, -- 关联的棋子列表
     }
-    
+
     -- 获取所有技能列表（用于显示 Buff 列表）
     bondData.Buffs = self:GetBondAllSkills(bondId)
     -- 关卡详情中全部标记为未拥有，未达到的等级用 0 级背景和 0 级字色
@@ -2962,11 +3042,11 @@ function XLuckyTenant2Control:GetBondDetailDataForStagePopup(bondId)
         bondData.Buffs[i].ImageBg = imageBgLevel0
         bondData.Buffs[i].LevelColor = BondLevelColors[0]
     end
-    
+
     -- 获取关联的棋子列表（用于显示关联棋子列表）
     bondData.ChessRequires = self:GetBondRelatedChessList(bondId)
     XLog.Error(bondData.ChessRequires)
-    
+
     return bondData
 end
 
@@ -2981,15 +3061,15 @@ function XLuckyTenant2Control:PrepareQuestSuccessData(quest, currentScore)
         Round = quest.Round or 0,
         Rewards = {},
     }
-    
+
     -- 准备奖励数据
     local rewardPieces = quest.RewardPieces or {}
     local rewardAmounts = quest.RewardPiecesAmount or {}
-    
+
     for i = 1, #rewardPieces do
         local pieceId = rewardPieces[i]
         local amount = rewardAmounts[i] or 1
-        
+
         if pieceId and pieceId > 0 then
             -- 获取棋子配置
             local pieceConfig = self._Model:GetLuckyTenant2ChessConfigById(pieceId)
@@ -3003,7 +3083,7 @@ function XLuckyTenant2Control:PrepareQuestSuccessData(quest, currentScore)
             end
         end
     end
-    
+
     return questData
 end
 
@@ -3037,14 +3117,14 @@ function XLuckyTenant2Control:RequestEndGame(callback)
         end
         return
     end
-    
+
     -- 调用 Agency 的方法，传入当前游戏对象
     XMVCA.XLuckyTenant2:RequestEndGame(stageId, self._Game, function(success)
         if success then
             -- 清除本地游戏记录（调试用）
             self._Model:DebugClearStageRecord(stageId)
         end
-        
+
         if callback then
             callback(success)
         end
@@ -3058,11 +3138,11 @@ function XLuckyTenant2Control:PrepareRestart()
     if not stageId or stageId <= 0 then
         return nil
     end
-    
+
     -- 清除当前游戏记录（调试用）
     self._Model:DebugClearStageRecord(stageId)
     self._Model:ClearPlayingStage()
-    
+
     return stageId
 end
 
@@ -3112,16 +3192,16 @@ function XLuckyTenant2Control:AddToastToQueue(bondId, oldLevel, newLevel)
     if not bondConfig then
         return
     end
-    
+
     local toastData = {
         BondId = bondId,
         BondName = bondConfig.BondName or "",
         OldLevel = oldLevel,
         NewLevel = newLevel,
     }
-    
+
     table.insert(self._ToastQueue, toastData)
-    
+
     -- 如果当前没有正在显示的Toast，立即显示
     if not self._IsShowingToast then
         self:ShowNextToast()
@@ -3135,13 +3215,17 @@ function XLuckyTenant2Control:ShowNextToast()
         self._IsShowingToast = false
         return
     end
-    
+
+    if not XLuaUiManager.IsUiShow("UiLuckyTenant2Game") then
+        return
+    end
+
     -- 取出队列中的第一个Toast
     local toastData = table.remove(self._ToastQueue, 1)
-    
+
     -- 标记正在显示Toast
     self._IsShowingToast = true
-    
+
     -- 打开Toast UI
     XLuaUiManager.Open("UiLuckyTenant2Toast", toastData)
 end
@@ -3158,4 +3242,3 @@ function XLuckyTenant2Control:OnBondLevelChanged(bondId, oldLevel, newLevel)
 end
 
 return XLuckyTenant2Control
-
