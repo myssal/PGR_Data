@@ -2,7 +2,7 @@
     {
         "Id": 1001,
         "Type": 101,
-        "Desc": "[<color=#f57c05>金融</color>]可被传染<color=#f83d50>帕弥什</color>；\\n被传染后每{0}回合在相邻空位产生{2}枚<color=#000000>金币</color>",
+        "Desc": "[<color=#f57c05>吸金</color>]可被传染<color=#f83d50>帕弥什</color>；\\n被传染后每{0}回合在相邻空位产生{2}枚<color=#000000>金币</color>",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -32,7 +32,7 @@
     {
         "Id": 1003,
         "Type": 103,
-        "Desc": "[<color=#f57c05>金融</color>]基础金币额外+{0}；\\n被消除金币+{1}",
+        "Desc": "[<color=#f57c05>吸金</color>]基础金币+{0}；\\n被消除金币+{1}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -46,7 +46,7 @@
     {
         "Id": 1004,
         "Type": 103,
-        "Desc": "[<color=#f57c05>金融</color>]基础金币额外+{0}；\\n被消除金币+{1}",
+        "Desc": "[<color=#f57c05>吸金</color>]基础金币+{0}；\\n被消除金币+{1}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -60,7 +60,7 @@
     {
         "Id": 1005,
         "Type": 105,
-        "Desc": "[<color=#f57c05>金融</color>]基础金币额外+{0}；\\n被消除金币*{1}",
+        "Desc": "[<color=#f57c05>吸金</color>]基础金币+{0}；\\n被消除金币*{1}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -124,8 +124,7 @@
         "IsEffectUponJoining": 0,
         "EffectJustOnFirstRound": 0,
         "Params": [
-            2,
-            3
+            2
         ]
     },
     {
@@ -170,7 +169,7 @@
         "EffectJustOnFirstRound": 0,
         "Condition": 7,
         "Params": [
-            20,
+            10,
             5,
             4,
             3
@@ -296,7 +295,7 @@
     {
         "Id": 4001,
         "Type": 401,
-        "Desc": "相邻2枚同品质[<color=#0761f6>武器</color>]，可融合提升品质；\\n属性叠加，融合上限lv.{0}",
+        "Desc": "相邻2枚同品质[<color=#0761f6>武器</color>]，可融合提升品质；\\n属性叠加，上限lv.{0}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -339,7 +338,7 @@
     {
         "Id": 4004,
         "Type": 404,
-        "Desc": "[<color=#0761f6>武器</color>]可被传染<color=#f83d50>帕弥什</color>；\\n可融合任意相邻[<color=#0761f6>武器</color>]，且等级额外+{0}",
+        "Desc": "[<color=#0761f6>武器</color>]可被传染<color=#f83d50>帕弥什</color>；\\n被传染后可融合任意相邻[<color=#0761f6>武器</color>]，且等级额外+{0}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -367,7 +366,7 @@
     {
         "Id": 4006,
         "Type": 407,
-        "Desc": "[<color=#0761f6>武器</color>]有{2}%概率让相邻{0}枚棋子倒计时清零；\\n成功后自身等级+{1}",
+        "Desc": "[<color=#0761f6>武器</color>]有{2}%概率让相邻{0}枚棋子倒计时清零；成功后自身等级+{1}",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -517,7 +516,7 @@
         "IsEffectUponJoining": 0,
         "EffectJustOnFirstRound": 0,
         "Params": [
-            4
+            2
         ]
     },
     {
@@ -531,7 +530,7 @@
         "EffectJustOnFirstRound": 0,
         "Params": [
             30,
-            4
+            2
         ]
     },
     {

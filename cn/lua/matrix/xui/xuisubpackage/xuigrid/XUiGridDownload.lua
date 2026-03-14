@@ -11,24 +11,34 @@ function XUiGridDownload:OnStart(isPreview)
 end
 
 function XUiGridDownload:InitCb()
-    self.BtnDownLoad.CallBack = function() 
-        self:OnBtnDownLoadClick()
+    if self.BtnDownLoad then
+        self.BtnDownLoad.CallBack = function() 
+            self:OnBtnDownLoadClick()
+        end
     end
 
-    self.BtnPause.CallBack = function()
-        self:OnBtnPauseClick()
+    if self.BtnPause then
+        self.BtnPause.CallBack = function()
+            self:OnBtnPauseClick()
+        end
     end
 
-    self.BtnDownLoading.CallBack = function()
-        self:OnBtnDownLoadingClick()
+    if self.BtnDownLoading then
+        self.BtnDownLoading.CallBack = function()
+            self:OnBtnDownLoadingClick()
+        end
     end
     
-    self.BtnPrepare.CallBack = function()
-        self:OnBtnPrepareClick()
+    if self.BtnPrepare then
+        self.BtnPrepare.CallBack = function()
+            self:OnBtnPrepareClick()
+        end
     end
 
-    self.BtnDelete.CallBack = function()
-        self:OnBtnDeleteClick()
+    if self.BtnDelete then
+        self.BtnDelete.CallBack = function()
+            self:OnBtnDeleteClick()
+        end
     end
 
     local DOWNLOAD_STATE = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
@@ -40,6 +50,7 @@ function XUiGridDownload:InitCb()
             [DOWNLOAD_STATE.DOWNLOADING]      = { BtnPause = true },
             [DOWNLOAD_STATE.COMPLETE]         = { BtnComplete = true },
             [DOWNLOAD_STATE.PREPARE_DOWNLOAD] = { BtnPrepare = true },
+            [DOWNLOAD_STATE.UNINSTALLED]      = { BtnPause = true },
         },
         [false] = { -- IsPreview = false
             [DOWNLOAD_STATE.PAUSE]            = { BtnPause = true, BtnDelete = function(id) return XMVCA.XSubPackage:CheckSubpackageCanUninstall(id) and XMVCA.XSubPackage:GetSubpackageTemplate(id).AllowDelete end },
@@ -63,12 +74,14 @@ function XUiGridDownload:RefreshButtons(state, subpackageId)
     self.BtnPrepare.gameObject:SetActiveEx(config.BtnPrepare or false)
 
     local deleteVisible = config.BtnDelete
-    if type(deleteVisible) == "function" then
-        self.BtnDelete.gameObject:SetActiveEx(deleteVisible(subpackageId))
-    elseif type(deleteVisible) == "boolean" then
-        self.BtnDelete.gameObject:SetActiveEx(deleteVisible)
-    else
-        self.BtnDelete.gameObject:SetActiveEx(false)
+    if self.BtnDelete then
+        if type(deleteVisible) == "function" then
+            self.BtnDelete.gameObject:SetActiveEx(deleteVisible(subpackageId))
+        elseif type(deleteVisible) == "boolean" then
+            self.BtnDelete.gameObject:SetActiveEx(deleteVisible)
+        else
+            self.BtnDelete.gameObject:SetActiveEx(false)
+        end
     end
 end
 
@@ -195,6 +208,12 @@ end
 
 function XUiGridDownload:OnBtnDeleteClick()
     if self.IsPreview then
+        return
+    end
+
+    -- 正在下载中，不允许卸载（避免遮罩问题）
+    if XMVCA.XSubPackage:IsDownloading() then
+        XUiManager.TipText("SubpackageUninstallRejectDownloading")
         return
     end
 

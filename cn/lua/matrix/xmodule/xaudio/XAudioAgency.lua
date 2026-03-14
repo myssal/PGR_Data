@@ -204,10 +204,16 @@ end
 function XAudioAgency:ChangeUiMainAlbumId(albumId)
     local template = self:GetAlbumTemplateById(albumId)
     local cueId = template.CueId
-    
+
+    -- 检测CD机分包是否下载完成，未完成则拦截切换操作
+    if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(XFunctionManager.FunctionName.UiMainMusicAlbum) then
+        return false
+    end
+
     self._Model.UiMainNeedPlayedAlbumId = albumId
     XSaveTool.SaveData(self._Model.UiMainSavedAlbumIdKey, albumId)
     CS.XAudioManager.UiMainNeedPlayedBgmCueId = cueId
+    return true
 end
 
 function XAudioAgency:GetUiMainNeedPlayedAlbumId()

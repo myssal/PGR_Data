@@ -44,7 +44,16 @@ function XLuckyTenant2OperationPackage:Do(ctx)
                 -- 执行成功后，获取动画数据
                 local animData = operation:GetAnimationData()
                 if animData then
-                    animationDataList[#animationDataList + 1] = animData
+                    -- 兼容两种返回：
+                    -- 1) 单条动画数据：{ type = ... }
+                    -- 2) 动画数据列表：{ {type=...}, {type=...}, ... }
+                    if animData.type then
+                        animationDataList[#animationDataList + 1] = animData
+                    elseif type(animData[1]) == "table" and animData[1].type then
+                        for _, one in ipairs(animData) do
+                            animationDataList[#animationDataList + 1] = one
+                        end
+                    end
                 end
             end
         end

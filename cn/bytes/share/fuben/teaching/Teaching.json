@@ -55165,7 +55165,7 @@
         "IconType": 1,
         "Icon": 3,
         "Icon2": 0,
-        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Dubian52.png",
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Dubian52Zhansha.png",
         "TimeOut": -1,
         "OnlyTrue": false,
         "IsMySelf": false,
@@ -56612,7 +56612,7 @@
         "IconType": 1,
         "Icon": 102,
         "Icon2": 0,
-        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Luosaita22.png",
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya22.png",
         "TimeOut": -1,
         "OnlyTrue": true,
         "IsMySelf": true,
@@ -56692,7 +56692,7 @@
         "IconType": 1,
         "Icon": 102,
         "Icon2": 0,
-        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Luosaita22.png",
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya22.png",
         "TimeOut": -1,
         "OnlyTrue": true,
         "IsMySelf": true,
@@ -56796,7 +56796,7 @@
         "IconType": 1,
         "Icon": 101,
         "Icon2": 0,
-        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Luosaita12.png",
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya12.png",
         "TimeOut": -1,
         "OnlyTrue": false,
         "IsMySelf": true,
@@ -56817,11 +56817,12 @@
     {
         "Id": 4276,
         "Group": 112265,
-        "Name": "长按黄球",
-        "Describe": "捏提亚-长按黄球",
+        "Name": "点击黄球",
+        "Describe": "捏提亚-点击黄球",
         "IconType": 1,
         "Icon": 103,
         "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya33.png",
         "TimeOut": -1,
         "OnlyTrue": false,
         "IsMySelf": true,
@@ -56836,6 +56837,401 @@
         ],
         "SkillId": [
             104013
+        ]
+    },
+    {
+        "Id": 4277,
+        "Group": 112266,
+        "Name": "点击蓝球",
+        "Describe": "涅缇娅-蓝三消2连",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104039,
+            104040,
+            104041,
+            104042,
+            104043,
+            104044
+        ]
+    },
+    {
+        "Id": 4278,
+        "Group": 112266,
+        "Name": "点击蓝球",
+        "Describe": "涅缇娅-蓝三消2连",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya22.png",
+        "TimeOut": 4000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104039,
+            104040,
+            104041,
+            104042,
+            104043,
+            104044
+        ]
+    },
+    {
+        "Id": 4279,
+        "Group": 112267,
+        "Name": "点击蓝球",
+        "Describe": "涅缇娅-蓝闪",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104039,
+            104040,
+            104041,
+            104042,
+            104043,
+            104044
+        ]
+    },
+    {
+        "Id": 4280,
+        "Group": 112267,
+        "Name": "点击闪避",
+        "Describe": "涅缇娅-蓝闪",
+        "IconType": 1,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": 4000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104027
+        ]
+    },
+    {
+        "Id": 4281,
+        "Group": 112268,
+        "Name": "点击黄球",
+        "Describe": "涅缇娅-一大前点黄",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104033
+        ]
+    },
+    {
+        "Id": 4282,
+        "Group": 112269,
+        "Name": "长按闪避",
+        "Describe": "涅缇娅-变鸟一斩",
+        "IconType": 4,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104034
+        ]
+    },
+    {
+        "Id": 4283,
+        "Group": 112269,
+        "Name": "闪光后松开",
+        "Describe": "涅缇娅-变鸟一斩",
+        "IconType": 1,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104045
+        ]
+    },
+    {
+        "Id": 4284,
+        "Group": 112270,
+        "Name": "点击必杀",
+        "Describe": "涅缇娅-一大",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            104024
+        ]
+    },
+    {
+        "Id": 4285,
+        "Group": 112271,
+        "Name": "点击红球",
+        "Describe": "涅缇娅-红三消二连",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104006,
+            104007,
+            104008,
+            104009,
+            104010,
+            104011
+        ]
+    },
+    {
+        "Id": 4286,
+        "Group": 112271,
+        "Name": "点击红球",
+        "Describe": "涅缇娅-红三消二连",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya12.png",
+        "TimeOut": 4000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104006,
+            104007,
+            104008,
+            104009,
+            104010,
+            104011
+        ]
+    },
+    {
+        "Id": 4287,
+        "Group": 112272,
+        "Name": "点击红球",
+        "Describe": "涅缇娅-红闪",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104006,
+            104007,
+            104008,
+            104009,
+            104010,
+            104011
+        ]
+    },
+    {
+        "Id": 4288,
+        "Group": 112272,
+        "Name": "点击闪避",
+        "Describe": "涅缇娅-红闪",
+        "IconType": 1,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": 4000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104026
+        ]
+    },
+    {
+        "Id": 4289,
+        "Group": 112273,
+        "Name": "点按黄球",
+        "Describe": "涅缇娅-长黄",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya33.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104013
+        ]
+    },
+    {
+        "Id": 4290,
+        "Group": 112273,
+        "Name": "自动释放",
+        "Describe": "涅缇娅-长黄",
+        "IconType": 4,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya34.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104014
+        ]
+    },
+    {
+        "Id": 4291,
+        "Group": 112274,
+        "Name": "点击必杀",
+        "Describe": "涅缇娅-二大",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya52.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            104018
         ]
     }
 ]

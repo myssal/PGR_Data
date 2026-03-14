@@ -5980,7 +5980,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
+        "Text": "{0}/<color=#00000><size=28>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -19403,7 +19403,7 @@
     },
     {
         "Key": "LuckyTenant2TimesRemain",
-        "Text": "剩余{0}回"
+        "Text": "本轮剩余{0}回"
     },
     {
         "Key": "LuckyTenant2BondLevelDown",
@@ -20258,6 +20258,10 @@
         "Text": "是否立即更换为该涂装？"
     },
     {
+        "Key": "FashionSuitDiscountActivityTip",
+        "Text": "折扣剩余时间：{0}"
+    },
+    {
         "Key": "TeamPrefabWeaponNotExistConflict",
         "Text": "当前编队部分角色装备无法使用，请重新设置后上阵"
     },
@@ -20371,7 +20375,7 @@
     },
     {
         "Key": "FashionSuitGroupSalesDesc",
-        "Text": "套装包含武器涂装、武器涂装和赠品头像。其中武器涂装不计入系列收集进度。"
+        "Text": "套装包含角色涂装、武器涂装和赠品头像。其中武器涂装不计入系列收集进度。"
     },
     {
         "Key": "FashionGroupSalesPopupItem1",
@@ -20407,7 +20411,11 @@
     },
     {
         "Key": "SubPackageDeleteConfirm",
-        "Text": "确认要删除分包{0}吗？"
+        "Text": "确认要卸载此资源包{0}吗？"
+    },
+    {
+        "Key": "SubpackageUninstallRejectDownloading",
+        "Text": "其它下载任务进行中，无法进行卸载"
     },
     {
         "Key": "DlcRelinkMateForceExit",
@@ -20432,5 +20440,9 @@
     {
         "Key": "UsePackageOverMaxCount",
         "Text": "使用{0}已到达上限"
+    },
+    {
+        "Key": "TeamPrefabCannotCoverEmptyTeam",
+        "Text": "编队数据为空，无法覆盖"
     }
 ]

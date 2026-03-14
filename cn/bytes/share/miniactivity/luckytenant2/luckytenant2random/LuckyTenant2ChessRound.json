@@ -76,10 +76,10 @@
     {
         "Id": 102002,
         "StageId": 102,
-        "StartRound": 4,
+        "StartRound": 5,
         "FirstUseInRound": [],
         "Group": [
-            10201
+            10202
         ]
     },
     {
@@ -160,11 +160,25 @@
         "StartRound": 1,
         "FirstUseInRound": [],
         "Group": [
-            20101
+            20106
+        ],
+        "FirstUseInStage": [
+            6,
+            11,
+            26
         ]
     },
     {
         "Id": 201002,
+        "StageId": 201,
+        "StartRound": 2,
+        "FirstUseInRound": [],
+        "Group": [
+            20101
+        ]
+    },
+    {
+        "Id": 201003,
         "StageId": 201,
         "StartRound": 4,
         "FirstUseInRound": [],
@@ -173,7 +187,7 @@
         ]
     },
     {
-        "Id": 201003,
+        "Id": 201004,
         "StageId": 201,
         "StartRound": 5,
         "FirstUseInRound": [],
@@ -182,7 +196,7 @@
         ]
     },
     {
-        "Id": 201004,
+        "Id": 201005,
         "StageId": 201,
         "StartRound": 7,
         "FirstUseInRound": [],
@@ -191,7 +205,7 @@
         ]
     },
     {
-        "Id": 201005,
+        "Id": 201006,
         "StageId": 201,
         "StartRound": 12,
         "FirstUseInRound": [],
@@ -200,7 +214,7 @@
         ]
     },
     {
-        "Id": 201006,
+        "Id": 201007,
         "StageId": 201,
         "StartRound": 15,
         "FirstUseInRound": [],
@@ -220,7 +234,7 @@
     {
         "Id": 202002,
         "StageId": 202,
-        "StartRound": 5,
+        "StartRound": 2,
         "FirstUseInRound": [],
         "Group": [
             20202
@@ -229,7 +243,7 @@
     {
         "Id": 202003,
         "StageId": 202,
-        "StartRound": 8,
+        "StartRound": 5,
         "FirstUseInRound": [],
         "Group": [
             20203
@@ -238,7 +252,7 @@
     {
         "Id": 202004,
         "StageId": 202,
-        "StartRound": 13,
+        "StartRound": 8,
         "FirstUseInRound": [],
         "Group": [
             20204
@@ -247,7 +261,7 @@
     {
         "Id": 202005,
         "StageId": 202,
-        "StartRound": 17,
+        "StartRound": 13,
         "FirstUseInRound": [],
         "Group": [
             20205
@@ -256,10 +270,19 @@
     {
         "Id": 202006,
         "StageId": 202,
+        "StartRound": 17,
+        "FirstUseInRound": [],
+        "Group": [
+            20206
+        ]
+    },
+    {
+        "Id": 202007,
+        "StageId": 202,
         "StartRound": 20,
         "FirstUseInRound": [],
         "Group": [
-            20205
+            20206
         ]
     },
     {
@@ -328,7 +351,7 @@
     {
         "Id": 302002,
         "StageId": 302,
-        "StartRound": 3,
+        "StartRound": 2,
         "FirstUseInRound": [],
         "Group": [
             30202
@@ -382,7 +405,7 @@
     {
         "Id": 401002,
         "StageId": 401,
-        "StartRound": 4,
+        "StartRound": 2,
         "FirstUseInRound": [],
         "Group": [
             40102
@@ -427,7 +450,7 @@
     {
         "Id": 402002,
         "StageId": 402,
-        "StartRound": 4,
+        "StartRound": 2,
         "FirstUseInRound": [],
         "Group": [
             40202
@@ -646,11 +669,20 @@
         "StartRound": 1,
         "FirstUseInRound": [],
         "Group": [
-            60201
+            60205
         ]
     },
     {
         "Id": 602002,
+        "StageId": 602,
+        "StartRound": 2,
+        "FirstUseInRound": [],
+        "Group": [
+            60201
+        ]
+    },
+    {
+        "Id": 602003,
         "StageId": 602,
         "StartRound": 5,
         "FirstUseInRound": [],
@@ -659,7 +691,7 @@
         ]
     },
     {
-        "Id": 602003,
+        "Id": 602004,
         "StageId": 602,
         "StartRound": 11,
         "FirstUseInRound": [],
@@ -668,7 +700,7 @@
         ]
     },
     {
-        "Id": 602004,
+        "Id": 602005,
         "StageId": 602,
         "StartRound": 16,
         "FirstUseInRound": [],
@@ -677,7 +709,7 @@
         ]
     },
     {
-        "Id": 602005,
+        "Id": 602006,
         "StageId": 602,
         "StartRound": 25,
         "FirstUseInRound": [],
@@ -863,10 +895,57 @@
         "FirstUseInRound": [],
         "Group": [
             70301
+        ],
+        "FirstUseInStage": [
+            24,
+            25,
+            37
         ]
     },
     {
         "Id": 703002,
+        "StageId": 703,
+        "StartRound": 2,
+        "FirstUseInRound": [],
+        "Group": [
+            70301
+        ],
+        "FirstUseInStage": [
+            23,
+            29,
+            38
+        ]
+    },
+    {
+        "Id": 703003,
+        "StageId": 703,
+        "StartRound": 3,
+        "FirstUseInRound": [],
+        "Group": [
+            70301
+        ],
+        "FirstUseInStage": [
+            26,
+            27,
+            39
+        ]
+    },
+    {
+        "Id": 703004,
+        "StageId": 703,
+        "StartRound": 4,
+        "FirstUseInRound": [],
+        "Group": [
+            70301
+        ],
+        "FirstUseInStage": [
+            28,
+            36,
+            40
+        ]
+    },
+    {
+        "Id": 703005,
         "StageId": 703,
         "StartRound": 5,
         "FirstUseInRound": [],
@@ -875,7 +954,7 @@
         ]
     },
     {
-        "Id": 703003,
+        "Id": 703006,
         "StageId": 703,
         "StartRound": 6,
         "FirstUseInRound": [],
@@ -884,7 +963,7 @@
         ]
     },
     {
-        "Id": 703004,
+        "Id": 703007,
         "StageId": 703,
         "StartRound": 7,
         "FirstUseInRound": [],
@@ -893,7 +972,7 @@
         ]
     },
     {
-        "Id": 703005,
+        "Id": 703008,
         "StageId": 703,
         "StartRound": 10,
         "FirstUseInRound": [],
@@ -902,7 +981,7 @@
         ]
     },
     {
-        "Id": 703006,
+        "Id": 703009,
         "StageId": 703,
         "StartRound": 11,
         "FirstUseInRound": [],
@@ -911,7 +990,7 @@
         ]
     },
     {
-        "Id": 703007,
+        "Id": 703010,
         "StageId": 703,
         "StartRound": 15,
         "FirstUseInRound": [],
@@ -920,7 +999,7 @@
         ]
     },
     {
-        "Id": 703008,
+        "Id": 703011,
         "StageId": 703,
         "StartRound": 16,
         "FirstUseInRound": [],
@@ -929,7 +1008,7 @@
         ]
     },
     {
-        "Id": 703009,
+        "Id": 703012,
         "StageId": 703,
         "StartRound": 17,
         "FirstUseInRound": [],
@@ -938,7 +1017,7 @@
         ]
     },
     {
-        "Id": 703010,
+        "Id": 703013,
         "StageId": 703,
         "StartRound": 25,
         "FirstUseInRound": [],
@@ -947,7 +1026,7 @@
         ]
     },
     {
-        "Id": 703011,
+        "Id": 703014,
         "StageId": 703,
         "StartRound": 26,
         "FirstUseInRound": [],
@@ -956,7 +1035,7 @@
         ]
     },
     {
-        "Id": 703012,
+        "Id": 703015,
         "StageId": 703,
         "StartRound": 27,
         "FirstUseInRound": [],
@@ -965,7 +1044,7 @@
         ]
     },
     {
-        "Id": 703013,
+        "Id": 703016,
         "StageId": 703,
         "StartRound": 30,
         "FirstUseInRound": [],

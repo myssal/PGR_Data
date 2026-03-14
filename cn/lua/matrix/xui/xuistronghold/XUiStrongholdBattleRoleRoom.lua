@@ -197,10 +197,14 @@ function XUiStrongholdBattleRoleRoom:OnTeamEntityChange()
     self.Team = self.TeamList[self.TeamPropId]:GetOrCreateTempTeam()
     
     -- 刷新角色显示
-    self:RefreshRoleModels()
-    self:RefreshCharacterRImgType()
-    self:RefreshPartners()
+    self:RefreshRoleInfos()
+    self.FirstEnterBtnGroup:SelectIndex(self.Team:GetFirstFightPos(), false)
+    self:RefreshFirstFightInfo()
+    self:RefreshTipGrids()
+    self:RefreshFightControlState()
+    self.PanelGeneralSkill:Refresh()
     self:RefreshRoleDetalInfo(true)
+    self:OnAnimationSetChange()
 end
 
 function XUiStrongholdBattleRoleRoom:OnBtnTeamPrefabClicked()

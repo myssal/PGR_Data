@@ -11,6 +11,7 @@ local XLuckyTenant2OperationAddPieceState = XClass(XLuckyTenant2Operation, "XLuc
 ---@param data.stateType number 状态类型（TriggerState枚举）
 ---@param data.skillId number 状态技能ID
 ---@param data.rounds number 持续回合数
+---@param data.fromPieceUid number 来源棋子UID（可选，用于受影响动画定位施法者）
 function XLuckyTenant2OperationAddPieceState:Ctor(data)
     data = data or {}
     XLuckyTenant2OperationAddPieceState.Super.Ctor(self, data)
@@ -19,6 +20,7 @@ function XLuckyTenant2OperationAddPieceState:Ctor(data)
     self._StateType = data.stateType or 0
     self._StateSkillId = data.skillId or 0  -- 状态技能ID（与Operation的skillId不同）
     self._Rounds = data.rounds or 0
+    self._FromPieceUid = data.fromPieceUid or 0
 end
 
 ---验证操作
@@ -54,13 +56,10 @@ function XLuckyTenant2OperationAddPieceState:Do(ctx)
     
     -- 添加状态
     local XLuckyTenant2State = require("XModule/XLuckyTenant2/Game/XLuckyTenant2State")
-    local state = XLuckyTenant2State.New(self._StateType, self._StateSkillId, self._Rounds)
+    -- 技能类型转为技能ID
+    local skillId = XLuckyTenant2Enum.SkillTypeToInfectionSkillMap[self._StateSkillId] or self._StateSkillId
+    local state = XLuckyTenant2State.New(self._StateType, skillId, self._Rounds)
     piece:AddState(state)
-    
-    if XMVCA.XLuckyTenant2 then
-        XMVCA.XLuckyTenant2:Print("[XLuckyTenant2OperationAddPieceState] 棋子UID:", self._PieceUid, 
-            "添加状态类型:", self._StateType, "技能ID:", self._StateSkillId, "回合数:", self._Rounds)
-    end
     
     return true, nil
 end
@@ -80,6 +79,7 @@ function XLuckyTenant2OperationAddPieceState:GetAnimationData()
         return {
             type = XLuckyTenant2Enum.AnimationType.UpdatePiece,
             pieceUid = self._PieceUid,
+            fromPieceUid = self._FromPieceUid,
         }
     end
     return nil

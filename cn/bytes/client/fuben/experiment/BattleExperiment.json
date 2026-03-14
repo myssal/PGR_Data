@@ -2683,7 +2683,7 @@
         "CharacterID": 1391003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
         "Title": "葬仪典章",
-        "Description": "消除蓝球可获得兆丧值，至多连消两次。消除后立即闪避可造成伤害。",
+        "Description": "常态下使用蓝球。消除蓝球可获得兆丧值，至多连消两次。消除后立即闪避可造成伤害。",
         "NextTrialID": 340
     },
     {
@@ -2691,7 +2691,7 @@
         "CharacterID": 1391003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
         "Title": "渡鸦祭礼",
-        "Description": "点击黄球，消耗兆丧值释放渡鸦祭礼，获得必杀能量。",
+        "Description": "常态下点击黄球，消耗兆丧值释放渡鸦祭礼，自动触发超算并获得必杀能量。",
         "NextTrialID": 341
     },
     {
@@ -2699,35 +2699,43 @@
         "CharacterID": 1391003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
         "Title": "双鸦赴誓",
-        "Description": "长按闪避进入鸦影形态，期间可移动，若在闪光后松开，消耗一枚蓝球额外获得兆丧值、必杀能量，重复该操作至多攻击三段。",
+        "Description": "常态下长按闪避进入鸦影形态，期间充能且可移动，松开闪避时对周围造成伤害。",
         "NextTrialID": 342
     },
     {
         "Id": 342,
         "CharacterID": 1391003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
-        "Title": "夺心一吻",
-        "Description": "常态下点击必杀释放夺心一吻，进入寻血异客形态，该形态下使用红球。",
+        "Title": "刃晫冥路",
+        "Description": "鸦影形态下闪光时充能完毕，此时松开闪避，消耗至多三枚蓝球额外获得兆丧值、必杀能量。",
         "NextTrialID": 343
     },
     {
         "Id": 343,
         "CharacterID": 1391003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
-        "Title": "审判刈临",
-        "Description": "寻血异客形态下，消除红球可获得兆丧值，至多连消两次。消除后立即闪避可造成伤害。",
+        "Title": "夺心一吻",
+        "Description": "常态下点击必杀释放夺心一吻，进入寻血异客形态，该形态下使用红球。",
         "NextTrialID": 344
     },
     {
         "Id": 344,
         "CharacterID": 1391003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
-        "Title": "绞刑幽灵",
-        "Description": "寻血异客形态下，长按黄球，消耗兆丧值造成多段伤害并获得必杀能量。",
+        "Title": "审判刈临",
+        "Description": "寻血异客形态下，消除红球可获得兆丧值，至多连消两次。消除后立即闪避可造成伤害。",
         "NextTrialID": 345
     },
     {
         "Id": 345,
+        "CharacterID": 1391003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
+        "Title": "绞刑幽灵",
+        "Description": "寻血异客形态下，长按黄球，消耗兆丧值造成多段伤害并获得必杀能量，且额外获得亡途烙印增强下次必杀技。",
+        "NextTrialID": 346
+    },
+    {
+        "Id": 346,
         "CharacterID": 1391003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
         "Title": "赴亡末约",

@@ -67,6 +67,13 @@ function XSoloReformAgency:GetTeam(chapterId)
 end
 
 function XSoloReformAgency:SettleFight(result)
+    if XMVCA.XFuben:GetFubenSettling() then
+        --有副本正在结算中
+        XLog.Warning("XSoloReformAgency:SettleFight Warning, fuben is settling!")
+        return
+    end
+  
+    XMVCA.XFuben:SetCurFightResult(result:GetFightResult())
     local settleData = result and result.Data
     if settleData then
         local stageId = settleData.StageId
@@ -75,13 +82,9 @@ function XSoloReformAgency:SettleFight(result)
             XMVCA.XFuben:SettleFight(result)
             return
         end
-
         XMVCA.XFuben:StatisticsFightResultDps(result)
         XMVCA.XFuben:SetFubenSettling(true) --正在结算
         local fightResBytes = result:GetFightsResultsBytes()
-
-        XMVCA.XFuben:SetCurFightResult(result:GetFightResult())
-
         XNetwork.Call("FightSettleRequest", fightResBytes, function(res)
             local soloReformSettleResult = res.Settle.SoloReformSettleResult
             local passTime = soloReformSettleResult and soloReformSettleResult.PassTime or 0
@@ -166,7 +169,7 @@ function XSoloReformAgency:ShowReward(data)
             if stageType == 0 then
                 XLuaUiManager.Open("UiSoloReformSettlement", stageId, passTime, isNew)
             else
-                CS.XFight.ExitForClient(true)--胜利结算退出战斗
+                CS.XFight.ExitForClient(true) --胜利结算退出战斗
             end
         else
             XMVCA.XFuben:ExitFight()
