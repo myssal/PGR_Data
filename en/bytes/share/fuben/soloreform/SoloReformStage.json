@@ -3,38 +3,38 @@
         "Id": 30061695,
         "Difficulty": 1,
         "StarNum": 3,
-        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster90910.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/ShenmirenNormal01.png",
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonstersSoloRankUp01.png",
+        "Icon": "Assets/Product/Texture/Image/UiSoloReform/RoleCharacterSoloRankUp01.png",
         "StageType": 1,
         "TitleUnlock": 0,
         "TitleName": "EASY",
-        "StageEnemyName": "多重映射",
+        "StageEnemyName": "Multiple Reflection",
         "FightEventIds": [
             2340111
         ],
         "StarTalks": [
             "Clear the stage.",
-            "关卡内的评分升阶到SS",
-            "关卡内的评分升阶到SSS"
+            "Reach Rating SS in the stage",
+            "Reach Rating SSS in the stage"
         ]
     },
     {
         "Id": 30061696,
         "Difficulty": 2,
         "StarNum": 3,
-        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster85100.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/GaodaNormal01.png",
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonstersSoloRankUp01.png",
+        "Icon": "Assets/Product/Texture/Image/UiSoloReform/RoleCharacterSoloRankUp01.png",
         "StageType": 1,
         "TitleUnlock": 30061695,
         "TitleName": "NORMAL",
-        "StageEnemyName": "多重映射",
+        "StageEnemyName": "Multiple Reflection",
         "FightEventIds": [
             2340111
         ],
         "StarTalks": [
             "Clear the stage.",
-            "关卡内的评分升阶到SSS",
-            "用时2分钟以下获得关卡内的SSS评分"
+            "Reach Rating SSS in the stage",
+            "Reach Rating SSS in the stage within 2 minutes"
         ]
     },
     {
@@ -42,7 +42,7 @@
         "Difficulty": 3,
         "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster81530.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/GodzillaNormal01.png",
+        "Icon": "Assets/Product/Texture/Image/UiSoloReform/RoleCharacterSoloRankUp00.png",
         "StageType": 2,
         "TitleUnlock": 30061695,
         "TitleName": "EASY",
@@ -52,12 +52,53 @@
         ],
         "StarTalks": [
             "Clear the stage.",
-            "关卡内的评分升阶到SS",
-            "关卡内的评分升阶到SSS"
+            "Reach Rating SS in the stage",
+            "Reach Rating SSS in the stage"
         ]
     },
     {
         "Id": 30163342,
+        "Difficulty": 1,
+        "StarNum": 2,
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster90790.png",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/DiaorenyixingNormal01.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
+        "StarTalks": [
+            "Clear the stage.",
+            "Press and hold Dodge to enter Ravenborn Form twice"
+        ]
+    },
+    {
+        "Id": 30163343,
+        "Difficulty": 2,
+        "StarNum": 3,
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonstersSolo08.png",
+        "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1DubianMd01001.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
+        "StarTalks": [
+            "Clear the stage.",
+            "Press and hold Dodge to enter Ravenborn Form 3 times.",
+            "Use Void Dirge (Yellow Orb) twice"
+        ]
+    },
+    {
+        "Id": 30163344,
+        "Difficulty": 3,
+        "StarNum": 3,
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster80210.png",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1TerminatorMd010001.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
+        "StarTalks": [
+            "Clear the stage.",
+            "Press and hold Dodge to enter Ravenborn Form 3 times.",
+            "Use Signature: Death's Kiss twice."
+        ]
+    },
+    {
+        "Id": 30163336,
         "Difficulty": 1,
         "StarNum": 2,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster90800.png",
@@ -65,69 +106,19 @@
         "StageType": 0,
         "TitleUnlock": 0,
         "FightEventIds": [
-            2340110
-        ],
-        "StarTalks": [
-            "Clear the stage.",
-            "长按闪避进入2次鸦影形态"
-        ]
-    },
-    {
-        "Id": 30163343,
-        "Difficulty": 2,
-        "StarNum": 3,
-        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster85751.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/V130klrdNormal01.png",
-        "StageType": 0,
-        "TitleUnlock": 0,
-        "FightEventIds": [
-            2340110
-        ],
-        "StarTalks": [
-            "Clear the stage.",
-            "长按闪避进入3次鸦影形态",
-            "使用2次归墟悼曲（黄球）"
-        ]
-    },
-    {
-        "Id": 30163344,
-        "Difficulty": 3,
-        "StarNum": 3,
-        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster87651.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1JusticeMd010001.png",
-        "StageType": 0,
-        "TitleUnlock": 0,
-        "FightEventIds": [
-            2340110
-        ],
-        "StarTalks": [
-            "Clear the stage.",
-            "长按闪避进入3次鸦影形态",
-            "使用必杀：死与吻2次"
-        ]
-    },
-    {
-        "Id": 30163336,
-        "Difficulty": 1,
-        "StarNum": 2,
-        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster93070.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/ShengtangNormal01.png",
-        "StageType": 0,
-        "TitleUnlock": 0,
-        "FightEventIds": [
             2340108
         ],
         "StarTalks": [
             "Clear the stage.",
-            "长按闪避使用降维坍坠2次"
+            "Use Dimensional Collapse twice by pressing and holding Dodge"
         ]
     },
     {
         "Id": 30163337,
         "Difficulty": 2,
         "StarNum": 3,
-        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster85670.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1EmperorMd010001.png",
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonstersSolo02.png",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1MelinoeMd010001.png",
         "StageType": 0,
         "TitleUnlock": 0,
         "FightEventIds": [
@@ -135,7 +126,7 @@
         ],
         "StarTalks": [
             "Clear the stage.",
-            "长按闪避使用降维坍坠5次",
+            "Use Dimensional Collapse 3 times by pressing and holding Dodge",
             "Use Yellow Orb twice"
         ]
     },
@@ -143,8 +134,8 @@
         "Id": 30163338,
         "Difficulty": 3,
         "StarNum": 3,
-        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster80400.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1ChainsawkillerMd010001.png",
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonstersSolo03.png",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1ChaosMd010001.png",
         "StageType": 0,
         "TitleUnlock": 0,
         "FightEventIds": [
@@ -152,58 +143,49 @@
         ],
         "StarTalks": [
             "Clear the stage.",
-            "长按闪避使用降维坍坠5次",
-            "使用必杀：寂灭绝罚2次"
+            "Use Dimensional Collapse 3 times by pressing and holding Dodge",
+            "Use Signature: Silent Punishment twice"
         ]
     },
     {
         "Id": 30163339,
         "Difficulty": 1,
         "StarNum": 2,
-        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster93681.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Me1PerfectrobotMd010001.png",
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster90250.png",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/LangrenNormal01.png",
         "StageType": 0,
         "TitleUnlock": 0,
-        "FightEventIds": [
-            2340109
-        ],
         "StarTalks": [
             "Clear the stage.",
-            "长按普攻使用2次始序惩斥或终临惩斥"
+            "Use Incipient Retribution or Final Retribution twice."
         ]
     },
     {
         "Id": 30163340,
         "Difficulty": 2,
         "StarNum": 3,
-        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster93492.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Me1PikemanMd000001.png",
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster93600.png",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1JiabailieMd000001.png",
         "StageType": 0,
         "TitleUnlock": 0,
-        "FightEventIds": [
-            2340109
-        ],
         "StarTalks": [
             "Clear the stage.",
-            "使用必杀：赤月裁星2次",
-            "使用长按必杀获得的终临球3次"
+            "Use Signature: Sanguine Verdict twice",
+            "Press and hold Signature to obtain Finality Orbs 3 times"
         ]
     },
     {
         "Id": 30163341,
         "Difficulty": 3,
         "StarNum": 3,
-        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster80210.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1TerminatorMd010001.png",
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster87620.png",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1DianaMd010001.png",
         "StageType": 0,
         "TitleUnlock": 0,
-        "FightEventIds": [
-            2340107
-        ],
         "StarTalks": [
             "Clear the stage.",
-            "长按普攻使用2次始序惩斥或终临惩斥",
-            "使用长按必杀获得的终临球5次"
+            "Use Incipient Retribution or Final Retribution twice.",
+            "Press and hold Signature to obtain Finality Orbs 5 times"
         ]
     },
     {
@@ -211,7 +193,7 @@
         "Difficulty": 4,
         "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster81530.png",
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/GodzillaNormal01.png",
+        "Icon": "Assets/Product/Texture/Image/UiSoloReform/RoleCharacterSoloRankUp00.png",
         "StageType": 2,
         "TitleUnlock": 30163347,
         "TitleName": "NORMAL",
@@ -221,8 +203,8 @@
         ],
         "StarTalks": [
             "Clear the stage.",
-            "关卡内的评分升阶到SSS",
-            "用时2分钟以下获得关卡内的SSS评分"
+            "Reach Rating SSS in the stage",
+            "Reach Rating SSS in the stage within 2 minutes"
         ]
     },
     {

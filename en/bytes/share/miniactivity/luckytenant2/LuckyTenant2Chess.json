@@ -3,7 +3,7 @@
         "Id": 99999,
         "Type": 99,
         "Quality": 0,
-        "Name": "删除币",
+        "Name": "Delete Coin",
         "Value": 0,
         "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess99998.png",
         "CanDelete": 0,
@@ -15,16 +15,15 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
-            "造型奇特的硬币，可以在背包里<color=#0f70bc>删除</color>指定<color=#0f70bc>棋子</color>。"
+            "A special coin that lets you <color=#0f70bc>clear</color> a selected <color=#0f70bc>piece</color> from your bag."
         ]
     },
     {
         "Id": 99998,
         "Type": 98,
         "Quality": 0,
-        "Name": "刷新币",
+        "Name": "Refresh Coin",
         "Value": 0,
         "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess99999.png",
         "CanDelete": 0,
@@ -36,16 +35,15 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
-            "造型奇特的硬币，可以在补棋阶段<color=#0f70bc>刷新棋子</color>组。"
+            "A special coin that lets you <color=#0f70bc>refresh the piece set</color> during the refill stage."
         ]
     },
     {
         "Id": 1,
         "Type": 6,
         "Quality": 1,
-        "Name": "Gold coin",
+        "Name": "Gold Coin",
         "Value": 1,
         "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess99997.png",
         "CanDelete": 1,
@@ -57,12 +55,8 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "Truly the source of all joy."
-        ],
-        "TriggerState": [
-            6
         ]
     },
     {
@@ -71,7 +65,7 @@
         "Quality": 1,
         "Name": "Crimson Bug",
         "Value": 1,
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconRift014.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20001.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -81,7 +75,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "This tiny thing gnaws through everything before you even notice."
         ],
@@ -96,7 +89,7 @@
         "Quality": 3,
         "Name": "4★ Weapon Shard",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess003.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20002.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -106,12 +99,8 @@
         "DefaultLevel": 4,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Want to hit harder? I mean with your weapon."
-        ],
-        "TriggerState": [
-            3
         ]
     },
     {
@@ -130,12 +119,8 @@
         "DefaultLevel": 6,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Gather shards, reforge your blade."
-        ],
-        "TriggerState": [
-            3
         ]
     },
     {
@@ -144,7 +129,7 @@
         "Quality": 2,
         "Name": "Green Cash",
         "Value": 1,
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconRogueSimTwo01.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20003.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -155,16 +140,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "What an energetic little item."
         ],
         "Tag": [
             1
-        ],
-        "TriggerState": [
-            1,
-            209
         ],
         "StateSkillId": [
             102
@@ -187,16 +167,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "Can't even remember what this was supposed to commemorate..."
         ],
         "Tag": [
             1
-        ],
-        "TriggerState": [
-            1,
-            209
         ],
         "StateSkillId": [
             102
@@ -208,7 +183,7 @@
         "Quality": 3,
         "Name": "Council Voucher",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconTurntableTicket05.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20004.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -219,16 +194,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "Sole issuer of this voucher: Miss Nirvatia."
         ],
         "Tag": [
             1
-        ],
-        "TriggerState": [
-            1,
-            209
         ],
         "StateSkillId": [
             102
@@ -251,16 +221,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "The name might be wrong, but it works."
         ],
         "Tag": [
             1
-        ],
-        "TriggerState": [
-            1,
-            209
         ],
         "StateSkillId": [
             102
@@ -283,16 +248,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "Somehow always goes missing..."
         ],
         "Tag": [
             1
-        ],
-        "TriggerState": [
-            1,
-            209
         ],
         "StateSkillId": [
             102
@@ -315,16 +275,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "Hard currency."
         ],
         "Tag": [
             1
-        ],
-        "TriggerState": [
-            1,
-            209
         ],
         "StateSkillId": [
             102
@@ -347,7 +302,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Heh, the cold-faced warrior shows up."
         ],
@@ -375,7 +329,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Currently engaged in devout but futile prayer."
         ],
@@ -392,7 +345,7 @@
         "Quality": 2,
         "Name": "Red Eye",
         "Value": 1,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItGift0322.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20005.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -403,7 +356,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Careful, it's about to mutate."
         ],
@@ -431,7 +383,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "An unremarkable unit, here just to fill the slot."
         ],
@@ -459,7 +410,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Carries neither a flower nor a sword, apparently."
         ],
@@ -476,7 +426,7 @@
         "Quality": 3,
         "Name": "Bamboo Hat Creature",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItGift0332.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20006.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -487,7 +437,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "A strange being—the hat might be the real body."
         ],
@@ -515,7 +464,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Bright, ugly, and poisonous all at once."
         ],
@@ -543,7 +491,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Stop posing. If you're going to fight, do it."
         ],
@@ -571,7 +518,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "A mascot that just spins around when hit."
         ],
@@ -588,7 +534,7 @@
         "Quality": 4,
         "Name": "Polar Bear",
         "Value": 5,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItGift0323.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20007.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -599,7 +545,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Looks like a temp worker who wandered onto the battlefield."
         ],
@@ -616,7 +561,7 @@
         "Quality": 5,
         "Name": "Huaxu",
         "Value": 7,
-        "Icon": "Assets/Product/Texture/Image/IconTools/Qshashibier.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20008.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -627,7 +572,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Let the dream-wrapped paradise come to an end."
         ],
@@ -655,7 +599,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "A breeding ground for disaster—best if it ends here."
         ],
@@ -683,7 +626,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Be my blade for now, Little Mechanic."
         ],
@@ -711,7 +653,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Just give him a whole bunch of coins."
         ],
@@ -739,7 +680,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "The simpler the mind, the happier the life."
         ],
@@ -767,9 +707,8 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
-            "So cute. Are you sure I can't touch those bear ears?"
+            "So cute. Can I touch those bear ears?"
         ],
         "Tag": [
             3
@@ -795,7 +734,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Like a haze spun from a midnight dream."
         ],
@@ -823,7 +761,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Hurry and bring the throne!"
         ],
@@ -851,7 +788,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Tag: Reliable"
         ],
@@ -879,7 +815,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Wish-Mael."
         ],
@@ -894,7 +829,7 @@
         "Id": 31,
         "Type": 3,
         "Quality": 4,
-        "Name": "Lucia",
+        "Name": "Luna",
         "Value": 4,
         "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess025.png",
         "CanDelete": 1,
@@ -907,7 +842,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Who are we fighting today?"
         ],
@@ -935,7 +869,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "When needed, the mastermind must enter the game."
         ],
@@ -963,7 +896,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Who are we fighting today? +1"
         ],
@@ -991,7 +923,6 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Sheep drifting into the dream, one after another..."
         ],
@@ -1019,15 +950,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "It settles disputes that words can't."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1036,7 +963,7 @@
         "Quality": 2,
         "Name": "Heavy Strike",
         "Value": 1,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3GloveMd010011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20013.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1047,15 +974,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Iron fist, iron will, iron order."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1064,7 +987,7 @@
         "Quality": 2,
         "Name": "Robotic Arm",
         "Value": 1,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3ArmMd010011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20014.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1075,15 +998,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "100% compatible with warriors."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1092,7 +1011,7 @@
         "Quality": 3,
         "Name": "Warboots",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3ShoesMd010011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20015.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1103,15 +1022,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Looks like a mislabeled bear paw."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1120,7 +1035,7 @@
         "Quality": 3,
         "Name": "Bowstring Rapier",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3LyreswordMd010011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20016.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1131,15 +1046,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Battle power unknown. Created by the WGAA."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1148,7 +1059,7 @@
         "Quality": 3,
         "Name": "Wandering Dragon",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3JianMd010011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20017.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1159,15 +1070,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "A sleeping force. When will it awaken?"
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1176,7 +1083,7 @@
         "Quality": 3,
         "Name": "Nuclear Meltdown",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3SuperliMd010011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20018.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1187,15 +1094,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "The most dangerously romantic creation in Babylonia."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1204,7 +1107,7 @@
         "Quality": 4,
         "Name": "Divine Key",
         "Value": 4,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3KeywandMd010011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20019.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1215,15 +1118,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Be careful. It can take control if you let your guard down."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1232,7 +1131,7 @@
         "Quality": 4,
         "Name": "Code Name: Oblivion",
         "Value": 4,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3CircleMd010011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20020.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1243,15 +1142,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "A final moon—silent, frenzied, and forever still."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1260,7 +1155,7 @@
         "Quality": 4,
         "Name": "Ultimate Revelation",
         "Value": 4,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3SwordaxeMd040011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20021.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1271,15 +1166,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "A scythe, the very instrument Death uses to reap souls."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1288,7 +1179,7 @@
         "Quality": 5,
         "Name": "Crimson Blade",
         "Value": 8,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3LotusbladeMd010011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess007.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1299,15 +1190,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "When cherry blossoms fall, crimson mist ripples in the breeze."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1316,7 +1203,7 @@
         "Quality": 5,
         "Name": "Suspended Lotus",
         "Value": 8,
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3LotusbladeMd010011.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20022.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1327,15 +1214,11 @@
         "DefaultLevel": 1,
         "CanUpgrade": 1,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Lights drift and flicker, aimless in the void."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ]
     },
     {
@@ -1344,7 +1227,7 @@
         "Quality": 2,
         "Name": "Mystery Box A",
         "Value": 1,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseW004.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20023.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1355,14 +1238,10 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "A standard mystery box, a miniature gamble."
         ],
         "Tag": [
-            1
-        ],
-        "TriggerState": [
             1
         ],
         "StateSkillId": [
@@ -1376,7 +1255,7 @@
         "Quality": 2,
         "Name": "Mystery Box B",
         "Value": 1,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseI001.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20024.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1387,14 +1266,10 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "Powered by dreams."
         ],
         "Tag": [
-            1
-        ],
-        "TriggerState": [
             1
         ],
         "StateSkillId": [
@@ -1408,7 +1283,7 @@
         "Quality": 2,
         "Name": "Mystery Box C",
         "Value": 1,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseI004.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20025.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1419,14 +1294,10 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "A box with limited potential."
         ],
         "Tag": [
-            1
-        ],
-        "TriggerState": [
             1
         ],
         "StateSkillId": [
@@ -1440,7 +1311,7 @@
         "Quality": 3,
         "Name": "Mystery Box D",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseW001.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20026.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1451,15 +1322,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "A proper mystery box."
         ],
         "Tag": [
             2
-        ],
-        "TriggerState": [
-            1
         ],
         "StateSkillId": [
             506,
@@ -1472,7 +1339,7 @@
         "Quality": 3,
         "Name": "Mystery Box E",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseW003.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20027.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1483,15 +1350,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "A not-so-proper mystery box."
         ],
         "Tag": [
             2
-        ],
-        "TriggerState": [
-            1
         ],
         "StateSkillId": [
             506,
@@ -1504,7 +1367,7 @@
         "Quality": 3,
         "Name": "Mystery Box F",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseI010050.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20028.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1515,15 +1378,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "Every mystery box is a gamble. Invest with caution."
         ],
         "Tag": [
             2
-        ],
-        "TriggerState": [
-            1
         ],
         "StateSkillId": [
             506,
@@ -1536,7 +1395,7 @@
         "Quality": 3,
         "Name": "Mystery Box G",
         "Value": 2,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseI002.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20029.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1547,15 +1406,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "A hard drive turned into a box?"
         ],
         "Tag": [
             2
-        ],
-        "TriggerState": [
-            1
         ],
         "StateSkillId": [
             506,
@@ -1568,7 +1423,7 @@
         "Quality": 4,
         "Name": "Medium Mystery Box: White Tiger",
         "Value": 5,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseI010060.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20030.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1579,15 +1434,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "Once the mystery box has a name, the price goes up."
         ],
         "Tag": [
             3
-        ],
-        "TriggerState": [
-            1
         ],
         "StateSkillId": [
             506,
@@ -1600,7 +1451,7 @@
         "Quality": 4,
         "Name": "Medium Mystery Box: Cheetah",
         "Value": 3,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseI003.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20031.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1611,15 +1462,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "Just remember, it's still just a box."
         ],
         "Tag": [
             5
-        ],
-        "TriggerState": [
-            1
         ],
         "StateSkillId": [
             506,
@@ -1632,7 +1479,7 @@
         "Quality": 4,
         "Name": "Medium Mystery Box: Tiger",
         "Value": 4,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseW003.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20032.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1643,15 +1490,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "Not an essential collectible."
         ],
         "Tag": [
             4
-        ],
-        "TriggerState": [
-            1
         ],
         "StateSkillId": [
             506,
@@ -1664,7 +1507,7 @@
         "Quality": 5,
         "Name": "Large Mystery Box: Golden Arc",
         "Value": 7,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseI020010.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20033.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1675,15 +1518,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "If not now, then when?"
         ],
         "Tag": [
             9
-        ],
-        "TriggerState": [
-            1
         ],
         "StateSkillId": [
             506,
@@ -1696,7 +1535,7 @@
         "Quality": 5,
         "Name": "Large Mystery Box: Violet Dew",
         "Value": 9,
-        "Icon": "Assets/Product/Texture/Image/IconTools/ItCaseI020030.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20034.png",
         "CanDelete": 1,
         "CanDie": 1,
         "Priority": 10,
@@ -1707,15 +1546,11 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 1,
-        "StateConditionId": [],
         "Desc": [
             "A box that stands apart from the world."
         ],
         "Tag": [
             7
-        ],
-        "TriggerState": [
-            1
         ],
         "StateSkillId": [
             506,
@@ -1728,7 +1563,7 @@
         "Quality": 5,
         "Name": "Red Mist",
         "Value": 12,
-        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess016.png",
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant2/Chess20035.png",
         "CanDelete": 1,
         "CanDie": 0,
         "Priority": 10,
@@ -1739,7 +1574,6 @@
         "DefaultLevel": 0,
         "CanUpgrade": 0,
         "CanBeEliminated": 0,
-        "StateConditionId": [],
         "Desc": [
             "Extreme danger! Best stay away from it."
         ]

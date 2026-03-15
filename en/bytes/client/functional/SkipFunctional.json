@@ -2994,7 +2994,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 164,
-        "Explain": "4.3版本涂装打脸图",
+        "Explain": "4.3版本薇拉涂装打脸图",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -3008,6 +3008,19 @@
         "UiName": "UiAutoWindow",
         "ParamId": 162,
         "Explain": "4.3涅缇娅好感领取打脸图",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 40164,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 165,
+        "Explain": "4.3版本曲涂装打脸图",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -4821,6 +4834,19 @@
         "ConditionId": 0,
         "FunctionalId": 0,
         "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 50116,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 108,
+        "Explain": "4.3版本签到",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 45110,
         "IsHideFunc": true,
         "IsShowExplain": false
     },
@@ -9286,7 +9312,7 @@
         "Origin": 7,
         "UiName": "SkipToMainLine2",
         "ParamId": 0,
-        "Explain": "新主线第三十九章",
+        "Explain": "New Main Story Chapter 39",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 10308,
@@ -18629,6 +18655,22 @@
         ]
     },
     {
+        "SkipId": 7139,
+        "Origin": 7,
+        "UiName": "SkipToPartnerTeachingChapter",
+        "ParamId": 0,
+        "Explain": "前往辅助机教学试玩-第三十二章",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1801,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            32
+        ]
+    },
+    {
         "SkipId": 7200,
         "Origin": 1,
         "UiName": "UiNewFuben",
@@ -18925,6 +18967,23 @@
         "CustomParams": [
             1,
             27
+        ]
+    },
+    {
+        "SkipId": 7218,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "ParamId": 0,
+        "Explain": "前往淬炼主题卡池",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 401,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            35
         ]
     },
     {
@@ -30459,7 +30518,7 @@
         "Origin": 6,
         "UiName": "UiWelfare",
         "ParamId": 0,
-        "Explain": "完成“诡魇轮骰”活动任务",
+        "Explain": "Complete \"Dicey Mystery\" event missions",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 1,
@@ -30497,13 +30556,13 @@
         "ConditionId": 0,
         "FunctionalId": 401,
         "TimeId": 0,
-        "StartTime": "2025/12/23 5:00",
-        "CloseTime": "2026/4/20 5:00",
+        "StartTime": "2026/3/17 0:00",
+        "CloseTime": "2026/4/20 23:00",
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
             1,
-            11
+            35
         ]
     },
     {
@@ -30516,8 +30575,8 @@
         "ConditionId": 0,
         "FunctionalId": 3,
         "TimeId": 0,
-        "StartTime": "2025/12/23 5:00",
-        "CloseTime": "2026/4/20 5:00",
+        "StartTime": "2026/3/17 0:00",
+        "CloseTime": "2026/4/20 23:00",
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
@@ -30634,7 +30693,7 @@
         "Origin": 6,
         "UiName": "UiWelfare",
         "ParamId": 0,
-        "Explain": "Placeholder_完成“诡魇轮骰”活动任务",
+        "Explain": "Complete \"Promised Dawn\" event missions",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 1,
@@ -41486,7 +41545,7 @@
         "Origin": 7,
         "UiName": "OnOpenGacha",
         "ParamId": 0,
-        "Explain": "前往活动【旖夜咏奏】",
+        "Explain": "Go to event [Night Sonata]",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 403,
@@ -41583,8 +41642,8 @@
         "ConditionId": 0,
         "FunctionalId": 5,
         "TimeId": 0,
-        "StartTime": "2026/3/17 5:00",
-        "CloseTime": "2026/4/20 5:00",
+        "StartTime": "2026/3/17 0:00",
+        "CloseTime": "2026/4/20 23:00",
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
@@ -41603,8 +41662,8 @@
         "ConditionId": 0,
         "FunctionalId": 5,
         "TimeId": 0,
-        "StartTime": "2026/3/17 5:00",
-        "CloseTime": "2026/4/20 5:00",
+        "StartTime": "2026/3/17 0:00",
+        "CloseTime": "2026/4/20 23:00",
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
@@ -41643,8 +41702,8 @@
         "ConditionId": 0,
         "FunctionalId": 5,
         "TimeId": 0,
-        "StartTime": "2026/3/17 5:00",
-        "CloseTime": "2026/4/20 5:00",
+        "StartTime": "2026/3/17 0:00",
+        "CloseTime": "2026/4/20 23:00",
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
@@ -41663,7 +41722,7 @@
         "ConditionId": 0,
         "FunctionalId": 1001,
         "TimeId": 0,
-        "StartTime": "2026/4/20 5:00",
+        "StartTime": "2026/4/20 23:00",
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
@@ -41683,7 +41742,7 @@
         "FunctionalId": 10342,
         "TimeId": 0,
         "StartTime": "2026/3/17 5:00",
-        "CloseTime": "2026/4/19 22:59",
+        "CloseTime": "2026/4/20 22:59",
         "IsHideFunc": true,
         "IsShowExplain": false
     },
@@ -41698,7 +41757,7 @@
         "FunctionalId": 5,
         "TimeId": 0,
         "StartTime": "2026/3/17 0:00",
-        "CloseTime": "2026/4/19 23:00",
+        "CloseTime": "2026/4/20 23:00",
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
@@ -43447,7 +43506,7 @@
         "UiName": "SkipToTheatre4",
         "ParamId": 0,
         "Explain": "Awakening Tundra",
-        "IsRecord": false,
+        "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 10470,
         "TimeId": 33,
@@ -48516,6 +48575,38 @@
             1,
             1,
             30163349
+        ]
+    },
+    {
+        "SkipId": 1300636,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "ParamId": 0,
+        "Explain": "涂装试玩-4.3薇拉",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            119
+        ]
+    },
+    {
+        "SkipId": 1300637,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "ParamId": 0,
+        "Explain": "涂装试玩-4.3曲",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            112
         ]
     }
 ]

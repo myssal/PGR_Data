@@ -24804,19 +24804,6 @@
         "HideSetPosition": false
     },
     {
-        "UiName": "UiFashionDetailComb",
-        "LoadWithParent": false,
-        "UiType": "Normal",
-        "UiResType": "Bundle",
-        "PrefabUrl": "Assets/Product/Ui/Prefab/UiFashionDetailComb.prefab",
-        "SceneUrl": "Assets/Product/Ui/Scene3DPrefab/UiCharacter3d.prefab",
-        "ModelUrl": "Assets/Product/Ui/UiModel/UiCharacter3d/UiFashionDetailComb.prefab",
-        "CacheTime": 5000,
-        "Recycle": false,
-        "FightingStay": 0,
-        "HideSetPosition": false
-    },
-    {
         "UiName": "UiMonthlyCardEn",
         "LoadWithParent": false,
         "UiType": "Normal",
@@ -26490,7 +26477,7 @@
     {
         "UiName": "UiLuckyTenant2Toast",
         "LoadWithParent": false,
-        "UiType": "NormalPopup",
+        "UiType": "Tips",
         "UiResType": "Bundle",
         "PrefabUrl": "Assets/Product/Ui/Prefab/UiLuckyTenant2/UiLuckyTenant2Toast.prefab",
         "CacheTime": 5000,
@@ -26523,7 +26510,7 @@
     {
         "UiName": "UiMovie2D",
         "LoadWithParent": false,
-        "UiType": "Popup",
+        "UiType": "Normal",
         "UiResType": "Bundle",
         "PrefabUrl": "Assets/Product/Ui/Prefab/UiMovie.prefab",
         "CacheTime": 5000,
@@ -26531,6 +26518,19 @@
         "FightingStay": 0,
         "HideSetPosition": false,
         "PcBackAction": null
+    },
+    {
+        "UiName": "UiMovieReview2D",
+        "ParentUiName": "UiMovie2D",
+        "LoadWithParent": false,
+        "UiType": "Popup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiMovieReview.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false,
+        "PcBackAction": "Close"
     },
     {
         "UiName": "UiCommonPopupUsePackage",

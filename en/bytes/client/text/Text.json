@@ -693,7 +693,7 @@
     },
     {
         "Key": "Residue",
-        "Text": "Remaining"
+        "Text": "Remaining "
     },
     {
         "Key": "Buy",
@@ -3712,11 +3712,11 @@
     },
     {
         "Key": "TaskLeftHour",
-        "Text": "<color=#0e70bd> {0} </color>hr left"
+        "Text": "Remaining<color=#0e70bd> {0} </color>hour(s) "
     },
     {
         "Key": "TaskLeftMin",
-        "Text": "<color=#0e70bd> {0} </color>min left"
+        "Text": "Remaining<color=#0e70bd> {0} </color>min(s)"
     },
     {
         "Key": "TaskBeginHour",
@@ -3980,7 +3980,7 @@
     },
     {
         "Key": "InTeamCantLookFashion",
-        "Text": "联机房间中不能查看涂装详情"
+        "Text": "Cannot view Coating details in Co-op room"
     },
     {
         "Key": "DormNullFurniture",
@@ -4104,7 +4104,7 @@
     },
     {
         "Key": "TaskLeftDay",
-        "Text": "<color=#0e70bd> {0}</color>D left"
+        "Text": "Remaining<color=#0e70bd> {0} </color>day(s)"
     },
     {
         "Key": "TypeItem",
@@ -5032,11 +5032,11 @@
     },
     {
         "Key": "PlayBeforeStory",
-        "Text": "Play pre-combat Cutscene"
+        "Text": "Play Pre-combat Story"
     },
     {
         "Key": "PlayAfterStory",
-        "Text": "Play post-combat Cutscene"
+        "Text": "Play Post-combat Story"
     },
     {
         "Key": "MovieSkipTipTitle",
@@ -5980,7 +5980,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
+        "Text": "{0}/<color=#00000><size=28>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -9844,7 +9844,7 @@
     },
     {
         "Key": "StrongholdTeamRestartConfirmContentOther",
-        "Text": "当前已在{0}拥有挑战进度，挑战本关将撤回相关梯队，已压制关卡需要重新挑战，是否确认撤退？"
+        "Text": "Ongoing Challenge Progress found in {0}, challenging this stage will cause the retreat of that team, all cleared stages will need to be challenged again. Confirm retreat?"
     },
     {
         "Key": "StrongholdElectricTeamMaxNum",
@@ -13416,7 +13416,7 @@
     },
     {
         "Key": "TeamRobotTips",
-        "Text": "Some team member(s) can be replaced with high BP trial character(s)"
+        "Text": "<size=28>Some member(s) can be replaced with high BP trial character(s)</size>"
     },
     {
         "Key": "RobotParnerTips",
@@ -17464,7 +17464,7 @@
     },
     {
         "Key": "ConnectingLineMoney",
-        "Text": "【黑金熊卡】不足，无法开启关卡"
+        "Text": "Insufficient [Black Gold Bear Cards]. Unable to unlock the stage."
     },
     {
         "Key": "ConnectingLineStage",
@@ -18740,7 +18740,7 @@
     },
     {
         "Key": "Theatre4EventRemainTime",
-        "Text": "(Remaining: {0} days)"
+        "Text": " (Remaining: {0} days)"
     },
     {
         "Key": "MainLineChapterNewTag",
@@ -19384,7 +19384,7 @@
     },
     {
         "Key": "LuckyTenantFailDesc",
-        "Text": "Unfortunately, challenge failed. Please work harder, Commandant!"
+        "Text": "Challenge Failed. Give it another shot, Commandant!"
     },
     {
         "Key": "LuckyTenantPerfectClearDesc",
@@ -19396,27 +19396,27 @@
     },
     {
         "Key": "LuckyTenant2TotalTimes",
-        "Text": "第{0}回"
-    },
-    {
-        "Key": "LuckyTenant2Round",
         "Text": "Round {0}"
     },
     {
+        "Key": "LuckyTenant2Round",
+        "Text": "Phase {0}"
+    },
+    {
         "Key": "LuckyTenant2TimesRemain",
-        "Text": "剩余{0}回"
+        "Text": "{0} round(s) remaining in this phase"
     },
     {
         "Key": "LuckyTenant2BondLevelDown",
-        "Text": "<color=#43454a>{0}羁绊等级下降</color>"
+        "Text": "<color=#43454a>{0} Bond level decreased</color>"
     },
     {
         "Key": "LuckyTenant2BondLevelUp",
-        "Text": "<color=#f09235>{0}</color><color=#356395>羁绊等级提升</color>"
+        "Text": "<color=#f09235>{0}</color><color=#356395> Bond level increased</color>"
     },
     {
         "Key": "LuckyTenant2PopupSuccessRound",
-        "Text": " 轮数: <color=#5089c6>{0}</color>/{1}"
+        "Text": "Phase: <color=#5089c6>{0}</color>/{1}"
     },
     {
         "Key": "FavorabilityStoryUnlockProgressLabel",
@@ -19460,7 +19460,7 @@
     },
     {
         "Key": "MultiMouseHunterUnVote",
-        "Text": "一键支持"
+        "Text": "Support All"
     },
     {
         "Key": "MultiMouseHunterVote",
@@ -19468,7 +19468,7 @@
     },
     {
         "Key": "MultiMouseHunterVoted",
-        "Text": "已支持{0}"
+        "Text": "{0} supported"
     },
     {
         "Key": "MultiMouseHunterSubUnVote",
@@ -19492,7 +19492,7 @@
     },
     {
         "Key": "MultiMouseHunterVoteVictory",
-        "Text": "恭喜“{0}”获胜"
+        "Text": "Congrats on {0}'s victory"
     },
     {
         "Key": "MultiMouseHunterVoteVictoryGet",
@@ -19572,7 +19572,7 @@
     },
     {
         "Key": "InRoomSkipTip",
-        "Text": "联机房间中无法跳转"
+        "Text": "Cannot navigate while in co-op room"
     },
     {
         "Key": "VersionGiftLeftTime",
@@ -19752,7 +19752,7 @@
     },
     {
         "Key": "UiCharacterSkillSwitchTitle",
-        "Text": "Battle Switch"
+        "Text": "Battle Voice Toggle"
     },
     {
         "Key": "DrawBannerRoleTypeText",
@@ -19776,7 +19776,7 @@
     },
     {
         "Key": "SoloReformHardUnlock",
-        "Text": "Unlocks after clearing Stage {0}"
+        "Text": "Unlocks after clearing  {0}"
     },
     {
         "Key": "SoloReformLastHardCompleted",
@@ -23539,6 +23539,10 @@
         "Text": "Switch to this Coating immediately?"
     },
     {
+        "Key": "FashionSuitDiscountActivityTip",
+        "Text": "Discount expires in: {0}"
+    },
+    {
         "Key": "TeamPrefabWeaponNotExistConflict",
         "Text": "Some equipment in the current team is unavailable. Adjust your setup before deploying."
     },
@@ -23620,19 +23624,19 @@
     },
     {
         "Key": "FashionActivitySecondTag",
-        "Text": "特惠"
+        "Text": "Special Offer"
     },
     {
         "Key": "FashionActivityRemainDays",
-        "Text": "{0}天后恢复原价"
+        "Text": "Returns to original price in {0} day(s)."
     },
     {
         "Key": "FashionActivityRemainNotEnoughDay",
-        "Text": "不足1天恢复原价"
+        "Text": "Returns to original price in under 1 day."
     },
     {
         "Key": "FashionGroupSalesDesc",
-        "Text": "套装包含角色涂装、武器涂装和赠品头像"
+        "Text": "Includes character coating, weapon coating, and bonus portrait."
     },
     {
         "Key": "FashionDetailGroupSalesTitle1",
@@ -23640,19 +23644,19 @@
     },
     {
         "Key": "FashionDetailGroupSalesTitle2",
-        "Text": "套装简介"
+        "Text": "Set Info"
     },
     {
         "Key": "FashionGroupSalesPopupTitle",
-        "Text": "是否确认花费<color=#0D70BC>{0}</color>{1}购买<color=#0D70BC>{2}</color>"
+        "Text": "Spend <color=#0D70BC>{0}</color> {1} to buy <color=#0D70BC>{2}</color>?"
     },
     {
         "Key": "FashionAddToRandomTip",
-        "Text": "已加入随机涂装"
+        "Text": "Added to Random Coatings"
     },
     {
         "Key": "FashionSuitGroupSalesDesc",
-        "Text": "套装包含武器涂装、武器涂装和赠品头像。其中武器涂装不计入系列收集进度。"
+        "Text": "Includes character coating, weapon coating, and bonus portrait. Weapon coatings do not count toward series collection progress."
     },
     {
         "Key": "FashionGroupSalesPopupItem1",
@@ -23664,11 +23668,11 @@
     },
     {
         "Key": "FashionGroupSalesPopupItem3",
-        "Text": "全套涂装"
+        "Text": "Full Coating Set"
     },
     {
         "Key": "SwitchableScenePcTip",
-        "Text": "按住Alt键移动鼠标，可与场景交互"
+        "Text": "Hold Alt and move the mouse to interact."
     },
     {
         "Key": "DrawCanLiverWeekTaskFinish",
@@ -23684,23 +23688,27 @@
     },
     {
         "Key": "DlcMultiPlayerSkillTips1",
-        "Text": "技能未装配满，请继续装配"
+        "Text": "Skill slots not full. Please continue equipping."
     },
     {
         "Key": "DlcMultiPlayerSkillTips2",
-        "Text": "技能已满，请先卸下其他技能"
+        "Text": "The slots are full. Please remove a skill first."
     },
     {
         "Key": "SubPackageDeleteConfirm",
-        "Text": "确认要删除分包{0}吗？"
+        "Text": "确认要卸载此资源包{0}吗？"
+    },
+    {
+        "Key": "SubpackageUninstallRejectDownloading",
+        "Text": "其它下载任务进行中，无法进行卸载"
     },
     {
         "Key": "DlcRelinkMateForceExit",
-        "Text": "联机出现网络异常导致中断，请检查联网环境。"
+        "Text": "Co-op connection interrupted due to network error. Please check your network connection."
     },
     {
         "Key": "UiShopBtnActivityTagName",
-        "Text": "上新"
+        "Text": "New Arrivals"
     },
     {
         "Key": "DiscountActivityTip",
@@ -23708,14 +23716,18 @@
     },
     {
         "Key": "UiNewDrawMainShopBubbleText",
-        "Text": "可直接兑换"
+        "Text": "Direct Exchange"
     },
     {
         "Key": "UiBuyAssetHasCount",
-        "Text": "现有:{0}"
+        "Text": "Current: {0}"
     },
     {
         "Key": "UsePackageOverMaxCount",
-        "Text": "使用{0}已到达上限"
+        "Text": "{0} usage limit reached"
+    },
+    {
+        "Key": "TeamPrefabCannotCoverEmptyTeam",
+        "Text": "Formation data is empty. Cannot overwrite."
     }
 ]

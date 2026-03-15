@@ -2,7 +2,7 @@
     {
         "Id": 1001,
         "Type": 101,
-        "Desc": "[<color=#f57c05>金融</color>]可被传染<color=#f83d50>帕弥什</color>；\\n被传染后每{0}回合在相邻空位产生{2}枚<color=#000000>金币</color>",
+        "Desc": "[<color=#f57c05>Money Drain</color>] can be infected with <color=#f83d50>Punishing Virus</color>.\\nOnce infected, it generates {2} <color=#000000>Coin</color> in an adjacent empty space every {0} round.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -17,7 +17,7 @@
     {
         "Id": 1002,
         "Type": 102,
-        "Desc": "被传染<color=#f83d50>帕弥什</color>中；\\n每{0}回合在相邻的空位产生{2}枚<color=#000000>金币</color>",
+        "Desc": "Infected with <color=#f83d50>Punishing Virus</color>.\\nGenerates {2} <color=#000000>Coin(s)</color> in adjacent empty spaces every {0} round(s).",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -32,7 +32,7 @@
     {
         "Id": 1003,
         "Type": 103,
-        "Desc": "[<color=#f57c05>金融</color>]基础金币额外+{0}；\\n被消除金币+{1}",
+        "Desc": "[<color=#f57c05>Money Drain</color>] Base Coins +{0}.\\nCoins +{1} from cleared pieces.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -46,7 +46,7 @@
     {
         "Id": 1004,
         "Type": 103,
-        "Desc": "[<color=#f57c05>金融</color>]基础金币额外+{0}；\\n被消除金币+{1}",
+        "Desc": "[<color=#f57c05>Money Drain</color>] Base Coins +{0}.\\nCoins +{1} from cleared pieces.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -60,7 +60,7 @@
     {
         "Id": 1005,
         "Type": 105,
-        "Desc": "[<color=#f57c05>金融</color>]基础金币额外+{0}；\\n被消除金币*{1}",
+        "Desc": "[<color=#f57c05>Money Drain</color>] Base Coins +{0}.\\nCoins x{1} from cleared pieces.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -74,7 +74,7 @@
     {
         "Id": 2001,
         "Type": 201,
-        "Desc": "[<color=#5f1fdf>Corruption</color>] can reproduce.\\nThey generate {1} <color=#000000>Crimson Bugs</color> in adjacent empty spaces every {0} round(s).\\n<color=#000000>Crimson Bugs</color> die after {3} round(s).",
+        "Desc": "[<color=#5f1fdf>Corruption</color>] can reproduce.\\nThey generate {1} <color=#000000>Crimson Bug</color> in adjacent empty spaces every {0} rounds.\\n<color=#000000>Crimson Bugs</color> die after {3} rounds.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -117,15 +117,14 @@
     {
         "Id": 2004,
         "Type": 204,
-        "Desc": "当<color=#000000>赤bug</color>在死亡或被消除时，额外得{0}倍基础金币收益",
+        "Desc": "When <color=#000000>Crimson Bugs</color> die or are cleared, gain {0} times the Base Coin reward.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
         "IsEffectUponJoining": 0,
         "EffectJustOnFirstRound": 0,
         "Params": [
-            2,
-            3
+            2
         ]
     },
     {
@@ -145,7 +144,7 @@
     {
         "Id": 2006,
         "Type": 207,
-        "Desc": "当<color=#000000>赤bug</color>死亡或被消除时，可传染相邻棋子<color=#f83d50>帕弥什</color>；每成功传染1枚棋子+{0}金币收益",
+        "Desc": "When <color=#000000>Crimson Bugs</color> die or are cleared, they can infect adjacent pieces with <color=#f83d50>Punishing Virus</color>. Coins +{0} for each piece infected.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -162,7 +161,7 @@
     {
         "Id": 2008,
         "Type": 208,
-        "Desc": "死亡时可传染相邻棋子<color=#f83d50>帕弥什</color>；每成功传染1枚棋子+{0}金币收益",
+        "Desc": "When defeated, infects adjacent chess pieces with <color=#f83d50>Punishing Virus</color>. Coins +{0} for each piece infected.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -170,7 +169,7 @@
         "EffectJustOnFirstRound": 0,
         "Condition": 7,
         "Params": [
-            20,
+            10,
             5,
             4,
             3
@@ -222,7 +221,7 @@
     {
         "Id": 3002,
         "Type": 302,
-        "Desc": "Each +1 level on a [<color=#49c10e>Talent</color>] increases Base Coins by {0}, {1}, {2}, or {3},\\ndepending on its quality.",
+        "Desc": "Each time [<color=#49c10e>Talent</color>] levels up, its Base Coins increase by {0}, {1}, {2}, or {3}, depending on its quality.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -238,7 +237,7 @@
     {
         "Id": 3003,
         "Type": 303,
-        "Desc": "[<color=#49c10e>人才</color>]升级的倒计时上限-{0}",
+        "Desc": "[<color=#49c10e>Talent</color>] max countdown between level-ups -{0}.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -253,7 +252,7 @@
     {
         "Id": 3004,
         "Type": 304,
-        "Desc": "[<color=#49c10e>Talent</color>] can trigger clears.\\nRandomly clears {0} adjacent pieces.\\nFor every {1} piece(s) cleared, level +{2}.",
+        "Desc": "[<color=#49c10e>Talent</color>] can trigger clears.\\nRandomly clears {0} adjacent piece.\\nFor every {1} piece cleared, level +{2}.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -268,7 +267,7 @@
     {
         "Id": 3005,
         "Type": 305,
-        "Desc": "[<color=#49c10e>人才</color>]可发动双消；\\n成功消除时，可再次消除{0}次；\\n消除数量+{1}",
+        "Desc": "[<color=#49c10e>Talent</color>] can trigger a double clear.\\nIf successful, can clear {0} more time.\\nCleared pieces +{1}.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -296,7 +295,7 @@
     {
         "Id": 4001,
         "Type": 401,
-        "Desc": "相邻2枚同品质[<color=#0761f6>武器</color>]，可融合提升品质；\\n属性叠加，融合上限lv.{0}",
+        "Desc": "2 adjacent [<color=#0761f6>Weapon</color>] pieces of the same quality can be fused to a higher quality.\\nStats stack, up to Lv.{0}.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -309,7 +308,7 @@
     {
         "Id": 4002,
         "Type": 402,
-        "Desc": "Each +1 level on [<color=#0761f6>Weapon</color>] increases Base Coins by {0}, {1}, {2}, or {3},\\ndepending on its quality.",
+        "Desc": "Each time [<color=#0761f6>Weapon</color>] levels up, its Base Coins increase by {0}, {1}, {2}, or {3}, depending on its quality.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -339,7 +338,7 @@
     {
         "Id": 4004,
         "Type": 404,
-        "Desc": "[<color=#0761f6>武器</color>]可被传染<color=#f83d50>帕弥什</color>；\\n可融合任意相邻[<color=#0761f6>武器</color>]，且等级额外+{0}",
+        "Desc": "[<color=#0761f6>Weapon</color>] can be infected with <color=#f83d50>Punishing Virus</color>.\\nOnce infected, can merge with any adjacent [<color=#0761f6>Weapon</color>], gaining +{0} level.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -367,7 +366,7 @@
     {
         "Id": 4006,
         "Type": 407,
-        "Desc": "[<color=#0761f6>武器</color>]有{2}%概率让相邻{0}枚棋子倒计时清零；\\n成功后自身等级+{1}",
+        "Desc": "[<color=#0761f6>Weapon</color>] has a {2}% chance to reset the countdown of {0} adjacent piece. On success, its level +{1}.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -397,7 +396,7 @@
     {
         "Id": 5002,
         "Type": 502,
-        "Desc": "After a [<color=#00afe9>Mystery Box</color>] disappears, 1 new [<color=#00afe9>Mystery Box</color>] is generated in the same spot.\\n{0}% chance to keep its quality, {1}% chance to upgrade it by 1.\\n5★ quality cannot be upgraded further.",
+        "Desc": "After a [<color=#00afe9>Mystery Box</color>] disappears, 1 new [<color=#00afe9>Mystery Box</color>] is generated in the same spot.\\n{0}% chance to keep its quality, {1}% chance to upgrade it by 1.\\nOrange quality cannot be upgraded further.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -411,7 +410,7 @@
     {
         "Id": 5003,
         "Type": 503,
-        "Desc": "[<color=#00afe9>盲盒</color>]消失倒计时的上限-{0}",
+        "Desc": "[<color=#00afe9>Mystery Box</color>] max countdown before disappearance -{0}.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -437,7 +436,7 @@
     {
         "Id": 5005,
         "Type": 505,
-        "Desc": "[<color=#00afe9>盲盒</color>]可被传染<color=#f83d50>帕弥什</color>；\\n被传染后自身倒计时-{0}；\\n仅产出[<color=#5f1fdf>侵蚀</color>]，{1}%概率另得1枚[<color=#f83d50>红雾</color>]",
+        "Desc": "[<color=#00afe9>Mystery Box</color>] can be infected with <color=#f83d50>Punishing Virus</color>.\\nAfter infection, countdown -{0}.\\nOnly spawns [<color=#5f1fdf>Corruption</color>], with a {1}% chance to also get 1 [<color=#f83d50>Red Mist</color>].",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -452,7 +451,7 @@
     {
         "Id": 5006,
         "Type": 506,
-        "Desc": "被传染<color=#f83d50>帕弥什</color>中；\\n仅产出[<color=#5f1fdf>侵蚀</color>]棋子，{1}%概率额外产出1枚[<color=#f83d50>红雾</color>]",
+        "Desc": "Currently infected with <color=#f83d50>Punishing Virus</color>.\\nOnly spawns [<color=#5f1fdf>Corruption</color>], with a {1}% chance to additionally spawn 1 [<color=#f83d50>Red Mist</color>].",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -467,7 +466,7 @@
     {
         "Id": 5007,
         "Type": 507,
-        "Desc": "When a [<color=#00afe9>Mystery Box</color>] is cleared, quality +1.\\nIf already at 5★ quality, Base Coins +{0} instead.",
+        "Desc": "When a [<color=#00afe9>Mystery Box</color>] is cleared, quality +1.\\nIf already at Orange quality, Base Coins +{0} instead.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -495,7 +494,7 @@
     {
         "Id": 6001,
         "Type": 601,
-        "Desc": "[<color=#f83d50>红雾</color>]每回合传染相邻棋子<color=#f83d50>帕弥什</color>",
+        "Desc": "[<color=#f83d50>Red Mist</color>] infects adjacent pieces with <color=#f83d50>Punishing Virus</color> each round.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -517,13 +516,13 @@
         "IsEffectUponJoining": 0,
         "EffectJustOnFirstRound": 0,
         "Params": [
-            4
+            2
         ]
     },
     {
         "Id": 6003,
         "Type": 603,
-        "Desc": "[<color=#f83d50>红雾</color>]相邻棋子存在倒计时时，\\n[<color=#f83d50>红雾</color>]有{0}%概率清零倒计时，且基础金币+{1}",
+        "Desc": "When pieces adjacent to [<color=#f83d50>Red Mist</color>] have countdown timers.\\n[<color=#f83d50>Red Mist</color>] has a {0}% chance to reset their countdown to zero, and Base Coins +{1}.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,
@@ -531,13 +530,13 @@
         "EffectJustOnFirstRound": 0,
         "Params": [
             30,
-            4
+            2
         ]
     },
     {
         "Id": 4007,
         "Type": 408,
-        "Desc": "被传染<color=#f83d50>帕弥什</color>中；\\n可融合任意相邻[<color=#0761f6>武器</color>]，且等级额外+{0}",
+        "Desc": "Infected with <color=#f83d50>Punishing Virus</color>.\\nCan merge with any adjacent [<color=#0761f6>Weapon</color>], gaining +{0} level.",
         "Score": 0,
         "Priority": 0,
         "IsPassive": 0,

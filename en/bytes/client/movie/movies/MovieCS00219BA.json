@@ -56,7 +56,7 @@
             "自定义文本显示优化",
             33,
             "性别差分富文本优化",
-            125
+            137
         ]
     },
     {
@@ -166,7 +166,7 @@
     {
         "Id": 12,
         "ActionId": 12,
-        "NextActionId": 128,
+        "NextActionId": 140,
         "Type": 202,
         "IsBlock": 0,
         "IsEnd": 0,
@@ -373,7 +373,7 @@
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0,
+        "EndDelay": 100.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront56.png",
             6
@@ -455,16 +455,14 @@
     {
         "Id": 32,
         "ActionId": 32,
-        "NextActionId": 128,
+        "NextActionId": 140,
         "Type": 301,
         "IsBlock": 0,
         "IsEnd": 0,
-        "BeginAnim": "DialogEnable",
-        "EndAnim": "DialogDisable",
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "做个翻牌效果试试^-^"
+            "模拟翻牌"
         ]
     },
     {
@@ -923,12 +921,81 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront94.png",
+            3
         ]
     },
     {
         "Id": 60,
         "ActionId": 60,
+        "NextActionId": 0,
+        "Type": 110,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "测试【背景切换】使用常规配置，是否会回归正常大小，不配置0|0|0"
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 100.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront94.png",
+            3,
+            "0|0|0"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "测试【背景切换】使用常规配置，是否会回归正常大小，有配置0|0|0"
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -941,8 +1008,8 @@
         ]
     },
     {
-        "Id": 61,
-        "ActionId": 61,
+        "Id": 66,
+        "ActionId": 66,
         "NextActionId": 0,
         "Type": 110,
         "IsBlock": 0,
@@ -951,8 +1018,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 62,
-        "ActionId": 62,
+        "Id": 67,
+        "ActionId": 67,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -966,8 +1033,8 @@
         ]
     },
     {
-        "Id": 63,
-        "ActionId": 63,
+        "Id": 68,
+        "ActionId": 68,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -979,8 +1046,8 @@
         ]
     },
     {
-        "Id": 64,
-        "ActionId": 64,
+        "Id": 69,
+        "ActionId": 69,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -993,8 +1060,8 @@
         ]
     },
     {
-        "Id": 65,
-        "ActionId": 65,
+        "Id": 70,
+        "ActionId": 70,
         "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
@@ -1009,8 +1076,8 @@
         ]
     },
     {
-        "Id": 66,
-        "ActionId": 66,
+        "Id": 71,
+        "ActionId": 71,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1022,8 +1089,8 @@
         ]
     },
     {
-        "Id": 67,
-        "ActionId": 67,
+        "Id": 72,
+        "ActionId": 72,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1037,8 +1104,8 @@
         ]
     },
     {
-        "Id": 68,
-        "ActionId": 68,
+        "Id": 73,
+        "ActionId": 73,
         "NextActionId": 0,
         "Type": 110,
         "IsBlock": 0,
@@ -1047,8 +1114,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 69,
-        "ActionId": 69,
+        "Id": 74,
+        "ActionId": 74,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1062,8 +1129,8 @@
         ]
     },
     {
-        "Id": 70,
-        "ActionId": 70,
+        "Id": 75,
+        "ActionId": 75,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1075,8 +1142,8 @@
         ]
     },
     {
-        "Id": 71,
-        "ActionId": 71,
+        "Id": 76,
+        "ActionId": 76,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1086,13 +1153,13 @@
         "Params": [
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png",
             3,
-            8,
-            "0|960|0"
+            10,
+            "0|0|0"
         ]
     },
     {
-        "Id": 72,
-        "ActionId": 72,
+        "Id": 77,
+        "ActionId": 77,
         "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
@@ -1108,22 +1175,8 @@
         ]
     },
     {
-        "Id": 73,
-        "ActionId": 73,
-        "NextActionId": 0,
-        "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png",
-            3
-        ]
-    },
-    {
-        "Id": 74,
-        "ActionId": 74,
+        "Id": 78,
+        "ActionId": 78,
         "NextActionId": 0,
         "Type": 110,
         "IsBlock": 0,
@@ -1132,23 +1185,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 75,
-        "ActionId": 75,
-        "NextActionId": 0,
-        "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginAnim": "DialogEnable",
-        "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "测试【背景切换】使用常规配置，是否会回归正常大小"
-        ]
-    },
-    {
-        "Id": 76,
-        "ActionId": 76,
+        "Id": 79,
+        "ActionId": 79,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1160,8 +1198,8 @@
         ]
     },
     {
-        "Id": 77,
-        "ActionId": 77,
+        "Id": 80,
+        "ActionId": 80,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1171,12 +1209,13 @@
         "Params": [
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png",
             3,
-            1
+            1,
+            "0|0|）"
         ]
     },
     {
-        "Id": 78,
-        "ActionId": 78,
+        "Id": 81,
+        "ActionId": 81,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1190,8 +1229,8 @@
         ]
     },
     {
-        "Id": 79,
-        "ActionId": 79,
+        "Id": 82,
+        "ActionId": 82,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 1,
@@ -1203,8 +1242,8 @@
         ]
     },
     {
-        "Id": 80,
-        "ActionId": 80,
+        "Id": 83,
+        "ActionId": 83,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -1222,8 +1261,8 @@
         ]
     },
     {
-        "Id": 81,
-        "ActionId": 81,
+        "Id": 84,
+        "ActionId": 84,
         "NextActionId": 0,
         "Type": 109,
         "IsBlock": 0,
@@ -1237,69 +1276,6 @@
             288,
             1,
             1.5,
-            3,
-            1,
-            6
-        ]
-    },
-    {
-        "Id": 82,
-        "ActionId": 82,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            22,
-            "<color=#000000ff><size=37>It means reinterpreting the world we thought we understood.\\nIt means a future that's no longer steady or certain.</size></color>",
-            325,
-            146,
-            1,
-            1.5,
-            3,
-            1,
-            6
-        ]
-    },
-    {
-        "Id": 83,
-        "ActionId": 83,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            23,
-            "<color=#000000ff><size=37>Screw it. I'm going beyond the boundary.</size></color>",
-            325,
-            35,
-            1,
-            1,
-            3,
-            1,
-            6
-        ]
-    },
-    {
-        "Id": 84,
-        "ActionId": 84,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            24,
-            "<color=#000000ff><size=37>Into the new world beyond the broken fortress.</size></color>",
-            325,
-            -53,
-            1,
-            1,
             3,
             1,
             6
@@ -1315,11 +1291,12 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            11,
-            "<color=#000000ff><size=37>—Christina</size></color>",
-            625,
-            -250,
+            22,
+            "<color=#000000ff><size=37>It means reinterpreting the world we thought we understood.\\nIt means a future that's no longer steady or certain.</size></color>",
+            325,
+            146,
             1,
+            1.5,
             3,
             1,
             6
@@ -1335,6 +1312,68 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
+            23,
+            "<color=#000000ff><size=37>Screw it. I'm going beyond the boundary.</size></color>",
+            325,
+            35,
+            1,
+            1,
+            3,
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            24,
+            "<color=#000000ff><size=37>Into the new world beyond the broken fortress.</size></color>",
+            325,
+            -53,
+            1,
+            1,
+            3,
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            11,
+            "<color=#000000ff><size=37>—Christina</size></color>",
+            625,
+            -250,
+            1,
+            3,
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
             11,
             "<color=#000000ff><size=37><s=#000000ff>—Christina </s></size></color>",
             625,
@@ -1345,8 +1384,8 @@
         ]
     },
     {
-        "Id": 87,
-        "ActionId": 87,
+        "Id": 90,
+        "ActionId": 90,
         "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
@@ -1366,8 +1405,18 @@
         ]
     },
     {
-        "Id": 88,
-        "ActionId": 88,
+        "Id": 91,
+        "ActionId": 91,
+        "NextActionId": 0,
+        "Type": 110,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -1383,18 +1432,8 @@
         ]
     },
     {
-        "Id": 89,
-        "ActionId": 89,
-        "NextActionId": 0,
-        "Type": 110,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 200.0
-    },
-    {
-        "Id": 90,
-        "ActionId": 90,
+        "Id": 93,
+        "ActionId": 93,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1404,12 +1443,45 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "测试【透明度设置】使用常规配置，是否会回归正常大小"
+            "测试【透明度设置】使用常规配置，是否会回归正常大小，没配0|0|0"
         ]
     },
     {
-        "Id": 91,
-        "ActionId": 91,
+        "Id": 94,
+        "ActionId": 94,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 100.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1003,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront94.png",
+            0,
+            1,
+            0,
+            "0|0|0"
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "测试【透明度设置】使用常规配置，是否会回归正常大小，有配0|0|0"
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1421,8 +1493,8 @@
         ]
     },
     {
-        "Id": 92,
-        "ActionId": 92,
+        "Id": 97,
+        "ActionId": 97,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -1438,8 +1510,8 @@
         ]
     },
     {
-        "Id": 93,
-        "ActionId": 93,
+        "Id": 98,
+        "ActionId": 98,
         "NextActionId": 0,
         "Type": 110,
         "IsBlock": 0,
@@ -1448,8 +1520,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 94,
-        "ActionId": 94,
+        "Id": 99,
+        "ActionId": 99,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1463,8 +1535,8 @@
         ]
     },
     {
-        "Id": 95,
-        "ActionId": 95,
+        "Id": 100,
+        "ActionId": 100,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 1,
@@ -1476,8 +1548,8 @@
         ]
     },
     {
-        "Id": 96,
-        "ActionId": 96,
+        "Id": 101,
+        "ActionId": 101,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1488,27 +1560,12 @@
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront94.png",
             3,
             6,
-            "-1060|-100|-100"
+            "0|-100|0"
         ]
     },
     {
-        "Id": 97,
-        "ActionId": 97,
-        "NextActionId": 0,
-        "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "1100|-100|-100",
-            0,
-            3
-        ]
-    },
-    {
-        "Id": 98,
-        "ActionId": 98,
+        "Id": 102,
+        "ActionId": 102,
         "NextActionId": 0,
         "Type": 104,
         "IsBlock": 0,
@@ -1516,93 +1573,9 @@
         "BeginDelay": 0.0,
         "EndDelay": 550.0,
         "Params": [
-            "0|-100|-100",
+            "-960|-100|-0",
             0.5,
             3
-        ]
-    },
-    {
-        "Id": 99,
-        "ActionId": 99,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            21,
-            "<color=#000000ff><size=37>The quantum leap has already begun,\\neven if it means shattering the order we've always known.</size></color>",
-            325,
-            288,
-            1,
-            1.5,
-            3,
-            1,
-            6
-        ]
-    },
-    {
-        "Id": 100,
-        "ActionId": 100,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            22,
-            "<color=#000000ff><size=37>It means reinterpreting the world we thought we understood.\\nIt means a future that's no longer steady or certain.</size></color>",
-            325,
-            146,
-            1,
-            1.5,
-            3,
-            1,
-            6
-        ]
-    },
-    {
-        "Id": 101,
-        "ActionId": 101,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            23,
-            "<color=#000000ff><size=37>Screw it. I'm going beyond the boundary.</size></color>",
-            325,
-            35,
-            1,
-            1,
-            3,
-            1,
-            6
-        ]
-    },
-    {
-        "Id": 102,
-        "ActionId": 102,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            24,
-            "<color=#000000ff><size=37>Into the new world beyond the broken fortress.</size></color>",
-            325,
-            -53,
-            1,
-            1,
-            3,
-            1,
-            6
         ]
     },
     {
@@ -1615,11 +1588,12 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            11,
-            "<color=#000000ff><size=37>—Christina</size></color>",
-            625,
-            -250,
+            21,
+            "<color=#000000ff><size=37>The quantum leap has already begun,\\neven if it means shattering the order we've always known.</size></color>",
+            375,
+            220,
             1,
+            1.5,
             3,
             1,
             6
@@ -1635,10 +1609,12 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            11,
-            "<color=#000000ff><size=37><s=#000000ff>—Christina </s></size></color>",
-            625,
-            -250,
+            22,
+            "<color=#000000ff><size=37>It means reinterpreting the world we thought we understood.\\nIt means a future that's no longer steady or certain.</size></color>",
+            375,
+            78,
+            1,
+            1.5,
             3,
             1,
             6
@@ -1649,16 +1625,16 @@
         "ActionId": 105,
         "NextActionId": 0,
         "Type": 109,
-        "IsBlock": 1,
+        "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            12,
-            "<color=#000000ff><size=60>Teddy{226|153|170}</size></color>",
-            625,
-            -30,
-            9,
+            23,
+            "<color=#000000ff><size=37>Screw it. I'm going beyond the boundary.</size></color>",
+            375,
+            -33,
+            1,
             1,
             3,
             1,
@@ -1668,6 +1644,87 @@
     {
         "Id": 106,
         "ActionId": 106,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            24,
+            "<color=#000000ff><size=37>Into the new world beyond the broken fortress.</size></color>",
+            375,
+            -121,
+            1,
+            1,
+            3,
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            11,
+            "<color=#000000ff><size=37>—Christina</size></color>",
+            675,
+            -318,
+            1,
+            3,
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            11,
+            "<color=#000000ff><size=37><s=#000000ff>—Christina </s></size></color>",
+            675,
+            -318,
+            3,
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 1,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            12,
+            "<color=#000000ff><size=60>Teddy{226|153|170}</size></color>",
+            675,
+            -98,
+            9,
+            1,
+            3,
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1679,8 +1736,8 @@
         ]
     },
     {
-        "Id": 107,
-        "ActionId": 107,
+        "Id": 111,
+        "ActionId": 111,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1693,8 +1750,8 @@
         ]
     },
     {
-        "Id": 108,
-        "ActionId": 108,
+        "Id": 112,
+        "ActionId": 112,
         "NextActionId": 0,
         "Type": 110,
         "IsBlock": 0,
@@ -1703,8 +1760,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 109,
-        "ActionId": 109,
+        "Id": 113,
+        "ActionId": 113,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1718,8 +1775,8 @@
         ]
     },
     {
-        "Id": 110,
-        "ActionId": 110,
+        "Id": 114,
+        "ActionId": 114,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 1,
@@ -1731,8 +1788,8 @@
         ]
     },
     {
-        "Id": 111,
-        "ActionId": 111,
+        "Id": 115,
+        "ActionId": 115,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -1744,102 +1801,24 @@
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront94.png",
             0,
             1,
-            0.5,
+            1,
             6,
-            "-1060|-100|-100"
-        ]
-    },
-    {
-        "Id": 112,
-        "ActionId": 112,
-        "NextActionId": 0,
-        "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "1100|-100|-100",
-            0,
-            3
-        ]
-    },
-    {
-        "Id": 113,
-        "ActionId": 113,
-        "NextActionId": 0,
-        "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 550.0,
-        "Params": [
-            "0|-100|-100",
-            0.5,
-            3
-        ]
-    },
-    {
-        "Id": 114,
-        "ActionId": 114,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            21,
-            "<color=#000000ff><size=37>The quantum leap has already begun,\\neven if it means shattering the order we've always known.</size></color>",
-            325,
-            288,
-            1,
-            1.5,
-            3,
-            1,
-            6
-        ]
-    },
-    {
-        "Id": 115,
-        "ActionId": 115,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            22,
-            "<color=#000000ff><size=37>It means reinterpreting the world we thought we understood.\\nIt means a future that's no longer steady or certain.</size></color>",
-            325,
-            146,
-            1,
-            1.5,
-            3,
-            1,
-            6
+            "0|-100|0"
         ]
     },
     {
         "Id": 116,
         "ActionId": 116,
         "NextActionId": 0,
-        "Type": 109,
+        "Type": 104,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0,
+        "EndDelay": 1800.0,
         "Params": [
-            23,
-            "<color=#000000ff><size=37>Screw it. I'm going beyond the boundary.</size></color>",
-            325,
-            35,
-            1,
-            1,
-            3,
-            1,
-            6
+            "-960|-100|-0",
+            1.5,
+            3
         ]
     },
     {
@@ -1852,12 +1831,12 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            24,
-            "<color=#000000ff><size=37>Into the new world beyond the broken fortress.</size></color>",
-            325,
-            -53,
+            21,
+            "<color=#000000ff><size=37>The quantum leap has already begun,\\neven if it means shattering the order we've always known.</size></color>",
+            375,
+            220,
             1,
-            1,
+            1.5,
             3,
             1,
             6
@@ -1873,11 +1852,12 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            11,
-            "<color=#000000ff><size=37>—Christina</size></color>",
-            625,
-            -250,
+            22,
+            "<color=#000000ff><size=37>It means reinterpreting the world we thought we understood.\\nIt means a future that's no longer steady or certain.</size></color>",
+            375,
+            78,
             1,
+            1.5,
             3,
             1,
             6
@@ -1893,10 +1873,12 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            11,
-            "<color=#000000ff><size=37><s=#000000ff>—Christina </s></size></color>",
-            625,
-            -250,
+            23,
+            "<color=#000000ff><size=37>Screw it. I'm going beyond the boundary.</size></color>",
+            375,
+            -33,
+            1,
+            1,
             3,
             1,
             6
@@ -1907,16 +1889,16 @@
         "ActionId": 120,
         "NextActionId": 0,
         "Type": 109,
-        "IsBlock": 1,
+        "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            12,
-            "<color=#000000ff><size=60>Teddy{226|153|170}</size></color>",
-            625,
-            -30,
-            9,
+            24,
+            "<color=#000000ff><size=37>Into the new world beyond the broken fortress.</size></color>",
+            375,
+            -121,
+            1,
             1,
             3,
             1,
@@ -1926,6 +1908,66 @@
     {
         "Id": 121,
         "ActionId": 121,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            11,
+            "<color=#000000ff><size=37>—Christina</size></color>",
+            675,
+            -318,
+            1,
+            3,
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            11,
+            "<color=#000000ff><size=37><s=#000000ff>—Christina </s></size></color>",
+            675,
+            -318,
+            3,
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 1,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            12,
+            "<color=#000000ff><size=60>Teddy{226|153|170}</size></color>",
+            675,
+            -98,
+            9,
+            1,
+            3,
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1937,8 +1979,8 @@
         ]
     },
     {
-        "Id": 122,
-        "ActionId": 122,
+        "Id": 125,
+        "ActionId": 125,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -1953,8 +1995,8 @@
         ]
     },
     {
-        "Id": 123,
-        "ActionId": 123,
+        "Id": 126,
+        "ActionId": 126,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1964,13 +2006,13 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "结论：背景位移动画是按照居中的方式去计算的，配置时需要在unity里调整成居中模式在计算坐标值"
+            "结论：背景位移动画配置时需要在unity手动调整，确认坐标值后再填入。对齐模式下的坐标可以理解成初始坐标，只需要配置结束坐标。"
         ]
     },
     {
-        "Id": 124,
-        "ActionId": 124,
-        "NextActionId": 128,
+        "Id": 127,
+        "ActionId": 127,
+        "NextActionId": 0,
         "Type": 110,
         "IsBlock": 0,
         "IsEnd": 0,
@@ -1978,8 +2020,155 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 125,
-        "ActionId": 125,
+        "Id": 128,
+        "ActionId": 128,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 1,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory576.jpg"
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            5735
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront101.png",
+            4,
+            8,
+            "-471|-200|-326"
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            "-471|560|-326",
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            32,
+            "<b><size=45><color=#000000ff>Observational Records of the </color><color=#ff4e4eff>\"Ever-Winter\"</color></size></b>",
+            75,
+            650,
+            7,
+            8
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            33,
+            "<b><i><color=#000000ff><size=45>Simulated Phenomenon and Analytical Report</size></color></i></b>",
+            80,
+            570,
+            7,
+            8
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "NextActionId": 0,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            34,
+            "<b><color=#000000ff><size=45> on the Possibility of Earth's Biosphere</size></color></b>",
+            85,
+            500,
+            7,
+            8
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "NextActionId": 140,
+        "Type": 109,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            35,
+            "<b><color=#000000ff><size=45>的分析性报告</size></color></b>",
+            90,
+            420,
+            7,
+            8
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1991,8 +2180,8 @@
         ]
     },
     {
-        "Id": 126,
-        "ActionId": 126,
+        "Id": 138,
+        "ActionId": 138,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2004,8 +2193,8 @@
         ]
     },
     {
-        "Id": 127,
-        "ActionId": 127,
+        "Id": 139,
+        "ActionId": 139,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2017,8 +2206,8 @@
         ]
     },
     {
-        "Id": 128,
-        "ActionId": 128,
+        "Id": 140,
+        "ActionId": 140,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,

@@ -3357,7 +3357,7 @@
         "TimeId": 45102,
         "AutoType": 2,
         "AutoCount": 1,
-        "ContinueOpen": false,
+        "ContinueOpen": true,
         "ConditionIds": [
             770400
         ]
@@ -3366,11 +3366,11 @@
         "Id": 1849,
         "FunctionType": 1,
         "SkipId": 40163,
-        "Pre": 4000,
+        "Pre": 1,
         "TimeId": 45601,
         "AutoType": 2,
         "AutoCount": 1,
-        "ContinueOpen": false,
+        "ContinueOpen": true,
         "ConditionIds": [
             863202
         ]
@@ -3383,7 +3383,7 @@
         "TimeId": 45104,
         "AutoType": 2,
         "AutoCount": 1,
-        "ContinueOpen": false,
+        "ContinueOpen": true,
         "ConditionIds": [
             770400
         ]
@@ -3396,9 +3396,35 @@
         "TimeId": 45105,
         "AutoType": 2,
         "AutoCount": 1,
-        "ContinueOpen": false,
+        "ContinueOpen": true,
         "ConditionIds": [
             6005005
+        ]
+    },
+    {
+        "Id": 1853,
+        "FunctionType": 2,
+        "SkipId": 50116,
+        "Pre": 1001,
+        "TimeId": 45110,
+        "AutoType": 1,
+        "AutoCount": 1,
+        "ContinueOpen": true,
+        "ConditionIds": [
+            30404
+        ]
+    },
+    {
+        "Id": 1854,
+        "FunctionType": 1,
+        "SkipId": 40164,
+        "Pre": 300,
+        "TimeId": 45105,
+        "AutoType": 2,
+        "AutoCount": 1,
+        "ContinueOpen": true,
+        "ConditionIds": [
+            6003706
         ]
     }
 ]

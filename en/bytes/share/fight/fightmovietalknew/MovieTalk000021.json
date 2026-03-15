@@ -1323,7 +1323,7 @@
         "UiType": 1,
         "Name": "Nirvatia",
         "Text": "The mechanoids that have gone berserk are still here, so stay where we can see you, little raven.",
-        "Duration": 6.25,
+        "Duration": -1,
         "IsMask": false
     },
     {
@@ -1332,7 +1332,7 @@
         "UiType": 1,
         "Name": "Nirvatia",
         "Text": "Three of the four mechanoid samples containing evidence are located behind this door.",
-        "Duration": 5.25,
+        "Duration": -1,
         "IsMask": false
     },
     {
@@ -1412,33 +1412,46 @@
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "Hello, Morigan. I'm Nirvatia.",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            1
+        ]
     },
     {
         "Id": 21005102,
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "Considering how long we've been together, I'm practically your \"old friend.\"",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            1
+        ]
     },
     {
         "Id": 21005103,
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "Now, please open your \"eyes\" and take a look at both this world and me.",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            1
+        ]
     },
     {
         "Id": 21005104,
         "Type": 1,
         "UiType": 1,
         "Name": "Morigan",
+        "Icon": 501218,
         "Text": "Whoa, this recorded my Activation Date...",
         "Duration": 0,
         "IsMask": false
@@ -1448,6 +1461,7 @@
         "Type": 1,
         "UiType": 1,
         "Name": "Morigan",
+        "Icon": 501218,
         "Text": "Look how gentle she was with me back then! Nowadays, sigh...",
         "Duration": 0,
         "IsMask": false
@@ -1457,27 +1471,39 @@
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "Lenore still granted me access to read the experimental records after that.",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            8
+        ]
     },
     {
         "Id": 21005107,
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "Perhaps. The human heart is such a complex thing.",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            10
+        ]
     },
     {
         "Id": 21005108,
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "Lenore, is there... something else you wish to tell me?",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            12
+        ]
     },
     {
         "Id": 21005109,
@@ -1502,69 +1528,98 @@
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "That was the last time I spoke with her face to face...",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            11
+        ]
     },
     {
         "Id": 21005112,
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "Yeah. We'll bring everything to light.",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            4
+        ]
     },
     {
         "Id": 21005113,
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "There's also a hidden video.",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            5
+        ]
     },
     {
         "Id": 21005114,
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "The title is... \"To Nirvatia: Before The Final Farewell\".",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            10
+        ]
     },
     {
         "Id": 21005115,
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "Not the kind of message that's easy to watch.",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            10
+        ]
     },
     {
         "Id": 21005116,
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "Little raven, would you... watch it with me?",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            10
+        ]
     },
     {
         "Id": 21005117,
         "Type": 1,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": 501217,
         "Text": "Thank you. With you by my side, I can face anything.",
         "Duration": 0,
-        "IsMask": false
+        "IsMask": false,
+        "Params": [
+            16
+        ]
     },
     {
         "Id": 21005201,
         "Type": 2,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Nietiya1.png",
         "Text": "Did you forget I can hear you, hmm?",
         "Duration": 3.25,
         "IsMask": false
@@ -1574,8 +1629,17 @@
         "Type": 2,
         "UiType": 1,
         "Name": "Nirvatia",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Nietiya1.png",
         "Text": "The door is open. Grab the evidence and come over.",
         "Duration": 3.25,
+        "IsMask": false
+    },
+    {
+        "Id": 21005999,
+        "Type": 3,
+        "UiType": 1,
+        "Text": "Placeholder_ 战后贴贴流程待完善",
+        "Duration": 3,
         "IsMask": false
     },
     {
@@ -1583,7 +1647,7 @@
         "Type": 1,
         "UiType": 1,
         "Name": "Commandant",
-        "Text": "这个开关……看起来还是开启的。",
+        "Text": "This switch still looks like it is on.",
         "Duration": 0,
         "IsMask": false
     },
@@ -1592,7 +1656,7 @@
         "Type": 1,
         "UiType": 1,
         "Name": "Commandant",
-        "Text": "控制台显示还有一个开关未开启，去那边房间看看吧。",
+        "Text": "The console shows one switch is still off. Check the room over there.",
         "Duration": 0,
         "IsMask": false
     },
@@ -1601,8 +1665,8 @@
         "Type": 3,
         "UiType": 1,
         "Name": "Commandant",
-        "Text": "这就是黄金树的核心吗?得想办法去安放炸弹，先调查下四周吧。",
-        "Duration": 5.25,
+        "Text": "So this is the Golden Tree's core. Gotta find a way to plant the bombs. Let's check the area first.",
+        "Duration": 5.75,
         "IsMask": false
     },
     {
@@ -1610,8 +1674,8 @@
         "Type": 3,
         "UiType": 1,
         "Name": "Commandant",
-        "Text": "红雾浓度在提升，得抓紧时间了……",
-        "Duration": 3.25,
+        "Text": "The Red Mist is getting thicker. Gotta hurry...",
+        "Duration": 4.25,
         "IsMask": false
     },
     {
@@ -1619,7 +1683,7 @@
         "Type": 3,
         "UiType": 1,
         "Name": "Commandant",
-        "Text": "核心被护住了，得先炸开两侧的树枝。",
+        "Text": "The core is protected. Gotta blast open the branches on both sides first.",
         "Duration": 3.25,
         "IsMask": false
     },
@@ -1628,7 +1692,7 @@
         "Type": 3,
         "UiType": 1,
         "Name": "Commandant",
-        "Text": "阻断器……要到极限了。",
+        "Text": "The blocker... is almost at its limit.",
         "Duration": 3.25,
         "IsMask": false
     },
@@ -1637,8 +1701,28 @@
         "Type": 3,
         "UiType": 1,
         "Name": "Commandant",
-        "Text": "成功了吗……?",
+        "Text": "Did it work...?",
         "Duration": 2.25,
         "IsMask": false
+    },
+    {
+        "Id": 90118306,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "Commandant",
+        "Text": "The bombs are planted. Hold this position for a while longer.",
+        "Duration": 3.25,
+        "IsMask": false
+    },
+    {
+        "Id": 21005701,
+        "Type": 7,
+        "UiType": 5,
+        "Text": "<b>Unauthorized data has been recovered</b>",
+        "Duration": 2,
+        "IsMask": false,
+        "Params": [
+            1.5
+        ]
     }
 ]

@@ -105,13 +105,15 @@ end
 ---@param y number Y坐标
 ---@param value number 分数值
 ---@param skillId number 技能ID（可选）
+---@param sourceBondIds number[]|nil 归因羁绊ID列表（可选）
 ---@return XLuckyTenant2Operation|nil
-function XLuckyTenant2OperationFactory.CreateAddScore(x, y, value, skillId)
+function XLuckyTenant2OperationFactory.CreateAddScore(x, y, value, skillId, sourceBondIds)
     return XLuckyTenant2OperationFactory.Create(XLuckyTenant2Enum.Operation.Score, {
         x = x,
         y = y,
         value = value,
         skillId = skillId or 0,
+        sourceBondIds = sourceBondIds,
     })
 end
 
@@ -121,14 +123,18 @@ end
 ---@param y number Y坐标
 ---@param fromPieceUid number 来源棋子UID（可选）
 ---@param skillId number 技能ID（可选）
+---@param roleWhipCount number|nil 305鞭尸特效次数（可选）
+---@param roleWhipSkillId number|nil 305技能ID（可选）
 ---@return XLuckyTenant2Operation|nil
-function XLuckyTenant2OperationFactory.CreateDeletePiece(pieceUid, x, y, fromPieceUid, skillId)
+function XLuckyTenant2OperationFactory.CreateDeletePiece(pieceUid, x, y, fromPieceUid, skillId, roleWhipCount, roleWhipSkillId)
     return XLuckyTenant2OperationFactory.Create(XLuckyTenant2Enum.Operation.DeletePiece, {
         pieceUid = pieceUid,
         x = x,
         y = y,
         fromPieceUid = fromPieceUid or 0,
         skillId = skillId or 0,
+        roleWhipCount = roleWhipCount or 0,
+        roleWhipSkillId = roleWhipSkillId or 0,
     })
 end
 
@@ -192,13 +198,15 @@ end
 ---@param stateType number 状态类型
 ---@param skillId number 状态技能ID
 ---@param rounds number 持续回合数
+---@param fromPieceUid number|nil 来源棋子UID
 ---@return XLuckyTenant2Operation|nil
-function XLuckyTenant2OperationFactory.CreateAddPieceState(pieceUid, stateType, skillId, rounds)
+function XLuckyTenant2OperationFactory.CreateAddPieceState(pieceUid, stateType, skillId, rounds, fromPieceUid)
     return XLuckyTenant2OperationFactory.Create(XLuckyTenant2Enum.Operation.AddPieceState, {
         pieceUid = pieceUid,
         stateType = stateType,
         skillId = skillId,
         rounds = rounds,
+        fromPieceUid = fromPieceUid or 0,
     })
 end
 
