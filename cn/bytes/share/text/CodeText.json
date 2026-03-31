@@ -2043,6 +2043,21 @@
         "Text": "勤务证明获取数量已达上限，只获取未超上限部分奖励"
     },
     {
+        "Id": 20012038,
+        "Key": "ItemExchangeTemplateNotFound",
+        "Text": "20012038道具兑换配置不存在"
+    },
+    {
+        "Id": 20012039,
+        "Key": "ItemExchangeCountNotEnough",
+        "Text": "20012039未达到最低兑换数量"
+    },
+    {
+        "Id": 20012040,
+        "Key": "ItemExchangeCountIllegal",
+        "Text": "20012040道具兑换数量非法"
+    },
+    {
         "Id": 20014001,
         "Key": "ArrangeManagerCalTypeFail",
         "Text": "ID不正确，无法识别类型"
@@ -3481,6 +3496,11 @@
         "Id": 20032014,
         "Key": "FightCheckManagerNotUseSegmentCheckError",
         "Text": "20032014没有使用分段校验"
+    },
+    {
+        "Id": 20032015,
+        "Key": "FightCheckManagerCvTypeIsError",
+        "Text": "20032015语音类型错误"
     },
     {
         "Id": 20033001,
@@ -5008,6 +5028,11 @@
         "Id": 20045048,
         "Key": "MatchRoomEnterWorldNotReady",
         "Text": "有玩家尚未准备完成"
+    },
+    {
+        "Id": 20045049,
+        "Key": "MatchFrequentOperation",
+        "Text": "20045049操作频繁，请稍后再试"
     },
     {
         "Id": 20046001,
@@ -14574,81 +14599,6 @@
         "Id": 20137015,
         "Key": "PassportBuyExpTranscend",
         "Text": "20137015无法购买无限区的等级"
-    },
-    {
-        "Id": 20137101,
-        "Key": "CombPassportActivityNotOpen",
-        "Text": "20137101活动未开启"
-    },
-    {
-        "Id": 20137102,
-        "Key": "CombPassportInfoNotExist",
-        "Text": "20137102通行证信息不存在"
-    },
-    {
-        "Id": 20137103,
-        "Key": "CombPassportNotUnlock",
-        "Text": "20137103通行证未解锁"
-    },
-    {
-        "Id": 20137104,
-        "Key": "CombPassportAlreadyUnlocked",
-        "Text": "20137104通行证已解锁"
-    },
-    {
-        "Id": 20137105,
-        "Key": "CombPassportInfoActivityIdNotMatch",
-        "Text": "20137105本期活动不存在该通行证"
-    },
-    {
-        "Id": 20137106,
-        "Key": "CombPassportLevelNotEnough",
-        "Text": "20137106领奖所需等级不足"
-    },
-    {
-        "Id": 20137107,
-        "Key": "CombPassportNoRewardCanGet",
-        "Text": "20137107无可领取奖励"
-    },
-    {
-        "Id": 20137108,
-        "Key": "CombPassportAlreadyMaxLevel",
-        "Text": "20137108已达到最大等级"
-    },
-    {
-        "Id": 20137109,
-        "Key": "CombPassportLevelCfgNotExist",
-        "Text": "20137109等级信息不存在"
-    },
-    {
-        "Id": 20137110,
-        "Key": "CombPassportRewardTemplateNotExist",
-        "Text": "20137110奖励不存在"
-    },
-    {
-        "Id": 20137111,
-        "Key": "CombPassportBuyLevelMustBiggerThanNow",
-        "Text": "20137111购买等级不能小于现有等级"
-    },
-    {
-        "Id": 20137112,
-        "Key": "CombPassportExpConfigError",
-        "Text": "20137112经验值配置错误"
-    },
-    {
-        "Id": 20137113,
-        "Key": "CombPassportRewardAlreadyGot",
-        "Text": "20137113奖励已领取"
-    },
-    {
-        "Id": 20137114,
-        "Key": "CombPassportBuyTimeAlreadyEnd",
-        "Text": "20137114本期活动购买时间已结束"
-    },
-    {
-        "Id": 20137115,
-        "Key": "CombPassportBuyExpTranscend",
-        "Text": "20137115无法购买无限区的等级"
     },
     {
         "Id": 20138001,
@@ -28031,6 +27981,171 @@
         "Text": 20324004
     },
     {
+        "Id": 20325001,
+        "Key": "PbrNotOpen",
+        "Text": "20325001功能未开启"
+    },
+    {
+        "Id": 20325002,
+        "Key": "MetaProgressionTemplateNoFound",
+        "Text": "20325002局外养成配置不存在"
+    },
+    {
+        "Id": 20325003,
+        "Key": "MetaProgressionPreNodeUnlock",
+        "Text": "20325003局外养成前置节点未解锁"
+    },
+    {
+        "Id": 20325004,
+        "Key": "MetaProgressionConditionLimit",
+        "Text": "20325004局外养成解锁条件限制"
+    },
+    {
+        "Id": 20325005,
+        "Key": "MetaProgressionNodeHasLock",
+        "Text": "20325005局外养成节点已解锁"
+    },
+    {
+        "Id": 20325006,
+        "Key": "PbrStateNoInShopping",
+        "Text": "20325006不在商店中"
+    },
+    {
+        "Id": 20325007,
+        "Key": "PbrNoShopData",
+        "Text": "20325007没有商店数据"
+    },
+    {
+        "Id": 20325008,
+        "Key": "PbrNoSegmentSettleData",
+        "Text": "20325008战双兄弟 没有局内数据"
+    },
+    {
+        "Id": 20325009,
+        "Key": "PbrShopFreshTemplateNoFound",
+        "Text": "20325009找不到商店刷新配置表"
+    },
+    {
+        "Id": 20325010,
+        "Key": "PbrShopTierWeightCfgError",
+        "Text": "20325010商店品阶权重配置错误"
+    },
+    {
+        "Id": 20325011,
+        "Key": "PbrShopCanNotFreshGood",
+        "Text": "20325011商店无法随机货物"
+    },
+    {
+        "Id": 20325012,
+        "Key": "PbrShopFreshCountLimit",
+        "Text": "20325012商店刷新次数不足"
+    },
+    {
+        "Id": 20325013,
+        "Key": "PbrShopFreshRepeatReq",
+        "Text": "20325013商店刷新重复请求"
+    },
+    {
+        "Id": 20325014,
+        "Key": "PbrShopSellItemNoExit",
+        "Text": "20325014商店货物不存在"
+    },
+    {
+        "Id": 20325015,
+        "Key": "PbrShopChooseTimeLimit",
+        "Text": "20325015商店购买次数限制"
+    },
+    {
+        "Id": 20325016,
+        "Key": "PbrItemCfgNoFound",
+        "Text": "20325016战双兄弟道具配置不存在"
+    },
+    {
+        "Id": 20325017,
+        "Key": "PbrItemTypeCfgError",
+        "Text": "20325017战双兄弟道具类型配置错误"
+    },
+    {
+        "Id": 20325018,
+        "Key": "PbrShopChooseOpLimit",
+        "Text": "20325018战双兄弟商店选择操作限制"
+    },
+    {
+        "Id": 20325019,
+        "Key": "PbrStageTemplateNoFound",
+        "Text": "20325019战双兄弟副本找不到关卡配置表"
+    },
+    {
+        "Id": 20325020,
+        "Key": "PbrFubenPreStageLimit",
+        "Text": "20325020战双兄弟前置关卡限制"
+    },
+    {
+        "Id": 20325021,
+        "Key": "PbrFubenCharacterCountLimit",
+        "Text": "20325021战双兄弟 进入战斗 角色个数必须为一个"
+    },
+    {
+        "Id": 20325022,
+        "Key": "PbrFubenCharacterCfgNoFound",
+        "Text": "20325022战双兄弟 进入战斗 角色配置不存在"
+    },
+    {
+        "Id": 20325023,
+        "Key": "PbrFubenCharacterStatsCfgNoFound",
+        "Text": "20325023战双兄弟 进入战斗 角色属性配置不存在"
+    },
+    {
+        "Id": 20325024,
+        "Key": "PbrFubenCharacterUnLock",
+        "Text": "20325024战双兄弟 进入战斗 角色未解锁"
+    },
+    {
+        "Id": 20325025,
+        "Key": "PbrFubenSettleDataNoFound",
+        "Text": "20325025战双兄弟 战斗结算 战斗没有传出结算数据"
+    },
+    {
+        "Id": 20325026,
+        "Key": "PbrFubenStageTimeLimit",
+        "Text": "20325026战双兄弟 关卡 时间开放限制"
+    },
+    {
+        "Id": 20325027,
+        "Key": "PbrFubenPassWaveLimit",
+        "Text": "20325027战双兄弟 未达到波次无法通关"
+    },
+    {
+        "Id": 20325028,
+        "Key": "PbrFubenSegmentSettleLimit",
+        "Text": "20325028战双兄弟 达到波次无法分段结算"
+    },
+    {
+        "Id": 20325029,
+        "Key": "PbrFubenRestartLimit",
+        "Text": "20325029战双兄弟重开限制"
+    },
+    {
+        "Id": 20325030,
+        "Key": "PbrFubenRebootLimit",
+        "Text": "20325030战双兄弟复活限制"
+    },
+    {
+        "Id": 20325031,
+        "Key": "PbrFubenPreFightInShop",
+        "Text": "20325031战双兄弟在商店状态不能发起战斗"
+    },
+    {
+        "Id": 20325032,
+        "Key": "ConditionPbrPassStageLimit",
+        "Text": "20325032战双兄弟关卡条件限制"
+    },
+    {
+        "Id": 20325033,
+        "Key": "ConditionPbrProgressionNodeCountLimit",
+        "Text": "20325033战双兄弟养成节点条件限制"
+    },
+    {
         "Id": 20420001,
         "Key": "RadioSignActivityNotOpen",
         "Text": "20420001活动未开启"
@@ -28059,6 +28174,11 @@
         "Id": 20421001,
         "Key": "FunctionalEntranceConfigNotFound",
         "Text": "20421001功能入口配置不存在"
+    },
+    {
+        "Id": 20422001,
+        "Key": "CommunityH5NotOpen",
+        "Text": "20422001活动未开启"
     },
     {
         "Id": 25000001,

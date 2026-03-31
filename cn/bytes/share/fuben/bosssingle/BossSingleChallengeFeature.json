@@ -783,6 +783,33 @@
         ]
     },
     {
+        "Id": 61,
+        "Name": "烬火祆现Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "每消除一个球，使Boss受到火属性伤害显著提升，最多叠加4层，持续10秒，重复触发刷新持续时间。",
+        "Type": 1,
+        "ScoreRate": 0,
+        "FightEventIds": [
+            2300061
+        ]
+    },
+    {
+        "Id": 62,
+        "Name": "震鸣于霆Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1010.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "每造成3次电束伤害，使Boss受到电束效应伤害显著提升，最多可叠加3层，持续10秒，重复触发刷新持续时间。",
+        "Type": 1,
+        "ScoreRate": 0,
+        "FightEventIds": [
+            2300062
+        ],
+        "ShowRecommendIds": [
+            4
+        ]
+    },
+    {
         "Id": 1001,
         "Name": "命络交罗Ⅰ",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon013.png",

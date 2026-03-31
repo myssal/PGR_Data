@@ -405,7 +405,7 @@
         "Key": "PvpPopUpTitle",
         "Values": [
             "亡命死竞",
-            "全新赛季"
+            "{0} 天启归来"
         ]
     },
     {
@@ -418,13 +418,13 @@
     {
         "Key": "PvpPopUpContent2",
         "Values": [
-            "新增玛门的嘉赏"
+            "赛季限时奖励"
         ]
     },
     {
         "Key": "PvpPopUpContent3",
         "Values": [
-            "赛季限时奖励"
+            "升级与饰品回归"
         ]
     },
     {
@@ -457,7 +457,7 @@
     {
         "Key": "PopUpversion",
         "Values": [
-            1
+            2
         ]
     },
     {
@@ -562,8 +562,8 @@
     {
         "Key": "PVPReasonTips",
         "Values": [
-            "{0}  {1}后开启",
-            "{0}  赛季已开启"
+            "{0}后开启",
+            "全局积分获取加速，可挑战额外对局"
         ]
     },
     {
@@ -609,6 +609,72 @@
         "Values": [
             "未接取委托",
             "委托进行中"
+        ]
+    },
+    {
+        "Key": "PvpRoundEndTips",
+        "Values": [
+            "{0}积分"
+        ]
+    },
+    {
+        "Key": "PvpExtraRoundTips",
+        "Values": [
+            "{0}~{1}积分"
+        ]
+    },
+    {
+        "Key": "PvpExMinRating",
+        "Values": [
+            0,
+            0,
+            -20,
+            -20,
+            -20,
+            -20,
+            -20,
+            -20,
+            -20,
+            -20,
+            -20,
+            -20,
+            -20
+        ]
+    },
+    {
+        "Key": "PvpExMaxRating",
+        "Values": [
+            99,
+            99,
+            99,
+            87,
+            87,
+            87,
+            71,
+            71,
+            71,
+            61,
+            50,
+            50,
+            60
+        ]
+    },
+    {
+        "Key": "PvpExtraPopupContent",
+        "Values": [
+            "当前已满足基本对局胜利结算条件,是否进行{0}场额外对局?"
+        ]
+    },
+    {
+        "Key": "PvpExtraPopupTxtTip",
+        "Values": [
+            "当前结算积分为{0},完成额外对局后,积分范围为{1}~{2}"
+        ]
+    },
+    {
+        "Key": "PvpExtraPopupTxtTipColor",
+        "Values": [
+            "1F85D8"
         ]
     }
 ]

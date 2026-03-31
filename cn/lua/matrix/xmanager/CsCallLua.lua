@@ -20,6 +20,7 @@ local VideoManager = {}
 local CommonGuide = {}
 local Movie = {}
 local Function = {}
+local Time = {}
 
 local TrueString = "True"
 local FalseString = "False"
@@ -647,6 +648,10 @@ function Function.BiwWorldSkipInterface(skipId)
     XMVCA.XBigWorldSkipFunction:SkipTo(skipId)
 end
 
+function Time.GetServerNowTimestamp()
+    return XTime.GetServerNowTimestamp()
+end
+
 CsCallLua = {}
 CsCallLua.Fuben = Fuben
 CsCallLua.Character = Character
@@ -670,3 +675,4 @@ CsCallLua.VideoManager = VideoManager
 CsCallLua.CommonGuide = CommonGuide
 CsCallLua.Movie = Movie
 CsCallLua.Function = Function
+CsCallLua.Time = Time

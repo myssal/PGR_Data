@@ -5980,7 +5980,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=28>{1}</size></color>"
+        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -11818,6 +11818,10 @@
         "Text": "当前资源已全部下载，需要重启游戏！"
     },
     {
+        "Key": "TryDownloadFailTip",
+        "Text": "用户进入玩法失败，请稍后重试"
+    },
+    {
         "Key": "RpgMakerGameTipClose",
         "Text": "{0}后关闭"
     },
@@ -12459,7 +12463,7 @@
     },
     {
         "Key": "CelicaTechDialogHintTip1",
-        "Text": "<size=36>检测到指挥官未拥有该成员，是否需要进行成员教学？</size>"
+        "Text": "<size=36>检测到指挥官未拥有该成员，且未完成该成员教学，是否需要进行成员教学？</size>"
     },
     {
         "Key": "CelicaTechDialogHintTip2",
@@ -20334,6 +20338,10 @@
         "Text": "跳过包含<color=#28CFFFFF>剧情探索及互动</color>的常规关卡流程，击败所有敌人即可通关"
     },
     {
+        "Key": "SnapLabel",
+        "Text": "折扣"
+    },
+    {
         "Key": "PassportBuyTimeAlreadyEnd",
         "Text": "本期战略评定手册购买时间已结束"
     },
@@ -20442,7 +20450,107 @@
         "Text": "使用{0}已到达上限"
     },
     {
+        "Key": "DynamicFaceRuleTitleTip",
+        "Text": "活动说明"
+    },
+    {
+        "Key": "DynamicFaceRuleContentTip",
+        "Text": "·规则说明：活动期间内限时上架联动动态表情包和涂装武器，包含：神威-好心情补给包、万事-好睡眠守护包、库洛姆-集中力补充包、卡穆-运动力提升包以及神威-黄油英雄武器箱"
+    },
+    {
+        "Key": "DynamicFaceActTip1",
+        "Text": "突击鹰小队X黄油小狗限时联动"
+    },
+    {
+        "Key": "DynamicFaceActTip2",
+        "Text": "战双帕弥什首款<color=#626c78>动态表情包</color>"
+    },
+    {
+        "Key": "FashionSuitProgress1",
+        "Text": "已收集{0}"
+    },
+    {
+        "Key": "FashionSuitProgress2",
+        "Text": "更多系列涂装待更新，敬请期待"
+    },
+    {
+        "Key": "FashionSuitProgress3",
+        "Text": "系列涂装更新中，全部更新后将解锁全收集奖励"
+    },
+    {
         "Key": "TeamPrefabCannotCoverEmptyTeam",
         "Text": "编队数据为空，无法覆盖"
+    },
+    {
+        "Key": "DrawTenDiscountDesc",
+        "Text": "本次卡池折扣次数 {0}/{1}"
+    },
+    {
+        "Key": "PayWithLoginErrorTips",
+        "Text": "账号信息过期，请重新登陆"
+    },
+    {
+        "Key": "BfrtTeamInstanceNotExist",
+        "Text": "交换失败：队伍实例不存在"
+    },
+    {
+        "Key": "ExtraChapterGetChapterDataFail",
+        "Text": "获取章节数据失败"
+    },
+    {
+        "Key": "ExtraChapterGetStageDataFail",
+        "Text": "获取关卡数据失败"
+    },
+    {
+        "Key": "ShortStoryChapterGetChapterDataFail",
+        "Text": "获取章节数据失败"
+    },
+    {
+        "Key": "ShortStoryChapterGetStageDataFail",
+        "Text": "获取关卡数据失败"
+    },
+    {
+        "Key": "DownloadAllCharacterFashion",
+        "Text": "该成员所有涂装"
+    },
+    {
+        "Key": "FashionDownloadIndividualDesc",
+        "Text": "{0}涂装{1}"
+    },
+    {
+        "Key": "FashionDownloadAllCharacterDesc",
+        "Text": "{0}所有未下载的涂装资源"
+    },
+    {
+        "Key": "FubenRepeatChallengeDoubleRewardTimes",
+        "Text": "{0}/{1}"
+    },
+    {
+        "Key": "DownloadFashionStarted",
+        "Text": "下载开始"
+    },
+    {
+        "Key": "SelectFashionToUninstall",
+        "Text": "请选择要卸载的涂装资源"
+    },
+    {
+        "Key": "SelectFashionToDownload",
+        "Text": "请选择要下载的涂装资源"
+    },
+    {
+        "Key": "DownloadFashionFinished",
+        "Text": "所选资源已下载完成"
+    },
+    {
+        "Key": "DownloadFashionFinishedRefresh",
+        "Text": "【{0}】下载完成"
+    },
+    {
+        "Key": "FashionAlreadyDownloaded",
+        "Text": "选择的涂装资源已下载完成"
+    },
+    {
+        "Key": "UninstallFashionConfirm",
+        "Text": "确定要卸载选中的涂装资源吗？"
     }
 ]

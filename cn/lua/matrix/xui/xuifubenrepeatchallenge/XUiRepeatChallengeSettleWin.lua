@@ -201,7 +201,7 @@ function XUiRepeatChallengeSettleWin:OnDynamicTableEvent(event, index, grid)
         grid:InitRootUi(self)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local rewardGoodsList = self.RewardLineList[index]
-        grid:Refresh(rewardGoodsList, index)
+        grid:Refresh(rewardGoodsList, index, self.StageCfg.StageId)
     end
 end
 

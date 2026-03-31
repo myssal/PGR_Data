@@ -17,12 +17,16 @@ local Creator = function()
         self.ui = ui
         self.Transform = self.ui.transform
         self.GameObject = self.ui.gameObject
+        self.ResIndex = 0
 
         local loginDownloadTr = self.Transform:Find("PanelBanner/LoginDownload")
+        print("loginDownloadTr", loginDownloadTr)
         if loginDownloadTr then
             local rawImageTr = loginDownloadTr:Find("ImgDownloadB")
+            print("rawImageTr", rawImageTr)
             if rawImageTr then
                 self.RawImageB = rawImageTr:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+                print("RawImageB", self.RawImageB)
             end
             self.effectTr = loginDownloadTr:Find("Effect")
             self.animationTr = loginDownloadTr:Find("Animation")
@@ -41,13 +45,18 @@ local Creator = function()
     end
 
     function XUiLaunchSwitchBackgournd:ClampIndex(index)
-        if index > #self.ResPathList then
+        local count = #self.ResPathList
+        if index > count then
             return 1
         elseif index < 1 then
-            return #self.ResPathList
+            return count
         else
             return index
         end
+    end
+
+    function XUiLaunchSwitchBackgournd:IsNewRes()
+        return self.RawImageB ~= nil
     end
 
     function XUiLaunchSwitchBackgournd:ShowIndex(index)
@@ -57,10 +66,13 @@ local Creator = function()
 
         local currentIndex = self:ClampIndex(index)
         local lastIndex
-        if self.ResIndex then
+        if self.ResIndex ~= 0 then
             lastIndex = self.ResIndex
         else
             lastIndex = currentIndex
+        end
+        if currentIndex > #self.ResPathList then
+            return
         end
 
         local pathF = self.ResPathList[currentIndex]
@@ -250,7 +262,6 @@ local Creator = function()
             self.BtnLast.gameObject:SetActiveEx(false)
             self.BtnNext.gameObject:SetActiveEx(false)
         else
-            self.DefaultDownloadBG.gameObject:SetActiveEx(false)
 
             local paths = Split(showPaths)
             self.DataList = {}
@@ -269,7 +280,18 @@ local Creator = function()
 
             self.CurrentIndex = 1
             self.UiLaunchSwitchBackgournd = XUiLaunchSwitchBackgournd.Ctor(XUiLaunchSwitchBackgournd, self.GridPanel)
+            print(string.format("paths:%s,NeedAutoScrollNext:%s", 
+                #paths, tostring(self.NeedAutoScrollNext)))
+            if not self.UiLaunchSwitchBackgournd:IsNewRes() then
+                self.DefaultDownloadBG.gameObject:SetActive(true)
+                self.PanelList.gameObject:SetActive(false)
+                self.BtnLast.gameObject:SetActive(false)
+                self.BtnNext.gameObject:SetActive(false)
+                self.NeedAutoScrollNext = false
+                return
+            end
             self.UiLaunchSwitchBackgournd:SetData(self.DataList)
+            self.DefaultDownloadBG.gameObject:SetActiveEx(false)
             self.LastClickTime = 0
             -- self.DynamicTable = XDynamicTableCurveLaunch.New(self.PanelList)
             -- self.DynamicTable:SetProxy(XUiLaunchImageGrid)
@@ -312,6 +334,10 @@ local Creator = function()
                 self.UiLaunchSwitchBackgournd:AutoNext()
                 self.LastClickTime = CS.UnityEngine.Time.realtimeSinceStartup
             end
+        end
+
+        if self._IsShowDownloadDefault then
+            self.UiDownload:SetActiveEx(true)
         end
     end
     
@@ -842,8 +868,9 @@ local Creator = function()
 
         if self.Obj and self.Obj:Exist() then
             local nameList = self.Obj.NameList
-            for _, v in pairs(nameList) do
-                self[v] = nil
+            for i = 0, nameList.Count - 1 do
+                local name = nameList[i]
+                self[name] = nil
             end
             self.Obj = nil
         end
@@ -1015,6 +1042,10 @@ local Creator = function()
         dict["auto_wifi"] = tostring(XLaunchDlcManager.IsSelectWifiAutoDownload())
         
         CS.XRecord.Record(dict, "80032", "SubpackageSelect")
+    end
+
+    function XUiLaunchUi:SetDowloadTest()
+        self._IsShowDownloadDefault = true
     end
     
     return XUiLaunchUi

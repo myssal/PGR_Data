@@ -281,12 +281,26 @@ M.ClearDownloadRecord = function(resId)
     LaunchDownloadRecord[resId] = STATE_DEFAULT
 
     -- 3. 按文件名删除 DownloadedMap 记录
-    --（要求调用方提供 indexInfo，这里只删 ResId 对应的所有文件）
+    -- 【修复】清除前检查该物理文件是否被其他未卸载的 resId 引用，避免误清共享文件标记
     local indexInfo = XMVCA.XSubPackage:GetSubIndexInfo()[resId]
     if indexInfo then
+        local fileToResIds = XMVCA.XSubPackage:GetFileToResIds()
         for _, info in pairs(indexInfo) do
-            local fileName = info[1]  -- fileName
-            DownloadedMap[fileName] = nil
+            local fileName = info[1]  -- 物理文件名(hash)
+            -- 检查该物理文件是否被其他未卸载的 resId 引用
+            local isShared = false
+            local owners = fileToResIds and fileToResIds[fileName]
+            if owners then
+                for _, ownerResId in ipairs(owners) do
+                    if ownerResId ~= resId and not M.HasUninstalledResId(ownerResId) then
+                        isShared = true
+                        break
+                    end
+                end
+            end
+            if not isShared then
+                DownloadedMap[fileName] = nil
+            end
         end
     end
 
@@ -578,10 +592,47 @@ M.CheckResIsIgnoreDownload = function(resId, needShowSelect, isOpen)
     return DlcIgnoreDownloadIfNotDownload[resId] ~= nil
 end
 
+--====AutoDownload涂装资源 begin=====
+local AutoDownloadResIds = nil
+
 --- 清理在热更阶段产生的local变量
 M.ClearLaunchCache = function()
     DlcIgnoreDownloadIfNotDownload = nil
+    AutoDownloadResIds = nil
 end
+
+--- 初始化AutoDownload涂装ResId列表（从LaunchConfig读取）
+M.InitAutoDownloadResIds = function()
+    if AutoDownloadResIds then
+        return
+    end
+    AutoDownloadResIds = {}
+    local resIdsStr = CS.XLaunchManager.LaunchConfig:GetString("AutoDownloadFashionResIds")
+    if not resIdsStr or resIdsStr == "" or resIdsStr == "null" then
+        CsLog.Debug("[DLC] AutoDownloadFashionResIds: empty or not found")
+        return
+    end
+    local count = 0
+    for resId in string.gmatch(resIdsStr, "([^,]+)") do
+        local id = tonumber(resId)
+        if id then
+            AutoDownloadResIds[id] = true
+            count = count + 1
+        end
+    end
+    CsLog.Debug("[DLC] AutoDownloadFashionResIds loaded, count: " .. count)
+end
+
+--- 检查ResId是否为AutoDownload涂装资源
+---@param resId number
+---@return boolean
+M.IsAutoDownloadRes = function(resId)
+    if not AutoDownloadResIds then
+        M.InitAutoDownloadResIds()
+    end
+    return AutoDownloadResIds[resId] == true
+end
+--====AutoDownload涂装资源 end=====
 
 --======== 业务层接口 end ====
 

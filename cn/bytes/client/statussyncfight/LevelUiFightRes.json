@@ -1,128 +1,564 @@
 [
     {
-        "Id": 1
+        "Id": 1,
+        "UiResGroupId": 1,
+        "UiType": "UiFightComponentDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
     },
     {
         "Id": 2,
-        "UiType": [
-            1,
-            2,
-            9,
-            1001,
-            4,
-            3,
-            1002,
-            8,
-            2001,
-            2002,
-            2003,
-            2004,
-            1007,
-            11,
-            10,
-            1003,
-            7,
-            1004,
-            1006,
-            1011,
-            1009,
-            1010
-        ],
-        "PrefabUrl": [
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkJoystickNode.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkCharacterControlPanel3.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiNpcFillBar/Lifu/UiDlcRelinkEnergyR4Lifu.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkTeamInfo.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkStagePanel.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkTargetPanel.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkControlPanel.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkMenu.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeGuide.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeConversation.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeTips.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeTutorial.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGameplay.prefab",
-            "_",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkDialogue.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkStageInfo.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkLockTarget.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkChatRoulette.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkScenePlayer.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkScenePlayerTeammate.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkTeammateInfo.prefab",
-            "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkMechanicInfo.prefab"
-        ],
-        "ScriptName": [
-            "XUiFightDlcRelinkJoystickNode",
-            "XUiFightDlcRelink3SkillNode",
-            "XUiFightDlcRelinkEnergyNode",
-            "XUiFightDlcRelinkTeamInformationNode",
-            "XUiFightDlcRelinkStagePanelNode",
-            "XUiFightDlcCommonTargetPanelNode",
-            "XUiFightDlcExtraControlNode",
-            "XUiFightDlcMenuNode",
-            "XUiNormalGuideNode",
-            "XUiGuideConversationNode",
-            "XUiGuideTextNode",
-            "XUiGuideImageVideoNode",
-            "XUiFightDlcRelinkGameplayNode",
-            "_",
-            "XUiFightDlcRelinkDialogueNode",
-            "XUiFightDlcRelinkStageInfoNode",
-            "XUiFightDlcLockTargetNode",
-            "XUiFightDlcRelinkChatRouletteNode",
-            "XUiFightDlcRelinkPlayerInfoNode",
-            "XUiFightDlcRelinkTeammateIndicatorNode",
-            "XUiFightDlcRelinkTeammateInfoNode",
-            "XUiFightDlcRelinkMechanicInfoNode"
-        ],
-        "OpenOrder": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            2,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1,
-            0,
-            0,
-            0,
-            3,
-            3,
-            0,
-            0,
-            0
-        ],
-        "IsOpen": [
-            true,
-            true,
-            true,
-            true,
-            false,
-            true,
-            true,
-            true,
-            false,
-            false,
-            false,
-            false,
-            true,
-            true,
-            false,
-            false,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true
-        ]
+        "UiResGroupId": 1,
+        "UiType": "UiFightTipsDLC",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 3,
+        "UiResGroupId": 1,
+        "UiType": "UiFightGuideDLC",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 4,
+        "UiResGroupId": 1,
+        "UiType": "UiFightDlcLevelPlayTimer",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 5,
+        "UiResGroupId": 1,
+        "UiType": "UiFightRebornDLC",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 6,
+        "UiResGroupId": 1,
+        "UiType": "UiFightOnlineMsgDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 7,
+        "UiResGroupId": 1,
+        "UiType": "UiFightDlcResilience",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 8,
+        "UiResGroupId": 1,
+        "UiType": "UiFightControlDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 9,
+        "UiResGroupId": 1,
+        "UiType": "UiFightRelinkControl",
+        "OpenOrder": 1,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 10,
+        "UiResGroupId": 1,
+        "UiType": "UiDlcRelinkFightCharacterEnergy",
+        "ProxyName": "XUiFightRelinkCharacterEnergy",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 11,
+        "UiResGroupId": 2,
+        "UiType": "UiFightComponentDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 12,
+        "UiResGroupId": 2,
+        "UiType": "UiFightTipsDLC",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 13,
+        "UiResGroupId": 2,
+        "UiType": "UiFightGuideDLC",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 14,
+        "UiResGroupId": 2,
+        "UiType": "UiFightDlcLevelPlayTimer",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 15,
+        "UiResGroupId": 2,
+        "UiType": "UiFightControlDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 16,
+        "UiResGroupId": 2,
+        "UiType": "UiFightDlcCasualGames",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 17,
+        "UiResGroupId": 3,
+        "UiType": "UiFightComponentDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 18,
+        "UiResGroupId": 3,
+        "UiType": "UiFightTipsDLC",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 19,
+        "UiResGroupId": 3,
+        "UiType": "UiFightGuideDLC",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 20,
+        "UiResGroupId": 3,
+        "UiType": "UiFightDlcLevelPlayTimer",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 21,
+        "UiResGroupId": 3,
+        "UiType": "UiFightControlDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 22,
+        "UiResGroupId": 3,
+        "UiType": "UiFightDlcMouseHunter",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 23,
+        "UiResGroupId": 4,
+        "UiType": "UiBigWorldFightComponentDLC",
+        "ProxyName": "XUiFightComponentDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 24,
+        "UiResGroupId": 4,
+        "UiType": "UiFightTipsDLC",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 25,
+        "UiResGroupId": 4,
+        "UiType": "UiBigWorldFightGuideDLC",
+        "ProxyName": "XUiFightGuideDLC",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 26,
+        "UiResGroupId": 4,
+        "UiType": "UiFightDlcLevelPlayTimer",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 27,
+        "UiResGroupId": 4,
+        "UiType": "UiFightDlcDrama",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 28,
+        "UiResGroupId": 4,
+        "UiType": "UiFightDlcDramaLog",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 29,
+        "UiResGroupId": 4,
+        "UiType": "UiFightDlcExplorationControl",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 30,
+        "UiResGroupId": 4,
+        "UiType": "UiFightDlcNavigation",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 31,
+        "UiResGroupId": 4,
+        "UiType": "UiFightDlcVideoPlayer",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 32,
+        "UiResGroupId": 4,
+        "UiType": "UiBigWorldBeamCannonControl",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 33,
+        "UiResGroupId": 5,
+        "UiType": "UiFightTipsDLC",
+        "OpenOrder": 3,
+        "InitState": 0,
+        "HasNode": false
+    },
+    {
+        "Id": 34,
+        "UiResGroupId": 5,
+        "UiType": "UiFightControlDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 35,
+        "UiResGroupId": 5,
+        "UiType": "UiFightDlcAutoChess",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 36,
+        "UiResGroupId": 5,
+        "UiType": "UiFightDlcLevelPlayTimer",
+        "OpenOrder": 2,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 37,
+        "UiResGroupId": 6,
+        "UiType": "UiFightComponentDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 38,
+        "UiResGroupId": 6,
+        "UiType": "UiFightControlDLC",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": false
+    },
+    {
+        "Id": 39,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonJoystick",
+        "ProxyEnumName": "CommonJoystick",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkJoystickNode.prefab",
+        "ScriptName": "XUiFightDlcRelinkJoystickNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 40,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonControl",
+        "ProxyEnumName": "CommonControl",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkCharacterControlPanel3.prefab",
+        "ScriptName": "XUiFightDlcRelink3SkillNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 41,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonControl",
+        "ProxyEnumName": "CommonControl",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkCharacterControlPanel3.prefab",
+        "ScriptName": "XUiFightDlcRelink4SkillNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 42,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonEnergy",
+        "ProxyEnumName": "CommonEnergy",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiNpcFillBar/Lifu/UiDlcRelinkEnergyR4Lifu.prefab",
+        "ScriptName": "XUiFightDlcRelinkEnergyNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 43,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonTeamInfo",
+        "ProxyEnumName": "RelinkTeamInfo",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkTeamInfo.prefab",
+        "ScriptName": "XUiFightDlcRelinkTeamInformationNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 44,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonUiDlcStagePanel",
+        "ProxyEnumName": "CommonTip",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkStagePanel.prefab",
+        "ScriptName": "XUiFightDlcRelinkStagePanelNode",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": true
+    },
+    {
+        "Id": 45,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonTargetPanel",
+        "ProxyEnumName": "CommonTargetInfo",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkTargetPanel.prefab",
+        "ScriptName": "XUiFightDlcCommonTargetPanelNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 46,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcRelinkExtraControl",
+        "ProxyEnumName": "RelinkControl",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkControlPanel.prefab",
+        "ScriptName": "XUiFightDlcExtraControlNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 47,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonMenu",
+        "ProxyEnumName": "CommonMenu",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkMenu.prefab",
+        "ScriptName": "XUiFightDlcMenuNode",
+        "OpenOrder": 2,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 48,
+        "UiResGroupId": 6,
+        "UiType": "UiDlcGuide",
+        "ProxyName": "XUiFightDlcCommonGuide",
+        "ProxyEnumName": "CommonGuide",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeGuide.prefab",
+        "ScriptName": "XUiNormalGuideNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 49,
+        "UiResGroupId": 6,
+        "UiType": "UiDlcGuide",
+        "ProxyName": "XUiFightDlcCommonGuide",
+        "ProxyEnumName": "CommonGuide",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeConversation.prefab",
+        "ScriptName": "XUiGuideConversationNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 50,
+        "UiResGroupId": 6,
+        "UiType": "UiDlcGuide",
+        "ProxyName": "XUiFightDlcCommonGuide",
+        "ProxyEnumName": "CommonGuide",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeTips.prefab",
+        "ScriptName": "XUiGuideTextNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 51,
+        "UiResGroupId": 6,
+        "UiType": "UiDlcGuide",
+        "ProxyName": "XUiFightDlcCommonGuide",
+        "ProxyEnumName": "CommonGuide",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeTutorial.prefab",
+        "ScriptName": "XUiGuideImageVideoNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 52,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcRelinkGameplay",
+        "ProxyEnumName": "RelinkGameplay",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGameplay.prefab",
+        "ScriptName": "XUiFightDlcRelinkGameplayNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 53,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonReborn",
+        "ProxyEnumName": "CommonReborn",
+        "OpenOrder": 1,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 54,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonDialogue",
+        "ProxyEnumName": "CommonDialog",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkDialogue.prefab",
+        "ScriptName": "XUiFightDlcRelinkDialogueNode",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": true
+    },
+    {
+        "Id": 55,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcRelinkStageInfo",
+        "ProxyEnumName": "RelinkTips",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkStageInfo.prefab",
+        "ScriptName": "XUiFightDlcRelinkStageInfoNode",
+        "OpenOrder": 0,
+        "InitState": 0,
+        "HasNode": true
+    },
+    {
+        "Id": 56,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcCommonLockTarget",
+        "ProxyEnumName": "CommonLockTarget",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkLockTarget.prefab",
+        "ScriptName": "XUiFightDlcLockTargetNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 57,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcRelinkChatRoulette",
+        "ProxyEnumName": "RelinkRoulette",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkChatRoulette.prefab",
+        "ScriptName": "XUiFightDlcRelinkChatRouletteNode",
+        "OpenOrder": 3,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 58,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcRelinkPlayerInfo",
+        "ProxyEnumName": "RelinkPlayerInfo",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkScenePlayer.prefab",
+        "ScriptName": "XUiFightDlcRelinkPlayerInfoNode",
+        "OpenOrder": 3,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 59,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcRelinkTeammateIndicator",
+        "ProxyEnumName": "RelinkTeammateIndicator",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkScenePlayerTeammate.prefab",
+        "ScriptName": "XUiFightDlcRelinkTeammateIndicatorNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 60,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcRelinkTeammateInfo",
+        "ProxyEnumName": "RelinkTeammateInfo",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkTeammateInfo.prefab",
+        "ScriptName": "XUiFightDlcRelinkTeammateInfoNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
+    },
+    {
+        "Id": 61,
+        "UiResGroupId": 6,
+        "UiType": "UiFightDlcRelinkMechanicInfo",
+        "ProxyEnumName": "RelinkMechanicInfo",
+        "PrefabUrl": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkMechanicInfo.prefab",
+        "ScriptName": "XUiFightDlcRelinkMechanicInfoNode",
+        "OpenOrder": 0,
+        "InitState": 1,
+        "HasNode": true
     }
 ]
