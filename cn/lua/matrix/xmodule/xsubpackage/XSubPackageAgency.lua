@@ -44,6 +44,7 @@ function XSubPackageAgency:OnInit()
     self._IsPause = false
 
     self._CheckTypeCountThisLogin = {}  -- 本次登录检测类型触发次数
+    self._BattleFashionTipDismissedThisLogin = false  -- 战斗涂装未下载提示本次登录不再提示
     self._FashionDownloadPromptCacheKeyPrefix = "FashionDownloadPrompt_"  -- 涂装下载提示缓存Key前缀
 
     self._ThreadCount = SingleThreadCount --线程数
@@ -116,11 +117,13 @@ function XSubPackageAgency:CheckFashionDownloadPrompt()
         return false
     end
 
-    -- 2. 统计玩家拥有的涂装数量
-    local ownFashions = XDataCenter.FashionManager.GetOwnFashionDataDic()
+    -- 2. 统计玩家拥有的涂装数量（仅计入 FashionDownloadConfig 中的涂装，剔除默认皮肤）
+    local allConfigs = self._Model:GetAllFashionDownloadConfigs()
     local fashionCount = 0
-    for _ in pairs(ownFashions) do
-        fashionCount = fashionCount + 1
+    for fashionId in pairs(allConfigs) do
+        if XDataCenter.FashionManager.CheckHasFashion(fashionId) then
+            fashionCount = fashionCount + 1
+        end
     end
     if fashionCount < threshold then
         return false
@@ -1869,6 +1872,7 @@ function XSubPackageAgency:OnNetworkReachabilityChanged()
 end
 
 function XSubPackageAgency:OnLoginSuccess()
+    self._BattleFashionTipDismissedThisLogin = false
     if not self:IsOpen() then
         return
     end
@@ -2259,6 +2263,18 @@ function XSubPackageAgency:GetFashionModelFallback(modelId)
     end
 
     return entry.DefaultModelId
+end
+
+--- 设置战斗涂装未下载提示本次登录不再提示
+---@param value boolean
+function XSubPackageAgency:SetBattleFashionTipDismissed(value)
+    self._BattleFashionTipDismissedThisLogin = value
+end
+
+--- 获取战斗涂装未下载提示是否本次登录不再提示
+---@return boolean
+function XSubPackageAgency:IsBattleFashionTipDismissed()
+    return self._BattleFashionTipDismissedThisLogin
 end
 
 --- 检查涂装资源是否已下载

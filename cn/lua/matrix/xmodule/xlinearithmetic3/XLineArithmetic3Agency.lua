@@ -253,6 +253,10 @@ function XLineArithmetic3Agency:ExOnSkip()
 end
 
 function XLineArithmetic3Agency:ExCheckInTime()
+    if not self._Model:CheckHasValidActivityId() then
+        return false
+    end
+    
     local activityConfig = self._Model:GetActivityConfig()
     if not activityConfig then
         return false

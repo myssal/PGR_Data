@@ -137,6 +137,11 @@ function XPBRCharacterControl:GetCharacterStatusInfo(customCharId, needSort, noV
                     -- 其中一方没有有效配置时保底处理
                     return true
                 end
+                
+                -- 有推荐的属性在最前面
+                if a.IsRecommend ~= b.IsRecommend then
+                    return a.IsRecommend
+                end
 
                 if not XTool.IsNumberValidEx(statusCfgA.ShowPriority) and not XTool.IsNumberValidEx(statusCfgB.ShowPriority) then
                     -- 如果两者都没有配优先级的话，按照Id升序排序

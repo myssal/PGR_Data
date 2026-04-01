@@ -415,17 +415,15 @@ function XLineArithmetic3Control:UpdateReward()
     self._UiData.RewardOnMainUi = rewards
 
     local activityConfig = self._Model:GetActivityConfig()
-    if not activityConfig or not activityConfig.RewardShow then
+    if not activityConfig or not XTool.IsNumberValidEx(activityConfig.RewardId) then
         return
     end
 
     -- 解析奖励显示配置
-    for _, rewardId in ipairs(activityConfig.RewardShow) do
-        local rewardConfig = XRewardManager.GetRewardList(rewardId)
-        if rewardConfig then
-            for _, reward in ipairs(rewardConfig) do
-                table.insert(rewards, reward)
-            end
+    local rewardConfig = XRewardManager.GetRewardList(activityConfig.RewardId)
+    if rewardConfig then
+        for _, reward in ipairs(rewardConfig) do
+            table.insert(rewards, reward)
         end
     end
 end

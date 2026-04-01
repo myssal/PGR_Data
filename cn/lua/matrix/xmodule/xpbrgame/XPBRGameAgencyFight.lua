@@ -7,11 +7,11 @@ function XPBRGameAgency:FightPartialInit()
 end
 
 function XPBRGameAgency:FightPartialInitEvent()
-    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.ShowWinSettle, self)
+    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self._OnFightSettle, self)
 end
 
 function XPBRGameAgency:FightPartialRelease()
-    XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.ShowWinSettle, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self._OnFightSettle, self)
 end
 
 function XPBRGameAgency:FightPartialReset()
@@ -66,6 +66,8 @@ end
 --- -> CallFinishFight
 ---@param result XFightResult
 function XPBRGameAgency:SettleFight(result)
+    result:GetFightResult()
+    
     --- 如果是暂停界面退出的，走特殊逻辑
     local fightExitType = self._Model:GetFightExitType()
 
@@ -147,7 +149,7 @@ function XPBRGameAgency:FinishFight(settleData)
     end
     
     -- 弹出结算
-    self:ShowWinSettle(settleData)
+    self:_ShowWinSettle(settleData)
 end
 
 
@@ -170,7 +172,22 @@ function XPBRGameAgency:DoSafeFightExit()
     return false
 end
 
-function XPBRGameAgency:ShowWinSettle(settleData)
+function XPBRGameAgency:_OnFightSettle(settleData, res)
+    if not res then
+        return
+    end
+    
+    if res.Code ~= XCode.Success then
+        -- 校验失败默认游戏失败
+        if settleData then
+            settleData.IsWin = false
+        end
+    end
+    
+    self:_ShowWinSettle(settleData)
+end
+
+function XPBRGameAgency:_ShowWinSettle(settleData)
     local stageId = settleData.StageId
     local stageType = XDataCenter.FubenManager.GetStageType(stageId)
 

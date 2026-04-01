@@ -55,6 +55,11 @@ function XLineArithmetic3Model:GetActivityId()
     return self._ActivityId or 0
 end
 
+---@return boolean
+function XLineArithmetic3Model:CheckHasValidActivityId()
+    return XTool.IsNumberValidEx(self._ActivityId)
+end
+
 --- 获取关卡星数
 ---@param stageId number 关卡ID
 ---@return number 星数，未通关返回0
