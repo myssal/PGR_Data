@@ -162,14 +162,14 @@ function XUiDownloadFashion:OnBtnDownloadClick()
     self._IsDownloading = true
     self._DownloadingResIds = resIds
     self:ClearSelection()
-    self:RefreshView()
+    self:RefreshGridDataOnly()
     self:UpdatePanelState()
 end
 
 function XUiDownloadFashion:OnBtnUninstallClick()
     -- 本界面自身正在下载中，不允许卸载
     if self._IsDownloading then
-        XUiManager.TipText("SubpackageUninstallRejectDownloading")
+        XUiManager.TipText("DownloadingFashionTip")
         return
     end
 
@@ -349,13 +349,24 @@ function XUiDownloadFashion:GetFashionDownloadList()
     return result
 end
 
---- 判断 resId 是否处于下载中状态
+--- 判断 resId 是否处于下载中状态（实体状态 或 在当前下载批次中）
 function XUiDownloadFashion:_CheckResDownloading(resId)
     local resItem = XMVCA.XSubPackage:GetResourceItem(resId)
-    if not resItem then return false end
-    local state = resItem:GetState()
-    local STATE = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
-    return state == STATE.DOWNLOADING or state == STATE.PREPARE_DOWNLOAD
+    if resItem then
+        local state = resItem:GetState()
+        local STATE = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
+        if state == STATE.DOWNLOADING or state == STATE.PREPARE_DOWNLOAD then
+            return true
+        end
+    end
+    if self._IsDownloading then
+        for _, downloadResId in ipairs(self._DownloadingResIds or {}) do
+            if downloadResId == resId then
+                return true
+            end
+        end
+    end
+    return false
 end
 
 function XUiDownloadFashion:UpdateFilterBtnState()
@@ -512,6 +523,7 @@ end
 
 -- 格子点击事件
 function XUiDownloadFashion:OnGridClick(grid)
+    if self._IsDownloading then return end
     if not grid or not grid.Data then return end
     local resId = grid.Data.ResId
     local isSelected = not grid.Data.IsSelected
@@ -536,6 +548,7 @@ end
 function XUiDownloadFashion:UpdatePanelState()
     self.PanelSelecting.gameObject:SetActiveEx(not self._IsDownloading)
     self.PanelDownloading.gameObject:SetActiveEx(self._IsDownloading)
+    self.BtnCancelDownload.gameObject:SetActiveEx(self._IsDownloading)
 
     if self._IsDownloading then
         self:UpdateDownloadProgress()
