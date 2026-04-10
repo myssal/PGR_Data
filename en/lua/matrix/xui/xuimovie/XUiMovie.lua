@@ -552,6 +552,10 @@ end
 
 --============================================================== #region BtnAuto ==============================================================
 function XUiMovie:OnClickBtnAuto()
+    if self:SelectPanelShowing() or self:IsDestroy() then
+        return
+    end
+    
     local isAutoPlay = not XDataCenter.MovieManager.GetIsAutoPlay()
     XDataCenter.MovieManager.SetMoviePause(false)
     XDataCenter.MovieManager.SetAutoPlay(isAutoPlay)
@@ -576,6 +580,8 @@ function XUiMovie:OnClickBtnAuto()
         -- 自动播放和暂停文本
         self:RefreshTextPause()
     end
+
+    XDataCenter.MovieManager.DispatchAutoPlayEvent()
 end
 
 function XUiMovie:OnClickBtnAutoing()
@@ -592,6 +598,7 @@ function XUiMovie:OnClickBtnAutoing()
     self.BtnAutoing.gameObject:SetActiveEx(false)
     
     self:ClearAutoTimer()
+    XDataCenter.MovieManager.DispatchAutoPlayEvent()
 end
 
 -- 刷新暂停文本
