@@ -3,36 +3,42 @@
         "ActorSignificance": 1,
         "NeedLod": true,
         "NeedStreaming": true,
-        "NeedMove": true
+        "NeedMove": true,
+        "MinTickDelta": 0.1
     },
     {
         "ActorSignificance": 2,
         "NeedLod": true,
         "NeedStreaming": true,
-        "NeedMove": true
+        "NeedMove": true,
+        "MinTickDelta": 10.0
     },
     {
         "ActorSignificance": 3,
         "NeedLod": true,
         "NeedStreaming": true,
-        "NeedMove": false
+        "NeedMove": false,
+        "MinTickDelta": 10.0
     },
     {
         "ActorSignificance": 4,
         "NeedLod": false,
         "NeedStreaming": true,
-        "NeedMove": true
+        "NeedMove": true,
+        "MinTickDelta": 0.5
     },
     {
         "ActorSignificance": 5,
         "NeedLod": true,
         "NeedStreaming": true,
-        "NeedMove": false
+        "NeedMove": false,
+        "MinTickDelta": 10.0
     },
     {
         "ActorSignificance": 6,
         "NeedLod": false,
         "NeedStreaming": false,
-        "NeedMove": false
+        "NeedMove": false,
+        "MinTickDelta": 10.0
     }
 ]

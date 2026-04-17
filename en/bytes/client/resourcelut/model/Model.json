@@ -122,7 +122,11 @@
     },
     {
         "Id": "Mb1AzazelMd010001",
-        "ModelPath": "Assets/Product/Role/CharaterPrefab/Mb1AzazelMd010001.prefab"
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Mb1AzazelMd010001.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Mb1AzazelMd010001/Mb1AzazelMd010001/Mb1AzazelMd010001.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Mb1AzazelMd010001/Mb1AzazelMd010001/Mb1AzazelMd010001Level1.controller"
+        ]
     },
     {
         "Id": "Mb1AzazelMd010002",
@@ -585,6 +589,7 @@
     {
         "Id": "Mb1MargaretMd010001",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Mb1MargaretMd010001.prefab",
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/Mb1MargaretMd010001Low.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Mb1MargaretMd010001/Mb1MargaretMd010001/Mb1MargaretMd010001.controller"
     },
     {
@@ -682,6 +687,11 @@
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Mb1MotorMd000002.prefab",
         "LowModelPath": "Assets/Product/Role/CharaterPrefab/Mb1MotorMd000001Low.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Mb1MotorMd000002/Mb1MotorMd000002/Mb1MotorMd000002.controller"
+    },
+    {
+        "Id": "Mb1NiggurathMd010001",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Mb1NiggurathMd010001.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Mb1NiggurathMd010001/Mb1NiggurathMd010001/Mb1NiggurathMd010001.controller"
     },
     {
         "Id": "Mb1OniisanMd010001",
@@ -2650,6 +2660,20 @@
         "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3JellyfishonMdCommon/Pet3JellyfishonMdCommonDisplay/UiStand1.anim"
     },
     {
+        "Id": "Pet3LionoffMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Pet3LionoffMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Pet3LionoffMd010011/Pet3LionoffMd010011/Pet3LionoffMd010011.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/Pet3LionoffMd010011/Pet3LionoffMd010011Display/Pet3LionoffMd010011Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3LionoffMdCommon/Pet3LionoffMdCommonDisplay/UiStand1.anim"
+    },
+    {
+        "Id": "Pet3LiononMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Pet3LiononMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Pet3LiononMd010011/Pet3LiononMd010011/Pet3LiononMd010011.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/Pet3LiononMd010011/Pet3LiononMd010011Display/Pet3LiononMd010011Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3LiononMdCommon/Pet3LiononMdCommonDisplay/UiStand1.anim"
+    },
+    {
         "Id": "Pet3MaoffMd010011",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Pet3MaoffMd010011.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Pet3MaoffMd010011/Pet3MaoffMd010011/Pet3MaoffMd010011.controller",
@@ -2899,9 +2923,41 @@
         "ControllerPath": "Assets/Product/Role/Animation/Q1AolajiangMd010011/Q1AolajiangMd010011/Q1AolajiangMd010011.controller"
     },
     {
+        "Id": "Q1ChangmaoMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Q1ChangmaoMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Q1ChangmaoMd010011/Q1ChangmaoMd010011/Q1ChangmaoMd010011.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Q1ChangmaoMd010011/Q1ChangmaoMd010011/Q1ChangmaoMd010011Level1.controller"
+        ]
+    },
+    {
         "Id": "Q1ChangyuMd010011",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Q1ChangyuMd010011.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Q1ChangyuMd010011/Q1ChangyuMd010011/Q1ChangyuMd010011.controller"
+    },
+    {
+        "Id": "Q1GongjianMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Q1GongjianMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Q1GongjianMd010011/Q1GongjianMd010011/Q1GongjianMd010011.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Q1GongjianMd010011/Q1GongjianMd010011/Q1GongjianMd010011Level1.controller"
+        ]
+    },
+    {
+        "Id": "Q1GuanjiaMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Q1GuanjiaMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Q1GuanjiaMd010011/Q1GuanjiaMd010011/Q1GuanjiaMd010011.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Q1GuanjiaMd010011/Q1GuanjiaMd010011/Q1GuanjiaMd010011Level1.controller"
+        ]
+    },
+    {
+        "Id": "Q1HuanMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Q1HuanMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Q1HuanMd010011/Q1HuanMd010011/Q1HuanMd010011.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Q1HuanMd010011/Q1HuanMd010011/Q1HuanMd010011Level1.controller"
+        ]
     },
     {
         "Id": "Q1LifuMd010011",
@@ -2915,6 +2971,14 @@
         "Id": "Q1LuxiyaMd010011",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Q1LuxiyaMd010011.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Q1LuxiyaMd010011/Q1LuxiyaMd010011/Q1LuxiyaMd010011.controller"
+    },
+    {
+        "Id": "Q1PentujixieMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Q1PentujixieMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Q1PentujixieMd010011/Q1PentujixieMd010011/Q1PentujixieMd010011.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Q1PentujixieMd010011/Q1PentujixieMd010011/Q1PentujixieMd010011Level1.controller"
+        ]
     },
     {
         "Id": "Q1XiulijigongMd010011",
@@ -3312,6 +3376,14 @@
         ]
     },
     {
+        "Id": "Q4ShenweiMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Q4ShenweiMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Q4ShenweiMd010011/Q4ShenweiMd010011/Q4ShenweiMd010011.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Q4ShenweiMd010011/Q4ShenweiMd010011/Q4ShenweiMd010011Level1.controller"
+        ]
+    },
+    {
         "Id": "Q4YongyechaoMd010011",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Q4YongyechaoMd010011.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Q4YongyechaoMd010011/Q4YongyechaoMd010011/Q4YongyechaoMd010011.controller",
@@ -3320,11 +3392,27 @@
         ]
     },
     {
+        "Id": "Q5LifuMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Q5LifuMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Q5LifuMd010011/Q5LifuMd010011/Q5LifuMd010011.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Q5LifuMd010011/Q5LifuMd010011/Q5LifuMd010011Level1.controller"
+        ]
+    },
+    {
         "Id": "Q5LuxiyaMd010011",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Q5LuxiyaMd010011.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Q5LuxiyaMd010011/Q5LuxiyaMd010011/Q5LuxiyaMd010011.controller",
         "LevelControllerPath": [
             "Assets/Product/Role/Animation/Q5LuxiyaMd010011/Q5LuxiyaMd010011/Q5LuxiyaMd010011Level1.controller"
+        ]
+    },
+    {
+        "Id": "Q6LuxiyaMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Q6LuxiyaMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Q6LuxiyaMd010011/Q6LuxiyaMd010011/Q6LuxiyaMd010011.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Q6LuxiyaMd010011/Q6LuxiyaMd010011/Q6LuxiyaMd010011Level1.controller"
         ]
     },
     {
@@ -4000,14 +4088,6 @@
         "ControllerPath": "Assets/Product/Role/Animation/R2KamuMd019161/R2KamuMd019161/R2KamuMd019161.controller",
         "DisplayControllerPath": "Assets/Product/Role/Animation/R2KamuMd019161/R2KamuMd019161Display/R2KamuMd019161Display.controller",
         "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R2KamuMd019161/R2KamuMd019161Display/UiStand1.anim"
-    },
-    {
-        "Id": "R2KamuMd019201",
-        "ModelPath": "Assets/Product/Role/CharaterPrefab/R2KamuMd019201.prefab",
-        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R2KamuMd010011Low.prefab",
-        "ControllerPath": "Assets/Product/Role/Animation/R2KamuMd019201/R2KamuMd019201/R2KamuMd019201.controller",
-        "DisplayControllerPath": "Assets/Product/Role/Animation/R2KamuMd019201/R2KamuMd019201Display/R2KamuMd019201Display.controller",
-        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R2KamuMd019201/R2KamuMd019201Display/UiStand1.anim"
     },
     {
         "Id": "R2KamuMd019202",
@@ -6773,9 +6853,37 @@
         "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R4SailinnaMd019331/R4SailinnaMd019331Display/UiStand1.anim"
     },
     {
+        "Id": "R4ShenweiMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/R4ShenweiMd010011.prefab",
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R4ShenweiMd010011Low.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R4ShenweiMd010011/R4ShenweiMd010011/R4ShenweiMd010011.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/R4ShenweiMd010011/R4ShenweiMd010011Display/R4ShenweiMd010011Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R4ShenweiMdCommon/R4ShenweiMdCommonDisplay/UiStand1.anim",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/R4ShenweiMd010011/R4ShenweiMd010011/R4ShenweiMd010011Level1.controller"
+        ]
+    },
+    {
         "Id": "R4ShenweiMd010021",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/R4ShenweiMd010021.prefab",
-        "ControllerPath": "Assets/Product/Role/Animation/R4ShenweiMd010021/R4ShenweiMd010021/R4ShenweiMd010021.controller"
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R4ShenweiMd010011Low.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R4ShenweiMd010021/R4ShenweiMd010021/R4ShenweiMd010021.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/R4ShenweiMd010021/R4ShenweiMd010021Display/R4ShenweiMd010021Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R4ShenweiMdCommon/R4ShenweiMdCommonDisplay/UiStand1.anim",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/R4ShenweiMd010021/R4ShenweiMd010021/R4ShenweiMd010021Level1.controller"
+        ]
+    },
+    {
+        "Id": "R4ShenweiMd010031",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/R4ShenweiMd010031.prefab",
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R4ShenweiMd010011Low.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R4ShenweiMd010031/R4ShenweiMd010031/R4ShenweiMd010031.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/R4ShenweiMd010031/R4ShenweiMd010031Display/R4ShenweiMd010031Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R4ShenweiMdCommon/R4ShenweiMdCommonDisplay/UiStand1.anim",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/R4ShenweiMd010031/R4ShenweiMd010031/R4ShenweiMd010031Level1.controller"
+        ]
     },
     {
         "Id": "R4WeilaMd010011",
@@ -7221,6 +7329,11 @@
         "LevelControllerPath": [
             "Assets/Product/Role/Animation/R6LuxiyaMd019371/R6LuxiyaMd019371/R6LuxiyaMd019371Level1.controller"
         ]
+    },
+    {
+        "Id": "R7LuxiyaMd010021",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/R7LuxiyaMd010021.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R7LuxiyaMd010021/R7LuxiyaMd010021/R7LuxiyaMd010021.controller"
     },
     {
         "Id": "RE2SwordMd120111",

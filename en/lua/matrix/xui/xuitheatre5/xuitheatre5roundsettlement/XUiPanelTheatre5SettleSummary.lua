@@ -440,6 +440,11 @@ function XUiPanelTheatre5SettleSummary:UpdateCharacterAndLevel()
                 self.TxtLevelEnemy.text = level
                 self.RoleEnemy:SetRawImage(characterIcon)
             end
+
+            -- PVE模式没有敌人等级
+            if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
+                self.TxtLevelEnemy.transform.parent.gameObject:SetActiveEx(false)
+            end
         end
     end
 end

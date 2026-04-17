@@ -335,6 +335,10 @@ local Creator = function()
                 self.LastClickTime = CS.UnityEngine.Time.realtimeSinceStartup
             end
         end
+
+        if self._IsShowDownloadDefault then
+            self.UiDownload:SetActiveEx(true)
+        end
     end
     
     function XUiLaunchUi:GetFixIndex(index)
@@ -864,8 +868,9 @@ local Creator = function()
 
         if self.Obj and self.Obj:Exist() then
             local nameList = self.Obj.NameList
-            for _, v in pairs(nameList) do
-                self[v] = nil
+            for i = 0, nameList.Count - 1 do
+                local name = nameList[i]
+                self[name] = nil
             end
             self.Obj = nil
         end
@@ -1037,6 +1042,10 @@ local Creator = function()
         dict["auto_wifi"] = tostring(XLaunchDlcManager.IsSelectWifiAutoDownload())
         
         CS.XRecord.Record(dict, "80032", "SubpackageSelect")
+    end
+
+    function XUiLaunchUi:SetDowloadTest()
+        self._IsShowDownloadDefault = true
     end
     
     return XUiLaunchUi

@@ -41,7 +41,7 @@
             "灰度动画",
             111,
             "富文本",
-            131
+            140
         ]
     },
     {
@@ -1686,14 +1686,14 @@
         "Id": 119,
         "ActionId": 119,
         "NextActionId": 0,
-        "Type": 201,
+        "Type": 101,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            1,
-            501419
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
+            4
         ]
     },
     {
@@ -1706,9 +1706,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            1,
-            "出个角色",
-            1
+            "出背景4"
         ]
     },
     {
@@ -1721,9 +1719,8 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            0.8,
-            1001,
-            1
+            1,
+            999
         ]
     },
     {
@@ -1736,8 +1733,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "只灰背景，灰度=0.8",
-            1
+            "背景层全灰，灰度=1（无动画）"
         ]
     },
     {
@@ -1750,8 +1746,8 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            0.4,
-            1,
+            0.5,
+            999,
             1
         ]
     },
@@ -1765,8 +1761,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "只灰角色，灰度=0.4",
-            1
+            "背景层画面全灰，灰度=0.5"
         ]
     },
     {
@@ -1779,8 +1774,8 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            0.2,
-            1001,
+            0,
+            999,
             1
         ]
     },
@@ -1794,7 +1789,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "只灰背景，灰度=0.2",
+            "背景层画面不灰，灰度=0",
             1
         ]
     },
@@ -1802,14 +1797,13 @@
         "Id": 127,
         "ActionId": 127,
         "NextActionId": 0,
-        "Type": 504,
+        "Type": 101,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            1,
-            1,
+            4,
             1
         ]
     },
@@ -1817,27 +1811,28 @@
         "Id": 128,
         "ActionId": 128,
         "NextActionId": 0,
-        "Type": 301,
+        "Type": 201,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "只灰角色，灰度=1",
-            1
+            1,
+            501419
         ]
     },
     {
         "Id": 129,
         "ActionId": 129,
         "NextActionId": 0,
-        "Type": 504,
+        "Type": 301,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            0,
+            1,
+            "出个角色",
             1
         ]
     },
@@ -1845,14 +1840,14 @@
         "Id": 130,
         "ActionId": 130,
         "NextActionId": 0,
-        "Type": 301,
+        "Type": 504,
         "IsBlock": 0,
-        "IsEnd": 1,
-        "EndAnim": "AniZhuanchangBegin",
+        "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "Test Complete",
+            0.8,
+            1001,
             1
         ]
     },
@@ -1866,20 +1861,23 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "<u=34aff8ff>自定义颜色的下划线</u>"
+            "只灰背景，灰度=0.8",
+            1
         ]
     },
     {
         "Id": 132,
         "ActionId": 132,
         "NextActionId": 0,
-        "Type": 301,
+        "Type": 504,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "<ud=34aff8ff>自定义颜色的下划虚线</ud>"
+            0.4,
+            1,
+            1
         ]
     },
     {
@@ -1892,20 +1890,23 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "<s=34aff8ff>自定义颜色的删除线</s>"
+            "只灰角色，灰度=0.4",
+            1
         ]
     },
     {
         "Id": 134,
         "ActionId": 134,
         "NextActionId": 0,
-        "Type": 301,
+        "Type": 504,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "<phonetic=露西亚>那个女人</phonetic>就那样抱着<phonetic=灰鸦>她</phonetic>的指挥官救下来小玫，在红潮到来之前跑进了展馆。"
+            0.2,
+            1001,
+            1
         ]
     },
     {
@@ -1918,12 +1919,110 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "我是<u=34aff8ff>下划线</u>我是我是<ud=34aff8ff>下划虚线</ud><s=34aff8ff>删除线</s>我是<s>普通删除线</s>。<phonetic=露西亚>那个女人</phonetic>就那样抱着"
+            "只灰背景，灰度=0.2",
+            1
         ]
     },
     {
         "Id": 136,
         "ActionId": 136,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "只灰角色，灰度=1",
+            1
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0,
+            1
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Test Complete",
+            1
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "<u=34aff8ff>自定义颜色的下划线</u>"
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "<ud=34aff8ff>自定义颜色的下划虚线</ud>"
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "<s=34aff8ff>自定义颜色的删除线</s>"
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
         "NextActionId": 0,
         "Type": 304,
         "IsBlock": 0,
@@ -1938,43 +2037,8 @@
         ]
     },
     {
-        "Id": 137,
-        "ActionId": 137,
-        "NextActionId": 0,
-        "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "<phonetic=露西亚>那个女人</phonetic>就那样抱着<phonetic=灰鸦>她</phonetic>的指挥官救下来小玫，在红潮到来之前跑进了展馆。（这个可以配置控制，往下一行）",
-            "ffffffff",
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
-            1,
-            -1
-        ]
-    },
-    {
-        "Id": 138,
-        "ActionId": 138,
-        "NextActionId": 0,
-        "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "我是<u=34aff8ff>下划线</u>我是我是<ud=34aff8ff>下划虚线</ud>我是我是我是<s=34aff8ff>删除线</s>我是<s>普通删除线</s>。<phonetic=露西亚>那个女人</phonetic>",
-            "ffffffff",
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
-            1,
-            -1,
-            1
-        ]
-    },
-    {
-        "Id": 139,
-        "ActionId": 139,
+        "Id": 144,
+        "ActionId": 144,
         "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
@@ -1987,36 +2051,8 @@
         ]
     },
     {
-        "Id": 140,
-        "ActionId": 140,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 1,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            1,
-            "<phonetic=露西亚>那个女人</phonetic>就那样抱着<phonetic=灰鸦>她</phonetic>的指挥官救下来小玫，在红潮到来之前跑进了展馆。"
-        ]
-    },
-    {
-        "Id": 141,
-        "ActionId": 141,
-        "NextActionId": 0,
-        "Type": 109,
-        "IsBlock": 1,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            1,
-            "<phonetic=露西亚>那个女人</phonetic>就那样我是<u=34aff8ff>下划线</u>我是我是<ud=34aff8ff>下划虚线</ud>我是我是我是<s=34aff8ff>删除线</s>我是<s>普通删除线</s>。"
-        ]
-    },
-    {
-        "Id": 142,
-        "ActionId": 142,
+        "Id": 145,
+        "ActionId": 145,
         "NextActionId": 0,
         "Type": 110,
         "IsBlock": 0,
@@ -2025,8 +2061,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 143,
-        "ActionId": 143,
+        "Id": 146,
+        "ActionId": 146,
         "NextActionId": 0,
         "Type": 307,
         "IsBlock": 1,
@@ -2040,38 +2076,8 @@
         ]
     },
     {
-        "Id": 144,
-        "ActionId": 144,
-        "NextActionId": 0,
-        "Type": 307,
-        "IsBlock": 1,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "<phonetic=露西亚>那个女人</phonetic>就那样抱着<phonetic=灰鸦>她</phonetic>的指挥官救下来小玫，在红潮到来之前跑进了展馆。",
-            45,
-            "ffffffff"
-        ]
-    },
-    {
-        "Id": 145,
-        "ActionId": 145,
-        "NextActionId": 0,
-        "Type": 307,
-        "IsBlock": 1,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "<phonetic=露西亚>那个女人</phonetic>就那<u=34aff8ff>下划线</u><ud=34aff8ff>下划虚线</ud><s=34aff8ff>删除线</s><s>普通删除线</s>",
-            40,
-            "ffffffff"
-        ]
-    },
-    {
-        "Id": 146,
-        "ActionId": 146,
+        "Id": 147,
+        "ActionId": 147,
         "NextActionId": 0,
         "Type": 307,
         "IsBlock": 0,
@@ -2083,10 +2089,10 @@
         ]
     },
     {
-        "Id": 147,
-        "ActionId": 147,
+        "Id": 148,
+        "ActionId": 148,
         "NextActionId": 0,
-        "Type": 302,
+        "Type": 301,
         "IsBlock": 0,
         "IsEnd": 1,
         "BeginAnim": "DialogEnable",
@@ -2094,12 +2100,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "<ud=34aff8ff>下划虚线</ud><u=34aff8ff>下划线</u><s=34aff8ff>删除线",
-            148,
-            "<phonetic=露西亚>那个女人</phonetic>就那样抱着",
-            148,
-            "<s=34aff8ff>删除线</s><ud=34aff8ff>下划虚线</ud><phonetic=露西亚>那个女人</phonetic>就那",
-            148
+            "<phonetic=露西亚>那个女人</phonetic>就那样抱着<phonetic=灰鸦>她</phonetic>的指挥官救下来小玫，在红潮到来之前跑进了展馆。"
         ]
     }
 ]

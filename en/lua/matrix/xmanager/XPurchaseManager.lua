@@ -275,6 +275,48 @@ XPurchaseManagerCreator = function()
         _PurchaseComboInfosData[data.UiType] = list
     end
 
+    -- 判断是否捆绑包
+    function XPurchaseManager.IsComboPackage(package)
+        local uiType = package:GetUiType()
+        local comboDatas = _PurchaseComboInfosData[uiType]
+        for i = 1, #comboDatas do
+            local comboData = comboDatas[i]
+            local subPackageDiscounts = comboData.SubPackageDiscounts
+            for id, _ in pairs(subPackageDiscounts) do
+                if id == package:GetId() then
+                    return true
+                end
+            end
+        end
+        return false
+    end
+
+    -- 获取捆绑包子礼包数据
+    function XPurchaseManager.GetComboPackageSubData(package)
+        local uiType = package:GetUiType()
+        local uiData = XPurchaseManager.GetComboPurchaseData(uiType)
+        for _, n in pairs(uiData) do
+            for _, sdata in pairs(n.SubDatas) do
+                if sdata.Id == package:GetId() then
+                    return sdata
+                end
+            end
+        end
+    end
+
+    -- 获取捆绑包父礼包数据
+    function XPurchaseManager.GetComboPackageParentData(package)
+        local uiType = package:GetUiType()
+        local uiData = XPurchaseManager.GetComboPurchaseData(uiType)
+        for _, n in pairs(uiData) do
+            for _, sdata in pairs(n.SubDatas) do
+                if sdata.Id == package:GetId() then
+                    return n
+                end
+            end
+        end
+    end
+
     function XPurchaseManager.GetComboPurchaseData(uiType)
         local comboDatas = _PurchaseComboInfosData[uiType]
         if not comboDatas then
@@ -907,6 +949,8 @@ XPurchaseManagerCreator = function()
     -- Get月卡数据
     function XPurchaseManager.GetYKInfoData()
         local datas = XPurchaseManager.GetYKInfoDatas()
+        if not datas then return nil end
+
         if XOverseaManager.IsENRegion() then
             for _, data in pairs(datas) do
                 if not data.IsUseMail and data.DailyRewardRemainDay > 0 then
@@ -950,11 +994,15 @@ XPurchaseManagerCreator = function()
     -- 是否已经买过了
     function XPurchaseManager.IsYkBuyed()
         local datas = XPurchaseManager.GetYKInfoDatas()
-        for id, data in pairs(datas) do
-            if data.DailyRewardRemainDay > 0 then
-                return true
+
+        if datas then
+            for id, data in pairs(datas) do
+                if data.DailyRewardRemainDay > 0 then
+                    return true
+                end
             end
         end
+
         return false
     end
 

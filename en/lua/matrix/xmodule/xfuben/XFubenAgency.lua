@@ -534,6 +534,7 @@ function XFubenAgency:IsStageCute(stageId)
     if stageType == XEnumConst.FuBen.StageType.TaikoMaster
             or stageType == XEnumConst.FuBen.StageType.MoeWarParkour
             or stageType == XEnumConst.FuBen.StageType.Maze
+            or stageType == XEnumConst.FuBen.StageType.PBRGame
     then
         return true
     end
@@ -1126,6 +1127,7 @@ function XFubenAgency:RecordFightBeginData(stageId, preFightData, charList, assi
         FightData = fightData,
         FirstFightPos = firstFightPos,
         SpeedrunStageId = speedrunStageId,
+        FightStartTime = XTime.GetServerNowTimestamp(),
     }
     self._Model:SetBeginData(beginData)
 
@@ -1292,7 +1294,12 @@ function XFubenAgency:DoEnterRealFight(preFightData, fightData)
     --args.ChallengeCount = preFightData.ChallengeCount or 0 --向XFight传入连战次数 方便作弊实现功能
     XEventManager.DispatchEvent(XEventId.EVENT_PRE_ENTER_FIGHT, fightData.StageId)
 
-    CS.XFight.Enter(fightData, args)
+    local stageType = self:GetStageType(fightData.StageId)
+    
+    if not self:CallCustomFunc(stageType, ProcessFunc.CustomOnCallFight, fightData, args) then
+        CS.XFight.Enter(fightData, args)
+    end
+    
     self._Model:SetEnterFightStartTime(CS.UnityEngine.Time.time)
     XEventManager.DispatchEvent(XEventId.EVENT_ENTER_FIGHT)
 end
@@ -1561,13 +1568,14 @@ function XFubenAgency:ChallengeLose(settleData)
 end
 
 -- 请求战斗通用结算
+---@param result XFightResult
 function XFubenAgency:SettleFight(result)
     if self._Model:GetFubenSettling() then
         --有副本正在结算中
         XLog.Warning("XFubenAgency:SettleFight Warning, fuben is settling!")
         return
     end
-
+    
     self:StatisticsFightResultDps(result)
     self._Model:SetFubenSettling(true) --正在结算
     local fightResBytes = result:GetFightsResultsBytes()
@@ -4093,10 +4101,15 @@ function XFubenAgency:SetStagePassed(stageId)
     self._Model:SetStagePassed(stageId)
 end
 
---- 获取主线战斗结算动画时长(秒）
-function XFubenAgency:GetFightSettleAnimationDuration()
-    --todo 4.3临时处理，读固定配置
-    return CS.XGame.ClientConfig:GetFloat("ArenaAndBossSingleFightSettleAnimDuration")
+--- 战斗内显示鼠标
+function XFubenAgency:SetMouseVisible()
+    -- 这里只有PC端开启了键鼠以后才能获取到设备
+    if CS.XFight.Instance and CS.XFight.Instance.InputSystem then
+        local inputKeyboard = CS.XFight.Instance.InputSystem:GetDevice(typeof(CS.XInputKeyboard))
+        inputKeyboard.HideMouseEvenByDrag = false
+    end
+    CS.UnityEngine.Cursor.lockState = CS.UnityEngine.CursorLockMode.None
+    CS.UnityEngine.Cursor.visible = true
 end
 
 return XFubenAgency

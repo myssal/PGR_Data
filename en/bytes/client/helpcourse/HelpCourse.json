@@ -733,17 +733,22 @@
     },
     {
         "Id": 10045,
-        "Name": "Chilling Omen",
+        "Name": "无归的航道",
         "Function": "PuzzleActivity",
         "Describe": "Puzzle Preview Stage Image Guide",
-        "IsShowCourse": 1,
+        "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiHelpPuzzle1.jpg",
             "Assets/Product/Texture/Image/UiHelp/UiHelpPuzzle2.jpg",
             "Assets/Product/Texture/Image/UiHelp/UiHelpPuzzle3.jpg",
             "Assets/Product/Texture/Image/UiHelp/UiHelpPuzzle4.jpg",
             "Assets/Product/Texture/Image/UiHelp/UiHelpPuzzle5.jpg"
+        ],
+        "TextGroupIds": [
+            1004501,
+            1004502,
+            1004503,
+            1004504
         ]
     },
     {
@@ -3317,7 +3322,7 @@
         "Id": 21000,
         "Name": "Rules",
         "Function": "UiReCallActivity",
-        "Describe": "Requirement\\nCommandant ≥Lv.40\\n\\nReturning Commandant\\nCommandant ≥Lv.40 and Consecutive Offline Days ≥30\\n\\nEvent Time\\n11/01/2025 10:00 - 12/23/2025 05:00 (UTC)\\nInvite and Mission Time\\n11/01/2025 10:00 - 12/23/2025 05:00 (UTC)\\n\\nEvent Info\\n1. During the event, Commandants who get invited and come back can claim rewards after logging in to the game and entering the invite code.\\n2. Each invite code can be used up to 10 times. Returning Commandants can complete designated Activity Missions for rewards.\\n3. Both the inviter and the invitee can each receive a reward the first time they share or download the picture.\\n4. Returning Commandants cannot unbind or change the invite code after entering it.\\n5. Each Commandant can only participate in the event once. Once the event ends, you'll not be able to claim the rewards.",
+        "Describe": "参加条件\\n指挥官等级≥40级\\n\\n回归指挥官\\n指挥官等级≥40级且连续未登录天数≥30天\\n\\n活动时间\\n2026/05/30 05:00:00 ～ 2026/07/15 05:00:00\\n邀请及任务时间\\n2026/05/30 05:00:00 ～ 2026/07/15 05:00:00\\n\\n活动说明\\n1.活动期间，收到邀请的回归指挥官登录游戏并成功输入邀请码后，被邀请指挥官可领取相应的奖励\\n2.邀请码可重复使用（最多同时邀请10名玩家），受邀回归的指挥官在游戏中完成指定活跃任务，邀请指挥官可获得相应奖励\\n3.邀请指挥官与被邀请指挥官可通过首次分享或下载保存图片后，领取对应奖励（仅限一次）\\n4.回归指挥官输入邀请码后，不可解除绑定更换邀请码\\n5.活动期间，回归指挥官会领取专属勤务任务，完成即可获取对应奖励\\n6.活动期间，回归指挥官会获得「拟战场域」双倍奖励机会。指定次数内，完成「拟战场域」挑战即可获取双倍拟战积分奖励（不含首通）\\n7.活动期间指挥官仅能参加一次活动，活动结束后奖励将无法领取",
         "IsShowCourse": 2,
         "SubIds": [],
         "TextGroupIds": [
@@ -3467,11 +3472,13 @@
         "SubIds": [],
         "ImageAsset": [
             "Assets/Product/Texture/Image/UiHelp/UiBountyChallengeHelp1.png",
-            "Assets/Product/Texture/Image/UiHelp/UiBountyChallengeHelp2.png"
+            "Assets/Product/Texture/Image/UiHelp/UiBountyChallengeHelp2.png",
+            "Assets/Product/Texture/Image/UiHelp/UiBountyChallengeHelp3.png"
         ],
         "TextGroupIds": [
             1021501,
-            1021502
+            1021502,
+            1021503
         ]
     },
     {
@@ -3488,14 +3495,14 @@
             "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help04.png",
             "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help05.png",
             "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help06.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help13.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help14.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help15.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help15.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help07.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help08.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help09.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help09.png",
             "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help10.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help16.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help17.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help18.png"
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help11.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help12.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help19.png"
         ],
         "TextGroupIds": [
             1021601,
@@ -3509,9 +3516,9 @@
             1021609,
             1021610,
             1021611,
+            1021612,
             1021613,
-            1021614,
-            1021615
+            1021616
         ]
     },
     {

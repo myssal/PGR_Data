@@ -5,6 +5,8 @@ local IsWindowsPlayer = CS.UnityEngine.Application.platform == CS.UnityEngine.Ru
 
 XMain.IsDebug = CS.XRemoteConfig.Debug
 XMain.IsEditorDebug = (XMain.IsWindowsEditor or IsWindowsPlayer) and XMain.IsDebug
+--是否为内部版本
+XMain.IsInternal = CS.XApplication.IsInternal
 
 local lockGMeta = {
     __newindex = function(t, k)
@@ -142,6 +144,7 @@ end
 
 -- 待c#移除
 XMain.Step5 = function()
+
 end
 
 XMain.Step6 = function()

@@ -531,9 +531,18 @@ local module_creator = function()
                          end
                     end
 
+                    -- [修复] 增加对游戏内已卸载资源的判定，避免重登后再次弹出下载提示
+                    local isUninstalled = XLaunchDlcManager.HasUninstalledResId(resId)
                     local needDownloadDlc = isHotUpdateRes and (isSelectFullOrSelectRemove or isDownloadedOrSelected)
                             and (not removeResIdsRecord[resId])
+                            and (not isUninstalled)
                             and not XLaunchDlcManager.CheckResIsIgnoreDownload(resId, NeedShowSelect, isSubpackOpen)
+                    -- AutoDownload涂装资源：仅首次弹窗时（NeedShowSelect）强制加入下载队列
+                    -- [修复#244203] 玩家选过一次后不再触发，后续由游戏内分包系统处理
+                    if not needDownloadDlc and not isHotUpdateRes
+                            and XLaunchDlcManager.IsAutoDownloadRes(resId) and not isUninstalled then
+                        needDownloadDlc = true
+                    end
                     if IsDebugBuild then
                         needDownloadMap[resId] = needDownloadDlc
                         print(string.format("[Debug] resId: %s isHotUpdateRes: %s, isSelectFullOrSelectRemove: %s, checkNeedDownload: %s, removeResIdsRecord: %s, ignore: %s", resId,

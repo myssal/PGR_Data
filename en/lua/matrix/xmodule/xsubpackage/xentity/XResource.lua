@@ -49,9 +49,25 @@ function XResource:PrepareDownload()
         XLog.Warning("XResource:PrepareDownload, already complete, id = " .. self._Id .. ", state = " .. self._State)
         return
     end
-    
+
     XLaunchDlcManager.RemoveUninstalledResId(self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD
+
+    -- [F1] 通知父分包更新聚合状态（从 UNINSTALLED/NOT_DOWNLOAD 恢复）
+    local subpackageIdList = XMVCA.XSubPackage:GetSubpackageIdByResId(self._Id)
+    if not XTool.IsTableEmpty(subpackageIdList) then
+        for _, subPackageId in pairs(subpackageIdList) do
+            local subpackageItem = XMVCA.XSubPackage:GetSubpackageItem(subPackageId)
+            if subpackageItem then
+                local subState = subpackageItem:GetState()
+                if subState == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
+                    or subState == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.NOT_DOWNLOAD then
+                    subpackageItem:UpdateAggregateState()
+                    XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subPackageId)
+                end
+            end
+        end
+    end
 end
 
 function XResource:StartDownload()
@@ -112,6 +128,18 @@ end
 function XResource:Complete()
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
     XEventManager.DispatchEvent(XEventId.EVENT_RES_COMPLETE, self._Id)
+    -- 在Release前使所属Subpackage的TaskGroups缓存失效，避免缓存已释放的C#对象
+    -- 同时通知Sub级进度更新，确保UiDownLoadMain的进度条在单个res完成时也能刷新
+    local subpackageIdList = XMVCA.XSubPackage:GetSubpackageIdByResId(self._Id)
+    if not XTool.IsTableEmpty(subpackageIdList) then
+        for _, subPackageId in pairs(subpackageIdList) do
+            local subpackageItem = XMVCA.XSubPackage:GetSubpackageItem(subPackageId)
+            if subpackageItem then
+                subpackageItem:InvalidateTaskGroupsCache()
+                XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_UPDATE, subPackageId, subpackageItem:GetProgress())
+            end
+        end
+    end
     self:Release()
     XMVCA.XSubPackage:Print(string.format("[SubPackage] Resource(%s) Download Complete!", self._Id))
 end

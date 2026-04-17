@@ -155,6 +155,7 @@ function XUiMainRightMid:OnEnable()
         -- 有功能开放标记时才显示免费标签
         if XFunctionManager.JudgeOpen(XFunctionManager.FunctionName.DrawCard) then
             XDataCenter.DrawManager.GetDrawGroupList(function()
+                self:CheckDrawDiscountTag()
                 self:AddRedPointEvent(self.BtnReward, self.OnCheckDrawFreeTicketTag, self, { XRedPointConditions.Types.CONDITION_DRAW_FREE_TAG })
                 self:AddRedPointEvent(self.BtnReward.ReddotObj, self.OnCheckARewardNews, self, { 
                     XRedPointConditions.Types.CONDITION_DEVILMAYCRY_CAN_RECEIVE_CHARACTER,
@@ -824,6 +825,19 @@ function XUiMainRightMid:OnCheckDrawFreeTicketTag(isShow)
         freeTag.gameObject:SetActiveEx(isShow >= 0)
     else
         freeTag.gameObject:SetActiveEx(false)
+    end
+end
+
+-- 检查是否有抽卡折扣Tag
+function XUiMainRightMid:CheckDrawDiscountTag()
+    local discountTag = XUiHelper.TryGetComponent(self.BtnReward.transform, "Tab4", nil)
+    if not discountTag then
+        return
+    end
+    if XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.DrawCard) then
+        discountTag.gameObject:SetActiveEx(XDataCenter.DrawManager.IsShowMainButtonDiscount())
+    else
+        discountTag.gameObject:SetActiveEx(false)
     end
 end
 

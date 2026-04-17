@@ -1,0 +1,413 @@
+[
+    {
+        "NodeId": 1,
+        "PreNode": 0,
+        "NodeName": "冲刺",
+        "NodeType": 1,
+        "NodeGroup": 1,
+        "NodeCost": 75,
+        "NodeCondition": 865000,
+        "TextUnlock": "Unlocks Sprint",
+        "TextLocked": "Unlocks Sprint",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconDashLimitNumUp.png",
+        "ShopFreshCount": 0
+    },
+    {
+        "NodeId": 2,
+        "PreNode": 1,
+        "NodeName": "Acrobatics",
+        "NodeType": 0,
+        "NodeGroup": 1,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "信号球伤害加成<color=#3ACC3B>+30%</color>",
+        "TextLocked": "信号球伤害加成<color=#3ACC3B>+30%</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconSignalOrbsDmgUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            12
+        ],
+        "NodeStatsNum": [
+            3000
+        ]
+    },
+    {
+        "NodeId": 3,
+        "PreNode": 2,
+        "NodeName": "Armor",
+        "NodeType": 0,
+        "NodeGroup": 1,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "护甲<color=#3ACC3B>+2</color>",
+        "TextLocked": "护甲<color=#3ACC3B>+2</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconArmorUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            33
+        ],
+        "NodeStatsNum": [
+            2
+        ]
+    },
+    {
+        "NodeId": 4,
+        "PreNode": 1,
+        "NodeName": "Basic Attack",
+        "NodeType": 0,
+        "NodeGroup": 1,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "普攻伤害加成<color=#3ACC3B>+45%</color>",
+        "TextLocked": "普攻伤害加成<color=#3ACC3B>+45%</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBasicAttackDmgUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            11
+        ],
+        "NodeStatsNum": [
+            4500
+        ]
+    },
+    {
+        "NodeId": 5,
+        "PreNode": 4,
+        "NodeName": "Dodge",
+        "NodeType": 0,
+        "NodeGroup": 1,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "Dodge <color=#3ACC3B>+5%</color>.",
+        "TextLocked": "Dodge <color=#3ACC3B>+5%</color>.",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconDodgeRateUpUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            144
+        ],
+        "NodeStatsNum": [
+            500
+        ]
+    },
+    {
+        "NodeId": 6,
+        "PreNode": 1,
+        "NodeName": "Confidence",
+        "NodeType": 2,
+        "NodeGroup": 4,
+        "NodeCost": 100,
+        "NodeCondition": 865001,
+        "TextUnlock": "Unlocks Red Orb Skill: [Swipe]\\nUnlocks Item: [Chromie]",
+        "TextLocked": "Unlocks Red Orb Skill: [Swipe]\\nUnlocks Item: [Chromie]",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R2shenweihong1Up.png",
+        "ShopFreshCount": 0,
+        "RewardItemIds": [
+            9,
+            10,
+            11,
+            12,
+            189
+        ]
+    },
+    {
+        "NodeId": 7,
+        "PreNode": 1,
+        "NodeName": "Blast",
+        "NodeType": 2,
+        "NodeGroup": 4,
+        "NodeCost": 100,
+        "NodeCondition": 865001,
+        "TextUnlock": "Unlocks Red Orb Skill: [Countering Swordplay]\\nUnlocks Items: [Renewed Dawn], [Scale]",
+        "TextLocked": "Unlocks Red Orb Skill: [Countering Swordplay]\\nUnlocks Items: [Renewed Dawn], [Scale]",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R3shenweihong1Up.png",
+        "ShopFreshCount": 0,
+        "RewardItemIds": [
+            45,
+            46,
+            47,
+            48,
+            163,
+            164
+        ]
+    },
+    {
+        "NodeId": 8,
+        "PreNode": 5,
+        "NodeName": "Max Sprint Charge",
+        "NodeType": 1,
+        "NodeGroup": 2,
+        "NodeCost": 75,
+        "NodeCondition": 865004,
+        "TextUnlock": "Max Sprint Charge <color=#3ACC3B>+2</color>.",
+        "TextLocked": "Max Sprint Charge <color=#3ACC3B>+2</color>.",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconDashInitialNumUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            55
+        ],
+        "NodeStatsNum": [
+            400000
+        ]
+    },
+    {
+        "NodeId": 9,
+        "PreNode": 8,
+        "NodeName": "Signal Orb Drop Rate",
+        "NodeType": 0,
+        "NodeGroup": 2,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "红球掉落概率<color=#3ACC3B>+15%</color>，黄球掉落概率<color=#3ACC3B>+15%</color>，蓝球掉落概率<color=#3ACC3B>+15%</color>",
+        "TextLocked": "红球掉落概率<color=#3ACC3B>+15%</color>，黄球掉落概率<color=#3ACC3B>+15%</color>，蓝球掉落概率<color=#3ACC3B>+15%</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconRedOrbsAttackDropRateUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            154,
+            155,
+            156
+        ],
+        "NodeStatsNum": [
+            1500,
+            1500,
+            1500
+        ]
+    },
+    {
+        "NodeId": 10,
+        "PreNode": 9,
+        "NodeName": "Spring Up",
+        "NodeType": 0,
+        "NodeGroup": 2,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "Max HP <color=#3ACC3B>+20</color>.",
+        "TextLocked": "Max HP <color=#3ACC3B>+20</color>.",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconMaxHPUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            1
+        ],
+        "NodeStatsNum": [
+            20
+        ]
+    },
+    {
+        "NodeId": 11,
+        "PreNode": 8,
+        "NodeName": "Rifling",
+        "NodeType": 0,
+        "NodeGroup": 2,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "Range <color=#3ACC3B>+2</color>",
+        "TextLocked": "Range <color=#3ACC3B>+2</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBasicAttackRangeUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            75
+        ],
+        "NodeStatsNum": [
+            2
+        ]
+    },
+    {
+        "NodeId": 12,
+        "PreNode": 11,
+        "NodeName": "Fast Speed",
+        "NodeType": 0,
+        "NodeGroup": 2,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "Speed <color=#3ACC3B>+30</color>",
+        "TextLocked": "Speed <color=#3ACC3B>+30</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconMoveSpeedUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            3
+        ],
+        "NodeStatsNum": [
+            30
+        ]
+    },
+    {
+        "NodeId": 13,
+        "PreNode": 8,
+        "NodeName": "弹射",
+        "NodeType": 2,
+        "NodeGroup": 5,
+        "NodeCost": 100,
+        "NodeCondition": 865005,
+        "TextUnlock": "Unlocks Red Orb Skill: [Ricochet Rounds]\\nUnlock Items: [Shark Mosaic Tile], [Launch Stars], [Guardian Mount]",
+        "TextLocked": "Unlocks Red Orb Skill: [Ricochet Rounds]\\nUnlock Items: [Shark Mosaic Tile], [Launch Stars], [Guardian Mount]",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R2lifuhong1Up.png",
+        "ShopFreshCount": 0,
+        "RewardItemIds": [
+            29,
+            30,
+            31,
+            32,
+            141,
+            142,
+            165
+        ]
+    },
+    {
+        "NodeId": 14,
+        "PreNode": 8,
+        "NodeName": "Crosshair",
+        "NodeType": 2,
+        "NodeGroup": 5,
+        "NodeCost": 100,
+        "NodeCondition": 865005,
+        "TextUnlock": "Unlocks Item: [Kamui's Invitation]",
+        "TextLocked": "Unlocks Item: [Kamui's Invitation]",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconPBRItemUp.png",
+        "ShopFreshCount": 0,
+        "RewardItemIds": [
+            188
+        ]
+    },
+    {
+        "NodeId": 15,
+        "PreNode": 12,
+        "NodeName": "Supply",
+        "NodeType": 1,
+        "NodeGroup": 3,
+        "NodeCost": 75,
+        "NodeCondition": 865008,
+        "TextUnlock": "Shop refresh attempts <color=#3ACC3B>+2</color>",
+        "TextLocked": "Shop refresh attempts <color=#3ACC3B>+2</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBuyCountUp.png",
+        "ShopFreshCount": 2
+    },
+    {
+        "NodeId": 16,
+        "PreNode": 15,
+        "NodeName": "Growth",
+        "NodeType": 0,
+        "NodeGroup": 3,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "HP Growth <color=#3ACC3B>+2</color>",
+        "TextLocked": "HP Growth <color=#3ACC3B>+2</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconHpPerLevelUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            17
+        ],
+        "NodeStatsNum": [
+            2
+        ]
+    },
+    {
+        "NodeId": 17,
+        "PreNode": 16,
+        "NodeName": "Repel",
+        "NodeType": 0,
+        "NodeGroup": 3,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "Knockback <color=#3ACC3B>+1</color>",
+        "TextLocked": "Knockback <color=#3ACC3B>+1</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBasicAttackKnockbackUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            78
+        ],
+        "NodeStatsNum": [
+            1
+        ]
+    },
+    {
+        "NodeId": 18,
+        "PreNode": 15,
+        "NodeName": "Chain",
+        "NodeType": 0,
+        "NodeGroup": 3,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "Chain duration <color=#3ACC3B>+2</color>s",
+        "TextLocked": "Chain duration <color=#3ACC3B>+2</color>s",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconComboBoostWindowUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            77
+        ],
+        "NodeStatsNum": [
+            2
+        ]
+    },
+    {
+        "NodeId": 19,
+        "PreNode": 18,
+        "NodeName": "Endurance",
+        "NodeType": 0,
+        "NodeGroup": 3,
+        "NodeCost": 50,
+        "NodeCondition": 0,
+        "TextUnlock": "Lifesteal Efficiency <color=#3ACC3B>+2%</color>",
+        "TextLocked": "Lifesteal Efficiency <color=#3ACC3B>+2%</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconLifestealRateLimit.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            49
+        ],
+        "NodeStatsNum": [
+            200
+        ]
+    },
+    {
+        "NodeId": 20,
+        "PreNode": 19,
+        "NodeName": 777,
+        "NodeType": 1,
+        "NodeGroup": 3,
+        "NodeCost": 200,
+        "NodeCondition": 865009,
+        "TextUnlock": "Luck <color=#3ACC3B>+777</color>",
+        "TextLocked": "Luck <color=#3ACC3B>+777</color>",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconLuckUp.png",
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            145
+        ],
+        "NodeStatsNum": [
+            777
+        ]
+    },
+    {
+        "NodeId": 21,
+        "PreNode": 15,
+        "NodeName": "Assault",
+        "NodeType": 2,
+        "NodeGroup": 6,
+        "NodeCost": 100,
+        "NodeCondition": 865010,
+        "TextUnlock": "Unlocks Red Orb Skill: [Thundering Rush]\\nUnlock Item: [Whatever You Want]",
+        "TextLocked": "Unlocks Red Orb Skill: [Thundering Rush]\\nUnlock Item: [Whatever You Want]",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R5Luxiyahong1Up.png",
+        "ShopFreshCount": 0,
+        "RewardItemIds": [
+            21,
+            22,
+            23,
+            24,
+            185
+        ]
+    },
+    {
+        "NodeId": 22,
+        "PreNode": 15,
+        "NodeName": "BUTTER DOG's Blessing",
+        "NodeType": 2,
+        "NodeGroup": 6,
+        "NodeCost": 100,
+        "NodeCondition": 865010,
+        "TextUnlock": "Unlocks Item: [Physical Luck]",
+        "TextLocked": "Unlocks Item: [Physical Luck]",
+        "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconPBRItemUp.png",
+        "ShopFreshCount": 0,
+        "RewardItemIds": [
+            184
+        ]
+    }
+]

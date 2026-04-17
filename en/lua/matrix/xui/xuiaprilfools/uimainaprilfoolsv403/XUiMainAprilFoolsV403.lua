@@ -36,7 +36,6 @@ function XUiMainAprilFoolsV403:OnStart(...)
     self:SetBtnExpelActiveEnable(true)
     
     self.BtnQuit:AddEventListener(function()
-        self:StopActivityCheckTimer()
         XMVCA.XAprilFoolDay:RequestFoolsDayClearOutComplete()
         XLuaUiManager.RunMain()
         self._Control:RecordAprilFoolDayMainUiBtnClick(RecordBtnIndex.Quit)
@@ -53,7 +52,6 @@ end
 
 function XUiMainAprilFoolsV403:OnEnable()
     XMVCA.XMainLine2:ClearCacheDatasUiFubenMainLineChapter()
-    CS.XResourceRecord.Stop();
     XRedPointManager.AutoReleaseRedPointEvent()
     XLoginManager.ResetHearbeatInterval()
 
