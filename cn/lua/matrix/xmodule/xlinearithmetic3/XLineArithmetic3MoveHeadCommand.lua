@@ -19,11 +19,16 @@ function XLineArithmetic3MoveHeadCommand:Ctor(uiGame, targetX, targetY, headPosB
     self._StartHeadPos = nil
     self._StartCarriagePositions = {}
     self._TargetPos = nil
+    -- 起点格子相关
+    self._WasAtStart = false  -- 移动前是否在起点
 end
 
 --- 执行命令（正向动画）
 function XLineArithmetic3MoveHeadCommand:Execute(game, onComplete)
     local uiGame = self._UiGame
+
+    -- 使用移动前的位置判断是否在起点（不能实时查询Game层，因为位置可能已更新）
+    self._WasAtStart = uiGame:IsPosAtStart(self._GameHeadPosBefore)
 
     -- 保存 UI 层状态
     local headGo = uiGame:GetHeadGo()
@@ -39,6 +44,11 @@ function XLineArithmetic3MoveHeadCommand:Execute(game, onComplete)
         if carriageGo then
             self._StartCarriagePositions[i] = carriageGo.transform.position
         end
+    end
+
+    -- 如果从起点离开，更新起点格子显示（显示车头）
+    if self._WasAtStart then
+        uiGame:UpdateStartGridDisplay(false)
     end
 
     -- 执行正向动画
@@ -78,7 +88,13 @@ function XLineArithmetic3MoveHeadCommand:Undo(game, onComplete)
     end
 
     -- 执行反向动画（使用全局 undo 时长）
-    self:_PlayTween(currentHeadPos, self._StartHeadPos, currentCarriagePositions, self._StartCarriagePositions, onComplete, XLineArithmetic3Enum.UndoDuration)
+    self:_PlayTween(currentHeadPos, self._StartHeadPos, currentCarriagePositions, self._StartCarriagePositions, function()
+        -- 动画完成后，如果原本在起点（撤销后回到起点），更新起点格子显示
+        if self._WasAtStart then
+            uiGame:UpdateStartGridDisplay(true)
+        end
+        if onComplete then onComplete() end
+    end, XLineArithmetic3Enum.UndoDuration)
 end
 
 --- 播放移动动画

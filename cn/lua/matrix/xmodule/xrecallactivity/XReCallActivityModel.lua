@@ -276,4 +276,23 @@ function XReCallActivityModel:GetClientConfigReCallNumArray(key)
 end
 --endregion
 
+--region 本地缓存
+
+--- 检查回归专属页签是否有点击标记
+function XReCallActivityModel:GetBackOnlyTagIsMark()
+    return self._SaveUtil:GetData("BackOnlyTagMark") or false
+end
+
+--- 设置回归专属页签显示缓存
+function XReCallActivityModel:SetBackOnlyTagMark(mark)
+    -- 默认标记缓存
+    if mark == nil then
+        mark = true
+    end
+    
+    self._SaveUtil:SaveData("BackOnlyTagMark", mark)
+end
+
+--endregion
+
 return XReCallActivityModel

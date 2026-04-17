@@ -18,6 +18,10 @@ function XUiPanelFashionSuitNormal:OnStart()
     end
 end
 
+function XUiPanelFashionSuitNormal:OnEnable()
+    self:PlayAnimationWithMask("AnimEnable")
+end
+
 function XUiPanelFashionSuitNormal:SetSuitId(id)
     self._Id = id
     self._Config = self._Control:GetFashionSuitById(id)

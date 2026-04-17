@@ -51,7 +51,12 @@ function XUiBountyChallengeChapterDetail:OnEnable()
 end
 
 function XUiBountyChallengeChapterDetail:OnDisable()
-
+    if not self.PanelTaskBg.gameObject.activeInHierarchy then
+        for i = 1, #self._GridTasks do
+            self._GridTasks[i]:Close()
+        end
+        self._GridTasks = {}
+    end
 end
 
 function XUiBountyChallengeChapterDetail:Update()

@@ -200,6 +200,26 @@ function XReCallActivityAgency:GetRegressionTaskDataList(refTaskDatas)
     return refTaskDatas
 end
 
+--- 判断任务是否是回归玩家专属任务
+--- 仅玩家有开放活动才判断
+function XReCallActivityAgency:CheckIsRegressionTaskById(taskId)
+    if self:CheckIsRegressionPlayer() then
+        local reCallData = self._Model:GetRecallData()
+
+        local cfg = self._Model:GetActivityConfigById(reCallData.ActivityId)
+
+        if cfg and XTool.IsNumberValidEx(cfg.TaskGroupId) then
+            local taskTimeLimitCfg = XTaskConfig.GetTimeLimitTaskCfg(cfg.TaskGroupId)
+
+            if taskTimeLimitCfg then
+                return table.contains(taskTimeLimitCfg.TaskId, taskId)
+            end
+        end
+    end
+    
+    return false
+end
+
 --- 回归玩家复刷关是否能获得双倍奖励
 function XReCallActivityAgency:CheckRegressionPlayerHasMultyRewardTimes(stageId)
     local maxCount, usedCount = 0, 0
@@ -224,5 +244,14 @@ function XReCallActivityAgency:CheckRegressionPlayerHasMultyRewardTimes(stageId)
     
     return usedCount < maxCount
 end
+
+--region 红点相关
+
+--- 检查回归专属页签是否有点击标记
+function XReCallActivityAgency:GetBackOnlyTagIsMark()
+    return self._Model:GetBackOnlyTagIsMark()
+end
+
+--endregion
 
 return XReCallActivityAgency

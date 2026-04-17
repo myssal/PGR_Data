@@ -3,7 +3,6 @@
 ---@field _TaskGroup XMTDownloadTaskGroup
 local XResource = XClass(nil, "XResource")
 local XLaunchDlcManager = require("XLaunchDlcManager")
-local CSXMTDownloadTaskGroupState = XTool.GetDownloadStateEnum()
 
 function XResource:Ctor(resId)
     self._Id = resId
@@ -11,7 +10,7 @@ function XResource:Ctor(resId)
     self._DownSize = 0
     self._TotalSize = 0
     self._MaxProgress = 0
-    self._TaskGroup = XTool.CreateDownloadTaskGroup(resId) -- 以ResId为唯一标识
+    self._TaskGroup = CS.XMTDownloadTaskGroup(resId) -- 以ResId为唯一标识
     self._WaitPause = false
 end
 
@@ -232,23 +231,23 @@ function XResource:GetDownloadSize()
 end
 
 function XResource:IsComplete()
-    return self._TaskGroup.State == CSXMTDownloadTaskGroupState.Complete
+    return self._TaskGroup.State == CS.XMTDownloadTaskGroupState.Complete
 end
 
 ---@param center XMTDownloadCenter
 function XResource:OnStateChanged()
     local state = self._TaskGroup.State
     -- print("SP/DN XResource:OnStateChanged", self._Id, state)
-    if state == CSXMTDownloadTaskGroupState.Registered and self._WaitPause then
+    if state == CS.XMTDownloadTaskGroupState.Registered and self._WaitPause then
         XMVCA.XSubPackage:OnResDownloadRelease()
         self._WaitPause = false
-    elseif state == CSXMTDownloadTaskGroupState.Complete then
+    elseif state == CS.XMTDownloadTaskGroupState.Complete then
         self:Complete()
         XMVCA.XSubPackage:OnResDownloadRelease()
         self._WaitPause = false
-    elseif state == CSXMTDownloadTaskGroupState.Pausing then
+    elseif state == CS.XMTDownloadTaskGroupState.Pausing then
         self._WaitPause = true
-    elseif state == CSXMTDownloadTaskGroupState.CompleteError then
+    elseif state == CS.XMTDownloadTaskGroupState.CompleteError then
         XMVCA.XSubPackage:OnResDownloadRelease()
     end
 

@@ -391,13 +391,17 @@ function XLineArithmetic3Control:UpdateChapter()
         if chapterConfig.ActivityId == activityId then
             local isOpen = self._Model:IsChapterUnlock(chapterConfig.Id)
 
+            -- 计算章节星级进度
+            local totalStar, earnedStar = self:_CalcChapterStarProgress(chapterConfig.Id)
+
             ---@class XLineArithmetic3ControlDataChapter
             local chapterData = {
                 Id = chapterConfig.Id,
                 Name = chapterConfig.Name or "",
                 IsOpen = isOpen,
                 Icon = chapterConfig.Icon or "",
-                ChapterIndex = index
+                ChapterIndex = index,
+                TxtStar = string.format("%d/%d", earnedStar, totalStar),
             }
             table.insert(chapters, chapterData)
 
@@ -407,6 +411,25 @@ function XLineArithmetic3Control:UpdateChapter()
             index = index + 1
         end
     end
+end
+
+--- 计算章节星级进度
+---@param chapterId number 章节ID
+---@return number, number 总星数, 已获得星数
+function XLineArithmetic3Control:_CalcChapterStarProgress(chapterId)
+    local stages = self._Model:GetStagesByChapterId(chapterId)
+    local totalStar = 0
+    local earnedStar = 0
+
+    for _, stageConfig in ipairs(stages) do
+        -- 最大星数由配置的 StarCondition 数量决定
+        if not XTool.IsTableEmpty(stageConfig.StarCondition) then
+            totalStar = totalStar + #stageConfig.StarCondition
+        end
+        earnedStar = earnedStar + self._Model:GetStageStar(stageConfig.Id)
+    end
+
+    return totalStar, earnedStar
 end
 
 --- 更新主界面奖励显示
@@ -579,16 +602,14 @@ function XLineArithmetic3Control:ChallengeNextStage()
     if not nextStageId or nextStageId == 0 then
         XLog.Warning("[XLineArithmetic3Control] 没有下一关了")
         -- 关闭结算界面，返回章节界面
-        XLuaUiManager.Close("UiLineArithmetic3PopupSettlement")
-        XLuaUiManager.Close("UiLineArithmetic3Game")
+        XLuaUiManager.CloseAllUpperUi("UiLineArithmetic3Main")
         return
     end
 
     -- 若下一关所属章节未解锁，则返回章节界面
     local nextStageConfig = self._Model:GetStageConfig(nextStageId)
     if nextStageConfig and not self._Model:IsChapterUnlock(nextStageConfig.ChapterId) then
-        XLuaUiManager.Close("UiLineArithmetic3PopupSettlement")
-        XLuaUiManager.Close("UiLineArithmetic3Game")
+        XLuaUiManager.CloseAllUpperUi("UiLineArithmetic3Main")
         return
     end
 

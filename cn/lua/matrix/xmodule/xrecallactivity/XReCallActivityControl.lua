@@ -196,4 +196,10 @@ function XReCallActivityControl:GetCurRegressionPlayerMultiRewardCount(stageId)
     return 0
 end
 
+--- 设置回归专属页签显示缓存
+function XReCallActivityControl:SetBackOnlyTagMark(mark)
+    self._Model:SetBackOnlyTagMark(mark)
+end
+
+
 return XReCallActivityControl

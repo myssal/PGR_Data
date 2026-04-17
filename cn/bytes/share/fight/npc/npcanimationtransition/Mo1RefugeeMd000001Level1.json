@@ -260,6 +260,60 @@
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 0,
+        "Target": "WalkStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "WalkStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "LTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "LTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "RTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "RTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "HitLB",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
         "Target": "Attack01",
         "TransitionDuration": 0.1
     },
@@ -422,13 +476,49 @@
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 0,
-        "Target": "Attack110",
+        "Target": "LevelAttack01",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 0,
-        "Target": "Attack111",
+        "Target": "LevelAttack02",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "LevelAttack03",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "LevelAttack04",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "LevelAttack05",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "LevelAttack06",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "LevelAttack12",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "Target": "LevelAttack13",
         "TransitionDuration": 0.1
     },
     {
@@ -749,6 +839,13 @@
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 0,
+        "State": "RunStartEnd01",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
         "State": "Hit1",
         "Target": "Stand2",
         "TransitionDuration": 0.0
@@ -848,6 +945,76 @@
         "Role": "Mo1RefugeeMd000001",
         "Layer": 0,
         "State": "Caught",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "State": "WalkStart",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "State": "WalkStart",
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "State": "WalkStart",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "State": "WalkStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "State": "WalkStartEnd",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "State": "LTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "State": "LTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "State": "RTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "State": "RTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 0,
+        "State": "HitLB",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     },
@@ -1112,205 +1279,145 @@
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack100",
+        "Target": "WalkStart",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack101",
+        "Target": "WalkStop",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack102",
+        "Target": "WalkStartEnd",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack103",
+        "Target": "LTurn90",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack104",
+        "Target": "LTurn180",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack105",
+        "Target": "RTurn90",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack106",
+        "Target": "RTurn180",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack107",
+        "Target": "LevelAttack10",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack108",
+        "Target": "LevelAttack11",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack109",
+        "Target": "LevelAttack12",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack110",
+        "Target": "LevelAttack13",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack111",
+        "Target": "LevelAttack14",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack112",
+        "Target": "LevelAttack15",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack113",
+        "Target": "LevelAttack22",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack114",
+        "Target": "LevelAttack23",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack115",
+        "Target": "LevelAttack31",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack116",
+        "Target": "LevelAttack32",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack117",
+        "Target": "LevelAttack33",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack118",
+        "Target": "LevelAttack35",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack119",
+        "Target": "LevelAttack36",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack120",
+        "Target": "LevelAttack37",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack121",
+        "Target": "LevelAttack38",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack122",
+        "Target": "LevelAttack39",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "Target": "Attack123",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mo1RefugeeMd000001",
-        "Layer": 1,
-        "Target": "Attack124",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mo1RefugeeMd000001",
-        "Layer": 1,
-        "Target": "Attack125",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mo1RefugeeMd000001",
-        "Layer": 1,
-        "Target": "Attack126",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mo1RefugeeMd000001",
-        "Layer": 1,
-        "Target": "Attack127",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mo1RefugeeMd000001",
-        "Layer": 1,
-        "Target": "Attack128",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mo1RefugeeMd000001",
-        "Layer": 1,
-        "Target": "Attack129",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mo1RefugeeMd000001",
-        "Layer": 1,
-        "Target": "Attack130",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mo1RefugeeMd000001",
-        "Layer": 1,
-        "Target": "Attack131",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mo1RefugeeMd000001",
-        "Layer": 1,
-        "Target": "Attack132",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mo1RefugeeMd000001",
-        "Layer": 1,
-        "Target": "Attack133",
+        "Target": "LevelAttack40",
         "TransitionDuration": 0.1
     },
     {
@@ -1631,6 +1738,13 @@
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
+        "State": "RunStartEnd01",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 1,
         "State": "Hit1",
         "Target": "Stand2",
         "TransitionDuration": 0.0
@@ -1736,15 +1850,64 @@
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "State": "Attack131",
-        "Target": "Attack132",
+        "State": "WalkStart",
+        "Target": "Walk",
         "TransitionDuration": 0.1
     },
     {
         "Role": "Mo1RefugeeMd000001",
         "Layer": 1,
-        "State": "Attack133",
-        "Target": "Attack132",
+        "State": "WalkStart",
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 1,
+        "State": "WalkStart",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 1,
+        "State": "WalkStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 1,
+        "State": "WalkStartEnd",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 1,
+        "State": "LTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 1,
+        "State": "LTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 1,
+        "State": "RTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1RefugeeMd000001",
+        "Layer": 1,
+        "State": "RTurn180",
+        "Target": "Stand2",
         "TransitionDuration": 0.1
     }
 ]

@@ -86,6 +86,12 @@ function XLineArithmetic3BoardCommand:Undo(game, onComplete)
         carriage.Passenger = nil  -- 上车前车厢是空的
     end
 
+    -- 恢复表情状态：将车厢的表情状态转移到格子
+    local carriageEmojKey = game:_GetCarriageEmojKey(self._CarriageIndex)
+    local gridEmojKey = game:_GetGridEmojKey(self._GridX, self._GridY)
+    local carriageEmoj = game:GetEmojState(carriageEmojKey)
+    game:SetEmojState(gridEmojKey, carriageEmoj)
+
     -- UI 层逻辑
     if not self._PassengerUid or not self._PassengerStartPos then
         if onComplete then onComplete() end

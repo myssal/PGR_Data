@@ -12,12 +12,6 @@ local DownloadMode = {
     Sub = "Sub",
 }
 
--- 下载状态筛选（与 FilterType 形成双维度交集）
-local DownloadFilterType = {
-    UnDownload = 1,  -- 未下载（含下载中）
-    Download = 2,    -- 已下载
-}
-
 -- [F7] 会话缓存 key
 local function GetSessionKey()
     return "DownloadFashion_Session_" .. (XPlayer.Id or 0)
@@ -29,8 +23,7 @@ function XUiDownloadFashion:OnAwake()
 end
 
 function XUiDownloadFashion:OnStart()
-    self._FilterType = FilterType.Own
-    self._DownloadFilterType = DownloadFilterType.UnDownload
+    self._FilterType = FilterType.All
     self._SelectedResIds = {}
     -- [F4] 初始化双模式字段
     self._DownloadMode = nil  -- DownloadMode.Res|DownloadMode.Sub|nil
@@ -71,12 +64,6 @@ function XUiDownloadFashion:InitButton()
     self.BtnUninstall:AddEventListener(handler(self, self.OnBtnUninstallClick))
     self.BtnContinue:AddEventListener(handler(self, self.OnBtnContinueClick))
     self.BtnPause:AddEventListener(handler(self, self.OnBtnPauseClick))
-    self.BtnFilterUnDownload:AddEventListener(handler(self, self.OnBtnFilterUnDownloadClick))
-    self.BtnFilterDownload:AddEventListener(handler(self, self.OnBtnFilterDownloadClick))
-    self.BtnCancelDownload:AddEventListener(handler(self, self.OnBtnCancelDownloadClick))
-    -- 缓存两个下载状态文本下的进度数字组件
-    self._TxtProgressDownloading = self.TxtDownloading.transform:Find("TxtTotalProgressNum"):GetComponent("Text")
-    self._TxtProgressWaiting = self.TxtWaiting.transform:Find("TxtTotalProgressNum"):GetComponent("Text")
 end
 
 function XUiDownloadFashion:InitDynamicTable()
@@ -105,20 +92,6 @@ end
 
 function XUiDownloadFashion:OnBtnFilterUnOwnClick()
     self._FilterType = FilterType.UnOwn
-    self:ClearSelection()
-    self:RefreshView()
-    self:UpdateFilterBtnState()
-end
-
-function XUiDownloadFashion:OnBtnFilterUnDownloadClick()
-    self._DownloadFilterType = DownloadFilterType.UnDownload
-    self:ClearSelection()
-    self:RefreshView()
-    self:UpdateFilterBtnState()
-end
-
-function XUiDownloadFashion:OnBtnFilterDownloadClick()
-    self._DownloadFilterType = DownloadFilterType.Download
     self:ClearSelection()
     self:RefreshView()
     self:UpdateFilterBtnState()
@@ -162,14 +135,14 @@ function XUiDownloadFashion:OnBtnDownloadClick()
     self._IsDownloading = true
     self._DownloadingResIds = resIds
     self:ClearSelection()
-    self:RefreshGridDataOnly()
+    self:RefreshView()
     self:UpdatePanelState()
 end
 
 function XUiDownloadFashion:OnBtnUninstallClick()
     -- 本界面自身正在下载中，不允许卸载
     if self._IsDownloading then
-        XUiManager.TipText("DownloadingFashionTip")
+        XUiManager.TipText("SubpackageUninstallRejectDownloading")
         return
     end
 
@@ -232,32 +205,6 @@ function XUiDownloadFashion:OnBtnPauseClick()
     self:UpdateDownloadBtnState()
 end
 
-function XUiDownloadFashion:OnBtnCancelDownloadClick()
-    -- Sub 模式：暂停整个 Sub
-    if self._DownloadMode == DownloadMode.Sub and self._DownloadSubId then
-        local flowState = XMVCA.XSubPackage:GetSubpackageFlowState(self._DownloadSubId)
-        if flowState == XEnumConst.SUBPACKAGE.FLOW_STATE.QUEUED then
-            XMVCA.XSubPackage:ProcessPrepare(self._DownloadSubId)
-        elseif flowState ~= XEnumConst.SUBPACKAGE.FLOW_STATE.NONE then
-            XMVCA.XSubPackage:PauseDownload(self._DownloadSubId)
-        end
-    end
-    -- Res 模式 或 Sub 模式兜底：暂停所有管理中的 Res
-    if not XTool.IsTableEmpty(self._DownloadingResIds) then
-        XMVCA.XSubPackage:PauseResListDownload(self._DownloadingResIds)
-    end
-
-    -- 清除下载状态，回到选择模式
-    self:ClearDownloadSession()
-    self._IsDownloading = false
-    self._IsPaused = false
-    self._DownloadingResIds = {}
-    self._DownloadMode = nil
-    self._DownloadSubId = nil
-    self:RefreshView()
-    self:UpdatePanelState()
-end
-
 function XUiDownloadFashion:OnListFashionDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:Refresh(self.ListFashion.DataSource[index])
@@ -295,48 +242,36 @@ function XUiDownloadFashion:GetFashionDownloadList()
     local result = {}
     local configs = XMVCA.XSubPackage:GetAllFashionDownloadConfigs()
 
-    for k, config in pairs(configs) do
-        if type(k) ~= "number" then goto continue end
+    for _, config in pairs(configs) do
         local fashionId = config.FashionId
         local resId = config.ResId
 
         if XDataCenter.FashionManager.IsFashionInTime(fashionId) then
             local isOwn = XDataCenter.FashionManager.CheckHasFashion(fashionId)
             local isDownloaded = XMVCA.XSubPackage:CheckResDownloadComplete(resId)
-            local isDownloading = self:_CheckResDownloading(resId)
 
-            -- 双筛选交集：拥有组 AND 下载状态组
-            local passOwnership = false
+            local shouldAdd = false
             if self._FilterType == FilterType.All then
-                passOwnership = true
+                shouldAdd = true
             elseif self._FilterType == FilterType.Own and isOwn then
-                passOwnership = true
+                shouldAdd = true
             elseif self._FilterType == FilterType.UnOwn and not isOwn then
-                passOwnership = true
+                shouldAdd = true
             end
 
-            local passDownload = false
-            if self._DownloadFilterType == DownloadFilterType.UnDownload then
-                passDownload = not isDownloaded  -- 未下载 + 下载中
-            elseif self._DownloadFilterType == DownloadFilterType.Download then
-                passDownload = isDownloaded
-            end
-
-            if passOwnership and passDownload then
+            if shouldAdd then
                 local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
                 table.insert(result, {
                     FashionId = fashionId,
                     ResId = resId,
                     IsOwn = isOwn,
                     IsDownloaded = isDownloaded,
-                    IsDownloading = isDownloading,
                     CharacterId = template and template.CharacterId or 0,
                     Name = template and template.Name or "",
                     IsSelected = self._SelectedResIds[resId] or false,
                 })
             end
         end
-        ::continue::
     end
 
     table.sort(result, function(a, b)
@@ -349,36 +284,10 @@ function XUiDownloadFashion:GetFashionDownloadList()
     return result
 end
 
---- 判断 resId 是否处于下载中状态（实体状态 或 在当前下载批次中）
-function XUiDownloadFashion:_CheckResDownloading(resId)
-    local resItem = XMVCA.XSubPackage:GetResourceItem(resId)
-    if resItem then
-        local state = resItem:GetState()
-        local STATE = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
-        if state == STATE.DOWNLOADING or state == STATE.PREPARE_DOWNLOAD then
-            return true
-        end
-    end
-    if self._IsDownloading then
-        for _, downloadResId in ipairs(self._DownloadingResIds or {}) do
-            if downloadResId == resId then
-                return true
-            end
-        end
-    end
-    return false
-end
-
 function XUiDownloadFashion:UpdateFilterBtnState()
-    -- 拥有组
     self.BtnFilterAll:SetButtonState(self._FilterType == FilterType.All and CS.UiButtonState.Select or CS.UiButtonState.Normal)
     self.BtnFilterOwn:SetButtonState(self._FilterType == FilterType.Own and CS.UiButtonState.Select or CS.UiButtonState.Normal)
     self.BtnFilterUnOwn:SetButtonState(self._FilterType == FilterType.UnOwn and CS.UiButtonState.Select or CS.UiButtonState.Normal)
-    -- 下载状态组
-    self.BtnFilterUnDownload:SetButtonState(self._DownloadFilterType == DownloadFilterType.UnDownload and CS.UiButtonState.Select or CS.UiButtonState.Normal)
-    self.BtnFilterDownload:SetButtonState(self._DownloadFilterType == DownloadFilterType.Download and CS.UiButtonState.Select or CS.UiButtonState.Normal)
-    -- 下载/卸载按钮跟随下载状态筛选
-    self:UpdateActionBtnVisibility()
 end
 
 function XUiDownloadFashion:UpdateBottomBtnState()
@@ -401,13 +310,6 @@ function XUiDownloadFashion:UpdateBottomBtnState()
 
     self.BtnDownload:SetNameByGroup(1, downloadMB)
     self.BtnUninstall:SetNameByGroup(1, uninstallMB)
-end
-
--- 下载/卸载按钮跟随下载状态筛选显隐
-function XUiDownloadFashion:UpdateActionBtnVisibility()
-    local isUnDownload = self._DownloadFilterType == DownloadFilterType.UnDownload
-    self.BtnDownload.gameObject:SetActiveEx(isUnDownload)
-    self.BtnUninstall.gameObject:SetActiveEx(not isUnDownload)
 end
 
 function XUiDownloadFashion:OnResUpdate(resId, progress)
@@ -523,7 +425,6 @@ end
 
 -- 格子点击事件
 function XUiDownloadFashion:OnGridClick(grid)
-    if self._IsDownloading then return end
     if not grid or not grid.Data then return end
     local resId = grid.Data.ResId
     local isSelected = not grid.Data.IsSelected
@@ -548,7 +449,6 @@ end
 function XUiDownloadFashion:UpdatePanelState()
     self.PanelSelecting.gameObject:SetActiveEx(not self._IsDownloading)
     self.PanelDownloading.gameObject:SetActiveEx(self._IsDownloading)
-    self.BtnCancelDownload.gameObject:SetActiveEx(self._IsDownloading)
 
     if self._IsDownloading then
         self:UpdateDownloadProgress()
@@ -566,25 +466,14 @@ end
 function XUiDownloadFashion:UpdateDownloadProgress()
     local totalSize = 0
     local downloadedSize = 0
-    local hasActiveDownload = false
-    local STATE = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
 
     for _, resId in ipairs(self._DownloadingResIds or {}) do
         local resItem = XMVCA.XSubPackage:GetResourceItem(resId)
         if resItem then
             totalSize = totalSize + resItem:GetTotalSize()
             downloadedSize = downloadedSize + resItem:GetDownloadSize()
-            local state = resItem:GetState()
-            if state == STATE.DOWNLOADING or state == STATE.PREPARE_DOWNLOAD then
-                hasActiveDownload = true
-            end
         end
     end
-
-    -- 区分下载中/等待中状态（暂停视为下载中）
-    local isWaiting = not hasActiveDownload and not self._IsPaused
-    self.TxtDownloading.gameObject:SetActiveEx(not isWaiting)
-    self.TxtWaiting.gameObject:SetActiveEx(isWaiting)
 
     -- 进度条（进度仍用非去重的累加值，保证比例正确）
     local progress = totalSize > 0 and (downloadedSize / totalSize) or 0
@@ -592,49 +481,38 @@ function XUiDownloadFashion:UpdateDownloadProgress()
         self.ImgFillBar.fillAmount = progress
     end
 
-    -- 进度文本：总大小用去重值，同时赋值到两个子节点
-    local resIdTable = {}
-    for _, resId in ipairs(self._DownloadingResIds or {}) do
-        resIdTable[resId] = true
-    end
-    local dedupTotal = XMVCA.XSubPackage:GetResListTotalSize(resIdTable)
-    local dedupDownloaded = totalSize > 0 and (downloadedSize / totalSize * dedupTotal) or 0
-    local progressText = string.format("%.1fMB/%.1fMB", dedupDownloaded / 1024 / 1024, dedupTotal / 1024 / 1024)
-    if self._TxtProgressDownloading then
-        self._TxtProgressDownloading.text = progressText
-    end
-    if self._TxtProgressWaiting then
-        self._TxtProgressWaiting.text = progressText
+    -- 进度文本：总大小用去重值，与Grid/按钮大小保持一致
+    if self.TxtTotalProgressNum then
+        local resIdTable = {}
+        for _, resId in ipairs(self._DownloadingResIds or {}) do
+            resIdTable[resId] = true
+        end
+        local dedupTotal = XMVCA.XSubPackage:GetResListTotalSize(resIdTable)
+        -- 已下载量按比例换算到去重总量
+        local dedupDownloaded = totalSize > 0 and (downloadedSize / totalSize * dedupTotal) or 0
+        local downloadedMB = string.format("%.1f", dedupDownloaded / 1024 / 1024)
+        local totalMB = string.format("%.1f", dedupTotal / 1024 / 1024)
+        self.TxtTotalProgressNum.text = downloadedMB .. "MB/" .. totalMB .. "MB"
     end
 end
 
 --- [F7 重写] 检查下载状态（进入界面时调用）
 function XUiDownloadFashion:CheckDownloadingState()
     local session = self:LoadDownloadSession()
-
-    -- ========== 有 session 时，先尝试恢复 ==========
-    if session and not XTool.IsTableEmpty(session.ResIds) then
-        local restored = self:_TryRestoreFromSession(session)
-        if restored then
+    if not session or XTool.IsTableEmpty(session.ResIds) then
+        -- [F9] 无本地 session 时，检测 Main 是否已发起涂装 Sub 下载
+        if self:TryRestoreSubModeFromMainWithoutSession() then
             return
         end
-        -- session 已过期/完成，清掉后 fall through 到无 session 检测
-        self:ClearDownloadSession()
-    end
 
-    -- ========== 无 session（或旧 session 已清除），检测 Main 是否发起了涂装 Sub 下载 ==========
-    if self:TryRestoreSubModeFromMainWithoutSession() then
+        self._IsDownloading = false
+        self._IsPaused = false
+        self._DownloadingResIds = {}
+        self._DownloadMode = nil
+        self._DownloadSubId = nil
         return
     end
-    self._IsDownloading = false
-    self._IsPaused = false
-    self._DownloadingResIds = {}
-    self._DownloadMode = nil
-    self._DownloadSubId = nil
-end
 
---- 尝试从已有 session 恢复下载状态，成功返回 true，session 过期/无效返回 false
-function XUiDownloadFashion:_TryRestoreFromSession(session)
     -- ========== Sub 模式恢复优先 ==========
     if session.Mode == DownloadMode.Sub and session.SubId and session.SubId > 0 then
         local subId = session.SubId
@@ -652,9 +530,17 @@ function XUiDownloadFashion:_TryRestoreFromSession(session)
         end
 
         if allComplete then
-            return false
+            self:ClearDownloadSession()
+            self._IsDownloading = false
+            self._IsPaused = false
+            self._DownloadingResIds = {}
+            self._DownloadMode = nil
+            self._DownloadSubId = nil
+            return
         end
 
+        -- 恢复条件：FlowState 非 None（进程内活跃），或 Activated + 未 Finished + 未全部完成
+        -- [修正] isActivated 单独不够（历史意图），必须排除已完成过的 sub
         local isFinished = XMVCA.XSubPackage:IsSubpackageFinished(subId)
         if flowState ~= XEnumConst.SUBPACKAGE.FLOW_STATE.NONE or (isActivated and not isFinished and not allComplete) then
             self._DownloadMode = DownloadMode.Sub
@@ -667,13 +553,22 @@ function XUiDownloadFashion:_TryRestoreFromSession(session)
             else
                 self._IsPaused = true
             end
-            return true
+            return
         end
 
-        return false
+        -- 上述条件都不满足（如已卸载），清缓存
+        self:ClearDownloadSession()
+        self._IsDownloading = false
+        self._IsPaused = false
+        self._DownloadingResIds = {}
+        self._DownloadMode = nil
+        self._DownloadSubId = nil
+        return
     end
 
     -- ========== Res 模式恢复 ==========
+    self._DownloadMode = DownloadMode.Res
+    self._DownloadSubId = nil
     local cachedResIds = session.ResIds
 
     -- [F7] 排除法过滤：保留 NOT_DOWNLOAD（重启后未落盘的选择）
@@ -690,9 +585,15 @@ function XUiDownloadFashion:_TryRestoreFromSession(session)
     end
 
     if XTool.IsTableEmpty(needDownloadResIds) then
-        return false
+        self:ClearDownloadSession()
+        self._IsDownloading = false
+        self._IsPaused = false
+        self._DownloadingResIds = {}
+        self._DownloadMode = nil
+        return
     end
 
+    -- 检查实际下载活跃度
     local hasActiveDownload = false
     local hasPausedDownload = false
     local hasNotDownloaded = false
@@ -713,14 +614,17 @@ function XUiDownloadFashion:_TryRestoreFromSession(session)
 
     -- [F7] NOT_DOWNLOAD 不是脏缓存
     if not hasActiveDownload and not hasPausedDownload and not hasNotDownloaded then
-        return false
+        self:ClearDownloadSession()
+        self._IsDownloading = false
+        self._IsPaused = false
+        self._DownloadingResIds = {}
+        self._DownloadMode = nil
+        return
     end
 
-    -- 进入下载中模式（保留完整 session 列表，确保进度条反映用户原始意图）
-    self._DownloadMode = DownloadMode.Res
-    self._DownloadSubId = nil
+    -- 进入下载中模式
     self._IsDownloading = true
-    self._DownloadingResIds = cachedResIds
+    self._DownloadingResIds = needDownloadResIds
 
     if hasActiveDownload then
         self._IsPaused = false
@@ -733,7 +637,6 @@ function XUiDownloadFashion:_TryRestoreFromSession(session)
     if takeoverSubId then
         self:TryEnterSubMode(takeoverSubId)
     end
-    return true
 end
 
 --- [F7] 保存下载会话
@@ -803,8 +706,8 @@ function XUiDownloadFashion:GetFashionSubResIds(subpackageId)
     end
     local result = {}
     local configs = XMVCA.XSubPackage:GetAllFashionDownloadConfigs()
-    for k, config in pairs(configs or {}) do
-        if type(k) == "number" and subResSet[config.ResId] then
+    for _, config in pairs(configs or {}) do
+        if subResSet[config.ResId] then
             table.insert(result, config.ResId)
         end
     end
@@ -819,19 +722,13 @@ function XUiDownloadFashion:GetFashionSubId()
     if XTool.IsTableEmpty(configs) then
         return nil
     end
-    -- BinaryTable 原始表含 __tableNextFix 等 string key 内部标记，只取 number key（FashionId）
-    local firstResId
-    for k, config in pairs(configs) do
-        if type(k) == "number" and config.ResId then
-            firstResId = config.ResId
-            break
-        end
-    end
-    if not firstResId then return nil end
-    local subIds = XMVCA.XSubPackage:GetSubpackageIdByResId(firstResId)
+    -- 取第一个 config 的 ResId 反查 subId（所有涂装 Res 应隶属同一个 Sub）
+    local firstConfig = next(configs)
+    if not firstConfig then return nil end
+    local subIds = XMVCA.XSubPackage:GetSubpackageIdByResId(configs[firstConfig].ResId)
     if XTool.IsTableEmpty(subIds) then return nil end
     if #subIds > 1 then
-        XLog.Error("[UiDownloadFashion] Fashion ResId 映射到多个 Sub，配置异常: resId=" .. firstResId)
+        XLog.Error("[UiDownloadFashion] Fashion ResId 映射到多个 Sub，配置异常: resId=" .. configs[firstConfig].ResId)
     end
     return subIds[1]
 end

@@ -107,7 +107,6 @@ function XUiPBRCollection:RefreshCollectionShowByType(tabType)
     else    
         self.DynamicTable:SetDataSource(datas)
         self.DynamicTable:ReloadDataSync(1)
-        self:PlayAnimationWithMask("Qiehuan")
     end
 end
 

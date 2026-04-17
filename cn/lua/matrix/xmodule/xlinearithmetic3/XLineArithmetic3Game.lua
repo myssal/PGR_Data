@@ -32,6 +32,9 @@ function XLineArithmetic3Game:Ctor()
 
     ---@type table[] 本笔即将播放的指令
     self._Instructions = {}
+
+    ---@type table<string, number> 角色表情状态字典，key: "head" | "carriage_N" | "grid_x_y"，value: Emoj枚举
+    self._EmojState = {}
 end
 
 ---@param pos { x: number, y: number }
@@ -82,6 +85,77 @@ function XLineArithmetic3Game:GetStationColorAt(pos)
         end
     end
     return XLineArithmetic3Enum.Color.White
+end
+
+--============================================================================
+-- 表情状态管理
+--============================================================================
+
+-- 表情状态Key编码常量
+local EmojKeyOffset = {
+    Head = 0,           -- 车头key: 0
+    Carriage = 1000,    -- 车厢key: 1000 + carriageIndex (1001, 1002, ...)
+    Grid = 10000,       -- 格子key: 10000 + y * 100 + x (10101-10709)
+}
+
+--- 获取车头表情key
+---@return number
+function XLineArithmetic3Game:_GetHeadEmojKey()
+    return EmojKeyOffset.Head
+end
+
+--- 获取车厢乘客表情key
+---@param carriageIndex number 车厢索引
+---@return number
+function XLineArithmetic3Game:_GetCarriageEmojKey(carriageIndex)
+    return EmojKeyOffset.Carriage + carriageIndex
+end
+
+--- 获取地图格子乘客表情key
+---@param x number 格子X坐标
+---@param y number 格子Y坐标
+---@return number
+function XLineArithmetic3Game:_GetGridEmojKey(x, y)
+    return EmojKeyOffset.Grid + y * 100 + x
+end
+
+--- 获取表情状态
+---@param key number 表情key
+---@return number Emoj枚举
+function XLineArithmetic3Game:GetEmojState(key)
+    return self._EmojState[key] or XLineArithmetic3Enum.Emoj.Initial
+end
+
+--- 设置表情状态
+---@param key number 表情key
+---@param emoj number Emoj枚举
+function XLineArithmetic3Game:SetEmojState(key, emoj)
+    self._EmojState[key] = emoj
+end
+
+--- 初始化表情状态（游戏开始时调用）
+function XLineArithmetic3Game:InitEmojState()
+    local Emoj = XLineArithmetic3Enum.Emoj
+
+    -- 车头初始表情
+    self:SetEmojState(self:_GetHeadEmojKey(), Emoj.Initial)
+
+    -- 车厢乘客初始表情
+    for ci = 1, #self._Carriages do
+        if self._Carriages[ci].Passenger then
+            self:SetEmojState(self:_GetCarriageEmojKey(ci), Emoj.AfterBoard)
+        end
+    end
+
+    -- 地图格子乘客初始表情
+    for y = 1, self._MapSize.y do
+        for x = 1, self._MapSize.x do
+            local grid = self:GetGrid({ x = x, y = y })
+            if grid and grid.Passenger then
+                self:SetEmojState(self:_GetGridEmojKey(x, y), Emoj.Initial)
+            end
+        end
+    end
 end
 
 --- 初始化地图与车站颜色（在加载地图后调用）
@@ -270,6 +344,7 @@ function XLineArithmetic3Game:Clear()
     self._HeadPos = nil
     self._Carriages = {}
     self._Instructions = {}
+    self._EmojState = {}
     -- 星星目标相关：记录每个终点/额外终点在第几个指令后完成
     self._EndConditionCompleteStepByCellId = {}
     self._ExtraEndCompleteStepByCellId = {}
@@ -396,6 +471,7 @@ function XLineArithmetic3Game:ImportConfig(model, mapConfig, carConfig)
                         carriage.Passenger = {
                             Color = gridCfg.Color,
                             GridName = gridCfg.GridName,
+                            CharacterId = gridCfg.CharacterId,
                         }
                     else
                         XLog.Error("[XLineArithmetic3Game] 乘客颜色与 GridName 获取失败，cellId:", cellId)
@@ -409,6 +485,9 @@ function XLineArithmetic3Game:ImportConfig(model, mapConfig, carConfig)
     self._Path = {}
     self._TraveledPath = { { x = self._HeadPos.x, y = self._HeadPos.y } } -- 起点
     self._Instructions = {}
+
+    -- 初始化表情状态
+    self:InitEmojState()
 end
 
 --- 埋点：记录一次回撤（按组）
@@ -689,19 +768,145 @@ function XLineArithmetic3Game:ConfirmPath()
             HeadPosBefore = headPosBefore
         }
 
-        -- 车头移动后，检测车头周围是否有乘客，添加 ReadyToBoard 表情
+        -- 车头移动后，检测车头周围是否有终点格和乘客
         local headNeighbors = self:GetNeighbors(self._HeadPos)
+        local isHeadNearOrAtEnd = false  -- 车头靠近或在终点格上
+        local passengerNearHead = {}  -- 与车头相邻的乘客位置
+
+        -- 检测车头当前位置是否在终点格上
+        local currentHeadGrid = self:GetGrid(self._HeadPos)
+        if currentHeadGrid and currentHeadGrid.Type == GridType.End then
+            isHeadNearOrAtEnd = true
+        end
+
         for _, hn in ipairs(headNeighbors) do
             local hng = self:GetGrid(hn)
+            -- 检测车头是否靠近终点格
+            if hng and hng.Type == GridType.End then
+                isHeadNearOrAtEnd = true
+            end
+            -- 记录与车头相邻的乘客（非额外终点格上的）
             if hng and hng.Passenger and hng.Type ~= GridType.ExtraEnd then
-                -- 乘客与车头相邻，切换为 ReadyToBoard 表情
-                self._Instructions[#self._Instructions + 1] = {
-                    Type = Instruction.ChangePassengerEmoj,
-                    GridX = hn.x,
-                    GridY = hn.y,
-                    Emoj = XLineArithmetic3Enum.Emoj.ReadyToBoard,
-                    EmojBefore = XLineArithmetic3Enum.Emoj.Initial
-                }
+                table.insert(passengerNearHead, { x = hn.x, y = hn.y })
+            end
+        end
+
+        -- 根据车头是否靠近/在终点，更新所有角色表情
+        if isHeadNearOrAtEnd then
+            -- 车头靠近/在终点：所有未到达目的地的角色切换为 ToFinalEnd
+            local Emoj = XLineArithmetic3Enum.Emoj
+
+            -- 车头切换为 ToFinalEnd 表情
+            local headKey = self:_GetHeadEmojKey()
+            self._Instructions[#self._Instructions + 1] = {
+                Type = Instruction.ChangePassengerEmoj,
+                IsHead = true,
+                Emoj = Emoj.ToFinalEnd,
+                EmojBefore = self:GetEmojState(headKey)
+            }
+            self:SetEmojState(headKey, Emoj.ToFinalEnd)
+
+            -- 车厢上的乘客切换为 ToFinalEnd 表情
+            for ci, carriage in ipairs(self._Carriages) do
+                if carriage.Passenger then
+                    local key = self:_GetCarriageEmojKey(ci)
+                    self._Instructions[#self._Instructions + 1] = {
+                        Type = Instruction.ChangePassengerEmoj,
+                        CarriageIndex = ci,
+                        Emoj = Emoj.ToFinalEnd,
+                        EmojBefore = self:GetEmojState(key)
+                    }
+                    self:SetEmojState(key, Emoj.ToFinalEnd)
+                end
+            end
+
+            -- 地图格子上的乘客切换为 ToFinalEnd 表情
+            for y = 1, self._MapSize.y do
+                for x = 1, self._MapSize.x do
+                    local grid = self:GetGrid({ x = x, y = y })
+                    if grid and grid.Passenger then
+                        if grid.Type == GridType.Passenger or grid.Type == GridType.Station then
+                            local key = self:_GetGridEmojKey(x, y)
+                            self._Instructions[#self._Instructions + 1] = {
+                                Type = Instruction.ChangePassengerEmoj,
+                                GridX = x,
+                                GridY = y,
+                                Emoj = Emoj.ToFinalEnd,
+                                EmojBefore = self:GetEmojState(key)
+                            }
+                            self:SetEmojState(key, Emoj.ToFinalEnd)
+                        end
+                    end
+                end
+            end
+        else
+            -- 车头远离终点：恢复角色表情到正常状态
+            local Emoj = XLineArithmetic3Enum.Emoj
+
+            -- 车头恢复为 Initial 表情
+            local headKey = self:_GetHeadEmojKey()
+            self._Instructions[#self._Instructions + 1] = {
+                Type = Instruction.ChangePassengerEmoj,
+                IsHead = true,
+                Emoj = Emoj.Initial,
+                EmojBefore = self:GetEmojState(headKey)
+            }
+            self:SetEmojState(headKey, Emoj.Initial)
+
+            -- 车厢上的乘客恢复为 AfterBoard 表情
+            for ci, carriage in ipairs(self._Carriages) do
+                if carriage.Passenger then
+                    local key = self:_GetCarriageEmojKey(ci)
+                    self._Instructions[#self._Instructions + 1] = {
+                        Type = Instruction.ChangePassengerEmoj,
+                        CarriageIndex = ci,
+                        Emoj = Emoj.AfterBoard,
+                        EmojBefore = self:GetEmojState(key)
+                    }
+                    self:SetEmojState(key, Emoj.AfterBoard)
+                end
+            end
+
+            -- 地图格子上的乘客：与车头相邻则 ReadyToBoard，否则 Initial
+            for y = 1, self._MapSize.y do
+                for x = 1, self._MapSize.x do
+                    local grid = self:GetGrid({ x = x, y = y })
+                    if grid and grid.Passenger then
+                        if grid.Type == GridType.Passenger or grid.Type == GridType.Station then
+                            -- 检查是否与车头相邻
+                            local isNearHead = false
+                            for _, pos in ipairs(passengerNearHead) do
+                                if pos.x == x and pos.y == y then
+                                    isNearHead = true
+                                    break
+                                end
+                            end
+
+                            local key = self:_GetGridEmojKey(x, y)
+                            if isNearHead then
+                                -- 与车头相邻，ReadyToBoard
+                                self._Instructions[#self._Instructions + 1] = {
+                                    Type = Instruction.ChangePassengerEmoj,
+                                    GridX = x,
+                                    GridY = y,
+                                    Emoj = Emoj.ReadyToBoard,
+                                    EmojBefore = self:GetEmojState(key)
+                                }
+                                self:SetEmojState(key, Emoj.ReadyToBoard)
+                            else
+                                -- 不与车头相邻，恢复 Initial
+                                self._Instructions[#self._Instructions + 1] = {
+                                    Type = Instruction.ChangePassengerEmoj,
+                                    GridX = x,
+                                    GridY = y,
+                                    Emoj = Emoj.Initial,
+                                    EmojBefore = self:GetEmojState(key)
+                                }
+                                self:SetEmojState(key, Emoj.Initial)
+                            end
+                        end
+                    end
+                end
             end
         end
 
@@ -791,15 +996,18 @@ function XLineArithmetic3Game:ConfirmPath()
                     CarriagePassengerBefore = carriagePassengerBefore
                 }
                 carriage.Passenger = nil
-                -- 下车后修改乘客表情（根据颜色决定）
+                -- 下车后修改乘客表情（根据颜色决定，从车厢转移到格子）
                 local emoj = self:_GetEmojByColor(color)
+                local emojBefore = self:GetEmojState(self:_GetCarriageEmojKey(ci))
                 self._Instructions[#self._Instructions + 1] = {
                     Type = Instruction.ChangePassengerEmoj,
                     GridX = n.x,
                     GridY = n.y,
                     Emoj = emoj,
-                    EmojBefore = XLineArithmetic3Enum.Emoj.AfterBoard
+                    EmojBefore = emojBefore
                 }
+                -- 更新表情状态：格子乘客表情设为下车后的表情
+                self:SetEmojState(self:_GetGridEmojKey(n.x, n.y), emoj)
                 -- 下车后刷新车站颜色并递归传播
                 self:_EmitPropagateInstructions(self:RefreshStationColorsWithPropagate())
             end
@@ -834,6 +1042,7 @@ function XLineArithmetic3Game:ConfirmPath()
                             -- 保存之前状态
                             local gridPassengerBefore = { Color = ng.Passenger.Color }
                             local color = ng.Passenger.Color
+                            local emojBefore = self:GetEmojState(self:_GetGridEmojKey(n.x, n.y))
                             carriage.Passenger = { Color = color }
                             ng.Passenger = nil
                             self._Instructions[#self._Instructions + 1] = {
@@ -844,13 +1053,16 @@ function XLineArithmetic3Game:ConfirmPath()
                                 Color = color,
                                 GridPassengerBefore = gridPassengerBefore
                             }
-                            -- 上车后修改乘客表情
+                            -- 上车后修改乘客表情（从格子位置转移到车厢）
+                            local Emoj = XLineArithmetic3Enum.Emoj
                             self._Instructions[#self._Instructions + 1] = {
                                 Type = Instruction.ChangePassengerEmoj,
                                 CarriageIndex = ci,
-                                Emoj = XLineArithmetic3Enum.Emoj.AfterBoard,
-                                EmojBefore = XLineArithmetic3Enum.Emoj.ReadyToBoard
+                                Emoj = Emoj.AfterBoard,
+                                EmojBefore = emojBefore
                             }
+                            -- 更新表情状态：车厢乘客表情设为AfterBoard
+                            self:SetEmojState(self:_GetCarriageEmojKey(ci), Emoj.AfterBoard)
                             -- 乘客格上车后刷新车站颜色并递归传播
                             self:_EmitPropagateInstructions(self:RefreshStationColorsWithPropagate())
                             break
@@ -860,6 +1072,7 @@ function XLineArithmetic3Game:ConfirmPath()
                             local gridPassengerBefore = { Color = ng.Passenger.Color }
                             local originalColor = ng.Passenger.Color
                             local color = originalColor
+                            local emojBefore = self:GetEmojState(self:_GetGridEmojKey(n.x, n.y))
                             if color == Color.White and ng.StationColor and ng.StationColor ~= Color.White then
                                 color = ng.StationColor
                                 self._Instructions[#self._Instructions + 1] = {
@@ -879,13 +1092,16 @@ function XLineArithmetic3Game:ConfirmPath()
                                 Color = color,
                                 GridPassengerBefore = gridPassengerBefore
                             }
-                            -- 上车后修改乘客表情
+                            -- 上车后修改乘客表情（从格子位置转移到车厢）
+                            local Emoj = XLineArithmetic3Enum.Emoj
                             self._Instructions[#self._Instructions + 1] = {
                                 Type = Instruction.ChangePassengerEmoj,
                                 CarriageIndex = ci,
-                                Emoj = XLineArithmetic3Enum.Emoj.AfterBoard,
-                                EmojBefore = XLineArithmetic3Enum.Emoj.ReadyToBoard
+                                Emoj = Emoj.AfterBoard,
+                                EmojBefore = emojBefore
                             }
+                            -- 更新表情状态：车厢乘客表情设为AfterBoard
+                            self:SetEmojState(self:_GetCarriageEmojKey(ci), Emoj.AfterBoard)
                             -- 车站上车后刷新车站颜色并递归传播
                             self:_EmitPropagateInstructions(self:RefreshStationColorsWithPropagate())
                             break
@@ -921,15 +1137,18 @@ function XLineArithmetic3Game:ConfirmPath()
                                     CarriagePassengerBefore = carriagePassengerBefore
                                 }
                                 carriage.Passenger = nil
-                                -- 下车后修改乘客表情（根据颜色决定）
+                                -- 下车后修改乘客表情（根据颜色决定，从车厢转移到格子）
                                 local emoj = self:_GetEmojByColor(color)
+                                local emojBefore = self:GetEmojState(self:_GetCarriageEmojKey(ci))
                                 self._Instructions[#self._Instructions + 1] = {
                                     Type = Instruction.ChangePassengerEmoj,
                                     GridX = n.x,
                                     GridY = n.y,
                                     Emoj = emoj,
-                                    EmojBefore = XLineArithmetic3Enum.Emoj.AfterBoard
+                                    EmojBefore = emojBefore
                                 }
+                                -- 更新表情状态：格子乘客表情设为下车后的表情
+                                self:SetEmojState(self:_GetGridEmojKey(n.x, n.y), emoj)
                                 -- 下车后刷新车站颜色并递归传播
                                 self:_EmitPropagateInstructions(self:RefreshStationColorsWithPropagate())
                                 break
@@ -959,17 +1178,6 @@ function XLineArithmetic3Game:ConfirmPath()
                 end
             end
         end
-    end
-
-    -- 6. 检测车头是否到达终点格，切换车头表情
-    local headGrid = self:GetGrid(self._HeadPos)
-    if headGrid and headGrid.Type == GridType.End then
-        self._Instructions[#self._Instructions + 1] = {
-            Type = Instruction.ChangePassengerEmoj,
-            IsHead = true,
-            Emoj = XLineArithmetic3Enum.Emoj.ToFinalEnd,
-            EmojBefore = XLineArithmetic3Enum.Emoj.Initial
-        }
     end
 
     -- 注意：不在这里清空 Path，由 UI 层在动画播放完成后调用 ClearPath

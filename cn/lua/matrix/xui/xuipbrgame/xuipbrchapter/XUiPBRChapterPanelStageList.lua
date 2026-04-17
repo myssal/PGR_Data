@@ -22,8 +22,6 @@ function XUiPBRChapterPanelStageList:InitComponents()
     ---@type XInputSignalMediator
     self.InputSignalMediator = XInputSignalMediator.New(XMVCA.XPBRGame.EnumConst.UIInputTypes.UIChapter)
     self.InputSignalMediator:RegisterSignalHandler(XMVCA.XPBRGame.EnumConst.UIInputTypes.UIChapter.SelectStage, handler(self, self.OnBtnGridStageClickSignal))
-    
-    self._PlayGridAnimationsHandler = handler(self, self._PlayGridAnimations)
 end
 
 function XUiPBRChapterPanelStageList:OnStart(...)
@@ -33,8 +31,6 @@ end
 
 function XUiPBRChapterPanelStageList:OnEnable()
     self.InputSignalMediator:StartInputSignalUpdateTimer()
-    
-    self:_PlayCustomAnimation()
 end
 
 function XUiPBRChapterPanelStageList:OnDisable()
@@ -199,36 +195,5 @@ function XUiPBRChapterPanelStageList:OnBtnGridStageClickSignal(stageId)
 end
 
 --endregion
-
-function XUiPBRChapterPanelStageList:_PlayCustomAnimation()
-    local delayTimes = self._Control:GetClientPBRNumber('UiChapterAnimDelayTime')
-
-    -- 先隐藏所有关卡
-    if not XTool.IsTableEmpty(self._ShowGridList) then
-        for i, v in pairs(self._ShowGridList) do
-            v:SetCanvasGroupAlpha(0)
-        end
-    end
-    
-    if XTool.IsNumberValidEx(delayTimes) then
-        -- 延后
-        self:DelayCall(self._PlayGridAnimationsHandler, delayTimes)
-    else
-        self._PlayGridAnimationsHandler()
-    end
-end
-
-function XUiPBRChapterPanelStageList:_PlayGridAnimations()
-    if not XTool.IsTableEmpty(self._ShowGridList) then
-        local delayTime = 0
-        local interval = self._Control:GetClientPBRNumber('UiChapterGridAnimInterval')
-        
-        for i, v in ipairs(self._ShowGridList) do
-            v:PlayCustomEnableAnimation(delayTime)
-
-            delayTime = delayTime + interval
-        end
-    end
-end
 
 return XUiPBRChapterPanelStageList

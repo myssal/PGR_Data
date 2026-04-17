@@ -949,6 +949,8 @@ XPurchaseManagerCreator = function()
     -- Get月卡数据
     function XPurchaseManager.GetYKInfoData()
         local datas = XPurchaseManager.GetYKInfoDatas()
+        if not datas then return nil end
+
         if XOverseaManager.IsENRegion() then
             for _, data in pairs(datas) do
                 if not data.IsUseMail and data.DailyRewardRemainDay > 0 then
@@ -992,11 +994,15 @@ XPurchaseManagerCreator = function()
     -- 是否已经买过了
     function XPurchaseManager.IsYkBuyed()
         local datas = XPurchaseManager.GetYKInfoDatas()
-        for id, data in pairs(datas) do
-            if data.DailyRewardRemainDay > 0 then
-                return true
+
+        if datas then
+            for id, data in pairs(datas) do
+                if data.DailyRewardRemainDay > 0 then
+                    return true
+                end
             end
         end
+
         return false
     end
 

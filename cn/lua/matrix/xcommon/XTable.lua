@@ -8621,7 +8621,7 @@ XTable = {
         WeaponPosY = ValueTypefloat,
         WeaponPosZ = ValueTypefloat,
         CameraFov = ValueTypefloat,
-        DetailBg = ValueTypestring,
+        DetailBg = Type1ValueTypestring,
         LogoBg = ValueTypestring,
         BtnBuyBg = ValueTypestring,
         BtnGetBg = ValueTypestring,
@@ -11635,6 +11635,7 @@ XTable = {
     XTableLineArithmeticCar = {
         Id = ValueTypeint,
         Carriages = Type1ValueTypeint,
+        RoleImgs = Type1ValueTypestring,
     },
     XTableLineArithmeticCell = {
         Id = ValueTypeint,
@@ -14704,6 +14705,7 @@ XTable = {
         MagicId = ValueTypeint,
         Radius = ValueTypefix,
         Effect = ValueTypestring,
+        BeHitEffect = ValueTypestring,
     },
     XTablePBRItem = {
         ItemId = ValueTypeint,

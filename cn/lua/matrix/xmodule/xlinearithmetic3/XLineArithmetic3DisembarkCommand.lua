@@ -82,6 +82,12 @@ function XLineArithmetic3DisembarkCommand:Undo(game, onComplete)
         carriage.Passenger = self._CarriagePassengerBefore
     end
 
+    -- 恢复表情状态：将格子的表情状态转移到车厢
+    local gridEmojKey = game:_GetGridEmojKey(self._GridX, self._GridY)
+    local carriageEmojKey = game:_GetCarriageEmojKey(self._CarriageIndex)
+    local gridEmoj = game:GetEmojState(gridEmojKey)
+    game:SetEmojState(carriageEmojKey, gridEmoj)
+
     -- UI 层逻辑
     if not self._PassengerUid then
         if onComplete then onComplete() end

@@ -44,7 +44,6 @@ function XSubPackageAgency:OnInit()
     self._IsPause = false
 
     self._CheckTypeCountThisLogin = {}  -- 本次登录检测类型触发次数
-    self._BattleFashionTipDismissedThisLogin = false  -- 战斗涂装未下载提示本次登录不再提示
     self._FashionDownloadPromptCacheKeyPrefix = "FashionDownloadPrompt_"  -- 涂装下载提示缓存Key前缀
 
     self._ThreadCount = SingleThreadCount --线程数
@@ -117,13 +116,11 @@ function XSubPackageAgency:CheckFashionDownloadPrompt()
         return false
     end
 
-    -- 2. 统计玩家拥有的涂装数量（仅计入 FashionDownloadConfig 中的涂装，剔除默认皮肤）
-    local allConfigs = self._Model:GetAllFashionDownloadConfigs()
+    -- 2. 统计玩家拥有的涂装数量
+    local ownFashions = XDataCenter.FashionManager.GetOwnFashionDataDic()
     local fashionCount = 0
-    for fashionId in pairs(allConfigs) do
-        if XDataCenter.FashionManager.CheckHasFashion(fashionId) then
-            fashionCount = fashionCount + 1
-        end
+    for _ in pairs(ownFashions) do
+        fashionCount = fashionCount + 1
     end
     if fashionCount < threshold then
         return false
@@ -397,6 +394,8 @@ function XSubPackageAgency:AddResToDownload(resId)
     end
     local resItem = self._Model:GetResourceItem(resId)
     resItem:PrepareDownload()
+    -- [F10最终] 标记游戏内下载意图（专用持久化，不污染 Launch 层）
+    self:MarkInGameResIntent(resId)
     table.insert(self._ResWaitDnLdQueue, resId)
     self:DoResDownload()
 end
@@ -441,6 +440,8 @@ function XSubPackageAgency:OnResDownloadRelease()
         local resItem = self._Model:GetResourceItem(self._DownloadingResId)
         if resItem:IsComplete() then
             self._LaunchDlcManager.SetLaunchDownloadRecord(self._DownloadingResId)
+            -- [F10最终] res 完成后清除进行中 intent（COMPLETE 态走 CheckNeedDownload 语义）
+            self:ClearInGameResIntent(self._DownloadingResId)
             CS.UnityEngine.PlayerPrefs.Save()
         end
         self._DownloadingResId = nil
@@ -727,11 +728,12 @@ function XSubPackageAgency:OnDownloadRelease()
         return
     end
 
-    local pausedSubpackageId = self._PreparePauseSubpackageId
-    if XTool.IsNumberValid(pausedSubpackageId) then
-        local item = self._Model:GetSubpackageItem(pausedSubpackageId)
+    if XTool.IsNumberValid(self._PreparePauseSubpackageId) then
+        local item = self._Model:GetSubpackageItem(self._PreparePauseSubpackageId)
         item:Pause()
         self._TipDialog = false
+
+        XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PAUSE, self._PreparePauseSubpackageId)
     end
 
     --下载队列为空了
@@ -745,11 +747,6 @@ function XSubPackageAgency:OnDownloadRelease()
     self._DownloadPackageId = 0
     self._PreparePauseSubpackageId = 0
     self._Downloader = nil
-
-    -- 先清完所有 Sub 级标记，再派发事件，确保 Grid 刷新时 IsSubOrResDownloading 能正确判定
-    if XTool.IsNumberValid(pausedSubpackageId) then
-        XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PAUSE, pausedSubpackageId)
-    end
 
     -- 保底若 OnResDownloadRelease 被拦截了 这里还能再处理一次队列下载
     if not XTool.IsNumberValid(self._DownloadingResId) then
@@ -913,6 +910,8 @@ function XSubPackageAgency:UninstallResourceById(resId, cb)
         end
 
         self._IsUninstalling = false -- 解锁
+        -- [F10最终] 清除游戏内下载意图
+        self:ClearInGameResIntent(resId)
         XLog.Warning(string.format("[XSubPackageAgency] 单资源异步卸载完成 ResId=%d", resId))
         if cb then cb() end
     end
@@ -1004,6 +1003,8 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
         end
 
         self._IsUninstalling = false
+        -- [F10最终] 清除该 sub 下全部游戏内下载意图
+        self:ClearInGameResIntentBySub(subpackageId)
         XLog.Warning("[XSubPackageAgency] 卸载完成")
         -- 用户卸载分包，标记为非激活状态
         self._LaunchDlcManager.SetSubPackageActive(subpackageId, false)
@@ -1101,9 +1102,8 @@ function XSubPackageAgency:CheckSubpackageCanUninstall(subpackageId)
         return false
     end
 
-    -- 2. 检查是否有下载过的内容
-    local downloadSize = item:GetDownloadSize()
-    return downloadSize > 0
+    -- 2. [F10] 检查是否有真实下载过的 Res（替代原来的 downloadSize > 0）
+    return self:HasSubpackageLogicalDownloadedRes(subpackageId)
 end
 
 -- [新增] 核心卸载逻辑（私有，必须在协程中运行）
@@ -1232,7 +1232,7 @@ end
 
 function XSubPackageAgency:InitDownloader()
     if not self._DownloadCenter then
-        self._DownloadCenter = XTool.CreateDownloadManager()
+        self._DownloadCenter = CS.XMTDownloadCenter()
         self._DownloadCenter:SetThreadNumber(self._ThreadCount)
         local groupIds = self._Model:GetGroupIdList()
         for _, groupId in ipairs(groupIds) do
@@ -1244,11 +1244,6 @@ function XSubPackageAgency:InitDownloader()
                     for k, taskGroup in pairs(taskGroups) do
                         taskGroup.NotifyStateChanged = handler(self, self.OnStateChanged)
                         taskGroup.NotifyProgressChanged = handler(self, self.OnProgressUpdate)
-                        if taskGroup.NotifyTaskComplete then
-                            taskGroup.NotifyTaskComplete = function(resName)
-                                self:OnSingleTaskFinish(nil, resName)
-                            end
-                        end
                         self._DownloadCenter:RegisterTaskGroup(taskGroup)
                     end
                 end
@@ -1864,7 +1859,6 @@ function XSubPackageAgency:OnNetworkReachabilityChanged()
 end
 
 function XSubPackageAgency:OnLoginSuccess()
-    self._BattleFashionTipDismissedThisLogin = false
     if not self:IsOpen() then
         return
     end
@@ -2257,18 +2251,6 @@ function XSubPackageAgency:GetFashionModelFallback(modelId)
     return entry.DefaultModelId
 end
 
---- 设置战斗涂装未下载提示本次登录不再提示
----@param value boolean
-function XSubPackageAgency:SetBattleFashionTipDismissed(value)
-    self._BattleFashionTipDismissedThisLogin = value
-end
-
---- 获取战斗涂装未下载提示是否本次登录不再提示
----@return boolean
-function XSubPackageAgency:IsBattleFashionTipDismissed()
-    return self._BattleFashionTipDismissedThisLogin
-end
-
 --- 检查涂装资源是否已下载
 ---@param fashionId number 涂装Id
 ---@return boolean 是否已下载（无配置或分包未开启时返回true）
@@ -2590,15 +2572,98 @@ function XSubPackageAgency:IsSubOrResDownloading(subpackageId)
     for _, queueId in ipairs(self._SubpackageWaitDnLdQueue or {}) do
         if queueId == subpackageId then return true end
     end
-    -- Res级：只检查当前正在下载的 Res 是否属于该 sub（不依赖 Res 实体状态，避免暂停后残留误判）
-    if self._DownloadingResId then
-        local template = self._Model:GetSubpackageTemplate(subpackageId)
-        if template and template.ResIds then
-            for _, resId in ipairs(template.ResIds) do
-                if self._DownloadingResId == resId then return true end
+    -- Res级：检查该 sub 下是否有 res 处于 DOWNLOADING/PREPARE_DOWNLOAD
+    local template = self._Model:GetSubpackageTemplate(subpackageId)
+    if not template or not template.ResIds then return false end
+    for _, resId in ipairs(template.ResIds) do
+        if self._DownloadingResId == resId then return true end
+        local resItem = self._Model:GetResourceItem(resId)
+        if resItem then
+            local state = resItem:GetState()
+            if state == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING
+                or state == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD then
+                return true
             end
         end
     end
+    return false
+end
+
+--- [F10最终] 游戏内 Res 下载意图标记（专用持久化，不污染 Launch 层）
+--- 语义：用户在游戏内主动发起了该 res 的下载请求
+
+local InGameResIntentKey = "InGameResIntent_"
+
+function XSubPackageAgency:MarkInGameResIntent(resId)
+    XSaveTool.SaveData(InGameResIntentKey .. resId, true)
+end
+
+function XSubPackageAgency:HasInGameResIntent(resId)
+    return XSaveTool.GetData(InGameResIntentKey .. resId) == true
+end
+
+function XSubPackageAgency:ClearInGameResIntent(resId)
+    XSaveTool.SaveData(InGameResIntentKey .. resId, nil)
+end
+
+function XSubPackageAgency:ClearInGameResIntentBySub(subpackageId)
+    local template = self._Model:GetSubpackageTemplate(subpackageId)
+    if not template or not template.ResIds then return end
+    for _, resId in ipairs(template.ResIds) do
+        self:ClearInGameResIntent(resId)
+    end
+end
+
+--- [F10最终] 检查单个 Res 是否在逻辑上有过下载行为
+--- PREPARE_DOWNLOAD / DOWNLOADING => true（运行时活跃）
+--- PAUSE => HasInGameResIntent(resId) 且 not HasUninstalledResId（用户主动发起的暂停）
+--- COMPLETE => CheckNeedDownload(resId, false) 且 not HasUninstalledResId（已完成的下载）
+--- 其他 => false
+function XSubPackageAgency:IsResLogicallyDownloadedOrInProgress(resId)
+    local resItem = self._Model:GetResourceItem(resId)
+    if not resItem then
+        return false
+    end
+
+    local state = resItem:GetState()
+    local STATE = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
+
+    -- 1. 运行时活跃
+    if state == STATE.PREPARE_DOWNLOAD
+        or state == STATE.DOWNLOADING then
+        return true
+    end
+
+    -- 2. PAUSE：必须有游戏内下载意图标记（不靠物理字节）
+    if state == STATE.PAUSE
+        and self:HasInGameResIntent(resId)
+        and not self._LaunchDlcManager.HasUninstalledResId(resId) then
+        return true
+    end
+
+    -- 3. COMPLETE：使用 Launch 层的下载完成记录
+    if state == STATE.COMPLETE
+        and self._LaunchDlcManager.CheckNeedDownload(resId, false)
+        and not self._LaunchDlcManager.HasUninstalledResId(resId) then
+        return true
+    end
+
+    return false
+end
+
+--- [F10] 检查分包下是否有任何 Res 有真实下载行为
+function XSubPackageAgency:HasSubpackageLogicalDownloadedRes(subpackageId)
+    local template = self._Model:GetSubpackageTemplate(subpackageId)
+    if not template or not template.ResIds then
+        return false
+    end
+
+    for _, resId in ipairs(template.ResIds) do
+        if self:IsResLogicallyDownloadedOrInProgress(resId) then
+            return true
+        end
+    end
+
     return false
 end
 
