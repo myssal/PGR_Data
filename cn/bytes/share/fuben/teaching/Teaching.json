@@ -57233,5 +57233,1556 @@
         "SkillId": [
             104018
         ]
+    },
+    {
+        "Id": 4292,
+        "Group": 112285,
+        "Name": "点击蓝球",
+        "Describe": "神威-蓝球",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei21.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104918
+        ]
+    },
+    {
+        "Id": 4293,
+        "Group": 112285,
+        "Name": "点击蓝球",
+        "Describe": "神威-蓝球",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei22.png",
+        "TimeOut": 3000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104921
+        ]
+    },
+    {
+        "Id": 4294,
+        "Group": 112286,
+        "Name": "点击闪避",
+        "Describe": "神威-格挡",
+        "IconType": 1,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104969
+        ]
+    },
+    {
+        "Id": 4295,
+        "Group": 112287,
+        "Name": "点按黄球",
+        "Describe": "神威-点按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104928,
+            104930
+        ]
+    },
+    {
+        "Id": 4296,
+        "Group": 112288,
+        "Name": "长按黄球",
+        "Describe": "神威-长按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104925,
+            104924
+        ]
+    },
+    {
+        "Id": 4297,
+        "Group": 112289,
+        "Name": "点按黄球",
+        "Describe": "神威-点按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104928,
+            104929
+        ]
+    },
+    {
+        "Id": 4298,
+        "Group": 112290,
+        "Name": "长按黄球",
+        "Describe": "神威-长按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104928
+        ]
+    },
+    {
+        "Id": 4299,
+        "Group": 112290,
+        "Name": "持续长按",
+        "Describe": "神威-长按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": 4000,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104961,
+            104962
+        ]
+    },
+    {
+        "Id": 4300,
+        "Group": 112291,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei13.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104946,
+            104934
+        ]
+    },
+    {
+        "Id": 4301,
+        "Group": 112291,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei12.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104938
+        ]
+    },
+    {
+        "Id": 4302,
+        "Group": 112291,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei11.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104942
+        ]
+    },
+    {
+        "Id": 4303,
+        "Group": 112292,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei13.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104946,
+            104934
+        ]
+    },
+    {
+        "Id": 4304,
+        "Group": 112292,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei12.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104938
+        ]
+    },
+    {
+        "Id": 4305,
+        "Group": 112292,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei11.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104942
+        ]
+    },
+    {
+        "Id": 4306,
+        "Group": 112292,
+        "Name": "落地长按闪避",
+        "Describe": "神威-长闪",
+        "IconType": 1,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": 8000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104909
+        ]
+    },
+    {
+        "Id": 4307,
+        "Group": 112292,
+        "Name": "长按闪避",
+        "Describe": "神威-长闪",
+        "IconType": 4,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104922,
+            104984
+        ]
+    },
+    {
+        "Id": 4308,
+        "Group": 112293,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei13.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104946,
+            104934
+        ]
+    },
+    {
+        "Id": 4309,
+        "Group": 112293,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei12.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104938
+        ]
+    },
+    {
+        "Id": 4310,
+        "Group": 112293,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei11.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104942
+        ]
+    },
+    {
+        "Id": 4311,
+        "Group": 112293,
+        "Name": "空中长按闪避",
+        "Describe": "神威-长闪",
+        "IconType": 1,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104907
+        ]
+    },
+    {
+        "Id": 4312,
+        "Group": 112293,
+        "Name": "长按闪避",
+        "Describe": "神威-长闪",
+        "IconType": 4,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104923,
+            104985
+        ]
+    },
+    {
+        "Id": 4313,
+        "Group": 112294,
+        "Name": "长按普攻",
+        "Describe": "神威-长普",
+        "IconType": 4,
+        "Icon": 1,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            4
+        ],
+        "SkillId": [
+            104915,
+            104914
+        ]
+    },
+    {
+        "Id": 4314,
+        "Group": 112295,
+        "Name": "点击必杀",
+        "Describe": "神威-大招",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            104980
+        ]
+    },
+    {
+        "Id": 4315,
+        "Group": 112296,
+        "Name": "落地后长按闪避",
+        "Describe": "神威-长闪",
+        "IconType": 4,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": 8000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104922,
+            104984
+        ]
+    },
+    {
+        "Id": 4316,
+        "Group": 112297,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei13.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104946,
+            104934
+        ]
+    },
+    {
+        "Id": 4317,
+        "Group": 112297,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei12.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104938
+        ]
+    },
+    {
+        "Id": 4318,
+        "Group": 112297,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei13.png",
+        "TimeOut": 3000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104942
+        ]
+    },
+    {
+        "Id": 4319,
+        "Group": 112298,
+        "Name": "点按黄球",
+        "Describe": "神威-点按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei32.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104964,
+            104965
+        ]
+    },
+    {
+        "Id": 4320,
+        "Group": 112298,
+        "Name": "点按黄球",
+        "Describe": "神威-点按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei32.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104964,
+            104965
+        ]
+    },
+    {
+        "Id": 4321,
+        "Group": 112298,
+        "Name": "点按黄球",
+        "Describe": "神威-点按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei32.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104964,
+            104965
+        ]
+    },
+    {
+        "Id": 4322,
+        "Group": 112298,
+        "Name": "点按黄球",
+        "Describe": "神威-点按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei32.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104964,
+            104965
+        ]
+    },
+    {
+        "Id": 4323,
+        "Group": 112298,
+        "Name": "点按黄球",
+        "Describe": "神威-点按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei32.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104964,
+            104965
+        ]
+    },
+    {
+        "Id": 4324,
+        "Group": 112299,
+        "Name": "长按黄球",
+        "Describe": "神威-长按黄球",
+        "IconType": 4,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei32.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104925,
+            104924
+        ]
+    },
+    {
+        "Id": 4325,
+        "Group": 112300,
+        "Name": "长按蓝球",
+        "Describe": "露西亚-长蓝",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya52.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            104018
+        ]
+    },
+    {
+        "Id": 4326,
+        "Group": 112301,
+        "Name": "点击QTE",
+        "Describe": "神威-qte",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Nietiya52.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            104018
+        ]
+    },
+    {
+        "Id": 4327,
+        "Group": 112302,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei13.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104946,
+            104934
+        ]
+    },
+    {
+        "Id": 4328,
+        "Group": 112302,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei12.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104938
+        ]
+    },
+    {
+        "Id": 4329,
+        "Group": 112302,
+        "Name": "点按红球",
+        "Describe": "神威-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei13.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104942
+        ]
+    },
+    {
+        "Id": 4330,
+        "Group": 112280,
+        "Name": "长按红球",
+        "Describe": "含英-红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Hanying11.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "SkillId": [
+            112449,
+            112477
+        ]
+    },
+    {
+        "Id": 4331,
+        "Group": 112280,
+        "Name": "点按泛音球",
+        "Describe": "含英-泛音球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Hanying42.png",
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "SkillId": [
+            112436
+        ]
+    },
+    {
+        "Id": 4332,
+        "Group": 112281,
+        "Name": "点按大招",
+        "Describe": "含英-大招",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112426
+        ]
+    },
+    {
+        "Id": 4333,
+        "Group": 112282,
+        "Name": "点按蓝球",
+        "Describe": "含英-蓝球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Hanying21.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            112422
+        ]
+    },
+    {
+        "Id": 4334,
+        "Group": 112283,
+        "Name": "点按大招",
+        "Describe": "含英-点按大招",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112440
+        ]
+    },
+    {
+        "Id": 4335,
+        "Group": 112283,
+        "Name": "点按大招",
+        "Describe": "含英-点按大招",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": 3000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112441
+        ]
+    },
+    {
+        "Id": 4336,
+        "Group": 112283,
+        "Name": "点按大招",
+        "Describe": "含英-点按大招",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": 3000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112442
+        ]
+    },
+    {
+        "Id": 4337,
+        "Group": 112283,
+        "Name": "点按大招",
+        "Describe": "含英-点按大招",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": 3000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112443
+        ]
+    },
+    {
+        "Id": 4338,
+        "Group": 112284,
+        "Name": "长按大招",
+        "Describe": "含英-长按大招",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112427
+        ]
+    },
+    {
+        "Id": 4339,
+        "Group": 112275,
+        "Name": "点击蓝球",
+        "Describe": "神威-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei21.png",
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104918
+        ]
+    },
+    {
+        "Id": 4340,
+        "Group": 112275,
+        "Name": "点击蓝球",
+        "Describe": "神威-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei22.png",
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104918,
+            104921
+        ]
+    },
+    {
+        "Id": 4341,
+        "Group": 112275,
+        "Name": "狮心统召",
+        "Describe": "神威-辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            423802,
+            423803,
+            423804,
+            423805,
+            423806,
+            423807
+        ]
+    },
+    {
+        "Id": 4342,
+        "Group": 112276,
+        "Name": "点击蓝球",
+        "Describe": "神威-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei21.png",
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104918
+        ]
+    },
+    {
+        "Id": 4343,
+        "Group": 112276,
+        "Name": "点击蓝球",
+        "Describe": "神威-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei22.png",
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104918,
+            104921
+        ]
+    },
+    {
+        "Id": 4344,
+        "Group": 112276,
+        "Name": "炽鬃覆烁",
+        "Describe": "神威-辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            423808,
+            423809,
+            423810,
+            423811,
+            423812,
+            423813
+        ]
+    },
+    {
+        "Id": 4345,
+        "Group": 112277,
+        "Name": "点按黄球",
+        "Describe": "神威-点按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei31.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            104928
+        ]
+    },
+    {
+        "Id": 4346,
+        "Group": 112278,
+        "Name": "点击红球",
+        "Describe": "神威-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei13.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104946,
+            104934
+        ]
+    },
+    {
+        "Id": 4347,
+        "Group": 112278,
+        "Name": "点击红球",
+        "Describe": "神威-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei12.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104946,
+            104938
+        ]
+    },
+    {
+        "Id": 4348,
+        "Group": 112278,
+        "Name": "点击红球",
+        "Describe": "神威-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR4Shenwei11.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            104946,
+            104938,
+            104942
+        ]
+    },
+    {
+        "Id": 4349,
+        "Group": 112279,
+        "Name": "长按普攻",
+        "Describe": "神威-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            4
+        ],
+        "SkillId": [
+            104915,
+            104914
+        ]
+    },
+    {
+        "Id": 4350,
+        "Group": 112303,
+        "Name": "长按必杀",
+        "Describe": "露西亚-焰雷模式",
+        "IconType": 4,
+        "Icon": 3,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya51.png",
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106236
+        ]
+    },
+    {
+        "Id": 4351,
+        "Group": 112304,
+        "Name": "消离电球",
+        "Describe": "露西亚-消特殊球",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya41.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "SkillId": [
+            106234,
+            106235,
+            106272,
+            106273,
+            106274,
+            106275
+        ]
+    },
+    {
+        "Id": 4352,
+        "Group": 112304,
+        "Name": "消离电球",
+        "Describe": "露西亚-消特殊球",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya41.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "SkillId": [
+            106234,
+            106235,
+            106272,
+            106273,
+            106274,
+            106275
+        ]
+    },
+    {
+        "Id": 4353,
+        "Group": 112305,
+        "Name": "长按闪避",
+        "Describe": "神威-长闪",
+        "IconType": 4,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            104922,
+            104984
+        ]
     }
 ]

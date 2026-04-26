@@ -472,7 +472,8 @@ function XUiRadioSignMain:UpdateReceivedRewardUI(isReceived, config)
 
         -- 更新文本
         if self.TxtDetatil then
-            self.TxtDetatil.text = videoConfig and videoConfig.EndText or ""
+            local endText = videoConfig and videoConfig.EndText or ""
+            self.TxtDetatil.text = XUiHelper.ConvertLineBreakSymbol(endText)
         end
 
         -- 设置ImgVideo位置并显示

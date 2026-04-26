@@ -430,11 +430,13 @@ XPurchaseManagerCreator = function()
                     for _, reward in pairs(purchaseInfo.RewardGoodsList) do
                         uiDataSub.RewardGoodsList[#uiDataSub.RewardGoodsList + 1] = reward
                     end
-
-                    -- RewardGoodsList
-                    for _, reward in pairs(purchaseInfo.RewardGoodsList) do
-                        uiDataCombo.RewardGoodsList[#uiDataCombo.RewardGoodsList + 1] = reward
-                    end
+                end
+            end
+            table.sort(uiDataCombo.SubDatas, function(a, b) return a.Id < b.Id end)
+            -- 按 SubDatas 排序后的顺序依次追加奖励，保证 RewardGoodsList 顺序与 uiDataSub 一致
+            for _, subData in ipairs(uiDataCombo.SubDatas) do
+                for _, reward in ipairs(subData.RewardGoodsList) do
+                    uiDataCombo.RewardGoodsList[#uiDataCombo.RewardGoodsList + 1] = reward
                 end
             end
         end

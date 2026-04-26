@@ -10,6 +10,23 @@ function XLineArithmetic3Control:OnInit()
     local XLineArithmetic3Game = require("XModule/XLineArithmetic3/XLineArithmetic3Game")
     self._Game = XLineArithmetic3Game.New()
 
+    -- 上车移动时间（秒）
+    self._Game.BoardMoveDuration = self._Model:GetClientConfigNumberByKey('BoardMoveDuration') or 0.2
+    -- 上车移动延后多久播放跳跃动画(秒）
+    self._Game.BoardJumpAnimDelay = self._Model:GetClientConfigNumberByKey('BoardJumpAnimDelay') or 0.1
+    -- 下车移动时间（秒）
+    self._Game.DisembarkDuration = self._Model:GetClientConfigNumberByKey('DisembarkDuration') or 0.2
+    -- 下车移动延后多久播放跳跃动画(秒）
+    self._Game.DisembarkJumpAnimDelay = self._Model:GetClientConfigNumberByKey('DisembarkJumpAnimDelay') or 0.1
+    -- 上车冲突移动多久播放跳跃动画(秒）
+    self._Game.ConflictJumpAnimDelay = self._Model:GetClientConfigNumberByKey('ConflictJumpAnimDelay') or 0.1
+    -- 上车冲突乘客移动格距比例
+    self._Game.ConflictMoveRatio = self._Model:GetClientConfigNumberByKey('ConflictMoveRatio') or 0.25
+    -- 上车冲突乘客移动单段时长(秒）
+    self._Game.ConflictMoveDuration = self._Model:GetClientConfigNumberByKey('BoardMoveDuration') or 0.15
+    -- 上车后播放特效，等待多长时间结束当前步骤（秒）
+    self._Game.BoardWaitFxTime = self._Model:GetClientConfigNumberByKey('BoardWaitFxTime') or 0.2
+
     -- 初始化UI数据
     self._UiData = {
         StarDescData = {},            -- 星星目标数据
@@ -116,6 +133,8 @@ function XLineArithmetic3Control:InitGame(stageId, isRestart)
 
     -- 保存当前关卡ID
     self._StageId = stageId
+    
+    self._Model:SetCurrentGameStageId(self._StageId)
 
     -- 获取关卡配置
     local stageConfig = self._Model:GetStageConfig(stageId)
@@ -389,7 +408,7 @@ function XLineArithmetic3Control:UpdateChapter()
     local index = 1
     for _, chapterConfig in ipairs(chapterConfigs) do
         if chapterConfig.ActivityId == activityId then
-            local isOpen = self._Model:IsChapterUnlock(chapterConfig.Id)
+            local isOpen, lockDesc = self._Model:IsChapterUnlock(chapterConfig.Id)
 
             -- 计算章节星级进度
             local totalStar, earnedStar = self:_CalcChapterStarProgress(chapterConfig.Id)
@@ -402,11 +421,13 @@ function XLineArithmetic3Control:UpdateChapter()
                 Icon = chapterConfig.Icon or "",
                 ChapterIndex = index,
                 TxtStar = string.format("%d/%d", earnedStar, totalStar),
+                IsNew = self._Model:IsNewChapter(chapterConfig.Id),
+                TxtLock = lockDesc,
             }
             table.insert(chapters, chapterData)
 
             if isOpen then
-                table.insert(self._UiData.UnlockChapters, chapterConfig.ChapterIndex or 0)
+                table.insert(self._UiData.UnlockChapters, chapterData.ChapterIndex or 0)
             end
             index = index + 1
         end
@@ -723,9 +744,7 @@ end
 
 --- 退出游戏界面
 function XLineArithmetic3Control:ExitGame()
-    -- 未结算的关卡，退出时发送放弃请求
-    self:RequestAbandon()
-    XLuaUiManager.Close("UiLineArithmetic3Game")
+    self._Model:SetCurrentGameStageId(nil)
 end
 
 --- 获取车头可移动的方向列表
@@ -738,6 +757,15 @@ function XLineArithmetic3Control:GetMovableDirections()
 end
 
 function XLineArithmetic3Control:OnRelease()
+    
 end
+
+--region ClientConfig
+
+function XLineArithmetic3Control:GetClientConfigText(key, index)
+    return self._Model:GetClientConfigTextByKey(key, index)
+end
+
+--endregion
 
 return XLineArithmetic3Control

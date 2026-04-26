@@ -670,7 +670,7 @@
             "御"
         ],
         "Contents": [
-            "优华将目标变成自己一段时间，期间目标可以使用<color=#7FF2F4>优华专属的战斗技能</color>与优华进行战斗。",
+            "<size=31>优华将目标变成自己一段时间，期间目标可以使用<color=#7FF2F4>优华专属的战斗技能</color>与优华进行战斗。\\n玩家触发幻惑身转变成为优华后，可以通过对敌人造成伤害，削减敌人指涉的程度，当<color=#7FF2F4>指涉程度归零</color>时，玩家<color=#7FF2F4>退出幻惑身</color>状态。</size>",
             "变身优华后，<color=#7FF2F4>点击信号球</color>可释放技能，使用后进入冷却。",
             "玩家触发幻惑身转变优华后，<color=#7FF2F4>长按普通攻击</color>可以蓄力，并掷椅子攻击敌人。",
             "玩家触发幻惑身转变优华后，<color=#7FF2F4>长按或点按必杀技</color>，可以格挡敌人的攻击。"
@@ -696,14 +696,14 @@
             "角色状态"
         ],
         "Contents": [
-            "本次玩法中，角色将使用普攻自动攻击。\\n指挥官可以控制角色进行移动，躲避怪物的攻击。",
-            "波次战斗完成后，可以在强化商店选择信号球技能和道具来提升角色能力。\\n角色通过消灭怪物，拾取掉落的经验值升级，可以增加商店选择次数。完成一定数量波次即可挑战成功。",
-            "角色当前生命值、经验值可在界面左上角查看。"
+            "①本次玩法中，角色将使用普攻自动攻击。\\n指挥官可以控制角色进行移动，躲避怪物的攻击。",
+            "②波次战斗完成后，可以在强化商店选择<color=#7FF2F4>信号球技能</color>和<color=#7FF2F4>道具</color>来提升角色能力。\\n角色通过消灭怪物，拾取掉落的<color=#7FF2F4>经验值</color>升级，可以增加<color=#7FF2F4>商店</color>选择次数。完成一定数量波次即可挑战成功。",
+            "③角色当前<color=#7FF2F4>生命值</color>、<color=#7FF2F4>经验值</color>可在界面左上角查看。"
         ],
         "AssetPaths": [
-            10001,
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V215JXPC.png",
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V215JXPC2.png"
+            31060,
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp08.png",
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp05.png"
         ],
         "AssetTypes": [
             1,
@@ -718,14 +718,37 @@
             "信号球"
         ],
         "Contents": [
-            "消灭怪物掉落，可通过碰撞拾取：\\n经验球：拾取一定数量经验球后可以提升角色等级。\\n治疗球：拾取治疗球可以回复角色当前生命值。\\n礼盒：拾取礼盒后可以在下个强化商店增加一次强化次数。",
-            "消灭怪物掉落，拾取后累计充能进度，累计拾取三个，可以触发对应颜色的信号球技能。"
+            "①消灭怪物掉落，可通过碰撞拾取：\\n经验球：拾取一定数量经验球后可以提升<color=#7FF2F4>角色等级</color>。\\n治疗球：拾取治疗球可以回复角色当前<color=#7FF2F4>生命值</color>。\\n礼盒：拾取礼盒后可以在下个强化商店增加一次<color=#7FF2F4>强化次数</color>。",
+            "②消灭怪物掉落，拾取后累计充能进度，累计拾取<color=#7FF2F4>三个</color>，可以触发对应颜色的<color=#7FF2F4>信号球技能</color>。"
         ],
         "AssetPaths": [
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V215JXM.png",
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V215JXPC.png"
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp07.png",
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp06.png"
         ],
         "AssetTypes": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 13021105,
+        "Titles": [
+            "骇客教学：连接方式",
+            "骇客教学：完成骇入",
+            "骇客教学：释放方式"
+        ],
+        "Contents": [
+            "骇入界面出现后 \\n<color=#ADD8E6>通过连接对应颜色的各个模块，</color><color=#34D2FF>填满</color><color=#ADD8E6>方格区域</color>",
+            "<color=#ADD8E6>完全</color><color=#34D2FF>填满</color><color=#ADD8E6>方格区域时，方可骇入成功</color>\\n连线混乱时，可通过右上方按钮重置",
+            "骇入成功后\\n<color=#ADD8E6>使用界面中心按钮释放能力</color>"
+        ],
+        "AssetPaths": [
+            "Assets/Product/Texture/Image/UiFightTutorialImage/V440Tutorial1.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/V440Tutorial2.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/V440Tutorial3.png"
+        ],
+        "AssetTypes": [
+            2,
             2,
             2
         ]

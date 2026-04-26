@@ -239,16 +239,16 @@ function XResource:OnStateChanged()
     local state = self._TaskGroup.State
     -- print("SP/DN XResource:OnStateChanged", self._Id, state)
     if state == CS.XMTDownloadTaskGroupState.Registered and self._WaitPause then
-        XMVCA.XSubPackage:OnResDownloadRelease()
+        XMVCA.XSubPackage:OnResDownloadRelease(self._Id)
         self._WaitPause = false
     elseif state == CS.XMTDownloadTaskGroupState.Complete then
         self:Complete()
-        XMVCA.XSubPackage:OnResDownloadRelease()
+        XMVCA.XSubPackage:OnResDownloadRelease(self._Id)
         self._WaitPause = false
     elseif state == CS.XMTDownloadTaskGroupState.Pausing then
         self._WaitPause = true
     elseif state == CS.XMTDownloadTaskGroupState.CompleteError then
-        XMVCA.XSubPackage:OnResDownloadRelease()
+        XMVCA.XSubPackage:OnResDownloadRelease(self._Id)
     end
 
     local subpackageIdList = XMVCA.XSubPackage:GetSubpackageIdByResId(self._Id)
