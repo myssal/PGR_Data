@@ -2,7 +2,7 @@
     {
         "NodeId": 1,
         "PreNode": 0,
-        "NodeName": "冲刺",
+        "NodeName": "Sprint",
         "NodeType": 1,
         "NodeGroup": 1,
         "NodeCost": 75,
@@ -10,7 +10,13 @@
         "TextUnlock": "Unlocks Sprint",
         "TextLocked": "Unlocks Sprint",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconDashLimitNumUp.png",
-        "ShopFreshCount": 0
+        "ShopFreshCount": 0,
+        "NodeStats": [
+            55
+        ],
+        "NodeStatsNum": [
+            200000
+        ]
     },
     {
         "NodeId": 2,
@@ -20,8 +26,8 @@
         "NodeGroup": 1,
         "NodeCost": 50,
         "NodeCondition": 0,
-        "TextUnlock": "信号球伤害加成<color=#3ACC3B>+30%</color>",
-        "TextLocked": "信号球伤害加成<color=#3ACC3B>+30%</color>",
+        "TextUnlock": "Signal Orb DMG Bonus <color=#3ACC3B>+30%</color>",
+        "TextLocked": "Signal Orb DMG Bonus <color=#3ACC3B>+30%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconSignalOrbsDmgUp.png",
         "ShopFreshCount": 0,
         "NodeStats": [
@@ -39,15 +45,15 @@
         "NodeGroup": 1,
         "NodeCost": 50,
         "NodeCondition": 0,
-        "TextUnlock": "护甲<color=#3ACC3B>+2</color>",
-        "TextLocked": "护甲<color=#3ACC3B>+2</color>",
+        "TextUnlock": "Armor <color=#3ACC3B>+3</color>",
+        "TextLocked": "Armor <color=#3ACC3B>+3</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconArmorUp.png",
         "ShopFreshCount": 0,
         "NodeStats": [
             33
         ],
         "NodeStatsNum": [
-            2
+            3
         ]
     },
     {
@@ -58,8 +64,8 @@
         "NodeGroup": 1,
         "NodeCost": 50,
         "NodeCondition": 0,
-        "TextUnlock": "普攻伤害加成<color=#3ACC3B>+45%</color>",
-        "TextLocked": "普攻伤害加成<color=#3ACC3B>+45%</color>",
+        "TextUnlock": "Basic Attack DMG Bonus <color=#3ACC3B>+45%</color>",
+        "TextLocked": "Basic Attack DMG Bonus <color=#3ACC3B>+45%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBasicAttackDmgUp.png",
         "ShopFreshCount": 0,
         "NodeStats": [
@@ -96,8 +102,8 @@
         "NodeGroup": 4,
         "NodeCost": 100,
         "NodeCondition": 865001,
-        "TextUnlock": "Unlocks Red Orb Skill: [Swipe]\\nUnlocks Item: [Chromie]",
-        "TextLocked": "Unlocks Red Orb Skill: [Swipe]\\nUnlocks Item: [Chromie]",
+        "TextUnlock": "Unlocks Red Orb Skill: [Swipe]\\nUnlocks Item: [Kuromaid]",
+        "TextLocked": "Unlocks Red Orb Skill: [Swipe]\\nUnlocks Item: [Kuromaid]",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R2shenweihong1Up.png",
         "ShopFreshCount": 0,
         "RewardItemIds": [
@@ -156,8 +162,8 @@
         "NodeGroup": 2,
         "NodeCost": 50,
         "NodeCondition": 0,
-        "TextUnlock": "红球掉落概率<color=#3ACC3B>+15%</color>，黄球掉落概率<color=#3ACC3B>+15%</color>，蓝球掉落概率<color=#3ACC3B>+15%</color>",
-        "TextLocked": "红球掉落概率<color=#3ACC3B>+15%</color>，黄球掉落概率<color=#3ACC3B>+15%</color>，蓝球掉落概率<color=#3ACC3B>+15%</color>",
+        "TextUnlock": "Red Orb drop rate <color=#3ACC3B>+15%</color>, Yellow Orb drop rate <color=#3ACC3B>+15%</color>, Blue Orb drop rate <color=#3ACC3B>+15%</color>",
+        "TextLocked": "Red Orb drop rate <color=#3ACC3B>+15%</color>, Yellow Orb drop rate <color=#3ACC3B>+15%</color>, Blue Orb drop rate <color=#3ACC3B>+15%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconRedOrbsAttackDropRateUp.png",
         "ShopFreshCount": 0,
         "NodeStats": [
@@ -231,13 +237,13 @@
     {
         "NodeId": 13,
         "PreNode": 8,
-        "NodeName": "弹射",
+        "NodeName": "Shoot",
         "NodeType": 2,
         "NodeGroup": 5,
         "NodeCost": 100,
         "NodeCondition": 865005,
         "TextUnlock": "Unlocks Red Orb Skill: [Ricochet Rounds]\\nUnlock Items: [Shark Mosaic Tile], [Launch Stars], [Guardian Mount]",
-        "TextLocked": "Unlocks Red Orb Skill: [Ricochet Rounds]\\nUnlock Items: [Shark Mosaic Tile], [Launch Stars], [Guardian Mount]",
+        "TextLocked": "<size=31>Unlocks Red Orb Skill: [Ricochet Rounds]\\nUnlock Items: [Shark Mosaic Tile], [Launch Stars], [Guardian Mount]</size>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R2lifuhong1Up.png",
         "ShopFreshCount": 0,
         "RewardItemIds": [
@@ -320,13 +326,13 @@
     {
         "NodeId": 18,
         "PreNode": 15,
-        "NodeName": "Chain",
+        "NodeName": "Combo",
         "NodeType": 0,
         "NodeGroup": 3,
         "NodeCost": 50,
         "NodeCondition": 0,
-        "TextUnlock": "Chain duration <color=#3ACC3B>+2</color>s",
-        "TextLocked": "Chain duration <color=#3ACC3B>+2</color>s",
+        "TextUnlock": "Combo duration <color=#3ACC3B>+2</color>s",
+        "TextLocked": "Combo duration <color=#3ACC3B>+2</color>s",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconComboBoostWindowUp.png",
         "ShopFreshCount": 0,
         "NodeStats": [
@@ -382,8 +388,8 @@
         "NodeGroup": 6,
         "NodeCost": 100,
         "NodeCondition": 865010,
-        "TextUnlock": "Unlocks Red Orb Skill: [Thundering Rush]\\nUnlock Item: [Whatever You Want]",
-        "TextLocked": "Unlocks Red Orb Skill: [Thundering Rush]\\nUnlock Item: [Whatever You Want]",
+        "TextUnlock": "Unlocks Red Orb Skill: [Thundering Rush]\\nUnlocks Item: [Whatever You Want]",
+        "TextLocked": "Unlocks Red Orb Skill: [Thundering Rush]\\nUnlocks Item: [Whatever You Want]",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R5Luxiyahong1Up.png",
         "ShopFreshCount": 0,
         "RewardItemIds": [

@@ -2,13 +2,13 @@
     {
         "Id": 1,
         "Name": "Shifting Nimbus",
-        "BaseDesc": "Performs three sweeping melee attacks on nearby enemies in an area centered on the character.",
+        "BaseDesc": "Performs 3 sweeping melee attacks against nearby enemies, centered on the character.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2kuluomuhong1.png",
         "LevelDescList": [
             "I. DMG: <color=#3ACC3B>10/10/10.</color>",
             "II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>",
             "III. Increases DMG to <color=#3ACC3B>15/15/15.</color> When the last hit lands, gains <color=#3ACC3B>1</color> Sprint Charge.",
-            "IV. After casting, summons a clone that casts it one extra time in place."
+            "IV. After casting, summons a clone that casts the skill one extra time in place."
         ]
     },
     {
@@ -19,19 +19,19 @@
         "LevelDescList": [
             "I. DMG: <color=#3ACC3B>35.</color>",
             "II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.伤害提升至<color=#3ACC3B>50。</color>大幅提升直刺范围。被动效果提升至：红球掉落概率<color=#3ACC3B>+25%。</color>",
-            "Ⅳ. Passive: When picking up Signal Orbs, gains <color=#3ACC3B>1</color> bonus EXP."
+            "III. Increases DMG to <color=#3ACC3B>50</color>. Greatly expands thrust range. Passive upgrade: Red Orb drop rate <color=#3ACC3B>+25%</color>.",
+            "IV. Passive: When picking up Signal Orbs, gains <color=#3ACC3B>1</color> bonus EXP."
         ]
     },
     {
         "Id": 3,
-        "Name": "横扫",
+        "Name": "Swipe",
         "BaseDesc": "Performs a fan-shaped slashing melee attack on the nearest enemy in an area centered on the character.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2shenweihong1.png",
         "LevelDescList": [
-            "I. DMG: <color=#3ACC3B>25 +</color> Max HP <color=#3ACC3B>x 10%.</color>",
+            "I. DMG: <color=#3ACC3B>25 +</color> Max HP <color=#3ACC3B>x 10%</color>.",
             "II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "III. DMG increases to <color=#3ACC3B>35 + </color>Max HP<color=#3ACC3B> x 15%.</color> Passive: Each cast increases max HP by <color=#3ACC3B>1</color>.",
+            "III. DMG increases to <color=#3ACC3B>35 + </color>Max HP<color=#3ACC3B> x 15%</color>. Passive: Each cast increases max HP by <color=#3ACC3B>1</color>.",
             "IV. Greatly increases the fan-shaped attack area."
         ]
     },
@@ -41,34 +41,34 @@
         "BaseDesc": "Continuously deals DMG to nearby enemies in an area centered on the character.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2ailahong1.png",
         "LevelDescList": [
-            "Ⅰ.持续<color=#3ACC3B>2</color>秒，每秒伤害<color=#3ACC3B>=24。</color>",
+            "I. Lasts <color=#3ACC3B>2</color>s. DMG per second: <color=#3ACC3B>24.</color>",
             "II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.每秒伤害提升至<color=#3ACC3B>32。</color>每次命中敌人时，移速<color=#3ACC3B>+20，</color>效果持续<color=#3ACC3B>5</color>s，重复触发刷新持续时间。",
+            "III. Increases DMG per second to <color=#3ACC3B>32</color>. Each time an enemy is hit, Movement Speed <color=#3ACC3B>+20,</color> for <color=#3ACC3B>5</color>s. Duration resets every time it is triggered.",
             "IV. Greatly increases the DMG duration and DMG area."
         ]
     },
     {
         "Id": 5,
         "Name": "Dazzle",
-        "BaseDesc": "后续若干次普攻信号球掉落概率增加，重复触发叠加普攻次数。至多叠加<color=#3ACC3B>99</color>次",
+        "BaseDesc": "The next several basic attacks have a higher Signal Orb drop rate. Triggering this effect again adds more basic attack hits. Max <color=#3ACC3B>99</color> stacks.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2luxiyahong1.png",
         "LevelDescList": [
             "I. Lasts <color=#3ACC3B>5</color> basic attacks, Signal Orb drop rate <color=#3ACC3B>+15%.</color>",
             "II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>",
             "III. Signal Orb drop rate increases by <color=#3ACC3B>30%</color>. The effect now lasts for <color=#3ACC3B>7</color> basic attacks. Passive: Basic Attack DMG increases by <color=#3ACC3B>25%</color>.",
-            "Ⅳ. Passive: When picking up Signal Orbs, gains <color=#3ACC3B>1</color> bonus EXP."
+            "IV. Passive: When picking up Signal Orbs, gains <color=#3ACC3B>1</color> bonus EXP."
         ]
     },
     {
         "Id": 6,
         "Name": "Thundering Rush",
-        "BaseDesc": "Performs a thrusting melee attack on the nearest enemy. When hitting more than <color=#3ACC3B>3</color> enemies, Basic Attack DMG Bonus <color=#3ACC3B>+10%.</color>",
+        "BaseDesc": "Performs a thrusting melee attack on the nearest enemy. When hitting more than <color=#3ACC3B>3</color> enemies, Basic Attack DMG Bonus <color=#3ACC3B>+10%</color>.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R5Luxiyahong1.png",
         "LevelDescList": [
             "I. DMG: <color=#3ACC3B>35.</color>",
             "II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>",
             "III. Increases DMG to <color=#3ACC3B>50.</color>",
-            "Ⅳ. After a skill hits, Basic Attack Speed <color=#3ACC3B>+50%</color> for <color=#3ACC3B>5</color>s."
+            "IV. After a skill hits, Basic Attack Speed <color=#3ACC3B>+50%</color> for <color=#3ACC3B>5</color>s."
         ]
     },
     {
@@ -79,26 +79,26 @@
         "LevelDescList": [
             "I. DMG per hit: <color=#3ACC3B>30.</color>",
             "II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.每次伤害提升至<color=#3ACC3B>50。</color><color=#3ACC3B>2</color>秒内获得暴击<color=#3ACC3B>+25%。</color>",
-            "Ⅳ. Increases shot count to <color=#3ACC3B>6</color>, and increases DMG per hit to <color=#3ACC3B>60 +</color> Luck <color=#3ACC3B>x 50%</color>."
+            "III. Increases DMG per hit to <color=#3ACC3B>50</color>. CRIT Rate <color=#3ACC3B>+25%</color> for <color=#3ACC3B>2</color>s.",
+            "IV. Increases shot count to <color=#3ACC3B>6</color>, and increases DMG per hit to <color=#3ACC3B>60 +</color> Luck <color=#3ACC3B>x 50%</color>."
         ]
     },
     {
         "Id": 8,
         "Name": "Ricochet Rounds",
-        "BaseDesc": "朝最近的敌人发射追踪子弹，子弹会在敌人间弹跳。",
+        "BaseDesc": "Fires tracking bullets at the nearest enemy. The bullets ricochet between enemies.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuhong1.png",
         "LevelDescList": [
-            "Ⅰ.跳弹次数上限为<color=#3ACC3B>3，</color>伤害<color=#3ACC3B>=25+</color>射程<color=#3ACC3B>*200%。</color>",
+            "I. Ricochet count is capped at <color=#3ACC3B>3</color>. DMG equals <color=#3ACC3B>25 +</color> Range <color=#3ACC3B>x 200%</color>.",
             "II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.跳弹次数提升至<color=#3ACC3B>5，</color>伤害提升至<color=#3ACC3B>35+</color>射程<color=#3ACC3B>*300%。</color>",
+            "III. Increases ricochet count to <color=#3ACC3B>5</color>, and increases DMG to <color=#3ACC3B>35 +</color> Range <color=#3ACC3B>x 300%</color>.",
             "IV. Removes the ricochet limit."
         ]
     },
     {
         "Id": 9,
         "Name": "Explosive Throw",
-        "BaseDesc": "朝最近的敌人发射爆弹。爆弹会留下灼烧区域持续造成伤害。",
+        "BaseDesc": "Fires explosive rounds at the nearest enemy. The blast leaves behind a burning area that deals continuous DMG.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2Sufeiyahong1.png",
         "LevelDescList": [
             "I. Deals <color=#3ACC3B>20</color> DMG per second for <color=#3ACC3B>3</color>s.",
@@ -150,9 +150,9 @@
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2shenweilan1.png",
         "LevelDescList": [
             "I. Lasts <color=#3ACC3B>5</color>s. Armor <color=#3ACC3B>+2.</color>",
-            "Ⅱ. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
+            "II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
             "III. Increases duration to <color=#3ACC3B>8</color>s, and increases Armor to <color=#3ACC3B>4.</color>",
-            "Ⅳ.被动效果：连锁状态下，获得随连锁次数提升的护甲。"
+            "IV. Passive: While in Combo State, Armor increases with combo count."
         ]
     },
     {
@@ -161,10 +161,10 @@
         "BaseDesc": "While active, the character gains increased Attack Speed. Duration resets every time it is triggered.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyalan1.png",
         "LevelDescList": [
-            "Ⅰ.持续<color=#3ACC3B>5</color>秒，攻速加成<color=#3ACC3B>+25%。</color>",
-            "Ⅱ. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.持续时间提升至<color=#3ACC3B>8</color>秒，攻速加成提升至<color=#3ACC3B>40%。</color>",
-            "Ⅳ.被动效果：连锁状态下，获得随连锁次数提升的攻速加成。"
+            "I. Lasts <color=#3ACC3B>5</color>s. Attack Speed Bonus <color=#3ACC3B>+25%</color>.",
+            "II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
+            "III. Increases duration to <color=#3ACC3B>8</color>s, and increases Attack Speed Bonus to <color=#3ACC3B>40%.</color>",
+            "IV. Passive: While in Combo State, Attack Speed increases with combo count."
         ]
     },
     {
@@ -174,9 +174,9 @@
         "Icon": "Assets/Product/Texture/Image/IconSkill/R3Weilalan1.png",
         "LevelDescList": [
             "I. Lasts <color=#3ACC3B>5</color>s. Sprint Charge <color=#3ACC3B>+40%.</color>",
-            "Ⅱ. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.持续时间提升至<color=#3ACC3B>8</color>秒，冲刺充能提升至<color=#3ACC3B>60%。</color>",
-            "Ⅳ.被动效果：连锁状态下，获得随连锁次数提升的冲刺充能。"
+            "II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
+            "III. Increases duration to <color=#3ACC3B>8</color>s, and increases Sprint Charge to <color=#3ACC3B>60%.</color>",
+            "IV. Passive: While in Combo State, Sprint Charge increases with combo count."
         ]
     },
     {
@@ -186,9 +186,9 @@
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2Hanyinlan1.png",
         "LevelDescList": [
             "I. Lasts <color=#3ACC3B>5</color>s. Lifesteal Efficiency <color=#3ACC3B>+2%.</color>",
-            "Ⅱ. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
+            "II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
             "III. Increases duration to <color=#3ACC3B>8</color>s, and increases Lifesteal Efficiency to <color=#3ACC3B>3%.</color>",
-            "Ⅳ.被动效果：连锁状态下，获得随连锁次数提升的生命偷取效率。"
+            "IV. Passive: While in Combo State, Lifesteal Efficiency increases with combo count."
         ]
     },
     {
@@ -197,10 +197,10 @@
         "BaseDesc": "While active, the character gains increased speed. Duration resets every time it is triggered.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R3luxiyalan1.png",
         "LevelDescList": [
-            "Ⅰ.持续<color=#3ACC3B>5</color>秒，速度<color=#3ACC3B>+25%。</color>",
-            "Ⅱ. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.持续时间提升至<color=#3ACC3B>8</color>秒，速度提升至<color=#3ACC3B>37.5%。</color>",
-            "Ⅳ.被动效果：连锁状态下，获得随连锁次数提升的速度。"
+            "I. Lasts <color=#3ACC3B>5</color>s. Speed <color=#3ACC3B>+25%</color>.",
+            "II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
+            "III. Increases duration to <color=#3ACC3B>8</color>s, and increases Speed to <color=#3ACC3B>37.5%.</color>",
+            "IV. Passive: While in Combo State, Speed increases with combo count."
         ]
     },
     {
@@ -209,22 +209,22 @@
         "BaseDesc": "For <color=#3ACC3B>10</color>s, greatly increases CRIT Rate while the character is standing still. Duration resets every time it is triggered.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2yongyechaolan1.png",
         "LevelDescList": [
-            "Ⅰ.暴击<color=#3ACC3B>+30%。</color>",
-            "Ⅱ. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.暴击提升至<color=#3ACC3B>50%。</color>",
-            "Ⅳ.角色停止移动时暴击伤害<color=#3ACC3B>+75%，</color>技能效果变为全局被动。"
+            "I. CRIT Rate <color=#3ACC3B>+30%</color>.",
+            "II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
+            "III. Increases CRIT Rate to <color=#3ACC3B>50%.</color>",
+            "IV. While the character is standing still, CRIT DMG <color=#3ACC3B>+75%</color>. The skill effect becomes a global passive."
         ]
     },
     {
         "Id": 19,
         "Name": "Magnetic Shot",
-        "BaseDesc": "后续若干次普攻会额外攻击，重复触发叠加普攻次数，至多叠加<color=#3ACC3B>99</color>次。",
+        "BaseDesc": "The next several basic attacks gain extra hits. Triggering this effect again adds more basic attack hits. Max <color=#3ACC3B>99</color> stacks.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2lilan1.png",
         "LevelDescList": [
             "I. Lasts for <color=#3ACC3B>3</color> basic attacks. DMG of extra hits equals <color=#3ACC3B>50%</color> of Basic Attack DMG.",
-            "Ⅱ. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
+            "II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
             "III. The effect now lasts for <color=#3ACC3B>7</color> basic attacks.",
-            "Ⅳ. Increases DMG of extra hits to <color=#3ACC3B>125%</color> of Basic Attack DMG."
+            "IV. Increases DMG of extra hits to <color=#3ACC3B>125%</color> of Basic Attack DMG."
         ]
     },
     {
@@ -234,9 +234,9 @@
         "Icon": "Assets/Product/Texture/Image/IconSkill/R1lifulan1.png",
         "LevelDescList": [
             "I. The chess piece lasts <color=#3ACC3B>10</color>s and restores <color=#3ACC3B>2</color> HP.",
-            "Ⅱ. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
+            "II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>",
             "III. Increases HP recovery to <color=#3ACC3B>3.</color>",
-            "Ⅳ.大幅提升回复范围，棋子额外为范围内角色提升<color=#3ACC3B>25%</color>速度。"
+            "IV. Greatly increases the recovery area. The chess piece also grants <color=#3ACC3B>+25%</color> Speed to characters within range."
         ]
     },
     {
@@ -257,9 +257,9 @@
         "BaseDesc": "Briefly enters the Matrix, immobilizing all enemies.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuhuang1.png",
         "LevelDescList": [
-            "Ⅰ.定身持续<color=#3ACC3B>0.5</color>秒。",
+            "I. Immobilizes for <color=#3ACC3B>0.5</color>s.",
             "II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.定身持续时间提升至<color=#3ACC3B>1</color>秒。",
+            "III. Increases immobilization duration to <color=#3ACC3B>1</color>s.",
             "IV. After casting, enemies suffer <color=#DB1D1A>-3</color> Armor for <color=#3ACC3B>3</color>s."
         ]
     },
@@ -283,8 +283,8 @@
         "LevelDescList": [
             "I. Lasts <color=#3ACC3B>5</color>s. Knockback <color=#3ACC3B>+1.</color>",
             "II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.击退提升至<color=#3ACC3B>2</color>，持续时间提升至<color=#3ACC3B>7</color>秒。",
-            "Ⅳ.击退提升至<color=#3ACC3B>3</color>，持续时间提升至<color=#3ACC3B>9</color>秒。"
+            "III. Increases Knockback to <color=#3ACC3B>2</color>, and increases duration to <color=#3ACC3B>7</color>s.",
+            "IV. Increases Knockback to <color=#3ACC3B>3</color>, and increases duration to <color=#3ACC3B>9</color>s."
         ]
     },
     {
@@ -305,10 +305,10 @@
         "BaseDesc": "For <color=#3ACC3B>10</color>s, greatly increases Dodge while the character is standing still. Duration resets every time it is triggered.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R4Lianghuang1.png",
         "LevelDescList": [
-            "Ⅰ.闪避<color=#3ACC3B>+15%。</color>",
+            "I. Dodge <color=#3ACC3B>+15%.</color>",
             "II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.闪避<color=#3ACC3B>+25%。</color>",
-            "Ⅳ.角色停止移动时射程<color=#3ACC3B>+5，</color>技能效果变为全局被动。"
+            "III. Dodge <color=#3ACC3B>+25%.</color>",
+            "IV. While the character is standing still, Range <color=#3ACC3B>+5</color>. The skill effect becomes a global passive."
         ]
     },
     {
@@ -317,9 +317,9 @@
         "BaseDesc": "For <color=#3ACC3B>10</color>s, greatly increases Armor while the character is standing still. Duration resets every time it is triggered.",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R2shenweihuang1.png",
         "LevelDescList": [
-            "Ⅰ.护甲<color=#3ACC3B>+4。</color>",
+            "I. Armor <color=#3ACC3B>+4</color>.",
             "II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>",
-            "Ⅲ.护甲<color=#3ACC3B>+6。</color>",
+            "III. Armor <color=#3ACC3B>+6</color>.",
             "IV. While the character is standing still, Lifesteal Efficiency <color=#3ACC3B>+3%</color>. The skill effect becomes a global passive."
         ]
     },

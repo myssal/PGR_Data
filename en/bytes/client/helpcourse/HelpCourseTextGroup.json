@@ -467,23 +467,23 @@
     {
         "Id": 1021501,
         "Texts": [
-            "① 疾速追缉共有四个关卡，每个关卡拥有四个难度。"
+            "① Rapid Pursuit has four stages, and each stage offers four difficulty levels."
         ]
     },
     {
         "Id": 1021502,
         "Texts": [
-            "① 玩法默认开启简单、困难难度，噩梦、炼狱难度需要通关<color=#0E70BD>上一难度</color>后解锁。",
-            "② 点击此处可查看<color=#0E70BD>敌人招式信息</color>。",
-            "③ 点击此处可展开敌人的<color=#0E70BD>挑战任务</color>。",
-            "④ 部分难度<color=#0E70BD>限定角色</color>挑战。"
+            "① Easy and Hard are available by default. Nightmare and Inferno unlock only after clearing the <color=#0E70BD>previous difficulty</color>.",
+            "② Tap here to view <color=#0E70BD>enemy move details</color>.",
+            "③ Tap here to expand the <color=#0E70BD>Challenge Missions</color> for the enemy.",
+            "④ Certain difficulties are limited to <color=#0E70BD>specific characters</color>."
         ]
     },
     {
         "Id": 1021503,
         "Texts": [
-            "① 每个悬赏目标有多个任务，完成任务可<color=#0E70BD>领取任务奖励</color>。",
-            "②  点击此处可查看<color=#0E70BD>挑战任务相关敌人招式信息"
+            "① Each bounty target features multiple missions that offer <color=#0E70BD>rewards</color> upon completion.",
+            "② Tap here to view <color=#0E70BD>enemy move details for Challenge Missions</color>."
         ]
     },
     {
@@ -973,7 +973,7 @@
     {
         "Id": 1012404,
         "Texts": [
-            "① Obtain event rewards after clearing a stage based on the number of stages cleared."
+            "① Obtain event rewards based on the number of stages cleared."
         ]
     },
     {
@@ -1000,6 +1000,79 @@
         "Id": 1004504,
         "Texts": [
             "① 完成拼图特定区域可以领取区域奖励。"
+        ]
+    },
+    {
+        "Id": 1033001,
+        "Texts": [
+            "① View stage <color=#0E70BD>objectives</color> here.",
+            "② <color=#0E70BD>Tap an empty tile</color> or <color=#0E70BD>drag Kamui</color> to move him. Drag outside the area to cancel.",
+            "③ Tap a <color=#0E70BD>path already traveled</color> to return to that position.",
+            "④ The stage is cleared once <color=#0E70BD>Kamui reaches the rendezvous point</color>. Send the other members to the <color=#0E70BD>interest points of the matching colors</color> to complete bonus objectives."
+        ]
+    },
+    {
+        "Id": 1033002,
+        "Texts": [
+            "① View the <color=#0E70BD>stage details</color> here to help you clear the stage.",
+            "② Members can automatically enter <color=#0E70BD>parking spots</color> and will be picked up again the next time the vehicle passes by.",
+            "③ Members in a parking spot will <color=#0E70BD>permanently share interests</color> with members in nearby parking spots.",
+            "④ You can <color=#0E70BD>enable hints</color> here to show the path for clearing the stage."
+        ]
+    },
+    {
+        "Id": 1022401,
+        "Texts": [
+            "① In this mode, you use the joystick to control <color=#0E70BD>character movement</color>, while the character <color=#0E70BD>attacks automatically</color> with basic attacks.",
+            "② Attacking or defeating enemies drops Signal Orbs. Collect 3 of the same color to automatically trigger a powerful <color=#0E70BD>Signal Orb Skill</color> and enter <color=#0E70BD>Chain State</color>.",
+            "③ The <color=#0E70BD>Sprint</color> ability can be unlocked through <color=#0E70BD>character upgrades</color> or <color=#0E70BD>enhancement items</color>."
+        ]
+    },
+    {
+        "Id": 1022402,
+        "Texts": [
+            "① In this mode, survive a certain number of waves to clear the challenge.",
+            "② After each wave, you can choose <color=#0E70BD>Signal Orb Skills</color> and <color=#0E70BD>items</color> in the <color=#0E70BD>Enhancement Shop</color> to strengthen the character. <color=#0E70BD>Level up</color> and <color=#0E70BD>collect gift boxes</color> to increase the number of available enhancements.",
+            "③ You can hold only 1 <color=#0E70BD>Signal Orb Skill</color> of each color at a time. Buy the same skill again to <color=#0E70BD>rank up</color> and improve its effects. <color=#0E70BD>Items</color> can be purchased repeatedly to stack their enhancement effects."
+        ]
+    },
+    {
+        "Id": 1022403,
+        "Texts": [
+            "① EXP Orbs: Dropped by defeated enemies. Collect a certain amount to increase character level.",
+            "② Healing Orbs: Dropped by defeated enemies. Collect them to restore the character's HP.",
+            "③ Gift Boxes: Dropped by defeated enemies. Collect a gift box to gain 1 additional enhancement at the next Enhancement Shop.",
+            "④ Signal Orbs: Dropped by defeated enemies. Collect them to build charge progress. Collect 3 to trigger the corresponding colored Signal Orb Skill."
+        ]
+    },
+    {
+        "Id": 1022404,
+        "Texts": [
+            "① Basic Attack/Signal Orb DMG Bonus: Increases the DMG of basic attacks and Signal Orb Skills.",
+            "② CRIT/CRIT DMG: The character's critical hit chance and critical damage multiplier.",
+            "③ Max HP/HP Growth: The character's max HP and the amount of max HP gained per level.",
+            "④ Red/Blue/Yellow Orb Drop Rate: The drop rate of the corresponding Signal Orbs when basic attacks hit.",
+            "⑤ Lifesteal Efficiency: The percentage of DMG dealt converted into HP."
+        ]
+    },
+    {
+        "Id": 1022405,
+        "Texts": [
+            "① Dodge: The chance to evade incoming damage.",
+            "② Speed: The speed at which the character moves.",
+            "③ Range: Affects the character's basic attack range.",
+            "④ Armor: Reduces incoming damage by a percentage when taking damage.",
+            "⑤ Luck: Makes you luckier!"
+        ]
+    },
+    {
+        "Id": 1022406,
+        "Texts": [
+            "① Attack Speed Bonus: Affects the interval between basic attacks.",
+            "② Penetration: Affects the number of targets that projectile skills can penetrate.",
+            "③ Sprint Charge: Affects the speed at which sprint charges up.",
+            "④ Knockback: Affects how far targets are knocked back when hit by basic attacks.",
+            "⑤ Chain Duration: The duration of the state when the chain stack count is at 1. The higher the chain stack count, the faster the stacks decay."
         ]
     }
 ]

@@ -26665,7 +26665,7 @@
     {
         "UiName": "UiDynamicFacePreview",
         "LoadWithParent": false,
-        "UiType": "Normal",
+        "UiType": "NormalPopup",
         "UiResType": "Bundle",
         "PrefabUrl": "Assets/Product/Ui/Prefab/UiCommon/UiCommonPopupEmojiDetail.prefab",
         "CacheTime": 5000,
@@ -26779,6 +26779,17 @@
         "UiResType": "Bundle",
         "PrefabUrl": "Assets/Product/Ui/Prefab/UiFight/UiPBRFight.prefab",
         "CacheTime": 30000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiPBRMainFightTips",
+        "LoadWithParent": false,
+        "UiType": "NormalPopup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiPBR/UiPBRMainFightTips.prefab",
+        "CacheTime": 5000,
         "Recycle": false,
         "FightingStay": 0,
         "HideSetPosition": false

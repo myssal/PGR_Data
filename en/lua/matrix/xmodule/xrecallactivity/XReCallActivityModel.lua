@@ -13,6 +13,8 @@ local TableKey = {
     },
     HoldRegressionShareConfig = {
         CacheType = XConfigUtil.CacheType.Normal,
+        Identifier = "Key",
+        ReadFunc = XConfigUtil.ReadType.String,
     },
     HoldRegressionClientConfig = {
         CacheType = XConfigUtil.CacheType.Normal,
@@ -187,8 +189,8 @@ function XReCallActivityModel:GetRegressionChannelConfigById(id)
 end
 
 --获取平台分享配置
-function XReCallActivityModel:GetRegressionPlatformConfigById(id)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.HoldRegressionShareConfig, id, false) or {}
+function XReCallActivityModel:GetRegressionPlatformConfigByKey(key)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.HoldRegressionShareConfig, key, false) or {}
 end
 
 function XReCallActivityModel:GetCurReCallTimeId()

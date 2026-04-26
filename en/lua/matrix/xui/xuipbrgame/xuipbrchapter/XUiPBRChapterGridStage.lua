@@ -18,6 +18,10 @@ function XUiPBRChapterGridStage:InitComponents()
         self.Grid256New2,
         self.Grid256New3,
     }
+    
+    self._PlayCustomEnableAnimHandler = function()
+        self:PlayAnimationWithMask("GridStageStyleEnable")
+    end
 end
 
 function XUiPBRChapterGridStage:OnStart(...)
@@ -123,6 +127,20 @@ function XUiPBRChapterGridStage:OnGridBtnClick()
         self._Control:ReddoSetStageMark(self.StageId)
     else
         XUiManager.TipMsg(self._LockDesc)
+    end
+end
+
+function XUiPBRChapterGridStage:PlayCustomEnableAnimation(delayTime)
+    if XTool.IsNumberValidEx(delayTime) then
+        self:DelayCall(self._PlayCustomEnableAnimHandler, delayTime)
+    else
+        self._PlayCustomEnableAnimHandler()
+    end
+end
+
+function XUiPBRChapterGridStage:SetCanvasGroupAlpha(alpha)
+    if self.CanvasGroup then
+        self.CanvasGroup.alpha = alpha
     end
 end
 

@@ -6847,7 +6847,7 @@
         "Name": "Second Chance",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "Duplicate effects do not stack. Only the highest rarity applies.",
-        "Desc": "Stat boost effects from Life-Risking Trick Runes trigger {0} additional times. This effect is stackable.",
+        "Desc": "Stat boost effects from Life-Risking Trick Runes trigger {0} additional time. This effect is stackable.",
         "AddDesc": "After [Life-Risking Trick] Runes trigger {0} times, summons a demon to attack enemies, dealing {1}% <color=#ecd7bd>Physical</color> DMG. This is stackable.",
         "IsShow": true,
         "Order": 251,
@@ -8118,7 +8118,7 @@
         "Name": "Born From Ashes",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "Duplicate effects do not stack. Only the highest rarity applies.",
-        "Desc": "No Time to Bleed Rune effects can trigger {0} additional times.",
+        "Desc": "No Time to Bleed Rune effects can trigger {0} additional time.",
         "AddDesc": "When a [No Time to Bleed] Rune is triggered, lightning randomly strikes both parties every second. When hitting enemies, directly deals {0}% <color=#ecd7bd>Physical</color> DMG. When hitting the user, increases ATK by {1}%, up to {2}%. The damage boost ends when [No Time to Bleed] Rune effects end. This is stackable.",
         "IsShow": true,
         "Order": 301,
@@ -9018,17 +9018,15 @@
         "BuffType": 0,
         "Name": "Phoenix Tail",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2028001.png",
-        "Desc": "When equipped with [Phoenix Rising], its HP recovery increases by an additional {1}% every {0}s. This effect stacks up to {2} times. During the Death Speed phase, the accumulated bonus recovery instantly increases by {3}%.",
+        "Desc": "When equipped with [Phoenix Rising], its HP recovery increases by {0}%. During the Death Speed phase, the HP recovery bonus increases to {1}%.",
         "IsShow": true,
         "Order": 29,
         "CharacterId": [
             4
         ],
         "DescDigit": [
-            5,
-            6,
-            6,
-            100
+            32,
+            64
         ]
     },
     {
@@ -9185,7 +9183,7 @@
         "BuffType": 0,
         "Name": "Vitrum Crystal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem02.png",
-        "Desc": "Gain {1} bonus ATK upon entering battle for every {0} archetype Runes equipped.",
+        "Desc": "Upon entering battle, gain {1} bonus ATK for every {0} archetype Rune equipped.",
         "IsShow": true,
         "Order": 38,
         "DescDigit": [
@@ -9240,7 +9238,7 @@
         "BuffType": 0,
         "Name": "Undeath Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon10.png",
-        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Suicidal Maniac\" archetype 5★ Rune(s) may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Suicidal Maniac\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
         "IsShow": true,
         "Order": 41,
         "DescDigit": [
@@ -9258,7 +9256,7 @@
         "BuffType": 0,
         "Name": "Boiling Blood Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
-        "Desc": "Each time you enter the Mysterious Tavern, {0} \"No Time to Bleed\" archetype 5★ Rune(s) may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"No Time to Bleed\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
         "IsShow": true,
         "Order": 42,
         "DescDigit": [
@@ -9276,7 +9274,7 @@
         "BuffType": 0,
         "Name": "Deathscape Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon13.png",
-        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Beyond Death\" archetype 5★ Rune(s) may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Beyond Death\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
         "IsShow": true,
         "Order": 43,
         "DescDigit": [
@@ -9294,7 +9292,7 @@
         "BuffType": 0,
         "Name": "Rapid Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon15.png",
-        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Speed Prologue\" archetype 5★ Rune(s) may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Speed Prologue\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
         "IsShow": true,
         "Order": 44,
         "DescDigit": [
@@ -9312,7 +9310,7 @@
         "BuffType": 0,
         "Name": "Deathhunt Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon16.png",
-        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Death Hunter\" archetype 5★ Rune(s) may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Death Hunter\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
         "IsShow": true,
         "Order": 45,
         "DescDigit": [
@@ -9330,7 +9328,7 @@
         "BuffType": 0,
         "Name": "Calamity Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon11.png",
-        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Rhythmic Suffering\" archetype 5★ Rune(s) may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Rhythmic Suffering\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
         "IsShow": true,
         "Order": 46,
         "DescDigit": [
@@ -9348,7 +9346,7 @@
         "BuffType": 0,
         "Name": "Life-Risking Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon14.png",
-        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Life-Risking Trick\" archetype 5★ Rune(s) may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Life-Risking Trick\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
         "IsShow": true,
         "Order": 47,
         "DescDigit": [

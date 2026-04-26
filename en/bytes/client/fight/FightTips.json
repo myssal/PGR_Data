@@ -33805,7 +33805,7 @@
         "Id": 301010216,
         "Type": 8,
         "Title": "Current Skill:",
-        "Desc": "【狮心统召】",
+        "Desc": "[Lionheart Rally]",
         "Time": 9999.0,
         "PositionX": 0,
         "PositionY": 0
@@ -33813,7 +33813,7 @@
     {
         "Id": 301010217,
         "Type": 1,
-        "Desc": "焰燧还可选择另一种主动技能，正在为您切换【炽鬃覆烁】演示",
+        "Desc": "You may select another Active Skill for Ignis. Switching to [Blazing Shroud] now.",
         "Time": 5.0,
         "PositionX": 0,
         "PositionY": 0
@@ -33822,7 +33822,7 @@
         "Id": 301010218,
         "Type": 8,
         "Title": "Current Skill:",
-        "Desc": "【炽鬃覆烁】",
+        "Desc": "[Blazing Shroud]",
         "Time": 9999.0,
         "PositionX": 0,
         "PositionY": 0
@@ -33830,7 +33830,15 @@
     {
         "Id": 301010219,
         "Type": 1,
-        "Desc": "接下来教学焰燧的协同攻击",
+        "Desc": "Next up is the tutorial of Ignis' joint attack.",
+        "Time": 5.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 301010220,
+        "Type": 1,
+        "Desc": "Next up is the tutorial for the second process.",
         "Time": 5.0,
         "PositionX": 0,
         "PositionY": 0
@@ -66442,6 +66450,24 @@
         "PositionY": 0
     },
     {
+        "Id": 30100215,
+        "Type": 8,
+        "Title": "Kamui deals more Fire DMG.",
+        "Desc": "{0}%",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 30100216,
+        "Type": 8,
+        "Title": "Kamui deals more Plasma Beam DMG.",
+        "Desc": "{0}%",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
         "Id": 1502141701,
         "Type": 5,
         "Desc": "I've obtained the footage from that so-called \"disaster\" in Pulia Forest Park. It confirms that my approach is correct. After all these years of silence, this is the best news I've ever received.\\nMy previous body was destroyed by that red-haired girl, and not all my memories were synced to this new one. Gabriel, too, has long since vanished.\\nBut it doesn't matter. Even if divine guidance has faded, I can still shoulder this responsibility. I will guide the Punishing Virus to evolve.\\nWhen the Eden of this new world gives rise to a new species, I will personally name it \"Eve\".\\nI'll make it clear to everyone: I am the one who replaces God.",
@@ -67137,7 +67163,7 @@
     {
         "Id": 969915293,
         "Type": 15,
-        "Desc": "被命中次数≤5次",
+        "Desc": "Take ≤5 hits",
         "Time": 0.0,
         "PositionX": 0,
         "PositionY": 0
@@ -67193,7 +67219,7 @@
     {
         "Id": 969915300,
         "Type": 15,
-        "Desc": "【幻惑身】中释放1次【掷】",
+        "Desc": "Cast [Throw] once while in [Phantom Morph]",
         "Time": 0.0,
         "PositionX": 0,
         "PositionY": 0
@@ -67201,7 +67227,7 @@
     {
         "Id": 969915301,
         "Type": 15,
-        "Desc": "【幻惑身】中用【御】格挡2次",
+        "Desc": "Use [Control] to block twice while in [Phantom Morph]",
         "Time": 0.0,
         "PositionX": 0,
         "PositionY": 0
@@ -67209,7 +67235,7 @@
     {
         "Id": 969915302,
         "Type": 15,
-        "Desc": "【幻惑身】中被命中次数≤10次",
+        "Desc": "Take ≤10 hits while in [Phantom Morph]",
         "Time": 0.0,
         "PositionX": 0,
         "PositionY": 0
@@ -67233,7 +67259,7 @@
     {
         "Id": 969915305,
         "Type": 15,
-        "Desc": "追缉任务|<color=#FFFFFF><size=30>被命中次数≤5次（<color=#11E959>已完成</color>）</size></color>|\\n",
+        "Desc": "Pursuit Mission|<color=#FFFFFF><size=30>Take ≤5 hits (<color=#11E959>Completed</color>)</size></color>|\\n",
         "Time": 0.0,
         "PositionX": 0,
         "PositionY": 0
@@ -67306,6 +67332,198 @@
         "Id": 969915314,
         "Type": 15,
         "Desc": "Pursuit Mission|<color=#FFFFFF><size=30>Take ≤10 hits (<color=#11E959>Completed</color>)</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915331,
+        "Type": 15,
+        "Desc": "Parry 5 times",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915332,
+        "Type": 15,
+        "Desc": "触发【击落】≥2次",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915333,
+        "Type": 15,
+        "Desc": "Take ≤5 hits",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915334,
+        "Type": 15,
+        "Desc": "被【次元囚缚】命中次数≤1次",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915335,
+        "Type": 15,
+        "Desc": "成功拼刀3次",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915336,
+        "Type": 15,
+        "Desc": "Take ≤3 hits",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915337,
+        "Type": 15,
+        "Desc": "被【光兆陨灭】命中次数≤1次",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915338,
+        "Type": 15,
+        "Desc": "触发【蚀破衰退】≥1次",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915339,
+        "Type": 15,
+        "Desc": "Take ≤5 hits",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915340,
+        "Type": 15,
+        "Desc": "Take ≤10 hits",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915341,
+        "Type": 15,
+        "Desc": "触发【反击之潮】≥1次",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915342,
+        "Type": 15,
+        "Desc": "在3分钟内使用罗塞塔·极锋看穿首领扎克的【冰心之海】",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915343,
+        "Type": 15,
+        "Desc": "Pursuit Mission|<color=#FFFFFF><size=30>Parry 5 times (<color=#11E959>Completed</color>)</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915344,
+        "Type": 15,
+        "Desc": "追缉任务|<color=#FFFFFF><size=30>触发【击落】≥2次（<color=#11E959>已完成</color>）</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915345,
+        "Type": 15,
+        "Desc": "Pursuit Mission|<color=#FFFFFF><size=30>Take ≤5 hits (<color=#11E959>Completed</color>)</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915346,
+        "Type": 15,
+        "Desc": "追缉任务|<color=#FFFFFF><size=30>被【次元囚缚】命中次数≤1次（<color=#11E959>已完成</color>）</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915347,
+        "Type": 15,
+        "Desc": "追缉任务|<color=#FFFFFF><size=30>成功拼刀3次 （<color=#11E959>已完成</color>）</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915348,
+        "Type": 15,
+        "Desc": "Pursuit Mission|<color=#FFFFFF><size=30>Take ≤3 hits (<color=#11E959>Completed</color>)</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915349,
+        "Type": 15,
+        "Desc": "追缉任务|<color=#FFFFFF><size=30>被【光兆陨灭】命中次数≤1次（<color=#11E959>已完成</color>）</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915350,
+        "Type": 15,
+        "Desc": "追缉任务|<color=#FFFFFF><size=30>触发【蚀破衰退】≥1次（<color=#11E959>已完成</color>）</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915351,
+        "Type": 15,
+        "Desc": "Pursuit Mission|<color=#FFFFFF><size=30>Take ≤5 hits (<color=#11E959>Completed</color>)</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915352,
+        "Type": 15,
+        "Desc": "Pursuit Mission|<color=#FFFFFF><size=30>Take ≤10 hits (<color=#11E959>Completed</color>)</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915353,
+        "Type": 15,
+        "Desc": "追缉任务|<color=#FFFFFF><size=30>触发【反击之潮】≥1次（<color=#11E959>已完成</color>）</size></color>|\\n",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 969915354,
+        "Type": 15,
+        "Desc": "追缉任务|<color=#FFFFFF><size=30>在3分钟内使用罗塞塔·极锋看穿首领扎克的【冰心之海】（<color=#11E959>已完成</color>）</size></color>|\\n",
         "Time": 0.0,
         "PositionX": 0,
         "PositionY": 0
@@ -69842,7 +70060,7 @@
         "Id": 1039010102,
         "Type": 5,
         "Title": "Main Target",
-        "Desc": "Inject Tranquilizer",
+        "Desc": "Inject the Tranquilizer",
         "Time": 0.0,
         "PositionX": 0,
         "PositionY": 0
@@ -69955,7 +70173,7 @@
     {
         "Id": 1039011721,
         "Type": 5,
-        "Title": "<size=45><b>Margaret's Medical Examination Report</b></size>",
+        "Title": "<size=40><b>Margaret's Medical Examination Report</b></size>",
         "Desc": "Carthaki Research Institute - Construct Health Assessment Report\\nReport ID: K-7824-2162\\nSubject Name: Margaret\\nAssessment Date: January 3, 2162\\nAttending: Dr. Alvin Costa\\n\\n1. Basic Status and Structural Analysis\\nSubject height: 162.2cm; mass: 41.8kg, significantly below human norms. Body surface consists of bionic composite skin. Multiple non-standard modification marks are present at frame joints. No registration record for this ID was found in the Gestalt database. Origin unknown.\\n2. Neural System and M.I.N.D. Anomalies\\nRoutine scans show a significant delay in memory modules and weak signals from emotional modules. Deep scans near the core reveal an unauthorized parasitic component, codenamed \"Seedling.\" This component directly couples with core interfaces, disrupting normal M.I.N.D. fluctuations and causing memory data conflicts and loss. The most notable clinical symptom is impaired advanced visual processing: the subject cannot parse human facial features (similar to prosopagnosia) but can still identify individuals using secondary cues such as color, outline, and clothing.\\n3. Seedling Characteristics and Risks\\nThe energy profile of this component is unknown. Gestalt analysis did not return any registered manufacturing source. Current analysis indicates that it is slowly consuming the host's M.I.N.D. data as its energy supply. At this stage, Seedling is deeply integrated into the frame. Forced surgical removal would likely result in permanent damage to M.I.N.D. structures and may shorten overall frame lifespan.\\n4. Medical Conclusion\\nConclusion: Subject is confirmed to be an unregistered Construct affected by the unknown parasitic component Seedling, resulting in memory disorders and specific cognitive impairments.\\n\\nFor details, please refer to the attached Seedling Component Analysis Report (BR-01).",
         "Time": 0.0,
         "PositionX": 0,
@@ -69967,7 +70185,7 @@
     {
         "Id": 1039011722,
         "Type": 5,
-        "Title": "<size=45><b>Anomalous Construct Discovery Report</b></size>",
+        "Title": "<size=40><b>Anomalous Construct Discovery Report</b></size>",
         "Desc": "The Akdilek Commercial Alliance - Carthaki Research Institute\\nTo: Science Council\\nRe: Anomalous Construct Discovery Report\\n\\nDuring a search-and-rescue operation in Elgar City, we discovered an unregistered Construct who identified herself as \"Margaret.\" This individual remains stable in a medium-level Punishing contamination environment. An unknown parasitic component, codenamed \"Seedling,\" was detected in her core.\\nThe component has a golden, branch-like structure and can generate a localized magnetic field that significantly slows Punishing erosion. At the same time, it continuously erodes the host's M.I.N.D., causing severe memory disruption and reset phenomena.\\nPreliminary comparison shows that the structure of Seedling is highly similar to related entries in the Consciousness Tide Dossier. We hereby request authorization to access the relevant files and recommend that the council form a dedicated task force to evaluate its potential applications and major risks.\\n\\nJune 1, 2161",
         "Time": 0.0,
         "PositionX": 0,
@@ -70063,6 +70281,170 @@
         "Time": 3.0,
         "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightTips/PanelLocationTip.prefab",
         "SecondDesc": "LOCATION",
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502171201,
+        "Type": 1,
+        "Title": "Kamui and the commandant engage in battle, facing what Marlis calls a trial.",
+        "Time": 4.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502171202,
+        "Type": 1,
+        "Title": "Rather than fighting herself, she dispatches an opponent she prepared specifically for Kamui.",
+        "Time": 4.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502171203,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Catch ??? and stop him",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502171204,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Purge the Enemies",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502171205,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Cleave through obstacles",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 737023001,
+        "Type": 5,
+        "Desc": "1. Ezette's Highest Tenet: Family comes first in all matters.\\n2. External rescue missions must follow humanitarian principles. Strive to save everyone.\\n3. During crises, protect members in batches according to priority classifications.",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 737023002,
+        "Type": 5,
+        "Desc": "The desolate military warship has fallen silent for many years. Here, time remains suspended, frozen with the memories of days past.\\nOnly upon reflection does one realize how much time has imperceptibly slipped away.",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 737023003,
+        "Type": 5,
+        "Desc": "Ezette Military Base\\nHistory: Initially formed during the Golden Age by refugees from various war-torn regions, operating as a stateless mercenary organization.\\nIn 2026, it was incorporated by the World Government, becoming an official military base under their jurisdiction. In 2161, it accepted World Government military forces and implemented the Project Barleycorn. In 2164 █▆▇▅▂▅▃▂▁▁\\nArea Distribution: The Ezette Military Base flagship serves as a mobile military fortress, housing archives, communications room, armory, supply storage, training grounds, medical bay, escape pods, and other areas. Secondary vessels primarily store backup supplies and weapons. If a Level 2 or higher alert is triggered within the base, all members must immediately assemble at the flagship for evacuation, abandoning all secondary vessels if necessary.",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502170801,
+        "Type": 1,
+        "Title": "As energy is absorbed, more memories of Odile and Eurytes begin to resurface.",
+        "Time": 4.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502170802,
+        "Type": 1,
+        "Title": "Kamui and the Commandant explore Ezette, searching for clues to restore his lost memories.",
+        "Time": 4.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502170803,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Purge the Enemies",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502170804,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Retrieve Data",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502170805,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Keep exploring",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502170806,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Investigate the memory fragment",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502172201,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Support allies",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502172202,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Help Abel up",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502172203,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Save more people...",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502172204,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Purge the Enemies",
+        "Time": 0.0,
+        "PositionX": 0,
+        "PositionY": 0
+    },
+    {
+        "Id": 1502172205,
+        "Type": 5,
+        "Title": "Main Target",
+        "Desc": "Eliminate more enemies",
+        "Time": 0.0,
         "PositionX": 0,
         "PositionY": 0
     }

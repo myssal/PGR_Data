@@ -670,7 +670,7 @@
             "Control"
         ],
         "Contents": [
-            "Yuka transforms the target into Yuka for a period of time. During that time, the target can use <color=#7FF2F4>Yuka's exclusive combat skills</color> to fight Yuka.",
+            "<size=31>Yuka transforms the target into Yuka for a period of time. During that time, the target can use <color=#7FF2F4>Yuka's exclusive combat skills</color> to fight Yuka.\\nOnce the player triggers Phantom Morph and becomes Yuka, they can deal damage to enemies to reduce their Reference level. When the <color=#7FF2F4>Reference level reaches zero</color>, the player <color=#7FF2F4>exits Phantom Morph</color>.</size>",
             "After transforming into Yuka, <color=#7FF2F4>tap Signal Orb</color> to cast skills. Enters cooldown after use.",
             "After transforming into Yuka through Phantom Morph, <color=#7FF2F4>press and hold Basic Attack to charge up and throw a chair at enemies</color>.",
             "After transforming into Yuka through Phantom Morph, <color=#7FF2F4>press and hold or tap Signature Move</color> to block enemy attacks."
@@ -692,18 +692,18 @@
         "Id": 300631251,
         "Titles": [
             "Basic Controls",
-            "强化商店",
-            "角色状态"
+            "Enhancement Shop",
+            "Character Status"
         ],
         "Contents": [
-            "本次玩法中，角色将使用普攻自动攻击。\\n指挥官可以控制角色进行移动，躲避怪物的攻击。",
-            "波次战斗完成后，可以在强化商店选择信号球技能和道具来提升角色能力。\\n角色通过消灭怪物，拾取掉落的经验值升级，可以增加商店选择次数。完成一定数量波次即可挑战成功。",
-            "角色当前生命值、经验值可在界面左上角查看。"
+            "① In this mode, the character attacks automatically with basic attacks.\\nYou can control the character to move and dodge enemy attacks.",
+            "② After completing a wave, you can choose <color=#7FF2F4>Signal Orb Skills</color> and <color=#7FF2F4>items</color> in the Enhancement Shop to strengthen the character.\\nDefeat enemies and collect dropped <color=#7FF2F4>EXP</color> to level up the character and increase the number of <color=#7FF2F4>shop</color> choices. Complete a set number of waves to clear the challenge.",
+            "③ The character's current <color=#7FF2F4>HP</color> and <color=#7FF2F4>EXP</color> are displayed in the top-left corner."
         ],
         "AssetPaths": [
-            10001,
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V215JXPC.png",
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V215JXPC2.png"
+            31060,
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp08.png",
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp05.png"
         ],
         "AssetTypes": [
             1,
@@ -714,18 +714,41 @@
     {
         "Id": 300631252,
         "Titles": [
-            "经验球、治疗球和礼盒",
-            "Signal Orb"
+            "EXP Orbs, Healing Orbs, and Gift Boxes",
+            "Signal Orbs"
         ],
         "Contents": [
-            "消灭怪物掉落，可通过碰撞拾取：\\n经验球：拾取一定数量经验球后可以提升角色等级。\\n治疗球：拾取治疗球可以回复角色当前生命值。\\n礼盒：拾取礼盒后可以在下个强化商店增加一次强化次数。",
-            "消灭怪物掉落，拾取后累计充能进度，累计拾取三个，可以触发对应颜色的信号球技能。"
+            "① Pick up drops from defeated enemies to gain bonuses:\\nEXP Orb: Increases <color=#7FF2F4>character level</color>.\\nHealing Orb: Restores <color=#7FF2F4>HP</color>.\\nGift Box: Grants 1 <color=#7FF2F4>additional enhancement</color> at the next Enhancement Shop.",
+            "② Dropped by defeated enemies. Collect them to build charge progress. Collect <color=#7FF2F4>3</color> to trigger the corresponding colored <color=#7FF2F4>Signal Orb Skill</color>."
         ],
         "AssetPaths": [
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V215JXM.png",
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V215JXPC.png"
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp07.png",
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp06.png"
         ],
         "AssetTypes": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 13021105,
+        "Titles": [
+            "Hacking Guide: Connections",
+            "Hacking Guide: Completion",
+            "Hacking Guide: Unleashing"
+        ],
+        "Contents": [
+            "After hacking begins\\n<color=#ADD8E6>Connect modules of matching colors to</color> <color=#34D2FF>fill</color><color=#ADD8E6> the grid area.</color>",
+            "<color=#ADD8E6>Hack succeeds once all grids are</color> <color=#34D2FF>filled.</color>\\nIf connections become tangled, use the button in the top-right to reset.",
+            "Upon a successful hack\\n<color=#ADD8E6>tap the center button to unleash the ability.</color>"
+        ],
+        "AssetPaths": [
+            "Assets/Product/Texture/Image/UiFightTutorialImage/V440Tutorial1.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/V440Tutorial2.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/V440Tutorial3.png"
+        ],
+        "AssetTypes": [
+            2,
             2,
             2
         ]

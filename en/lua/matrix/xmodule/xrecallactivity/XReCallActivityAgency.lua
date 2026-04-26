@@ -109,7 +109,16 @@ end
 
 --- 获取该玩家的邀请码
 function XReCallActivityAgency:PlayIdToHexUpper()
-    return string.upper(string.format("HG%08X", XPlayer.Id))
+    --- 保底获取当前Id
+    local fixedPlayerId = XPlayer.Id
+    
+    local reCallData = self._Model:GetRecallData()
+    -- 优先使用服务端缓存的Id，兼容迁移导致的PlayerId变化
+    if not XTool.IsTableEmpty(reCallData) and XTool.IsNumberValidEx(reCallData.GenId) then
+        fixedPlayerId = reCallData.GenId
+    end
+    
+    return string.upper(string.format("HG%08X", fixedPlayerId))
 end
 
 --- 邀请码校验
@@ -120,6 +129,16 @@ function XReCallActivityAgency:CheckMsgContainsInviteCode(msg)
     
     -- 客户端只校验格式，不与玩家本身的邀请码匹配
     if string.find(msg, "HG%w%w%w%w%w%w%w%w") then
+        return true
+    end
+    
+    return false
+end
+
+--- 邀请码校验
+--- 有明确边界，用于邀请码的使用场景
+function XReCallActivityAgency:CheckInviteCodeFormatValid(inviteCode)
+    if string.find(inviteCode, "^HG%w%w%w%w%w%w%w%w$") then
         return true
     end
     

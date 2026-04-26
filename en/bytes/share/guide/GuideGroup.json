@@ -10007,7 +10007,7 @@
     {
         "Id": 63923,
         "Priority": 63923,
-        "Ignore": 1,
+        "Ignore": 0,
         "Desc": "v4.0 引导肉鸽5 饰品选择",
         "GuideType": 1,
         "CompleteId": 63923,
@@ -10023,7 +10023,7 @@
     {
         "Id": 63924,
         "Priority": 63924,
-        "Ignore": 1,
+        "Ignore": 0,
         "Desc": "v4.0 引导肉鸽5 角色升级",
         "GuideType": 1,
         "CompleteId": 63924,
@@ -10039,7 +10039,7 @@
     {
         "Id": 63925,
         "Priority": 63925,
-        "Ignore": 1,
+        "Ignore": 0,
         "Desc": "v4.0 引导肉鸽5 商店购买角色升级",
         "GuideType": 1,
         "CompleteId": 63925,
@@ -10089,7 +10089,7 @@
     {
         "Id": 63928,
         "Priority": 63928,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v4.2 引导肉鸽5 任务选择",
         "GuideType": 1,
         "CompleteId": 63928,
@@ -10104,7 +10104,7 @@
     {
         "Id": 63929,
         "Priority": 63929,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v4.2 引导肉鸽5 商店内委托",
         "GuideType": 1,
         "CompleteId": 63929,
@@ -10116,6 +10116,22 @@
             862112,
             774800,
             863133
+        ]
+    },
+    {
+        "Id": 63930,
+        "Priority": 63930,
+        "Ignore": 0,
+        "Desc": "v4.4 引导肉鸽5 pvp额外对局",
+        "GuideType": 1,
+        "CompleteId": 63930,
+        "ActiveUi": "UiTheatre5RoundSettlement",
+        "CheckNodeActive": "BtnOvertime",
+        "RewardId": 0,
+        "GroupId": 63930,
+        "ConditionId": [
+            862112,
+            774800
         ]
     },
     {
@@ -11023,7 +11039,7 @@
     {
         "Id": 64331,
         "Priority": 64331,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v4.1 疾速追缉",
         "GuideType": 1,
         "CompleteId": 64331,
@@ -11677,6 +11693,209 @@
         "ConditionId": [
             862112,
             774800
+        ]
+    },
+    {
+        "Id": 64601,
+        "Priority": 64601,
+        "Ignore": 0,
+        "Desc": "v4.4 战双兄弟 主界面介绍",
+        "GuideType": 1,
+        "CompleteId": 64601,
+        "ActiveUi": "UiPBRMain",
+        "RewardId": 0,
+        "GroupId": 64601,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64602,
+        "Priority": 64602,
+        "Ignore": 0,
+        "Desc": "v4.4 战双兄弟 商店介绍",
+        "GuideType": 1,
+        "CompleteId": 64602,
+        "ActiveUi": "UiPBRShopNew",
+        "RewardId": 0,
+        "GroupId": 64602,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64603,
+        "Priority": 64603,
+        "Ignore": 0,
+        "Desc": "v4.4 战双兄弟 商店升阶",
+        "GuideType": 1,
+        "CompleteId": 64603,
+        "ActiveUi": "UiPBRShopNew",
+        "RewardId": 0,
+        "GroupId": 64603,
+        "ConditionId": [
+            862112,
+            774800,
+            863144
+        ]
+    },
+    {
+        "Id": 64604,
+        "Priority": 64604,
+        "Ignore": 0,
+        "Desc": "v4.4 战双兄弟 养成界面",
+        "GuideType": 1,
+        "CompleteId": 64604,
+        "ActiveUi": "UiPBRGenius",
+        "RewardId": 0,
+        "GroupId": 64604,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64605,
+        "Priority": 64605,
+        "Ignore": 0,
+        "Desc": "v4.4 战双兄弟 关卡失败",
+        "GuideType": 1,
+        "CompleteId": 64605,
+        "ActiveUi": "UiPBRSettlement",
+        "CheckNodeActive": "TxtResultFail",
+        "RewardId": 0,
+        "GroupId": 64605,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64606,
+        "Priority": 64606,
+        "Ignore": 0,
+        "Desc": "v4.4 战双兄弟 关卡胜利",
+        "GuideType": 1,
+        "CompleteId": 64606,
+        "ActiveUi": "UiPBRSettlement",
+        "CheckNodeActive": "BtnNext",
+        "RewardId": 0,
+        "GroupId": 64606,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64611,
+        "Priority": 64611,
+        "Ignore": 0,
+        "Desc": "v4.4 疾速追缉",
+        "GuideType": 1,
+        "CompleteId": 64611,
+        "ActiveUi": "UiBountyChallengeMain",
+        "RewardId": 0,
+        "GroupId": 64611,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64621,
+        "Priority": 64621,
+        "Ignore": 0,
+        "Desc": "v4.4 神威大连线 主界面",
+        "GuideType": 1,
+        "CompleteId": 64621,
+        "ActiveUi": "UiLineArithmetic3Main",
+        "RewardId": 0,
+        "GroupId": 64621,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64622,
+        "Priority": 64622,
+        "Ignore": 0,
+        "Desc": "v4.4 神威大连线 101",
+        "GuideType": 1,
+        "CompleteId": 64622,
+        "ActiveUi": "UiLineArithmetic3Game",
+        "RewardId": 0,
+        "GroupId": 64622,
+        "ConditionId": [
+            862112,
+            774800,
+            863145
+        ]
+    },
+    {
+        "Id": 64623,
+        "Priority": 64623,
+        "Ignore": 0,
+        "Desc": "v4.4 神威大连线 102",
+        "GuideType": 1,
+        "CompleteId": 64623,
+        "ActiveUi": "UiLineArithmetic3Game",
+        "RewardId": 0,
+        "GroupId": 64623,
+        "ConditionId": [
+            862112,
+            774800,
+            863146
+        ]
+    },
+    {
+        "Id": 64624,
+        "Priority": 64624,
+        "Ignore": 0,
+        "Desc": "v4.4 神威大连线 201",
+        "GuideType": 1,
+        "CompleteId": 64624,
+        "ActiveUi": "UiLineArithmetic3Game",
+        "RewardId": 0,
+        "GroupId": 64624,
+        "ConditionId": [
+            862112,
+            774800,
+            863147
+        ]
+    },
+    {
+        "Id": 64625,
+        "Priority": 64625,
+        "Ignore": 0,
+        "Desc": "v4.4 神威大连线 301",
+        "GuideType": 1,
+        "CompleteId": 64625,
+        "ActiveUi": "UiLineArithmetic3Game",
+        "RewardId": 0,
+        "GroupId": 64625,
+        "ConditionId": [
+            862112,
+            774800,
+            863148
+        ]
+    },
+    {
+        "Id": 64626,
+        "Priority": 64626,
+        "Ignore": 0,
+        "Desc": "v4.4 神威大连线 401",
+        "GuideType": 1,
+        "CompleteId": 64626,
+        "ActiveUi": "UiLineArithmetic3Game",
+        "RewardId": 0,
+        "GroupId": 64626,
+        "ConditionId": [
+            862112,
+            774800,
+            863149
         ]
     }
 ]

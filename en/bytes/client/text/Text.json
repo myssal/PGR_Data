@@ -205,7 +205,7 @@
     },
     {
         "Key": "CharacterFullName2",
-        "Text": "{0}·{1}"
+        "Text": "{0}:{1}"
     },
     {
         "Key": "CharacterLackDps",
@@ -2244,7 +2244,7 @@
     },
     {
         "Key": "DecomposeConfirmTip",
-        "Text": "You have selected <color=#0E70BD>4★ or above equipment</color>.\\nYou will get approximately 70% of the training materials used from deconstructing. (Resonance materials are not refunded. Non-integer values are rounded down)"
+        "Text": "You have selected <color=#0E70BD>4★ or above equipment</color>.\\nYou will get approximately 70% of the training materials used from deconstructing.\\n (Resonance materials are not refunded. Non-integer values are rounded down.)"
     },
     {
         "Key": "DecomposeConfirmTitle",
@@ -3604,7 +3604,7 @@
     },
     {
         "Key": "BossSingleRepeartDesc",
-        "Text": "Challenges bosses to refresh Progress.\\nProgress does not stack."
+        "Text": "Challenge bosses to refresh Progress.\\nProgress does not stack."
     },
     {
         "Key": "BossSingleScoreDesc",
@@ -3696,7 +3696,7 @@
     },
     {
         "Key": "DrawNotEnoughError",
-        "Text": "Insufficient Coins"
+        "Text": "Insufficient Items"
     },
     {
         "Key": "CdKeyIsEmpty",
@@ -16756,11 +16756,11 @@
     },
     {
         "Key": "TransfiniteLockGoOn3",
-        "Text": "You have dead character(s) on team. Saving the result will make you not able to use the character(s) in the subsequent battles. You have not beaten the challenge of this stage. Challenge again?"
+        "Text": "Some characters in your team have been defeated. If you save your progress, they will be unavailable in subsequent battles. You haven't completed the challenge of this stage. Retry?"
     },
     {
         "Key": "TransfiniteLockGoOn4",
-        "Text": "You have dead character(s) on team. Saving the result will make you not able to use the character(s) in the subsequent battles. Challenge again?"
+        "Text": "Some characters in your team have been defeated. If you save your progress, they will be unavailable in subsequent battles. Retry this stage?"
     },
     {
         "Key": "TransfiniteRechallenge",
@@ -18448,7 +18448,7 @@
     },
     {
         "Key": "DrawNeedChooseCharTip",
-        "Text": "Select Rate-up Members first"
+        "Text": "Select a Rate-up Member First"
     },
     {
         "Key": "CharacterGeneralSkillDesc1",
@@ -19756,7 +19756,7 @@
     },
     {
         "Key": "UiCharacterSkillSwitchTitle",
-        "Text": "Battle Voice Toggle"
+        "Text": "Settings"
     },
     {
         "Key": "DrawBannerRoleTypeText",
@@ -23504,7 +23504,7 @@
     },
     {
         "Key": "PurchaseComboContent",
-        "Text": "1、规则说明:捆绑包内含多个补给包,购买时,将以对应价格获得多个补给包的内容。\\n2、已单独购买的补给包不参与捆绑包的付费计算。\\n3、购买后,捆绑包内包含的补给包将会全部售罄,不可再次购买。"
+        "Text": "1. Rules: A bundle contains multiple Supply Packs. Upon purchase, you will receive the contents of multiple Supply Packs at a discounted price.\\n2. Supply Packs purchased individually do not affect the bundle's pricing calculation.\\n3. After purchase, all Supply Packs contained in the bundle will be marked as sold out and cannot be purchased again."
     },
     {
         "Key": "PurchaseFirstRechargeTipTitle",
@@ -23736,7 +23736,7 @@
     },
     {
         "Key": "DynamicFaceRuleContentTip",
-        "Text": "· Rules: During the event, limited-time collaboration stamps and weapon Coatings will be available, including: Kamui - Good Mood Supply Pack, Wanshi - Sleep Care Pack, Chrome - Focus Boost Pack, Camu - Strength Boost Pack, and Kamui - Butter Hero Weapon Box."
+        "Text": "Rules: During the event, limited-time collab animated stamps and weapon coating will be available, including: Kamui - Happy Supply Pack, Wanshi - Sleep Guardian Pack, Chrome - Focus Supplement Pack, Camu - Athletic Boost Pack, and Kamui - Butter Hero Weapon Box."
     },
     {
         "Key": "DynamicFaceActTip1",
@@ -23748,15 +23748,15 @@
     },
     {
         "Key": "FashionSuitProgress1",
-        "Text": "已收集{0}"
+        "Text": "Collected {0}"
     },
     {
         "Key": "FashionSuitProgress2",
-        "Text": "更多系列涂装待更新，敬请期待"
+        "Text": "More series Coatings coming soon"
     },
     {
         "Key": "FashionSuitProgress3",
-        "Text": "系列涂装更新中，全部更新后将解锁全收集奖励"
+        "Text": "This Coating series is still being updated. Complete Collection Rewards will unlock after full update."
     },
     {
         "Key": "TeamPrefabCannotCoverEmptyTeam",
@@ -23765,6 +23765,14 @@
     {
         "Key": "DrawTenDiscountDesc",
         "Text": "Current pool discount uses: {0}/{1}"
+    },
+    {
+        "Key": "DrawTenDiscountDescXuan",
+        "Text": "Wishing Pool discounts: {0}/{1}"
+    },
+    {
+        "Key": "DrawTenDiscountDescMingyunXuan",
+        "Text": "Fate Wishing Pool discounts: {0}/{1}"
     },
     {
         "Key": "PayWithLoginErrorTips",
@@ -23808,30 +23816,58 @@
     },
     {
         "Key": "DownloadFashionStarted",
-        "Text": "下载开始"
+        "Text": "Download Started"
     },
     {
         "Key": "SelectFashionToUninstall",
-        "Text": "请选择要卸载的涂装资源"
+        "Text": "Select the Coating resources to uninstall"
     },
     {
         "Key": "SelectFashionToDownload",
-        "Text": "请选择要下载的涂装资源"
+        "Text": "Select the Coating resources to download"
     },
     {
         "Key": "DownloadFashionFinished",
-        "Text": "所选资源已下载完成"
+        "Text": "Selected Resources Downloaded"
     },
     {
         "Key": "DownloadFashionFinishedRefresh",
-        "Text": "【{0}】下载完成"
+        "Text": "[{0}] Download Complete"
     },
     {
         "Key": "FashionAlreadyDownloaded",
-        "Text": "选择的涂装资源已下载完成"
+        "Text": "Selected Coating Resources Downloaded"
     },
     {
         "Key": "UninstallFashionConfirm",
-        "Text": "确定要卸载选中的涂装资源吗？"
+        "Text": "Uninstall the selected Coating resources?"
+    },
+    {
+        "Key": "BattleFashionUndownloadedTipTitle",
+        "Text": "Tips"
+    },
+    {
+        "Key": "BattleFashionUndownloadedTip",
+        "Text": "The resources for your currently equipped Coating haven't been downloaded. A default Coating will be used in battle."
+    },
+    {
+        "Key": "BattleFashionUndownloadedConfirmButton",
+        "Text": "Enter Battle"
+    },
+    {
+        "Key": "BattleFashionUndownloadedHit",
+        "Text": "Do not show again during this session"
+    },
+    {
+        "Key": "DownloadingFashionTip",
+        "Text": "Resource download in progress. Cancel download before proceeding."
+    },
+    {
+        "Key": "FashionSuitProgressComplate",
+        "Text": "Complete"
+    },
+    {
+        "Key": "WaitingForDownloadFashionTip",
+        "Text": "Pending other downloads. Press [Cancel Download] to stop."
     }
 ]

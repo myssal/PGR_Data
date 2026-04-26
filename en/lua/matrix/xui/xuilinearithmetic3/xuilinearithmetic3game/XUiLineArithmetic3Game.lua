@@ -119,7 +119,7 @@ end
 function XUiLineArithmetic3Game:InitComponents()
     -- Back Mainui Help
     self:BindExitBtns()
-    self:BindHelpBtn(self.BtnHelp, "UiLineArithmetic3GameHelpKey")
+    self:BindHelpBtn(self.BtnHelp, "LineArithmeticHelp")
 
     -- BtnTips、PanelTips、GridTips
     if self.BtnTips then
@@ -197,6 +197,17 @@ end
 function XUiLineArithmetic3Game:OnDisable()
     -- 移除事件监听
     XEventManager.RemoveEventListener(XEventId.EVENT_LINE_ARITHMETIC_UPDATE_GAME, self.OnGameUpdate, self)
+
+    if self._CommandManager then
+        self._CommandManager:StopMoveSound()
+    end
+    
+    self:StopAllTweens()
+end
+
+function XUiLineArithmetic3Game:Close()
+    self._Control:ExitGame()
+    XLuaUi.Close(self)
 end
 
 --- 游戏更新事件处理（重新挑战、下一关）
@@ -384,6 +395,21 @@ function XUiLineArithmetic3Game:InitGame()
         grid.GameObject:SetActiveEx(false)
     end, false)
 
+    -- 感染特效对象池（支持多个感染同时播放）
+    ---@type XPool
+    self._InfectionFxPool = XPool.New(function()
+        if self.FxUiLineArithmetic3Infection then
+            local fxGo = XUiHelper.Instantiate(
+                self.FxUiLineArithmetic3Infection.gameObject,
+                self.FxUiLineArithmetic3Infection.transform.parent)
+
+            local uiParticleSystemGroup = fxGo.gameObject:GetComponent(typeof(CS.XUiPlayParticleSystemGroup))
+            return uiParticleSystemGroup
+        end
+    end, function(fxNode)
+        fxNode.gameObject:SetActiveEx(false)
+    end, false)
+
     -- 初始化玩家绘制路径显示列表
     self._SelectedPathGrids = {}
 
@@ -487,6 +513,18 @@ end
 ---@return UnityEngine.GameObject|nil
 function XUiLineArithmetic3Game:GetGridElement(key)
     return self._GridElements[key]
+end
+
+--- 获取车站格子的 UI 节点（兼容两种 key：普通车站"x_y"，有驻站乘客的车站"Passenger_x_y"）
+---@param x number 格子X坐标
+---@param y number 格子Y坐标
+---@return XUiLineArithmetic3GridItem|nil
+function XUiLineArithmetic3Game:GetStationGridElement(x, y)
+    local key = string.format("%d_%d", x, y)
+    local node = self._GridElements[key]
+    if node then return node end
+    local passengerKey = "Passenger_" .. x .. "_" .. y
+    return self._GridElements[passengerKey]
 end
 
 --- 获取颜色预制体
@@ -600,6 +638,18 @@ function XUiLineArithmetic3Game:CreateTween(duration, onUpdate, onComplete)
         self._ActiveTweens[#self._ActiveTweens + 1] = tween
     end
     return tween
+end
+
+function XUiLineArithmetic3Game:CreateDelayCall(func, delay)
+    local delayRaw = math.floor(delay * XScheduleManager.SECOND)
+    
+    local timeId = XScheduleManager.ScheduleOnce(func, delayRaw)
+
+    if timeId then
+        self._ActiveTweens[#self._ActiveTweens + 1] = timeId
+    end
+    
+    return timeId
 end
 
 --- 初始化游戏对象（车头和车厢）
@@ -849,9 +899,9 @@ function XUiLineArithmetic3Game:UpdateStationColor(x, y, stationGrid, color)
     end
 
     -- 先清除旧的颜色节点
-    local childCount = stationGrid.Transform.childCount
+    local childCount = stationGrid.ColorRoot.transform.childCount
     for i = childCount - 1, 0, -1 do
-        local child = stationGrid.Transform:GetChild(i)
+        local child = stationGrid.ColorRoot.transform:GetChild(i)
         if child and child.name and string.find(child.name, "GridCharacterColor") then
             CS.UnityEngine.GameObject.Destroy(child.gameObject)
         end
@@ -885,10 +935,7 @@ function XUiLineArithmetic3Game:RefreshAllStationColors()
         for x, gridData in pairs(row) do
             -- 只处理车站类型的格子
             if gridData.Type == XLineArithmetic3Enum.GridType.Station then
-                -- 构造车站格子的key
-                local key = string.format("%d_%d", x, y)
-                local stationGo = self._GridElements[key]
-
+                local stationGo = self:GetStationGridElement(x, y)
                 if stationGo then
                     self:UpdateStationColor(x, y, stationGo)
                 end
@@ -1062,8 +1109,17 @@ function XUiLineArithmetic3Game:RefreshSelectedPathDisplay()
     local game = self._Control:GetGame()
     local drawingPath = game:GetPath() or {}
 
+    -- 判断第一个路径是不是头
+    local firstPos = drawingPath[1]
+    local isFirstPosIsHeadPos = not XTool.IsTableEmpty(firstPos) and game:CheckPosIsHead(firstPos.x, firstPos.y)
+    local fixedDrawingPathCount = #drawingPath
+
+    if isFirstPosIsHeadPos then
+        fixedDrawingPathCount = fixedDrawingPathCount - 1
+    end
+    
     -- 清除多余的路径显示
-    while #self._SelectedPathGrids > #drawingPath do
+    while #self._SelectedPathGrids > fixedDrawingPathCount do
         local pathGo = table.remove(self._SelectedPathGrids)
         if pathGo then
             CS.UnityEngine.GameObject.Destroy(pathGo.gameObject)
@@ -1073,13 +1129,17 @@ function XUiLineArithmetic3Game:RefreshSelectedPathDisplay()
     -- 创建缺少的路径显示
     for i = #self._SelectedPathGrids + 1, #drawingPath do
         local pos = drawingPath[i]
-        if self.GridPathSelected and pos then
+        -- 车头位置不需要生成
+        if self.GridPathSelected and pos and not game:CheckPosIsHead(pos.x, pos.y) then
             local pathGo = self:InstantiateGrid(self.GridPathSelected, self.PanelPath)
             local position = self:GetGridWorldPosition(pos.x, pos.y)
             pathGo.transform.position = position
-            self._SelectedPathGrids[i] = pathGo
+            table.insert(self._SelectedPathGrids, pathGo)
         end
     end
+    
+    -- 播放音效
+    self._CommandManager:PlaySelectPathSound()
 end
 
 --- 清空玩家绘制路径显示
@@ -1113,16 +1173,23 @@ function XUiLineArithmetic3Game:OnBeginDrag(eventData)
     if not x or not y then
         return
     end
-
     -- 如果不是undo点，并且不在直线可达范围，直接返回，避免格子选中状态闪烁
     local game = self._Control:GetGame()
+
+    -- 当玩家第一次点击时，若点击的是障碍，需要播放对应的音效
+    if game:IsObstacleByPos(x, y) then
+        self._CommandManager:PlayClickObstacleSound()
+    end
+
     local isUndoTarget = game:IsOnTraveledPath({ x = x, y = y }) and not (game:GetHeadPos() and game:GetHeadPos().x == x and game:GetHeadPos().y == y)
+    
     if not isUndoTarget and not game:CanStraightReach({ x = x, y = y }) then
         return
     end
 
     game:OnPathAdd({ x = x, y = y })
     self:RefreshSelectedPathDisplay()
+    
 end
 
 --- 拖动画线
@@ -1208,6 +1275,8 @@ function XUiLineArithmetic3Game:OnEndDrag(eventData)
             self._CommandManager:UndoGroups(undoGroupCount, function()
                 -- 保底刷新所有车站和乘客颜色到 Game 层实际数据
                 self:RefreshAllColorsToGameData()
+                -- Undo 后步数回退，重置全局步数基数和步数缓存，供下一笔正确比较
+                self._Control:GetGame():ResetInstructionIndexBase()
                 -- 刷新星星目标显示（Undo 之后）
                 self:UpdateStarTarget()
                 -- 刷新方向指示器（倒放完成后显示）
@@ -1243,15 +1312,21 @@ function XUiLineArithmetic3Game:PlayInstructions(instructions)
         return
     end
 
+    XLog.Debug("[UiGame] PlayInstructions called, count=" .. #instructions)
+
     -- 设置播放状态，禁止玩家操作
     self._CommandManager:SetPlaying(true)
+
+    -- 播放移动音效（整个路径移动期间持续播放）
+    self._CommandManager:PlayMoveSound()
 
     -- 隐藏方向指示器（动画播放期间）
     self:HideAllDirectionIndicators()
 
-    -- 保存指令队列
+    -- 保存指令队列，记录本笔全局步数基数（用于 UpdateStarTarget 的步数比较）
     self._InstructionQueue = instructions
     self._CurrentInstructionIndex = 0
+    self._InstructionIndexBase = self._Control:GetGame():GetInstructionIndexBase()
 
     -- 开始播放第一个指令
     self:PlayNextInstruction()
@@ -1263,7 +1338,10 @@ function XUiLineArithmetic3Game:PlayNextInstruction()
 
     -- 检查是否还有指令
     if self._CurrentInstructionIndex > #self._InstructionQueue then
-        -- 所有指令播放完成，结束当前分组
+        XLog.Debug("[UiGame] All instructions completed, stopping move sound")
+        -- 所有指令播放完成，停止移动音效
+        self._CommandManager:StopMoveSound()
+        -- 结束当前分组
         self._CommandManager:EndGroup()
         -- 关闭播放状态
         self._CommandManager:SetPlaying(false)
@@ -1298,9 +1376,9 @@ function XUiLineArithmetic3Game:PlayNextInstruction()
 
     local currentIndex = self._CurrentInstructionIndex
     self:PlaySingleInstruction(instruction, function()
-        -- 仅在上下车指令执行完成后，按「指令序号」刷新星星目标显示
+        -- 仅在上下车指令执行完成后，按「全局指令序号」刷新星星目标显示
         if instruction.Type == Ins.Board or instruction.Type == Ins.Disembark then
-            self:UpdateStarTarget(currentIndex)
+            self:UpdateStarTarget((self._InstructionIndexBase or 0) + currentIndex)
         end
         self:PlayNextInstruction()
     end)
@@ -1347,19 +1425,19 @@ function XUiLineArithmetic3Game:CreateCommand(instruction)
 
     if instruction.Type == Ins.MoveHead then
         local MoveHeadCommand = require("XModule/XLineArithmetic3/XLineArithmetic3MoveHeadCommand")
-        return MoveHeadCommand.New(self, instruction.X, instruction.Y, instruction.HeadPosBefore)
+        return MoveHeadCommand.New(self, instruction.X, instruction.Y, instruction.HeadPosBefore, instruction.CarriagePositionsBefore)
     elseif instruction.Type == Ins.Board then
         local BoardCommand = require("XModule/XLineArithmetic3/XLineArithmetic3BoardCommand")
-        return BoardCommand.New(self, instruction.GridX, instruction.GridY, instruction.CarriageIndex, instruction.Color, instruction.GridPassengerBefore)
+        return BoardCommand.New(self, instruction.GridX, instruction.GridY, instruction.CarriageIndex, instruction.Color, instruction.GridPassengerBefore, instruction.IsInfected)
     elseif instruction.Type == Ins.Disembark then
         local DisembarkCommand = require("XModule/XLineArithmetic3/XLineArithmetic3DisembarkCommand")
-        return DisembarkCommand.New(self, instruction.GridX, instruction.GridY, instruction.CarriageIndex, instruction.Color, instruction.CarriagePassengerBefore)
+        return DisembarkCommand.New(self, instruction.GridX, instruction.GridY, instruction.CarriageIndex, instruction.Color, instruction.CarriagePassengerBefore, instruction.IsInfected)
     elseif instruction.Type == Ins.ActivateEnd then
         local ActivateEndCommand = require("XModule/XLineArithmetic3/XLineArithmetic3ActivateEndCommand")
         return ActivateEndCommand.New(self, instruction.GridX, instruction.GridY)
     elseif instruction.Type == Ins.DyePassenger then
         local DyePassengerCommand = require("XModule/XLineArithmetic3/XLineArithmetic3DyePassengerCommand")
-        return DyePassengerCommand.New(self, instruction.CarriageIndex, instruction.Color, instruction.PassengerColorBefore)
+        return DyePassengerCommand.New(self, instruction.CarriageIndex, instruction.Color, instruction.PassengerColorBefore, instruction.GridX, instruction.GridY)
     elseif instruction.Type == Ins.DyeStationPassenger then
         local DyeStationPassengerCommand = require("XModule/XLineArithmetic3/XLineArithmetic3DyeStationPassengerCommand")
         return DyeStationPassengerCommand.New(self, instruction.GridX, instruction.GridY, instruction.Color, instruction.PassengerColorBefore)
@@ -1369,6 +1447,9 @@ function XUiLineArithmetic3Game:CreateCommand(instruction)
     elseif instruction.Type == Ins.ChangePassengerEmoj then
         local ChangePassengerEmojCommand = require("XModule/XLineArithmetic3/XLineArithmetic3ChangePassengerEmojCommand")
         return ChangePassengerEmojCommand.New(self, instruction.GridX, instruction.GridY, instruction.CarriageIndex, instruction.Emoj, instruction.EmojBefore, instruction.IsHead)
+    elseif instruction.Type == Ins.Conflict then
+        local ConflictCommand = require("XModule/XLineArithmetic3/XLineArithmetic3ConflictCommand")
+        return ConflictCommand.New(self, instruction.CarriageIndex, instruction.ConflictPassengers)
     end
 
     return nil
@@ -1560,7 +1641,68 @@ function XUiLineArithmetic3Game:OnActivateEnd(gridX, gridY, onComplete)
     end)
 end
 
---- 更新乘客颜色显示
+--- 播放到达终点特效（不等待完成）
+---@param worldPos UnityEngine.Vector3 世界坐标
+function XUiLineArithmetic3Game:PlayArriveEffect(worldPos)
+    if not self.FxUiLineArithmetic3Arrive then return end
+    self.FxUiLineArithmetic3Arrive.transform:SetPosition(worldPos.x, worldPos.y, worldPos.z)
+    self.FxUiLineArithmetic3Arrive:PlayWithEnable()
+end
+
+--- 播放感染特效（等待完成后回调，使用对象池支持多个同时播放）
+---@param worldPos UnityEngine.Vector3 世界坐标
+---@param onComplete function 完成回调
+function XUiLineArithmetic3Game:PlayInfectionEffect(worldPos, onComplete)
+    if not self.FxUiLineArithmetic3Infection then
+        if onComplete then onComplete() end
+        return
+    end
+    local fxNode = self._InfectionFxPool:GetItemFromPool()
+    if not fxNode then
+        if onComplete then onComplete() end
+        return
+    end
+    fxNode.transform:SetPosition(worldPos.x, worldPos.y, worldPos.z)
+    fxNode:PlayWithEnable(function()
+        self._InfectionFxPool:ReturnItemToPool(fxNode)
+        if onComplete then onComplete() end
+    end)
+end
+
+--- 播放冲突特效（等待完成后回调）
+---@param worldPos UnityEngine.Vector3 世界坐标
+---@param onComplete function 完成回调
+function XUiLineArithmetic3Game:PlayConflictEffect(worldPos, onComplete)
+    if not self.FxUiLineArithmetic3Conflict then
+        if onComplete then onComplete() end
+        return
+    end
+    self.FxUiLineArithmetic3Conflict.transform:SetPosition(worldPos.x, worldPos.y, worldPos.z)
+    self.FxUiLineArithmetic3Conflict:PlayWithEnable(onComplete)
+end
+
+--- 播放上车特效（等待完成后回调）
+---@param worldPos UnityEngine.Vector3 世界坐标
+---@param onComplete function 完成回调
+function XUiLineArithmetic3Game:PlayBoardEffect(worldPos, onComplete)
+    if not self.FxUiLineArithmetic3Emoj then
+        if onComplete then onComplete() end
+        return
+    end
+    self.FxUiLineArithmetic3Emoj.transform:SetPosition(worldPos.x, worldPos.y, worldPos.z)
+    self.FxUiLineArithmetic3Emoj:PlayWithEnable(onComplete)
+end
+
+--- 乘客上车跳跃动画（内部由外部实现）
+---@param passengerGrid XUiLineArithmetic3GridItem 乘客格子对象
+---@param onComplete function 完成回调
+function XUiLineArithmetic3Game:PlayPassengerJumpAnim(passengerGrid, onComplete)
+    if passengerGrid.AnimJump then
+        passengerGrid.AnimJump:PlayTimelineAnimation(onComplete, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
+    else
+        if onComplete then onComplete() end
+    end
+end
 ---@param characterGrid XUiLineArithmetic3GridItem 乘客GameObject
 ---@param color number 颜色值
 function XUiLineArithmetic3Game:UpdatePassengerColor(characterGrid, color)
@@ -1778,7 +1920,9 @@ function XUiLineArithmetic3Game:UpdateStarTarget(step)
 
     -- 星1：固定 GridTarget01
     if starAmount >= 1 and self._StarGrid01 then
+        local isFinishBefore = self._StarGrid01._IsFinish
         self._StarGrid01:Open()
+        self._StarGrid01._IsFinish = isFinishBefore
         self._StarGrid01:Update(stars[1])
     elseif self._StarGrid01 then
         self._StarGrid01:Close()
@@ -1793,7 +1937,9 @@ function XUiLineArithmetic3Game:UpdateStarTarget(step)
             uiGrid = XUiLineArithmetic3GameGridTarget.New(ui, self)
             self._StarGrids[i] = uiGrid
         end
+        local isFinishBefore = uiGrid._IsFinish
         uiGrid:Open()
+        uiGrid._IsFinish = isFinishBefore
         uiGrid:Update(starDesc)
     end
     for i = starAmount + 1, #self._StarGrids do

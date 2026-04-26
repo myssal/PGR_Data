@@ -6,7 +6,7 @@
         "NameEN": "HAPPY BIRTHDAY",
         "IsAgency": false,
         "SkipId": 89053,
-        "TimeId": 513,
+        "TimeId": 518,
         "IsOrConditions": false,
         "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainBrithday01.png",
         "LeftTimeFun": "GetBirthday",
@@ -354,6 +354,20 @@
         ],
         "RedPointConditions": [
             "CONDITION_ACCUMULATE_EXPEND_SHOP_NOTIFY"
+        ]
+    },
+    {
+        "Id": 25,
+        "Priority": 0,
+        "Name": "Wishing Target",
+        "NameEN": "Wishing Target",
+        "IsAgency": false,
+        "SkipId": 20361,
+        "TimeId": 46712,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainBtnSummerSign306.png",
+        "Conditions": [
+            770402
         ]
     }
 ]

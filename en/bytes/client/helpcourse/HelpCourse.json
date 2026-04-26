@@ -733,7 +733,7 @@
     },
     {
         "Id": 10045,
-        "Name": "无归的航道",
+        "Name": "Lost Voyage",
         "Function": "PuzzleActivity",
         "Describe": "Puzzle Preview Stage Image Guide",
         "IsShowCourse": 3,
@@ -3092,22 +3092,18 @@
     },
     {
         "Id": 10194,
-        "Name": "Threading Arts",
+        "Name": "Earthy Camping",
         "Function": "LineArithmeticHelp",
-        "Describe": "Discord Connect Image Guide",
+        "Describe": "神威连线图文教程",
         "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiLineArithmetic2/UiLineArithmetic2Help01.png",
-            "Assets/Product/Texture/Image/UiLineArithmetic2/UiLineArithmetic2Help02.png",
-            "Assets/Product/Texture/Image/UiLineArithmetic2/UiLineArithmetic2Help03.png",
-            "Assets/Product/Texture/Image/UiLineArithmetic2/UiLineArithmetic2Help04.png"
+            "Assets/Product/Texture/Image/UiLineArithmetic3/UiLineArithmetic3Help01.png",
+            "Assets/Product/Texture/Image/UiLineArithmetic3/UiLineArithmetic3Help02.png"
         ],
         "TextGroupIds": [
-            1019401,
-            1019402,
-            1019403,
-            1019404
+            1033001,
+            1033002
         ]
     },
     {
@@ -3322,7 +3318,7 @@
         "Id": 21000,
         "Name": "Rules",
         "Function": "UiReCallActivity",
-        "Describe": "参加条件\\n指挥官等级≥40级\\n\\n回归指挥官\\n指挥官等级≥40级且连续未登录天数≥30天\\n\\n活动时间\\n2026/05/30 05:00:00 ～ 2026/07/15 05:00:00\\n邀请及任务时间\\n2026/05/30 05:00:00 ～ 2026/07/15 05:00:00\\n\\n活动说明\\n1.活动期间，收到邀请的回归指挥官登录游戏并成功输入邀请码后，被邀请指挥官可领取相应的奖励\\n2.邀请码可重复使用（最多同时邀请10名玩家），受邀回归的指挥官在游戏中完成指定活跃任务，邀请指挥官可获得相应奖励\\n3.邀请指挥官与被邀请指挥官可通过首次分享或下载保存图片后，领取对应奖励（仅限一次）\\n4.回归指挥官输入邀请码后，不可解除绑定更换邀请码\\n5.活动期间，回归指挥官会领取专属勤务任务，完成即可获取对应奖励\\n6.活动期间，回归指挥官会获得「拟战场域」双倍奖励机会。指定次数内，完成「拟战场域」挑战即可获取双倍拟战积分奖励（不含首通）\\n7.活动期间指挥官仅能参加一次活动，活动结束后奖励将无法领取",
+        "Describe": "Requirement\\nCommandant ≥Lv.40\\n\\nReturning Commandant\\nCommandant ≥Lv.40 and Consecutive Offline Days ≥30\\n\\nEvent Time\\n2026/05/30 05:00:00 (UTC) - 2026/07/15 05:00:00 (UTC)\\nInvite and Mission Time\\n2026/05/30 05:00:00 (UTC) - 2026/07/15 05:00:00 (UTC)\\n\\nEvent Info\\n1. During the event, Commandants who get invited and come back can claim rewards after logging in to the game and entering the invite code.\\n2. Each invite code can be used multiple times (up to 10 players). Returning Commandants can complete designated Activity Missions for rewards.\\n3. Both the inviter and the invitee can claim rewards (only once) after sharing or downloading and saving the picture for the first time.\\n4. Returning Commandants cannot unbind or change the invite code after entering it.\\n5. During the event, returning Commandants will receive exclusive Service Missions. Complete them to claim the corresponding rewards.\\n6. During the event, returning Commandants will have opportunities to earn double rewards in [Simulated Battlefield]. Complete [Simulated Battlefield] challenges within the designated number of attempts to earn double Simulation Score (excluding first clear rewards).\\n7. Each Commandant can only participate in the event once. Once the event ends, you'll not be able to claim the rewards.",
         "IsShowCourse": 2,
         "SubIds": [],
         "TextGroupIds": [
@@ -3705,5 +3701,29 @@
         "Describe": "1. Purchase the [Black Card Monthly Pass C] to claim 90 Black Cards at 05:00 UTC every day for 30 days.\\n2. You may purchase up to 2 [Black Card Monthly Pass C] only. Cannot own [Black Card Monthly Pass A] and [Black Card Monthly Pass C] in a same period.\\n3. Once you have purchased a [Black Card Monthly Pass C], you will receive 300 Black Cards immediately.",
         "IsShowCourse": 2,
         "SubIds": []
+    },
+    {
+        "Id": 10224,
+        "Name": "Butter Coffee Wonders",
+        "Function": "UiPBRHelp",
+        "Describe": "Butter Coffee Wonders Illustrated Tutorial",
+        "IsShowCourse": 3,
+        "SubIds": [],
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp01.png",
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp02.png",
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp03.png",
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp04.png",
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp04.png",
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp04.png"
+        ],
+        "TextGroupIds": [
+            1022401,
+            1022402,
+            1022403,
+            1022404,
+            1022405,
+            1022406
+        ]
     }
 ]

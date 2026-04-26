@@ -38,13 +38,13 @@
     {
         "Key": "StageUnlockPreStageFormat",
         "Values": [
-            "需通关{0}"
+            "Requires clearing {0}"
         ]
     },
     {
         "Key": "StageLockOutDateDesc",
         "Values": [
-            "关卡已过期"
+            "Stage expired"
         ]
     },
     {
@@ -95,56 +95,56 @@
     {
         "Key": "ShopNoFreshTimesTips",
         "Values": [
-            "商品刷新次数已达上限"
+            "Item refresh limit reached"
         ]
     },
     {
         "Key": "ShopSelectChoseItemTips",
         "Values": [
-            "该道具已选择"
+            "Item already selected"
         ]
     },
     {
         "Key": "ShopSelectItemSuccessTips",
         "Values": [
-            "选择道具成功"
+            "Item selected"
         ]
     },
     {
         "Key": "ShopNoChooseTimesTips",
         "Values": [
-            "道具选择次数已达上限"
+            "Item selection limit reached"
         ]
     },
     {
         "Key": "BattleSettleByHandTips",
         "Values": [
-            "当前尚未通关，提前退出将无法解锁下一关，是否确认退出？"
+            "This stage has not been cleared yet. Leaving now will prevent the next stage from unlocking. Confirm?"
         ]
     },
     {
         "Key": "SettleTitle",
         "Values": [
-            "Challenge complete",
+            "Challenge Complete",
             "Challenge failed"
         ]
     },
     {
         "Key": "UIPauseTitle",
         "Values": [
-            "{0}-第{1}波"
+            "{0} - Wave {1}"
         ]
     },
     {
         "Key": "ShopFreshSuccessTips",
         "Values": [
-            "道具刷新成功"
+            "Items refreshed"
         ]
     },
     {
         "Key": "UIMainProgress",
         "Values": [
-            "{0}-第{1}波"
+            "{0} - Wave {1}"
         ]
     },
     {
@@ -166,21 +166,21 @@
         "Values": [
             "Skill",
             "Item",
-            "Monster"
+            "Enemy"
         ]
     },
     {
         "Key": "CollectionMonsterTypeLabel",
         "Values": [
-            "NORMAL",
-            "Elite",
+            "Normal",
+            "ELITE",
             "<color=#FFFFFF>Boss</color>"
         ]
     },
     {
         "Key": "CollectionTitleWithLock",
         "Values": [
-            "Mysterious Mechanoid"
+            "???"
         ]
     },
     {
@@ -192,7 +192,7 @@
     {
         "Key": "StageEnterFailWithLockChar",
         "Values": [
-            "角色未解锁，无法进入战斗"
+            "Character locked. Cannot enter battle."
         ]
     },
     {
@@ -207,34 +207,34 @@
     {
         "Key": "CollectionSortTypeName",
         "Values": [
-            "默认排序",
-            "解锁顺序",
-            "稀有度"
+            "Sort: Default",
+            "Sort: Latest",
+            "Sort: Rarity"
         ]
     },
     {
         "Key": "GeniusPreNodeUnlockTips",
         "Values": [
-            "前置节点未解锁"
+            "Prerequisite node locked"
         ]
     },
     {
         "Key": "GeniusUnlockSuccessTips",
         "Values": [
-            "节点解锁成功"
+            "Node unlocked"
         ]
     },
     {
         "Key": "GeniusNodeUnlockCostLimitTips",
         "Values": [
-            "解锁所需货币不足"
+            "Insufficient tokens to unlock"
         ]
     },
     {
         "Key": "GeniusRewardTitleDesc",
         "Values": [
             "Unlocks:",
-            "已解锁："
+            "Unlocked:"
         ]
     },
     {
@@ -284,6 +284,24 @@
         "Key": "SettleStageNameDesc",
         "Values": [
             "[Stage {0}]"
+        ]
+    },
+    {
+        "Key": "UiChapterAnimDelayTime",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "UiChapterGridAnimInterval",
+        "Values": [
+            0.1
+        ]
+    },
+    {
+        "Key": "SettleForceTips",
+        "Values": [
+            "Previous game abandoned"
         ]
     }
 ]
