@@ -1,0 +1,255 @@
+[
+    {
+        "Name": "Walk",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -895785005,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Walk.anim"
+    },
+    {
+        "Name": "WalkStart",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -895785005,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/WalkStart.anim"
+    },
+    {
+        "Name": "WalkEnd",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -895785005,
+        "BlendParameter": 846125279,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Stop_Walk_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Stop_Walk_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Stop_Walk_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "RunStart",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -162882405,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/RunStart.anim"
+    },
+    {
+        "Name": "RunStartEnd01",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 895008329,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/RunStartEnd01_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/RunStartEnd01_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/RunStartEnd01_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Run",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 1391530821,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/RunLeanL.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Run.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/RunLeanR.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -20.0,
+            0.0,
+            20.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Stop",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 1601072779,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Stop_Run_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Stop_Run_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Stop_Run_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "SprintStart",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/RunStart.anim"
+    },
+    {
+        "Name": "Sprint",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "BlendParameter": -1977151796,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/SprintLeanL.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Sprint.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/SprintLeanR.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -20.0,
+            0.0,
+            20.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "SprintStop",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "BlendParameter": -1989393594,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Stop_Sprint_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Stop_Sprint_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Stop_Sprint_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Jumpsquat1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpsquat1.anim"
+    },
+    {
+        "Name": "Jumprise1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumprise1.anim"
+    },
+    {
+        "Name": "Jumpchange1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpchange1.anim"
+    },
+    {
+        "Name": "Jumpfall1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpfall1.anim"
+    },
+    {
+        "Name": "Jumpfalling1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpfalling1.anim"
+    },
+    {
+        "Name": "Jumpdown1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpdown1.anim"
+    },
+    {
+        "Name": "Jumpsquat2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpsquat2.anim"
+    },
+    {
+        "Name": "Jumprise2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumprise2.anim"
+    },
+    {
+        "Name": "Jumpchange2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpchange2.anim"
+    },
+    {
+        "Name": "Jumpfall2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpfall2.anim"
+    },
+    {
+        "Name": "Jumpdown2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpdown2.anim"
+    },
+    {
+        "Name": "Turn90L",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Turn90L.anim"
+    },
+    {
+        "Name": "Turn90R",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Turn90R.anim"
+    },
+    {
+        "Name": "IdleJumpToStandHeavy",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpdown1.anim"
+    },
+    {
+        "Name": "MoveJumpToStandHeavy",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/CommonLayer/Jumpdown2.anim"
+    },
+    {
+        "Name": "Drama_Stand_01",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMd010021SG/R7LuxiyaMd010021SG/CommonLayer/Drama_Stand_01.anim"
+    },
+    {
+        "Name": "Drama_Stand_01_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMd010021SG/R7LuxiyaMd010021SG/CommonLayer/Drama_Stand_01.anim"
+    },
+    {
+        "Name": "Drama_SpecialEyeBrow_Blink_Loop",
+        "Layer": "FaceLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/FaceLayer/Drama_SpecialEyeBrow_Blink_Loop.anim"
+    },
+    {
+        "Name": "Drama_SpecialEyes_Blink_Loop",
+        "Layer": "FaceLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/FaceLayer/Drama_SpecialEyes_Blink_Loop.anim"
+    },
+    {
+        "Name": "Drama_SpecialSmile_Blink_Loop",
+        "Layer": "FaceLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R7LuxiyaMdCommonSG/R7LuxiyaMdCommonSG/FaceLayer/Drama_SpecialSmile_Blink_Loop.anim"
+    }
+]

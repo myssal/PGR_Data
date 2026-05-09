@@ -152,6 +152,14 @@
         "Desc": "角色详情界面中：\\n·在左侧列表选中后，点击右下按钮对当前成员进行入队/退队/换位操作\\n·点击涂装按钮进入涂装界面，可以为成员更换<color=#0f70bc>部分已拥有的</color>涂装及头像"
     },
     {
+        "Id": 100401,
+        "HelpCourseId": 1004,
+        "Index": 1,
+        "Name": "指挥官服饰",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachDIY01.png",
+        "Desc": "指挥官服饰有不同分类：\\n·特殊环境需要穿着指定分类的服饰进行体验\\n·点击左侧列表切换当前穿着类型"
+    },
+    {
         "Id": 201001,
         "HelpCourseId": 2010,
         "Index": 1,
@@ -333,7 +341,7 @@
         "Index": 1,
         "Name": "制导重炮",
         "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachBeamCannonControl/UiBigWorldTeachBeamCannonControl01.png",
-        "Desc": "按下瞄准按钮，即可进入瞄准模式，再次按下瞄准按钮,便可退出瞄准模式。"
+        "Desc": "\"按下瞄准按钮，即可进入瞄准模式，再次按下瞄准按钮,便可退出瞄准模式。\""
     },
     {
         "Id": 201402,
@@ -341,7 +349,7 @@
         "Index": 2,
         "Name": "制导重炮",
         "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachBeamCannonControl/UiBigWorldTeachBeamCannonControl02.png",
-        "Desc": "在瞄准模式下,按下射击按钮,便可射出炮弹。"
+        "Desc": "\"在瞄准模式下,按下射击按钮,便可射出炮弹。\""
     },
     {
         "Id": 201403,
@@ -350,5 +358,69 @@
         "Name": "制导重炮",
         "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachBeamCannonControl/UiBigWorldTeachBeamCannonControl03.png",
         "Desc": "炮弹命中敌人或地形后，将会引发大范围爆炸，用它消灭敌人吧。"
+    },
+    {
+        "Id": 302501,
+        "HelpCourseId": 3025,
+        "Index": 1,
+        "Name": "视界探查",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldFightScanPlusAbility01.png",
+        "Desc": "点击「视界探查」按钮即可启动系统，再次点击可退出该模式。"
+    },
+    {
+        "Id": 302502,
+        "HelpCourseId": 3025,
+        "Index": 2,
+        "Name": "视界探查",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldFightScanPlusAbility02.png",
+        "Desc": "开启「视界探查」后，移动镜头对准高亮角色或物件，即可解析并获取目标信息。"
+    },
+    {
+        "Id": 302503,
+        "HelpCourseId": 3025,
+        "Index": 3,
+        "Name": "视界探查",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldFightScanPlusAbility03.png",
+        "Desc": "借助「视界探查」可对部分设施进行权限操作，开启、关闭或调取监控等功能均可藉此实现。"
+    },
+    {
+        "Id": 302001,
+        "HelpCourseId": 3020,
+        "Index": 1,
+        "Name": "战斗教学-基础操作",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachJumpPlayer01.png",
+        "Desc": "训练用数据对誓炎机体有一定限制，点击普通攻击键可发动最多5段的连续攻击，在敌人攻击即将命中时点击闪避可触发完美闪避。"
+    },
+    {
+        "Id": 302002,
+        "HelpCourseId": 3020,
+        "Index": 2,
+        "Name": "战斗教学-基础操作",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachJumpPlayer08.png",
+        "Desc": "点击跳跃按键可短暂跃起，在空中攻击会可产生一定额外效果，释放技能「环锋卷焰」后，点击普通攻击键可触发强化普攻。"
+    },
+    {
+        "Id": 302003,
+        "HelpCourseId": 3020,
+        "Index": 3,
+        "Name": "战斗教学-跃起状态",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachJumpPlayer01.png",
+        "Desc": "跃起时点击普通攻击键可直接触发第3段普通攻击并击飞敌人，释放技能「环锋卷焰」可向斜前方挥剑发出剑气。长按普通攻击键可直接发动第5段普通攻击； 长按闪避键可将附近敌人拉至身边"
+    },
+    {
+        "Id": 302004,
+        "HelpCourseId": 3020,
+        "Index": 4,
+        "Name": "战斗教学-强化技",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachJumpPlayer08.png",
+        "Desc": "释放普通攻击或技能可累计「淬炼值」； 淬炼值满后，长按普通攻击键可释放技能「辉光绽空」"
+    },
+    {
+        "Id": 302005,
+        "HelpCourseId": 3020,
+        "Index": 5,
+        "Name": "战斗教学-必杀技",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachJumpPlayer08.png",
+        "Desc": "对敌人造成伤害累计「能量值」； 能量值充满时可释放必杀技「蚀日彻曙」"
     }
 ]

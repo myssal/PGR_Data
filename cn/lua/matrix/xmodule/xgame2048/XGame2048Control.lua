@@ -194,22 +194,7 @@ function XGame2048Control:GetChapterFullBgById(chapterId)
 end
 
 function XGame2048Control:GetChapterIdByStageId(stageId)
-    local chapterCfgs = self._Model:GetGame2048ChapterCfgs()
-
-    if not XTool.IsTableEmpty(chapterCfgs) then
-        ---@param chapterCfg XTableGame2048Chapter
-        for i, chapterCfg in pairs(chapterCfgs) do
-            if not XTool.IsTableEmpty(chapterCfg.StageIds) then
-                for i, id in pairs(chapterCfg.StageIds) do
-                    if stageId == id then
-                        return chapterCfg.Id
-                    end
-                end
-            end
-        end
-    end
-    
-    return 0
+    return self._Model:GetChapterIdByStageId(stageId)
 end
 
 --- ChapterShow
@@ -655,19 +640,22 @@ end
 
 --region 界面数据
 function XGame2048Control:SetCurChapterId(chapterId)
-    self._ChapterId = chapterId
+    self._Model:SetCurChapterId(chapterId)
 end
 
 function XGame2048Control:GetCurChapterId()
-    return self._ChapterId
+    return self._Model:GetCurChapterId()
 end
 
 function XGame2048Control:SetCurStageId(stageId)
-    self._StageId = stageId
+    self._Model:SetCurStageId(stageId)
+    if XTool.IsNumberValid(stageId) then
+        self._Model:SetCurChapterId(self._Model:GetChapterIdByStageId(stageId))
+    end
 end
 
 function XGame2048Control:GetCurStageId()
-    return self._StageId or 0
+    return self._Model:GetCurStageId()
 end
 
 function XGame2048Control:GetLastSelectStageIndex(chapterId)

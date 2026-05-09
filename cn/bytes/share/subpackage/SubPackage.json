@@ -4,26 +4,20 @@
         "Name": "【感染】主线包",
         "Index": 1,
         "Type": 1,
-        "Desc": "游玩【感染】主线及后续主线的必要资源包",
-        "AllowDelete": false,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             201
-        ]
+        ],
+        "Desc": "游玩【感染】主线及后续主线的必要资源包"
     },
     {
         "Id": 202,
         "Name": "【漩涡】主线包",
         "Index": 2,
         "Type": 1,
-        "Desc": "游玩【漩涡】主线及后续主线的必要资源包",
-        "AllowDelete": false,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             202
         ],
+        "Desc": "游玩【漩涡】主线及后续主线的必要资源包",
         "PreIds": [
             201
         ]
@@ -33,15 +27,12 @@
         "Name": "【灾诞】主线包",
         "Index": 3,
         "Type": 1,
-        "Desc": "游玩【灾诞】主线及后续主线的必要资源包",
-        "AllowDelete": false,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             203,
             3031,
             3033
         ],
+        "Desc": "游玩【灾诞】主线及后续主线的必要资源包",
         "PreIds": [
             201,
             202
@@ -52,15 +43,12 @@
         "Name": "【命途】主线包",
         "Index": 4,
         "Type": 1,
-        "Desc": "游玩【命途】主线及后续主线的必要资源包",
-        "AllowDelete": false,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             204,
             3038,
             3039
         ],
+        "Desc": "游玩【命途】主线及后续主线的必要资源包",
         "PreIds": [
             201,
             202,
@@ -72,64 +60,52 @@
         "Name": "空中花园",
         "Index": 1,
         "Type": 2,
-        "Desc": "游玩空中花园的必要资源包",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             301,
             402,
             403
-        ]
+        ],
+        "Desc": "游玩空中花园的必要资源包",
+        "AllowDelete": true
     },
     {
         "Id": 901,
         "Name": "粤语配音",
         "Index": 1,
         "Type": 2,
-        "Desc": "下载后可使用粤语配音",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             901
-        ]
+        ],
+        "Desc": "下载后可使用粤语配音",
+        "AllowDelete": true
     },
     {
         "Id": 902,
         "Name": "日语配音",
         "Index": 2,
         "Type": 2,
-        "Desc": "下载后可使用日语配音",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             902
-        ]
+        ],
+        "Desc": "下载后可使用日语配音",
+        "AllowDelete": true
     },
     {
         "Id": 903,
         "Name": "英语配音",
         "Index": 3,
         "Type": 2,
-        "Desc": "下载后可使用英语配音",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             903
-        ]
+        ],
+        "Desc": "下载后可使用英语配音",
+        "AllowDelete": true
     },
     {
         "Id": 904,
         "Name": "剧情视频",
         "Index": 4,
         "Type": 2,
-        "Desc": "下载后可播放所有剧情视频",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             1002,
             1003,
@@ -187,17 +163,15 @@
             1055,
             1056,
             1057
-        ]
+        ],
+        "Desc": "下载后可播放所有剧情视频",
+        "AllowDelete": true
     },
     {
         "Id": 905,
         "Name": "玩法视频",
         "Index": 5,
         "Type": 2,
-        "Desc": "下载后可播放所有玩法视频",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             2000,
             2001,
@@ -213,32 +187,28 @@
             2011,
             2012,
             2013
-        ]
+        ],
+        "Desc": "下载后可播放所有玩法视频",
+        "AllowDelete": true
     },
     {
         "Id": 3000,
         "Name": "主题音乐",
         "Index": 6,
         "Type": 2,
-        "Desc": "使用主界面音乐播放器及公会音乐盒的必要资源包",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             3000,
             3001,
             3002
-        ]
+        ],
+        "Desc": "使用主界面音乐播放器及公会音乐盒的必要资源包",
+        "AllowDelete": true
     },
     {
         "Id": 4000,
         "Name": "角色涂装",
         "Index": 7,
         "Type": 2,
-        "Desc": "下载后可使用所有角色涂装",
-        "AllowDelete": false,
-        "CustomSkipId": 89103,
-        "DownloadTaskId": 0,
         "ResIds": [
             4000,
             4001,
@@ -436,18 +406,19 @@
             4193,
             4194,
             4195,
-            4196
-        ]
+            4196,
+            4197,
+            4198,
+            4199
+        ],
+        "Desc": "下载后可使用所有角色涂装",
+        "CustomSkipId": 89103
     },
     {
         "Id": 9999,
         "Name": "玩法扩充包",
         "Index": 5,
         "Type": 1,
-        "Desc": "游玩全新主线以及活动玩法的必要资源包",
-        "AllowDelete": false,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             9999,
             3041,
@@ -474,6 +445,7 @@
             3069,
             3071
         ],
+        "Desc": "游玩全新主线以及活动玩法的必要资源包",
         "PreIds": [
             201,
             202,

@@ -1,12 +1,8 @@
 [
     {
         "Id": 1,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "圣诞大作战",
         "Priority": 1,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "M-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner05.png",
@@ -17,7 +13,6 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenChristmas/UiFubenChristmasImg1.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenChristmas/UiFubenChristmasTitleBg.png",
         "ChapterType": 21,
-        "ChapterBgm": 0,
         "StageId": [
             30130101,
             30130102,
@@ -32,12 +27,8 @@
     },
     {
         "Id": 3,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "岁除",
         "Priority": 3,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "NYA-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner05.png",
@@ -66,12 +57,8 @@
     },
     {
         "Id": 4,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "四月舱中鱼",
         "Priority": 4,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "AFD-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner10.png",
@@ -99,12 +86,8 @@
     },
     {
         "Id": 5,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "未遗忘的节日",
         "Priority": 5,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "DBF-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner14.png",
@@ -128,12 +111,8 @@
     },
     {
         "Id": 6,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "搁浅",
         "Priority": 6,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "BBS-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner10.png",
@@ -153,12 +132,8 @@
     },
     {
         "Id": 7,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "夏日戏话",
         "Priority": 7,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "SDW-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner15.png",
@@ -182,12 +157,8 @@
     },
     {
         "Id": 8,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "兰夜琢月",
         "Priority": 8,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "DSF-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner14.png",
@@ -208,12 +179,11 @@
     },
     {
         "Id": 9,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "道长争夺战",
         "Priority": 9,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20029
+        ],
         "FunctionOpenId": 10323,
         "StagePrefix": "ZYG-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenDuanwu/FubenActivityBanner15.png",
@@ -225,9 +195,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenYureSummer/UiFubenYuReSummerBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 27,
-        "SkipId": [
-            20029
-        ],
         "StageId": [
             30130701,
             30130702,
@@ -239,12 +206,8 @@
     },
     {
         "Id": 10,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "雪痕",
         "Priority": 10,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "RTP-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner10.png",
@@ -264,12 +227,11 @@
     },
     {
         "Id": 11,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "梨园·墟",
         "Priority": 11,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20031
+        ],
         "FunctionOpenId": 10306,
         "StagePrefix": "ZYG-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner20.png",
@@ -281,9 +243,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelBg8.png",
         "ChapterType": 27,
         "ChapterBgm": 27,
-        "SkipId": [
-            20031
-        ],
         "StageId": [
             15020201,
             15020202,
@@ -292,12 +251,11 @@
     },
     {
         "Id": 12,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "暗潮涌动",
         "Priority": 12,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20036
+        ],
         "FunctionOpenId": 10306,
         "StagePrefix": "FAN-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner20.png",
@@ -309,9 +267,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UIFubenYureLuna/FubenYureTitleLuna01.png",
         "ChapterType": 27,
         "ChapterBgm": 6,
-        "SkipId": [
-            20036
-        ],
         "StageId": [
             10130153,
             10130154,
@@ -320,12 +275,11 @@
     },
     {
         "Id": 13,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "圣夜与星海之间",
         "Priority": 13,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20048
+        ],
         "FunctionOpenId": 10306,
         "StagePrefix": "MCX-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner23.png",
@@ -336,9 +290,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenChristmas/UiFubenChristmasTitleBg.png",
         "ChapterType": 27,
         "ChapterBgm": 11,
-        "SkipId": [
-            20048
-        ],
         "StageId": [
             30130901,
             30130902,
@@ -352,12 +303,11 @@
     },
     {
         "Id": 14,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "拂旧迎新",
         "Priority": 14,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            11744
+        ],
         "FunctionOpenId": 10306,
         "StagePrefix": "HNY-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner24.png",
@@ -369,9 +319,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenYuandan/UiFubenYuanDanBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 6,
-        "SkipId": [
-            11744
-        ],
         "StageId": [
             30131011,
             30131012,
@@ -382,12 +329,8 @@
     },
     {
         "Id": 15,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "意识营救战·再临",
         "Priority": 15,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "YSS-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner25.png",
@@ -424,12 +367,8 @@
     },
     {
         "Id": 16,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "意识营救战·深潜",
         "Priority": 16,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "YSS-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner26.png",
@@ -466,12 +405,8 @@
     },
     {
         "Id": 17,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "意识营救战·终战",
         "Priority": 17,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "YSS-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner27.png",
@@ -508,12 +443,8 @@
     },
     {
         "Id": 18,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "岁辞候福",
         "Priority": 18,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "ONY-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner30.png",
@@ -542,12 +473,8 @@
     },
     {
         "Id": 19,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "通胜宜行",
         "Priority": 19,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "LNY-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBannerNewYear.png",
@@ -572,12 +499,8 @@
     },
     {
         "Id": 20,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "异境漫游记",
         "Priority": 20,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "AFD-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner33.png",
@@ -603,12 +526,8 @@
     },
     {
         "Id": 21,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "适配拟合·庭霓",
         "Priority": 21,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "CRA-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenPet/UiFubenPetBg04.png",
@@ -628,12 +547,8 @@
     },
     {
         "Id": 22,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "海都异闻",
         "Priority": 22,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "BLT-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner41.png",
@@ -661,11 +576,9 @@
     {
         "Id": 23,
         "TimeId": 808,
-        "ActivityTimeId": 0,
         "UiType": 1,
         "Name": "琥虎符福",
         "Priority": 23,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "XC-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPicJQ01.png",
@@ -695,11 +608,13 @@
     {
         "Id": 24,
         "TimeId": 808,
-        "ActivityTimeId": 0,
         "UiType": 1,
         "Name": "纯白寄意",
         "Priority": 24,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            10035,
+            20011
+        ],
         "FunctionOpenId": 10306,
         "StagePrefix": "IS-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPicJQ02.png",
@@ -712,10 +627,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiUiFubenWhiteValentine/UiWhiteValentineImgBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 208,
-        "SkipId": [
-            10035,
-            20011
-        ],
         "StageId": [
             30130507,
             30130508,
@@ -730,11 +641,9 @@
     {
         "Id": 25,
         "TimeId": 808,
-        "ActivityTimeId": 0,
         "UiType": 1,
         "Name": "遥阳绘旅",
         "Priority": 25,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "SW-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPicJQ03.png",
@@ -767,12 +676,8 @@
     },
     {
         "Id": 26,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "憩梦穹森",
         "Priority": 26,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 1308,
         "StagePrefix": "LIV-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner83.png",
@@ -788,11 +693,9 @@
     {
         "Id": 27,
         "TimeId": 808,
-        "ActivityTimeId": 0,
         "UiType": 1,
         "Name": "游月杳信",
         "Priority": 27,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "MA-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPicJQ04.png",
@@ -817,12 +720,8 @@
     },
     {
         "Id": 28,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "白梦游弋",
         "Priority": 28,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 1308,
         "StagePrefix": "ARC-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
@@ -838,11 +737,9 @@
     {
         "Id": 29,
         "TimeId": 808,
-        "ActivityTimeId": 0,
         "UiType": 1,
         "Name": "除岁列车之夜",
         "Priority": 29,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "NY-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPicJQ05.png",
@@ -870,11 +767,9 @@
     {
         "Id": 30,
         "TimeId": 809,
-        "ActivityTimeId": 0,
         "UiType": 1,
         "Name": "旭愿笺梦",
         "Priority": 30,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "DW-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPicJQ06.png",
@@ -901,12 +796,11 @@
     },
     {
         "Id": 31,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "心映繁景",
         "Priority": 32,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20200
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "AAA-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner121.png",
@@ -917,19 +811,12 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 11,
-        "SkipId": [
-            20200
-        ]
+        "ChapterBgm": 11
     },
     {
         "Id": 32,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "镜焰迷城",
         "Priority": 31,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "BRS-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
@@ -959,12 +846,8 @@
     },
     {
         "Id": 33,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "白梦游弋·复刻",
         "Priority": 33,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 1308,
         "StagePrefix": "ARC-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
@@ -979,12 +862,12 @@
     },
     {
         "Id": 34,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "憩梦穹森·复刻",
         "Priority": 34,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20161,
+            20207
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "LIV-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner83.png",
@@ -995,20 +878,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 163,
-        "SkipId": [
-            20161,
-            20207
-        ]
+        "ChapterBgm": 163
     },
     {
         "Id": 35,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "溺梦游歌",
         "Priority": 35,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20213
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLamiya/FubenGachaLamiyaLine.prefab",
@@ -1017,19 +895,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 399,
-        "SkipId": [
-            20213
-        ]
+        "ChapterBgm": 399
     },
     {
         "Id": 36,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "心映繁景·复刻",
         "Priority": 36,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20220
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "AAA-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner121.png",
@@ -1040,19 +914,12 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 11,
-        "SkipId": [
-            20220
-        ]
+        "ChapterBgm": 11
     },
     {
         "Id": 37,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "鸣神叹妙",
         "Priority": 37,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 1308,
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/FubenGachaAlphaLine.prefab",
         "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/GridGachaAlphaFight.prefab",
@@ -1064,12 +931,11 @@
     },
     {
         "Id": 38,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "溺梦游歌·复刻",
         "Priority": 38,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20229
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLamiya/FubenGachaLamiyaLine.prefab",
@@ -1078,19 +944,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 399,
-        "SkipId": [
-            20229
-        ]
+        "ChapterBgm": 399
     },
     {
         "Id": 39,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "白梦游弋·复刻",
         "Priority": 39,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20232
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "ARC-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
@@ -1101,19 +963,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 230,
-        "SkipId": [
-            20232
-        ]
+        "ChapterBgm": 230
     },
     {
         "Id": 40,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "焚朽魇月",
         "Priority": 40,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20237
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "LN-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
@@ -1124,19 +982,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 11,
-        "SkipId": [
-            20237
-        ]
+        "ChapterBgm": 11
     },
     {
         "Id": 41,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "恋屿千年歌",
         "Priority": 41,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20245
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLucia/FubenGachaLuciaLine.prefab",
@@ -1145,19 +999,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 11,
-        "SkipId": [
-            20245
-        ]
+        "ChapterBgm": 11
     },
     {
         "Id": 42,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "鸣神叹妙",
         "Priority": 42,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20256
+        ],
         "FunctionOpenId": 1308,
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/FubenGachaAlphaLine.prefab",
         "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/GridGachaAlphaFight.prefab",
@@ -1165,19 +1015,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 5034,
-        "SkipId": [
-            20256
-        ]
+        "ChapterBgm": 5034
     },
     {
         "Id": 43,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "溺梦游歌·复刻",
         "Priority": 43,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20258
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLamiya/FubenGachaLamiyaLine.prefab",
@@ -1186,19 +1032,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 399,
-        "SkipId": [
-            20258
-        ]
+        "ChapterBgm": 399
     },
     {
         "Id": 44,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "白梦游弋·复刻",
         "Priority": 44,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20260
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "ARC-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
@@ -1209,19 +1051,12 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 230,
-        "SkipId": [
-            20260
-        ]
+        "ChapterBgm": 230
     },
     {
         "Id": 45,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "幻寂鸣泣曲",
         "Priority": 45,
-        "FubenActivityOrder": 0,
         "FunctionOpenId": 10306,
         "StagePrefix": "DMC-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner188.png",
@@ -1232,7 +1067,6 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 0,
         "StageId": [
             15010300,
             15010301,
@@ -1254,12 +1088,11 @@
     },
     {
         "Id": 46,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "焚朽魇月·复刻",
         "Priority": 40,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            90030
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "LN-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
@@ -1271,9 +1104,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 11,
-        "SkipId": [
-            90030
-        ],
         "StageId": [
             30130446,
             30130447,
@@ -1284,12 +1114,11 @@
     },
     {
         "Id": 47,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "心映繁景·复刻",
         "Priority": 36,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            90031
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "AAA-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner121.png",
@@ -1301,9 +1130,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 11,
-        "SkipId": [
-            90031
-        ],
         "StageId": [
             30130601,
             30130602,
@@ -1314,12 +1140,12 @@
     },
     {
         "Id": 48,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "憩梦穹森·复刻",
         "Priority": 34,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            90032,
+            90029
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "LIV-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner83.png",
@@ -1331,10 +1157,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 163,
-        "SkipId": [
-            90032,
-            90029
-        ],
         "StageId": [
             30130408,
             30130409,
@@ -1343,12 +1165,11 @@
     },
     {
         "Id": 49,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "梦栖宵暮",
         "Priority": 46,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            90036
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaSelena/FubenGachaSelenaLine.prefab",
@@ -1357,19 +1178,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 11,
-        "SkipId": [
-            90036
-        ]
+        "ChapterBgm": 11
     },
     {
         "Id": 50,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "恋屿千年歌·复刻",
         "Priority": 47,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20289
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLucia/FubenGachaLuciaLine.prefab",
@@ -1378,19 +1195,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 11,
-        "SkipId": [
-            20289
-        ]
+        "ChapterBgm": 11
     },
     {
         "Id": 51,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "鸣神叹妙·复刻",
         "Priority": 48,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20290
+        ],
         "FunctionOpenId": 1308,
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/FubenGachaAlphaLine.prefab",
         "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/GridGachaAlphaFight.prefab",
@@ -1398,19 +1211,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 5034,
-        "SkipId": [
-            20290
-        ]
+        "ChapterBgm": 5034
     },
     {
         "Id": 52,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "溺梦游歌·复刻",
         "Priority": 49,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20291
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLamiya/FubenGachaLamiyaLine.prefab",
@@ -1419,19 +1228,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 399,
-        "SkipId": [
-            20291
-        ]
+        "ChapterBgm": 399
     },
     {
         "Id": 53,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "白梦游弋·复刻",
         "Priority": 50,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20292
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "ARC-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
@@ -1442,19 +1247,15 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 230,
-        "SkipId": [
-            20292
-        ]
+        "ChapterBgm": 230
     },
     {
         "Id": 54,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "慈悲至观",
         "Priority": 51,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20299
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
         "MainBackgound": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/UiEpicFashionGachaStageLineBg.png",
@@ -1465,9 +1266,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 11,
-        "SkipId": [
-            20299
-        ],
         "StageId": [
             30130475,
             30130476,
@@ -1480,12 +1278,11 @@
     },
     {
         "Id": 55,
-        "TimeId": 0,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "寐影帷声",
         "Priority": 52,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20321
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
         "MainBackgound": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/UiEpicFashionGachaStageLineBg.png",
@@ -1496,9 +1293,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 11,
-        "SkipId": [
-            20321
-        ],
         "StageId": [
             30130482,
             30130483,
@@ -1511,11 +1305,11 @@
     {
         "Id": 56,
         "TimeId": 46920,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "梦栖宵暮·复刻",
         "Priority": 53,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20342
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaSelena/FubenGachaSelenaLine.prefab",
@@ -1525,9 +1319,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 11,
-        "SkipId": [
-            20342
-        ],
         "StageId": [
             30130458,
             30130459,
@@ -1540,11 +1331,11 @@
     {
         "Id": 57,
         "TimeId": 46920,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "恋屿千年歌·复刻",
         "Priority": 54,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20343
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLucia/FubenGachaLuciaLine.prefab",
@@ -1554,9 +1345,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 11,
-        "SkipId": [
-            20343
-        ],
         "StageId": [
             30130451,
             30130452,
@@ -1570,11 +1358,11 @@
     {
         "Id": 58,
         "TimeId": 46920,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "鸣神叹妙·复刻",
         "Priority": 55,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20344
+        ],
         "FunctionOpenId": 1308,
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/FubenGachaAlphaLine.prefab",
         "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/GridGachaAlphaFight.prefab",
@@ -1583,9 +1371,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 5034,
-        "SkipId": [
-            20344
-        ],
         "StageId": [
             30130431,
             30130432,
@@ -1599,11 +1384,11 @@
     {
         "Id": 59,
         "TimeId": 46920,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "溺梦游歌·复刻",
         "Priority": 56,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20345
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLamiya/FubenGachaLamiyaLine.prefab",
@@ -1613,9 +1398,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 399,
-        "SkipId": [
-            20345
-        ],
         "StageId": [
             30130424,
             30130425,
@@ -1630,11 +1412,11 @@
     {
         "Id": 60,
         "TimeId": 46921,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "恋屿千年歌·复刻",
         "Priority": 57,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20350
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLucia/FubenGachaLuciaLine.prefab",
@@ -1644,9 +1426,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 11,
-        "SkipId": [
-            20350
-        ],
         "StageId": [
             30130520,
             30130521,
@@ -1660,11 +1439,11 @@
     {
         "Id": 61,
         "TimeId": 46921,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "鸣神叹妙·复刻",
         "Priority": 58,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20351
+        ],
         "FunctionOpenId": 1308,
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/FubenGachaAlphaLine.prefab",
         "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/GridGachaAlphaFight.prefab",
@@ -1673,9 +1452,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 5034,
-        "SkipId": [
-            20351
-        ],
         "StageId": [
             30130527,
             30130528,
@@ -1689,11 +1465,11 @@
     {
         "Id": 62,
         "TimeId": 46921,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "溺梦游歌·复刻",
         "Priority": 59,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20352
+        ],
         "FunctionOpenId": 1308,
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
         "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLamiya/FubenGachaLamiyaLine.prefab",
@@ -1703,9 +1479,6 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 399,
-        "SkipId": [
-            20352
-        ],
         "StageId": [
             30130534,
             30130535,
@@ -1720,11 +1493,11 @@
     {
         "Id": 63,
         "TimeId": 46921,
-        "ActivityTimeId": 0,
-        "UiType": 0,
         "Name": "白梦游弋·复刻",
         "Priority": 60,
-        "FubenActivityOrder": 0,
+        "SkipId": [
+            20353
+        ],
         "FunctionOpenId": 1308,
         "StagePrefix": "ARC-",
         "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
@@ -1736,15 +1509,39 @@
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
         "ChapterBgm": 230,
-        "SkipId": [
-            20353
-        ],
         "StageId": [
             30130411,
             30130412,
             30130413,
             30130414,
             30130415
+        ]
+    },
+    {
+        "Id": 64,
+        "TimeId": 47911,
+        "Name": "澄愿眷旅",
+        "Priority": 61,
+        "SkipId": [
+            20364
+        ],
+        "FunctionOpenId": 1308,
+        "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
+        "MainBackgound": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/UiEpicFashionGachaStageLineBg.png",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/UiGachaLifu405/UiGachaLifu405Line.prefab",
+        "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/UiGachaLifu405/GridGachaLifu405Fight.prefab",
+        "GridStoryPrefab": "Assets/Product/Ui/ComponentPrefab/UiGachaLifu405/GridGachaLifu405Story.prefab",
+        "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
+        "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
+        "ChapterType": 27,
+        "ChapterBgm": 230,
+        "StageId": [
+            30130542,
+            30130543,
+            30130544,
+            30130545,
+            30130546,
+            30130547
         ]
     }
 ]

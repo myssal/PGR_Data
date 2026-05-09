@@ -1,0 +1,252 @@
+[
+    {
+        "Key": "TaskOverflowGoodFactor",
+        "Desc": "提前完成任务，多余的材料转为金币",
+        "Values": [
+            10
+        ]
+    },
+    {
+        "Key": "ActiveSkillSlotInitCount",
+        "Desc": "初始主动技能槽位数量",
+        "Values": [
+            4
+        ]
+    },
+    {
+        "Key": "InsertSkillSlotInitCount",
+        "Desc": "初始插入技能槽位数量",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "SkillBagSlotInitCount",
+        "Desc": "初始技能背包槽位数量",
+        "Values": [
+            8
+        ]
+    },
+    {
+        "Key": "ActiveSkillSlotLimit",
+        "Desc": "主动技能槽位最大数量限制",
+        "Values": [
+            4
+        ]
+    },
+    {
+        "Key": "InsertSkillSlotLimit",
+        "Desc": "插入技能槽位最大数量限制",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "SkillBagSlotLimit",
+        "Desc": "技能背包槽位数最大限制",
+        "Values": [
+            8
+        ]
+    },
+    {
+        "Key": "ActiveSkillSlotSort",
+        "Desc": "主动技能槽位适配顺序(1特殊槽,2主动槽,3插入槽,4背包)",
+        "Values": [
+            2,
+            4
+        ]
+    },
+    {
+        "Key": "ClashSkillSlotSort",
+        "Desc": "拼刀技能槽位适配顺序(1特殊槽,2主动槽,3插入槽,4背包)",
+        "Values": [
+            1,
+            4
+        ]
+    },
+    {
+        "Key": "UltraCalcSkillSlotSort",
+        "Desc": "超算技能槽位适配顺序(1特殊槽,2主动槽,3插入槽,4背包)",
+        "Values": [
+            1,
+            4
+        ]
+    },
+    {
+        "Key": "InsertSkillSlotSort",
+        "Desc": "插入技能槽位适配顺序(1特殊槽,2主动槽,3插入槽,4背包)",
+        "Values": [
+            3,
+            1,
+            4
+        ]
+    },
+    {
+        "Key": "PlayModeConditionId",
+        "Desc": "玩法模式条件ID",
+        "Values": [
+            1021001
+        ]
+    },
+    {
+        "Key": "SaveTagCount",
+        "Desc": "存档标签数量",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "MaxSaveFileCount",
+        "Desc": "存档槽位数量",
+        "Values": [
+            6
+        ]
+    },
+    {
+        "Key": "Theatre6Coin",
+        "Desc": "故事线代币",
+        "Values": [
+            97084
+        ]
+    },
+    {
+        "Key": "TalentCoin",
+        "Desc": "天赋树代币",
+        "Values": [
+            97085
+        ]
+    },
+    {
+        "Key": "CSCost",
+        "Desc": "双方开超算需要消耗的超算值",
+        "Values": [
+            100
+        ]
+    },
+    {
+        "Key": "EvasionDmg-",
+        "Desc": "闪避时伤害减免（万分比）",
+        "Values": [
+            8000
+        ]
+    },
+    {
+        "Key": "BlockDmg-",
+        "Desc": "格挡时伤害减免（万分比）",
+        "Values": [
+            5000
+        ]
+    },
+    {
+        "Key": "BlockCS+",
+        "Desc": "格挡时获得额外超算值（万分比）",
+        "Values": [
+            2000
+        ]
+    },
+    {
+        "Key": "CriticalDmg+",
+        "Desc": "暴击时伤害提升（万分比）",
+        "Values": [
+            5000
+        ]
+    },
+    {
+        "Key": "CriticalTL+",
+        "Desc": "暴击时回复X点体力",
+        "Values": [
+            10
+        ]
+    },
+    {
+        "Key": "WeakenTime",
+        "Desc": "疲劳时间（秒）",
+        "Values": [
+            90
+        ]
+    },
+    {
+        "Key": "PDDmg+",
+        "Desc": "拼刀时，每1点韧性提升X%伤害",
+        "Values": [
+            2500
+        ]
+    },
+    {
+        "Key": "DefaultDice",
+        "Desc": "初始情况下的拼点浮动值上限",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "TLDmg-",
+        "Desc": "受到伤害时，每1点体力造成的伤害减免（万分比）",
+        "Values": [
+            20
+        ]
+    },
+    {
+        "Key": "MultipleCSRate-",
+        "Desc": "单个回合期间，一方多次触发超算时，超算获取率降低（万分比）",
+        "Values": [
+            1000
+        ]
+    },
+    {
+        "Key": "DefaultURSkill",
+        "Desc": "角色刚进入游戏时的拼刀/超算技能槽",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "DefaultZDSkill",
+        "Desc": "角色刚进入游戏时的主动技能槽",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "DefaultCRSkill",
+        "Desc": "角色刚进入游戏时的插入技能槽",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "EventMaxDepth",
+        "Desc": "事件循环最大深度（程序用）",
+        "Values": [
+            999
+        ]
+    },
+    {
+        "Key": "BuffMaxTriggerCount",
+        "Desc": "同一时间BUFF最大触发次数",
+        "Values": [
+            20
+        ]
+    },
+    {
+        "Key": "StoryUpdateTime",
+        "Desc": "剧情更新时间",
+        "Values": [
+            "2026/1/1"
+        ]
+    },
+    {
+        "Key": "GoodBaseWeight",
+        "Desc": "材料基础权重，任务随机时用",
+        "Values": [
+            100
+        ]
+    },
+    {
+        "Key": "StoryAvgId",
+        "Desc": "首次进去剧情模式播放的AVG",
+        "Values": [
+            1
+        ]
+    }
+]

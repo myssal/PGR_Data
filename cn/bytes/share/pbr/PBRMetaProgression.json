@@ -1,7 +1,6 @@
 [
     {
         "NodeId": 1,
-        "PreNode": 0,
         "NodeName": "冲刺",
         "NodeType": 1,
         "NodeGroup": 1,
@@ -10,7 +9,6 @@
         "TextUnlock": "解锁冲刺能力",
         "TextLocked": "解锁冲刺能力",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconDashLimitNumUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             55
         ],
@@ -22,14 +20,11 @@
         "NodeId": 2,
         "PreNode": 1,
         "NodeName": "杂技",
-        "NodeType": 0,
         "NodeGroup": 1,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "信号球伤害加成<color=#3ACC3B>+30%</color>",
         "TextLocked": "信号球伤害加成<color=#3ACC3B>+30%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconSignalOrbsDmgUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             12
         ],
@@ -41,14 +36,11 @@
         "NodeId": 3,
         "PreNode": 2,
         "NodeName": "护甲",
-        "NodeType": 0,
         "NodeGroup": 1,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "护甲<color=#3ACC3B>+3</color>",
         "TextLocked": "护甲<color=#3ACC3B>+3</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconArmorUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             33
         ],
@@ -60,14 +52,11 @@
         "NodeId": 4,
         "PreNode": 1,
         "NodeName": "普攻",
-        "NodeType": 0,
         "NodeGroup": 1,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "普攻伤害加成<color=#3ACC3B>+45%</color>",
         "TextLocked": "普攻伤害加成<color=#3ACC3B>+45%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBasicAttackDmgUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             11
         ],
@@ -79,14 +68,11 @@
         "NodeId": 5,
         "PreNode": 4,
         "NodeName": "闪避",
-        "NodeType": 0,
         "NodeGroup": 1,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "闪避<color=#3ACC3B>+5%</color>",
         "TextLocked": "闪避<color=#3ACC3B>+5%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconDodgeRateUpUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             144
         ],
@@ -105,7 +91,6 @@
         "TextUnlock": "解锁红球技能【横扫】\\n解锁道具【库仆仆】",
         "TextLocked": "解锁红球技能【横扫】\\n解锁道具【库仆仆】",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R2shenweihong1Up.png",
-        "ShopFreshCount": 0,
         "RewardItemIds": [
             9,
             10,
@@ -125,7 +110,6 @@
         "TextUnlock": "解锁红球技能【逆反剑技】\\n解锁道具【明瞳续昼】【天平】",
         "TextLocked": "解锁红球技能【逆反剑技】\\n解锁道具【明瞳续昼】【天平】",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R3shenweihong1Up.png",
-        "ShopFreshCount": 0,
         "RewardItemIds": [
             45,
             46,
@@ -146,7 +130,6 @@
         "TextUnlock": "冲刺充能上限<color=#3ACC3B>+2</color>",
         "TextLocked": "冲刺充能上限<color=#3ACC3B>+2</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconDashInitialNumUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             55
         ],
@@ -158,14 +141,11 @@
         "NodeId": 9,
         "PreNode": 8,
         "NodeName": "信号球掉率",
-        "NodeType": 0,
         "NodeGroup": 2,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "红球掉落概率<color=#3ACC3B>+15%</color>，黄球掉落概率<color=#3ACC3B>+15%</color>，蓝球掉落概率<color=#3ACC3B>+15%</color>",
         "TextLocked": "红球掉落概率<color=#3ACC3B>+15%</color>，黄球掉落概率<color=#3ACC3B>+15%</color>，蓝球掉落概率<color=#3ACC3B>+15%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconRedOrbsAttackDropRateUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             154,
             155,
@@ -181,14 +161,11 @@
         "NodeId": 10,
         "PreNode": 9,
         "NodeName": "生息",
-        "NodeType": 0,
         "NodeGroup": 2,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "最大生命值<color=#3ACC3B>+20</color>",
         "TextLocked": "最大生命值<color=#3ACC3B>+20</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconMaxHPUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             1
         ],
@@ -200,14 +177,11 @@
         "NodeId": 11,
         "PreNode": 8,
         "NodeName": "膛线",
-        "NodeType": 0,
         "NodeGroup": 2,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "射程<color=#3ACC3B>+2</color>",
         "TextLocked": "射程<color=#3ACC3B>+2</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBasicAttackRangeUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             75
         ],
@@ -219,14 +193,11 @@
         "NodeId": 12,
         "PreNode": 11,
         "NodeName": "急速",
-        "NodeType": 0,
         "NodeGroup": 2,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "速度<color=#3ACC3B>+30</color>",
         "TextLocked": "速度<color=#3ACC3B>+30</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconMoveSpeedUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             3
         ],
@@ -245,7 +216,6 @@
         "TextUnlock": "解锁红球技能【离索跳弹】\\n解锁道具【鲨赛克瓷砖】【发射星星】【卫士挂载】",
         "TextLocked": "解锁红球技能【离索跳弹】\\n解锁道具【鲨赛克瓷砖】【发射星星】【卫士挂载】",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R2lifuhong1Up.png",
-        "ShopFreshCount": 0,
         "RewardItemIds": [
             29,
             30,
@@ -267,7 +237,6 @@
         "TextUnlock": "解锁道具【神威邀请函】",
         "TextLocked": "解锁道具【神威邀请函】",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconPBRItemUp.png",
-        "ShopFreshCount": 0,
         "RewardItemIds": [
             188
         ]
@@ -289,14 +258,11 @@
         "NodeId": 16,
         "PreNode": 15,
         "NodeName": "成长",
-        "NodeType": 0,
         "NodeGroup": 3,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "生命成长<color=#3ACC3B>+2</color>",
         "TextLocked": "生命成长<color=#3ACC3B>+2</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconHpPerLevelUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             17
         ],
@@ -308,14 +274,11 @@
         "NodeId": 17,
         "PreNode": 16,
         "NodeName": "退散",
-        "NodeType": 0,
         "NodeGroup": 3,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "击退<color=#3ACC3B>+1</color>",
         "TextLocked": "击退<color=#3ACC3B>+1</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBasicAttackKnockbackUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             78
         ],
@@ -327,14 +290,11 @@
         "NodeId": 18,
         "PreNode": 15,
         "NodeName": "连锁",
-        "NodeType": 0,
         "NodeGroup": 3,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "连锁持续时间<color=#3ACC3B>+2</color>秒",
         "TextLocked": "连锁持续时间<color=#3ACC3B>+2</color>秒",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconComboBoostWindowUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             77
         ],
@@ -346,14 +306,11 @@
         "NodeId": 19,
         "PreNode": 18,
         "NodeName": "续航",
-        "NodeType": 0,
         "NodeGroup": 3,
         "NodeCost": 50,
-        "NodeCondition": 0,
         "TextUnlock": "生命偷取效率<color=#3ACC3B>+2%</color>",
         "TextLocked": "生命偷取效率<color=#3ACC3B>+2%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconLifestealRateLimit.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             49
         ],
@@ -372,7 +329,6 @@
         "TextUnlock": "幸运<color=#3ACC3B>+777</color>",
         "TextLocked": "幸运<color=#3ACC3B>+777</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconLuckUp.png",
-        "ShopFreshCount": 0,
         "NodeStats": [
             145
         ],
@@ -391,7 +347,6 @@
         "TextUnlock": "解锁红球技能【掠雷冲】\\n解锁道具【你想要的】",
         "TextLocked": "解锁红球技能【掠雷冲】\\n解锁道具【你想要的】",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/R5Luxiyahong1Up.png",
-        "ShopFreshCount": 0,
         "RewardItemIds": [
             21,
             22,
@@ -411,7 +366,6 @@
         "TextUnlock": "解锁道具【实体幸运】",
         "TextLocked": "解锁道具【实体幸运】",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconPBRItemUp.png",
-        "ShopFreshCount": 0,
         "RewardItemIds": [
             184
         ]

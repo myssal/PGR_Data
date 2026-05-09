@@ -398,6 +398,44 @@
         ]
     },
     {
+        "Key": "EquipOneClickWearTipContent",
+        "Params": [
+            "存在更符合当前角色的装备是否一键替换？",
+            "确定",
+            "取消"
+        ]
+    },
+    {
+        "Key": "AutoSettingUnsavedTipContent",
+        "Params": [
+            "您有未保存的修改，确定要退出吗？",
+            "确定",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipFactorOverflowWearTipContent",
+        "Params": [
+            "以下词条超过当前等级上限,超出部分将无法生效,确定继续装配吗?\\n{0}",
+            "穿戴",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipFactorOverflowAbsorbTipContent",
+        "Params": [
+            "以下词条超过当前等级上限,超出部分将无法生效,确定继续装配吗?\\n{0}",
+            "强化",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipFactorOverflowDesc",
+        "Params": [
+            "%s（<color=#fa7d81>%s</color>/%s）"
+        ]
+    },
+    {
         "Key": "LikeSuccessDesc",
         "Params": [
             "%s给你点赞"
@@ -681,7 +719,13 @@
     {
         "Key": "TipsNotEffective",
         "Params": [
-            "额外加持未生效（装备职业类型不符）"
+            "额外加持未生效"
+        ]
+    },
+    {
+        "Key": "EquipSlotNotEffectiveDesc",
+        "Params": [
+            "当前装备职业类型不符,未满足加持生效条件"
         ]
     },
     {
@@ -742,7 +786,7 @@
         "Key": "GlobalMatchRewardDesc",
         "Params": [
             "额外装备奖励 (<color=#a1b9ff>%s</color><color=#a1b9ff>/%s</color>)",
-            "额外装备奖励 (<color=#fa7d81>%s</color><color=#a1b9ff>/%s</color>)"
+            "额外装备奖励 (<color=#fa7d81>%s</color><color=#fa7d81>/%s</color>)"
         ]
     },
     {
@@ -762,6 +806,103 @@
         "Params": [
             "未选关卡",
             "随机关卡"
+        ]
+    },
+    {
+        "Key": "CustomRichTextDesc",
+        "Params": [
+            "<b><u><color=#34aff8ff><link={0}>{1}</link></color></u></b>"
+        ]
+    },
+    {
+        "Key": "LongPressProgressBarPath",
+        "Params": [
+            "Assets/Product/Ui/ComponentPrefab/UiDlcRelink/PanelTimer.prefab"
+        ]
+    },
+    {
+        "Key": "LongPressProgressBarShowTime",
+        "Params": [
+            0.3
+        ]
+    },
+    {
+        "Key": "EquipCancelDiscardTips",
+        "Params": [
+            "装备已取消弃置"
+        ]
+    },
+    {
+        "Key": "EquipUnlockAndDiscardTips",
+        "Params": [
+            "装备已取消锁定，并设为弃置"
+        ]
+    },
+    {
+        "Key": "EquipSetDiscardTips",
+        "Params": [
+            "装备已设为弃置"
+        ]
+    },
+    {
+        "Key": "EquipOneClickWearNoChangeTip",
+        "Params": [
+            "无需更换"
+        ]
+    },
+    {
+        "Key": "AutoSettingTabName",
+        "Params": [
+            "自动锁定",
+            "自动弃置"
+        ]
+    },
+    {
+        "Key": "AutoSettingTabImage",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipLocked.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkExchangeWheelDelete.png"
+        ]
+    },
+    {
+        "Key": "AutoSettingEquipTypeName",
+        "Params": [
+            "主控装备",
+            "普通装备"
+        ]
+    },
+    {
+        "Key": "AutoSettingQualityTypeName",
+        "Params": [
+            "蓝色",
+            "紫色",
+            "金色",
+            "红色"
+        ]
+    },
+    {
+        "Key": "RoomUiLoadingType",
+        "Params": [
+            1071062
+        ]
+    },
+    {
+        "Key": "AutoSettingDesc",
+        "Params": [
+            "保存设置后，将在获取装备时自动进行锁定",
+            "保存设置后，将在获取装备时自动进行弃置"
+        ]
+    },
+    {
+        "Key": "AutoSettingSavedTip",
+        "Params": [
+            "设置已保存"
+        ]
+    },
+    {
+        "Key": "FactorLevelTypeIcon",
+        "Params": [
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkMainBtn02.png"
         ]
     }
 ]

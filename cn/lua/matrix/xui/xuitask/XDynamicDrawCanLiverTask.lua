@@ -485,4 +485,10 @@ function XDynamicDrawCanLiverTask:SetExLabelShow(labelName, isShow)
     end
 end
 
+function XDynamicDrawCanLiverTask:SetPanelTagActive(isActive)
+    if self.PanelTag then
+        self.PanelTag.gameObject:SetActiveEx(isActive)
+    end
+end
+
 return XDynamicDrawCanLiverTask

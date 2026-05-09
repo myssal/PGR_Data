@@ -5,19 +5,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "终于跟你接上了！别的来不及解释，我带你了解一下连接员的基本操作。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "终于跟你接上了！别的来不及解释，我带你了解一下连接员的基本操作。"
     },
     {
         "Id": 10102,
@@ -27,37 +22,24 @@
         "ConditionParam": 10101,
         "CompleteType": 1,
         "CompleteParam": "UiTask",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "从这里查看伊甸给各部队的任务。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "SafeAreaContentPane/BgView/Background/BtnLegion"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "从这里查看伊甸给各部队的任务。"
     },
     {
         "Id": 10103,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 6,
         "ConditionParam": "PanelTaskStoryList",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiTask",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "选取已完成的任务。",
         "IsFlow": [
             1,
             0
@@ -71,7 +53,11 @@
         "Target": [
             "PanelTaskStoryList",
             "BtnFinish"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "选取已完成的任务。"
     },
     {
         "Id": 10201,
@@ -79,19 +65,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "你已经提交了完成报告。现在来为队员更换一下【意识】装备。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "你已经提交了完成报告。现在来为队员更换一下【意识】装备。"
     },
     {
         "Id": 10202,
@@ -101,20 +82,16 @@
         "ConditionParam": 10201,
         "CompleteType": 1,
         "CompleteParam": "UiCharacter",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10203,
@@ -124,20 +101,16 @@
         "ConditionParam": 10202,
         "CompleteType": 1,
         "CompleteParam": "UiEquipAwarenessReplace",
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnAwarenessReplace1"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10204,
@@ -147,13 +120,7 @@
         "ConditionParam": "PanelEquipScroll",
         "CompleteType": 1,
         "CompleteParam": "UiEquipAwarenessPopup",
-        "Arrow": 0,
         "UiName": "UiEquipAwarenessReplace",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 1,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -164,29 +131,27 @@
         "Target": [
             "PanelEquipScroll",
             "@"
-        ]
+        ],
+        "IconPos": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10205,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 10204,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipAwarenessPopup",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnPutOn"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10301,
@@ -194,19 +159,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "【意识】装备也可以进行强化。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "【意识】装备也可以进行强化。"
     },
     {
         "Id": 10302,
@@ -216,20 +176,16 @@
         "ConditionParam": 10301,
         "CompleteType": 1,
         "CompleteParam": "UiCharacter",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10303,
@@ -239,20 +195,16 @@
         "ConditionParam": 10302,
         "CompleteType": 1,
         "CompleteParam": "UiEquipAwarenessReplace",
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "PanelAwareness1"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10304,
@@ -262,21 +214,17 @@
         "ConditionParam": "10205|10303",
         "CompleteType": 1,
         "CompleteParam": "UiEquipAwarenessPopup",
-        "Arrow": 0,
         "UiName": "UiEquipAwarenessReplace",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "选择需要强化的【意识】装备。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "PanelPos1"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "选择需要强化的【意识】装备。"
     },
     {
         "Id": 10305,
@@ -286,20 +234,16 @@
         "ConditionParam": 10304,
         "CompleteType": 1,
         "CompleteParam": "UiEquipDetail",
-        "Arrow": 0,
         "UiName": "UiEquipAwarenessPopup",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnStrengthen"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10306,
@@ -309,20 +253,16 @@
         "ConditionParam": 10305,
         "CompleteType": 1,
         "CompleteParam": "UiEquipStrengthen",
-        "Arrow": 0,
         "UiName": "UiEquipDetail",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnStrengthen"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10307,
@@ -330,14 +270,7 @@
         "Mask": 1,
         "ConditionType": 6,
         "ConditionParam": "PanelEquipScroll",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipStrengthen",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 1,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -348,7 +281,10 @@
         "Target": [
             "PanelEquipScroll",
             "@"
-        ]
+        ],
+        "IconPos": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10308,
@@ -356,39 +292,29 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 10307,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipStrengthen",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "Target": [
             "BtnStrengthen"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10309,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 10308,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipStrengthen",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnMain"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10401,
@@ -396,19 +322,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "准备工作已经完成，你的小队可以继续进行作战。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "准备工作已经完成，你的小队可以继续进行作战。"
     },
     {
         "Id": 10402,
@@ -418,20 +339,16 @@
         "ConditionParam": 10401,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineBanner",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10403,
@@ -440,13 +357,7 @@
         "ConditionType": 6,
         "ConditionParam": "PanelChapterList",
         "CompleteType": 5,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -459,7 +370,9 @@
         ],
         "Target": [
             "PanelChapterList"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10404,
@@ -469,20 +382,16 @@
         "ConditionParam": 10403,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineDetail",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             10010101
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10405,
@@ -492,42 +401,33 @@
         "ConditionParam": 10404,
         "CompleteType": 1,
         "CompleteParam": "UiNewRoomSingle",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineDetail",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 10406,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 10405,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnterFight"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 20101,
@@ -535,19 +435,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "现在来尝试一下新装备吧。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "现在来尝试一下新装备吧。"
     },
     {
         "Id": 20102,
@@ -557,20 +452,16 @@
         "ConditionParam": 20101,
         "CompleteType": 1,
         "CompleteParam": "UiCharacter",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 20103,
@@ -580,20 +471,16 @@
         "ConditionParam": 20102,
         "CompleteType": 1,
         "CompleteParam": "UiEquipAwarenessReplace",
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "PanelAwareness4"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 20104,
@@ -601,22 +488,18 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 20103,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipAwarenessReplace",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 1,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "【意识】根据不同位置会有不同属性加成。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "Tog4"
-        ]
+        ],
+        "IconPos": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "【意识】根据不同位置会有不同属性加成。"
     },
     {
         "Id": 20105,
@@ -626,14 +509,7 @@
         "ConditionParam": "PanelEquipScroll",
         "CompleteType": 1,
         "CompleteParam": "UiEquipAwarenessPopup",
-        "Arrow": 0,
         "UiName": "UiEquipAwarenessReplace",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 1,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "装备的同名的【意识】，可触发套装效果。",
         "IsFlow": [
             1,
             0
@@ -644,7 +520,11 @@
         "Target": [
             "PanelEquipScroll",
             "@"
-        ]
+        ],
+        "IconPos": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "装备的同名的【意识】，可触发套装效果。"
     },
     {
         "Id": 20106,
@@ -652,21 +532,17 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 20105,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipAwarenessPopup",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnPutOn"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 20107,
@@ -674,41 +550,30 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 20106,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipAwarenessReplace",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "两件同名【意识】即可触发二件套效果。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "两件同名【意识】即可触发二件套效果。"
     },
     {
         "Id": 20108,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 20107,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipAwarenessReplace",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnMain"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 20201,
@@ -716,19 +581,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "一切就绪，准备前往作战地点。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "一切就绪，准备前往作战地点。"
     },
     {
         "Id": 20202,
@@ -738,20 +598,16 @@
         "ConditionParam": 20201,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineBanner",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 20203,
@@ -761,13 +617,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineChapter",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -781,7 +631,9 @@
         "Target": [
             "PanelChapterList",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 20204,
@@ -791,13 +643,7 @@
         "ConditionParam": 20203,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineDetail",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
@@ -808,7 +654,9 @@
         "Target": [
             "PanelStageContent",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 20205,
@@ -818,42 +666,34 @@
         "ConditionParam": 20204,
         "CompleteType": 1,
         "CompleteParam": "UiNewRoomSingle",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineDetail",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 20206,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 20205,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 1,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnterFight"
-        ]
+        ],
+        "Record": 1,
+        "IconPos": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 30101,
@@ -861,39 +701,30 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiFubenMainLineChapter",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "副本通关后可以获取装备奖励。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "副本通关后可以获取装备奖励。"
     },
     {
         "Id": 30102,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 30101,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 1,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "继续挑战接下来的副本吧。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "IconPos": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "继续挑战接下来的副本吧。"
     },
     {
         "Id": 40101,
@@ -901,19 +732,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "让我们来领取一下任务奖励。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "让我们来领取一下任务奖励。"
     },
     {
         "Id": 40102,
@@ -923,36 +749,23 @@
         "ConditionParam": 40101,
         "CompleteType": 1,
         "CompleteParam": "UiTask",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "SafeAreaContentPane/BgView/Background/BtnLegion"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40103,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 40102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiTask",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 1,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "留意下方，领取【主线任务奖励】。",
         "IsFlow": [
             0,
             0
@@ -963,7 +776,12 @@
         "Target": [
             "PanelCourseContainer",
             "BtnClick"
-        ]
+        ],
+        "Record": 1,
+        "IconPos": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "留意下方，领取【主线任务奖励】。"
     },
     {
         "Id": 40201,
@@ -971,19 +789,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "新的构造体已苏醒，请做好必要的战前准备。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "新的构造体已苏醒，请做好必要的战前准备。"
     },
     {
         "Id": 40202,
@@ -991,19 +804,14 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 40201,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "进入【成员】选择新的构造体。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "进入【成员】选择新的构造体。"
     },
     {
         "Id": 40203,
@@ -1013,20 +821,16 @@
         "ConditionParam": 40202,
         "CompleteType": 5,
         "CompleteParam": "SViewCharacterList",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40204,
@@ -1034,14 +838,7 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 40203,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -1055,7 +852,9 @@
         "Target": [
             "SViewCharacterList",
             "BtnCharacter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40205,
@@ -1063,21 +862,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 40204,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnLevelUp"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40206,
@@ -1085,22 +879,17 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 40205,
-        "CompleteType": 0,
         "CompleteParam": "UiCharacter|PanelCharLevel",
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnLevelUpButton"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40207,
@@ -1108,45 +897,35 @@
         "Mask": 1,
         "ConditionType": 6,
         "ConditionParam": 30011,
-        "CompleteType": 0,
         "CompleteParam": "UiCharacter|PanelSelectLevelItems",
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "选取足够的【经验材料】。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             30011
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "选取足够的【经验材料】。"
     },
     {
         "Id": 40208,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 40207,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnUpgrade"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40301,
@@ -1154,19 +933,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "一切就绪，准备前往作战地点。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "一切就绪，准备前往作战地点。"
     },
     {
         "Id": 40302,
@@ -1176,20 +950,16 @@
         "ConditionParam": 40301,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineBanner",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40303,
@@ -1199,13 +969,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineChapter",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -1219,7 +983,9 @@
         "Target": [
             "PanelChapterList",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40304,
@@ -1229,13 +995,7 @@
         "ConditionParam": 40303,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineDetail",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
@@ -1246,7 +1006,9 @@
         "Target": [
             "PanelStageContent",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40305,
@@ -1256,20 +1018,16 @@
         "ConditionParam": 40304,
         "CompleteType": 1,
         "CompleteParam": "UiNewRoomSingle",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineDetail",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40306,
@@ -1277,19 +1035,14 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 40305,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "将新成员编入作战队伍。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "将新成员编入作战队伍。"
     },
     {
         "Id": 40307,
@@ -1299,20 +1052,16 @@
         "ConditionParam": 40306,
         "CompleteType": 1,
         "CompleteParam": "UiMainLineRoomCharacter",
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnChar1"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40308,
@@ -1320,14 +1069,7 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 40307,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMainLineRoomCharacter",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
@@ -1338,7 +1080,10 @@
         "Target": [
             "PanelRoleContent",
             "@"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40309,
@@ -1346,43 +1091,32 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 40308,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMainLineRoomCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnJoinTeam"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 40310,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiNewRoomSingle",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnterFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 50101,
@@ -1390,19 +1124,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "提升构造体的技能等级，可以让他们更加强大。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "提升构造体的技能等级，可以让他们更加强大。"
     },
     {
         "Id": 50102,
@@ -1412,21 +1141,17 @@
         "ConditionParam": 50101,
         "CompleteType": 5,
         "CompleteParam": "SViewCharacterList",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "进入成员选择一个构造体。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "进入成员选择一个构造体。"
     },
     {
         "Id": 50103,
@@ -1434,14 +1159,7 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 50102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -1455,7 +1173,9 @@
         "Target": [
             "SViewCharacterList",
             "BtnCharacter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 50104,
@@ -1463,21 +1183,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 50103,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnLevelUp"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 50105,
@@ -1485,21 +1200,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 50104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogSkill"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 50106,
@@ -1508,21 +1218,17 @@
         "ConditionType": 3,
         "ConditionParam": 50105,
         "CompleteType": 5,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "进入【技能】的配置分页。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "GridSkillItem4/RImgSkillIcon"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "进入【技能】的配置分页。"
     },
     {
         "Id": 50107,
@@ -1530,44 +1236,35 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 50106,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "选中需要升级的【技能】。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "103118/BtnSubSkillIconBg"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "选中需要升级的【技能】。"
     },
     {
         "Id": 50108,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 50107,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 1,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnUpgradeButtonOn"
-        ]
+        ],
+        "Record": 1,
+        "IconPos": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 50201,
@@ -1575,19 +1272,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "前往作战地点。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "前往作战地点。"
     },
     {
         "Id": 50202,
@@ -1597,20 +1289,16 @@
         "ConditionParam": 50201,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineBanner",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 50203,
@@ -1620,13 +1308,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineChapter",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -1640,7 +1322,9 @@
         "Target": [
             "PanelChapterList",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 50204,
@@ -1650,13 +1334,7 @@
         "ConditionParam": 50203,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineDetail",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
@@ -1667,7 +1345,9 @@
         "Target": [
             "PanelStageContent",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 50205,
@@ -1677,20 +1357,16 @@
         "ConditionParam": 50204,
         "CompleteType": 1,
         "CompleteParam": "UiNewRoomSingle",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineDetail",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 50206,
@@ -1698,19 +1374,14 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 50205,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "当前丽芙安排在<color=#00EEEE>【蓝色位置】</color>。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "当前丽芙安排在<color=#00EEEE>【蓝色位置】</color>。"
     },
     {
         "Id": 50207,
@@ -1718,41 +1389,31 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 50206,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "使用其他角色触发<color=#00EEEE>蓝球3消</color>即可让丽芙使出【援护攻击】。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "使用其他角色触发<color=#00EEEE>蓝球3消</color>即可让丽芙使出【援护攻击】。"
     },
     {
         "Id": 50208,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 50207,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnterFight"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 70101,
@@ -1760,19 +1421,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "对于新任连接员，有大量的【新手目标】等待达成。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "对于新任连接员，有大量的【新手目标】等待达成。"
     },
     {
         "Id": 70102,
@@ -1780,37 +1436,24 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 70101,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "进入进行查看。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnTarget"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "进入进行查看。"
     },
     {
         "Id": 70103,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 6,
         "ConditionParam": "SViewTask",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewPlayerTask",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -1824,7 +1467,10 @@
         "Target": [
             "SViewTask",
             "BtnCollect"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 90101,
@@ -1834,21 +1480,17 @@
         "ConditionParam": "UiMain",
         "CompleteType": 5,
         "CompleteParam": "SViewCharacterList",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "当前已满足构造体【晋升】条件，请进入成员界面。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "当前已满足构造体【晋升】条件，请进入成员界面。"
     },
     {
         "Id": 90102,
@@ -1856,14 +1498,7 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 90101,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -1877,7 +1512,9 @@
         "Target": [
             "SViewCharacterList",
             "BtnCharacter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 90103,
@@ -1885,21 +1522,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 90102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnLevelUp"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 90104,
@@ -1907,21 +1539,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 90103,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogGrade"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 90105,
@@ -1929,19 +1556,14 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 90104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "构造体晋升后能有效提高作战能力。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "构造体晋升后能有效提高作战能力。"
     },
     {
         "Id": 90106,
@@ -1949,41 +1571,31 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 90105,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "留意晋升所需的条件。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "留意晋升所需的条件。"
     },
     {
         "Id": 90107,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 90106,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnWisdom"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 110101,
@@ -1993,21 +1605,17 @@
         "ConditionParam": "UiMain",
         "CompleteType": 1,
         "CompleteParam": "UiSocial",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "进入好友界面，尝试添加其他指挥官。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnSocial"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "进入好友界面，尝试添加其他指挥官。"
     },
     {
         "Id": 110102,
@@ -2015,41 +1623,31 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 110101,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiSocial",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnMainAddContact"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 110103,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 110102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiSocial",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "尝试添加联络人。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "尝试添加联络人。"
     },
     {
         "Id": 120101,
@@ -2057,21 +1655,16 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnRole"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 120102,
@@ -2081,13 +1674,7 @@
         "ConditionParam": 120101,
         "CompleteType": 1,
         "CompleteParam": "UiFavorability",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
@@ -2095,7 +1682,9 @@
         "Target": [
             "PanelLayout",
             "BtnInteractive"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 120103,
@@ -2103,19 +1692,14 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 120102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFavorability",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "点击可以切换看板，或查看更多构造体的资料。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "点击可以切换看板，或查看更多构造体的资料。"
     },
     {
         "Id": 120104,
@@ -2123,19 +1707,15 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 120103,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFavorability",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "点击偶遇可以与构造体进行小游戏，提升构造体好感度。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "点击偶遇可以与构造体进行小游戏，提升构造体好感度。"
     },
     {
         "Id": 130001,
@@ -2143,19 +1723,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "研发可以获取新的【构造体】、【武器】和【意识】。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "研发可以获取新的【构造体】、【武器】和【意识】。"
     },
     {
         "Id": 130002,
@@ -2163,39 +1738,30 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 130001,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 1,
-        "RewardId": 1300,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "作为特例，给你一些【研发券】吧。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "RewardId": 1300,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "作为特例，给你一些【研发券】吧。"
     },
     {
         "Id": 130003,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 2,
         "ConditionParam": "UiObtain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "好了，以后记得还我哟。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "好了，以后记得还我哟。"
     },
     {
         "Id": 130101,
@@ -2203,19 +1769,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "来尝试一下研发。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "来尝试一下研发。"
     },
     {
         "Id": 130102,
@@ -2225,20 +1786,16 @@
         "ConditionParam": "130101|130003",
         "CompleteType": 1,
         "CompleteParam": "UiDrawMain",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnReward"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130103,
@@ -2246,21 +1803,16 @@
         "Mask": 1,
         "ConditionType": 6,
         "ConditionParam": "UiDrawMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiDrawMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             1
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130104,
@@ -2269,42 +1821,33 @@
         "ConditionType": 6,
         "CompleteType": 1,
         "CompleteParam": "UiDraw",
-        "Arrow": 0,
         "UiName": "UiDrawMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "DrawStandardPt01"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 130104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiDraw",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnDraw1"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130201,
@@ -2312,19 +1855,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "新的【构造体】已苏醒，请做好必要的战前准备。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "新的【构造体】已苏醒，请做好必要的战前准备。"
     },
     {
         "Id": 130202,
@@ -2332,19 +1870,14 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 130201,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "进入【成员】选择新的构造体。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "进入【成员】选择新的构造体。"
     },
     {
         "Id": 130203,
@@ -2354,20 +1887,16 @@
         "ConditionParam": 130202,
         "CompleteType": 5,
         "CompleteParam": "SViewCharacterList",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130204,
@@ -2375,14 +1904,7 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 130203,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -2396,7 +1918,9 @@
         "Target": [
             "SViewCharacterList",
             "BtnCharacter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130205,
@@ -2404,21 +1928,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 130204,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnLevelUp"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130206,
@@ -2426,22 +1945,17 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 130205,
-        "CompleteType": 0,
         "CompleteParam": "UiCharacter|PanelCharLevel",
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnLevelUpButton"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130207,
@@ -2449,22 +1963,17 @@
         "Mask": 1,
         "ConditionType": 6,
         "ConditionParam": 30012,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "选取足够的【经验材料】。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             30012
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "选取足够的【经验材料】。"
     },
     {
         "Id": 130208,
@@ -2472,43 +1981,33 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 130207,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnUpgrade"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130209,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 2,
         "ConditionParam": "UiCharacter|PanelLevelUpgrade",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnMainUi"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130301,
@@ -2516,19 +2015,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "一切就绪，准备前往作战地点。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "一切就绪，准备前往作战地点。"
     },
     {
         "Id": 130302,
@@ -2538,20 +2032,16 @@
         "ConditionParam": 130301,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineBanner",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130303,
@@ -2561,13 +2051,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineChapter",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -2581,7 +2065,9 @@
         "Target": [
             "PanelChapterList",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130304,
@@ -2591,13 +2077,7 @@
         "ConditionParam": 130303,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineDetail",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
@@ -2608,7 +2088,9 @@
         "Target": [
             "PanelStageContent",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130305,
@@ -2618,20 +2100,16 @@
         "ConditionParam": 130304,
         "CompleteType": 1,
         "CompleteParam": "UiNewRoomSingle",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineDetail",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130306,
@@ -2639,19 +2117,14 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 130305,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "编入新队员进行作战。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "编入新队员进行作战。"
     },
     {
         "Id": 130307,
@@ -2661,20 +2134,16 @@
         "ConditionParam": 130306,
         "CompleteType": 1,
         "CompleteParam": "UiMainLineRoomCharacter",
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnChar3"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130308,
@@ -2682,14 +2151,7 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 130307,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMainLineRoomCharacter",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
@@ -2699,7 +2161,10 @@
         ],
         "Target": [
             "PanelRoleContent"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130309,
@@ -2707,43 +2172,32 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 130308,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMainLineRoomCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnJoinTeam"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 130310,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiNewRoomSingle",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnterFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 150101,
@@ -2751,19 +2205,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "活动任务已开启，前往领取任务奖励。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "活动任务已开启，前往领取任务奖励。"
     },
     {
         "Id": 150102,
@@ -2773,20 +2222,16 @@
         "ConditionParam": 150101,
         "CompleteType": 1,
         "CompleteParam": "UiTask",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnLegion"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 150103,
@@ -2794,37 +2239,23 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 150102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiTask",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogActivity"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 150104,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 6,
         "ConditionParam": "PanelTaskActivityList",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiTask",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "选取已完成的任务。",
         "IsFlow": [
             1,
             0
@@ -2838,7 +2269,11 @@
         "Target": [
             "PanelTaskActivityList",
             "BtnFinish"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "选取已完成的任务。"
     },
     {
         "Id": 170101,
@@ -2846,19 +2281,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "日常任务已开启，前往领取任务奖励。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "日常任务已开启，前往领取任务奖励。"
     },
     {
         "Id": 170102,
@@ -2868,20 +2298,16 @@
         "ConditionParam": 170101,
         "CompleteType": 1,
         "CompleteParam": "UiTask",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnLegion"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 170103,
@@ -2889,21 +2315,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 170102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiTask",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogDaily"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 170104,
@@ -2911,39 +2332,29 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 170103,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiTask",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "指挥官通过完成日常任务可以获得相应的【经验值】。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "指挥官通过完成日常任务可以获得相应的【经验值】。"
     },
     {
         "Id": 170105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 170104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiTask",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "记得每日清理任务哦！",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "记得每日清理任务哦！"
     },
     {
         "Id": 180101,
@@ -2951,42 +2362,32 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiNewRoomSingle",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "点击此处发射【支援信号】。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnAssistToggle"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "点击此处发射【支援信号】。"
     },
     {
         "Id": 180102,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 180101,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "如果附近的小队接收到信号，将会前来支援。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "如果附近的小队接收到信号，将会前来支援。"
     },
     {
         "Id": 210101,
@@ -2996,21 +2397,17 @@
         "ConditionParam": "UiMain",
         "CompleteType": 1,
         "CompleteParam": "UiPlayer",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "接下来我们查看一下成就吧。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnRoleInfo"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "接下来我们查看一下成就吧。"
     },
     {
         "Id": 210102,
@@ -3018,41 +2415,31 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 210101,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiPlayer",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogAchv"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 210103,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 210102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiPlayer",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "在该界面领取成就奖励。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "在该界面领取成就奖励。"
     },
     {
         "Id": 220101,
@@ -3060,19 +2447,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "对了，研发中的【狙击模式】可以提高部分装备的概率。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "对了，研发中的【狙击模式】可以提高部分装备的概率。"
     },
     {
         "Id": 220102,
@@ -3082,20 +2464,16 @@
         "ConditionParam": 220101,
         "CompleteType": 1,
         "CompleteParam": "UiDrawMain",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnReward"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 220103,
@@ -3103,21 +2481,16 @@
         "Mask": 1,
         "ConditionType": 6,
         "ConditionParam": "UiDrawMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiDrawMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             2
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 220104,
@@ -3127,40 +2500,31 @@
         "ConditionParam": 220103,
         "CompleteType": 1,
         "CompleteParam": "UiDraw",
-        "Arrow": 0,
         "UiName": "UiDrawMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "DrawStandardJj02"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 220105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 220104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiDraw",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "在下方使用【装备选择】，可以自选一组想要提高概率的装备组合。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "在下方使用【装备选择】，可以自选一组想要提高概率的装备组合。"
     },
     {
         "Id": 230101,
@@ -3170,43 +2534,34 @@
         "ConditionParam": "UiMain",
         "CompleteType": 1,
         "CompleteParam": "UiShop",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "有需要的话，可以进入商店选购需要的物资。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnStore"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "有需要的话，可以进入商店选购需要的物资。"
     },
     {
         "Id": 230102,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 6,
         "ConditionParam": 1,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiShop",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             1
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 250101,
@@ -3214,19 +2569,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "训练已经准备好了，请准备进入意识海。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "训练已经准备好了，请准备进入意识海。"
     },
     {
         "Id": 250102,
@@ -3236,20 +2586,16 @@
         "ConditionParam": 250101,
         "CompleteType": 1,
         "CompleteParam": "UiFuben",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 250103,
@@ -3259,21 +2605,17 @@
         "ConditionParam": 250102,
         "CompleteType": 1,
         "CompleteParam": "UiFubenDailyBanner",
-        "Arrow": 0,
         "UiName": "UiFuben",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "切换为日常分页。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogDaily"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "切换为日常分页。"
     },
     {
         "Id": 250104,
@@ -3283,13 +2625,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenChallengeMap",
-        "Arrow": 0,
         "UiName": "UiFubenDailyBanner",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -3299,27 +2635,24 @@
         ],
         "Target": [
             "PanelChapterList"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 250105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 250104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenChallengeMap",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "挑战完成后可获得丰富的【构造体经验】。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "挑战完成后可获得丰富的【构造体经验】。"
     },
     {
         "Id": 260101,
@@ -3329,41 +2662,32 @@
         "ConditionParam": "UiMain",
         "CompleteType": 1,
         "CompleteParam": "UiMission",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "嘟嘟嘟，听到吗，你有一则派遣任务通知。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnDispatch"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "嘟嘟嘟，听到吗，你有一则派遣任务通知。"
     },
     {
         "Id": 260102,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 260101,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMission",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "选择派遣任务，添加人员，完成任务获取奖励。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "选择派遣任务，添加人员，完成任务获取奖励。"
     },
     {
         "Id": 270101,
@@ -3373,21 +2697,17 @@
         "ConditionParam": "UiMain",
         "CompleteType": 5,
         "CompleteParam": "SViewCharacterList",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "阿！忘记说了，构造体可以改变涂装！",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "阿！忘记说了，构造体可以改变涂装！"
     },
     {
         "Id": 270102,
@@ -3395,14 +2715,7 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 270101,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -3416,7 +2729,9 @@
         "Target": [
             "SViewCharacterList",
             "BtnCharacter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 270103,
@@ -3426,40 +2741,31 @@
         "ConditionParam": 270102,
         "CompleteType": 1,
         "CompleteParam": "UiFashion",
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFashion"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 270104,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 270103,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFashion",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "获取的涂装可以在这个界面查看。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "获取的涂装可以在这个界面查看。"
     },
     {
         "Id": 1010101,
@@ -3467,19 +2773,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "困难模式中，会产出大量的【武器】和【意识】，对于装备的获取和提升是一个有效的途径。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "困难模式中，会产出大量的【武器】和【意识】，对于装备的获取和提升是一个有效的途径。"
     },
     {
         "Id": 1010102,
@@ -3489,20 +2790,16 @@
         "ConditionParam": 1010101,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineBanner",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1010103,
@@ -3512,13 +2809,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineChapter",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -3532,7 +2823,9 @@
         "Target": [
             "PanelChapterList",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1010104,
@@ -3540,21 +2833,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1010103,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnNormal"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1010105,
@@ -3563,21 +2851,17 @@
         "ConditionType": 3,
         "ConditionParam": 1010104,
         "CompleteType": 5,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "选择困难模式。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnHard"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "选择困难模式。"
     },
     {
         "Id": 1010106,
@@ -3587,20 +2871,16 @@
         "ConditionParam": 1010105,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineDetail",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             11010101
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1010107,
@@ -3610,42 +2890,33 @@
         "ConditionParam": 1010106,
         "CompleteType": 1,
         "CompleteParam": "UiNewRoomSingle",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineDetail",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1010108,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1010107,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiNewRoomSingle",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnEnterFight"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020101,
@@ -3653,19 +2924,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "获得对应的构造体碎片后，可以激活【进化】系统。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "获得对应的构造体碎片后，可以激活【进化】系统。"
     },
     {
         "Id": 1020102,
@@ -3675,20 +2941,16 @@
         "ConditionParam": 1020101,
         "CompleteType": 5,
         "CompleteParam": "SViewCharacterList",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020103,
@@ -3696,14 +2958,7 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1020102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -3717,7 +2972,9 @@
         "Target": [
             "SViewCharacterList",
             "BtnCharacter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020104,
@@ -3725,21 +2982,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1020103,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnLevelUp"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020105,
@@ -3747,21 +2999,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1020104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogQuality"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020106,
@@ -3769,44 +3016,34 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1020105,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "点击激活。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnActive"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "点击激活。"
     },
     {
         "Id": 1020107,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1020106,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnMainUi"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020201,
@@ -3814,19 +3051,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "一切就绪，准备前往作战地点。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "一切就绪，准备前往作战地点。"
     },
     {
         "Id": 1020202,
@@ -3836,20 +3068,16 @@
         "ConditionParam": 1020201,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineBanner",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020203,
@@ -3859,13 +3087,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineChapter",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -3879,7 +3101,9 @@
         "Target": [
             "PanelChapterList",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020204,
@@ -3887,21 +3111,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1020203,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnNormal"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020205,
@@ -3910,20 +3129,16 @@
         "ConditionType": 3,
         "ConditionParam": 1020204,
         "CompleteType": 5,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnHard"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020206,
@@ -3933,13 +3148,7 @@
         "ConditionParam": 1020205,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineDetail",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
@@ -3947,7 +3156,9 @@
         "Target": [
             11010101,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1020207,
@@ -3957,44 +3168,35 @@
         "ConditionParam": 1020206,
         "CompleteType": 1,
         "CompleteParam": "UiAutoFightDialog",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineDetail",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "自动作战，可模拟上1次作战记录进行作战。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnAutoFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "自动作战，可模拟上1次作战记录进行作战。"
     },
     {
         "Id": 1020208,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1020207,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiAutoFightDialog",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "每个战场首次通关后可以使用，减少连接员的操作压力。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnStart"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "每个战场首次通关后可以使用，减少连接员的操作压力。"
     },
     {
         "Id": 1030101,
@@ -4002,19 +3204,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "一起来，进行资源回收！",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "一起来，进行资源回收！"
     },
     {
         "Id": 1030102,
@@ -4024,20 +3221,16 @@
         "ConditionParam": 1030101,
         "CompleteType": 1,
         "CompleteParam": "UiFuben",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1030103,
@@ -4047,21 +3240,17 @@
         "ConditionParam": 1030102,
         "CompleteType": 1,
         "CompleteParam": "UiFubenDailyBanner",
-        "Arrow": 0,
         "UiName": "UiFuben",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "切换为日常分页。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogDaily"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "切换为日常分页。"
     },
     {
         "Id": 1030104,
@@ -4071,13 +3260,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenCoinSkill",
-        "Arrow": 0,
         "UiName": "UiFubenDailyBanner",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -4087,30 +3270,28 @@
         ],
         "Target": [
             "PanelChapterList"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1030105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1030104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenCoinSkill",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 1,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "挑战等级会根据当前指挥官的等级而变动，同时奖励会更丰富。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "PanelTab2"
-        ]
+        ],
+        "IconPos": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "挑战等级会根据当前指挥官的等级而变动，同时奖励会更丰富。"
     },
     {
         "Id": 1070101,
@@ -4118,19 +3299,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "来了！赏金任务已开放。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "来了！赏金任务已开放。"
     },
     {
         "Id": 1070102,
@@ -4140,44 +3316,36 @@
         "ConditionParam": 1070101,
         "CompleteType": 1,
         "CompleteParam": "UiTask",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "SafeAreaContentPane/BgView/Background/BtnLegion"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1070103,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1070102,
         "CompleteType": 1,
         "CompleteParam": "UiMoneyReward",
-        "Arrow": 0,
         "UiName": "UiTask",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "从此处进入赏金任务。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnMoneyReward"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "从此处进入赏金任务。"
     },
     {
         "Id": 1090101,
@@ -4185,19 +3353,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "让我们去看一下收集螺母的战场。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "让我们去看一下收集螺母的战场。"
     },
     {
         "Id": 1090102,
@@ -4207,20 +3370,16 @@
         "ConditionParam": 1090101,
         "CompleteType": 1,
         "CompleteParam": "UiFuben",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1090103,
@@ -4230,21 +3389,17 @@
         "ConditionParam": 1090102,
         "CompleteType": 1,
         "CompleteParam": "UiFubenDailyBanner",
-        "Arrow": 0,
         "UiName": "UiFuben",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "切换为日常分页。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogDaily"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "切换为日常分页。"
     },
     {
         "Id": 1090104,
@@ -4254,13 +3409,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenCoinSkill",
-        "Arrow": 0,
         "UiName": "UiFubenDailyBanner",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -4270,30 +3419,27 @@
         ],
         "Target": [
             "PanelChapterList"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1090105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1090104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenCoinSkill",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "挑战等级会根据当前指挥官的等级而变动，同时奖励会更丰富。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "PanelTab1"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "挑战等级会根据当前指挥官的等级而变动，同时奖励会更丰富。"
     },
     {
         "Id": 340101,
@@ -4303,43 +3449,34 @@
         "ConditionParam": "UiMain",
         "CompleteType": 1,
         "CompleteParam": "UiCharacter",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 340102,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 340101,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "这里可以查看构造体的详情。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnOwnedDetail"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "这里可以查看构造体的详情。"
     },
     {
         "Id": 450101,
@@ -4347,19 +3484,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "继续进行作战。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "继续进行作战。"
     },
     {
         "Id": 450102,
@@ -4369,20 +3501,16 @@
         "ConditionParam": 450101,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineBanner",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 450103,
@@ -4392,13 +3520,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineChapter",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -4412,7 +3534,9 @@
         "Target": [
             "PanelChapterList",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 450104,
@@ -4420,21 +3544,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 450103,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnNormal"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 450105,
@@ -4442,42 +3561,32 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 450104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "选择据点模式",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnNightmare"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "选择据点模式"
     },
     {
         "Id": 450106,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 450105,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineChapter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "据点模式通过后，可提高【派遣收益】。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "据点模式通过后，可提高【派遣收益】。"
     },
     {
         "Id": 2430101,
@@ -4485,19 +3594,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "幻痛囚笼已开放，准备好了吗。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "幻痛囚笼已开放，准备好了吗。"
     },
     {
         "Id": 2430102,
@@ -4507,20 +3611,16 @@
         "ConditionParam": 2430101,
         "CompleteType": 1,
         "CompleteParam": "UiFuben",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 2430103,
@@ -4530,21 +3630,17 @@
         "ConditionParam": 2430102,
         "CompleteType": 1,
         "CompleteParam": "UiFubenChallengeBanner",
-        "Arrow": 0,
         "UiName": "UiFuben",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "切换为挑战分页。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogChallenge"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "切换为挑战分页。"
     },
     {
         "Id": 2430104,
@@ -4554,13 +3650,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenChallengeMapBossSingle",
-        "Arrow": 0,
         "UiName": "UiFubenChallengeBanner",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -4570,27 +3660,24 @@
         ],
         "Target": [
             "PanelChapterList"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 2430105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 2430104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenChallengeMapBossSingle",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "只要击败boss，即可获取【专属货币】进行物资兑换。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "只要击败boss，即可获取【专属货币】进行物资兑换。"
     },
     {
         "Id": 1050101,
@@ -4598,19 +3685,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "一切就绪，准备前往作战地点。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "一切就绪，准备前往作战地点。"
     },
     {
         "Id": 1050102,
@@ -4620,20 +3702,16 @@
         "ConditionParam": 1050101,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineBanner",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1050103,
@@ -4641,21 +3719,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1050102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogTabDz"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1050104,
@@ -4664,13 +3737,7 @@
         "ConditionType": 6,
         "CompleteType": 1,
         "CompleteParam": "UiPrequel",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -4684,27 +3751,24 @@
         "Target": [
             "FullScreenBackground/MainLineChapter3d/PanelChapterDz/PanelChapterDz",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1050105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1050104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiPrequel",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "想更多的了解构造体的，可以尝试一下哦。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "想更多的了解构造体的，可以尝试一下哦。"
     },
     {
         "Id": 1060101,
@@ -4712,19 +3776,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "一切就绪，准备前往作战地点。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "一切就绪，准备前往作战地点。"
     },
     {
         "Id": 1060102,
@@ -4734,20 +3793,16 @@
         "ConditionParam": 1060101,
         "CompleteType": 1,
         "CompleteParam": "UiFubenMainLineBanner",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1060103,
@@ -4755,21 +3810,16 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1060102,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogTabDz"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1060104,
@@ -4778,13 +3828,7 @@
         "ConditionType": 6,
         "CompleteType": 1,
         "CompleteParam": "UiPrequel",
-        "Arrow": 0,
         "UiName": "UiFubenMainLineBanner",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -4798,7 +3842,9 @@
         "Target": [
             "FullScreenBackground/MainLineChapter3d/PanelChapterDz/PanelChapterDz",
             "@"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1060105,
@@ -4806,41 +3852,31 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1060104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiPrequel",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnSwitch2Fight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1060106,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1060105,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiPrequel",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "通过挑战后，有机会获得相应的构造体碎片。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "通过挑战后，有机会获得相应的构造体碎片。"
     },
     {
         "Id": 1040101,
@@ -4848,19 +3884,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "意识营救战已开启。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "意识营救战已开启。"
     },
     {
         "Id": 1040102,
@@ -4870,20 +3901,16 @@
         "ConditionParam": 1040101,
         "CompleteType": 1,
         "CompleteParam": "UiFuben",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1040103,
@@ -4893,21 +3920,17 @@
         "ConditionParam": 1040102,
         "CompleteType": 1,
         "CompleteParam": "UiFubenChallengeBanner",
-        "Arrow": 0,
         "UiName": "UiFuben",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "切换至挑战分页。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogChallenge"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "切换至挑战分页。"
     },
     {
         "Id": 1040104,
@@ -4917,13 +3940,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiTrial",
-        "Arrow": 0,
         "UiName": "UiFubenChallengeBanner",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -4933,27 +3950,24 @@
         ],
         "Target": [
             "PanelChapterList"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1040105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1040104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiTrial",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "挑战副本，赢取【装备奖励】。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "挑战副本，赢取【装备奖励】。"
     },
     {
         "Id": 2370101,
@@ -4961,19 +3975,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "立刻前往，纷争战区！",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "立刻前往，纷争战区！"
     },
     {
         "Id": 2370102,
@@ -4983,20 +3992,16 @@
         "ConditionParam": 2370101,
         "CompleteType": 1,
         "CompleteParam": "UiFuben",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 2370103,
@@ -5006,21 +4011,17 @@
         "ConditionParam": 2370102,
         "CompleteType": 1,
         "CompleteParam": "UiFubenChallengeBanner",
-        "Arrow": 0,
         "UiName": "UiFuben",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "切换至挑战分页。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogChallenge"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "切换至挑战分页。"
     },
     {
         "Id": 2370104,
@@ -5030,13 +4031,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiArena",
-        "Arrow": 0,
         "UiName": "UiFubenChallengeBanner",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -5046,27 +4041,24 @@
         ],
         "Target": [
             "PanelChapterList"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 2370105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 2370104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiArena",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "挑战完成后，有丰富【黑卡奖励】。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "挑战完成后，有丰富【黑卡奖励】。"
     },
     {
         "Id": 150201,
@@ -5074,19 +4066,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "让我们穿戴刚获取的装备。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "让我们穿戴刚获取的装备。"
     },
     {
         "Id": 150202,
@@ -5096,20 +4083,16 @@
         "ConditionParam": 150201,
         "CompleteType": 5,
         "CompleteParam": "SViewCharacterList",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnConstructor"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 150203,
@@ -5117,14 +4100,7 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 150202,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -5138,7 +4114,9 @@
         "Target": [
             "SViewCharacterList",
             "BtnCharacter"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 150204,
@@ -5148,34 +4126,23 @@
         "ConditionParam": 150203,
         "CompleteType": 1,
         "CompleteParam": "UiEquipReplaceNew",
-        "Arrow": 0,
         "UiName": "UiCharacter",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnWeaponReplace"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 150205,
         "NextStep": 150206,
         "Mask": 1,
         "ConditionType": 6,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipReplaceNew",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 1,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             1,
             0
@@ -5186,7 +4153,10 @@
         "Target": [
             "PanelEquipScroll",
             "@"
-        ]
+        ],
+        "IconPos": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 150206,
@@ -5194,41 +4164,31 @@
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 150205,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipReplaceNew",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnTakeOn"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女"
     },
     {
         "Id": 150207,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 150206,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiEquipReplaceNew",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "谜之少女",
-        "Text": "需要更换装备时，吞噬原有装备的【经验值】会100%返还，请放心强化。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "谜之少女",
+        "Text": "需要更换装备时，吞噬原有装备的【经验值】会100%返还，请放心强化。"
     },
     {
         "Id": 1100101,
@@ -5236,19 +4196,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "请前往【界限突破】。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "请前往【界限突破】。"
     },
     {
         "Id": 1100102,
@@ -5258,20 +4213,16 @@
         "ConditionParam": 1100101,
         "CompleteType": 1,
         "CompleteParam": "UiFuben",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1100103,
@@ -5281,21 +4232,17 @@
         "ConditionParam": 1100102,
         "CompleteType": 1,
         "CompleteParam": "UiFubenDailyBanner",
-        "Arrow": 0,
         "UiName": "UiFuben",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "切换至日常分页。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogDaily"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "切换至日常分页。"
     },
     {
         "Id": 1100104,
@@ -5305,13 +4252,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenChallengeMap",
-        "Arrow": 0,
         "UiName": "UiFubenDailyBanner",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -5321,27 +4262,24 @@
         ],
         "Target": [
             "PanelChapterList"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1100105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1100104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenChallengeMap",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "装备突破后会进行【等级重置】，但升级【属性成长】会大大提高。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "装备突破后会进行【等级重置】，但升级【属性成长】会大大提高。"
     },
     {
         "Id": 1080101,
@@ -5349,19 +4287,14 @@
         "Mask": 1,
         "ConditionType": 1,
         "ConditionParam": "UiMain",
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "请前往【EXEM行动】。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "请前往【EXEM行动】。"
     },
     {
         "Id": 1080102,
@@ -5371,20 +4304,16 @@
         "ConditionParam": 1080101,
         "CompleteType": 1,
         "CompleteParam": "UiFuben",
-        "Arrow": 0,
         "UiName": "UiMain",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "BtnFight"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1080103,
@@ -5394,21 +4323,17 @@
         "ConditionParam": 1080102,
         "CompleteType": 1,
         "CompleteParam": "UiFubenDailyBanner",
-        "Arrow": 0,
         "UiName": "UiFuben",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "切换至日常分页。",
         "IsFlow": [
             0,
             0
         ],
         "Target": [
             "TogDaily"
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "切换至日常分页。"
     },
     {
         "Id": 1080104,
@@ -5418,13 +4343,7 @@
         "ConditionParam": "PanelChapterList",
         "CompleteType": 1,
         "CompleteParam": "UiFubenChallengeMap",
-        "Arrow": 0,
         "UiName": "UiFubenDailyBanner",
-        "Record": 1,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
         "IsFlow": [
             1,
             0
@@ -5434,26 +4353,23 @@
         ],
         "Target": [
             "PanelChapterList"
-        ]
+        ],
+        "Record": 1,
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡"
     },
     {
         "Id": 1080105,
-        "NextStep": 0,
         "Mask": 1,
         "ConditionType": 3,
         "ConditionParam": 1080104,
-        "CompleteType": 0,
-        "Arrow": 0,
         "UiName": "UiFubenChallengeMap",
-        "Record": 0,
-        "RewardId": 0,
-        "IconPos": 0,
-        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
-        "Name": "赛利卡",
-        "Text": "挑战完成后有机会获得【高级装备】。",
         "IsFlow": [
             0,
             0
-        ]
+        ],
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Name": "赛利卡",
+        "Text": "挑战完成后有机会获得【高级装备】。"
     }
 ]

@@ -7,7 +7,6 @@
         "DetailShowType": 1,
         "Name": "生命",
         "Desc": "提升基础生命值",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 102
     },
@@ -31,7 +30,6 @@
         "DetailShowType": 1,
         "Name": "攻击",
         "Desc": "提升基础攻击力",
-        "IsPercent": 0,
         "MaxLevel": 39,
         "Order": 101
     },
@@ -187,7 +185,6 @@
         "DetailShowType": 1,
         "Name": "失衡增益",
         "Desc": "提升对BOSS平衡值的削减能力",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 116
     },
@@ -222,7 +219,6 @@
         "DetailShowType": 1,
         "Name": "初始必杀能量",
         "Desc": "进入战斗获得一定的<color=#ffdd93>必杀能量</color>。",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1001
     },
@@ -233,7 +229,6 @@
         "DetailShowType": 1,
         "Name": "追击技能增伤",
         "Desc": "追击技能伤害加成",
-        "IsPercent": 0,
         "MaxLevel": 26,
         "Order": 1006
     },
@@ -256,7 +251,6 @@
         "DetailShowType": 1,
         "Name": "燃血加成",
         "Desc": "自身<color=#ffdd93>剩余生命值</color>越少，提升的<color=#ffdd93>总伤害加成</color>越高",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1008
     },
@@ -267,7 +261,6 @@
         "DetailShowType": 1,
         "Name": "愈疗强攻",
         "Desc": "<color=#ffdd93>治疗</color>其他玩家后的20秒内，自身<color=#ffdd93>额外伤害加成</color>提升。",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1009
     },
@@ -278,7 +271,6 @@
         "DetailShowType": 1,
         "Name": "盾击强化",
         "Desc": "拥有<color=#ffdd93>护盾</color>及<color=#ffdd93>护盾消失</color>的3秒内，自身<color=#ffdd93>额外伤害加成</color>提升。",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1010
     },
@@ -289,31 +281,38 @@
         "DetailShowType": 1,
         "Name": "援护减伤",
         "Desc": "处于<color=#ffdd93>支援复活其他玩家</color>状态下时，自身<color=#ffdd93>伤害减免</color>提升。",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1011
     },
     {
         "Id": 21012,
+        "AttributeName": "CritDmgRateP",
         "AttributeType": 1,
         "LevelOverlyingType": 1,
         "DetailShowType": 1,
         "Name": "暴伤增益",
         "Desc": "当攻击加深≥50%时<color=#ffdd93>暴击伤害</color>提升。",
-        "IsPercent": 0,
+        "IsPercent": 1,
         "MaxLevel": 13,
-        "Order": 1012
+        "Order": 1012,
+        "Condition": [
+            866475
+        ]
     },
     {
         "Id": 21013,
+        "AttributeName": "CritDmgRateP",
         "AttributeType": 1,
         "LevelOverlyingType": 1,
         "DetailShowType": 1,
         "Name": "绝对优势",
         "Desc": "生命值≥16000时<color=#ffdd93>暴击伤害</color>提升。",
-        "IsPercent": 0,
+        "IsPercent": 1,
         "MaxLevel": 13,
-        "Order": 1013
+        "Order": 1013,
+        "Condition": [
+            866476
+        ]
     },
     {
         "Id": 21014,
@@ -322,7 +321,6 @@
         "DetailShowType": 1,
         "Name": "暴怒特攻",
         "Desc": "对<color=#ffdd93>暴怒</color>状态下的敌人<color=#ffdd93>额外伤害</color>提升。",
-        "IsPercent": 0,
         "MaxLevel": 26,
         "Order": 1014
     },
@@ -333,7 +331,6 @@
         "DetailShowType": 1,
         "Name": "失衡特化",
         "Desc": "对<color=#ffdd93>失衡</color>状态下的敌人<color=#ffdd93>额外伤害</color>提升。",
-        "IsPercent": 0,
         "MaxLevel": 26,
         "Order": 1015
     },
@@ -344,7 +341,6 @@
         "DetailShowType": 1,
         "Name": "绝处逢生",
         "Desc": "濒死时触发<color=#ffdd93>自动重启</color>，<color=#ffdd93>冷却时间</color>过后可再次生效",
-        "IsPercent": 0,
         "MaxLevel": 16,
         "Order": 1016
     },
@@ -355,7 +351,6 @@
         "DetailShowType": 1,
         "Name": "燃血强攻",
         "Desc": "自身<color=#ffdd93>攻击加深</color>提升，但最大生命值减少20%。",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1017
     },
@@ -366,7 +361,6 @@
         "DetailShowType": 1,
         "Name": "乘胜追击",
         "Desc": "自身<color=#ffdd93>剩余生命值</color>越多，提升的<color=#ffdd93>总伤害加成</color>越高。",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1018
     },
@@ -375,197 +369,197 @@
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "劫雷烙影（唯一）",
+        "Name": "劫雷烙影",
         "Desc": "【深红囚影】的【燎荒斩】、【影袭】和【振雷斩】获得<color=#ffdd93>伤害加成</color>。【露西亚·深红囚影】的攻击有概率给敌人留下【伤痕】，【伤痕】最多存在5个，使用【燎荒斩】造成伤害时，会引爆全部【伤痕】降下<color=#ffdd93>落雷造成额外伤害</color>。",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 1
+        "Order": 1,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31002,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "残铭于烬（唯一）",
+        "Name": "残铭于烬",
         "Desc": "【深红囚影】的【剑气】与【剑气攻击】获得<color=#ffdd93>伤害加成</color>，释放【剑气攻击】时会治疗自身0.5%最大生命值，自身攻击命中带有【剑损烙印】的目标时，额外造成一次剑损伤害且不消耗【剑损烙印层数】，该效果每0.5秒最多触发一次。",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 2
+        "Order": 2,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31003,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "镣刃炙锋（唯一）",
+        "Name": "镣刃炙锋",
         "Desc": "【深红囚影】释放【溯轮杀】时获得抗打断。【溯轮杀】<color=#ffdd93>伤害加成</color>，<color=#ffdd93>伤害上限</color>提高。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 7
+        "Order": 7,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31004,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "虚明归鞘（唯一）",
+        "Name": "虚明归鞘",
         "Desc": "【深红囚影】释放【居合斩·极】时按住移动，则会释放【穿梭居合】返回释放起始位置。【居合斩·极】获得<color=#ffdd93>伤害加成</color>。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 8
+        "Order": 8,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31005,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "零我寂深（唯一）",
+        "Name": "零我寂深",
         "Desc": "【深红囚影】释放【乱霆开曜】时，获得的<color=#ffdd93>伤害加成</color>效果和<color=#ffdd93>额外伤害减免</color>效果提升。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 9
+        "Order": 9,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31006,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "悬弧残痕（唯一）",
+        "Name": "悬弧残痕",
         "Desc": "【深红囚影】释放【振雷斩】后会在地面留下裂痕，<color=#ffdd93>裂痕</color>会对范围内的目标每秒造成一次伤害，裂痕持续8秒。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 10
+        "Order": 10,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31007,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "辉铠持护（唯一）",
+        "Name": "辉铠持护",
         "Desc": "【芒星之迹】格挡反击时，自身<color=#ffdd93>额外伤害减免</color>提高，格挡反击获得<color=#ffdd93>伤害加成</color>。在【剑盾状态】下进行完美格挡后，若【星芯值】已满，则可通过长按普攻释放【坠星崩殛】。",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 3
+        "Order": 3,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31008,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "引星偏振（唯一）",
+        "Name": "引星偏振",
         "Desc": "【芒星之迹】在【盾斧状态】下自身获得抗打断，<color=#ffdd93>额外伤害减免</color>、<color=#ffdd93>失衡增益</color>提升。当敌人失衡后，15秒内获得<color=#ffdd93>伤害加成</color>，若自身处于<color=#ffdd93>【狂锯崩解】形态</color>时，该加成时长延续到60秒。",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 4
+        "Order": 4,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31009,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "喷流助推（唯一）",
+        "Name": "喷流助推",
         "Desc": "【芒星之迹】释放【奔星突烁】时，提升【奔星突烁】技能的位移距离，且释放过程中增加格挡判定，可通过摇杆释放。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 11
+        "Order": 11,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31010,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "寰辰增铓（唯一）",
+        "Name": "寰辰增铓",
         "Desc": "【芒星之迹】释放【遥穹合斩】/【疾虹突刺】后的10秒内，自身获得【星芯值】、【超解值】和【锋锐值】的效率提升，获得<color=#ffdd93>伤害加成</color>。【遥穹合斩】/【疾虹突刺】的<color=#ffdd93>技能冷却</color>降低，释放【遥穹合斩】/【疾虹突刺】过程中自身获得抗打断和<color=#ffdd93>额外伤害减免</color>。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 12
+        "Order": 12,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31011,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "聚循标弦（唯一）",
+        "Name": "聚循标弦",
         "Desc": "【芒星之迹】释放【金辉怒嚎】后，自身造成伤害时<color=#ffdd93>仇恨专注</color>提升；一段时间内，自身攻击被嘲讽敌人时，<color=#ffdd93>额外对敌人造成一次伤害</color>，该效果每秒最多生效一次。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 13
+        "Order": 13,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31012,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "星图展开（唯一）",
+        "Name": "星图展开",
         "Desc": "【芒星之迹】在【剑盾】状态下进行第三段【游星辉击】时，点击【耀雷风暴】，可获得强化派生，并获得大量【锋锐值】。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 14
+        "Order": 14,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31013,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "圣颂清愉（唯一）",
+        "Name": "圣颂清愉",
         "Desc": "【极昼】的【颂奏层数】到达满层时，会强化下一次【长夜祈光】和【苍色穹壁】。强化后的【长夜祈光】和【苍色穹壁】将在治疗其他玩家同时，再<color=#ffdd93>额外为全体玩家恢复生命值</color>。",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 5
+        "Order": 5,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     },
     {
         "Id": 31014,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "福临敕断（唯一）",
+        "Name": "福临敕断",
         "Desc": "【极昼】的【裁决辉迹II】若最后一段攻击命中敌人，则额外产生一次<color=#ffdd93>爆炸</color>，并获得两层【颂奏层数】。",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 6
+        "Order": 6,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     },
     {
         "Id": 31015,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "断罪绝罚（唯一）",
+        "Name": "断罪绝罚",
         "Desc": "【极昼】在释放【赤染棘冠】后会进入【极昼状态】。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 15
+        "Order": 15,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     },
     {
         "Id": 31016,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "祝圣启明（唯一）",
+        "Name": "祝圣启明",
         "Desc": "【极昼】释放【极昼宣誓】后自身获得<color=#ffdd93>治疗增益</color>，该治疗增益持续20秒；并释放一次【长夜祈光】。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 16
+        "Order": 16,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     },
     {
         "Id": 31017,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "返身赦章（唯一）",
+        "Name": "返身赦章",
         "Desc": "BOSS处于【暴怒状态】下释放高威胁技能时，会立刻刷新【苍色穹壁】，并获得12层【颂奏层数】。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 17
+        "Order": 17,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     },
     {
         "Id": 31018,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "诵祷虔心（唯一）",
+        "Name": "诵祷虔心",
         "Desc": "【极昼】在进入【极昼状态】后，【长夜祈光】、【苍色穹壁】和【赤染棘冠】冷却减少33%。",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 18
+        "Order": 18,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     }
 ]

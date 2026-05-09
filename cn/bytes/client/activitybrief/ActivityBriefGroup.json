@@ -2,38 +2,26 @@
     {
         "Id": 1,
         "Name": "主线活动",
-        "SkipId": 533,
-        "TimeId": 46120,
+        "SkipId": 534,
+        "TimeId": 47205,
         "BtnInitMethodName": "RefreshActivityMainLine2",
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 9,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "RemindPriority": 12
     },
     {
         "Id": 2,
         "Name": "支线活动",
         "SkipId": 8000,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityBranch",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityBranch"
     },
     {
         "Id": 3,
         "Name": "超难关",
         "SkipId": 11724,
-        "TimeId": 46202,
+        "TimeId": 47901,
         "BtnInitMethodName": "RefreshActivityBossSingle",
         "IsRemindWhenOpen": 1,
         "RemindPriority": 6,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_ACTIVITY_BOSS_SINGLE_REWARD"
         ]
@@ -42,37 +30,19 @@
         "Id": 4,
         "Name": "8/6-8/20",
         "SkipId": 20019,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityBossOnline",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityBossOnline"
     },
     {
         "Id": 5,
         "Name": "间章1",
         "SkipId": 20117,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshAllActivityPrequel",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshAllActivityPrequel"
     },
     {
         "Id": 6,
         "Name": "巴别塔",
         "SkipId": 20015,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshNormal",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_ACTIVITYBRIE_BABELTOWER_REWARD"
         ]
@@ -81,459 +51,246 @@
         "Id": 7,
         "Name": "肉鸽爬塔",
         "SkipId": 20018,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityRogueLike",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityRogueLike"
     },
     {
         "Id": 8,
         "Name": "复刷关",
         "SkipId": 20017,
-        "TimeId": 46709,
+        "TimeId": 47703,
         "BtnInitMethodName": "RefreshActivityRepeateChallenge",
         "IsRemindWhenOpen": 1,
         "RemindPriority": 1,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_REPEAT_CHALLENGE_ENTRANCE"
         ],
         "ActivityRewardIds": [
-            68094
+            69060
         ],
         "RewardShowTimeIds": [
-            46709
+            47703
         ]
     },
     {
         "Id": 9,
         "Name": "区域联机",
         "SkipId": 11723,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityArenaOnline",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityArenaOnline"
     },
     {
         "Id": 10,
         "Name": "狙击战",
         "SkipId": 11722,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityUnionKill",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityUnionKill"
     },
     {
         "Id": 11,
         "Name": "短篇故事",
         "SkipId": 11729,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityShortStories",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityShortStories"
     },
     {
         "Id": 12,
         "Name": "间章2",
         "SkipId": 11731,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshAllActivityPrequel",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshAllActivityPrequel"
     },
     {
         "Id": 13,
         "Name": "异聚迷宫",
         "SkipId": 11726,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityLabyrinth",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityLabyrinth"
     },
     {
         "Id": 14,
         "Name": "公会系统",
         "SkipId": 15001,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivitySociety",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivitySociety"
     },
     {
         "Id": 15,
         "Name": "资源AE5",
         "SkipId": 11728,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityResource",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityResource"
     },
     {
         "Id": 16,
         "Name": "特训关",
         "SkipId": 89025,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshActivitySpecialTrain",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "Default",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "Default"
     },
     {
         "Id": 17,
         "Name": "九龙战役",
         "SkipId": 99998,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityExtra",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityExtra"
     },
     {
         "Id": 18,
         "Name": "世界Boss",
         "SkipId": 11735,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshWorldBoss",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshWorldBoss"
     },
     {
         "Id": 19,
         "Name": "自走棋",
         "SkipId": 20104,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshExpedition",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshExpedition"
     },
     {
         "Id": 20,
         "Name": "新增终极区",
         "SkipId": 10009,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshFubenBossSingle",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_ACTIVITYBRIE_BOSSSINGLE",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "CONDITION_ACTIVITYBRIE_BOSSSINGLE"
     },
     {
         "Id": 21,
         "Name": "活动商店",
         "SkipId": 20055,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityShop",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityShop"
     },
     {
         "Id": 22,
         "Name": "番外-隐藏",
         "SkipId": 99995,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityExtra",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityExtra"
     },
     {
         "Id": 23,
         "Name": "大富翁玩法",
         "SkipId": 11737,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshMaintainerAction",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshMaintainerAction"
     },
     {
         "Id": 24,
         "Name": "RPG玩法",
         "SkipId": 11736,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshRpgTower",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshRpgTower"
     },
     {
         "Id": 25,
         "Name": "活动抽卡",
         "SkipId": 20053,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshDrawActivity",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshDrawActivity"
     },
     {
         "Id": 26,
         "Name": "终焉福音-主线跑团活动",
         "SkipId": 11738,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshTRPG",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshTRPG"
     },
     {
         "Id": 27,
         "Name": "新角色试玩",
         "SkipId": 20235,
-        "TimeId": 46201,
+        "TimeId": 47101,
         "BtnInitMethodName": "RefreshNewCharActivity",
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 4,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_NEWCHARACT_ISCHALLENGEABLE",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
+        "RemindPriority": 3,
         "RedConditions": [
             "CONDITION_KOROMCHARACTIVITYMAINRED"
-        ]
+        ],
+        "TagCondition": "CONDITION_NEWCHARACT_ISCHALLENGEABLE"
     },
     {
         "Id": 28,
         "Name": "涂装试玩关",
         "SkipId": 10035,
-        "TimeId": 46204,
+        "TimeId": 47406,
         "BtnInitMethodName": "RefreshFubenActivityTrial",
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 8,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "RemindPriority": 5,
+        "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL"
     },
     {
         "Id": 29,
         "Name": "师徒系统",
         "SkipId": 15003,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshShiTu",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshShiTu"
     },
     {
         "Id": 30,
         "Name": "尼尔玩法",
         "SkipId": 11749,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshNier",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshNier"
     },
     {
         "Id": 31,
         "Name": "口袋战双",
         "SkipId": 11750,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshPokemon",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshPokemon"
     },
     {
         "Id": 32,
         "Name": "追及玩法",
         "SkipId": 11751,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshPursuit",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshPursuit"
     },
     {
         "Id": 33,
         "Name": "超级据点",
         "SkipId": 70001,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshStrongHold",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshStrongHold"
     },
     {
         "Id": 34,
         "Name": "模拟作战",
         "SkipId": 11752,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshSimulate",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshSimulate"
     },
     {
         "Id": 35,
         "Name": "宠物",
         "SkipId": 7110,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshPartner",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshPartner"
     },
     {
         "Id": 36,
         "Name": "2021白色情人节",
-        "SkipId": 80011,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "SkipId": 80011
     },
     {
         "Id": 37,
         "Name": "猜拳小游戏",
-        "SkipId": 11753,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "SkipId": 11753
     },
     {
         "Id": 38,
         "Name": "萌战",
         "SkipId": 11756,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshMoeWar",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshMoeWar"
     },
     {
         "Id": 39,
         "Name": "宠物抽卡系统",
         "SkipId": 7212,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshPetCard",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshPetCard"
     },
     {
         "Id": 40,
         "Name": "新宠物活动",
         "SkipId": 7109,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshPetTrial",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshPetTrial"
     },
     {
         "Id": 41,
         "Name": "翻牌拼大小",
         "SkipId": 11761,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshPokerGuessing",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshPokerGuessing"
     },
     {
         "Id": 42,
         "Name": "骇入玩法",
         "SkipId": 11758,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshHack",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshHack"
     },
     {
         "Id": 43,
         "Name": "推箱子",
         "SkipId": 20128,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshRpgMaker",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_RPG_MAKER_GAME_RED"
         ]
@@ -542,13 +299,7 @@
         "Id": 44,
         "Name": "界限构解",
         "SkipId": 81104,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshReform",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_REFORM_All_RED_POINT"
         ]
@@ -557,72 +308,36 @@
         "Id": 45,
         "Name": "双人同行",
         "SkipId": 82001,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshCoupleCombat",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshCoupleCombat"
     },
     {
         "Id": 46,
         "Name": "超级爬塔",
         "SkipId": 20084,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshSuperTower",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshSuperTower"
     },
     {
         "Id": 47,
         "Name": "夏活系列关",
         "SkipId": 20088,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshSummerSeries",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshSummerSeries"
     },
     {
         "Id": 48,
         "Name": "杀戮空间",
         "SkipId": 20083,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshKillZone",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshKillZone"
     },
     {
         "Id": 49,
         "Name": "虚像地平线",
         "SkipId": 11734,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshExpedition",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshExpedition"
     },
     {
         "Id": 50,
         "Name": "三消-链合回路",
         "SkipId": 82010,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_SAMECOLOR_IS_CHALLENGE"
         ]
@@ -631,178 +346,96 @@
         "Id": 51,
         "Name": "全境特遣-全服决战",
         "SkipId": 80176,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshAreaWar",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "XRedPointConditionAreaWarActivityTag",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "XRedPointConditionAreaWarActivity"
-        ]
+        ],
+        "TagCondition": "XRedPointConditionAreaWarActivityTag"
     },
     {
         "Id": 52,
         "Name": "超限乱斗",
         "SkipId": 20104,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshSuperSmashBros",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "Default",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "Default"
     },
     {
         "Id": 53,
         "Name": "教学关涂装试玩",
         "SkipId": 89012,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshTeachingSkin",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "Default",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "Default"
     },
     {
         "Id": 54,
         "Name": "射击玩法",
         "SkipId": 89011,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshMaverick",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "Default",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "Default"
     },
     {
         "Id": 55,
         "Name": "意识营救战",
         "SkipId": 82040,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshMemorySave",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshMemorySave"
     },
     {
         "Id": 56,
         "Name": "肉鸽玩法",
         "SkipId": 82020,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshTheatre",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshTheatre"
     },
     {
         "Id": 57,
         "Name": "模拟经营",
         "SkipId": 82050,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshDoomsDay",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshDoomsDay"
     },
     {
         "Id": 58,
         "Name": "独域特攻 - Sp角色",
         "SkipId": 82070,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshPivotCombat",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_PIVOTCOMBAT_NEW_AREA_OPEN_RED_POINT",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "CONDITION_PIVOTCOMBAT_NEW_AREA_OPEN_RED_POINT"
     },
     {
         "Id": 59,
         "Name": "限时逃脱",
         "SkipId": 82080,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshEscape",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_ESCAPE_ACTIVITY_CHALLENGE",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "CONDITION_ESCAPE_ACTIVITY_CHALLENGE"
     },
     {
         "Id": 60,
         "Name": "浮点纪实-故事集",
         "SkipId": 20191,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshFubenShortStory",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshFubenShortStory"
     },
     {
         "Id": 61,
         "Name": "塔防",
         "SkipId": 82100,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshDoubleTower",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshDoubleTower"
     },
     {
         "Id": 62,
         "Name": "副面板活动商店",
-        "SkipId": 0,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshFubenShortStory",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshFubenShortStory"
     },
     {
         "Id": 63,
         "Name": "副面板跳转",
         "SkipId": 20125,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshSecondActivityPanel",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshSecondActivityPanel"
     },
     {
         "Id": 64,
         "Name": "工会战",
         "SkipId": 85016,
-        "TimeId": 0,
+        "TimeId": 47201,
         "BtnInitMethodName": "RefreshGuildWar",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 2,
         "RedConditions": [
             "CONDITION_GUILDWAR_Main"
         ]
@@ -811,163 +444,85 @@
         "Id": 65,
         "Name": "矿工",
         "SkipId": 20177,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshGoldenMiner",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "Default",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_GOLDEN_MINER_REWARD"
-        ]
+        ],
+        "TagCondition": "Default"
     },
     {
         "Id": 66,
         "Name": "春节七关",
         "SkipId": 83010,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshNormal",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshNormal"
     },
     {
         "Id": 67,
         "Name": "音游小游戏",
         "SkipId": 84010,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshTaiKoMaster",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_ACTIVITY_TAIKO_MASTER_CD_UNLOCK",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "CONDITION_ACTIVITY_TAIKO_MASTER_CD_UNLOCK"
     },
     {
         "Id": 68,
         "Name": "多维挑战",
         "SkipId": 84020,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshMultiDim",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshMultiDim"
     },
     {
         "Id": 69,
         "Name": "活动剧情",
         "SkipId": 20147,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityFestival",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityFestival"
     },
     {
         "Id": 70,
         "Name": "拟真围剿",
         "SkipId": 84040,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshGuildBoss",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshGuildBoss"
     },
     {
         "Id": 71,
         "Name": "正逆塔-心象风景",
         "SkipId": 85013,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshTwoSideTower",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_TWO_SIDE_TOWER_NEW_CHAPTER",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "CONDITION_TWO_SIDE_TOWER_NEW_CHAPTER"
     },
     {
         "Id": 72,
         "Name": "特训关",
         "SkipId": 11727,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivitySpecialTrain",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivitySpecialTrain"
     },
     {
         "Id": 73,
         "Name": "七夕活动",
         "SkipId": 11761,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityFestival",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityFestival"
     },
     {
         "Id": 74,
         "Name": "肉鸽2.0（厄愿潮声）",
         "SkipId": 85015,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshBiancaTheatre",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshBiancaTheatre"
     },
     {
         "Id": 75,
         "Name": "中秋活动剧情",
         "SkipId": 20166,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityFestival",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityFestival"
     },
     {
         "Id": 76,
         "Name": "本我回廊",
         "SkipId": 11772,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityCharacterTower",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityCharacterTower"
     },
     {
         "Id": 77,
         "Name": "战双大秘境",
         "SkipId": 80201,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshActivityRift",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_RIFT_ENTRANCE"
         ]
@@ -976,164 +531,87 @@
         "Id": 78,
         "Name": "调色板战争",
         "SkipId": 88004,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshColorTable",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshColorTable"
     },
     {
         "Id": 79,
         "Name": "光辉同行",
         "SkipId": 89001,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshBrilliantWalk",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshBrilliantWalk"
     },
     {
         "Id": 80,
         "Name": "意识公约",
         "SkipId": 11775,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshFubenAwareness",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshFubenAwareness"
     },
     {
         "Id": 81,
         "Name": "战双厨房",
         "SkipId": 89008,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshRestaurant",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshRestaurant"
     },
     {
         "Id": 82,
         "Name": "特训关",
         "SkipId": 89007,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshActivitySpecialTrain",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "Default",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "Default"
     },
     {
         "Id": 83,
         "Name": "节日剧情",
         "SkipId": 90024,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshActivityFestival",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 15010306,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_ACTIVITY_FESTIVAL_DMC"
-        ]
+        ],
+        "RedParam": 15010306
     },
     {
         "Id": 84,
         "Name": "情人节",
         "SkipId": 89013,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshNormal",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_MAZE_FIRST_TIME",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "CONDITION_MAZE_FIRST_TIME"
     },
     {
         "Id": 85,
         "Name": "星星环游记",
         "SkipId": 89015,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshPlanetRunning",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_PLANET_RUNNING_NEW_CHAPTER",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "CONDITION_PLANET_RUNNING_NEW_CHAPTER"
     },
     {
         "Id": 86,
         "Name": "BVB",
         "SkipId": 89016,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshMonsterCombat",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_MONSTER_COMBAT_NEW_CHAPTER",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "CONDITION_MONSTER_COMBAT_NEW_CHAPTER"
     },
     {
         "Id": 87,
         "Name": "三头犬-余尘三重奏",
         "SkipId": 89018,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshNormal",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshNormal"
     },
     {
         "Id": 88,
         "Name": "超限连战",
         "SkipId": 89023,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshTransfinite",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshTransfinite"
     },
     {
         "Id": 89,
         "Name": "肉鸽3.0",
         "SkipId": 89027,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshTheatre3",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshTheatre3"
     },
     {
         "Id": 90,
         "Name": "黑岩国际战旗",
         "SkipId": 89028,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshNormal",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_BLACK_ROCK_CHESS_ENTRANCE"
         ]
@@ -1142,13 +620,7 @@
         "Id": 91,
         "Name": "九龙一商",
         "SkipId": 89044,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshNormal",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_ROGUESIM_ACTIVITY"
         ]
@@ -1157,13 +629,7 @@
         "Id": 92,
         "Name": "2.9主线活动特殊配置-隐藏关",
         "SkipId": 511,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshActivityMainLine",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_MAINLINE_CHAPTER_REWARD"
         ]
@@ -1172,25 +638,13 @@
         "Id": 94,
         "Name": "涂装试玩关合体版",
         "SkipId": 10035,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshFubenActivityTrial",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL"
     },
     {
         "Id": 95,
         "Name": "魔方弹跳乐",
         "SkipId": 89045,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_DLC_CASUAL_ACTIVITY"
         ]
@@ -1199,70 +653,40 @@
         "Id": 96,
         "Name": "隐藏剧情",
         "SkipId": 510,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityMainLine",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityMainLine"
     },
     {
         "Id": 97,
         "Name": "土耳其方块",
         "SkipId": 89049,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_FANGKUAI_CHALLENGE",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_FANGKUAI_MAIN"
-        ]
+        ],
+        "TagCondition": "CONDITION_FANGKUAI_CHALLENGE"
     },
     {
         "Id": 98,
         "Name": "言灵",
         "SkipId": 89050,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_KOTODAMA_NO_PASS_ALLSTAGE",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_KOTODAMA_MAIN"
-        ]
+        ],
+        "TagCondition": "CONDITION_KOTODAMA_NO_PASS_ALLSTAGE"
     },
     {
         "Id": 99,
         "Name": "庙会",
         "SkipId": 89052,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshNormal",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagCondition": "CONDITION_TEMPLE_CHALLENGE",
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_TEMPLE_MAIN"
-        ]
+        ],
+        "TagCondition": "CONDITION_TEMPLE_CHALLENGE"
     },
     {
         "Id": 100,
         "Name": "战双工艺",
         "SkipId": 89058,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_LINKCRAFT_MAIN"
         ]
@@ -1271,12 +695,6 @@
         "Id": 101,
         "Name": "卧猫藏鼠",
         "SkipId": 89057,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_DLC_MOUSE_HUNTER_ACTIVITY"
         ]
@@ -1285,26 +703,14 @@
         "Id": 102,
         "Name": "拉弥亚涂装试玩关",
         "SkipId": 10035,
-        "TimeId": 0,
         "BtnInitMethodName": "RefreshFubenActivityTrial",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
         "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL",
-        "TagOffset": 0.0,
-        "TagParam": 107,
-        "ConstShowRewardId": 0
+        "TagParam": 107
     },
     {
         "Id": 103,
         "Name": "万事大连线",
         "SkipId": 89062,
-        "TimeId": 46910,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 7,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_LINE_ARITHMETIC"
         ]
@@ -1313,12 +719,6 @@
         "Id": 104,
         "Name": "效应玩法",
         "SkipId": 89063,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_MECHANISM_MAIN"
         ]
@@ -1327,12 +727,6 @@
         "Id": 105,
         "Name": "涂装剧情",
         "SkipId": 89065,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_FASHION_STORY_ENTRANCE"
         ]
@@ -1341,12 +735,6 @@
         "Id": 106,
         "Name": "评分玩法",
         "SkipId": 89061,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_BOSS_INSHOT"
         ]
@@ -1355,12 +743,6 @@
         "Id": 107,
         "Name": "新高难",
         "SkipId": 89073,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_SUCCEED_BOSS"
         ]
@@ -1369,12 +751,6 @@
         "Id": 108,
         "Name": "数据演习活动",
         "SkipId": 89071,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_SIMULATE_TRAIN"
         ]
@@ -1383,12 +759,6 @@
         "Id": 109,
         "Name": "逛街玩法",
         "SkipId": 89074,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_TEMPLE2"
         ]
@@ -1397,12 +767,6 @@
         "Id": 110,
         "Name": "背包整理",
         "SkipId": 90020,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_BAGORGANIZE_ANY"
         ]
@@ -1411,12 +775,6 @@
         "Id": 111,
         "Name": 2048,
         "SkipId": 89075,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_GAME2048_MAIN"
         ]
@@ -1425,12 +783,6 @@
         "Id": 112,
         "Name": "FPS",
         "SkipId": 89079,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_FPSGAME_MAIN"
         ]
@@ -1439,12 +791,6 @@
         "Id": 113,
         "Name": "精选关",
         "SkipId": 90010,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_STAGE_MEMORY"
         ]
@@ -1452,24 +798,12 @@
     {
         "Id": 114,
         "Name": "露娜卡池皮",
-        "SkipId": 80203,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "SkipId": 80203
     },
     {
         "Id": 115,
         "Name": "异构阵线·绝境先锋",
         "SkipId": 90011,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_MAVERICK3_MAIN"
         ]
@@ -1478,12 +812,6 @@
         "Id": 116,
         "Name": "幸运房东",
         "SkipId": 90014,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_LUCKY_TENANT2"
         ]
@@ -1492,12 +820,6 @@
         "Id": 117,
         "Name": "可肝角色卡池",
         "SkipId": 20239,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_GACHACANLIVER_MAIN"
         ]
@@ -1506,12 +828,6 @@
         "Id": 118,
         "Name": "拟像试炼",
         "SkipId": 89061,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_BOSS_INSHOT"
         ]
@@ -1520,12 +836,6 @@
         "Id": 119,
         "Name": "打牌",
         "SkipId": 90016,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_PCG_ACTIVITY"
         ]
@@ -1534,12 +844,6 @@
         "Id": 120,
         "Name": "情人节",
         "SkipId": 90018,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_POKER_GUESSING2"
         ]
@@ -1548,12 +852,6 @@
         "Id": 121,
         "Name": "新矿区",
         "SkipId": 89091,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_SCORETOWER_MAIN"
         ]
@@ -1562,12 +860,6 @@
         "Id": 122,
         "Name": "吃豆人",
         "SkipId": 90025,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_PACMAN2_NEW_STAGE"
         ]
@@ -1576,12 +868,6 @@
         "Id": 123,
         "Name": "肉鸽5",
         "SkipId": 89092,
-        "TimeId": 46401,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 2,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_THEATRE5_PVP_NEW_ACTIVITY"
         ]
@@ -1590,24 +876,15 @@
         "Id": 124,
         "Name": "3.6下半主线活动",
         "SkipId": 526,
-        "TimeId": 0,
-        "BtnInitMethodName": "RefreshActivityMainLine2",
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "BtnInitMethodName": "RefreshActivityMainLine2"
     },
     {
         "Id": 125,
         "Name": "全系回溯加料",
         "SkipId": 89093,
-        "TimeId": 46101,
+        "TimeId": 47401,
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 5,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
+        "RemindPriority": 8,
         "RedConditions": [
             "CONDITION_BOUNTY_CHALLENGE"
         ]
@@ -1616,12 +893,6 @@
         "Id": 126,
         "Name": "作战覆写",
         "SkipId": 89094,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_SOLO_REFORM_MAIN",
             "CONDITION_SOLO_REFORM_CHALLENGE_TASK"
@@ -1631,12 +902,6 @@
         "Id": 133,
         "Name": "赌马",
         "SkipId": 89100,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_RACE_MAIN"
         ]
@@ -1645,12 +910,6 @@
         "Id": 134,
         "Name": "周年面板",
         "SkipId": 89047,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_ANNIVERSARY_REPEATCHALLENGE",
             "CONDITION_ANNIVERSARY_DRAW",
@@ -1659,14 +918,11 @@
     },
     {
         "Id": 135,
-        "Name": "空花1.5",
+        "Name": "空花2.0",
         "SkipId": 89076,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
+        "TimeId": 47002,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 10,
         "RedConditions": [
             "CONDITION_BIG_WORLD_SKY_GARDEN_ENTRANCE"
         ]
@@ -1675,12 +931,6 @@
         "Id": 136,
         "Name": "空花预热签到",
         "SkipId": 90058,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_RADIO_SIGN"
         ]
@@ -1689,12 +939,6 @@
         "Id": 137,
         "Name": "relink",
         "SkipId": 90047,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_DLC_RELINK_MAIN"
         ]
@@ -1702,24 +946,15 @@
     {
         "Id": 138,
         "Name": "卡池皮肤试玩",
-        "SkipId": 20321,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "SkipId": 20363,
+        "TimeId": 47911,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 7
     },
     {
         "Id": 139,
         "Name": "情人节打牌",
         "SkipId": 90018,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_POKER_GUESSING2"
         ]
@@ -1727,24 +962,12 @@
     {
         "Id": 140,
         "Name": "勤务商店",
-        "SkipId": 90055,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "SkipId": 90055
     },
     {
         "Id": 141,
         "Name": "勤务任务",
         "SkipId": 90057,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_TASK_CANLIVER"
         ]
@@ -1752,24 +975,15 @@
     {
         "Id": 142,
         "Name": "肉鸽4",
-        "SkipId": 89090,
-        "TimeId": 0,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0
+        "SkipId": 89090
     },
     {
         "Id": 143,
         "Name": "大好感",
-        "SkipId": 20333,
-        "TimeId": 46651,
+        "SkipId": 20362,
+        "TimeId": 47801,
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 3,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
+        "RemindPriority": 4,
         "RedConditions": [
             "CONDITION_FAVORABILITY_STORY_GIFT_TASK"
         ]
@@ -1778,14 +992,24 @@
         "Id": 144,
         "Name": "战双兄弟",
         "SkipId": 1300635,
-        "TimeId": 46930,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 10,
-        "RedParam": 0,
-        "TagOffset": 0.0,
-        "ConstShowRewardId": 0,
         "RedConditions": [
             "CONDITION_PBRGAME_MAIN"
         ]
+    },
+    {
+        "Id": 145,
+        "Name": "小游戏合集",
+        "SkipId": 1300640,
+        "TimeId": 47501,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 9
+    },
+    {
+        "Id": 146,
+        "Name": "肉鸽6",
+        "SkipId": 89102,
+        "TimeId": 47121,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 11
     }
 ]

@@ -4,12 +4,6 @@
         "TitleCN": "成员狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 1,
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 40,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 1,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体"
@@ -26,6 +20,9 @@
             "新的A级角色进入狙击模式的时间请参考相关公告说明",
             "在成员狙击卡池中，A级及S级角色的保底次数均不会因狙击角色的变更而受影响，即保底次数继承"
         ],
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 40,
+        "IsShowFilter": 1,
         "CharFilterElementList": [
             1,
             2,
@@ -43,13 +40,6 @@
         "Id": 2,
         "TitleCN": "武器研发",
         "TitleEN": "Standard Mode",
-        "RareRank": 0,
-        "BottomText": "6星保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "每研发10次必出五星或以上武器",
             "每研发30次必出六星武器"
@@ -61,19 +51,13 @@
         "BaseRules": [
             "每研发10次必出五星或以上武器。",
             "每研发30次必出六星武器。"
-        ]
+        ],
+        "BottomText": "6星保底"
     },
     {
         "Id": 4,
         "TitleCN": "狙击武器研发",
         "TitleEN": "Optional Mode",
-        "RareRank": 0,
-        "BottomText": "6星保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 1,
         "MainRules": [
             "任选一组UP，占6星出率80%",
             "每研发10次必出五星或以上武器",
@@ -82,13 +66,17 @@
         "BaseRuleTitles": [
             "自选组合",
             "狙击模式详解",
-            "校准系统"
+            "校准系统",
+            "源树脉络武器获取规则"
         ],
         "BaseRules": [
             "选择1种装备组合进行抽取，特定组合获得概率提升。",
             "狙击武器可以选择你想要的武器进行大幅度概率提升。",
-            "抽出六星武器时，如果没有抽到当前选中的目标武器，则会触发校准系统，下次抽出六星武器时，必定为当前选中的自选目标武器。（校准保底同名卡池继承）"
+            "抽出六星武器时，如果没有抽到当前选中的目标武器，则会触发校准系统，下次抽出六星武器时，必定为当前选中的自选目标武器。（校准保底同名卡池继承）",
+            "限定武器仅在源树脉络研发开启期间开放获取，指挥官无法从其他途径获取相关限定内容。【无光暮途】以及【空境悬海的涟漪】卡池将视为源树脉络卡池。"
         ],
+        "BottomText": "6星保底",
+        "IsShowFilter": 1,
         "DrawRules": [
             "<color=#ff5f2d>6星武器</color>",
             "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>5星</color>或以上武器"
@@ -98,15 +86,6 @@
         "Id": 6,
         "TitleCN": "宿舍研发",
         "TitleEN": "Standard Mode",
-        "RareRank": 0,
-        "UpQuality": "<color=#fee82a>6星</color>",
-        "UpProbability": "<color=#fee82a>80%</color>",
-        "BottomText": "保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "每10回必出涂装设计草稿。"
         ],
@@ -117,22 +96,15 @@
         "BaseRules": [
             "可抽取家具、改造图纸、涂装设计草稿、入住凭证。",
             "版本新型家具暂不加入卡池。"
-        ]
+        ],
+        "UpQuality": "<color=#fee82a>6星</color>",
+        "UpProbability": "<color=#fee82a>80%</color>",
+        "BottomText": "保底"
     },
     {
         "Id": 10,
         "TitleCN": "主题狙击武器",
         "TitleEN": "Standard Mode",
-        "RareRank": 0,
-        "UpType": "武器",
-        "UpQuality": "<color=#fee82a>6星</color>",
-        "UpProbability": "<color=#fee82a>80%</color>",
-        "BottomText": "6星保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "每研发10次必出五星或以上武器",
             "每研发30次必出六星武器"
@@ -150,22 +122,17 @@
         ],
         "EventRules": [
             "若研发时抽出6星武器，则有80%几率判定为UP武器。"
-        ]
+        ],
+        "UpType": "武器",
+        "UpQuality": "<color=#fee82a>6星</color>",
+        "UpProbability": "<color=#fee82a>80%</color>",
+        "BottomText": "6星保底"
     },
     {
         "Id": 11,
-        "TitleCN": "主题活动角色",
+        "TitleCN": "逆冕活动角色",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体"
@@ -173,12 +140,14 @@
         "BaseRuleTitles": [
             "10连保底A级",
             "60连保底S级",
-            "卡池保底继承规则"
+            "卡池保底继承规则",
+            "源树脉络卡池规则"
         ],
         "BaseRules": [
             "每研发10次，必有A级或以上泛用机体加入队伍。",
             "每研发60次，必有S级泛用机体加入队伍。",
-            "名字类型相同的卡池继承保底，否则不继承。例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。"
+            "名字类型相同的卡池继承保底，否则不继承。例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。【逆冕活动角色】视为源树脉络卡池的同时，与【主题活动角色池】以及【源树脉络复刻池】互相继承保底。",
+            "源树脉络研发为限定卡池，指挥官无法从其他途径获取相关限定内容。【逆冕活动角色池】以及【源树脉络复刻池】将视为源树脉络卡池。"
         ],
         "EventRuleTitles": [
             "占S级出率"
@@ -186,6 +155,10 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。"
         ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
         "DrawRules": [
             "<color=#ff5f2d>S级角色</color>",
             "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
@@ -196,15 +169,6 @@
         "TitleCN": "降临狙击角色",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>70%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体"
@@ -225,25 +189,22 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则有70%几率判定为UP角色。"
         ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>70%</color>",
+        "BottomText": "S级保底",
         "DrawRules": [
             "<color=#ff5f2d>S级角色</color>",
             "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
-        ]
+        ],
+        "IsCharacterImage": 1,
+        "DrawName": "降临狙击"
     },
     {
         "Id": 13,
         "TitleCN": "命运降临狙击角色",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>70%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 80,
-        "SpecialBottomMax": 100,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "1.每10回必有A级或以上泛用机体",
             "2.每80~100回必有S级泛用机体",
@@ -270,25 +231,24 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则有70%几率判定为UP角色。"
         ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>70%</color>",
+        "BottomText": "S级保底",
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
         "DrawRules": [
             "<color=#ff5f2d>S级角色</color>",
             "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
-        ]
+        ],
+        "IsCharacterImage": 1,
+        "DrawName": "命运降临狙击"
     },
     {
         "Id": 14,
         "TitleCN": "降临活动角色",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>70%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体"
@@ -308,22 +268,17 @@
         ],
         "EventRules": [
             "若研发时抽出S级泛用机体，则有70%几率判定为UP角色。"
-        ]
+        ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>70%</color>",
+        "BottomText": "S级保底"
     },
     {
         "Id": 15,
-        "TitleCN": "命运主题活动角色",
+        "TitleCN": "命运逆冕活动角色",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 80,
-        "SpecialBottomMax": 100,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "1.每10回必有A级或以上泛用机体",
             "2.每80~100回必有S级泛用机体",
@@ -334,13 +289,15 @@
             "浮动保底",
             "基础掉率（不含保底）",
             "综合掉率（含保底）",
-            "卡池保底继承规则"
+            "卡池保底继承规则",
+            "源树脉络卡池规则"
         ],
         "BaseRules": [
             "系统会在80-100随机一个值，比如随机到90，那么本次S级保底次数为90，抽出S级后重新随机保底次数。",
             "S级泛用机体基础掉率1.5%。",
             "S级泛用机体综合掉率和其他卡池一致（1.9%）",
-            "名字类型相同的卡池继承保底，否则不继承。例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。"
+            "名字类型相同的卡池继承保底，否则不继承。例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。",
+            "源树脉络研发为限定卡池，指挥官无法从其他途径获取相关限定内容。【命运逆冕活动角色池】以及【命运源树脉络复刻池】将视为源树脉络卡池。"
         ],
         "EventRuleTitles": [
             "占S级出率"
@@ -348,6 +305,12 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。"
         ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
         "DrawRules": [
             "<color=#ff5f2d>S级角色</color>",
             "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
@@ -358,15 +321,6 @@
         "TitleCN": "独域机体狙击角色",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "独域机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 1,
         "MainRules": [
             "每10回必有S级独域机体"
         ],
@@ -385,6 +339,11 @@
         "EventRuleTitles": [
             "占S级出率"
         ],
+        "UpType": "独域机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "IsShowFilter": 1,
         "CharFilterElementList": [
             1,
             2,
@@ -403,15 +362,6 @@
         "TitleCN": "周年限定",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": true,
-        "IsShowFilter": 0,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体"
@@ -431,22 +381,18 @@
         ],
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为当前选中的UP角色。"
-        ]
+        ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "IsNotSelectDefault": true
     },
     {
         "Id": 18,
         "TitleCN": "命运周年限定",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 80,
-        "SpecialBottomMax": 100,
-        "IsNotSelectDefault": true,
-        "IsShowFilter": 0,
         "MainRules": [
             "1.每10回必有A级或以上泛用机体",
             "2.每80~100回必有S级泛用机体",
@@ -470,22 +416,20 @@
         ],
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为当前选中的UP角色。"
-        ]
+        ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": true
     },
     {
         "Id": 19,
         "TitleCN": "联动狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体",
@@ -508,22 +452,17 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。",
             "每10回研发后，额外奖励3回研发（750联动角色研发券）"
-        ]
+        ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底"
     },
     {
         "Id": 20,
         "TitleCN": "命运联动狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 80,
-        "SpecialBottomMax": 100,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "1.每10回必有A级或以上泛用机体",
             "2.每80~100回必有S级泛用机体",
@@ -549,19 +488,18 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。",
             "每10回研发后，额外奖励3回研发（750联动角色研发券）"
-        ]
+        ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100
     },
     {
         "Id": 21,
         "TitleCN": "联动武器狙击",
         "TitleEN": "Standard Mode",
-        "RareRank": 0,
-        "BottomText": "6星保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 1,
         "MainRules": [
             "任选一组UP，占6星出率80%",
             "每研发10次必出五星或以上武器",
@@ -576,20 +514,14 @@
             "选择1种装备组合进行抽取，特定组合获得概率提升。",
             "狙击武器可以选择你想要的武器进行大幅度概率提升。",
             "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池"
-        ]
+        ],
+        "BottomText": "6星保底",
+        "IsShowFilter": 1
     },
     {
         "Id": 22,
         "TitleCN": "辅助机狙击",
         "TitleEN": "Standard Mode",
-        "RareRank": 0,
-        "UpType": "辅助机",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 1,
         "MainRules": [
             "每10回必有A级或以上辅助机",
             "每20回必有S级辅助机"
@@ -597,16 +529,21 @@
         "BaseRuleTitles": [
             "自选组合",
             "狙击模式详解",
-            "卡池保底继承规则"
+            "卡池保底继承规则",
+            "源树脉络辅助机获取规则"
         ],
         "BaseRules": [
             "选择1种辅助机进行抽取，特定目标获得概率提升。",
             "狙击辅助机可以选择你想要的辅助机进行大幅度概率提升。",
-            "在辅助机狙击卡池中，A级及S级的保底次数均不会因狙击目标的变更而受影响，即保底次数继承"
+            "在辅助机狙击卡池中，A级及S级的保底次数均不会因狙击目标的变更而受影响，即保底次数继承",
+            "限定辅助机仅在源树脉络卡池开启期间开放获取，指挥官无法从其他途径获取相关限定内容。【异身】以及【浮浮】卡池将视为源树脉络卡池。"
         ],
         "EventRuleTitles": [
             "占S级出率"
         ],
+        "UpType": "辅助机",
+        "BottomText": "S级保底",
+        "IsShowFilter": 1,
         "DrawRules": [
             "<color=#ff5f2d>S级辅助机</color>",
             "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上辅助机"
@@ -617,15 +554,6 @@
         "TitleCN": "心选狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": true,
-        "IsShowFilter": 1,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体"
@@ -646,6 +574,12 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。"
         ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "IsNotSelectDefault": true,
+        "IsShowFilter": 1,
         "CharFilterElementList": [
             1,
             2,
@@ -660,15 +594,6 @@
         "TitleCN": "命运心选狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 80,
-        "SpecialBottomMax": 100,
-        "IsNotSelectDefault": true,
-        "IsShowFilter": 1,
         "MainRules": [
             "1.每10回必有A级或以上泛用机体",
             "2.每80~100回必有S级泛用机体",
@@ -694,6 +619,14 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。"
         ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": true,
+        "IsShowFilter": 1,
         "CharFilterElementList": [
             1,
             2,
@@ -708,12 +641,6 @@
         "TitleCN": "成员狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 1,
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 1,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体"
@@ -728,6 +655,8 @@
             "狙击模式选择BRS，若产出的泛用机体为A级泛用机体，则BRS占A级角色产出率100%",
             "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池"
         ],
+        "BottomText": "S级保底",
+        "IsShowFilter": 1,
         "CharFilterElementList": [
             1,
             2,
@@ -741,13 +670,6 @@
         "Id": 26,
         "TitleCN": "武器狙击",
         "TitleEN": "Standard Mode",
-        "RareRank": 0,
-        "BottomText": "六星保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 1,
         "MainRules": [
             "每研发10次必出五星或以上武器",
             "每研发30次必出六星武器。【★黑岩巨炮】占六星出率80%"
@@ -764,22 +686,15 @@
         ],
         "EventRuleTitles": [
             "占六星出率"
-        ]
+        ],
+        "BottomText": "六星保底",
+        "IsShowFilter": 1
     },
     {
         "Id": 27,
         "TitleCN": "夏令限定狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": true,
-        "IsShowFilter": 1,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体"
@@ -800,6 +715,12 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为当前选中的UP角色。"
         ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "IsNotSelectDefault": true,
+        "IsShowFilter": 1,
         "CharFilterElementList": [
             1,
             2,
@@ -814,15 +735,6 @@
         "TitleCN": "命运夏令限定狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 80,
-        "SpecialBottomMax": 100,
-        "IsNotSelectDefault": true,
-        "IsShowFilter": 1,
         "MainRules": [
             "1.每10回必有A级或以上泛用机体",
             "2.每80~100回必有S级泛用机体",
@@ -847,6 +759,14 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为当前选中的UP角色。"
         ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": true,
+        "IsShowFilter": 1,
         "CharFilterElementList": [
             1,
             2,
@@ -861,15 +781,6 @@
         "TitleCN": "但丁狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体",
@@ -892,22 +803,17 @@
         ],
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。"
-        ]
+        ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底"
     },
     {
         "Id": 30,
         "TitleCN": "命运但丁狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 80,
-        "SpecialBottomMax": 100,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "1.每10回必有A级或以上泛用机体",
             "2.每80~100回必有S级泛用机体",
@@ -933,22 +839,19 @@
         ],
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。"
-        ]
+        ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100
     },
     {
         "Id": 31,
         "TitleCN": "维吉尔狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体",
@@ -971,22 +874,17 @@
         ],
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。"
-        ]
+        ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底"
     },
     {
         "Id": 32,
         "TitleCN": "命运维吉尔狙击",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 80,
-        "SpecialBottomMax": 100,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "1.每10回必有A级或以上泛用机体",
             "2.每80~100回必有S级泛用机体",
@@ -1012,19 +910,18 @@
         ],
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。"
-        ]
+        ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100
     },
     {
         "Id": 33,
         "TitleCN": "联动武器狙击",
         "TitleEN": "Standard Mode",
-        "RareRank": 0,
-        "BottomText": "6星保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 1,
         "MainRules": [
             "任选一组UP，占6星出率80%",
             "每研发10次必出五星或以上武器",
@@ -1041,20 +938,14 @@
             "狙击武器可以选择你想要的武器进行大幅度概率提升。",
             "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池",
             "抽出六星武器时，如果没有抽到当前选中的目标武器，则会触发校准系统，下次抽出六星武器时，必定为当前选中的自选目标武器。（校准保底同名卡池继承）"
-        ]
+        ],
+        "BottomText": "6星保底",
+        "IsShowFilter": 1
     },
     {
         "Id": 34,
         "TitleCN": "异界装备狙击",
         "TitleEN": "Standard Mode",
-        "RareRank": 0,
-        "UpType": "异界装备",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 1,
         "MainRules": [
             "每10回必有A级或以上异界装备",
             "每20回必有S级异界装备"
@@ -1071,22 +962,16 @@
         ],
         "EventRuleTitles": [
             "占S级出率"
-        ]
+        ],
+        "UpType": "异界装备",
+        "BottomText": "S级保底",
+        "IsShowFilter": 1
     },
     {
         "Id": 35,
         "TitleCN": "淬炼活动角色",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 0,
-        "SpecialBottomMax": 0,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "每10回必有A级或以上泛用机体",
             "每60回必有S级泛用机体"
@@ -1109,6 +994,10 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。"
         ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
         "DrawRules": [
             "<color=#ff5f2d>S级角色</color>",
             "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
@@ -1119,15 +1008,6 @@
         "TitleCN": "命运淬炼活动角色",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
-        "UpType": "泛用机体",
-        "UpQuality": "<color=#fee82a>S级</color>",
-        "UpProbability": "<color=#fee82a>100%</color>",
-        "BottomText": "S级保底",
-        "NewHandBottomCount": 0,
-        "SpecialBottomMin": 80,
-        "SpecialBottomMax": 100,
-        "IsNotSelectDefault": false,
-        "IsShowFilter": 0,
         "MainRules": [
             "1.每10回必有A级或以上泛用机体",
             "2.每80~100回必有S级泛用机体",
@@ -1154,6 +1034,12 @@
         "EventRules": [
             "若研发时抽出S级泛用机体，则必为UP角色。"
         ],
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
         "DrawRules": [
             "<color=#ff5f2d>S级角色</color>",
             "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"

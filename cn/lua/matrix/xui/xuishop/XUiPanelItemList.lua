@@ -51,21 +51,16 @@ function XUiPanelItemList:ShowPanel(id)
 end
 
 function XUiPanelItemList:ShowScreenPanel(shopId,groupId,selectTag,isKeepOrder)
-    local shopShowTypeCfg = XShopConfigs.GetShopShowTypeTemplateById(shopId)
-    if not shopShowTypeCfg or shopShowTypeCfg.ShowType == XShopConfigs.ShowType.Normal then
-        self.GameObject:SetActive(true)
-        self.GoodsList = XShopManager.GetScreenGoodsListByTag(shopId,groupId,selectTag)
-        if isKeepOrder then
-            self:SortByOldGoodsOrder()
-        else
-            self:SaveGoodsOrder()
-        end
-        self:ShowGoods()
-        self.DynamicTable:SetDataSource(self.GoodsList)
-        self.DynamicTable:ReloadDataASync()
+    self.GameObject:SetActive(true)
+    self.GoodsList = XShopManager.GetScreenGoodsListByTag(shopId,groupId,selectTag)
+    if isKeepOrder then
+        self:SortByOldGoodsOrder()
     else
-        self.GameObject:SetActive(false)
+        self:SaveGoodsOrder()
     end
+    self:ShowGoods()
+    self.DynamicTable:SetDataSource(self.GoodsList)
+    self.DynamicTable:ReloadDataASync()
 end
 
 

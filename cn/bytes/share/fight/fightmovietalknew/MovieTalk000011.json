@@ -1,14 +1,15 @@
 [
     {
-        "Id": 0,
         "Type": 1,
         "UiType": 1,
         "Name": "唐培",
         "Icon": 1,
         "Text": "旧版本主线内容迭代",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
             1,
             1,
             1
@@ -22,8 +23,10 @@
         "Icon": 1,
         "Text": "这里是一个对话1",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
             2
         ]
     },
@@ -35,8 +38,9 @@
         "Icon": 1,
         "Text": "<color=#7FFF00>这里是一个对话1（立绘反转）</color>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1,
             3,
             1,
@@ -51,8 +55,8 @@
         "Icon": 1,
         "Text": "<size=30>这里是一个对话1（开启playalone）</size>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -64,8 +68,8 @@
         "Icon": 1,
         "Text": "这里是一个对话1（立绘反转·开启playalone）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1,
             5
@@ -79,9 +83,10 @@
         "Icon": 1,
         "Text": "这里是一个对话2",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
             6
         ]
     },
@@ -93,9 +98,9 @@
         "Icon": 1,
         "Text": "这里是一个对话2（立绘反转）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
             1,
             7
         ]
@@ -108,9 +113,10 @@
         "Icon": 1,
         "Text": "这里是一个对话3（开启playalone）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
             1
         ]
     },
@@ -122,10 +128,10 @@
         "Icon": 1,
         "Text": "这里是一个对话4（开启playalone）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
             1,
+            "",
             2
         ]
     },
@@ -136,8 +142,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "<color=#7FFF00>左上角对话1</color>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -147,8 +154,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal02.png",
         "Text": "<size=30>左上角对话2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9920,
@@ -156,8 +162,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
         "Text": "左上角对话3（1秒）",
-        "Duration": 1,
-        "IsMask": false
+        "Duration": 1
     },
     {
         "Id": 9921,
@@ -165,8 +170,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal04.png",
         "Text": "左上角对话4（3秒）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 9922,
@@ -174,16 +178,14 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>过场动画1</color>",
         "Text": "<color=#7FFF00>这里是一个对话1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9923,
         "Type": 3,
         "UiType": 1,
         "Text": "<size=30>这里是一个对话2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9924,
@@ -191,8 +193,7 @@
         "UiType": 1,
         "Name": "过场动画3",
         "Text": "这里是一个对话3（3s）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 9925,
@@ -200,24 +201,21 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>连线对话A</color>",
         "Text": "<color=#7FFF00>连线对话123</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9926,
         "Type": 4,
         "UiType": 1,
         "Text": "连线对话234（3s）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 9927,
         "Type": 4,
         "UiType": 1,
         "Name": "只有名字的连线对话",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9928,
@@ -227,8 +225,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "<size=30>自定义对话框1</size>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -239,8 +238,7 @@
         "Name": "<size=15>自定义对话框</size>",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal02.png",
         "Text": "<color=#7FFF00>自定义对话框2</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9930,
@@ -249,8 +247,7 @@
         "Name": "自定义对话框",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
         "Text": "自定义对话框3（3s）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1,
@@ -258,8 +255,7 @@
         "UiType": 1,
         "Name": "主线第九章黑星坠落9-2",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1501020301,
@@ -269,8 +265,11 @@
         "Icon": 500610,
         "Text": "在这里聚集的是……感染体么",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -282,8 +281,11 @@
         "Icon": 500610,
         "Text": "顺着这些“造物”的踪迹的话……",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -294,8 +296,7 @@
         "Name": "阿尔法",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya3.png",
         "Text": "没完没了……！",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1501020304,
@@ -304,8 +305,7 @@
         "Name": "阿尔法",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya3.png",
         "Text": "终于消停下来了么。",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1501020305,
@@ -314,8 +314,7 @@
         "Name": "？？？",
         "Icon": "Assets/Product/Texture/Image/RoleMonster/RoleMonster90600.png",
         "Text": "%……&*@#",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1501020306,
@@ -324,8 +323,7 @@
         "Name": "？？？",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V270fdNormal01.png",
         "Text": "你是……！？",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1501020307,
@@ -334,8 +332,7 @@
         "Name": "“堡垒”",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V270fdNormal02.png",
         "Text": "……",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1501020308,
@@ -344,8 +341,7 @@
         "Name": "阿尔法",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya3.png",
         "Text": "嗯？那边是……",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1501020309,
@@ -354,8 +350,7 @@
         "Name": "阿尔法",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya3.png",
         "Text": "他们……要去哪？",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1030011801,
@@ -363,8 +358,7 @@
         "UiType": 1,
         "Name": "塔露",
         "Text": "你就是虫子！",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030011802,
@@ -372,8 +366,7 @@
         "UiType": 1,
         "Name": "α",
         "Text": "该回家打酱油了",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 969922161,
@@ -381,8 +374,7 @@
         "UiType": 1,
         "Name": "露娜",
         "Text": "帕弥什好像变得……平静一些了？",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 969922162,
@@ -390,8 +382,7 @@
         "UiType": 1,
         "Name": "露娜",
         "Text": "这条甬道，前面的节点，难道要全部打破才能出去吗",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030011803,
@@ -399,8 +390,7 @@
         "UiType": 1,
         "Name": "卑微关卡",
         "Text": "这儿的演出还没做喵，对不起喵，但是形式跟前面第一个一样捏",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030011804,
@@ -408,8 +398,7 @@
         "UiType": 1,
         "Name": "露娜",
         "Text": "红潮的力量渗透进来了……已经有谁进行了‘交易’……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030011805,
@@ -417,8 +406,7 @@
         "UiType": 1,
         "Name": "露娜",
         "Text": "这后面……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030011806,
@@ -426,8 +414,7 @@
         "UiType": 1,
         "Name": "【■■■■α】",
         "Text": "露娜，该回家洗衣服了",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030011807,
@@ -435,8 +422,7 @@
         "UiType": 1,
         "Name": "露娜",
         "Text": "集中精神。",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1030011808,
@@ -444,8 +430,7 @@
         "UiType": 1,
         "Name": "露娜",
         "Text": "还不是停下的时候",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1030011809,
@@ -453,8 +438,10 @@
         "UiType": 1,
         "Text": "确定要跳过关卡内容，直接进入最终战斗吗",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
             0,
             0,
             0
@@ -466,8 +453,10 @@
         "UiType": 1,
         "Text": "请选择难度",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
             0,
             0,
             0
@@ -479,8 +468,10 @@
         "UiType": 1,
         "Text": "是否要跳过战斗",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
             0,
             0,
             0
@@ -493,8 +484,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "快点结束吧。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010603,
@@ -503,8 +493,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "……呵",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010604,
@@ -513,8 +502,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "这里……数据无法正常流动。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010605,
@@ -523,8 +511,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "……关键的藏在那边吗……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010606,
@@ -533,8 +520,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "破除禁锢的钥匙就在其中。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010607,
@@ -543,8 +529,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "可这股能量……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010608,
@@ -553,8 +538,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "虽然可以直接闯入。",
-        "Duration": 2.3,
-        "IsMask": false
+        "Duration": 2.3
     },
     {
         "Id": 1030010609,
@@ -563,8 +547,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "但根据能量的流动，如果依次破坏掉那些节点。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1030010610,
@@ -573,8 +556,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "风险会小很多……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010611,
@@ -583,8 +565,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "再尝试最后一次。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010612,
@@ -593,8 +574,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "早该这样。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010613,
@@ -603,8 +583,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "果然，里面的能量降低了些。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010614,
@@ -613,8 +592,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "虫子一样，没完没了。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010615,
@@ -623,8 +601,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "这条通道……直接通往最后一个节点",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010616,
@@ -633,8 +610,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "……数据碰撞过程中产生的捷径吗……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010617,
@@ -643,8 +619,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "集中精神。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010618,
@@ -653,8 +628,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "还不是停下的时候。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010620,
@@ -663,8 +637,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "红潮渗透进来了",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030011811,
@@ -673,8 +646,7 @@
         "Name": "塞勒涅",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LunaNormal09.png",
         "Text": "又是信任，又是失望，何必再走这条路？",
-        "Duration": 5.5,
-        "IsMask": false
+        "Duration": 5.5
     },
     {
         "Id": 1030011812,
@@ -683,8 +655,7 @@
         "Name": "塞勒涅",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LunaNormal09.png",
         "Text": "回头吧，前方只有更多的谎言和痛苦。",
-        "Duration": 5.5,
-        "IsMask": false
+        "Duration": 5.5
     },
     {
         "Id": 1030011813,
@@ -693,8 +664,7 @@
         "Name": "塞勒涅",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LunaNormal09.png",
         "Text": "你忘了吗？每次伸出手，最终换来的只是背叛。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 1030011814,
@@ -703,8 +673,7 @@
         "Name": "【■■■■α】",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V210aefNormal07.png",
         "Text": "回家吧，露娜。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030011815,
@@ -713,8 +682,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "你的把戏，真的很拙劣。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030011816,
@@ -723,8 +691,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "别挡路。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030011817,
@@ -733,8 +700,7 @@
         "Name": "露娜",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LunaNormal02.png",
         "Text": "要开始了。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010619,
@@ -742,8 +708,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/KuruoruoNormal01.png",
         "Text": "剩余的传送门全部开启了……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1030010621,
@@ -751,8 +716,10 @@
         "UiType": 1,
         "Text": "确定要重置解谜吗",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
             0,
             0,
             0
@@ -764,8 +731,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/KuruoruoNormal01.png",
         "Text": "这个门已经解锁了……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74728701,
@@ -774,8 +740,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "你在哪",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -786,8 +753,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "找到你了",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -798,8 +766,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "别想跑哦",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -810,8 +779,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "嘻嘻嘻嘻",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -822,8 +792,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "抓到了",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -833,8 +804,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "明白，向前行进吧",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730102,
@@ -842,8 +812,7 @@
         "UiType": 1,
         "Name": "格雷格&桑迪",
         "Text": "收到。",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 74730103,
@@ -851,8 +820,7 @@
         "UiType": 1,
         "Name": "格雷格",
         "Text": "玩偶、书本，乱七八糟的……还有空中花园构造体残骸，这里到底发生了什么",
-        "Duration": 9.5,
-        "IsMask": false
+        "Duration": 9.5
     },
     {
         "Id": 74730104,
@@ -860,8 +828,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "当心，还有不少帕弥什残留。",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730105,
@@ -869,8 +836,7 @@
         "UiType": 1,
         "Name": "桑迪",
         "Text": "毕竟是被升格者当作过据点……",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730106,
@@ -878,8 +844,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "……不，不止是升格者造成的",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730107,
@@ -887,8 +852,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "还有残余的感染体……速战速决吧。",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730108,
@@ -897,8 +861,7 @@
         "Name": "桑迪",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TongyonggouzaotinvNormal01.png",
         "Text": "那边也有高浓度帕弥什反应，我和格雷格过去。",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730109,
@@ -906,8 +869,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "这里的信息很多，“鹰眼”都能读到",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730110,
@@ -915,8 +877,7 @@
         "UiType": 1,
         "Name": "研究员A",
         "Text": "快跑！",
-        "Duration": 5.5,
-        "IsMask": false
+        "Duration": 5.5
     },
     {
         "Id": 74730111,
@@ -924,8 +885,7 @@
         "UiType": 1,
         "Name": "研究员B",
         "Text": "研究所内部怎么会出现帕弥什？！",
-        "Duration": 5.5,
-        "IsMask": false
+        "Duration": 5.5
     },
     {
         "Id": 74730112,
@@ -933,8 +893,7 @@
         "UiType": 1,
         "Name": "研究员A",
         "Text": "他们说那个实验间被破坏了！帕弥什都泄漏了！",
-        "Duration": 6.5,
-        "IsMask": false
+        "Duration": 6.5
     },
     {
         "Id": 74730113,
@@ -942,8 +901,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "很老旧的痕迹……是人类和感染体战斗留下的",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730114,
@@ -951,8 +909,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "这就是研究所覆灭的原因吗？",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730115,
@@ -960,8 +917,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "……培养罐都被打碎了，进行过生物实验吗？",
-        "Duration": 5.5,
-        "IsMask": false
+        "Duration": 5.5
     },
     {
         "Id": 74730116,
@@ -970,8 +926,7 @@
         "Name": "桑迪",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TongyonggouzaotinvNormal01.png",
         "Text": "啊！",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730117,
@@ -980,8 +935,7 @@
         "Name": "格雷格",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TongyonggouzaotiNomal04.png",
         "Text": "桑迪？！唔啊啊——",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730118,
@@ -990,8 +944,7 @@
         "Name": "万事",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Wanshi1.png",
         "Text": "喂？格雷格？桑迪？",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730119,
@@ -999,8 +952,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "指挥官，他们那边好像出状况了，联系不上。",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730120,
@@ -1008,8 +960,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "等等……这里还有别的信息。",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730121,
@@ -1017,8 +968,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "用鹰眼试一下",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 74730122,
@@ -1026,8 +976,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "这些是……实验体？",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730123,
@@ -1035,8 +984,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "当年的实验……居然真的在拿孩子当样本",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730124,
@@ -1044,8 +992,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "不对劲，指挥官，格雷格他们可能发现什么了",
-        "Duration": 6.5,
-        "IsMask": false
+        "Duration": 6.5
     },
     {
         "Id": 74730125,
@@ -1053,8 +1000,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "你先不要靠近格雷格刚才的位置，来我这边，这里有情况",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730126,
@@ -1062,8 +1008,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "还没有结束。",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730127,
@@ -1071,8 +1016,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "现在不是睡觉的时候。",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730128,
@@ -1080,8 +1024,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "看起来像小孩子的涂鸦",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730129,
@@ -1089,8 +1032,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "油画棒？里面藏着一根……金属刺？",
-        "Duration": 8.5,
-        "IsMask": false
+        "Duration": 8.5
     },
     {
         "Id": 74730130,
@@ -1098,8 +1040,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "小孩子的玩偶……",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730131,
@@ -1107,8 +1048,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "……这里的孩子……难道都已经被改造成构造体了？",
-        "Duration": 5.5,
-        "IsMask": false
+        "Duration": 5.5
     },
     {
         "Id": 74730132,
@@ -1116,8 +1056,10 @@
         "UiType": 1,
         "Text": "是否需要再熟悉一下新机体的操作？",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
             0,
             0,
             0
@@ -1128,16 +1070,14 @@
         "Type": 3,
         "UiType": 1,
         "Text": "用鹰眼看看吧",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730134,
         "Type": 3,
         "UiType": 1,
         "Text": "似乎打不开……",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730135,
@@ -1145,8 +1085,7 @@
         "UiType": 1,
         "Name": "罗塞塔",
         "Text": "你们应该都察觉到了，走廊上的帕弥什浓度比上面更高，尽快通过吧",
-        "Duration": 6.5,
-        "IsMask": false
+        "Duration": 6.5
     },
     {
         "Id": 74730136,
@@ -1154,8 +1093,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "这里也有异合生物？我没见过这种形态的。",
-        "Duration": 6.5,
-        "IsMask": false
+        "Duration": 6.5
     },
     {
         "Id": 74730137,
@@ -1163,8 +1101,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "当心，他们都躲在暗处！",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730138,
@@ -1173,8 +1110,7 @@
         "Name": "万事",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Wanshi1.png",
         "Text": "唔……意识海……还没有完全稳定。",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730139,
@@ -1182,8 +1118,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "唔……好多了，别担心",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730140,
@@ -1191,8 +1126,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "指挥官，先不要去那里，里面不安全。",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730141,
@@ -1200,8 +1134,7 @@
         "UiType": 1,
         "Name": "罗塞塔",
         "Text": "这种程度的袭击还构不成什么威胁，继续找找线索吧",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730142,
@@ -1209,8 +1142,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "先不要随意走动，当心走廊尽头的那扇门",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730143,
@@ -1218,8 +1150,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "最好先过去看一下，我能探测到门后还有很大空间",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730144,
@@ -1227,8 +1158,7 @@
         "UiType": 1,
         "Name": "罗塞塔",
         "Text": "好，事不宜迟，我们走。",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730145,
@@ -1236,8 +1166,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "不行，暂时打不开，需要权限卡",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730146,
@@ -1245,8 +1174,7 @@
         "UiType": 1,
         "Name": "罗塞塔",
         "Text": "直接打穿。",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730147,
@@ -1254,8 +1182,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "那要看你是想速通还是想找找线索了。",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730148,
@@ -1263,8 +1190,7 @@
         "UiType": 1,
         "Name": "罗塞塔",
         "Text": "……走，去找权限卡。",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730149,
@@ -1272,8 +1198,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "那边可能有遗漏的异合生物，先来这边吧",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730150,
@@ -1281,8 +1206,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "我去这后面调查一下。",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 74730151,
@@ -1290,8 +1214,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "分头行动吧，我去另一边",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730152,
@@ -1299,8 +1222,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "指挥官呢？",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 74730153,
@@ -1308,8 +1230,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "那我去门后的岔路，有情况随时通讯",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730154,
@@ -1317,8 +1238,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "那只玩偶……过去看看。",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730155,
@@ -1326,8 +1246,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "玩偶上有很多信息……用鹰眼试一下。",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730156,
@@ -1336,8 +1255,7 @@
         "Name": "罗塞塔",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LuosaitaNormal05.png",
         "Text": "我这边没什么收获，你们呢？",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730157,
@@ -1345,8 +1263,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "权限卡我找到了，还有一些儿童实验的细节。",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730158,
@@ -1355,8 +1272,7 @@
         "Name": "罗塞塔",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LuosaitaNormal05.png",
         "Text": "儿童实验……明白了，回到刚才的位置汇合吧，试一下那扇门能不能打开。",
-        "Duration": 8.5,
-        "IsMask": false
+        "Duration": 8.5
     },
     {
         "Id": 74730159,
@@ -1364,8 +1280,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "好。",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 74730160,
@@ -1374,8 +1289,7 @@
         "Name": "万事",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Wanshi1.png",
         "Text": "嗬——越打越多……",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730161,
@@ -1384,8 +1298,7 @@
         "Name": "罗塞塔",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LuosaitaNormal05.png",
         "Text": "不要久留！把权限卡给我，我们去门后！",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730162,
@@ -1394,8 +1307,7 @@
         "Name": "万事",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Wanshi1.png",
         "Text": "我来清理这些家伙，抓紧机会！",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730163,
@@ -1404,8 +1316,7 @@
         "Name": "罗塞塔",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LuosaitaNormal05.png",
         "Text": "权限卡可用！就是后面好像有什么东西挡住了……",
-        "Duration": 5.5,
-        "IsMask": false
+        "Duration": 5.5
     },
     {
         "Id": 74730164,
@@ -1414,8 +1325,7 @@
         "Name": "万事",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Wanshi1.png",
         "Text": "现在可以直接推开了！",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74730165,
@@ -1424,8 +1334,7 @@
         "Name": "罗塞塔",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LuosaitaNormal05.png",
         "Text": "明白——指挥官，快进门！",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 74730166,
@@ -1434,8 +1343,7 @@
         "Name": "万事",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Wanshi1.png",
         "Text": "走！",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 74730167,
@@ -1443,8 +1351,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/KuruoruoNormal01.png",
         "Text": "连续点击普攻",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 74730168,
@@ -1452,8 +1359,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/KuruoruoNormal01.png",
         "Text": "消球或长按红球积攒技能条，积攒满后可长按红球进入校准模式",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 74730169,
@@ -1461,8 +1367,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/KuruoruoNormal01.png",
         "Text": "校准模式中连续点击红球或长按普攻即可打出子弹！",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 74730170,
@@ -1470,8 +1375,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/KuruoruoNormal01.png",
         "Text": "弹匣打空后点击红球扔出空枪",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 74730171,
@@ -1479,8 +1383,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/KuruoruoNormal01.png",
         "Text": "此时点击红球或主动移动至手枪落点即可接起空枪并填满弹匣",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 74730172,
@@ -1488,8 +1391,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/KuruoruoNormal01.png",
         "Text": "使用必杀吧！",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 74730173,
@@ -1497,40 +1399,35 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/KuruoruoNormal01.png",
         "Text": "似乎还未开启……",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 74730174,
         "Type": 4,
         "UiType": 1,
         "Text": "失去光彩的小熊……与残破不堪的幼小躯体",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 74730175,
         "Type": 4,
         "UiType": 1,
         "Text": "被随处遗弃的童心与幻想",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 74730176,
         "Type": 4,
         "UiType": 1,
         "Text": "“也许把眼泪哭干，把血液流尽，就不会再有苦痛。”",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 74730177,
         "Type": 4,
         "UiType": 1,
         "Text": "不知从何处生长出来的“枝丫”，似乎直接由帕弥什组成。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 74730178,
@@ -1538,8 +1435,7 @@
         "UiType": 1,
         "Name": "万事",
         "Text": "回刚才的门那边看看吧",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74730179,
@@ -1548,8 +1444,7 @@
         "Name": "华胥",
         "Icon": 500160,
         "Text": "你说的对，但是，鸣潮，启动！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 74730180,
@@ -1558,8 +1453,7 @@
         "Name": "指挥官",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/zhgNormal01.png",
         "Text": "立刻去他们的位置汇合，我也意识到了，实际任务难度绝对比预判的要高。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 74730181,
@@ -1568,42 +1462,33 @@
         "Name": "指挥官",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/zhgNormal01.png",
         "Text": "这种情况下，我们无法承担减员风险。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 103201021,
         "Type": 3,
-        "UiType": 0,
         "Name": "露娜",
         "Text": "是新的痕迹……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 150211051,
         "Type": 3,
-        "UiType": 0,
         "Text": "这就是传说中的凛冬计划了吧……有趣。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 150211052,
         "Type": 3,
-        "UiType": 0,
         "Text": "思维器官？生理意义上的意识转移吗？……还真是个异想天开的老疯子。",
-        "Duration": 7,
-        "IsMask": false
+        "Duration": 7
     },
     {
         "Id": 150211053,
         "Type": 3,
-        "UiType": 0,
         "Name": "莉莉丝",
         "Text": "可惜了，今天还不是你的死期。毕竟，那位先生也对你寄予了厚望呢~",
-        "Duration": 8,
-        "IsMask": false
+        "Duration": 8
     },
     {
         "Id": 150211080,
@@ -1612,8 +1497,7 @@
         "Name": "蒙扎诺夫人（？）",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V3100auntNormal01.png",
         "Text": "那艘船本就不足以支撑所有人活下去",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 150211081,
@@ -1622,8 +1506,7 @@
         "Name": "蒙扎诺夫人（？）",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V3100auntNormal01.png",
         "Text": "只有我的殖民舰，才能航向又一个黄金时代！",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 150211082,
@@ -1631,8 +1514,7 @@
         "UiType": 1,
         "Name": "莉莉丝",
         "Text": "活在过去……哈，很诱人的念头",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 150211083,
@@ -1640,8 +1522,7 @@
         "UiType": 1,
         "Name": "莉莉丝",
         "Text": "但那和化石又有什么区别！",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 150211084,
@@ -1650,8 +1531,7 @@
         "Name": "冯内古特",
         "Icon": "Assets/Product/Texture/Image/RoleStory/FengneigutemianjuNormal02.png",
         "Text": "崭新的你是过往一切选择的总和。不要让犹豫将野心埋葬，莉莉丝。",
-        "Duration": 7,
-        "IsMask": false
+        "Duration": 7
     },
     {
         "Id": 150211085,
@@ -1660,8 +1540,7 @@
         "Name": "蒙扎诺夫人（？）",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V3100auntNormal02.png",
         "Text": "我忘了告诉你吗？斜奏从一开始就是可抛弃的筹码……",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 150211086,
@@ -1670,8 +1549,7 @@
         "Name": "蒙扎诺夫人（？）",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V3100auntNormal02.png",
         "Text": "而交易已经完成了。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 150211087,
@@ -1679,8 +1557,7 @@
         "UiType": 1,
         "Name": "莉莉丝",
         "Text": "可以被你称作筹码的东西有很多……但我心爱的玩偶绝对不是其中之一！",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 150211054,
@@ -1689,8 +1566,7 @@
         "Name": "蒙扎诺夫人",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V3100auntNormal01.png",
         "Text": "即将抵达北亚生命科学与进化研究所空域",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 150211055,
@@ -1699,8 +1575,7 @@
         "Name": "蒙扎诺夫人",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V3100auntNormal01.png",
         "Text": "高度三万英尺。云幕与能见度良好，开始舱内减压……",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 150211056,
@@ -1709,8 +1584,7 @@
         "Name": "蒙扎诺夫人",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V3100auntNormal01.png",
         "Text": "埃莉诺，确认目标内容。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 150211057,
@@ -1718,8 +1592,7 @@
         "UiType": 1,
         "Name": "莉莉丝",
         "Text": "刺杀葛德文，尽可能多地收集“凛冬计划”相关资料。",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 150211058,
@@ -1727,8 +1600,7 @@
         "UiType": 1,
         "Name": "莉莉丝",
         "Text": "已肃清外围巡逻队伍，遭遇的抵抗与预期相符。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 150211059,
@@ -1737,8 +1609,7 @@
         "Name": "蒙扎诺夫人",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V3100auntNormal01.png",
         "Text": "不错，没有枉费平时的训练。葛德文应该在设施深处，不可掉以轻心。",
-        "Duration": 8,
-        "IsMask": false
+        "Duration": 8
     },
     {
         "Id": 150211060,
@@ -1747,8 +1618,7 @@
         "Name": "葛德文",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V3100gdwNormal01.png",
         "Text": "看来我这里溜进了一只小毒虫啊。我警告你，消杀设施可不长眼。",
-        "Duration": 10,
-        "IsMask": false
+        "Duration": 10
     },
     {
         "Id": 150211061,
@@ -1756,8 +1626,7 @@
         "UiType": 1,
         "Name": "莉莉丝",
         "Text": "哈？你管那些抬胳膊都费劲的铁皮罐头叫“消杀”？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304521,
@@ -1765,8 +1634,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "呼救声就在前方，我们出发吧，指挥官。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304522,
@@ -1774,8 +1642,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "前方是家族的交战区，想要抵达工厂深处，就必须穿过这里。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 301304523,
@@ -1783,8 +1650,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "冲突程度持续升级，看来这里就是主战场了。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304524,
@@ -1792,8 +1658,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "远处还有人质的呼救声，指挥官，我们继续前进吧。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 301304525,
@@ -1801,8 +1666,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "开始突破——！",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 301304526,
@@ -1810,8 +1674,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "指挥官，战场的空间狭窄，火力较为密集，请务必注意安全！",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 301304527,
@@ -1819,8 +1682,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "已解救建筑中的所有人质，该尽快撤出这里了，指挥官。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 301304561,
@@ -1828,8 +1690,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "战斗开始，指挥官，请下达作战命令。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304562,
@@ -1837,8 +1698,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "礼堂中暂时安全了，指挥官，没有受伤吧？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304563,
@@ -1847,8 +1707,7 @@
         "Name": "罗素",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadV3200YF01.png",
         "Text": "呵呵呵……萨伏伊家族的实力果然不容小觑。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 301304564,
@@ -1857,8 +1716,7 @@
         "Name": "罗素",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadV3200YF01.png",
         "Text": "但很可惜，“铎母”的传说，",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304565,
@@ -1867,8 +1725,7 @@
         "Name": "露西亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Luxiya7.png",
         "Text": "……敌方援军已抵达，指挥官，做好接敌准备！",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 301304566,
@@ -1877,8 +1734,7 @@
         "Name": "奥莉薇娅",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadAlwyNormal01.png",
         "Text": "时间来不及了，必须尽快结束战斗！",
-        "Duration": 7,
-        "IsMask": false
+        "Duration": 7
     },
     {
         "Id": 301304567,
@@ -1887,8 +1743,7 @@
         "Name": "奥莉薇娅",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadAlwyNormal01.png",
         "Text": "婚礼必须在十二时之前完成",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304568,
@@ -1897,8 +1752,7 @@
         "Name": "奥莉薇娅",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadAlwyNormal01.png",
         "Text": "如果违反了这个传统",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304569,
@@ -1906,8 +1760,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "敌人动用重型兵器发动了进攻……指挥官，请暂时撤退，我会把他们拦在外面！",
-        "Duration": 7,
-        "IsMask": false
+        "Duration": 7
     },
     {
         "Id": 301304570,
@@ -1915,8 +1768,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "……我明白了。那就让我们一起，击退敌人吧！",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304571,
@@ -1924,8 +1776,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "最后一轮敌人围上来了，指挥官，请退到我的身边，做好决战准备！",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304572,
@@ -1934,8 +1785,7 @@
         "Name": "奥莉薇娅",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadAlwyNormal01.png",
         "Text": "这是卡塔尼亚千年不易的铁律！",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304573,
@@ -1944,8 +1794,7 @@
         "Name": "奥莉薇娅",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadAlwyNormal01.png",
         "Text": "萨伏伊家族将在人民心中失去权威",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304574,
@@ -1954,8 +1803,7 @@
         "Name": "奥莉薇娅",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadAlwyNormal01.png",
         "Text": "解散十三家族也将无从说起！",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304575,
@@ -1964,8 +1812,7 @@
         "Name": "罗素",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadV3200YF01.png",
         "Text": "在今天就要画上句号了！",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 915252,
@@ -1974,7 +1821,6 @@
         "Text": "龙息值",
         "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightTips/PanelFightScanbarBlue.prefab",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             4450,
             9770
@@ -1986,8 +1832,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TongyonggouzaotiUnknown02.png",
         "Text": "<color=#9CEDBC>攻击力提升！</color>",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 75386202,
@@ -1995,8 +1840,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TongyonggouzaotiUnknown02.png",
         "Text": "<color=#999FFF>映射锁链与坼地逆罔伤害提升！</color>",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 75386203,
@@ -2004,8 +1848,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TongyonggouzaotiUnknown02.png",
         "Text": "<color=#999FFF>坼地逆罔·燃烧的焚烧伤害提升！</color>",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 75386204,
@@ -2013,8 +1856,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TongyonggouzaotiUnknown02.png",
         "Text": "<color=#D3D3D3>攻击力提升失效</color>",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 75386205,
@@ -2022,8 +1864,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TongyonggouzaotiUnknown02.png",
         "Text": "<color=#D3D3D3>映射锁链与坼地逆罔伤害提升失效</color>",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 75386206,
@@ -2031,8 +1872,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TongyonggouzaotiUnknown02.png",
         "Text": "<color=#D3D3D3>坼地逆罔·燃烧的焚烧伤害提升失效</color>",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1502141701,
@@ -2040,7 +1880,6 @@
         "UiType": 1,
         "Text": "数据同步已完成。\\n\\n机体循环，正常；\\n意识海数据，正常；\\n战斗模块，正常。\\n\\n自检成功。",
         "Duration": 11,
-        "IsMask": false,
         "Params": [
             10
         ]
@@ -2051,8 +1890,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "这副机体……呵，我居然对它的力量感到陌生。",
-        "Duration": 9,
-        "IsMask": false
+        "Duration": 9
     },
     {
         "Id": 1502141703,
@@ -2060,8 +1898,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "这些“胚胎”都还活着？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141704,
@@ -2069,8 +1906,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "这扇门打不开，继续向前行进。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141705,
@@ -2078,8 +1914,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "里面应该就是“空洞”，帕弥什浓度很高。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1502141706,
@@ -2087,8 +1922,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "走，跟紧我。",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1502141707,
@@ -2096,8 +1930,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "这里好像是个实验间？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141708,
@@ -2105,8 +1938,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "看来方向是对的，距离“空洞”更近了。",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 1502141709,
@@ -2114,8 +1946,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "实验记录仪？能不能找到一些有价值的信息？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141710,
@@ -2123,8 +1954,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "哈，估计这个人也想不到实验记录仪会记下自己的死状。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 1502141711,
@@ -2132,8 +1962,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "是海恩斯的笔记……阴魂不散的老东西。",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 1502141712,
@@ -2141,8 +1970,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "那股自怜自负的味道都溢出来了，还有别的吗？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141713,
@@ -2150,8 +1978,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "不看了，以海恩斯的性格，肯定在终点等我们，走。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141714,
@@ -2159,8 +1986,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "这个设备还能运行？是做什么用的？",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 1502141715,
@@ -2168,8 +1994,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "不对，它似乎在朝“空洞”内部传递能量。站远点，我破坏掉它。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 1502141716,
@@ -2177,8 +2002,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "唔……果然出问题了。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1502141717,
@@ -2186,8 +2010,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "还来得及……！远没到……我倒下的时候！",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141718,
@@ -2195,8 +2018,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "哈哈哈哈……又要重蹈覆辙了吗！",
-        "Duration": 5.5,
-        "IsMask": false
+        "Duration": 5.5
     },
     {
         "Id": 1502141719,
@@ -2204,8 +2026,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "嘘，有声音。进去看看。",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 1502141720,
@@ -2213,8 +2034,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "呼……抵达“空洞”了，接下来……受死的会是谁？！",
-        "Duration": 8,
-        "IsMask": false
+        "Duration": 8
     },
     {
         "Id": 1502141721,
@@ -2222,8 +2042,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "你以为……我甘心在这里折断吗？！",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141722,
@@ -2231,8 +2050,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "恶心，滚开！",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141723,
@@ -2240,8 +2058,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "无法破坏……居然被保护起来了，看来它很重要。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141724,
@@ -2249,8 +2066,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "嗯？能源接通了吗？刚才那扇门是不是也打开了？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1502141725,
@@ -2258,7 +2074,6 @@
         "UiType": 5,
         "Text": "此处应有演出-场景动画+动作配合",
         "Duration": 5,
-        "IsMask": false,
         "Params": [
             2
         ]
@@ -2269,7 +2084,6 @@
         "UiType": 5,
         "Text": "此处应有动作",
         "Duration": 5,
-        "IsMask": false,
         "Params": [
             2
         ]
@@ -2280,7 +2094,6 @@
         "UiType": 5,
         "Text": "此处应有特效",
         "Duration": 5,
-        "IsMask": false,
         "Params": [
             2
         ]
@@ -2291,8 +2104,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "那么，和我一起来吧。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1302040402,
@@ -2300,8 +2112,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "暗影会吞噬一切，这是我最后一次劝你离开。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1302040403,
@@ -2309,8 +2120,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "这里的舞厅从来没有开启过。",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 1302040404,
@@ -2318,8 +2128,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "进入舞厅的钥匙也早已被吞噬了。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1302040405,
@@ -2327,8 +2136,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "先找到它吧。",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 1302040406,
@@ -2336,8 +2144,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "镜子的另一端是更深的未知，你有勇气走进去看看吗？或许……你想要的东西就在那里。",
-        "Duration": 10,
-        "IsMask": false
+        "Duration": 10
     },
     {
         "Id": 1302040407,
@@ -2345,8 +2152,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "哦？你还是那么有探索欲。",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 1302040408,
@@ -2354,8 +2160,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "还想窥探更多秘密吗？",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 1302040409,
@@ -2363,8 +2168,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "不听话的家伙，小心受到惩罚。",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 1302040410,
@@ -2372,8 +2176,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "好了，这就是你参加舞会的“邀请函”。",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 1302040411,
@@ -2381,8 +2184,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "和我一起，配合舞曲的节奏吧。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1302040412,
@@ -2390,8 +2192,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "怎么，居然敢无视我的邀请吗？",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 1302040413,
@@ -2399,8 +2200,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "……这也是你的信念能做到的事情吗？",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 1302040414,
@@ -2408,8 +2208,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "……我已经快要忘记这座城堡原来的样子了。",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 1302040415,
@@ -2417,8 +2216,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "和我一起走走吧……太多年了。",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 1302040416,
@@ -2426,8 +2224,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "呵，“玫瑰的诅咒”……我居然有些怀念它。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 1302040417,
@@ -2435,8 +2232,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "如果故事回到【好结局】，我会再次邀请你共舞。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1302040418,
@@ -2444,8 +2240,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "属于我们的舞曲已至尾声，如你所说……一起走吧。",
-        "Duration": 7,
-        "IsMask": false
+        "Duration": 7
     },
     {
         "Id": 1302040419,
@@ -2453,8 +2248,7 @@
         "UiType": 1,
         "Name": "薇拉",
         "Text": "我感受到那把钥匙的气息了，就在附近。",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 1302040420,
@@ -2462,7 +2256,6 @@
         "UiType": 5,
         "Text": "薇拉好感度100，恭喜通关！",
         "Duration": 5,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2474,7 +2267,6 @@
         "Text": "<color=#e8f5ff>余寂</color>",
         "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightMovieTalkNew/PanelFightMovieFreeV34.prefab",
         "Duration": 3,
-        "IsMask": false,
         "Params": [
             5000,
             5000
@@ -2487,8 +2279,11 @@
         "Icon": 1,
         "Text": "确定要跳过关卡，直接前往“空洞”吗",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1,
             1
         ]
@@ -2499,8 +2294,7 @@
         "UiType": 1,
         "Name": "里",
         "Text": "这里是灰鸦小队，里，已抵达目标重灾区。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 1035012502,
@@ -2508,8 +2302,7 @@
         "UiType": 1,
         "Name": "里",
         "Text": "已确认敌方目标。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1035012503,
@@ -2517,8 +2310,7 @@
         "UiType": 1,
         "Name": "里",
         "Text": "任务开始。",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1035012504,
@@ -2526,8 +2318,7 @@
         "UiType": 1,
         "Name": "里",
         "Text": "等等，刚才那是……",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 1035012505,
@@ -2535,8 +2326,7 @@
         "UiType": 1,
         "Name": "里",
         "Text": "……一座……“塔”？",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 1035012506,
@@ -2544,8 +2334,7 @@
         "UiType": 1,
         "Name": "里",
         "Text": "呃……陌生的波动……怪物……聚集起来了？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035012507,
@@ -2553,8 +2342,7 @@
         "UiType": 1,
         "Name": "里",
         "Text": "该死……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1035013001,
@@ -2563,8 +2351,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "部分模块修复完成，接收到算力单位",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013002,
@@ -2573,8 +2360,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "华胥，启动支援程序，开始协力战斗",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013003,
@@ -2583,8 +2369,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "开始协力战斗",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013004,
@@ -2593,8 +2378,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "注意——部分模块正在遭受剧烈攻击",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013005,
@@ -2603,8 +2387,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "警告——部分模块已经失联",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013006,
@@ -2613,8 +2396,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "检测到帕弥什信号——",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013007,
@@ -2623,8 +2405,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "华胥——正在链接——进度35.12%",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013008,
@@ -2633,8 +2414,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "华胥——正在链接——进度63.45%",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013009,
@@ -2643,8 +2423,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "华胥——重新链接——链接成功。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013010,
@@ -2653,8 +2432,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "请注意，华胥子服务器正在被攻击——",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013011,
@@ -2663,8 +2441,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "监测到高强度帕弥什信号——",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1035013012,
@@ -2672,8 +2449,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "指挥官，我来了。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1035013013,
@@ -2681,8 +2457,7 @@
         "UiType": 1,
         "Name": "里",
         "Text": "指挥官，放心，有我在。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1035013014,
@@ -2690,8 +2465,7 @@
         "UiType": 1,
         "Name": "丽芙",
         "Text": "指挥官，丽芙会帮上忙的。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1035013015,
@@ -2699,17 +2473,14 @@
         "UiType": 1,
         "Name": "卡列尼娜",
         "Text": "我来帮你！",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1035013016,
         "Type": 6,
-        "UiType": 0,
         "Name": "当前子塔剩余血量",
         "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightTips/PanelFightScanbar.prefab",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             500,
             4500
@@ -2718,11 +2489,9 @@
     {
         "Id": 1035013017,
         "Type": 6,
-        "UiType": 0,
         "Name": "当前子塔激活进度",
         "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightTips/PanelFightScanbar.prefab",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             500,
             5500
@@ -2734,8 +2503,7 @@
         "UiType": 1,
         "Name": "伊什梅尔",
         "Text": "我知道你会来……“从天而降”，还真是你的风格。",
-        "Duration": 9.7,
-        "IsMask": false
+        "Duration": 9.7
     },
     {
         "Id": 301304802,
@@ -2743,8 +2511,7 @@
         "UiType": 1,
         "Name": "伊什梅尔",
         "Text": "一个人解决不了问题，我们分开行动，在前面汇合，好吗？",
-        "Duration": 8,
-        "IsMask": false
+        "Duration": 8
     },
     {
         "Id": 301304803,
@@ -2752,8 +2519,7 @@
         "UiType": 1,
         "Name": "伊什梅尔",
         "Text": "收束的速度越来越慢了……",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 301304804,
@@ -2761,8 +2527,7 @@
         "UiType": 1,
         "Name": "伊什梅尔",
         "Text": "灰鸦还在那边，我得……加快速度。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 301304805,
@@ -2770,8 +2535,7 @@
         "UiType": 1,
         "Name": "伊什梅尔",
         "Text": "……完成了吗？哈……终于彻底结束了。",
-        "Duration": 9,
-        "IsMask": false
+        "Duration": 9
     },
     {
         "Id": 301304806,
@@ -2779,8 +2543,7 @@
         "UiType": 1,
         "Name": "伊什梅尔",
         "Text": "嗯，我知道你一直在我身后。",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1302080701,
@@ -2788,8 +2551,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "（壁炉自燃……无聊的恶作剧?真是没有新意。）",
-        "Duration": 8.3,
-        "IsMask": false
+        "Duration": 8.3
     },
     {
         "Id": 1302080702,
@@ -2797,8 +2559,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "（嗯？没有入侵痕迹，也没有生命信号。这里……有其他东西？）",
-        "Duration": 8.4,
-        "IsMask": false
+        "Duration": 8.4
     },
     {
         "Id": 1302080703,
@@ -2806,8 +2567,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "（如果我完全忽视“你”这家伙呢？等等……）",
-        "Duration": 4.6,
-        "IsMask": false
+        "Duration": 4.6
     },
     {
         "Id": 1302080704,
@@ -2815,8 +2575,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "嗯……这是什么歌？怎么好像……",
-        "Duration": 4.9,
-        "IsMask": false
+        "Duration": 4.9
     },
     {
         "Id": 1302080705,
@@ -2824,8 +2583,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "看来只是无聊的恶作剧……真是浪费时间。",
-        "Duration": 4.9,
-        "IsMask": false
+        "Duration": 4.9
     },
     {
         "Id": 1302080706,
@@ -2833,8 +2591,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "搞什么……留声机播放的音乐起码应该有留声机的声学效果啊。这是在糊弄谁——",
-        "Duration": 12,
-        "IsMask": false
+        "Duration": 12
     },
     {
         "Id": 1302080707,
@@ -2842,8 +2599,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "等等——这首歌……我这是在哪里？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1302080708,
@@ -2851,8 +2607,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "模拟意识……鹿鹿熊……克丽丝，指挥……指挥官！？",
-        "Duration": 7.8,
-        "IsMask": false
+        "Duration": 7.8
     },
     {
         "Id": 1302080709,
@@ -2860,8 +2615,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "指挥官！你在这里吗？",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1302080710,
@@ -2869,8 +2623,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "指挥官，你——",
-        "Duration": 2.3,
-        "IsMask": false
+        "Duration": 2.3
     },
     {
         "Id": 1302080711,
@@ -2878,8 +2631,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "唔……？",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1302080712,
@@ -2887,8 +2639,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "啧……？",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1302080713,
@@ -2896,8 +2647,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "嗯……？",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1302080714,
@@ -2905,8 +2655,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "唔……？",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1302080715,
@@ -2914,8 +2663,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "批注？是我过去写的吗？我……写过这样的批注吗？",
-        "Duration": 7.3,
-        "IsMask": false
+        "Duration": 7.3
     },
     {
         "Id": 1302080716,
@@ -2923,8 +2671,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "“你”……是另一个我吗？还是……",
-        "Duration": 6.3,
-        "IsMask": false
+        "Duration": 6.3
     },
     {
         "Id": 1302080717,
@@ -2932,8 +2679,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "……看起来，“你”并不是我摸索出的另一套思维方式啊。",
-        "Duration": 7.3,
-        "IsMask": false
+        "Duration": 7.3
     },
     {
         "Id": 1302080718,
@@ -2941,8 +2687,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "这样吗……嗤，你应该不是“我”吧？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1302080719,
@@ -2950,8 +2695,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "但你的每一个回答，都还算对我胃口。",
-        "Duration": 6.3,
-        "IsMask": false
+        "Duration": 6.3
     },
     {
         "Id": 1302080720,
@@ -2959,8 +2703,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "剧变已经来临，即使那意味眼前的秩序要被打破，意味着要重新解释熟知的世界，意味一个不再稳固的未来即将到来……",
-        "Duration": 18,
-        "IsMask": false
+        "Duration": 18
     },
     {
         "Id": 1302080721,
@@ -2968,8 +2711,7 @@
         "UiType": 1,
         "Name": "克里斯蒂娜",
         "Text": "管他的，我要去边界之外，去到堡垒破碎后的新世界。",
-        "Duration": 12,
-        "IsMask": false
+        "Duration": 12
     },
     {
         "Id": 1302080722,
@@ -2977,8 +2719,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "谁——指挥官？我在……？这里是我的意识海？",
-        "Duration": 7.4,
-        "IsMask": false
+        "Duration": 7.4
     },
     {
         "Id": 1302080723,
@@ -2986,8 +2727,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "指挥官！这里有些失控！注意安全！然后想办法——唤醒我！",
-        "Duration": 7.7,
-        "IsMask": false
+        "Duration": 7.7
     },
     {
         "Id": 1302080724,
@@ -2995,8 +2735,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "嗯？镜子……变化了？",
-        "Duration": 2.2,
-        "IsMask": false
+        "Duration": 2.2
     },
     {
         "Id": 1302080725,
@@ -3004,8 +2743,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "又见面了，指挥官~",
-        "Duration": 2.1,
-        "IsMask": false
+        "Duration": 2.1
     },
     {
         "Id": 1302080726,
@@ -3013,8 +2751,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "放心，我知道该怎么办。",
-        "Duration": 3.1,
-        "IsMask": false
+        "Duration": 3.1
     },
     {
         "Id": 1302080727,
@@ -3022,8 +2759,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "面对镜子的话，即使近在咫尺，也无法接近，即使张开双臂，无法拥抱。",
-        "Duration": 9.1,
-        "IsMask": false
+        "Duration": 9.1
     },
     {
         "Id": 1302080728,
@@ -3031,8 +2767,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "所以这里不该是镜子，而应该是……门扉。",
-        "Duration": 5.1,
-        "IsMask": false
+        "Duration": 5.1
     },
     {
         "Id": 1302080729,
@@ -3040,8 +2775,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "我说的对吗？",
-        "Duration": 2.6,
-        "IsMask": false
+        "Duration": 2.6
     },
     {
         "Id": 1302080730,
@@ -3049,16 +2783,14 @@
         "UiType": 1,
         "Name": "布偶熊？",
         "Text": "失控，不被允许。",
-        "Duration": 4.2,
-        "IsMask": false
+        "Duration": 4.2
     },
     {
         "Id": 1302080731,
         "Type": 3,
         "UiType": 1,
         "Text": "如果是这样，那么……你会记得自己哼唱的这段旋律吗？",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 1037010201,
@@ -3066,8 +2798,7 @@
         "UiType": 1,
         "Name": "莫瓦诺",
         "Text": "仓库暗门连通的地方竟然是下水道……",
-        "Duration": 5.2,
-        "IsMask": false
+        "Duration": 5.2
     },
     {
         "Id": 1037010202,
@@ -3075,8 +2806,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "认真点，或许会有危险。",
-        "Duration": 3.3,
-        "IsMask": false
+        "Duration": 3.3
     },
     {
         "Id": 1037010203,
@@ -3084,8 +2814,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "这是……抓痕？看起来和公寓里的暴动机械留下的痕迹很像。",
-        "Duration": 5.9,
-        "IsMask": false
+        "Duration": 5.9
     },
     {
         "Id": 1037010204,
@@ -3093,8 +2822,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "这里有血迹……不对，这个质感……是循环液。",
-        "Duration": 7.4,
-        "IsMask": false
+        "Duration": 7.4
     },
     {
         "Id": 1037010205,
@@ -3102,8 +2830,7 @@
         "UiType": 1,
         "Name": "莫瓦诺",
         "Text": "那边好像有人在战斗。",
-        "Duration": 4.3,
-        "IsMask": false
+        "Duration": 4.3
     },
     {
         "Id": 1037010206,
@@ -3111,8 +2838,7 @@
         "UiType": 1,
         "Name": "穆尔",
         "Text": "给我……滚开！",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 1037010207,
@@ -3120,8 +2846,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "是穆尔，他快坚持不住了，我们去帮他！",
-        "Duration": 2.2,
-        "IsMask": false
+        "Duration": 2.2
     },
     {
         "Id": 1037010208,
@@ -3129,8 +2854,7 @@
         "UiType": 1,
         "Name": "莫瓦诺",
         "Text": "你怎么也在这里？",
-        "Duration": 1.8,
-        "IsMask": false
+        "Duration": 1.8
     },
     {
         "Id": 1037010209,
@@ -3138,8 +2862,7 @@
         "UiType": 1,
         "Name": "穆尔",
         "Text": "多谢帮忙。",
-        "Duration": 1.9,
-        "IsMask": false
+        "Duration": 1.9
     },
     {
         "Id": 1037010210,
@@ -3147,8 +2870,7 @@
         "UiType": 1,
         "Name": "穆尔",
         "Text": "我在调查一桩失踪案，跟随线索来到了下水道。",
-        "Duration": 4.8,
-        "IsMask": false
+        "Duration": 4.8
     },
     {
         "Id": 1037010211,
@@ -3156,8 +2878,7 @@
         "UiType": 1,
         "Name": "穆尔",
         "Text": "没想到这里会出现这些红眼的机械。",
-        "Duration": 3.6,
-        "IsMask": false
+        "Duration": 3.6
     },
     {
         "Id": 1037010212,
@@ -3165,8 +2886,7 @@
         "UiType": 1,
         "Name": "莫瓦诺",
         "Text": "你知道这些机械从哪里来的吗？",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 1037010213,
@@ -3174,8 +2894,7 @@
         "UiType": 1,
         "Name": "穆尔",
         "Text": "完全不清楚，我在追踪线索的时候发现了它们。",
-        "Duration": 4.2,
-        "IsMask": false
+        "Duration": 4.2
     },
     {
         "Id": 1037010214,
@@ -3183,8 +2902,7 @@
         "UiType": 1,
         "Name": "莫瓦诺",
         "Text": "先想办法一起出去吧。",
-        "Duration": 2.9,
-        "IsMask": false
+        "Duration": 2.9
     },
     {
         "Id": 1037010215,
@@ -3192,8 +2910,7 @@
         "UiType": 1,
         "Name": "奇怪的抓痕",
         "Text": "看起来并不像是生物留下的痕迹，是机械体吗？",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1037010217,
@@ -3201,16 +2918,14 @@
         "UiType": 1,
         "Name": "奇怪的血迹",
         "Text": "喷溅状的血迹",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1037010218,
         "Type": 4,
         "UiType": 1,
         "Text": "需要提取化验才能确认血迹主人的身份",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1037010901,
@@ -3218,8 +2933,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "隐藏密钥……该如何拆解呢……",
-        "Duration": 5.3,
-        "IsMask": false
+        "Duration": 5.3
     },
     {
         "Id": 1037010902,
@@ -3227,8 +2941,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "或许可以试试这样做。",
-        "Duration": 2.8,
-        "IsMask": false
+        "Duration": 2.8
     },
     {
         "Id": 1037010903,
@@ -3236,8 +2949,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "如果……尝试用“克里斯蒂娜”的做法呢？",
-        "Duration": 3.1,
-        "IsMask": false
+        "Duration": 3.1
     },
     {
         "Id": 1037010904,
@@ -3245,8 +2957,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "怎么会……她怎么会知道这个破解方法……",
-        "Duration": 3.4,
-        "IsMask": false
+        "Duration": 3.4
     },
     {
         "Id": 1037010905,
@@ -3254,8 +2965,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "先整理下线索吧。",
-        "Duration": 2.1,
-        "IsMask": false
+        "Duration": 2.1
     },
     {
         "Id": 1037010906,
@@ -3263,8 +2973,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "线索已经整理完毕，接下来就是推导结果了。",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 1037010907,
@@ -3272,8 +2981,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "不对，还不够。",
-        "Duration": 2.7,
-        "IsMask": false
+        "Duration": 2.7
     },
     {
         "Id": 1037010908,
@@ -3281,8 +2989,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "莫瓦诺……为什么……",
-        "Duration": 2.3,
-        "IsMask": false
+        "Duration": 2.3
     },
     {
         "Id": 1037010909,
@@ -3290,8 +2997,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "是时候聊一聊了，莫瓦诺。",
-        "Duration": 3.2,
-        "IsMask": false
+        "Duration": 3.2
     },
     {
         "Id": 1037010910,
@@ -3299,8 +3005,7 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "嗯？",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1037010911,
@@ -3308,40 +3013,35 @@
         "UiType": 1,
         "Name": "布偶熊",
         "Text": "嗯！",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1302080732,
         "Type": 3,
         "UiType": 1,
         "Text": "布偶熊，小心！",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1039012101,
         "Type": 3,
         "UiType": 1,
         "Text": "这场灾难，必须要有人回头。",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 1039012102,
         "Type": 3,
         "UiType": 1,
         "Text": "我们的孩子，应当活在更美好的明天。",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 1039012103,
         "Type": 3,
         "UiType": 1,
         "Text": "我回去。",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1039012104,
@@ -3349,8 +3049,7 @@
         "UiType": 1,
         "Name": "玛格丽特？",
         "Text": "涅缇娅。",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1039012105,
@@ -3358,8 +3057,7 @@
         "UiType": 1,
         "Name": "涅缇娅",
         "Text": "……玛格丽特？",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1039012106,
@@ -3367,71 +3065,262 @@
         "UiType": 1,
         "Name": "涅缇娅",
         "Text": "玛格丽特……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1039012107,
         "Type": 3,
         "UiType": 1,
         "Text": "我回去。",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1039012108,
         "Type": 3,
         "UiType": 1,
         "Text": "我回去。",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 1039012109,
         "Type": 3,
         "UiType": 1,
         "Text": "家园……被毁灭了……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1039012110,
         "Type": 3,
         "UiType": 1,
         "Text": "为什么……是我们？",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1039012111,
         "Type": 3,
         "UiType": 1,
         "Text": "掩埋我们的存在……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1039012112,
         "Type": 3,
         "UiType": 1,
         "Text": "歪曲我们的牺牲……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1039012113,
         "Type": 3,
         "UiType": 1,
         "Text": "无法原谅！不可饶恕！",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1039012114,
         "Type": 3,
         "UiType": 1,
         "Text": "把名字——还给我们！！",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
+    },
+    {
+        "Id": 9200455,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "冰心皇·扎克",
+        "Text": "就用这战，决出谁才能决定这极地的未来！",
+        "Duration": 4
+    },
+    {
+        "Id": 9200456,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "冰心皇·扎克",
+        "Text": "我是冰心皇扎克，最后的君王！",
+        "Duration": 4
+    },
+    {
+        "Id": 9200457,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "罗塞塔",
+        "Text": "分胜负吧，扎克！",
+        "Duration": 3
+    },
+    {
+        "Id": 9200458,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "冰心皇·扎克",
+        "Text": "看来是我高看你们了。",
+        "Duration": 4
+    },
+    {
+        "Id": 9200459,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "冰心皇·扎克",
+        "Text": "我绝不会让过去的一切失去意义。",
+        "Duration": 5
+    },
+    {
+        "Id": 9200460,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "冰心皇·扎克",
+        "Text": "以冰心皇之名，将力量与荣耀归于此身！",
+        "Duration": 6
+    },
+    {
+        "Id": 9200461,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "罗塞塔",
+        "Text": "指挥官，那力量绝非寻常，我们尽快得赶回去！结束战斗！",
+        "Duration": 5
+    },
+    {
+        "Id": 9200462,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "罗塞塔",
+        "Text": "我不会停下的！",
+        "Duration": 2
+    },
+    {
+        "Id": 9200463,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "罗塞塔",
+        "Text": "别以为能一直拖住我！",
+        "Duration": 3
+    },
+    {
+        "Id": 9200464,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "扎克·最终统合",
+        "Text": "这就是真正的，统合世界的力量！",
+        "Duration": 5
+    },
+    {
+        "Id": 9200465,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "罗塞塔",
+        "Text": "我要粉碎你的幻想，扎克！",
+        "Duration": 3
+    },
+    {
+        "Id": 9200466,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "扎克·最终统合",
+        "Text": "成为统合的一部分吧。",
+        "Duration": 3
+    },
+    {
+        "Id": 9200467,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "扎克·最终统合",
+        "Text": "以统合之力，冰封世界！",
+        "Duration": 4
+    },
+    {
+        "Id": 9200468,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "罗塞塔",
+        "Text": "注意防御！",
+        "Duration": 2
+    },
+    {
+        "Id": 9200469,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "扎克·最终统合",
+        "Text": "让你见识皇的力量！",
+        "Duration": 3
+    },
+    {
+        "Id": 9200470,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "扎克·最终统合",
+        "Text": "你要知道，唯有统合才能拯救人类！",
+        "Duration": 5
+    },
+    {
+        "Id": 9200471,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "扎克·最终统合",
+        "Text": "为了北极航线联合，听我命令，冰海！",
+        "Duration": 5
+    },
+    {
+        "Id": 9200472,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "扎克·最终统合",
+        "Text": "我将！成为世界的唯一！",
+        "Duration": 4
+    },
+    {
+        "Id": 9200473,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "扎克·最终统合",
+        "Text": "不可能，不可以……",
+        "Duration": 7
+    },
+    {
+        "Id": 301305441,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "丽芙",
+        "Text": "如你所料，果然有守卫。当心！",
+        "Duration": 0
+    },
+    {
+        "Id": 301305442,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "丽芙",
+        "Text": "迷失的朋友们，由我来唤醒。",
+        "Duration": 0
+    },
+    {
+        "Id": 301305443,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "丽芙",
+        "Text": "大家，请想起来！那些我们共度的美好时光，不会被任何存在抹去。",
+        "Duration": 0
+    },
+    {
+        "Id": 301305444,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "丽芙",
+        "Text": "守卫失去行动能力了。我们一起去解开愿望的封印吧。",
+        "Duration": 0
+    },
+    {
+        "Id": 301305445,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "丽芙",
+        "Text": "是等候归来的灯火，是充盈房间的欢笑。",
+        "Duration": 0
+    },
+    {
+        "Id": 301305446,
+        "Type": 3,
+        "UiType": 1,
+        "Name": "丽芙",
+        "Text": "看啊，指挥官，家园将由这些点亮。",
+        "Duration": 0
     }
 ]

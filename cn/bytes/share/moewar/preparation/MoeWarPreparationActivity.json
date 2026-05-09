@@ -1,14 +1,6 @@
 [
     {
         "Id": 2,
-        "TimeId": 0,
-        "InitStageCount": 5,
-        "MaxStageCount": 10,
-        "StageRecoveryTime": 10800,
-        "CommunicateItemId": 0,
-        "Name": "文化纪筹备",
-        "RedminNum": 10,
-        "GiftAmount": 1,
         "MatchIds": [
             101,
             102,
@@ -16,11 +8,17 @@
             104,
             105
         ],
+        "InitStageCount": 5,
+        "MaxStageCount": 10,
+        "StageRecoveryTime": 10800,
         "PreparationGears": [
             11,
             12,
             13,
             14
-        ]
+        ],
+        "Name": "文化纪筹备",
+        "RedminNum": 10,
+        "GiftAmount": 1
     }
 ]

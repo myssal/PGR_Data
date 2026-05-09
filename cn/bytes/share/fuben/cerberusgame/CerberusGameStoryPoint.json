@@ -2,23 +2,16 @@
     {
         "Id": 1,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "第一章剧情",
-        "Name": "第一章剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "StoryPointTypeParams": [
             30110277
-        ]
+        ],
+        "Title": "第一章剧情",
+        "Name": "第一章剧情",
+        "GridShowType": 4
     },
     {
         "Id": 2,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "角色教学关",
-        "Name": "角色教学关",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             1
         ],
@@ -28,6 +21,9 @@
             1221003,
             1251002
         ],
+        "Title": "角色教学关",
+        "Name": "角色教学关",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
         ],
@@ -41,11 +37,6 @@
     {
         "Id": 3,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "第二章剧情+精切教学",
-        "Name": "第二章剧情+精切教学",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             2
         ],
@@ -55,6 +46,9 @@
             1221003,
             1251002
         ],
+        "Title": "第二章剧情+精切教学",
+        "Name": "第二章剧情+精切教学",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
         ],
@@ -68,26 +62,19 @@
     {
         "Id": 4,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "第三章剧情",
-        "Name": "第三章剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             3
         ],
         "StoryPointTypeParams": [
             30110278
-        ]
+        ],
+        "Title": "第三章剧情",
+        "Name": "第三章剧情",
+        "GridShowType": 4
     },
     {
         "Id": 5,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "常规关",
-        "Name": "常规关",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             4
         ],
@@ -97,6 +84,9 @@
             1221003,
             1251002
         ],
+        "Title": "常规关",
+        "Name": "常规关",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_011.png"
         ],
@@ -110,11 +100,6 @@
     {
         "Id": 6,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "第四章剧情+常规",
-        "Name": "第四章剧情+常规",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             5
         ],
@@ -124,6 +109,9 @@
             1221003,
             1251002
         ],
+        "Title": "第四章剧情+常规",
+        "Name": "第四章剧情+常规",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32062.png"
         ],
@@ -137,26 +125,19 @@
     {
         "Id": 7,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "第五章剧情",
-        "Name": "第五章剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             6
         ],
         "StoryPointTypeParams": [
             30110279
-        ]
+        ],
+        "Title": "第五章剧情",
+        "Name": "第五章剧情",
+        "GridShowType": 4
     },
     {
         "Id": 8,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "第六章剧情+特殊",
-        "Name": "第六章剧情+特殊",
-        "GridShowType": 2,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             7
         ],
@@ -166,6 +147,9 @@
             1221003,
             1251002
         ],
+        "Title": "第六章剧情+特殊",
+        "Name": "第六章剧情+特殊",
+        "GridShowType": 2,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_011.png",
             "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_024.png"
@@ -182,11 +166,6 @@
     {
         "Id": 9,
         "StoryPointType": 3,
-        "OpenCondition": 861055,
-        "Title": "某人机制",
-        "Name": "某人机制",
-        "GridShowType": 1,
-        "ExtraRobotId": 9183,
         "PrePointIds": [
             8
         ],
@@ -195,6 +174,10 @@
             1221003,
             1251002
         ],
+        "OpenCondition": 861055,
+        "Title": "某人机制",
+        "Name": "某人机制",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon10032.png",
             "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff03.png"
@@ -206,16 +189,12 @@
         "BuffDescs": [
             "怪物首次死亡时，每秒回复5%护盾，持续8秒，连携切换诺克提快速击破",
             "本关只能使用诺克提、21号"
-        ]
+        ],
+        "ExtraRobotId": 9183
     },
     {
         "Id": 10,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "另一个人机制",
-        "Name": "另一个人机制",
-        "GridShowType": 1,
-        "ExtraRobotId": 9183,
         "PrePointIds": [
             9
         ],
@@ -224,6 +203,9 @@
             1221003,
             1251002
         ],
+        "Title": "另一个人机制",
+        "Name": "另一个人机制",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11041.png",
             "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff03.png"
@@ -235,31 +217,25 @@
         "BuffDescs": [
             "每5秒对所有角色叠加剧毒，每层剧毒每秒扣除1%最大生命，连携切换21号清除剧毒",
             "本关只能使用诺克提、21号"
-        ]
+        ],
+        "ExtraRobotId": 9183
     },
     {
         "Id": 11,
         "StoryPointType": 2,
-        "OpenCondition": 0,
-        "Title": "双人通讯",
-        "Name": "双人通讯",
-        "GridShowType": 5,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             10
         ],
         "StoryPointTypeParams": [
             1001
-        ]
+        ],
+        "Title": "双人通讯",
+        "Name": "双人通讯",
+        "GridShowType": 5
     },
     {
         "Id": 12,
         "StoryPointType": 3,
-        "OpenCondition": 861056,
-        "Title": "熟悉角色",
-        "Name": "熟悉角色",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             8
         ],
@@ -267,6 +243,10 @@
             30110207,
             1131003
         ],
+        "OpenCondition": 861056,
+        "Title": "熟悉角色",
+        "Name": "熟悉角色",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22041.png"
         ],
@@ -280,42 +260,33 @@
     {
         "Id": 13,
         "StoryPointType": 2,
-        "OpenCondition": 0,
-        "Title": "单人通讯",
-        "Name": "单人通讯",
-        "GridShowType": 5,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             12
         ],
         "StoryPointTypeParams": [
             1002
-        ]
+        ],
+        "Title": "单人通讯",
+        "Name": "单人通讯",
+        "GridShowType": 5
     },
     {
         "Id": 14,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "第七章剧情",
-        "Name": "第七章剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             9,
             12
         ],
         "StoryPointTypeParams": [
             30110280
-        ]
+        ],
+        "Title": "第七章剧情",
+        "Name": "第七章剧情",
+        "GridShowType": 4
     },
     {
         "Id": 15,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "大招开启",
-        "Name": "大招开启",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             14
         ],
@@ -325,6 +296,9 @@
             1221003,
             1251002
         ],
+        "Title": "大招开启",
+        "Name": "大招开启",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
         ],
@@ -338,11 +312,6 @@
     {
         "Id": 16,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "第八章剧情+大招实战",
-        "Name": "第八章剧情+大招实战",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             15
         ],
@@ -352,6 +321,9 @@
             1221003,
             1251002
         ],
+        "Title": "第八章剧情+大招实战",
+        "Name": "第八章剧情+大招实战",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_011.png"
         ],
@@ -365,26 +337,19 @@
     {
         "Id": 17,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "第九章剧情",
-        "Name": "第九章剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             16
         ],
         "StoryPointTypeParams": [
             30110281
-        ]
+        ],
+        "Title": "第九章剧情",
+        "Name": "第九章剧情",
+        "GridShowType": 4
     },
     {
         "Id": 18,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "第十章剧情+特殊",
-        "Name": "第十章剧情+特殊",
-        "GridShowType": 2,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             17
         ],
@@ -394,6 +359,9 @@
             1221003,
             1251002
         ],
+        "Title": "第十章剧情+特殊",
+        "Name": "第十章剧情+特殊",
+        "GridShowType": 2,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_028.png",
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
@@ -410,11 +378,6 @@
     {
         "Id": 19,
         "StoryPointType": 3,
-        "OpenCondition": 861060,
-        "Title": "某人机制",
-        "Name": "某人机制",
-        "GridShowType": 1,
-        "ExtraRobotId": 9185,
         "PrePointIds": [
             18
         ],
@@ -423,6 +386,10 @@
             1131003,
             1221003
         ],
+        "OpenCondition": 861060,
+        "Title": "某人机制",
+        "Name": "某人机制",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12112.png",
             "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff03.png"
@@ -434,16 +401,12 @@
         "BuffDescs": [
             "每秒扣除角色15%HP，持续5秒，连携切换21号回复全队血量",
             "本关只能使用薇拉、21号"
-        ]
+        ],
+        "ExtraRobotId": 9185
     },
     {
         "Id": 20,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "另一个人机制",
-        "Name": "另一个人机制",
-        "GridShowType": 1,
-        "ExtraRobotId": 9185,
         "PrePointIds": [
             19
         ],
@@ -452,6 +415,9 @@
             1131003,
             1221003
         ],
+        "Title": "另一个人机制",
+        "Name": "另一个人机制",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32062.png",
             "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff03.png"
@@ -463,31 +429,25 @@
         "BuffDescs": [
             "怪物霸体值提升，存在霸体时降低50%受到的伤害，连携切换薇拉可快速击破霸体",
             "本关只能使用薇拉、21号"
-        ]
+        ],
+        "ExtraRobotId": 9185
     },
     {
         "Id": 21,
         "StoryPointType": 2,
-        "OpenCondition": 0,
-        "Title": "双人通讯",
-        "Name": "双人通讯",
-        "GridShowType": 5,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             20
         ],
         "StoryPointTypeParams": [
             1003
-        ]
+        ],
+        "Title": "双人通讯",
+        "Name": "双人通讯",
+        "GridShowType": 5
     },
     {
         "Id": 22,
         "StoryPointType": 3,
-        "OpenCondition": 861061,
-        "Title": "熟悉角色",
-        "Name": "熟悉角色",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             18
         ],
@@ -495,6 +455,10 @@
             30110256,
             1251002
         ],
+        "OpenCondition": 861061,
+        "Title": "熟悉角色",
+        "Name": "熟悉角色",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22041.png"
         ],
@@ -508,42 +472,33 @@
     {
         "Id": 23,
         "StoryPointType": 2,
-        "OpenCondition": 0,
-        "Title": "单人通讯",
-        "Name": "单人通讯",
-        "GridShowType": 5,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             22
         ],
         "StoryPointTypeParams": [
             1004
-        ]
+        ],
+        "Title": "单人通讯",
+        "Name": "单人通讯",
+        "GridShowType": 5
     },
     {
         "Id": 24,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "第十一章剧情",
-        "Name": "第十一章剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             19,
             22
         ],
         "StoryPointTypeParams": [
             30110282
-        ]
+        ],
+        "Title": "第十一章剧情",
+        "Name": "第十一章剧情",
+        "GridShowType": 4
     },
     {
         "Id": 25,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "三人特殊",
-        "Name": "三人特殊",
-        "GridShowType": 2,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             24
         ],
@@ -553,6 +508,9 @@
             1221003,
             1251002
         ],
+        "Title": "三人特殊",
+        "Name": "三人特殊",
+        "GridShowType": 2,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
         ],
@@ -566,11 +524,6 @@
     {
         "Id": 26,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "三人常规",
-        "Name": "三人常规",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             25
         ],
@@ -580,6 +533,9 @@
             1221003,
             1251002
         ],
+        "Title": "三人常规",
+        "Name": "三人常规",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11041.png",
             "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff06.png"
@@ -596,26 +552,19 @@
     {
         "Id": 27,
         "StoryPointType": 2,
-        "OpenCondition": 0,
-        "Title": "三人通讯",
-        "Name": "三人通讯",
-        "GridShowType": 5,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             26
         ],
         "StoryPointTypeParams": [
             1005
-        ]
+        ],
+        "Title": "三人通讯",
+        "Name": "三人通讯",
+        "GridShowType": 5
     },
     {
         "Id": 28,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "十三章剧情+BOSS",
-        "Name": "十三章剧情+BOSS",
-        "GridShowType": 3,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             25
         ],
@@ -625,6 +574,9 @@
             1221003,
             1251002
         ],
+        "Title": "十三章剧情+BOSS",
+        "Name": "十三章剧情+BOSS",
+        "GridShowType": 3,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33283.png",
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
@@ -641,32 +593,28 @@
     {
         "Id": 29,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "十四章剧情",
-        "Name": "十四章剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             28
         ],
         "StoryPointTypeParams": [
             30110283
-        ]
+        ],
+        "Title": "十四章剧情",
+        "Name": "十四章剧情",
+        "GridShowType": 4
     },
     {
         "Id": 30,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "困难1",
-        "Name": "困难1",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "StoryPointTypeParams": [
             30110289,
             1131003,
             1221003,
             1251002
         ],
+        "Title": "困难1",
+        "Name": "困难1",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11047.png",
             "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_024.png"
@@ -683,11 +631,6 @@
     {
         "Id": 31,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "困难2",
-        "Name": "困难2",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             30
         ],
@@ -697,6 +640,9 @@
             1221003,
             1251002
         ],
+        "Title": "困难2",
+        "Name": "困难2",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11047.png",
             "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_028.png"
@@ -713,11 +659,6 @@
     {
         "Id": 32,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "困难3",
-        "Name": "困难3",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             31
         ],
@@ -727,6 +668,9 @@
             1221003,
             1251002
         ],
+        "Title": "困难3",
+        "Name": "困难3",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11047.png",
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
@@ -743,11 +687,6 @@
     {
         "Id": 33,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "困难4",
-        "Name": "困难4",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             32
         ],
@@ -757,6 +696,9 @@
             1221003,
             1251002
         ],
+        "Title": "困难4",
+        "Name": "困难4",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11047.png",
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33283.png"
@@ -773,21 +715,15 @@
     {
         "Id": 40,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "三头犬-1-纯剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "StoryPointTypeParams": [
             30110221
-        ]
+        ],
+        "Title": "三头犬-1-纯剧情",
+        "GridShowType": 4
     },
     {
         "Id": 41,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "完成薇拉教学",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             40
         ],
@@ -795,6 +731,8 @@
             30110215,
             1131003
         ],
+        "Title": "完成薇拉教学",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
         ],
@@ -808,10 +746,6 @@
     {
         "Id": 42,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "完成21号教学",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             40
         ],
@@ -819,6 +753,8 @@
             30110216,
             1221003
         ],
+        "Title": "完成21号教学",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
         ],
@@ -832,10 +768,6 @@
     {
         "Id": 43,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "完成诺克提教学",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             40
         ],
@@ -843,6 +775,8 @@
             30110217,
             1251002
         ],
+        "Title": "完成诺克提教学",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
         ],
@@ -856,10 +790,6 @@
     {
         "Id": 44,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "完成连携切换教学（本活动所有试玩角色，均为SS品质并携带专武）",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             41,
             42,
@@ -871,6 +801,8 @@
             1221003,
             1251002
         ],
+        "Title": "完成连携切换教学（本活动所有试玩角色，均为SS品质并携带专武）",
+        "GridShowType": 1,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
         ],
@@ -884,24 +816,18 @@
     {
         "Id": 45,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "三头犬-2-纯剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             44
         ],
         "StoryPointTypeParams": [
             30110222
-        ]
+        ],
+        "Title": "三头犬-2-纯剧情",
+        "GridShowType": 4
     },
     {
         "Id": 46,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "打败帮派成员",
-        "GridShowType": 3,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             45
         ],
@@ -911,6 +837,8 @@
             1221003,
             1251002
         ],
+        "Title": "打败帮派成员",
+        "GridShowType": 3,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_028.png",
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
@@ -927,24 +855,18 @@
     {
         "Id": 47,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "三头犬-3-纯剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             46
         ],
         "StoryPointTypeParams": [
             30110223
-        ]
+        ],
+        "Title": "三头犬-3-纯剧情",
+        "GridShowType": 4
     },
     {
         "Id": 48,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "击败所有敌人",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             47
         ],
@@ -953,29 +875,25 @@
             1131003,
             1221003,
             1251002
-        ]
+        ],
+        "Title": "击败所有敌人",
+        "GridShowType": 1
     },
     {
         "Id": 49,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "三头犬-4-纯剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             48
         ],
         "StoryPointTypeParams": [
             30110224
-        ]
+        ],
+        "Title": "三头犬-4-纯剧情",
+        "GridShowType": 4
     },
     {
         "Id": 50,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "迎战动作演员",
-        "GridShowType": 2,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             49
         ],
@@ -985,6 +903,8 @@
             1221003,
             1251002
         ],
+        "Title": "迎战动作演员",
+        "GridShowType": 2,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_028.png",
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
@@ -1001,24 +921,18 @@
     {
         "Id": 51,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "三头犬-5-纯剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             50
         ],
         "StoryPointTypeParams": [
             30110225
-        ]
+        ],
+        "Title": "三头犬-5-纯剧情",
+        "GridShowType": 4
     },
     {
         "Id": 52,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "击败所有敌人",
-        "GridShowType": 1,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             51
         ],
@@ -1027,15 +941,13 @@
             1131003,
             1221003,
             1251002
-        ]
+        ],
+        "Title": "击败所有敌人",
+        "GridShowType": 1
     },
     {
         "Id": 53,
         "StoryPointType": 3,
-        "OpenCondition": 0,
-        "Title": "迎战动，作，巨，星……？",
-        "GridShowType": 3,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             52
         ],
@@ -1045,6 +957,8 @@
             1221003,
             1251002
         ],
+        "Title": "迎战动，作，巨，星……？",
+        "GridShowType": 3,
         "BuffIcon": [
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33283.png",
             "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
@@ -1061,15 +975,13 @@
     {
         "Id": 54,
         "StoryPointType": 1,
-        "OpenCondition": 0,
-        "Title": "三头犬-6-纯剧情",
-        "GridShowType": 4,
-        "ExtraRobotId": 0,
         "PrePointIds": [
             53
         ],
         "StoryPointTypeParams": [
             30110226
-        ]
+        ],
+        "Title": "三头犬-6-纯剧情",
+        "GridShowType": 4
     }
 ]

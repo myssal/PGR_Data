@@ -7,8 +7,6 @@
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff07.png",
         "TriggerCD": 5,
         "TriggerBlockId": 10094,
-        "TriggerReplaceType": 0,
-        "TriggerFeverLv": 0,
         "TriggerCountLimit": -1,
         "TriggerRate": 100
     },
@@ -20,8 +18,6 @@
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff07.png",
         "TriggerCD": 7,
         "TriggerBlockId": 10094,
-        "TriggerReplaceType": 0,
-        "TriggerFeverLv": 0,
         "TriggerCountLimit": -1,
         "TriggerRate": 100
     },
@@ -33,8 +29,6 @@
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff01.png",
         "TriggerCD": 10,
         "TriggerBlockId": 10095,
-        "TriggerReplaceType": 0,
-        "TriggerFeverLv": 0,
         "TriggerCountLimit": -1,
         "TriggerRate": 100
     },
@@ -45,14 +39,12 @@
         "Desc": "每10步加入一个压舱货物，不可移动，参与合成后成为蓄能核心。",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff08.png",
         "TriggerCD": 10,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 2,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 5,
@@ -61,14 +53,12 @@
         "Desc": "每10步加入一个航道中枢，当上下左右有方块因为测距道标的效果而翻倍时，自身数字乘2。",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff05.png",
         "TriggerCD": 10,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 3,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 6,
@@ -77,14 +67,12 @@
         "Desc": "每10步加入一个蓄能核心，参与合成时记录一个点数，盘面升级时点数结算加入强化步数。",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff09.png",
         "TriggerCD": 10,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 1,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 7,
@@ -93,14 +81,12 @@
         "Desc": "每10步加入一个测距道标，参与合成后让上下左右的方块（除测距道标）数字乘2。",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff06.png",
         "TriggerCD": 10,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 5,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 8,
@@ -108,9 +94,6 @@
         "Name": "加方块",
         "Desc": "用当前盘面规则再一次生成",
         "TriggerCD": 20,
-        "TriggerBlockId": 0,
-        "TriggerReplaceType": 0,
-        "TriggerFeverLv": 0,
         "TriggerCountLimit": -1,
         "TriggerRate": 50
     },
@@ -121,14 +104,12 @@
         "Desc": "每7步加入一个测距道标，参与合成后让上下左右的方块（除测距道标）数字乘2。",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff06.png",
         "TriggerCD": 7,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 5,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 10,
@@ -137,14 +118,12 @@
         "Desc": "每10步加入一个测距道标，参与合成后让上下左右的方块（除测距道标）数字乘2。",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff06.png",
         "TriggerCD": 10,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 5,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 11,
@@ -154,8 +133,6 @@
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff10.png",
         "TriggerCD": 5,
         "TriggerBlockId": 10094,
-        "TriggerReplaceType": 0,
-        "TriggerFeverLv": 0,
         "TriggerCountLimit": -1,
         "TriggerRate": 100
     },
@@ -167,8 +144,6 @@
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff10.png",
         "TriggerCD": 10,
         "TriggerBlockId": 10094,
-        "TriggerReplaceType": 0,
-        "TriggerFeverLv": 0,
         "TriggerCountLimit": -1,
         "TriggerRate": 100
     },
@@ -179,15 +154,13 @@
         "Desc": "将泡泡咩传送到使清除范围最大的位置",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff12.png",
         "TriggerCD": 15,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 9,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             11,
             12
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 14,
@@ -196,15 +169,13 @@
         "Desc": "将泡泡咩传送到使清除范围最大的位置",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff12.png",
         "TriggerCD": 10,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 9,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             11,
             12
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 15,
@@ -213,14 +184,12 @@
         "Desc": "生成心心方块，心心方块合成3次后，泡泡方块数值直接达到合成目标",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff11.png",
         "TriggerCD": 10,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 10,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 16,
@@ -229,14 +198,12 @@
         "Desc": "生成心心方块，心心方块合成3次后，泡泡方块数值直接达到合成目标",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff11.png",
         "TriggerCD": 15,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 10,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 17,
@@ -245,14 +212,12 @@
         "Desc": "将泡泡咩传送到使清除范围最大的位置",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff12.png",
         "TriggerCD": 20,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 9,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 18,
@@ -261,14 +226,12 @@
         "Desc": "测试生成水方块",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff06.png",
         "TriggerCD": 1,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 11,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 19,
@@ -277,14 +240,12 @@
         "Desc": "测试生成火方块",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff06.png",
         "TriggerCD": 2,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 12,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 20,
@@ -293,14 +254,12 @@
         "Desc": "将泡泡咩传送到使清除范围最大的位置",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff12.png",
         "TriggerCD": 15,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 9,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 21,
@@ -309,65 +268,39 @@
         "Desc": "将泡泡咩传送到使清除范围最大的位置",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff12.png",
         "TriggerCD": 10,
-        "TriggerBlockId": 0,
         "TriggerReplaceType": 9,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": -1,
-        "TriggerRate": 100,
         "ReplaceValueFormBlockTypes": [
             4
-        ]
+        ],
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
     },
     {
         "Id": 22,
         "Type": 3,
         "Name": "加热热方块",
         "Desc": "生成热热方块，和凉凉方块合成将随机生成方块属性",
-        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff13.png",
-        "TriggerCD": 0,
-        "TriggerBlockId": 0,
-        "TriggerReplaceType": 0,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": 0,
-        "TriggerRate": 0
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff13.png"
     },
     {
         "Id": 23,
         "Type": 3,
         "Name": "加凉凉方块",
         "Desc": "生成凉凉方块，和热热方块合成将随机生成方块属性",
-        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff14.png",
-        "TriggerCD": 0,
-        "TriggerBlockId": 0,
-        "TriggerReplaceType": 0,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": 0,
-        "TriggerRate": 0
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff14.png"
     },
     {
         "Id": 24,
         "Type": 3,
         "Name": "加坨坨方块",
         "Desc": "坨坨方块可以被破碎，数字表示需要碰撞的次数",
-        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff15.png",
-        "TriggerCD": 0,
-        "TriggerBlockId": 0,
-        "TriggerReplaceType": 0,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": 0,
-        "TriggerRate": 0
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff15.png"
     },
     {
         "Id": 25,
         "Type": 3,
         "Name": "加星星方块",
         "Desc": "星星方块可以和任意数字方块（除泡泡方块）发生合成",
-        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff10.png",
-        "TriggerCD": 0,
-        "TriggerBlockId": 0,
-        "TriggerReplaceType": 0,
-        "TriggerFeverLv": 0,
-        "TriggerCountLimit": 0,
-        "TriggerRate": 0
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff10.png"
     }
 ]

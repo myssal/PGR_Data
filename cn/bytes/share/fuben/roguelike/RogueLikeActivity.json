@@ -1,8 +1,12 @@
 [
     {
         "Id": 1,
-        "ActivityTimeId": 0,
-        "FightTimeId": 0,
+        "TeamEffectId": [
+            1,
+            2,
+            3,
+            4
+        ],
         "ActionPoint": 999,
         "TeamMemberCount": 3,
         "BlackShopId": 20001,
@@ -10,19 +14,17 @@
         "RobotMax": 8,
         "CharacterLimitType": 3,
         "LimitBuffId": 1,
-        "InitActionPoint": 200,
-        "InitBuffId": 0,
-        "TeamEffectId": [
-            1,
-            2,
-            3,
-            4
-        ]
+        "InitActionPoint": 200
     },
     {
         "Id": 2,
-        "ActivityTimeId": 0,
-        "FightTimeId": 0,
+        "TeamEffectId": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
         "ActionPoint": 999,
         "TeamMemberCount": 3,
         "BlackShopId": 30001,
@@ -30,20 +32,17 @@
         "RobotMax": 8,
         "CharacterLimitType": 3,
         "LimitBuffId": 1,
-        "InitActionPoint": 200,
-        "InitBuffId": 0,
-        "TeamEffectId": [
-            1,
-            2,
-            3,
-            4,
-            5
-        ]
+        "InitActionPoint": 200
     },
     {
         "Id": 3,
-        "ActivityTimeId": 0,
-        "FightTimeId": 0,
+        "TeamEffectId": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
         "ActionPoint": 999,
         "TeamMemberCount": 3,
         "BlackShopId": 30001,
@@ -51,20 +50,17 @@
         "RobotMax": 8,
         "CharacterLimitType": 3,
         "LimitBuffId": 1,
-        "InitActionPoint": 200,
-        "InitBuffId": 0,
-        "TeamEffectId": [
-            1,
-            2,
-            3,
-            4,
-            5
-        ]
+        "InitActionPoint": 200
     },
     {
         "Id": 4,
-        "ActivityTimeId": 0,
-        "FightTimeId": 0,
+        "TeamEffectId": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
         "ActionPoint": 80,
         "TeamMemberCount": 3,
         "BlackShopId": 30001,
@@ -72,20 +68,17 @@
         "RobotMax": 8,
         "CharacterLimitType": 3,
         "LimitBuffId": 1,
-        "InitActionPoint": 16,
-        "InitBuffId": 0,
-        "TeamEffectId": [
-            1,
-            2,
-            3,
-            4,
-            5
-        ]
+        "InitActionPoint": 16
     },
     {
         "Id": 5,
-        "ActivityTimeId": 0,
-        "FightTimeId": 0,
+        "TeamEffectId": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
         "ActionPoint": 80,
         "TeamMemberCount": 3,
         "BlackShopId": 30001,
@@ -94,13 +87,6 @@
         "CharacterLimitType": 3,
         "LimitBuffId": 1,
         "InitActionPoint": 16,
-        "InitBuffId": 600000,
-        "TeamEffectId": [
-            1,
-            2,
-            3,
-            4,
-            5
-        ]
+        "InitBuffId": 600000
     }
 ]

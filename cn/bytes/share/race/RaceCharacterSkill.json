@@ -4,177 +4,145 @@
         "Name": "紧急散热",
         "Desc": "比赛前半段每次获得红球时，有概率小幅加速",
         "Condition": 5,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2,
         "Name": "超维迟滞",
         "UltraShout": "你们的速度，由我掌控！",
         "Desc": "让其他所有角色大幅减速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             3
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 3,
         "Name": "露记主厨",
         "Desc": "获得信号球时，有概率请前方一名随机角色用餐，使对方减速",
         "Condition": 6,
-        "Times": 0,
-        "Probability": 500,
-        "EmojiTime": 0
+        "Probability": 500
     },
     {
         "Id": 4,
         "Name": "阿呆蛙的庇护",
         "UltraShout": "阿呆蛙，庇护我穿过迷雾与深渊吧！",
         "Desc": "获得阿呆蛙的庇护，加速且免疫负面效果",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 5,
         "Name": "紧急救护",
         "Desc": "受到负面效果影响时，有概率获得一个随机信号球",
         "Condition": 7,
-        "Times": 0,
-        "Probability": 400,
-        "EmojiTime": 0
+        "Probability": 400
     },
     {
         "Id": 6,
         "Name": "锻炼计划",
         "UltraShout": "丽芙，进入加速模式！",
         "Desc": "分析赛道环境，选择最合适的行驶方式，获得较长时间的加速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 7,
         "Name": "光暗交转",
         "Desc": "初始为暗形态，比赛后半会切换至光形态",
         "Condition": 9,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 8,
         "Name": "终末祷词",
         "UltraShout": "聆听吧……引擎的哀歌！",
         "Desc": "暗形态时触发会让其他所有角色减速，光形态时触发会自己加速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 9,
         "Name": "百分之七实",
         "Desc": "每次获得信号球都有70%的概率额外获得一个",
         "Condition": 6,
-        "Times": 0,
-        "Probability": 700,
-        "EmojiTime": 0
+        "Probability": 700
     },
     {
         "Id": 10,
         "Name": "一口气上吧",
         "UltraShout": "七实旋风冲刺！一口气上吧！",
         "Desc": "获得大幅加速，有70%的概率延长2秒",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 11,
         "Name": "战斗！爽！",
         "Desc": "受到负面效果时，有概率免疫",
         "Condition": 76,
-        "Times": 0,
-        "Probability": 500,
-        "EmojiTime": 0
+        "Probability": 500
     },
     {
         "Id": 12,
         "Name": "高手心流",
         "UltraShout": "就让速度……于我同行！",
         "Desc": "进入高手模式直至比赛结束，获得额外的移速，并且漂移获得氮气的效率提升",
-        "Condition": 0,
-        "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
+            "",
             2
-        ]
+        ],
+        "Times": 1,
+        "Probability": 1000
     },
     {
         "Id": 13,
         "Name": "基建工程",
         "Desc": "改造自身所在赛道，在比赛前半段获得额外加速",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 14,
         "Name": "舞台焦点",
         "UltraShout": "聚光灯！朝这里打！",
         "Desc": "自己获得大幅加速，其他角色获得小幅加速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 15,
         "Name": "遗忘者",
         "Desc": "不受所有效果影响",
         "Condition": 17,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 16,
         "Name": "无惧死亡",
         "UltraShout": "我已无惧干扰！",
         "Desc": "失去【遗忘者】的效果，并且获得常驻的速度与加速度提升，全局一次",
-        "Condition": 0,
-        "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             3
-        ]
+        ],
+        "Times": 1,
+        "Probability": 1000
     },
     {
         "Id": 17,
@@ -182,129 +150,103 @@
         "Desc": "比赛开始时立刻获得随机3个信号球",
         "Condition": 1,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 18,
         "Name": "轰鸣",
         "UltraShout": "限速的囚笼由我冲破。",
         "Desc": "获得大幅加速的效果",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 19,
         "Name": "出手阔绰",
         "Desc": "比赛前半获得信号球时，有概率多获得1个随机信号球",
         "Condition": 18,
-        "Times": 0,
-        "Probability": 750,
-        "EmojiTime": 0
+        "Probability": 750
     },
     {
         "Id": 20,
         "Name": "色彩调配",
         "UltraShout": "这就是，名为“加速”的构图",
         "Desc": "获得小幅加速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "SignalBallCosts": "{0: 2}",
+        "Probability": 1000
     },
     {
         "Id": 21,
         "Name": "有备无患",
         "Desc": "比赛前半段免疫负面效果",
         "Condition": 19,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 22,
         "Name": "计划有变！",
         "UltraShout": "准备采取后备方案。",
         "Desc": "清除所有角色身上的负面效果，同时自身获得大幅加速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 23,
         "Name": "归我了！",
         "Desc": "比赛前半每次进入弯道时，从前方一名随机角色身上拿走1个随机信号球",
         "Condition": 21,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 24,
         "Name": "永夜恒火",
         "UltraShout": "火光尽头，将会是空无一人的终点线！",
         "Desc": "释放永夜恒火，让所有其他角色的速度和加速度都降低",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 25,
         "Name": "乘法在此降临",
         "Desc": "进入比赛后半时，每次获得的信号球数量都会翻倍",
         "Condition": 22,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 26,
         "Name": "升格演算",
         "UltraShout": "这就是升格网络的力量！",
         "Desc": "让所有排名大于自己的角色减速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 27,
         "Name": "我的回合",
         "Desc": "每次进入弯道时有概率获得一个随机信号球并发动",
         "Condition": 20,
-        "Times": 0,
-        "Probability": 750,
-        "EmojiTime": 0
+        "Probability": 750
     },
     {
         "Id": 28,
         "Name": "我来助你！",
         "UltraShout": "你能跟上我的速度吗？",
         "Desc": "让自己和排名低于自己的随机1名角色都获得加速和免疫负面的效果",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             1,
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 29,
@@ -312,226 +254,188 @@
         "Desc": "比赛后半段排名下降时触发，立刻大幅加速，全程触发一次",
         "Condition": 24,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 30,
         "Name": "九龙的意志",
         "UltraShout": "九龙的意志，集结于此！",
         "Desc": "让所有角色小幅加速，同时自己额外获得大幅加速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 31,
         "Name": "打盹",
         "Desc": "比赛后段随时有概率睡着，获得随机信号球但短时间减速",
         "Condition": 45,
-        "Times": 0,
-        "Probability": 300,
-        "EmojiTime": 0
+        "Probability": 300
     },
     {
         "Id": 32,
         "Name": "起床气",
         "UltraShout": "不要，扰人清梦！",
         "Desc": "锁定前方随机6名目标发动攻击",
-        "Condition": 0,
-        "Times": 0,
+        "SignalBallCosts": [
+            "",
+            "",
+            2
+        ],
         "Probability": 1000,
         "Emoji": "Assets/Product/Texture/Image/UiPokerGuessing2/UiPokerGuessingEmote03.png",
-        "EmojiTime": 1500,
-        "SignalBallCosts": [
-            2
-        ]
+        "EmojiTime": 1500
     },
     {
         "Id": 33,
         "Name": "宣叙调",
         "Desc": "比赛前半每次进入直线赛道时，都会获得一个随机信号球并发动",
         "Condition": 47,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 34,
         "Name": "协奏曲",
         "UltraShout": "请来与我共奏这曲乐章吧。",
         "Desc": "自身获得加速，并且有概率让前方随机3人减速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
+            "",
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 35,
         "Name": "头狼",
         "Desc": "比赛开始时获得短暂大幅加速",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 36,
         "Name": "追猎者",
         "UltraShout": "猎物的味道！",
         "Desc": "标记前方3名随机目标，偷取他们的速度，持续一段时间",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 37,
         "Name": "余响",
         "Desc": "每次获得加速效果时，概率延长自身当前所有加速效果的持续时间",
         "Condition": 48,
-        "Times": 0,
-        "Probability": 500,
-        "EmojiTime": 0
+        "Probability": 500
     },
     {
         "Id": 38,
         "Name": "复奏",
         "UltraShout": "余音不绝，不妨再来一曲。",
         "Desc": "获得中幅加速，并且有概率返还1-2个信号球",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 39,
         "Name": "正向激励",
         "Desc": "受到负面效果时，会获得加速效果",
         "Condition": 49,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 40,
         "Name": "姐姐！",
         "UltraShout": "赛西莉姐姐！帮帮我！",
         "Desc": "隐身在一旁的姐姐帮忙推车，获得大幅加速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 41,
         "Name": "摸鱼",
         "Desc": "比赛前半段小幅减速，后半段随时概率中幅加速",
         "Condition": 45,
-        "Times": 0,
-        "Probability": 300,
-        "EmojiTime": 0
+        "Probability": 300
     },
     {
         "Id": 42,
         "Name": "海妖之歌",
         "UltraShout": "沉没在这片海底",
         "Desc": "对随机数量的其他角色造成减速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             1,
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 43,
         "Name": "好心小梅",
         "Desc": "比赛进入后半时，让自己和最后一名的角色获得短暂大幅加速",
         "Condition": 2,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 44,
         "Name": "混乱维度",
         "UltraShout": "见识一下吧，维度之外的景象。",
         "Desc": "召唤来自高维力量的打击，对随机数量的其他角色造成攻击",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "Emoji": "Assets/Product/Texture/Image/UiPokerGuessing2/UiPokerGuessingEmote03.png",
-        "EmojiTime": 1500,
         "SignalBallCosts": [
             1,
             1
-        ]
+        ],
+        "Probability": 1000,
+        "Emoji": "Assets/Product/Texture/Image/UiPokerGuessing2/UiPokerGuessingEmote03.png",
+        "EmojiTime": 1500
     },
     {
         "Id": 45,
         "Name": "赢家通吃",
         "Desc": "使用必杀技后，一段时间内免疫负面效果",
         "Condition": 52,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 46,
         "Name": "灌铅骰子",
         "UltraShout": "猜猜自己的点数吧。",
         "Desc": "包括自己在内，所有角色随机获得一个信号球并生效（不会触发技能效果）",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
+            "",
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 47,
         "Name": "势能冲锋",
         "Desc": "初始速度较低，但比赛中会逐渐提升自己的最大速度",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 48,
         "Name": "真龙姿态",
         "UltraShout": "冲锋，只会让我痛快！",
         "Desc": "进入龙骑武装形态，全局一次，之后每行驶一段距离就会给自己释放短时间的护盾。",
-        "Condition": 0,
-        "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Times": 1,
+        "Probability": 1000
     },
     {
         "Id": 1000,
@@ -539,8 +443,7 @@
         "Desc": "初始自带标记buff",
         "Condition": 1,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1001,
@@ -548,181 +451,145 @@
         "Desc": "半程后把标记buff删了",
         "Condition": 2,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1002,
         "Name": "比安卡暗大招",
         "Condition": 11,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1003,
         "Name": "比安卡光大招",
         "Condition": 12,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1004,
         "Name": "七实大招延长加速",
         "Condition": 13,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1005,
         "Name": "卡列过半移除被动",
         "Condition": 2,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1006,
         "Name": "遗忘者实际效果",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1007,
         "Name": "库洛姆被动效果",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1008,
         "Name": "移除库洛姆被动",
         "Condition": 2,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1009,
         "Name": "拉弥亚被动加速",
         "Condition": 78,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1010,
         "Name": "拉弥亚被动减速",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1011,
         "Name": "维罗妮卡被动实际效果",
         "Condition": 73,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1012,
         "Name": "维罗妮卡大招加盾",
         "Condition": 75,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2000,
         "Name": "鲨鲨技能",
         "Desc": "比赛前半段每次获得红球时，有概率小幅加速",
         "Condition": 5,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2001,
         "Name": "鲨鲨必杀",
         "UltraShout": "鲨鲨，开始测试！",
         "Desc": "让其他所有角色大幅减速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             3
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 2002,
         "Name": "阿箭技能",
         "Desc": "受到负面效果时，有概率免疫",
         "Condition": 76,
-        "Times": 0,
-        "Probability": 500,
-        "EmojiTime": 0
+        "Probability": 500
     },
     {
         "Id": 2003,
         "Name": "阿箭必杀",
         "UltraShout": "阿箭，开始测试！",
         "Desc": "直至比赛结束，获得额外的移速，并且漂移获得氮气的效率提升",
-        "Condition": 0,
-        "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
+            "",
             2
-        ]
+        ],
+        "Times": 1,
+        "Probability": 1000
     },
     {
         "Id": 2004,
         "Name": "阿枪技能",
         "Desc": "比赛前半获得信号球时，有概率多获得1个随机信号球",
         "Condition": 18,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2005,
         "Name": "阿枪必杀",
         "UltraShout": "阿枪，开始测试！",
         "Desc": "获得小幅加速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "SignalBallCosts": "{0: 2}",
+        "Probability": 1000
     },
     {
         "Id": 2006,
         "Name": "蔷薇技能",
         "Desc": "不受所有效果影响",
         "Condition": 17,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2007,
         "Name": "蔷薇必杀",
         "UltraShout": "蔷薇，开始测试！",
         "Desc": "失去技能效果，并且获得常驻的速度与加速度提升，全局一次",
-        "Condition": 0,
-        "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             3
-        ]
+        ],
+        "Times": 1,
+        "Probability": 1000
     },
     {
         "Id": 2008,
@@ -730,44 +597,36 @@
         "Desc": "比赛后半段排名下降时触发，立刻大幅加速，全程触发一次",
         "Condition": 24,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2009,
         "Name": "喷涂必杀",
         "UltraShout": "喷涂，开始测试！",
         "Desc": "让所有角色小幅加速，同时自己额外获得大幅加速",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 2010,
         "Name": "修理技能",
         "Desc": "使用必杀技后，一段时间内免疫负面效果",
         "Condition": 52,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2011,
         "Name": "修理必杀",
         "UltraShout": "修理，开始测试！",
         "Desc": "包括自己在内，所有角色随机获得一个信号球并生效（不会触发技能效果）",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
+            "",
             1
-        ]
+        ],
+        "Probability": 1000
     }
 ]

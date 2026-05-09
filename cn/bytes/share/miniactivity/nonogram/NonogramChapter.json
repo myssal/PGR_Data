@@ -2,185 +2,165 @@
     {
         "Id": 1,
         "Name": "昼夜倾倒",
-        "PreChapterId": 0,
+        "StageGroupIds": [
+            1
+        ],
         "UnlockItemNum": 20,
         "UnlockCgItemId": 1058,
         "UnlockCgItemNum": 6,
         "CgRewardId": 64643,
         "TimeLimit": 60,
-        "DeductTime": 2,
-        "IsRebrush": false,
-        "StageGroupIds": [
-            1
-        ]
+        "DeductTime": 2
     },
     {
         "Id": 2,
         "Name": "原野灼烧",
+        "StageGroupIds": [
+            2
+        ],
         "PreChapterId": 1,
         "UnlockItemNum": 20,
         "UnlockCgItemId": 1059,
         "UnlockCgItemNum": 6,
         "CgRewardId": 64644,
         "TimeLimit": 60,
-        "DeductTime": 3,
-        "IsRebrush": false,
-        "StageGroupIds": [
-            2
-        ]
+        "DeductTime": 3
     },
     {
         "Id": 3,
         "Name": "界域俯瞰",
+        "StageGroupIds": [
+            3
+        ],
         "PreChapterId": 2,
         "UnlockItemNum": 20,
         "UnlockCgItemId": 1060,
         "UnlockCgItemNum": 6,
         "CgRewardId": 64645,
         "TimeLimit": 60,
-        "DeductTime": 5,
-        "IsRebrush": false,
-        "StageGroupIds": [
-            3
-        ]
+        "DeductTime": 5
     },
     {
         "Id": 4,
         "Name": "编织命运",
+        "StageGroupIds": [
+            4
+        ],
         "PreChapterId": 3,
         "UnlockItemNum": 20,
         "UnlockCgItemId": 1061,
         "UnlockCgItemNum": 8,
         "CgRewardId": 64646,
         "TimeLimit": 60,
-        "DeductTime": 5,
-        "IsRebrush": false,
-        "StageGroupIds": [
-            4
-        ]
+        "DeductTime": 5
     },
     {
         "Id": 5,
         "Name": "秉火长明",
+        "StageGroupIds": [
+            5
+        ],
         "PreChapterId": 4,
         "UnlockItemNum": 20,
         "UnlockCgItemId": 1062,
         "UnlockCgItemNum": 8,
         "CgRewardId": 64647,
         "TimeLimit": 60,
-        "DeductTime": 5,
-        "IsRebrush": false,
-        "StageGroupIds": [
-            5
-        ]
+        "DeductTime": 5
     },
     {
         "Id": 6,
         "Name": "挑战",
-        "PreChapterId": 5,
-        "UnlockItemNum": 0,
-        "UnlockCgItemId": 0,
-        "UnlockCgItemNum": 0,
-        "CgRewardId": 0,
-        "TimeLimit": 60,
-        "DeductTime": 5,
-        "IsRebrush": true,
         "StageGroupIds": [
             3,
             4,
             5
-        ]
+        ],
+        "PreChapterId": 5,
+        "TimeLimit": 60,
+        "DeductTime": 5,
+        "IsRebrush": true
     },
     {
         "Id": 7,
         "Name": "困身",
-        "PreChapterId": 0,
+        "StageGroupIds": [
+            6
+        ],
         "UnlockItemNum": 20,
         "UnlockCgItemId": 1070,
         "UnlockCgItemNum": 6,
         "CgRewardId": 66502,
         "TimeLimit": 60,
-        "DeductTime": 2,
-        "IsRebrush": false,
-        "StageGroupIds": [
-            6
-        ]
+        "DeductTime": 2
     },
     {
         "Id": 8,
         "Name": "沉忆",
+        "StageGroupIds": [
+            7
+        ],
         "PreChapterId": 7,
         "UnlockItemNum": 20,
         "UnlockCgItemId": 1071,
         "UnlockCgItemNum": 6,
         "CgRewardId": 66503,
         "TimeLimit": 60,
-        "DeductTime": 3,
-        "IsRebrush": false,
-        "StageGroupIds": [
-            7
-        ]
+        "DeductTime": 3
     },
     {
         "Id": 9,
         "Name": "逐惘",
+        "StageGroupIds": [
+            8
+        ],
         "PreChapterId": 8,
         "UnlockItemNum": 20,
         "UnlockCgItemId": 1072,
         "UnlockCgItemNum": 6,
         "CgRewardId": 66504,
         "TimeLimit": 60,
-        "DeductTime": 5,
-        "IsRebrush": false,
-        "StageGroupIds": [
-            8
-        ]
+        "DeductTime": 5
     },
     {
         "Id": 10,
         "Name": "赴夜",
+        "StageGroupIds": [
+            9
+        ],
         "PreChapterId": 9,
         "UnlockItemNum": 20,
         "UnlockCgItemId": 1073,
         "UnlockCgItemNum": 8,
         "CgRewardId": 66505,
         "TimeLimit": 60,
-        "DeductTime": 5,
-        "IsRebrush": false,
-        "StageGroupIds": [
-            9
-        ]
+        "DeductTime": 5
     },
     {
         "Id": 11,
         "Name": "新生",
+        "StageGroupIds": [
+            10
+        ],
         "PreChapterId": 10,
         "UnlockItemNum": 20,
         "UnlockCgItemId": 1074,
         "UnlockCgItemNum": 8,
         "CgRewardId": 66506,
         "TimeLimit": 60,
-        "DeductTime": 5,
-        "IsRebrush": false,
-        "StageGroupIds": [
-            10
-        ]
+        "DeductTime": 5
     },
     {
         "Id": 12,
         "Name": "挑战",
-        "PreChapterId": 11,
-        "UnlockItemNum": 0,
-        "UnlockCgItemId": 0,
-        "UnlockCgItemNum": 0,
-        "CgRewardId": 0,
-        "TimeLimit": 60,
-        "DeductTime": 5,
-        "IsRebrush": true,
         "StageGroupIds": [
             8,
             9,
             10
-        ]
+        ],
+        "PreChapterId": 11,
+        "TimeLimit": 60,
+        "DeductTime": 5,
+        "IsRebrush": true
     }
 ]

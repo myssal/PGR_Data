@@ -517,6 +517,7 @@ local module_creator = function()
 
                 -- 分包补丁
                 ResSizeDic = {}
+                local subHasUninstalledCache = {} -- 缓存Sub级卸载意图检查结果，避免同Sub下多个res重复查询
                 for resId, dlcTable in pairs(DlcIndexTable) do
                     dlcTableMap[resId] = dlcTable
                     -- 是否需要下载分包资源 = 是热更流程 && (是全量下载 || 已经下载过) && 未被移除 && 未被忽略
@@ -526,8 +527,22 @@ local module_creator = function()
                     if not isDownloadedOrSelected and isHotUpdateRes then
                          local parentSubId = ResId2SubIdMap and ResId2SubIdMap[resId]
                          if parentSubId and XLaunchDlcManager.IsSubPackageActive(parentSubId) then
-                              isDownloadedOrSelected = true
-                              CsLog.Debug("[DLC] Auto-complete resId: " .. tostring(resId) .. " for active subpackage: " .. tostring(parentSubId))
+                              -- 检查该Sub是否有取消下载意图标记（如用户在涂装下载界面点了取消）
+                              if XLaunchDlcManager.IsSubPackageSkipAutoComplete(parentSubId) then
+                                  CsLog.Debug("[DLC] Auto-complete SKIPPED resId: " .. tostring(resId) .. " subpackage " .. tostring(parentSubId) .. " has skip-auto-complete flag")
+                              else
+                                  -- 检查该Sub下是否有任何Res存在RES级卸载意图
+                                  -- 如果有，说明用户已进行过Res级精细管理，不再整体自动补全该Sub
+                                  if subHasUninstalledCache[parentSubId] == nil then
+                                      subHasUninstalledCache[parentSubId] = XLaunchDlcManager.HasAnyUninstalledResInSub(parentSubId)
+                                  end
+                                  if not subHasUninstalledCache[parentSubId] then
+                                      isDownloadedOrSelected = true
+                                      CsLog.Debug("[DLC] Auto-complete resId: " .. tostring(resId) .. " for active subpackage: " .. tostring(parentSubId))
+                                  else
+                                      CsLog.Debug("[DLC] Auto-complete SKIPPED resId: " .. tostring(resId) .. " subpackage " .. tostring(parentSubId) .. " has RES-level uninstall record")
+                                  end
+                              end
                          end
                     end
 
@@ -542,6 +557,7 @@ local module_creator = function()
                     if not needDownloadDlc and not isHotUpdateRes
                             and XLaunchDlcManager.IsAutoDownloadRes(resId) and not isUninstalled then
                         needDownloadDlc = true
+                        XLaunchDlcManager.SetLaunchDownloadRecord(resId) -- 补写记录，确保热更时能下载补丁
                     end
                     if IsDebugBuild then
                         needDownloadMap[resId] = needDownloadDlc

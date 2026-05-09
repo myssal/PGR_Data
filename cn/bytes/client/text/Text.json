@@ -404,6 +404,10 @@
         "Text": "奖励详情"
     },
     {
+        "Key": "WeeklyActiveRewardTitle",
+        "Text": "奖励详情"
+    },
+    {
         "Key": "SettingCheckSave",
         "Text": "当前更改尚未保存，是否保存？"
     },
@@ -1152,6 +1156,10 @@
         "Text": "讨伐值{0}"
     },
     {
+        "Key": "BossSingleChallengeButtonScoreDisplay",
+        "Text": "{0}/<color=#525963>{1}</color>"
+    },
+    {
         "Key": "BossSingleNoNeedScore",
         "Text": "全部获得"
     },
@@ -1166,6 +1174,10 @@
     {
         "Key": "BossSingleMinuteHideBoss",
         "Text": "<color=#e53632>{0}分钟</color>"
+    },
+    {
+        "Key": "BossSingleTimeLimit",
+        "Text": "通关时限：{0}分钟"
     },
     {
         "Key": "BossSingleLevel",
@@ -3496,7 +3508,7 @@
     },
     {
         "Key": "PurchaseYKDes",
-        "Text": "月卡购买后，持续30日，每日5:00，可领取100黑卡。\\n月卡最多购买2张，时间叠加，每天只能领取一次100黑卡奖励。\\n购买后可立即获取300黑卡。"
+        "Text": "月卡购买后，持续30日，每日5:00，可领取100黑卡。\\n月卡最多购买6张，时间叠加，每天只能领取一次100黑卡奖励。\\n购买后可立即获取300黑卡。"
     },
     {
         "Key": "SaveShowSetting",
@@ -17807,7 +17819,7 @@
     },
     {
         "Key": "BossSingleDetailAllScore",
-        "Text": "<color=#0E70BDFF>{0}</color>"
+        "Text": "{0}"
     },
     {
         "Key": "ActivityOpenMonthDayTime",
@@ -20227,7 +20239,7 @@
     },
     {
         "Key": "PurchaseComboContent",
-        "Text": "1、规则说明:捆绑包内含多个补给包,购买时,将以对应价格获得多个补给包的内容。\\n2、已单独购买的补给包不参与捆绑包的付费计算。\\n3、购买后,捆绑包内包含的补给包将会全部售罄,不可再次购买。"
+        "Text": "1、规则说明:捆绑包内含多个补给包,购买时,将以对应显示价格获得多个补给包的内容。\\n2、已单独购买的补给包不参与捆绑包的付费计算。\\n3、购买后,捆绑包内包含的补给包将会全部售罄,不可再次购买。"
     },
     {
         "Key": "PurchaseFirstRechargeTipTitle",
@@ -20446,6 +20458,102 @@
         "Text": "现有:{0}"
     },
     {
+        "Key": "Theatre6StoryProgress",
+        "Text": "进度：{0}/{1}"
+    },
+    {
+        "Key": "Theatre6StoryConsumeNoEnought",
+        "Text": "缄封文书数量不足"
+    },
+    {
+        "Key": "Theatre6StoryConsumeTip",
+        "Text": "可在关卡中获取{0}"
+    },
+    {
+        "Key": "Theatre6StoryPurchaseTip",
+        "Text": "{0}不足，可在关卡中获取"
+    },
+    {
+        "Key": "Theatre6StoryGiveUp",
+        "Text": "是否放弃当前进度"
+    },
+    {
+        "Key": "Theatre6Save",
+        "Text": "保存"
+    },
+    {
+        "Key": "Theatre6SaveReplace",
+        "Text": "对比并替换"
+    },
+    {
+        "Key": "Theatre6AttrPackTypeName",
+        "Text": "旧物"
+    },
+    {
+        "Key": "Theatre6BuffEffectTimes",
+        "Text": "生效：{0}"
+    },
+    {
+        "Key": "Theatre6BuffRemainingTimes",
+        "Text": "剩余：{0}"
+    },
+    {
+        "Key": "Theatre6TaskFinish",
+        "Text": "已完成"
+    },
+    {
+        "Key": "Theatre6StoryUnlock",
+        "Text": "解锁{0}"
+    },
+    {
+        "Key": "Theatre6FreeRefresh",
+        "Text": "免费"
+    },
+    {
+        "Key": "Theatre6TaskGoldTip",
+        "Text": "古旧金币不足"
+    },
+    {
+        "Key": "Theatre6TaskRefreshTip",
+        "Text": "刷新次数已达上限"
+    },
+    {
+        "Key": "Theatre6TaskChooseCountTip",
+        "Text": "请选择{0}个任务"
+    },
+    {
+        "Key": "Theatre6TaskProgressFinish",
+        "Text": "完美达成！"
+    },
+    {
+        "Key": "Theatre6TaskChooseLimit",
+        "Text": "任务选择已达上限"
+    },
+    {
+        "Key": "Theatre6FightEquipSkillTip",
+        "Text": "存在可装配的技能，是否直接进入战斗"
+    },
+    {
+        "Key": "Theatre6FightHighSkillTip",
+        "Text": "存在更高等级的技能，是否直接进入战斗"
+    },
+    {
+        "Key": "Theatre6TalentLvRichText",
+        "Text": "<size=28><b>Lv.</b></size>{0}"
+    },
+    {
+        "Key": "Theatre6TaskShopTimeLabel",
+        "Text": "剩余时间：{0}"
+    },
+    {
+        "Key": "Theatre6EntranceTimeLabel",
+        "Text": "限时奖励剩余：{0}"
+    },
+    {
+        "Key": "Theatre6ChooseMaxTaskTip",
+        "Text": "需要选择3个任务"
+    },
+    {
         "Key": "UsePackageOverMaxCount",
         "Text": "使用{0}已到达上限"
     },
@@ -20518,6 +20626,14 @@
         "Text": "获取关卡数据失败"
     },
     {
+        "Key": "Theatre6GiveUpTitle",
+        "Text": "placeholder_放弃存档"
+    },
+    {
+        "Key": "Theatre6SaveGiveUpContent",
+        "Text": "placeholder_真的要放弃吗"
+    },
+    {
         "Key": "DownloadAllCharacterFashion",
         "Text": "该成员所有涂装"
     },
@@ -20538,12 +20654,68 @@
         "Text": "下载开始"
     },
     {
+        "Key": "BtnPvpTip",
+        "Text": "在后续版本中，可以使用存档与其他玩家对战\\n有丰富的奖励"
+    },
+    {
+        "Key": "BtnPvpTipTitle",
+        "Text": "敬请期待"
+    },
+    {
+        "Key": "Theatre6Shop",
+        "Text": "placeholder_商 店"
+    },
+    {
+        "Key": "Theatre6Task",
+        "Text": "placeholder_任 务"
+    },
+    {
         "Key": "SelectFashionToUninstall",
         "Text": "请选择要卸载的涂装资源"
     },
     {
         "Key": "SelectFashionToDownload",
         "Text": "请选择要下载的涂装资源"
+    },
+    {
+        "Key": "Theatre6StoryGiveUpTitle",
+        "Text": "放弃进度"
+    },
+    {
+        "Key": "Theatre6ActiveSkill",
+        "Text": "主动技能"
+    },
+    {
+        "Key": "Theatre6BattleSkill",
+        "Text": "拼刀技能"
+    },
+    {
+        "Key": "Theatre6CSSkill",
+        "Text": "反制技能"
+    },
+    {
+        "Key": "Theatre6InsertSkill",
+        "Text": "触发技能"
+    },
+    {
+        "Key": "Theatre6DifficultyEasy",
+        "Text": "简单"
+    },
+    {
+        "Key": "Theatre6DifficultyHard",
+        "Text": "困难"
+    },
+    {
+        "Key": "Theatre6CoinNotEnough",
+        "Text": "古旧金币不足，无法购买"
+    },
+    {
+        "Key": "Theatre6SkillMax",
+        "Text": "技能已满，无法购买"
+    },
+    {
+        "Key": "Theatre6OverClockEfficiency",
+        "Text": "伤害倍率"
     },
     {
         "Key": "DownloadFashionFinished",
@@ -20560,6 +20732,46 @@
     {
         "Key": "UninstallFashionConfirm",
         "Text": "确定要卸载选中的涂装资源吗？"
+    },
+    {
+        "Key": "Theatre6SkillCSMag",
+        "Text": "placeholder_超算积累倍率"
+    },
+    {
+        "Key": "PassportCloudGameDesc",
+        "Text": "可用于战双云游戏（需要在版本结束前登录云游戏激活）"
+    },
+    {
+        "Key": "ChangeGetFashionGroup",
+        "Text": "套装已更换"
+    },
+    {
+        "Key": "ChangeNoGetFashionGroup",
+        "Text": "尚未拥有整套涂装，已更换拥有的涂装"
+    },
+    {
+        "Key": "Theatre6SanTitleNormal",
+        "Text": "理智正常"
+    },
+    {
+        "Key": "Theatre6SanTitleDeath",
+        "Text": "呓语缠身"
+    },
+    {
+        "Key": "Theatre6SanTitleAbnormal",
+        "Text": "理智异常"
+    },
+    {
+        "Key": "Theatre6SanTipDesc",
+        "Text": "当前理智所处的状态。当理智过低时，会触发负面残响。"
+    },
+    {
+        "Key": "Theatre6BattleShopName",
+        "Text": "情报之间"
+    },
+    {
+        "Key": "Theatre6BattleShopTipExitConfirm",
+        "Text": "placeholder_还有可购买商品或免费刷新次数，是否确认离开商店？"
     },
     {
         "Key": "BattleFashionUndownloadedTipTitle",
@@ -20582,11 +20794,127 @@
         "Text": "资源下载中，请先取消下载再进行操作"
     },
     {
+        "Key": "Theatre6PopupSkillLevelUpNotShow",
+        "Text": "无可升级技能"
+    },
+    {
+        "Key": "Theatre6PopupSkillLevelUpCancel",
+        "Text": "确定要放弃升级吗？"
+    },
+    {
+        "Key": "Theatre6SkillCoinNotEnough",
+        "Text": "古旧金币不足"
+    },
+    {
+        "Key": "PurchaseYKRetroactiveNotNeeded",
+        "Text": "无需补签"
+    },
+    {
+        "Key": "PurchaseYKRetroactiveHelpTitle",
+        "Text": "补签说明"
+    },
+    {
+        "Key": "PurchaseYKRetroactiveHelpContent",
+        "Text": "消耗出勤补录卡可以进行一次月卡补签\\n完成每周任务可以获得出勤补录卡\\n每个自然月结束时，将自动使用出勤补录卡进行月卡补签\\n未使用的出勤补录卡会在自然月结束时过期"
+    },
+    {
+        "Key": "PurchaseYKRetroactiveNeedMoreItems",
+        "Text": "出勤补录卡数量不足"
+    },
+    {
+        "Key": "PassportFashionBuyBtnText",
+        "Text": "付费情报获取"
+    },
+    {
         "Key": "FashionSuitProgressComplate",
         "Text": "已集齐"
     },
     {
+        "Key": "PassportAutoWindowTitleOpen",
+        "Text": "战略评定手册开启"
+    },
+    {
+        "Key": "PassportAutoWindowTitleSprint",
+        "Text": "战略评定手册冲刺中"
+    },
+    {
+        "Key": "PassportAutoWindowTitleNearEnd",
+        "Text": "战略评定手册即将结束"
+    },
+    {
+        "Key": "PassportAutoWindowSubtitleOpen",
+        "Text": "解锁情报，获得超值奖励"
+    },
+    {
+        "Key": "PassportAutoWindowSubtitleDoubleExp",
+        "Text": "情报值获取限时翻倍"
+    },
+    {
+        "Key": "PassportObtain",
+        "Text": "本期通行证轮次为 <color=#57f0fb>4</color> 轮，赠送您补偿奖励"
+    },
+    {
+        "Key": "ShopItemRoleTips",
+        "Text": "当前{0}等阶，再购买{1}个可达{2}"
+    },
+    {
+        "Key": "ExportPerformanceTipsDesc",
+        "Text": "开始自动导出？"
+    },
+    {
+        "Key": "ExportPerformanceCancelTipsDesc",
+        "Text": "正在执行导出中，是否取消？"
+    },
+    {
         "Key": "WaitingForDownloadFashionTip",
         "Text": "等待其它资源下载中，如想停止请点击【取消下载】"
+    },
+    {
+        "Key": "Theatre6SkillUpGrade",
+        "Text": "等级提升"
+    },
+    {
+        "Key": "Theatre6GetSkill",
+        "Text": "获得技能"
+    },
+    {
+        "Key": "Theatre6GetAttrPack",
+        "Text": "获得旧物"
+    },
+    {
+        "Key": "FuBenBossSingleResetNotUsable",
+        "Text": "当前无法重置"
+    },
+    {
+        "Key": "SetTeamTag",
+        "Text": "是否保存本次修改？"
+    },
+    {
+        "Key": "FashionColorLock",
+        "Text": "尚未获得当前异色涂装"
+    },
+    {
+        "Key": "Theatre6SkillChangeError1",
+        "Text": "低等级技能无法替换装备中的高等级技能"
+    },
+    {
+        "Key": "Theatre6SkillChangeError2",
+        "Text": "已装备相同技能,无法重复装备"
+    },
+    {
+        "Key": "Theatre6SkillSlotFull",
+        "Text": "装备槽已满"
+    },
+    {
+        "Key": "Theatre6ShopStatus1",
+        "Text": "本次刷新"
+    },
+    {
+        "Key": "Theatre6ShopStatus2",
+        "Text": "免费刷新"
+    },
+    {
+        "Key": "Theatre6ShopStatus3",
+        "Text": "刷新上限"
     }
 ]

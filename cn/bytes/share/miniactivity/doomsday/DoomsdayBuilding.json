@@ -5,16 +5,9 @@
         "Name": "废墟",
         "Desc": "一座小小的废墟，全部清理完成后，你将获得 300 木材、 300 钢材。区域将恢复为空地。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild02.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
         "WorkDayCount": 1,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 0,
         "LockPeopleOnWorking": 3,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "WorkingEffectId": [
             1,
             2
@@ -26,16 +19,9 @@
         "Name": "废墟",
         "Desc": "一座中等的废墟，全部清理完成后，你将获得 600 木材、 600 钢材。区域将恢复为空地。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild02.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
         "WorkDayCount": 1,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 0,
         "LockPeopleOnWorking": 5,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "WorkingEffectId": [
             3,
             4
@@ -47,16 +33,9 @@
         "Name": "废墟",
         "Desc": "一座很大的废墟，全部清理完成后，你将获得 1000 木材、 1000 钢材。区域将恢复为空地。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild02.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
         "WorkDayCount": 1,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 0,
         "LockPeopleOnWorking": 10,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "WorkingEffectId": [
             5,
             6
@@ -68,16 +47,7 @@
         "Name": "住宅",
         "Desc": "为一部分人提供住所。至少比直接睡地板舒服一些。有住所的人们，将不容易生病或饥饿。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild05.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 2,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 10,
-        "CanManualRemove": true,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -85,24 +55,17 @@
         "SpendResourceCount": [
             355,
             360
-        ]
+        ],
+        "LockPeopleOnBuilding": 2,
+        "ExtendPeopleNumber": 10,
+        "CanManualRemove": true
     },
     {
         "Id": 5,
-        "Type": 0,
         "Name": "医疗站",
         "Desc": "当数量足够的居民在医疗站中工作时，医疗站每天产出固定数量的药物。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild03.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 2,
-        "LockPeopleOnWorking": 2,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": true,
-        "UnlockCondition": 10529,
         "SpendResourceType": [
             1,
             2
@@ -117,26 +80,20 @@
         "WorkingDailyGainResourceCount": [
             5
         ],
+        "LockPeopleOnBuilding": 2,
+        "LockPeopleOnWorking": 2,
         "WorkingEffectId": [
             7
-        ]
+        ],
+        "CanManualRemove": true,
+        "UnlockCondition": 10529
     },
     {
         "Id": 6,
-        "Type": 0,
         "Name": "补给站",
         "Desc": "当数量足够的居民在补给站中工作时，补给站每天产出固定数量的食物。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild07.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 2,
-        "LockPeopleOnWorking": 2,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": true,
-        "UnlockCondition": 10529,
         "SpendResourceType": [
             1,
             2
@@ -151,9 +108,13 @@
         "WorkingDailyGainResourceCount": [
             5
         ],
+        "LockPeopleOnBuilding": 2,
+        "LockPeopleOnWorking": 2,
         "WorkingEffectId": [
             8
-        ]
+        ],
+        "CanManualRemove": true,
+        "UnlockCondition": 10529
     },
     {
         "Id": 7,
@@ -163,14 +124,6 @@
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild06.png",
         "MaxNum": 2,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 5,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 10529,
         "SpendResourceType": [
             1,
             2
@@ -179,10 +132,12 @@
             305,
             280
         ],
+        "LockPeopleOnBuilding": 5,
         "WorkingEffectId": [
             9,
             10
-        ]
+        ],
+        "UnlockCondition": 10529
     },
     {
         "Id": 8,
@@ -192,14 +147,6 @@
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild04.png",
         "MaxNum": 1,
         "FinishDayCount": 3,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 10,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": true,
-        "UnlockCondition": 10529,
         "SpendResourceType": [
             1,
             2
@@ -207,24 +154,17 @@
         "SpendResourceCount": [
             940,
             965
-        ]
+        ],
+        "LockPeopleOnBuilding": 10,
+        "CanManualRemove": true,
+        "UnlockCondition": 10529
     },
     {
         "Id": 201,
-        "Type": 0,
         "Name": "旧型医疗站",
         "Desc": "当数量足够的居民在医疗站中工作时，大型医疗站每天产出固定数量的药物。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild03.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 3,
-        "LockPeopleOnWorking": 3,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": true,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -239,26 +179,19 @@
         "WorkingDailyGainResourceCount": [
             10
         ],
+        "LockPeopleOnBuilding": 3,
+        "LockPeopleOnWorking": 3,
         "WorkingEffectId": [
             201
-        ]
+        ],
+        "CanManualRemove": true
     },
     {
         "Id": 202,
-        "Type": 0,
         "Name": "旧型补给站",
         "Desc": "当数量足够的居民在补给站中工作时，大型补给站每天产出固定数量的食物。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild07.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 3,
-        "LockPeopleOnWorking": 3,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": true,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -273,9 +206,12 @@
         "WorkingDailyGainResourceCount": [
             10
         ],
+        "LockPeopleOnBuilding": 3,
+        "LockPeopleOnWorking": 3,
         "WorkingEffectId": [
             202
-        ]
+        ],
+        "CanManualRemove": true
     },
     {
         "Id": 203,
@@ -283,16 +219,8 @@
         "Name": "小型废墟",
         "Desc": "一座小小的废墟，全部清理完成后，你将获得 <color=#0F70BC>100 木材</color> 、 <color=#0F70BC>100 钢材</color>  。而后区域将 <color=#0F70BC>恢复为空地</color>  。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild02.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
         "WorkDayCount": 1,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 0,
-        "LockPeopleOnWorking": 3,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "WorkingDailyGainResourceId": [
             1,
             2
@@ -301,6 +229,7 @@
             100,
             100
         ],
+        "LockPeopleOnWorking": 3,
         "WorkingEffectId": [
             203,
             204
@@ -312,16 +241,8 @@
         "Name": "中型废墟",
         "Desc": "一座中等的废墟，全部清理完成后，你将获得 <color=#0F70BC>200 木材</color> 、 <color=#0F70BC>200 钢材</color>  。而后区域将 <color=#0F70BC>恢复为空地</color>  。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild02.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
         "WorkDayCount": 2,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 0,
-        "LockPeopleOnWorking": 3,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "WorkingDailyGainResourceId": [
             1,
             2
@@ -330,6 +251,7 @@
             100,
             100
         ],
+        "LockPeopleOnWorking": 3,
         "WorkingEffectId": [
             205,
             206
@@ -341,16 +263,8 @@
         "Name": "大型废墟",
         "Desc": "一座很大的废墟，全部清理完成后，你将获得 <color=#0F70BC>500 木材</color> 、 <color=#0F70BC>500 钢材</color>  。而后区域将 <color=#0F70BC>恢复为空地</color>  。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild02.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
         "WorkDayCount": 3,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 0,
-        "LockPeopleOnWorking": 5,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "WorkingDailyGainResourceId": [
             1,
             2
@@ -359,6 +273,7 @@
             170,
             170
         ],
+        "LockPeopleOnWorking": 5,
         "WorkingEffectId": [
             207,
             208
@@ -370,16 +285,7 @@
         "Name": "住宅",
         "Desc": "为一部分人<color=#0F70BC>（10人）</color>提供住所。至少比直接睡地板舒服一些。有住所的人们，将不容易感到疲惫<color=#0F70BC>（精神值下降减少）</color>。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild05.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 5,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 10,
-        "CanManualRemove": true,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -387,24 +293,17 @@
         "SpendResourceCount": [
             500,
             500
-        ]
+        ],
+        "LockPeopleOnBuilding": 5,
+        "ExtendPeopleNumber": 10,
+        "CanManualRemove": true
     },
     {
         "Id": 207,
-        "Type": 0,
         "Name": "医疗站",
         "Desc": "当数量足够的居民在医疗站中工作时，医疗站每天产出固定数量的药物。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild03.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 2,
-        "LockPeopleOnWorking": 2,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": true,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -419,26 +318,19 @@
         "WorkingDailyGainResourceCount": [
             15
         ],
+        "LockPeopleOnBuilding": 2,
+        "LockPeopleOnWorking": 2,
         "WorkingEffectId": [
             209
-        ]
+        ],
+        "CanManualRemove": true
     },
     {
         "Id": 208,
-        "Type": 0,
         "Name": "补给站",
         "Desc": "当数量足够的居民在补给站中工作时，补给站每天产出固定数量的食物。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild07.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 2,
-        "LockPeopleOnWorking": 2,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": true,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -453,9 +345,12 @@
         "WorkingDailyGainResourceCount": [
             15
         ],
+        "LockPeopleOnBuilding": 2,
+        "LockPeopleOnWorking": 2,
         "WorkingEffectId": [
             210
-        ]
+        ],
+        "CanManualRemove": true
     },
     {
         "Id": 209,
@@ -465,14 +360,6 @@
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild06.png",
         "MaxNum": 2,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 3,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -481,6 +368,7 @@
             300,
             300
         ],
+        "LockPeopleOnBuilding": 3,
         "WorkingEffectId": [
             211,
             212
@@ -494,14 +382,6 @@
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild04.png",
         "MaxNum": 1,
         "FinishDayCount": 2,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 6,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -510,6 +390,7 @@
             1000,
             1000
         ],
+        "LockPeopleOnBuilding": 6,
         "WorkingEffectId": [
             20209,
             20210,
@@ -524,14 +405,6 @@
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild06.png",
         "MaxNum": 1,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 3,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 20202,
         "SpendResourceType": [
             1,
             2
@@ -540,9 +413,11 @@
             300,
             300
         ],
+        "LockPeopleOnBuilding": 3,
         "WorkingEffectId": [
             211
-        ]
+        ],
+        "UnlockCondition": 20202
     },
     {
         "Id": 20301,
@@ -552,14 +427,6 @@
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild06.png",
         "MaxNum": 2,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 3,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -568,6 +435,7 @@
             300,
             300
         ],
+        "LockPeopleOnBuilding": 3,
         "WorkingEffectId": [
             211,
             212,
@@ -582,14 +450,6 @@
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild06.png",
         "MaxNum": 1,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 3,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -598,6 +458,7 @@
             350,
             350
         ],
+        "LockPeopleOnBuilding": 3,
         "WorkingEffectId": [
             211,
             212,
@@ -612,14 +473,6 @@
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild04.png",
         "MaxNum": 1,
         "FinishDayCount": 2,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 4,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": true,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -628,9 +481,11 @@
             900,
             900
         ],
+        "LockPeopleOnBuilding": 4,
         "WorkingEffectId": [
             20420
-        ]
+        ],
+        "CanManualRemove": true
     },
     {
         "Id": 20403,
@@ -638,16 +493,8 @@
         "Name": "不太小废墟",
         "Desc": "一座小小的废墟，全部清理完成后，你将获得 <color=#0F70BC>200 木材</color> 、 <color=#0F70BC>200 钢材</color>  。而后区域将 <color=#0F70BC>恢复为空地</color>  。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild02.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
         "WorkDayCount": 1,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 0,
-        "LockPeopleOnWorking": 4,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "WorkingDailyGainResourceId": [
             1,
             2
@@ -656,6 +503,7 @@
             200,
             200
         ],
+        "LockPeopleOnWorking": 4,
         "WorkingEffectId": [
             20410,
             20411
@@ -667,16 +515,8 @@
         "Name": "不算大废墟",
         "Desc": "一座大大的废墟，全部清理完成后，你将获得 <color=#0F70BC>350 木材</color> 、 <color=#0F70BC>350 钢材</color>  。而后区域将 <color=#0F70BC>恢复为空地</color>  。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild02.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
         "WorkDayCount": 1,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 0,
-        "LockPeopleOnWorking": 6,
-        "ExtendPeopleNumber": 0,
-        "CanManualRemove": false,
-        "UnlockCondition": 0,
         "WorkingDailyGainResourceId": [
             1,
             2
@@ -685,6 +525,7 @@
             350,
             350
         ],
+        "LockPeopleOnWorking": 6,
         "WorkingEffectId": [
             20412,
             20413
@@ -696,16 +537,7 @@
         "Name": "避难所",
         "Desc": "为一部分人<color=#0F70BC>（5人）</color>提供住所。至少比直接睡地板舒服一些。有住所的人们，将不容易感到疲惫<color=#0F70BC>（精神值下降减少）</color>。",
         "Icon": "Assets/Product/Texture/Image/UiDoomsday/UiDoomsdayMainBuild05.png",
-        "MaxNum": 0,
         "FinishDayCount": 1,
-        "WorkDayCount": 0,
-        "WorkingDailyConsumeResourceId": [],
-        "WorkingDailyConsumeResourceCount": [],
-        "LockPeopleOnBuilding": 2,
-        "LockPeopleOnWorking": 0,
-        "ExtendPeopleNumber": 5,
-        "CanManualRemove": true,
-        "UnlockCondition": 0,
         "SpendResourceType": [
             1,
             2
@@ -713,6 +545,9 @@
         "SpendResourceCount": [
             100,
             100
-        ]
+        ],
+        "LockPeopleOnBuilding": 2,
+        "ExtendPeopleNumber": 5,
+        "CanManualRemove": true
     }
 ]

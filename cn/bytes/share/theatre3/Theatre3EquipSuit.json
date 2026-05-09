@@ -101,7 +101,6 @@
     },
     {
         "Id": 6,
-        "AttType": 0,
         "SuitName": "狄瑟尔",
         "UseType": 2,
         "SuitEffectGroupId": 6,
@@ -115,7 +114,6 @@
     },
     {
         "Id": 7,
-        "AttType": 0,
         "SuitName": "布恩",
         "UseType": 2,
         "SuitEffectGroupId": 7,
@@ -129,23 +127,22 @@
     },
     {
         "Id": 8,
-        "AttType": 0,
         "SuitName": "图灵",
         "UseType": 2,
         "SuitEffectGroupId": 8,
         "Desc": "· 【<u>伤口</u>】叠加层数上限<color=#4a70b9>+20</color>\\n·  战斗开始时，对所有敌方施加<color=#4a70b9>20</color>层【<u>伤口</u>】",
-        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ETulingI01002.png",
-        "RecommendDesc": "-推荐驻场角色-",
-        "SimpleEffectDesc": "· 【<u>伤口</u>】叠加层数提高\\n·  战斗开始时，对所有敌方施加高层数【<u>伤口</u>】",
-        "QubitSuitEffectGroupId": 1008,
-        "QubitDesc": "· 【<u>撕裂</u>】叠加层数上限<color=#17f5cf>+30</color>\\n·  战斗开始时，对所有敌方施加<color=#17f5cf>30</color>层【<u>撕裂</u>】",
-        "QubitSampleEffectDesc": "· 【<u>撕裂</u>】叠加层数提高\\n·  战斗开始时，对所有敌方施加高层数【<u>撕裂</u>】",
         "TraitName": [
             "伤口"
         ],
         "TraitDesc": [
             "· 受到普攻伤害时，额外造成伤口层数*<color=#4a70b9>200%</color>的属性伤害（基于当前角色属性），冷却<color=#4a70b9>4</color>秒\\n· 伤口叠加上限为<color=#4a70b9>20</color>层，持续<color=#4a70b9>10</color>秒（重复时刷新）"
         ],
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ETulingI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 【<u>伤口</u>】叠加层数提高\\n·  战斗开始时，对所有敌方施加高层数【<u>伤口</u>】",
+        "QubitSuitEffectGroupId": 1008,
+        "QubitDesc": "· 【<u>撕裂</u>】叠加层数上限<color=#17f5cf>+30</color>\\n·  战斗开始时，对所有敌方施加<color=#17f5cf>30</color>层【<u>撕裂</u>】",
+        "QubitSampleEffectDesc": "· 【<u>撕裂</u>】叠加层数提高\\n·  战斗开始时，对所有敌方施加高层数【<u>撕裂</u>】",
         "QubitTraitName": [
             "撕裂"
         ],
@@ -155,7 +152,6 @@
     },
     {
         "Id": 9,
-        "AttType": 0,
         "SuitName": "夏洛蒂",
         "UseType": 2,
         "SuitEffectGroupId": 9,
@@ -169,7 +165,6 @@
     },
     {
         "Id": 10,
-        "AttType": 0,
         "SuitName": "萨曼达",
         "UseType": 2,
         "SuitEffectGroupId": 10,
@@ -183,7 +178,6 @@
     },
     {
         "Id": 11,
-        "AttType": 0,
         "SuitName": "弗兰",
         "UseType": 2,
         "SuitEffectGroupId": 11,
@@ -197,7 +191,6 @@
     },
     {
         "Id": 12,
-        "AttType": 0,
         "SuitName": "提法",
         "UseType": 2,
         "SuitEffectGroupId": 12,
@@ -211,7 +204,6 @@
     },
     {
         "Id": 13,
-        "AttType": 0,
         "SuitName": "萨贺芬",
         "UseType": 2,
         "SuitEffectGroupId": 13,
@@ -225,7 +217,6 @@
     },
     {
         "Id": 14,
-        "AttType": 0,
         "SuitName": "坎宁安",
         "UseType": 2,
         "SuitEffectGroupId": 14,
@@ -239,23 +230,22 @@
     },
     {
         "Id": 15,
-        "AttType": 0,
         "SuitName": "伏尔泰",
         "UseType": 2,
         "SuitEffectGroupId": 15,
         "Desc": "· 战斗结算时，获得<color=#4a70b9>1</color>层【<u>处决</u>】效果（单局演算内永久累计）\\n· BOSS战提供<color=#4a70b9>4</color>层{0}",
-        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EFuertaiI01002.png",
-        "RecommendDesc": "-推荐驻场角色-",
-        "SimpleEffectDesc": "· 通过战斗节点时，局内永久获得固定层数的【<u>处决</u>】效果\\n· BOSS战额外提供层数",
-        "QubitSuitEffectGroupId": 1015,
-        "QubitDesc": "· 战斗结算时，获得<color=#17f5cf>2</color>层【<u>处决</u>】效果（单局演算内永久累计）\\n· BOSS战提供<color=#17f5cf>5</color>层{0}",
-        "QubitSampleEffectDesc": "· 通过战斗节点时，局内永久获得固定层数的【<u>处决</u>】效果\\n· BOSS战额外提供层数",
         "TraitName": [
             "处决"
         ],
         "TraitDesc": [
             "· 对目标造成伤害时，若目标生命值比例低于处决层数，将其秒杀"
         ],
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EFuertaiI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 通过战斗节点时，局内永久获得固定层数的【<u>处决</u>】效果\\n· BOSS战额外提供层数",
+        "QubitSuitEffectGroupId": 1015,
+        "QubitDesc": "· 战斗结算时，获得<color=#17f5cf>2</color>层【<u>处决</u>】效果（单局演算内永久累计）\\n· BOSS战提供<color=#17f5cf>5</color>层{0}",
+        "QubitSampleEffectDesc": "· 通过战斗节点时，局内永久获得固定层数的【<u>处决</u>】效果\\n· BOSS战额外提供层数",
         "QubitTraitName": [
             "处决"
         ],
@@ -265,23 +255,22 @@
     },
     {
         "Id": 16,
-        "AttType": 0,
         "SuitName": "希格娜",
         "UseType": 2,
         "SuitEffectGroupId": 16,
         "Desc": "· 敌方【<u>中毒</u>】层数上限<color=#4a70b9>+30</color>\\n· 施加【<u>中毒</u>】时，额外施加<color=#4a70b9>1</color>层",
-        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXigenaI01002.png",
-        "RecommendDesc": "-推荐驻场角色-",
-        "SimpleEffectDesc": "· 敌方【<u>中毒</u>】层数上限提高\\n· 施加【<u>中毒</u>】时，获得额外层数",
-        "QubitSuitEffectGroupId": 1016,
-        "QubitDesc": "· 敌方【<u>剧毒</u>】层数上限<color=#17f5cf>+40</color>\\n· 施加【<u>剧毒</u>】时，额外施加<color=#17f5cf>1</color>层",
-        "QubitSampleEffectDesc": "· 敌方【<u>剧毒</u>】层数上限提高\\n· 施加【<u>剧毒</u>】时，获得额外层数",
         "TraitName": [
             "中毒"
         ],
         "TraitDesc": [
             "· 中毒状态下，每秒受到角色攻击力<color=#4a70b9>600%</color>的真实伤害，上限<color=#4a70b9>30</color>层，持续<color=#4a70b9>5</color>秒（重复获取时刷新，每层伤害独立计算）"
         ],
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXigenaI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 敌方【<u>中毒</u>】层数上限提高\\n· 施加【<u>中毒</u>】时，获得额外层数",
+        "QubitSuitEffectGroupId": 1016,
+        "QubitDesc": "· 敌方【<u>剧毒</u>】层数上限<color=#17f5cf>+40</color>\\n· 施加【<u>剧毒</u>】时，额外施加<color=#17f5cf>1</color>层",
+        "QubitSampleEffectDesc": "· 敌方【<u>剧毒</u>】层数上限提高\\n· 施加【<u>剧毒</u>】时，获得额外层数",
         "QubitTraitName": [
             "剧毒"
         ],
@@ -291,7 +280,6 @@
     },
     {
         "Id": 17,
-        "AttType": 0,
         "SuitName": "德珂朵",
         "UseType": 2,
         "SuitEffectGroupId": 17,
@@ -305,7 +293,6 @@
     },
     {
         "Id": 18,
-        "AttType": 0,
         "SuitName": "莫扎特",
         "UseType": 2,
         "SuitEffectGroupId": 18,
@@ -319,7 +306,6 @@
     },
     {
         "Id": 19,
-        "AttType": 0,
         "SuitName": "卢克雷齐娅",
         "UseType": 2,
         "SuitEffectGroupId": 19,
@@ -333,7 +319,6 @@
     },
     {
         "Id": 20,
-        "AttType": 0,
         "SuitName": "艾夏",
         "UseType": 2,
         "SuitEffectGroupId": 20,
@@ -347,23 +332,22 @@
     },
     {
         "Id": 21,
-        "AttType": 0,
         "SuitName": "雪莱",
         "UseType": 2,
         "SuitEffectGroupId": 21,
         "Desc": "·【<u>机械</u>】每<color=#4a70b9>10</color>级进化一次，解锁更强的形态和效果",
-        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXueLaiI01002.png",
-        "RecommendDesc": "-推荐驻场角色-",
-        "SimpleEffectDesc": "·【<u>机械</u>】依据等级进化",
-        "QubitSuitEffectGroupId": 1021,
-        "QubitDesc": "·【<u>机械</u>】升至满级，并突破上限进化至终极形态",
-        "QubitSampleEffectDesc": "·【<u>机械</u>】升至满级，并突破上限进化至终极形态",
         "TraitName": [
             "机械"
         ],
         "TraitDesc": [
             "· 机械跟随角色作战，战中阵亡时无法复活\\n· 机械攻击力和生命值随等级提高\\n· 战斗结算时，机械等级<color=#4a70b9>+1</color>，上限<color=#4a70b9>30</color>级"
         ],
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXueLaiI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "·【<u>机械</u>】依据等级进化",
+        "QubitSuitEffectGroupId": 1021,
+        "QubitDesc": "·【<u>机械</u>】升至满级，并突破上限进化至终极形态",
+        "QubitSampleEffectDesc": "·【<u>机械</u>】升至满级，并突破上限进化至终极形态",
         "QubitTraitName": [
             "机械"
         ],
@@ -373,7 +357,6 @@
     },
     {
         "Id": 22,
-        "AttType": 0,
         "SuitName": "武安君",
         "UseType": 2,
         "SuitEffectGroupId": 22,
@@ -401,7 +384,6 @@
     },
     {
         "Id": 50,
-        "AttType": 0,
         "SuitName": "艾琳",
         "UseType": 3,
         "SuitEffectGroupId": 50,
@@ -415,7 +397,6 @@
     },
     {
         "Id": 51,
-        "AttType": 0,
         "SuitName": "黎塞留",
         "UseType": 3,
         "SuitEffectGroupId": 51,
@@ -429,7 +410,6 @@
     },
     {
         "Id": 52,
-        "AttType": 0,
         "SuitName": "艾克",
         "UseType": 3,
         "SuitEffectGroupId": 52,
@@ -443,7 +423,6 @@
     },
     {
         "Id": 53,
-        "AttType": 0,
         "SuitName": "爱芙",
         "UseType": 3,
         "SuitEffectGroupId": 53,
@@ -457,7 +436,6 @@
     },
     {
         "Id": 54,
-        "AttType": 0,
         "SuitName": "伊丽莎白",
         "UseType": 3,
         "SuitEffectGroupId": 54,
@@ -471,7 +449,6 @@
     },
     {
         "Id": 55,
-        "AttType": 0,
         "SuitName": "尤尼梅特",
         "UseType": 3,
         "SuitEffectGroupId": 55,
@@ -485,7 +462,6 @@
     },
     {
         "Id": 56,
-        "AttType": 0,
         "SuitName": "爱丽丝",
         "UseType": 3,
         "SuitEffectGroupId": 56,
@@ -499,7 +475,6 @@
     },
     {
         "Id": 57,
-        "AttType": 0,
         "SuitName": "歌罗达",
         "UseType": 3,
         "SuitEffectGroupId": 57,
@@ -513,7 +488,6 @@
     },
     {
         "Id": 58,
-        "AttType": 0,
         "SuitName": "嘉莉埃妮",
         "UseType": 3,
         "SuitEffectGroupId": 58,
@@ -527,7 +501,6 @@
     },
     {
         "Id": 59,
-        "AttType": 0,
         "SuitName": "阿尔冯斯",
         "UseType": 3,
         "SuitEffectGroupId": 59,
@@ -541,7 +514,6 @@
     },
     {
         "Id": 60,
-        "AttType": 0,
         "SuitName": "科亚",
         "UseType": 3,
         "SuitEffectGroupId": 60,

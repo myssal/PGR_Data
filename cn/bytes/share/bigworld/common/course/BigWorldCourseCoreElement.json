@@ -4,14 +4,11 @@
         "Name": "库洛洛咖啡",
         "SortIndex": 1,
         "Background": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelActivityCafe.png",
-        "TeachId": 0,
-        "DisplayRewardId": 0,
         "EntryType": 1,
-        "SkipId": 1011,
-        "CustomParamId": 0,
         "EntryIds": [
             1
         ],
+        "SkipId": 1011,
         "LockSkipIds": [
             1031,
             1012
@@ -26,14 +23,11 @@
         "Name": "商业开发计划",
         "SortIndex": 2,
         "Background": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelActivityShoppingStreet.png",
-        "TeachId": 0,
-        "DisplayRewardId": 0,
         "EntryType": 1,
-        "SkipId": 1021,
-        "CustomParamId": 0,
         "EntryIds": [
             2
         ],
+        "SkipId": 1021,
         "LockSkipIds": [
             1033,
             1022
@@ -48,14 +42,12 @@
         "Name": "空域迷航",
         "SortIndex": 11,
         "Background": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelActivitySGDrone.png",
-        "TeachId": 0,
-        "DisplayRewardId": 0,
         "EntryType": 1,
-        "SkipId": 1061,
-        "CustomParamId": 1001,
         "EntryIds": [
             4
         ],
+        "SkipId": 1061,
+        "CustomParamId": 1001,
         "LockSkipIds": [
             1051,
             1052
@@ -74,16 +66,15 @@
         "ProgressTitle": "「初生意志的迷惘」完成：",
         "SortIndex": 12,
         "Background": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelActivityPhotograph.png",
-        "TeachId": 0,
         "DisplayRewardId": 12,
         "EntryType": 3,
-        "SkipId": 1071,
-        "CustomParamId": 1002,
         "EntryIds": [
             2011,
             2013,
             2014
         ],
+        "SkipId": 1071,
+        "CustomParamId": 1002,
         "LockSkipIds": [
             1051
         ],
@@ -99,26 +90,21 @@
         "Name": "邀约任务",
         "SortIndex": 13,
         "Background": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelActivityInvitation.png",
-        "TeachId": 0,
         "DisplayRewardId": 13,
         "EntryType": 5,
-        "SkipId": 1051,
-        "CustomParamId": 0,
         "EntryIds": [
             2007,
             2009
-        ]
+        ],
+        "SkipId": 1051
     },
     {
         "Id": 1014,
         "Name": "邂逅时光",
         "SortIndex": 14,
         "Background": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelActivityEnvironment.png",
-        "TeachId": 0,
         "DisplayRewardId": 29,
         "EntryType": 6,
-        "SkipId": 1091,
-        "CustomParamId": 0,
         "EntryIds": [
             1,
             2,
@@ -128,7 +114,8 @@
             6,
             7,
             8
-        ]
+        ],
+        "SkipId": 1091
     },
     {
         "Id": 1015,
@@ -136,27 +123,59 @@
         "ProgressTitle": "「冰心潜影」完成：",
         "SortIndex": 15,
         "Background": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelActivityLuosaitaQuest.png",
-        "TeachId": 0,
         "DisplayRewardId": 2001,
         "EntryType": 4,
-        "SkipId": 1101,
-        "CustomParamId": 0,
         "EntryIds": [
             1002
+        ],
+        "SkipId": 1101
+    },
+    {
+        "Id": 1021,
+        "Name": "邀约任务",
+        "SortIndex": 31,
+        "Background": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelActivityLuosaitaQuest.png",
+        "DisplayRewardId": 31,
+        "EntryType": 5,
+        "EntryIds": [
+            2008,
+            2006,
+            2016,
+            2015
+        ],
+        "LockSkipConditionIds": [
+            50010416
+        ]
+    },
+    {
+        "Id": 1022,
+        "Name": "邂逅时光",
+        "SortIndex": 32,
+        "Background": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelActivityLuosaitaQuest.png",
+        "DisplayRewardId": 32,
+        "EntryType": 6,
+        "EntryIds": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ],
+        "LockSkipConditionIds": [
+            50010417
         ]
     },
     {
         "Id": 2101,
         "Name": "行至时间彼岸",
         "SortIndex": 4,
-        "TeachId": 0,
         "DisplayRewardId": 1001,
         "EntryType": 2,
-        "SkipId": 1001,
-        "CustomParamId": 0,
         "EntryIds": [
             1001
         ],
+        "SkipId": 1001,
         "LockSkipIds": [
             1002
         ],

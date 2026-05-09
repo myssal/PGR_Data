@@ -3,44 +3,35 @@
         "Id": 1,
         "GroupId": 1,
         "ChapterName": "<size=22>Ch.1</size> <size=42>摇曳之梦</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            2
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/BgStory/BgStory801.jpg",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo01.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh01.png",
         "TitleEffect": "EffectTitleName01",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            2
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 2,
         "GroupId": 1,
         "ChapterName": "<size=22>Ch.2</size> <size=42>静谧潜影</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            3
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory1.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo02.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh02.png",
         "TitleEffect": "EffectTitleName02",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            3
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 3,
         "GroupId": 1,
         "ChapterName": "<size=22>Ch.3</size> <size=42>陆离迷宫</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/BgStory/BgStory693.jpg",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo03.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh03.png",
@@ -51,97 +42,84 @@
         "Id": 101,
         "GroupId": 100,
         "ChapterName": "<size=22>Ch.1</size> <size=42>摇曳之梦</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            102
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/BgStory/BgStory801.jpg",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo01.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh01.png",
         "TitleEffect": "EffectTitleName01",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            102
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 102,
         "GroupId": 100,
         "ChapterName": "<size=22>Ch.2</size> <size=42>静谧潜影</size>",
-        "ConditionId": 0,
+        "NextChapterIds": [
+            103
+        ],
         "ConnectChapter": 9102,
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory1.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo02.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh02.png",
         "TitleEffect": "EffectTitleName02",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            103
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 103,
         "GroupId": 100,
         "ChapterName": "<size=22>Ch.3</size> <size=42>陆离迷宫</size>",
-        "ConditionId": 0,
+        "NextChapterIds": [
+            104
+        ],
         "ConnectChapter": 9103,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/BgStory/BgStory693.jpg",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo03.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh03.png",
         "TitleEffect": "EffectTitleName03",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            104
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 104,
         "GroupId": 100,
         "ChapterName": "<size=22>Ch.4</size> <size=42>幽密深潭</size>",
-        "ConditionId": 0,
+        "NextChapterIds": [
+            105
+        ],
         "ConnectChapter": 9104,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory2.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo04.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh04.png",
         "TitleEffect": "EffectTitleName04",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            105
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 105,
         "GroupId": 100,
         "ChapterName": "<size=22>Ch.5</size> <size=42>歧路异途</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 9105,
-        "OpenSuitCount": 20,
-        "BgmCueId": 0,
-        "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory3.png",
-        "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo05.png",
-        "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh05.png",
-        "TitleEffect": "EffectTitleName05",
-        "ChapterType": 1,
         "NextChapterIds": [
             106,
             107,
             108
-        ]
+        ],
+        "ConnectChapter": 9105,
+        "OpenSuitCount": 20,
+        "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory3.png",
+        "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo05.png",
+        "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh05.png",
+        "TitleEffect": "EffectTitleName05",
+        "ChapterType": 1
     },
     {
         "Id": 106,
         "GroupId": 100,
         "ChapterName": "<size=22>Ch.6</size> <size=42>迷雾高塔</size>",
         "ConditionId": 1020111,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory4.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh06.png",
@@ -152,97 +130,84 @@
         "Id": 201,
         "GroupId": 200,
         "ChapterName": "<size=22>Ch.1</size> <size=42>摇曳之梦</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            202
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/BgStory/BgStory801.jpg",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo01.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh01.png",
         "TitleEffect": "EffectTitleName01",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            202
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 202,
         "GroupId": 200,
         "ChapterName": "<size=22>Ch.2</size> <size=42>静谧潜影</size>",
-        "ConditionId": 0,
+        "NextChapterIds": [
+            203
+        ],
         "ConnectChapter": 9202,
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory1.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo02.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh02.png",
         "TitleEffect": "EffectTitleName02",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            203
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 203,
         "GroupId": 200,
         "ChapterName": "<size=22>Ch.3</size> <size=42>陆离迷宫</size>",
-        "ConditionId": 0,
+        "NextChapterIds": [
+            204
+        ],
         "ConnectChapter": 9203,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/BgStory/BgStory693.jpg",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo03.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh03.png",
         "TitleEffect": "EffectTitleName03",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            204
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 204,
         "GroupId": 200,
         "ChapterName": "<size=22>Ch.4</size> <size=42>幽密深潭</size>",
-        "ConditionId": 0,
+        "NextChapterIds": [
+            205
+        ],
         "ConnectChapter": 9204,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory2.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo04.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh04.png",
         "TitleEffect": "EffectTitleName04",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            205
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 205,
         "GroupId": 200,
         "ChapterName": "<size=22>Ch.5</size> <size=42>歧路异途</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 9205,
-        "OpenSuitCount": 20,
-        "BgmCueId": 0,
-        "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory3.png",
-        "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo05.png",
-        "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh05.png",
-        "TitleEffect": "EffectTitleName05",
-        "ChapterType": 1,
         "NextChapterIds": [
             206,
             207,
             208
-        ]
+        ],
+        "ConnectChapter": 9205,
+        "OpenSuitCount": 20,
+        "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory3.png",
+        "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo05.png",
+        "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh05.png",
+        "TitleEffect": "EffectTitleName05",
+        "ChapterType": 1
     },
     {
         "Id": 206,
         "GroupId": 200,
         "ChapterName": "<size=22>Ch.6</size> <size=42>迷雾高塔</size>",
         "ConditionId": 1020111,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory4.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh06.png",
@@ -253,97 +218,84 @@
         "Id": 301,
         "GroupId": 300,
         "ChapterName": "<size=22>Ch.1</size> <size=42>摇曳之梦</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            302
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/BgStory/BgStory801.jpg",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo01.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh01.png",
         "TitleEffect": "EffectTitleName01",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            302
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 302,
         "GroupId": 300,
         "ChapterName": "<size=22>Ch.2</size> <size=42>静谧潜影</size>",
-        "ConditionId": 0,
+        "NextChapterIds": [
+            303
+        ],
         "ConnectChapter": 9302,
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory1.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo02.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh02.png",
         "TitleEffect": "EffectTitleName02",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            303
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 303,
         "GroupId": 300,
         "ChapterName": "<size=22>Ch.3</size> <size=42>陆离迷宫</size>",
-        "ConditionId": 0,
+        "NextChapterIds": [
+            304
+        ],
         "ConnectChapter": 9303,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/BgStory/BgStory693.jpg",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo03.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh03.png",
         "TitleEffect": "EffectTitleName03",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            304
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 304,
         "GroupId": 300,
         "ChapterName": "<size=22>Ch.4</size> <size=42>幽密深潭</size>",
-        "ConditionId": 0,
+        "NextChapterIds": [
+            305
+        ],
         "ConnectChapter": 9304,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory2.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo04.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh04.png",
         "TitleEffect": "EffectTitleName04",
-        "ChapterType": 1,
-        "NextChapterIds": [
-            305
-        ]
+        "ChapterType": 1
     },
     {
         "Id": 305,
         "GroupId": 300,
         "ChapterName": "<size=22>Ch.5</size> <size=42>歧路异途</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 9305,
-        "OpenSuitCount": 20,
-        "BgmCueId": 0,
-        "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory3.png",
-        "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo05.png",
-        "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh05.png",
-        "TitleEffect": "EffectTitleName05",
-        "ChapterType": 1,
         "NextChapterIds": [
             306,
             307,
             308
-        ]
+        ],
+        "ConnectChapter": 9305,
+        "OpenSuitCount": 20,
+        "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory3.png",
+        "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo05.png",
+        "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh05.png",
+        "TitleEffect": "EffectTitleName05",
+        "ChapterType": 1
     },
     {
         "Id": 306,
         "GroupId": 300,
         "ChapterName": "<size=22>Ch.6</size> <size=42>迷雾高塔</size>",
         "ConditionId": 1020111,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStory4.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh06.png",
@@ -355,9 +307,7 @@
         "GroupId": 100,
         "ChapterName": "<size=22>Mega.2</size> <size=42>摇曳晚钟</size>",
         "ConditionId": 1020226,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc5.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh11.png",
@@ -369,9 +319,7 @@
         "GroupId": 200,
         "ChapterName": "<size=22>Mega.2</size> <size=42>摇曳晚钟</size>",
         "ConditionId": 1020226,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc5.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh11.png",
@@ -383,9 +331,7 @@
         "GroupId": 300,
         "ChapterName": "<size=22>Mega.2</size> <size=42>摇曳晚钟</size>",
         "ConditionId": 1020226,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc5.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh11.png",
@@ -397,9 +343,7 @@
         "GroupId": 100,
         "ChapterName": "<size=22>Mega.1</size> <size=42>虚妄梦乡</size>",
         "ConditionId": 1020336,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc6.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh12.png",
@@ -411,9 +355,7 @@
         "GroupId": 200,
         "ChapterName": "<size=22>Mega.1</size> <size=42>虚妄梦乡</size>",
         "ConditionId": 1020336,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc6.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh12.png",
@@ -425,9 +367,7 @@
         "GroupId": 300,
         "ChapterName": "<size=22>Mega.1</size> <size=42>虚妄梦乡</size>",
         "ConditionId": 1020336,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc6.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh12.png",
@@ -438,214 +378,176 @@
         "Id": 9102,
         "GroupId": 100,
         "ChapterName": "<size=22>Ch.6</size> <size=42>迷雾高塔</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9103
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc1.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh07.png",
         "TitleEffect": "EffectTitleName06",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9103
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9103,
         "GroupId": 100,
         "ChapterName": "<size=22>Ch.5</size> <size=42>歧路异途</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9104
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc2.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo05Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh08.png",
         "TitleEffect": "EffectTitleName05",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9104
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9104,
         "GroupId": 100,
         "ChapterName": "<size=22>Ch.4</size> <size=42>幽密深潭</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9105
+        ],
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc3.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo04Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh09.png",
         "TitleEffect": "EffectTitleName04",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9105
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9105,
         "GroupId": 100,
         "ChapterName": "<size=22>Ch.3</size> <size=42>陆离迷宫</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9106
+        ],
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc4.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo03Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh10.png",
         "TitleEffect": "EffectTitleName03",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9106
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9202,
         "GroupId": 200,
         "ChapterName": "<size=22>Ch.6</size> <size=42>迷雾高塔</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9203
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc1.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh07.png",
         "TitleEffect": "EffectTitleName06",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9203
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9203,
         "GroupId": 200,
         "ChapterName": "<size=22>Ch.5</size> <size=42>歧路异途</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9204
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc2.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo05Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh08.png",
         "TitleEffect": "EffectTitleName05",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9204
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9204,
         "GroupId": 200,
         "ChapterName": "<size=22>Ch.4</size> <size=42>幽密深潭</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9205
+        ],
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc3.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo04Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh09.png",
         "TitleEffect": "EffectTitleName04",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9205
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9205,
         "GroupId": 200,
         "ChapterName": "<size=22>Ch.3</size> <size=42>陆离迷宫</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9206
+        ],
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc4.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo03Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh10.png",
         "TitleEffect": "EffectTitleName03",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9206
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9302,
         "GroupId": 300,
         "ChapterName": "<size=22>Ch.6</size> <size=42>迷雾高塔</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9303
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc1.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo06Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh07.png",
         "TitleEffect": "EffectTitleName06",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9303
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9303,
         "GroupId": 300,
         "ChapterName": "<size=22>Ch.5</size> <size=42>歧路异途</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9304
+        ],
         "OpenSuitCount": 17,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc2.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo05Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh08.png",
         "TitleEffect": "EffectTitleName05",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9304
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9304,
         "GroupId": 300,
         "ChapterName": "<size=22>Ch.4</size> <size=42>幽密深潭</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9305
+        ],
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc3.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo04Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh09.png",
         "TitleEffect": "EffectTitleName04",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9305
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9305,
         "GroupId": 300,
         "ChapterName": "<size=22>Ch.3</size> <size=42>陆离迷宫</size>",
-        "ConditionId": 0,
-        "ConnectChapter": 0,
+        "NextChapterIds": [
+            9306
+        ],
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc4.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo03Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh10.png",
         "TitleEffect": "EffectTitleName03",
-        "ChapterType": 2,
-        "NextChapterIds": [
-            9306
-        ]
+        "ChapterType": 2
     },
     {
         "Id": 9106,
         "GroupId": 100,
         "ChapterName": "<size=22>Mega.0</size> <size=42>终焉彼岸</size>",
         "ConditionId": 1020337,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc7.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo01Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh13.png",
@@ -657,9 +559,7 @@
         "GroupId": 200,
         "ChapterName": "<size=22>Mega.0</size> <size=42>终焉彼岸</size>",
         "ConditionId": 1020337,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc7.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo01Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh13.png",
@@ -671,9 +571,7 @@
         "GroupId": 300,
         "ChapterName": "<size=22>Mega.0</size> <size=42>终焉彼岸</size>",
         "ConditionId": 1020337,
-        "ConnectChapter": 0,
         "OpenSuitCount": 20,
-        "BgmCueId": 0,
         "PlayMainBg": "Assets/Product/Texture/Image/UiTheatre3/Theatre3BgStoryDlc7.png",
         "LoadingTitle": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingNo01Quantum.png",
         "LoadingDesc": "Assets/Product/Texture/Image/UiTheatre3/UiTheatre3LoadingCh13.png",

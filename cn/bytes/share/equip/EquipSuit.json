@@ -1,11 +1,9 @@
 [
     {
-        "Id": 0,
         "IconPath": "Assets/Product/Texture/Image/IconTools/E1GunMd030011.png",
         "ClearIconPath": "Assets/Product/Texture/Image/IconTools/E1GunMd030011.png",
         "Name": "无",
-        "Description": "无",
-        "SuitType": 0
+        "Description": "无"
     },
     {
         "Id": 1101,
@@ -14,11 +12,11 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EYiefuliemofuI01002.png",
         "Name": "约瑟夫",
         "Description": "白板",
-        "SuitType": 0,
-        "EquipType": 9,
         "SkillDescription": [
+            "",
             "攻击增加5点"
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1201,
@@ -27,16 +25,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ESipeierI01002.png",
         "Name": "梅尔妮",
         "Description": "攻击强化",
-        "SuitType": 12,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             120102,
+            "",
             120104
         ],
         "SkillDescription": [
+            "",
             "攻击增加10点",
+            "",
             "生命值增加50点"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3012001,
             3022001,
@@ -44,7 +45,8 @@
             3042001,
             3052001,
             3062001
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1301,
@@ -53,16 +55,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EModeerI01002.png",
         "Name": "彼诺芙",
         "Description": "近距离战斗强化",
-        "SuitType": 12,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             130102,
+            "",
             130104
         ],
         "SkillDescription": [
+            "",
             "攻击2米内的怪物时，额外伤害加成提升3%。",
+            "",
             "受到2米内的怪物攻击时，额外伤害减免提升3%。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3013001,
             3023001,
@@ -70,7 +75,8 @@
             3043001,
             3053001,
             3063001
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1304,
@@ -79,16 +85,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHeermanI01002.png",
         "Name": "帕芙莉",
         "Description": "远距离战斗强化",
-        "SuitType": 12,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             130402,
+            "",
             130404
         ],
         "SkillDescription": [
+            "",
             "攻击3米外的怪物时，额外伤害加成提升3%。",
+            "",
             "受到3米外的怪物攻击时，额外伤害减免提升3%。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3013002,
             3023002,
@@ -96,7 +105,8 @@
             3043002,
             3053002,
             3063002
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1401,
@@ -105,16 +115,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAjimideI01002.png",
         "Name": "阿基米德",
         "Description": "普通攻击强化",
-        "SuitType": 12,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             140102,
+            "",
             140104
         ],
         "SkillDescription": [
+            "",
             "普通攻击额外伤害加成提高5%。",
+            "",
             "每经过10秒，下1次使用普通攻击将增加普通攻击伤害10%，持续4秒。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3014001,
             3024001,
@@ -122,7 +135,8 @@
             3044001,
             3054001,
             3064001
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1404,
@@ -131,16 +145,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAidishengI01002.png",
         "Name": "爱迪生",
         "Description": "技能攻击强化",
-        "SuitType": 12,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             140402,
+            "",
             140404
         ],
         "SkillDescription": [
+            "",
             "信号球技能伤害增加5%。",
+            "",
             "3消后，自身额外伤害加成提升5%，持续5秒，重复触发刷新持续时间。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3014002,
             3024002,
@@ -148,7 +165,8 @@
             3044002,
             3054002,
             3064002
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1407,
@@ -157,16 +175,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAliceI01002.png",
         "Name": "爱丽丝",
         "Description": "辅助强化",
-        "SuitType": 12,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             140702,
+            "",
             140704
         ],
         "SkillDescription": [
+            "",
             "治疗效果增加5%。",
+            "",
             "治疗目标使其物理伤害和元素属性伤害增加4%，持续4秒，重复触发刷新持续时间。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3014003,
             3024003,
@@ -174,7 +195,8 @@
             3044003,
             3054003,
             3064003
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1410,
@@ -183,16 +205,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKanninganI01002.png",
         "Name": "坎宁安",
         "Description": "防御强化",
-        "SuitType": 12,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             141002,
+            "",
             141004
         ],
         "SkillDescription": [
+            "",
             "攻击霸体状态的敌人时，物理伤害和属性伤害均增加5%。",
+            "",
             "5秒内连续受击，获得减伤护盾，下次受到伤害减少30%。有5秒的冷却时间。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3014004,
             3024004,
@@ -200,7 +225,8 @@
             3044004,
             3054004,
             3064004
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1413,
@@ -209,18 +235,22 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAdaifuYYI01002.png",
         "Name": "库莉珂-永恒",
         "Description": "召唤强化",
-        "SuitType": 12,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             141302
         ],
         "SkillDescription": [
+            "",
             "攻击目标时，有20%几率呼叫炮击，每枚炮弹对目标造成40%的物理伤害，有15秒的冷却时间。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3014005,
+            "",
+            "",
             3044005
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1416,
@@ -229,18 +259,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENimizi01002.png",
         "Name": "尼米兹",
         "Description": "攻击强化",
-        "SuitType": 12,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             141602,
+            "",
             141604,
+            "",
             141606
         ],
         "SkillDescription": [
+            "",
             "普通攻击额外伤害加成提高5%。",
+            "",
             "3消额外伤害加成提升5%。",
+            "",
             "释放出场技后额外伤害加成提升10%，持续8秒"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3014006,
             3024006,
@@ -248,7 +283,8 @@
             3044006,
             3054006,
             3064006
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1501,
@@ -257,16 +293,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELongmeierI01002.png",
         "Name": "嘉莉埃妮",
         "Description": "普通攻击强化",
-        "SuitType": 6,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             150102,
+            "",
             150104
         ],
         "SkillDescription": [
+            "",
             "普通攻击额外伤害加成提高10%",
+            "",
             "未受到攻击时，普通攻击额外伤害加成提高15%，受到攻击后进入冷却，冷却时间12秒。"
         ],
+        "SuitType": 6,
         "EquipIds": [
             3015001,
             3025001,
@@ -274,7 +313,8 @@
             3045001,
             3055001,
             3065001
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1502,
@@ -283,16 +323,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAifuI01002.png",
         "Name": "爱芙",
         "Description": "技能强化",
-        "SuitType": 6,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             150202,
+            "",
             150204
         ],
         "SkillDescription": [
+            "",
             "每消除1个球额外伤害加成提升2%，持续3秒，最多可叠加5层，重复触发刷新持续时间。",
+            "",
             "每60秒，下次3消会进入超算空间。"
         ],
+        "SuitType": 6,
         "EquipIds": [
             3015002,
             3025002,
@@ -300,7 +343,8 @@
             3045002,
             3055002,
             3065002
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1503,
@@ -309,16 +353,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAikeI01002.png",
         "Name": "艾克",
         "Description": "能量攻击强化",
-        "SuitType": 6,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             150302,
+            "",
             150304
         ],
         "SkillDescription": [
+            "",
             "额外伤害加成提升2%，全元素属性伤害增加4%。",
+            "",
             "造成元素属性伤害时，有15%几率造成根据元素属性对应的灼烧、感电、霜冻、侵蚀。持续5秒，对同一单位有8秒的冷却时间。"
         ],
+        "SuitType": 6,
         "EquipIds": [
             3015003,
             3025003,
@@ -326,7 +373,8 @@
             3045003,
             3055003,
             3065003
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1504,
@@ -335,16 +383,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFuertaiI01002.png",
         "Name": "伏尔泰",
         "Description": "削弱敌人强化Ⅰ",
-        "SuitType": 10,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             150402,
+            "",
             150404
         ],
         "SkillDescription": [
+            "",
             "攻击会使目标防御减少10%，持续5秒，有12秒的冷却时间。",
+            "",
             "每次受到伤害，减少伤害来源方的物理防御15%，持续7秒，最多叠加2次，重复触发刷新持续时间。"
         ],
+        "SuitType": 10,
         "EquipIds": [
             3015004,
             3025004,
@@ -352,7 +403,8 @@
             3045004,
             3055004,
             3065004
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1505,
@@ -361,16 +413,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGeluodaI01002.png",
         "Name": "歌罗达",
         "Description": "削弱敌人强化Ⅱ",
-        "SuitType": 11,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             150502,
+            "",
             150504
         ],
         "SkillDescription": [
+            "",
             "攻击目标使目标全元素属性抗性减少6%，持续5秒。有12秒的冷却时间。",
+            "",
             "每次受到伤害时，降低受击者半径5米范围内怪物6%全元素属性抗性，持续7秒，重复触发刷新持续时间。"
         ],
+        "SuitType": 11,
         "EquipIds": [
             3015005,
             3025005,
@@ -378,7 +433,8 @@
             3045005,
             3055005,
             3065005
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1506,
@@ -387,16 +443,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELisailiuI01002.png",
         "Name": "黎塞留",
         "Description": "攻击辅助强化",
-        "SuitType": 7,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             150602,
+            "",
             150604
         ],
         "SkillDescription": [
+            "",
             "治疗效果增加5%，下次治疗使目标物理伤害增加8%，持续4秒。有5秒的冷却时间。",
+            "",
             "每消除8个球，额外获得一个随机信号球。有5秒的冷却时间。"
         ],
+        "SuitType": 7,
         "EquipIds": [
             3015006,
             3025006,
@@ -404,7 +463,8 @@
             3045006,
             3055006,
             3065006
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1507,
@@ -413,16 +473,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ESamandaI01002.png",
         "Name": "萨曼达",
         "Description": "能量辅助强化",
-        "SuitType": 8,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             150702,
+            "",
             150704
         ],
         "SkillDescription": [
+            "",
             "治疗效果增加5%，下次治疗使目标全元素属性伤害增加8%，持续4秒。有5秒的冷却时间。",
+            "",
             "下次释放治疗技能，留下元素属性光环，处于区域内的友方单位增加8%的全元素属性伤害和5%的全元素属性抗性，有10秒的冷却时间。"
         ],
+        "SuitType": 8,
         "EquipIds": [
             3015007,
             3025007,
@@ -430,7 +493,8 @@
             3045007,
             3055007,
             3065007
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1508,
@@ -439,16 +503,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EMozateI01002.png",
         "Name": "莫扎特",
         "Description": "极限闪避强化",
-        "SuitType": 6,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             150802,
+            "",
             150804
         ],
         "SkillDescription": [
+            "",
             "处于超算空间时，额外伤害加成提升15%。",
+            "",
             "触发超算空间时，造成一次200%全屏伤害。"
         ],
+        "SuitType": 6,
         "EquipIds": [
             3015008,
             3025008,
@@ -456,7 +523,8 @@
             3045008,
             3055008,
             3065008
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1509,
@@ -465,18 +533,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBudika01002.png",
         "Name": "布狄卡",
         "Description": "攻击强化",
-        "SuitType": 6,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             150902,
+            "",
             150904,
+            "",
             150906
         ],
         "SkillDescription": [
+            "",
             "普通攻击额外伤害加成提高7%。",
+            "",
             "处于超算空间时，全攻击增加5%，移动速度增加10%",
+            "",
             "造成伤害时，额外伤害加成提升3%，2秒内只触发1次，最多叠加5层，持续到下一次受到伤害"
         ],
+        "SuitType": 6,
         "EquipIds": [
             3015009,
             3025009,
@@ -484,7 +557,8 @@
             3045009,
             3055009,
             3065009
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1550,
@@ -493,16 +567,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EShengdanlifuI01001.png",
         "Name": "丽芙·驯鹿",
         "Description": "能量强化",
-        "SuitType": 12,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             155002,
+            "",
             155004
         ],
         "SkillDescription": [
+            "",
             "信号球技能额外伤害加成提升5%，治疗效果增加5%",
+            "",
             "攻击敌人时，有20%几率在敌人身边随机掉落圣诞礼物盒，拾取礼物盒回复5点能量，并使自身额外伤害加成提升5%，持续5秒，有10秒的冷却时间。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015050,
             3025050,
@@ -510,7 +587,8 @@
             3045050,
             3055050,
             3065050
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1551,
@@ -519,13 +597,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EXinniankalieI01001.png",
         "Name": "年禧焰火",
         "Description": "伤害强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             155012
         ],
         "SkillDescription": [
+            "",
             "攻击增加5%，累积消除3个红色信号球后，召唤4个环绕的红包，红包触碰敌人时，造成10%的火属性伤害，持续10秒，有30秒的冷却时间。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015051,
             3025051,
@@ -542,13 +622,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EYuanxiaoluxiyaI01001.png",
         "Name": "元宵·重聚",
         "Description": "攻击强化",
-        "SuitType": 9,
         "SkillEffect": [
+            "",
             155022
         ],
         "SkillDescription": [
+            "",
             "释放3消或QTE技能后，传送一个元宵灯跟随在场角色移动，并且为附近的友方目标增加7%的攻击、移动速度，持续15秒，有30秒的冷却时间。"
         ],
+        "SuitType": 9,
         "EquipIds": [
             3015052,
             3025052,
@@ -565,15 +647,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELizhounianI01002.png",
         "Name": "里·月下庆典",
         "Description": "周年意识",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             155052,
+            "",
             155054
         ],
         "SkillDescription": [
+            "",
             "闪避时额外伤害减免提升10%，持续3秒",
+            "",
             "进入超算空间时回复自身10%的最大生命值，每30秒触发一次。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015053,
             3025053,
@@ -590,13 +676,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKFC02002.png",
         "Name": "KFC·Alpha",
         "Description": "移速强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             155032
         ],
         "SkillDescription": [
+            "",
             "QTE、3消后，有50%的几率掉落全家桶，有30秒的冷却时间。全家桶掉落后将存在10秒，在此期间角色接触全家桶后会拾取该物品，增加拾取角色12%的移动速度，持续15s，重复触发刷新持续时间。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015055,
             3025055,
@@ -613,13 +701,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKFC01002.png",
         "Name": "KFC·Lucia",
         "Description": "能量强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             155042
         ],
         "SkillDescription": [
+            "",
             "QTE、3消后，有50%的几率掉落鸡腿堡，有30秒的冷却时间。鸡腿堡掉落后将存在10秒，在此期间角色接触鸡腿堡后会拾取该物品，增加拾取角色8点大招能量。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015056,
             3025056,
@@ -636,15 +726,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELifuZhongqiuI01002.png",
         "Name": "丽芙·团聚一宵",
         "Description": "生存强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             155062,
+            "",
             155064
         ],
         "SkillDescription": [
+            "",
             "移动速度增加10%",
+            "",
             "三消信号球后，治疗量增加10%，并获得最大生命值10%护盾，持续5秒"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015057,
             3025057,
@@ -661,15 +755,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKuluomuI01002.png",
         "Name": "库洛姆·夜宴",
         "Description": "二周年意识",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             155072,
+            "",
             155074
         ],
         "SkillDescription": [
+            "",
             "防御力增加10%",
+            "",
             "三消信号球后获得最大生命值15%护盾，持续8秒。每8秒可触发一次。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015058,
             3025058,
@@ -686,15 +784,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBiankaZhounianI01002.png",
         "Name": "比安卡·微醺之夜",
         "Description": "三周年意识",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             155902,
+            "",
             155904
         ],
         "SkillDescription": [
+            "",
             "移动速度增加10%",
+            "",
             "三消信号球后，防御力增加10%，持续5秒。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015059,
             3025059,
@@ -711,15 +813,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELunaMengzhanI01002.png",
         "Name": "露娜·满月桂冠",
         "Description": "伊甸文化纪",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             156002,
+            "",
             156004
         ],
         "SkillDescription": [
+            "",
             "每20秒，获得自身最大生命值10%的治疗效果。",
+            "",
             "每30秒，受到伤害时，获得一个自身最大生命值25%的护盾，持续5秒。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015060,
             3025060,
@@ -736,15 +842,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ECerberusI01002.png",
         "Name": "三头犬.热音派对",
         "Description": "四周年意识",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             156102,
+            "",
             156104
         ],
         "SkillDescription": [
+            "",
             "防御力增加10%",
+            "",
             "三消信号球后，回复自身攻击力50%的生命值。每5秒可触发一次。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015061,
             3025061,
@@ -761,13 +871,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EQiaqiaQul01002.png",
         "Name": "洽洽·曲",
         "Description": "辅助强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             156202
         ],
         "SkillDescription": [
+            "",
             "释放消球技能命中目标时，有50%的几率掉落瓜子袋，有30秒的冷却时间。瓜子袋掉落后将存在5秒，每秒向外抛出瓜子，使附近的角色回复4%生命值。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015062,
             3025062,
@@ -784,13 +896,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EQiaqiaHanyingl01002.png",
         "Name": "洽洽·含英",
         "Description": "移速强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             156302
         ],
         "SkillDescription": [
+            "",
             "释放消球技能命中目标时，有50%的几率掉落瓜子袋，有30秒的冷却时间。瓜子袋掉落后将存在5秒，每秒向外抛出瓜子，增加附近角色12%的移动速度，持续4秒。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015063,
             3025063,
@@ -807,13 +921,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENabatiLuciaI01002.png",
         "Name": "纳宝帝·露西亚",
         "Description": "防御强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             156402
         ],
         "SkillDescription": [
+            "",
             "释放消球技能命中目标时，有50%几率在自身附近随机掉落包装袋，有30秒的冷却时间。包装袋将存在5秒，拾取后获得增加8%防御力的效果，持续4秒。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015064,
             3025064,
@@ -830,13 +946,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENabatiLeeI01002.png",
         "Name": "纳宝帝·里",
         "Description": "移速强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             156502
         ],
         "SkillDescription": [
+            "",
             "释放消球技能命中目标时，有50%几率在自身附近随机掉落包装袋，有30秒的冷却时间。包装袋将存在5秒，拾取后获得增加12%移动速度的效果，持续4秒。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015065,
             3025065,
@@ -853,13 +971,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENabatiLivI01002.png",
         "Name": "纳宝帝·丽芙",
         "Description": "辅助强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             156602
         ],
         "SkillDescription": [
+            "",
             "释放消球技能命中目标时，有50%几率在自身附近随机掉落包装袋，有30秒的冷却时间。包装袋将存在5秒，拾取后回复4%生命值。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015066,
             3025066,
@@ -876,13 +996,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EChupaBiancaI01002.png",
         "Name": "珍宝珠·比安卡",
         "Description": "辅助强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             156702
         ],
         "SkillDescription": [
+            "",
             "释放消球技能命中目标时，有50%几率在自身附近随机掉落包装袋，有30秒的冷却时间。包装袋将存在5秒，拾取后获得增加8%防御力的效果，持续4秒。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015067,
             3025067,
@@ -899,13 +1021,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EChupaNanamiI01002.png",
         "Name": "珍宝珠·七实",
         "Description": "辅助强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             156802
         ],
         "SkillDescription": [
+            "",
             "释放消球技能命中目标时，有50%几率在自身附近随机掉落包装袋，有30秒的冷却时间。包装袋将存在5秒，拾取后回复4%生命值。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015068,
             3025068,
@@ -922,15 +1046,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/E5AnniverI01002.png",
         "Name": "七实·全息宇宙",
         "Description": "五周年意识",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             156902,
+            "",
             156904
         ],
         "SkillDescription": [
+            "",
             "防御力增加10%",
+            "",
             "三消信号球后，回复自身攻击力50%的生命值。每5秒可触发一次。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015069,
             3025069,
@@ -947,13 +1075,15 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELawsonI01002.png",
         "Name": "罗森·心灵驿站",
         "Description": "辅助强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             157002
         ],
         "SkillDescription": [
+            "",
             "释放消球技能命中目标时，有50%几率在自身附近随机掉落包装袋，有30秒的冷却时间。包装袋将存在5秒，拾取后回复4%生命值。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015070,
             3025070,
@@ -970,15 +1100,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/E5HalfAnniverI01002.png",
         "Name": "盛筵拾光",
         "Description": "5.5周年意识",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             157102,
+            "",
             157104
         ],
         "SkillDescription": [
+            "",
             "防御力增加10%",
+            "",
             "三消信号球后，回复自身攻击力50%的生命值。每5秒可触发一次。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015071,
             3025071,
@@ -995,15 +1129,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/E6AnniverI01001.png",
         "Name": "丽芙·漫游小记",
         "Description": "六周年意识",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             157202,
+            "",
             157204
         ],
         "SkillDescription": [
+            "",
             "防御力增加10%",
+            "",
             "三消信号球后，回复自身攻击力50%的生命值。每5秒可触发一次。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3015072,
             3025072,
@@ -1020,16 +1158,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKangdelinaI01002.png",
         "Name": "康德丽娜",
         "Description": "普通攻击强化",
-        "SuitType": 6,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             160102,
+            "",
             160104
         ],
         "SkillDescription": [
+            "",
             "普通攻击额外伤害加成提高15%",
+            "",
             "普攻有50%几率进入暴怒状态，普通攻击的额外伤害加成提升20%，持续5秒。有8秒的冷却时间。"
         ],
+        "SuitType": 6,
         "EquipIds": [
             3016001,
             3026001,
@@ -1037,7 +1178,8 @@
             3046001,
             3056001,
             3066001
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1602,
@@ -1046,16 +1188,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EShashibiyaI01002.png",
         "Name": "莎士比亚",
         "Description": "火系强化",
-        "SuitType": 2,
-        "EquipType": 2,
         "SkillEffect": [
+            "",
             160202,
+            "",
             160204
         ],
         "SkillDescription": [
+            "",
             "全攻击增加3%，火属性伤害增加7%",
+            "",
             "额外伤害加成提升10%。攻击时使目标陷入灼烧状态，期间目标的火属性抗性降低15%，灼烧状态持续8秒，对同一目标有10秒的冷却时间。攻击灼烧目标时，会触发爆炸，造成600%火属性伤害，对同一目标有6秒的冷却时间。"
         ],
+        "SuitType": 2,
         "EquipIds": [
             3016002,
             3026002,
@@ -1063,7 +1208,8 @@
             3046002,
             3056002,
             3066002
-        ]
+        ],
+        "EquipType": 2
     },
     {
         "Id": 1603,
@@ -1072,16 +1218,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHaisenbaoI01002.png",
         "Name": "海森",
         "Description": "雷系强化",
-        "SuitType": 4,
-        "EquipType": 4,
         "SkillEffect": [
+            "",
             160302,
+            "",
             160304
         ],
         "SkillDescription": [
+            "",
             "全攻击增加3%，雷属性伤害增加7%",
+            "",
             "额外伤害加成提升10%。攻击时使目标陷入感电状态，期间目标的雷属性抗性降低15%，感电状态持续8秒，对同一目标有10秒的冷却时间。攻击感电目标时，会触发雷暴，造成600%雷属性伤害，对同一目标有6秒的冷却时间。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016003,
             3026003,
@@ -1089,7 +1238,8 @@
             3046003,
             3056003,
             3066003
-        ]
+        ],
+        "EquipType": 4
     },
     {
         "Id": 1604,
@@ -1098,16 +1248,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EDaerwenI01002.png",
         "Name": "达尔文",
         "Description": "消除强化",
-        "SuitType": 6,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             160402,
+            "",
             160404
         ],
         "SkillDescription": [
+            "",
             "每消除1个球额外伤害加成提升3%，持续4秒，最多可叠加5层，重复触发刷新持续时间。",
+            "",
             "消除某一颜色信号球时添加记录标记，3种颜色信号球都被记录后，以角色为中心释放一次直径12米大范围冲击波，造成600%的物理伤害，并刷新记录标记。"
         ],
+        "SuitType": 6,
         "EquipIds": [
             3016004,
             3026004,
@@ -1115,7 +1268,8 @@
             3046004,
             3056004,
             3066004
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1605,
@@ -1124,16 +1278,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHannaI01002.png",
         "Name": "汉娜",
         "Description": "三消强化",
-        "SuitType": 6,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             160502,
+            "",
             160504
         ],
         "SkillDescription": [
+            "",
             "3消技能额外伤害加成提升25%。",
+            "",
             "每30秒，下次3消会进入超算空间，并随机获得1个信号球。"
         ],
+        "SuitType": 6,
         "EquipIds": [
             3016005,
             3026005,
@@ -1141,7 +1298,8 @@
             3046005,
             3056005,
             3066005
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1606,
@@ -1150,16 +1308,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAdaifuI01002.png",
         "Name": "库莉珂",
         "Description": "必杀强化",
-        "SuitType": 6,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             160602,
+            "",
             160604
         ],
         "SkillDescription": [
+            "",
             "消球时，额外获得20%的能量。必杀技所需能量值减少20%。",
+            "",
             "释放必杀技时，使自身额外伤害加成提升15%，持续10秒，重复触发刷新持续时间。释放必杀技后，获得霸体状态，并使自身额外伤害减免提升20%，持续5秒，重复触发刷新持续时间。"
         ],
+        "SuitType": 6,
         "EquipIds": [
             3016006,
             3026006,
@@ -1167,7 +1328,8 @@
             3046006,
             3056006,
             3066006
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1607,
@@ -1176,18 +1338,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EDafenqiI01002.png",
         "Name": "达芬奇",
         "Description": "QTE强化",
-        "SuitType": 9,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             160702,
+            "",
             160704,
+            "",
             160706
         ],
         "SkillDescription": [
+            "",
             "QTE时登场会给操控的角色增加10%的攻击，20%的防御力，持续8秒，重复触发刷新持续时间。",
+            "",
             "QTE出场时，使另一角色QTE充能次数加一并激活，有8秒的冷却时间。三个角色同时在场时为所有角色增加20%攻击，持续2秒，重复触发刷新持续时间。",
+            "",
             "达芬奇四件套效果取消冷却时间限制，无法与同类效果叠加。"
         ],
+        "SuitType": 9,
         "EquipIds": [
             3016007,
             3026007,
@@ -1195,7 +1362,8 @@
             3046007,
             3056007,
             3066007
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1608,
@@ -1204,16 +1372,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKaiselinI01002.png",
         "Name": "凯瑟琳",
         "Description": "生存能力强化Ⅰ",
-        "SuitType": 10,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             160802,
+            "",
             160804
         ],
         "SkillDescription": [
+            "",
             "QTE、3消技能，将降低目标20%的物理防御，持续8秒。有10秒的冷却时间。",
+            "",
             "受到伤害时，获得1000点的生命护盾，并使自身物理伤害增加15%，持续5秒。有8秒的冷却时间。"
         ],
+        "SuitType": 10,
         "EquipIds": [
             3016008,
             3026008,
@@ -1221,7 +1392,8 @@
             3046008,
             3056008,
             3066008
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1609,
@@ -1230,16 +1402,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAiyinsitanI01002.png",
         "Name": "爱因斯坦娜",
         "Description": "生存能力强化Ⅱ",
-        "SuitType": 11,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             160902,
+            "",
             160904
         ],
         "SkillDescription": [
+            "",
             "QTE、3消技能，使目标全元素属性抗性降低15%，持续8秒。有10秒的冷却时间。",
+            "",
             "受到伤害时，展开元素属性光环，获得20%的全元素属性抗性，持续5秒，光环存在时造成全元素属性伤害增加15%。有8秒的冷却时间。"
         ],
+        "SuitType": 11,
         "EquipIds": [
             3016009,
             3026009,
@@ -1247,7 +1422,8 @@
             3046009,
             3056009,
             3066009
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1610,
@@ -1256,16 +1432,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFeilieteI01002.png",
         "Name": "费列特二世",
         "Description": "辅助能力强化Ⅰ",
-        "SuitType": 7,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             161002,
+            "",
             161004
         ],
         "SkillDescription": [
+            "",
             "治疗效果增加10%，受到治疗的友方单位物理伤害增加10%，防御增加10%，持续5秒。有8秒的冷却时间。",
+            "",
             "每次释放治疗效果会进行无人机充能，充能满后，下次治疗会清空充能召唤一个治疗无人机，治疗无人机自动跟随血量比例最低的队友。无人机的5米圆形范围内持续每秒恢复队友2%的最大生命值，该范围内增加物理伤害15%，持续5秒，有12秒的冷却时间。"
         ],
+        "SuitType": 7,
         "EquipIds": [
             3016010,
             3026010,
@@ -1273,7 +1452,8 @@
             3046010,
             3056010,
             3066010
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1611,
@@ -1282,16 +1462,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGuiniweiI01002.png",
         "Name": "桂尼",
         "Description": "辅助能力强化Ⅱ",
-        "SuitType": 8,
-        "EquipType": 8,
         "SkillEffect": [
+            "",
             161102,
+            "",
             161104
         ],
         "SkillDescription": [
+            "",
             "治疗效果增加10%，使治疗目标全元素属性伤害、全元素属性抗性增加10%，持续5秒。有8秒的冷却时间。",
+            "",
             "每次释放治疗效果会进行无人机充能，充能满后，下次治疗会清空充能召唤一个元素属性无人机，治疗无人机自动跟随血量比例最低的队友，无人机的5米圆形范围持续每秒恢复队友2%的最大生命值，范围增加15%的全元素属性伤害，持续5秒，有12秒的冷却时间。"
         ],
+        "SuitType": 8,
         "EquipIds": [
             3016011,
             3026011,
@@ -1299,7 +1482,8 @@
             3046011,
             3056011,
             3066011
-        ]
+        ],
+        "EquipType": 8
     },
     {
         "Id": 1612,
@@ -1308,16 +1492,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFeitelieI01002.png",
         "Name": "腓特烈",
         "Description": "闪避强化",
-        "SuitType": 6,
-        "EquipType": 9,
         "SkillEffect": [
+            "",
             161202,
+            "",
             161204
         ],
         "SkillDescription": [
+            "",
             "每次闪避增加15%移动速度和5%的额外伤害加成，持续5秒，最多可叠加3层，重复触发刷新持续时间。",
+            "",
             "角色触发超算空间时，使全场敌人速度减少20%，超算空间内/超维预演持续时间内额外伤害减免降低15%，持续4秒。有8秒的冷却时间。"
         ],
+        "SuitType": 6,
         "EquipIds": [
             3016012,
             3026012,
@@ -1325,7 +1512,8 @@
             3046012,
             3056012,
             3066012
-        ]
+        ],
+        "EquipType": 9
     },
     {
         "Id": 1613,
@@ -1334,16 +1522,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EManyinsitanI01002.png",
         "Name": "芭斯隆",
         "Description": "暗系强化",
-        "SuitType": 5,
-        "EquipType": 5,
         "SkillEffect": [
+            "",
             161302,
+            "",
             161304
         ],
         "SkillDescription": [
+            "",
             "攻击增加3%，暗属性伤害增加7%",
+            "",
             "额外伤害加成提升10%。攻击时使目标陷入侵蚀状态，期间目标的暗属性抗性降低15%，侵蚀状态持续8秒，对同一目标有10秒的冷却时间。攻击侵蚀目标时，会触发爆炸，造成600%暗属性伤害，对同一目标有6秒的冷却时间。"
         ],
+        "SuitType": 5,
         "EquipIds": [
             3016013,
             3026013,
@@ -1351,7 +1542,8 @@
             3046013,
             3056013,
             3066013
-        ]
+        ],
+        "EquipType": 5
     },
     {
         "Id": 1614,
@@ -1360,16 +1552,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBadunI01002.png",
         "Name": "巴顿",
         "Description": "物理强化",
-        "SuitType": 1,
-        "EquipType": 1,
         "SkillEffect": [
+            "",
             161402,
+            "",
             161404
         ],
         "SkillDescription": [
+            "",
             "攻击增加3%，物理伤害增加7%。",
+            "",
             "额外伤害加成提升10%。攻击时使目标陷入刺伤状态，期间目标的物理抗性降低7%，刺伤状态持续8秒，对同一目标有10秒的冷却时间。攻击刺伤目标时，会触发爆炸，造成600%物理伤害，对同一目标有6秒的冷却时间。"
         ],
+        "SuitType": 1,
         "EquipIds": [
             3016014,
             3026014,
@@ -1377,7 +1572,8 @@
             3046014,
             3056014,
             3066014
-        ]
+        ],
+        "EquipType": 1
     },
     {
         "Id": 1615,
@@ -1386,16 +1582,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EZuwenyuanI01001.png",
         "Name": "辰积原",
         "Description": "冰系强化",
-        "SuitType": 3,
-        "EquipType": 3,
         "SkillEffect": [
+            "",
             161502,
+            "",
             161504
         ],
         "SkillDescription": [
+            "",
             "攻击增加3%，冰属性伤害增加7%",
+            "",
             "额外伤害加成提升10%。攻击时使目标陷入霜冻状态，期间目标的冰属性抗性降低15%，霜冻状态持续8秒，对同一目标有10秒的冷却时间。攻击霜冻目标时，会触发冰爆，造成600%冰属性伤害，对同一目标有6秒的冷却时间。"
         ],
+        "SuitType": 3,
         "EquipIds": [
             3016015,
             3026015,
@@ -1403,7 +1602,8 @@
             3046015,
             3056015,
             3066015
-        ]
+        ],
+        "EquipType": 3
     },
     {
         "Id": 1616,
@@ -1412,19 +1612,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKeya01002.png",
         "Name": "科亚",
         "Description": "攻击强化",
-        "SuitType": 12,
-        "EquipType": 7,
-        "RecommendCharacterId": 1511003,
         "SkillEffect": [
+            "",
             161602,
+            "",
             161604,
+            "",
             161606
         ],
         "SkillDescription": [
+            "",
             "额外伤害提升10%。",
+            "",
             "每次出场获得20%必杀能量值，存在任意护盾时，消球技能伤害增加10%。",
+            "",
             "卡穆·狂犬在狂噬状态下，额外伤害提升10%及移速提升20%，消球技能对敌人造成伤害同时造成恐惧效果，敌人恐惧持续至狂噬状态结束。恐惧：降低目标攻击力10%，自身对目标造成额外伤害10%。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3016016,
             3026016,
@@ -1432,7 +1636,9 @@
             3046016,
             3056016,
             3066016
-        ]
+        ],
+        "EquipType": 7,
+        "RecommendCharacterId": 1511003
     },
     {
         "Id": 1617,
@@ -1441,17 +1647,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELiewenhukeI01001.png",
         "Name": "列文虎克",
         "Description": "物理辅助强化",
-        "SuitType": 1,
-        "EquipType": 1,
-        "RecommendCharacterId": 1141003,
         "SkillEffect": [
+            "",
             161702,
+            "",
             161704
         ],
         "SkillDescription": [
+            "",
             "攻击增加3%，物理伤害增加7%",
+            "",
             "由罗塞塔·凛冽施加的透甲之击效果增加20%，攻击有透甲之击效果的目标时，造成的伤害增加5%"
         ],
+        "SuitType": 1,
         "EquipIds": [
             3016017,
             3026017,
@@ -1459,7 +1667,9 @@
             3046017,
             3056017,
             3066017
-        ]
+        ],
+        "EquipType": 1,
+        "RecommendCharacterId": 1141003
     },
     {
         "Id": 1618,
@@ -1468,19 +1678,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EWuanjunI01002.png",
         "Name": "武安君",
         "Description": "攻击强化",
-        "SuitType": 12,
-        "EquipType": 7,
-        "RecommendCharacterId": 1521003,
         "SkillEffect": [
+            "",
             161802,
+            "",
             161804,
+            "",
             161806
         ],
         "SkillDescription": [
+            "",
             "普通攻击额外伤害加成提高5%，物理伤害增加7%",
+            "",
             "横扫六合霸体效果额外延长2秒，持续期间内物理伤害增加15%",
+            "",
             "进入意志凝结状态时，获得24点能量值。释放必杀-龙枪乱舞时，立即获得三种颜色的信号球各一个。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3016018,
             3026018,
@@ -1488,7 +1702,9 @@
             3046018,
             3056018,
             3066018
-        ]
+        ],
+        "EquipType": 7,
+        "RecommendCharacterId": 1521003
     },
     {
         "Id": 1619,
@@ -1497,17 +1713,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELemeiI01002.png",
         "Name": "勒梅",
         "Description": "攻击强化",
-        "SuitType": 5,
-        "EquipType": 5,
-        "RecommendCharacterId": 1171003,
         "SkillEffect": [
+            "",
             161902,
+            "",
             161904
         ],
         "SkillDescription": [
+            "",
             "暗属性伤害增加5%，攻击增加5%",
+            "",
             "进入湮灭状态后，暗属性伤害提高30%。终焉降临伤害提高30%。消除湮灭球后额外获得10点能量。"
         ],
+        "SuitType": 5,
         "EquipIds": [
             3016019,
             3026019,
@@ -1515,7 +1733,9 @@
             3046019,
             3056019,
             3066019
-        ]
+        ],
+        "EquipType": 5,
+        "RecommendCharacterId": 1171003
     },
     {
         "Id": 1620,
@@ -1524,19 +1744,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELukeleiqiyaI01002.png",
         "Name": "卢克雷齐娅",
         "Description": "雷系强化",
-        "SuitType": 12,
-        "EquipType": 7,
-        "RecommendCharacterId": 1531003,
         "SkillEffect": [
+            "",
             162002,
+            "",
             162004,
+            "",
             162006
         ],
         "SkillDescription": [
+            "",
             "雷属性伤害增加10%",
+            "",
             "触发和弦时，额外获得15点必杀能量值，并额外伤害加成提高10%，持续5秒",
+            "",
             "攻击被协奏影响的怪物时，额外伤害加成增加20%"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3016020,
             3026020,
@@ -1544,7 +1768,9 @@
             3046020,
             3056020,
             3066020
-        ]
+        ],
+        "EquipType": 7,
+        "RecommendCharacterId": 1531003
     },
     {
         "Id": 1621,
@@ -1553,7 +1779,6 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAikesupeiliI01002.png",
         "Name": "埃克苏佩里",
         "Description": "冰系强化",
-        "SuitType": 0,
         "EquipIds": [
             3016021,
             3026021,
@@ -1570,17 +1795,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ETifaI01002.png",
         "Name": "提法",
         "Description": "雷系强化",
-        "SuitType": 4,
-        "EquipType": 4,
-        "RecommendCharacterId": 1131003,
         "SkillEffect": [
+            "",
             162202,
+            "",
             162204
         ],
         "SkillDescription": [
+            "",
             "攻击增加5%，雷属性伤害增加5%",
+            "",
             "引枪追击伤害增加50%。胜光战旗会对伤害单位附加乱流干扰，持续2s，重复触发刷新持续时间。降雷坠基础伤害提高100%。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016022,
             3026022,
@@ -1588,7 +1815,9 @@
             3046022,
             3056022,
             3066022
-        ]
+        ],
+        "EquipType": 4,
+        "RecommendCharacterId": 1131003
     },
     {
         "Id": 1623,
@@ -1597,19 +1826,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENikeersenI01002.png",
         "Name": "杰克",
         "Description": "火系强化",
-        "SuitType": 12,
-        "EquipType": 7,
-        "RecommendCharacterId": 1541003,
         "SkillEffect": [
+            "",
             162302,
+            "",
             162304,
+            "",
             162306
         ],
         "SkillDescription": [
+            "",
             "攻击增加5%，火属性伤害增加7%",
+            "",
             "普攻连段的额外伤害加成提高10%，获得的虚赝值提高10点。",
+            "",
             "每次出场额外获得30点大招能量。释放有效连段后，根据连段类型分别恢复50/75/100闪避值。焚烈球的额外伤害加成提高100%。释放必杀技后，攻击力增加5%，持续8秒。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3016023,
             3026023,
@@ -1617,7 +1850,9 @@
             3046023,
             3056023,
             3066023
-        ]
+        ],
+        "EquipType": 7,
+        "RecommendCharacterId": 1541003
     },
     {
         "Id": 1624,
@@ -1626,17 +1861,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EYilishabaiI01002.png",
         "Name": "伊丽莎白",
         "Description": "火系强化",
-        "SuitType": 2,
-        "EquipType": 2,
-        "RecommendCharacterId": 1031004,
         "SkillEffect": [
+            "",
             162402,
+            "",
             162404
         ],
         "SkillDescription": [
+            "",
             "攻击增加5%，火属性伤害提高5%",
+            "",
             "任意宣誓额外伤害加成提高50%。丽芙·极昼携带时，全队成员释放3消时对目标释放纯白圣言，每秒造成丽芙·极昼攻击力3%的伤害，持续20秒，最多叠加5次。同时每秒为范围内的队友恢复攻击力15%的生命值，持续4秒。"
         ],
+        "SuitType": 2,
         "EquipIds": [
             3016024,
             3026024,
@@ -1644,7 +1881,9 @@
             3046024,
             3056024,
             3066024
-        ]
+        ],
+        "EquipType": 2,
+        "RecommendCharacterId": 1031004
     },
     {
         "Id": 1625,
@@ -1653,17 +1892,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFanniI01002.png",
         "Name": "萨贺芬",
         "Description": "暗系强化",
-        "SuitType": 5,
-        "EquipType": 5,
-        "RecommendCharacterId": 1531004,
         "SkillEffect": [
+            "",
             162502,
+            "",
             162504
         ],
         "SkillDescription": [
+            "",
             "攻击增加5%，暗属性伤害提高5%",
+            "",
             "任意重奏基础伤害提升100%。受到赛琳娜·幻奏治疗的友方单位获得暗属性伤害提高10%的暗质辐射效果，持续8秒，重复触发刷新持续时间。"
         ],
+        "SuitType": 5,
         "EquipIds": [
             3016025,
             3026025,
@@ -1671,7 +1912,9 @@
             3046025,
             3056025,
             3066025
-        ]
+        ],
+        "EquipType": 5,
+        "RecommendCharacterId": 1531004
     },
     {
         "Id": 1626,
@@ -1680,19 +1923,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EMaerkeI01002.png",
         "Name": "玛尔珂",
         "Description": "物理强化",
-        "SuitType": 12,
-        "EquipType": 7,
-        "RecommendCharacterId": 1551003,
         "SkillEffect": [
+            "",
             162602,
+            "",
             162604,
+            "",
             162606
         ],
         "SkillDescription": [
+            "",
             "物理伤害提高7%，普通攻击伤害增加5%",
+            "",
             "受击时触碰回旋龙厄将解除受击状态并将回旋龙厄再次投出，同时将清除红闪惩罚并恢复250点闪避值。",
+            "",
             "龙劲连击的基础伤害提高50%。触发龙劲连击第一击时，回旋龙厄将释放龙啸将敌人向蒲牢方向牵引并给予自身15%最大生命值的护盾，持续6秒。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3016026,
             3026026,
@@ -1700,7 +1947,9 @@
             3046026,
             3056026,
             3066026
-        ]
+        ],
+        "EquipType": 7,
+        "RecommendCharacterId": 1551003
     },
     {
         "Id": 1627,
@@ -1709,17 +1958,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EYounimeiteI01002.png",
         "Name": "尤尼梅特",
         "Description": "火系强化",
-        "SuitType": 2,
-        "EquipType": 2,
-        "RecommendCharacterId": 1051004,
         "SkillEffect": [
+            "",
             162702,
+            "",
             162704
         ],
         "SkillDescription": [
+            "",
             "火属性伤害提高10%",
+            "",
             "“哎呀可惜~”/“简直完美！”/激燃冲角造成的基础伤害提高100%。七实·遥星之座的QTE技能对命中目标附加减少15%火属性抗性的灼热侵袭效果，持续8秒。"
         ],
+        "SuitType": 2,
         "EquipIds": [
             3016027,
             3026027,
@@ -1727,7 +1978,9 @@
             3046027,
             3056027,
             3066027
-        ]
+        ],
+        "EquipType": 2,
+        "RecommendCharacterId": 1051004
     },
     {
         "Id": 1628,
@@ -1736,19 +1989,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAixiaI01002.png",
         "Name": "艾夏",
         "Description": "冰系强化",
-        "SuitType": 12,
-        "EquipType": 7,
-        "RecommendCharacterId": 1561003,
         "SkillEffect": [
+            "",
             162802,
+            "",
             162804,
+            "",
             162806
         ],
         "SkillDescription": [
+            "",
             "攻击增加5%，冰属性伤害增加7%",
+            "",
             "霜流淬刃-彻寒造成的基础伤害提高15%。",
+            "",
             "凛寒对封冻状态中的敌人造成的冰属性伤害提高200%"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3016028,
             3026028,
@@ -1756,7 +2013,9 @@
             3046028,
             3056028,
             3066028
-        ]
+        ],
+        "EquipType": 7,
+        "RecommendCharacterId": 1561003
     },
     {
         "Id": 1629,
@@ -1765,17 +2024,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBuenI01002.png",
         "Name": "布恩",
         "Description": "暗系强化",
-        "SuitType": 5,
-        "EquipType": 5,
-        "RecommendCharacterId": 1071004,
         "SkillEffect": [
+            "",
             162902,
+            "",
             162904
         ],
         "SkillDescription": [
+            "",
             "暗属性伤害提高10%",
+            "",
             "卡列尼娜·辉晓动能值提供的星碎地平线基础伤害提升效果翻倍。跃升击及辉耀旋击基础伤害倍率翻倍。"
         ],
+        "SuitType": 5,
         "EquipIds": [
             3016029,
             3026029,
@@ -1783,7 +2044,9 @@
             3046029,
             3056029,
             3066029
-        ]
+        ],
+        "EquipType": 5,
+        "RecommendCharacterId": 1071004
     },
     {
         "Id": 1630,
@@ -1792,19 +2055,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EXueLaiI01002.png",
         "Name": "雪莱",
         "Description": "雷系强化",
-        "SuitType": 12,
-        "EquipType": 7,
-        "RecommendCharacterId": 1571003,
         "SkillEffect": [
+            "",
             163002,
+            "",
             163004,
+            "",
             163006
         ],
         "SkillDescription": [
+            "",
             "雷属性伤害提高10%。",
+            "",
             "三消及派生全程获得霸体；若释放三消、极限突破派生或强袭升华击的过程中受到伤害，将免疫该伤害，改为消耗等生命值比例的闪避值，若闪避值不足抵扣则无法免疫伤害。",
+            "",
             "极限突破派生和强袭升华击的基础伤害倍率翻倍。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3016030,
             3026030,
@@ -1812,7 +2079,9 @@
             3046030,
             3056030,
             3066030
-        ]
+        ],
+        "EquipType": 7,
+        "RecommendCharacterId": 1571003
     },
     {
         "Id": 1631,
@@ -1821,17 +2090,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EXialuodiI01002.png",
         "Name": "夏洛蒂",
         "Description": "物理强化",
-        "SuitType": 1,
-        "EquipType": 1,
-        "RecommendCharacterId": 1041004,
         "SkillEffect": [
+            "",
             163102,
+            "",
             163104
         ],
         "SkillDescription": [
+            "",
             "普通攻击伤害提高5%，攻击力提高7%。",
+            "",
             "垂灯耀目基础伤害提高50%，残光剑影基础伤害提高100%。每次进入照域后，释放垂灯耀目时，将重新排列信号球。"
         ],
+        "SuitType": 1,
         "EquipIds": [
             3016031,
             3026031,
@@ -1839,7 +2110,9 @@
             3046031,
             3056031,
             3066031
-        ]
+        ],
+        "EquipType": 1,
+        "RecommendCharacterId": 1041004
     },
     {
         "Id": 1632,
@@ -1848,17 +2121,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ETulingI01002.png",
         "Name": "图灵",
         "Description": "火系强化",
-        "SuitType": 2,
-        "EquipType": 2,
-        "RecommendCharacterId": 1011004,
         "SkillEffect": [
+            "",
             163202,
+            "",
             163204
         ],
         "SkillDescription": [
+            "",
             "火属性伤害提高10%",
+            "",
             "超维劫击及必杀-界域崩解基础伤害提高100%。超维空间中每次释放超维劫击时，延长1秒超维空间的持续时间。"
         ],
+        "SuitType": 2,
         "EquipIds": [
             3016032,
             3026032,
@@ -1866,7 +2141,9 @@
             3046032,
             3056032,
             3066032
-        ]
+        ],
+        "EquipType": 2,
+        "RecommendCharacterId": 1011004
     },
     {
         "Id": 1633,
@@ -1875,17 +2152,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EYileinuoyaI01002.png",
         "Name": "艾琳",
         "Description": "冰系强化",
-        "SuitType": 3,
-        "EquipType": 3,
-        "RecommendCharacterId": 1091003,
         "SkillEffect": [
+            "",
             163302,
+            "",
             163304
         ],
         "SkillDescription": [
+            "",
             "额外伤害加成增加5%，冰属性伤害提高5%",
+            "",
             "纯色·主题强调、混色·概念碰撞基础伤害提高50%。幻彩笔触基础伤害提升80%。"
         ],
+        "SuitType": 3,
         "EquipIds": [
             3016033,
             3026033,
@@ -1893,7 +2172,9 @@
             3046033,
             3056033,
             3066033
-        ]
+        ],
+        "EquipType": 3,
+        "RecommendCharacterId": 1091003
     },
     {
         "Id": 1634,
@@ -1902,17 +2183,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EDiseerI01002.png",
         "Name": "狄瑟尔",
         "Description": "雷系强化",
-        "SuitType": 4,
-        "EquipType": 4,
-        "RecommendCharacterId": 1021005,
         "SkillEffect": [
+            "",
             163402,
+            "",
             163404
         ],
         "SkillDescription": [
+            "",
             "雷属性伤害提高10%",
+            "",
             "剑势的获取效率提高50%。不灭殛华的殛跃挑击基础伤害提高50%，必杀-囚影·浮世业火基础伤害提高80%。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016034,
             3026034,
@@ -1920,7 +2203,9 @@
             3046034,
             3056034,
             3066034
-        ]
+        ],
+        "EquipType": 4,
+        "RecommendCharacterId": 1021005
     },
     {
         "Id": 1635,
@@ -1929,17 +2214,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFulanI01002.png",
         "Name": "弗兰",
         "Description": "雷系强化",
-        "SuitType": 4,
-        "EquipType": 4,
-        "RecommendCharacterId": 1221003,
         "SkillEffect": [
+            "",
             163502,
+            "",
             163504
         ],
         "SkillDescription": [
+            "",
             "雷属性伤害提高5%，额外伤害加成提高5%。",
+            "",
             "薄暮荧辉、彷林猎影基础伤害提高100%。超束解放基础伤害提升70%。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016035,
             3026035,
@@ -1947,7 +2234,9 @@
             3046035,
             3056035,
             3066035
-        ]
+        ],
+        "EquipType": 4,
+        "RecommendCharacterId": 1221003
     },
     {
         "Id": 1636,
@@ -1956,17 +2245,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EXigenaI01002.png",
         "Name": "希格娜",
         "Description": "物理强化",
-        "SuitType": 1,
-        "EquipType": 1,
-        "RecommendCharacterId": 1261003,
         "SkillEffect": [
+            "",
             163602,
+            "",
             163604
         ],
         "SkillDescription": [
+            "",
             "物理伤害提高5%，额外伤害加成提高5%。",
+            "",
             "合击·锁魂裁定及合击·碎魄之弓的基础伤害提升100%。回音为友方恢复生命值时，友方获得暴击伤害提高20%的深度穿透效果以及75%暴击几率，持续8秒，重新触发刷新持续时间。"
         ],
+        "SuitType": 1,
         "EquipIds": [
             3016036,
             3026036,
@@ -1974,7 +2265,9 @@
             3046036,
             3056036,
             3066036
-        ]
+        ],
+        "EquipType": 1,
+        "RecommendCharacterId": 1261003
     },
     {
         "Id": 1637,
@@ -1983,17 +2276,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EDekeduoI01002.png",
         "Name": "德珂朵",
         "Description": "暗系强化",
-        "SuitType": 5,
-        "EquipType": 5,
-        "RecommendCharacterId": 1271003,
         "SkillEffect": [
+            "",
             163702,
+            "",
             163704
         ],
         "SkillDescription": [
+            "",
             "暗属性伤害提高10%。",
+            "",
             "潮涌球技能、溯汐球技能、必杀-沉渊终局基础伤害提高100%。释放必杀-沉渊终局后下场时每个队友主动释放必杀时拉弥亚会对敌人进行协同攻击，每次攻击造成倍率3000%的暗属性伤害，协同攻击在每次释放必杀-沉渊终局后下场最多触发3次。"
         ],
+        "SuitType": 5,
         "EquipIds": [
             3016037,
             3026037,
@@ -2001,7 +2296,9 @@
             3046037,
             3056037,
             3066037
-        ]
+        ],
+        "EquipType": 5,
+        "RecommendCharacterId": 1271003
     },
     {
         "Id": 1638,
@@ -2010,17 +2307,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAlphonseI01002.png",
         "Name": "阿尔冯斯",
         "Description": "火系强化",
-        "SuitType": 2,
-        "EquipType": 2,
-        "RecommendCharacterId": 1081004,
         "SkillEffect": [
+            "",
             163802,
+            "",
             163804
         ],
         "SkillDescription": [
+            "",
             "火属性伤害提高10%",
+            "",
             "热焰喷涌、热力侵蚀的基础伤害倍率提升100%。火力屏障会对伤害单位附加降低目标火属性抗性的灼热侵袭效果，持续8秒，重复触发刷新持续时间。"
         ],
+        "SuitType": 2,
         "EquipIds": [
             3016038,
             3026038,
@@ -2028,7 +2327,9 @@
             3046038,
             3056038,
             3066038
-        ]
+        ],
+        "EquipType": 2,
+        "RecommendCharacterId": 1081004
     },
     {
         "Id": 1639,
@@ -2037,18 +2338,23 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELilianaI01002.png",
         "Name": "莉莉安娜",
         "Description": "攻击强化",
-        "SuitType": 12,
-        "EquipType": 7,
         "SkillEffect": [
+            "",
             163902,
+            "",
             163904,
+            "",
             163906
         ],
         "SkillDescription": [
+            "",
             "攻击提升5%，额外伤害提升5%",
+            "",
             "处于超算空间时，额外伤害提升10%",
+            "",
             "切换入场后，全元素属性伤害和物理伤害增加15%，持续8秒"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3016039,
             3026039,
@@ -2056,7 +2362,8 @@
             3046039,
             3056039,
             3066039
-        ]
+        ],
+        "EquipType": 7
     },
     {
         "Id": 1640,
@@ -2065,17 +2372,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EJiboanI01002.png",
         "Name": "姬伯安",
         "Description": "冰系强化",
-        "SuitType": 12,
-        "EquipType": 3,
-        "RecommendCharacterId": 1521004,
         "SkillEffect": [
+            "",
             164002,
+            "",
             164004
         ],
         "SkillDescription": [
+            "",
             "攻击提升5%，冰属性伤害提升5%",
+            "",
             "凝诀、飞霜、唤岳基础倍率提升100%。君临镇魄技能倍率翻倍。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3016040,
             3026040,
@@ -2083,7 +2392,9 @@
             3046040,
             3056040,
             3066040
-        ]
+        ],
+        "EquipType": 3,
+        "RecommendCharacterId": 1521004
     },
     {
         "Id": 1641,
@@ -2092,17 +2403,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ECleopatraI01002.png",
         "Name": "克娄帕特拉",
         "Description": "空系强化",
-        "SuitType": 14,
-        "EquipType": 6,
-        "RecommendCharacterId": 1171004,
         "SkillEffect": [
+            "",
             164102,
+            "",
             164104
         ],
         "SkillDescription": [
+            "",
             "空属性伤害提高10%",
+            "",
             "终月值获取效率提升100%。主序/终临期间，露娜·终焉获得30%额外伤害加成。"
         ],
+        "SuitType": 14,
         "EquipIds": [
             3016041,
             3026041,
@@ -2110,7 +2423,9 @@
             3046041,
             3056041,
             3066041
-        ]
+        ],
+        "EquipType": 6,
+        "RecommendCharacterId": 1171004
     },
     {
         "Id": 1642,
@@ -2119,17 +2434,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EChangwuziI01002.png",
         "Name": "长梧子",
         "Description": "物理系强化",
-        "SuitType": 1,
-        "EquipType": 1,
-        "RecommendCharacterId": 1241003,
         "SkillEffect": [
+            "",
             164202,
+            "",
             164204
         ],
         "SkillDescription": [
+            "",
             "物理伤害提高10%",
+            "",
             "泛音球的基础伤害提升100%。由含英·檀心施加的透甲之击效果增加20%。退出月音之域时，领域将继续维持12秒，并对领域中的敌方单位每秒造成一次50%的物理伤害。"
         ],
+        "SuitType": 1,
         "EquipIds": [
             3016042,
             3026042,
@@ -2137,7 +2454,9 @@
             3046042,
             3056042,
             3066042
-        ]
+        ],
+        "EquipType": 1,
+        "RecommendCharacterId": 1241003
     },
     {
         "Id": 1643,
@@ -2146,17 +2465,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EListonI01002.png",
         "Name": "利斯顿",
         "Description": "冰系强化",
-        "SuitType": 12,
-        "EquipType": 3,
-        "RecommendCharacterId": 1211003,
         "SkillEffect": [
+            "",
             164302,
+            "",
             164304
         ],
         "SkillDescription": [
-            "冰属性伤害提高10%",
+            "",
+            "冰属性伤害提高10%。释放【QTE-抵近射袭】后触发【封冻区域】效果，【封冻区域】持续8秒，重复触发刷新持续时间。",
+            "",
             "封冻区域造成伤害时，附加降低目标冰属性抗性的霜晶刻蚀效果，持续8秒，重复触发刷新持续时间。连发模式中，每次射击额外叠加一层致伤效果，致伤效果叠加上限提升至24层。释放破灭寒流时，每枚修正弹提供的基础伤害提升效果提升至10%。"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3016043,
             3026043,
@@ -2164,7 +2485,9 @@
             3046043,
             3056043,
             3066043
-        ]
+        ],
+        "EquipType": 3,
+        "RecommendCharacterId": 1211003
     },
     {
         "Id": 1644,
@@ -2173,17 +2496,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHeraclitusI01002.png",
         "Name": "赫拉克利特",
         "Description": "火系强化",
-        "SuitType": 2,
-        "EquipType": 2,
-        "RecommendCharacterId": 1021006,
         "SkillEffect": [
+            "",
             164402,
+            "",
             164404
         ],
         "SkillDescription": [
+            "",
             "攻击增加5%，火属性伤害及电束伤害提高5%",
+            "",
             "辉光值的获取效率提升100%。 必杀-协行锐斩、必杀-蚀日彻曙的倍率翻倍。"
         ],
+        "SuitType": 2,
         "EquipIds": [
             3016044,
             3026044,
@@ -2191,7 +2516,9 @@
             3046044,
             3056044,
             3066044
-        ]
+        ],
+        "EquipType": 2,
+        "RecommendCharacterId": 1021006
     },
     {
         "Id": 1645,
@@ -2200,16 +2527,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EWildeI01002.png",
         "Name": "王尔德",
         "Description": "电束强化",
-        "SuitType": 4,
-        "EquipType": 10,
         "SkillEffect": [
+            "",
             164502,
+            "",
             164504
         ],
         "SkillDescription": [
+            "",
             "雷属性伤害提高5%，电束伤害提高10%",
+            "",
             "电暴鸣闪状态持续期间内，攻击力增加5%，电束伤害提高10%。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016045,
             3026045,
@@ -2217,7 +2547,8 @@
             3046045,
             3056045,
             3066045
-        ]
+        ],
+        "EquipType": 10
     },
     {
         "Id": 1646,
@@ -2226,17 +2557,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHerschellI01002.png",
         "Name": "赫尔舍尔",
         "Description": "雷系强化",
-        "SuitType": 4,
-        "EquipType": 4,
-        "RecommendCharacterId": 1051005,
         "SkillEffect": [
+            "",
             164602,
+            "",
             164604
         ],
         "SkillDescription": [
+            "",
             "攻击增加5%，雷属性伤害及焚烧伤害提高5%",
+            "",
             "耀烬领域造成伤害时附带减抗效果，持续8秒。QTE持续伤害附带减抗效果，持续2秒。天宇贯星击及万兆碎星斩基础伤害翻倍，释放后获得两枚信号球，且优先凑齐三消球。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016046,
             3026046,
@@ -2244,7 +2577,9 @@
             3046046,
             3056046,
             3066046
-        ]
+        ],
+        "EquipType": 4,
+        "RecommendCharacterId": 1051005
     },
     {
         "Id": 1647,
@@ -2253,17 +2588,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ESothothI01002.png",
         "Name": "索托斯",
         "Description": "空系强化",
-        "SuitType": 14,
-        "EquipType": 6,
-        "RecommendCharacterId": 1321003,
         "SkillEffect": [
+            "",
             164702,
+            "",
             164704
         ],
         "SkillDescription": [
+            "",
             "空属性伤害提高10%。",
+            "",
             "释放浮影归湮时，根据当前段数获得18/36/36/36/54点坍缩值。释放彼界浮象后立即获得150点浮影值。释放降维坍坠后，下一次必杀-寂灭绝罚的基础伤害提升100%。若自身是装甲型/破甲型，超维界域命中目标时会根据观测纪行附加对应元素的减抗效果；若自身是增幅型，超维界域存在期间会每秒恢复友方8%攻击力的生命值，并根据观测纪行为友方单位附加元素伤害提高效果。"
         ],
+        "SuitType": 14,
         "EquipIds": [
             3016047,
             3026047,
@@ -2271,7 +2608,9 @@
             3046047,
             3056047,
             3066047
-        ]
+        ],
+        "EquipType": 6,
+        "RecommendCharacterId": 1321003
     },
     {
         "Id": 1648,
@@ -2280,17 +2619,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EbarceloI01002.png",
         "Name": "巴塞罗",
         "Description": "暗系强化",
-        "SuitType": 5,
-        "EquipType": 5,
-        "RecommendCharacterId": 1331003,
         "SkillEffect": [
+            "",
             164802,
+            "",
             164804
         ],
         "SkillDescription": [
+            "",
             "攻击增加7%，暗属性伤害及电束伤害提高3%",
+            "",
             "璀金璨梦之邀基础伤害翻倍。"
         ],
+        "SuitType": 5,
         "EquipIds": [
             3016048,
             3026048,
@@ -2298,7 +2639,9 @@
             3046048,
             3056048,
             3066048
-        ]
+        ],
+        "EquipType": 5,
+        "RecommendCharacterId": 1331003
     },
     {
         "Id": 1649,
@@ -2307,17 +2650,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBuranaI01002.png",
         "Name": "布兰",
         "Description": "物理系强化",
-        "SuitType": 1,
-        "EquipType": 1,
-        "RecommendCharacterId": 1531005,
         "SkillEffect": [
+            "",
             164902,
+            "",
             164904
         ],
         "SkillDescription": [
+            "",
             "攻击增加5%，物理伤害及覆冰伤害提高5%。SS升阶新增：释放流韵穿刺后，退场时视为已释放必杀-间岚啸鸣（无法减少杂噪层数）。",
+            "",
             "释放流韵穿刺时立即获得2个信号球。音刃延鸣、流韵穿刺、必杀-间岚啸鸣、必杀-徒花的终止符的伤害翻倍。"
         ],
+        "SuitType": 1,
         "EquipIds": [
             3016049,
             3026049,
@@ -2325,7 +2670,9 @@
             3046049,
             3056049,
             3066049
-        ]
+        ],
+        "EquipType": 1,
+        "RecommendCharacterId": 1531005
     },
     {
         "Id": 1650,
@@ -2334,16 +2681,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKlenovaI01002.png",
         "Name": "克涅诺娃",
         "Description": "覆冰强化",
-        "SuitType": 4,
-        "EquipType": 10,
         "SkillEffect": [
+            "",
             165002,
+            "",
             165004
         ],
         "SkillDescription": [
+            "",
             "冰属性伤害提高5%，覆冰伤害提高10%",
+            "",
             "冰刺存续期间，攻击力增加5%，覆冰伤害提高10%。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016050,
             3026050,
@@ -2351,7 +2701,8 @@
             3046050,
             3056050,
             3066050
-        ]
+        ],
+        "EquipType": 10
     },
     {
         "Id": 1651,
@@ -2360,17 +2711,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHervorI01002.png",
         "Name": "赫尔薇",
         "Description": "火系强化",
-        "SuitType": 2,
-        "EquipType": 2,
-        "RecommendCharacterId": 1131004,
         "SkillEffect": [
+            "",
             165102,
+            "",
             165104
         ],
         "SkillDescription": [
+            "",
             "攻击力提升5%，火属性及黯衍伤害提升5%",
+            "",
             "释放炙锋灼空后额外获得3个蓝球。消除一组红球延长绝焰的持续时间翻倍。"
         ],
+        "SuitType": 2,
         "EquipIds": [
             3016051,
             3026051,
@@ -2378,7 +2731,9 @@
             3046051,
             3056051,
             3066051
-        ]
+        ],
+        "EquipType": 2,
+        "RecommendCharacterId": 1131004
     },
     {
         "Id": 1652,
@@ -2387,17 +2742,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EJeanneI01002.png",
         "Name": "让娜",
         "Description": "暗系强化",
-        "SuitType": 2,
-        "EquipType": 5,
-        "RecommendCharacterId": 1041005,
         "SkillEffect": [
+            "",
             165202,
+            "",
             165204
         ],
         "SkillDescription": [
+            "",
             "攻击力提升5%，暗属性及熠光伤害提升5%",
+            "",
             "断海伤害翻倍。释放链蚀时，每消耗1点戒律值，获得10层祝祷，若消耗9点戒律值，额外获得45层祝祷。"
         ],
+        "SuitType": 2,
         "EquipIds": [
             3016052,
             3026052,
@@ -2405,7 +2762,9 @@
             3046052,
             3056052,
             3066052
-        ]
+        ],
+        "EquipType": 5,
+        "RecommendCharacterId": 1041005
     },
     {
         "Id": 1653,
@@ -2414,17 +2773,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKeatsI01002.png",
         "Name": "济慈",
         "Description": "物理强化",
-        "SuitType": 1,
-        "EquipType": 1,
-        "RecommendCharacterId": 1381003,
         "SkillEffect": [
+            "",
             165302,
+            "",
             165304
         ],
         "SkillDescription": [
+            "",
             "物理伤害及焚烧伤害提高5%，额外伤害加成提高5%。维罗妮卡为友方恢复生命值时，友方获得暴击伤害提高20%的深度穿透效果及75%的暴击率，持续8s，重复触发刷新持续时间。",
+            "",
             "重锋清空红色信号球时，除获得必杀能量外，每清空一颗红色信号球可以额外获得5点肃恶值。单次清空的红色信号球数量大于等于9颗时，第9颗开始后续每颗红色信号球可额外再获得5点肃恶值。掣烈焚棘、断域的基础伤害提升50%。正刑期间每消耗1点肃恶值，墟烬生的基础伤害增加0.5%，最多提升50%，退场或释放墟烬生后重置该提升效果。"
         ],
+        "SuitType": 1,
         "EquipIds": [
             3016053,
             3026053,
@@ -2432,7 +2793,9 @@
             3046053,
             3056053,
             3066053
-        ]
+        ],
+        "EquipType": 1,
+        "RecommendCharacterId": 1381003
     },
     {
         "Id": 1654,
@@ -2441,17 +2804,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENatashaI01002.png",
         "Name": "娜塔莎",
         "Description": "雷系强化",
-        "SuitType": 4,
-        "EquipType": 4,
-        "RecommendCharacterId": 1031005,
         "SkillEffect": [
+            "",
             165402,
+            "",
             165404
         ],
         "SkillDescription": [
+            "",
             "攻击力提升5%，雷属性及黯衍伤害提升5%。",
+            "",
             "玲珑心的强化基础伤害效果翻倍。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016054,
             3026054,
@@ -2459,7 +2824,9 @@
             3046054,
             3056054,
             3066054
-        ]
+        ],
+        "EquipType": 4,
+        "RecommendCharacterId": 1031005
     },
     {
         "Id": 1655,
@@ -2468,16 +2835,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EPoincareI01002.png",
         "Name": "庞加莱",
         "Description": "黯衍强化",
-        "SuitType": 4,
-        "EquipType": 10,
         "SkillEffect": [
+            "",
             165502,
+            "",
             165504
         ],
         "SkillDescription": [
+            "",
             "暗属性伤害提高5%，黯衍伤害提高10%。",
+            "",
             "释放必杀技时，攻击力增加5%，黯衍伤害提高10%，持续10秒，重复触发刷新持续时间。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016055,
             3026055,
@@ -2485,7 +2855,8 @@
             3046055,
             3056055,
             3066055
-        ]
+        ],
+        "EquipType": 10
     },
     {
         "Id": 1656,
@@ -2494,17 +2865,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EJoannaI01002.png",
         "Name": "乔安娜",
         "Description": "冰系强化",
-        "SuitType": 3,
-        "EquipType": 3,
-        "RecommendCharacterId": 1291003,
         "SkillEffect": [
+            "",
             165602,
+            "",
             165604
         ],
         "SkillDescription": [
+            "",
             "攻击力提升5%，冰属性及熠光伤害提升5%",
+            "",
             "数域空间·闪烁留存造成的伤害提升125%，数域空间·势垒裂隙造成的伤害翻倍。"
         ],
+        "SuitType": 3,
         "EquipIds": [
             3016056,
             3026056,
@@ -2512,7 +2885,9 @@
             3046056,
             3056056,
             3066056
-        ]
+        ],
+        "EquipType": 3,
+        "RecommendCharacterId": 1291003
     },
     {
         "Id": 1657,
@@ -2521,17 +2896,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENiumuI01002.png",
         "Name": "妮缪",
         "Description": "暗系强化",
-        "SuitType": 5,
-        "EquipType": 5,
-        "RecommendCharacterId": 1141004,
         "SkillEffect": [
+            "",
             165702,
+            "",
             165704
         ],
         "SkillDescription": [
+            "",
             "攻击力提升5%，暗属性及真意斩伤害提升5%",
+            "",
             "涅索斯拟态下获得的必杀能量翻倍。涅索斯拟态下消耗覆态馈赠获得的必杀基础伤害提升效果翻倍，最多提升90%。"
         ],
+        "SuitType": 5,
         "EquipIds": [
             3016057,
             3026057,
@@ -2539,7 +2916,9 @@
             3046057,
             3056057,
             3066057
-        ]
+        ],
+        "EquipType": 5,
+        "RecommendCharacterId": 1141004
     },
     {
         "Id": 1658,
@@ -2548,16 +2927,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBenShengI01002.png",
         "Name": "本笙",
         "Description": "真意斩强化",
-        "SuitType": 4,
-        "EquipType": 10,
         "SkillEffect": [
+            "",
             165802,
+            "",
             165804
         ],
         "SkillDescription": [
+            "",
             "物理伤害提高5%，真意斩伤害提高10%。",
+            "",
             "真意值≥5时，攻击力增加5%，真意斩伤害提高10%。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016058,
             3026058,
@@ -2565,7 +2947,8 @@
             3046058,
             3056058,
             3066058
-        ]
+        ],
+        "EquipType": 10
     },
     {
         "Id": 1659,
@@ -2574,17 +2957,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBulgakovI01002.png",
         "Name": "布尔加科夫",
         "Description": "空系强化",
-        "SuitType": 4,
-        "EquipType": 6,
-        "RecommendCharacterId": 1391003,
         "SkillEffect": [
+            "",
             165902,
+            "",
             165904
         ],
         "SkillDescription": [
+            "",
             "空属性伤害提高10%",
+            "",
             "每次入场，首次使用夺心一吻后额外获得3个红球。夺心一吻、赴亡末约额外伤害提升50%。"
         ],
+        "SuitType": 4,
         "EquipIds": [
             3016059,
             3026059,
@@ -2592,7 +2977,9 @@
             3046059,
             3056059,
             3066059
-        ]
+        ],
+        "EquipType": 6,
+        "RecommendCharacterId": 1391003
     },
     {
         "Id": 1660,
@@ -2601,17 +2988,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFeynmanI01002.png",
         "Name": "费曼",
         "Description": "火系强化",
-        "SuitType": 2,
-        "EquipType": 2,
-        "RecommendCharacterId": 1061004,
         "SkillEffect": [
+            "",
             166002,
+            "",
             166004
         ],
         "SkillDescription": [
+            "",
             "攻击力提升5%，火属性伤害及电束伤害提高5%。",
+            "",
             "耀斑值提升引火至晖基础伤害的效果翻倍。"
         ],
+        "SuitType": 2,
         "EquipIds": [
             3016060,
             3026060,
@@ -2619,7 +3008,70 @@
             3046060,
             3056060,
             3066060
-        ]
+        ],
+        "EquipType": 2,
+        "RecommendCharacterId": 1061004
+    },
+    {
+        "Id": 1661,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELyudmilaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELyudmilaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELyudmilaI01002.png",
+        "Name": "柳德米拉",
+        "Description": "冰系强化",
+        "SkillEffect": [
+            "",
+            166102,
+            "",
+            166104
+        ],
+        "SkillDescription": [
+            "",
+            "攻击力提升5%，冰属性及焚烧伤害提升5%",
+            "",
+            "必杀-诸光尽默之渊倍率翻倍。"
+        ],
+        "SuitType": 3,
+        "EquipIds": [
+            3016061,
+            3026061,
+            3036061,
+            3046061,
+            3056061,
+            3066061
+        ],
+        "EquipType": 3,
+        "RecommendCharacterId": 1021007
+    },
+    {
+        "Id": 1662,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EClusiusI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EClusiusI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EClusiusI01002.png",
+        "Name": "克卢修斯",
+        "Description": "焚烧强化",
+        "SkillEffect": [
+            "",
+            166202,
+            "",
+            166204
+        ],
+        "SkillDescription": [
+            "",
+            "火属性伤害提高5%，焚烧伤害提高10%。",
+            "",
+            "释放必杀技时，攻击力增加5%，焚烧伤害提高10%，持续10秒，重复触发刷新持续时间。"
+        ],
+        "SuitType": 4,
+        "EquipIds": [
+            3016062,
+            3026062,
+            3036062,
+            3046062,
+            3056062,
+            3066062
+        ],
+        "EquipType": 10
     },
     {
         "Id": 20001,
@@ -2628,15 +3080,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EJpLivlizhuangB01001.png",
         "Name": "礼装·丽芙",
         "Description": "生存强化",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             3000002,
+            "",
             3000004
         ],
         "SkillDescription": [
+            "",
             "每30秒，受到伤害时，获得一个自身最大生命值20%的护盾，护盾持续5秒",
+            "",
             "每20秒，获得自身最大生命值15%的治疗效果"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3018053,
             3028053,
@@ -2653,9 +3109,10 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
         "Name": "意识强化素材",
         "Description": "低级强化素材",
-        "SuitType": 0,
         "SkillDescription": [
+            "",
             "无",
+            "",
             "无"
         ],
         "EquipIds": [
@@ -2674,9 +3131,10 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
         "Name": "意识强化素材",
         "Description": "中级强化素材",
-        "SuitType": 0,
         "SkillDescription": [
+            "",
             "无",
+            "",
             "无"
         ],
         "EquipIds": [
@@ -2695,9 +3153,10 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
         "Name": "意识强化素材",
         "Description": "高级强化素材",
-        "SuitType": 0,
         "SkillDescription": [
+            "",
             "无",
+            "",
             "无"
         ],
         "EquipIds": [
@@ -2716,9 +3175,10 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
         "Name": "意识强化素材",
         "Description": "高级强化素材",
-        "SuitType": 0,
         "SkillDescription": [
+            "",
             "无",
+            "",
             "无"
         ],
         "EquipIds": [
@@ -2737,13 +3197,16 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
         "Name": "意识强化素材",
         "Description": "高级强化素材",
-        "SuitType": 0,
         "SkillEffect": [
+            "",
             190202,
+            "",
             190204
         ],
         "SkillDescription": [
+            "",
             "额外伤害加成降低15%，额外伤害减免降低30%",
+            "",
             "每5秒减少5%的最大生命值。"
         ],
         "EquipIds": [
@@ -2762,13 +3225,16 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
         "Name": "意识强化素材",
         "Description": "高级强化素材",
-        "SuitType": 0,
         "SkillEffect": [
+            "",
             190202,
+            "",
             190204
         ],
         "SkillDescription": [
+            "",
             "额外伤害加成降低15%，额外伤害减免降低30%",
+            "",
             "每5秒减少5%的最大生命值。"
         ],
         "EquipIds": [
@@ -2787,15 +3253,19 @@
         "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EJpWeilaSummerB01001.png",
         "Name": "薇拉·绯红夏日",
         "Description": "攻击回血",
-        "SuitType": 12,
         "SkillEffect": [
+            "",
             3000006,
+            "",
             3000008
         ],
         "SkillDescription": [
+            "",
             "三消后，攻击增加5%，效果持续5秒，冷却时间10秒",
+            "",
             "处于超算空间时，下次造成的伤害会回复当前攻击力200%的血量，冷却时间25s"
         ],
+        "SuitType": 12,
         "EquipIds": [
             3019050,
             3029050,

@@ -102,7 +102,7 @@
     {
         "Key": "RewardItemId",
         "Comment": "货币Id",
-        "Value": 96206
+        "Value": 96207
     },
     {
         "Key": "RewardItemHipLimitCount",
@@ -127,12 +127,31 @@
     {
         "Key": "ExtraAddEnergyRule",
         "Comment": "额外增加体力规则",
-        "Value": "{\"DifficultyIds\":[1,2],\"GiveDays\":4,\"GameThrough\":2,\"NodeConditions\":[{\"Priority\":1,\"NodeType\":16,\"EnergyAdd\":70},{\"Priority\":2,\"NodeType\":5,\"EnergyAdd\":20}]}"
+        "Value": {
+            "DifficultyIds": [
+                1,
+                2
+            ],
+            "GiveDays": 4,
+            "GameThrough": 2,
+            "NodeConditions": [
+                {
+                    "Priority": 1,
+                    "NodeType": 16,
+                    "EnergyAdd": 70
+                },
+                {
+                    "Priority": 2,
+                    "NodeType": 5,
+                    "EnergyAdd": 20
+                }
+            ]
+        }
     },
     {
         "Key": "GuildWarShopId",
         "Comment": "商店id",
-        "Value": 4017
+        "Value": 4018
     },
     {
         "Key": "DragonRageOpenNodeType",

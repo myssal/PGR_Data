@@ -3,8 +3,7 @@
         "Id": 9999,
         "Type": 3,
         "UiType": 1,
-        "Duration": 0.1,
-        "IsMask": false
+        "Duration": 0.1
     },
     {
         "Id": 1,
@@ -12,8 +11,7 @@
         "UiType": 1,
         "Name": "LJZ备注",
         "Icon": 500703,
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10,
@@ -22,8 +20,7 @@
         "Name": "左边的人",
         "Icon": 500703,
         "Text": "这里是一个对话1",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11,
@@ -33,8 +30,9 @@
         "Icon": 500703,
         "Text": "<color=#7FFF00>这里是一个对话1（立绘反转）</color>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -46,8 +44,8 @@
         "Icon": 500703,
         "Text": "<size=30>这里是一个对话1（开启playalone）</size>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -59,8 +57,8 @@
         "Icon": 500703,
         "Text": "这里是一个对话1（立绘反转·开启playalone）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1
         ]
@@ -73,7 +71,6 @@
         "Icon": 500703,
         "Text": "这里是一个对话2",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -86,9 +83,9 @@
         "Icon": 500703,
         "Text": "这里是一个对话2（立绘反转）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
             1
         ]
     },
@@ -100,8 +97,8 @@
         "Icon": 500703,
         "Text": "这里是一个对话3（开启playalone）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -113,7 +110,6 @@
         "Icon": 500703,
         "Text": "这里是一个对话4（开启playalone）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
             1
@@ -125,8 +121,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V250ylsNormal01.png",
         "Text": "<color=#7FFF00>左上角对话1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 21,
@@ -134,8 +129,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V250ylsNormal01.png",
         "Text": "<size=30>左上角对话2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 22,
@@ -143,8 +137,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V250ylsNormal01.png",
         "Text": "左上角对话3（1秒）",
-        "Duration": 1,
-        "IsMask": false
+        "Duration": 1
     },
     {
         "Id": 23,
@@ -152,8 +145,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V250ylsNormal01.png",
         "Text": "左上角对话4（3秒）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 30,
@@ -161,8 +153,7 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>过场动画1</color>",
         "Text": "<color=#7FFF00>这里是一个对话1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 31,
@@ -170,8 +161,7 @@
         "UiType": 1,
         "Name": "<size=30>过场动画2</size>",
         "Text": "<size=30>这里是一个对话2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 32,
@@ -179,8 +169,7 @@
         "UiType": 1,
         "Name": "过场动画3",
         "Text": "这里是一个对话3（3s）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 40,
@@ -188,24 +177,21 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>连线对话A</color>",
         "Text": "<color=#7FFF00>连线对话123</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 41,
         "Type": 4,
         "UiType": 1,
         "Text": "连线对话234（3s）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 42,
         "Type": 4,
         "UiType": 1,
         "Name": "只有名字的连线对话",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 50,
@@ -214,8 +200,7 @@
         "Name": "<color=#7FFF00>自定义对话框</color>",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V250ylsNormal01.png",
         "Text": "<size=30>自定义对话框1</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 51,
@@ -224,8 +209,7 @@
         "Name": "<size=30>自定义对话框</size>",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V250ylsNormal01.png",
         "Text": "<color=#7FFF00>自定义对话框2</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 52,
@@ -234,15 +218,13 @@
         "Name": "自定义对话框",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V250ylsNormal01.png",
         "Text": "自定义对话框3（3s）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 60,
         "Type": 6,
         "UiType": 1,
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             100,
             100
@@ -255,7 +237,6 @@
         "Name": "恢复率",
         "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightTips/PanelFightScanbar.prefab",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             5000,
             500
@@ -265,16 +246,14 @@
         "Id": 62,
         "Type": 6,
         "UiType": 1,
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 63,
         "Type": 6,
         "UiType": 1,
         "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightTips/PanelFightScanbar.prefab",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 150701,
@@ -283,8 +262,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "多出一把武器会使你的移动速度受到影响。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150702,
@@ -293,8 +271,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "有时，优势也会成为绊脚石，如何做到趋利避害……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150703,
@@ -303,8 +280,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "就在实战中摸索清楚吧，洁塔薇。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150704,
@@ -313,8 +289,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "你对时机的把握已经炉火纯青了。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150705,
@@ -323,8 +298,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "我没有多余的技巧传授给你。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150706,
@@ -333,8 +307,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "毕业快乐，洁塔薇。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150707,
@@ -343,8 +316,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "智慧是美德的源泉。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150708,
@@ -353,8 +325,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "无知是所有的罪恶。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150709,
@@ -363,8 +334,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "粗鲁的闯入者，在此赎罪吧!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150711,
@@ -373,8 +343,7 @@
         "Name": "权柄镜像",
         "Icon": 700009,
         "Text": "战斗时最先控制局面的人会掌握优势。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150712,
@@ -383,8 +352,7 @@
         "Name": "权柄镜像",
         "Icon": 700009,
         "Text": "但也存在着「防守反击」的战法，等待对手犯错的瞬间一击毙命。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150713,
@@ -393,8 +361,7 @@
         "Name": "权柄镜像",
         "Icon": 700009,
         "Text": "想用何种思路就由你来做判断吧。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150714,
@@ -403,8 +370,7 @@
         "Name": "权柄镜像",
         "Icon": 700009,
         "Text": "看来你完美地控制了战局的发展……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150715,
@@ -413,8 +379,7 @@
         "Name": "权柄镜像",
         "Icon": 700009,
         "Text": "在战术和战略上我都输了。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150716,
@@ -423,8 +388,7 @@
         "Name": "权柄镜像",
         "Icon": 700009,
         "Text": "毕业快乐，洁塔薇。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150717,
@@ -433,8 +397,7 @@
         "Name": "权柄镜像",
         "Icon": 700009,
         "Text": "打倒我，证明你比我强。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150718,
@@ -443,8 +406,7 @@
         "Name": "权柄镜像",
         "Icon": 700009,
         "Text": "打倒我，证明你值得那个宝物。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150719,
@@ -453,8 +415,7 @@
         "Name": "权柄镜像",
         "Icon": 700009,
         "Text": "打倒我，是你办不到的事。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150721,
@@ -463,8 +424,7 @@
         "Name": "爱憎镜像",
         "Icon": 700004,
         "Text": "你觉得爱是什么，恨又是什么？",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150722,
@@ -473,8 +433,7 @@
         "Name": "爱憎镜像",
         "Icon": 700004,
         "Text": "光有恨是无法平静地夺走对方生命的，因为啊……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150723,
@@ -483,8 +442,7 @@
         "Name": "爱憎镜像",
         "Icon": 700004,
         "Text": "恨滋生恐惧，爱诞生勇气。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150724,
@@ -493,8 +451,7 @@
         "Name": "爱憎镜像",
         "Icon": 700004,
         "Text": "这不是……做到了吗，呵呵。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150725,
@@ -503,8 +460,7 @@
         "Name": "爱憎镜像",
         "Icon": 700004,
         "Text": "我已经毫无保留了，请离开吧。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150726,
@@ -513,8 +469,7 @@
         "Name": "爱憎镜像",
         "Icon": 700004,
         "Text": "毕业快乐，洁塔薇。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150727,
@@ -523,8 +478,7 @@
         "Name": "爱憎镜像",
         "Icon": 700004,
         "Text": "智者千虑，必有一失，你不会永远幸运。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150728,
@@ -533,8 +487,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "无知是所有的罪恶。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150729,
@@ -543,8 +496,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "粗鲁的闯入者，在此赎罪吧!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150731,
@@ -553,8 +505,7 @@
         "Name": "强欲镜像",
         "Icon": 500623,
         "Text": "小可爱，你知道情绪的意义吗？",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150732,
@@ -563,8 +514,7 @@
         "Name": "强欲镜像",
         "Icon": 500623,
         "Text": "在战斗中先失去理智的一方往往会输。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150733,
@@ -573,8 +523,7 @@
         "Name": "强欲镜像",
         "Icon": 500623,
         "Text": "恐惧也好，愤怒也好，一旦战斗开始就请享受杀戮吧。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150734,
@@ -583,8 +532,7 @@
         "Name": "强欲镜像",
         "Icon": 500623,
         "Text": "实在是……太强了，真令人难忘。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150735,
@@ -593,8 +541,7 @@
         "Name": "强欲镜像",
         "Icon": 500623,
         "Text": "如此纯粹的暴力和肆虐，呵呵……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150736,
@@ -603,8 +550,7 @@
         "Name": "强欲镜像",
         "Icon": 500623,
         "Text": "毕业快乐，洁塔薇。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150737,
@@ -613,8 +559,7 @@
         "Name": "强欲镜像",
         "Icon": 500623,
         "Text": "逃离这里？绝无可能。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150738,
@@ -623,8 +568,7 @@
         "Name": "强欲镜像",
         "Icon": 500623,
         "Text": "与我共舞，亲吻绝望。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150739,
@@ -633,8 +577,7 @@
         "Name": "强欲镜像",
         "Icon": 500623,
         "Text": "就此堕落吧，迷途的灵魂。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150741,
@@ -643,8 +586,7 @@
         "Name": "力量镜像",
         "Icon": 700010,
         "Text": "你的算力很庞大，不过战斗可不是有氧运动……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150742,
@@ -653,8 +595,7 @@
         "Name": "力量镜像",
         "Icon": 700010,
         "Text": "持续性和爆发力都是克敌制胜的关键。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150743,
@@ -663,8 +604,7 @@
         "Name": "力量镜像",
         "Icon": 700010,
         "Text": "如何权衡两者，可不光是蛮力就能解决的。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150744,
@@ -673,8 +613,7 @@
         "Name": "力量镜像",
         "Icon": 700010,
         "Text": "压倒性的攻击方式……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150745,
@@ -683,8 +622,7 @@
         "Name": "力量镜像",
         "Icon": 700010,
         "Text": "在现在的你面前，或许我已经不值一提了吧。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150746,
@@ -693,8 +631,7 @@
         "Name": "力量镜像",
         "Icon": 700010,
         "Text": "毕业快乐，洁塔薇。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150747,
@@ -703,8 +640,7 @@
         "Name": "力量镜像",
         "Icon": 700010,
         "Text": "我将带给你三个预言。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150748,
@@ -713,8 +649,7 @@
         "Name": "力量镜像",
         "Icon": 700010,
         "Text": "失败、毁灭、懊悔。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150749,
@@ -723,8 +658,7 @@
         "Name": "力量镜像",
         "Icon": 700010,
         "Text": "接下这些诅咒。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150751,
@@ -733,8 +667,7 @@
         "Name": "傲岸镜像",
         "Icon": 500701,
         "Text": "俗话说，真正的武艺似水。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150752,
@@ -743,8 +676,7 @@
         "Name": "傲岸镜像",
         "Icon": 500701,
         "Text": "战斗技术并非生搬硬套，无论何种战斗方法……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150753,
@@ -753,8 +685,7 @@
         "Name": "傲岸镜像",
         "Icon": 500701,
         "Text": "能够活用于不同场合才是武艺的灵魂。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150754,
@@ -763,8 +694,7 @@
         "Name": "傲岸镜像",
         "Icon": 500701,
         "Text": "真是精彩的较量。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150755,
@@ -773,8 +703,7 @@
         "Name": "傲岸镜像",
         "Icon": 500701,
         "Text": "你已经是出色的武者和战斗专家了啊。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150756,
@@ -783,8 +712,7 @@
         "Name": "傲岸镜像",
         "Icon": 500701,
         "Text": "毕业快乐，洁塔薇。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150757,
@@ -793,8 +721,7 @@
         "Name": "傲岸镜像",
         "Icon": 500701,
         "Text": "寻找真相吗？这样啊…",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150758,
@@ -803,8 +730,7 @@
         "Name": "傲岸镜像",
         "Icon": 500701,
         "Text": "但是这扇门后面真有你期待的东西吗？",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150759,
@@ -813,8 +739,7 @@
         "Name": "傲岸镜像",
         "Icon": 500701,
         "Text": "抱歉我又多嘴了…不过对阁下这样的死人来说，又有什么区别呢？",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150761,
@@ -823,8 +748,7 @@
         "Name": "偏执镜像",
         "Icon": 500686,
         "Text": "没有执念的战士就像沉睡的狮子。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150762,
@@ -833,8 +757,7 @@
         "Name": "偏执镜像",
         "Icon": 500686,
         "Text": "即使拥有强大的战斗技巧……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150763,
@@ -843,8 +766,7 @@
         "Name": "偏执镜像",
         "Icon": 500686,
         "Text": "无法坚持自己的立场，就容易被敌人影响。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150764,
@@ -853,8 +775,7 @@
         "Name": "偏执镜像",
         "Icon": 500686,
         "Text": "看来，你的执念一点也不亚于我。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150765,
@@ -863,8 +784,7 @@
         "Name": "偏执镜像",
         "Icon": 500686,
         "Text": "就这么坚持下去吧！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150766,
@@ -873,8 +793,7 @@
         "Name": "偏执镜像",
         "Icon": 500686,
         "Text": "毕业快乐，洁塔薇。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150767,
@@ -883,8 +802,7 @@
         "Name": "偏执镜像",
         "Icon": 500686,
         "Text": "有勇无谋的家伙，不值一提。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150768,
@@ -893,8 +811,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "无知是所有的罪恶。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150769,
@@ -903,8 +820,7 @@
         "Name": "智识镜像",
         "Icon": 700008,
         "Text": "粗鲁的闯入者，在此赎罪吧!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150771,
@@ -913,8 +829,7 @@
         "Name": "王者镜像",
         "Icon": 700021,
         "Text": "强大，是身体与精神的统一。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150772,
@@ -923,8 +838,7 @@
         "Name": "王者镜像",
         "Icon": 700021,
         "Text": "即使是弱者，只要拥有强者之心……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150773,
@@ -933,8 +847,7 @@
         "Name": "王者镜像",
         "Icon": 700021,
         "Text": "总有一天，也能让自己成为理想国的王。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150774,
@@ -943,8 +856,7 @@
         "Name": "王者镜像",
         "Icon": 700021,
         "Text": "心无旁骛的专注力和完善的战斗技巧……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150775,
@@ -953,8 +865,7 @@
         "Name": "王者镜像",
         "Icon": 700021,
         "Text": "真不愧是被矩阵选中的奇迹之子。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150776,
@@ -963,8 +874,7 @@
         "Name": "王者镜像",
         "Icon": 700021,
         "Text": "毕业快乐，洁塔薇。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150777,
@@ -973,8 +883,7 @@
         "Name": "王者镜像",
         "Icon": 700021,
         "Text": "你当然有生的经验，可你有过死的经验吗？",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150778,
@@ -983,8 +892,7 @@
         "Name": "王者镜像",
         "Icon": 700021,
         "Text": "我会教给你这一点，记住。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 150779,
@@ -993,8 +901,7 @@
         "Name": "王者镜像",
         "Icon": 700021,
         "Text": "我会教给你这一点，记住。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 2704,
@@ -1003,8 +910,7 @@
         "Name": "洁塔薇",
         "Icon": 700024,
         "Text": "一起搞点破坏吧~马车很好玩的！根据表现还能获得增益奖励哦~！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 2705,
@@ -1013,8 +919,7 @@
         "Name": "洁塔薇",
         "Icon": 700024,
         "Text": "居然是无伤！获得40%额外伤害加成！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 2706,
@@ -1023,8 +928,7 @@
         "Name": "洁塔薇",
         "Icon": 700024,
         "Text": "可惜~还差一点点~获得30%额外伤害加成！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 2707,
@@ -1033,7 +937,6 @@
         "Name": "洁塔薇",
         "Icon": 700024,
         "Text": "逊诶~不过还是可以获得20%额外伤害加成！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     }
 ]

@@ -1,13 +1,11 @@
 [
     {
-        "Id": 0,
         "Type": 1,
         "UiType": 1,
         "Name": "唐培",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal02.png",
         "Text": "旧版本主线内容迭代",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10,
@@ -16,8 +14,7 @@
         "Name": "左边的人",
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "这里是一个对话1",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11,
@@ -27,8 +24,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "<color=#7FFF00>这里是一个对话1（立绘反转）</color>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -40,8 +38,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "<size=30>这里是一个对话1（开启playalone）</size>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -53,8 +51,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "这里是一个对话1（立绘反转·开启playalone）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1
         ]
@@ -67,7 +65,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png",
         "Text": "这里是一个对话2",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -80,9 +77,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png",
         "Text": "这里是一个对话2（立绘反转）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
             1
         ]
     },
@@ -94,8 +91,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal03.png",
         "Text": "这里是一个对话3（开启playalone）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -107,7 +104,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal02.png",
         "Text": "这里是一个对话4（开启playalone）",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
             1
@@ -119,8 +115,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "<color=#7FFF00>左上角对话1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 21,
@@ -128,8 +123,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal02.png",
         "Text": "<size=30>左上角对话2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 22,
@@ -137,8 +131,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
         "Text": "左上角对话3（1秒）",
-        "Duration": 1,
-        "IsMask": false
+        "Duration": 1
     },
     {
         "Id": 23,
@@ -146,8 +139,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal04.png",
         "Text": "左上角对话4（3秒）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 30,
@@ -155,16 +147,14 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>过场动画1</color>",
         "Text": "<color=#7FFF00>这里是一个对话1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 31,
         "Type": 3,
         "UiType": 1,
         "Text": "<size=30>这里是一个对话2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 32,
@@ -172,8 +162,7 @@
         "UiType": 1,
         "Name": "过场动画3",
         "Text": "这里是一个对话3（3s）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 40,
@@ -181,24 +170,21 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>连线对话A</color>",
         "Text": "<color=#7FFF00>连线对话123</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 41,
         "Type": 4,
         "UiType": 1,
         "Text": "连线对话234（3s）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 42,
         "Type": 4,
         "UiType": 1,
         "Name": "只有名字的连线对话",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 50,
@@ -207,8 +193,7 @@
         "Name": "<color=#7FFF00>自定义对话框</color>",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "<size=30>自定义对话框1</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 51,
@@ -217,8 +202,7 @@
         "Name": "<size=15>自定义对话框</size>",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal02.png",
         "Text": "<color=#7FFF00>自定义对话框2</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 52,
@@ -227,8 +211,7 @@
         "Name": "自定义对话框",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
         "Text": "自定义对话框3（3s）",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1,
@@ -236,8 +219,7 @@
         "UiType": 1,
         "Name": "主线第九章黑星坠落",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010201,
@@ -246,8 +228,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "这里没地方躲。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1026010202,
@@ -256,8 +237,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "这里很危险。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1026010203,
@@ -266,8 +246,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "电梯是坏的，这里也不行。",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1026010204,
@@ -276,8 +255,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "没时间了……",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1026010205,
@@ -286,8 +264,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "必须找个地方躲起来……",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010206,
@@ -297,7 +274,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "等它走远了再行动……",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -310,7 +286,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "好，快点离开这里吧。",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -322,8 +297,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "得转移到别的安全的地方去",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010209,
@@ -332,8 +306,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "这些感染体没有被控制，攻击也没事。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010210,
@@ -343,7 +316,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "好了，走吧。",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -355,8 +327,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "\"虽然状态还没回复,但没办法了,用全力吧……\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010212,
@@ -366,7 +337,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "这是什么诡异的门？游戏体验馆里的虚拟实景吗？",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -379,7 +349,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "那家伙又来了!先穿过这里再说吧！",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -392,7 +361,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "等等，有人来了。",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -405,7 +373,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "这是……感染体？不对，他被升格者控制着！",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -417,8 +384,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "战斗动静不小，得快点找到出路。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011101,
@@ -427,8 +393,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "碰到卵没有再陷入混乱了，说不定能使用它！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011102,
@@ -437,8 +402,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "我能压制惑砂的控制了！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011103,
@@ -447,8 +411,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "那家伙飞走了，得先解决这些杂兵。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011104,
@@ -457,8 +420,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "我能从那边瀑布游着追上去。",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011105,
@@ -467,8 +429,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "现在我可不怕你了！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011106,
@@ -477,8 +438,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "让我继续使用卵的力量！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011107,
@@ -487,8 +447,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "现在我才是狩猎者！",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011108,
@@ -497,8 +456,7 @@
         "Name": "拉弥亚",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "使用卵的力量来对付它们",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026012501,
@@ -508,7 +466,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "“她”正在干扰我的意识海，我得想办法处理",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]

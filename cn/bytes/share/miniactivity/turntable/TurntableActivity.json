@@ -1,7 +1,6 @@
 [
     {
         "Id": 1,
-        "TimeId": 0,
         "ConsumeItemId": 97010,
         "ConsumeItemCount": 10,
         "MaxDrawNum": 10,
@@ -21,7 +20,6 @@
     },
     {
         "Id": 2,
-        "TimeId": 0,
         "ConsumeItemId": 97030,
         "ConsumeItemCount": 10,
         "MaxDrawNum": 10,
@@ -41,7 +39,6 @@
     },
     {
         "Id": 3,
-        "TimeId": 0,
         "ConsumeItemId": 97057,
         "ConsumeItemCount": 10,
         "MaxDrawNum": 10,
@@ -57,6 +54,26 @@
         "TaskGroup": [
             523,
             522
+        ]
+    },
+    {
+        "Id": 4,
+        "TimeId": 47351,
+        "ConsumeItemId": 97081,
+        "ConsumeItemCount": 10,
+        "MaxDrawNum": 10,
+        "RecordNum": 10,
+        "BaseRuleTitles": [
+            "活动说明",
+            "货币获取"
+        ],
+        "BaseRules": [
+            "逐浪拾光活动为不放回制抽奖，消耗夏光曳辉奖券可参与抽奖，累积抽奖次数可获得额外奖励。",
+            "活动期间，可通过完成活动任务获得夏光曳辉奖券，活动结束后奖券将自动回收。"
+        ],
+        "TaskGroup": [
+            671,
+            672
         ]
     }
 ]

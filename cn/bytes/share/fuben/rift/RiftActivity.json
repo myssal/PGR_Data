@@ -1,27 +1,13 @@
 [
     {
         "Id": 1,
-        "TimeId": 0,
         "Name": "映像潜渊",
-        "ResetNoCdTimes": 0,
         "ResetCdIncrease": 1,
         "ResetCdMax": 1,
         "DailySweepTimes": 3,
         "PluginPeakloadInit": 7,
         "PluginPeakloadMax": 30,
         "AttrLevelSetCount": 5,
-        "PeriodTimeIds": [],
-        "RankLayerLimits": [],
-        "MaxLuckyValue": 50,
-        "RankLayerLimit": 1,
-        "SeasonTaskGroupId": 172,
-        "AttrSetNameLength": 7,
-        "MopupCd": 0,
-        "MaxWeight": 1000000,
-        "AffixWeightVersion": 0,
-        "TimeIntervalToLucky": 360,
-        "TimeAddValueToLucky": 1,
-        "GainRewardLuckyValue": 100,
         "ShopId": [
             1236,
             1235
@@ -29,31 +15,25 @@
         "TaskGroupId": [
             171,
             172
-        ]
+        ],
+        "MaxLuckyValue": 50,
+        "RankLayerLimit": 1,
+        "SeasonTaskGroupId": 172,
+        "AttrSetNameLength": 7,
+        "MaxWeight": 1000000,
+        "TimeIntervalToLucky": 360,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 100
     },
     {
         "Id": 2,
-        "TimeId": 0,
         "Name": "映像潜渊",
-        "ResetNoCdTimes": 0,
         "ResetCdIncrease": 1,
         "ResetCdMax": 1,
         "DailySweepTimes": 3,
         "PluginPeakloadInit": 7,
         "PluginPeakloadMax": 30,
         "AttrLevelSetCount": 5,
-        "PeriodTimeIds": [],
-        "RankLayerLimits": [],
-        "MaxLuckyValue": 50,
-        "RankLayerLimit": 1,
-        "SeasonTaskGroupId": 282,
-        "AttrSetNameLength": 7,
-        "MopupCd": 86400,
-        "MaxWeight": 1000000,
-        "AffixWeightVersion": 0,
-        "TimeIntervalToLucky": 360,
-        "TimeAddValueToLucky": 1,
-        "GainRewardLuckyValue": 100,
         "ShopId": [
             1296,
             1295,
@@ -75,36 +55,31 @@
             "终末时序:怪物5米范围内没有其他怪物时，造成伤害与减伤都会增加",
             "循环时序:杀死怪物会提升角色造成伤害，持续5秒，重复触发刷新并叠加层数"
         ],
+        "MaxLuckyValue": 50,
+        "RankLayerLimit": 1,
         "PeriodName": [
             "源初时序",
             "演变时序",
             "终末时序",
             "循环时序"
-        ]
+        ],
+        "SeasonTaskGroupId": 282,
+        "AttrSetNameLength": 7,
+        "MopupCd": 86400,
+        "MaxWeight": 1000000,
+        "TimeIntervalToLucky": 360,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 100
     },
     {
         "Id": 3,
-        "TimeId": 0,
         "Name": "寰维逐星",
-        "ResetNoCdTimes": 0,
         "ResetCdIncrease": 1,
         "ResetCdMax": 1,
         "DailySweepTimes": 3,
         "PluginPeakloadInit": 18,
         "PluginPeakloadMax": 30,
         "AttrLevelSetCount": 5,
-        "PeriodTimeIds": [],
-        "RankLayerLimits": [],
-        "MaxLuckyValue": 200,
-        "RankLayerLimit": 1,
-        "SeasonTaskGroupId": 0,
-        "AttrSetNameLength": 7,
-        "MopupCd": 86400,
-        "MaxWeight": 1000000,
-        "AffixWeightVersion": 0,
-        "TimeIntervalToLucky": 360,
-        "TimeAddValueToLucky": 1,
-        "GainRewardLuckyValue": 100,
         "ShopId": [
             1432,
             1433
@@ -112,31 +87,25 @@
         "TaskGroupId": [
             391,
             392
-        ]
+        ],
+        "MaxLuckyValue": 200,
+        "RankLayerLimit": 1,
+        "AttrSetNameLength": 7,
+        "MopupCd": 86400,
+        "MaxWeight": 1000000,
+        "TimeIntervalToLucky": 360,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 100
     },
     {
         "Id": 4,
-        "TimeId": 0,
         "Name": "葬愿穷途",
-        "ResetNoCdTimes": 0,
         "ResetCdIncrease": 1,
         "ResetCdMax": 1,
         "DailySweepTimes": 3,
         "PluginPeakloadInit": 18,
         "PluginPeakloadMax": 30,
         "AttrLevelSetCount": 5,
-        "PeriodTimeIds": [],
-        "RankLayerLimits": [],
-        "MaxLuckyValue": 360,
-        "RankLayerLimit": 1,
-        "SeasonTaskGroupId": 0,
-        "AttrSetNameLength": 7,
-        "MopupCd": 86400,
-        "MaxWeight": 1000000,
-        "AffixWeightVersion": 1,
-        "TimeIntervalToLucky": 240,
-        "TimeAddValueToLucky": 1,
-        "GainRewardLuckyValue": 180,
         "ShopId": [
             1447,
             1448
@@ -144,6 +113,15 @@
         "TaskGroupId": [
             552,
             553
-        ]
+        ],
+        "MaxLuckyValue": 360,
+        "RankLayerLimit": 1,
+        "AttrSetNameLength": 7,
+        "MopupCd": 86400,
+        "MaxWeight": 1000000,
+        "AffixWeightVersion": 1,
+        "TimeIntervalToLucky": 240,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 180
     }
 ]

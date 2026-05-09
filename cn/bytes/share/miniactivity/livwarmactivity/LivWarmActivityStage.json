@@ -3,8 +3,6 @@
         "Id": 1,
         "ActivityId": 5,
         "MaxItemCount": 30,
-        "DismisMaxCount": 10,
-        "RequireStageId": 0,
         "RewardProgress": [
             2,
             5,
@@ -14,14 +12,13 @@
             66983,
             66984,
             66985
-        ]
+        ],
+        "DismisMaxCount": 10
     },
     {
         "Id": 2,
         "ActivityId": 5,
         "MaxItemCount": 30,
-        "DismisMaxCount": 10,
-        "RequireStageId": 1,
         "RewardProgress": [
             2,
             5,
@@ -31,14 +28,14 @@
             66986,
             66987,
             66988
-        ]
+        ],
+        "DismisMaxCount": 10,
+        "RequireStageId": 1
     },
     {
         "Id": 3,
         "ActivityId": 5,
         "MaxItemCount": 30,
-        "DismisMaxCount": 10,
-        "RequireStageId": 2,
         "RewardProgress": [
             2,
             5,
@@ -48,6 +45,8 @@
             66989,
             66990,
             66991
-        ]
+        ],
+        "DismisMaxCount": 10,
+        "RequireStageId": 2
     }
 ]

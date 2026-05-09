@@ -1,24 +1,40 @@
 [
     {
         "VersionId": 1,
-        "TimeId": 100,
-        "ConditionId": 0,
         "Name": "行动指南",
         "ContentIds": [
             101,
             102,
             103
-        ]
+        ],
+        "TimeId": 100,
+        "Priority": 1,
+        "SwitchIcon": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/UiBigWorldProcessImg03.png"
     },
     {
         "VersionId": 2,
-        "TimeId": 44107,
-        "ConditionId": 50002051,
         "Name": "行动指南Ⅱ",
         "ContentIds": [
             201,
             202,
             203
-        ]
+        ],
+        "TimeId": 100,
+        "ConditionId": 50002051,
+        "Priority": 2,
+        "SwitchIcon": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/UiBigWorldProcessImg02.png"
+    },
+    {
+        "VersionId": 3,
+        "Name": "行动指南Ⅲ",
+        "ContentIds": [
+            301,
+            302,
+            303
+        ],
+        "TimeId": 100,
+        "ConditionId": 50003221,
+        "Priority": 3,
+        "SwitchIcon": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/UiBigWorldProcessImg02.png"
     }
 ]

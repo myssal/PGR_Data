@@ -11,6 +11,7 @@ local IS_SELECT_WIFI_AUTO_DOWNLOAD = "IS_SELECT_WIFI_AUTO_DOWNLOAD" --是否选�
 local KEY_UNINSTALLED_RESID_LIST = "KEY_UNINSTALLED_RESID_LIST" -- 新增Key
 local KEY_SUBPACKAGE_FINISHED = "KEY_SUBPACKAGE_FINISHED_" -- 分包下载完成状态
 local KEY_SUBPACKAGE_ACTIVE = "KEY_SUBPACKAGE_ACTIVE_" -- 分包激活状态（用户意图）
+local KEY_SUBPACKAGE_SKIP_AUTO_COMPLETE = "KEY_SUBPACKAGE_SKIP_AUTO_COMPLETE_" -- 分包跳过热更自动补全标记
 local CsLog = CS.XLog
 
 ---@class XLaunchDlcManager 分包资源-启动管理类
@@ -375,6 +376,23 @@ M.SetSubPackageActive = function(subPackageId, isActive)
     UnityPlayerPrefs.Save()
     CsLog.Debug("[XLaunchDlcManager] SetSubPackageActive: " .. tostring(subPackageId) .. " -> " .. tostring(isActive))
 end
+
+-- 检查分包是否跳过热更自动补全
+M.IsSubPackageSkipAutoComplete = function(subPackageId)
+    if not subPackageId then return false end
+    local key = KEY_SUBPACKAGE_SKIP_AUTO_COMPLETE .. tostring(subPackageId)
+    return UnityPlayerPrefs.GetInt(key, 0) == 1
+end
+
+-- 设置分包跳过热更自动补全标记
+M.SetSubPackageSkipAutoComplete = function(subPackageId, isSkip)
+    if not subPackageId then return end
+    local key = KEY_SUBPACKAGE_SKIP_AUTO_COMPLETE .. tostring(subPackageId)
+    local val = isSkip and 1 or 0
+    UnityPlayerPrefs.SetInt(key, val)
+    UnityPlayerPrefs.Save()
+    CsLog.Debug("[XLaunchDlcManager] SetSubPackageSkipAutoComplete: " .. tostring(subPackageId) .. " -> " .. tostring(isSkip))
+end
 --====启动逻辑接口 end=====
 
 
@@ -633,6 +651,57 @@ M.IsAutoDownloadRes = function(resId)
     return AutoDownloadResIds[resId] == true
 end
 --====AutoDownload涂装资源 end=====
+
+--====Sub级auto-complete冲突检测 begin=====
+--- 检查某个 SubPackage 下是否有任何 ResId 存在 RES级卸载意图
+--- 用于 Launch 阶段 auto-complete 前的冲突检测：
+--- 当 Sub 下有任何 Res 被用户在游戏内执行过 RES级卸载，
+--- 说明用户已进行过精细管理，不应再整体自动补全该 Sub
+---@param subPackageId number
+---@return boolean
+M.HasAnyUninstalledResInSub = function(subPackageId)
+    if not subPackageId then return false end
+
+    -- 先检查是否有卸载记录
+    local str = UnityPlayerPrefs.GetString(KEY_UNINSTALLED_RESID_LIST, "")
+    if str == "" then return false end
+
+    -- 解析卸载列表为 set
+    local uninstalledSet = {}
+    for idStr in string.gmatch(str, "[^,]+") do
+        local id = tonumber(idStr)
+        if id then
+            uninstalledSet[id] = true
+        end
+    end
+
+    -- 通过 SubPackageTab 获取该 Sub 的所有 ResId
+    local subPackageStorage = CS.XLaunchManager.SubPackageTab
+    if not subPackageStorage then return false end
+
+    local resIdsStr = nil
+    local spPairs = subPackageStorage.keyValuePairs
+    for i = 0, spPairs.Length - 1 do
+        local kv = spPairs[i]
+        if kv.Key == subPackageId then
+            resIdsStr = tostring(kv.Value)
+            break
+        end
+    end
+
+    if not resIdsStr or resIdsStr == "" then return false end
+
+    -- 检查该 Sub 下是否有任何 res 在卸载列表中
+    for resId in string.gmatch(resIdsStr, "[^,]+") do
+        local id = tonumber(resId)
+        if id and uninstalledSet[id] then
+            return true
+        end
+    end
+
+    return false
+end
+--====Sub级auto-complete冲突检测 end=====
 
 --======== 业务层接口 end ====
 

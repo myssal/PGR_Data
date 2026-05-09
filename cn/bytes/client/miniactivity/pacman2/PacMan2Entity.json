@@ -4,12 +4,6 @@
         "Desc": "能跑起来的代码，良性代码块的数量是判断是否抢险成功的重要指标。",
         "Type": 1,
         "Name": "良性代码块",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon07.png"
     },
     {
@@ -17,12 +11,6 @@
         "Desc": "收集指定数量良性代码块后，进入即可结束工程。",
         "Type": 2,
         "Name": "逻辑块结束点",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon15.png"
     },
     {
@@ -30,49 +18,31 @@
         "Desc": "拾取后可恢复生命。",
         "Type": 3,
         "Name": "语法高亮",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon04.png",
         "Params": [
             1
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon04.png"
     },
     {
         "Id": 4,
         "Desc": "进入追击阶段后可拾取，拾取后短时间内可以通过触碰击杀怪物。",
         "Type": 4,
         "Name": "故障排除模式",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon12.png",
         "Params": [
             5,
             10
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon12.png"
     },
     {
         "Id": 5,
         "Desc": "拾取后，一定时间内移动速度变快，地图上的怪物都会变成跑鞋，触碰跑鞋即可刷新持续时间。",
         "Type": 5,
         "Name": "加速冲刺",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png",
         "Params": [
             5
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png"
     },
     {
         "Id": 6,
@@ -80,11 +50,6 @@
         "Type": 6,
         "Name": "语法报错",
         "Speed": 55,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon02.png"
     },
     {
@@ -97,7 +62,6 @@
         "AlertX": 4,
         "AlertY": 4,
         "AlertVisibility": true,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon05.png"
     },
     {
@@ -106,17 +70,14 @@
         "Type": 8,
         "Name": "异魔怪",
         "Speed": 18,
-        "TurningDuration": 0,
         "AlertX": 4,
         "AlertY": 4,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png",
         "Params": [
             90,
             3,
             3
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png"
     },
     {
         "Id": 9,
@@ -124,17 +85,12 @@
         "Type": 9,
         "Name": "鞋子",
         "Speed": 18,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon20.png",
         "Params": [
             5,
             35,
             2
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon20.png"
     },
     {
         "Id": 10,
@@ -142,16 +98,11 @@
         "Type": 10,
         "Name": "幻影分身",
         "Speed": 30,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon08.png",
         "Params": [
             2,
             1
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon08.png"
     },
     {
         "Id": 11,
@@ -159,11 +110,6 @@
         "Type": 11,
         "Name": "食物",
         "Speed": 30,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon06.png"
     },
     {
@@ -171,12 +117,6 @@
         "Desc": "通过触碰，可以在相同颜色的断点间传送。",
         "Type": 12,
         "Name": "循环断点",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon11.png"
     },
     {
@@ -185,15 +125,10 @@
         "Type": 13,
         "Name": "栈溢出",
         "Speed": 60,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png",
         "Params": [
             7
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png"
     },
     {
         "Id": 14,
@@ -201,49 +136,32 @@
         "Type": 14,
         "Name": "内存泄漏",
         "Speed": 80,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon05.png",
         "Params": [
             55,
             12
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon05.png"
     },
     {
         "Id": 15,
         "Desc": "拾取后，可令所有报错移动速度降低，更好排查问题。",
         "Type": 15,
         "Name": "单步调试",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon10.png",
         "Params": [
             5000,
             5
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon10.png"
     },
     {
         "Id": 16,
         "Desc": "拾取后，可在持续时间内提升移动速度。",
         "Type": 16,
         "Name": "快速遍历",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png",
         "Params": [
             5000,
             5
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png"
     }
 ]

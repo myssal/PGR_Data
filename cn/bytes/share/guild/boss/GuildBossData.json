@@ -3,8 +3,6 @@
         "Id": 1,
         "Desc": "低浓度据点",
         "StageType": 1,
-        "RobotCount": 5,
-        "StageCount": 4,
         "StageId": [
             "30190213|30190226|30190227|30190228",
             "30190214|30190229|30190230|30190231",
@@ -53,14 +51,14 @@
             20,
             20,
             20
-        ]
+        ],
+        "RobotCount": 5,
+        "StageCount": 4
     },
     {
         "Id": 2,
         "Desc": "重灾区据点",
         "StageType": 2,
-        "RobotCount": 3,
-        "StageCount": 3,
         "StageId": [
             "30190208|30190220|30190221",
             "30190209|30190222|30190223",
@@ -88,14 +86,14 @@
             20,
             20,
             20
-        ]
+        ],
+        "RobotCount": 3,
+        "StageCount": 3
     },
     {
         "Id": 3,
         "Desc": "boss关卡",
         "StageType": 3,
-        "RobotCount": 5,
-        "StageCount": 1,
         "StageId": [
             30190201,
             30190202,
@@ -148,6 +146,8 @@
             240,
             241
         ],
+        "RobotCount": 5,
+        "StageCount": 1,
         "FixedRobot": [
             241,
             227

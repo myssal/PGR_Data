@@ -359,9 +359,9 @@
     },
     {
         "Key": "BossRewardEntranceIntercept",
-        "Comment": "boss奖励入口（主界面左边【领主】）的拦截提示文本",
+        "Comment": "boss奖励入口（主界面左边【寐者】）的拦截提示文本",
         "Values": [
-            "曾在其他指挥局参与行征，本轮无法领取领主奖励"
+            "曾在其他指挥局参与行征，本轮无法领取寐者奖励"
         ]
     },
     {
@@ -372,35 +372,35 @@
     },
     {
         "Key": "DragonRageLevelTips",
-        "Comment": "迷雾等级描述",
+        "Comment": "魇梦等级描述",
         "Values": [
-            "迷雾等级随周目提升，所有关卡难度将会随迷雾等级同步提升。"
+            "魇梦等级随周目提升，所有关卡难度将会随魇梦等级同步提升。"
         ]
     },
     {
         "Key": "DragonRageLevel",
-        "Comment": "迷雾等级格式",
+        "Comment": "魇梦等级格式",
         "Values": [
             "LV.{0}"
         ]
     },
     {
         "Key": "DragonRageToRelicTitle",
-        "Comment": "迷雾玩法节点切废墟弹窗标题",
+        "Comment": "魇梦玩法节点切废墟弹窗标题",
         "Values": [
-            "领主变得更加狂暴，以下节点成为废墟"
+            "寐者愈发强大，以下节点成为废墟"
         ]
     },
     {
         "Key": "DragonRageEffectShowLowerLimit",
-        "Comment": "迷雾玩法进度条显示特效下限百分比",
+        "Comment": "魇梦玩法进度条显示特效下限百分比",
         "Values": [
             0
         ]
     },
     {
         "Key": "DragonRageSweepTips",
-        "Comment": "迷雾玩法下的周目扫荡",
+        "Comment": "魇梦玩法下的周目扫荡",
         "Values": [
             "当前周目尚未手动通关，扫荡积分将使用上次手动通关积分计算"
         ]
@@ -458,9 +458,10 @@
     },
     {
         "Key": "PanelRoleStationProgressShow",
-        "Comment": "关卡详情面板，驻扎进度及效果描述文本",
+        "Comment": "关卡详情面板，驻扎进度及效果描述文本。1对应效果未达上限时，2对应效果达上限",
         "Values": [
-            "公会已驻扎<color=#34AFF8>{0}/{1}</color>名机体。下周目刷新时，此处血量削减<color=#34AFF8>{2}%</color>"
+            "公会已驻扎<color=#34AFF8>{0}/{1}</color>名机体。下周目刷新时，此处血量削减<color=#34AFF8>{2}%</color>",
+            "【当前节点驻扎效果已达到最大值】公会已驻扎<color=#34AFF8>{0}/{1}</color>名机体。下周目刷新时，此处血量削减<color=#34AFF8>{2}%</color>"
         ]
     },
     {

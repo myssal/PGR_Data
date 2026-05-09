@@ -5,11 +5,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1001.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "受到物理伤害时，积累创伤槽，满层后进入创伤状态，受到暴击伤害显著提升，最多可叠加4层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300001
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 2,
@@ -17,11 +16,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "受到物理伤害时，积累创伤槽，满层后进入创伤状态，受到物理伤害显著提升，最多可叠加4层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300002
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 3,
@@ -29,11 +27,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1003.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "造成雷伤害时，角色获得雷盾，雷盾对周围持续造成雷属性伤害，且使角色自身雷属性伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300003
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 4,
@@ -41,11 +38,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成雷伤害时，获得雷盾，雷盾辐射范围内单位受到雷属性伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300004
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 5,
@@ -53,11 +49,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "受到暗属性伤害时，掉落暗球，拾取后角色暗属性伤害提升。暗球数量达到上限后，下次攻击将释放全部暗球引发爆炸，使角色造成暗属性伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300006
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 6,
@@ -65,11 +60,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1006.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "受到暗属性伤害时，掉落暗球，拾取后自身暗属性伤害提升。暗球数量达到上限后，下次攻击将释放全部暗球引发爆炸，使单位受到暗属性伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300005
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 7,
@@ -77,14 +71,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss最大生命值的50%转换为稳态力场。击碎稳态力场时，角色自身全属性伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300008
         ],
         "ShowRecommendIds": [
             1
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 8,
@@ -92,14 +85,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1008.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "Boss最大生命值的50%转换为稳态力场。击碎稳态力场时，单位受到全属性伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300007
         ],
         "ShowRecommendIds": [
             1
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 9,
@@ -107,11 +99,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "极易受高温点燃并引发剧烈的爆炸，基于此特性受到的火属性伤害会显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300009
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 10,
@@ -119,11 +110,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "低温情况下会出现膨胀式冻结效应，基于此特性受到的冰属性伤害会显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300010
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 11,
@@ -131,11 +121,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1001.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "受到物理伤害时，积累创伤槽，满层后进入创伤状态，受到暴击伤害显著提升，最多可叠加4层。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300011
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 12,
@@ -143,11 +132,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "受到物理伤害时，积累创伤槽，满层后进入创伤状态，受到物理伤害显著提升，最多可叠加4层。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300012
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 13,
@@ -155,11 +143,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1003.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "造成雷伤害时，角色获得雷盾，雷盾对周围持续造成雷属性伤害，且使角色自身雷属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300013
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 14,
@@ -167,11 +154,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成雷伤害时，获得雷盾，雷盾辐射范围内单位受到雷属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300014
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 15,
@@ -179,11 +165,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "受到暗属性伤害时，掉落暗球，拾取后角色暗属性伤害提升。暗球数量达到上限后，下次攻击将释放全部暗球引发爆炸，使角色造成暗属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300016
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 16,
@@ -191,11 +176,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1006.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "受到暗属性伤害时，掉落暗球，拾取后自身暗属性伤害提升。暗球数量达到上限后，下次攻击将释放全部暗球引发爆炸，使单位受到暗属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300015
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 17,
@@ -203,14 +187,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss最大生命值的50%转换为稳态力场。击碎稳态力场时，角色自身全属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300018
         ],
         "ShowRecommendIds": [
             1
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 18,
@@ -218,14 +201,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1008.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "Boss最大生命值的50%转换为稳态力场。击碎稳态力场时，单位受到全属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300017
         ],
         "ShowRecommendIds": [
             1
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 19,
@@ -233,11 +215,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "极易受高温点燃并引发剧烈的爆炸，基于此特性受到的火属性伤害会显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300019
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 20,
@@ -245,11 +226,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "低温情况下会出现膨胀式冻结效应，基于此特性受到的冰属性伤害会显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300020
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 21,
@@ -257,11 +237,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "消球时积累创伤槽，攒满后进入创伤状态，受到物理伤害显著提升，最多可叠加2层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300021
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 22,
@@ -269,11 +248,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "造成暗属性伤害时可获得暗球，拾取后下次攻击将打出暗球造成暗属性伤害，并使自身暗属性伤害显著提升，最多可叠加6层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300022
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 23,
@@ -281,14 +259,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "释放真意斩时，使自身物理伤害和Boss受到真意斩伤害显著提升，最多可叠加5层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300023
         ],
         "ShowRecommendIds": [
             3
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 24,
@@ -296,14 +273,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，角色必杀技造成伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300024
         ],
         "ShowRecommendIds": [
             1
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 25,
@@ -311,14 +287,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1010.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "角色进入电暴鸣闪状态时，Boss受到电束伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300025
         ],
         "ShowRecommendIds": [
             4
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 26,
@@ -326,11 +301,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "释放必杀技后进入愤怒状态，在该状态下每造成2次火属性伤害，自身火属性伤害显著提升，最多可叠加5层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300026
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 27,
@@ -338,11 +312,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成雷伤害时可获得雷盾，雷盾叠满时将自动引爆，使Boss受到雷属性伤害显著提升，最多可叠加4层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300027
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 28,
@@ -350,11 +323,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成冰属性伤害可积累霜冻槽，使Boss受到冰属性伤害显著提升，最多可叠加3层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300028
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 29,
@@ -362,11 +334,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "消球时积累创伤槽，攒满后进入创伤状态，受到物理伤害显著提升，最多可叠加2层。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300029
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 30,
@@ -374,11 +345,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "造成暗属性伤害时可获得暗球，拾取后下次攻击将打出暗球造成暗属性伤害，并使自身暗属性伤害显著提升，最多可叠加6层。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300030
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 31,
@@ -386,14 +356,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "释放真意斩时，使自身物理伤害和Boss受到真意斩伤害显著提升，最多可叠加5层。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300031
         ],
         "ShowRecommendIds": [
             3
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 32,
@@ -401,14 +370,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，角色必杀技造成伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300032
         ],
         "ShowRecommendIds": [
             1
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 33,
@@ -416,14 +384,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1010.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "角色进入电暴鸣闪状态时，Boss受到电束伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300033
         ],
         "ShowRecommendIds": [
             4
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 34,
@@ -431,11 +398,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "释放必杀技后进入愤怒状态，在该状态下每造成2次火属性伤害，自身火属性伤害显著提升，最多可叠加5层。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300034
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 35,
@@ -443,11 +409,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成雷伤害时可获得雷盾，雷盾叠满时将自动引爆，使Boss受到雷属性伤害显著提升，最多可叠加4层。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300035
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 36,
@@ -455,11 +420,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成冰属性伤害可积累霜冻槽，使Boss受到冰属性伤害显著提升，最多可叠加3层。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300036
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 37,
@@ -467,11 +431,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "释放必杀技后进入愤怒状态，在该状态下每造成2次火属性伤害，自身火属性伤害显著提升，最多可叠加5层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300037
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 38,
@@ -479,11 +442,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成雷伤害时可获得雷盾，雷盾叠满时将自动引爆，使Boss受到雷属性伤害显著提升，最多可叠加4层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300038
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 39,
@@ -491,11 +453,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "释放必杀技后进入愤怒状态，在该状态下每造成2次火属性伤害，自身火属性伤害显著提升，最多可叠加5层。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300039
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 40,
@@ -503,11 +464,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成雷伤害时可获得雷盾，雷盾叠满时将自动引爆，使Boss受到雷属性伤害显著提升，最多可叠加4层。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300040
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 41,
@@ -515,14 +475,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，使Boss受到空属性伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300041
         ],
         "ShowRecommendIds": [
             1
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 42,
@@ -530,14 +489,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，使Boss受到空属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300042
         ],
         "ShowRecommendIds": [
             1
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 43,
@@ -545,11 +503,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "造成暗属性伤害时可获得暗球，拾取后下次攻击将打出暗球造成暗属性伤害，并使自身暗属性伤害显著提升，最多可叠加6层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300043
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 44,
@@ -557,14 +514,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，使Boss受到空属性伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300044
         ],
         "ShowRecommendIds": [
             1
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 45,
@@ -572,11 +528,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "造成暗属性伤害时可获得暗球，拾取后下次攻击将打出暗球造成暗属性伤害，并使自身暗属性伤害显著提升，最多可叠加6层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300045
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 46,
@@ -584,11 +539,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "暴击时使Boss受到物理伤害显著提升，最多可叠加6层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300046
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 47,
@@ -596,14 +550,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1012.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "覆冰效应造成伤害时，Boss受到覆冰伤害显著提升，最多可叠加5层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300047
         ],
         "ShowRecommendIds": [
             5
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 48,
@@ -611,14 +564,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1013.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "造成焚烧伤害时，Boss受到焚烧伤害显著提升，最多可叠加8层，持续10秒，全员切换入场时刷新持续时间。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300048
         ],
         "ShowRecommendIds": [
             2
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 49,
@@ -626,14 +578,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "释放真意斩时，使自身物理伤害和Boss受到真意斩伤害显著提升，最多可叠加5层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300049
         ],
         "ShowRecommendIds": [
             3
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 50,
@@ -641,14 +592,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1014.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "每消除一个球，Boss受到雷属性及电束伤害显著提升，最多可叠加5层，持续10秒，重复触发刷新持续时间。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300050
         ],
         "ShowRecommendIds": [
             7
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 51,
@@ -656,11 +606,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "造成暗属性伤害时，Boss受到暗属性伤害显著提升，最多可叠加6层，持续10秒，重复触发刷新持续时间。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300051
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 52,
@@ -668,11 +617,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "暴击时使Boss受到物理伤害显著提升，最多可叠加6层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300052
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 53,
@@ -680,11 +628,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "造成暗属性伤害时，Boss受到暗属性伤害显著提升，最多可叠加6层，持续10秒，重复触发刷新持续时间。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300053
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 54,
@@ -692,11 +639,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成雷伤害时可获得雷盾，雷盾叠满时将自动引爆，使Boss受到雷属性伤害显著提升，最多可叠加4层。（熠光效应伤害小幅提升）",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300054
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 55,
@@ -704,14 +650,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1015.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成黯衍伤害时，使敌人受到黯衍伤害显著提升，最多叠加9层，持续10秒，重复触发刷新持续时间。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300055
         ],
         "ShowRecommendIds": [
             6
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 56,
@@ -719,11 +664,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "造成冰属性伤害可积累霜冻槽，使Boss受到冰属性伤害显著提升，最多可叠加3层。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300028
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 57,
@@ -731,14 +675,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1014.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "每消除一个球，Boss受到熠光伤害显著提升，最多可叠加5层，持续10秒，重复触发刷新持续时间。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300057
         ],
         "ShowRecommendIds": [
             7
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 58,
@@ -746,11 +689,10 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "每消除一个球，Boss受到暗属性伤害显著提升，最多叠加4层，持续10秒，重复触发刷新持续时间。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300058
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 59,
@@ -758,14 +700,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "每次释放真意斩，使Boss受到真意斩效应伤害显著提升、自身物理伤害显著提升，最多可叠加5层，持续10秒，重复触发刷新持续时间。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300059
         ],
         "ShowRecommendIds": [
             3
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 60,
@@ -773,14 +714,13 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，使Boss受到空属性伤害显著提升。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300060
         ],
         "ShowRecommendIds": [
             1
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 61,
@@ -788,11 +728,10 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "每消除一个球，使Boss受到火属性伤害显著提升，最多叠加4层，持续10秒，重复触发刷新持续时间。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300061
-        ]
+        ],
+        "Type": 1
     },
     {
         "Id": 62,
@@ -800,14 +739,38 @@
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1010.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "每造成3次电束伤害，使Boss受到电束效应伤害显著提升，最多可叠加3层，持续10秒，重复触发刷新持续时间。",
-        "Type": 1,
-        "ScoreRate": 0,
         "FightEventIds": [
             2300062
         ],
         "ShowRecommendIds": [
             4
-        ]
+        ],
+        "Type": 1
+    },
+    {
+        "Id": 63,
+        "Name": "沧皑霜壑Ⅳ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "每消除一个球，使Boss受到冰属性伤害显著提升，最多叠加3层，持续10秒，重复触发刷新持续时间。",
+        "FightEventIds": [
+            2300063
+        ],
+        "Type": 1
+    },
+    {
+        "Id": 64,
+        "Name": "焚天炽地Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1013.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "造成焚烧伤害时，Boss受到焚烧伤害显著提升，最多可叠加8层，持续10秒，重复触发刷新持续时间。",
+        "FightEventIds": [
+            2300064
+        ],
+        "ShowRecommendIds": [
+            2
+        ],
+        "Type": 1
     },
     {
         "Id": 1001,
@@ -815,11 +778,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon013.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "Boss的生命值增加50%。",
-        "Type": 2,
-        "ScoreRate": 950,
         "FightEventIds": [
             2301001
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 950
     },
     {
         "Id": 1002,
@@ -827,11 +790,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon001.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss受到除物理外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301002
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1003,
@@ -839,11 +802,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon002.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "Boss受到除火属性外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301003
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1004,
@@ -851,11 +814,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon003.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "Boss受到除冰属性外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301004
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1005,
@@ -863,11 +826,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon004.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss受到除暗属性外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301005
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1006,
@@ -875,11 +838,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon005.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "Boss受到除雷属性外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301006
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1007,
@@ -887,11 +850,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon006.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss受到除空属性外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301007
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1008,
@@ -899,11 +862,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon007.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "Boss受到除真意斩效应外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301008
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1009,
@@ -911,11 +874,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon008.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss受到除焚烧效应外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301009
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1010,
@@ -923,11 +886,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon009.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss受到除覆冰效应外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301010
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1011,
@@ -935,11 +898,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon010.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "Boss受到除黯衍效应外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301011
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1012,
@@ -947,11 +910,11 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon011.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "Boss受到除电束效应外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301012
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     },
     {
         "Id": 1013,
@@ -959,10 +922,34 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon012.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss受到除熠光效应外的其它伤害降低。",
-        "Type": 2,
-        "ScoreRate": 1550,
         "FightEventIds": [
             2301013
-        ]
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
+    },
+    {
+        "Id": 1014,
+        "Name": "命络交罗Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon013.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss的生命值增加60%。",
+        "FightEventIds": [
+            2301014
+        ],
+        "Type": 2,
+        "ScoreRate": 1250
+    },
+    {
+        "Id": 1015,
+        "Name": "命络交罗Ⅲ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon013.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss的生命值增加70%。",
+        "FightEventIds": [
+            2301015
+        ],
+        "Type": 2,
+        "ScoreRate": 1550
     }
 ]
