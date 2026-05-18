@@ -39,7 +39,7 @@ function XUiPhotographPanel:Init()
     self.Btn.CallBack = function() self:OnBtnClick() end
     
     if XOverseaManager.IsOverSeaRegion() then
-        self.BtnPhotograph:SetButtonState(3) -- 海外隐藏拍照按钮
+        self.BtnPhotograph:SetButtonState(CS.UiButtonState.Disable) -- 海外隐藏拍照按钮
         local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
         raycastComponent.raycastTarget = false
     else

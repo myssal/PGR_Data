@@ -1,9 +1,6 @@
 [
     {
         "Id": 1,
-        "Type": 0,
-        "LvMaxShipKey": "MaxSpeedShip",
-        "IsOpen": 0,
         "UpgradeCosts": [
             120,
             200,
@@ -23,13 +20,11 @@
         ],
         "LocalIds": [
             1
-        ]
+        ],
+        "LvMaxShipKey": "MaxSpeedShip"
     },
     {
         "Id": 2,
-        "Type": 0,
-        "LvMaxShipKey": "MaxClampShip",
-        "IsOpen": 0,
         "UpgradeCosts": [
             700,
             1500,
@@ -49,12 +44,11 @@
         ],
         "LocalIds": [
             2
-        ]
+        ],
+        "LvMaxShipKey": "MaxClampShip"
     },
     {
         "Id": 3,
-        "Type": 1,
-        "IsOpen": 0,
         "UpgradeCosts": [
             3888,
             3998
@@ -70,6 +64,7 @@
             0,
             0
         ],
+        "Type": 1,
         "LocalIds": [
             3,
             4
@@ -77,8 +72,6 @@
     },
     {
         "Id": 4,
-        "Type": 0,
-        "IsOpen": 0,
         "UpgradeCosts": [
             888
         ],
@@ -98,8 +91,6 @@
     },
     {
         "Id": 5,
-        "Type": 2,
-        "IsOpen": 0,
         "UpgradeCosts": [
             3888,
             3998
@@ -115,6 +106,7 @@
             0,
             0
         ],
+        "Type": 2,
         "LocalIds": [
             3,
             4
@@ -122,8 +114,6 @@
     },
     {
         "Id": 101,
-        "Type": 0,
-        "IsOpen": 1,
         "UpgradeCosts": [
             1000
         ],
@@ -139,13 +129,11 @@
         ],
         "LocalIds": [
             101
-        ]
+        ],
+        "IsOpen": 1
     },
     {
         "Id": 102,
-        "Type": 0,
-        "LvMaxShipKey": "MaxClampShip",
-        "IsOpen": 1,
         "UpgradeCosts": [
             900,
             1800,
@@ -165,12 +153,12 @@
         ],
         "LocalIds": [
             102
-        ]
+        ],
+        "LvMaxShipKey": "MaxClampShip",
+        "IsOpen": 1
     },
     {
         "Id": 103,
-        "Type": 2,
-        "IsOpen": 1,
         "UpgradeCosts": [
             0,
             0,
@@ -192,12 +180,14 @@
             0,
             0
         ],
+        "Type": 2,
         "LocalIds": [
             103,
             104,
             105,
             106,
             107
-        ]
+        ],
+        "IsOpen": 1
     }
 ]

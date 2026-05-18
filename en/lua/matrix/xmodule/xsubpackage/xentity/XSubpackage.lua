@@ -180,21 +180,37 @@ end
 --- 用于 Res级操作后同步 Sub 状态（如从 UNINSTALLED/NOT_DOWNLOAD 恢复时）
 --- 调用时机：XResource:PrepareDownload 检测到父Sub为 UNINSTALLED/NOT_DOWNLOAD 时
 function XSubpackage:UpdateAggregateState()
-    if XTool.IsTableEmpty(self._ResItemDic) then return end
+    if XTool.IsTableEmpty(self._ResItemDic) then
+        local downloadSize = self:GetDownloadSize()
+        local totalSize = self:GetTotalSize()
+        if downloadSize <= 0 then
+            if totalSize <= 0 then
+                self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
+            else
+                self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.NOT_DOWNLOAD
+            end
+        elseif downloadSize < totalSize then
+            self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
+        else
+            self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
+        end
+        return
+    end
+
+    self:UpdateUninstallState()
+    if self:IsUninstalled() then
+        return
+    end
 
     local hasDownloading = false
     local hasPrepare = false
     local hasPause = false
     local allComplete = true
-    local allUninstalled = true
 
     for _, resItem in pairs(self._ResItemDic) do
         local state = resItem:GetState()
         if state ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
             allComplete = false
-        end
-        if state ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED then
-            allUninstalled = false
         end
         if state == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING then
             hasDownloading = true
@@ -207,8 +223,6 @@ function XSubpackage:UpdateAggregateState()
 
     if allComplete then
         self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
-    elseif allUninstalled then
-        self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
     elseif hasDownloading or hasPrepare then
         self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
     elseif hasPause then
@@ -261,9 +275,7 @@ function XSubpackage:InvalidateTaskGroupsCache()
 end
 
 function XSubpackage:FileInitComplete()
-    -- self._TaskGroup:AddFinishedSizeAfterAddTask(self._DownSize)
-    self:InitState()
-    -- self._RepeatName = nil
+    self:UpdateAggregateState()
 end
 
 ---@return XMTDownloadTaskGroup

@@ -270,6 +270,7 @@ function XUiPhotographPortrait:InitCb()
     end
     if XOverseaManager.IsOverSeaRegion() then
         self.BtnPhotograph.gameObject:SetActiveEx(false) -- 海外隐藏拍照按钮
+        self.BtnPhotograph:SetButtonState(CS.UiButtonState.Disable)
         local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
         raycastComponent.raycastTarget = false
     else
@@ -1014,7 +1015,11 @@ function XUiPhotographPortrait:SwitchCapturePanel(show)
     self.BtnHide.gameObject:SetActiveEx(not show)
     self:RefreshViewActive(not show)
     self.Btn.gameObject:SetActiveEx(not show)
-    self.BtnPhotograph.gameObject:SetActiveEx(not show)
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnPhotograph.gameObject:SetActiveEx(false) -- 海外隐藏拍照按钮
+    else
+        self.BtnPhotograph.gameObject:SetActiveEx(not show)
+    end
 end
 
 function XUiPhotographPortrait:IsShowCapturePanel()

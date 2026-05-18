@@ -243,7 +243,7 @@ function XSubPackageAgency:SyncSubpackageStates()
                 end
             end
             if not isActive then
-                item:InitState()
+                item:UpdateAggregateState()
             end
         end
     end
@@ -742,7 +742,7 @@ function XSubPackageAgency:PauseAll()
     end
     for _, subId in pairs(self._SubpackageWaitDnLdQueue or {}) do
         local item = self._Model:GetSubpackageItem(subId)
-        item:InitState()
+        item:UpdateAggregateState()
     end
     self._SubpackageWaitDnLdQueue = {}
 
@@ -816,7 +816,7 @@ function XSubPackageAgency:ProcessPrepare(subpackageId)
         table.remove(self._SubpackageWaitDnLdQueue, index)
     end
     local item = self._Model:GetSubpackageItem(subpackageId)
-    item:InitState()
+    item:UpdateAggregateState()
 
     XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subpackageId)
 end
@@ -1191,6 +1191,8 @@ function XSubPackageAgency:_UninstallResCore(resId, currentVersion)
 
     -- 4. 内存刷新
     self._Model:RemoveResCache(resId)
+
+    -- 通过 Sub 的 InitFileInfo 重建 Res 文件信息（会 lazy-create 新 XResource 并挂入 _ResItemDic）
     local affectedSubpackageIds = self._Model:GetSubpackageIdByResId(resId)
     if affectedSubpackageIds then
         for _, subId in ipairs(affectedSubpackageIds) do
@@ -1199,15 +1201,24 @@ function XSubPackageAgency:_UninstallResCore(resId, currentVersion)
                 for assetPath, info in pairs(indexInfo) do
                     subItem:InitFileInfo(assetPath, info, resId)
                 end
-                subItem:FileInitComplete()
             end
         end
     end
 
-    -- 补调新 XResource 的 FileInitComplete，确保状态正确初始化
+    -- 先完成 Res 初始化，确保 Res 状态就绪
     local newResItem = self._Model:GetResourceItem(resId)
     if newResItem then
         newResItem:FileInitComplete()
+    end
+
+    -- 再通知父 Sub 重新聚合（此时 Res 状态已正确）
+    if affectedSubpackageIds then
+        for _, subId in ipairs(affectedSubpackageIds) do
+            local subItem = self._Model:GetSubpackageItem(subId)
+            if subItem then
+                subItem:FileInitComplete()
+            end
+        end
     end
 end
 

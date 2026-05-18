@@ -4,72 +4,68 @@
         "Name": "Invite Friend",
         "GroupId": 3,
         "SortId": 1,
-        "TimeId": 0,
         "ActivityType": 4,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6InviteFriend.png",
         "ActivityTitle": "Invite Friend",
         "ActivityDes": "You can share your invite code to Lv.≥20 commandants. If they use your code, you will have invited them successfully.",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelSendInvitation.prefab",
-        "ConditionId": 770400,
         "Params": [
             2,
             10015,
             3
-        ]
+        ],
+        "ConditionId": 770400
     },
     {
         "Id": 999,
         "Name": "Invite Code",
         "GroupId": 3,
         "SortId": 1,
-        "TimeId": 0,
         "ActivityType": 5,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase5OtherInviteCode.png",
         "ActivityTitle": "Invite Code",
         "ActivityDes": "Welcome back to Gray Raven HQ. You can input the invite code of other commandants to receive corresponding rewards.",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelAcceptInvitation.prefab",
-        "ConditionId": 770400,
         "Params": [
             2,
             10016
-        ]
+        ],
+        "ConditionId": 770400
     },
     {
         "Id": 981,
         "Name": "Returning Player Experience Survey",
         "GroupId": 16,
         "SortId": 1,
-        "TimeId": 0,
         "ActivityType": 11,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuestionnaire.png",
         "ActivityTitle": "Returning Player Experience Survey",
         "ActivityDes": "Requirements: Commandant Lv.40\\n\\nEvent Info:\\nIn order to create a better gaming environment, the Command Central has decided to conduct a survey regarding the in-game experiences of returning players. Please tap the [Advance] button below to share your thoughts! Rewards will be granted upon completion of the survey.",
-        "ConditionId": 770400,
         "Params": [
             2,
             11641,
             1
-        ]
+        ],
+        "ConditionId": 770400
     },
     {
         "Id": 970,
         "Name": "Return Support",
         "GroupId": 5,
         "SortId": 1,
-        "TimeId": 0,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
         "ActivityTitle": "Return Support",
         "ActivityDes": "During the event, commandants in the \"Return\" state can complete the missions and get the rewards (the event ends when the Return state expires).",
-        "ConditionId": 845020,
         "Params": [
             0,
             31
-        ]
+        ],
+        "ConditionId": 845020
     },
     {
         "Id": 960,
@@ -81,11 +77,11 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualStepReward.prefab",
-        "ConditionId": 862850,
-        "ShowEndTime": "Permanent",
         "Params": [
             1
-        ]
+        ],
+        "ConditionId": 862850,
+        "ShowEndTime": "Permanent"
     },
     {
         "Id": 961,
@@ -97,11 +93,11 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualPassport.prefab",
-        "ConditionId": 862850,
-        "ShowEndTime": "Permanent",
         "Params": [
             2
-        ]
+        ],
+        "ConditionId": 862850,
+        "ShowEndTime": "Permanent"
     },
     {
         "Id": 962,
@@ -113,11 +109,11 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualTask.prefab",
-        "ConditionId": 862850,
-        "ShowEndTime": "Permanent",
         "Params": [
             3
-        ]
+        ],
+        "ConditionId": 862850,
+        "ShowEndTime": "Permanent"
     },
     {
         "Id": 963,
@@ -129,11 +125,11 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualLotto.prefab",
-        "ConditionId": 862858,
-        "ShowEndTime": "Permanent",
         "Params": [
             4
-        ]
+        ],
+        "ConditionId": 862858,
+        "ShowEndTime": "Permanent"
     },
     {
         "Id": 964,
@@ -145,11 +141,11 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualGiftPack.prefab",
-        "ConditionId": 862850,
-        "ShowEndTime": "Permanent",
         "Params": [
             5
-        ]
+        ],
+        "ConditionId": 862850,
+        "ShowEndTime": "Permanent"
     },
     {
         "Id": 965,
@@ -161,11 +157,11 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualTeaching.prefab",
-        "ConditionId": 862850,
-        "ShowEndTime": "Permanent",
         "Params": [
             6
-        ]
+        ],
+        "ConditionId": 862850,
+        "ShowEndTime": "Permanent"
     },
     {
         "Id": 966,
@@ -177,11 +173,11 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualGuide.prefab",
-        "ConditionId": 862850,
-        "ShowEndTime": "Permanent",
         "Params": [
             7
-        ]
+        ],
+        "ConditionId": 862850,
+        "ShowEndTime": "Permanent"
     },
     {
         "Id": 900,
@@ -207,12 +203,12 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMainLinev404.png",
         "ActivityTitle": "The Dying Sun",
         "ActivityDes": "Event Info: Play through the new story [The Dying Sun] and complete missions.",
-        "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             0,
             653
-        ]
+        ],
+        "ConditionId": 770400,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 401,
@@ -226,12 +222,12 @@
         "ActivityTitle": "Simulated Battlefield",
         "ActivityDes": "Requirements:\\nCommandant Lv.16.\\nMission Info:\\n1. Earn Simulation Scores upon clearing a stage.\\n2. Spend Simulation Scores to purchase items at the Simulation Shop.\\n3. The limited-time shop exchange ends on June 1, 2026, at 23:00 (UTC).\\n4. During the event period, clear Simulated Battlefield stages and consume a certain amount of serum to claim rewards.",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelRepeatActivity.prefab",
-        "ConditionId": 770422,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             20017,
             651
-        ]
+        ],
+        "ConditionId": 770422,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 402,
@@ -244,11 +240,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityCoffee404.png",
         "ActivityTitle": "Butter Coffee Wonders",
         "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. Defend the Butter Coffee Shop and clear out malfunctioning robots.\\n2. The event includes 8 stages. After clearing Hard stages, you can take on Endless Challenge.\\n3. During the event, you will control characters to dodge enemy attacks, collect powerful items and skills, fight back waves of enemies, and protect the coffee shop.\\n4. First clears and wave completions grant Cafe Stamps, which you can use in out-of-stage training to boost character stats and unlock powerful items that help you defeat stronger enemies.\\n5. Beat the designated challenges to complete missions and claim Event Construct R&D Tickets, Trade Vouchers, and other items.",
-        "ConditionId": 774800,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             1300635
-        ]
+        ],
+        "ConditionId": 774800,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 403,
@@ -261,10 +257,10 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseChenlangv404.png",
         "ActivityTitle": "Earthy Camping",
         "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. Plan the team-building route and guide Kamui as he escorts each member to their assigned location.\\n2. The event features 4 chapters, each with multiple stages that unlock over time and as you progress through earlier stages.\\n3. During the event, you will need to plan Kamui's route and clear stages while delivering each member to the corresponding location.\\n4. Make smart use of stage mechanics and arrange the members' arrival order carefully.\\n5. Clear designated stages and earn chapter stars to complete missions and claim rewards.",
-        "ConditionId": 774800,
         "Params": [
             89062
-        ]
+        ],
+        "ConditionId": 774800
     },
     {
         "Id": 404,
@@ -277,11 +273,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuanxiv404.png",
         "ActivityTitle": "Rapid Pursuit",
         "ActivityDes": "Requirements: Commandant Lv.42\\n\\nEvent Info:\\n1. This event features 4 stages, each with 4 difficulty levels.\\n2. Defeat Bosses of different difficulties in bounties with the required characters.\\n3. Complete bounty missions to claim rewards.",
-        "ConditionId": 774700,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             89093
-        ]
+        ],
+        "ConditionId": 774700,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 405,
@@ -294,10 +290,10 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRoguev404.png",
         "ActivityTitle": "Desperado Clash",
         "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. A new limited-time season of [Desperado Clash] mode is now available.\\n2. This season features faster global point gain, the return of accessory and character leveling systems, plus new accessories to boost your combat power and resource earnings.\\n3. A limited-time shop is open during the event. Play any mode in [The Godfall Revelation] to earn Pristine Crystals, which can be exchanged for rewards. The event ends on June 1 at 05:00 (UTC).\\n4. Use [R&D Tickets] from the event shop to increase your rank in Desperado Clash and earn exclusive [Nameplates]!",
-        "ConditionId": 770401,
         "Params": [
             89092
-        ]
+        ],
+        "ConditionId": 770401
     },
     {
         "Id": 406,
@@ -310,10 +306,10 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDifficultv404.png",
         "ActivityTitle": "The Absence Sings",
         "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. There are a total of 6 difficulty levels, all of which are highly challenging with [Ezette] being your formidable enemy.\\n2. All members will be reset once knocked out during the challenge, making the challenge easier to complete.\\n3. Each stage has its own 3-star clearance conditions. Collectibles will be rewarded once you have earned a total of 3 stars. The more stars you earn, the higher the quality of the collectibles will be.",
-        "ConditionId": 1050141,
         "Params": [
             11724
-        ]
+        ],
+        "ConditionId": 1050141
     },
     {
         "Id": 407,
@@ -326,11 +322,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterv404.png",
         "ActivityTitle": "Omniframe Target",
         "ActivityDes": "New Character:\\n※S-Rank Fire Breaker [Kamui: Aeternion]\\nNew Weapon:\\n※6★ [Solar Flare] (Kinetic Greatsword)\\n\\nInfo:\\n1. Construct Research:\\n※[Kamui: Aeternion] will be available in the [Themed Construct] Research Pool. There is a 100% chance to get [Kamui: Aeternion] upon getting an S-Rank Construct.\\n2. Weapon Research:\\n※[Solar Flare] will be available in the [Weapon Research] Research Pool, with the same rules and rates as other weapons.",
-        "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             7209
-        ]
+        ],
+        "ConditionId": 770400,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 408,
@@ -343,11 +339,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerv404.png",
         "ActivityTitle": "CUB Target",
         "ActivityDes": "New CUB:\\n※S-Rank CUB: [Ignis]\\n※Recommended for the character [Kamui: Aeternion]\\n※[Ignis] will be added to the [CUB Research] Pool.\\nWhen conducting CUB Research, it is allowed to choose any S-Rank CUB for target research.\\nDuring the event, if [Ignis] is selected for target research, it will have a 100% drop rate among S-Rank CUB.",
-        "ConditionId": 8006,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             7212
-        ]
+        ],
+        "ConditionId": 8006,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 409,
@@ -360,10 +356,10 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase4in1EffectCoatingV404.png",
         "ActivityTitle": "Stellar Memories",
         "ActivityDes": "Requirements: Commandant Lv.40 and clear Main Story 1-8\\n\\nEvent Info:\\nIn this coating rerun event, you can choose and research a coating.\\nEligible coatings included: [Love's Dawn], [Tsubaki], [Solitary Longings], and [Solitary Dream].\\nYou may choose 1 of the coatings to research. The selected coating cannot be changed afterward.",
-        "ConditionId": 770410,
         "Params": [
             90063
-        ]
+        ],
+        "ConditionId": 770410
     },
     {
         "Id": 410,
@@ -376,10 +372,10 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase4in1EffectCoating2V404.png",
         "ActivityTitle": "Stellar Memories",
         "ActivityDes": "Requirements: Commandant Lv.40 and clear Main Story 1-8\\n\\nEvent Info:\\nIn this coating rerun event, you can choose and research a coating.\\nEligible coatings included: [Threads of Destiny], [Love's Dawn], [Tsubaki], and [Solitary Longings].\\nYou may choose 1 of the coatings to research. The selected coating cannot be changed afterward.",
-        "ConditionId": 770410,
         "Params": [
             90062
-        ]
+        ],
+        "ConditionId": 770410
     },
     {
         "Id": 411,
@@ -392,11 +388,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseEffectCoatingv404.png",
         "ActivityTitle": "New Coating - Unending Pursuit",
         "ActivityDes": "New Coating:\\nOmniframe [Kamui: Aeternion] Coating: [Unending Pursuit]\\nInfo:\\n[Unending Pursuit] will be on sale at \"30% off\" in \"Top-up - Coating Supply\" during the event.",
-        "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             20020
-        ]
+        ],
+        "ConditionId": 770400,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 412,
@@ -409,11 +405,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBPv404.png",
         "ActivityTitle": "Tactical Assessment Manual",
         "ActivityDes": "Requirements: \\nCommandant Lv.40\\nEvent Info:\\n1. Accumulate Intel Value by completing the Rating Missions of the Daily, the Round, and the current Intel Manual.\\n2. Raise the Rating Level by reaching the required Intel Value.\\n3. You will obtain the corresponding reward upon reaching the required Rating Level.\\n4. You can also purchase additional Intel to get better rewards.",
-        "ConditionId": 770401,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             20171
-        ]
+        ],
+        "ConditionId": 770401,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 413,
@@ -426,13 +422,13 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharaUp.png",
         "ActivityTitle": "Character Leap - Solacetune",
         "ActivityDes": "Requirements: \\nEvent Info:1. Complete the tutorial stage and experience the changes brought by the leap.",
-        "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2026-04-21",
-        "ShowEndTime": "Permanent",
         "Params": [
             20334,
             659
-        ]
+        ],
+        "ConditionId": 770400,
+        "ShowBeginTime": "After the update on 2026-04-21",
+        "ShowEndTime": "Permanent"
     },
     {
         "Id": 414,
@@ -445,12 +441,12 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterTryv404.png",
         "ActivityTitle": "Sunstrider's Return",
         "ActivityDes": "Requirements: Clear Normal Story 1-8.",
-        "ConditionId": 774501,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             20235,
             660
-        ]
+        ],
+        "ConditionId": 774501,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 415,
@@ -463,12 +459,12 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerTryv404.png",
         "ActivityTitle": "Adaptation Fitting - Ignis",
         "ActivityDes": "Requirements: Commandant Lv.61.",
-        "ConditionId": 8006,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             7107,
             661
-        ]
+        ],
+        "ConditionId": 8006,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 416,
@@ -481,12 +477,12 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseEffectCoatingv404.png",
         "ActivityTitle": "Unending Pursuit",
         "ActivityDes": "New Coating:\\nOmniframe [Kamui: Aeternion] Coating: [Unending Pursuit]",
-        "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2026-04-21",
         "Params": [
             10035,
             662
-        ]
+        ],
+        "ConditionId": 770400,
+        "ShowBeginTime": "After the update on 2026-04-21"
     },
     {
         "Id": 419,
@@ -499,11 +495,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLuxiya2CoatingV215.png",
         "ActivityTitle": "Tsubaki",
         "ActivityDes": "Info: During the event, [Tsubaki] can be obtained through \"main interface - Tsubaki\" Coating Research Event for a limited time.",
-        "ConditionId": 863247,
         "Params": [
             20347,
             663
-        ]
+        ],
+        "ConditionId": 863247
     },
     {
         "Id": 420,
@@ -516,11 +512,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLamiyaCoatingV211.png",
         "ActivityTitle": "Solitary Longings",
         "ActivityDes": "Info: During the event, [Solitary Longings] can be obtained through \"main interface - Solitary Longings\" Coating Research Event for a limited time.",
-        "ConditionId": 863248,
         "Params": [
             20348,
             664
-        ]
+        ],
+        "ConditionId": 863248
     },
     {
         "Id": 421,
@@ -533,11 +529,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBiankaEffectCoatingV201.png",
         "ActivityTitle": "Solitary Dream",
         "ActivityDes": "Info: During the event, [Solitary Dream] can be obtained through \"main interface - Solitary Dream\" Coating Research Event for a limited time.",
-        "ConditionId": 863249,
         "Params": [
             20349,
             665
-        ]
+        ],
+        "ConditionId": 863249
     },
     {
         "Id": 422,
@@ -550,11 +546,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLuxiyaEffectCoatingV302.png",
         "ActivityTitle": "Love's Dawn",
         "ActivityDes": "Info: During the event, [Love's Dawn] can be obtained through \"main interface - Love's Dawn\" Coating Research Event for a limited time.",
-        "ConditionId": 863246,
         "Params": [
             20346,
             666
-        ]
+        ],
+        "ConditionId": 863246
     },
     {
         "Id": 423,
@@ -567,11 +563,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSailinnaEffectCoatingV306.png",
         "ActivityTitle": "Threads of Destiny",
         "ActivityDes": "Info: During the event, [Threads of Destiny] can be obtained through \"main interface - Threads of Destiny\" Coating Research Event for a limited time.",
-        "ConditionId": 863242,
         "Params": [
             20338,
             668
-        ]
+        ],
+        "ConditionId": 863242
     },
     {
         "Id": 424,
@@ -584,11 +580,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLuxiya2CoatingV215.png",
         "ActivityTitle": "Tsubaki",
         "ActivityDes": "Info: During the event, [Tsubaki] can be obtained through \"main interface - Tsubaki\" Coating Research Event for a limited time.",
-        "ConditionId": 863244,
         "Params": [
             20340,
             667
-        ]
+        ],
+        "ConditionId": 863244
     },
     {
         "Id": 425,
@@ -601,11 +597,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLamiyaCoatingV211.png",
         "ActivityTitle": "Solitary Longings",
         "ActivityDes": "Info: During the event, [Solitary Longings] can be obtained through \"main interface - Solitary Longings\" Coating Research Event for a limited time.",
-        "ConditionId": 863245,
         "Params": [
             20341,
             669
-        ]
+        ],
+        "ConditionId": 863245
     },
     {
         "Id": 426,
@@ -618,11 +614,11 @@
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLuxiyaEffectCoatingV302.png",
         "ActivityTitle": "Love's Dawn",
         "ActivityDes": "Info: During the event, [Love's Dawn] can be obtained through \"main interface - Love's Dawn\" Coating Research Event for a limited time.",
-        "ConditionId": 863243,
         "Params": [
             20339,
             670
-        ]
+        ],
+        "ConditionId": 863243
     },
     {
         "Id": 427,
@@ -632,10 +628,9 @@
         "TimeId": 46707,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanv403.png",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanv404.png",
         "ActivityTitle": "Lost Voyage",
         "ActivityDes": "Event Info: Complete event missions to obtain [Beacon].",
-        "ConditionId": 0,
         "Params": [
             20266,
             652

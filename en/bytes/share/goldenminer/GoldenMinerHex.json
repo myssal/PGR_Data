@@ -3,70 +3,63 @@
         "Id": 1,
         "Name": "Ore Vein Detector",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex3V2P17.png",
-        "Desc": "召唤探测雷达，每隔一段时间发现1个高价值物品",
+        "Desc": "Summons a detection radar, discovering 1 high-value item every certain amount of time.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 110
     },
     {
         "Id": 2,
         "Name": "Full Combo",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex2.png",
-        "Desc": "成功抓取3次后扫描抓取1个未被电磁链接的物品，抓取的物品视为相同种类",
+        "Desc": "After successfully grabbing 3 items, scan and grab 1 item not electromagnetically linked. All grabbed items count as the same type.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 120
     },
     {
         "Id": 3,
         "Name": "Close Encounter",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex4.png",
-        "Desc": "召唤宇宙飞碟抓取距离最近的物品，抓取的物品视为相同种类",
+        "Desc": "Summons a UFO to grab the nearest item. All grabbed items count as the same type.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 130
     },
     {
         "Id": 4,
-        "Name": "辅助模式",
+        "Name": "Support Mode",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff29.png",
-        "Desc": "抓钩现在会显示瞄准线，并可以抓取所有物品",
+        "Desc": "The hook now shows aiming line and grabs all items on its path.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 140
     },
     {
         "Id": 6,
         "Name": "Non-oriented Chain - 1",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff03.png",
-        "Desc": "关卡内所有得分提升8%",
+        "Desc": "All points gained in the stage increase by 8%.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 160
     },
     {
         "Id": 7,
         "Name": "Universal Converter",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex4V2P17.png",
-        "Desc": "抓取的所有物品在同类点数奖励中都视为相同种类",
+        "Desc": "All grabbed items count as the same type for same-type point rewards.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 170
     },
     {
         "Id": 9,
         "Name": "Speed Turbine - 1",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex6V2P17.png",
-        "Desc": "当前地图内，每成功抓取一次中幅提升钩爪速度，最多提高3次",
+        "Desc": "Moderately increases grapple speed for each successful grab within the current map, up to 3 times.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 190
     },
     {
         "Id": 11,
         "Name": "Collab Grappling Hook",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex12.png",
-        "Desc": "拓展为3个联动抓钩，可分别抓取物品",
+        "Desc": "Expands into 3 collab grappling hooks, each grabbing items independently.",
         "HexType": 1,
         "DropMapGroupId": 701,
         "HexUpgradeId": 210,
@@ -76,45 +69,41 @@
     },
     {
         "Id": 12,
-        "Name": "抓取速度提升-1",
+        "Name": "Grappling Speed Up - 1",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff30.png",
-        "Desc": "抓取速度小幅提升",
+        "Desc": "Grappling speed slightly increases.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 220
     },
     {
         "Id": 13,
-        "Name": "抓取尺寸提升-1",
+        "Name": "Grappling Size Up - 1",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff27.png",
         "Desc": "Grappling hook's size slightly increases.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 230
     },
     {
         "Id": 14,
         "Name": "Let's Discuss the Price - 1",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff06.png",
-        "Desc": "获得资源点数会在-6%~+12%之间波动",
+        "Desc": "Resource Points earned fluctuate between -6% and +12%",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 260
     },
     {
         "Id": 15,
         "Name": "Time Extension - 1",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex3.png",
-        "Desc": "开局增加10秒额外关卡时间",
+        "Desc": "Start with 10s of extra stage time.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 270
     },
     {
         "Id": 26,
         "Name": "Electromagnetic Chain Module",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex11.png",
-        "Desc": "每隔7秒，将最上方的1个物品和最下方的2个物品链接，抓取任一则可全部抓取",
+        "Desc": "Links 1 item at the top with 2 items at the bottom every 7s. Grab any linked item to grab all of them.",
         "HexType": 1,
         "DropMapGroupId": 704,
         "HexUpgradeId": 360
@@ -123,7 +112,7 @@
         "Id": 27,
         "Name": "Net-Shooting Grappling Hook",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex13.png",
-        "Desc": "抓钩变成网！首次发射进入预瞄状态，再次发射则向区域撒网，抓取区域内的物品",
+        "Desc": "The grapple becomes a net! Fire once to enter aiming mode, then fire again to deploy the net and grab all items in the area.",
         "HexType": 1,
         "DropMapGroupId": 702,
         "HexUpgradeId": 370,
@@ -135,18 +124,17 @@
         "Id": 28,
         "Name": "Copycat Module",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex14.png",
-        "Desc": "所有物品的价值提升25%；抓取特定物品后，有60%的概率在物品原地生成一个复制品",
+        "Desc": "Increase all item values by 25%. Upon grabbing specific items, there's a 60% chance to create a duplicate where the original was grabbed.",
         "HexType": 1,
         "DropMapGroupId": 703,
         "HexUpgradeId": 380
     },
     {
         "Id": 29,
-        "Name": "飞船加速-1",
+        "Name": "UFO Speed Up - 1",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff26.png",
-        "Desc": "飞船的移动速度小幅提升",
+        "Desc": "UFO's movement speed slightly increases.",
         "HexType": 2,
-        "DropMapGroupId": 0,
         "HexUpgradeId": 383
     }
 ]
