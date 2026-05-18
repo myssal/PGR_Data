@@ -119,7 +119,7 @@ function XUiPanelDetail:OnBtnBossClick()
         return
     end
     local data = {WorldBossTeamDatas = bossArea:GetCharacterDatas()}
-    XLuaUiManager.Open("UiBattleRoleRoom", bossArea:GetStageId(), data)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(bossArea:GetStageId(), data)
 end
 
 function XUiPanelDetail:SetShow(IsShow)

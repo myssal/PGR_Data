@@ -19,9 +19,11 @@ end
 
 function XBuff10262130:OnLuaSkillEnd(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    --如果是【拼刀成功技】，则触发本技能
-    self._level:RequestInsertSkill(self._npcUUID, self._skillId)
-    self.trigger = false
+    if self.trigger then
+        --如果是【拼刀成功技】，则触发本技能
+        self._level:RequestInsertSkill(self._npcUUID, self._skillId)
+        self.trigger = false
+    end
 end
 
 function XBuff10262130:OnLuaSkillStart(eventArgs)

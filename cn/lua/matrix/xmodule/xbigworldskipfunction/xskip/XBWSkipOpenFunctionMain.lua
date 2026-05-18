@@ -56,9 +56,9 @@ end
 function XBWSkipOpenFunctionMain:_OpenTargetUI(functionConfig)
     --functionConfig.Args 是一个预判需求，目前没有这个字段
     if functionConfig.Args and #functionConfig.Args > 0 then
-        XLuaUiManager.Open(functionConfig.UiName, table.unpack(functionConfig.Args))
+        XMVCA.XBigWorldUI:Open(functionConfig.UiName, table.unpack(functionConfig.Args))
     else
-        XLuaUiManager.Open(functionConfig.UiName)
+        XMVCA.XBigWorldUI:Open(functionConfig.UiName)
     end
 end
 

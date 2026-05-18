@@ -125,6 +125,7 @@ function XBigWorldQuestAgency:RequestEnvironmentQuestGroupChange(levelId, groupI
         end
 
         self._Model:UpdateEnvironmentOnDuty(res.EnvironmentQuestData)
+        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_AI_MEMORY_DISPLAY_CHANGE)
         if callback then
             callback()
         end
@@ -133,6 +134,16 @@ end
 
 function XBigWorldQuestAgency:UpdateEnvironmentOnDuty(data)
     self._Model:UpdateEnvironmentOnDuty(data)
+end
+
+function XBigWorldQuestAgency:CheckEnvironmentPlaceIdOnDuty(levelId, placeId)
+    local placeIds = self._Model:GetEnvironmentOnDutyPlaceIds(levelId)
+
+    if not XTool.IsTableEmpty(placeIds) then
+        return placeIds[placeId] or false
+    end
+
+    return false
 end
 
 function XBigWorldQuestAgency:GetEnvironmentIds()
@@ -167,6 +178,26 @@ function XBigWorldQuestAgency:CheckEnvironmentFinish(id)
             return false
         end
     end
+    return true
+end
+
+function XBigWorldQuestAgency:CheckEnvironmentGroupFinish(groupId)
+    local environmentIds = self._Model:GetEnvironmentIds()
+
+    if XTool.IsTableEmpty(environmentIds) then
+        return true
+    end
+
+    for _, environmentId in ipairs(environmentIds) do
+        local environmentGroupId = self._Model:GetEnvironmentQuestGroupId(environmentId)
+
+        if environmentGroupId == groupId then
+            if not self:CheckEnvironmentFinish(environmentId) then
+                return false
+            end
+        end
+    end
+
     return true
 end
 
@@ -251,12 +282,12 @@ function XBigWorldQuestAgency:GetEnvironmentQuestGroupLevelConfigs()
     local result = {}
 
     for _, config in pairs(levelConfigs) do
-            local conditionId = config.ConditionId
+        local conditionId = config.ConditionId
 
-            if not XTool.IsNumberValid(conditionId) or XMVCA.XBigWorldService:CheckCondition(conditionId) then
-                table.insert(result, config)
-            end
+        if not XTool.IsNumberValid(conditionId) or XMVCA.XBigWorldService:CheckCondition(conditionId) then
+            table.insert(result, config)
         end
+    end
 
     return result
 end

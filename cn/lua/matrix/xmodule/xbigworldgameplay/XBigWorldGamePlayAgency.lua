@@ -10,7 +10,7 @@ XBigWorldGamePlayAgency.FAOS_LEVEL_ID = 6001
 
 --region 部分类
 XClassPartialRequire("XModule/XBigWorldGamePlay/Partial/XBigWorldGamePlayProcess", "XBigWorldGamePlayAgency") --流程相关放这里
---endregion 
+--endregion
 
 local XBigWorldActivityAgency = require("XModule/XBase/XBigWorldActivityAgency")
 local IsWindowsEditor = XMain.IsWindowsEditor
@@ -39,9 +39,9 @@ function XBigWorldGamePlayAgency:OnInit()
     }
 
     self.BigWorldGamePlayState = {
-        None = 1, --不在大世界中
+        None = 1,       --不在大世界中
         InBigWorld = 2, --在大世界中
-        InFight = 4, --在主线战斗中
+        InFight = 4,    --在主线战斗中
     }
 
     self._GamePlayState = self.BigWorldGamePlayState.None
@@ -70,17 +70,21 @@ function XBigWorldGamePlayAgency:InitEvent()
     CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_DLC_FIGHT_ENTER, self._OnEnterFight)
     CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_DLC_FIGHT_EXIT, self._OnExitFight)
 
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH, self.OnOpenGuideFinished, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH,
+        self.OnOpenGuideFinished, self)
     -- 大世界内关卡切换（如传送出/入法奥斯）时同步流式纹理 / LOD mesh 状态
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL, self._OnRefreshStreamingOnLevelEnter)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL,
+        self._OnRefreshStreamingOnLevelEnter)
 end
 
 function XBigWorldGamePlayAgency:RemoveEvent()
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_DLC_FIGHT_ENTER, self._OnEnterFight)
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_DLC_FIGHT_EXIT, self._OnExitFight)
 
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH, self.OnOpenGuideFinished, self)
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL, self._OnRefreshStreamingOnLevelEnter)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH,
+        self.OnOpenGuideFinished, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL,
+        self._OnRefreshStreamingOnLevelEnter)
 end
 
 function XBigWorldGamePlayAgency:SetCurrentGameAgency(worldId)
@@ -482,14 +486,14 @@ function XBigWorldGamePlayAgency:OnFightGetPerspectiveState(data)
         levelId = self:GetCurrentLevelId()
         return {
             IsFirstPersonMode = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetPerspective(levelId)
-                    == XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson,
+                == XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson,
             HasData = self:GetCurrentAgency():IsSavePerspective(levelId),
         }
     else
         levelId = data.LevelId
     end
     local isFirstPersonMode = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetPerspective(levelId) == first
-    
+
     return {
         IsFirstPersonMode = isFirstPersonMode,
         HasData = self:GetCurrentAgency():IsSavePerspective(levelId),
@@ -502,13 +506,14 @@ function XBigWorldGamePlayAgency:OnPerspectiveModeChanged(data)
         return
     end
     local success, isFirst, levelId = data.IsSuccess, data.IsFirstPersonMode, data.LevelId
-    
+
     if not levelId or levelId <= 0 then
         XLog.Error("OnSetFirstPersonMode levelId is invalid: " .. tostring(levelId))
         return
     end
     if success then
-        local perspective = isFirst and XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson or XMVCA.XBigWorldGamePlay.PerspectiveType.ThirdPerson
+        local perspective = isFirst and XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson or
+        XMVCA.XBigWorldGamePlay.PerspectiveType.ThirdPerson
         self:SavePerspectiveRequest(levelId, perspective)
     end
 end
@@ -662,9 +667,12 @@ function XBigWorldGamePlayAgency:NotifyExternalRequiredBigWorldPlayerData(data)
         worldIds = data.EnteredBigWorldIds
     end
     self._Model:UpdateEntranceWorldMark(worldIds)
-    
+
     if data.Gender then
         XMVCA.XBigWorldCommanderDIY:SetCurrentGender(data.Gender)
+    end
+    if data.CommanderFashionBags then
+        XMVCA.XBigWorldCommanderDIY:UpdateUnlockParts(data.CommanderFashionBags)
     end
 end
 
@@ -719,6 +727,7 @@ end
 function XBigWorldGamePlayAgency:GetSkyGardenOpenGuideIdList()
     return self._Model:GetSkyGardenOpenGuideIdList()
 end
+
 --endregion
 
 --region Debug/黑幕进战斗

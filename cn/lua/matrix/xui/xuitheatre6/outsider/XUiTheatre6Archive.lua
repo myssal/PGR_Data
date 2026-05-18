@@ -33,7 +33,14 @@ function XUiTheatre6Archive:OnEnable()
 end
 
 function XUiTheatre6Archive:OnDestroy()
-    self._Scene:BackToMain()
+    local index = self:_GetRoleIndex()
+    if index then
+        -- 不调用 BackToMain，避免重置 CurSelectIndex 与重播 ChooseAnim
+        self._Scene:SetAllModelCamFalse()
+        self._Scene:SetModelSelect(index)
+    else
+        self._Scene:BackToMain()
+    end
 end
 
 function XUiTheatre6Archive:Refresh()
@@ -115,8 +122,15 @@ function XUiTheatre6Archive:SelectSlot(slotIndex, target)
 end
 
 function XUiTheatre6Archive:PlayArchiveCamAnim()
+    local index = self:_GetRoleIndex()
+    if index then
+        self._Scene:SetChangeArchiveByRoleBtn(index)
+    end
+end
+
+function XUiTheatre6Archive:_GetRoleIndex()
     if not self._RoleId then
-        return
+        return nil
     end
 
     -- 获取角色配置列表并排序
@@ -133,10 +147,10 @@ function XUiTheatre6Archive:PlayArchiveCamAnim()
     -- 找到角色对应的索引
     for index, config in ipairs(roleConfigs) do
         if config.Id == self._RoleId then
-            self._Scene:SetChangeArchiveByRoleBtn(index)
-            return
+            return index
         end
     end
+    return nil
 end
 
 return XUiTheatre6Archive

@@ -21,6 +21,13 @@ function XBuffScript10251080:OnLuaSkillEnd(eventArgs)
     --self:LogError(".....扣对面10点体力")
     self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, -20, 0)
     --self:LogError(".....扣自己10点体力")
+end
+
+
+function XBuffScript10251080:OnLuaSkillStart(eventArgs)
+    ------------执行------------
+    if eventArgs._skillId ~= self._skillId then return end
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
     self._HitFlyController:AddSkillCount(self._stackCount)
 end
 

@@ -36,6 +36,8 @@ EFightLuaEvent = {
     Theatre6AffixBlock = 1016,
     --- 肉鸽6触发破防
     Theatre6AffixBlockBreak = 1017,
+    --- 肉鸽6触发怒火攻击
+    Theatre6AffixAngerDamage = 1018,
 }
 
 --region Define - GetEventArgs

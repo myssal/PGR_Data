@@ -17,120 +17,128 @@
         "Id": 11,
         "Name": "晕眩",
         "Pirority": 11,
-        "Desc": "placeholder_晕眩期间，无法获取【超序值】",
+        "Desc": "晕眩期间，无法获取<Icon=IconOverClock|30|30|0.5/><color=#516797>超序值</color>",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36.png"
     },
     {
         "Id": 12,
         "Name": "点燃",
         "Pirority": 2,
-        "Desc": "placeholder_每有一层，对手技能命中时额外附加10%攻击的伤害，持续时间无限，可无限叠加。",
+        "Desc": "每有一层，对手技能命中时额外附加10%攻击的伤害，持续时间无限，可无限叠加。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon38.png"
     },
     {
         "Id": 13,
         "Name": "击飞",
         "Pirority": 2,
-        "Desc": "placeholder_敌人被击飞期间，无法触发格挡。",
+        "Desc": "敌人被<Icon=IconHitFlyBlack|30|30|0.5/><color=#487F3B>击飞</color>期间，无法触发<Icon=IconBlock|30|30|0.5/><color=#516797>格挡</color>。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon39.png"
     },
     {
         "Id": 14,
         "Name": "击倒",
         "Pirority": 2,
-        "Desc": "placeholder_敌人被击倒期间，无法触发格挡。",
+        "Desc": "敌人被<Icon=IconHitDown|30|30|0.5/><color=#487F3B>击倒</color>期间，无法触发<Icon=IconBlock|30|30|0.5/><color=#516797>格挡</color>。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon41.png"
     },
     {
         "Id": 15,
-        "Name": "次数暴击",
+        "Name": "<暴击>",
         "Pirority": 1,
-        "Desc": "placeholder_下1次使用技能时，消耗1层<暴击>并触发【暴击】。持续时间无限，可无限叠加。",
+        "Desc": "下次使用技能时，消耗1层<color=#B96716><</color><Icon=IconCritBlack|30|30|0.5/><color=#B96716>暴击></color>，使该次技能造成的伤害提升50%。持续时间无限，可无限叠加。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
     },
     {
         "Id": 16,
         "Name": "暴击",
         "Pirority": 2,
-        "Desc": "placeholder_此次技能造成伤害提升50%。",
+        "Desc": "此次技能造成的伤害提升50%。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
     },
     {
         "Id": 17,
-        "Name": "次数格挡",
+        "Name": "<格挡>",
         "Pirority": 1,
-        "Desc": "placeholder_下1次对手技能命中时，消耗1层<格挡>并触发【格挡】。持续时间无限，可无限叠加。",
+        "Desc": "下次对手技能命中时，消耗1层<color=#516797><</color><Icon=IconBlock|30|30|0.5/><color=#516797>格挡></color>，使自身受到该次技能的伤害降低50%。持续时间无限，可无限叠加，无法格挡击飞与击倒效果。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
     },
     {
         "Id": 18,
         "Name": "格挡",
         "Pirority": 2,
-        "Desc": "placeholder_此次技能受到伤害降低50%。",
+        "Desc": "受到此次技能的伤害降低50%，无法格挡击飞与击倒效果。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
     },
     {
         "Id": 19,
         "Name": "怒火",
         "Pirority": 1,
-        "Desc": "placeholder_通过使用技能，可以获得一定点数的【怒火】，持续时间无限。\\n【怒火】上限为100点，达到上限时，进入【狂袭】。",
+        "Desc": "通过使用技能，可以获得一定点数的<color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color>，持续时间无限。\\n<color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color>上限为100点，达到上限时，进入<color=#9F3232><Icon=IconAngry|30|30|0.5/>狂暴</color>。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43.png"
     },
     {
         "Id": 20,
-        "Name": "狂袭",
+        "Name": "狂暴",
         "Pirority": 2,
-        "Desc": "placeholder_【狂袭】状态下，造成伤害提高X%，使用任意技能均将消耗10点【怒火】，部分技能将触发额外效果。\\n在【怒火】消耗至0时，【狂袭】状态结束。【狂袭】无法叠加。",
+        "Desc": "<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态下，造成伤害提高10%，使用任意技能均将消耗10点<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>，部分技能将触发额外效果。\\n在<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>消耗至0时，<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态结束。<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>无法叠加。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png"
     },
     {
         "Id": 21,
         "Name": "拼刀",
         "Pirority": 1,
-        "Desc": "placeholder_战斗开始时以及双方【战意值】均耗尽时，将触发一次【拼刀】。在【拼刀】中获胜的一方，将获得出手权。",
+        "Desc": "战斗开始时以及双方<Icon=IconStamina|30|30|0.5/><color=#6F4877>战意值</color>均耗尽时，将触发一次<Icon=IconWrestle|30|30|0.5/><color=#B96716>拼刀</color>。在<Icon=IconWrestle|30|30|0.5/><color=#B96716>拼刀</color>中获胜的一方，将获得出手权。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
     },
     {
         "Id": 22,
         "Name": "反制",
         "Pirority": 1,
-        "Desc": "placeholder_战斗中一方【超序值】达到100点时，将触发一次【反制】。在【反制】中获胜的一方，将获得出手权。",
+        "Desc": "战斗中一方<Icon=IconOverClock|30|30|0.5/><color=#516797>超序值</color>达到100点时，将触发一次<Icon=IconOverClock|30|30|0.5/><color=#516797>反制</color>。在<Icon=IconOverClock|30|30|0.5/><color=#516797>反制</color>中获胜的一方，将获得出手权",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
     },
     {
         "Id": 23,
         "Name": "先机",
         "Pirority": 3,
-        "Desc": "placeholder_部分技能在【先机】属性高时可以造成额外效果。",
+        "Desc": "部分技能在<Icon=IconWrestle|30|30|0.5/><color=#B96716>先机</color>属性高时可以造成额外效果。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
     },
     {
         "Id": 24,
         "Name": "超序",
         "Pirority": 3,
-        "Desc": "placeholder_部分技能在【超序】属性高时可以造成额外效果。",
+        "Desc": "部分技能在<Icon=IconOverClock|30|30|0.5/><color=#516797>超序</color>属性高时可以造成额外效果。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
     },
     {
         "Id": 25,
         "Name": "战意",
         "Pirority": 3,
-        "Desc": "placeholder_部分技能在【战意】属性高时可以造成额外效果。",
+        "Desc": "部分技能在<Icon=IconStamina|30|30|0.5/><color=#6F4877>战意</color>属性高时可以造成额外效果。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon03.png"
+    },
+    {
+        "Id": 99,
+        "Name": "点燃",
+        "Pirority": 11,
+        "Desc": "每有一层，对手技能命中时额外附加10%攻击的伤害，持续时间无限，可无限叠加。",
+        "SaveWeight": 10,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon38.png"
     }
 ]

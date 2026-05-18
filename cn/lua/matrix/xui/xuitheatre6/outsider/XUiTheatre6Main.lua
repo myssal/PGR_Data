@@ -29,7 +29,7 @@ function XUiTheatre6Main:OnEnable()
     XMVCA.XTheatre6:StopSanAudio()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_MODE_END, self.Refresh, self)
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.Theatre6)
-  
+    self._Scene:UpdateRogueModel(true)
 end
 
 function XUiTheatre6Main:OnDisable()
@@ -58,8 +58,9 @@ function XUiTheatre6Main:Init3DPanel()
     XMVCA.XScene:LoadScene(SceneIds.XTheatre6Scene, false, function()
         ---@type XTheatre6Scene
         self._Scene = XMVCA.XScene:GetScene(SceneIds.XTheatre6Scene)
-        self._Scene:UpdateRogueModel(true)
     end)
+    local timerId = self._Scene:PlayEnterCamAnim()
+    self:_AddTimerId(timerId)
 end
 
 --region 刷新
@@ -96,9 +97,20 @@ end
 
 ---首轮共通线关卡完成前隐藏玩法模式和PVP按钮
 function XUiTheatre6Main:RefreshFirstPlayState()
-    local isVisible = self._Control:CheckOpenGamePlayModeCond()
-    self.BtnPlay.gameObject:SetActiveEx(isVisible)
-    self.BtnPvp.gameObject:SetActiveEx(isVisible)
+    local isOpen = self._Control:CheckOpenGamePlayModeCond()
+    self.BtnPlay.gameObject:SetActiveEx(isOpen)
+    self.BtnPvp.gameObject:SetActiveEx(isOpen)
+    --动效（只在从局内直接回到玩法主界面时播放）
+    if self._IsPlayModeOpen == false and isOpen then
+        local anim = self.BtnPlay.transform:FindTransform("UnLockEnable")
+        if not XTool.UObjIsNil(anim) then
+            self.BtnPlay:SetButtonState(XUiButtonState.Disable)
+            anim:PlayTimelineAnimation(function()
+                self.BtnPlay:SetButtonState(XUiButtonState.Normal)
+            end)
+        end
+    end
+    self._IsPlayModeOpen = isOpen
 end
 
 function XUiTheatre6Main:RefreshBtnStory()
@@ -209,7 +221,7 @@ function XUiTheatre6Main:RefreshCommon()
         local conditionId = storyLineConfig.ConditionId
         local isUnlock = not XTool.IsNumberValid(conditionId) or XConditionManager.CheckCondition(conditionId)
         local isPass = true
-        for i, stageId in ipairs(storyLineConfig.StageIds) do
+        for i = 1, #storyLineConfig.StageIds do
             if not self._Control:IsStagePass(storyLineId, i) then
                 isPass = false
                 if not self._CommonIdx and isUnlock then

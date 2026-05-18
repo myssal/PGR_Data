@@ -28,15 +28,9 @@ function XBigWorldCommanderDIYAgency:OnRelease()
 end
 
 function XBigWorldCommanderDIYAgency:InitConditionCheck()
-    XMVCA.XBigWorldService:RegisterConditionFunc(10102001, Handler(self, self.CheckPartUnlockCondition))
 end
 
 function XBigWorldCommanderDIYAgency:ReleaseConditionCheck()
-    if not XMVCA:IsRegisterAgency(ModuleId.XBigWorldService) then
-        return
-    end
-
-    XMVCA.XBigWorldService:UnRegisterConditionFunc(10102001)
 end
 
 function XBigWorldCommanderDIYAgency:CheckPartUnlockCondition(template)
@@ -90,7 +84,11 @@ function XBigWorldCommanderDIYAgency:UpdateData(res)
     self._Model:SetGender(gender)
     self._Model:SetCommanderFashionOutfitsData(commanderFashionOutfits, curCommanderOutfitType)
     -- self._Model:UpdateFashion(fashionList)
-    self._Model:UpdateUnlockParts(commanderFashionBags)
+    self:UpdateUnlockParts(commanderFashionBags)
+end
+
+function XBigWorldCommanderDIYAgency:UpdateUnlockParts(fashionBags)
+    self._Model:UpdateUnlockParts(fashionBags)
 end
 
 ---@param displayController XUiModelDisplayController
@@ -572,7 +570,7 @@ function XBigWorldCommanderDIYAgency:GetPartItemParams(templateId)
 end
 
 function XBigWorldCommanderDIYAgency:OnNotifyBigWorldCommanderFashionBagUpdate(data)
-    self._Model:UpdateUnlockParts(data.DlcFashionBags)
+    self:UpdateUnlockParts(data.DlcFashionBags)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_COMMANDER_DIY_BACKPACK_UPDATE)
 end
 

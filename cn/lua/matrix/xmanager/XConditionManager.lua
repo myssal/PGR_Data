@@ -2819,6 +2819,10 @@ PlayerCondition = {
         local isEntry = condition.Params[2] == 1
         return XMVCA.XBigWorldGamePlay:CheckEntryWorld(worldId) == isEntry, condition.Desc
     end,
+    --判断是否获得某个指挥官DIY部位
+    [23102] = function(condition)
+        return XMVCA.XBigWorldCommanderDIY:CheckPartUnlockCondition(condition)
+    end,
     --region 累消商店
     --累计代币总数大于配置
     [10502] = function(condition)

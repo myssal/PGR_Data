@@ -9,9 +9,9 @@ function XBuffScript10251613:ScriptInit(isGainControl) --初始化
     ---受到攻击计数
     self.hitCount = 0
     self.targetHitCount = 5
-    if self._skillId == 10252131 then self._addOverClock = 30
-    else if self._skillId == 10252132 then self._addOverClock = 60
-    else self._addOverClock = 100
+    if self._skillId == 10252131 then self.addOverClock = 30
+    else if self._skillId == 10252132 then self.addOverClock = 60
+    else self.addOverClock = 100
     end
     end
     self._addAttack = 20

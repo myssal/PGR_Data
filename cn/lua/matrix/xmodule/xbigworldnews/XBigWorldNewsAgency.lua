@@ -262,13 +262,19 @@ end
 function XBigWorldNewsAgency:GetNewsShowTimeRewardTitle(id)
     local t = self._Model:GetNewsTemplate(id)
 
-    return t.ShowTimeRewardTitle or 0
+    return t.ShowTimeRewardTitle or ""
 end
 
 function XBigWorldNewsAgency:GetNewsShowTimeRewardContent(id)
     local t = self._Model:GetNewsTemplate(id)
 
-    return t.ShowTimeRewardContent or 0
+    return t.ShowTimeRewardContent or ""
+end
+
+function XBigWorldNewsAgency:GetNewsShowTimeRewardTip(id)
+    local t = self._Model:GetNewsTemplate(id)
+
+    return t.ShowTimeRewardTip or ""
 end
 
 function XBigWorldNewsAgency:GetNewsTagHideCondition(id)

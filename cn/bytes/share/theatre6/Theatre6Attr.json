@@ -2,61 +2,61 @@
     {
         "Id": 1,
         "Name": "攻击",
-        "Desc": "placeholder_影响角色释放技能时的伤害",
+        "Desc": "影响角色释放技能时的伤害",
         "Min": 1,
         "Max": 10000000,
         "SaveScore": 12,
         "AttrType": 1,
         "AttrKey": "Attack",
         "Priority": 1,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon02.png"
     },
     {
         "Id": 2,
         "Name": "生命",
-        "Desc": "placeholder_角色在战斗中的生命值，归零时战斗失败",
+        "Desc": "角色在战斗中的生命值，归零时战斗失败",
         "Min": 1,
         "Max": 9999999,
         "SaveScore": 1,
         "AttrType": 1,
         "AttrKey": "Life",
         "Priority": 2,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon01.png"
     },
     {
         "Id": 3,
         "Name": "战意",
-        "Desc": "placeholder_角色释放技能需要消耗战意值，双方战意值均耗尽时，将恢复等值于战意属性的战意值；\\n战斗中，每点战意值，使角色获得0.3%伤害减免，至多30%",
+        "Desc": "角色释放技能需要消耗战意值，双方战意值均耗尽时，将恢复等值于战意属性的战意值；\\n战斗中，每点战意值，使角色获得0.3%伤害减免，至多30%",
         "Min": 1,
         "Max": 9999999,
         "SaveScore": 48,
         "AttrType": 2,
         "AttrKey": "Stamina",
         "Priority": 3,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon03.png"
     },
     {
         "Id": 4,
         "Name": "先机",
-        "Desc": "placeholder_影响角色拼刀时的成功率；\\n释放【拼刀成功技能】时，每有1点先机属性，造成的伤害提升0.6%",
+        "Desc": "影响角色拼刀时的成功率；\\n释放拼刀技能时，每有1点先机属性，造成的伤害提升0.6%",
         "Min": 1,
         "Max": 9999999,
         "SaveScore": 6,
         "AttrType": 2,
         "AttrKey": "WrestlePoint",
         "Priority": 4,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
     },
     {
         "Id": 5,
         "Name": "超序",
-        "Desc": "placeholder_影响角色进行反制的成功率，以及角色受到攻击时的超序值获取效率",
+        "Desc": "影响角色进行反制的成功率，以及角色受到攻击时的超序值获取效率",
         "Min": 1,
         "Max": 9999999,
         "SaveScore": 6,
         "AttrType": 2,
         "AttrKey": "OverClock",
         "Priority": 5,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
     }
 ]

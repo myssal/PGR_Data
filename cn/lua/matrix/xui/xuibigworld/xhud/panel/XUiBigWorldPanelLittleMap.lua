@@ -202,6 +202,8 @@ function XUiBigWorldPanelLittleMap:_RegisterListeners()
         self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE, self.OnPinStateChange,
         self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_AI_MEMORY_DISPLAY_CHANGE, self.OnPinStateChange,
+        self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, self.OnPinHide, self)
 end
 
@@ -225,6 +227,9 @@ function XUiBigWorldPanelLittleMap:_RemoveListeners()
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAYER_ENTER_AREA, self.OnPlayerEnterArea,
         self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE,
+        self.OnPinStateChange,
+        self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_AI_MEMORY_DISPLAY_CHANGE,
         self.OnPinStateChange,
         self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, self.OnPinHide, self)

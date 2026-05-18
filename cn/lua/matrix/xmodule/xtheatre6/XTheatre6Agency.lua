@@ -114,7 +114,8 @@ function XTheatre6Agency:ExGetTimerShowStr()
         local now = XTime.GetServerNowTimestamp()
         local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
         local leftTime = math.max(endTime - now, 0)
-        return XUiHelper.GetText("Theatre6EntranceTimeLabel", XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY))
+        return XUiHelper.GetText("Theatre6EntranceTimeLabel",
+            XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY))
     else
         return ''
     end
@@ -127,11 +128,11 @@ end
 ---获取最新剧情更新时间
 ---@return number
 function XTheatre6Agency:GetLatestStoryUpdateTime()
-    local values = self._Model:GetConfigValues("StoryUpdateTime")
-    if #values ~= 0 then
-        return XTime.ParseToTimestamp(values[#values])
+    local timeStr = self._Model:GetClientConfigValue("StoryUpdateTime")
+    if string.IsNilOrEmpty(timeStr) then
+        return 0
     end
-    return 0
+    return XTime.ParseToTimestamp(timeStr)
 end
 
 ---获取最后查看剧情时间
@@ -224,7 +225,7 @@ function XTheatre6Agency:IsDiffPassTimaes(diffId, times)
     return self._Model:IsDiffPassTimaes(diffId, times)
 end
 
-function XTheatre6Agency:OpenSettle()
+function XTheatre6Agency:CheckOpenSettle()
     local data = self._PendingSettleData
     if not data then
         return false
@@ -232,7 +233,7 @@ function XTheatre6Agency:OpenSettle()
     self:ClearPendingSettleData()
     XLuaUiManager.OpenWithCloseCallback("UiTheatre6Settlement", function()
         self._Model:NotifyTheatre6SettleData()
-    end, data)
+    end, data, self._Model:GetCurPlayMode())
     return true
 end
 
@@ -243,6 +244,10 @@ end
 function XTheatre6Agency:ClearSkillUpEffectPopupQueue()
     self._SkillUpEffectPopupQueue = {}
     self._IsSkillUpEffectPopupOpening = false
+end
+
+function XTheatre6Agency:SetSettlementLock(isDelayOpen)
+    self._IsDelaySettleOpen = isDelayOpen
 end
 
 ----------public end----------
@@ -293,20 +298,41 @@ end
 
 function XTheatre6Agency:NotifyTheatre6SettleData(data)
     self._Model:UpdateSettleData(data)
-    self._PendingSettleData = data
-    if not XFightUtil.IsFighting() then
-        self:OpenSettle()
+    self._PendingSettleData = data.SettleData
+    if XFightUtil.IsFighting() then
+        return --处于战斗界面时延迟打开
     end
+    if self._IsDelaySettleOpen then
+        return --处于二择展示弹框期间时延迟打开
+    end
+    self:CheckOpenSettle()
 end
 
 function XTheatre6Agency:NotifyTheatre6AddBuff(data)
     self._Model:NotifyTheatre6AddBuff(data)
     local buffId = data.BuffData.BuffId
     if buffId == self._Model:GetSanDeathBuffId() then
-        self._Model:SetShowDeathBuff(data.BuffData)
-        self:OpenSanDeathBuffPopup()
+        self:ShowDeathBuff(data.BuffData)
     end
     XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_BUFF_CHANGE)
+end
+
+function XTheatre6Agency:ShowDeathBuff(buffData)
+    local isFighting = XFightUtil.IsFighting()
+
+    --二择期间获得san值buff 给Theatre6ChooseEventRequest那边处理
+    local curr = self._Model.StageChain.Curr
+    if not isFighting and curr and curr.RoomType == XEnumConst.Theatre6.RoomType.ChooseOption then
+        return
+    end
+
+    self._Model:SetShowDeathBuff(buffData)
+
+    if isFighting then
+        return
+    end
+
+    self:OpenSanDeathBuffPopup()
 end
 
 function XTheatre6Agency:NotifyTheatre6BuffUpdate(data)
@@ -368,6 +394,13 @@ function XTheatre6Agency:NotifyTheatre6SkillUpEffect(data)
 end
 
 function XTheatre6Agency:ShowSkillUpEffect(buffDatas, finishCb)
+    if XTool.IsTableEmpty(buffDatas) then
+        if finishCb then
+            finishCb()
+        end
+        return
+    end
+    
     local showUi = false
     for _, slotType in pairs(XEnumConst.Theatre6.SlotType) do
         local defaultSkill = self._Model.Skill:GetCharacterSkills(slotType)[1]
@@ -380,19 +413,46 @@ function XTheatre6Agency:ShowSkillUpEffect(buffDatas, finishCb)
         local buffCfg = self._Model:GetBuffConfig(buffData.BuffId)
         if not buffCfg or XTool.IsTableEmpty(buffCfg.BuffEffectParams) then
             XLog.Error(string.format("肉鸽6技能升级数据异常，BuffId=%s", buffData.BuffId))
-        elseif not showUi then
-            self:EnqueueSkillUpEffectPopup("UiTheatre6PopupCommon", "", XUiHelper.GetText("Theatre6PopupSkillLevelUpNotShow"))
         else
             local levelUpCount = buffCfg.BuffEffectParams[1]
             local levelUpLevel = buffCfg.BuffEffectParams[2]
             local levelUpLimit = buffCfg.BuffEffectParams[3]
             local levelUpQuality = buffCfg.BuffEffectParams[4]
-
-            self:EnqueueSkillUpEffectPopup("UiTheatre6PopupSkillLevelUp", levelUpCount, levelUpLevel, levelUpLimit, levelUpQuality)
+            if not showUi or not self:HasAnyBuffUpgradableSkill(levelUpCount, levelUpLimit, levelUpQuality) then
+                self:EnqueueSkillUpEffectPopup("UiTheatre6PopupCommon", "",
+                    XUiHelper.GetText("Theatre6PopupSkillLevelUpNotShow"))
+            else
+                self:EnqueueSkillUpEffectPopup("UiTheatre6PopupSkillLevelUp", buffData.Uid, levelUpCount, levelUpLevel,
+                    levelUpLimit, levelUpQuality)
+            end
         end
     end
 
     self:TryOpenNextSkillUpEffectPopup(finishCb)
+end
+
+---背包/装备槽内是否存在符合本次 buff 升级条件的技能,与 popup 的 ConditionLevelUp 口径一致(不含已升次数 delta)
+function XTheatre6Agency:HasAnyBuffUpgradableSkill(levelUpCount, levelUpLimit, levelUpQuality)
+    if not levelUpCount or levelUpCount <= 0 then
+        return false
+    end
+    levelUpLimit = levelUpLimit or 0
+    levelUpQuality = levelUpQuality or 0
+    for _, slotType in pairs(XEnumConst.Theatre6.SlotType) do
+        local skills = self._Model.Skill:GetCharacterSkills(slotType)
+        for _, skill in pairs(skills or {}) do
+            local skillId = skill and skill.SkillId
+            if XTool.IsNumberValid(skillId) and XTool.IsNumberValid(self._Model.Skill:GetNextLevelSkillId(skillId)) then
+                local cfg = self._Model:GetSkillCfgById(skillId)
+                local levelOk = levelUpLimit == 0 or cfg.Level < levelUpLimit
+                local qualityOk = levelUpQuality == 0 or cfg.Quality <= levelUpQuality
+                if levelOk and qualityOk then
+                    return true
+                end
+            end
+        end
+    end
+    return false
 end
 
 function XTheatre6Agency:EnqueueSkillUpEffectPopup(uiName, ...)
@@ -427,9 +487,6 @@ function XTheatre6Agency:TryOpenNextSkillUpEffectPopup(finishCb)
 end
 
 function XTheatre6Agency:OpenSanDeathBuffPopup()
-    if XFightUtil.IsFighting() then
-        return
-    end
     local buffData = self._Model:GetShowDeathBuffWithClear()
     if not buffData then
         return
@@ -460,6 +517,23 @@ function XTheatre6Agency:CheckTaskRedPoint()
         end
     end
     return false
+end
+
+function XTheatre6Agency:RunChain(steps, finalCb)
+    local index = 1
+    local function next()
+        local step = steps[index]
+        index = index + 1
+
+        if step then
+            step(next)
+        else
+            if finalCb then
+                finalCb()
+            end
+        end
+    end
+    next()
 end
 
 ----------private end----------

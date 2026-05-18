@@ -56,7 +56,7 @@ function XUiRpgTowerStageDetails:OnClickBtnEnter()
                     return
                 end
                 self:HidePanel()
-                XLuaUiManager.Open("UiBattleRoleRoom",
+                XMVCA.XFuben:OpenUiBattleRoleRoom(
                     self.RootUi.RStage:GetStageId(),
                     self:GetBattleTeamData(),
                     require("XUi/XUiRpgTower/Battle/BattleRoom/XUiRpgTowerBattleRoom")
@@ -67,7 +67,7 @@ function XUiRpgTowerStageDetails:OnClickBtnEnter()
             return
         end
         self:HidePanel()
-        XLuaUiManager.Open("UiBattleRoleRoom",
+        XMVCA.XFuben:OpenUiBattleRoleRoom(
             self.RootUi.RStage:GetStageId(),
             self:GetBattleTeamData(),
             require("XUi/XUiRpgTower/Battle/BattleRoom/XUiRpgTowerBattleRoom")

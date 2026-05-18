@@ -13,7 +13,7 @@ function XBuffScript10262020:ScriptInit(isGainControl) --初始化
     self.ChanceCheck = 0
     self._stackCountHitDown = 0
     self._angerCost = 50
-    self._damageMagicId = 10250044 --注册超算成功技1伤害id，目前是临时的
+    self._damageMagicId = 1026202 --注册超算成功技1伤害id，5.10已换
     if self._skillId == 10262021 then self._exDamageRateBase = 8000
     else if self._skillId == 10262022 then self._exDamageRateBase = 8000
     else self._exDamageRateBase = 8000

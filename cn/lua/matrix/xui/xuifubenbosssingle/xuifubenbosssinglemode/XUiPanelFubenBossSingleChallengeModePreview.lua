@@ -44,9 +44,11 @@ function XUiPanelFubenBossSingleChallengeModePreview:SetData(
         return
     end
 
-    local buffGroupIndexes =
-        XMVCA.XFubenBossSingle:GetBossSingleChallengeBuffGroupConfigByBuffGroupId(
+    local succ, buffGroupIndexes =
+        XMVCA.XFubenBossSingle:TryGetBossSingleChallengeBuffGroupConfigByBuffGroupId(
             bossSingleChallengeBuffGroup.BuffGroupId)
+
+    if not succ then buffGroupIndexes = {} end
 
     local empty = true
     local allScoreUp = 0

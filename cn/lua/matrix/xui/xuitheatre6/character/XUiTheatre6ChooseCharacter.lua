@@ -63,7 +63,7 @@ end
 function XUiTheatre6ChooseCharacter:InitComponents()
     self:BindHelpBtn(self.BtnHelp, "UiTheatre6ChooseCharacterHelpKey")
     XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
-    XUiHelper.NewPanelActivityAssetSafe({ self._ConsumeId }, self.PanelSpecialTool, self, nil, function(_, index)
+    XUiHelper.NewPanelActivityAssetSafe({ self._ConsumeId }, self.PanelSpecialTool, self, nil, function(_, _)
         XLuaUiManager.Open("UiTheatre6PopupRewardDetail", self._ConsumeId)
     end)
 end
@@ -75,11 +75,11 @@ end
 
 function XUiTheatre6ChooseCharacter:OnStart(playMode)
     self._PlayMode = playMode
+    self:ApplyStatus(FuncName.Init)
+    self:InitCommon()
 end
 
 function XUiTheatre6ChooseCharacter:OnEnable()
-    self:ApplyStatus(FuncName.Init)
-    self:InitCommon()
     self:UpdateBuyFashion()
     XDataCenter.ItemManager.AddCountUpdateListener({ self._ConsumeId, self._TalentCoinId }, handler(self, self.OnItemCountUpdate), self.Transform)
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_TALENT_LEVEL_CHANGE, self.UpdateTalent, self)
@@ -105,12 +105,12 @@ function XUiTheatre6ChooseCharacter:InitCommon()
 
     if isGamePlay then
         self._BuffDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6BuffDetail").New(self.BuffDetail, self)
-        self._BuffDetail:SetBtnUseVisible(true, handler(self, self.OnBuffDetailClick))
+        self._BuffDetail:SetBtnUseVisible(handler(self, self.OnBuffDetailClick))
     end
 
     ---@type XTableTheatre6Character[]
     self._RoleConfigs = {}
-    for k, v in pairs(self._Control:GetCharacterConfigs()) do
+    for _, v in pairs(self._Control:GetCharacterConfigs()) do
         if XTool.IsNumberValid(v.Priority) then
             table.insert(self._RoleConfigs, v)
         end
@@ -234,7 +234,8 @@ end
 
 function XUiTheatre6ChooseCharacter:UpdateDetailOnPlayMode()
     local tagBuffIds = self._CurRole.TagBuffIds
-    local useBuffId = self._TagBuffUseDict[self._RoleId] or tagBuffIds[1]
+    local useBuffId = self._TagBuffUseDict[self._RoleId]
+    local selectIndex = self._TagBuffChooseDict[self._RoleId]
 
     self._TagBuffGrids = {}
     XUiHelper.RefreshCustomizedList(self.GridBuff.transform.parent, self.GridBuff.transform, #tagBuffIds, function(i, go)
@@ -242,7 +243,19 @@ function XUiTheatre6ChooseCharacter:UpdateDetailOnPlayMode()
         local grid = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Buff").New(go, self)
         grid:UpdateByChoose(tagBuffIds[i], self._RoleId, i)
         table.insert(self._TagBuffGrids, grid)
+        if grid:IsUnlock() then
+            if not useBuffId then
+                useBuffId = tagBuffIds[i]
+            end
+            if not selectIndex then
+                selectIndex = i
+            end
+        end
     end)
+
+    selectIndex = selectIndex or 1
+    useBuffId = useBuffId or tagBuffIds[selectIndex]
+    self._TagBuffUseDict[self._RoleId] = useBuffId
     
     local tabs = {}
     for i = 1, #tagBuffIds do
@@ -252,7 +265,7 @@ function XUiTheatre6ChooseCharacter:UpdateDetailOnPlayMode()
         grid:InsertTab(tabs)
         grid:SetChooseBuff(useBuffId)
     end
-    local selectIndex = self._TagBuffChooseDict[self._RoleId] or 1
+    
     self.BuffGroup:Init(tabs, function(i)
         self._TagBuffChooseDict[self._RoleId] = i
         self._BuffDetail:SetBuffIdToChoose(self._RoleId, i)
@@ -374,12 +387,11 @@ end
 
 ---玩法模式进入难度选择
 function XUiTheatre6ChooseCharacter:OnBtnFightClick()
-    local selectIndex = self._TagBuffChooseDict[self._RoleId]
     local params = {}
     params.GroupId = self._CurRole.PlayDiffGroupIds[1] --第一期特殊处理
     params.RoleId = self._RoleId
     params.FashionId = self._CurFashionId
-    params.InitBuffId = self._CurRole.TagBuffIds[selectIndex]
+    params.InitBuffId = self._TagBuffUseDict[self._RoleId]
     XLuaUiManager.Open("UiTheatre6ChooseDifficulty", params)
 end
 

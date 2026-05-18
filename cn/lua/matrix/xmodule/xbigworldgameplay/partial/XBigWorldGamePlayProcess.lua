@@ -100,7 +100,7 @@ function XBigWorldGamePlayAgency:ExitWorld()
         return
     end
     self:_DisposeX3C()
-    
+
     XMVCA.XBigWorldUI:ClearBigWorldUI()
     --退出战斗
     CS.StatusSyncFight.XFightClient.RequestExitFight()
@@ -196,6 +196,18 @@ function XBigWorldGamePlayAgency:ExitFight()
     self:_DisposeTempVar()
     --关闭流式纹理
     XMipStreamingManager.ExitBigWorld()
+end
+
+--- 登出/强制清理：无论当前是否 InGame，都把大世界相关标记位复位、卸载相关资源
+--- 由 XLoginManager.ClearGame 调用
+--------------------------
+function XBigWorldGamePlayAgency:ClearGame()
+    if self:IsInGame() then
+        self:ExitFight()
+    else
+        self:_DisposeMVCA()
+        XMipStreamingManager.ExitBigWorld()
+    end
 end
 
 function XBigWorldGamePlayAgency:ExitDlcFightAndEnterFubenFight()
@@ -533,7 +545,7 @@ function XBigWorldGamePlayAgency:_DisposeTempVar()
     self._Model:Clear()
     self:ClearDebugState()
 
-    CS.XTableManager.ReleaseTable(true)
+    CS.XTableManager.ReleaseTable()
 end
 
 --endregion

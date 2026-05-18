@@ -131,6 +131,7 @@ function XUiGirdBigWorldEnvironmentalGroup:RefreshTabs(config)
                     end
                 end
 
+                tab:ShowReddot(XMVCA.XBigWorldQuest:CheckEnvironmentGroupFinish(groupId))
                 self._Configs[index] = groupConfig
                 tabs[index] = tab
                 index = index + 1

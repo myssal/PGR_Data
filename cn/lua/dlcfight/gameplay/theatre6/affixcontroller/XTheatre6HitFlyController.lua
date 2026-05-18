@@ -45,7 +45,7 @@ function XTheatre6HitFlyController:OnLuaHitModify(missileUUID, launcherNpcUUID, 
     local hasPopText = false
     -- 只在子弹的第一段判定中触发跳字
     if hitCount == 1 then
-        self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 1, 0)
+        self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 7, 0)
         hasPopText = true
     end
 

@@ -144,7 +144,7 @@ function XUiPrequelLineDetail:OnBtnEnterClick()
     end
 
     if XDataCenter.FubenManager.CheckPreFight(stageCfg) then
-        XLuaUiManager.Open("UiBattleRoleRoom", stageCfg.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageCfg.StageId)
         self:OnPrequelDetailClose()
     end
 

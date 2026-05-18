@@ -13,7 +13,8 @@ XTheatre6CritController.HitAffixTag = XGameplayTag.Missile_Theatre6_HitAffixType
 XTheatre6CritController.StackBuff = 1025104
 
 function XTheatre6CritController:Ctor(proxy, npc)
-    self.StaminaRecoverPermyriad = 2000
+    -- self.StaminaRecoverPermyriad = 0
+    self.StaminaRecoverValue = proxy:Theatre6GetConfig():GetInt("CriticalTL+")
     self._needDmgFix = false
     self._dmgFixActId = nil
 end
@@ -67,7 +68,7 @@ function XTheatre6CritController:OnLuaHitModify(missileUUID, launcherNpcUUID, ta
     if isActivate and hitCount == 1 then
         hasPopText = true
         self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 1, 0)
-        self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, 0, self.StaminaRecoverPermyriad)
+        self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.StaminaRecoverValue)
     end
 
     --准备在接下来的伤害事件中执行伤害修正

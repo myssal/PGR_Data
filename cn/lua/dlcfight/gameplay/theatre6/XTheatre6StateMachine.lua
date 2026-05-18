@@ -6,7 +6,7 @@
 ---@class XTheatre6State
 ---@field Start fun(state:self) 状态进入逻辑
 ---@field ReEnter fun(state:self) 状态重进逻辑
----@field End fun(state:self) 状态退出逻辑
+---@field End fun(state:self, newState:XTheatre6State) 状态退出逻辑
 ---@field Update fun(state:self, dt:number) 状态更新逻辑
 ---@field Name string 状态名(静态变量)
 ---@field Id integer 状态Id(静态变量)
@@ -87,7 +87,7 @@ function XTheatre6StateMachine:SetStateById(newStateId)
     -- owner:LogError(".XTheatre6StateMachine.SetStateById is called. State changes from " ..
     --     tostring(oldState and oldState.Name) .. " to " .. tostring(newState and newState.Name))
 
-    if oldState and oldState.End then oldState:End() end
+    if oldState and oldState.End then oldState:End(newState) end
     self._curState = newState
     if newState.Start then newState:Start() end
 end
@@ -153,7 +153,7 @@ function XTheatre6StateMachine:CreateClassByEnum(stateEnum, namePrefix)
 
     local smClass = XClass(XTheatre6StateMachine, namePrefix .. ".StateMachine")
     local stateClasses = self.CreateStateClassByEnum(stateEnum, namePrefix)
-    self.StateClasses = stateClasses
+    smClass.StateClasses = stateClasses
     return smClass, stateClasses
 end
 

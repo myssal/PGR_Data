@@ -30,7 +30,7 @@ end
 
 ---初始化San值条（详情弹窗模式）
 function XUiTheatre6PopupSanDetail:InitSanBar()
-    self._PanelSan = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6TopSan").New(self.UiTheatre6PanelSan, self)
+    self._PanelSan = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6TopSan").New(self.UiTheatre6PanelSan, self, true)
     self._PanelSan:Open()
 end
 

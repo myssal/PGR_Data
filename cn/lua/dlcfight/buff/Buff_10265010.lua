@@ -20,7 +20,7 @@ function XBuffScript10265010:ScriptInit(isGainControl) --初始化
     self._hasChangedDamage = true
 end
 
-function XBuffScript10265010:OnLuaSkillEnd(eventArgs)
+function XBuffScript10265010:OnLuaSkillStart(eventArgs)
     ------------执行------------
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
@@ -43,7 +43,7 @@ function XBuffScript10265010:ChangeDamageBeforeCalc(eventArgs)
     if eventArgs.Id ~= self._damageMagicId then return end
     if self._hasChangedDamage then return end
     local FinalDMGRate = eventArgs.PhysicalPermyriad + self._exDamageRate
-    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.isCrity)
+    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.isCrit)
     self._hasChangedDamage = true
 end
 

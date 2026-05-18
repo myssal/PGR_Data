@@ -26,8 +26,9 @@ function XUiGridTheatre6TaskDemand:SetData(taskData, slotIndex)
 
     local cur, total
     if isShowCondition then
-        cur, total = taskData.Schedule, taskConfig.ConditionValue
-        self.TxtCondition.text = self._Control:GetConditionConfig(taskConfig.ConditionId).Desc
+        local condConfig = self._Control:GetConditionConfig(taskConfig.ConditionId)
+        cur, total = taskData.Schedule, condConfig.Params[2]
+        self.TxtCondition.text = condConfig.Desc
     else
         cur, total = goodsSlot.Amount, goodsSlot.NeedNum
         local icon = self._Control:GetStageGoodsConfig(goodsSlot.GoodsId).Icon

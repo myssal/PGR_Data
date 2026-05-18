@@ -61,7 +61,7 @@ end
 
 function XUiTRPGTruthRoadMain:OnBtnEnterFightClick()
     self:CloseEnterDialog()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.DialogId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.DialogId)
 end
 
 function XUiTRPGTruthRoadMain:OnBtnMaskClick()

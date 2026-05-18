@@ -28,22 +28,15 @@ end
 ---刷新Boss标签列表
 function XUiPanelTheatre6BossCard:RefreshTags()
     local tagIds = self._Control:GetBossTagIds(self._FightId)
-
-    if XTool.IsTableEmpty(tagIds) then
-        self.ListTag.gameObject:SetActiveEx(false)
+    local isEmpty = XTool.IsTableEmpty(tagIds)
+    if self.PanelTag then
+        self.PanelTag.gameObject:SetActiveEx(not isEmpty)
+    end
+    if isEmpty then
         return
     end
-
-    self.ListTag.gameObject:SetActiveEx(true)
-
     -- 使用UpdateDynamicItem管理标签Grid
-    XTool.UpdateDynamicItem(
-        self._TagGrids,
-        tagIds,
-        self.GridTag,
-        require("XUi/XUiTheatre6/Boss/Grid/XUiGridTheatre6BossTag"),
-        self
-    )
+    XTool.UpdateDynamicItem(self._TagGrids, tagIds, self.GridTag, require("XUi/XUiTheatre6/Boss/Grid/XUiGridTheatre6BossTag"), self)
 end
 
 return XUiPanelTheatre6BossCard

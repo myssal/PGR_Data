@@ -60,6 +60,16 @@
         "Value": 1
     },
     {
+        "Key": "SkillBindSlideOutTime",
+        "Type": "float",
+        "Value": 0.4
+    },
+    {
+        "Key": "SkillBindSlideUpDelayTime",
+        "Type": "float",
+        "Value": 0.2
+    },
+    {
         "Key": "WrestleScoreName",
         "Type": "string",
         "Value": "先机"
@@ -77,11 +87,61 @@
     {
         "Key": "LimitHeight",
         "Type": "float",
-        "Value": 5
+        "Value": 3
     },
     {
         "Key": "DefaultDicePoint",
         "Type": "int",
         "Value": 60
+    },
+    {
+        "Key": "CSCost",
+        "Type": "int",
+        "Value": 100
+    },
+    {
+        "Key": "EvasionDmg-",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "BlockDmg-",
+        "Type": "int",
+        "Value": 5000
+    },
+    {
+        "Key": "BlockCS+",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "CriticalDmg+",
+        "Type": "int",
+        "Value": 5000
+    },
+    {
+        "Key": "CriticalTL+",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "WeakenTime",
+        "Type": "int",
+        "Value": 90
+    },
+    {
+        "Key": "PDDmg+",
+        "Type": "int",
+        "Value": 60
+    },
+    {
+        "Key": "TLDmg-",
+        "Type": "int",
+        "Value": 30
+    },
+    {
+        "Key": "MultipleCSRate-",
+        "Type": "int",
+        "Value": 1000
     }
 ]

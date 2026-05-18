@@ -37,14 +37,14 @@ local TableKey = {
     Theatre6StoryLine = {},
     Theatre6StoryDetail = {},
     Theatre6Talent = {},
-    Theatre6Reward = {},
+    Theatre6Reward = { CacheType = XConfigUtil.CacheType.Normal },
     Theatre6RandomPool = {},
     Theatre6StageBuffPoolShow = { DirPath = XConfigUtil.DirectoryType.Client },
     Theatre6StageAnno = { DirPath = XConfigUtil.DirectoryType.Client },
     Theatre6StageDifficultyAuto = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "StageId" }, --DifficultyIds已在源表导出时排序
     Theatre6StoryLineAuto = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterId" },
     Theatre6StageSanAuto = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "SanGroupId" },
-    Theatre6TagToBuff = {},
+    Theatre6TagToBuff = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Tag" },
     Theatre6Condition = {},
 }
 

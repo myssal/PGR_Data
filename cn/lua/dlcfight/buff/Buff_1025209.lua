@@ -1,13 +1,13 @@
-local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
----@class XBuffScript1025209 : XTheatre6SkillBase
-local XBuffScript1025209 = XDlcScriptManager.RegBuffScript(1025209, "XBuffScript1025209", XTheatre6SkillBase)
+local XTheatre6BuffBase = require("Gameplay/Theatre6/XTheatre6BuffBase")
+---@class XBuffScript1025209 : XTheatre6BuffBase
+local XBuffScript1025209 = XDlcScriptManager.RegBuffScript(1025209, "XBuffScript1025209", XTheatre6BuffBase)
 
 
 --效果说明：进入战斗时，获得1层<心眼>，在下次使用主动技能时消耗1层<心眼>，并触发【暴击】。
 
 function XBuffScript1025209:Init()
     --初始化
-    XTheatre6SkillBase.Init(self)
+    XTheatre6BuffBase.Init(self)
     ------------配置------------
     --self.magicId = 1015335
     --self.magicKind = 1015335

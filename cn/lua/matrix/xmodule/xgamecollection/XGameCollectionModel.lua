@@ -12,7 +12,7 @@ function XGameCollectionModel:OnInit()
     self._ConfigUtil:InitConfigByTableKey("MiniActivity/GameCollection", TableKey)
 end
 
-function XGameCollectionModel:ClearPrivate()
+function XGameCollectionModel:ClearData()
     self._PendingExitRecord = nil
     self._SelectedGameType = nil
     self._GameSnapshots = nil
@@ -21,7 +21,7 @@ end
 function XGameCollectionModel:ResetAll()
     self._ActivityId = nil
     self._GameData = nil
-    self:ClearPrivate()
+    self:ClearData()
 end
 
 --region Config Accessors

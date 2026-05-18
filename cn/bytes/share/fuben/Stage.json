@@ -64403,7 +64403,20 @@
         "NormalEventIdOnPassed": 1,
         "OrderId": 3,
         "LimitBuffId": 1,
-        "PassTimeLimit": 300
+        "PassTimeLimit": 300,
+        "OnlinePlayerLimit": 3,
+        "ForceConditionId": [
+            30000101
+        ],
+        "FunctionLeftBtn": 3,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
     },
     {
         "StageId": 30060101,

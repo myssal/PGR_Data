@@ -19,9 +19,20 @@ end
 
 ---商店刷新请求
 function XTheatre6Control:ShopFreshRequest(cb)
+    local hasRefreshable = false
+    for _, good in ipairs(self:GetShopGoods()) do
+        if not good.IsLock then
+            hasRefreshable = true
+            break
+        end
+    end
+    if not hasRefreshable then
+        XUiManager.TipText("Theatre6BattleShopAllLocked")
+        return
+    end
     if self:GetRefreshPrice() > self:GetCurrentGold() then
             XLuaUiManager.Open("UiTheatre6PopupCommon", "", XUiHelper.GetText("Theatre6CoinNotEnough"))
-    
+
         return
     end
     local req = { ShopFreshCount = self:GetCurRefreshCount() }
@@ -30,8 +41,7 @@ function XTheatre6Control:ShopFreshRequest(cb)
             XUiManager.TipCode(response.Code)
             return
         end
-        self:GetBSModel():SetShopFreshCount(self._Model:GetCurPlayMode(), response.ShopFreshCount)
-        self:GetBSModel():SetShopGoods(self._Model:GetCurPlayMode(), response.ShopGoods)
+        self:GetBSModel():SyncCurRoomShopData(response.ShopGoods, response.ShopFreshCount)
         if cb then
             cb()
         end
@@ -97,9 +107,22 @@ function XTheatre6Control:BuySkillGood(skillId, pos, cb)
         return
     end
 
-    if not self._Model.Skill:CheckSkillHad(skillId) and self._Model.Skill:IsSkillBagFull() then
-        XLuaUiManager.Open("UiTheatre6PopupCommon", "", XUiHelper.GetText("Theatre6SkillMax"))
-        return
+    if not self._Model.Skill:CheckSkillHad(skillId) then
+        local skillModel = self._Model.Skill
+        local installSlots = skillModel:GetSkillInstallSlots(skillId)
+        local hasEquipSpace = false
+        if installSlots then
+            for _, slotType in ipairs(installSlots) do
+                if not skillModel:IsSlotFull(nil, slotType) then
+                    hasEquipSpace = true
+                    break
+                end
+            end
+        end
+        if not hasEquipSpace and skillModel:IsSkillBagFull() then
+            XLuaUiManager.Open("UiTheatre6PopupCommon", "", XUiHelper.GetText("Theatre6SkillMax"))
+            return
+        end
     end
     local req = { Pos = pos }
     XNetwork.Call(ReqMethodName.BuyGood, req, function(response)
@@ -109,8 +132,20 @@ function XTheatre6Control:BuySkillGood(skillId, pos, cb)
         end
         local isGetNewSkill = false
         local isUpGrade = false
+
+        local targetPos = response.SellShopGood.Position
+        local skillId = response.SellShopGood.GoodId
+
+        self:GetBSModel():UpdateShopGoodData(response.SellShopGood)
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_BUY_GOOD, targetPos)
+        
         if response.SkillUpdates then
+            local hasUpgradeReplace = false
+            local hasLowLevelToBag = false
             for _, skillUpdateData in ipairs(response.SkillUpdates) do
+                local upgrade, toBag = self._Model.Skill:CollectAddSkillToastFlags(skillUpdateData)
+                hasUpgradeReplace = hasUpgradeReplace or upgrade
+                hasLowLevelToBag = hasLowLevelToBag or toBag
                 self._Model.Skill:UpdateSkillsWithOverQueue(skillUpdateData)
                 if skillUpdateData.AddSkill then
                     isGetNewSkill = true
@@ -128,17 +163,19 @@ function XTheatre6Control:BuySkillGood(skillId, pos, cb)
                     end
                 end
             end
+            if hasUpgradeReplace then
+                XUiManager.TipMsg(XUiHelper.GetText("Theatre6SkillReplaceHigh"))
+            end
+            if hasLowLevelToBag then
+                XUiManager.TipMsg(XUiHelper.GetText("Theatre6SkillAutoToBag"))
+            end
         end
         if cb then
             cb()
         end
 
-        local targetPos = response.SellShopGood.Position
-        local result = response.SellShopGood.IsSell
-        local isLock = response.SellShopGood.IsLock
-        self:GetBSModel():UpdateShopGoodIsSell(targetPos, result)
-        self:GetBSModel():UpdateShopGoodIsLock(targetPos, isLock)
-        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_BUY_GOOD, pos)
+
+
         if isGetNewSkill or isUpGrade then
             if XLuaUiManager.IsUiShow("UiTheatre6GainTips") then
                 XLuaUiManager.Close("UiTheatre6GainTips")
@@ -165,20 +202,17 @@ function XTheatre6Control:BuyRelicGood(relicId, pos, cb)
             XUiManager.TipCode(response.Code)
             return
         end
+        local targetPos = response.SellShopGood.Position
         local isGetNewRelic = false
         if response.AttrPackId then
-            self._Model:UpdateBuyAttrPack(response.AttrPackId)
             isGetNewRelic = true
         end
         if cb then
             cb()
         end
-        local targetPos = response.SellShopGood.Position
-        local result = response.SellShopGood.IsSell
-        local isLock = response.SellShopGood.IsLock
-        self:GetBSModel():UpdateShopGoodIsSell(targetPos, result)
-        self:GetBSModel():UpdateShopGoodIsLock(targetPos, isLock)
-        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_BUY_GOOD, pos)
+
+        self:GetBSModel():UpdateShopGoodData(response.SellShopGood)
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_BUY_GOOD, targetPos)
         if isGetNewRelic then
             if XLuaUiManager.IsUiShow("UiTheatre6GainTips") then
                 XLuaUiManager.Close("UiTheatre6GainTips")

@@ -351,11 +351,8 @@ function XUiFashion:UpdateFashionData()
     else
         self.FashionList = XDataCenter.FashionManager.GetCurrentTimeFashionByCharId(self.CharacterId) or {}
         self.DisplayFashionList = {}
-        for _, fashionId in pairs(self.FashionList) do
-            local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
-            if template.DefaultHide ~= true and template.DefaultHide ~= 1 then
+    for _, fashionId in pairs(self.FashionList) do
                 tableInsert(self.DisplayFashionList, fashionId)
-            end
         end
     end
 

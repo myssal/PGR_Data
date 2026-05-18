@@ -7,6 +7,7 @@ local Direction = XEnumConst.Theatre6.Direction
 local EventRewardType = XEnumConst.Theatre6.EventRewardType
 
 function XUiTheatre6RoomEitheror:OnAwake()
+    self._GuideId = self._Control:GetIntClientConfigValue("EitherorGuideId")
     ---@type table<number, XUiGridTheatre6TaskDemand[]>
     self._TaskDemandGrids = {}
     ---@type table<number,XUiGridTheatre6TaskDetail>
@@ -28,7 +29,6 @@ function XUiTheatre6RoomEitheror:OnStart()
     self:CheckFightReconnect()
     self:InitBackgroup()
     self:InitDrag()
-    self:TryOpenSellSkillPanel()
 
 end
 
@@ -71,6 +71,9 @@ function XUiTheatre6RoomEitheror:InitComponent()
     self._PanelAsset = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6Asset").New(self.PanelAsset, self)
     ---@type XUiPanelTheatre6BottomBuffList
     self._PanelBuff = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6BottomBuffList").New(self.ListBuff, self)
+
+    self._PanelTrigger = {}
+    XUiHelper.InitUiClass(self._PanelTrigger, self.PanelTrigger)
 
     require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6TopStage").New(self.PanelStage, self)
     require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6MessyCodeFx").New(self.MessyCodeFx, self)
@@ -293,10 +296,24 @@ function XUiTheatre6RoomEitheror:ShowTaskRewardChange(direction)
     for i, grids in pairs(self._TaskDemandGrids) do
         local taskData = self._TaskDatas[i]
         for j, grid in pairs(grids) do
-            local goodsSlots = taskData and taskData.GoodsSlots
-            local goodsSlot = goodsSlots and goodsSlots[j]
-            local goodsId = goodsSlot and goodsSlot.GoodsId
-            grid:ShowHighLight(goodsId and goodsIds[goodsId])
+            local taskConfig = self._Control:GetTaskConfig(taskData.TaskId)
+            local conditionId = taskConfig.ConditionId
+            if XTool.IsNumberValid(conditionId) then
+                --条件任务
+                local condConfig = self._Control:GetConditionConfig(conditionId)
+                if condConfig.Type == XEnumConst.Theatre6.TaskConditionType.Goods then
+                    local needGoodsId = condConfig.Params[1]
+                    if needGoodsId and (needGoodsId == 0 or goodsIds[needGoodsId]) then
+                        grid:ShowHighLight(true)
+                    end
+                end
+            else
+                --材料任务
+                local goodsSlots = taskData and taskData.GoodsSlots
+                local goodsSlot = goodsSlots and goodsSlots[j]
+                local goodsId = goodsSlot and goodsSlot.GoodsId
+                grid:ShowHighLight(goodsId and goodsIds[goodsId])
+            end
         end
     end
 end
@@ -390,11 +407,18 @@ function XUiTheatre6RoomEitheror:OnCardDragging(posX, _)
 end
 
 function XUiTheatre6RoomEitheror:OnEnterChooseArea(direction)
-    
+    local isMonster = XTool.IsNumberValid(self._FightDict[direction])
+    self._PanelTrigger.UiOnlvL.gameObject:SetActiveEx(not isMonster and direction == Direction.Left)
+    self._PanelTrigger.UiOnhongL.gameObject:SetActiveEx(isMonster and direction == Direction.Left)
+    self._PanelTrigger.UiOnlvR.gameObject:SetActiveEx(not isMonster and direction == Direction.Right)
+    self._PanelTrigger.UiOnhongR.gameObject:SetActiveEx(isMonster and direction == Direction.Right)
 end
 
 function XUiTheatre6RoomEitheror:OnLeaveChooseArea()
-    
+    self._PanelTrigger.UiOnlvL.gameObject:SetActiveEx(false)
+    self._PanelTrigger.UiOnhongL.gameObject:SetActiveEx(false)
+    self._PanelTrigger.UiOnlvR.gameObject:SetActiveEx(false)
+    self._PanelTrigger.UiOnhongR.gameObject:SetActiveEx(false)
 end
 
 function XUiTheatre6RoomEitheror:PlayCardDisableAnim(direction)
@@ -521,6 +545,7 @@ function XUiTheatre6RoomEitheror:OnEndChoose(direction)
         self:CheckPlayStory(storyId, function()
             self:PlayCardEnableAnim()
             self:ShowEvent()
+            self:CheckPlayGuide()
         end)
     end)
 end
@@ -569,6 +594,8 @@ function XUiTheatre6RoomEitheror:PlayTimelineAnimation(animTran)
     animTran:PlayTimelineAnimation(function()
         animTran.gameObject:SetActiveEx(false)
         XLuaUiManager.SetMask(false)
+        self:TryOpenSellSkillPanel()
+
     end)
 end
 
@@ -629,6 +656,7 @@ end
 function XUiTheatre6RoomEitheror:WaitForPlayDragGuideAnim()
     self:StopDragGuideAnim()
     self._DragGuideTimerId = XScheduleManager.ScheduleOnce(function()
+        self.PanelTipsAnim.gameObject:SetActiveEx(true)
         self.PanelTipsAnim.time = 0
         self.PanelTipsAnim:Play()
         self.PanelTipsAnim:Evaluate()
@@ -644,6 +672,18 @@ function XUiTheatre6RoomEitheror:StopDragGuideAnim()
     self.PanelTipsAnim:Stop()
     self.PanelTipsAnim.time = self.PanelTipsAnim.duration
     self.PanelTipsAnim:Evaluate()
+    self.PanelTipsAnim.gameObject:SetActiveEx(false)
+end
+
+function XUiTheatre6RoomEitheror:CheckPlayGuide()
+    if not XTool.IsNumberValid(self._GuideId) then
+        return
+    end
+    local isGuidePlayed = XDataCenter.GuideManager.CheckIsGuide(self._GuideId)
+    if isGuidePlayed then
+        return
+    end
+    XDataCenter.GuideManager.PlayGuide(self._GuideId)
 end
 
 return XUiTheatre6RoomEitheror

@@ -22,6 +22,7 @@
     {
         "Id": 10,
         "ChoosePoolIds": [
+            1011,
             1001,
             1001,
             1001,
@@ -34,7 +35,6 @@
             1004,
             1004,
             1004,
-            1010,
             1010,
             1010,
             1010,
@@ -45,7 +45,10 @@
         ],
         "Bg": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBg.png",
         "FirstTaskGroupId": 1001,
-        "LoopTaskGroupId": 1002
+        "LoopTaskGroupId": 1002,
+        "AppointFightGroupIds": [
+            1
+        ]
     },
     {
         "Id": 20,
@@ -567,17 +570,17 @@
         "Id": 201,
         "ChoosePoolIds": [
             2001,
+            3001,
+            2001,
+            3001,
+            2001,
+            3001,
             2001,
             2001,
             2001,
+            4001,
             2001,
-            2001,
-            2001,
-            2001,
-            2001,
-            2001,
-            2001,
-            2001
+            3001
         ],
         "Bg": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBg.png",
         "FirstTaskGroupId": 101,
@@ -590,14 +593,14 @@
         "Id": 202,
         "ChoosePoolIds": [
             2002,
+            3002,
+            3002,
+            2002,
+            3002,
+            3002,
             2002,
             2002,
-            2002,
-            2002,
-            2002,
-            2002,
-            2002,
-            2002,
+            4001,
             2002,
             2002,
             2002
@@ -613,16 +616,16 @@
         "Id": 203,
         "ChoosePoolIds": [
             2003,
+            3003,
+            2003,
+            3003,
             2003,
             2003,
+            3003,
             2003,
+            3003,
             2003,
-            2003,
-            2003,
-            2003,
-            2003,
-            2003,
-            2003,
+            4001,
             2003
         ],
         "Bg": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBg.png",
@@ -636,13 +639,13 @@
         "Id": 204,
         "ChoosePoolIds": [
             2004,
+            3001,
             2004,
             2004,
+            3001,
+            3001,
             2004,
-            2004,
-            2004,
-            2004,
-            2004,
+            3001,
             2004,
             2004,
             2004,
@@ -660,13 +663,13 @@
         "ChoosePoolIds": [
             2005,
             2005,
+            3002,
             2005,
+            3002,
+            3002,
+            3002,
             2005,
-            2005,
-            2005,
-            2005,
-            2005,
-            2005,
+            4001,
             2005,
             2005,
             2005
@@ -682,15 +685,15 @@
         "Id": 206,
         "ChoosePoolIds": [
             2006,
+            3003,
+            2006,
+            3003,
+            3003,
             2006,
             2006,
             2006,
-            2006,
-            2006,
-            2006,
-            2006,
-            2006,
-            2006,
+            3003,
+            4001,
             2006,
             2006
         ],
@@ -699,6 +702,144 @@
         "LoopTaskGroupId": 104,
         "AppointFightGroupIds": [
             2120
+        ]
+    },
+    {
+        "Id": 207,
+        "ChoosePoolIds": [
+            2001,
+            2001,
+            3001,
+            2001,
+            3001,
+            2001,
+            3001,
+            2001,
+            3001,
+            2001,
+            4001,
+            2001
+        ],
+        "Bg": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBg.png",
+        "FirstTaskGroupId": 101,
+        "LoopTaskGroupId": 101,
+        "AppointFightGroupIds": [
+            2200
+        ]
+    },
+    {
+        "Id": 208,
+        "ChoosePoolIds": [
+            2002,
+            3002,
+            2002,
+            3002,
+            2002,
+            2002,
+            3002,
+            2002,
+            4001,
+            2002,
+            2002,
+            2002
+        ],
+        "Bg": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBg.png",
+        "FirstTaskGroupId": 103,
+        "LoopTaskGroupId": 103,
+        "AppointFightGroupIds": [
+            2210
+        ]
+    },
+    {
+        "Id": 209,
+        "ChoosePoolIds": [
+            2003,
+            2003,
+            2003,
+            3003,
+            2003,
+            3003,
+            3003,
+            3003,
+            2003,
+            4001,
+            2003,
+            2003
+        ],
+        "Bg": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBg.png",
+        "FirstTaskGroupId": 104,
+        "LoopTaskGroupId": 104,
+        "AppointFightGroupIds": [
+            2220
+        ]
+    },
+    {
+        "Id": 210,
+        "ChoosePoolIds": [
+            2004,
+            2004,
+            2004,
+            3001,
+            3001,
+            3001,
+            3001,
+            2004,
+            2004,
+            4001,
+            2004,
+            2004
+        ],
+        "Bg": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBg.png",
+        "FirstTaskGroupId": 101,
+        "LoopTaskGroupId": 101,
+        "AppointFightGroupIds": [
+            2300
+        ]
+    },
+    {
+        "Id": 211,
+        "ChoosePoolIds": [
+            2005,
+            3002,
+            2005,
+            3002,
+            2005,
+            3002,
+            3002,
+            2005,
+            4001,
+            2005,
+            2005,
+            2005
+        ],
+        "Bg": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBg.png",
+        "FirstTaskGroupId": 103,
+        "LoopTaskGroupId": 103,
+        "AppointFightGroupIds": [
+            2310
+        ]
+    },
+    {
+        "Id": 212,
+        "ChoosePoolIds": [
+            2006,
+            2006,
+            3003,
+            2006,
+            3003,
+            2006,
+            2006,
+            3003,
+            2006,
+            2006,
+            3003,
+            4001
+        ],
+        "Bg": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBg.png",
+        "FirstTaskGroupId": 104,
+        "LoopTaskGroupId": 104,
+        "AppointFightGroupIds": [
+            2320
         ]
     }
 ]

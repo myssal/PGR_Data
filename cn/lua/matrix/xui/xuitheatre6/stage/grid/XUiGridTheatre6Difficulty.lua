@@ -7,15 +7,19 @@ local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
 local XUiGridTheatre6Difficulty = XClass(XUiNode, "XUiGridTheatre6Difficulty")
 
 function XUiGridTheatre6Difficulty:OnStart()
-    
+    self.UiTxtDes.requestImage = XMVCA.XTheatre6.RichTextImageCallBack
 end
 
 function XUiGridTheatre6Difficulty:Refresh(difficultyId)
     self._Difficulty = self._Control:GetDifficultyConfig(difficultyId)
     self.TxtName.text = self._Difficulty.Name
-    self.UiTxtDes.text = self._Difficulty.Des
+    self.UiTxtDes.text = XUiHelper.ReplaceTextNewLine(self._Difficulty.Des)
 
-    local ret, desc = not XTool.IsNumberValid(self._Difficulty.ConditionId) or XConditionManager.CheckCondition(self._Difficulty.ConditionId)
+    local ret, desc = true, ""
+    if XTool.IsNumberValid(self._Difficulty.ConditionId) then
+        ret, desc = XConditionManager.CheckCondition(self._Difficulty.ConditionId)
+    end
+
     self.UiTxtLock.gameObject:SetActiveEx(not ret)
     self.UiTxtLock.text = desc
     self.RImgLevel:SetRawImage(self._Control:GetClientConfigValue("DifficultyLevelBg", self._Difficulty.HardNum))

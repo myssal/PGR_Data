@@ -353,9 +353,7 @@ function XUiPhotograph:UpdateRoleModel(charId, fashionId, colorId)
     --self.CurFashionId = fashionId
     self.SelectFashionId = fashionId
     self.CG.LastPlayId = nil
-    if not XTool.IsNumberValid(colorId) then
-        colorId = 0
-    end
+
     XDataCenter.DisplayManager.UpdateRoleModel(self.RoleModel, charId, nil, fashionId, colorId)
     self.RoleAnimator = self.RoleModel:GetAnimator()
 

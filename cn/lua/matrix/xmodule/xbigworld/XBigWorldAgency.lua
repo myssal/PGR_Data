@@ -20,7 +20,6 @@ function XBigWorldAgency:OnInit()
         ModuleId.XBigWorldResource,
         ModuleId.XBigWorldInstance,
         ModuleId.XBigWorldSkipFunction,
-        ModuleId.XBigWorldMemory,
         ModuleId.XLowMemory,
         --具体玩法
         ModuleId.XBigWorldAlbum,
@@ -129,6 +128,7 @@ function XBigWorldAgency:InitX3C()
     register(X3C_CMD.CMD_GET_LITTLE_MAP_RADIUS, XMVCA.XBigWorldMap.OnGetLittleMapRadius, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_FIGHT_OPEN_BIG_MAP, XMVCA.XBigWorldMap.OnOpenBigMap, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_MAP_PIN_OUT_OF_LITTLE_MAP_RANGE, XMVCA.XBigWorldMap.OnLittleMapPinRemove, XMVCA.XBigWorldMap)
+    register(X3C_CMD.CMD_ECOLOGY_CONSTRUCT_CLEAR_STATE_CHANGED, XMVCA.XBigWorldMap.OnAiMemoryClearStateChange, XMVCA.XBigWorldMap)
 
     -- 通用功能
     register(X3C_CMD.CMD_OPEN_CONFIRM_POPUP_UI, XMVCA.XBigWorldUI.OpenConfirmPopupUiWithCmd, XMVCA.XBigWorldUI)

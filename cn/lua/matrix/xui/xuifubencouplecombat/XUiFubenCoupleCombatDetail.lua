@@ -154,7 +154,7 @@ function XUiFubenCoupleCombatDetail:OnBtnEnterClick()
 
         -- 如果有第五期，请务必转移到UiBattleRoleRoom
         -- proxy需要兼容
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId)
         self:Close()
     end
 end

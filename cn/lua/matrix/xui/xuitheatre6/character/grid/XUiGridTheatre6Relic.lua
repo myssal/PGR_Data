@@ -11,6 +11,9 @@ function XUiGridTheatre6Relic:OnStart()
 end
 
 function XUiGridTheatre6Relic:SetRelic(id, count)
+    if self._Id ~= id then
+        self._LastHighLightTagIds = nil
+    end
     self._Id = id
     self._Config = self._Control:GetAttrPackCfgById(id)
     self.RImgIcon:SetRawImage(self._Config.Icon)
@@ -32,16 +35,46 @@ end
 function XUiGridTheatre6Relic:ShowBuildTag()
     ---@type XTableTheatre6BuildTag[]
     local showTags = self._Control:GetShowBuildTagWithSort(self._Config.BuildTags)
+    self.TagUis = {}
     if #showTags > 0 then
         self.ListTag.gameObject:SetActiveEx(true)
         XUiHelper.RefreshCustomizedList(self.Tag.parent, self.Tag, #showTags, function(i, go)
             local uiObject = {}
             XUiHelper.InitUiClass(uiObject, go)
             uiObject.RImgIcon:SetRawImage(showTags[i].Icon)
+            if uiObject.HighLight then
+                uiObject.HighLight.gameObject:SetActiveEx(false)
+            end
+            self.TagUis[showTags[i].Id] = uiObject
         end)
     else
         self.ListTag.gameObject:SetActiveEx(false)
     end
+    if self._LastHighLightTagIds then
+        self:ShowTagHightLight(self._LastHighLightTagIds)
+    end
+end
+
+function XUiGridTheatre6Relic:ShowTagHightLight(ids)
+    self._LastHighLightTagIds = ids
+    if not self.TagUis then return end
+    for _, ui in pairs(self.TagUis) do
+        if ui.HighLight then
+            ui.HighLight.gameObject:SetActiveEx(false)
+        end
+    end
+    for _, id in pairs(ids) do
+        if self.TagUis[id] and self.TagUis[id].HighLight then
+            self.TagUis[id].HighLight.gameObject:SetActiveEx(true)
+        end
+    end
+end
+
+---按当前装备技能 dominant tag 刷新本格 tag 高亮
+---@param skillIdsBySlot table<number, table>|nil 存档模式下传入,避免查实时玩法数据
+function XUiGridTheatre6Relic:RefreshTagHightLight(skillIdsBySlot)
+    if not self._Config then return end
+    self:ShowTagHightLight(self._Control:GetEquippedDominantTagInList(self._Config.BuildTags, skillIdsBySlot))
 end
 
 function XUiGridTheatre6Relic:SetClickCb(cb)
@@ -58,15 +91,22 @@ end
 ----------------------------------------------------------------------------------------------
 
 function XUiGridTheatre6Relic:Update(relicId)
+    if self._RelicId ~= relicId then
+        self._LastHighLightTagIds = nil
+    end
     self._RelicId = relicId
-    local config = self._Control:GetAttrPackCfgById(self._RelicId)
-    self.ImgBg:SetRawImage(self._Control:GetRelicQualityIcon(config.Quality))
-    self.RImgIcon:SetRawImage(config.Icon)
-    self.ListTag.gameObject:SetActiveEx(false)
+    self._Config = self._Control:GetAttrPackCfgById(self._RelicId)
+    self.ImgBg:SetRawImage(self._Control:GetRelicQualityIcon(self._Config.Quality))
+    self.RImgIcon:SetRawImage(self._Config.Icon)
+    self:ShowBuildTag()
 end
 
 function XUiGridTheatre6Relic:GetDesc()
-    return self._Control:GetAttrPackDesc(self._RelicId, true)
+    local shortDesc = self._Control:GetAttrPackDesc(self._RelicId, true)
+    if not shortDesc or shortDesc == "" then
+          return self._Control:GetAttrPackDesc(self._RelicId, false)
+    end
+  return shortDesc
 end
 
 --@return string Icon 用于快速获取技能价格

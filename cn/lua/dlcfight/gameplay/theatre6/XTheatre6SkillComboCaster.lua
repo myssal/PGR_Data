@@ -38,12 +38,16 @@ local DebugSkillTypeName = {
 }
 
 --region 初始化
-function XTheatre6SkillComboCaster.New(ownerOrProxy, npcUUID, targetNpcUUID)
+
+---@param ownerNpc XTheatre6CharBase
+---@return XTheatre6SkillComboCaster
+function XTheatre6SkillComboCaster.New(ownerNpc)
     ---@class XTheatre6SkillComboCaster
     local obj = setmetatable({}, XTheatre6SkillComboCaster)
-    obj._proxy = ownerOrProxy and ownerOrProxy._proxy or ownerOrProxy ---@type XDlcCSharpFuncs
-    obj._npcUUID = npcUUID or 0
-    obj._targetNpcUUID = targetNpcUUID or 0
+    obj._npc = ownerNpc
+    obj._proxy = ownerNpc._proxy
+    obj._npcUUID = ownerNpc._uuid
+    obj._targetNpcUUID = ownerNpc._enemyUUID
     obj:Reset()
     return obj
 end
@@ -179,7 +183,8 @@ function XTheatre6SkillComboCaster:Cast(skillType, skillId)
     --关于数值和UI的部分迁移到角色基类里, 方便后续调整
     --另外这里的UI表现应该还涉及到守方的技能播报清理,以及连击数等内容
     local previewMainSkillId = self:GetPreviewMainSkillId()
-    self._proxy:Theatre6UpdateSkillUI(self._npcUUID, skillConfig.Id, previewMainSkillId)
+    -- self._proxy:Theatre6UpdateSkillUI(self._npcUUID, skillConfig.Id, previewMainSkillId)
+    self._npc:UpdateSkillUi(skillConfig.Id, previewMainSkillId)
     self._proxy:Theatre6AddSkillCastCount(self._npcUUID, skillConfig.Id);
     self._proxy:ChangeNpcGameplayEnergy(self._npcUUID, ETheatre6AttribType.Stamina, -skillConfig.CostTL)
     self._proxy:CastSkillActionToNpcNotCheck(self._npcUUID, actionId, self._targetNpcUUID)

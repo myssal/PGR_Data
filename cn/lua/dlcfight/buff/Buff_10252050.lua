@@ -3,13 +3,11 @@ local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 local XBuffScript10252050 = XDlcScriptManager.RegBuffScript(10252050, "XBuffScript10252050", XTheatre6SkillBase)
 
 --效果说明：释放【超算成功技能】后触发：
---· 【攻击】属性在本场战斗中提升20点；
 --· 获得1/2/3层<心眼>。
 
 function XBuffScript10252050:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
     self.ChanceCheck = 0
-    self._stackCountAtk = 10
     if self._skillId == 10252051 then self._stackCountCrit = 1
     else if self._skillId == 10252052 then self._stackCountCrit = 2
     else self._stackCountCrit = 3
@@ -26,13 +24,6 @@ function XBuffScript10252050:OnLuaSkillEnd(eventArgs)
     if eventArgs._skillType ~= ETheatre6SkillType.Dodge then return end
     self._level:RequestInsertSkill(self._npcUUID,self.TargetSkill)
     --self:LogError(".....超算技能释放完毕"..self._skillId)
-end
-
-function XBuffScript10252050:OnLuaSkillStart(eventArgs)
-    ------------执行------------
-    if eventArgs._skillId ~= self._skillId then return end
-    if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, 1025904,1,0,self._stackCountAtk)
 end
 
 return XBuffScript10252050

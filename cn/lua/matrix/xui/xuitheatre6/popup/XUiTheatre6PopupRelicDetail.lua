@@ -12,6 +12,7 @@ end
 function XUiTheatre6PopupRelicDetail:OnStart(relicIds, relicCounts)
     ---@type XUiPanelTheatre6BubbleTag
     self._BubbleTag = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6BubbleTag").New(self.BubbleTagDetail, self)
+    self._BubbleTag.BtnCloseTagDetail.gameObject:SetActiveEx(true)
     self._BubbleTag:Close()
 
     self.UiTxtNameNum.text = string.format("/%s", #relicIds)
@@ -25,6 +26,7 @@ function XUiTheatre6PopupRelicDetail:OnStart(relicIds, relicCounts)
         grid:SetClickBuildTagCb(function(_, tags, keyWordIds)
             self._BubbleTag:Open()
             self._BubbleTag:SetConfigs(tags, keyWordIds)
+            XUiHelper.ShowBubbleToTarget(self._BubbleTag.PanelTagDetail, go, self.Transform)
         end)
     end)
 end

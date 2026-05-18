@@ -15,6 +15,7 @@ function XUiTheatre6RoomBoss:OnStart()
     self:InitData()
     self:ShowRoleInfo()
     self:InitDrag()
+    self:CheckRestartFight()
 end
 
 function XUiTheatre6RoomBoss:OnEnable()
@@ -121,6 +122,14 @@ function XUiTheatre6RoomBoss:EnterFight(direction)
     self._Control:RequestFightRoomSlide(direction, self._SelectMonsterIds[direction], function()
         XLuaUiManager.Open("UiTheatre6Loading")
     end)
+end
+
+function XUiTheatre6RoomBoss:CheckRestartFight()
+    local roomData = self._Control:GetCurRoomData()
+    if not XTool.IsNumberValid(roomData.FightId) or not XTool.IsNumberValid(roomData.SelectedMonsterId) then
+        return
+    end
+    XLuaUiManager.Open("UiTheatre6Loading")
 end
 
 return XUiTheatre6RoomBoss

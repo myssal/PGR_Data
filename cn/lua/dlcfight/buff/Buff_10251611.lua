@@ -26,7 +26,8 @@ end
 function XBuff10251611:OnLuaSkillStart(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     if eventArgs._skillType ~= Insert then return end
-    self._proxy:Theatre6ChangeStaminaValue(eventArgs._targetUUID, -self.staminaDamage,0)
+    self._stackCountAtk = self.hitFlyCount * 10
+    self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, 1025904,1,0,self._stackCountAtk)
 end
 
 function XBuff10251611:OnLuaSkillEnd(eventArgs)

@@ -44,9 +44,11 @@ end
 
 ----------public start----------
 
-function XFashionAgency:GetOwnFashionColorResourcesId(fashionId)
-    local fashionData = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId)
-    local colorId = fashionData and fashionData.ColorId or nil
+function XFashionAgency:GetOwnFashionColorResourcesId(fashionId, colorId)
+    if colorId == nil then
+        local fashionData = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId)
+        colorId = fashionData and fashionData.ColorId or nil
+    end
     if XTool.IsNumberValid(colorId) and colorId ~= 0 then
         return self:GetFashionColorResourcesId(colorId)
     end

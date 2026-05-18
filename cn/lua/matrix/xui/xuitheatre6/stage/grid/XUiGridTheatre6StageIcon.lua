@@ -16,7 +16,7 @@ function XUiGridTheatre6StageIcon:SetRoomData(roomIndex, roomId)
     local roomData = self._Control:GetCurRoomData()
     local curRoomIdx = roomData.RoomIdx + 1
     self.UiPanelFinish.gameObject:SetActiveEx(roomIndex < curRoomIdx)
-    self.UiPanelUnfinished.gameObject:SetActiveEx(roomIndex >= curRoomIdx)
+    self.UiPanelUnfinished.gameObject:SetActiveEx(roomIndex == curRoomIdx)
 end
 
 function XUiGridTheatre6StageIcon:SetLineVisible(isVisible)

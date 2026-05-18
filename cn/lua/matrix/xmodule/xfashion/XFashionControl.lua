@@ -51,7 +51,7 @@ function XFashionControl:UseFashion(fashionId, colorId, cb)
     --未穿戴则穿戴时装
     XDataCenter.FashionManager.UseFashion(fashionId, function()
         --穿戴时装后，colorId不为空则切换颜色
-        if colorId and colorId ~= 0 then
+        if colorId ~= nil then
             self:SwitchColor(fashionId, colorId, cb)
         else
             if cb then
@@ -63,7 +63,14 @@ end
 
 
 function XFashionControl:SwitchColor(fashionId, colorId, cb)
-    if not self._Model.ColorData:IsFashionColorHas(fashionId, colorId) then
+    if colorId == nil then
+        if cb then
+            cb()
+        end
+        return
+    end
+
+    if colorId ~= 0 and not self._Model.ColorData:IsFashionColorHas(fashionId, colorId) then
         XUiManager.TipText("FashionColorLock")
         if cb then
             cb()

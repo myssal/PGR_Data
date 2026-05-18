@@ -14,6 +14,7 @@ end
 
 function XUiPanelRewardShopShop:OnStart(...)
     self:InitComponents()
+    self._ShopItemTextColor = {CanBuyColor= self._Control:GetGameCollectionConfig("CanBuyColor"), CanNotBuyColor=self._Control:GetGameCollectionConfig("CanNotBuyColor")}
 
 
 end
@@ -41,7 +42,7 @@ function XUiPanelRewardShopShop:OnDynamicTableEvent(event, index, grid)
         grid:Init(self, self, self)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.GoodsList[index]
-        grid:UpdateData(data)
+        grid:UpdateData(data,self._ShopItemTextColor )
         grid:RefreshShowLock()
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RECYCLE then
         grid:OnRecycle()
@@ -54,7 +55,7 @@ function XUiPanelRewardShopShop:UpdateBuy(data, cb)
             cb()
         end
         self:RefreshGoodsList()
-        self.Parent.BtnShop:ShowReddot(XMVCA.XGameCollection:HasGoodCanBuy())
+        self.Parent:UpdateReddot()
     end)
 end
 
@@ -62,4 +63,13 @@ function XUiPanelRewardShopShop:SetUiSprite(imgQuality, spriteName)
     imgQuality:SetSprite(spriteName)
 end
 
+function XUiPanelRewardShopShop:GetCurShopId()
+    return tonumber(self._Control:GetGameCollectionConfig("shopId"))
+end
+
+
+function XUiPanelRewardShopShop:RefreshBuy()
+     self:RefreshGoodsList()
+       self.Parent:UpdateReddot()
+end
 return XUiPanelRewardShopShop

@@ -1555,6 +1555,10 @@ function XFubenAgency:ShowReward(winData)
 end
 
 function XFubenAgency:CheckHasFlopReward(winData, needMySelf)
+    if not winData or not winData.FlopRewardList then
+        return false
+    end
+    
     for _, v in pairs(winData.FlopRewardList) do
         if v.PlayerId ~= 0 then
             if not needMySelf or v.PlayerId == XPlayer.Id then
@@ -2340,10 +2344,36 @@ end
 -- 将旧战斗房间NewRoomSingle删除，全部改为BattleRoleRoom
 function XFubenAgency:OpenBattleRoom(stage, data)
     if self:CheckPreFight(stage) then
-        XLuaUiManager.Open("UiBattleRoleRoom", stage.StageId, data)
+        self:OpenUiBattleRoleRoom(stage.StageId, data)
         return true
     end
     return false
+end
+
+--- 打开战前编队房间（UiBattleRoleRoom）
+--- 所有打开 UiBattleRoleRoom 的入口都应通过本方法
+---@param stageId number 关卡 ID
+---@param team XTeam|nil 队伍数据，可为 nil（UI 内部会取默认队伍）
+---@param proxy any|nil XUiBattleRoleRoomDefaultProxy 或子类（可为 nil）
+function XFubenAgency:OpenUiBattleRoleRoom(stageId, team, proxy, ...)
+    XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, proxy, ...)
+end
+
+--- 关闭当前 Normal UI 后再打开 UiBattleRoleRoom（无缝切换）
+---@param stageId number
+---@param team XTeam|nil
+---@param proxy any|nil
+function XFubenAgency:PopThenOpenUiBattleRoleRoom(stageId, team, proxy, ...)
+    XLuaUiManager.PopThenOpen("UiBattleRoleRoom", stageId, team, proxy, ...)
+end
+
+--- 打开 UiBattleRoleRoom 并在打开完成后执行回调
+---@param callback fun(ui:any):void
+---@param stageId number
+---@param team XTeam|nil
+---@param proxy any|nil
+function XFubenAgency:OpenUiBattleRoleRoomWithCallback(callback, stageId, team, proxy, ...)
+    XLuaUiManager.OpenWithCallback("UiBattleRoleRoom", callback, stageId, team, proxy, ...)
 end
 
 --- 作战准备，如果使用非常规NPC，则直接进入战斗，否则先进入编队
@@ -2361,7 +2391,7 @@ function XFubenAgency:DoBattlePrepare(stageId, ...)
         end
     end
 
-    XLuaUiManager.Open('UiBattleRoleRoom', stageId, ...)
+    self:OpenUiBattleRoleRoom(stageId, ...)
 end
 
 -- 萌战战斗

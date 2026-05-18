@@ -50,7 +50,6 @@ do
 
     function Start:Start()
         self._proxy:SetAutoChessUiActive(false, "FightUiEnable") --开局清空UI
-
     end
 
     function Start:Update(dt)
@@ -68,8 +67,8 @@ do
         local fighter2UUID = self._owner._fighter2UUID
         local spawnPoint = self._owner._spawnPoint
 
-        self._proxy:AbortAction(fighter1UUID, true)                   --打断出场动作
-        self._proxy:SetNpcPosition(fighter1UUID, spawnPoint[2])       --传送玩家1位置
+        self._proxy:AbortAction(fighter1UUID, true)             --打断出场动作
+        self._proxy:SetNpcPosition(fighter1UUID, spawnPoint[2]) --传送玩家1位置
         --4.8修改内容，需要修改回去
         -- self._proxy:SetNpcRotation(fighter1UUID,{x = 0, y = 180, z = 0})
         self._proxy:SetNpcFaceToPosition(fighter1UUID, spawnPoint[3]) --设置看向2的位置
@@ -95,8 +94,8 @@ do
 
     function Settle:Start()
         self._proxy:Theatre6CountDownMessageTip(3) --倒计时3秒
-        self._proxy:Theatre6UIShowAnimation(true) --开启角色战斗UI
-        self._proxy:SetCameraOpEnable(false)    --禁止移动镜头
+        self._proxy:Theatre6UIShowAnimation(true)  --开启角色战斗UI
+        self._proxy:SetCameraOpEnable(false)       --禁止移动镜头
     end
 
     Settle.EndTime = 5       --Settle阶段结束时间点
@@ -126,11 +125,11 @@ do
                 self._settleCamera = 0                                           --镜头计数归零
             end
         elseif levelId == 1082 then
-            if levelTime >= self._settleTime   and self._settleCamera == 1 then
-                self._proxy:PlayCameraTimeline("Theatre6LevelStartCamera",NPC,0.25,0.25,0)
+            if levelTime >= self._settleTime and self._settleCamera == 1 then
+                self._proxy:PlayCameraTimeline("Theatre6LevelStartCamera", NPC, 0.25, 0.25, 0)
                 self._settleCamera = 2
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
-                self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre",NPC,1.5,0.75,0)
+                self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
             elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
@@ -158,11 +157,11 @@ do
             --    self._settleCamera = 0                                           --镜头计数归零
             --end
         elseif levelId == 1083 then
-            if levelTime >= self._settleTime   and self._settleCamera == 1 then
-                self._proxy:PlayCameraTimeline("Theatre6LevelStartCamera",NPC,0.25,0.25,0)
+            if levelTime >= self._settleTime and self._settleCamera == 1 then
+                self._proxy:PlayCameraTimeline("Theatre6LevelStartCamera", NPC, 0.25, 0.25, 0)
                 self._settleCamera = 2
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
-                self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre",NPC,1.5,0.75,0)
+                self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
             elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
@@ -185,11 +184,11 @@ do
             --    self._settleCamera = 0                                           --镜头计数归零
             --end
         elseif levelId == 1084 then
-            if levelTime >= self._settleTime   and self._settleCamera == 1 then
-                self._proxy:PlayCameraTimeline("Theatre6LevelStartCamera",NPC,0.25,0.25,0)
+            if levelTime >= self._settleTime and self._settleCamera == 1 then
+                self._proxy:PlayCameraTimeline("Theatre6LevelStartCamera", NPC, 0.25, 0.25, 0)
                 self._settleCamera = 2
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
-                self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre",NPC,1.5,0.75,0)
+                self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
             elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
@@ -232,8 +231,8 @@ do
         -- proxy:NpcMoveTo(fighter2UUID, center, ENpcMoveType.Sprint)
 
         self._proxy:SetNpcFocusTarget(fighter1UUID, fighter2UUID)
-        self._proxy:ApplyMagic(fighter1UUID, fighter1UUID, 1025112, 0, 1)
-        self._proxy:ApplyMagic(fighter2UUID, fighter2UUID, 1025112, 0, 1)
+        self._proxy:ApplyMagic(fighter1UUID, fighter1UUID, 1025112, 1, 1)
+        self._proxy:ApplyMagic(fighter2UUID, fighter2UUID, 1025112, 1, 1)
         -- XLog.Debug("双方被加上了1025112BUFF")
 
         -- local searchtarget = self._proxy:GetFirstSearchTarget(fighter1UUID, ENpcTargetType.Enemy)        --新索敌获取权重最高目标，搜寻规则见表
@@ -250,7 +249,7 @@ do
     ---@class XLevelScript1081.State.Wrestle:XLevelScript1081.State
     local Wrestle = States.Wrestle
     Wrestle.MaxDuration = 10 --Wrestle阶段的最大持续时间, 超出此时间后强制中断
-    Wrestle.DiceTime = 5     --拼点等待时间(临时方案)
+    Wrestle.DiceTime = 2.5   --拼点等待时间(临时方案)
 
     Wrestle.NpcSubState =
     {
@@ -267,13 +266,17 @@ do
         self._endTime = self._owner._levelTime + self.MaxDuration
     end
 
+    function Wrestle:SecondWrestleContinueTime()
+        self._endTime = self._owner._levelTime + self.MaxDuration
+    end
+
     ---控制中心进入拼刀状态
     function Wrestle:Start()
         local npcSubState = self.NpcSubState
         self._fighter1SubState = npcSubState.Wait
         self._fighter2SubState = npcSubState.Wait
-        self._owner:SendWrestleStartEvent()
 
+        self._owner:SendWrestleStartEvent()
         self:RefreshForceContinueTime()
     end
 
@@ -296,81 +299,107 @@ do
         if uuid == self._fighter1UUID then Wrestle._fighter1SubState = Ready end
         if uuid == self._fighter2UUID then Wrestle._fighter2SubState = Ready end
         if Wrestle._fighter1SubState == Ready and Wrestle._fighter2SubState == Ready then
+            if self._isFirstWrestle == false then
+                local fighter1 = self._fighter1UUID
+                local fighter2 = self._fighter2UUID
+                local positon1 = self._spawnPoint[2]
+                local positon2 = self._spawnPoint[3]
+                self._fighter1:OnSecondWrestleReset(fighter1, fighter2, positon1, positon2)
+                self._fighter2:OnSecondWrestleReset(fighter1, fighter2, positon1, positon2)
+                XLog.Warning("二次拼刀退出动作完成")
+                -----------------上述动作无法退会到拼刀起始点，有bug，临时处理如下----------------------
+                -- self._proxy:AddTimerTask(0.3, function()
+                --     self._proxy:SetNpcPosition(fighter1, positon1)
+                --     self._proxy:SetNpcPosition(fighter2, positon2)
+                -- end)
+                ---------------------------修复后请删除中间区域内容------------------------------------
+                self._proxy:AddTimerTask(1, function()
+                    Wrestle:OnFightersReady()
+                end)
+                return
+            end
             return Wrestle:OnFightersReady()
         end
     end
 
     ---控制中心已进入拼刀状态,并且双方均已完成前置状态清理
     function Wrestle:OnFightersReady()
-        local level = self._owner
-        local proxy = self._proxy
-        local fighter1UUID = level._fighter1UUID
-        local fighter2UUID = level._fighter2UUID
-
-
-        --清空角色的技能播报UI
-        -- proxy:Theatre6UpdateSkillUI(fighter1UUID, 0, fighter1SkillComboCaster:GetPreviewMainSkillId())
-        -- proxy:Theatre6UpdateSkillUI(fighter2UUID, 0, fighter2SkillComboCaster:GetPreviewMainSkillId())
-        proxy:Theatre6UpdateSkillUI(fighter1UUID, 0, 0)
-        proxy:Theatre6UpdateSkillUI(fighter2UUID, 0, 0)
-
-        -- --启动拼点(临时方案)
-        -- proxy:Theatre6StartWrestleRollDice(self.DiceTime)
-
-        self._owner:SendWrestleBeginEvent()
-        -- self._owner:SendWrestleContinueEvent()
-        --ToDo处理出手方UI
-        --level:SetActionNpc(0);
-    end
-
-    ---发送双方完成前置状态清理的通知
-    function XLevelScript1081:SendWrestleBeginEvent()
-        --获取fighter1Npc和fighter2Npc
-        local fighter1 = self._fighter1
-        local fighter2 = self._fighter2
+        local level = self._owner --[[@as XLevelScript.1081]]
+        local fighter1 = level._fighter1
+        local fighter2 = level._fighter2
         local uuid1 = fighter1:GetUUID()
         local uuid2 = fighter2:GetUUID()
-        local spawnPoint = self._spawnPoint
-        self._proxy:Theatre6UIShowAnimation(false) --关闭角色战斗UI
-        self._proxy:SetNpcPosition(uuid1, spawnPoint[2])       --传送玩家1位置
-        self._proxy:SetNpcFaceToPosition(uuid1, spawnPoint[3])
-        self._proxy:SetNpcPosition(uuid2, spawnPoint[3])       --传送玩家2位置
-        self._proxy:SetNpcFaceToPosition(uuid1, spawnPoint[2])
-        self._fighter1:OnCenterWrestleBegin(uuid1,uuid2);
-        self._fighter2:OnCenterWrestleBegin(uuid1,uuid2);
-        -- self._proxy:CheckBuffByKind(self._robotUUID,)
-        self._proxy:ApplyMagic(self._robotUUID,self._robotUUID,self._Pindao_Start_camera)--目前有bug，用不了
-        XLog.Warning("开始拼刀镜头1" .. self._Pindao_Start_camera)
+        local proxy = self._proxy
+
+
+        level:SendWrestleBeginEvent()
+
+        local spawnPoint = level._spawnPoint
+        proxy:SetNpcFaceToPosition(uuid1, spawnPoint[1])
+        proxy:SetNpcFaceToPosition(uuid2, spawnPoint[1])
+
+        proxy:Theatre6UIShowAnimation(false) --隐藏角色战斗UI
+        proxy:AddTimerTask(1, function()
+            fighter1:HideComboUi()
+            fighter1:HideSkillUi()
+            fighter2:HideComboUi()
+            fighter2:HideSkillUi()
+        end) --隐藏战斗UI后, 在后台关闭技能面板和连击面板
+
+
+        local robotUUID = level._robotUUID
+        local Pindao_Start_camera = level._Pindao_Start_camera
+        local Pindao_Start_3_camera = level._Pindao_Start_3_camera
+        local FxPindaoStart = 1025009
+        local PindaoShake = 10250205
+
+        proxy:ApplyMagic(robotUUID, robotUUID, Pindao_Start_camera) --目前有bug，用不了
+        XLog.Warning("开始拼刀镜头1" .. Pindao_Start_camera)
+
         if fighter1 and fighter1._Pindao_Start_2L_camera then
             local Pindao_Start_2L_camera = fighter1._Pindao_Start_2L_camera
-            self._proxy:AddTimerTask(0.533, function()
-                self._proxy:ApplyMagic(self._robotUUID,self._robotUUID,Pindao_Start_2L_camera)
-                XLog.Warning("开始拼刀镜头2" ..Pindao_Start_2L_camera)
+            proxy:AddTimerTask(0.533, function()
+                proxy:ApplyMagic(robotUUID, robotUUID, Pindao_Start_2L_camera)
+                XLog.Warning("开始拼刀镜头2" .. Pindao_Start_2L_camera)
             end)
         end
 
         if fighter2 and fighter2._Pindao_Start_2R_camera then
             local Pindao_Start_2R_camera = fighter2._Pindao_Start_2R_camera
-            self._proxy:AddTimerTask(1.4, function()
-                self._proxy:ApplyMagic(self._robotUUID,self._robotUUID,Pindao_Start_2R_camera)
-                XLog.Warning("开始拼刀镜头3" ..Pindao_Start_2R_camera)
+            proxy:AddTimerTask(1.4, function()
+                proxy:ApplyMagic(robotUUID, robotUUID, Pindao_Start_2R_camera)
+                XLog.Warning("开始拼刀镜头3" .. Pindao_Start_2R_camera)
             end)
         end
 
         --拼刀僵持镜头
-        self._proxy:AddTimerTask(2.2, function()
-            self._proxy:ApplyMagic(self._robotUUID, self._robotUUID,self._Pindao_Start_3_camera) --目前有bug，用不了
-            XLog.Warning("开始拼刀镜头1" .. self._Pindao_Start_3_camera)
-            self._proxy:SetNpcPosition(uuid1, spawnPoint[4])       --传送玩家1位置
-            self._proxy:SetNpcFaceToPosition(uuid1, spawnPoint[3])
-            self._proxy:SetNpcPosition(uuid2, spawnPoint[5])       --传送玩家2位置
-            self._proxy:SetNpcFaceToPosition(uuid1, spawnPoint[4])
-            self._fighter1:OnCenterWrestleCountinue(uuid1,uuid2)
-            self._fighter2:OnCenterWrestleCountinue(uuid1,uuid2)
+        proxy:AddTimerTask(2.2, function()
+            proxy:ApplyMagic(robotUUID, robotUUID, Pindao_Start_3_camera) --目前有bug，用不了
+            XLog.Warning("开始拼刀镜头1" .. Pindao_Start_3_camera)
+            proxy:SetNpcPosition(uuid1, spawnPoint[4])                    --传送玩家1位置
+            proxy:SetNpcFaceToPosition(uuid1, spawnPoint[3])
+            proxy:SetNpcPosition(uuid2, spawnPoint[5])                    --传送玩家2位置
+            proxy:SetNpcFaceToPosition(uuid1, spawnPoint[4])
+            fighter1:OnCenterWrestleCountinue(uuid1, uuid2)
+            fighter2:OnCenterWrestleCountinue(uuid1, uuid2)
         end)
-        self._proxy:AddTimerTask(2.67, function()
-            self._proxy:Theatre6StartWrestleRollDice(self._wrestleDiceTime)
+
+        proxy:AddTimerTask(2.62, function()
+            proxy:Theatre6StartWrestleRollDice(self.DiceTime)
+            proxy:ApplyMagic(robotUUID, robotUUID, FxPindaoStart)
         end)
+        proxy:AddTimerTask(2.68, function()
+            proxy:ApplyMagic(robotUUID, robotUUID, PindaoShake)
+        end)
+        self._owner._isFirstWrestle = false
+    end
+
+    ---发送双方完成前置状态清理的通知
+    function XLevelScript1081:SendWrestleBeginEvent()
+        local uuid1 = self._fighter1UUID
+        local uuid2 = self._fighter2UUID
+        self._fighter1:OnCenterWrestleBegin(uuid1, uuid2);
+        self._fighter2:OnCenterWrestleBegin(uuid1, uuid2);
     end
 
     -- function XLevelScript1081:SendWrestleContinueEvent()
@@ -397,9 +426,12 @@ do
                 tostring(curState and curState.Name))
             return
         end
+        local FxPindaoStart = 1025009
 
+        self._proxy:RemoveBuff(self._robotUUID, FxPindaoStart)
         self:SetActionNpc(winnerUUID) --这里的UI表现时间点需要细化
         self:SetTempActionNpc(winnerUUID)
+        self._proxy:SetCameraFocusTarget(winnerUUID, self:GetTempDefender():GetUUID())
 
         return self:SendWrestleRollDiceEndEvent(winnerUUID, diff)
 
@@ -416,7 +448,7 @@ do
 
     ---发送拼刀拼点结束通知
     function XLevelScript1081:SendWrestleRollDiceEndEvent(winnerUUID, diff)
-        self._proxy:RemoveBuff(self._robotUUID,self._Pindao_Start_camera)
+        self._proxy:RemoveBuff(self._robotUUID, self._Pindao_Start_camera)
         self._fighter1:OnCenterWrestleRollDiceEnd(winnerUUID, diff);
         self._fighter2:OnCenterWrestleRollDiceEnd(winnerUUID, diff);
     end
@@ -424,8 +456,11 @@ do
     ---角色拼刀成功终结动作结束事件
     ---@param uuid integer
     function XLevelScript1081:OnCharWrestleSuccEndFinish(uuid)
-        self._proxy:Theatre6UIShowAnimation(true)
         self:OnControlCenter()
+    end
+
+    function Wrestle:End()
+        self._proxy:Theatre6UIShowAnimation(true)
     end
 end
 
@@ -462,6 +497,22 @@ do
         self._fighter2SubState = npcSubState.Wait
         self._owner:SendDodgeStartEvent(self._launcher:GetUUID())
         self:RefreshForceContinueTime()
+
+        --当敌方角色发起超算时，给敌方角色增加红色特效
+        self._owner._effect = 1025017
+        if self._launcher:GetUUID() == self._owner._fighter2UUID then
+            local effectBuffId = 1025013
+            self._proxy:ApplyMagic(self._owner._fighter2UUID, self._owner._fighter2UUID, self._owner._effect, 1, 1)
+            self._proxy:ApplyMagic(self._owner._fighter2UUID, self._owner._fighter2UUID, effectBuffId, 1, 1)
+            self._appliedDodgeEffect1 = true  -- 记录已施加BUFF
+            XLog.Debug("增加红色特效成功")
+        elseif self._launcher:GetUUID() == self._owner._fighter1UUID then
+            local effectBuffId = 1025015
+            self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, self._owner._effect, 1, 1)
+            self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, effectBuffId, 1, 1)
+            self._appliedDodgeEffect2 = true  -- 记录已施加BUFF
+            XLog.Debug("增加超算特效成功")
+        end
     end
 
     ---发送控制中心进入超算状态的通知
@@ -495,7 +546,7 @@ do
         --启动拼点(临时方案)
         self._proxy:Theatre6StartDodgeRollDice(launcherUUID, self.DiceTime)
         self._proxy:Theatre6UIShowAnimation(false)
-        
+
         self._owner:SendDodgeBeginEvent(launcherUUID)
         --ToDo处理出手方UI
         --level:SetActionNpc(0);
@@ -519,7 +570,9 @@ do
             self:LogError(" XLevelScript1081:OnCSDodgeRollDiceEndEvent Error: Called Outside Dodge State, curState is " ..
                 tostring(curState and curState.Name))
         end
+        local FxPindaoStart = 1025009
 
+        self._proxy:RemoveBuff(self._robotUUID, FxPindaoStart)
         self:SetActionNpc(winnerUUID) --这里的UI表现时间点需要细化
         self:SetTempActionNpc(winnerUUID)
 
@@ -542,13 +595,28 @@ do
         if uuid == self._fighter2UUID then Dodge._fighter2SubState = Dodge.NpcSubState.Finish end
 
         if Dodge._fighter1SubState == Dodge.NpcSubState.Finish and Dodge._fighter2SubState == Dodge.NpcSubState.Finish then
-            self._proxy:Theatre6UIShowAnimation(true)
             self:OnControlCenter()
         end
     end
 
     function Dodge:End()
+        XLog.Debug("Dodge:End at time " .. self._owner._levelTime)
+        self._proxy:Theatre6UIShowAnimation(true)
         self._launcher = nil
+        self._owner._effect = 1025017
+        if self._appliedDodgeEffect1 then
+            local effectBuffId = 1025013
+            self._proxy:RemoveBuff(self._owner._fighter2UUID, self._owner._effect)
+            self._proxy:RemoveBuff(self._owner._fighter2UUID, effectBuffId)
+            self._appliedDodgeEffect1 = false
+            XLog.Debug("卸载红色特效成功")
+        elseif self._appliedDodgeEffect2 then
+            local effectBuffId = 1025015
+            self._proxy:RemoveBuff(self._owner._fighter1UUID, self._owner._effect)
+            self._proxy:RemoveBuff(self._owner._fighter1UUID, effectBuffId)
+            self._appliedDodgeEffect2 = false
+            XLog.Debug("卸载特效成功")
+        end
     end
 end
 
@@ -562,10 +630,17 @@ do
         self._launcher = npc
     end
 
+    function WrestleSucSkill:DebugInfo()
+        XLog.Warning("WrestleSucSkill DebugInfo called!")   -- 临时调试
+        return string.format("launcher: %s, skillId: %s",
+                tostring(self._launcher and self._launcher._name),
+                tostring(self._skillId))
+    end
+
     WrestleSucSkill.MaxDuration = 10 --WrestleSucSkill阶段的最大持续时间, 如果在此时间内没有收到来自角色的任何更新, 则强制继续后续流程
     function WrestleSucSkill:Start()
         local level = self._owner
-        local launcherUUID = level:GetAttacker():GetUUID()
+        local launcherUUID = self._launcher and self._launcher:GetUUID() or level:GetAttacker():GetUUID()
 
         self._endTime = math.maxinteger
 
@@ -591,7 +666,7 @@ do
     end
 
     function XLevelScript1081:RefreshWrestleSucSkillForceContinueTime(skillTime)
-        self._states.WrestleSucSkill._endTime = self._levelTime + skillTime
+        self._states.WrestleSucSkill._endTime = self._levelTime + skillTime + 3
     end
 
     ---角色拼刀成功技能结束通知
@@ -640,7 +715,7 @@ do
     end
 
     function XLevelScript1081:RefreshDodgeSucSkillForceContinueTime(skillTime)
-        self._states.DodgeSucSkill._endTime = self._levelTime + skillTime
+        self._states.DodgeSucSkill._endTime = self._levelTime + skillTime + 3
     end
 
     ---角色拼刀成功技能结束通知
@@ -690,7 +765,7 @@ do
     end
 
     function XLevelScript1081:RefreshMainSkillForceContinueTime(skillTime)
-        self._states.MainSkill._endTime = self._levelTime + skillTime
+        self._states.MainSkill._endTime = self._levelTime + skillTime + 3
         -- self:LogError("MainSkillEndTime is refresed to " .. self._states.MainSkill._endTime )
     end
 
@@ -710,6 +785,7 @@ do
     function InsertSkill:Prepare(npc, skillId)
         self._launcher = npc
         self._skillId = skillId
+        self._isCastFromDefend = (npc == self._owner:GetTempDefender())
     end
 
     InsertSkill.MaxDuration = 10 --InsertSkill阶段的最大持续时间, 如果在此时间内没有收到来自角色的任何更新, 则强制继续后续流程
@@ -733,6 +809,7 @@ do
     function InsertSkill:End()
         self._launcher = nil
         self._skillId = nil
+        self._isCastFromDefend = false
     end
 
     function XLevelScript1081:SendInsertSkillStartEvent(launcherUUID, skillId)
@@ -741,13 +818,25 @@ do
     end
 
     function XLevelScript1081:RefreshInsertSkillForceContinueTime(skillTime)
-        self._states.InsertSkill._endTime = self._levelTime + skillTime
+        self._states.InsertSkill._endTime = self._levelTime + skillTime + 3
     end
 
     ---角色插入式技能结束通知
     ---@param uuid integer
     function XLevelScript1081:OnCharInsertSkillEnd(uuid)
         self:OnControlCenter()
+    end
+
+    function InsertSkill:IsCastFromDefend(npcUUID)
+        return npcUUID == self._launcher:GetUUID() and self._isCastFromDefend
+    end
+
+    ---检查给定角色是否从受击状态中释放插入式技能
+    ---@param npcUUID integer
+    function XLevelScript1081:IsInsertSkillFromDefend(npcUUID)
+        if not self._stateMachine:CheckStateById(StateEnum.InsertSkill) then return false end
+        local state = self._states.InsertSkill --[[@as XLevelScript1081.State.InsertSkill]]
+        return state:IsCastFromDefend(npcUUID)
     end
 end
 
@@ -762,16 +851,24 @@ do
     function Die:Prepare(deadNpc, livingNpc)
         self._deadNpc = deadNpc
         self._livingNpc = livingNpc
-        local uuid = livingNpc:GetUUID()
-        if self._proxy:CheckNpc(uuid) then
-            self._proxy:ApplyMagic(uuid, uuid, 1010051, 0, 1) --锁血
-            self._proxy:RemoveBuff(uuid, 1015992)             --移除AI启动标记
-        end
     end
 
     function Die:Start()
         self._endTime = self._owner._levelTime + self.Duration
-        self._proxy:SetAutoChessUiActive(true, "FightUiDisable") --战斗UI退场
+
+        local proxy = self._proxy
+        local deadUuid = self._deadNpc:GetUUID()
+        local livingUuid = self._livingNpc:GetUUID()
+
+        proxy:SetAutoChessUiActive(true, "FightUiDisable") --战斗UI退场
+
+        proxy:RemoveBuff(deadUuid, 1025111)
+        proxy:RemoveBuff(livingUuid, 1025111)
+        self:LogError("卸载角色疲劳BUFF")
+        proxy:KillStayScreenEffectById(1071001) --卸载疲劳状态屏幕特效
+        self:LogError("结束阶段卸载疲劳屏幕特效")
+
+        self._owner:SendDieStartEvent(deadUuid, livingUuid)
     end
 
     Die.EndState = States.End
@@ -782,27 +879,9 @@ do
         self._owner:SetState(StateEnum.End)
     end
 
-    ---Npc死亡
-    ---@param npcUUID number
-    ---@param npcPlaceId number
-    ---@param npcKind number
-    ---@param isPlayer boolean
-    function XLevelScript1081:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
-        if npcUUID == self._fighter1UUID then     --如果是玩家1发生了死亡
-            self._proxy:RemoveBuff(self._fighter1UUID, 1025111)
-            self._proxy:RemoveBuff(self._fighter2UUID, 1025111)
-            XLog.Debug("卸载角色疲劳BUFF")
-            self._proxy:KillStayScreenEffectById(1071001)   --卸载疲劳状态屏幕特效
-            XLog.Debug("结束阶段卸载疲劳屏幕特效")
-            self._fighter1UUID = 0
-        elseif npcUUID == self._fighter2UUID then --如果是玩家2发生了死亡
-            self._proxy:RemoveBuff(self._fighter1UUID, 1025111)
-            self._proxy:RemoveBuff(self._fighter2UUID, 1025111)
-            XLog.Debug("卸载角色疲劳BUFF")
-            self._proxy:KillStayScreenEffectById(1071001)   --卸载疲劳状态屏幕特效
-            XLog.Debug("结束阶段卸载疲劳屏幕特效")
-            self._fighter2UUID = 0
-        end
+    function XLevelScript1081:SendDieStartEvent(deadUuid, livingUuid)
+        self._fighter1:OnCenterEnterDieState(deadUuid, livingUuid)
+        self._fighter2:OnCenterEnterDieState(deadUuid, livingUuid)
     end
 end
 
@@ -816,13 +895,12 @@ do
     end
 
     function End:Start()
-        self._owner._isEndBattle = true
-        --self._proxy:RemoveBuff(self._owner._fighter1UUID, 1025111)
-        --self._proxy:RemoveBuff(self._owner._fighter2UUID, 1025111)     --卸载角色疲劳BUFF
-        --XLog.Debug("卸载角色疲劳BUFF")
-        --self._proxy:KillStayScreenEffectById(1071001)   --卸载疲劳状态屏幕特效
-        --XLog.Debug("结束阶段卸载疲劳屏幕特效")
-        self._proxy:SettleFight(self._livingNpc == self._owner._fighter1)
+        local level = self._owner
+        local proxy = self._proxy
+        local fighter1Uuid = level._fighter1UUID
+        proxy:RemoveNpcFocusTarget(fighter1Uuid)
+        proxy:SetCameraCharacterTarget(fighter1Uuid)
+        proxy:SettleFight(self._livingNpc == level._fighter1)
     end
 end
 
@@ -836,13 +914,15 @@ function XLevelScript1081:OnControlCenter()
     if self._stateMachine:CheckStateById(StateEnum.End) or self._stateMachine:CheckStateById(StateEnum.Die) then return end
 
     --如果有角色死亡，启动死亡流程
-    if self._fighter2UUID == 0 then
+    if self:CheckNpcDie(self._fighter2UUID) then
+        -- if self._fighter2UUID == 0 then
         self._states.Die:Prepare(self._fighter2, self._fighter1)
         self:SetState(StateEnum.Die)
         return
     end
 
-    if self._fighter1UUID == 0 then
+    if self:CheckNpcDie(self._fighter1UUID) then
+        -- if self._fighter1UUID == 0 then
         self._states.Die:Prepare(self._fighter1, self._fighter2)
         self:SetState(StateEnum.Die)
         return
@@ -850,6 +930,7 @@ function XLevelScript1081:OnControlCenter()
 
     --判断玩家能否释放拼刀成功技能
     if self:CheckCanCastWrestleSucSkill(self:GetAttacker()) then
+        self._states.WrestleSucSkill:Prepare(self:GetAttacker())
         self:SetState(StateEnum.WrestleSucSkill)
         return
     end
@@ -954,6 +1035,13 @@ function XLevelScript1081:OnControlCenter()
     --         self:StartWrestleRollDice() -- 双发体力耗尽，进行拼刀
     --     end
     -- end
+end
+
+---检查单位HP是否已经清空
+---@param uuid integer
+---@return boolean
+function XLevelScript1081:CheckNpcDie(uuid)
+    return self._proxy:GetNpcAttribValue(uuid, ENpcAttrib.Life) <= 0
 end
 
 ---检查单位体力是否清空
@@ -1103,13 +1191,15 @@ function XLevelScript1081:OnMissileHitEvent(missileUUID, targetNpcUUID, launcher
             -- self:LogError(tostring(tag))
             controller = attacker:GetAffixControllerByHitTag(tag)
             isAtkTriggered = controller and
-                controller:CheckCanTriggerByHit(missileUUID, launcherNpcUUID, targetNpcUUID, srcType, isActivate, hitCount)
+                controller:CheckCanTriggerByHit(missileUUID, launcherNpcUUID, targetNpcUUID, srcType, isActivate,
+                    hitCount)
         end
 
         if srcType & DYNAMIC_DEF ~= 0 then
             controller = defender:GetAffixControllerByHitTag(tag)
             isDefTriggered = controller and
-                controller:CheckCanTriggerByHit(missileUUID, launcherNpcUUID, targetNpcUUID, srcType, isActivate, hitCount)
+                controller:CheckCanTriggerByHit(missileUUID, launcherNpcUUID, targetNpcUUID, srcType, isActivate,
+                    hitCount)
         end
 
         triggeredTags[tag] = isAtkTriggered or isDefTriggered
@@ -1194,6 +1284,31 @@ end
 function XLevelScript1081:ForceContinue()
     --跑到这里说明某个状态维持不变的时长超出预期, 必定是产生了什么问题
     local state = self._stateMachine._curState
+    local info = ""
+    -- 手工为每个可能超时的状态补充关键信息
+    if state == self._states.Start then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    elseif state == self._states.Show then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    elseif state == self._states.Settle then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    elseif state == self._states.MainSkill then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    elseif state == self._states.InsertSkill then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    elseif state == self._states.Wrestle then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    elseif state == self._states.Dodge then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    elseif state == self._states.Die then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    elseif state == self._states.End then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    elseif state == self._states.WrestleSucSkill then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    elseif state == self._states.DodgeSucSkill then
+        info = "launcher = " .. tostring(state._launcher and state._launcher._name)
+    end
     local DebugInfo = state and state.DebugInfo
     self:LogError("XLevelScript1081:ForceContinue is called. CurState is " ..
         tostring(state and state.Name) .. ", debugInfo: \n " .. tostring(DebugInfo and DebugInfo(state)))
@@ -1297,7 +1412,7 @@ function XLevelScript1081:SetActionNpc(npcUUID)
     local npc = self:GetNpcByUUID(npcUUID)
     -- local ux = npc:GetHandSideUx()
     -- self:LogError("updateHandSideUi: " .. tostring(ux))
-    self._proxy:Theatre6UpdateHandSideUI(npcUUID, npc:GetHandSideUx())
+    -- self._proxy:Theatre6UpdateHandSideUI(npcUUID, npc:GetHandSideUx())
 
     --发送通知
     local eventType = EFightLuaEvent.Theatre6AttakerChange
@@ -1308,12 +1423,12 @@ function XLevelScript1081:SetActionNpc(npcUUID)
     self:DispatchLuaEvent(eventType, eventArgs)
 end
 
---- 当单位的出手权UX发生更改时, 尝试更新出手权UX
----@param npc XTheatre6CharBase
-function XLevelScript1081:TryUdpateHandSideUx(npc)
-    if npc ~= self:GetAttacker() then return end
-    self._proxy:Theatre6UpdateHandSideUI(npc:GetUUID(), npc:GetHandSideUx())
-end
+-- --- 当单位的出手权UX发生更改时, 尝试更新出手权UX
+-- ---@param npc XTheatre6CharBase
+-- function XLevelScript1081:TryUdpateHandSideUx(npc)
+--     if npc ~= self:GetAttacker() then return end
+--     self._proxy:Theatre6UpdateHandSideUI(npc:GetUUID(), npc:GetHandSideUx())
+-- end
 
 --- 检查事实超算值是否已满
 function XLevelScript1081:CheckNpcRuntimeOverClockIsMax(npcUUID)
@@ -1375,12 +1490,14 @@ function XLevelScript1081:Ctor(proxy)
     --self._settleTime = 1             --倒计时阶段开始时间
     --self._settleCamera = 1              --倒计时阶段镜头序号
     -- self._battleTime = 5             --战斗阶段开始时间
-    self._tiredTime = 90             --疲劳机制开启时间
-    self._tiredState = false         --疲劳机制是否开启
+    -- self._tiredTime = 90     --疲劳机制开启时间
+    self._tiredTime = proxy:Theatre6GetConfig():GetInt("WeakenTime")     --疲劳机制开启时间
+    self._tiredState = false --疲劳机制是否开启
 
-    self._wrestleDiceTime = 2.5        --拼刀拼点等待时间
-    self._castRuntimeOverClock = 100 --超算值消耗
-    self._overclockDiceTime = 1.5      --超算拼点等待时间
+    -- self._wrestleDiceTime = 2.5      --拼刀拼点等待时间
+    -- self._castRuntimeOverClock = 100 --超算值消耗
+    self._castRuntimeOverClock = proxy:Theatre6GetConfig():GetInt("CSCost") --超算值消耗
+    -- self._overclockDiceTime = 2.5    --超算拼点等待时间
 
     ----------------------------调试用的逻辑--------------------------------------
 
@@ -1390,7 +1507,7 @@ end
 
 function XLevelScript1081:Init()
     self._name = self.__cname .. "." .. self._proxy:GetCurrentLevelId()
-        self:RegisterEvents()
+    self:RegisterEvents()
     --初始化逻辑
     -- 玩家的初始化, 正式应该由Gameplay的程序初始化处理, 此处为临时方案
     --self._playerNpcUUID = self._proxy:GetLocalPlayerNpcId() --玩家ID
@@ -1404,15 +1521,15 @@ function XLevelScript1081:Init()
     --Fighter1配置
     local fighter1NpcId = 1010
     local fighter1Camp = ENpcCampType.Camp1
-    local fighter1BornRota = {x = 0, y = -180, z = 0}
+    local fighter1BornRota = { x = 0, y = -180, z = 0 }
     --Fighter2配置
     local fighter2NpcId = 1010
     local fighter2Camp = ENpcCampType.Camp2
-    local fighter2BornRota = {x = 0, y = -90, z = 0}
+    local fighter2BornRota = { x = 0, y = -90, z = 0 }
     --空NPC配置
     local commonNpcId = 1050 --公共NPC
     local commonNpcCamp = ENpcCampType.Camp1
-    local commonNpcBornRota = {x = 0, y = 90, z = 0}
+    local commonNpcBornRota = { x = 0, y = 90, z = 0 }
     --空NPC配置
     -- local robotNpcId = 1016
     -- local robotCamp = ENpcCampType.Camp1
@@ -1436,6 +1553,7 @@ function XLevelScript1081:Init()
     self._delPindao_Start_3_camera = 10250105
     self._OpenCamera = 1025011
     self._DeleteOpenCamera = 1025012
+    self._isFirstWrestle = true
 
 
     -----------------创建Npc1--------------------------------------------------------------------------------------------
@@ -1443,9 +1561,9 @@ function XLevelScript1081:Init()
 
     if self._fighter1UUID == 0 then
         self._fighter1UUID = self._proxy:GenerateNpc(fighter1NpcId, fighter1Camp, self._spawnPoint[2], fighter1BornRota)
-        self._proxy:SetAutoChessNpcUi(self._fighter1UUID, true)               -- Debug暂时给绑定角色血量
+        self._proxy:SetAutoChessNpcUi(self._fighter1UUID, true)             -- Debug暂时给绑定角色血量
     else
-        self._proxy:SetNpcPosition(self._fighter1UUID, self._spawnPoint[2])   --传送玩家1位置
+        self._proxy:SetNpcPosition(self._fighter1UUID, self._spawnPoint[2]) --传送玩家1位置
     end
     -- self._proxy:SetNpcFaceToPosition(self._fighter1UUID, self._spawnPoint[3]) --设置看向2的位置
     -----------------创建Npc2--------------------------------------------------------------------------------------------
@@ -1453,9 +1571,9 @@ function XLevelScript1081:Init()
 
     if self._fighter2UUID == 0 then
         self._fighter2UUID = self._proxy:GenerateNpc(fighter2NpcId, fighter2Camp, self._spawnPoint[3], fighter2BornRota)
-        self._proxy:SetAutoChessNpcUi(self._fighter2UUID, false)                   -- Debug暂时给绑定角色血量
+        self._proxy:SetAutoChessNpcUi(self._fighter2UUID, false)            -- Debug暂时给绑定角色血量
     else
-        self._proxy:SetNpcPosition(self._fighter2UUID, self._spawnPoint[3])        --传送玩家2位置
+        self._proxy:SetNpcPosition(self._fighter2UUID, self._spawnPoint[3]) --传送玩家2位置
     end
     -- self._proxy:SetNpcFaceToPosition(self._fighter2UUID, self._spawnPoint[2])      --设置看向1的位置
 
@@ -1468,14 +1586,14 @@ function XLevelScript1081:Init()
 
     -----------------创建空NPC-------------------------------------------------------------------------------------------
     self._robotUUID = self._proxy:GenerateNpc(commonNpcId, commonNpcCamp, self._spawnPoint[1], commonNpcBornRota) --空NPCUUID赋值，生成机器人
-    XLog.Warning("生成了空NPC" ..self._robotUUID)
+    XLog.Warning("生成了空NPC" .. self._robotUUID)
     -- self._proxy:SetNpcActive(self._robotUUID, false)                                           --设置隐藏空NPC
     -- self._proxy:ApplyMagic(self._robotUUID, self._robotUUID, 1010028, 1)                                 --关闭AI
 
     ----------Level配置-------------------------------------------------------------------------------------------
     self._proxy:SetLevelMemoryInt(4001, 1) --设置游戏开始的局
 
-    -----------------激活虚拟相机--------------------------------------------------------------------------------------------
+    -----------------激活虚拟相机和BGM--------------------------------------------------------------------------------------------
     if self._levelId == 1081 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 0.5, 0, 31.83, 0.829, 86.62, -5.43, 44.14, 0, 0,
             0,
@@ -1483,30 +1601,33 @@ function XLevelScript1081:Init()
     elseif self._levelId == 1082 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 5, 0, 100.038, 27.1, 100.066, -6, 0, 0, 0, 0,
             101, false) --1082关的镜头
+        self._proxy:PlayMusicInOut(7170, -1, -1, -1, -1, 0, 0) --战斗BGM
     elseif self._levelId == 1083 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 5, 0, 75, 8.35, 65, -6, 0, 0, 0,
             0,
             101, false) --1083关的镜头
+        self._proxy:PlayMusicInOut(7171, -1, -1, -1, -1, 0, 0) --战斗BGM
     elseif self._levelId == 1084 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 5, 0, 57, 18.9, 58.50978, -6, 0,
             0, 0, 0,
             101, false)                        --1084关的镜头
+        self._proxy:PlayMusicInOut(7172, -1, -1, -1, -1, 0, 0) --战斗BGM
     end
     self._proxy:ResetCamera(false, -80, false) --重置相机方向
     XLog.Debug("开场镜头被激活")
-    self._proxy:SetCameraOpEnable(false)    --禁止移动镜头
+    self._proxy:SetCameraOpEnable(false)       --禁止移动镜头
     XLog.Debug("开局禁止滑动镜头")
     ------开局UI管理--------------------------------------------------------------------------------------------------
 
-    ------BGM管理--------------------------------------------------------------------------------------------------
-    self._proxy:PlayMusicInOut(6219, -1, -1, -1, -1, 0, 0) --战斗BGM 3首随机
+    ------BGM管理放入关卡判断中--------------------------------------------------------------------------------------------------
+    --self._proxy:PlayMusicInOut(7170, -1, -1, -1, -1, 0, 0) --战斗BGM
+
 
     self:SetState(StateEnum.Start)
 end
 
 function XLevelScript1081:RegisterEvents()
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)                 --事件注册：npc加buff
-    self._proxy:RegisterEvent(EWorldEvent.NpcDie)                     -- 监听Npc死亡
     self._proxy:RegisterEvent(EWorldEvent.Theatre6WrestleRollDiceEnd) -- 肉鸽6拼点结束
     self._proxy:RegisterEvent(EWorldEvent.Theatre6DodgeRollDiceEnd)   -- 肉鸽6超算拼点结束
 
@@ -1514,7 +1635,7 @@ function XLevelScript1081:RegisterEvents()
     self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)              -- Npc技能结束
 
     -- self._proxy:RegisterEvent(EWorldEvent.OnMissileColliderNpc)       -- 子弹碰撞npc
-    self._proxy:RegisterEvent(EWorldEvent.MissileHit) -- 子弹命中npc
+    self._proxy:RegisterEvent(EWorldEvent.MissileHit)  -- 子弹命中npc
     self._proxy:RegisterEvent(EWorldEvent.MissileDead) -- 子弹销毁
 end
 
@@ -1529,10 +1650,10 @@ function XLevelScript1081:Update(dt)
         if not self._stateMachine:CheckStateById(StateEnum.Die) and not self._stateMachine:CheckStateById(StateEnum.End) then
             XLog.Debug("疲劳时间到")
             self._tiredState = true                    --进入疲劳阶段
-            self._proxy:ShowAutoChessTriedMessageTip() --疲劳播报
-            self._proxy:ApplyMagic(self._fighter1UUID, self._fighter1UUID, 1025111, 0, 1)
-            self._proxy:ApplyMagic(self._fighter2UUID, self._fighter2UUID, 1025111, 0, 1)
+            self._proxy:ApplyMagic(self._fighter1UUID, self._fighter1UUID, 1025111, 1, 1)
+            self._proxy:ApplyMagic(self._fighter2UUID, self._fighter2UUID, 1025111, 1, 1)
             XLog.Debug("给双方加上了疲劳BUFF")
+            self._proxy:ShowTip(108101)
             self._proxy:PlayStayScreenEffectById(1071001) --屏幕特效
         end
     end
@@ -1555,8 +1676,6 @@ function XLevelScript1081:HandleEvent(eventType, eventArgs)
         self:OnCSWrestleRollDiceEndEvent(eventArgs.WinnerUUID, eventArgs.Diff)
     elseif eventType == EWorldEvent.Theatre6DodgeRollDiceEnd then
         self:OnCSDodgeRollDiceEndEvent(eventArgs.LauncherUUID, eventArgs.WinnerUUID)
-    elseif eventType == EWorldEvent.NpcDie then
-        self:OnNpcDieEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer)
     end
 end
 

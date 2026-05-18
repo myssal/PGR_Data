@@ -193,14 +193,12 @@ function XUiTheatre6RewardShop:OnSelectedTag(index)
     self.UiTheatre6TaskPanel:SetVisible(cfgType == TaskShopType.Task)
     if cfgType == TaskShopType.Shop then
         self.UiTheatre6ShopPanel:UpdateShopShow(rewardCfg.ShopId, true)
-        self._Control:RemoveShopNewReddot(rewardCfg)
         self.TxtTitle.text=XUiHelper.GetText("Theatre6Shop")
         self:UpdateRedDot()
     else
         local taskTimeLimitCfg = XTaskConfig.GetTimeLimitTaskCfg(rewardCfg.TaskTimeLimitId)
         local taskIds = taskTimeLimitCfg and taskTimeLimitCfg.TaskId or {}
         self.UiTheatre6TaskPanel:UpdateTaskShow(taskIds)
-        self._Control:RemoveTaskNewReddot(rewardCfg)
         self.TxtTitle.text=XUiHelper.GetText("Theatre6Task")
         self:UpdateRedDot()
     end
@@ -394,15 +392,6 @@ function XUiTheatre6RewardShop:UpdateRedDot()
                         break
                     end
                 end
-            end
-            if not isRed then
-                if self._Control:CheckNewTaskByTaskConfig(config) then
-                    isRed = true
-                end
-            end
-        elseif cfgType == TaskShopType.Shop then
-            if self._Control:CheckShopNewGoodsByShopConfig(config) then
-                isRed = true
             end
         end
 

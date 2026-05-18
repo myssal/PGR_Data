@@ -11,9 +11,9 @@ function XUiTheatre6BubbleRelicDetail:OnAwake()
     self.BtnClose:AddEventListener(handler(self, self.Close))
 end
 
-function XUiTheatre6BubbleRelicDetail:OnStart(attrPackId, tran,param,avoidTransforms)
-    self._Bubble:Refresh(attrPackId,param)
-    XUiHelper.ShowBubbleToTarget(self.BubbleRelicDetail, tran, self.Transform,avoidTransforms)
+function XUiTheatre6BubbleRelicDetail:OnStart(attrPackId, tran, param, avoidTransforms)
+    self._Bubble:Refresh(attrPackId, param)
+    XUiHelper.ShowBubbleToTarget(self.BubbleRelicDetail, tran, self.Transform, avoidTransforms)
 end
 
 function XUiTheatre6BubbleRelicDetail:OnEnable()

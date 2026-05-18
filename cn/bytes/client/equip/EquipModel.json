@@ -14717,55 +14717,65 @@
     {
         "Id": 16540111,
         "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
             "Assets/Product/Role/WeaponPrefab/E2KodachiMd010011.prefab",
-            "Assets/Product/Role/WeaponPrefab/E2KodachiMd010011.prefab",
-            "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P01.prefab"
+            "Assets/Product/Role/WeaponPrefab/E2SsalphaMd010011.prefab"
         ],
         "AnimController": [
             "",
-            "Assets/Product/Role/WeaponAnimation/R7LuxiyaUchigatana/UchigatanaCommon/Fight/Fight.controller"
+            "Assets/Product/Role/WeaponAnimation/R7LuxiyaUchigatana/UchigatanaCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P01/Uistand/Uistand.controller"
         ]
     },
     {
         "Id": 16540112,
         "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E2SsalphaMd010011.prefab",
             "Assets/Product/Role/WeaponPrefab/E2DachiMd010011.prefab",
-            "Assets/Product/Role/WeaponPrefab/E2DachiMd010011.prefab",
-            "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P01.prefab"
+            "Assets/Product/Role/WeaponPrefab/E2SsalphaMd010011.prefab"
         ],
         "AnimController": [
-            "",
-            "Assets/Product/Role/WeaponAnimation/R7LuxiyaNodachi/NodachiCommon/Fight/Fight.controller"
+            "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P01/Uistand01/Uistand01.controller",
+            "Assets/Product/Role/WeaponAnimation/R7LuxiyaNodachi/NodachiCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P01/Uistand/Uistand.controller"
+        ],
+        "UiAnimStateName": [
+            "UiStandstart"
         ]
     },
     {
         "Id": 16550111,
         "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
             "Assets/Product/Role/WeaponPrefab/E2KodachiMd020011.prefab",
-            "Assets/Product/Role/WeaponPrefab/E2KodachiMd020011.prefab",
-            "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P01.prefab"
+            "Assets/Product/Role/WeaponPrefab/E2SsalphaMd020011.prefab"
         ],
         "AnimController": [
             "",
-            "Assets/Product/Role/WeaponAnimation/R7LuxiyaUchigatana/UchigatanaCommon/Fight/Fight.controller"
+            "Assets/Product/Role/WeaponAnimation/R7LuxiyaUchigatana/UchigatanaCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P01/Uistand/Uistand.controller"
         ]
     },
     {
         "Id": 16550112,
         "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E2SsalphaMd020011.prefab",
             "Assets/Product/Role/WeaponPrefab/E2DachiMd020011.prefab",
-            "Assets/Product/Role/WeaponPrefab/E2DachiMd020011.prefab",
-            "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P01.prefab"
+            "Assets/Product/Role/WeaponPrefab/E2SsalphaMd020011.prefab"
         ],
         "AnimController": [
-            "",
-            "Assets/Product/Role/WeaponAnimation/R7LuxiyaNodachi/NodachiCommon/Fight/Fight.controller"
+            "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P01/Uistand01/Uistand01.controller",
+            "Assets/Product/Role/WeaponAnimation/R7LuxiyaNodachi/NodachiCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P01/Uistand/Uistand.controller"
+        ],
+        "UiAnimStateName": [
+            "UiStandstart"
         ]
     },
     {
         "Id": 16560111,
         "ModelName": [
-            "Assets/Product/Role/WeaponPrefab/E3KodachiMd010011P01.prefab",
+            "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
             "Assets/Product/Role/WeaponPrefab/E3KodachiMd010011P01.prefab",
             "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P01.prefab"
         ],
@@ -14778,30 +14788,50 @@
             "",
             "",
             "Changestart01"
+        ],
+        "UiAnimCueId": [
+            "",
+            "",
+            7040
+        ],
+        "UiAnimDelay": [
+            "",
+            "",
+            300
         ]
     },
     {
         "Id": 16560112,
         "ModelName": [
-            "Assets/Product/Role/WeaponPrefab/E3DachiMd010011P01.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P01.prefab",
             "Assets/Product/Role/WeaponPrefab/E3DachiMd010011P01.prefab",
             "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P01.prefab"
         ],
         "AnimController": [
-            "",
+            "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P01/Uistand01/Uistand01.controller",
             "Assets/Product/Role/WeaponAnimation/R7LuxiyaNodachi/NodachiCommon/Fight/Fight.controller",
             "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P01/Uistand/Uistand.controller"
         ],
         "UiAnimStateName": [
-            "",
+            "UiStandstart",
             "",
             "Changestart01"
+        ],
+        "UiAnimCueId": [
+            "",
+            "",
+            7040
+        ],
+        "UiAnimDelay": [
+            "",
+            "",
+            300
         ]
     },
     {
         "Id": 16560121,
         "ModelName": [
-            "Assets/Product/Role/WeaponPrefab/E3KodachiMd010011P02.prefab",
+            "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
             "Assets/Product/Role/WeaponPrefab/E3KodachiMd010011P02.prefab",
             "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P02.prefab"
         ],
@@ -14814,30 +14844,50 @@
             "",
             "",
             "Changestart02"
+        ],
+        "UiAnimCueId": [
+            "",
+            "",
+            7041
+        ],
+        "UiAnimDelay": [
+            "",
+            "",
+            300
         ]
     },
     {
         "Id": 16560122,
         "ModelName": [
-            "Assets/Product/Role/WeaponPrefab/E3DachiMd010011P02.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P02.prefab",
             "Assets/Product/Role/WeaponPrefab/E3DachiMd010011P02.prefab",
             "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P02.prefab"
         ],
         "AnimController": [
-            "",
+            "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P02/Uistand01/Uistand01.controller",
             "Assets/Product/Role/WeaponAnimation/R7LuxiyaNodachi/NodachiCommon/Fight/Fight.controller",
             "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P02/Uistand/Uistand.controller"
         ],
         "UiAnimStateName": [
-            "",
+            "UiStandstart",
             "",
             "Changestart02"
+        ],
+        "UiAnimCueId": [
+            "",
+            "",
+            7041
+        ],
+        "UiAnimDelay": [
+            "",
+            "",
+            300
         ]
     },
     {
         "Id": 16560131,
         "ModelName": [
-            "Assets/Product/Role/WeaponPrefab/E3KodachiMd010011P03.prefab",
+            "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
             "Assets/Product/Role/WeaponPrefab/E3KodachiMd010011P03.prefab",
             "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P03.prefab"
         ],
@@ -14850,30 +14900,50 @@
             "",
             "",
             "Changestart03"
+        ],
+        "UiAnimCueId": [
+            "",
+            "",
+            7042
+        ],
+        "UiAnimDelay": [
+            "",
+            "",
+            300
         ]
     },
     {
         "Id": 16560132,
         "ModelName": [
-            "Assets/Product/Role/WeaponPrefab/E3DachiMd010011P03.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P03.prefab",
             "Assets/Product/Role/WeaponPrefab/E3DachiMd010011P03.prefab",
             "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P03.prefab"
         ],
         "AnimController": [
-            "",
+            "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P03/Uistand01/Uistand01.controller",
             "Assets/Product/Role/WeaponAnimation/R7LuxiyaNodachi/NodachiCommon/Fight/Fight.controller",
             "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P03/Uistand/Uistand.controller"
         ],
         "UiAnimStateName": [
-            "",
+            "UiStandstart",
             "",
             "Changestart03"
+        ],
+        "UiAnimCueId": [
+            "",
+            "",
+            7042
+        ],
+        "UiAnimDelay": [
+            "",
+            "",
+            300
         ]
     },
     {
         "Id": 16560141,
         "ModelName": [
-            "Assets/Product/Role/WeaponPrefab/E3KodachiMd010011P04.prefab",
+            "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
             "Assets/Product/Role/WeaponPrefab/E3KodachiMd010011P04.prefab",
             "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P04.prefab"
         ],
@@ -14886,24 +14956,44 @@
             "",
             "",
             "Changestart04"
+        ],
+        "UiAnimCueId": [
+            "",
+            "",
+            7043
+        ],
+        "UiAnimDelay": [
+            "",
+            "",
+            300
         ]
     },
     {
         "Id": 16560142,
         "ModelName": [
-            "Assets/Product/Role/WeaponPrefab/E3DachiMd010011P04.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P04.prefab",
             "Assets/Product/Role/WeaponPrefab/E3DachiMd010011P04.prefab",
             "Assets/Product/Role/WeaponPrefab/E3SsalphaMd010011P04.prefab"
         ],
         "AnimController": [
-            "",
+            "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P04/Uistand01/Uistand01.controller",
             "Assets/Product/Role/WeaponAnimation/R7LuxiyaNodachi/NodachiCommon/Fight/Fight.controller",
             "Assets/Product/Role/WeaponAnimation/Ssalpha/E3SsalphaMd010011P04/Uistand/Uistand.controller"
         ],
         "UiAnimStateName": [
-            "",
+            "UiStandstart",
             "",
             "Changestart04"
+        ],
+        "UiAnimCueId": [
+            "",
+            "",
+            7043
+        ],
+        "UiAnimDelay": [
+            "",
+            "",
+            300
         ]
     },
     {

@@ -15,7 +15,7 @@ function XUiPanelTheatre6BubbleAttr:SetAttrIds(attrIds)
         XUiHelper.InitUiClass(uiObject, go)
         uiObject.UiImgIcon:SetRawImage(attrConfig.Icon)
         uiObject.UiTxtName.text = attrConfig.Name
-        uiObject.UiTxtDesc.text = attrConfig.Desc
+        uiObject.UiTxtDesc.text = XUiHelper.ReplaceTextNewLine(attrConfig.Desc)
         uiObject.ImgLine.gameObject:SetActiveEx(index < count)
     end)
 end

@@ -17,6 +17,7 @@ XTheatre6AffixControllerBase.Name2Path = {
     HitDown = "Gameplay/Theatre6/AffixController/XTheatre6HitDownController",
     Burn = "Gameplay/Theatre6/AffixController/XTheatre6BurnController",
     Block = "Gameplay/Theatre6/AffixController/XTheatre6BlockController",
+    Anger = "Gameplay/Theatre6/AffixController/XTheatre6AngerController",
 }
 
 ---肉鸽6词条控制器更新类型

@@ -5,8 +5,6 @@ local XUiGridTheatre6Difficulty = require("XUi/XUiTheatre6/Stage/Grid/XUiGridThe
 ---@field _DynamicTable XDynamicTableCurve
 local XUiTheatre6ChooseDifficulty = XLuaUiManager.Register(XLuaUi, "UiTheatre6ChooseDifficulty")
 
-local Direction = XEnumConst.Theatre6.Direction
-
 function XUiTheatre6ChooseDifficulty:OnAwake()
     self:InitComponents()
     self.GridDifficultyDeatil.gameObject:SetActiveEx(false)
@@ -48,10 +46,13 @@ end
 
 function XUiTheatre6ChooseDifficulty:OnBtnStartClick()
     local config = self._Control:GetDifficultyConfig(self._DifficultyId)
-    local ret, desc = not XTool.IsNumberValid(config.ConditionId) or XConditionManager.CheckCondition(config.ConditionId)
-    if not ret then
-        self._Control:ShowTip(desc)
-        return
+
+    if XTool.IsNumberValid(config.ConditionId) then
+        local ret, desc = XConditionManager.CheckCondition(config.ConditionId)
+        if not ret then
+            self._Control:ShowTip(desc)
+            return
+        end
     end
     
     self._Control:RequestPlayModeStartFight(self._RoleId, self._FashionId, self._InitBuffId, self._DifficultyId, function()

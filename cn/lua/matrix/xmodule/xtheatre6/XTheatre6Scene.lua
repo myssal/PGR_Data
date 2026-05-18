@@ -39,36 +39,36 @@ function XTheatre6Scene:UpdateCustomRogueModel(isHideLockRole)
 end
 
 function XTheatre6Scene:_UpdateRoleModel(mode, isHideLockRole)
-    if not self._RoleConfigs then
-        local index = 0
-        ---@type XTableTheatre6Character[]
-        self._RoleConfigs = {}
-        self._RoleIndexDict = {}
-        for _, v in pairs(self._Control:GetCharacterConfigs()) do
-            if XTool.IsNumberValid(v.Priority) then
-                index = index + 1
-                if isHideLockRole and XTool.IsNumberValid(v.ConditionId) and not XConditionManager.CheckCondition(v.ConditionId) then
-                    goto continue
-                end
-                table.insert(self._RoleConfigs, v)
-                self._RoleIndexDict[v.Id] = index
+    local index = 0
+    ---@type XTableTheatre6Character[]
+    self._RoleConfigs = {}
+    self._RoleIndexDict = {}
+    for _, v in pairs(self._Control:GetCharacterConfigs()) do
+        if XTool.IsNumberValid(v.Priority) then
+            index = index + 1
+            if isHideLockRole and XTool.IsNumberValid(v.ConditionId) and not XConditionManager.CheckCondition(v.ConditionId) then
+                goto continue
             end
-            :: continue ::
+            table.insert(self._RoleConfigs, v)
+            self._RoleIndexDict[v.Id] = index
         end
-        table.sort(self._RoleConfigs, function(a, b)
-            return a.Priority > b.Priority
-        end)
+        :: continue ::
     end
+    table.sort(self._RoleConfigs, function(a, b)
+        return a.Priority > b.Priority
+    end)
 
     for _, v in ipairs(self._RoleConfigs) do
         local index = self._RoleIndexDict[v.Id]
-        local fashionId
-        if mode == AllRogue then
-            fashionId = v.FashionIds[1]
-        elseif mode == Normal then
-            fashionId = v.FashionIds[2]
-        elseif mode == CustomRogue then
-            fashionId = self._Control:IsUseRogueFashion(v.Id) and v.FashionIds[1] or v.FashionIds[2]
+        local fashionId = v.FashionIds[1] --肉鸽涂装
+        if #v.FashionIds >= 2 then
+            if mode == AllRogue then
+                fashionId = v.FashionIds[1]
+            elseif mode == Normal then
+                fashionId = v.FashionIds[2]
+            elseif mode == CustomRogue then
+                fashionId = self._Control:IsUseRogueFashion(v.Id) and v.FashionIds[1] or v.FashionIds[2]
+            end
         end
         local fashionConfig = self._Control:GetFashionConfig(fashionId)
         self:_LoadRoleModel(index, fashionId, false, fashionConfig.ChooseAnim)
@@ -242,6 +242,19 @@ function XTheatre6Scene:StopCommonCamAnim()
     end
     self._CommonCameraNear = nil
     self._CommonCameraFar = nil
+end
+
+function XTheatre6Scene:PlayEnterCamAnim()
+    local uiCamFarMainIn = self._ModelTransform:FindTransform("UiCamFarMainIn")
+    local uiCamNearMainIn = self._ModelTransform:FindTransform("UiCamNearMainIn")
+    if XTool.UObjIsNil(uiCamFarMainIn) or XTool.UObjIsNil(uiCamNearMainIn) then
+        return
+    end
+    local time = self._Control:GetIntClientConfigValue("MainUiEnterCamAnimTime")
+    return XScheduleManager.ScheduleOnce(function()
+        uiCamFarMainIn.gameObject:SetActiveEx(false)
+        uiCamNearMainIn.gameObject:SetActiveEx(false)
+    end, time)
 end
 
 ----------public end----------

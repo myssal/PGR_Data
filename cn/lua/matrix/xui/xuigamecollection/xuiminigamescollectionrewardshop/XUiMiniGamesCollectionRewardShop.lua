@@ -31,7 +31,7 @@ function XUiMiniGamesCollectionRewardShop:OnEnable()
 end
 function XUiMiniGamesCollectionRewardShop:UpdateReddot()
     self.BtnTask:ShowReddot(XMVCA.XGameCollection:HasRewardCanGet())
-    self.BtnShop:ShowReddot(XMVCA.XGameCollection:HasGoodCanBuy() or XMVCA.XGameCollection:CheckActivityTips())
+    self.BtnShop:ShowReddot(XMVCA.XGameCollection:CheckActivityTips() and XMVCA.XGameCollection:HasGoodCanBuy())
 end
 
 function XUiMiniGamesCollectionRewardShop:OnBtnSetUpTypeClick(uiType)

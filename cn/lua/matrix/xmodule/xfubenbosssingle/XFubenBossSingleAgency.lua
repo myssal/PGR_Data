@@ -66,6 +66,7 @@ end
 
 function XFubenBossSingleAgency:ResetAll()
     self._FightSettleDataCache = nil
+    self._NoWinDataOnBehaviorDoExitFight = nil
 end
 
 -- region Getter/Setter
@@ -290,6 +291,13 @@ end
 function XFubenBossSingleAgency:GetBossSingleChallengeBuffGroupBuffById(id)
     XLog.Error("XFubenBossSingleAgency:GetBossSingleChallengeBuffGroupBuffById is deprecated, use GetBossSingleChallengeBuffGroupConfigByBuffGroupId instead.")
     return self._Model:GetBossSingleChallengeBuffGroupBuffById(id)
+end
+
+function XFubenBossSingleAgency:TryGetBossSingleChallengeBuffGroupConfigByBuffGroupId(
+    buffGroupId)
+
+    local succ, r = self._Model:TryGetBossSingleChallengeBuffGroupConfigByBuffGroupId(buffGroupId)
+    return succ, r
 end
 
 function XFubenBossSingleAgency:GetBossSingleChallengeBuffGroupConfigByBuffGroupId(
@@ -967,7 +975,13 @@ function XFubenBossSingleAgency:_ShowReward(winData)
         self._DebugWinData = winData
     end
 
-    self._FightSettleDataCache = winData
+    if self._NoWinDataOnBehaviorDoExitFight then
+        self._NoWinDataOnBehaviorDoExitFight = nil
+        -- 说明战斗退出执行在结算请求回调完成前就执行了，此时需要手动打开结算界面
+        self:_OpenRewardUi(winData)
+    else
+        self._FightSettleDataCache = winData
+    end
 end
 
 function XFubenBossSingleAgency:OnBehaviorDoExitFight(event, args)
@@ -989,6 +1003,12 @@ function XFubenBossSingleAgency:OnBehaviorDoExitFight(event, args)
 end
 
 function XFubenBossSingleAgency:_OpenRewardUi(winData)
+    if not winData then
+        -- 没有结算数据，可能是结算失败，也可能是结算请求还没回调，不向下执行并记录
+        self._NoWinDataOnBehaviorDoExitFight = true
+        return
+    end
+    
     XMVCA.XFuben:SetMouseVisible()
     
     if XMVCA.XFuben:CheckHasFlopReward(winData) then

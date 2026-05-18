@@ -62,13 +62,25 @@ function XUiTheatre6BattleShopGridCommodity:OnNotify(evt, ...)
         end
     elseif evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
         self:RefreshCanUpgrade()
+        self:RefreshTagHightLight()
     end
 end
 
 function XUiTheatre6BattleShopGridCommodity:RefreshCanUpgrade()
-    if self:IsSellOut() then return end
     if not self.GridData or self.GridData.Type ~= ItemType.Skill then return end
-    self.GridSkillUi:CanUpgrade(self._Control:ShopHasCanUpGradeSkills(self.GridData.GoodId))
+ 
+    self.GridSkillUi:CanUpgrade(self._Control:ShopHasCanUpGradeSkills(self.GridData.GoodId) and not self:IsSellOut())
+end
+
+function XUiTheatre6BattleShopGridCommodity:RefreshTagHightLight()
+    if self:IsSellOut() or not self.GridData then return end
+    if self.GridData.Type == ItemType.Skill then
+        local cfg = self._Control:GetSkillCfgById(self.GridData.GoodId)
+        self.GridSkillUi:ShowTagHightLight(self._Control:GetSkillHighlightTagIds(cfg))
+    elseif self.GridData.Type == ItemType.AttrPack then
+        local cfg = self._Control:GetAttrPackCfgById(self.GridData.GoodId)
+        self.GridRelicUi:ShowTagHightLight(self._Control:GetEquippedDominantTagInList(cfg and cfg.BuildTags))
+    end
 end
 
 function XUiTheatre6BattleShopGridCommodity:CloseAllGridUis()
@@ -88,14 +100,13 @@ function XUiTheatre6BattleShopGridCommodity:Refresh(data)
     if self.GridData.Type == ItemType.Skill then
         self.GridSkillUi:Open()
         self.GridSkillUi:Update(self.GridData.GoodId, nil, self.GridData)
-        self.GridSkillUi:CanUpgrade(self._Control:ShopHasCanUpGradeSkills(self.GridData.GoodId))
+        self:RefreshCanUpgrade()
         self.PanelSkillTag.gameObject:SetActiveEx(true)
         gridUi = self.GridSkillUi
     elseif self.GridData.Type == ItemType.AttrPack then
         self.GridRelicUi:Open()
         self.GridRelicUi:Update(self.GridData.GoodId)
         gridUi = self.GridRelicUi
-        self.PanelRelicTag.gameObject:SetActiveEx(true)
     end
     self.ListDesc.gameObject:SetActiveEx(true)
     self.UiTxtDesc.text = gridUi:GetDesc()
@@ -105,6 +116,7 @@ function XUiTheatre6BattleShopGridCommodity:Refresh(data)
 
     self:RefreshLockStatus()
     self:RefreshBuildTag()
+    self:RefreshTagHightLight()
     self:RefreshSellStatus()
 end
 
@@ -151,6 +163,10 @@ end
 function XUiTheatre6BattleShopGridCommodity:RefreshBuildTag()
     if self.GridData.Type == ItemType.Skill then
         local skillConfig = self._Control:GetSkillCfgById(self.GridData.GoodId)
+        if skillConfig.BuildTags == nil or #skillConfig.BuildTags <= 0 then
+            self.PanelSkillTag.gameObject:SetActiveEx(false)
+            return
+        end
         local buildTagCfgs = self._Control:GetShowBuildTagWithSort(skillConfig.BuildTags)
         XUiHelper.RefreshCustomizedList(self.TagSkill.transform.parent, self.TagSkill,
             #buildTagCfgs,
@@ -164,6 +180,7 @@ function XUiTheatre6BattleShopGridCommodity:RefreshBuildTag()
     else
         local relicConfig = self._Control:GetAttrPackCfgById(self.GridData.GoodId)
         -- local attrCfgs = self._Control:GetShowAttributeWithSort(relicConfig.AttrTypes)
+        self.PanelRelicTag.gameObject:SetActiveEx(relicConfig.AttrTypes ~= nil and #relicConfig.AttrTypes > 0)
         local attrConfigs, attrValues = self._Control:GetShowAttribute(relicConfig.AttrTypes, relicConfig.AttrNums)
         XUiHelper.RefreshCustomizedList(self.TagRelic.transform.parent, self.TagRelic,
             #attrConfigs,
@@ -187,12 +204,10 @@ function XUiTheatre6BattleShopGridCommodity:RefreshSellStatus()
     self.SellOut.gameObject:SetActiveEx(self:IsSellOut())
 
     self.BtnGrid:SetDisable(self:IsSellOut())
-
-
-    if self:IsSellOut() then
-        self:CloseAllGridUis()
-        return
-    end
+ if self:IsSellOut() then
+    self.GridSkillUi:CanUpgrade(not self:IsSellOut())
+    self:CloseAllGridUis()
+end
 end
 
 return XUiTheatre6BattleShopGridCommodity

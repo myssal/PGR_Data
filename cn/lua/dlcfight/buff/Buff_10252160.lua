@@ -23,7 +23,7 @@ end
 
 function XBuffScript10252160:OnLuaSkillEnd(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self.originAttrib1 = self._proxy:ChangeNpcGameplayEnergy(self._uuid,ETheatre6AttribType.Stamina)
+    self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.Stamina)
     if self.originAttrib1 <= 0 then
         if self.ChanceCheckSkillUse <= 0 then
             self.ChanceCheckSkillUse = 1
@@ -50,7 +50,3 @@ function XBuffScript10252160:OnLuaSkillStart(eventArgs)
 end
 
 return XBuffScript10252160
-
-
---24行永远为true, bro你清醒一点, 拿一个变量自己和自己比是何意味????    ：我是傻逼
---38行_stackCount没有初始化    ：我是傻逼

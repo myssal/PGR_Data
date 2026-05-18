@@ -30,16 +30,16 @@ end
 
 function XUiTheatre6RoomChooseTask:OnEnable()
     self:ShowRoleInfo()
-    self:UpdateTask()
+    self:InitTask()
     self._PanelAsset:Refresh()
     self._PanelBuff:UpdateView()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.ShowRoleInfo, self)
-    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.UpdateTask, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.UpdateTaskRefreshCost, self)
 end
 
 function XUiTheatre6RoomChooseTask:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.ShowRoleInfo, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.UpdateTask, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.UpdateTaskRefreshCost, self)
 end
 
 function XUiTheatre6RoomChooseTask:InitComponent()
@@ -60,7 +60,7 @@ function XUiTheatre6RoomChooseTask:ShowRoleInfo()
     self.BtnCharacter:SetName(self._ModelData.ScoreTotal)
 end
 
-function XUiTheatre6RoomChooseTask:UpdateTask()
+function XUiTheatre6RoomChooseTask:InitTask()
     for i, data in ipairs(self._ModelData.TaskSlotData) do
         local grid = self._TaskGrids[i]
         if not grid then
@@ -78,9 +78,42 @@ function XUiTheatre6RoomChooseTask:UpdateTask()
     self.BtnYes:SetNameByGroup(1, string.format("%s/%s", XTool.GetTableCount(self._ChooseTaskIndexDict), self._ChooseNum))
 end
 
+---更新任务选中状态
+function XUiTheatre6RoomChooseTask:UpdateTaskChoose()
+    for i = 1, #self._ModelData.TaskSlotData do
+        local grid = self._TaskGrids[i]
+        if grid then
+            grid:UpdateChoose(self._ChooseTaskIndexDict[i])
+        end
+    end
+    self.BtnYes:SetNameByGroup(1, string.format("%s/%s", XTool.GetTableCount(self._ChooseTaskIndexDict), self._ChooseNum))
+end
+
+---更新单个任务
+function XUiTheatre6RoomChooseTask:UpdateTaskRefresh(i)
+    local grid = self._TaskGrids[i]
+    if not grid then
+        return
+    end
+    local data = self._ModelData.TaskSlotData[i]
+    grid:SetSlotData(data, self._ModelData.TaskGroupId)
+    grid:UpdateChoose(self._ChooseTaskIndexDict[i])
+end
+
+---更新任务刷新费用
+function XUiTheatre6RoomChooseTask:UpdateTaskRefreshCost()
+    for i = 1, #self._ModelData.TaskSlotData do
+        local grid = self._TaskGrids[i]
+        if grid then
+            grid:SetBtnRefresh()
+        end
+    end
+end
+
 function XUiTheatre6RoomChooseTask:ChooseTask(index)
     if self._ChooseNum >= 3 then
         self._Control:ShowTipWithKey("Theatre6ChooseMaxTaskTip")
+        self:UpdateTaskChoose()
         return
     end
     if self._ChooseTaskIndexDict[index] then
@@ -91,7 +124,7 @@ function XUiTheatre6RoomChooseTask:ChooseTask(index)
         self._Control:ShowTipWithKey("Theatre6TaskChooseLimit")
         return
     end
-    self:UpdateTask()
+    self:UpdateTaskChoose()
 end
 
 function XUiTheatre6RoomChooseTask:OnBtnCharacterClick()

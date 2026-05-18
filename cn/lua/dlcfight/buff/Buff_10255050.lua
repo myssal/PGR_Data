@@ -10,7 +10,6 @@ function XBuffScript10255050:ScriptInit(isGainControl) --初始化
     --self:LogError(".....初始化完成")
     self._stackCountBurn = 3
     self.ChanceCheck = 0
-    self._hitFlyController = self:GetNpc():GetHitFlyController()
 end
 
 function XBuffScript10255050:OnLuaSkillStart(eventArgs)

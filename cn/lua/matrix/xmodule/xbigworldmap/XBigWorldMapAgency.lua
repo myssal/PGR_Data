@@ -209,7 +209,7 @@ function XBigWorldMapAgency:OnPlayerExitArea(data)
 end
 
 function XBigWorldMapAgency:OnAssistedTrackMapPin(data)
-    self._Model:UpdateAssistedTrack(data.MapPinLevelId, data.MapPinId, data.Position, data.MapAreaGroupId)
+    self._Model:UpdateAssistedTrack(data.MapPinLevelId, data.MapPinId, data.Position, data.PlayerGroupId)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ASSISTED_TRACK_UPDATE)
 end
 
@@ -218,6 +218,20 @@ function XBigWorldMapAgency:OnUpdateMapPinPosition(data)
     self._Model:UpdatePinPosition(data.MapPinLevelId, data.MapPinId, data.Position)
     self._Model:UpdatePinAreaGroup(data.MapPinLevelId, data.MapPinId, data.MapAreaGroupId)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_POSITION_UPDATE, data)
+end
+
+function XBigWorldMapAgency:OnAiMemoryClearStateChange(data)
+    if not XTool.IsTableEmpty(data) then
+        for _, state in pairs(data) do
+            local pinData = self._Model:GetPinDataByLevelIdAndPinId(state.LevelId, state.MapPinId)
+
+            if pinData and (pinData.NpcPlaceId == state.PlaceId or pinData.SceneObjectPlaceId == state.PlaceId) then
+                pinData:UpdateAiMemoryClear(state.IsClear)
+            end
+        end
+
+        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_AI_MEMORY_DISPLAY_CHANGE)
+    end
 end
 
 function XBigWorldMapAgency:OnGetLittleMapRadius(data)

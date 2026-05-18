@@ -65,7 +65,7 @@ function XTheatre6Control:OnInit()
         ["UiTheatre6ChooseCharacter"] = true,
         ["UiTheatre6Archive"] = true,
     }
-    
+
     self:OnInitCharacter()
     XMVCA.XTheatre6:PlayBuffAudio()
 end
@@ -177,6 +177,89 @@ function XTheatre6Control:GetShowBuildTagWithSort(buildTags)
     return tagConfigs
 end
 
+---返回所有已装备技能(不区分槽位)BuildTag 中出现次数最多的 tag id;并列时取 Pirority 最大者
+---@param skillIdsBySlot table<number, table>|nil 可选,按槽位类型的已装备技能id表;不传则查询当前玩法数据(存档模式下传入避免读取已清空的玩法数据)
+---@return number|nil
+function XTheatre6Control:GetEquippedDominantBuildTagId(skillIdsBySlot)
+    local tagCount = {}
+    local slotTypes = {
+        XEnumConst.Theatre6.SlotType.Active,
+        XEnumConst.Theatre6.SlotType.Insert,
+        XEnumConst.Theatre6.SlotType.Special,
+    }
+    for _, slotType in ipairs(slotTypes) do
+        local ownedIds = (skillIdsBySlot and skillIdsBySlot[slotType])
+            or self:GetCharacterDressSkillIds(slotType)
+        if ownedIds then
+            for _, ownedSkillId in pairs(ownedIds) do
+                if XTool.IsNumberValid(ownedSkillId) then
+                    local cfg = self:GetSkillCfgById(ownedSkillId)
+                    if cfg and cfg.BuildTags then
+                        for _, tagId in ipairs(cfg.BuildTags) do
+                            tagCount[tagId] = (tagCount[tagId] or 0) + 1
+                        end
+                    end
+                end
+            end
+        end
+    end
+    local bestTagId, bestCount, bestPriority = nil, 0, -math.huge
+    for tagId, count in pairs(tagCount) do
+        local cfg = self:GetBuildTagConfig(tagId)
+        local priority = (cfg and cfg.Pirority) or 0
+        if count > bestCount or (count == bestCount and priority > bestPriority) then
+            bestTagId, bestCount, bestPriority = tagId, count, priority
+        end
+    end
+    return bestTagId
+end
+
+---返回 buildTags 中应高亮的 tag id 列表(0 或 1 个)
+---规则:仅高亮已装备技能 BuildTag 出现次数最多的 tag(并列取 Pirority 最大者),且必须包含在 buildTags 中
+---@param buildTags number[]
+---@param skillIdsBySlot table<number, table>|nil 可选,存档模式下传入避免读取实时玩法数据
+---@return number[]
+function XTheatre6Control:GetEquippedDominantTagInList(buildTags, skillIdsBySlot)
+    local result = {}
+    if not buildTags or #buildTags == 0 then return result end
+    local dominantTagId = self:GetEquippedDominantBuildTagId(skillIdsBySlot)
+    if not dominantTagId then return result end
+    for _, tagId in ipairs(buildTags) do
+        if tagId == dominantTagId then
+            table.insert(result, tagId)
+            return result
+        end
+    end
+    return result
+end
+
+---返回技能配置应高亮的 tag id 列表
+---规则:IsShowTags[i]==true 强制常亮,与 dominant 高亮(GetEquippedDominantTagInList)取并集
+---@param skillCfg table 技能配置(需含 BuildTags 与可选 IsShowTags)
+---@param skillIdsBySlot table<number, table>|nil 可选,存档模式下传入避免读取实时玩法数据
+---@return number[]
+function XTheatre6Control:GetSkillHighlightTagIds(skillCfg, skillIdsBySlot)
+    local result = {}
+    local buildTags = skillCfg and skillCfg.BuildTags
+    if not buildTags or #buildTags == 0 then return result end
+    local highlightSet = {}
+    local isShowTags = skillCfg.IsShowTags
+    if isShowTags then
+        for i, tagId in ipairs(buildTags) do
+            if isShowTags[i] then
+                highlightSet[tagId] = true
+            end
+        end
+    end
+    for _, tagId in ipairs(self:GetEquippedDominantTagInList(buildTags, skillIdsBySlot)) do
+        highlightSet[tagId] = true
+    end
+    for tagId in pairs(highlightSet) do
+        table.insert(result, tagId)
+    end
+    return result
+end
+
 function XTheatre6Control:GetBuffDataByUid(uid)
     return self._Model:GetBuffDataByUid(uid)
 end
@@ -204,9 +287,9 @@ end
 function XTheatre6Control:OpenBattleShop()
     if XLuaUiManager.IsUiShow("UiTheatre6BattleShop") then
         XLuaUiManager.PopThenOpen("UiTheatre6BattleShop")
-        else    
-            XLuaUiManager.Open("UiTheatre6BattleShop")
-        end
+    else
+        XLuaUiManager.Open("UiTheatre6BattleShop")
+    end
 end
 
 ---BOSS预览
@@ -278,7 +361,7 @@ function XTheatre6Control:MoveNext()
         self._Model.StageChain.IsWaitOpenNext = true
         return
     end
-    
+
     self:OpenStageView()
 end
 
@@ -289,9 +372,8 @@ end
 ---@private
 function XTheatre6Control:OpenStageView()
     self._Model.StageChain.IsWaitOpenNext = false
-    
+
     local node = self._Model.StageChain.Curr
-    local floorConfig = self._Model:GetStageFloorConfig(node.FloorId)
     local openUiFunc = self._RoomUiFuncDict[node.RoomType]
 
     if not openUiFunc then
@@ -331,9 +413,11 @@ function XTheatre6Control:TryOpenGetBuffPopup(roomType)
     local showFloorBuffData = {}
     for _, uid in ipairs(floorBuffUid) do
         local buffData = self:GetBuffDataByUid(uid)
-        local buffConfig = self:GetBuffConfig(buffData.BuffId)
-        if not XTool.IsNumberValid(buffConfig.IsNotShow) then
-            table.insert(showFloorBuffData, buffData)
+        if buffData then
+            local buffConfig = self:GetBuffConfig(buffData.BuffId)
+            if not XTool.IsNumberValid(buffConfig.IsNotShow) then
+                table.insert(showFloorBuffData, buffData)
+            end
         end
     end
 
@@ -387,25 +471,27 @@ function XTheatre6Control:OpenPoolTip(rewardType, id)
     XLuaUiManager.Open("UiTheatre6PopupGoodsDetail", rewardType, id)
 end
 
-function XTheatre6Control:OpenSkillTip(skillId, target, param,avoidTransforms)
+function XTheatre6Control:OpenSkillTip(skillId, target, param, avoidTransforms)
     if param and param.IsBaseSkill then
         XLuaUiManager.Open("UiTheatre6BubbleAttackDetail", skillId, target)
         return
     end
-    XLuaUiManager.Open("UiTheatre6BubbleSkillDetail", skillId, target, param,avoidTransforms)
+    XLuaUiManager.Open("UiTheatre6BubbleSkillDetail", skillId, target, param, avoidTransforms)
 end
 
 function XTheatre6Control:OpenBuffTip(buffId, target)
     XLuaUiManager.Open("UiTheatre6BubbleBuffDetail", buffId, target)
 end
 
-function XTheatre6Control:OpenRelicTip(relicId, target,param,avoidTransforms)
-    XLuaUiManager.Open("UiTheatre6BubbleRelicDetail", relicId, target,param,avoidTransforms)
+function XTheatre6Control:OpenRelicTip(relicId, target, param, avoidTransforms)
+    XLuaUiManager.Open("UiTheatre6BubbleRelicDetail", relicId, target, param, avoidTransforms)
 end
 
 function XTheatre6Control:OpenTagTip(buildTags, target, keyWordIds)
     if not buildTags or #buildTags == 0 then
-        return
+        if not keyWordIds or #keyWordIds == 0 then
+            return
+        end
     end
     if XLuaUiManager.IsUiShow("UiTheatre6BubbleTagDetail") then
         XLuaUiManager.Close("UiTheatre6BubbleTagDetail")
@@ -464,7 +550,7 @@ function XTheatre6Control:GetRewardPoolsByRoom(fightId, isHard)
     for i = 1, #stageFightConfig.HardRewardTypes do
         local rewardType = isHard and stageFightConfig.HardRewardTypes[i] or stageFightConfig.EasyRewardTypes[i]
         local rewardId = isHard and stageFightConfig.HardRewardIds[i] or stageFightConfig.EasyRewardIds[i]
-        table.insert(rewards,{ rewardType, rewardId })
+        table.insert(rewards, { rewardType, rewardId })
     end
     return rewards
 end
@@ -613,34 +699,10 @@ end
 ---@return string
 function XTheatre6Control:GetTaskShopTagName(taskShopType)
     if taskShopType == XEnumConst.Theatre6.TaskShopType.Shop then
-        return self._Model:GetClientConfigValue("TaskShopTagName",1)
+        return self._Model:GetClientConfigValue("TaskShopTagName", 1)
     else
-        return self._Model:GetClientConfigValue("TaskShopTagName",2)
+        return self._Model:GetClientConfigValue("TaskShopTagName", 2)
     end
-end
-
----清除商店新商品红点
-function XTheatre6Control:RemoveShopNewReddot(shopCfg)
-    -- TODO: 标记商店已查看
-end
-
----清除任务新红点
-function XTheatre6Control:RemoveTaskNewReddot(taskCfg)
-    -- TODO: 标记任务已查看
-end
-
----检查是否有新任务
----@return boolean
-function XTheatre6Control:CheckNewTaskByTaskConfig(taskCfg)
-    -- TODO: 实现新任务检查逻辑
-    return false
-end
-
----检查是否有新商品
----@return boolean
-function XTheatre6Control:CheckShopNewGoodsByShopConfig(shopCfg)
-    -- TODO: 实现新商品检查逻辑
-    return false
 end
 
 ---获取过期刷新提示文本
@@ -760,7 +822,7 @@ end
 
 ---获取回合结算伤害列表
 ---@param roleData table Theatre6CheckData.MyData 或 EnemyData
----@return table[] {{SkillId, Times, HpDamage, SpDamage, TotalDamage, IsBuff}, ...} 
+---@return table[] {{SkillId, Times, HpDamage, SpDamage, TotalDamage, IsBuff}, ...}
 function XTheatre6Control:GetRoundSettlementDamageList(roleData)
     local damageList = {}
     local skillDamageRecord = roleData.DamageRecord and roleData.DamageRecord[0] or table.empty
@@ -780,17 +842,19 @@ function XTheatre6Control:GetRoundSettlementDamageList(roleData)
             IsBuff = false
         })
     end
-    
+
     for tagId, damage in pairs(buffDamageRecord) do
-        table.insert(damageList, {
-            SkillId = tagId,
-            Times = 0,
-            HpDamage = damage or 0,
-            SpDamage = buffEnergyRecord[tagId] or 0,
-            TotalDamage = roleData.TotalDamage,
-            TotalEnergyCast = roleData.TotalEnergyCast,
-            IsBuff = true
-        })
+        if XTool.IsNumberValid(damage) then --buff如果没有造成伤害则不显示
+            table.insert(damageList, {
+                SkillId = tagId,
+                Times = 0,
+                HpDamage = damage,
+                SpDamage = buffEnergyRecord[tagId] or 0,
+                TotalDamage = roleData.TotalDamage,
+                TotalEnergyCast = roleData.TotalEnergyCast,
+                IsBuff = true
+            })
+        end
     end
 
     -- 按伤害降序排序
@@ -928,7 +992,7 @@ end
 
 
 function XTheatre6Control:GetQualityIcon(quality)
-    return self:GetClientConfigValue("Quality"..quality)
+    return self:GetClientConfigValue("Quality" .. quality)
 end
 
 function XTheatre6Control:GetRelicQualityIcon(quality)

@@ -123,7 +123,8 @@ end
 
 function XUiTheatre6BattleShop:OnRefreshGridClick()
     self._Control:ShopFreshRequest(function()
-        self:Refresh()
+    self:PlayAnimationWithMask("ListCommodityReShow")
+    self:Refresh()
     end)
 end
 

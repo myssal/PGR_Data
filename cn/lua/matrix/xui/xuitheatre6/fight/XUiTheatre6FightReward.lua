@@ -17,6 +17,7 @@ end
 function XUiTheatre6FightReward:OnStart(rewardGoodsList)
     self._RewardGoodsList = rewardGoodsList or {}
     self.RImgIcon:SetRawImage(self._Control:GetCoinIcon())
+    self:TryOpenSellSkillPanel()
 end
 
 function XUiTheatre6FightReward:OnEnable()
@@ -29,7 +30,7 @@ function XUiTheatre6FightReward:OnDestroy()
     end
     CS.StatusSyncFight.XFightClient.RequestExitFight()
     --如果对局已经全部结束，显示结算界面
-    if not XMVCA.XTheatre6:OpenSettle() then
+    if not XMVCA.XTheatre6:CheckOpenSettle() then
         self._Control:TryOpenStageViewAfterFight()
     end
 end

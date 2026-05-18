@@ -22,9 +22,10 @@ States.Wrestle.WrestleSkillIdRightCountinue = 1026007 -- 拼刀僵持动作 右 
 States.Wrestle.PindaoStart2LCamera = 10250102 -- 拼刀start冲刺特写镜头动画buff 左(fighter1
 States.Wrestle.PindaoStart2RCamera = 10250103 -- 拼刀start冲刺特写镜头动画buff 右(fighter2
 States.Wrestle.SucceedActionId = 1026002 -- 拼刀成功动作
+States.Wrestle.SecondWrestleReset = 1025010 -- 二次拼刀位置重置动作
 States.Dodge.DodgeSkillId = 1026003  -- 超算受身动作
 States.Dodge.SucceedActionId = 1026004 --超算受身成功反击
-States.Block.ActionId = 1026009 -- 格挡动作
+States.Block.Actions = {1026009} -- 格挡动作
 
 function XChar1026:_BaseInit()
     XTheatre6CharBase._BaseInit(self)
@@ -65,6 +66,15 @@ function XChar1026:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
     if buffId == 1026003 then
         XLog.Warning("切换状态机为2")
         self._proxy:SetNpcAnimationLayer(self._uuid, 2)
+    end
+end
+
+function XChar1026:OnNpcCastActionAfterEvent(skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
+    if launcherId ~= self._uuid then return end
+    if skillActionId == 1026205 then
+        self._proxy:SetNpcGravity(self._uuid, 0, 0)
+    else
+        self._proxy:SetNpcGravity(self._uuid, -50, -15)
     end
 end
 

@@ -29,7 +29,8 @@ function XGameCollectionAgency:IsLaunchedFromCollection(gameType)
         return true
     end
 
-    return self:GetLaunchContext().GameType == gameType
+    local launchContext = self:GetLaunchContext()
+    return launchContext and launchContext.GameType == gameType or false
 end
 
 function XGameCollectionAgency:OnGameExitToCollection(gameType, exitInfo)
@@ -56,30 +57,47 @@ function XGameCollectionAgency:OnGameExitToCollection(gameType, exitInfo)
     return true
 end
 
-function XGameCollectionAgency:_BuildExitRecord(gameType, gameCfg, exitInfo)
+function XGameCollectionAgency:RecordExitForGame(gameType, exitInfo)
+    if not XTool.IsNumberValid(gameType) then
+        return false
+    end
+
+    exitInfo = exitInfo or {}
+    if not exitInfo.IsSettled then
+        return false
+    end
+
+    local gameCfg = self._Model:GetGameCollectionCfgById(gameType)
     if XTool.IsTableEmpty(gameCfg) then
+        return false
+    end
+
+    local enterMaxScore = exitInfo.EnterMaxScore or 0
+    local score = exitInfo.Score or 0
+    if enterMaxScore > 0 and score > enterMaxScore then
+        self._Model:SetPendingExitRecord({
+            GameName = gameCfg.Name,
+            NewScore = score,
+        })
+    end
+    return true
+end
+
+function XGameCollectionAgency:_BuildExitRecord(gameType, gameCfg, exitInfo)
+    if XTool.IsTableEmpty(gameCfg) or not exitInfo.IsSettled then
         return nil
     end
 
-    if gameType == XEnumConst.GameCollection.GameType.Game2048 then
-        local snapshot = self._Model:GetGameSnapshot(gameType)
-        local enterMaxScore = snapshot and snapshot.EnterMaxScore or 0
-        local score = exitInfo.Score or 0
-        if score > enterMaxScore then
-            return {
-                GameName = gameCfg.Name,
-                NewScore = score,
-            }
-        end
-        return nil
-    end
-
-    if gameType == XEnumConst.GameCollection.GameType.FangKong and exitInfo.IsNewScoreRecord then
+    local snapshot = self._Model:GetGameSnapshot(gameType)
+    local enterMaxScore = snapshot and snapshot.EnterMaxScore or 0
+    local score = exitInfo.Score or 0
+    if enterMaxScore > 0 and score > enterMaxScore then
         return {
             GameName = gameCfg.Name,
-            NewScore = exitInfo.Score or 0,
+            NewScore = score,
         }
     end
+    return nil
 end
 
 function XGameCollectionAgency:SetLaunchContext(gameType, stageId)
@@ -167,7 +185,7 @@ function XGameCollectionAgency:MarkRewardShopEntered()
 end
 
 function XGameCollectionAgency:HasGoodCanBuy()
-    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, false) then
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) then
         return false
     end
     local config = self._Model:GetGameCollectionConfig("shopId")
@@ -207,5 +225,6 @@ function XGameCollectionAgency:HasGoodCanBuy()
 
     return false
 end
+
 
 return XGameCollectionAgency

@@ -19,10 +19,11 @@ function XUiPanelRegressionGiftShop:OnStart()
     self._DynamicTable:SetProxy(XUiGridRegressionGift)
     self._DynamicTable:SetDelegate(self)
 
-
     local uiType = self.ViewModel:GetPackageUiType()
     self.UiType = uiType
     self:_RefreshPurchaseList()
+
+    XDataCenter.Regression3rdManager.MarkGiftShopRedPointData()
 end
 
 function XUiPanelRegressionGiftShop:_RefreshPurchaseList()

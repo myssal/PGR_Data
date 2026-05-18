@@ -373,7 +373,7 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         local isResonanceOrOverrunConflict = false
         local conflictPosList = {}
         for pos, v in ipairs(self.CharacterCardList) do
-            if v:GetIsWeaponResonanceCountConflict() or v:GetIsWeaponOverrunConflict() or v:GetIsWeaponResonanceBindSkillIdConflict() then
+            if v:GetIsWeaponResonanceCountConflict() or v:GetIsWeaponOverrunConflict() or v:GetIsWeaponResonanceSkillNeedConfirm() then
                 isResonanceOrOverrunConflict = true
                 table.insert(conflictPosList, pos)
             end

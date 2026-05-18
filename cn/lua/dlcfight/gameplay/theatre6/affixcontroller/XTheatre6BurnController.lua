@@ -98,7 +98,7 @@ function XTheatre6BurnController:OnLuaHitModify(missileUUID, launcherNpcUUID, ta
     end
 
     self:GetEnemyNpc():GetBurnController():CastStackBuff(1, self._npcUUID)
-    self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 1, 0)
+    self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 5, 0)
 end
 
 --endregion

@@ -22,6 +22,7 @@ function XUiPanelBossStage:OnEnable()
 end
 
 function XUiPanelBossStage:OnDisable()
+    self.BtnModeV4P5Effect.gameObject:SetActiveEx(false)
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_SYNC, self._Refresh, self)
     
     -- 清理延迟隐藏的定时器

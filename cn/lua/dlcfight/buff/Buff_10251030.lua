@@ -13,6 +13,7 @@ function XBuffScript10251030:ScriptInit(isGainControl) --初始化
     else
         self._stackCount = 3
     end
+    self._stackCountNormal = 1
 end
 
 function XBuffScript10251030:OnEnterLevel(levelId)
@@ -27,6 +28,7 @@ function XBuffScript10251030:OnLuaSpecialHit(eventArgs)
     if eventArgs._missileHitCount ~= 1 then return end
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
+    self:GetEnemyNpc():GetBurnController():CastStackBuff(self._stackCountNormal, self._enemyUUID)
     if self._proxy:CheckBuffByKind(self._npcUUID, self._stackbuff) then
         self:GetEnemyNpc():GetBurnController():CastStackBuff(self._stackCount, self._enemyUUID)
     end

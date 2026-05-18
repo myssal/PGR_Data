@@ -34,11 +34,11 @@ function XUiTheatre6Settlement:TryOpenSellSkillPanel()
 end
 
 function XUiTheatre6Settlement:OnDisable()
-    self:StopAutoSwitchTimer()
+    
 end
 
 function XUiTheatre6Settlement:OnDestroy()
-    self:StopAutoSwitchTimer()
+    
 end
 
 --region PanelResult（战斗结果）
@@ -48,7 +48,10 @@ function XUiTheatre6Settlement:ShowPanelResult()
         self:ShowPanelDetail()
     else
         self.PanelResult.gameObject:SetActiveEx(true)
-        self:StartAutoSwitchTimer()
+        self:PlayAnimationWithMask("PanelResultAnimEnable", function()
+            self:PlayAnimationWithMask("PanelDetailTab")
+            self:ShowPanelDetail()
+        end)
     end
 end
 
@@ -56,30 +59,10 @@ function XUiTheatre6Settlement:RefreshPanelResult()
     self.PanelWin.gameObject:SetActiveEx(self.IsWin)
     self.PanelLose.gameObject:SetActiveEx(not self.IsWin)
 end
-
-function XUiTheatre6Settlement:StartAutoSwitchTimer()
-    self:StopAutoSwitchTimer()
-    self.AutoSwitchTimer = XScheduleManager.ScheduleOnce(function()
-        self:OnAutoSwitchTimeUp()
-    end, SETTLEMENT_RESULT_SHOW_TIME)
-end
-
-function XUiTheatre6Settlement:StopAutoSwitchTimer()
-    if self.AutoSwitchTimer then
-        XScheduleManager.UnSchedule(self.AutoSwitchTimer)
-        self.AutoSwitchTimer = nil
-    end
-end
-
-function XUiTheatre6Settlement:OnAutoSwitchTimeUp()
-    self.AutoSwitchTimer = nil
-    self:ShowPanelDetail()
-end
 --endregion
 
 --region PanelDetail（详情界面）
 function XUiTheatre6Settlement:ShowPanelDetail()
-    self:StopAutoSwitchTimer()
     self.PanelResult.gameObject:SetActiveEx(false)
     self._PanelDetail:Open()
     self._PanelDetail:Refresh()

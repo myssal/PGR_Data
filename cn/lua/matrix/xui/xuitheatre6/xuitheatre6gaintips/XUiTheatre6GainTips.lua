@@ -46,6 +46,7 @@ end
 function XUiTheatre6GainTips:Refresh()
     if self._GridType == ItemType.Skill then
         self.GridSkillUi:Update(self._GridId)
+        self.GridSkillUi:SetClickCb(function() end)
         self.GridSkill.gameObject:SetActiveEx(true)
         self.GridRelic.gameObject:SetActiveEx(false)
 

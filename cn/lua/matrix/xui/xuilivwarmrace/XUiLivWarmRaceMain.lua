@@ -97,7 +97,7 @@ function XUiLivWarmRaceMain:OnBtnEnterFinalStageClick()
         return
     end
 
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId)
 end
 
 function XUiLivWarmRaceMain:OnBtnEnterStageClick(groupId)

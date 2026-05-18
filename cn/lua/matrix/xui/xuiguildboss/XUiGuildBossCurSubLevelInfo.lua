@@ -187,7 +187,7 @@ end
 
 function XUiGuildBossCurSubLevelInfo:RealOnBtnStartClick()
     local func = function()
-        XLuaUiManager.Open("UiBattleRoleRoom", self.Data.StageId
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.Data.StageId
             , XDataCenter.GuildBossManager.GetXTeamByStageId(self.Data.StageId)
             , require("XUi/XUiGuildBoss/XUiGuildBossBattleRoleRoom"))
     end

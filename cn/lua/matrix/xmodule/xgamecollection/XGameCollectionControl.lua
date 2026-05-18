@@ -178,7 +178,7 @@ function XGameCollectionControl:RequestEnterGame(gameType)
         if res.Code ~= XCode.Success then
             return
         end
-        self:_StartLaunchSession(gameType, gameCfg.StageId)
+        self:_StartLaunchSession(gameType, gameCfg.StageId, self:_BuildEnterScoreSnapshot(gameType))
         self:EnterChildGame(gameType)
     end)
 end
@@ -278,7 +278,7 @@ function XGameCollectionControl:TryOpenExitRecord()
         return
     end
 
-    XLuaUiManager.Open("UiGameCollectionRecord", record.GameName, record.NewScore)
+    XLuaUiManager.Open("UiMiniGamesCollectionBreakTheRecord", record.GameName, record.NewScore)
 end
 
 function XGameCollectionControl:_ResolveGameType(gameType)
@@ -328,6 +328,12 @@ function XGameCollectionControl:_CreateGame2048Snapshot(stageId)
     }
 end
 
+function XGameCollectionControl:_BuildEnterScoreSnapshot(gameType)
+    return {
+        EnterMaxScore = self._Model:GetMaxScore(gameType) or 0,
+    }
+end
+
 function XGameCollectionControl:_GetFangKuaiPlayingStageId(gameCfg)
     local stageId = gameCfg and gameCfg.StageId or 0
     if not XTool.IsNumberValid(stageId) then
@@ -346,13 +352,14 @@ function XGameCollectionControl:_RequestEnterGoldenMiner(gameCfg)
     local gameType = GetGameType(gameCfg)
     local useCharacterId = XMVCA.XGoldenMiner:GetUseCharacterId()
     XMVCA.XGoldenMiner:RequestGoldenMinerEnterGame(useCharacterId, function()
-        self:_StartLaunchSession(gameType, gameCfg.StageId)
+        self:_StartLaunchSession(gameType, gameCfg.StageId, self:_BuildEnterScoreSnapshot(gameType))
         XMVCA.XGoldenMiner:OpenGameUi()
     end)
 end
 
 function XGameCollectionControl:_ContinueGoldenMiner(gameCfg)
-    self:_StartLaunchSession(GetGameType(gameCfg), gameCfg.StageId)
+    local gameType = GetGameType(gameCfg)
+    self:_StartLaunchSession(gameType, gameCfg.StageId, self:_BuildEnterScoreSnapshot(gameType))
     XMVCA.XGoldenMiner:ContinueGame()
 end
 
@@ -364,9 +371,16 @@ function XGameCollectionControl:_GiveUpGoldenMiner(gameCfg, cb)
         return
     end
 
+    local gameType = GetGameType(gameCfg)
+    local enterMaxScore = self._Model:GetMaxScore(gameType) or 0
     local stageScores = XMVCA.XGoldenMiner:GetStageScores()
     XMVCA.XGoldenMiner:RequestGoldenMinerExitGame(0, function()
-        self:_ClearLaunchSession(GetGameType(gameCfg))
+        XMVCA.XGameCollection:RecordExitForGame(gameType, {
+            Score = stageScores or 0,
+            EnterMaxScore = enterMaxScore,
+            IsSettled = true,
+        })
+        self:_ClearLaunchSession(gameType)
         if cb then
             cb()
         end
@@ -420,15 +434,24 @@ function XGameCollectionControl:_ContinueGame2048(gameCfg)
 end
 
 function XGameCollectionControl:_GiveUpGame2048(gameCfg, cb)
-    if XTool.IsTableEmpty(XMVCA.XGame2048:GetCurStageData()) then
+    local stageData = XMVCA.XGame2048:GetCurStageData()
+    if XTool.IsTableEmpty(stageData) then
         if cb then
             cb()
         end
         return
     end
-    
+
+    local gameType = GetGameType(gameCfg)
+    local stageId = stageData.StageId
+    local enterMaxScore = self._Model:GetMaxScore(gameType) or 0
     XMVCA.XGame2048:RequestGame2048Settle(XMVCA.XGame2048.EnumConst.SettleType.ByHand,function()
-        self:_ClearLaunchSession(GetGameType(gameCfg))
+        XMVCA.XGameCollection:RecordExitForGame(gameType, {
+            Score = XMVCA.XGame2048:GetStageMaxScoreById(stageId) or 0,
+            EnterMaxScore = enterMaxScore,
+            IsSettled = true,
+        })
+        self:_ClearLaunchSession(gameType)
         if cb then
             cb()
         end
@@ -436,6 +459,7 @@ function XGameCollectionControl:_GiveUpGame2048(gameCfg, cb)
 end
 
 function XGameCollectionControl:_RequestEnterFangKuai(gameCfg)
+    local gameType = GetGameType(gameCfg)
     local targetStageId = gameCfg.StageId
     if not XTool.IsNumberValid(targetStageId) then
         XMVCA.XFangKuai:ExOpenMainUi()
@@ -443,18 +467,19 @@ function XGameCollectionControl:_RequestEnterFangKuai(gameCfg)
     end
 
     XMVCA.XFangKuai:OpenStageFromCollection(targetStageId, function(stageId)
-        self:_StartLaunchSession(gameCfg.GameType, stageId or targetStageId)
+        self:_StartLaunchSession(gameType, stageId or targetStageId, self:_BuildEnterScoreSnapshot(gameType))
     end)
 end
 
 function XGameCollectionControl:_ContinueFangKuai(gameCfg)
+    local gameType = GetGameType(gameCfg)
     local currentStageId = self:_GetFangKuaiPlayingStageId(gameCfg)
     if not XTool.IsNumberValid(currentStageId) then
         return
     end
 
     XMVCA.XFangKuai:OpenStageFromCollection(currentStageId, function(stageId)
-        self:_StartLaunchSession(GetGameType(gameCfg), stageId or currentStageId)
+        self:_StartLaunchSession(gameType, stageId or currentStageId, self:_BuildEnterScoreSnapshot(gameType))
     end)
 end
 
@@ -467,12 +492,25 @@ function XGameCollectionControl:_GiveUpFangKuai(gameCfg, cb)
         return
     end
 
+    local gameType = GetGameType(gameCfg)
+    local enterMaxScore = self._Model:GetMaxScore(gameType) or 0
     XMVCA.XFangKuai:GiveUpStageFromCollection(currentStageId, function()
-        self:_ClearLaunchSession(GetGameType(gameCfg))
+        local settleData = XMVCA.XFangKuai:GetCurStageSettleData()
+        XMVCA.XGameCollection:RecordExitForGame(gameType, {
+            Score = settleData and settleData.Point or 0,
+            EnterMaxScore = enterMaxScore,
+            IsSettled = true,
+        })
+        self:_ClearLaunchSession(gameType)
         if cb then
             cb()
         end
     end)
+end
+
+function XGameCollectionControl:OpenDialog(title,context,surecb)
+    XLuaUiManager.Open("UiGoldenMinerGiveUp",title,context,surecb) 
+
 end
 
 return XGameCollectionControl

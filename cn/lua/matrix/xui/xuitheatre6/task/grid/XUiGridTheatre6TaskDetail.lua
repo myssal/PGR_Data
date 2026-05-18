@@ -1,11 +1,10 @@
 ---@class XUiGridTheatre6TaskDetail : XUiNode 任务详情
 ---@field Parent XUiTheatre6RoomChooseTask
 ---@field _Control XTheatre6Control
----@param _TaskData XTheatre6StageTaskProtocol
----@param _SlotData XTheatre6StageTaskSlotDataProtocol
+---@field _TaskData XTheatre6StageTaskProtocol
+---@field _SlotData XTheatre6StageTaskSlotDataProtocol
 local XUiGridTheatre6TaskDetail = XClass(XUiNode, "XUiGridTheatre6TaskDetail")
 
-local TaskState = XEnumConst.Theatre6.TaskState
 local Choose = 1 --任务选择
 local Show = 2 --任务展示
 local Settle = 3 --任务结算
@@ -13,6 +12,7 @@ local Settle = 3 --任务结算
 function XUiGridTheatre6TaskDetail:OnStart()
     self.BtnRefresh:AddEventListener(handler(self, self.OnBtnRefreshClick))
     self.BtnChoose:AddEventListener(handler(self, self.OnBtnChooseClick))
+    self.BtnChoose.ExitCheck = false
     self.BtnRefresh.gameObject:SetActiveEx(false)
 end
 
@@ -50,6 +50,7 @@ end
 
 function XUiGridTheatre6TaskDetail:UpdateChoose(isSelected)
     self.RImgBgChoose.gameObject:SetActiveEx(isSelected)
+    self.BtnChoose:SetButtonState(isSelected and XUiButtonState.Select or XUiButtonState.Normal)
 end
 
 function XUiGridTheatre6TaskDetail:ShowTaskInfo()
@@ -103,7 +104,7 @@ function XUiGridTheatre6TaskDetail:ShowDemand(isShowProgress)
         local cur, total = 0, 0
         if isShowCondition then
             local condConfig = self._Control:GetConditionConfig(conditionId)
-            cur, total = self._TaskData.Schedule, self._TaskConfig.ConditionValue
+            cur, total = self._TaskData.Schedule, condConfig.Params[2]
             grid.TxtCondition.text = condConfig.Desc
         else
             local data = goodsSlots[i]
@@ -151,12 +152,16 @@ function XUiGridTheatre6TaskDetail:ShowProgressReward()
     if self._IsTaskFinish then
         self.UiTxtSettlement.text = XUiHelper.GetText("Theatre6TaskProgressFinish")
     else
-        if not self._GridResource then
-            ---@type XUiGridTheatre6BossRewardResource
-            self._GridResource = require("XUi/XUiTheatre6/Boss/Grid/XUiGridTheatre6BossRewardResource").New(self.GridResource, self)
+        if XTool.IsNumberValid(self._TaskData.FailAddNum) then
+            if not self._GridResource then
+                ---@type XUiGridTheatre6BossRewardResource
+                self._GridResource = require("XUi/XUiTheatre6/Boss/Grid/XUiGridTheatre6BossRewardResource").New(self.GridResource, self)
+            end
+            self._GridResource:RefreshGold(self._TaskData.FailAddNum)
+        else
+            self.GridResource.gameObject:SetActiveEx(false)
         end
-        self._GridResource:RefreshGold(self._TaskData.FailAddNum)
-        self.UiTxtSettlement.text = string.format("%s%%", math.ceil(self._TaskData.Progress / 10))
+        self.UiTxtSettlement.text = string.format("%s%%", math.floor(self._TaskData.Progress / 10))
     end
 end
 
@@ -176,8 +181,9 @@ function XUiGridTheatre6TaskDetail:OnBtnRefreshClick()
     end
 
     self._Control:RequestRefreshTask(self._TaskId, self._SlotData.Index, function()
-        self.Parent:UpdateTask()
+        self.Parent:UpdateTaskRefresh(self._SlotData.Index)
         self:SetBtnRefresh()
+        self:PlayAnimation("ReShow")
     end)
 end
 

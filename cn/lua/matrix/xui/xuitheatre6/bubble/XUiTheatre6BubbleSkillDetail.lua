@@ -5,15 +5,16 @@ local XUiTheatre6BubbleSkillDetail = XLuaUiManager.Register(XLuaUi, "UiTheatre6B
 function XUiTheatre6BubbleSkillDetail:OnAwake()
     self.BubbleSkillDetail.gameObject:SetActiveEx(true)
     ---@type XUiPanelTheatre6SkillDetail
-    self._SkillDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6SkillDetail").New(self.BubbleSkillDetail, self)
+    self._SkillDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6SkillDetail").New(
+    self.BubbleSkillDetail, self)
     self.BtnClose:AddEventListener(handler(self, self.Close))
 end
 
-function XUiTheatre6BubbleSkillDetail:OnStart(skillId, target,param,avoidTransforms)
+function XUiTheatre6BubbleSkillDetail:OnStart(skillId, target, param, avoidTransforms)
     self._SkillId = skillId
-    self._SkillDetail:Refresh(skillId,param)
+    self._SkillDetail:Refresh(skillId, param)
     self.InShop = param and param.IsInShop
-    XUiHelper.ShowBubbleToTarget(self.PanelBubble, target, self.Transform,avoidTransforms)
+    XUiHelper.ShowBubbleToTarget(self.PanelBubble, target, self.Transform, avoidTransforms)
 end
 
 function XUiTheatre6BubbleSkillDetail:OnEnable()
