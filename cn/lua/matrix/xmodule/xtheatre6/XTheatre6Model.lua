@@ -215,7 +215,7 @@ function XTheatre6Model:UpdateFileDataToSlot(fileData)
         self._FileDatas = {}
     end
     for i, data in ipairs(self._FileDatas) do
-        if data.SlotId == fileData.SlotId then
+        if data.SlotId == fileData.SlotId and data.CharacterId == fileData.CharacterId then
             self._FileDatas[i] = fileData
             return
         end
@@ -257,11 +257,17 @@ function XTheatre6Model:GetMessyCodes()
 end
 
 function XTheatre6Model:SetCurSanCueId(id)
-    self._CurSanCueId = id
+    if not self._CurSanCueDict then
+        self._CurSanCueDict = {}
+    end
+    self._CurSanCueDict[self._CurrentMode] = id
 end
 
 function XTheatre6Model:GetCurSanCueId()
-    return self._CurSanCueId
+    if self._CurSanCueDict then
+        return self._CurSanCueDict[self._CurrentMode]
+    end
+    return nil
 end
 
 ---条件：通关活动x关卡y次
@@ -531,20 +537,20 @@ end
 function XTheatre6Model:NotifyTheatre6AddSkill(data)
     local skillUpdates = data and data.SkillUpdates
     local hasUpgradeReplace = false
-    local hasLowLevelToBag = false
+    -- local hasLowLevelToBag = false
     local playModeId = self:GetCurPlayMode()
     for _, skillUpdateData in ipairs(skillUpdates or {}) do
         local upgrade, toBag = self.Skill:CollectAddSkillToastFlags(skillUpdateData)
         hasUpgradeReplace = hasUpgradeReplace or upgrade
-        hasLowLevelToBag = hasLowLevelToBag or toBag
+        -- hasLowLevelToBag = hasLowLevelToBag or toBag
         self.Skill:UpdateSkillsWithOverQueue(skillUpdateData, playModeId)
     end
     if hasUpgradeReplace then
         XUiManager.TipMsg(XUiHelper.GetText("Theatre6SkillReplaceHigh"))
     end
-    if hasLowLevelToBag then
-        XUiManager.TipMsg(XUiHelper.GetText("Theatre6SkillAutoToBag"))
-    end
+    -- if hasLowLevelToBag then
+    --     XUiManager.TipMsg(XUiHelper.GetText("Theatre6SkillAutoToBag"))
+    -- end
     if self.Skill:IsForceSellSkillBlock() then
         self.Skill:OpenSellSkillPanel(self.Skill:GetForceSellSkillOverQueue())
     end

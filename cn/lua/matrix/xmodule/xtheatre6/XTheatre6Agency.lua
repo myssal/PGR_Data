@@ -165,36 +165,27 @@ function XTheatre6Agency:GetBuildTagConfig(buildTagId)
     return self._Model:GetBuildTagConfig(buildTagId)
 end
 
-function XTheatre6Agency:PlayBuffAudio()
-    local cur = self._Model:GetCurBuffCueId()
-    local now = self._Model:GetBuffCueId()
-    if cur == now then
+function XTheatre6Agency:PlayAudioWithoutFight()
+    if XFightUtil.IsFighting() then
         return
     end
-
-    if XTool.IsNumberValid(cur) then
-        XLuaAudioManager.StopAudioByCueId(cur)
-    end
-
-    if XTool.IsNumberValid(now) then
-        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, now)
-    end
-
-    self._Model:SetCurBuffCueId(now)
+    self:PlayAudio()
 end
 
-function XTheatre6Agency:StopBuffAudio()
-    local cur = self._Model:GetCurBuffCueId()
-    if XTool.IsNumberValid(cur) then
-        XLuaAudioManager.StopAudioByCueId(cur)
-        self._Model:SetCurBuffCueId(nil)
-    end
-end
-
-function XTheatre6Agency:PlaySanAudio()
+---[1]、进入局内时播放，回到局外时停止
+---[2]、进入局内商店时停止，离开时恢复播放
+---[3]、进入战斗时不停止，等待战斗内自己的音频顶掉，关闭战斗奖励界面时恢复
+---[4]、全流程结束，进入结算界面时停止
+---[5]、buff音频播放优先级高于san音频
+function XTheatre6Agency:PlayAudio()
     local cur = self._Model:GetCurSanCueId()
-    local now = self._Model:GetCurSanConfig().CueId
+    local now = self._Model:GetBuffCueId()
+    if not now then
+        now = self._Model:GetCurSanConfig().CueId
+    end
+
     if cur == now then
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Music, now, false)
         return
     end
 
@@ -203,13 +194,13 @@ function XTheatre6Agency:PlaySanAudio()
     end
 
     if XTool.IsNumberValid(now) then
-        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, now)
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Music, now)
     end
 
     self._Model:SetCurSanCueId(now)
 end
 
-function XTheatre6Agency:StopSanAudio()
+function XTheatre6Agency:StopAudio()
     local cur = self._Model:GetCurSanCueId()
     if XTool.IsNumberValid(cur) then
         XLuaAudioManager.StopAudioByCueId(cur)
@@ -252,6 +243,8 @@ end
 
 ----------public end----------
 
+---获取有效的商店或任务配置列表
+---@param taskShopType number
 ---@return XTableTheatre6Reward[]
 function XTheatre6Agency:GetValidShopOrTaskList(taskShopType)
     return self._Model:GetTaskOrShopCfgs(taskShopType) or {}
@@ -276,7 +269,7 @@ function XTheatre6Agency:NotifyTheatre6SanChange(data)
     self._Model:NotifyTheatre6SanChange(data)
     local node = self._Model.StageChain.Curr
     if node and node.RoomType ~= XEnumConst.Theatre6.RoomType.BattleShop then
-        self:PlaySanAudio()
+        self:PlayAudioWithoutFight()
     end
 end
 
@@ -347,12 +340,12 @@ end
 
 function XTheatre6Agency:NotifyTheatre6AddBgm(data)
     self._Model:NotifyTheatre6AddBgm(data)
-    self:PlayBuffAudio()
+    self:PlayAudioWithoutFight()
 end
 
 function XTheatre6Agency:NotifyTheatre6DelBgm(data)
     self._Model:NotifyTheatre6DelBgm(data)
-    self:PlayBuffAudio()
+    self:PlayAudioWithoutFight()
 end
 
 function XTheatre6Agency:NotifyTheatre6AddMessyCode(data)
@@ -482,7 +475,7 @@ function XTheatre6Agency:TryOpenNextSkillUpEffectPopup(finishCb)
     self._IsSkillUpEffectPopupOpening = true
     XLuaUiManager.OpenWithCloseCallback(popupData.UiName, function()
         self._IsSkillUpEffectPopupOpening = false
-        self:TryOpenNextSkillUpEffectPopup()
+        self:TryOpenNextSkillUpEffectPopup(finishCb)
     end, table.unpack(popupData.Args))
 end
 

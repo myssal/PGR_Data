@@ -422,12 +422,12 @@ do
         -- self:LogError("checkTime is set to " .. self._checkTime)
     end
 
-    ---释放拼刀成功技能时增伤(乘区14)
+    ---释放拼刀成功技能时增伤(乘区71)
     ---@param eventArgs BeforeDamageCalcEventArgs
     function WrestleSucSkill:BeforeDamageCalc(eventArgs)
         local npc = self._owner
         if eventArgs.Launcher ~= npc._uuid then return end
-        self._proxy:AddDamageMagicContextValue(eventArgs.ContextId, ENpcAttrib.Attack1AmpP, self._dmgIncValue, 0)
+        self._proxy:AddDamageMagicContextValue(eventArgs.ContextId, ENpcAttrib.Attack2AmpP, self._dmgIncValue, 0)
     end
 
     WrestleSucSkill.OnCsNpcDamageEvent = XTheatre6CharBase.IncComboCountOnDamgeInState

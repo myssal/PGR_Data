@@ -65,7 +65,7 @@
         "Id": 17,
         "Name": "<格挡>",
         "Pirority": 1,
-        "Desc": "下次对手技能命中时，消耗1层<color=#516797><</color><Icon=IconBlock|30|30|0.5/><color=#516797>格挡></color>，使自身受到该次技能的伤害降低50%。持续时间无限，可无限叠加，无法格挡击飞与击倒效果。",
+        "Desc": "下次对手技能命中时，消耗1层<color=#516797><</color><Icon=IconBlock|30|30|0.5/><color=#516797>格挡></color>，使自身受到该次技能的伤害降低50%。持续时间无限，可无限叠加，击飞与击倒状态下无法格挡。",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
     },
@@ -73,7 +73,7 @@
         "Id": 18,
         "Name": "格挡",
         "Pirority": 2,
-        "Desc": "受到此次技能的伤害降低50%，无法格挡击飞与击倒效果。",
+        "Desc": "受到此次技能的伤害降低50%，击飞与击倒状态下无法格挡。",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
     },

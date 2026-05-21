@@ -309,7 +309,7 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
         if XLuaUiManager.IsMaskShow(MoveSkillMaskKey) then
             XLuaUiManager.SetMask(false, MoveSkillMaskKey)
         end
-    end, 500)
+    end, 200)
 end
 
 ---溢出技能出售请求
@@ -337,7 +337,10 @@ function XTheatre6Control:BuffLevelUpSkillRequest(buffId,skillId, cb)
             return
         end
         if XTool.IsNumberValid(skillId) and skillId ~= 0 then
-            XLuaUiManager.Open("UiTheatre6GainTips", 1, skillId, true)
+            local nextSkillId = self:GetNextLevelSkillId(skillId)
+            if XTool.IsNumberValid(nextSkillId) then
+                XLuaUiManager.Open("UiTheatre6GainTips", 1, nextSkillId, true)
+            end
         end
         if response.SkillUpdates then
             self._Model.Skill:UpdateSkillListWithOverQueue(response.SkillUpdates)

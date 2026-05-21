@@ -117,6 +117,7 @@ function XVanessaTrainingRoomState:InitStateConfig()
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
         EWorldEvent.NpcInteractComplete,
+        EWorldEvent.DramaFinish,
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Near] = {

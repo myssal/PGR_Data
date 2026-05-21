@@ -1,7 +1,6 @@
-local XUiPanelTask = require("XUi/XUiMoneyReward/XUiPanelTask")
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XDynamicDailyTask = require("XUi/XUiTask/XDynamicDailyTask")
-local XPanelWeeklyTasksRewardGrid = require("XUi/XUiTask/XPanelWeeklyTasksRewardGrid")
+
 ---@class XUiPanelTaskWeekly
 local XUiPanelTaskWeekly = XClass(XUiNode, "XUiPanelTaskWeekly")
 local IsMulting = false
@@ -23,6 +22,10 @@ function XUiPanelTaskWeekly:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_TASK_SYNC, self.Refresh, self)
     self.DynamicTable:RecycleAllTableGrid()
     self:_HideAllWeeklyTaskRewardGrid()
+end
+
+function XUiPanelTaskWeekly:OnDestroy()
+    self:ReleaseRefreshWeeklyTaskRewardBarSchedule()
 end
 
 function XUiPanelTaskWeekly:ShowPanel()
@@ -163,6 +166,13 @@ function XUiPanelTaskWeekly:OnGetReward()
     end)
 end
 
+function XUiPanelTaskWeekly:ReleaseRefreshWeeklyTaskRewardBarSchedule()
+    if self._ScheduleRefreshWeeklyTaskRewardBar then
+        XScheduleManager.UnSchedule(self._ScheduleRefreshWeeklyTaskRewardBar)
+        self._ScheduleRefreshWeeklyTaskRewardBar = nil
+    end
+end
+
 function XUiPanelTaskWeekly:RefreshWeeklyTaskRewardBar()
     if XUiManager.IsHideFunc then
         self.TxtTasksFinished.transform.parent.gameObject:SetActiveEx(false)
@@ -184,43 +194,34 @@ function XUiPanelTaskWeekly:RefreshWeeklyTaskRewardBar()
         self.PanelTasksFinishedCountArrivedGrids = {}
     end
 
-    local barWidth = self.ImgTasksFinishedProgress.rectTransform.rect.width
-    local barX = self.ImgTasksFinishedProgress.rectTransform.anchoredPosition3D.x
+    self:ReleaseRefreshWeeklyTaskRewardBarSchedule()
 
-    for i = 1, activenessCount do
-        local grid = self.PanelTasksFinishedCountArrivedGrids[i]
-        if not grid then
-            if i == 1 then
-                grid = XPanelWeeklyTasksRewardGrid.New(
-                    self.PanelWeeklyTaskRewardGrid,
-                    self.Parent)
-            else
-                local go = CS.UnityEngine.Object.Instantiate(
-                    self.PanelWeeklyTaskRewardGrid)
+    self._ScheduleRefreshWeeklyTaskRewardBar = XScheduleManager.ScheduleNextFrame(function()
+        self:ReleaseRefreshWeeklyTaskRewardBarSchedule()
 
-                go.transform:SetParent(
-                    self.PanelWeeklyTaskRewardGrid.transform.parent,
-                    false)
+        local onGetRewardHandler = handler(self, self.OnGetReward)
 
-                grid = XPanelWeeklyTasksRewardGrid.New(
-                    go, self.Parent)
-            end
+        local barWidth = self.ImgTasksFinishedProgress.rectTransform.rect.width
+        local barX = self.ImgTasksFinishedProgress.rectTransform.anchoredPosition3D.x
 
-            self.PanelTasksFinishedCountArrivedGrids[i] = grid
+        local gridArgs = XTool.MakeArray(activenessCount, function(i)
+            return {
+                PositionX = barX + barWidth / activenessCount * i,
+                Activeness = activeness,
+                TargetActiveness = self.WeeklyActiveness.Activeness[i],
+                RewardId = self.WeeklyActiveness.RewardId[i],
+                OnGetReward = onGetRewardHandler
+            }
+        end)
 
-            grid.Transform.anchoredPosition3D = CS.UnityEngine.Vector3(
-                barX + barWidth / activenessCount * i,
-                grid.Transform.anchoredPosition3D.y,
-                grid.Transform.anchoredPosition3D.z)
-
-        end
-        grid:Open()
-        grid:SetData(
-            activeness,
-            self.WeeklyActiveness.Activeness[i],
-            self.WeeklyActiveness.RewardId[i],
-            function() self:OnGetReward() end)
-    end
+        XTool.SetDataForGenericGrid(
+            self.PanelTasksFinishedCountArrivedGrids,
+            gridArgs,
+            self.PanelWeeklyTaskRewardGrid.gameObject,
+            self.PanelWeeklyTaskRewardGrid.parent,
+            self,
+            require("XUi/XUiTask/XPanelWeeklyTasksRewardGrid"))
+    end)
 end
 
 function XUiPanelTaskWeekly:_HideAllWeeklyTaskRewardGrid()

@@ -35,12 +35,17 @@ function XUiGridTheatre6TaskReward:OnStart()
 end
 
 function XUiGridTheatre6TaskReward:OnGetLuaEvents()
-    return { XEventId.EVENT_THEATRE6_UPDATE_SKILL }
+    return {
+        XEventId.EVENT_THEATRE6_UPDATE_SKILL,
+        XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE,
+    }
 end
 
 function XUiGridTheatre6TaskReward:OnNotify(evt)
     if evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
         self:RefreshCanUpgrade()
+        self:RefreshTagHightLight()
+    elseif evt == XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE then
         self:RefreshTagHightLight()
     end
 end
@@ -52,19 +57,36 @@ function XUiGridTheatre6TaskReward:RefreshCanUpgrade()
 end
 
 function XUiGridTheatre6TaskReward:RefreshTagHightLight()
-    if self._IsSkillReward then
-        local skillCfg = self._Control:GetSkillCfgById(self._Id)
-        self._GridSkill:ShowTagHightLight(self._Control:GetSkillHighlightTagIds(skillCfg))
-    elseif self._IsRelicReward then
+    local highlightSourceTagIds = self._Control:GetEffectiveTagHighlightSourceTagIds(
+        self._Control:GetTagHighlightSourceTagIds()
+    )
+    if self._IsRelicReward then
+        if not self._EnableTagHighlight then
+            self._GridRelic:ShowTagHightLight(nil)
+            return
+        end
         local relicCfg = self._Control:GetAttrPackCfgById(self._Id)
-        local tags = relicCfg and relicCfg.BuildTags
-        self._GridRelic:ShowTagHightLight(self._Control:GetEquippedDominantTagInList(tags))
+        self._GridRelic:ShowTagHightLight(
+            self._Control:CalcSkillHighlightTagsBySource(relicCfg, highlightSourceTagIds)
+        )
+        return
     end
+    if not self._IsSkillReward then return end
+    if not self._EnableTagHighlight then
+        self._GridSkill:ShowTagHightLight(nil)
+        return
+    end
+    local skillCfg = self._Control:GetSkillCfgById(self._Id)
+    self._GridSkill:ShowTagHightLight(
+        self._Control:CalcSkillHighlightTagsBySource(skillCfg, highlightSourceTagIds)
+    )
 end
 
 ---XTool.UpdateDynamicItem调用
 ---@param data Theatre6PreviewRewardGoodsProtocol
-function XUiGridTheatre6TaskReward:Update(data)
+---@param enableTagHighlight boolean 是否启用 tag 高亮(仅任务选择模式传 true)
+function XUiGridTheatre6TaskReward:Update(data, enableTagHighlight)
+    self._EnableTagHighlight = enableTagHighlight == true
     self._Id = data.TemplateId
     self._IsSkillReward = false
     self._IsRelicReward = false

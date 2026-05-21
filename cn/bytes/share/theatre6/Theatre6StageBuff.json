@@ -199,7 +199,6 @@
     },
     {
         "Id": 1010,
-        "Name": "placeholder_正常",
         "BuffTriggerType": 7,
         "BuffEffectType": 11,
         "BuffEffectParams": [
@@ -213,7 +212,6 @@
     },
     {
         "Id": 1011,
-        "Name": "placeholder_小异常",
         "BuffTriggerType": 7,
         "BuffEffectType": 11,
         "BuffEffectParams": [
@@ -227,7 +225,6 @@
     },
     {
         "Id": 1012,
-        "Name": "placeholder_大异常",
         "BuffTriggerType": 7,
         "BuffEffectType": 11,
         "BuffEffectParams": [
@@ -241,8 +238,6 @@
     },
     {
         "Id": 2000,
-        "Name": "placeholder_关卡成长",
-        "Desc": "placeholder_每次滑动增加2点攻击与24点生命",
         "Icon": "Assets/Product/Texture/Image/UiCollection/Iconcollection024.png",
         "BuffTriggerType": 1,
         "BuffTriggerParams": [
@@ -278,7 +273,7 @@
             1,
             -2
         ],
-        "DurationType": 1,
+        "DurationType": 8,
         "DeathType": 1,
         "IsCount": 1,
         "DebuffType": 2,
@@ -300,7 +295,7 @@
             1,
             -4
         ],
-        "DurationType": 1,
+        "DurationType": 8,
         "DeathType": 1,
         "IsCount": 1,
         "DebuffType": 2,
@@ -310,20 +305,17 @@
         "Id": 3500,
         "Name": "回响·材料",
         "Desc": "材料获取量提升20%",
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon28.png",
-        "BuffTriggerType": 3,
-        "BuffTriggerParams": [
-            2,
-            0,
-            1
-        ],
-        "BuffEffectType": 9,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon27.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 4,
         "BuffEffectParams": [
-            200
+            3600,
+            3601,
+            3602,
+            3603
         ],
-        "DurationType": 1,
+        "DurationType": 8,
         "DeathType": 1,
-        "IsCount": 1,
         "DebuffType": 1,
         "Limit": 1
     },
@@ -331,7 +323,7 @@
         "Id": 3501,
         "Name": "回响·尘封异兆I",
         "Desc": "本层<Icon=IconGood01|45|45|0.5/>尘封异兆获取量提升50%",
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon28.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon09.png",
         "BuffTriggerType": 3,
         "BuffTriggerParams": [
             2,
@@ -355,7 +347,7 @@
         "Id": 3502,
         "Name": "回响·寂渊秘识I",
         "Desc": "本层<Icon=IconGood02|45|45|0.5/>寂渊秘识获取量提升50%",
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon28.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon11.png",
         "BuffTriggerType": 3,
         "BuffTriggerParams": [
             2,
@@ -379,7 +371,7 @@
         "Id": 3503,
         "Name": "回响·绯红异象I",
         "Desc": "本层<Icon=IconGood03|45|45|0.5/>绯红异象获取量提升50%",
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon28.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon13.png",
         "BuffTriggerType": 3,
         "BuffTriggerParams": [
             2,
@@ -403,7 +395,7 @@
         "Id": 3504,
         "Name": "回响·幻蚀秘藏I",
         "Desc": "本层<Icon=IconGood04|45|45|0.5/>幻蚀秘藏获取量提升50%",
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon28.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon15.png",
         "BuffTriggerType": 3,
         "BuffTriggerParams": [
             2,
@@ -427,7 +419,7 @@
         "Id": 3505,
         "Name": "回响·尘封异兆II",
         "Desc": "本层<Icon=IconGood01|45|45|0.5/>尘封异兆获取量提升80%",
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon28.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon09.png",
         "BuffTriggerType": 3,
         "BuffTriggerParams": [
             2,
@@ -451,7 +443,7 @@
         "Id": 3506,
         "Name": "回响·寂渊秘识II",
         "Desc": "本层<Icon=IconGood02|45|45|0.5/>寂渊秘识获取量提升80%",
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon28.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon11.png",
         "BuffTriggerType": 3,
         "BuffTriggerParams": [
             2,
@@ -475,7 +467,7 @@
         "Id": 3507,
         "Name": "回响·绯红异象II",
         "Desc": "本层<Icon=IconGood03|45|45|0.5/>绯红异象获取量提升80%",
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon28.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon13.png",
         "BuffTriggerType": 3,
         "BuffTriggerParams": [
             2,
@@ -499,7 +491,7 @@
         "Id": 3508,
         "Name": "回响·幻蚀秘藏II",
         "Desc": "本层<Icon=IconGood04|45|45|0.5/>幻蚀秘藏获取量提升80%",
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon28.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon15.png",
         "BuffTriggerType": 3,
         "BuffTriggerParams": [
             2,
@@ -516,6 +508,78 @@
         ],
         "DeathType": 1,
         "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3600,
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            1,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            200
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3601,
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            2,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            200
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3602,
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            3,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            200
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3603,
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            4,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            200
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
         "DebuffType": 1,
         "Limit": 1
     },
@@ -555,8 +619,6 @@
     },
     {
         "Id": 10001,
-        "Name": "placeholder_剧情用",
-        "Desc": "placeholder_",
         "DurationType": 3,
         "DurationValues": [
             1
@@ -567,8 +629,6 @@
     },
     {
         "Id": 10002,
-        "Name": "placeholder_剧情用",
-        "Desc": "placeholder_",
         "DurationType": 3,
         "DurationValues": [
             1
@@ -579,8 +639,6 @@
     },
     {
         "Id": 10003,
-        "Name": "placeholder_剧情用",
-        "Desc": "placeholder_",
         "DurationType": 3,
         "DurationValues": [
             1
@@ -591,8 +649,6 @@
     },
     {
         "Id": 10004,
-        "Name": "placeholder_剧情用",
-        "Desc": "placeholder_",
         "DurationType": 3,
         "DurationValues": [
             1

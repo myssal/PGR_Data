@@ -13,23 +13,28 @@ function XBuffScript1025201:Init()
     self.blockStacks = 100        --格挡增伤100%
     self._stackbuff = 1025105     --格挡buff
     self.extraDmgBuffId = 1025906 --增伤buff
+    self.checkBlock = 0           --检查是否有格挡
 end
 
 function XBuffScript1025201:OnLuaSkillStart(eventArgs)
     ------------执行------------
     if eventArgs._skillType ~= ETheatre6SkillType.Wrestle then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.extraDmgBuffId, 1, 1, self.baseStacks)
-    if self._proxy:CheckBuffByKind(self._enemyUUID, self._stackbuff) then
-        self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.extraDmgBuffId, 1, 1, self.blockStacks)
-    end
+    local buffStacks = self.baseStacks
+    --如果有格挡，额外增伤层数生效
+    self.checkBlock = self._proxy:CheckBuffByKind(self._enemyUUID, self._stackbuff)
+    if self.checkBlock then buffStacks = self.baseStacks + self.blockStacks end
+    self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.extraDmgBuffId, 1, 1, buffStacks)
 end
 
 function XBuffScript1025201:OnLuaSkillEnd(eventArgs)
     ------------执行------------
     if eventArgs._skillType ~= ETheatre6SkillType.Wrestle then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self._proxy:RemoveBuff(self._npcUUID, self.extraDmgBuffId)
+    local buffStacks = self.baseStacks
+    --如果有格挡，删除时考虑额外层数
+    if self.checkBlock then buffStacks = self.baseStacks + self.blockStacks end
+    self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.extraDmgBuffId,buffStacks)
 end
 
 return XBuffScript1025201

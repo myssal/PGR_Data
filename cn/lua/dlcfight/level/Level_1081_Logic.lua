@@ -93,9 +93,17 @@ do
     local Settle = States.Settle
 
     function Settle:Start()
+        local levelId = self._owner._levelId
         self._proxy:Theatre6CountDownMessageTip(3) --倒计时3秒
         self._proxy:Theatre6UIShowAnimation(true)  --开启角色战斗UI
         self._proxy:SetCameraOpEnable(false)       --禁止移动镜头
+        if levelId == 1082 then
+            self._proxy:PlayMusicInOut(7170, -1, -1, -1, -1, 0, 0) --战斗BGM
+        elseif levelId == 1083 then
+            self._proxy:PlayMusicInOut(7171, -1, -1, -1, -1, 0, 0) --战斗BGM
+        elseif levelId == 1084 then
+            self._proxy:PlayMusicInOut(7172, -1, -1, -1, -1, 0, 0) --战斗BGM
+        end
     end
 
     Settle.EndTime = 5       --Settle阶段结束时间点
@@ -505,13 +513,11 @@ do
             self._proxy:ApplyMagic(self._owner._fighter2UUID, self._owner._fighter2UUID, self._owner._effect, 1, 1)
             self._proxy:ApplyMagic(self._owner._fighter2UUID, self._owner._fighter2UUID, effectBuffId, 1, 1)
             self._appliedDodgeEffect1 = true  -- 记录已施加BUFF
-            XLog.Debug("增加红色特效成功")
         elseif self._launcher:GetUUID() == self._owner._fighter1UUID then
             local effectBuffId = 1025015
             self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, self._owner._effect, 1, 1)
             self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, effectBuffId, 1, 1)
             self._appliedDodgeEffect2 = true  -- 记录已施加BUFF
-            XLog.Debug("增加超算特效成功")
         end
     end
 
@@ -609,13 +615,11 @@ do
             self._proxy:RemoveBuff(self._owner._fighter2UUID, self._owner._effect)
             self._proxy:RemoveBuff(self._owner._fighter2UUID, effectBuffId)
             self._appliedDodgeEffect1 = false
-            XLog.Debug("卸载红色特效成功")
         elseif self._appliedDodgeEffect2 then
             local effectBuffId = 1025015
             self._proxy:RemoveBuff(self._owner._fighter1UUID, self._owner._effect)
             self._proxy:RemoveBuff(self._owner._fighter1UUID, effectBuffId)
             self._appliedDodgeEffect2 = false
-            XLog.Debug("卸载特效成功")
         end
     end
 end
@@ -861,13 +865,11 @@ do
         local livingUuid = self._livingNpc:GetUUID()
 
         proxy:SetAutoChessUiActive(true, "FightUiDisable") --战斗UI退场
-
-        proxy:RemoveBuff(deadUuid, 1025111)
-        proxy:RemoveBuff(livingUuid, 1025111)
-        self:LogError("卸载角色疲劳BUFF")
-        proxy:KillStayScreenEffectById(1071001) --卸载疲劳状态屏幕特效
-        self:LogError("结束阶段卸载疲劳屏幕特效")
-
+        if proxy:CheckBuffByKind(deadUuid, 1025111) or proxy:CheckBuffByKind(livingUuid, 1025111)  then
+            proxy:RemoveBuff(deadUuid, 1025111)
+            proxy:RemoveBuff(livingUuid, 1025111)
+            proxy:KillStayScreenEffectById(1071001) --卸载疲劳状态屏幕特效
+        end
         self._owner:SendDieStartEvent(deadUuid, livingUuid)
     end
 
@@ -1310,8 +1312,6 @@ function XLevelScript1081:ForceContinue()
         info = "launcher = " .. tostring(state._launcher and state._launcher._name)
     end
     local DebugInfo = state and state.DebugInfo
-    self:LogError("XLevelScript1081:ForceContinue is called. CurState is " ..
-        tostring(state and state.Name) .. ", debugInfo: \n " .. tostring(DebugInfo and DebugInfo(state)))
     return self:OnControlCenter()
 end
 
@@ -1493,6 +1493,7 @@ function XLevelScript1081:Ctor(proxy)
     -- self._tiredTime = 90     --疲劳机制开启时间
     self._tiredTime = proxy:Theatre6GetConfig():GetInt("WeakenTime")     --疲劳机制开启时间
     self._tiredState = false --疲劳机制是否开启
+    self._BGMBegin = 1 --BGM播放开始时间
 
     -- self._wrestleDiceTime = 2.5      --拼刀拼点等待时间
     -- self._castRuntimeOverClock = 100 --超算值消耗
@@ -1601,17 +1602,17 @@ function XLevelScript1081:Init()
     elseif self._levelId == 1082 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 5, 0, 100.038, 27.1, 100.066, -6, 0, 0, 0, 0,
             101, false) --1082关的镜头
-        self._proxy:PlayMusicInOut(7170, -1, -1, -1, -1, 0, 0) --战斗BGM
+        --self._proxy:PlayMusicInOut(7170, -1, -1, -1, -1, 0, 0) --战斗BGM
     elseif self._levelId == 1083 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 5, 0, 75, 8.35, 65, -6, 0, 0, 0,
             0,
             101, false) --1083关的镜头
-        self._proxy:PlayMusicInOut(7171, -1, -1, -1, -1, 0, 0) --战斗BGM
+        --self._proxy:PlayMusicInOut(7171, -1, -1, -1, -1, 0, 0) --战斗BGM
     elseif self._levelId == 1084 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 5, 0, 57, 18.9, 58.50978, -6, 0,
             0, 0, 0,
             101, false)                        --1084关的镜头
-        self._proxy:PlayMusicInOut(7172, -1, -1, -1, -1, 0, 0) --战斗BGM
+        --self._proxy:PlayMusicInOut(7172, -1, -1, -1, -1, 0, 0) --战斗BGM
     end
     self._proxy:ResetCamera(false, -80, false) --重置相机方向
     XLog.Debug("开场镜头被激活")

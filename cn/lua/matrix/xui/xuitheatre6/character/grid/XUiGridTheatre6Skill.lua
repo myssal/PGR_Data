@@ -156,6 +156,7 @@ function XUiGridTheatre6Skill:ShowTagHightLight(ids)
             ui.HighLight.gameObject:SetActiveEx(false)
         end
     end
+    if not ids then return end
     for k, id in pairs(ids) do
         if self.TagUis[id] and self.TagUis[id].HighLight then
             self.TagUis[id].HighLight.gameObject:SetActiveEx(true)

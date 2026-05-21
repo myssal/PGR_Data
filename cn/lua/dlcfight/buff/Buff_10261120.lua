@@ -6,7 +6,7 @@ local XBuffScript10261120 = XDlcScriptManager.RegBuffScript(10261120, "XBuffScri
 --消耗自身【体力值】的20%，每消耗1点【体力值】，伤害额外提高12/16/20%攻击；
 
 function XBuffScript10261120:ScriptInit(isGainControl) --初始化
-    self.damageMagicId = 1026398                        --伤害magic
+    self.damageMagicId = 1026397                        --伤害magic
     self.extraPermyriad = {                             --提升伤害比例(万分比）
         [1] = 1200,
         [2] = 1600,
@@ -23,7 +23,7 @@ function XBuffScript10261120:OnLuaSkillStart(eventArgs)
     --保底处理，如果不是自己/技能id不对，直接退出
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-
+    
     --体力处理
     local stamina = self._proxy:GetNpcGameplayAttribValue(self._uuid, ETheatre6AttribType.Stamina)
     local reduceStamina = math.floor(stamina * self.dictReduceStaminaPermyriad / 10000)
@@ -44,13 +44,20 @@ end
 --实际调整伤害
 function XBuffScript10261120:ChangeDamageBeforeCalc(eventArgs)
     if eventArgs.Launcher ~= self._npcUUID then return end
-    if eventArgs.Id ~= self._damageMagicId then return end
+    if eventArgs.Id ~= self.damageMagicId then return end
     --不满足体力条件时，不调整伤害
     if not self.trigger then return end
     local newPermyriad = eventArgs.PhysicalPermyriad + self.totalExctraPermyriad
     self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, newPermyriad, eventArgs.ElementPermyriad,
         eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
-    self.trigger = false
+end
+
+function XBuffScript10261120:OnLuaSkillEnd(eventArgs)
+    ------------执行------------
+    if eventArgs._skillId ~= self._skillId then return end
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    --本技能放完后，取消加伤
+    if self.trigger == true then self.trigger = false end
 end
 
 return XBuffScript10261120

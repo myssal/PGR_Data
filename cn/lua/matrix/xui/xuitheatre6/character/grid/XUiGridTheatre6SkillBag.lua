@@ -75,13 +75,11 @@ end
 ---@param skillId number 技能id，无=nil
 ---@param dragArea Transform[] 拖拽响应区域
 ---@param readOnly boolean 是否只读(参数/存档模式下不查询实时玩法数据)
----@param skillIdsBySlot table<number, table>|nil 存档模式下传入,tag 高亮时不查实时玩法数据
-function XUiGridTheatre6SkillBag:Refresh(pos, slotType, skillId, characterId, readOnly, skillIdsBySlot)
+function XUiGridTheatre6SkillBag:Refresh(pos, slotType, skillId, characterId, readOnly)
     self._SlotType = slotType
     self._SkillId = skillId
     self._Pos = pos
     self._Disable = false
-    self._SkillIdsBySlot = skillIdsBySlot
     self:SetBaseSkill(characterId)
     self:SetHighlightEffect(false)
     self.UiSkillGrid:ShowSelected(false)
@@ -217,24 +215,31 @@ function XUiGridTheatre6SkillBag:CanUpgrade(value)
     self.UiSkillGrid:CanUpgrade(value)
 end
 
----基于当前装备状态刷新 tag 高亮:命中 dominant 的 tag 高亮;
----技能配置 IsShowTags[i]=true 时,对应 BuildTags[i] 强制常亮(与 dominant 高亮取并集)
----结算态(IsCurModeSettle)下统一不高亮
+---基于 Control 的"高亮源 tag 集合"刷新本格 tag 高亮:
+---仅在商店/任务选择界面打开期间(源集合非 nil)才计算
+---高亮 = selfBuildTags ∩ (sourceTagIds ∩ (装备最多 tags + 装备 IsShowTags tags))
+---结算态(IsCurModeSettle)统一不高亮
 function XUiGridTheatre6SkillBag:RefreshTagHightLight()
     -- SkillId 无效时 UiSkillGrid 已 Close 且 TagUis 未建立,无需(也不能)清理
     if not XTool.IsNumberValid(self._SkillId) then return end
     if not TagEffectSlotTypes[self._SlotType] or self._Control:IsCurModeSettle() then
-        self.UiSkillGrid:ShowTagHightLight({})
+        self.UiSkillGrid:ShowTagHightLight(nil)
+        return
+    end
+    local sourceTagIds = self._Control:GetTagHighlightSourceTagIds()
+    if not sourceTagIds then
+        self.UiSkillGrid:ShowTagHightLight(nil)
         return
     end
     local selfCfg = self._Control:GetSkillCfgById(self._SkillId)
     local selfTags = selfCfg and selfCfg.BuildTags
     if not selfTags or #selfTags == 0 then
-        self.UiSkillGrid:ShowTagHightLight({})
+        self.UiSkillGrid:ShowTagHightLight(nil)
         return
     end
+    local highlightSourceTagIds = self._Control:GetEffectiveTagHighlightSourceTagIds(sourceTagIds)
     self.UiSkillGrid:ShowTagHightLight(
-        self._Control:GetSkillHighlightTagIds(selfCfg, self._SkillIdsBySlot)
+        self._Control:CalcSkillHighlightTagsBySource(selfCfg, highlightSourceTagIds)
     )
 end
 

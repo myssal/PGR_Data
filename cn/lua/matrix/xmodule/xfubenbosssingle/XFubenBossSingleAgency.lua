@@ -900,8 +900,8 @@ function XFubenBossSingleAgency:PreFight(stage, teamId, isAssist, challengeCount
         -- 如果是普通区，保存编队到服务端
         local bossSingleStageType = self._Model:GetFightStageType()
         if bossSingleStageType == XEnumConst.BossSingle.StageType.Normal then
-            local bossId = self:GetBossSectionId(stage.StageId)
-            if bossId then
+            local sectionId = self:GetBossSectionId(stage.StageId)
+            if sectionId then
                 -- 提取角色ID列表（排除0和机器人）
                 local characterIds = {}
                 for _, entityId in ipairs(teamData) do
@@ -911,7 +911,7 @@ function XFubenBossSingleAgency:PreFight(stage, teamId, isAssist, challengeCount
                 end
                 
                 if #characterIds > 0 then
-                    self:SaveNormalStageTeamInfo(bossId, characterIds)
+                    self:SaveNormalStageTeamInfo(sectionId, characterIds)
                 end
             end
         end

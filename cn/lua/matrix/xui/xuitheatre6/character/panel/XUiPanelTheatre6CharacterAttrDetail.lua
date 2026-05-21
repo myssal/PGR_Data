@@ -11,8 +11,6 @@ local XUiPanelTheatre6CharacterAttrDetail = XClass(XUiNode, "XUiPanelTheatre6Cha
 function XUiPanelTheatre6CharacterAttrDetail:OnStart(data, mode, isInShop, taskUpgradeSkillIds)
     self._Mode = mode or self._Control:GetCurPlayMode()
     self._IsInShop = isInShop or false
-    self._IsUseParamData = data ~= nil
-    self._ModelData = (data and data.CharacterId) and data or self._Control:GetPlayModeData(self._Mode)
     self._MaxRelicCount = self._Control:GetIntClientConfigValue("MaxRelicCount")
     self._MaxBuffCount = self._Control:GetIntClientConfigValue("MaxBuffCount")
     self._AttrIds = {}
@@ -20,11 +18,27 @@ function XUiPanelTheatre6CharacterAttrDetail:OnStart(data, mode, isInShop, taskU
     self._TaskUpgradeSkillIds = taskUpgradeSkillIds
     self._OnScrollCb = handler(self, self.CheckScoreTopVisible)
 
+    self.PanelSkillBag.gameObject:SetActiveEx(false)
+    self.BtnAttribute:AddEventListener(handler(self, self.OnBtnAttributeClick))
+    self.BtnBackpack:AddEventListener(handler(self, self.ShowSkillBag))
+    self.ListRoleDetail.onValueChanged:AddListener(self._OnScrollCb)
+
+    self:InitScoreTopCheck()
+
+    self:SetData(data)
+    -- self:UpdateReddot()
+end
+
+---切换数据并刷新视图，可在面板创建后多次调用
+---@param data Theatre6FileData|nil
+function XUiPanelTheatre6CharacterAttrDetail:SetData(data)
+    self._IsUseParamData = data ~= nil
+    self._ModelData = (data and data.CharacterId) and data or self._Control:GetPlayModeData(self._Mode)
+
     self:CacheSkillData()
     self:CacheBuffData()
 
-    local characterId = self._ModelData.CharacterId
-    local characterConfig = self._Control:GetCharacterConfig(characterId)
+    local characterConfig = self._Control:GetCharacterConfig(self._ModelData.CharacterId)
     self.UiTxtName.text = characterConfig.Name
     if self._IsUseParamData then
         local defaultFashion = self._Control:GetFashionConfig(characterConfig.FashionIds[1]).BigPortrait
@@ -35,14 +49,7 @@ function XUiPanelTheatre6CharacterAttrDetail:OnStart(data, mode, isInShop, taskU
     end
 
     self:RefreshRoleDetail()
-
-    self.PanelSkillBag.gameObject:SetActiveEx(false)
-    self.BtnAttribute:AddEventListener(handler(self, self.OnBtnAttributeClick))
-    self.BtnBackpack:AddEventListener(handler(self, self.ShowSkillBag))
-    self.ListRoleDetail.onValueChanged:AddListener(self._OnScrollCb)
-
-    self:InitScoreTopCheck()
-    -- self:UpdateReddot()
+    self:UpdateView()
 end
 
 function XUiPanelTheatre6CharacterAttrDetail:OnEnable()
@@ -51,7 +58,6 @@ function XUiPanelTheatre6CharacterAttrDetail:OnEnable()
     if self._IsDirty then
         self._IsDirty = false
     end
-    self:UpdateView()
     -- self:UpdateReddot()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.RefreshRoleDetail, self)
 end
@@ -89,16 +95,6 @@ function XUiPanelTheatre6CharacterAttrDetail:CacheSkillData()
     self._InsertSlotMax = self._Control:GetSlotMaxLimit(XEnumConst.Theatre6.SlotType.Insert)
     self._SpecialSlotMax = self._Control:GetSlotMaxLimit(XEnumConst.Theatre6.SlotType.Special)
     self._BagSlotMax = self._Control:GetSlotMaxLimit(XEnumConst.Theatre6.SlotType.Bag)
-    if self._IsUseParamData then
-        local SlotType = XEnumConst.Theatre6.SlotType
-        self._SkillIdsBySlot = {
-            [SlotType.Active]  = self._ActiveSkillIds,
-            [SlotType.Insert]  = self._InsertSkillIds,
-            [SlotType.Special] = self._SpecialSkillIds,
-        }
-    else
-        self._SkillIdsBySlot = nil
-    end
 end
 
 function XUiPanelTheatre6CharacterAttrDetail:CacheBuffData()
@@ -124,6 +120,7 @@ function XUiPanelTheatre6CharacterAttrDetail:OnGetLuaEvents()
         XEventId.EVENT_THEATRE6_SKILL_NOT_NEW,
         XEventId.EVENT_THEATRE6_SHOP_REFRESH,
         XEventId.EVENT_THEATRE6_SCORE_CHANGE,
+        XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE,
     }
 end
 
@@ -137,7 +134,6 @@ function XUiPanelTheatre6CharacterAttrDetail:OnNotify(evt, ...)
         end
         self:ShowSkill()
         self:DispatchSkillEffects(addedIdsBySlot, upgradeIds)
-        self:RefreshRelicTagHightLight()
         -- self:UpdateReddot()
     elseif evt == XEventId.EVENT_THEATRE6_SHOP_REFRESH then
         self:CacheSkillData()
@@ -164,7 +160,9 @@ function XUiPanelTheatre6CharacterAttrDetail:OnNotify(evt, ...)
         )
 
         self.RollingNumber:Play(oldScore, newScore, 1)
-      
+
+    elseif evt == XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE then
+        self:RefreshAllTagHighLight()
     end
 end
 
@@ -314,7 +312,7 @@ function XUiPanelTheatre6CharacterAttrDetail:ShowSkill()
 
         uiObject:Open()
         uiObject:ClearData()
-        uiObject:Refresh(pos, slotType, skillId, self._ModelData.CharacterId, self._IsUseParamData, self._SkillIdsBySlot)
+        uiObject:Refresh(pos, slotType, skillId, self._ModelData.CharacterId, self._IsUseParamData)
         if self._IsInShop and XTool.IsNumberValid(skillId) then
             uiObject:CanUpgrade(self._Control:CharacterHasCanUpGradeSkills(skillId))
         end
@@ -399,11 +397,12 @@ function XUiPanelTheatre6CharacterAttrDetail:DispatchSkillEffects(addedIdsBySlot
     end
 end
 
----刷新已展示的遗物格子的 tag 高亮(技能装备变化导致 dominant 改变时调用)
-function XUiPanelTheatre6CharacterAttrDetail:RefreshRelicTagHightLight()
-    if not self.RelicGrids then return end
-    for _, grid in pairs(self.RelicGrids) do
-        grid:RefreshTagHightLight(self._SkillIdsBySlot)
+---刷新已展示的装备技能格子的 tag 高亮(商店/任务源 tag 集合变化时调用)
+function XUiPanelTheatre6CharacterAttrDetail:RefreshAllTagHighLight()
+    if not self.SkillGrids or not self._SkillsCount then return end
+    for i = 1, self._SkillsCount do
+        local grid = self.SkillGrids[i]
+        if grid then grid:RefreshTagHightLight() end
     end
 end
 
@@ -643,9 +642,16 @@ function XUiPanelTheatre6CharacterAttrDetail:ShowRelic()
         self.ListRelic.gameObject:SetActiveEx(not isEmpty)
     end
 
+    if not self._GridRelics then
+        ---@type XUiGridTheatre6Relic[]
+        self._GridRelics = {}
+    end
+
     XUiHelper.RefreshCustomizedList(self.GridRelic.parent, self.GridRelic, showCount, function(i, go)
-        ---@type XUiGridTheatre6Relic
-        local grid = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Relic").New(go, self)
+        local grid = self._GridRelics[i]
+        if not grid then
+            grid = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Relic").New(go, self)
+        end
         local relicId = attrPacks[i].Id
         grid:SetRelic(relicId, attrPackNums[relicId])
         if i == showCount and extraCount > 0 then
@@ -657,11 +663,10 @@ function XUiPanelTheatre6CharacterAttrDetail:ShowRelic()
                 table.insert(ids, v.Id)
                 table.insert(counts, attrPackNums[v.Id])
             end
-            XLuaUiManager.Open("UiTheatre6PopupRelicDetail", ids, counts)
+            XLuaUiManager.Open("UiTheatre6PopupRelicDetail", ids, counts, self._IsUseParamData)
         end)
         self.RelicGrids[i] = grid
     end)
-    self:RefreshRelicTagHightLight()
     self.TxtRelicEmpty.gameObject:SetActiveEx(isEmpty)
 end
 
@@ -708,7 +713,7 @@ function XUiPanelTheatre6CharacterAttrDetail:CheckScoreTopVisible()
     local scoreBottom = self._ScoreCorners[0].y
     local viewportTop = self._ViewportCorners[1].y
     XScheduleManager.ScheduleNextFrame(function()
-        if XTool.UObjIsNil(self.ImgBgScoreTop.gameObject) then return end
+        if XTool.UObjIsNil(self.GameObject) then return end
         self.ImgBgScoreTop.gameObject:SetActiveEx(scoreBottom > viewportTop)
     end)
 end

@@ -7,7 +7,11 @@ local XBuffScript10261110 = XDlcScriptManager.RegBuffScript(10261110, "XBuffScri
 
 function XBuffScript10261110:ScriptInit(isGainControl) --初始化
     --注册技能伤害id
-    self._damageMagicId = 1026397
+    self._damageMagicId = {
+        [1] = 1026514,
+        [2] = 1026515,
+        [3] = 1026516
+    }
     --所需体力
     self._needTL = 10
     --所需坚毅层数
@@ -46,7 +50,18 @@ end
 --实际调整伤害
 function XBuffScript10261110:ChangeDamageBeforeCalc(eventArgs)
     if eventArgs.Launcher ~= self._npcUUID then return end
-    if eventArgs.Id ~= self._damageMagicId then return end
+    -- 1. 遍历自建的技能伤害ID列表，校验 eventArgs.Id 是否符合
+    local isMatch = false
+    for _, magicId in ipairs(self._damageMagicId) do
+        if eventArgs.Id == magicId then
+            isMatch = true
+            break
+        end
+    end
+    -- 2. 如果不匹配任何一个ID，直接退出
+    if not isMatch then return end
+    
+    
     --如果没有满足条件，或者已经修改过伤害了，直接返回
     if self._trigger == false then return end
     --判断要改多少伤害
@@ -56,7 +71,16 @@ function XBuffScript10261110:ChangeDamageBeforeCalc(eventArgs)
     --调整伤害
     self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, newPermyriad, eventArgs.ElementPermyriad,
         eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
-    self._trigger = false
+    
+
+end
+
+function XBuffScript10261110:OnLuaSkillEnd(eventArgs)
+    ------------执行------------
+    if eventArgs._skillId ~= self._skillId then return end
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    --本技能放完后，取消加伤
+    if self._trigger == true then self._trigger = false end
 end
 
 return XBuffScript10261110

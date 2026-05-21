@@ -40,20 +40,21 @@ function XUiPanelTheatre6SkilBagDetail:OnGetLuaEvents()
         XEventId.EVENT_THEATRE6_BUY_GOOD,
         XEventId.EVENT_THEATRE6_SKILL_BUBBLE_CLOSE,
         XEventId.EVENT_THEATRE6_SHOP_REFRESH,
+        XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE,
     }
 end
 
 function XUiPanelTheatre6SkilBagDetail:OnNotify(evt, ...)
     if evt == XEventId.EVENT_THEATRE6_BUY_GOOD or evt == XEventId.EVENT_THEATRE6_SHOP_REFRESH then
         self:Refresh()
-    end
-    if evt == XEventId.EVENT_THEATRE6_SKILL_BUBBLE_CLOSE then
+    elseif evt == XEventId.EVENT_THEATRE6_SKILL_BUBBLE_CLOSE then
         self:ClearCurrentSelect()
-    end
-    if evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
+    elseif evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
         local addedIdsBySlot, upgradeIds = ...
         self:Refresh()
         self:DispatchSkillEffects(addedIdsBySlot, upgradeIds)
+    elseif evt == XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE then
+        self:RefreshAllTagHighLight()
     end
 end
 
@@ -129,6 +130,21 @@ function XUiPanelTheatre6SkilBagDetail:DispatchSkillEffects(addedIdsBySlot, upgr
         for _, grid in pairs(self.SkillGrids[slotType] or {}) do
             if addedIdsBySlot then grid:TryTriggerTagEffect(addedIdsBySlot) end
             if upgradeIds then grid:TryShowUpgradeEffect(upgradeIds) end
+        end
+    end
+end
+
+---刷新技能背包详情中所有技能格子的 tag 高亮
+function XUiPanelTheatre6SkilBagDetail:RefreshAllTagHighLight()
+    if not self.SkillGrids then return end
+    for _, slotType in ipairs(slotTypeInitOrder) do
+        local grids = self.SkillGrids[slotType]
+        if grids then
+            for _, grid in pairs(grids) do
+                if grid then
+                    grid:RefreshTagHightLight()
+                end
+            end
         end
     end
 end

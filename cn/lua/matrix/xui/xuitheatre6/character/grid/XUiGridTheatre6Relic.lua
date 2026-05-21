@@ -8,6 +8,7 @@ function XUiGridTheatre6Relic:OnStart()
     if self.GridRelic then
         self.GridRelic:AddEventListener(handler(self, self.OnGridRelicClick))
     end
+    self.InitListTagX = self.ListTag.anchoredPosition.x
 end
 
 function XUiGridTheatre6Relic:SetRelic(id, count)
@@ -30,6 +31,9 @@ end
 function XUiGridTheatre6Relic:ShowMore(count)
     self.ImgMask.gameObject:SetActiveEx(true)
     self.UiTxtAddNum.text = string.format("+%s", count)
+    if self.ListTag then
+        self.ListTag:SetAnchoredPositionX(self.InitListTagX + self.Tag.rect.width / 2)
+    end
 end
 
 function XUiGridTheatre6Relic:ShowBuildTag()
@@ -63,18 +67,12 @@ function XUiGridTheatre6Relic:ShowTagHightLight(ids)
             ui.HighLight.gameObject:SetActiveEx(false)
         end
     end
+    if not ids then return end
     for _, id in pairs(ids) do
         if self.TagUis[id] and self.TagUis[id].HighLight then
             self.TagUis[id].HighLight.gameObject:SetActiveEx(true)
         end
     end
-end
-
----按当前装备技能 dominant tag 刷新本格 tag 高亮
----@param skillIdsBySlot table<number, table>|nil 存档模式下传入,避免查实时玩法数据
-function XUiGridTheatre6Relic:RefreshTagHightLight(skillIdsBySlot)
-    if not self._Config then return end
-    self:ShowTagHightLight(self._Control:GetEquippedDominantTagInList(self._Config.BuildTags, skillIdsBySlot))
 end
 
 function XUiGridTheatre6Relic:SetClickCb(cb)

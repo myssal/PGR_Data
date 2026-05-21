@@ -20,17 +20,12 @@ function XUiTheatre6Settlement:OnStart(settleData, mode, isContinue)
 
     self._PanelDetail = require("XUi/XUiTheatre6/Settlement/Panel/XUiPanelTheatre6SettlementDetail").New(self.PanelDetail, self, self._Mode)
     self._PanelSave = require("XUi/XUiTheatre6/Settlement/Panel/XUiPanelTheatre6SettlementSave").New(self.PanelSave, self, self._Mode)
-    self:TryOpenSellSkillPanel()
 end
 
 function XUiTheatre6Settlement:OnEnable()
 
     self:ShowPanelResult()
     XLuaUiManager.SafeClose("UiTheatre6RoomEitheror")
-end
-
-function XUiTheatre6Settlement:TryOpenSellSkillPanel()
-    return self._Control:CheckForceSellSkillBlock()
 end
 
 function XUiTheatre6Settlement:OnDisable()

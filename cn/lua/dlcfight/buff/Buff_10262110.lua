@@ -20,7 +20,7 @@ end
 
 function XBuff10262110:OnEnterLevel(levelId)
     XTheatre6SkillBase.OnEnterLevel(self, levelId)
-    self._hitDownController = self:GetEnemyNpc():GetHitDownController()
+    self._hitDownController = self:GetNpc():GetHitDownController()
 end
 
 function XBuff10262110:OnLuaSpecialHit(eventArgs)

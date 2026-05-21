@@ -40,6 +40,7 @@ function XUiTheatre6BattleShopGridCommodity:OnGetLuaEvents()
         XEventId.EVENT_THEATRE6_BUY_GOOD,
         XEventId.EVENT_THEATRE6_GOLD_CHANGE,
         XEventId.EVENT_THEATRE6_UPDATE_SKILL,
+        XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE,
     }
 end
 
@@ -51,10 +52,12 @@ function XUiTheatre6BattleShopGridCommodity:OnNotify(evt, ...)
         if args[1] == self.GridData.Position then
             self.IsSell = true
             self:RefreshSellStatus()
+            self:RefreshTagHightLight()
             self.IsLock = false
             self:RefreshLockStatus()
         else
             self:RefreshCanUpgrade()
+            self:RefreshTagHightLight()
         end
     elseif evt == XEventId.EVENT_THEATRE6_GOLD_CHANGE then
         if not self:IsSellOut() then
@@ -62,6 +65,8 @@ function XUiTheatre6BattleShopGridCommodity:OnNotify(evt, ...)
         end
     elseif evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
         self:RefreshCanUpgrade()
+        self:RefreshTagHightLight()
+    elseif evt == XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE then
         self:RefreshTagHightLight()
     end
 end
@@ -73,14 +78,30 @@ function XUiTheatre6BattleShopGridCommodity:RefreshCanUpgrade()
 end
 
 function XUiTheatre6BattleShopGridCommodity:RefreshTagHightLight()
-    if self:IsSellOut() or not self.GridData then return end
-    if self.GridData.Type == ItemType.Skill then
-        local cfg = self._Control:GetSkillCfgById(self.GridData.GoodId)
-        self.GridSkillUi:ShowTagHightLight(self._Control:GetSkillHighlightTagIds(cfg))
-    elseif self.GridData.Type == ItemType.AttrPack then
-        local cfg = self._Control:GetAttrPackCfgById(self.GridData.GoodId)
-        self.GridRelicUi:ShowTagHightLight(self._Control:GetEquippedDominantTagInList(cfg and cfg.BuildTags))
+    if not self.GridData then return end
+    local highlightSourceTagIds = self._Control:GetEffectiveTagHighlightSourceTagIds(
+        self._Control:GetTagHighlightSourceTagIds()
+    )
+    if self.GridData.Type == ItemType.AttrPack then
+        if self:IsSellOut() then
+            self.GridRelicUi:ShowTagHightLight(nil)
+            return
+        end
+        local relicCfg = self._Control:GetAttrPackCfgById(self.GridData.GoodId)
+        self.GridRelicUi:ShowTagHightLight(
+            self._Control:CalcSkillHighlightTagsBySource(relicCfg, highlightSourceTagIds)
+        )
+        return
     end
+    if self.GridData.Type ~= ItemType.Skill then return end
+    if self:IsSellOut() then
+        self.GridSkillUi:ShowTagHightLight(nil)
+        return
+    end
+    local cfg = self._Control:GetSkillCfgById(self.GridData.GoodId)
+    self.GridSkillUi:ShowTagHightLight(
+        self._Control:CalcSkillHighlightTagsBySource(cfg, highlightSourceTagIds)
+    )
 end
 
 function XUiTheatre6BattleShopGridCommodity:CloseAllGridUis()

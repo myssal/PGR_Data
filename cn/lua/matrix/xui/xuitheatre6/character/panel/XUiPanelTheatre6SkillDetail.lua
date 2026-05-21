@@ -95,7 +95,7 @@ function XUiPanelTheatre6SkillDetail:Refresh(skillId, params)
     self.TxtType.text = self._Control:GetClientConfigValue("SkillType", skillConfig.Type) --技能类型
     self.TxtDesc.text = self._Control:GetSkillDesc(self._SkillId, false)
     if self.UiRImgIcon then
-        self.UiRImgIcon:SetSprite(skillConfig.Icon) --技能图标
+        self.UiRImgIcon:SetRawImage(skillConfig.Icon) --技能图标
     end
 
     self.BtnSell:SetNameByGroup(0, skillConfig.SellPrice)

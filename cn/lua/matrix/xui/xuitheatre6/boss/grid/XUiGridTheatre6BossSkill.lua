@@ -62,7 +62,9 @@ end
 ---@param buildTags number[]
 function XUiGridTheatre6BossSkill:RefreshTags(buildTags)
     if not buildTags or #buildTags == 0 then
-        self.ListTag.gameObject:SetActiveEx(false)
+        if self.ListTag then
+            self.ListTag.gameObject:SetActiveEx(false)
+        end
         return
     end
 

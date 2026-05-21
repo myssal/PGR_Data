@@ -493,16 +493,24 @@ function XUiBigWorldHud:OnSetActive(value)
     end
     self._Active = value
     
+    if self.CanvasGroup then
+        self.CanvasGroup.blocksRaycasts = self._Active
+    end
+
     --当前帧
     local frameCount = CS.UnityEngine.Time.frameCount
     --同一帧内，设置多次，直接取最新结果，不再播放动画
     if frameCount == self._SetFrameCount then
         if self._PlayingAnima then
-            self:StopAnimation(self._PlayingAnima, true, true)
+            self:StopAnimation(self._PlayingAnima, false, true)
         end
-        self._PlayingAnima = false
-        self:SetActive(value)
-        self.CanvasGroup.alpha = value and 1 or 0
+        if value then
+            self:SetActive(value)
+            self:FinishAnimation("Enable")
+        else
+            self:FinishAnimation("Disable")
+            self:SetActive(value)
+        end
         return
     end
     self._SetFrameCount = frameCount

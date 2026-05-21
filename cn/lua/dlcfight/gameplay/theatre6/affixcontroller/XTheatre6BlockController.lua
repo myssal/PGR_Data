@@ -158,7 +158,7 @@ function XTheatre6BlockController:Block(missileUUID, launcherNpcUUID, targetNpcU
     eventArgs._actionId = actionId
     eventArgs._skillId = skillId
     eventArgs._missileHitCount = hitCount
-    eventArgs._hasPopText = hasPopText
+    eventArgs._hasPopText = hasPopText and true or false
     self:DispatchLuaEvent(eventType, eventArgs)
 end
 

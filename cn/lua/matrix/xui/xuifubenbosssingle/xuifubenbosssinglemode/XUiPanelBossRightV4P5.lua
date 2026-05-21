@@ -29,6 +29,17 @@ function XUiPanelBossRightV4P5:OnStart()
     self.BtnStart.CallBack = handler(self, self._OnBtnSelectModuleClick)
 
     self:RefreshWholeView()
+
+    for _, grid in pairs(self._SmallBuffGrids) do
+        grid:PlayExtendAnimation()
+    end
+
+    XLuaUiManager.SetMask(true)
+    self._OpenAnimationMaskOffSchedule = XScheduleManager.ScheduleOnce(function()
+        XLuaUiManager.SetMask(false)
+        XScheduleManager.UnSchedule(self._OpenAnimationMaskOffSchedule)
+        self._OpenAnimationMaskOffSchedule = nil
+    end, 2000)
 end
 
 function XUiPanelBossRightV4P5:OnEnable()
@@ -55,10 +66,14 @@ function XUiPanelBossRightV4P5:OnDisable()
         self)
 end
 
+function XUiPanelBossRightV4P5:OnDestroy()
+    self:_StopRecordTimer()
+end
+
 function XUiPanelBossRightV4P5:Select(i)
     self._SelectedFeatureIndex = i
 
-    if i == 0 then
+    if not i or i == 0 then
         self.SelectedFeature = nil
         self.SelectedBuffGroup = nil
         self.SelectedBuffGroupId = nil
@@ -75,13 +90,15 @@ function XUiPanelBossRightV4P5:Select(i)
     end
 
     self:_RefreshViewSelectState()
+
+    self._BigBuffGrid:PlayExtendAnimation()
 end
 
 function XUiPanelBossRightV4P5:_RefreshViewSelectState()
     local sel = self._SelectedFeatureIndex
     local challengeData = self.Parent._ChallengeData
 
-    if sel == 0 then
+    if not sel or sel == 0 then
         self._BigBuffGrid:Close()
         self.PanelSmallTitle.gameObject:SetActiveEx(true)
         self.PanelBigUi.gameObject:SetActiveEx(false)

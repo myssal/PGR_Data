@@ -386,6 +386,18 @@ XTool.MaxBy = function(t, maxBy)
     return maxK, maxV
 end
 
+-- 根据大小创建一个含有指定数量元素的数组，并使用valueFactory填充其中的值
+-- size -> (index -> value) -> value array
+XTool.MakeArray = function(arraySize, valueFactory)
+    local array = {}
+
+    for i = 1, arraySize do
+        array[i] = valueFactory(i)
+    end
+
+    return array
+end
+
 XTool.ToArray = function(t)
     local array = {}
     for _, v in pairs(t) do
