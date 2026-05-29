@@ -57,10 +57,9 @@ function XTheatre6Control:OnInit()
         [ChooseRoomStatus.ChooseEvent] = handler(self, self.OpenChooseOption),
         [ChooseRoomStatus.TaskFinish] = handler(self, self.OpenTaskSettlement),
         [ChooseRoomStatus.ChooseRoomFinish] = handler(self, self.OpenTaskSettlement),
-        [ChooseRoomStatus.Finished] = handler(self, self.CheckFightReconnect),
     }
 
-    self._OnUiChange = handler(self, self.OnUiChange)
+    self._OnUiDisable = handler(self, self.OnUiDisable)
     self._ShowSceneUis = {
         ["UiTheatre6Main"] = true,
         ["UiTheatre6ChooseCharacter"] = true,
@@ -68,22 +67,21 @@ function XTheatre6Control:OnInit()
     }
 
     self:OnInitCharacter()
+    XMVCA.XTheatre6:PlayBuffAudio()
 end
 
 function XTheatre6Control:AddAgencyEvent()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_ENTER_NEW_ROOM, self.MoveNext, self)
-    CS.XGameEventManager.Instance:RegisterEvent(XEventId.EVENT_UI_ENABLE, self._OnUiChange)
-    CS.XGameEventManager.Instance:RegisterEvent(XEventId.EVENT_UI_DISABLE, self._OnUiChange)
+    CS.XGameEventManager.Instance:RegisterEvent(XEventId.EVENT_UI_DISABLE, self._OnUiDisable)
 end
 
 function XTheatre6Control:RemoveAgencyEvent()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_ENTER_NEW_ROOM, self.MoveNext, self)
-    CS.XGameEventManager.Instance:RemoveEvent(XEventId.EVENT_UI_ENABLE, self._OnUiChange)
-    CS.XGameEventManager.Instance:RemoveEvent(XEventId.EVENT_UI_DISABLE, self._OnUiChange)
+    CS.XGameEventManager.Instance:RemoveEvent(XEventId.EVENT_UI_DISABLE, self._OnUiDisable)
 end
 
 function XTheatre6Control:OnRelease()
-    XMVCA.XTheatre6:StopAudio()
+    XMVCA.XTheatre6:StopBuffAudio()
 end
 
 --region 养成
@@ -179,204 +177,6 @@ function XTheatre6Control:GetShowBuildTagWithSort(buildTags)
     return tagConfigs
 end
 
----返回所有已装备技能(不区分槽位)BuildTag 中出现次数最多的 tag id;并列时按 Pirority 降序 + Id 升序取唯一一个
----@param skillIdsBySlot table<number, table>|nil 可选,按槽位类型的已装备技能id表;不传则查询当前玩法数据
----@return number|nil
-function XTheatre6Control:GetEquippedDominantBuildTagId(skillIdsBySlot)
-    local tagCount = {}
-    local slotTypes = {
-        XEnumConst.Theatre6.SlotType.Active,
-        XEnumConst.Theatre6.SlotType.Insert,
-        XEnumConst.Theatre6.SlotType.Special,
-    }
-    for _, slotType in ipairs(slotTypes) do
-        local ownedIds = (skillIdsBySlot and skillIdsBySlot[slotType])
-            or self:GetCharacterDressSkillIds(slotType)
-        if ownedIds then
-            for _, ownedSkillId in pairs(ownedIds) do
-                if XTool.IsNumberValid(ownedSkillId) then
-                    local cfg = self:GetSkillCfgById(ownedSkillId)
-                    if cfg and cfg.BuildTags then
-                        for _, tagId in ipairs(cfg.BuildTags) do
-                            tagCount[tagId] = (tagCount[tagId] or 0) + 1
-                        end
-                    end
-                end
-            end
-        end
-    end
-    local bestCount = 0
-    for _, count in pairs(tagCount) do
-        if count > bestCount then
-            bestCount = count
-        end
-    end
-    if bestCount <= 0 then return {} end
-    local result = {}
-    for tagId, count in pairs(tagCount) do
-        if count == bestCount then
-            table.insert(result, tagId)
-        end
-    end
-    table.sort(result, function(a, b)
-        local cfgA = self:GetBuildTagConfig(a)
-        local cfgB = self:GetBuildTagConfig(b)
-        local priorityA = (cfgA and cfgA.Pirority) or 0
-        local priorityB = (cfgB and cfgB.Pirority) or 0
-        if priorityA ~= priorityB then
-            return priorityA > priorityB
-        end
-        return a < b
-    end)
-    return result[1]
-end
-
----返回所有已装备技能中配置 IsShowTags 的 BuildTag
----@param skillIdsBySlot table<number, table>|nil 可选,存档模式下传入避免读取实时玩法数据
----@return number[]
-function XTheatre6Control:GetEquippedForceShowBuildTagIds(skillIdsBySlot)
-    local result = {}
-    local set = {}
-    local slotTypes = {
-        XEnumConst.Theatre6.SlotType.Active,
-        XEnumConst.Theatre6.SlotType.Insert,
-        XEnumConst.Theatre6.SlotType.Special,
-    }
-    for _, slotType in ipairs(slotTypes) do
-        local ownedIds = (skillIdsBySlot and skillIdsBySlot[slotType])
-            or self:GetCharacterDressSkillIds(slotType)
-        if ownedIds then
-            for _, ownedSkillId in pairs(ownedIds) do
-                if XTool.IsNumberValid(ownedSkillId) then
-                    local cfg = self:GetSkillCfgById(ownedSkillId)
-                    local buildTags = cfg and cfg.BuildTags
-                    local isShowTags = cfg and cfg.IsShowTags
-                    if buildTags and isShowTags then
-                        for i, tagId in ipairs(buildTags) do
-                            if isShowTags[i] and not set[tagId] then
-                                set[tagId] = true
-                                table.insert(result, tagId)
-                            end
-                        end
-                    end
-                end
-            end
-        end
-    end
-    return result
-end
-
----商店/任务最终高亮源:(source ∩ 装备 dominant tags) ∪ (source ∩ 装备 IsShowTags tags)
----IsShowTags 视为"装备最多 tags"的等价项,与 dominant 一起按 source 命中规则参与高亮
----@param sourceTagIds number[]|nil 商店/任务页收集到的可参照 tag 集合
----@param skillIdsBySlot table<number, table>|nil 可选,存档模式下传入避免读取实时玩法数据
----@return number[]|nil
-function XTheatre6Control:GetEffectiveTagHighlightSourceTagIds(sourceTagIds, skillIdsBySlot)
-    if not sourceTagIds then return nil end
-    local sourceTagSet = {}
-    for _, tagId in ipairs(sourceTagIds) do
-        sourceTagSet[tagId] = true
-    end
-    local result = {}
-    local addedSet = {}
-    local appendIfInSource = function(tagId)
-        if sourceTagSet[tagId] and not addedSet[tagId] then
-            addedSet[tagId] = true
-            table.insert(result, tagId)
-        end
-    end
-    local dominantTagId = self:GetEquippedDominantBuildTagId(skillIdsBySlot)
-    if dominantTagId then
-        appendIfInSource(dominantTagId)
-    end
-    for _, tagId in ipairs(self:GetEquippedForceShowBuildTagIds(skillIdsBySlot)) do
-        appendIfInSource(tagId)
-    end
-    return result
-end
-
----设置 tag 高亮源 tag 集合(仅商店/任务界面打开期间非 nil)
----@param tagIds number[]|nil
-function XTheatre6Control:SetTagHighlightSourceTagIds(tagIds)
-    self._TagHighlightSourceTagIds = tagIds
-    XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE)
-end
-
----@return number[]|nil
-function XTheatre6Control:GetTagHighlightSourceTagIds()
-    return self._TagHighlightSourceTagIds
-end
-
-function XTheatre6Control:ClearTagHighlightSourceTagIds()
-    self._TagHighlightSourceTagIds = nil
-    XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE)
-end
-
----商店/任务页 tag 高亮源:未售/未结算技能与遗物的 BuildTags 并集
----@param skillIds number[]|nil 未售/未结算的技能 id
----@param relicIds number[]|nil 未售/未结算的遗物 id
----@return number[]
-function XTheatre6Control:CollectShopOrTaskHighlightSourceTags(skillIds, relicIds)
-    local set = {}
-    local result = {}
-    if skillIds then
-        for _, skillId in ipairs(skillIds) do
-            if XTool.IsNumberValid(skillId) then
-                local cfg = self:GetSkillCfgById(skillId)
-                if cfg and cfg.BuildTags then
-                    for _, tagId in ipairs(cfg.BuildTags) do
-                        if not set[tagId] then
-                            set[tagId] = true
-                            table.insert(result, tagId)
-                        end
-                    end
-                end
-            end
-        end
-    end
-    if relicIds and #relicIds > 0 then
-        for _, relicId in ipairs(relicIds) do
-            if XTool.IsNumberValid(relicId) then
-                local cfg = self:GetAttrPackCfgById(relicId)
-                local tags = cfg and cfg.BuildTags
-                if tags then
-                    for _, tagId in ipairs(tags) do
-                        if not set[tagId] then
-                            set[tagId] = true
-                            table.insert(result, tagId)
-                        end
-                    end
-                end
-            end
-        end
-    end
-    return result
-end
-
----按"高亮源 tag 集合"计算技能应高亮的 tag id 列表(仅商店/任务界面生效)
----规则:skillCfg.BuildTags 与 sourceTagIds 的交集
----@param skillCfg table 技能或遗物配置(需含 BuildTags)
----@param sourceTagIds number[]|nil 源 tag 集合;为 nil 时返回空(表示不在商店/任务界面)
----@return number[]
-function XTheatre6Control:CalcSkillHighlightTagsBySource(skillCfg, sourceTagIds)
-    local result = {}
-    if not sourceTagIds then return result end
-    local buildTags = skillCfg and skillCfg.BuildTags
-    if not buildTags or #buildTags == 0 then return result end
-    local sourceSet = {}
-    for _, tagId in ipairs(sourceTagIds) do
-        sourceSet[tagId] = true
-    end
-    local addedSet = {}
-    for _, tagId in ipairs(buildTags) do
-        if sourceSet[tagId] and not addedSet[tagId] then
-            addedSet[tagId] = true
-            table.insert(result, tagId)
-        end
-    end
-    return result
-end
-
 function XTheatre6Control:GetBuffDataByUid(uid)
     return self._Model:GetBuffDataByUid(uid)
 end
@@ -395,22 +195,18 @@ function XTheatre6Control:UiTip(itemId)
     XLuaUiManager.Open("UiTip", itemId)
 end
 
-function XTheatre6Control:OpenUi(uiName, isPopOpen)
-    if isPopOpen then
-        XLuaUiManager.PopThenOpen(uiName)
-    else
-        XLuaUiManager.Open(uiName)
-    end
-end
-
 ---选择任务
-function XTheatre6Control:OpenChooseTask(isPopOpen)
-    self:OpenUi("UiTheatre6RoomChooseTask", isPopOpen)
+function XTheatre6Control:OpenChooseTask()
+    XLuaUiManager.Open("UiTheatre6RoomChooseTask")
 end
 
 ---战斗商店
-function XTheatre6Control:OpenBattleShop(isPopOpen)
-    self:OpenUi("UiTheatre6BattleShop", isPopOpen)
+function XTheatre6Control:OpenBattleShop()
+    if XLuaUiManager.IsUiShow("UiTheatre6BattleShop") then
+        XLuaUiManager.PopThenOpen("UiTheatre6BattleShop")
+    else
+        XLuaUiManager.Open("UiTheatre6BattleShop")
+    end
 end
 
 ---BOSS预览
@@ -419,8 +215,8 @@ function XTheatre6Control:OpenBossPreview(roomId, fightId)
 end
 
 ---BOSS选择（选择后进入战斗）
-function XTheatre6Control:OpenRoomBoss(isPopOpen)
-    self:OpenUi("UiTheatre6RoomBoss", isPopOpen)
+function XTheatre6Control:OpenRoomBoss()
+    XLuaUiManager.Open("UiTheatre6RoomBoss")
 end
 
 ---播放剧情
@@ -438,46 +234,34 @@ function XTheatre6Control:OpenNewFloorAvg()
     local storyDetailId = self:GetStageFloorConfig(node.FloorId).StartAVG
     local storyDetailConfig = self:GetStoryDetailConfig(storyDetailId)
     XDataCenter.MovieManager.PlayMovie(storyDetailConfig.StoryId, function()
-        self:MoveNext(false)
+        self:MoveNext()
     end, nil, nil, false)
     self._Model:SetAvgFinish()
 end
 
 ---报幕
-function XTheatre6Control:OpenChapterPreview(isPopOpen)
-    self:OpenUi("UiTheatre6ChapterPreview", isPopOpen)
+function XTheatre6Control:OpenChapterPreview()
+    XLuaUiManager.Open("UiTheatre6ChapterPreview")
 end
 
 ---任务结算
-function XTheatre6Control:OpenTaskSettlement(isPopOpen)
-    self:OpenUi("UiTheatre6RoomTaskSettlement", isPopOpen)
-end
-
----二择最后一个选项是战斗并且中途退出，重新今入战斗
-function XTheatre6Control:CheckFightReconnect()
-    local roomData = self:GetCurRoomData()
-    if not roomData then
-        return
-    end
-    if XTool.IsNumberValid(roomData.FightId) and XTool.IsNumberValid(roomData.FightSeed)
-            and XTool.IsNumberValid(roomData.SelectedMonsterId) and not XTool.IsTableEmpty(roomData.FightRewards) then
-        XLuaUiManager.Open("UiTheatre6Loading")
-    end
+function XTheatre6Control:OpenTaskSettlement()
+    XLuaUiManager.Open("UiTheatre6RoomTaskSettlement")
 end
 
 ---二择房间（任务选择+二择+任务结算）
-function XTheatre6Control:OpenChooseRoom(isPopOpen)
+function XTheatre6Control:OpenChooseRoom()
     local roomData = self:GetCurRoomData()
     local handler = self._ChooseRoomHandlers[roomData.ChooseRoomStatus]
     if handler then
-        handler(isPopOpen)
+        handler()
         XMVCA.XTheatre6:OpenSanDeathBuffPopup()
     end
 end
 
 ---二择
-function XTheatre6Control:OpenChooseOption(isPopOpen)
-    self:OpenUi("UiTheatre6RoomEitheror", isPopOpen)
+function XTheatre6Control:OpenChooseOption()
+    XLuaUiManager.Open("UiTheatre6RoomEitheror")
 end
 
 ---开始游戏
@@ -487,7 +271,7 @@ function XTheatre6Control:StartGame(modelId, stageId, floorIndex, roomIndex)
 end
 
 ---进入下一关
-function XTheatre6Control:MoveNext(isPopOpen)
+function XTheatre6Control:MoveNext()
     self._Model.StageChain:MoveNext()
 
     if XFightUtil.IsFighting() then
@@ -495,10 +279,7 @@ function XTheatre6Control:MoveNext(isPopOpen)
         return
     end
 
-    if isPopOpen == nil then
-        isPopOpen = true
-    end
-    self:OpenStageView(isPopOpen)
+    self:OpenStageView()
 end
 
 function XTheatre6Control:InitClientStageStatus()
@@ -506,7 +287,7 @@ function XTheatre6Control:InitClientStageStatus()
 end
 
 ---@private
-function XTheatre6Control:OpenStageView(isPopOpen)
+function XTheatre6Control:OpenStageView()
     self._Model.StageChain.IsWaitOpenNext = false
 
     local node = self._Model.StageChain.Curr
@@ -517,18 +298,15 @@ function XTheatre6Control:OpenStageView(isPopOpen)
         return
     end
 
-    openUiFunc(isPopOpen)
+    openUiFunc()
     self:TryOpenGetBuffPopup(node.RoomType)
-    self:PlayAudio()
     XMVCA.XTheatre6:OpenSanDeathBuffPopup()
-end
 
-function XTheatre6Control:PlayAudio()
-    local node = self._Model.StageChain.Curr
     if node.RoomType == RoomType.BattleShop then
-        return
+        XMVCA.XTheatre6:StopSanAudio()
+    else
+        XMVCA.XTheatre6:PlaySanAudio()
     end
-    XMVCA.XTheatre6:PlayAudio()
 end
 
 function XTheatre6Control:TryOpenStageViewAfterFight()
@@ -552,11 +330,9 @@ function XTheatre6Control:TryOpenGetBuffPopup(roomType)
     local showFloorBuffData = {}
     for _, uid in ipairs(floorBuffUid) do
         local buffData = self:GetBuffDataByUid(uid)
-        if buffData then
-            local buffConfig = self:GetBuffConfig(buffData.BuffId)
-            if not XTool.IsNumberValid(buffConfig.IsNotShow) then
-                table.insert(showFloorBuffData, buffData)
-            end
+        local buffConfig = self:GetBuffConfig(buffData.BuffId)
+        if not XTool.IsNumberValid(buffConfig.IsNotShow) then
+            table.insert(showFloorBuffData, buffData)
         end
     end
 
@@ -628,9 +404,7 @@ end
 
 function XTheatre6Control:OpenTagTip(buildTags, target, keyWordIds)
     if not buildTags or #buildTags == 0 then
-        if not keyWordIds or #keyWordIds == 0 then
-            return
-        end
+        return
     end
     if XLuaUiManager.IsUiShow("UiTheatre6BubbleTagDetail") then
         XLuaUiManager.Close("UiTheatre6BubbleTagDetail")
@@ -638,7 +412,7 @@ function XTheatre6Control:OpenTagTip(buildTags, target, keyWordIds)
     XLuaUiManager.Open("UiTheatre6BubbleTagDetail", buildTags, target, keyWordIds)
 end
 
-function XTheatre6Control:OnUiChange()
+function XTheatre6Control:OnUiDisable()
     local topUiName = XLuaUiManager.GetUIStackTopUiName()
     if string.IsNilOrEmpty(topUiName) then
         return
@@ -650,8 +424,7 @@ function XTheatre6Control:OnUiChange()
         return
     end
 
-    local isTopShow = XLuaUiManager.IsUiShow(topUiName) or XLuaUiManager.IsUiPushing(topUiName)
-    if self._ShowSceneUis[topUiName] and isTopShow then
+    if self._ShowSceneUis[topUiName] then
         scene:ShowScene()
     else
         scene:HideScene()
@@ -687,10 +460,10 @@ end
 function XTheatre6Control:GetRewardPoolsByRoom(fightId, isHard)
     local stageFightConfig = self._Model:GetStageFightCfgById(fightId)
     local rewards = {}
-    local rewardTypes = isHard and stageFightConfig.HardRewardTypes or stageFightConfig.EasyRewardTypes
-    local rewardIds = isHard and stageFightConfig.HardRewardIds or stageFightConfig.EasyRewardIds
-    for i = 1, #rewardTypes do
-        table.insert(rewards, { rewardTypes[i], rewardIds[i] })
+    for i = 1, #stageFightConfig.HardRewardTypes do
+        local rewardType = isHard and stageFightConfig.HardRewardTypes[i] or stageFightConfig.EasyRewardTypes[i]
+        local rewardId = isHard and stageFightConfig.HardRewardIds[i] or stageFightConfig.EasyRewardIds[i]
+        table.insert(rewards, { rewardType, rewardId })
     end
     return rewards
 end
@@ -816,7 +589,7 @@ end
 ---获取有效商店ID列表
 ---@return number[]
 function XTheatre6Control:GetValidShopIdList()
-    local shopConfigs = XMVCA.XTheatre6:GetValidShopOrTaskList(XEnumConst.Theatre6.TaskShopType.Shop)
+    local shopConfigs = self:GetValidShopOrTaskList(XEnumConst.Theatre6.TaskShopType.Shop)
     local shopIds = {}
     for _, cfg in ipairs(shopConfigs or {}) do
         if XTool.IsNumberValid(cfg.ShopId) then
@@ -824,6 +597,14 @@ function XTheatre6Control:GetValidShopIdList()
         end
     end
     return shopIds
+end
+
+---获取有效的商店或任务配置列表
+---@param taskShopType number
+---@return table[]
+function XTheatre6Control:GetValidShopOrTaskList(taskShopType)
+    local agency = self:GetAgency()
+    return agency:GetValidShopOrTaskList(taskShopType)
 end
 
 ---获取商店/任务一级页签名称
@@ -941,13 +722,15 @@ end
 ---保存存档到指定槽位
 ---@param slotIndex number
 ---@param finishCb function
-function XTheatre6Control:SaveSettlement(mode, slotIndex, finishCb)
-    self:RequestSaveFile(mode, slotIndex, finishCb)
+function XTheatre6Control:SaveSettlement(slotIndex, finishCb)
+    local modeId = self._Model:GetCurPlayMode()
+    self:RequestSaveFile(modeId, slotIndex, finishCb)
 end
 
 ---放弃结算存档
-function XTheatre6Control:GiveUpSettlement(mode, finishCb)
-    self:Theatre6GiveUpSaveFileRequest(mode, finishCb)
+function XTheatre6Control:GiveUpSettlement(finishCb)
+    local modeId = self._Model:GetCurPlayMode()
+    self:Theatre6GiveUpSaveFileRequest(modeId, finishCb)
 end
 
 ---获取回合结算伤害列表

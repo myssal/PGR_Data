@@ -1555,10 +1555,6 @@ function XFubenAgency:ShowReward(winData)
 end
 
 function XFubenAgency:CheckHasFlopReward(winData, needMySelf)
-    if not winData or not winData.FlopRewardList then
-        return false
-    end
-    
     for _, v in pairs(winData.FlopRewardList) do
         if v.PlayerId ~= 0 then
             if not needMySelf or v.PlayerId == XPlayer.Id then

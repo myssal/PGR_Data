@@ -7,9 +7,8 @@ function XUiTheatre6PopupCoverArchive:OnAwake()
     self.BtnCover:AddEventListener(handler(self,self.OnClickCover))
 end
 
-function XUiTheatre6PopupCoverArchive:OnStart(selectSlot, fileData, mode)
+function XUiTheatre6PopupCoverArchive:OnStart(selectSlot, fileData)
     self._SelectSlot = selectSlot
-    self._Mode = mode
     local XUiPanelCharacterAttrDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6CharacterAttrDetail")
 
     --Old：选中槽位的存档数据
@@ -33,7 +32,7 @@ function XUiTheatre6PopupCoverArchive:OnStart(selectSlot, fileData, mode)
 end
 
 function XUiTheatre6PopupCoverArchive:OnClickCover()
-    self._Control:SaveSettlement(self._Mode, self._SelectSlot, function()
+    self._Control:SaveSettlement(self._SelectSlot, function()
         XLuaUiManager.Close("UiTheatre6Settlement")
         self:Close()
     end)

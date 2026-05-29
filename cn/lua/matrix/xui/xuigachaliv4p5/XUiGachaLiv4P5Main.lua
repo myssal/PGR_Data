@@ -87,13 +87,18 @@ function XUiGachaLiv4P5Main:OnStart(gachaId, isPlayEnterAnim, isPlayStoryAnim)
         self._CG.VideoPlayer.DestroyOnStopWithoutLanguagePreparing = true
 
         self._CGFinishCallBack = function()
-            self.SafeAreaContentPane.blocksRaycasts = true
+            if self.SafeAreaContentPane then
+                self.SafeAreaContentPane.blocksRaycasts = true
+            end
+            
             self._Volume:PlayEnd()
             self._Scene:SetXPostFaicalControllerActive(true)
-            self._SwitchableScene:Play(self._SceneId, self.UiSceneInfo.Transform)
+            self._SwitchableScene:OnVideoEnd()
         end
         
         self._CG:AddVideoDestroyCallBack(self._CGFinishCallBack)
+        
+        self._CG:Close()
     end
 
     if self.PanelGyroTips then
@@ -295,6 +300,7 @@ end
 
 function XUiGachaLiv4P5Main:PlayVideoEnableAnim(videoId)
     if self._CG then
+        self._CG:Open()
         self.SafeAreaContentPane.blocksRaycasts = false
         self._SwitchableScene:OnVideoStart()
         self._Volume:PlayStart()

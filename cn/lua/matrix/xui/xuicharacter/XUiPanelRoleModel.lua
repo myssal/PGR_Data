@@ -2889,10 +2889,9 @@ function XUiPanelRoleModel:LoadPartnerUiEffect(modelName, effectParentName, isBi
     local parentNamePrefix = CreateEffectParentName(effectParentName)
     local index = 1
 
-    if isUseModelParent or effectParentName == XPartnerConfigs.EffectParentName.ModelLoopEffect then
+    if isUseModelParent then
         parentNamePrefix = modelName .. parentNamePrefix
     end
-    
     for _, effectInfo in pairs(effectInfos) do
         ---@type UnityEngine.GameObject
         local effectParent = nil
@@ -2956,8 +2955,6 @@ function XUiPanelRoleModel:LoadPartnerUiEffect(modelName, effectParentName, isBi
             if isBindEffect then
                 self:BindEffect(effect)
             end
-
-            effect.gameObject:SetActiveEx(true)
     
             -- 使用动画事件控制的特效, 默认隐藏
             if effectParentName == XPartnerConfigs.EffectParentName.ControlByAnimationEvent then

@@ -37,7 +37,6 @@ function XUiGridFubenChapter:PlayOpenAnim(isAnim, rootUi)
     if isAnim == nil then isAnim = true end
     if not isAnim then
         self.TimerOpen1 = XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.Transform) then return end
             self.Big:Stop()
             self.Small:Stop()
             self.HoldBig:Play()
@@ -45,8 +44,7 @@ function XUiGridFubenChapter:PlayOpenAnim(isAnim, rootUi)
         return
     end
     rootUi.Mask.gameObject:SetActiveEx(true) -- 只要播放动画就开遮罩
-    self.TimerOpen2 = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.Transform) then return end
+    self.TimerOpen2 = XScheduleManager.ScheduleOnce(function() 
         self.Small:Stop()
         if self.Big.gameObject.activeInHierarchy then
             self.Big.transform:PlayTimelineAnimation(function ()
@@ -60,15 +58,13 @@ function XUiGridFubenChapter:PlayCloseAnim(isAnim, rootUi)
     if isAnim == nil then isAnim = true end
     if not isAnim then 
         self.TimerClose1 = XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.Transform) then return end
             self.Big:Stop()
             self.Small:Stop()
             self.HoldSmall:Play()
         end, 1)
         return
     end
-    self.TimerClose2 = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.Transform) then return end
+    self.TimerClose2 = XScheduleManager.ScheduleOnce(function() 
         self.Big:Stop()
         self.Small:Play()
         rootUi.Mask.gameObject:SetActiveEx(true) -- 只要播放动画就开遮罩

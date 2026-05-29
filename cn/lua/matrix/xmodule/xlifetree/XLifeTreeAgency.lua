@@ -318,7 +318,12 @@ end
 
 -- 功能是否开启
 function XLifeTreeAgency:IsOpen(isTips)
-    return false
+    -- 提审包屏蔽
+    if XUiManager.IsHideFunc then return false end
+    -- 玩法是否开启
+    local noTips = not isTips
+    local isOpen = XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.LifeTree, false, noTips)
+    return isOpen
 end
 
 -- 是否是生命树角色

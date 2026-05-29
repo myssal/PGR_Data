@@ -23,6 +23,7 @@ local SkillTypeHighlightConfig = {
     [XEnumConst.Theatre6.SlotType.Active] = "SkillType1LightMask",
 }
 function XUiGridTheatre6Skill:OnStart()
+    self.SkillTypes = {}
     self:ResetClickListener()
 end
 
@@ -47,45 +48,26 @@ function XUiGridTheatre6Skill:UpdateTypeIcons(buildTagCfgs)
             if ui.HighLight then
                 ui.HighLight.gameObject:SetActiveEx(false)
             end
-            if ui.TriggerFx then
-                ui.TriggerFx.gameObject:SetActiveEx(false)
-            end
             self.TagUis[cfg.Id] = ui
         end)
-    if self._LastHighLightTagIds then
-        self:ShowTagHightLight(self._LastHighLightTagIds)
+    if self._LastTagEffectIds then
+        self:ShowTagEffect(self._LastTagEffectIds)
     end
 end
 
 function XUiGridTheatre6Skill:UpdateStarList(starCount)
-    self:ClearLevelUpHideTimer()
-    if self.GridStarLevelUp and not XTool.UObjIsNil(self.GridStarLevelUp) then
-        self.GridStarLevelUp.gameObject:SetActiveEx(false)
-    end
-    if self.GridStarAnim and not XTool.UObjIsNil(self.GridStarAnim) then
-        self.GridStarAnim.gameObject:SetActiveEx(false)
-    end
-    self.GridStarAnim = nil
-    self.GridStarLevelUp = nil
-    self.PreUpStarGo = nil
     XUiHelper.RefreshCustomizedList(self.GridStar.transform.parent, self.GridStar, starCount, function(index, go)
         local ui = {}
         XTool.InitUiObjectByUi(ui, go)
         if ui.Animation then
             ui.Animation.gameObject:SetActiveEx(false)
-            local animUi = {}
-            XTool.InitUiObjectByUi(animUi, ui.Animation)
-            if animUi.LevelUp then
-                animUi.LevelUp.gameObject:SetActiveEx(false)
-            end
             if index == starCount then
                 self.GridStarAnim = ui.Animation
-                self.GridStarLevelUp = animUi.LevelUp
             end
         end
     end)
-    if self._ShowUpgradeEffect then
-        self:TryPlayUpgradeEffect()
+    if self._ShowUpgradeEffect and self.GridStarAnim then
+        self.GridStarAnim.gameObject:SetActiveEx(true)
     end
 end
 
@@ -93,7 +75,7 @@ end
 ---@param readOnly boolean 是否只读(只读时不查询升星状态,避免参数/存档模式下访问实时玩法数据)
 function XUiGridTheatre6Skill:Update(skillId, readOnly)
     if self._SkillId ~= skillId then
-        self._LastHighLightTagIds = nil
+        self._LastTagEffectIds = nil
     end
     self._SkillId = skillId
     local skillConfig = self._Control:GetSkillCfgById(self._SkillId)
@@ -145,18 +127,36 @@ function XUiGridTheatre6Skill:CanUpgrade(value)
     self.ImgUpArrow.gameObject:SetActiveEx(value)
 end
 
+--状态3有同流派
+function XUiGridTheatre6Skill:HasSameSchool(value)
+    for key, typeGo in pairs(self.SkillTypes) do
+        typeGo.Selected.gameObject:SetActiveEx(value)
+    end
+end
+
+--激活同流派动画
+function XUiGridTheatre6Skill:PlaySameSchoolAnimation()
+    if self.EffectGo then
+        self.EffectGo.gameObject:SetActiveEx(true)
+        XScheduleManager.ScheduleOnce(function()
+            if not XTool.UObjIsNil(self.EffectGo) then
+                self.EffectGo.gameObject:SetActiveEx(false)
+            end
+        end, XScheduleManager.SECOND)
+    end
+end
+
 function XUiGridTheatre6Skill:SetClickCb(cb)
     self._ClickCb = cb
 end
 
-function XUiGridTheatre6Skill:ShowTagHightLight(ids)
-    self._LastHighLightTagIds = ids
+function XUiGridTheatre6Skill:ShowTagEffect(ids)
+    self._LastTagEffectIds = ids
     for _, ui in pairs(self.TagUis) do
         if ui.HighLight then
             ui.HighLight.gameObject:SetActiveEx(false)
         end
     end
-    if not ids then return end
     for k, id in pairs(ids) do
         if self.TagUis[id] and self.TagUis[id].HighLight then
             self.TagUis[id].HighLight.gameObject:SetActiveEx(true)
@@ -165,100 +165,9 @@ function XUiGridTheatre6Skill:ShowTagHightLight(ids)
 end
 
 function XUiGridTheatre6Skill:ShowUpgradeEffect(value)
-    self._ShowUpgradeEffect = value
-    if value then
-        self:TryPlayUpgradeEffect()
-    else
-        self:ClearLevelUpHideTimer()
-        if self.GridStarLevelUp and not XTool.UObjIsNil(self.GridStarLevelUp) then
-            self.GridStarLevelUp.gameObject:SetActiveEx(false)
-        end
-    end
+    self._ShowUpgradeEffect =  value
 end
 
-function XUiGridTheatre6Skill:ClearLevelUpHideTimer()
-    if self._LevelUpHideTimer then
-        XScheduleManager.UnSchedule(self._LevelUpHideTimer)
-        self._LevelUpHideTimer = nil
-    end
-end
-
-function XUiGridTheatre6Skill:TryPlayUpgradeEffect()
-    if not self.GridStarAnim or XTool.UObjIsNil(self.GridStarAnim) then
-        return false
-    end
-
-    self:ClearLevelUpHideTimer()
-    self._ShowUpgradeEffect = false
-    self.GridStarAnim.gameObject:SetActiveEx(true)
-
-    local gridStarLevelUp = self.GridStarLevelUp
-    if gridStarLevelUp and not XTool.UObjIsNil(gridStarLevelUp) then
-        gridStarLevelUp.gameObject:SetActiveEx(true)
-        self._LevelUpHideTimer = XScheduleManager.ScheduleOnce(function()
-            self._LevelUpHideTimer = nil
-            if not XTool.UObjIsNil(gridStarLevelUp) then
-                gridStarLevelUp.gameObject:SetActiveEx(false)
-            end
-        end, XScheduleManager.SECOND)
-    end
-    return true
-end
---region 特效
----播放 tag 触发特效(2 秒临时态),不影响持久高亮 _LastHighLightTagIds
-function XUiGridTheatre6Skill:TriggerTagEffect(ids)
-    if not self.TagUis then return end
-    for _, ui in pairs(self.TagUis) do
-        if ui.TriggerFx then
-            ui.TriggerFx.gameObject:SetActiveEx(false)
-        end
-    end
-    local showFx = {}
-    for _, id in pairs(ids) do
-        if self.TagUis[id] and self.TagUis[id].TriggerFx then
-            self.TagUis[id].TriggerFx.gameObject:SetActiveEx(true)
-            table.insert(showFx, self.TagUis[id].TriggerFx)
-        end
-    end
-    XScheduleManager.ScheduleOnce(function()
-        for _, fx in pairs(showFx) do
-            if not XTool.UObjIsNil(fx) then
-                fx.gameObject:SetActiveEx(false)
-            end
-        end
-    end, XScheduleManager.SECOND * 2)
-end
-
-function XUiGridTheatre6Skill:ShowPreLevelUpEffect()
-    if self.PreUpStarGo then
-        self.PreUpStarGo.transform:SetAsLastSibling()
-    else
-        self.PreUpStarGo = XUiHelper.Instantiate(self.GridStar, self.GridStar.transform.parent)
-        self.PreUpStarUi = {}
-        XTool.InitUiObjectByUi(self.PreUpStarUi, self.PreUpStarGo)
-    end
-    if self.PreUpStarUi.Animation then
-        self.PreUpStarUi.Animation.gameObject:SetActiveEx(true)
-        XTool.InitUiObjectByUi(self.PreUpStarUi, self.PreUpStarUi.Animation)
-        if self.PreUpStarUi.LevelUpTips then
-            self.PreUpStarUi.LevelUpTips.gameObject:SetActiveEx(true)
-        end
-    end
-end
-
-function XUiGridTheatre6Skill:TriggerLevelUpEffect()
-    if not self.PreUpStarUi then
-        XLog.Error("未找到预升星特效UI，无法播放升星特效")
-        return
-    end
-    if self.PreUpStarUi.LevelUpTips then
-        self.PreUpStarUi.LevelUpTips.gameObject:SetActiveEx(false)
-    end
-    if self.PreUpStarUi.LevelUpEnable then
-        self.PreUpStarUi.LevelUpEnable.gameObject:SetActiveEx(true)
-    end
-end
----endregion
 function XUiGridTheatre6Skill:OnBtnGridSkillClick()
     if self._ClickCb then
         self._ClickCb(self._SkillId)
@@ -278,7 +187,7 @@ end
 
 function XUiGridTheatre6Skill:ShowSelected(value)
     if value and SkillTypeHighlightConfig[self.SlotTypes[1]] then
-         self.RawImgSelect:SetRawImage(self._Control:GetClientConfigValue(SkillTypeHighlightConfig[self.SlotTypes[1]]))
+        self.RawImgSelect:SetRawImage(self._Control:GetClientConfigValue(SkillTypeHighlightConfig[self.SlotTypes[1]]))
     end
     self.RawImgSelect.gameObject:SetActiveEx(value)
 end
@@ -293,7 +202,7 @@ end
 
 --region 拖拽
 
-function XUiGridTheatre6Skill:SetDragCb(area, cloneParent, startCb, endCb, enterCb, leaveCb, scrollRect)
+function XUiGridTheatre6Skill:SetDragCb(area, cloneParent, startCb, endCb, enterCb, leaveCb)
     self._StartDragCb = startCb
     self._EndDragCb = endCb
     self._EnterDragCb = enterCb
@@ -312,7 +221,7 @@ function XUiGridTheatre6Skill:SetDragCb(area, cloneParent, startCb, endCb, enter
     if not area or not cloneParent then
         return
     end
-    self:InitDrag(cloneParent, area, scrollRect)
+    self:InitDrag(cloneParent, area)
 end
 
 function XUiGridTheatre6Skill:AddDragTargetArea(rectTransform, areaId)
@@ -335,12 +244,12 @@ function XUiGridTheatre6Skill:ClearDrag(restoreClick)
     end
 end
 
-function XUiGridTheatre6Skill:InitDrag(cloneParent, area, scrollRect)
+function XUiGridTheatre6Skill:InitDrag(cloneParent, area)
     if self._Drag then
         return
     end
     self._Drag = XUiSimpleDrag.New(self.Transform, self)
-    self._Drag:Setup(self.Transform, cloneParent, scrollRect)
+    self._Drag:Setup(self.Transform, cloneParent)
     self._Drag:SetTriggerDelay(0.2)
     self.BtnGridSkill:AddEventListener(nil)
     self._Drag:RegisterCallback(DragAction.Click, handler(self, self.OnBtnGridSkillClick))
@@ -363,13 +272,9 @@ function XUiGridTheatre6Skill:OnStartChoose()
 end
 
 function XUiGridTheatre6Skill:OnEnterChooseArea(id)
-    local isValid = true
     if self._EnterDragCb then
-        if self._EnterDragCb(id) == false then
-            isValid = false
-        end
+        self._EnterDragCb(id)
     end
-    self:DisableDragSelect(not isValid)
 end
 
 function XUiGridTheatre6Skill:OnLeaveChooseArea()
@@ -401,11 +306,7 @@ end
 
 function XUiGridTheatre6Skill:OnDestroy()
     self:ClearDrag(false)
-    self:ClearLevelUpHideTimer()
     self.GameObject:SetActiveEx(false)
-    -- XUiHelper.Destroy(self.PreUpStarUi.gameObject)
-    
-    self.PreUpStarUi = nil
 end
 
 function XUiGridTheatre6Skill:ClearNewFlag()

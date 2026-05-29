@@ -76,7 +76,6 @@ function XUiFashionSuitLobby:Update()
     end
 
     self._DynamicTable:ReloadData(self._CurSelectIndex - 1)
-    self:ApplyCurrentSelection()
 end
 
 function XUiFashionSuitLobby:InitGridTabs()
@@ -136,14 +135,17 @@ function XUiFashionSuitLobby:ApplyCurrentSelection()
     end
 
     local luaIndex = self:GetLuaIndexByCurveIndex(self._DynamicTable.Imp.StartIndex)
+    if not XTool.IsNumberValid(luaIndex) then
+        self:RefreshTabSelection()
+        return
+    end
+
     local cfg = self._TabCfgs[luaIndex]
-    if cfg then
-        self._CurSelectIndex = luaIndex
-    end
+    self._CurSelectIndex = luaIndex
     self:RefreshTabSelection()
-    if cfg then
-        self:OnGridTabClick(cfg)
-    end
+
+
+    self:OnGridTabClick(cfg)
 end
 
 ---@param grid XUiFashionSuitLobbyGridTab
@@ -155,9 +157,20 @@ function XUiFashionSuitLobby:OnDynamicTableEvent(event, index, grid)
             return
         end
         grid:Update(cfg)
-        grid:SetSelect(false)
+        grid:SetSelect(index == self._DynamicTable.Imp.StartIndex)
+        if index == self._DynamicTable.Imp.StartIndex then
+            if cfg.Type == self._Control.FashionSuitType.Lock then
+                return
+            end
+            self._CurSelectIndex = luaIndex
+            self:ApplyCurrentSelection()
+        end
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_TWEEN_OVER then
         local luaIndex = self:GetLuaIndexByCurveIndex(self._DynamicTable.Imp.StartIndex)
+        if not XTool.IsNumberValid(luaIndex) then
+            self:RefreshTabSelection()
+            return
+        end
         local cfg = self._TabCfgs[luaIndex]
         if cfg and cfg.Type == self._Control.FashionSuitType.Lock then
             XUiManager.TipMsg(XUiHelper.GetText("FashionSuitProgress2"))
@@ -166,24 +179,23 @@ function XUiFashionSuitLobby:OnDynamicTableEvent(event, index, grid)
             end
             return
         end
+        self._CurSelectIndex = luaIndex
         self:ApplyCurrentSelection()
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         self:TrySelectTab(index, grid)
-    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_BEGIN_DRAG then
-        for _, g in pairs(self._DynamicTable:GetGrids() or {}) do
-            g:SetSelect(false)
-        end
     end
 end
 
 ---@param grid XUiFashionSuitLobbyGridTab
 function XUiFashionSuitLobby:TrySelectTab(curveIndex, grid)
-    local cfg = self._TabCfgs[self:GetLuaIndexByCurveIndex(curveIndex)]
+    local luaIndex = self:GetLuaIndexByCurveIndex(curveIndex)
+    local cfg = self._TabCfgs[luaIndex]
     if not cfg then
         return
     end
 
     if self._DynamicTable.Imp.StartIndex == curveIndex then
+        self._CurSelectIndex = luaIndex
         self:ApplyCurrentSelection()
         return
     end
@@ -202,38 +214,51 @@ function XUiFashionSuitLobby:OnGridTabClick(cfg)
         return
     end
     if self.CurSelectCfg then
-        if self.CurSelectCfg.Sort < cfg.Sort then
+        local isLeft = self.CurSelectCfg.Sort < cfg.Sort
+        local isRight = self.CurSelectCfg.Sort > cfg.Sort
+        if isLeft then
             self:PlayAnimationWithMask("TabToLeft")
-        elseif self.CurSelectCfg.Sort > cfg.Sort then
+        elseif isRight then
             self:PlayAnimationWithMask("TabToRight")
         end
+
     end
 
     self:UpdateUiRimgPic(cfg)
     self.CurSelectCfg = cfg
     self.PanelRight:Refresh(cfg)
-end
 
-local function SetRawImageList(rimgList, path)
-    for _, rimg in ipairs(rimgList) do
-        rimg:SetRawImage(path)
-    end
 end
-
+    
 function XUiFashionSuitLobby:UpdateUiRimgPic(cfg)
-    local newUiCfg = self._Control:GetFashionSuitUiConfigById(cfg.Id)
-    if not self.CurSelectCfg then
-        SetRawImageList(self.CurUiRImgPics, newUiCfg.SuitBackground)
-        SetRawImageList(self.CurUiRimgPicCGs, newUiCfg.FirstBg)
-        SetRawImageList(self.NewUiRImgPics, newUiCfg.SuitBackground)
-        return
+    if  self.CurSelectCfg then
+        local suitUiConfig = self._Control:GetFashionSuitUiConfigById(self.CurSelectCfg.Id)
+        for key, rimg in pairs(self.CurUiRImgPics) do
+            rimg:SetRawImage(suitUiConfig.SuitBackground)
+        end   
+        for key, rimg in pairs(self.NewUiRimgPicCGs) do
+            rimg:SetRawImage(suitUiConfig.FirstBg)
+        end
+        local newSuitUiConfig = self._Control:GetFashionSuitUiConfigById(cfg.Id)
+        for key, rimg in pairs(self.NewUiRImgPics) do
+            rimg:SetRawImage(newSuitUiConfig.SuitBackground)
+        end
+        for key, rimg in pairs(self.CurUiRimgPicCGs) do
+            rimg:SetRawImage(newSuitUiConfig.FirstBg)
+        end
+    else
+        local suitUiConfig = self._Control:GetFashionSuitUiConfigById(cfg.Id)
+        for key, rimg in pairs(self.CurUiRImgPics) do
+            rimg:SetRawImage(suitUiConfig.SuitBackground)
+        end   
+        for key, rimg in pairs(self.CurUiRimgPicCGs) do
+            rimg:SetRawImage(suitUiConfig.FirstBg)
+        end
+        for key, rimg in pairs(self.NewUiRImgPics) do
+            rimg:SetRawImage(suitUiConfig.SuitBackground)
+        end
     end
 
-    local oldUiCfg = self._Control:GetFashionSuitUiConfigById(self.CurSelectCfg.Id)
-    SetRawImageList(self.CurUiRImgPics, oldUiCfg.SuitBackground)
-    SetRawImageList(self.NewUiRimgPicCGs, oldUiCfg.FirstBg)
-    SetRawImageList(self.NewUiRImgPics, newUiCfg.SuitBackground)
-    SetRawImageList(self.CurUiRimgPicCGs, newUiCfg.FirstBg)
 end
 
 return XUiFashionSuitLobby

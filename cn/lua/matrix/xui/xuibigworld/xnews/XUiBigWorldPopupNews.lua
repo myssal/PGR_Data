@@ -281,7 +281,7 @@ end
 function XUiBigWorldPopupNews:RegisterTimer()
     self:RemoveTimer()
 
-    self._Timer = XScheduleManager.ScheduleForeverEx(Handler(self, self.UpdateTime), XScheduleManager.SECOND)
+    self._Timer = XScheduleManager.ScheduleForeverEx(Handler(self, self.UpdateTime), 1)
 end
 
 function XUiBigWorldPopupNews:RemoveTimer()
@@ -314,8 +314,6 @@ function XUiBigWorldPopupNews:UpdateTime()
                 end
 
                 XMVCA.XBigWorldUI:TipText("NewsChangeTip")
-            elseif isInTime then
-                panel:SecondUpdate()
             end
 
             if isChangeSelect then

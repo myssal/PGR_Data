@@ -33,5 +33,40 @@
         "PreSkipIds": [
             200105
         ]
+    },
+    {
+        "Id": 3,
+        "Type": 2,
+        "Name": "归航与启程",
+        "Title": "归航与启程",
+        "Content": "跨越劫难后，军部准备向所有奋战过的人们颁发勋章。整理装束，以毕业生代表的身份再度踏入法奥斯吧。",
+        "Priority": 3,
+        "ShowReward": 2003,
+        "ShowTimeId": 47001,
+        "ShowCountDown": 3542400,
+        "ShowTimeRewardTitle": "限时完成任务",
+        "ShowTimeRewardContent": "即可领取指挥官涂装",
+        "ShowTimeRewardTip": "限时领取将于2026/07/15 05:00截止",
+        "TagHideCondition": 50003202,
+        "EarlyAccessCondition": 50003203,
+        "BgPic": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldNews/UiBigWorldPopupNewsBg109.png",
+        "SkipId": 200122,
+        "RewardShowSkipId": 1204,
+        "TaskGroupId": 701,
+        "IsSpecial": true,
+        "CustomParamId": 2001,
+        "EarlyAccessTextDialogId": 1002,
+        "EarlyAccessSkipIds": [
+            200121
+        ],
+        "Params": [
+            7003
+        ],
+        "PreConditions": [
+            50003206
+        ],
+        "PreSkipIds": [
+            200121
+        ]
     }
 ]

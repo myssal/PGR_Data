@@ -354,7 +354,7 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
                 end
                 -- ④ 绑定技能冲突（需预设武器与实穿一致）
                 local prefabSkillId = resonanceDict and resonanceDict[slot]
-                local isCurSlotSkillIdConflict = isWeaponSameAsReal and XTool.IsNumberValid(prefabSkillId) and not validSkillIdSet[prefabSkillId] and XMVCA.XEquip:GetEquipStarByEquipId(usingWeaponId) >= XEnumConst.EQUIP.MAX_STAR_COUNT
+                local isCurSlotSkillIdConflict = isWeaponSameAsReal and XTool.IsNumberValid(prefabSkillId) and not validSkillIdSet[prefabSkillId]
                 if isCurSlotSkillIdConflict then
                     isWeaponResonanceBindSkillIdConflict = true
                     self.IsWeaponResonanceBindSkillIdConflict = true

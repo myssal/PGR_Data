@@ -10,8 +10,7 @@ function XBuffScript10253010:ScriptInit(isGainControl) --初始化
     self._stunTime = 5 --5秒眩晕
     --self:LogError("....【拼刀成功技能1】初始化完成")
     self._HitFlyController = self:GetNpc():GetHitFlyController()
-    self._stackCount = 1
-    self.useCount = 0
+
 end
 
 --function XBuffScript10253010:OnLuaSkillStart(eventArgs)
@@ -27,9 +26,16 @@ end
 function XBuffScript10253010:OnLuaAffixHitFly(eventArgs)
     ------------执行------------
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    if self.useCount == 1 then
-        self:AddTheatre6Attrib(ETheatre6AttribType.WrestlePoint, self._buffStacks, self._npcUUID, self._npcUUID)
-    end
+    self:AddTheatre6Attrib(ETheatre6AttribType.WrestlePoint, self._buffStacks, self._npcUUID, self._npcUUID)
+end
+
+function XBuffScript10253010:ChangeDamageBeforeCalc(eventArgs)
+    if eventArgs.Launcher ~= self._npcUUID then return end
+    if eventArgs.Id ~= self._damageMagicId then return end
+    if self._hasChangedDamage then return end
+    local FinalDMGRate = eventArgs.PhysicalPermyriad + self._exDamageRate
+    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.isCrity)
+    self._hasChangedDamage = true
 end
 
 function XBuffScript10253010:OnLuaSpecialHit(eventArgs)
@@ -37,14 +43,7 @@ function XBuffScript10253010:OnLuaSpecialHit(eventArgs)
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     self._proxy:Theatre6AddNpcStun(eventArgs._targetUUID, self._stunTime) -- 增加5秒眩晕
-end
-
-function XBuffScript10253010:OnLuaSkillStart(eventArgs)
-    ------------执行------------
-    if eventArgs._skillId ~= self._skillId then return end
-    if eventArgs._launcherUUID ~= self._npcUUID then return end
-    --self._HitFlyController:AddSkillCount(self._stackCount)
-    self.useCount = 1
+    self._HitFlyController:AddSkillCount(self._stackCount)
 end
 
 return XBuffScript10253010

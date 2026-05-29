@@ -40,7 +40,7 @@ local XNirvatiaTeachingBuildingState = XClass(BaseState, "XNirvatiaTeachingBuild
 function XNirvatiaTeachingBuildingState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.TeachingBuilding
-    self.StateConfig.StateAnim = "Drama_Stand_15"
+    self.StateConfig.StateAnim = "Drama_Stand_09"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 2
     self.StateConfig.RegisterWorldEventList = {
@@ -61,18 +61,18 @@ end
 
 function XNirvatiaTeachingBuildingState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.DroneClub, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 0)
 end
 
 function XNirvatiaTeachingBuildingState:HandleEvent(eventType, eventArgs)
     BaseState.HandleEvent(self, eventType, eventArgs)
     if eventType == EWorldEvent.DramaFinish and eventArgs.DramaName == "Drama_3018_001" then
-        if not eventArgs.HistoryDecisionDict[31] then -- 跳过剧情的情况
-            self.StateMachine:SetDataBoard(DataBoardKey.DroneClub, 1) ----无人机
+        if not eventArgs.HistoryDecisionDict[31] then ----跳过剧情的情况
+            self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 1) ----无人机
         elseif table.indexof(eventArgs.HistoryDecisionDict[31], 1) then
-            self.StateMachine:SetDataBoard(DataBoardKey.DroneClub, 3) ----二楼逮捕指挥官
+            self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 3) ----二楼逮捕指挥官
         elseif table.indexof(eventArgs.HistoryDecisionDict[31], 2) then
-            self.StateMachine:SetDataBoard(DataBoardKey.DroneClub, 4) ----教室讲台
+            self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 4) ----教室讲台
         end
     end
 end
@@ -246,9 +246,10 @@ function XCharNirvatiaEcology:RegisterMachineStateTransition()
 
 
     -- 教学楼→2楼/讲台/无人机
+    -- 如果在教学楼前通过分歧节点选1，则去终端室；选2则去讲台，否则去无人机
     self:RegisterInFindPathStateTransition(StateEnum.TeachingBuilding, function()
-        if DataBoardKey.TeachingBuilding == 1 then return  StateEnum.SecondFloor end
-        if DataBoardKey.TeachingBuilding == 2 then return StateEnum.InClass end
+        if self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding == 1) then return  StateEnum.SecondFloor end
+        if self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding == 2) then return StateEnum.InClass end
         return StateEnum.DroneClub
     end, 5, 1)
 

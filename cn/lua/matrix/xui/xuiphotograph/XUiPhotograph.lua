@@ -55,6 +55,12 @@ function XUiPhotograph:OnAwake()
     if self.PanelLackResources then
         self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
     end
+
+    self._CGFinishCallBack = function()
+        self.SwitchableScene:OnVideoEnd()
+    end
+
+    self.CG:AddVideoDestroyCallBack(self._CGFinishCallBack)
 end
 
 function XUiPhotograph:OnStart()
@@ -240,6 +246,7 @@ function XUiPhotograph:OnNotify(evt, ...)
         self:Replay()
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING then
         if not self.CG:IsLanguagePreparing() then
+            self.SwitchableScene:OnVideoStart()
             self:OnCGPlay()
         end
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then

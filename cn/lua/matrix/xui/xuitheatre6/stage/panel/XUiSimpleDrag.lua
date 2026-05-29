@@ -33,11 +33,9 @@ end
 ---初始化设置
 ---@param targetTransform UnityEngine.Transform 被克隆的目标Transform
 ---@param cloneParent UnityEngine.Transform 克隆体的父节点（通常是Canvas层）
----@param scrollRect UnityEngine.UI.ScrollRect|nil 外部传入的需在按下时禁用的滚动组件，未传入则不处理滚动
-function XUiSimpleDrag:Setup(targetTransform, cloneParent, scrollRect)
+function XUiSimpleDrag:Setup(targetTransform, cloneParent)
     self._TargetTransform = targetTransform
     self._CloneParent = cloneParent
-    self._ScrollRect = scrollRect
     self:_InitLongClick()
 end
 
@@ -58,12 +56,15 @@ function XUiSimpleDrag:_InitLongClick()
     self._LongClick:AddFocusExitListener(handler(self, self._OnFocusExit))
 end
 
---- 外部传入 ScrollRect 时,按下即禁用滚动,避免抢占长按/拖拽
+--- 父级存在 ScrollRect 时，按下即禁用滚动，避免抢占长按/拖拽
 function XUiSimpleDrag:_InitScrollRectHandler()
-    if not self._ScrollRect or XTool.UObjIsNil(self._ScrollRect) then
+    local go = self._Transform.gameObject
+    local scrollRect = go:GetComponentInParent(typeof(CS.UnityEngine.UI.ScrollRect))
+    if not scrollRect or XTool.UObjIsNil(scrollRect) then
         return
     end
-    local pointer = self._Transform.gameObject:GetComponent("XUiPointer")
+    self._ScrollRect = scrollRect
+    local pointer = go:GetComponent("XUiPointer")
     if not pointer then
         return
     end

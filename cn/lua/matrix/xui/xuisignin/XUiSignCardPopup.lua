@@ -25,15 +25,7 @@ end
 
 function XUiSignCardPopup:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN, self.Refresh, self)
-    XDataCenter.PurchaseManager.YKInfoDataReq(function()
-        local isBuy = XDataCenter.PurchaseManager.IsYkBuyed()
-        if isBuy then
-            self:RefreshGet()
-            self:AutoGetReward()
-        else
-            XLog.Error("未购买月卡")
-        end
-    end)
+    self:Refresh()
 end
 
 function XUiSignCardPopup:OnDisable()
@@ -41,14 +33,33 @@ function XUiSignCardPopup:OnDisable()
 end
 
 function XUiSignCardPopup:Refresh()
+    self:RefreshButtonsAndBg(false)
     XDataCenter.PurchaseManager.YKInfoDataReq(function()
-        local isBuy = XDataCenter.PurchaseManager.IsYkBuyed()
-        if isBuy then
-            self:RefreshGet()
-        else
-            self:Close()
-        end
+        self:RefreshButtonsAndBg(true)
     end)
+end
+
+function XUiSignCardPopup:RefreshButtonsAndBg(autoGetReward)
+    local isBuy = XDataCenter.PurchaseManager.IsYkBuyed()
+    if isBuy then
+        self:RefreshGet()
+        if autoGetReward then self:AutoGetReward() end
+    else
+        self:Close()
+    end
+
+    local data = XDataCenter.PurchaseManager.GetYKInfoData()
+    if data then
+        if XOverseaManager.IsENRegion() then
+            local isCardC = data and data.Id == XPurchaseConfigs.EnYKCID
+            self.Bg.gameObject:SetActiveEx(not isCardC)
+            self.BgC.gameObject:SetActiveEx(isCardC)
+        end
+
+        local ykConfig = XPurchaseConfigs.GetPurchasePackageYKUiConfig(data.Id)
+        self.TipText01.text = ykConfig.Tips[1]
+        self.TipText02.text = ykConfig.Tips[2]
+    end
 end
 
 function XUiSignCardPopup:RefreshInfo(data)

@@ -534,7 +534,7 @@ PlayerCondition = {
                 return true, condition.Desc
             end
         end
-        return gender == curGender, condition.Desc
+        return false, condition.Desc
     end,
     
     [10200] = function(condition)

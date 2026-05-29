@@ -6175,6 +6175,7 @@ XTable = {
         RolePath = ValueTypestring,
         RoleIcon = ValueTypestring,
         AcceptMessageId = ValueTypeint,
+        Type = ValueTypeint,
         ResultIds = Type1ValueTypeint,
         TotalRewardId = ValueTypeint,
         TipText = ValueTypestring,
@@ -7402,6 +7403,10 @@ XTable = {
         Schedules = Type1ValueTypeint,
         RewardIds = Type1ValueTypeint,
     },
+    XTableDrawCharacterImage = {
+        Id = ValueTypeintPrimaryKey,
+        DrawShowRImg = ValueTypestring,
+    },
     XTableDrawClientConfig = {
         Key = ValueTypestringPrimaryKey,
         Desc = ValueTypestring,
@@ -7467,6 +7472,7 @@ XTable = {
         DrawRules = Type1ValueTypestring,
         IsCharacterImage = ValueTypeint,
         DrawName = ValueTypestring,
+        DrawGroupName = ValueTypestring,
     },
     XTableDrawNewPlayerAssignTag = {
         CharacterId = ValueTypeintPrimaryKey,
@@ -7530,7 +7536,6 @@ XTable = {
         ModelRotation = ValueTypestring,
         ModelScale = ValueTypestring,
         IsHideWeapon = ValueTypeint,
-        DrawShowRImg = ValueTypestring,
         DrawTreePv = ValueTypeint,
     },
     XTableDrawShow = {
@@ -8674,6 +8679,7 @@ XTable = {
         FashionIcon = ValueTypestring,
         FashionName = ValueTypestring,
         OriginalFashionId = ValueTypeint,
+        PreviewAnimation = ValueTypestring
     },
     XTableFashionDownloadConfig = {
         FashionId = ValueTypeintPrimaryKey,
@@ -24560,7 +24566,6 @@ XTable = {
         Icon = ValueTypestring,
         ComboList = Type1ValueTypeint,
         BuildTags = Type1ValueTypeint,
-        IsShowTags = Type1ValueTypebool,
         Level = ValueTypeint,
         Magics = Type1ValueTypeint,
         Type = ValueTypeint,

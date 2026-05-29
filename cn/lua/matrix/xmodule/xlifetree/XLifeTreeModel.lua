@@ -43,6 +43,8 @@ end
 function XLifeTreeModel:RefreshUnlockCharacterData(characterData)
     if not self.LifeTreeData then
         self.LifeTreeData = {}
+    end
+    if not self.LifeTreeData.UnlockCharacterData then
         self.LifeTreeData.UnlockCharacterData = {}
     end
     self.LifeTreeData.UnlockCharacterData[characterData.Id] = characterData

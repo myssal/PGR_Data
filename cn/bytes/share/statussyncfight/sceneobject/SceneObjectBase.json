@@ -2608,19 +2608,19 @@
     {
         "Id": 410,
         "Name": "宿舍-勋绶托座",
-        "Model": "Assets/Product/BigWorld/SkyGarden_SuShe/SceneObjectPrefabs/SG_Sushe_WG_032Qingwa.prefab",
+        "Model": "Assets/Product/BigWorld/SkyGarden_SuShe/SceneObjectPrefabs/SG_Sushe_JH_Dizuo01.prefab",
         "UseDistanceDither": true
     },
     {
         "Id": 411,
         "Name": "宿舍-法奥斯传承勋章",
-        "Model": "Assets/Product/BigWorld/SkyGarden_SuShe/SceneObjectPrefabs/SG_Sushe_WG_032Qingwa.prefab",
+        "Model": "Assets/Product/BigWorld/SkyGarden_SuShe/SceneObjectPrefabs/SG_Sushe_JH_Wujian16.prefab",
         "UseDistanceDither": true
     },
     {
         "Id": 412,
         "Name": "宿舍-补给导师",
-        "Model": "Assets/Product/BigWorld/SkyGarden_SuShe/SceneObjectPrefabs/SG_Sushe_WG_032Qingwa.prefab",
+        "Model": "Assets/Product/BigWorld/SkyGarden_SuShe/SceneObjectPrefabs/SG_Sushe_JH_Wujian17.prefab",
         "UseDistanceDither": true
     },
     {
@@ -2930,7 +2930,8 @@
         "Id": 449,
         "Name": "法奥斯粉笔",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Chalk.prefab",
-        "UseDistanceDither": true
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Chalk.prefab"
     },
     {
         "Id": 700322,
@@ -2942,19 +2943,22 @@
         "Id": 450,
         "Name": "神威邀约-纸张1",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Paper01.prefab",
-        "UseDistanceDither": true
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Paper01"
     },
     {
         "Id": 451,
         "Name": "神威邀约-纸张2",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Paper02.prefab",
-        "UseDistanceDither": true
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Paper02"
     },
     {
         "Id": 452,
         "Name": "神威邀约-纸张3",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Paper03.prefab",
-        "UseDistanceDither": true
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Paper03"
     },
     {
         "Id": 453,
@@ -2967,19 +2971,22 @@
         "Id": 454,
         "Name": "神威邀约-折纸小狗",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Paper05.prefab",
-        "UseDistanceDither": true
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Paper05"
     },
     {
         "Id": 455,
         "Name": "神威邀约-笔",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Pen.prefab",
-        "UseDistanceDither": true
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Pen"
     },
     {
         "Id": 456,
         "Name": "神威邀约-笔1",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Pen01.prefab",
-        "UseDistanceDither": true
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Pen01"
     },
     {
         "Id": 457,
@@ -2991,12 +2998,48 @@
         "Id": 458,
         "Name": "神威邀约-糖",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Tang.prefab",
-        "UseDistanceDither": true
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Tang"
     },
     {
         "Id": 459,
         "Name": "神威邀约-糖纸",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Tangzhi.prefab",
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Tangzhi"
+    },
+    {
+        "Id": 460,
+        "Name": "神威邀约-窗01（绑定）",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/Scene_Faos01/SG_TR_WG_Chuangzha01.prefab",
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_WG_Chuangzha01"
+    },
+    {
+        "Id": 461,
+        "Name": "神威邀约-窗03（绑定）",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/Scene_Faos01/SG_TR_WG_Chuangzha03.prefab",
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_WG_Chuangzha03"
+    },
+    {
+        "Id": 462,
+        "Name": "神威邀约-桌子2（绑定）",
+        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Zhuozi02.prefab",
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Zhuozi02"
+    },
+    {
+        "Id": 463,
+        "Name": "神威邀约-门（绑定）",
+        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Door.prefab",
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Door"
+    },
+    {
+        "Id": 464,
+        "Name": "神威邀约-窗02",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/Scene_Faos01/SG_TR_WG_Chuangzha02.prefab",
         "UseDistanceDither": true
     }
 ]

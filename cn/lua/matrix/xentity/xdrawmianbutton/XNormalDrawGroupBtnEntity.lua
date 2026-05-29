@@ -24,6 +24,7 @@ function XNormalDrawGroupBtnEntity:UpdateData(data)
     self.MaxSwitchDrawIdCount = data.MaxSwitchDrawIdCount
     self.Order = data.Order
     self.OptionKey = data.OptionKey or ""
+    self.ConditionId = data.ConditionId or 0
 
     self.UseItemIdList = {}
     table.insert(self.UseItemIdList, XDataCenter.ItemManager.ItemId.FreeGem)

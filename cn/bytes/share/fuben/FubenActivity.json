@@ -41,7 +41,7 @@
         "Name": "拟战场域",
         "ManagerName": "FubenRepeatChallengeManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner146.png",
-        "TimeId": 28,
+        "TimeId": 47703,
         "FunctionNameId": 10309,
         "SkipId": 20017,
         "Order": 1,
@@ -55,9 +55,10 @@
         "Name": "雾宇瞭望",
         "ManagerName": "FubenActivityBossSingleManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner220.png",
+        "TimeId": 47901,
         "FunctionNameId": 10304,
         "SkipId": 11724,
-        "Order": 3,
+        "Order": 4,
         "RedPointConditions": [
             "CONDITION_ACTIVITYBRIE_BOSSSINGLE"
         ],
@@ -164,10 +165,10 @@
     },
     {
         "Id": 16,
-        "Name": "逐日者复归",
+        "Name": "戴冠者长存",
         "ManagerName": "FubenNewCharActivityManager",
-        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner226.png",
-        "TimeId": 28,
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner229.png",
+        "TimeId": 47101,
         "FunctionNameId": 10325,
         "SkipId": 20235,
         "Order": 2,
@@ -367,6 +368,7 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner119.png",
         "FunctionNameId": 10425,
         "SkipId": 85016,
+        "Order": 6,
         "RedPointConditions": [
             "CONDITION_GUILDWAR_Main"
         ],
@@ -833,9 +835,10 @@
         "Name": "疾速追缉",
         "ManagerName": "XBountyChallengeAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner228.png",
+        "TimeId": 47401,
         "FunctionNameId": 10492,
         "SkipId": 89093,
-        "Order": 4,
+        "Order": 5,
         "RedPointConditions": [
             "CONDITION_BOUNTY_CHALLENGE"
         ],
@@ -862,10 +865,8 @@
         "Name": "尘浪露营",
         "ManagerName": "XLineArithmetic3Agency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner148.png",
-        "TimeId": 46910,
         "FunctionNameId": 10468,
         "SkipId": 89062,
-        "Order": 6,
         "RedPointConditions": [
             "CONDITION_LINE_ARITHMETIC"
         ],
@@ -961,11 +962,9 @@
         "Name": "黄油咖啡奇遇事",
         "ManagerName": "XPBRGameAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner224.png",
-        "TimeId": 46930,
         "ShowConditionId": 774800,
         "FunctionNameId": 10500,
         "SkipId": 1300635,
-        "Order": 5,
         "RedPointConditions": [
             "CONDITION_PBRGAME_MAIN"
         ],
@@ -977,22 +976,18 @@
         "Id": 87,
         "Name": "梦栖宵暮·复刻",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner196.png",
-        "TimeId": 46920,
         "ShowConditionId": 863242,
         "FunctionNameId": 1308,
         "SkipId": 20342,
-        "Order": 7,
         "Note": "涂装剧情"
     },
     {
         "Id": 88,
         "Name": "恋屿千年歌·复刻",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner180.png",
-        "TimeId": 46920,
         "ShowConditionId": 863243,
         "FunctionNameId": 1308,
         "SkipId": 20343,
-        "Order": 7,
         "Note": "涂装剧情"
     },
     {
@@ -1000,11 +995,9 @@
         "Name": "鸣神叹妙·复刻",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner154.png",
-        "TimeId": 46920,
         "ShowConditionId": 863244,
         "FunctionNameId": 1308,
         "SkipId": 20344,
-        "Order": 7,
         "Note": "涂装剧情"
     },
     {
@@ -1012,22 +1005,18 @@
         "Name": "溺梦游歌·复刻",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
-        "TimeId": 46920,
         "ShowConditionId": 863245,
         "FunctionNameId": 1308,
         "SkipId": 20345,
-        "Order": 7,
         "Note": "涂装剧情"
     },
     {
         "Id": 91,
         "Name": "恋屿千年歌·复刻",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner180.png",
-        "TimeId": 46921,
         "ShowConditionId": 863246,
         "FunctionNameId": 1308,
         "SkipId": 20350,
-        "Order": 7,
         "Note": "涂装剧情"
     },
     {
@@ -1035,11 +1024,9 @@
         "Name": "鸣神叹妙·复刻",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner154.png",
-        "TimeId": 46921,
         "ShowConditionId": 863247,
         "FunctionNameId": 1308,
         "SkipId": 20351,
-        "Order": 7,
         "Note": "涂装剧情"
     },
     {
@@ -1047,32 +1034,29 @@
         "Name": "溺梦游歌·复刻",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
-        "TimeId": 46921,
         "ShowConditionId": 863248,
         "FunctionNameId": 1308,
         "SkipId": 20352,
-        "Order": 7,
         "Note": "涂装剧情"
     },
     {
         "Id": 94,
         "Name": "白梦游弋·复刻",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
-        "TimeId": 46921,
         "ShowConditionId": 863249,
         "FunctionNameId": 1308,
         "SkipId": 20353,
-        "Order": 7,
         "Note": "涂装剧情"
     },
     {
         "Id": 95,
         "Name": "旧世游艺",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner227.png",
+        "TimeId": 47501,
         "ShowConditionId": 774800,
         "FunctionNameId": 10503,
         "SkipId": 1300640,
-        "Order": 8,
+        "Order": 7,
         "RedPointConditions": [
             "CONDITION_GAMECOLLECTION_CAN_REWARD_OR_BUY"
         ],
@@ -1083,9 +1067,10 @@
         "Id": 96,
         "Name": "澄愿眷旅",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner180.png",
+        "TimeId": 47911,
         "FunctionNameId": 1308,
         "SkipId": 20364,
-        "Order": 9,
+        "Order": 3,
         "Note": "涂装剧情"
     }
 ]

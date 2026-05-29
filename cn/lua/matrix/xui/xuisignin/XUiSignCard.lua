@@ -101,26 +101,35 @@ function XUiSignCard:OnBtnGetClick()
 end
 
 function XUiSignCard:Refresh(configId, isShow, isAuto)
+    self:RefreshButtons(configId, false)
     XDataCenter.PurchaseManager.YKInfoDataReq(function()
-        if not configId then
-            configId = self.ConfigId
-        end
-        self.ConfigId = configId
-
         self.PanelBuy.gameObject:SetActive(false)
         self.PanelGet.gameObject:SetActive(false)
 
-        self.Config = XSignInConfigs.GetSignCardConfig(configId)
-        local data = XDataCenter.PurchaseManager.GetYKInfoData()
-        local isBuy = data ~= nil and data.Id == self.Config.Param[2] and data.DailyRewardRemainDay > 0
-        if isBuy then
-            self:RefreshGet()
-            self:AutoGetReward(isAuto)
-        else
-            self:RefreshBuy()
-        end
+        self:RefreshButtons(configId, isAuto)
         XEventManager.DispatchEvent(XEventId.EVENT_SING_IN_OPEN_BTN, true)
     end)
+end
+
+function XUiSignCard:RefreshButtons(configId, isAuto)
+    if not configId then
+        configId = self.ConfigId
+    end
+    self.ConfigId = configId
+    self.Config = XSignInConfigs.GetSignCardConfig(configId)
+
+    local ykConfig = XPurchaseConfigs.GetPurchasePackageYKUiConfig(self.Config.Param[2])
+    self.TipText01.text = ykConfig.Tips[1]
+    self.TipText02.text = ykConfig.Tips[2]
+
+    local data = XDataCenter.PurchaseManager.GetYKInfoData()
+    local isBuy = data ~= nil and data.Id == self.Config.Param[2] and data.DailyRewardRemainDay > 0
+    if isBuy then
+        self:RefreshGet()
+        self:AutoGetReward(isAuto)
+    else
+        self:RefreshBuy()
+    end
 end
 
 function XUiSignCard:AutoGetReward(isAuto)
@@ -195,9 +204,17 @@ function XUiSignCard:RefreshGet()
         local retroactiveItemIcon =
             itemManager.GetItemIcon(retroactiveItemId)
 
-        self.ImgRetroactiveItemIcon1:SetRawImage(retroactiveItemIcon)
-        self.ImgRetroactiveItemIcon2:SetRawImage(retroactiveItemIcon)
-        self.ImgRetroactiveItemIcon3:SetRawImage(retroactiveItemIcon)
+        if self.ImgRetroactiveItemIcon1 then
+            self.ImgRetroactiveItemIcon1:SetRawImage(retroactiveItemIcon)
+        end
+
+        if self.ImgRetroactiveItemIcon2 then
+            self.ImgRetroactiveItemIcon2:SetRawImage(retroactiveItemIcon)
+        end
+
+        if self.ImgRetroactiveItemIcon3 then
+            self.ImgRetroactiveItemIcon3:SetRawImage(retroactiveItemIcon)
+        end
 
         local retroactiveChance =
             tostring(retroactiveItemCount) .. "/" .. tostring(math.min(retroactiveItemCount, cardsMissed))

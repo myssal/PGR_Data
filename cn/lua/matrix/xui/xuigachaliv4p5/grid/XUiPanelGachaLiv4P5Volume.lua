@@ -77,6 +77,9 @@ function XUiPanelGachaLiv4P5Volume:PlayStart()
 end
 
 function XUiPanelGachaLiv4P5Volume:PlayEnd()
+    if not self:IsValidState() then
+        return
+    end
     -- 重置用户最后设置的音量
     XLuaAudioManager.ResetSystemAudioVolume()
     self:HideAll(true)
@@ -93,7 +96,11 @@ function XUiPanelGachaLiv4P5Volume:HideAll(isTween)
 end
 
 function XUiPanelGachaLiv4P5Volume:PlayHideSliderTween(isCloseView)
-    if self.PanelSlider.gameObject.activeSelf then
+    if not self:IsValidState() then
+        return
+    end
+    
+    if self.PanelSlider and self.PanelSlider.gameObject.activeSelf then
         self.Parent:PlayAnimation("PanelVolumeDisable", function()
             self.PanelSlider.gameObject:SetActiveEx(false)
             if isCloseView then

@@ -74,7 +74,7 @@ function XGameCollectionAgency:RecordExitForGame(gameType, exitInfo)
 
     local enterMaxScore = exitInfo.EnterMaxScore or 0
     local score = exitInfo.Score or 0
-    if enterMaxScore > 0 and score > enterMaxScore then
+    if score > enterMaxScore then
         self._Model:SetPendingExitRecord({
             GameName = gameCfg.Name,
             NewScore = score,
@@ -91,7 +91,7 @@ function XGameCollectionAgency:_BuildExitRecord(gameType, gameCfg, exitInfo)
     local snapshot = self._Model:GetGameSnapshot(gameType)
     local enterMaxScore = snapshot and snapshot.EnterMaxScore or 0
     local score = exitInfo.Score or 0
-    if enterMaxScore > 0 and score > enterMaxScore then
+    if score > enterMaxScore then
         return {
             GameName = gameCfg.Name,
             NewScore = score,

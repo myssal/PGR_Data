@@ -2770,13 +2770,16 @@
         "Quality": 1,
         "LeftDesc": "placeholder_记录坐标",
         "LeftRewardTypes": [
-            2
+            2,
+            4
         ],
         "LeftRewardTypeIds": [
-            1
+            1,
+            105
         ],
         "LeftRewardMinNums": [
-            0
+            0,
+            1
         ],
         "RightDesc": "placeholder_扯出羊皮纸",
         "RightRewardTypes": [
@@ -2944,13 +2947,16 @@
         "Quality": 1,
         "LeftDesc": "placeholder_牢记地图路线",
         "LeftRewardTypes": [
-            2
+            2,
+            4
         ],
         "LeftRewardTypeIds": [
-            1
+            1,
+            103
         ],
         "LeftRewardMinNums": [
-            0
+            0,
+            1
         ],
         "RightDesc": "placeholder_丢掉火柴",
         "RightRewardTypes": [
@@ -3026,13 +3032,16 @@
         "Quality": 1,
         "LeftDesc": "placeholder_抄写星象图",
         "LeftRewardTypes": [
-            2
+            2,
+            4
         ],
         "LeftRewardTypeIds": [
-            1
+            1,
+            105
         ],
         "LeftRewardMinNums": [
-            -15
+            -15,
+            1
         ],
         "LeftRewardMaxNums": [
             -10
@@ -4420,7 +4429,7 @@
     },
     {
         "Id": 215,
-        "Desc": "在钟表匠的店铺里，无数的时钟发出滴答的声音，指针在诡异地倒转。",
+        "Desc": "在钟表匠的店铺里，无数的时钟发出抵达的声音，指针在诡异地倒转。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi06.png",
         "Quality": 1,
         "LeftDesc": "拆开钟表",
@@ -4942,18 +4951,22 @@
         "RightDesc": "placeholder_拦下他",
         "RightRewardTypes": [
             2,
+            4,
             1
         ],
         "RightRewardTypeIds": [
             1,
+            106,
             3
         ],
         "RightRewardMinNums": [
             -10,
+            1,
             5
         ],
         "RightRewardMaxNums": [
             -5,
+            "",
             10
         ],
         "IsOutNormalPool": true
@@ -5200,18 +5213,22 @@
         "RightDesc": "placeholder_查阅地图对比坐标位置",
         "RightRewardTypes": [
             2,
+            4,
             1
         ],
         "RightRewardTypeIds": [
             1,
+            102,
             4
         ],
         "RightRewardMinNums": [
             -10,
+            1,
             5
         ],
         "RightRewardMaxNums": [
             -5,
+            "",
             10
         ],
         "IsOutNormalPool": true
@@ -5952,7 +5969,7 @@
         "Id": 3011,
         "Desc": "火场废墟中，残留着尚未被烧毁的肖像画，不论从什么角度观看，画中人都似乎凝视着你。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi04.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "凝视画中人的双眼",
         "LeftRewardTypes": [
             2,
@@ -5994,15 +6011,13 @@
             "",
             17,
             37
-        ],
-        "ChooseLine": 106,
-        "LineNum": 1
+        ]
     },
     {
         "Id": 3012,
         "Desc": "当晚，本应残缺不全的肖像画再度出现在你的桌上，却已奇迹般地恢复原状。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "试图拆开画框查看",
         "LeftRewardTypes": [
             7
@@ -6033,15 +6048,13 @@
             -10,
             37,
             17
-        ],
-        "ChooseLine": 106,
-        "LineNum": 2
+        ]
     },
     {
         "Id": 3021,
         "Desc": "下水道的格栅不断发出震动，似乎是有什么看不见的“怪物”在试图挣脱。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi03.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "透过格栅仔细观察",
         "LeftRewardTypes": [
             2,
@@ -6083,15 +6096,13 @@
             "",
             37,
             17
-        ],
-        "ChooseLine": 107,
-        "LineNum": 1
+        ]
     },
     {
         "Id": 3022,
         "Desc": "下水道的格栅忽然轰然而破，带着腥味的污水不断涌出。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi16.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "试图收集污水样本进行研究",
         "LeftRewardTypes": [
             2,
@@ -6133,9 +6144,7 @@
             "",
             17,
             37
-        ],
-        "ChooseLine": 107,
-        "LineNum": 2
+        ]
     },
     {
         "Id": 3023,
@@ -6178,7 +6187,7 @@
         "Id": 3031,
         "Desc": "钟表店里，所有时钟的指针，都停留在了十二点整。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi06.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "查看异常的钟表",
         "LeftRewardTypes": [
             2,
@@ -6220,15 +6229,13 @@
             "",
             37,
             17
-        ],
-        "ChooseLine": 108,
-        "LineNum": 1
+        ]
     },
     {
         "Id": 3032,
         "Desc": "沉默的钟表匠忽然回过头来，空洞的眼眶里竟然镶嵌着一枚钟表的齿轮。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "正面对抗他的袭击",
         "LeftRewardTypes": [
             7
@@ -6259,15 +6266,13 @@
             -10,
             37,
             17
-        ],
-        "ChooseLine": 108,
-        "LineNum": 2
+        ]
     },
     {
         "Id": 3041,
         "Desc": "深夜，一只附满了藤壶的木箱，被海浪冲上了码头。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi09.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "试图撬开箱子",
         "LeftRewardTypes": [
             2,
@@ -6309,15 +6314,13 @@
             40,
             37,
             17
-        ],
-        "ChooseLine": 109,
-        "LineNum": 1
+        ]
     },
     {
         "Id": 3042,
         "Desc": "古怪的木箱里，只有一颗不断跳动的怪异的“卵”。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen07.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "盖上木箱",
         "LeftRewardTypes": [
             2,
@@ -6359,15 +6362,13 @@
             40,
             17,
             37
-        ],
-        "ChooseLine": 109,
-        "LineNum": 2
+        ]
     },
     {
         "Id": 3043,
         "Desc": "木箱中的“卵”忽然裂开，一只多足的怪物爬了出来。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen08.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "闪身避开",
         "LeftRewardTypes": [
             2,
@@ -6398,9 +6399,7 @@
         ],
         "RightRewardMinNums": [
             1
-        ],
-        "ChooseLine": 109,
-        "LineNum": 3
+        ]
     },
     {
         "Id": 3051,
@@ -6491,7 +6490,7 @@
         "Id": 3061,
         "Desc": "午夜时分，你登上了一辆列车，却发现所有乘客的面目都模糊不清。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi01.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "试图与乘客攀谈",
         "LeftRewardTypes": [
             2,
@@ -6533,15 +6532,13 @@
             "",
             17,
             37
-        ],
-        "ChooseLine": 110,
-        "LineNum": 1
+        ]
     },
     {
         "Id": 3062,
         "Desc": "列车忽然驶入一条之前从未见过的隧道，隧道的外面尽是污浊的血水。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "抓紧扶手",
         "LeftRewardTypes": [
             2,
@@ -6583,15 +6580,13 @@
             "",
             17,
             37
-        ],
-        "ChooseLine": 110,
-        "LineNum": 2
+        ]
     },
     {
         "Id": 3063,
         "Desc": "一个古怪的身影用触手击碎车窗玻璃，试图将你拖入外面的迷雾深处。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "闪身避开",
         "LeftRewardTypes": [
             2,
@@ -6622,15 +6617,13 @@
         ],
         "RightRewardMinNums": [
             1
-        ],
-        "ChooseLine": 110,
-        "LineNum": 3
+        ]
     },
     {
         "Id": 3071,
         "Desc": "双目失明的占卜师提出要为你算命，邀请你抽出一张纸牌。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen09.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "放下硬币作为报酬",
         "LeftRewardTypes": [
             2,
@@ -6672,15 +6665,13 @@
             "",
             37,
             17
-        ],
-        "ChooseLine": 111,
-        "LineNum": 1
+        ]
     },
     {
         "Id": 3072,
         "Desc": "占卜师向你展示一张纸牌，上面的图案是一处深渊，其中伸出众多苍白的怪手。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen09.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "向其询问深渊的消息",
         "LeftRewardTypes": [
             2,
@@ -6722,9 +6713,7 @@
             -5,
             37,
             17
-        ],
-        "ChooseLine": 111,
-        "LineNum": 2
+        ]
     },
     {
         "Id": 3081,
@@ -6778,7 +6767,7 @@
         "Id": 3082,
         "Desc": "你走入空无一人的地下室，看到地面上散落着许多惨白的牙齿。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen10.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "捡起牙齿观察",
         "LeftRewardTypes": [
             2,
@@ -6820,15 +6809,13 @@
             "",
             17,
             37
-        ],
-        "ChooseLine": 112,
-        "LineNum": 1
+        ]
     },
     {
         "Id": 3083,
         "Desc": "地下室的角落中窜出一只古怪的动物，张开巨口对你喷射恶臭的黏液。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen03.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "举枪射击",
         "LeftRewardTypes": [
             7
@@ -6859,9 +6846,7 @@
             -10,
             37,
             17
-        ],
-        "ChooseLine": 112,
-        "LineNum": 2
+        ]
     },
     {
         "Id": 3091,
@@ -6956,7 +6941,7 @@
         "Id": 3101,
         "Desc": "歌剧院里正在上演一出无名的歌剧，但观众席上空无一人。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi17.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "坐下认真聆听",
         "LeftRewardTypes": [
             2,
@@ -6998,15 +6983,13 @@
             40,
             17,
             37
-        ],
-        "ChooseLine": 113,
-        "LineNum": 1
+        ]
     },
     {
         "Id": 3102,
         "Desc": "在演出最精彩的时候，舞台上的歌者忽然发出了尖锐的鸣叫声。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen06.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "仔细分辨歌者声音里的信息",
         "LeftRewardTypes": [
             2,
@@ -7048,15 +7031,13 @@
             -5,
             17,
             37
-        ],
-        "ChooseLine": 113,
-        "LineNum": 2
+        ]
     },
     {
         "Id": 3103,
         "Desc": "舞台上的舞者撕碎华服，变身为一只面目狰狞的怪物，冲向台下的观众席。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen06.png",
-        "Quality": 6,
+        "Quality": 1,
         "LeftDesc": "极力躲避",
         "LeftRewardTypes": [
             2,
@@ -7087,14 +7068,12 @@
         ],
         "RightRewardMinNums": [
             1
-        ],
-        "ChooseLine": 113,
-        "LineNum": 3
+        ]
     },
     {
         "Id": 1001,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n即便有夜色的掩护，你们一行“异种”在城内的行动依旧危险重重。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi14.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7105,7 +7084,7 @@
     {
         "Id": 1002,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n此时，远方的街角，隐隐传来了马车的声音。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7116,7 +7095,7 @@
     {
         "Id": 1003,
         "Desc": "<color=#E74354>【异闻决策】</color>\\n马车夫的面容隐没在车篷的阴影下，只是无声地对你做了一个“上车”的手势。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "摇头拒绝",
         "LeftRewardTypes": [
@@ -7175,7 +7154,7 @@
     {
         "Id": 1004,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你没有接受这来路不明的邀约，而是裹紧外套，又走入了雾中。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7189,7 +7168,7 @@
     {
         "Id": 1005,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n脚步声回荡在街头，在黑暗中，你很难分辨方向，似乎觉得自己一直在重复着相同的路。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7200,7 +7179,7 @@
     {
         "Id": 1006,
         "Desc": "<color=#E74354>【异闻决策】</color>\\n在长街的另一个方向，你又一次看到了那辆同样的马车。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "保持沉默",
         "LeftRewardTypes": [
@@ -7259,7 +7238,7 @@
     {
         "Id": 1007,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你没有拒绝这适时的“善意”，登上马车，刻意让自己的身形掩藏在车厢的最深处。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7273,7 +7252,7 @@
     {
         "Id": 1008,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n车夫挥动马鞭，驱动马车在街道上行驶起来。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7284,7 +7263,7 @@
     {
         "Id": 1009,
         "Desc": "<color=#E74354>【异闻决策】</color>\\n坐在狭小的马车车厢内，你的潜意识里，渐渐升起某种隐隐的不安。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "或许只是自己的错觉",
         "LeftRewardTypes": [
@@ -7343,7 +7322,7 @@
     {
         "Id": 1010,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n那位马车夫依旧保持着原来的姿势，仿佛一个不断执行同样指令的机械人偶。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7357,7 +7336,7 @@
     {
         "Id": 1011,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n他没有回答，但你敏锐地感知到，他身上隐约传出某种冰凉的腥味。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7368,7 +7347,7 @@
     {
         "Id": 1012,
         "Desc": "<color=#E74354>【异闻决策】</color>\\n借着微弱的月光，你发现他的头颅古怪地扭动了一下，紧接着，又是更大幅度的震动。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "躲入黑暗之中",
         "LeftRewardTypes": [
@@ -7419,7 +7398,7 @@
     {
         "Id": 1013,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n马车虽然“行驶”了很久，却又回到了原地，而车夫依旧保持着手握缰绳的姿势。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7433,7 +7412,7 @@
     {
         "Id": 1014,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n他保持着这个姿势不动，似乎在和你做着无言的对峙。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7444,7 +7423,7 @@
     {
         "Id": 1015,
         "Desc": "<color=#E74354>【异闻决策】</color>\\n终于，他的头颅却古怪地转了过来，面容正对着你，那张面容上，还挂着古怪的微笑。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "本能躲避",
         "LeftRewardTypes": [
@@ -7506,7 +7485,7 @@
     {
         "Id": 1017,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n他头颅以一个不可思议的角度歪向一边，但灰白的面部肌肉依旧保持着原来的微笑。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7517,7 +7496,7 @@
     {
         "Id": 1018,
         "Desc": "<color=#E74354>【异闻决策】</color>\\n无数的触手从他的颈项中伸出，在触手的末端，悬挂着他摇摇欲坠的，带着笑容的头颅。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "不再纠缠，迅速离去",
         "LeftRewardTypes": [
@@ -7560,7 +7539,7 @@
     {
         "Id": 1020,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n更为浓重的雾气，再一次弥漫在你的眼前，四周一片寂静。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7571,7 +7550,7 @@
     {
         "Id": 1021,
         "Desc": "<color=#CDA05A>【异闻进程】</color>\\n那辆马车依旧停在不远处，但车厢里空空如也，没有马车夫的身影。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "继续",
         "RightDesc": "继续",
@@ -7582,7 +7561,7 @@
     {
         "Id": 1022,
         "Desc": "<color=#E74354>【异闻决策】</color>\\n车厢内，唯有一张沾满污渍的纸条，上面写着几个歪歪扭扭的血字“市政厅”。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
         "LeftDesc": "捡起纸条",
         "LeftRewardTypes": [
@@ -7632,43 +7611,43 @@
     },
     {
         "Id": 1100,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n残月被天上涌动的乌云遮蔽，眼前的街景变得难以辨明，街道上只回荡着你的脚步声。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 20,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1101,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n起雾了，雾中传来了一个似曾相识的声音，反复地呼唤着你的名字。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "置之不理",
+        "RightDesc": "回头张望",
         "ChooseLine": 20,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1102,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n雾中的声音渐渐变大，但你没有在声音的源头看到任何实体，似乎那只是“鬼魅”。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 20,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1103,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n不论往哪个方向行走，那个声音都似乎无处不在，但呼唤的内容变成了“你会死”。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
+        "LeftDesc": "依旧保持沉默",
         "LeftRewardTypes": [
             4
         ],
@@ -7678,7 +7657,7 @@
         "LeftRewardMinNums": [
             1
         ],
-        "RightDesc": "不明",
+        "RightDesc": "出言回应",
         "RightRewardTypes": [
             4
         ],
@@ -7694,11 +7673,11 @@
     },
     {
         "Id": 1104,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n渐渐地，你感觉到周遭的气温变得越来越低，刺骨的寒意深入肌骨。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 21,
         "LineNum": 1,
         "NeedBuffs": [
@@ -7708,44 +7687,44 @@
     },
     {
         "Id": 1105,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你几乎能感受到周遭空气渐渐冻结的古怪感觉。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 21,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1106,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n似乎有什么无形的事物，越来越近了。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 21,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1107,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n一团怪异的阴影突然出现，悬浮在视线中，似乎触手可及，却散发着冰冷的腥味。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "举起煤气灯照亮阴影",
+        "RightDesc": "小心伸手触碰",
         "ChooseLine": 21,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1108,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你继续走着，却开始感觉到周围的空气里的温度变得越来越低。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 22,
         "LineNum": 1,
         "NeedBuffs": [
@@ -7755,142 +7734,142 @@
     },
     {
         "Id": 1109,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n刺骨的低温包裹着你，寒意一点点渗入肌骨。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 22,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1110,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n阴影在你的面前迅速蔓延，如同浓墨在清水中化开，你的视线变得模糊不清。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 22,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1111,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n阴影扭曲着，最终构成了一个“人类”的身影，但似乎身上附生着多余的“肢体”。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "向怪影开枪",
+        "RightDesc": "躲入街角阴影处暂避",
         "ChooseLine": 22,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1112,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n怪影组成的“人类”终于倒在地上，慢慢地化成一滩浓稠的黑水，散发着刺鼻的气味。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 23,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1113,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n黑水翻滚，灼烧，最终从其中显现出一块类似于长方形石板的形状，你觉得那像“墓碑”。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 23,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1114,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n借着街角煤气灯的光亮，你看清了“墓碑”上的字迹：那是你的名字。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "转身离去，拒绝幻象的诱惑",
+        "RightDesc": "掘开坟墓，仔细查验",
         "ChooseLine": 23,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1120,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n某种冰凉的触感，慢慢地爬上你的脚踝。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 24,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1121,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你低下头，看到几条黏滑的怪物触手，从雾中延伸出来，缓缓地接近你。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 24,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1122,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n被怪物触手接触的皮肤，传来一阵刺痛，与此同时，脑中感到了某种怪异的眩晕。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "奋力挣脱触手",
+        "RightDesc": "在眩晕中渐渐被触手控制",
         "ChooseLine": 24,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1130,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n走廊里，冰冷的感觉如影随形，似乎有一双看不见的“眼睛”，始终在背后注视着你。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "回以注视",
+        "RightDesc": "不做回应",
         "ChooseLine": 25,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1131,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n走廊的尽头，一扇门悄无声息地打开了，锈蚀的门轴发出刺耳的摩擦声。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "走近查看",
+        "RightDesc": "置之不理",
         "ChooseLine": 25,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1200,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n月轮被乌云遮蔽，午夜的天幕唯余下厚重的云层，没有丝毫光亮。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 26,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1201,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n长街上，唯一的光源便是来自几盏煤气灯的光亮。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
+        "LeftDesc": "继续前行",
         "LeftRewardTypes": [
             4
         ],
@@ -7900,7 +7879,7 @@
         "LeftRewardMinNums": [
             1
         ],
-        "RightDesc": "不明",
+        "RightDesc": "小心辨认脚下的路",
         "RightRewardTypes": [
             4
         ],
@@ -7916,11 +7895,11 @@
     },
     {
         "Id": 1202,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你沿着长街前行，并不明亮的光照在你身后投影下长长的影子。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 27,
         "LineNum": 1,
         "NeedBuffs": [
@@ -7930,44 +7909,44 @@
     },
     {
         "Id": 1203,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n街上很安静，你能清晰你听到自己的脚步落在街道石板上的声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 27,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1204,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n但伴随着你的脚步，身后的煤气灯一盏又一盏地熄灭了。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 27,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1205,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n在黑暗中，你察觉到了无数细小的红色光点亮了起来，在有规律地闪动。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "拿出提灯",
+        "RightDesc": "让眼睛适应黑暗",
         "ChooseLine": 27,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1206,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n伴随着最后一盏灯的熄灭，街道上陷入了一片黑暗。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 28,
         "LineNum": 1,
         "NeedBuffs": [
@@ -7977,54 +7956,54 @@
     },
     {
         "Id": 1207,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你等待着，直到视线适应了身边浓稠的黑暗。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 28,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1208,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n一些细微的声音开始响了起来，那是来自某种古怪的动物的声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 28,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1209,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n随后，你看到了黑暗中无数细小的红色光点亮了起来，在有规律地闪动。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "拿出提灯",
+        "RightDesc": "让眼睛适应黑暗",
         "ChooseLine": 28,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1210,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n终于，你看清了那些“红色光点”的来源。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 29,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1211,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n那是无数只老鼠的眼睛，灼灼地盯着你。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
+        "LeftDesc": "静静看着它们",
         "LeftRewardTypes": [
             4
         ],
@@ -8034,7 +8013,7 @@
         "LeftRewardMinNums": [
             1
         ],
-        "RightDesc": "不明",
+        "RightDesc": "并不在意",
         "RightRewardTypes": [
             4
         ],
@@ -8050,11 +8029,11 @@
     },
     {
         "Id": 1212,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n老鼠们拖动着肥硕的身影，行走在静谧的长街上。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 30,
         "LineNum": 1,
         "NeedBuffs": [
@@ -8064,33 +8043,33 @@
     },
     {
         "Id": 1213,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你略带疑惑地看着这些古怪的老鼠，但它们无视你的视线。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 30,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1214,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n它们只是自顾自地排成一列，首尾相接，向着某个地方缓缓爬去。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "驱散它们",
+        "RightDesc": "上前仔细查验",
         "ChooseLine": 30,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1215,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n随着你驱散老鼠们的手势，它们无声地散开，隐入街道的黑暗中。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 31,
         "LineNum": 1,
         "NeedBuffs": [
@@ -8100,252 +8079,252 @@
     },
     {
         "Id": 1216,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n但片刻之后，它们又再一次地钻了出来，重新组成了原来的“队形”。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 31,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1217,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n那支由老鼠组成的“长队”，依旧保持着原来的速度，向着街道尽头的一间房屋走去。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "直接上前查看",
+        "RightDesc": "在稍远处静静观察",
         "ChooseLine": 31,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1218,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你没有惊扰那群“列队”的老鼠，而是在后面小心地保持着跟上它们的脚步。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 32,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1219,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n它们保持着整齐划一的步伐，走过静谧的长街，前往街道尽头的一间房屋。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 32,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1220,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n房屋的大门紧闭，而老鼠们正从玻璃长窗上的破洞里，一只只鱼贯而入。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "保持一定距离观察",
+        "RightDesc": "试图撬门",
         "ChooseLine": 32,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1230,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n眼前原本空旷的走廊另一端，忽然出现了一扇之前你从未见过的大门，透出幽微的烛光。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 33,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1231,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在门扉上，你看到了一双纤细的血手印，那似乎来源于某个你熟悉的人。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 33,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1232,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n一股浓重的血腥味，从紧闭的门缝中隐隐透出。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "直接破坏门锁",
+        "RightDesc": "寻找另外能通行的路",
         "ChooseLine": 33,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1300,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n空旷的宴会厅里，回荡着古怪的声音，像是无意识的吟诵，又像是古怪的风声。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 34,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1301,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你四处张望，但除了空旷的大厅，你似乎找不到任何异状。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 34,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1302,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n“救我……救我……”这些单调而干涩的声音，不断地传入你的耳中。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "捂住耳朵不听",
+        "RightDesc": "静心仔细聆听",
         "ChooseLine": 34,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1303,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n冷风从门扉吹入，吹熄了原本就摇曳不停的烛火。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 34,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1304,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n传入你耳中的声音越来越大，也越来越清晰，你清楚地意识到：那绝不是风的声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 34,
         "LineNum": 5,
         "IsOutNormalPool": true
     },
     {
         "Id": 1305,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n终于，你意识到那些怪声，是从角落里一尊苍白的石膏像口中传出的。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "沉默转身离去",
+        "RightDesc": "动手打碎雕像",
         "ChooseLine": 34,
         "LineNum": 6,
         "IsOutNormalPool": true
     },
     {
         "Id": 1310,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你的身后，传来了门扇被推开的刺耳的声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 35,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1311,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n整齐的“与会者”一个接着一个，沉默无言地走入宴会厅。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 35,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1312,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n他们的眼中似乎没有生命的色彩，唯有空无一物的空白。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "试图唤醒他们",
+        "RightDesc": "试图混入他们的队伍中",
         "ChooseLine": 35,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1320,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n宴会厅消失了，雾气缭绕，你甚至不知道自己所处之处是真实，还是一个幻境中。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 36,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1321,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n隐约可见脚下一条崎岖的小路，那条道路的尽头，闪动着煤气灯微弱的光亮。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "在原地继续谨慎观察",
+        "RightDesc": "向煤气灯的方向走去",
         "ChooseLine": 36,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1322,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在你前方的不远处，隐约出现了一个身影。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 36,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1323,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n那个身影十分熟悉，似乎就是“你”的样子。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 36,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1324,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n面前的那个“你”走走停停，似乎是有意地在吸引你的注意。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 36,
         "LineNum": 5,
         "IsOutNormalPool": true
     },
     {
         "Id": 1325,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n你加快脚步，但却似乎始终无法拉近你与那个身影之间的距离。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
+        "LeftDesc": "快步向前",
         "LeftRewardTypes": [
             4
         ],
@@ -8355,7 +8334,7 @@
         "LeftRewardMinNums": [
             1
         ],
-        "RightDesc": "不明",
+        "RightDesc": "绕路靠近",
         "RightRewardTypes": [
             4
         ],
@@ -8371,11 +8350,11 @@
     },
     {
         "Id": 1326,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n古怪的好奇心促使你加快了脚步，想要一探那个身影的真相。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 37,
         "LineNum": 1,
         "NeedBuffs": [
@@ -8385,44 +8364,44 @@
     },
     {
         "Id": 1327,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n似乎是无形中有什么阻隔一般，那个身影始终距离你有一段距离。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 37,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1328,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n终于，你追上了那个身影，对方与你之间的距离已经触手可及。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 37,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1329,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n那个“你”却在你触碰的瞬间，化为一缕古怪的黑雾，缠绕上你的指尖。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "躲避黑雾",
+        "RightDesc": "仔细查验手上的黑雾",
         "ChooseLine": 37,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1330,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你试图绕路，不被觉察地靠近那个身影，",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 38,
         "LineNum": 1,
         "NeedBuffs": [
@@ -8432,230 +8411,230 @@
     },
     {
         "Id": 1331,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n但不论怎么努力，你搜寻的视线中却始终一无所获。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 38,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1332,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n终于，你听到你的背后传来了沉闷的脚步声。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 38,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1333,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n你回过头，看到了那个和“你”一样的身影，不知什么时候已经悄然站在了你的身后。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "对那个身影发起攻击",
+        "RightDesc": "开口直接试图与对方交谈",
         "ChooseLine": 38,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1340,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n那个和“你”别无二致的身影，冷冷地睥睨着你。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 39,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1341,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n没有言语，没有动作，你却无端地感受到了无形的威压。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 39,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1342,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n那个人影手势微动，变为了另外的模样，如同面目模糊、无法直视的“神明”。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "闭上眼，试图让幻觉消散",
+        "RightDesc": "出言否认对方的真实",
         "ChooseLine": 39,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1400,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你独自坐在宴会长桌前，椅子排列整齐，但其上却空无一人。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 40,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1401,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n寂静无声的大厅里，唯一的声音就是落地大钟的滴答声，时间已近午夜时分。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 40,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1402,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n终于，时钟奏响了午夜的钟声，随后，大钟的指针开始反向运行。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "刻意忽略诡异的指针",
+        "RightDesc": "查看落地钟的零件是否故障",
         "ChooseLine": 40,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1403,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你注意到桌面上的邀请函，虽然信封装饰精美，却已沾染上岁月的污渍。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 40,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1404,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n伸出手，你拆开了那封邀请函。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 40,
         "LineNum": 5,
         "IsOutNormalPool": true
     },
     {
         "Id": 1405,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n泛黄的纸张上，除了你的名字，其他的都是你曾在墓园中所见过的，死者的名号。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "起身离开宴会厅",
+        "RightDesc": "在邀请函上再次签名",
         "ChooseLine": 40,
         "LineNum": 6,
         "IsOutNormalPool": true
     },
     {
         "Id": 1410,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在寂静的街道上，你听到了马车由远及近的声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 41,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1411,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n一辆封闭的灵车渐渐出现在视线中，拉着马车的马匹，黑得与夜色几乎别无二致。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 41,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1412,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n在灵车后，跟随的哀悼之人轻轻吟诵着送葬的轻歌，但那声线却似乎并非是常人可以发出的声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "刻意忽略诡异的歌声",
+        "RightDesc": "无意识地跟上他们吟诵的节奏",
         "ChooseLine": 41,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1413,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n灵车越来越远，但那方向传来的轻歌却似乎变得越来越清晰。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 41,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1414,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n他们所去的方向，却似乎并非驶向墓园。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 41,
         "LineNum": 5,
         "IsOutNormalPool": true
     },
     {
         "Id": 1415,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n为首的送葬人察觉了你的存在，“这是你的葬礼。”，他的喉中发出嘶哑的声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "藏身进街角的黑暗中",
+        "RightDesc": "斥责他在装神弄鬼",
         "ChooseLine": 41,
         "LineNum": 6,
         "IsOutNormalPool": true
     },
     {
         "Id": 1500,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n祭坛之上，烛光缭绕，鲜花簇拥着洁白大理石雕刻而成的圣母像。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 42,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1501,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n纯洁的圣母像低眉俯视着一切，也看着你，石雕的面容上似乎蕴含着笑意。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 42,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1502,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n忽然，你看到一行诡异的猩红，从圣母像的双眼中缓缓流出。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
+        "LeftDesc": "伸手触碰“血泪”",
         "LeftRewardTypes": [
             4
         ],
@@ -8665,7 +8644,7 @@
         "LeftRewardMinNums": [
             1
         ],
-        "RightDesc": "不明",
+        "RightDesc": "刻意保持距离",
         "RightRewardTypes": [
             4
         ],
@@ -8681,263 +8660,263 @@
     },
     {
         "Id": 1503,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n“你很虔诚，圣女将赐予你圣水。”背后传来了一句毫无波澜的称赞。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 43,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1504,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你回过头，看到了一袭黑袍，而裹在其中的人看不清面貌，只露出一双枯瘦的手。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 43,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1505,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n那个人沉默着，却向你递出一个精美的酒杯。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 43,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1506,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n那双手中的酒杯里，鲜红的液体中蠕动着怪异的虫影，散发出腥甜的味道。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "拒绝酒杯",
+        "RightDesc": "接过酒杯",
         "ChooseLine": 43,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1507,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你将视线从圣女像上离开，却看到了一旁的一袭黑袍，仿佛是凭空出现的一般。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 44,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1508,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n“何不展现你的虔诚呢？”隐匿于黑袍中的人影缓缓走向你的面前，语调中毫无波澜。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 44,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1509,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n他不再言语，只向你伸出一双枯瘦的手，手中捧着酒杯。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 44,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1510,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n鲜红的液体中蠕动着怪异的虫影，散发出腥甜的味道。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "拒绝酒杯",
+        "RightDesc": "接过酒杯",
         "ChooseLine": 44,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1511,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n烛火难以察觉地震颤了一下，祭坛上的光影也随之跳动了一瞬。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 45,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1512,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在光影变动的瞬间，你意识到那个披着黑袍的身影，不知什么时候忽然消失了。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 45,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1513,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n你低下头，发现眼前的酒杯中，早已空空如也。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "砸碎酒杯",
+        "RightDesc": "拿走酒杯",
         "ChooseLine": 45,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1520,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n以坚韧的意志抗拒发生的古怪之事，你继续踏上你应当去往的道路。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 46,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1521,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n面无表情的侍者拦住了去路，手中的武器折射出冰冷的锐光。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 46,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1522,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n他们没有言语，却无声地阻拦在你前往圣女所在的路上。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "假意展示自己的虔诚",
+        "RightDesc": "似乎冲突在所难免",
         "ChooseLine": 46,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1530,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n阳光透过镶嵌着彩色玻璃的长窗，将祷告室中的一切都涂抹上光怪陆离的色彩。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 47,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1531,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n厚重的门外，隐约传来管风琴厚重而肃穆的声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 47,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1532,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n那乐声越发像是某种心脏鼓动的声音，仿佛你身处的并非祷告室，而是某种怪物的腹腔。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "离开祷告室",
+        "RightDesc": "继续聆听“乐声”",
         "ChooseLine": 47,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1533,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n祭坛之下，巨大的银器中承装着满满的清水。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 47,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1534,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n不知为何，在你靠近之际，原本平静的水面剧烈地动荡起来。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 47,
         "LineNum": 5,
         "IsOutNormalPool": true
     },
     {
         "Id": 1535,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n越来越大的水波之间，隐约出现了如同眼眸的波纹。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "谨慎远离",
+        "RightDesc": "触碰水面",
         "ChooseLine": 47,
         "LineNum": 6,
         "IsOutNormalPool": true
     },
     {
         "Id": 1600,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n夜色之下，墓园中寂静无声，传入耳中的，唯有你脚步踏在厚厚落叶上的声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 48,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1601,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n一片黑暗中，唯一的光源，来自众多飞舞盘旋的萤火虫。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 48,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1602,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n萤火虫发出的幽微冷光在眼前浮动，宛如幽魂的提灯。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 48,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1603,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n萤火越聚越多，最终照亮了一方尚未盖上坟土的新坟。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
+        "LeftDesc": "或许只是自己的幻觉",
         "LeftRewardTypes": [
             4
         ],
@@ -8947,7 +8926,7 @@
         "LeftRewardMinNums": [
             1
         ],
-        "RightDesc": "不明",
+        "RightDesc": "举起提灯仔细观察",
         "RightRewardTypes": [
             4
         ],
@@ -8963,11 +8942,11 @@
     },
     {
         "Id": 1604,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你走过去，借着萤火的微光观察着那方坟土，自己的影子投影在其中。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 49,
         "LineNum": 1,
         "NeedBuffs": [
@@ -8977,44 +8956,44 @@
     },
     {
         "Id": 1605,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n坟中土质松软，覆盖着厚厚的腐叶，散发出某种混合着树木和泥土的气息。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 49,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1606,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n眼前的一切，都似乎在对你发出莫名而怪诞的邀约。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 49,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1607,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n“来试试躺在这里的感觉吧。”你的耳畔，隐约传来了某个古怪的声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "摇头拒绝耳畔的声音",
+        "RightDesc": "被那个声音无意识地吸引",
         "ChooseLine": 49,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1608,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你举起提灯仔细观察，但提灯的强烈光芒，却似乎无法照亮你投影在坟土上的影子。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 50,
         "LineNum": 1,
         "NeedBuffs": [
@@ -9024,307 +9003,307 @@
     },
     {
         "Id": 1609,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n松软的坟土覆盖着厚厚的腐叶，树木与泥土的气息交织在一起。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 50,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1610,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n不知为什么，你看着坟中松软的新土，嗅闻着腐叶的气息，脑中传来了一种古怪的感觉。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 50,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1611,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n“来试试躺在这里的感觉吧。”你的脑中，忽然浮现了这个似乎难以抗拒的念头。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "驱散脑中的怪念头",
+        "RightDesc": "被脑中的念头无意识牵绊",
         "ChooseLine": 50,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1612,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你转身离去，却忍不住再度回头看了一眼那片坟土。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 68,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1613,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n众多萤火虫的光点在黑夜中明灭，依旧盘桓不去。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 68,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1614,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n在某个瞬间，你似乎看到了一个模糊如影子般的“身影”，如释重负地倒向了坟土之中。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "或许只是自己的错觉",
+        "RightDesc": "上前仔细查看坟土",
         "ChooseLine": 68,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1620,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n黑暗中，飞舞的萤火虫越来越多，宛如悬停在虚空中的一轮冰冷的月轮。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 51,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1621,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在“月轮”冰冷光芒的映照下，一些状若幽鬼的暗影从无数的坟土中现身。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 51,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1622,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n它们散发着冰冷腐臭的气息，向你渐渐靠近。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "躲避诡影的追击",
+        "RightDesc": "直面突发的异状",
         "ChooseLine": 51,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1630,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n荒废已久的庄园里，灰尘密布，一切都似乎被凝冻在时光中。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 52,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1631,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在台阶上厚厚的尘土上，你看到一行纤细的脚印缓缓浮现，在灰尘上留下清晰的印记。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 52,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1632,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n脚印继续前行，消失在长廊的尽头。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "跟上怪异的脚印",
+        "RightDesc": "蹲下仔细查看脚印",
         "ChooseLine": 52,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1633,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n天色将明之前，空气中水汽弥漫，废弃庄园中的落地玻璃被晕染得漫漶不清。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 52,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1634,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在被水雾晕染的玻璃上，隐隐出现了一些毫无章法的线条。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 52,
         "LineNum": 5,
         "IsOutNormalPool": true
     },
     {
         "Id": 1635,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n线条反复出现，又再度消隐，似乎是作画的“幽灵”对自己的作品并不满意。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "远离古怪的长窗",
+        "RightDesc": "试图解读线条的规律",
         "ChooseLine": 52,
         "LineNum": 6,
         "IsOutNormalPool": true
     },
     {
         "Id": 1700,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你行走在虚幻中的田野里，不论举目望向哪个方向，都只有随风摇曳的麦穗。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 53,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1701,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n踏过茂密的麦田，脚下的土壤深处似乎传来微微的震颤。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 53,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1702,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n土壤之下的动静越来越清晰，你能感知到，那似乎是与心跳一般有规律的震动。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "将身体贴近田野感受",
+        "RightDesc": "试图掘开泥土查看",
         "ChooseLine": 53,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1703,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你伸出手，试图从土中拔出一根饱满得被压弯了的稻穗。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 53,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1704,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n但稻穗的根系却异常坚韧，你不觉手上加力，终于，稻穗扎根的泥土开始松动。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 53,
         "LineNum": 5,
         "IsOutNormalPool": true
     },
     {
         "Id": 1705,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n松动的泥土中，露出了一节苍白的指骨，隐隐地闪动着黯淡的磷火。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "轻轻用泥土将其掩埋",
+        "RightDesc": "伸手触碰指骨",
         "ChooseLine": 53,
         "LineNum": 6,
         "IsOutNormalPool": true
     },
     {
         "Id": 1710,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你已不知自己身在何处，身侧的一切似乎都已陷入如同凝冻般的寂静中。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 54,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1711,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n一些影影绰绰的“影子”，渐渐在你眼前现出了形状。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 54,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1712,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n即便你知道那是虚幻的怪影，但也依旧感受到了靠近的危险。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "本能地躲避这些“怪物”",
+        "RightDesc": "无惧眼前的怪影",
         "ChooseLine": 54,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1720,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你行走在幻境中的厅堂里，烛火通明，桌椅整齐，厚重的丝绒帷幔殷红如血。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 55,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1721,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n一场盛大的庆典，似乎在迎接你的到来。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 55,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1722,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n但每张座位上的“宾客”却并非你的同类，而是蒙尘的人偶。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 55,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1723,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n人偶近乎松脱的关节，勉强以无数丝线连缀。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
+        "LeftDesc": "上前查看",
         "LeftRewardTypes": [
             4
         ],
@@ -9334,7 +9313,7 @@
         "LeftRewardMinNums": [
             1
         ],
-        "RightDesc": "不明",
+        "RightDesc": "触碰人偶",
         "RightRewardTypes": [
             4
         ],
@@ -9350,11 +9329,11 @@
     },
     {
         "Id": 1724,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你走上前，试图仔细查看那些陈旧的人偶。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 56,
         "LineNum": 1,
         "NeedBuffs": [
@@ -9364,44 +9343,44 @@
     },
     {
         "Id": 1725,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n似乎是感知到了你的存在，人偶齐齐转头，绞缠着丝线的关节发出了暗哑的摩擦声。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 56,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1726,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在你的注意力都被人偶所吸引的同时，一条丝线无知无觉地缠上你的手指，",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 56,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1727,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n随后，你感觉到指尖传来一阵刺痛。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "查看伤口",
+        "RightDesc": "并不在意",
         "ChooseLine": 56,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1728,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你伸出手，小心地触碰人偶，指尖感受到了人偶冰凉坚硬的质感。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 57,
         "LineNum": 1,
         "NeedBuffs": [
@@ -9411,142 +9390,142 @@
     },
     {
         "Id": 1729,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你的触碰似乎“惊醒”了人偶，它们一起转头，空洞的眼神盯着你的方向。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 57,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1730,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在你试图更仔细地观察人偶的同时，人偶关节处的丝线无声地缠上你的指尖。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 57,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1731,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n你感到被丝线绞缠的指尖传来一阵刺痛。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "查看伤口",
+        "RightDesc": "并不在意",
         "ChooseLine": 57,
         "LineNum": 4,
         "IsOutNormalPool": true
     },
     {
         "Id": 1732,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n一滴你的鲜血，从被丝线划破的伤口中，缓缓滴落。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 58,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1733,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n“滴答”，你听到了血滴落在人偶身上的几不可闻的细微声音。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 58,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1734,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n那一刻，你似乎看到人偶的眼睛，缓缓地眨了一下，又一下。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "离开厅堂",
+        "RightDesc": "砸碎人偶",
         "ChooseLine": 58,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1740,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在真实与虚幻之间，你看到了某种如同水波一样的纹路，在空气中缓缓流动。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 59,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1741,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你知道，那就是跨越虚妄、踏入真实之地的交界之处。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 59,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1742,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n在你跨越“交界”的瞬间，虚妄的厅堂和无数的人偶，在你身后灰飞烟灭。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "不再回望",
+        "RightDesc": "继续前行",
         "ChooseLine": 59,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1800,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你行走在回廊中，足下踏上的是厚实而柔软的地毯的触感。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 60,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1801,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你深吸一口气，这里没有灰尘，也没有霉味，只有干净而清凉的空气。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 60,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1802,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n不知为什么，自从你踏入此地，原本紧绷依旧的神经却感到了一丝久违的安宁。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 60,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1803,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n仿佛这里和你之前所探查的地方全然不同，这里的一切都散发着令你安心的气息。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
+        "LeftDesc": "继续前行",
         "LeftRewardTypes": [
             4
         ],
@@ -9556,7 +9535,7 @@
         "LeftRewardMinNums": [
             1
         ],
-        "RightDesc": "不明",
+        "RightDesc": "走到回廊尽头",
         "RightRewardTypes": [
             4
         ],
@@ -9572,11 +9551,11 @@
     },
     {
         "Id": 1804,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你看到了一间布置得十分舒适的房间，糖果，洋娃娃，留声机……那是属于孩子们的最爱。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 61,
         "LineNum": 1,
         "NeedBuffs": [
@@ -9586,33 +9565,33 @@
     },
     {
         "Id": 1805,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n一对姐妹相互依偎着，尽情地享受着属于她们无忧无虑的时光。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 61,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1806,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n她们欢笑着，为对方剥开彩色的糖纸，品尝着糖果的甜味。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "静静看着她们",
+        "RightDesc": "关上房门离去",
         "ChooseLine": 61,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1807,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你的步伐带领你走进了一间房间，糖果，洋娃娃，留声机……全是孩子们的最爱。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 62,
         "LineNum": 1,
         "NeedBuffs": [
@@ -9622,187 +9601,187 @@
     },
     {
         "Id": 1808,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n在这个只属于她们的小天地里，一对姐妹尽情地享受着属于她们无忧无虑的时光。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 62,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1809,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n她们共同合作，为洋娃娃梳头，换装……",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "静静看着她们",
+        "RightDesc": "关上房门离去",
         "ChooseLine": 62,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1810,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n沉浸在欢乐中的姐妹二人，乐于向你分享她们的喜悦。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 63,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1811,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n她们走上来，对你伸出小小的手。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 63,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1812,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n“走了这么久，很辛苦吧。”阳光般的笑容在她们的脸上绽放开来。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "回以微笑",
+        "RightDesc": "加入她们",
         "ChooseLine": 63,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1820,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你穿行过众多纠缠的丝线，如同谨慎地穿过密结而危险的蛛网，你不知道那些丝线的尽头是什么。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 64,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1821,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n难以名状的预感萦绕在脑中，你敏锐的神经能够感知到，似乎有什么危险在渐渐靠近。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 64,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1822,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n终于，你看到了一个似乎有些熟悉的身影，但浑身散发的却并非是“活人”的气息。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "直面危机",
+        "RightDesc": "不再恐惧",
         "ChooseLine": 64,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1830,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n一切都似乎已经结束了，深夜，你漫步在安静的城市里，试图舒缓翻涌的心绪。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 65,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1831,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n走得久了，你却似乎开始有种微微的恍惚感，似乎无法控制步伐将你带向未知的何方。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 65,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1832,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n在黑夜中，你看到了远方一处孤独的建筑，在你的印象中，你从未见过它。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "仔细观察",
+        "RightDesc": "推门进入",
         "ChooseLine": 65,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1833,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n眼前这间陌生的建筑，却散发着一种令你莫名感到安心的气息。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 66,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1834,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你推开门，走入了这间小小的建筑，里面没有灯火，唯有一支小小的蜡烛。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 66,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1835,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n你伸手点燃那支蜡烛，一片昏暗中，蜡烛发出幽幽的冷色光芒，宛如幽灵的提灯。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "吹熄蜡烛",
+        "RightDesc": "静静凝视火苗",
         "ChooseLine": 66,
         "LineNum": 3,
         "IsOutNormalPool": true
     },
     {
         "Id": 1840,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n终于，你不再执着于探究这间陌生建筑中的秘密，推开门，重新回到了夜色下的街道。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 67,
         "LineNum": 1,
         "IsOutNormalPool": true
     },
     {
         "Id": 1841,
-        "Desc": "不明",
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你回过头，忽然发现刚才置身其间的建筑已然消失，只留下一条空无一人的长街。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
         "ChooseLine": 67,
         "LineNum": 2,
         "IsOutNormalPool": true
     },
     {
         "Id": 1842,
-        "Desc": "不明",
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n在街道上弥漫的雾气中，你隐约看见了众多怪物缓缓靠近的轮廓。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror03.png",
         "Quality": 5,
-        "LeftDesc": "不明",
-        "RightDesc": "不明",
+        "LeftDesc": "躲避怪影的靠近",
+        "RightDesc": "握紧手枪",
         "ChooseLine": 67,
         "LineNum": 3,
         "IsOutNormalPool": true
@@ -10915,13 +10894,13 @@
         "Id": 5027,
         "Desc": "废弃已久的剧院阁楼中，墙面上镶嵌了众多布满裂痕的镜子。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi11.png",
-        "Quality": 2,
+        "Quality": 3,
         "LeftDesc": "查看镜子",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2001
+            2005
         ],
         "LeftRewardMinNums": [
             1
@@ -10934,7 +10913,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2003
+            2007
         ],
         "RightRewardMinNums": [
             1
@@ -10947,13 +10926,13 @@
         "Id": 5028,
         "Desc": "你行过夜幕里的街头，却忽然发现街道两侧的橱窗里，亮起了无数双古怪的眼睛。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi06.png",
-        "Quality": 2,
+        "Quality": 3,
         "LeftDesc": "打碎橱窗",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2001
+            2005
         ],
         "LeftRewardMinNums": [
             1
@@ -10966,7 +10945,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2003
+            2007
         ],
         "RightRewardMinNums": [
             1
@@ -10979,13 +10958,13 @@
         "Id": 5029,
         "Desc": "在没有出口的死胡同里，一个影影绰绰的黑影堵住了你的去路。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
-        "Quality": 2,
+        "Quality": 3,
         "LeftDesc": "正面应对",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2002
+            2006
         ],
         "LeftRewardMinNums": [
             1
@@ -10998,7 +10977,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2004
+            2008
         ],
         "RightRewardMinNums": [
             1
@@ -11011,13 +10990,13 @@
         "Id": 5030,
         "Desc": "拍卖会结束后，一尊古怪的灰色石雕被流拍了。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi06.png",
-        "Quality": 2,
+        "Quality": 3,
         "LeftDesc": "查看石雕",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2001
+            2005
         ],
         "LeftRewardMinNums": [
             1
@@ -11030,7 +11009,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2003
+            2007
         ],
         "RightRewardMinNums": [
             1
@@ -11043,13 +11022,13 @@
         "Id": 5031,
         "Desc": "档案室的地板夹缝里，藏着一枚形状扭曲的生锈钥匙。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 2,
+        "Quality": 3,
         "LeftDesc": "取出钥匙",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2001
+            2005
         ],
         "LeftRewardMinNums": [
             1
@@ -11062,7 +11041,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2003
+            2007
         ],
         "RightRewardMinNums": [
             1
@@ -11075,13 +11054,13 @@
         "Id": 5032,
         "Desc": "浓雾弥漫的河岸边，河水中开始闪烁着古怪的磷光。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi01.png",
-        "Quality": 2,
+        "Quality": 3,
         "LeftDesc": "试图捕捞",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2002
+            2006
         ],
         "LeftRewardMinNums": [
             1
@@ -11094,7 +11073,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2004
+            2008
         ],
         "RightRewardMinNums": [
             1
@@ -11181,13 +11160,13 @@
         "Id": 5051,
         "Desc": "警局的证物袋里，出现了一件之前从未有过的“证物”，那是一块怪异的封蜡。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 2,
+        "Quality": 4,
         "LeftDesc": "仔细观察",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2001
+            2009
         ],
         "LeftRewardMinNums": [
             1
@@ -11200,7 +11179,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2003
+            2011
         ],
         "RightRewardMinNums": [
             1
@@ -11213,13 +11192,13 @@
         "Id": 5052,
         "Desc": "荒废庄园的壁炉深处，灰烬中残留着一张未被火焰完全烧毁的旧照片。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi04.png",
-        "Quality": 2,
+        "Quality": 4,
         "LeftDesc": "捡起照片",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2001
+            2009
         ],
         "LeftRewardMinNums": [
             1
@@ -11232,7 +11211,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2003
+            2011
         ],
         "RightRewardMinNums": [
             1
@@ -11245,13 +11224,13 @@
         "Id": 5053,
         "Desc": "珠宝店里，一枚雕刻成蜘蛛形状的胸针无人问津。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 2,
+        "Quality": 4,
         "LeftDesc": "检查胸针",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2002
+            2010
         ],
         "LeftRewardMinNums": [
             1
@@ -11264,7 +11243,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2004
+            2012
         ],
         "RightRewardMinNums": [
             1
@@ -11277,13 +11256,13 @@
         "Id": 5054,
         "Desc": "在看到你走近时，原本兜售古怪药剂的黑市商人裹紧斗篷离去，却留下了一瓶药水。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
-        "Quality": 2,
+        "Quality": 4,
         "LeftDesc": "捡起药瓶",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2001
+            2009
         ],
         "LeftRewardMinNums": [
             1
@@ -11296,7 +11275,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2003
+            2011
         ],
         "RightRewardMinNums": [
             1
@@ -11309,13 +11288,13 @@
         "Id": 5055,
         "Desc": "孤儿院的孩子向你递过来一只玩偶，但玩偶的眼睛却已经被破坏。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi02.png",
-        "Quality": 2,
+        "Quality": 4,
         "LeftDesc": "接过玩偶",
         "LeftRewardTypes": [
             5
         ],
         "LeftRewardTypeIds": [
-            2001
+            2009
         ],
         "LeftRewardMinNums": [
             1
@@ -11328,7 +11307,7 @@
             5
         ],
         "RightRewardTypeIds": [
-            2003
+            2011
         ],
         "RightRewardMinNums": [
             1
@@ -11339,2453 +11318,6 @@
     },
     {
         "Id": 5056,
-        "Desc": "博物馆无人问津的展柜里，放着一块刻满古怪文字的黏土板。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 2,
-        "LeftDesc": "仔细检查",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2002
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "借走研究",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2004
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5100,
-        "Desc": "停尸房的铁门忽然缓缓洞开，一个裹着白布的躯体向你缓缓靠近。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
-        "Quality": 1,
-        "LeftDesc": "举起手枪",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2100
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "请牧师前来祈祷",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            2
-        ],
-        "RightRewardMinNums": [
-            20,
-            13,
-            33
-        ],
-        "RightRewardMaxNums": [
-            40,
-            17,
-            37
-        ]
-    },
-    {
-        "Id": 5101,
-        "Desc": "精神病院里，穿着束缚衣的患者用背部着地，四肢以不可思议的角度在走廊里爬行。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi07.png",
-        "Quality": 1,
-        "LeftDesc": "准备攻击",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2100
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "侧身闪避",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "RightRewardMinNums": [
-            -10,
-            13,
-            33
-        ],
-        "RightRewardMaxNums": [
-            -5,
-            17,
-            37
-        ]
-    },
-    {
-        "Id": 5102,
-        "Desc": "迷雾中，忽然冲出了一只瘦削的流浪狗，低低的吠叫声仿佛是在模仿人的言语。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
-        "Quality": 1,
-        "LeftDesc": "出手驱赶",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2110
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "谨慎后退",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "RightRewardMinNums": [
-            0,
-            33,
-            13
-        ],
-        "RightRewardMaxNums": [
-            "",
-            37,
-            17
-        ]
-    },
-    {
-        "Id": 5103,
-        "Desc": "你投影在地上的影子里，脖颈的边缘出现了一只并不存在的手，正在缓缓地逼向你。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
-        "Quality": 1,
-        "LeftDesc": "举枪戒备",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2110
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "举起提灯驱散黑影",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "RightRewardMinNums": [
-            20,
-            13,
-            33
-        ],
-        "RightRewardMaxNums": [
-            40,
-            17,
-            37
-        ]
-    },
-    {
-        "Id": 5104,
-        "Desc": "报社的印刷机突发故障，印出的所有报纸上，都只有一句如同邪恶咒语的不明文字。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 1,
-        "LeftDesc": "关闭机器",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2120
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "强行切断电源",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            4
-        ],
-        "RightRewardMinNums": [
-            20,
-            33,
-            13
-        ],
-        "RightRewardMaxNums": [
-            40,
-            37,
-            17
-        ]
-    },
-    {
-        "Id": 5105,
-        "Desc": "在夜里巡视的守墓人在试图掘开墓地偷盗陪葬品时，突然陷入疯狂中。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
-        "Quality": 1,
-        "LeftDesc": "控制他的癫狂",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2120
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "填埋被掘开的墓地",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            2,
-            3
-        ],
-        "RightRewardMinNums": [
-            20,
-            13,
-            33
-        ],
-        "RightRewardMaxNums": [
-            40,
-            17,
-            37
-        ]
-    },
-    {
-        "Id": 5106,
-        "Desc": "在寒夜里，卧室上的冰霜渐渐组合成难以辨认的文字。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
-        "Quality": 1,
-        "LeftDesc": "击碎玻璃查看外面有什么",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2200
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "在笔记本上描摹图案",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            2,
-            4
-        ],
-        "RightRewardMinNums": [
-            0,
-            33,
-            13
-        ],
-        "RightRewardMaxNums": [
-            "",
-            37,
-            17
-        ]
-    },
-    {
-        "Id": 5107,
-        "Desc": "越来越浓的雾气中，一团隐约的黑影渐渐成型。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
-        "Quality": 1,
-        "LeftDesc": "举起手枪戒备",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2200
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "仔细辨认黑影的样子",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            2,
-            3
-        ],
-        "RightRewardMinNums": [
-            -15,
-            33,
-            13
-        ],
-        "RightRewardMaxNums": [
-            -10,
-            37,
-            17
-        ]
-    },
-    {
-        "Id": 5108,
-        "Desc": "地下室的角落中窜出一只古怪的动物，张开巨口对你喷射恶臭的黏液。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen03.png",
-        "Quality": 1,
-        "LeftDesc": "举枪射击",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2210
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "闪身躲避",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "RightRewardMinNums": [
-            -10,
-            30,
-            14
-        ],
-        "RightRewardMaxNums": [
-            -5,
-            37,
-            17
-        ]
-    },
-    {
-        "Id": 5109,
-        "Desc": "沉默的钟表匠忽然回过头来，空洞的眼眶里竟然镶嵌着一枚钟表的齿轮。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
-        "Quality": 1,
-        "LeftDesc": "正面对抗他的袭击",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2210
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "挣脱他的纠缠",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "RightRewardMinNums": [
-            -10,
-            30,
-            14
-        ],
-        "RightRewardMaxNums": [
-            -5,
-            37,
-            17
-        ]
-    },
-    {
-        "Id": 5110,
-        "Desc": "越来越浓的雾气中，一团隐约的黑影渐渐成型。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
-        "Quality": 1,
-        "LeftDesc": "举起手枪戒备",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2220
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "仔细辨认黑影的样子",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "RightRewardMinNums": [
-            20,
-            30,
-            14
-        ],
-        "RightRewardMaxNums": [
-            40,
-            37,
-            17
-        ]
-    },
-    {
-        "Id": 5111,
-        "Desc": "停尸房的铁门忽然缓缓洞开，一个裹着白布的躯体向你缓缓靠近。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
-        "Quality": 1,
-        "LeftDesc": "举起手枪",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2300
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "请牧师前来祈祷",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            2
-        ],
-        "RightRewardMinNums": [
-            20,
-            13,
-            33
-        ],
-        "RightRewardMaxNums": [
-            40,
-            17,
-            37
-        ]
-    },
-    {
-        "Id": 5112,
-        "Desc": "精神病院里，穿着束缚衣的患者用背部着地，四肢以不可思议的角度在走廊里爬行。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi07.png",
-        "Quality": 1,
-        "LeftDesc": "准备攻击",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2300
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "侧身闪避",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "RightRewardMinNums": [
-            -10,
-            13,
-            33
-        ],
-        "RightRewardMaxNums": [
-            -5,
-            17,
-            37
-        ]
-    },
-    {
-        "Id": 5113,
-        "Desc": "迷雾中，忽然冲出了一只瘦削的流浪狗，低低的吠叫声仿佛是在模仿人的言语。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
-        "Quality": 1,
-        "LeftDesc": "出手驱赶",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2310
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "谨慎后退",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "RightRewardMinNums": [
-            0,
-            33,
-            13
-        ],
-        "RightRewardMaxNums": [
-            "",
-            37,
-            17
-        ]
-    },
-    {
-        "Id": 5114,
-        "Desc": "你投影在地上的影子里，脖颈的边缘出现了一只并不存在的手，正在缓缓地逼向你。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
-        "Quality": 1,
-        "LeftDesc": "举枪戒备",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2310
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "举起提灯驱散黑影",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "RightRewardMinNums": [
-            20,
-            13,
-            33
-        ],
-        "RightRewardMaxNums": [
-            40,
-            17,
-            37
-        ]
-    },
-    {
-        "Id": 5115,
-        "Desc": "报社的印刷机突发故障，印出的所有报纸上，都只有一句如同邪恶咒语的不明文字。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 1,
-        "LeftDesc": "关闭机器",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2320
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "强行切断电源",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            1,
-            4
-        ],
-        "RightRewardMinNums": [
-            20,
-            33,
-            13
-        ],
-        "RightRewardMaxNums": [
-            40,
-            37,
-            17
-        ]
-    },
-    {
-        "Id": 5116,
-        "Desc": "在夜里巡视的守墓人在试图掘开墓地偷盗陪葬品时，突然陷入疯狂中。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
-        "Quality": 1,
-        "LeftDesc": "控制他的癫狂",
-        "LeftRewardTypes": [
-            7
-        ],
-        "LeftRewardTypeIds": [
-            2320
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "RightDesc": "填埋被掘开的墓地",
-        "RightRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "RightRewardTypeIds": [
-            1,
-            2,
-            3
-        ],
-        "RightRewardMinNums": [
-            20,
-            13,
-            33
-        ],
-        "RightRewardMaxNums": [
-            40,
-            17,
-            37
-        ]
-    },
-    {
-        "Id": 5117,
-        "Desc": "废弃钟楼的阴影中，一群人围在一起，低头闭目，进行着无言的祈祷。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi12.png",
-        "Quality": 1,
-        "LeftDesc": "伪装身份加入祈祷",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            37,
-            17
-        ],
-        "RightDesc": "打断这场怪异的祈祷",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2100
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5118,
-        "Desc": "在寂静的街角，高大的道旁树的枝条被风吹动，在地面上投下斑驳的阴影，如同鬼魅起舞。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
-        "Quality": 1,
-        "LeftDesc": "静静凝视枝影",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            2,
-            3
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            37,
-            17
-        ],
-        "RightDesc": "试图折断枝条",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2100
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5119,
-        "Desc": "歌剧院的舞台帷幕后，忽然传来令人牙酸的声音，一个巨大的道具人偶正缓缓爬出。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi17.png",
-        "Quality": 1,
-        "LeftDesc": "顺着通道撤退",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            3,
-            4
-        ],
-        "LeftRewardMinNums": [
-            20,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            40,
-            37,
-            17
-        ],
-        "RightDesc": "向人偶发起攻击",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2110
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5120,
-        "Desc": "房间墙上的藤蔓浮雕出现了细微的裂痕，似乎它们曾经“生长”过。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi02.png",
-        "Quality": 1,
-        "LeftDesc": "靠近观察",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            1,
-            4
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            37,
-            17
-        ],
-        "RightDesc": "敲碎浮雕",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2110
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5121,
-        "Desc": "废弃的花园里，饥饿的猎犬发出哭泣般的声音。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi03.png",
-        "Quality": 1,
-        "LeftDesc": "喝杯热茶压惊",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            3,
-            4
-        ],
-        "LeftRewardMinNums": [
-            20,
-            13,
-            33
-        ],
-        "LeftRewardMaxNums": [
-            40,
-            17,
-            37
-        ],
-        "RightDesc": "拔枪戒备",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2120
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5122,
-        "Desc": "警局的档案室里，堆积如山的旧卷宗里冒出古怪的黑气。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 1,
-        "LeftDesc": "给档案室上锁",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            1,
-            4
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            37,
-            17
-        ],
-        "RightDesc": "举枪戒备",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2120
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5123,
-        "Desc": "在拍卖会上，压轴的拍卖品，是一只无法分辨是什么品种的古怪动物的标本。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 1,
-        "LeftDesc": "出高价买下",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            3,
-            4
-        ],
-        "LeftRewardMinNums": [
-            0,
-            13,
-            33
-        ],
-        "LeftRewardMaxNums": [
-            "",
-            17,
-            37
-        ],
-        "RightDesc": "上前打碎装着标本的瓶子",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2200
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5124,
-        "Desc": "街头的占卜摊上，每一张塔罗牌上都显示着奇特的暗纹。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen05.png",
-        "Quality": 1,
-        "LeftDesc": "仔细查看卡牌",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            3,
-            4
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            37,
-            17
-        ],
-        "RightDesc": "应对占卜摊主人的忽然袭击",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2200
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5125,
-        "Desc": "一只通体漆黑的怪鸟停在你的窗台，不停地用尖利的鸟喙啄着玻璃。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi08.png",
-        "Quality": 1,
-        "LeftDesc": "拉上窗帘",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            2,
-            3
-        ],
-        "LeftRewardMinNums": [
-            20,
-            13,
-            33
-        ],
-        "LeftRewardMaxNums": [
-            40,
-            17,
-            37
-        ],
-        "RightDesc": "试图驱逐鸟儿",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2210
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5126,
-        "Desc": "在一处隐秘的地下室里，一群信徒正牵着彼此的手，吟诵着难懂的歌谣。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi02.png",
-        "Quality": 1,
-        "LeftDesc": "试图加入",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            2,
-            3
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            37,
-            17
-        ],
-        "RightDesc": "出言阻止他们的行为",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2210
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5127,
-        "Desc": "舞台上的舞者撕碎华服，变身为一只面目狰狞的怪物，冲向台下的观众席。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen06.png",
-        "Quality": 1,
-        "LeftDesc": "极力躲避",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            2,
-            4
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            26,
-            18
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            31,
-            23
-        ],
-        "RightDesc": "开枪射击",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2220
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5128,
-        "Desc": "一个古怪的身影用触手击碎车窗玻璃，试图将你拖入外面的迷雾深处。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
-        "Quality": 1,
-        "LeftDesc": "闪身避开",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            2,
-            4
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            26,
-            18
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            31,
-            23
-        ],
-        "RightDesc": "开枪射击",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2220
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5129,
-        "Desc": "在一处隐秘的地下室里，一群信徒正牵着彼此的手，吟诵着难懂的歌谣。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi02.png",
-        "Quality": 1,
-        "LeftDesc": "试图加入",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            2,
-            4
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            26,
-            18
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            31,
-            23
-        ],
-        "RightDesc": "出言阻止他们的行为",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2300
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5130,
-        "Desc": "废弃钟楼的阴影中，一群人围在一起，低头闭目，进行着无言的祈祷。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi12.png",
-        "Quality": 1,
-        "LeftDesc": "伪装身份加入祈祷",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            1,
-            3
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            37,
-            17
-        ],
-        "RightDesc": "打断这场怪异的祈祷",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2300
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5131,
-        "Desc": "在寂静的街角，高大的道旁树的枝条被风吹动，在地面上投下斑驳的阴影，如同鬼魅起舞。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
-        "Quality": 1,
-        "LeftDesc": "静静凝视枝影",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            2,
-            3
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            37,
-            17
-        ],
-        "RightDesc": "试图折断枝条",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2310
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5132,
-        "Desc": "歌剧院的舞台帷幕后，忽然传来令人牙酸的声音，一个巨大的道具人偶正缓缓爬出。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi17.png",
-        "Quality": 1,
-        "LeftDesc": "顺着通道撤退",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            3,
-            4
-        ],
-        "LeftRewardMinNums": [
-            20,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            40,
-            37,
-            17
-        ],
-        "RightDesc": "向人偶发起攻击",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2310
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5133,
-        "Desc": "房间墙上的藤蔓浮雕出现了细微的裂痕，似乎它们曾经“生长”过。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi02.png",
-        "Quality": 1,
-        "LeftDesc": "靠近观察",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            1,
-            4
-        ],
-        "LeftRewardMinNums": [
-            -15,
-            33,
-            13
-        ],
-        "LeftRewardMaxNums": [
-            -10,
-            37,
-            17
-        ],
-        "RightDesc": "敲碎浮雕",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2320
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 5134,
-        "Desc": "废弃的花园里，饥饿的猎犬发出哭泣般的声音。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi03.png",
-        "Quality": 1,
-        "LeftDesc": "喝杯热茶压惊",
-        "LeftRewardTypes": [
-            2,
-            1,
-            1
-        ],
-        "LeftRewardTypeIds": [
-            1,
-            3,
-            4
-        ],
-        "LeftRewardMinNums": [
-            20,
-            13,
-            33
-        ],
-        "LeftRewardMaxNums": [
-            40,
-            17,
-            37
-        ],
-        "RightDesc": "拔枪戒备",
-        "RightRewardTypes": [
-            7
-        ],
-        "RightRewardTypeIds": [
-            2320
-        ],
-        "RightRewardMinNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6003,
-        "Desc": "墓园的守卫坐在门口，对每一个路过的行人露出诡异的微笑。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
-        "Quality": 3,
-        "LeftDesc": "微笑致意",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "出言询问",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6004,
-        "Desc": "废弃码头的集装箱表面，开始慢慢被黏滑而带有腥味的海草所覆盖。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi01.png",
-        "Quality": 3,
-        "LeftDesc": "撬开箱子",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "扯下海草",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6005,
-        "Desc": "疯人院的院长在临终前，颤抖着将一枚刻着眼球图案的徽章塞进你掌心。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen04.png",
-        "Quality": 3,
-        "LeftDesc": "仔细观察徽章",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2006
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "收下徽章",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2008
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6006,
-        "Desc": "手中的怀表发出古怪的噪音，在拆开后，你发现齿轮之间缠满了乌黑的发丝。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
-        "Quality": 3,
-        "LeftDesc": "合上怀表",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "清理发丝",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6007,
-        "Desc": "在旧书铺里，你发现了一本被铁链锁住的无名手稿。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi11.png",
-        "Quality": 3,
-        "LeftDesc": "买下这本手稿",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "试图撬开铁链",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6008,
-        "Desc": "衣衫褴褛的流浪汉向你走来，试图用他手中的古怪药瓶向你换取一点果腹的食物。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi03.png",
-        "Quality": 3,
-        "LeftDesc": "同意交换",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2006
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "询问他药瓶里是什么",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2008
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6027,
-        "Desc": "废弃已久的剧院阁楼中，墙面上镶嵌了众多布满裂痕的镜子。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi11.png",
-        "Quality": 3,
-        "LeftDesc": "查看镜子",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "打碎镜子查看后面有什么",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6028,
-        "Desc": "你行过夜幕里的街头，却忽然发现街道两侧的橱窗里，亮起了无数双古怪的眼睛。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi06.png",
-        "Quality": 3,
-        "LeftDesc": "打碎橱窗",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "上前查看",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6029,
-        "Desc": "在没有出口的死胡同里，一个影影绰绰的黑影堵住了你的去路。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
-        "Quality": 3,
-        "LeftDesc": "正面应对",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2006
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "试图绕开",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2008
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6030,
-        "Desc": "拍卖会结束后，一尊古怪的灰色石雕被流拍了。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi06.png",
-        "Quality": 3,
-        "LeftDesc": "查看石雕",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "表示要买下石雕",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6031,
-        "Desc": "档案室的地板夹缝里，藏着一枚形状扭曲的生锈钥匙。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 3,
-        "LeftDesc": "取出钥匙",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "试图把钥匙恢复原状",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6032,
-        "Desc": "浓雾弥漫的河岸边，河水中开始闪烁着古怪的磷光。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi01.png",
-        "Quality": 3,
-        "LeftDesc": "试图捕捞",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2006
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "举起提灯查看",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2008
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6051,
-        "Desc": "警局的证物袋里，出现了一件之前从未有过的“证物”，那是一块怪异的封蜡。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 3,
-        "LeftDesc": "仔细观察",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "尝试敲碎封蜡",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6052,
-        "Desc": "荒废庄园的壁炉深处，灰烬中残留着一张未被火焰完全烧毁的旧照片。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi04.png",
-        "Quality": 3,
-        "LeftDesc": "捡起照片",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "扫除灰烬",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6053,
-        "Desc": "珠宝店里，一枚雕刻成蜘蛛形状的胸针无人问津。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 3,
-        "LeftDesc": "检查胸针",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2006
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "表示想买下这枚胸针",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2008
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6054,
-        "Desc": "在看到你走近时，原本兜售古怪药剂的黑市商人裹紧斗篷离去，却留下了一瓶药水。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
-        "Quality": 3,
-        "LeftDesc": "捡起药瓶",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "试图开口唤住对方",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6055,
-        "Desc": "孤儿院的孩子向你递过来一只玩偶，但玩偶的眼睛却已经被破坏。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi02.png",
-        "Quality": 3,
-        "LeftDesc": "接过玩偶",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2005
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "认真查看玩偶的眼睛",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2007
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 6056,
-        "Desc": "博物馆无人问津的展柜里，放着一块刻满古怪文字的黏土板。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 3,
-        "LeftDesc": "仔细检查",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2006
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "借走研究",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2008
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7003,
-        "Desc": "墓园的守卫坐在门口，对每一个路过的行人露出诡异的微笑。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
-        "Quality": 4,
-        "LeftDesc": "微笑致意",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "出言询问",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7004,
-        "Desc": "废弃码头的集装箱表面，开始慢慢被黏滑而带有腥味的海草所覆盖。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi01.png",
-        "Quality": 4,
-        "LeftDesc": "撬开箱子",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "扯下海草",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7005,
-        "Desc": "疯人院的院长在临终前，颤抖着将一枚刻着眼球图案的徽章塞进你掌心。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen04.png",
-        "Quality": 4,
-        "LeftDesc": "仔细观察徽章",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2010
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "收下徽章",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2012
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7006,
-        "Desc": "手中的怀表发出古怪的噪音，在拆开后，你发现齿轮之间缠满了乌黑的发丝。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
-        "Quality": 4,
-        "LeftDesc": "合上怀表",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "清理发丝",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7007,
-        "Desc": "在旧书铺里，你发现了一本被铁链锁住的无名手稿。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi11.png",
-        "Quality": 4,
-        "LeftDesc": "买下这本手稿",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "试图撬开铁链",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7008,
-        "Desc": "衣衫褴褛的流浪汉向你走来，试图用他手中的古怪药瓶向你换取一点果腹的食物。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi03.png",
-        "Quality": 4,
-        "LeftDesc": "同意交换",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2010
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "询问他药瓶里是什么",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2012
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7027,
-        "Desc": "废弃已久的剧院阁楼中，墙面上镶嵌了众多布满裂痕的镜子。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi11.png",
-        "Quality": 4,
-        "LeftDesc": "查看镜子",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "打碎镜子查看后面有什么",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7028,
-        "Desc": "你行过夜幕里的街头，却忽然发现街道两侧的橱窗里，亮起了无数双古怪的眼睛。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi06.png",
-        "Quality": 4,
-        "LeftDesc": "打碎橱窗",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "上前查看",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7029,
-        "Desc": "在没有出口的死胡同里，一个影影绰绰的黑影堵住了你的去路。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
-        "Quality": 4,
-        "LeftDesc": "正面应对",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2010
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "试图绕开",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2012
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7030,
-        "Desc": "拍卖会结束后，一尊古怪的灰色石雕被流拍了。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi06.png",
-        "Quality": 4,
-        "LeftDesc": "查看石雕",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "表示要买下石雕",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7031,
-        "Desc": "档案室的地板夹缝里，藏着一枚形状扭曲的生锈钥匙。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 4,
-        "LeftDesc": "取出钥匙",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "试图把钥匙恢复原状",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7032,
-        "Desc": "浓雾弥漫的河岸边，河水中开始闪烁着古怪的磷光。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi01.png",
-        "Quality": 4,
-        "LeftDesc": "试图捕捞",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2010
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "举起提灯查看",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2012
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7051,
-        "Desc": "警局的证物袋里，出现了一件之前从未有过的“证物”，那是一块怪异的封蜡。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 4,
-        "LeftDesc": "仔细观察",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "尝试敲碎封蜡",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7052,
-        "Desc": "荒废庄园的壁炉深处，灰烬中残留着一张未被火焰完全烧毁的旧照片。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi04.png",
-        "Quality": 4,
-        "LeftDesc": "捡起照片",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "扫除灰烬",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7053,
-        "Desc": "珠宝店里，一枚雕刻成蜘蛛形状的胸针无人问津。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
-        "Quality": 4,
-        "LeftDesc": "检查胸针",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2010
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "表示想买下这枚胸针",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2012
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7054,
-        "Desc": "在看到你走近时，原本兜售古怪药剂的黑市商人裹紧斗篷离去，却留下了一瓶药水。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi13.png",
-        "Quality": 4,
-        "LeftDesc": "捡起药瓶",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "试图开口唤住对方",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7055,
-        "Desc": "孤儿院的孩子向你递过来一只玩偶，但玩偶的眼睛却已经被破坏。",
-        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi02.png",
-        "Quality": 4,
-        "LeftDesc": "接过玩偶",
-        "LeftRewardTypes": [
-            5
-        ],
-        "LeftRewardTypeIds": [
-            2009
-        ],
-        "LeftRewardMinNums": [
-            1
-        ],
-        "LeftRewardMaxNums": [
-            1
-        ],
-        "RightDesc": "认真查看玩偶的眼睛",
-        "RightRewardTypes": [
-            5
-        ],
-        "RightRewardTypeIds": [
-            2011
-        ],
-        "RightRewardMinNums": [
-            1
-        ],
-        "RightRewardMaxNums": [
-            1
-        ]
-    },
-    {
-        "Id": 7056,
         "Desc": "博物馆无人问津的展柜里，放着一块刻满古怪文字的黏土板。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
         "Quality": 4,

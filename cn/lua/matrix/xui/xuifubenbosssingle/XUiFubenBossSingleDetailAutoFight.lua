@@ -158,7 +158,7 @@ end
 
 --region 私有方法
 function XUiFubenBossSingleDetailAutoFight:_TipClose()
-    self.Parent:RefreshToggleGroup(true)
+    self.Parent:RefreshToggleGroup()
 end
 
 function XUiFubenBossSingleDetailAutoFight:_RegisterButtonClicks()

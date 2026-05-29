@@ -15,7 +15,12 @@ end
 
 ---@param rewardList table 服务器返回的实际获得奖励列表
 function XUiPassportGetReward:OnStart(rewardList, uiPassport)
-    self._RewardList = rewardList or table.empty
+    if not rewardList then
+        self._RewardList = table.empty
+    else
+        self._RewardList = XRewardManager.MergeAndSortRewardGoodsList(rewardList)
+    end
+
     self:RefreshObtainedRewards()
     self:RefreshBuyPanel()
     self.UiPassport = uiPassport

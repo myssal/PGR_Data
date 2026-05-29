@@ -255,13 +255,13 @@ end
 
 function XUiMovie:OnClickHideMask()
     self.PanelHideMask.gameObject:SetActiveEx(false)
-    self.PanelDialogCanvasGroup.alpha = 1
+    self.PanelDialog.gameObject:SetActiveEx(true)
     self.TopBtnCanvasGroup.alpha = 1
 end
 
 function XUiMovie:OnClickBtnHide()
     self.PanelHideMask.gameObject:SetActiveEx(true)
-    self.PanelDialogCanvasGroup.alpha = 0
+    self.PanelDialog.gameObject:SetActiveEx(false)
     self.TopBtnCanvasGroup.alpha = 0
     self:ResetAutoPlay()
 end

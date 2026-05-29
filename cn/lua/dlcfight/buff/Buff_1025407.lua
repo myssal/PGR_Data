@@ -21,7 +21,6 @@ end
 
 function XBuffScript1025407:OnLuaAffixBlock(eventArgs)
     --self:LogError(".....抓到格挡")
-    if eventArgs._launcherUUID == self._npcUUID then return end
     if self.SkillChanceCheck == 0 then
         self.SkillChanceCheck = 1
         self._proxy:Theatre6ChangeStaminaValue(self._enemyUUID, -self.originAttrib1, 0) --扣除对手体力

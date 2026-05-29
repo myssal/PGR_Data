@@ -193,6 +193,7 @@ function XUiPhotographPortrait:OnNotify(evt, ...)
         self:Replay()
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING then
         if not self.CG:IsLanguagePreparing() then
+            self.SwitchableScene:OnVideoStart()
             self:OnCGPlay()
         end
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then
@@ -271,6 +272,7 @@ function XUiPhotographPortrait:InitCb()
     end
     if XOverseaManager.IsOverSeaRegion() then
         self.BtnPhotograph.gameObject:SetActiveEx(false) -- 海外隐藏拍照按钮
+        self.BtnPhotograph:SetButtonState(CS.UiButtonState.Disable)
         local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
         raycastComponent.raycastTarget = false
     else
@@ -349,6 +351,13 @@ function XUiPhotographPortrait:InitUi()
     self._SceneChange = require("XUi/XUiPhotograph/XUiPanelPhotographSceneChange").New(self.PanelSceneChange, self)
     self._SceneChange:SetUpdateBatteryMode(handler(self, self.UpdateBatteryMode))
     self.FashionColorPanel = XUiPhotographFashionColor.New(self.PanelDot, self)
+
+
+    self._CGFinishCallBack = function()
+        self.SwitchableScene:OnVideoEnd()
+    end
+
+    self.CG:AddVideoDestroyCallBack(self._CGFinishCallBack)
 end
 
 --region   ------------------动态列表 start-------------------
@@ -1021,7 +1030,11 @@ function XUiPhotographPortrait:SwitchCapturePanel(show)
     self.BtnHide.gameObject:SetActiveEx(not show)
     self:RefreshViewActive(not show)
     self.Btn.gameObject:SetActiveEx(not show)
-    self.BtnPhotograph.gameObject:SetActiveEx(not show)
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnPhotograph.gameObject:SetActiveEx(false) -- 海外隐藏拍照按钮
+    else
+        self.BtnPhotograph.gameObject:SetActiveEx(not show)
+    end
 end
 
 function XUiPhotographPortrait:IsShowCapturePanel()

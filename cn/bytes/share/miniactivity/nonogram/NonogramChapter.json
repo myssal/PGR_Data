@@ -162,5 +162,87 @@
         "TimeLimit": 60,
         "DeductTime": 5,
         "IsRebrush": true
+    },
+    {
+        "Id": 13,
+        "Name": "预湿",
+        "StageGroupIds": [
+            11
+        ],
+        "UnlockItemNum": 20,
+        "UnlockCgItemId": 1082,
+        "UnlockCgItemNum": 6,
+        "CgRewardId": 69092,
+        "TimeLimit": 60,
+        "DeductTime": 2
+    },
+    {
+        "Id": 14,
+        "Name": "显影",
+        "StageGroupIds": [
+            12
+        ],
+        "PreChapterId": 13,
+        "UnlockItemNum": 20,
+        "UnlockCgItemId": 1083,
+        "UnlockCgItemNum": 6,
+        "CgRewardId": 69093,
+        "TimeLimit": 60,
+        "DeductTime": 3
+    },
+    {
+        "Id": 15,
+        "Name": "停影",
+        "StageGroupIds": [
+            13
+        ],
+        "PreChapterId": 14,
+        "UnlockItemNum": 20,
+        "UnlockCgItemId": 1084,
+        "UnlockCgItemNum": 6,
+        "CgRewardId": 69094,
+        "TimeLimit": 60,
+        "DeductTime": 5
+    },
+    {
+        "Id": 16,
+        "Name": "赴夜",
+        "StageGroupIds": [
+            14
+        ],
+        "PreChapterId": 15,
+        "UnlockItemNum": 20,
+        "UnlockCgItemId": 1085,
+        "UnlockCgItemNum": 8,
+        "CgRewardId": 69095,
+        "TimeLimit": 60,
+        "DeductTime": 5
+    },
+    {
+        "Id": 17,
+        "Name": "倒影",
+        "StageGroupIds": [
+            15
+        ],
+        "PreChapterId": 16,
+        "UnlockItemNum": 20,
+        "UnlockCgItemId": 1086,
+        "UnlockCgItemNum": 8,
+        "CgRewardId": 69096,
+        "TimeLimit": 60,
+        "DeductTime": 5
+    },
+    {
+        "Id": 18,
+        "Name": "水洗",
+        "StageGroupIds": [
+            13,
+            14,
+            15
+        ],
+        "PreChapterId": 17,
+        "TimeLimit": 60,
+        "DeductTime": 5,
+        "IsRebrush": true
     }
 ]

@@ -50,6 +50,14 @@ function XUiPanelSwitchableSceneAnim:OnVideoStart()
     end
 end
 
+function XUiPanelSwitchableSceneAnim:OnVideoEnd()
+    local proxy = self._Player:GetProxy()
+
+    if proxy then
+        proxy:ResumeForVideoEnd()
+    end
+end
+
 ---播放场景动画
 ---@param sceneId number 场景ID
 ---@param sceneTran UnityEngine.Transform 场景Transform

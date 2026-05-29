@@ -10,11 +10,10 @@ function XUiPanelTheatre6Asset:OnStart()
 
     self.BtnHP:AddEventListener(handler(self, self.OnBtnHPClick))
     self.BtnGlod:AddEventListener(handler(self, self.OnBtnGlodClick))
-    if self.BtnTaskDetailClose then
-        self.BtnTaskDetailClose:AddEventListener(handler(self, self.OnBtnTaskDetailCloseClick))
-    end
+    --self.BtnReturn:AddEventListener(handler(self, self.OnBtnReturnClick))
 
     self.PanelBubble.gameObject:SetActiveEx(false)
+    --self.BtnReturn.gameObject:SetActiveEx(false)
     self.UiTxtHpAdd.gameObject:SetActiveEx(false)
     self.UiTxtHpReduce.gameObject:SetActiveEx(false)
     self.UiTxtGoldAdd.gameObject:SetActiveEx(false)
@@ -42,6 +41,7 @@ end
 function XUiPanelTheatre6Asset:Refresh()
     self:RefreshHp()
     self:RefreshGold()
+    --self:RefreshBubbleDetail()
 end
 
 function XUiPanelTheatre6Asset:RefreshHp()
@@ -54,19 +54,36 @@ function XUiPanelTheatre6Asset:RefreshGold()
     self.BtnGlod:SetNameByGroup(0, gold)
 end
 
+--function XUiPanelTheatre6Asset:RefreshBubbleDetail()
+--    local hpData = self._Control:GetHpDetail()
+--    local goldData = self._Control:GetGoldDetail()
+--    local detailText = "这是详情"
+--    self.UiTxtDetail.text = detailText
+--end
+
 function XUiPanelTheatre6Asset:OnBtnHPClick()
     self._IsBubbleOpen = not self._IsBubbleOpen
     self.PanelBubble.gameObject:SetActiveEx(self._IsBubbleOpen)
     self.UiTxtDetail.text = self._Control:GetHpDetail()
-    self:OpenClickMask()
 end
 
 function XUiPanelTheatre6Asset:OnBtnGlodClick()
     self._IsBubbleOpen = not self._IsBubbleOpen
     self.PanelBubble.gameObject:SetActiveEx(self._IsBubbleOpen)
     self.UiTxtDetail.text = self._Control:GetGoldDetail()
-    self:OpenClickMask()
 end
+
+--function XUiPanelTheatre6Asset:OnBtnAssetClick()
+--    self._IsBubbleOpen = not self._IsBubbleOpen
+--    self.PanelBubble.gameObject:SetActiveEx(self._IsBubbleOpen)
+--    self.BtnReturn.gameObject:SetActiveEx(self._IsBubbleOpen)
+--end
+
+--function XUiPanelTheatre6Asset:OnBtnReturnClick()
+--    self._IsBubbleOpen = false
+--    self.PanelBubble.gameObject:SetActiveEx(false)
+--    self.BtnReturn.gameObject:SetActiveEx(false)
+--end
 
 function XUiPanelTheatre6Asset:PlayAddGold(value)
     self:RefreshGold()
@@ -115,18 +132,6 @@ function XUiPanelTheatre6Asset:RemoveHpTimer()
     if self._HpTimer then
         XScheduleManager.UnSchedule(self._HpTimer)
         self._HpTimer = nil
-    end
-end
-
-function XUiPanelTheatre6Asset:OnBtnTaskDetailCloseClick()
-    self._IsBubbleOpen = false
-    self.PanelBubble.gameObject:SetActiveEx(false)
-    self.BtnTaskDetailClose.gameObject:SetActiveEx(false)
-end
-
-function XUiPanelTheatre6Asset:OpenClickMask()
-    if self._IsBubbleOpen and self.BtnTaskDetailClose then
-        self.BtnTaskDetailClose.gameObject:SetActiveEx(true)
     end
 end
 

@@ -2,6 +2,7 @@
 ---@class XUiLifeTreeCardGridCard : XUiNode
 ---@field _Control XLifeTreeControl
 ---@field IsAnimPlaying boolean
+---@field CatalogId number
 local XUiLifeTreeCardGridCard = XClass(XUiNode, "XUiLifeTreeCardGridCard")
 
 function XUiLifeTreeCardGridCard:InitLine()
@@ -23,5 +24,10 @@ end
 function XUiLifeTreeCardGridCard:GetIsAnimPlaying()
     return self.IsAnimPlaying == true
 end
+
+function XUiLifeTreeCardGridCard:GetCardType()
+     local catalogConfig = self._Control:GetLifeTreeCharacterCatalogConfigById(self.CatalogId)
+     return catalogConfig.CardType
+ end
 
 return XUiLifeTreeCardGridCard

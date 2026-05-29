@@ -13,9 +13,7 @@ function XUiPanelSimulationBranchStyle:Ctor(ui, parent)
 end
 
 function XUiPanelSimulationBranchStyle:SetupDynamicTable(datas)
-    -- 切换二级标签时数据源变化，必须重置选中index为0（第1个格子），
-    -- 否则沿用旧的CurrentSelectedIndex会导致新数据源中第1个格子被当作非选中格子播CloseAnim
-    self.ChapterDynamicTable:RefreshList(datas, 0)
+    self.ChapterDynamicTable:RefreshList(datas)
 end
 
 ---@param manager XFubenBaseAgency
@@ -32,12 +30,6 @@ function XUiPanelSimulationBranchStyle:OnBtnChapterClicked(index, manager)
     self.ChapterDynamicTable:TweenToIndex(index, XFubenConfigs.ExtralLineWaitTime, function()
         self.Mask.gameObject:SetActiveEx(false)
     end)
-end
-
-function XUiPanelSimulationBranchStyle:OnDestroy()
-    if self.ChapterDynamicTable and self.ChapterDynamicTable.OnDestroy then
-        self.ChapterDynamicTable:OnDestroy()
-    end
 end
 
 return XUiPanelSimulationBranchStyle

@@ -774,6 +774,7 @@ end
 function XUiTeamPrefabMain:RefreshFilterState()
     self.BtnFilter:SetButtonState(self.IsFiltering and CS.UiButtonState.Select or CS.UiButtonState.Normal)
     self.BtnAdd.gameObject:SetActiveEx(not self.IsFiltering)
+    self.BtnSkipToTeamRecommendation.gameObject:SetActiveEx(not self.IsFiltering)
     self.BtnTopUp.gameObject:SetActiveEx(not self.IsFiltering)
 end
 

@@ -46,7 +46,7 @@ function XUiFubenBossSingleDetailV4P5:OnAwake()
 
     self._AutoFightPanelUi:SetBtnAutoFightAdditionalOperation(function()
         self._AutoFightPanelUi:Close()
-        self:_RefreshView(true)
+        self:_RefreshView()
         self:ScheduleResetCooldown()
     end)
 
@@ -65,9 +65,9 @@ function XUiFubenBossSingleDetailV4P5:OnStart(bossId)
 end
 
 function XUiFubenBossSingleDetailV4P5:OnEnable()
-    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_SYNC, self._RefreshViewNoDifficultySelectCardAnimation, self)
-    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self._RefreshViewNoDifficultySelectCardAnimation, self)
-    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_AUTO_FIGHT, self._RefreshViewNoDifficultySelectCardAnimation, self)
+    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_SYNC, self._RefreshView, self)
+    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self._RefreshView, self)
+    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_AUTO_FIGHT, self._RefreshView, self)
 
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_SYNC, self.ScheduleResetCooldown, self)
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self.ScheduleResetCooldown, self)
@@ -78,9 +78,9 @@ function XUiFubenBossSingleDetailV4P5:OnEnable()
 end
 
 function XUiFubenBossSingleDetailV4P5:OnDisable()
-    XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_SYNC, self._RefreshViewNoDifficultySelectCardAnimation, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self._RefreshViewNoDifficultySelectCardAnimation, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_AUTO_FIGHT, self._RefreshViewNoDifficultySelectCardAnimation, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_SYNC, self._RefreshView, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self._RefreshView, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_AUTO_FIGHT, self._RefreshView, self)
 
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_SYNC, self.ScheduleResetCooldown, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self.ScheduleResetCooldown, self)
@@ -128,11 +128,7 @@ function XUiFubenBossSingleDetailV4P5:_SelectLevel(index, skipRefreshView)
     if not skipRefreshView then self:_RefreshView() end
 end
 
-function XUiFubenBossSingleDetailV4P5:_RefreshViewNoDifficultySelectCardAnimation()
-    self:_RefreshView(true)
-end
-
-function XUiFubenBossSingleDetailV4P5:_RefreshView(noDifficultySelectCardAnimation)
+function XUiFubenBossSingleDetailV4P5:_RefreshView()
     local bossConf = self._SelectedBossStageConf
     local stageId = self._SelectedBossStageConf.StageId
     local stageConf = XMVCA.XFuben:GetStageCfg(stageId)
@@ -149,7 +145,7 @@ function XUiFubenBossSingleDetailV4P5:_RefreshView(noDifficultySelectCardAnimati
 
 
     self:_RefreshBuffDetails(bossConf)
-    self:_ResetDifficultySelectCards(noDifficultySelectCardAnimation)
+    self:_ResetDifficultySelectCards()
     self:_RefreshButtons()
     self:ScheduleResetCooldown()
 end
@@ -219,7 +215,7 @@ function XUiFubenBossSingleDetailV4P5:_RefreshBuffDetails(bossConf)
         not XTool.IsTableEmpty(self._BuffOrSkillGrids))
 end
 
-function XUiFubenBossSingleDetailV4P5:_ResetDifficultySelectCards(noDifficultySelectCardAnimation)
+function XUiFubenBossSingleDetailV4P5:_ResetDifficultySelectCards()
     if self._DifficultySelectCard then
         for _, v in pairs(self._DifficultySelectCard) do
             v:Close()
@@ -227,7 +223,6 @@ function XUiFubenBossSingleDetailV4P5:_ResetDifficultySelectCards(noDifficultySe
         end
     end
 
-    local playSmallAnimation = not self._DifficultySelectCard
     self._DifficultySelectCard = {}
     self.BtnGridDifficultyBig.gameObject:SetActiveEx(false)
     self.BtnGridDifficultySmall.gameObject:SetActiveEx(false)
@@ -235,7 +230,6 @@ function XUiFubenBossSingleDetailV4P5:_ResetDifficultySelectCards(noDifficultySe
     for difficultyIndex, difficulty in pairs(self._SectionInfo) do
         local prefab
         local callback
-        local isSmall = nil
 
         if difficultyIndex == self._SelectedBossStageIndex then
             prefab = self.BtnGridDifficultyBig.gameObject
@@ -243,7 +237,6 @@ function XUiFubenBossSingleDetailV4P5:_ResetDifficultySelectCards(noDifficultySe
         else
             prefab = self.BtnGridDifficultySmall.gameObject
             callback = function() self:_SelectLevel(difficultyIndex) end
-            isSmall = true
         end
 
         local go = XUiHelper.Instantiate(prefab, self.PanelDifficultyContent)
@@ -254,16 +247,14 @@ function XUiFubenBossSingleDetailV4P5:_ResetDifficultySelectCards(noDifficultySe
             self,
             difficulty,
             self._SelectedBossStageConf,
-            callback,
-            isSmall and playSmallAnimation and not noDifficultySelectCardAnimation,
-            not isSmall and not noDifficultySelectCardAnimation)
+            callback)
 
         table.insert(self._DifficultySelectCard, ui)
     end
 end
 
-function XUiFubenBossSingleDetailV4P5:RefreshToggleGroup(noDifficultyCardAnimation)
-    self:_RefreshView(noDifficultyCardAnimation)
+function XUiFubenBossSingleDetailV4P5:RefreshToggleGroup()
+    self:_RefreshView()
     self:ScheduleResetCooldown()
 end
 
@@ -317,8 +308,10 @@ function XUiFubenBossSingleDetailV4P5:_RefreshBtnStartAndAuto()
         self.BtnAuto:SetName(
             XUiHelper.GetText("BossSingleAutoFightCount2", curCount, maxCount))
 
+        self.BtnStart.gameObject:SetActiveEx(false)
         self.BtnAuto.gameObject:SetActiveEx(true)
     else
+        self.BtnStart.gameObject:SetActiveEx(true)
         self.BtnAuto.gameObject:SetActiveEx(false)
     end
 end
@@ -339,7 +332,7 @@ function XUiFubenBossSingleDetailV4P5:ScheduleResetCooldown()
     end
 
     self._TimerResetCooldown = XScheduleManager.ScheduleForever(function()
-        self:_RefreshButtons()
+        self:RefreshToggleGroup()
         if not self._Control:IsResetCoolDown() then
             XScheduleManager.UnSchedule(self._TimerResetCooldown)
         end

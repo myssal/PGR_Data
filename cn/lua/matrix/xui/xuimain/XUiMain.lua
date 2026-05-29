@@ -64,7 +64,14 @@ function XUiMain:InitPanel()
     self.MainBoardEffect = XUiMainBoardEffect.New(self)
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
-    
+
+    self._CGFinishCallBack = function()
+        self.SwitchableScene:OnVideoEnd()
+    end
+
+    self.CG:AddVideoDestroyCallBack(self._CGFinishCallBack)
+
+
     -- self.AreanOnline = XUiPanelArenaOnline.New(self, self.PanelArenaOnline)  --屏蔽合众战局
 end
 
@@ -259,6 +266,7 @@ function XUiMain:OnNotify(evt, ...)
         end
 
         if not self.CG:IsLanguagePreparing() then
+            self.SwitchableScene:OnVideoStart()
             self.CG:OnCGPlay()
         end
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then

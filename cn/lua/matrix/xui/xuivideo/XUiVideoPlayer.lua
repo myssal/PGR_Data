@@ -93,7 +93,7 @@ function XUiVideoPlayer:OnStart(data, closeCb, needAuto, needSkip, defaultHideBu
 end
 
 function XUiVideoPlayer:OnEnable()
-    XInputManager.SetCurInputMap(XInputMapId.Video)
+    XInputManager.SetCurInputMap(XOperationType.Video)
     XInputManager.RegisterOnClick(XOperationType.Video, self.OnClick)
 end
 

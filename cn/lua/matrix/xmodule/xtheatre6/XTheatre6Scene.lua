@@ -13,8 +13,8 @@ function XTheatre6Scene:OnInit()
     self._RoleModelPanels = {}
     ---@type table<number, XTableTheatre6CharacterFashion>
     self._FashionConfigDict = {}
-    ---@type table<number, string> 记录每个位置上次加载的主线模型名
-    self._LoadedMainlineModelNameDict = {}
+    ---@type table<number, string> 记录每个位置上次加载的DlcModelId
+    self._LoadedDlcModelIdDict = {}
     ---@type table<number, string> 记录每个位置上次加载的AnimatorController
     self._LoadedAnimControllerDict = {}
     ---@type table<number, UnityEngine.GameObject> 每个位置缓存的换人特效对象
@@ -22,12 +22,6 @@ function XTheatre6Scene:OnInit()
     self._FxUiHuanRen = self._Control:GetClientConfigValue("FxUiHuanRen")
     self._NodeCount = self._Control:GetIntClientConfigValue("SceneRoleNodeCount")
     self.CurSelectIndex = nil
-end
-
----根据Theatre6CharacterFashion配置获取主线角色模型名
-function XTheatre6Scene:GetMainlineModelName(mainlineFashionId)
-    local resourcesId = XDataCenter.FashionManager.GetResourcesId(mainlineFashionId)
-    return XMVCA.XCharacter:GetCharResModel(resourcesId)
 end
 
 ----------public start----------
@@ -250,19 +244,6 @@ function XTheatre6Scene:StopCommonCamAnim()
     self._CommonCameraFar = nil
 end
 
-function XTheatre6Scene:PlayEnterCamAnim()
-    local uiCamFarMainIn = self._ModelTransform:FindTransform("UiCamFarMainIn")
-    local uiCamNearMainIn = self._ModelTransform:FindTransform("UiCamNearMainIn")
-    if XTool.UObjIsNil(uiCamFarMainIn) or XTool.UObjIsNil(uiCamNearMainIn) then
-        return
-    end
-    local time = self._Control:GetIntClientConfigValue("MainUiEnterCamAnimTime")
-    return XScheduleManager.ScheduleOnce(function()
-        uiCamFarMainIn.gameObject:SetActiveEx(false)
-        uiCamNearMainIn.gameObject:SetActiveEx(false)
-    end, time)
-end
-
 ----------public end----------
 
 ----------private start----------
@@ -279,7 +260,7 @@ end
 function XTheatre6Scene:OnDestroy()
     self._RoleModelPanels = {}
     self._FashionConfigDict = {}
-    self._LoadedMainlineModelNameDict = {}
+    self._LoadedDlcModelIdDict = {}
     self._LoadedAnimControllerDict = {}
     self._HuanRenFxDict = {}
     self._RoleConfigs = nil
@@ -303,32 +284,32 @@ function XTheatre6Scene:_LoadRoleModel(index, fashionId, isChangeFashion, playAn
         return
     end
 
-    local mainlineModelName = self:GetMainlineModelName(fashionConfig.MainlineFashionId)
-    if string.IsNilOrEmpty(mainlineModelName) then
+    local dlcModelId = fashionConfig.DlcModelId
+    if string.IsNilOrEmpty(dlcModelId) then
         return
     end
 
     self._FashionConfigDict[index] = fashionConfig
     local roleModelPanel = self:_GetOrCreateRoleModelPanel(index)
 
-    local lastMainlineModelName = self._LoadedMainlineModelNameDict[index]
-    local isSameMainlineModelName = lastMainlineModelName == mainlineModelName
+    local lastDlcModelId = self._LoadedDlcModelIdDict[index]
+    local isSameDlcModelId = lastDlcModelId == dlcModelId
 
-    if isChangeFashion or not isSameMainlineModelName then
-        -- 主线模型不一样，重新加载模型（异步，回调中执行_OnModelReady）
+    if isChangeFashion or not isSameDlcModelId then
+        -- DlcModelId不一样，重新加载模型（异步，回调中执行_OnModelReady）
         -- 仅在选人界面切换涂装的单角色刷新时播放换人特效
-        self:_ReloadMainlineModel(index, roleModelPanel, mainlineModelName, fashionConfig, playAnimName)
+        self:_ReloadFullModel(index, roleModelPanel, dlcModelId, fashionConfig, playAnimName)
         return
     end
 
     local isSameAnimController = self._LoadedAnimControllerDict[index] == fashionConfig.AnimatorController
     if not isSameAnimController then
-        -- 主线模型一样但AnimatorController不一样，只更新状态机
+        -- DlcModelId一样但AnimatorController不一样，只更新状态机
         self:_UpdateAnimatorOnly(index, roleModelPanel, fashionConfig, playAnimName)
         return
     end
 
-    -- 主线模型和AnimatorController都一样，仍需执行_OnModelReady
+    -- DlcModelId和AnimatorController都一样，仍需执行_OnModelReady
     local model = roleModelPanel:GetCurRoleModel()
     if model then
         self:_OnModelReady(model, index, fashionConfig, playAnimName)
@@ -348,7 +329,7 @@ function XTheatre6Scene:_GetOrCreateRoleModelPanel(index)
     return roleModelPanel
 end
 
----主线模型一样但AnimatorController不一样时，只更新状态机
+---DlcModelId一样但AnimatorController不一样时，只更新状态机
 ---@param index number
 ---@param roleModelPanel XUiPanelRoleModel
 ---@param fashionConfig XTableTheatre6CharacterFashion
@@ -360,15 +341,15 @@ function XTheatre6Scene:_UpdateAnimatorOnly(index, roleModelPanel, fashionConfig
     end
 end
 
----主线模型不一样时，重新加载模型
+---DlcModelId不一样时，重新加载模型
 ---@param index number
 ---@param roleModelPanel XUiPanelRoleModel
----@param mainlineModelName string
+---@param dlcModelId string
 ---@param fashionConfig XTableTheatre6CharacterFashion
-function XTheatre6Scene:_ReloadMainlineModel(index, roleModelPanel, mainlineModelName, fashionConfig, animName)
-    self._LoadedMainlineModelNameDict[index] = mainlineModelName
+function XTheatre6Scene:_ReloadFullModel(index, roleModelPanel, dlcModelId, fashionConfig, animName)
+    self._LoadedDlcModelIdDict[index] = dlcModelId
     self._LoadedAnimControllerDict[index] = fashionConfig.AnimatorController
-    roleModelPanel:UpdateRoleModel(mainlineModelName, nil, self._Name, function(model)
+    roleModelPanel:UpdateRoleModel(dlcModelId, nil, self._Name, function(model)
         self:_OnModelReady(model, index, fashionConfig, animName)
     end)
 end

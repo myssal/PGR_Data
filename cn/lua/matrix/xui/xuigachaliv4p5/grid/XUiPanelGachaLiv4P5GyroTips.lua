@@ -22,33 +22,21 @@ function XUiPanelGachaLiv4P5GyroTips:OnStart(gachaId, sceneId)
         
         self.Text.text = tips
     end
+
+    -- 首次进入界面初始化时自动播一次
+    self:PlayAnimation("Enable")
 end
 
-function XUiPanelGachaLiv4P5GyroTips:OnDestroy()
-    self:_StopDelayCall()
+function XUiPanelGachaLiv4P5GyroTips:OnDisable()
+    self.PanelTips.gameObject:SetActiveEx(false)
+
+    if self.Mask then
+        self.Mask.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiPanelGachaLiv4P5GyroTips:OnBtnClickEvent()
-    self:_StopDelayCall()
-    
-    --todo 临时逻辑，后面动画介入后再调整
-    self._IsOpen = not self._IsOpen
-
-    if self._IsOpen then
-        self.PanelTips.gameObject:SetActiveEx(true)
-        self._DelayCallTimeId = XScheduleManager.ScheduleOnce(function()
-            self.PanelTips.gameObject:SetActiveEx(false)
-        end, 5 * XScheduleManager.SECOND)
-    else
-        self.PanelTips.gameObject:SetActiveEx(false)
-    end
-end
-
-function XUiPanelGachaLiv4P5GyroTips:_StopDelayCall()
-    if self._DelayCallTimeId then
-        XScheduleManager.UnSchedule(self._DelayCallTimeId)
-        self._DelayCallTimeId = nil
-    end
+    self:PlayAnimation("Enable")
 end
 
 return XUiPanelGachaLiv4P5GyroTips

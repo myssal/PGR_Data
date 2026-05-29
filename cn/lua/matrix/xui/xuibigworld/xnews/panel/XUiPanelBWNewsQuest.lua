@@ -67,8 +67,15 @@ function XUiPanelBWNewsQuest:RefreshTask(taskGroupId)
             local taskId = taskDatas[1].Id
             local rewardId = XMVCA.XBigWorldService:GetTaskRewardIdByTaskId(taskId)
             local rewards = XMVCA.XBigWorldService:GetRewardDataList(rewardId)
+            local countDownTime = XMVCA.XBigWorldNews:GetNewsRemainingTime(self._NewsId)
 
-            self:RefreshTime()
+            if countDownTime > 0 then
+                self.ImgTimeBg.gameObject:SetActiveEx(true)
+                self.TxtTime.text = XMVCA.XBigWorldCommon:GetCoolTimeStr(countDownTime, XMVCA.XBigWorldCommon.CoolTimeFormat.NewsReward)
+            else
+                self.ImgTimeBg.gameObject:SetActiveEx(false)
+            end
+
             if not XTool.IsTableEmpty(rewards) then
                 self.PanelRewardTime.gameObject:SetActiveEx(true)
                 self.TxtRewardTitle.text = XMVCA.XBigWorldNews:GetNewsShowTimeRewardTitle(self._NewsId)
@@ -79,8 +86,7 @@ function XUiPanelBWNewsQuest:RefreshTask(taskGroupId)
 
                 if not self._TimeRewardGrid then
                     ---@type XUiGridBWItem
-                    self._TimeRewardGrid = XUiGridBWItem.New(self.TimeRewardGrid, self,
-                        Handler(self, self.OnTimeRewardClick))
+                    self._TimeRewardGrid = XUiGridBWItem.New(self.TimeRewardGrid, self, Handler(self, self.OnTimeRewardClick))
                 end
 
                 local isReceive = true
@@ -118,10 +124,7 @@ function XUiPanelBWNewsQuest:RefreshOther()
     local finish = self:IsFinish()
     local isUnlock = true
 
-    if finish then
-        self.LockTips.gameObject:SetActiveEx(false)
-        self.UiBigWorldCommonBtnBigConfirm:ShowTag(false)
-    elseif isPassed then
+    if isPassed then
         self.LockTips.gameObject:SetActiveEx(false)
         self.UiBigWorldCommonBtnBigConfirm:ShowTag(false)
         self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(0, XMVCA.XBigWorldService:GetText("SkipTo"))
@@ -129,29 +132,32 @@ function XUiPanelBWNewsQuest:RefreshOther()
         local textDialogId = XMVCA.XBigWorldNews:GetNewsEarlyAccessTextDialogId(self._NewsId)
 
         if XTool.IsNumberValid(self._CustomParamId) and not XTool.IsTableEmpty(self._EarlyAccessSkipIds) then
-            local isUnlockEarlyAccess, desc = XMVCA.XBigWorldNews:CheckEarlyAccessCondition(self._NewsId)
-
-            self.LockTips.gameObject:SetActiveEx(true)
-            self.BtnDetail.gameObject:SetActiveEx(XTool.IsNumberValid(textDialogId))
-            if isUnlockEarlyAccess then
-                self.UiBigWorldCommonBtnBigConfirm:ShowTag(XMVCA.XBigWorldNews:CheckQuestNewsHasNew(self._NewsId))
-                self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(0, XMVCA.XBigWorldService:GetText("EarlyAccessText"))
-                self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(1, XMVCA.XBigWorldService:GetText("EarlyAccessDesc"))
-            else
-                isUnlock = false
+            if finish then
+                self.LockTips.gameObject:SetActiveEx(false)
                 self.UiBigWorldCommonBtnBigConfirm:ShowTag(false)
-                self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(1, desc)
+            else
+                local isUnlockEarlyAccess, desc = XMVCA.XBigWorldNews:CheckEarlyAccessCondition(self._NewsId)
+                
+                self.BtnDetail.gameObject:SetActiveEx(XTool.IsNumberValid(textDialogId))
+                if isUnlockEarlyAccess then
+                    self.UiBigWorldCommonBtnBigConfirm:ShowTag(XMVCA.XBigWorldNews:CheckQuestNewsHasNew(self._NewsId))
+                    self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(0, XMVCA.XBigWorldService:GetText("EarlyAccessText"))
+                    self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(1, XMVCA.XBigWorldService:GetText("EarlyAccessDesc"))
+                else
+                    isUnlock = false
+                    self.UiBigWorldCommonBtnBigConfirm:ShowTag(false)
+                    self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(1, desc)
+                end
             end
         else
             local preConditions = XMVCA.XBigWorldNews:GetNewsPreConditions(self._NewsId)
-
+            
             self.LockTips.gameObject:SetActiveEx(true)
             self.BtnDetail.gameObject:SetActiveEx(false)
             self.UiBigWorldCommonBtnBigConfirm:ShowTag(XMVCA.XBigWorldNews:CheckQuestNewsHasNew(self._NewsId))
-            self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(0,
-                XMVCA.XBigWorldService:GetText("SkipToFinshPreCondition"))
+            self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(0, XMVCA.XBigWorldService:GetText("SkipToFinshPreCondition"))
             self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(1,
-                XMVCA.XBigWorldService:GetDlcConditionDesc(preConditions[self._FirstNotPassConditionIndex]))
+            XMVCA.XBigWorldService:GetDlcConditionDesc(preConditions[self._FirstNotPassConditionIndex]))
         end
     end
     self.UiBigWorldCommonBtnBigConfirm:SetDisable(finish or not isUnlock, not finish and isUnlock)
@@ -160,18 +166,6 @@ function XUiPanelBWNewsQuest:RefreshOther()
         self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(2, XMVCA.XBigWorldService:GetText("EarlyAccessLock"))
     else
         self.UiBigWorldCommonBtnBigConfirm:SetNameByGroup(2, XMVCA.XBigWorldService:GetText("Complete"))
-    end
-end
-
-function XUiPanelBWNewsQuest:RefreshTime()
-    local countDownTime = XMVCA.XBigWorldNews:GetNewsRemainingTime(self._NewsId)
-
-    if countDownTime > 0 then
-        self.ImgTimeBg.gameObject:SetActiveEx(true)
-        self.TxtTime.text = XMVCA.XBigWorldCommon:GetCoolTimeStr(countDownTime,
-            XMVCA.XBigWorldCommon.CoolTimeFormat.NewsReward)
-    else
-        self.ImgTimeBg.gameObject:SetActiveEx(false)
     end
 end
 
@@ -250,7 +244,7 @@ function XUiPanelBWNewsQuest:IsFinish()
             local taskDatas = XMVCA.XBigWorldService:GetTimeLimitTaskListByGroupId(taskGroupId)
 
             for _, taskData in pairs(taskDatas) do
-                if not (XMVCA.XBigWorldService:CheckTaskFinish(taskData.Id) or XMVCA.XBigWorldService:CheckTaskAchieved(taskData.Id)) then
+                if not XMVCA.XBigWorldService:CheckTaskFinish(taskData.Id) then
                     return false
                 end
             end
@@ -264,10 +258,6 @@ end
 
 function XUiPanelBWNewsQuest:IsTime()
     return XMVCA.XBigWorldNews:CheckNewsIsTime(self._NewsId)
-end
-
-function XUiPanelBWNewsQuest:SecondUpdate()
-    self:RefreshTime()
 end
 
 return XUiPanelBWNewsQuest

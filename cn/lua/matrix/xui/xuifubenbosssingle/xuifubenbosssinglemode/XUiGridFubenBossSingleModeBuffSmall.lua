@@ -17,10 +17,6 @@ function XUiGridFubenBossSingleModeBuffSmall:SetData(feature, buffGroups, index)
     self.Feature = feature
 end
 
-function XUiGridFubenBossSingleModeBuffSmall:PlayExtendAnimation()
-    self:PlayAnimation("Small")
-end
-
 function XUiGridFubenBossSingleModeBuffSmall:OnClick()
     self.Parent:Select(self._Index)
 end

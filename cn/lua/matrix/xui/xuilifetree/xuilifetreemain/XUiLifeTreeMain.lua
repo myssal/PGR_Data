@@ -316,13 +316,10 @@ end
 function XUiLifeTreeMain:PlayStartAnimation()
     -- 场景动画
     self:StopSceneAnimation("AnimEnable02")
-    self:StopSceneAnimation("AnimLoop02")
-    self:StopSceneAnimation("AnimLoop01")
+    self:StopSceneAnimation("AnimEnable03")
     XLuaUiManager.SetMask(true)
     self:PlaySceneAnimation("AnimEnable01", function()
         XLuaUiManager.SetMask(false)
-        self:StopSceneAnimation("AnimEnable01")
-        self:PlaySceneAnimation("AnimLoop01")
     end)
 
     -- 摄像机动画
@@ -395,27 +392,22 @@ end
 -- 播放生命树动画
 function XUiLifeTreeMain:PlayLifeTreeAnimations()
     self:StopSceneAnimation("AnimEnable01")
-    self:StopSceneAnimation("AnimLoop01")
-    self:StopSceneAnimation("AnimLoop02")
+    self:StopSceneAnimation("AnimEnable02")
     
     XLuaUiManager.SetMask(true)
-    self:PlaySceneAnimation("AnimEnable02", function()
+    self:PlaySceneAnimation("AnimEnable03", function()
         XLuaUiManager.SetMask(false)
-        self:StopSceneAnimation("AnimEnable02")
-        self:PlaySceneAnimation("AnimLoop01")
-    end, true)
+    end)
 end
 
 -- 播放意识海动画
 function XUiLifeTreeMain:PlaySeaAnimations()
     self:StopSceneAnimation("AnimEnable01")
-    self:StopSceneAnimation("AnimLoop01")
+    self:StopSceneAnimation("AnimEnable03")
 
     XLuaUiManager.SetMask(true)
     self:PlaySceneAnimation("AnimEnable02", function()
         XLuaUiManager.SetMask(false)
-        self:StopSceneAnimation("AnimEnable02")
-        self:PlaySceneAnimation("AnimLoop02")
     end)
 end
 --endregion
@@ -543,6 +535,9 @@ function XUiLifeTreeMain:PlayCameraZoomInAnimation(cb)
     self.CamFarMain.gameObject:SetActiveEx(false)
     self.LastFarCameraPosition = self.UiFarCamera.transform.position
 
+    -- 界面压黑动画
+    self:PlayAnimation("DarkDisable")
+
     -- 镜头推进动画
     local targetPosition = self.ZoomInPoint.transform.position -- 镜头推进目标位置
     self:StopCameraZoomInAnimation()
@@ -558,6 +553,9 @@ end
 -- 播放镜头恢复动画动画
 function XUiLifeTreeMain:PlayCameraResetAnimation(cb)
     if not self.IsCameraZoomIn then return end
+
+    -- 界面黑色消退动画
+    self:PlayAnimation("DarkEnable")
 
     -- 镜头推进动画
     self:StopCameraZoomInAnimation()

@@ -2118,20 +2118,16 @@ function XEquipModel:GetConfigWeaponSkillPool(id)
     end
 end
 
-function XEquipModel:GetWeaponSkillPoolSkillIds(poolId, characterId, notTip)
+function XEquipModel:GetWeaponSkillPoolSkillIds(poolId, characterId)
     local template = self.WeaponSkillPoolTemplate[poolId]
     if not template then
-        if not notTip then
-            XLog.ErrorTableDataNotFound("XEquipModel:GetWeaponSkillPoolSkillIds", "template", "Share/Equip/WeaponSkillPool.tab", "poolId", tostring(poolId))
-        end
+        XLog.ErrorTableDataNotFound("XEquipModel:GetWeaponSkillPoolSkillIds", "template", "Share/Equip/WeaponSkillPool.tab", "poolId", tostring(poolId))
         return
     end
 
     local skillIds = template[characterId]
     if not skillIds then
-        if not notTip then
-            XLog.ErrorTableDataNotFound("XEquipModel:GetWeaponSkillPoolSkillIds", "characterId", "Share/Equip/WeaponSkillPool.tab", "poolId", tostring(poolId))
-        end
+        XLog.ErrorTableDataNotFound("XEquipModel:GetWeaponSkillPoolSkillIds", "characterId", "Share/Equip/WeaponSkillPool.tab", "poolId", tostring(poolId))
         return
     end
     return skillIds

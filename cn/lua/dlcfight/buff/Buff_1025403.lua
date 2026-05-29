@@ -14,7 +14,6 @@ function XBuffScript1025403:Init()
     --self.attrib = ENpcAttrib.HealAmpP
     --公用的击倒id
     self.originAttrib1 = 0
-    self.SkillChanceCheck = 0
     ------------执行------------
 end
 
@@ -22,7 +21,6 @@ end
 function XBuffScript1025403:OnLuaAffixHitDown(eventArgs)
     --self:LogError("SkillEnd")
     if eventArgs._launcherUUID == self._npcUUID then return end
-    if self.SkillChanceCheck == 0 then
     self.originAttrib1 = self.originAttrib1 + 1
     self.TargetCS = self._proxy:Theatre6GetNpcRuntimeOverClock(self._enemyUUID)
     if self.TargetCS <= self.CSCost then self._proxy:Theatre6CastNpcRuntimeOverClock(self._enemyUUID,self.TargetCS) --扣除对手超算值
@@ -31,13 +29,6 @@ function XBuffScript1025403:OnLuaAffixHitDown(eventArgs)
     self._proxy:Theatre6ChangeStaminaValue(self._enemyUUID, -self.originAttrib1, 0) --扣除对手体力
     --触发击飞时，计数器+1
     --return self._critController:AddSkillCount(self._stackCount)
-        self.SkillChanceCheck = 1
-    end
-end
-
-function XBuffScript1025403:OnLuaSkillStart(eventArgs)
-    ------------执行------------
-    self.SkillChanceCheck = 0
 end
 
 return XBuffScript1025403

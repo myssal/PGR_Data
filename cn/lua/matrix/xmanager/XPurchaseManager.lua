@@ -1920,7 +1920,7 @@ XPurchaseManagerCreator = function()
     if XOverseaManager.IsENRegion() then
         -- EN有多个月卡
         PurchasePackageId2Class[83028] = require("XEntity/XPurchase/XYKPurchasePackage")
-        PurchasePackageId2Class[90032] = require("XEntity/XPurchase/XYKPurchasePackage")
+        PurchasePackageId2Class[XPurchaseConfigs.EnYKCID] = require("XEntity/XPurchase/XYKPurchasePackage")
     end
 
     function XPurchaseManager.CreatePurchasePackage(id, data)

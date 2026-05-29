@@ -54,6 +54,10 @@ end
 function XSceneAnimProxyBase:SuspendForVideo()
 end
 
+---视频播放结束后恢复场景交互
+function XSceneAnimProxyBase:ResumeForVideoEnd()
+end
+
 --endregion
 
 --region 更新（子类实现）

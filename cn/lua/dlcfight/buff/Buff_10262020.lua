@@ -13,7 +13,7 @@ function XBuffScript10262020:ScriptInit(isGainControl) --初始化
     self.ChanceCheck = 0
     self._stackCountHitDown = 0
     self._angerCost = 50
-    self._damageMagicId = 1026202 --注册超算成功技1伤害id，5.10已换
+    self._damageMagicId = 10250044 --注册超算成功技1伤害id，目前是临时的
     if self._skillId == 10262021 then self._exDamageRateBase = 8000
     else if self._skillId == 10262022 then self._exDamageRateBase = 8000
     else self._exDamageRateBase = 8000
@@ -23,7 +23,7 @@ end
 
 function XBuffScript10262020:OnEnterLevel(levelId)
     XTheatre6SkillBase.OnEnterLevel(self, levelId)
-    self._HitDownController = self:GetNpc():GetHitDownController()
+    self._HitDownController = self:GetEnemyNpc():GetHitDownController()
 end
 
 

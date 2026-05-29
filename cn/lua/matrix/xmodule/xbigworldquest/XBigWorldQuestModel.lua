@@ -751,15 +751,9 @@ function XBigWorldQuestModel:PopupTaskObtain(questId, isFinish)
     else
         isShield = self:CheckPopViewOpenWhenQuestReceive(questId)
     end
-
-    if isShield then
-        return
-    end
-
     local questType = self:GetQuestTypeTemplate(t.Type)
     local popViewType = questType.PopType or PopViewType.None
-
-    if popViewType == PopViewType.None then
+    if isShield or popViewType == PopViewType.None then
         return
     end
     local uiName = PopViewType2UiName[popViewType]
@@ -930,6 +924,11 @@ end
 function XBigWorldQuestModel:GetInviteQuestPopTipText(id)
     local t = self:GetInviteQuestTemplate(id)
     return t and t.PopTipText
+end
+
+function XBigWorldQuestModel:GetInviteQuestType(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.Type
 end
 
 ---@return XTableDlcInviteQuestResult

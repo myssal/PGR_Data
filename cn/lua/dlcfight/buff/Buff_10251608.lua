@@ -34,7 +34,7 @@ function XBuff10251608:OnLuaSkillEnd(eventArgs)
         self.trigger = true
     end
     if eventArgs._skillId ~= self._skillId then return end
-    local stamina = self._proxy:GetNpcGameplayAttribMaxValue(self._npcUUID, ETheatre6AttribType.Stamina)
+    local stamina = self._proxy:GetNpcGameplayAttribValue(self._npcUUID, ETheatre6AttribType.Stamina)
     self.buffStacks = stamina // self.staminaPerCrit
     self._critController:AddSkillCount(self.buffStacks)
     --self:LogError(".....增加暴击层数"..self.buffStacks)

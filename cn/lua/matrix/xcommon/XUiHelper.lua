@@ -2352,7 +2352,7 @@ function XUiHelper.OpenMonthlyCardEn()
         if item.Data.Id == 83028 then
             cardAData = item
             cardABoughtFull = cardAData:GetCurrentBuyTime() == cardAData:GetBuyLimitTime()
-        elseif item.Data.Id == 90032 then
+        elseif item.Data.Id == XPurchaseConfigs.EnYKCID then
             cardCData = item
             cardCBoughtFull = cardCData:GetCurrentBuyTime() == cardCData:GetBuyLimitTime()
         end

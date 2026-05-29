@@ -86,9 +86,10 @@ function XUiTheatre6GainTips:SkillUpGrade()
     end
     local skillConfig = self._Control:GetSkillCfgById(self._GridId)
     local curlevel = skillConfig.Level
+    local lastLevel = curlevel - 1
     self.TxtTitle.text = skillConfig.Name
     self.TxtMedalName.text = XUiHelper.GetText("Theatre6SkillUpGrade")
-    self.GridSkillUi:ShowUpgradeEffect(true)
+    --todo 动效显示升级前后属性差异
 end
 
 return XUiTheatre6GainTips

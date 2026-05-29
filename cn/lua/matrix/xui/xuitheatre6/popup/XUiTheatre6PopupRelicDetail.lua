@@ -9,11 +9,9 @@ end
 
 ---@param relicIds number[] 遗物Id列表
 ---@param relicCounts number[] 遗物数量列表
----@param readOnly boolean 是否只读（存档来源等）
-function XUiTheatre6PopupRelicDetail:OnStart(relicIds, relicCounts, readOnly)
+function XUiTheatre6PopupRelicDetail:OnStart(relicIds, relicCounts)
     ---@type XUiPanelTheatre6BubbleTag
     self._BubbleTag = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6BubbleTag").New(self.BubbleTagDetail, self)
-    self._BubbleTag.BtnCloseTagDetail.gameObject:SetActiveEx(true)
     self._BubbleTag:Close()
 
     self.UiTxtNameNum.text = string.format("/%s", #relicIds)
@@ -21,10 +19,13 @@ function XUiTheatre6PopupRelicDetail:OnStart(relicIds, relicCounts, readOnly)
         ---@type XUiGridTheatre6RelicDetail
         local grid = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6RelicDetail").New(go, self)
         local relicCount = relicCounts and relicCounts[i] or 0
-        grid:SetData(relicIds[i], readOnly)
-        grid:SetBtnStatus({ ReadOnly = readOnly })
+        grid:SetData(relicIds[i])
+        grid:SetBtnStatus()
         grid:ShowOwn(relicCount)
-
+        grid:SetClickBuildTagCb(function(_, tags, keyWordIds)
+            self._BubbleTag:Open()
+            self._BubbleTag:SetConfigs(tags, keyWordIds)
+        end)
     end)
 end
 

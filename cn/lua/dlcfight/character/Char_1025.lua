@@ -25,7 +25,7 @@ States.Wrestle.SucceedActionId = 1025002 -- 拼刀成功动作
 States.Wrestle.SecondWrestleReset = 1025010 -- 二次拼刀位置重置动作
 States.Dodge.DodgeSkillId = 1025003  -- 超算受身动作
 States.Dodge.SucceedActionId = 1025004 --超算受身成功反击
-States.Block.Actions = {1025009} -- 格挡动作
+States.Block.ActionId = 1025009 -- 格挡动作
 
 function XChar1025:_BaseInit()
     XTheatre6CharBase._BaseInit(self)
@@ -70,16 +70,13 @@ function XChar1025:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
     end
 end
 
-function XChar1025:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skillActionId, keyFrameId, skillId)
-    XTheatre6CharBase.OnNpcSkillActionKeyframeSendEvent(self, launcher, eventName, skillActionId, keyFrameId, skillId)
-    
-    if eventName == "ChangeAirStyle" then
-        self._proxy:SetNpcGravity(self._uuid, 0, 0)
-    end
-
-    if eventName == "EndAirStyle" then
-        self._proxy:SetNpcGravity(self._uuid, -50, -15)
-    end
-end
+-- function XChar1025:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skillActionId, keyFrameId, skillId)
+--     XTheatre6CharBase.OnNpcSkillActionKeyframeSendEvent(self, launcher, eventName, skillActionId, keyFrameId, skillId)
+--     if eventName == "Wrestle" then
+--         self._proxy:ApplyMagic(self._uuid, self._uuid, 1025003)--添加去时缓buff
+--         self._proxy:AbortAction(self._uuid, true)
+--         self._proxy:CastActionToTarget(self._uuid, 1025002, self._enemyUUID)
+--     end
+-- end
 
 return XChar1025

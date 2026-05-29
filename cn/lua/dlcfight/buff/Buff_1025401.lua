@@ -3,7 +3,7 @@ local XTheatre6BuffBase = require("Gameplay/Theatre6/XTheatre6BuffBase")
 local XBuffScript1025401 = XDlcScriptManager.RegBuffScript(1025401, "XBuffScript1025401", XTheatre6BuffBase)
 
 
---效果说明：每次造成【击倒】时，本场战斗中自身【先机】属性提升6点。
+--效果说明：每次造成【击倒】时，本场战斗中自身【先机】属性提升1点。
 
 function XBuffScript1025401:Init()
     --初始化
@@ -16,7 +16,6 @@ function XBuffScript1025401:Init()
     --公用的击倒id
     self.originAttrib1 = 0
     self._HitDownController = self:GetNpc():GetHitDownController()
-    self.SkillChanceCheck = 0
     ------------执行------------
 end
 
@@ -27,17 +26,9 @@ end
 function XBuffScript1025401:OnLuaAffixHitDown(eventArgs)
     -- self:LogError("SkillEnd")
     if eventArgs._launcherUUID == self._npcUUID then return end
-    if self.SkillChanceCheck == 0 then
-        self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, 1025901,1,0,6)
-        --触发击飞时，计数器+1
-        --return self._critController:AddSkillCount(self._stackCount)
-        self.SkillChanceCheck = 1
-    end
-end
-
-function XBuffScript1025401:OnLuaSkillStart(eventArgs)
-    ------------执行------------
-    self.SkillChanceCheck = 0
+    self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, 1025901,1,0,1)
+    --触发击飞时，计数器+1
+    --return self._critController:AddSkillCount(self._stackCount)
 end
 
 return XBuffScript1025401

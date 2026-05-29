@@ -55,6 +55,9 @@ function XFashionAgency:GetOwnFashionColorResourcesId(fashionId, colorId)
     return XDataCenter.FashionManager.GetResourcesId(fashionId)
 end
 
+function XFashionAgency:GetFashionColorById(colorId)
+    return self._Model:GetFashionColorById(colorId)
+end
 
 function XFashionAgency:GetFashionColorResourcesId(colorId)
     local colorConfig = self._Model:GetFashionColorById(colorId)

@@ -753,7 +753,7 @@
         "LauncherEndZ": 0.1511,
         "LauncherEndRadian": 0,
         "TargetEndX": -5.759,
-        "TargetEndZ": 88.3015,
+        "TargetEndZ": 88.301,
         "TargetEndRadian": 3.1415,
         "FixHeightOffSet": 0
     },
@@ -2064,9 +2064,9 @@
             -1.7539
         ],
         "NpcEndZ": [
-            96.8103,
-            99.0943,
-            107.2967
+            96.8079,
+            99.0919,
+            107.2943
         ],
         "NpcEndRadian": [
             3.1415,
@@ -2935,7 +2935,7 @@
         "LauncherStartZ": 0,
         "LauncherStartAngle": 0,
         "LauncherEndX": 0,
-        "LauncherEndZ": 94.3111,
+        "LauncherEndZ": 94.3079,
         "LauncherEndRadian": 0,
         "TargetEndX": 0,
         "TargetEndZ": 0,
@@ -5522,16 +5522,16 @@
         "Id": "CTMb1NiggurathMd010001Attack54",
         "OffsetType": 2,
         "TotalFrame": 116,
-        "UseStartPosition": 1,
+        "SyncTimelineSpeed": true,
         "LauncherStartX": 0,
         "LauncherStartZ": 0,
         "LauncherStartAngle": 0,
         "LauncherEndX": -0.033,
         "LauncherEndZ": 1.887,
         "LauncherEndRadian": 0,
-        "TargetEndX": 0,
-        "TargetEndZ": 0,
-        "TargetEndRadian": 3.1415,
+        "TargetEndX": -0.0251,
+        "TargetEndZ": 20.2546,
+        "TargetEndRadian": -0.1822,
         "NpcEndX": [
             0,
             0,
@@ -5540,8 +5540,8 @@
             0
         ],
         "NpcEndZ": [
-            0,
-            0,
+            21.1446,
+            21.4016,
             0,
             0,
             0
@@ -5553,9 +5553,7 @@
             3.1415,
             3.1415
         ],
-        "FollowLauncherHeight": true,
-        "FixHeightOffSet": 0,
-        "ResetPositionType": 3
+        "FixHeightOffSet": 0
     },
     {
         "Id": "CTLifu05LevelAttack28",
@@ -5570,6 +5568,30 @@
         "TargetEndX": 0,
         "TargetEndZ": 0,
         "TargetEndRadian": 3.1415,
+        "FixHeightOffSet": 0
+    },
+    {
+        "Id": "CTLuxiya07LevelAttack12",
+        "OffsetType": 1,
+        "TotalFrame": 219,
+        "LauncherStartX": 0,
+        "LauncherStartZ": 0,
+        "LauncherStartAngle": 0,
+        "LauncherEndX": 0,
+        "LauncherEndZ": 0,
+        "LauncherEndRadian": 0,
+        "TargetEndX": 0,
+        "TargetEndZ": 0,
+        "TargetEndRadian": 3.1415,
+        "NpcEndX": [
+            0
+        ],
+        "NpcEndZ": [
+            0
+        ],
+        "NpcEndRadian": [
+            3.1415
+        ],
         "FixHeightOffSet": 0
     }
 ]

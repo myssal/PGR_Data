@@ -174,9 +174,9 @@ local emptyTable = {}
 ---@class Theatre6HitAffixArgs : LuaEventArgs
 local Theatre6HitAffixArgs = {
     ---@private
-    __type = EFightLuaEvent.Theatre6SpecialHit,
+    __type = EFightLuaEvent.Theatre6AffixCritDamage,
     ---@private
-    __name = EventNamesById[EFightLuaEvent.Theatre6SpecialHit],
+    __name = EventNamesById[EFightLuaEvent.Theatre6AffixCritDamage],
     -- _contextId = 0, ---@type integer
     _missileUUID = 0, ---@type integer
     _missileHitCount = 0, ---@type integer 这是该子弹的第几次命中

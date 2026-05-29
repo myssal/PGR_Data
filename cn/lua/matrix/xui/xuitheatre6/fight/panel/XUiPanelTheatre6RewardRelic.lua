@@ -33,8 +33,10 @@ function XUiPanelTheatre6RewardRelic:RefreshName()
 end
 
 function XUiPanelTheatre6RewardRelic:RefreshQuality()
-    if self.ImgQuality then
-        self.ImgQuality:SetRawImage(self._Control:GetRelicQualityIcon(self._Config.Quality))
+    local quality = self._Config.Quality or 1
+    local qualityIcon = self._Control:GetQualityIcon(quality)
+    if qualityIcon and self.ImgQuality then
+        self.ImgQuality:SetRawImage(qualityIcon)
     end
 end
 
@@ -80,9 +82,9 @@ function XUiPanelTheatre6RewardRelic:RefreshTags()
         grid.ImgIcon:SetSprite(tag.Icon)
         grid.TxtName.text = tag.Name
 
-        --grid:AddEventListener(function()
-        --    self._Control:OpenTagTip(self._Config.BuildTags, self.Transform, keyWordIds)
-        --end)
+        grid:AddEventListener(function()
+            self._Control:OpenTagTip(self._Config.BuildTags, self.Transform, keyWordIds)
+        end)
     end)
 end
 

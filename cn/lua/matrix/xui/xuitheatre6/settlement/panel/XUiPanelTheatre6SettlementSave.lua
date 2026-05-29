@@ -67,7 +67,7 @@ function XUiPanelTheatre6SettlementSave:RefreshBtnSave()
     local isDisable = not selectedData
     local isReplace = selectedData and not selectedData.isEmpty
     self.BtnSave:SetDisable(isDisable, not isDisable)
-    self.BtnSave:SetName(XUiHelper.GetText(isReplace and "Theatre6SaveReplace" or "Theatre6Save"))
+    self.UiTxtSave.text = XUiHelper.GetText(isReplace and "Theatre6SaveReplace" or "Theatre6Save")
 end
 
 function XUiPanelTheatre6SettlementSave:SelectDefaultEmptySlot()
@@ -95,7 +95,7 @@ function XUiPanelTheatre6SettlementSave:OnBtnGiveUpClick()
 end
 
 function XUiPanelTheatre6SettlementSave:OnConfirmGiveUp()
-    self._Control:GiveUpSettlement(self._Mode, function()
+    self._Control:GiveUpSettlement(function()
         XLuaUiManager.Close("UiTheatre6Settlement")
     end)
 end
@@ -117,12 +117,12 @@ function XUiPanelTheatre6SettlementSave:OnBtnSaveClick()
     if selectedData.isEmpty == true then
         self:SaveToSlot(self._SelectedSlotIndex)
     else
-        XLuaUiManager.Open("UiTheatre6PopupCoverArchive", self._SelectedSlotIndex, self.Parent.SettleData.FileData, self._Mode)
+        XLuaUiManager.Open("UiTheatre6PopupCoverArchive", self._SelectedSlotIndex, self.Parent.SettleData.FileData)
     end
 end
 
 function XUiPanelTheatre6SettlementSave:SaveToSlot(slotIndex)
-    self._Control:SaveSettlement(self._Mode, slotIndex, function()
+    self._Control:SaveSettlement(slotIndex, function()
         -- 保存成功，播放动效后回到主界面
         
         self:PlaySaveEffect(function()

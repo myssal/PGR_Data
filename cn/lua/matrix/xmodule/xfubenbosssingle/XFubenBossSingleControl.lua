@@ -913,18 +913,16 @@ function XFubenBossSingleControl:GetTeamByBossId(bossId)
                 ---@type XTeam
                 local serverTeam = XDataCenter.TeamManager.GetXTeamByTypeId(CS.XGame.Config:GetInt("TypeIdBossSingle"))
                 local baseTeamData = serverTeam:SwithToOldTeamData()
-                -- 优先使用 per-boss 本地缓存，避免三个 boss 共用 serverTeam 导致 FirstFightPos 互相污染
-                local localTeam = XSaveTool.GetData(teamId .. XPlayer.Id)
-
+                
                 -- 构造编队数据
                 teamData = {
-                    FirstFightPos = (localTeam and localTeam.FirstFightPos) or baseTeamData.FirstFightPos or 0,
-                    CaptainPos = (localTeam and localTeam.CaptainPos) or baseTeamData.CaptainPos or 0,
+                    FirstFightPos = baseTeamData.FirstFightPos or 0,
+                    CaptainPos = baseTeamData.CaptainPos or 0,
                     TeamData = {},
                     TeamName = "",
-                    SelectedGeneralSkill = (localTeam and localTeam.SelectedGeneralSkill) or baseTeamData.SelectedGeneralSkill,
-                    EnterCgIndex = (localTeam and localTeam.EnterCgIndex) or baseTeamData.EnterCgIndex,
-                    SettleCgIndex = (localTeam and localTeam.SettleCgIndex) or baseTeamData.SettleCgIndex,
+                    SelectedGeneralSkill = baseTeamData.SelectedGeneralSkill,
+                    EnterCgIndex = baseTeamData.EnterCgIndex,
+                    SettleCgIndex = baseTeamData.SettleCgIndex,
                 }
                 
                 -- 填充角色ID列表
@@ -955,7 +953,7 @@ function XFubenBossSingleControl:GetTeamByBossId(bossId)
                     TeamName = "",
                     SelectedGeneralSkill = localTeam.SelectedGeneralSkill,
                     EnterCgIndex = localTeam.EnterCgIndex,
-                    SettleCgIndex = localTeam.SettleCgIndex,
+                    SettleCgIndex = localTeam.EnterCgIndex,
                 }
 
                 resultTeam:UpdateFromTeamData(teamData)

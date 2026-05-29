@@ -15,13 +15,6 @@ function XUiPanelTheatre6TagDetail:InitComponents()
 end
 
 function XUiPanelTheatre6TagDetail:Refresh(buildTagIds, keyWordIds)
-    if buildTagIds == nil then
-        buildTagIds = {}
-     end
-     if keyWordIds == nil then
-        keyWordIds = {}
-     end
-
     local buildTagCfg = self._Control:GetShowBuildTagWithSort(buildTagIds)
     --先显示keyword
     local showKeyWordCfgs = {}
@@ -43,7 +36,7 @@ function XUiPanelTheatre6TagDetail:Refresh(buildTagIds, keyWordIds)
             if index <= #showKeyWordCfgs then
                 local cfg = showKeyWordCfgs[index]
                 ui.UiTxtName.text = cfg.Name
-                desc = self._Control:ReplaceAttrPlaceholder(cfg.Des)
+                desc = self._Control:ReplaceAttrPlaceholder(cfg.Desc)
                 local isExistIcon = not string.IsNilOrEmpty(cfg.Icon)
                 ui.ImgIcon.gameObject:SetActiveEx(isExistIcon)
                 if isExistIcon then

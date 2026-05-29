@@ -323,11 +323,10 @@ end
 --    end)
 --end
 
-function XUiPanelFashionSuitButtonGroup:SetButtonBg(buyBg, getBg, wearBg, randomWearBg)
+function XUiPanelFashionSuitButtonGroup:SetButtonBg(buyBg, getBg, wearBg)
     self.BtnBuy:SetRawImage(buyBg)
     self.BtnGet:SetRawImage(getBg)
     self.BtnWear:SetRawImage(wearBg)
-    self.BtnRandomWear:SetRawImage(randomWearBg)
 end
 
 --region 成套购买

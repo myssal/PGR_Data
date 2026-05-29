@@ -45881,6 +45881,1140 @@
         ]
     },
     {
+        "StageId": 10400101,
+        "Type": 87,
+        "Name": "猎杀",
+        "Description": "她注视着鲜红水波中那个熟悉又陌生的身影，注视着她被吞食的数十年光阴。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabN4101.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenImgN4101.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06601BA"
+        ],
+        "EndStoryIds": [
+            "ZX06601EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172410
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleSpecial",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400102
+        ]
+    },
+    {
+        "StageId": 10400102,
+        "Type": 87,
+        "Name": "棱镜广场",
+        "Description": "只有四散的棱镜残片和依然矗立的棱镜塔，昭示着这里曾经的辉煌和璀璨。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 2,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400101
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06602BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400103
+        ]
+    },
+    {
+        "StageId": 10400103,
+        "Type": 87,
+        "Name": "迷航",
+        "Description": "哭够了吗？",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 3,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400102
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06603BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400104
+        ]
+    },
+    {
+        "StageId": 10400104,
+        "Type": 87,
+        "Name": "穷途",
+        "Description": "除去窸窣的怪物和血迹，这里安静得像一座巨大的坟墓。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 4,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400103
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06604BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400105
+        ]
+    },
+    {
+        "StageId": 10400105,
+        "Type": 87,
+        "Name": "“故人”",
+        "Description": "那个编号的序列完全不存在……",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 5,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400104
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06605BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400106
+        ]
+    },
+    {
+        "StageId": 10400106,
+        "Type": 87,
+        "Name": "失乡者觅梦",
+        "Description": "雾是冷的，像是他们……第21次离开……的那天……",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 6,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400105
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06606BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400107
+        ]
+    },
+    {
+        "StageId": 10400107,
+        "Type": 87,
+        "Name": "堕入雾魇",
+        "Description": "……“露西亚”……",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabN4107.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenImgN4107.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 7,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400106
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06607BA"
+        ],
+        "EndStoryIds": [
+            "ZX06607EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172410,
+            172280
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleSpecial",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400108
+        ]
+    },
+    {
+        "StageId": 10400108,
+        "Type": 87,
+        "Name": "来时的路",
+        "Description": "明天……我和大家，要一起出一趟远门。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 8,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400107
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06608BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400109
+        ]
+    },
+    {
+        "StageId": 10400109,
+        "Type": 87,
+        "Name": "以终为始",
+        "Description": "这个残酷的世界为他们留下的，没有胜利，没有答案……",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 9,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400108
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06609BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400110
+        ]
+    },
+    {
+        "StageId": 10400110,
+        "Type": 87,
+        "Name": "“阿尔法”",
+        "Description": "大家一个一个离开了……是不是最后一个英雄也失败了呢？",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 10,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400109
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06610BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400111
+        ]
+    },
+    {
+        "StageId": 10400111,
+        "Type": 87,
+        "Name": "追乡",
+        "Description": "……我回来了。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 11,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400110
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06611BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400112
+        ]
+    },
+    {
+        "StageId": 10400112,
+        "Type": 87,
+        "Name": "远望",
+        "Description": "大人们……不要食言。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 12,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400111
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06612BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400113
+        ]
+    },
+    {
+        "StageId": 10400113,
+        "Type": 87,
+        "Name": "启航",
+        "Description": "是露西亚打开的门。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 13,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400112
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06613BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400114
+        ]
+    },
+    {
+        "StageId": 10400114,
+        "Type": 87,
+        "Name": "露西亚",
+        "Description": "她再一次成为了母亲的孩子。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 14,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400113
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06614BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400115
+        ]
+    },
+    {
+        "StageId": 10400115,
+        "Type": 87,
+        "Name": "开学演习",
+        "Description": "就像领跑了很久的人，忽然发现自己的身侧多了一个身影——她似乎好久没这样开心过了。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 15,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400114
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06615BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400116
+        ]
+    },
+    {
+        "StageId": 10400116,
+        "Type": 87,
+        "Name": "坠落的天空",
+        "Description": "几乎是同一瞬间，法奥斯全域的警报同时拉响。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 16,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400115
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06616BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400117
+        ]
+    },
+    {
+        "StageId": 10400117,
+        "Type": 87,
+        "Name": "星空的愿望",
+        "Description": "反正法奥斯的大家，迟早还会再见的。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 17,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400116
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06617BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400118
+        ]
+    },
+    {
+        "StageId": 10400118,
+        "Type": 87,
+        "Name": "毕业",
+        "Description": "彼时尚未离港，幸福不知归途。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 18,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400117
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06618BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400119
+        ]
+    },
+    {
+        "StageId": 10400119,
+        "Type": 87,
+        "Name": "返校宴",
+        "Description": "因为说了“只说一次”，所以我想了一个别的办法……",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 19,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400118
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06619BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400120
+        ]
+    },
+    {
+        "StageId": 10400120,
+        "Type": 87,
+        "Name": "相同的起点",
+        "Description": "离港失乡之后，才明白了归航的意义。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 20,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400119
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06620BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400121
+        ]
+    },
+    {
+        "StageId": 10400121,
+        "Type": 87,
+        "Name": "苦旅",
+        "Description": "把我们当作故事里必需的替罪羊，好吗？",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 21,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400120
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06621BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400122
+        ]
+    },
+    {
+        "StageId": 10400122,
+        "Type": 87,
+        "Name": "誓焰",
+        "Description": "我好怕我想你们。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabN4122.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenImgN4122.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 22,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400121
+        ],
+        "KeepPlayingStory": 1,
+        "EndStoryIds": [
+            "ZX06622EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172410,
+            172280
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleSpecial",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400123
+        ]
+    },
+    {
+        "StageId": 10400123,
+        "Type": 87,
+        "Name": "王冠",
+        "Description": "总有一天，我们会在背道相驰的彼方，重新走到一起去。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 23,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400122
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06623BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400124
+        ]
+    },
+    {
+        "StageId": 10400124,
+        "Type": 87,
+        "Name": "两个半结局",
+        "Description": "我只剩我的生命。这是我最后能自由行使选择权的东西。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 24,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400123
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06624BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400125
+        ]
+    },
+    {
+        "StageId": 10400125,
+        "Type": 87,
+        "Name": "另半个结局",
+        "Description": "宇宙并不怜悯这场未曾完成的约定，是另一个在乎的人将她带回了这一刻。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 25,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400124
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06625BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400126
+        ]
+    },
+    {
+        "StageId": 10400126,
+        "Type": 87,
+        "Name": "长路归航",
+        "Description": "我们踏上的，从一开始就是一条归航长路。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabN4126.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenImgN4126.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 26,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400125
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06626BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172410
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleBoss",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400127
+        ]
+    },
+    {
+        "StageId": 10400127,
+        "Type": 87,
+        "Name": "擦肩陌路",
+        "Description": "但她不需要答案了。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 27,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400126
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06627BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10400128
+        ]
+    },
+    {
+        "StageId": 10400128,
+        "Type": 87,
+        "Name": "不复存在的录音",
+        "Description": "祝■▇你▃▂",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 28,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10400127
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06628BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
         "StageId": 17010101,
         "Type": 1,
         "Name": "黑星坠落",
@@ -49910,6 +51044,64 @@
         "StageId": 17014002,
         "Type": 87,
         "Name": "更美好的明天",
+        "BgmId": 101,
+        "LoadingType": 10101,
+        "EventId": 2410015,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 1,
+        "StageType": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 17014101,
+        "Type": 87,
+        "Name": "烈日将烬",
+        "BgmId": 101,
+        "LoadingType": 10101,
+        "EventId": 2410015,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 1,
+        "StageType": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 17014102,
+        "Type": 87,
+        "Name": "烈日将烬",
         "BgmId": 101,
         "LoadingType": 10101,
         "EventId": 2410015,
@@ -64403,20 +65595,7 @@
         "NormalEventIdOnPassed": 1,
         "OrderId": 3,
         "LimitBuffId": 1,
-        "PassTimeLimit": 300,
-        "OnlinePlayerLimit": 3,
-        "ForceConditionId": [
-            30000101
-        ],
-        "FunctionLeftBtn": 3,
-        "FunctionRightBtn": 1,
-        "StageGridStyle": "Rectangle",
-        "NeedJobType": [
-            1,
-            2,
-            3
-        ],
-        "Restartable": true
+        "PassTimeLimit": 300
     },
     {
         "StageId": 30060101,
@@ -105179,8 +106358,7 @@
             3
         ],
         "NextStageId": [
-            30100211,
-            30100218
+            30100211
         ]
     },
     {
@@ -105219,8 +106397,7 @@
             3
         ],
         "NextStageId": [
-            30100212,
-            30100219
+            30100212
         ]
     },
     {
@@ -105302,7 +106479,7 @@
         "Type": 36,
         "Name": "A1",
         "Description": "核心技能",
-        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR4ShenweiMainV404/FuBenR4ShenweiActivity01.png",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40515.png",
         "BgmId": 5063,
         "LoadingType": 10101,
         "NormalEventIdOnPassed": 1,
@@ -105318,7 +106495,7 @@
         "FunctionLeftBtn": 4,
         "FunctionRightBtn": 1,
         "RobotId": [
-            2325
+            2328
         ],
         "RebootId": 3,
         "StageGridStyle": "Rectangle",
@@ -105326,6 +106503,9 @@
             1,
             2,
             3
+        ],
+        "NextStageId": [
+            30100218
         ]
     },
     {
@@ -105333,14 +106513,14 @@
         "Type": 36,
         "Name": "A2",
         "Description": "实战流程",
-        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR4ShenweiMainV404/FuBenR4ShenweiActivity01.png",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40515.png",
         "BgmId": 5063,
         "LoadingType": 10101,
         "NormalEventIdOnPassed": 1,
         "OrderId": 1,
         "LimitBuffId": 2,
         "PreStageId": [
-            30100210
+            30100217
         ],
         "FirstRewardShow": 30100801,
         "FirstRewardId": 30100801,
@@ -105354,7 +106534,7 @@
         "FunctionLeftBtn": 4,
         "FunctionRightBtn": 1,
         "RobotId": [
-            2325
+            2328
         ],
         "RebootId": 3,
         "StageGridStyle": "Rectangle",
@@ -105362,6 +106542,9 @@
             1,
             2,
             3
+        ],
+        "NextStageId": [
+            30100219
         ]
     },
     {
@@ -105369,14 +106552,14 @@
         "Type": 36,
         "Name": "A3",
         "Description": "效应流程",
-        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR4ShenweiMainV404/FuBenR4ShenweiActivity01.png",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40515.png",
         "BgmId": 5063,
         "LoadingType": 10101,
         "NormalEventIdOnPassed": 1,
         "OrderId": 1,
         "LimitBuffId": 2,
         "PreStageId": [
-            30100211
+            30100218
         ],
         "OnlinePlayerLimit": 3,
         "StarDesc": [
@@ -105388,8 +106571,7 @@
         "FunctionLeftBtn": 4,
         "FunctionRightBtn": 1,
         "RobotId": [
-            172404,
-            2325
+            2328
         ],
         "RebootId": 3,
         "StageGridStyle": "Rectangle",
@@ -105399,7 +106581,7 @@
             3
         ],
         "GeneralSkillIds": [
-            4
+            2
         ]
     },
     {
@@ -112015,9 +113197,11 @@
             3
         ],
         "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ],
         "NextStageId": [
-            30100215,
-            30100221
+            30100215
         ]
     },
     {
@@ -112050,9 +113234,11 @@
             3
         ],
         "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ],
         "NextStageId": [
-            30100216,
-            30100222
+            30100216
         ]
     },
     {
@@ -112086,7 +113272,7 @@
         ],
         "Restartable": true,
         "GeneralSkillIds": [
-            1
+            4
         ]
     },
     {
@@ -112094,7 +113280,7 @@
         "Type": 36,
         "Name": 1,
         "Description": "角色挑战",
-        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR4ShenweiMainV404/FuBenR4ShenweiActivity02.png",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40516.png",
         "BgmId": 5071,
         "NormalEventIdOnPassed": 1,
         "OrderId": 1,
@@ -112115,20 +113301,23 @@
             2,
             3
         ],
-        "Restartable": true
+        "Restartable": true,
+        "NextStageId": [
+            30100221
+        ]
     },
     {
         "StageId": 30100221,
         "Type": 36,
         "Name": 2,
         "Description": "角色挑战",
-        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR4ShenweiMainV404/FuBenR4ShenweiActivity02.png",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40516.png",
         "BgmId": 5071,
         "NormalEventIdOnPassed": 1,
         "OrderId": 1,
         "LimitBuffId": 2,
         "PreStageId": [
-            30100214
+            30100220
         ],
         "OnlinePlayerLimit": 3,
         "StarDesc": [
@@ -112146,20 +113335,23 @@
             2,
             3
         ],
-        "Restartable": true
+        "Restartable": true,
+        "NextStageId": [
+            30100222
+        ]
     },
     {
         "StageId": 30100222,
         "Type": 36,
         "Name": 3,
         "Description": "角色挑战",
-        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR4ShenweiMainV404/FuBenR4ShenweiActivity02.png",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40516.png",
         "BgmId": 5071,
         "NormalEventIdOnPassed": 1,
         "OrderId": 1,
         "LimitBuffId": 2,
         "PreStageId": [
-            30100215
+            30100221
         ],
         "OnlinePlayerLimit": 3,
         "StarDesc": [
@@ -112179,7 +113371,7 @@
         ],
         "Restartable": true,
         "GeneralSkillIds": [
-            1
+            2
         ]
     },
     {
@@ -170530,7 +171722,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败“埃则忒”",
+            "击败“先遣队”",
             "死亡次数不超过5次",
             "死亡次数不超过3次"
         ],
@@ -170556,7 +171748,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败“埃则忒”",
+            "击败“先遣队”",
             "死亡次数不超过5次",
             "死亡次数不超过3次"
         ],
@@ -170582,7 +171774,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败“埃则忒”",
+            "击败“先遣队”",
             "死亡次数不超过5次",
             "死亡次数不超过3次"
         ],
@@ -170608,7 +171800,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败“埃则忒”",
+            "击败“先遣队”",
             "死亡次数不超过3次",
             "死亡次数不超过1次"
         ],
@@ -170634,7 +171826,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败“埃则忒”",
+            "击败“先遣队”",
             "死亡次数不超过1次",
             "不死亡任何成员"
         ],
@@ -170660,7 +171852,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败“埃则忒”",
+            "击败“先遣队”",
             "死亡次数不超过1次",
             "不死亡任何成员"
         ],
@@ -203030,7 +204222,7 @@
         "Type": 43,
         "Name": "异身",
         "Description": "异身描述",
-        "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
+        "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYiShenStage01.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
         "BgmId": 101,
         "NormalEventIdOnPassed": 1,

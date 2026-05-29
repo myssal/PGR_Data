@@ -17,7 +17,6 @@ function XBuffScript10251010:ScriptInit(isGainControl) --初始化
     else
         self._exBurnStacks = 3
     end
-    self.SkillCount = 0
 end
 
 function XBuffScript10251010:OnEnterLevel(levelId)
@@ -31,21 +30,18 @@ function XBuffScript10251010:OnLuaAffixHitFly(EventArgs)
     if self._currentSkillHasHitFly then return end -- 如果已经上个技能已经造成过击飞则返回
     self._proxy:ApplyMagic(self._npcUUID,self._npcUUID,self._canBurnSainBuffid) --添加可引燃标记buff
     self._currentSkillHasHitFly = true --打开上次主动技能击飞检查标记
-    self.SkillCount = 1
 end
 
 function XBuffScript10251010:OnLuaSkillEnd(eventArgs)
     ------------执行------------
+    if eventArgs._skillId == self._currentSkillHasHitFlyId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    if self.SkillCount == 1 then
-        self.SkillCount = self.SkillCount + 1
-    else if self.SkillCount == 2 then
-        self.SkillCount = 0
-        if self._currentSkillHasHitFly then --如果本次技能结束时击飞标记为开
-            self._currentSkillHasHitFly = false --关闭击飞技能标记
-            return
-        end
+    if self._currentSkillHasHitFly then --如果本次技能结束时击飞标记为开
+        self._currentSkillHasHitFly = false --关闭击飞技能标记
+        return
     end
+    if self._proxy:CheckBuffByKind(self._npcUUID, self._canBurnSainBuffid) then -- 删除标记buff保底
+        self._proxy:RemoveBuff(self._npcUUID, self._canBurnSainBuffid)
     end
 end
 
@@ -55,7 +51,6 @@ function XBuffScript10251010:OnLuaSpecialHit(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     if self._proxy:CheckBuffByKind(self._npcUUID, self._canBurnSainBuffid) then
         self._BurnController:CastStackBuff(self._exBurnStacks,self._enemyUUID)
-        self._proxy:RemoveBuff(self._npcUUID, self._canBurnSainBuffid)
     end
 end
 

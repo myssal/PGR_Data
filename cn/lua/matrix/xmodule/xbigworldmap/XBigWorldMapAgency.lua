@@ -209,7 +209,7 @@ function XBigWorldMapAgency:OnPlayerExitArea(data)
 end
 
 function XBigWorldMapAgency:OnAssistedTrackMapPin(data)
-    self._Model:UpdateAssistedTrack(data.MapPinLevelId, data.MapPinId, data.Position, data.PlayerGroupId)
+    self._Model:UpdateAssistedTrack(data.MapPinLevelId, data.MapPinId, data.Position, data.MapAreaGroupId)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ASSISTED_TRACK_UPDATE)
 end
 

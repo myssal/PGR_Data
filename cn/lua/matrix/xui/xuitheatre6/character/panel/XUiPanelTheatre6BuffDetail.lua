@@ -87,7 +87,7 @@ end
 ---@param info XTheatre6BuffData
 function XUiPanelTheatre6BuffDetail:ShowTimes(info)
     if self._BuffConfig.CanStack then
-        self:SetStackCount(info.StackCount) --只显示堆叠数量
+        self:SetEffectTimes(info.StackCount) --只显示堆叠数量
         return
     end
     if XTool.IsNumberValid(self._BuffConfig.IsCount) then
@@ -110,11 +110,6 @@ end
 function XUiPanelTheatre6BuffDetail:SetCurChooseBuff(id)
     self._IsSelected = id == self._BuffId
     self:_UpdateSelectStatus()
-end
-
-function XUiPanelTheatre6BuffDetail:SetStackCount(count)
-    self.UiTxtAdd.gameObject:SetActiveEx(true)
-    self.UiTxtAdd.text = XUiHelper.GetText("Theatre6BuffStackCount", count)
 end
 
 ---设置buff生效次数

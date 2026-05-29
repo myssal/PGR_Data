@@ -24,16 +24,7 @@ function XUiGridPhotographCharacterBtn:Refrash(data)
     local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
 
     if self.ColorTag then
-        local hasOwnedColor = false
-        if template.FashionColorIds then
-            for _, colorId in ipairs(template.FashionColorIds) do
-                if XMVCA.XFashion:IsFashionColorHas(fashionId, colorId) then
-                    hasOwnedColor = true
-                    break
-                end
-            end
-        end
-        self.ColorTag.gameObject:SetActiveEx(hasOwnedColor)
+        self.ColorTag.gameObject:SetActiveEx(template.FashionColorIds and #template.FashionColorIds > 0)
     end
 end
 

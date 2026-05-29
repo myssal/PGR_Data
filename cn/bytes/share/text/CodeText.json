@@ -813,8 +813,8 @@
     },
     {
         "Id": 20003086,
-        "Key": "FubenBossSingleChallengeBuffIdNotExist",
-        "Text": "20003086囚笼鏖战点当前Buff组不存在此Buff"
+        "Key": "FubenBossSingleChallengePreBuffNotActive",
+        "Text": "20003086囚笼鏖战点前置buff未激活"
     },
     {
         "Id": 20003087,
@@ -1289,132 +1289,72 @@
     {
         "Id": 20004005,
         "Key": "TeamManagerCanNotFindThePrefabTeam",
-        "Text": "找不到该预设队伍"
+        "Text": "20004005找不到该预设队伍"
     },
     {
         "Id": 20004006,
-        "Key": "TeamManagerPosDataNotFound",
-        "Text": "没有角色站位数据"
+        "Key": "TeamManagerCharacterIsEmptyCanNotCarryPartner",
+        "Text": "20004006站位没有角色不能携带辅助机"
     },
     {
         "Id": 20004007,
-        "Key": "TeamManagerCharacterIsEmptyCanNotCarryPartner",
-        "Text": "站位没有角色不能携带辅助机"
+        "Key": "TeamManagerThisTeamPosIsNotExist",
+        "Text": "20004007站位不存在"
     },
     {
         "Id": 20004008,
-        "Key": "TeamManagerThisTeamPosIsNotExist",
-        "Text": "站位不存在"
+        "Key": "TeamManagerPrefabPartnerSkillIsEmpty",
+        "Text": "20004006辅助机预设技能不能为空"
     },
     {
         "Id": 20004009,
-        "Key": "TeamManagerPrefabTeamPartnerDataEmpty",
-        "Text": "预设编队辅助机数据为空"
+        "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
+        "Text": "20004008辅助机预设为空不能设置技能"
     },
     {
         "Id": 20004010,
-        "Key": "TeamManagerPrefabPartnerSkillIsEmpty",
-        "Text": "辅助机预设技能不能为空"
+        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
+        "Text": "20004010站位没有角色不能穿戴装备"
     },
     {
         "Id": 20004011,
-        "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
-        "Text": "辅助机预设为空不能设置技能"
+        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
+        "Text": "20004011该编队已在最上面"
     },
     {
         "Id": 20004012,
-        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
-        "Text": "站位没有角色不能穿戴装备"
+        "Key": "TeamManagerPrefabTeamEquipRepeat",
+        "Text": "20004012预设编队存在重复穿着装备"
     },
     {
         "Id": 20004013,
-        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
-        "Text": "该编队已在最上面"
+        "Key": "TeamManagerPrefabTeamResonanceRepeat",
+        "Text": "20004013预设编队存在重复穿着共鸣"
     },
     {
         "Id": 20004014,
-        "Key": "TeamManagerPrefabTeamEquipRepeat",
-        "Text": "预设编队存在重复穿着装备"
+        "Key": "TeamManagerPrefabCharacterEquipEmpty",
+        "Text": "20004014站位角色装备数据为空"
     },
     {
         "Id": 20004015,
-        "Key": "TeamManagerPrefabTeamEquipDataEmpty",
-        "Text": "预设编队装备数据为空"
+        "Key": "TeamManagerPrefabTeamNameEmpty",
+        "Text": "20004015编队名不能为空"
     },
     {
         "Id": 20004016,
-        "Key": "TeamManagerPrefabTeamResonanceRepeat",
-        "Text": "预设编队存在重复穿着共鸣"
+        "Key": "TeamManagerPrefabTeamPartnerRepeat",
+        "Text": "20004016预设编队存在重复装备辅助机器"
     },
     {
         "Id": 20004017,
-        "Key": "TeamManagerPrefabCharacterEquipEmpty",
-        "Text": "站位角色装备数据为空"
+        "Key": "TeamManagerPrefabTeamSameCharacter",
+        "Text": "20004017预设编队存在重复角色"
     },
     {
         "Id": 20004018,
-        "Key": "TeamManagerPrefabTeamNameEmpty",
-        "Text": "编队名不能为空"
-    },
-    {
-        "Id": 20004019,
-        "Key": "TeamManagerPrefabTeamNameIllegal",
-        "Text": "编队名含有非法字符"
-    },
-    {
-        "Id": 20004020,
-        "Key": "TeamManagerPrefabTeamPartnerRepeat",
-        "Text": "预设编队存在重复装备辅助机器"
-    },
-    {
-        "Id": 20004021,
-        "Key": "TeamManagerPrefabTeamSameCharacter",
-        "Text": "预设编队存在重复角色"
-    },
-    {
-        "Id": 20004022,
         "Key": "TeamManagerPrefabTeamEquipDataIsNull",
-        "Text": "预设编队装备数据不能设置为空"
-    },
-    {
-        "Id": 20004023,
-        "Key": "TeamManagerPrefabTagConfigNotFound",
-        "Text": "预设编队标签不合法"
-    },
-    {
-        "Id": 20004024,
-        "Key": "TeamManagerPrefabTagDataError",
-        "Text": "预设编队标签设置参数异常"
-    },
-    {
-        "Id": 20004025,
-        "Key": "TeamManagerPrefabTagRepeat",
-        "Text": "预设编队设置了相同标签"
-    },
-    {
-        "Id": 20004026,
-        "Key": "TeamManagerPrefabTagTypeError",
-        "Text": "预设编队设置了多个同类型标签"
-    },
-    {
-        "Id": 20004027,
-        "Key": "TeamManagerPrefabSkillCanNotSwitch",
-        "Text": "预设编队无法选择出场形态"
-    },
-    {
-        "Id": 20004028,
-        "Key": "TeamManagerPrefabSkillSwitchError",
-        "Text": "预设编队出场形态技能不合法"
-    },
-    {
-        "Id": 20004029,
-        "Key": "TeamManagerPrefabSkillSwitchParamError",
-        "Text": "预设编队出场形态设置参数异常"
-    },
-    {
-        "Id": 20004030,
-        "Key": "TeamManagerPrefabSkillSwitchInEmptyPos",
-        "Text": "站位没有角色不能设置战斗形态"
+        "Text": "20004018预设编队装备数据不能设置为空"
     },
     {
         "Id": 20007001,
@@ -5581,22 +5521,22 @@
     {
         "Id": 20053040,
         "Key": "PurchaseNotSupportSupplementGet",
-        "Text": "20053040礼包不支持补签"
+        "Text": "无法进行补签"
     },
     {
         "Id": 20053041,
         "Key": "PurchaseNotSupplementGetCount",
-        "Text": "20053041无需补签领取"
+        "Text": "无需补签领取"
     },
     {
         "Id": 20053042,
         "Key": "PurchaseBuyRemainDayLimit",
-        "Text": "20053042未到购买时间"
+        "Text": "当前无法购买"
     },
     {
         "Id": 20053043,
         "Key": "PurchaseNotSupportSupplementGetReward",
-        "Text": "20053043不支持补签"
+        "Text": "无法进行补签"
     },
     {
         "Id": 20053101,
@@ -27285,11 +27225,6 @@
         "Text": "20290019大世界玩法场景模块找不到"
     },
     {
-        "Id": 20290020,
-        "Key": "BigWorldCourseExploreNoAvailableReward",
-        "Text": "20290020历程探索无可领取奖励"
-    },
-    {
         "Id": 20291001,
         "Key": "BigWorldModuleNotFind",
         "Text": "20291001大世界玩法模块找不到"
@@ -28885,21 +28820,6 @@
         "Text": "指定技能升级失败"
     },
     {
-        "Id": 20423092,
-        "Key": "Theatre6CharacterUnlockError",
-        "Text": "20423092角色未解锁"
-    },
-    {
-        "Id": 20423093,
-        "Key": "Theatre6StoryLineCompletedError",
-        "Text": "20423093当前故事线已经完成"
-    },
-    {
-        "Id": 20423098,
-        "Key": "Theatre6AlreadySettleError",
-        "Text": "20423098当前模式已结算"
-    },
-    {
         "Id": 25000001,
         "Key": "DlcWorldInfoTemplateNotFound",
         "Text": "25000001Dlc世界信息配置不存在"
@@ -29653,11 +29573,6 @@
         "Id": 25100046,
         "Key": "DlcEnvironmentQuestConfigNotExist",
         "Text": "25100046找不到对应的环境任务配置"
-    },
-    {
-        "Id": 25100047,
-        "Key": "DlcQuestStateIsNotReady",
-        "Text": "25100047任务状态不是Ready"
     },
     {
         "Id": 25200001,
@@ -30743,16 +30658,6 @@
         "Id": 25300092,
         "Key": "RelinkPlayerIsMatching",
         "Text": "匹配中无法操作"
-    },
-    {
-        "Id": 25300093,
-        "Key": "RelinkCharacterNpcAttribDataNotFound",
-        "Text": "25300093找不到角色该风格对应的属性数据"
-    },
-    {
-        "Id": 25300094,
-        "Key": "RelinkFactorDescNotFound",
-        "Text": "25300094找不到该词条的详细信息"
     },
     {
         "Id": 30002001,

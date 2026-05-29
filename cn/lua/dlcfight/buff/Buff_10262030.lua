@@ -2,9 +2,10 @@ local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 ---@class XBuffScript10262030 : XTheatre6SkillBase
 local XBuffScript10262030 = XDlcScriptManager.RegBuffScript(10262030, "XBuffScript10262030", XTheatre6SkillBase)
 
---效果说明：【狂暴】期间，每次怒火<=50时触发：
--- · 造成50%攻击伤害；
--- · 恢复50点【怒火】。每次使用此技能，本场战斗中此技能的怒火恢复-30/20/15点。
+--效果说明：每次进入【狂暴】后触发：
+--· 造成120%攻击伤害；
+--· 消耗50点【怒火】，造成【击倒】；
+--· 每次使用此技能，伤害额外提高80%攻击。
 
 function XBuffScript10262030:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
@@ -13,17 +14,18 @@ function XBuffScript10262030:ScriptInit(isGainControl) --初始化
     self._stackCountHitDown = 0
     self._angerCost = 50
     self._angerRecover = 50
-    self._damageMagicId = 1026203 --注册超算成功技1伤害id，5.10已换
-    if self._skillId == 10262031 then self._angerCostPerHappened = 30
-    else if self._skillId == 10262032 then self._angerCostPerHappened = 20
-    else self._angerCostPerHappened = 15
+    self._angerCostPerHappened = 15
+    self._damageMagicId = 10250044 --注册超算成功技1伤害id，目前是临时的
+    if self._skillId == 10262021 then self._exDamageRateBase = 8000
+    else if self._skillId == 10262022 then self._exDamageRateBase = 8000
+    else self._exDamageRateBase = 8000
     end
     end
 end
 
 function XBuffScript10262030:OnEnterLevel(levelId)
     XTheatre6SkillBase.OnEnterLevel(self, levelId)
-    self._HitDownController = self:GetNpc():GetHitDownController()
+    self._HitDownController = self:GetEnemyNpc():GetHitDownController()
 end
 
 function XBuffScript10262030:OnLuaAttackerChange(eventArgs)
@@ -38,7 +40,7 @@ function XBuffScript10262030:OnLuaSkillEnd(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     self.originAttrib1 = self._proxy:GetBuffStacks( self._npcUUID,XTheatre6AngerController.StackBuffAnger)
     if self.originAttrib1 <= self.AngerCheck then
-        self._level:RequestInsertSkill(self._npcUUID,self.TargetSkill)
+        self._level:RequestInsertSkill(self._uuid,self.TargetSkill)
     end
     if eventArgs._skillId ~= self._skillId then return end
     self._AngerController:CastStackBuff(self._angerRecover, self._npcUUID)

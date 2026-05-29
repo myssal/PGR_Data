@@ -222,4 +222,31 @@ function XUiLifeTreeCard:RefreshBtnTask()
     self.BtnTask:ShowReddot(isRed)
 end
 
+-- 非神卡牌显示动画
+function XUiLifeTreeCard:PlayNonDivineCardsAnimShow()
+    self:ShowNonDivineCards(true)
+    self:PlayAnimation("ShowUI")
+end
+
+-- 非神卡牌隐藏动画
+function XUiLifeTreeCard:PlayNonDivineCardsAnimHide()
+    self:PlayAnimation("HideUI", function()
+        self:ShowNonDivineCards(false)
+    end)
+end
+
+-- 显示/隐藏非神卡牌
+function XUiLifeTreeCard:ShowNonDivineCards(isShow)
+    for _, card in pairs(self.GridCards) do
+        local cardType = card:GetCardType()
+        if cardType == XMVCA.XLifeTree.EnumConst.CARD_TYPE.REGULAR or cardType == XMVCA.XLifeTree.EnumConst.CARD_TYPE.BASIC then
+            if isShow then
+                card:Open()
+            else
+                card:Close()
+            end
+        end
+    end
+end
+
 return XUiLifeTreeCard

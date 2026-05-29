@@ -36,6 +36,7 @@ function XUiNewGridDrawBanner:Refresh()
     self:SetTime()
     self:SetCharacterBg()
     self:SetDrawName()
+    self:SetDrawGroupName()
 end
 
 function XUiNewGridDrawBanner:TryGetComponent()
@@ -160,6 +161,11 @@ function XUiNewGridDrawBanner:TryGetComponent()
     local txtDrawName = self.Transform:FindTransform("TxtDrawName")
     if txtDrawName then
         self.TxtDrawName = txtDrawName:GetComponent("Text")
+    end
+
+    local txtNameChouka = self.Transform:FindTransform("TxtNameChouka")
+    if txtNameChouka then
+        self.TxtNameChouka = txtNameChouka:GetComponent("Text")
     end
 
     local rImgCharacterBg = self.Transform:FindTransform("RImgCharacterBg")
@@ -369,16 +375,13 @@ function XUiNewGridDrawBanner:SetCharacterBg()
     local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.Base.GroupId)
     if drawGroupRule and XTool.IsNumberValid(drawGroupRule.IsCharacterImage) then
         local drawSceneCfg = XDrawConfigs.GetDrawSceneCfg(self.Base.DrawInfo.Id)
-        if drawSceneCfg and not string.IsNilOrEmpty(drawSceneCfg.DrawShowRImg) then
+        local drawShowRImg = drawSceneCfg and XDrawConfigs.GetDrawShowImageCfgById(tonumber(drawSceneCfg.ModelId))
+        if not string.IsNilOrEmpty(drawShowRImg) then
             isShow = true
-            if self.RImgCharacterBg then
-                self.RImgCharacterBg:SetRawImageEx(drawSceneCfg.DrawShowRImg)
-            end
+            self.RImgCharacterBg:SetRawImageEx(drawShowRImg)
         end
     end
-    if self.RImgCharacterBg then
-        self.RImgCharacterBg.transform.parent.gameObject:SetActiveEx(isShow)
-    end
+    self.RImgCharacterBg.transform.parent.gameObject:SetActiveEx(isShow)
 end
 
 function XUiNewGridDrawBanner:SetDrawName()
@@ -390,6 +393,18 @@ function XUiNewGridDrawBanner:SetDrawName()
     self.TxtDrawName.gameObject:SetActiveEx(hasDrawName)
     if hasDrawName then
         self.TxtDrawName.text = drawGroupRule.DrawName
+    end
+end
+
+function XUiNewGridDrawBanner:SetDrawGroupName()
+    if not self.TxtNameChouka then
+        return
+    end
+    local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.Base.GroupId)
+    local hasDrawGroupName = drawGroupRule and not string.IsNilOrEmpty(drawGroupRule.DrawGroupName)
+    self.TxtNameChouka.gameObject:SetActiveEx(hasDrawGroupName)
+    if hasDrawGroupName then
+        self.TxtNameChouka.text = drawGroupRule.DrawGroupName
     end
 end
 

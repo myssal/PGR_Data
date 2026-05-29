@@ -5,7 +5,6 @@ local SceneIds = require("XModule/XScene/XScene/XLuaSceneDefine").SceneIds
 ---@field _Control XTheatre6Control
 local XUiTheatre6Main = XLuaUiManager.Register(XLuaUi, "UiTheatre6Main")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
-local MaskKey = "UiTheatre6MainMask"
 
 --region 生命周期
 function XUiTheatre6Main:OnAwake()
@@ -18,26 +17,22 @@ function XUiTheatre6Main:OnStart()
     self.RewardRedPoint = self:AddRedPointEvent(self.BtnStory, self.NewStoryRedPoint, self, { XRedPointConditions.Types.CONDITION_THEATRE6_NEW_STORY }, nil, true)
     self.TaskRewardRedPoint = self:AddRedPointEvent(self.BtnReward, self.OnTaskRewardRedPoint, self, { XRedPointConditions.Types.CONDITION_THEATRE6_REWARD }, nil, true)
     self:TryPlayPv(function()
-        self:PlayAnimation("AnimStart1")
         self:Refresh()
         self:TryShowUpdatePopup()
     end)
 end
 
 function XUiTheatre6Main:OnEnable()
-    CS.XInputManager.SetCurInputMap(CS.XInputMapId.System)
     self:Refresh()
     self:RefreshCommon()
     self:RefreshShowItems()
+    XMVCA.XTheatre6:StopSanAudio()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_MODE_END, self.Refresh, self)
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.Theatre6)
     self._Scene:UpdateRogueModel(true)
 end
 
 function XUiTheatre6Main:OnDisable()
-    if XLuaUiManager.IsMaskShow(MaskKey) then
-        XLuaUiManager.SetMask(false, MaskKey)
-    end
     self._Scene:StopCommonCamAnim()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_MODE_END, self.Refresh, self)
 end
@@ -60,15 +55,10 @@ end
 --endregion
 
 function XUiTheatre6Main:Init3DPanel()
-    self._Scene = XMVCA.XScene:GetScene(SceneIds.XTheatre6Scene)
-    if not self._Scene then
-        XMVCA.XScene:LoadScene(SceneIds.XTheatre6Scene, false, function()
-            ---@type XTheatre6Scene
-            self._Scene = XMVCA.XScene:GetScene(SceneIds.XTheatre6Scene)
-        end)
-    end
-    local timerId = self._Scene:PlayEnterCamAnim()
-    self:_AddTimerId(timerId)
+    XMVCA.XScene:LoadScene(SceneIds.XTheatre6Scene, false, function()
+        ---@type XTheatre6Scene
+        self._Scene = XMVCA.XScene:GetScene(SceneIds.XTheatre6Scene)
+    end)
 end
 
 --region 刷新
@@ -105,20 +95,9 @@ end
 
 ---首轮共通线关卡完成前隐藏玩法模式和PVP按钮
 function XUiTheatre6Main:RefreshFirstPlayState()
-    local isOpen = self._Control:CheckOpenGamePlayModeCond()
-    self.BtnPlay.gameObject:SetActiveEx(isOpen)
-    self.BtnPvp.gameObject:SetActiveEx(isOpen)
-    --动效（只在从局内直接回到玩法主界面时播放）
-    if self._IsPlayModeOpen == false and isOpen then
-        local anim = self.BtnPlay.transform:FindTransform("UnLockEnable")
-        if not XTool.UObjIsNil(anim) then
-            self.BtnPlay:SetButtonState(XUiButtonState.Disable)
-            anim:PlayTimelineAnimation(function()
-                self.BtnPlay:SetButtonState(XUiButtonState.Normal)
-            end)
-        end
-    end
-    self._IsPlayModeOpen = isOpen
+    local isVisible = self._Control:CheckOpenGamePlayModeCond()
+    self.BtnPlay.gameObject:SetActiveEx(isVisible)
+    self.BtnPvp.gameObject:SetActiveEx(isVisible)
 end
 
 function XUiTheatre6Main:RefreshBtnStory()
@@ -192,10 +171,6 @@ function XUiTheatre6Main:OnBtnStoryClick()
         return
     end
 
-    if not self:CheckStoryClickCond() then
-        return
-    end
-
     local avgId = self._Control:GetStoryAvgId()
     local firstGuideId = self._Control:GetStoryFirstGuideId()
     local repeatGuideId = self._Control:GetStoryRepeatGuideId()
@@ -225,24 +200,8 @@ function XUiTheatre6Main:OnBtnStoryClick()
     self:EnterStoryMode()
 end
 
-function XUiTheatre6Main:CheckStoryClickCond()
-    if not self._CurStoryLine then
-        return true --全部通关
-    end
-    local conditionId = self._CurStoryLine.ConditionId
-    if XTool.IsNumberValid(conditionId) then
-        local isUnlock, desc = XConditionManager.CheckCondition(conditionId)
-        if not isUnlock then
-            self._Control:ShowTip(desc)
-            return false
-        end
-    end
-    return true
-end
-
 function XUiTheatre6Main:RefreshCommon()
     self._CommonIdx = nil
-    self._CurStoryLine = nil
     local storyLineIds = self._Control:GetCommonStoryLineIds()
     for _, storyLineId in ipairs(storyLineIds) do
         local storyLineConfig = self._Control:GetStoryLineConfig(storyLineId)
@@ -252,7 +211,7 @@ function XUiTheatre6Main:RefreshCommon()
         for i = 1, #storyLineConfig.StageIds do
             if not self._Control:IsStagePass(storyLineId, i) then
                 isPass = false
-                if not self._CommonIdx then
+                if not self._CommonIdx and isUnlock then
                     self._CommonIdx = i
                     self._CurStoryLine = storyLineConfig
                 end
@@ -351,11 +310,9 @@ end
 function XUiTheatre6Main:EnterChooseCharacter(mode)
     local index = self._Control:GetModeSelectRoleIndex(mode)
     self._Scene:SetModelSelect(index)
-
-    XLuaUiManager.SetMask(true, MaskKey)
+    
     local duration = self._Control:GetIntClientConfigValue("UiCameraDuration", index)
     local timerId = XScheduleManager.ScheduleOnce(function()
-        XLuaUiManager.SetMask(false, MaskKey)
         XLuaUiManager.Open("UiTheatre6ChooseCharacter", mode)
     end, duration)
     self:_AddTimerId(timerId)

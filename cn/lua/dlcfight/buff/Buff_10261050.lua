@@ -16,7 +16,7 @@ function XBuffScript10261050:OnEnterLevel(levelId)
     XTheatre6SkillBase.OnEnterLevel(self, levelId)
     --初始化怒火、击倒控制器
     self._AngerController = self:GetNpc():GetAngerController()
-    self._HitDownController = self:GetNpc():GetHitDownController()
+    self._HitDownController = self:GetEnemyNpc():GetHitDownController()
 end
 
 function XBuffScript10261050:OnLuaSpecialHit(eventArgs)

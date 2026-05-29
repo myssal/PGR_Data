@@ -199,7 +199,7 @@ end
 
 function XFightUiManager.DoBrilliantwalkSetTipsDesc(id, textIndex, tipTextId, varIndex, value)
 	local ui = GetChildUiFight("UiFightBrilliantwalk")
-	if not ui or not ui.UiProxy then
+	if not ui then
 		return
 	end
 	local func = ui.UiProxy.UiLuaTable["SetTipsDesc"]

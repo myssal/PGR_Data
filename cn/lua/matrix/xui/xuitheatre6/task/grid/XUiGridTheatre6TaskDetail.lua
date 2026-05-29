@@ -12,6 +12,7 @@ local Settle = 3 --任务结算
 function XUiGridTheatre6TaskDetail:OnStart()
     self.BtnRefresh:AddEventListener(handler(self, self.OnBtnRefreshClick))
     self.BtnChoose:AddEventListener(handler(self, self.OnBtnChooseClick))
+    self.BtnChoose.ExitCheck = false
     self.BtnRefresh.gameObject:SetActiveEx(false)
 end
 
@@ -48,11 +49,8 @@ function XUiGridTheatre6TaskDetail:SetSlotData(slotData, taskGroupId)
 end
 
 function XUiGridTheatre6TaskDetail:UpdateChoose(isSelected)
-    local buttonState = isSelected and XUiButtonState.Select or XUiButtonState.Normal
     self.RImgBgChoose.gameObject:SetActiveEx(isSelected)
-    self.BtnChoose:SetButtonState(buttonState)
-    self.BtnChoose.TempState = buttonState --XUiButton组件的TempState状态有bug
-    self.BtnChoose:SetNameByGroup(0, XUiHelper.GetText(isSelected and "Theatre6TaskSelectState" or "Theatre6TaskNormalState"))
+    self.BtnChoose:SetButtonState(isSelected and XUiButtonState.Select or XUiButtonState.Normal)
 end
 
 function XUiGridTheatre6TaskDetail:ShowTaskInfo()
@@ -134,7 +132,7 @@ function XUiGridTheatre6TaskDetail:ShowReward()
     XUiHelper.RefreshCustomizedList(self.GridItem.parent, self.GridItem, #rewardGoods, function(i, go)
         ---@type XUiGridTheatre6TaskReward
         local grid = require("XUi/XUiTheatre6/Task/Grid/XUiGridTheatre6TaskReward").New(go, self)
-        grid:Update(rewardGoods[i], self._Mode == Choose)
+        grid:Update(rewardGoods[i])
         if self._Mode == Settle then
             grid:SetFinish(self._IsTaskFinish)
         end
@@ -185,7 +183,6 @@ function XUiGridTheatre6TaskDetail:OnBtnRefreshClick()
     self._Control:RequestRefreshTask(self._TaskId, self._SlotData.Index, function()
         self.Parent:UpdateTaskRefresh(self._SlotData.Index)
         self:SetBtnRefresh()
-        self:PlayAnimation("ReShow")
     end)
 end
 

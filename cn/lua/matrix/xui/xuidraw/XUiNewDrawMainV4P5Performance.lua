@@ -62,9 +62,8 @@ function XUiNewDrawMainV4P5Performance:Refresh(rewardInfo)
         return
     end
     self:RefreshInfo()
-    self:LoadAsset()
-
     self:PlayEnterPerformance(function()
+        self:LoadAsset()
         self:PlayCharacterPerformance()
     end)
 end
@@ -90,7 +89,7 @@ function XUiNewDrawMainV4P5Performance:RefreshInfo()
         end
         grid.gameObject:SetActiveEx(true)
         local generalSkillConfig = XMVCA.XCharacter:GetModelCharacterGeneralSkill()[id]
-        grid:SetRawImageEx(generalSkillConfig.Icon)
+        grid:SetRawImageEx(generalSkillConfig.IconTranspose)
     end
 
     for index = #generalSkillIds + 1, #self.GridGeneralSkills do

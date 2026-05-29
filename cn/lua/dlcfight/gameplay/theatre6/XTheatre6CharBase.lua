@@ -332,8 +332,7 @@ do
         self._actionId = actionId
         self._dmgIncRatio = self._proxy:Theatre6GetConfig():GetInt("PDDmg+")
         -- self._dmgIncValue = self._proxy:GetNpcGameplayAttribValue(npc._uuid, ETheatre6AttribType.WrestlePoint) * 60
-        self._dmgIncValue = self._proxy:GetNpcGameplayAttribValue(npc._uuid, ETheatre6AttribType.WrestlePoint) *
-            self._dmgIncRatio
+        self._dmgIncValue = self._proxy:GetNpcGameplayAttribValue(npc._uuid, ETheatre6AttribType.WrestlePoint) *  self._dmgIncRatio
         self:RefreshForceContinueTime(actionId)
         self:RefreshCheckTime(); --临时方案
         npc._level:RefreshWrestleSucSkillForceContinueTime(npc._skillComboCaster:GetSkillTime(skillId))
@@ -422,12 +421,12 @@ do
         -- self:LogError("checkTime is set to " .. self._checkTime)
     end
 
-    ---释放拼刀成功技能时增伤(乘区71)
+    ---释放拼刀成功技能时增伤(乘区14)
     ---@param eventArgs BeforeDamageCalcEventArgs
     function WrestleSucSkill:BeforeDamageCalc(eventArgs)
         local npc = self._owner
         if eventArgs.Launcher ~= npc._uuid then return end
-        self._proxy:AddDamageMagicContextValue(eventArgs.ContextId, ENpcAttrib.Attack2AmpP, self._dmgIncValue, 0)
+        self._proxy:AddDamageMagicContextValue(eventArgs.ContextId, ENpcAttrib.Attack1AmpP, self._dmgIncValue, 0)
     end
 
     WrestleSucSkill.OnCsNpcDamageEvent = XTheatre6CharBase.IncComboCountOnDamgeInState
@@ -950,12 +949,6 @@ do
         [EHitType.Suppress] = nil, -- 压制
     }
 
-    Hit.CanBlockStates = {
-        [SubState.HitEnd] = true,
-        [SubState.HitLight] = true,
-        [SubState.HitHeavy] = true,
-    }
-
     function Hit:Start()
         local npc = self._owner
         npc:BreakSkillUi()
@@ -971,15 +964,15 @@ do
         return subState
     end
 
-    function Hit:CanBlock()
-        return self.CanBlockStates[self:GetSubState()]
+    function Hit:IsFreeToAct()
+        return self:GetSubState() == self.SubState.HitEnd
     end
 end
 
 -- Block 状态逻辑
 do
     ---@class XTheatre6CharBase.State.Block:XTheatre6CharBase.State
-    ---@field Actions integer[] 格挡成功时触发的动作id列表
+    ---@field ActionId integer 格挡成功时触发的动作id
     local Block = States.Block
 
     -- 格挡控制器触发格挡的通知
@@ -992,14 +985,8 @@ do
         self:SetState(StateEnum.Hit)
     end
 
-    function Block:Ctor()
-        self._actIndex = 0
-    end
-
     function Block:Start()
-        self._actIndex = (self._actIndex + 1) % (#self.Actions)
-        local actionId = self.Actions[self._actIndex + 1]
-        self._owner:CastAction(actionId)
+        self._owner:CastAction(self.ActionId)
     end
 
     function Block:ReEnter()
@@ -1037,7 +1024,6 @@ do
         },
 
         HitFly = {
-            Wrestle = { 0.2, 0.3, 1.2, 1.4},
             Dodge = { nil, nil, 0.4 },
             Default = { nil, nil, 0.8, 1.5 }
         },
@@ -1170,7 +1156,7 @@ do
     function Die:Start()
         local uuid = self._owner._uuid
         if self._isDead then
-            -- self:LogError("setNpcDie")
+            self:LogError("setNpcDie")
             self._proxy:NpcDie(uuid, nil, self._killerUuid)
         else
             self._proxy:ApplyMagic(uuid, uuid, 1010051, 0, 1) --锁血
@@ -1206,8 +1192,6 @@ function XTheatre6CharBase:Ctor(proxy)
     self._isActive = false --是否为出手方的标记
     self._handSideUx = nil --角色的出手权头像UI动效
     self.StaminaDmgReducRatio = proxy:Theatre6GetConfig():GetInt("TLDmg-")
-    self._overclockvalue = 0
-    self._TLvalue = 0
 end
 
 function XTheatre6CharBase:_BaseInit()
@@ -1234,7 +1218,6 @@ function XTheatre6CharBase:InitEventCallBackRegister()
     self._proxy:RegisterEvent(EWorldEvent.OnNpcBeHitBegin)                                     --受击事件
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)                                          --Buff添加事件
     self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)                                       --Buff删除事件
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
     local uuid = self._uuid
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcSkillActionKeyframeSendEvent, uuid)       --注册技能事件
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageBefore, uuid)
@@ -1338,9 +1321,9 @@ function XTheatre6CharBase:RemoveArmor()
     self._hasArmor = false
 end
 
---检查单位是否处于可以触发格挡的状态
-function XTheatre6CharBase:CanBlock()
-    return self._states.Hit:CanBlock()
+--检查单位是否处于一个可以释放动作的自由态
+function XTheatre6CharBase:IsFreeToAct()
+    return self._states.Hit:IsFreeToAct()
 end
 
 --检查单位是否已经处于格挡状态
@@ -1461,10 +1444,6 @@ function XTheatre6CharBase:OnNpcSkillActionKeyframeSendEvent(launcher, eventName
     -- self:LogError(eventName .. launcher)
     if eventName == "WrestleSuccEndFinish" then return self:OnWrestleSuccEndFinish(skillActionId, keyFrameId) end
     if eventName == "DodgeSuccEndFinish" then return self:OnDodgeSuccEndFinish(self._uuid) end
-    if eventName == "ChangeCamera" then
-        XLog.Warning("切换镜头")
-        self._proxy:SetCameraFocusTarget(self._uuid, self._enemyUUID)
-    end
 end
 
 ---释放拼刀成功技能时增伤(乘区14)
@@ -1510,7 +1489,7 @@ function XTheatre6CharBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind,
     --todo:超算值获取逻辑追加读取技能配置&局内动态调整
 
     local curState = self._stateMachine._curState
-    if curState and curState.OnCsNpcDamageEvent then curState:OnCsNpcDamageEvent(launcherId, targetId, actionId) end
+    if curState.OnCsNpcDamageEvent then curState:OnCsNpcDamageEvent(launcherId, targetId, actionId) end
 
     --todo:连击数更新逻辑迁移
     -- if launcherId == self._uuid and targetId == self._enemyUUID then
@@ -1567,22 +1546,6 @@ function XTheatre6CharBase:Update(dt)
     self._stateMachine:Update(dt)
     for _, affixController in pairs(self._updateControllers) do
         affixController:Update(dt)
-    end
-
-    local curOverClockValue = self._proxy:Theatre6GetNpcRuntimeOverClock(self._uuid)
-    if self._overclockvalue ~= curOverClockValue then
-        if self._overclockvalue < 100 and curOverClockValue >= 100 then
-            self._proxy:Theatre6PopDamage(self._uuid, self._uuid, 10, 0)
-        end
-        self._overclockvalue = curOverClockValue
-    end
-
-    local curTLValue = self._proxy:GetNpcGameplayAttribValue(self._uuid, ETheatre6AttribType.Stamina)
-    if self._TLvalue ~= curTLValue then
-        if self._TLvalue > 0 and curTLValue <= 0 then
-            self._proxy:Theatre6PopDamage(self._uuid, self._uuid, 9, 0)
-        end
-        self._TLvalue = curTLValue
     end
 end
 

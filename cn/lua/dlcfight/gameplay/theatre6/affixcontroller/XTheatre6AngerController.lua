@@ -54,7 +54,6 @@ function XTheatre6AngerController:OnLuaSkillEnd(eventArgs)
             self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.StackBuffAngry, 1)
             --self:LogError(".....玩家怒火归零，退出狂暴"..self._npcUUID)
             self._needDmgFix = false
-            self._npc:SetHandSideUx(nil)
         end
     else
         self.originAttrib2 = self._proxy:GetBuffStacks( self._npcUUID,self.StackBuffAnger)
@@ -64,7 +63,6 @@ function XTheatre6AngerController:OnLuaSkillEnd(eventArgs)
             --self:LogError(".....玩家怒火满，进入狂暴"..self._npcUUID)
             self._proxy:Theatre6PopDamage(self._npcUUID, self._npcUUID, 2, 0)
             self._needDmgFix = true
-            self._npc:SetHandSideUx("FxUiTheatre6FightViolenTips")
         end
     end
 end

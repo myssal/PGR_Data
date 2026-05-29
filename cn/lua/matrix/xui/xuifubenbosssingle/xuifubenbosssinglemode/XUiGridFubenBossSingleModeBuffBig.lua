@@ -27,10 +27,6 @@ function XUiGridFubenBossSingleModeBuffBig:SetData(
     self._BuffPreview:SetData(feature:GetHistoryBuffGroup())
 end
 
-function XUiGridFubenBossSingleModeBuffBig:PlayExtendAnimation()
-    self:PlayAnimationWithMask("Big")
-end
-
 function XUiGridFubenBossSingleModeBuffBig:_SetHistoryTeam(feature)
     if not self._CharHeads then
         self._CharHeads = {

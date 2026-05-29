@@ -897,6 +897,12 @@ function XTimelineSwitchProxy:SuspendForVideo()
     self:SetForceDisableGyro(true)
 end
 
+function XTimelineSwitchProxy:ResumeForVideoEnd()
+    self:SetForceDisableGyro(false)
+    
+    self:StartSwitchTimer()
+end
+
 ---获取当前状态
 ---@return boolean true=春状态，false=冬状态
 function XTimelineSwitchProxy:IsSpringState()

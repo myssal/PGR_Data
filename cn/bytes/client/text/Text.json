@@ -3948,7 +3948,7 @@
     },
     {
         "Key": "BossSingleAutoFightDesc",
-        "Text": "使用自动战斗可还原最高纪录的100%。\\n自动战斗将会扣除记录中编队成员耐力，并消耗当日次数。\\n自动战斗刷新周期内可使用6次。"
+        "Text": "使用自动战斗可还原最高纪录的80%。\\n自动战斗将会扣除记录中编队成员耐力，并消耗当日次数。\\n自动战斗刷新周期内可使用3次。"
     },
     {
         "Key": "BossSingleAutoFightRateDesc",
@@ -18414,6 +18414,42 @@
         "Text": "教学关尚未完成，是否立即前往？"
     },
     {
+        "Key": "BossInshotToastTowerUp",
+        "Text": "成功升层"
+    },
+    {
+        "Key": "BossInshotToastTowerDown",
+        "Text": "降层触发"
+    },
+    {
+        "Key": "BossInshotToastTowerClear",
+        "Text": "恭喜通关"
+    },
+    {
+        "Key": "BossInshotToastTowerDownProtected",
+        "Text": "降层保护触发"
+    },
+    {
+        "Key": "BossInshotToastTowerFloor",
+        "Text": "{0}F"
+    },
+    {
+        "Key": "BossInshotToastTowerDescUp",
+        "Text": "评分达{0}，上升{1}层。"
+    },
+    {
+        "Key": "BossInshotToastTowerDescDown",
+        "Text": "评分未达{0}，降至{1}层。"
+    },
+    {
+        "Key": "BossInshotToastTowerDescClear",
+        "Text": "可选择其他Boss挑战，获取更高排名。\\n失败不再触发降层。"
+    },
+    {
+        "Key": "BossInshotToastTowerDescDownProtected",
+        "Text": "首次未达{0}，不降层。"
+    },
+    {
         "Key": "DlcRoomKickOutTip",
         "Text": "是否将该玩家踢出房间？"
     },
@@ -19039,7 +19075,7 @@
     },
     {
         "Key": "NonogramSettlementTitleAllFinish",
-        "Text": "恭喜完成所有夜幕探索"
+        "Text": "恭喜完成所有暗房探索"
     },
     {
         "Key": "NonogramSettlementTitleExit",
@@ -20231,7 +20267,7 @@
     },
     {
         "Key": "PurchaseMonthPlusDesc",
-        "Text": "1、规则说明：购买后可立刻获得1000活动研发券，并获得1份【黑卡月卡】（黑卡月卡共计可得3300黑卡奖励）。\\n2、黑卡月卡说明：获得后立即发放300黑卡，从激活当日开始每日登录可领取100黑卡，持续30日。每日5:00后登录可自动领取当天黑卡奖励，或进入【主界面--活动】系统内找到【月卡】的页签，手动领取奖励。此页签也可查看指挥官当前黑卡月卡权限剩余天数。\\n3、限购说明：【月卡研发劵组合包】限购1次，不受当前【黑卡月卡】购买数量限制的影响。例如：指挥官当前已激活2张月卡达到上限，此时仍可购买【月卡研发劵组合包】，购买后黑卡月卡剩余天数相应增加。"
+        "Text": "1、规则说明：购买后可立刻获得1000活动研发券，并获得1份【黑卡月卡】（黑卡月卡共计可得3300黑卡奖励）。\\n2、黑卡月卡说明：获得后立即发放300黑卡，从激活当日开始每日登录可领取100黑卡，持续30日。每日5:00后登录可自动领取当天黑卡奖励，或进入【主界面--活动】系统内找到【月卡】的页签，手动领取奖励。此页签也可查看指挥官当前黑卡月卡权限剩余天数。\\n3、限购说明：【月卡研发劵组合包】限购1次，不受当前【黑卡月卡】购买数量限制的影响。例如：指挥官当前已激活6张月卡达到上限，此时仍可购买【月卡研发劵组合包】，购买后黑卡月卡剩余天数相应增加。"
     },
     {
         "Key": "PurchaseComboTitle",
@@ -20498,10 +20534,6 @@
         "Text": "剩余：{0}"
     },
     {
-        "Key": "Theatre6BuffStackCount",
-        "Text": "数量：{0}"
-    },
-    {
         "Key": "Theatre6TaskFinish",
         "Text": "已完成"
     },
@@ -20539,7 +20571,7 @@
     },
     {
         "Key": "Theatre6FightHighSkillTip",
-        "Text": "存在可替换的高星级技能，是否直接进入战斗"
+        "Text": "存在更高等级的技能，是否直接进入战斗"
     },
     {
         "Key": "Theatre6TalentLvRichText",
@@ -20659,7 +20691,7 @@
     },
     {
         "Key": "BtnPvpTip",
-        "Text": "在后续版本中，可以使用存档与其他玩家对战\\n有丰富的奖励"
+        "Text": "在后续版本内，可以使用角色归档与其他玩家进行对战"
     },
     {
         "Key": "BtnPvpTipTitle",
@@ -20739,7 +20771,7 @@
     },
     {
         "Key": "Theatre6SkillCSMag",
-        "Text": "placeholder_超算积累倍率"
+        "Text": "伤害倍率"
     },
     {
         "Key": "PassportCloudGameDesc",
@@ -20776,22 +20808,6 @@
     {
         "Key": "Theatre6BattleShopTipExitConfirm",
         "Text": "placeholder_还有可购买商品或免费刷新次数，是否确认离开商店？"
-    },
-    {
-        "Key": "Theatre6TaskSelectState",
-        "Text": "已选择"
-    },
-    {
-        "Key": "Theatre6TaskNormalState",
-        "Text": "选择"
-    },
-    {
-        "Key": "Theatre6PvpEnvReplaceSuccess",
-        "Text": "环境替换成功"
-    },
-    {
-        "Key": "Theatre6PvpEnvReplaceFail",
-        "Text": "尚未解锁该环境"
     },
     {
         "Key": "BattleFashionUndownloadedTipTitle",
@@ -20891,7 +20907,7 @@
     },
     {
         "Key": "Theatre6SkillUpGrade",
-        "Text": "星级提升"
+        "Text": "等级提升"
     },
     {
         "Key": "Theatre6GetSkill",
@@ -20915,15 +20931,15 @@
     },
     {
         "Key": "Theatre6SkillChangeError1",
-        "Text": "已装备更高星级的技能"
+        "Text": "低等级技能无法替换装备中的高等级技能"
     },
     {
         "Key": "Theatre6SkillChangeError2",
-        "Text": "已装备相同技能"
+        "Text": "已装备相同技能,无法重复装备"
     },
     {
         "Key": "Theatre6SkillSlotFull",
-        "Text": "暂无可装备槽位"
+        "Text": "装备槽已满"
     },
     {
         "Key": "Theatre6ShopStatus1",
@@ -20939,15 +20955,15 @@
     },
     {
         "Key": "Theatre6SkillBagFull",
-        "Text": "暂无仓库槽位"
+        "Text": "当前背包已满，%s 将自动转换为金币%s，确定要继续吗？"
     },
     {
         "Key": "Theatre6SkillReplaceHigh",
-        "Text": "已替换为高星技能"
+        "Text": "已替换为高级技能"
     },
     {
         "Key": "Theatre6SkillAutoToBag",
-        "Text": "无法装备低星级技能，自动进入技能档案"
+        "Text": "无法装备低等级技能，自动进入背包"
     },
     {
         "Key": "GameCollectionTips1",
@@ -20972,25 +20988,5 @@
     {
         "Key": "Theatre6SkillMoveError",
         "Text": "技能类型不正确，无法交换"
-    },
-    {
-        "Key": "Theatre6Lock",
-        "Text": "冻结"
-    },
-    {
-        "Key": "Theatre6UnLock",
-        "Text": "解冻"
-    },
-    {
-        "Key": "Theatre6SkillBagOver",
-        "Text": "当前技能档案已满，%s 将转换为金币%s，请前往清理技能档案，或点击【确定】自动售出"
-    },
-    {
-        "Key": "Theatre6PopupSkillLevelUpCountOut",
-        "Text": "升级次数已用完"
-    },
-    {
-        "Key": "Theatre6BattleShopAllLocked",
-        "Text": "商品均冻结，无法刷新"
     }
 ]

@@ -29,8 +29,13 @@ end
 
 function XUiLifeTreeCardGridRegularCard:InitComponents()
     self.Button:AddEventListener(function() self:OnBtnButtonClick() end)
-    
+
     self:InitLine()
+end
+
+function XUiLifeTreeCardGridRegularCard:GetCardType()
+    local catalogConfig = self._Control:GetLifeTreeCharacterCatalogConfigById(self.CatalogId)
+    return catalogConfig.CardType
 end
 
 function XUiLifeTreeCardGridRegularCard:Refresh()
