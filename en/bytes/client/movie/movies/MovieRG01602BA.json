@@ -1,0 +1,2346 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            6245
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "街头的煤气灯早已熄灭，唯有巨大的满月，将城市里的街道镀上一层诡异的寒光。"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "深夜的街头上，不时回荡着古怪的笑声。"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1483.jpg"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 201,
+        "Params": [
+            1,
+            500454
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 502,
+        "Params": [
+            "PanelActor1Shake"
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "疯癫的行人",
+            "啊——祂要降临了，降临在我们之间，让人间的一切都成为祂的食粮……",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 301,
+        "Params": [
+            "",
+            "疯癫的行人",
+            "时间到了，我们应当打开那扇门，接引祂的降临……我看见了，我看见了祂的所在——",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 301,
+        "Params": [
+            "",
+            "疯癫的行人",
+            "啊哈哈哈哈哈……!是前往祂神殿的马车啊，带上我，带上我——!",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 203,
+        "Params": [
+            1,
+            0.35,
+            -50
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 401,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "表情狂乱的疯子在路边起舞，发出刺耳的笑声，手舞足蹈地从警员的身边走过。"
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 201,
+        "Params": [
+            1,
+            500813
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "紧张的警员",
+            "该死，又疯了一个。",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 306,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "警员低声咒骂了一声，暗中祷告“迷雾”不要这么快蔓延到这附近，他不想也变成刚才那家伙一样的疯子。"
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "自己这个倒霉蛋无非也是众多倾力而出的警员中的一员，为的就是抓捕今晚从绞刑架上逃脱的那些“异种”。"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 306,
+        "EndDelay": 500.0
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "紧张的警员",
+            "这么大个城市，上哪儿找去……",
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 401,
+        "Params": [
+            2,
+            4161
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "警员在街头搜寻着，不放过每一处异常，一边自言自语地给自己打气。"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "前方的街角中，影影绰绰地出现了一抹灰色的影子。"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "煤气灯的光影下，似乎是映照出某个重伤倒地的身影。"
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 201,
+        "Params": [
+            1,
+            500813
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "Params": [
+            1,
+            "紧张的警员",
+            "在那里……",
+            1
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "警员小心翼翼地向那个灰色的身影走了过去，举起枪对准了对方。"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 401,
+        "Params": [
+            2,
+            5705
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "紧张的警员",
+            "Don't move.",
+            1
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "枪口下的身影没有回应，而警员却感觉到某种冰凉的触感紧贴在自己的脖子上，同时，一个来自身后的声音响了起来。"
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "警员这才意识到：那个灰色的身影，只不过是一件用于做“诱饵”的灰色披风。"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 401,
+        "Params": [
+            1,
+            201
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 401,
+        "Params": [
+            2,
+            819043
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 201,
+        "Params": [
+            1,
+            501586
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            1,
+            "“猩红女爵”",
+            "放下枪。",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "人类从那位手持太刀的同伴身后出现，走向了被解除武装的警员。"
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 302,
+        "Params": [
+            "",
+            "还有一位没上绞刑架的“异种”，现在在哪?",
+            45
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "警员明白人类的话中所指，但职业的正义感仍旧让他说出了拒绝的答案。"
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 201,
+        "Params": [
+            1,
+            500813
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            1,
+            "紧张的警员",
+            "I don't know...",
+            1
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "但警员的对抗并没有持续太久，另一位状若妖鬼的身影就从黑暗中步出。"
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 201,
+        "Params": [
+            1,
+            501620
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 401,
+        "Params": [
+            2,
+            2689
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "背后生着双翼的“妖鸟”逼近了他，眼中全是冰冷。"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "紧张的警员",
+            "你、你要做什么……啊!!!",
+            18
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 401,
+        "Params": [
+            2,
+            2690
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "紧张的警员",
+            "我、我的腿——!!!断了……要断了……",
+            18
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 301,
+        "Params": [
+            "",
+            "“嗜血妖鸟”",
+            "不说的话，接下来就是你的手。",
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 301,
+        "Params": [
+            "",
+            "“嗜血妖鸟”",
+            "还有你的脑袋。",
+            1
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 202,
+        "EndDelay": 300.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 401,
+        "Params": [
+            2,
+            6571
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "警员绝望地感受到，“妖鸟”指爪逼近上来的巨大力道，自己甚至能听到骨头在一点点发出即将断裂的声音。"
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 201,
+        "Params": [
+            1,
+            500813
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            1,
+            "紧张的警员",
+            "我、我……别这样……我是真的不知道——!",
+            1
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 301,
+        "Params": [
+            "",
+            "紧张的警员",
+            "我只见过……一些奇怪的人带着她进过市政厅……",
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 301,
+        "Params": [
+            "",
+            "紧张的警员",
+            "后来我又看到一辆马车从那里出来，应该就是送走那位异……不不不，你们的同伴……但去了哪里我真的不知道……",
+            1
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "紧张的警员",
+            "这些都是市政厅的大人物们才知道的大事，我、我知道的都说了……!",
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 501,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 101,
+        "BeginDelay": 800.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory941.jpg"
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 401,
+        "Params": [
+            1,
+            12
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "在【kuroname】一行拷问着警员的同时，一场关于“异种”的研究正在城市的一角紧张地进行着。"
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "煤气灯提供着这处被作为“秘密实验室”的地下室中唯一的光源，让实验中的学者几乎忘却了外面已经是什么时间。"
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "雪亮的灯光照亮了学者们不耐烦的眼神，而这些眼神都汇聚在了实验室中央的少女身上。"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "为了防止她施展自己的“异能”，她被魔枷牢牢地束缚在椅子上。"
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 201,
+        "Params": [
+            1,
+            501406,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 201,
+        "Params": [
+            2,
+            500059,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 301,
+        "Params": [
+            1,
+            "学者A",
+            "你既然曾经是那个【kuroname】的助手，理所应当也能成为我们的“好助手”——说吧，把关于“迷雾”的事情都交代清楚。",
+            1
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 301,
+        "Params": [
+            "",
+            "学者A",
+            "你们到底是通过什么方式引来了那些怪雾?邪术，仪器，还是什么我们不知道的东西?",
+            1
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 301,
+        "Params": [
+            "",
+            "学者B",
+            "别想着靠装傻就能混过去，我们可有的是治你这种人的办法。",
+            2
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 202,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 201,
+        "Params": [
+            1,
+            501602,
+            7
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "但面对这样的高压逼问，少女却毫不在意，反而像是被这群凶神恶煞的学者激发了斗志一般，露出了顽皮的笑意。"
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "不知道~我什么都不记得了~",
+            1
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "哎呀，这也不能怪我嘛，要知道，在心理压力过大的时候，脑子很容易就是一片空白嘛。",
+            1
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "你看，我就这样坐得又不舒服，还被你们这么多人盯着，心理压力能不大嘛~",
+            1
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "少女撅起了嘴，身体也不安分地小幅度摇晃，仿佛是在认真“思考”着什么，又像是试图在缓解魔枷给她带来的不适。"
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 201,
+        "Params": [
+            1,
+            501406,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 201,
+        "Params": [
+            2,
+            500059
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 201,
+        "Params": [
+            3,
+            500058,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 401,
+        "Params": [
+            2,
+            4079
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "学者A",
+            "少给我耍嘴皮子!",
+            1
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 301,
+        "Params": [
+            "",
+            "学者B",
+            "啧，怎么又玩儿“失忆”这套?我们这里又不是什么精神病院，不治失忆!",
+            2
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 301,
+        "Params": [
+            "",
+            "学者C",
+            "就是，有你这么做“研究”的吗?光靠这套“审问”要是能行，还要实验室里的那些仪器和药品有什么用?",
+            3
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 401,
+        "Params": [
+            2,
+            2701
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "但这番争执忽然被开门的声音打断，门外，这群学者的领头人面带不悦地注视着这一切。"
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 401,
+        "Params": [
+            2,
+            1087
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 201,
+        "Params": [
+            1,
+            500617
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 301,
+        "Params": [
+            1,
+            "高傲的学者",
+            "这个学会里，只养了你们这群只会动嘴皮子的“资深学者”吗?",
+            1
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 301,
+        "Params": [
+            "",
+            "高傲的学者",
+            "把她装进那边的铁笼里，放到外面——是时候验证一下她和“迷雾”之间的真正关系了。",
+            1
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 301,
+        "Params": [
+            "",
+            "高傲的学者",
+            "当完成验证以后，不管那“异能”是来自她的血，还是心脏，还是别的什么地方，我都要拿到“纯粹”的结果。",
+            1
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 301,
+        "Params": [
+            "",
+            "高傲的学者",
+            "而不仅仅只是你们那些又臭又长的研究报告，明白了吗?",
+            1
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 201,
+        "Params": [
+            1,
+            501406,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 201,
+        "Params": [
+            2,
+            500059,
+            "",
+            0
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 201,
+        "Params": [
+            3,
+            500058,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 301,
+        "Params": [
+            1,
+            "学者A&学者B&学者C",
+            "...I see.",
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 202,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 201,
+        "Params": [
+            1,
+            500617
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 301,
+        "Params": [
+            1,
+            "高傲的学者",
+            "三天之后我会再来，如果到时我还看到你们在和她“谈心”，而不是拿出真正的工作成果的话，我会让另一批更高明的学者过来接手你们的工作。",
+            1
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 301,
+        "Params": [
+            "",
+            "高傲的学者",
+            "也别觉得这是我对你们的“压迫”，因为市长大人比我更期待早日看到实验能够取得成功。",
+            1
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 401,
+        "Params": [
+            2,
+            4161
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "领头的学者在离开前，丢下了明确而冰冷的指令，这宣告着即将降临在少女身上的比绞刑更为残酷的死亡。"
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "来自众人的恶意，降临在这个被他们视为“猎物”的少女身上。"
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 201,
+        "Params": [
+            1,
+            501406
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "学者A",
+            "行了行了，都别愣着了，该干活儿了!",
+            1
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 301,
+        "Params": [
+            "",
+            "学者A",
+            "装“失忆”是吧，不肯老实交代也没关系，给我好好去迷雾里待着就行。",
+            1
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 201,
+        "Params": [
+            1,
+            501602,
+            14
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "埃琳娜",
+            "欸欸欸等等……别急!",
+            1
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "虽然我失忆了……还可能大概，还是会记得一点点的!",
+            1
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "见情况突变，少女像被踩了尾巴的猫一般抗议起来，但那些原本等着她“口供”的学者却已并不买账了。"
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 201,
+        "Params": [
+            1,
+            501406
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 301,
+        "Params": [
+            1,
+            "学者A",
+            "不必了，现在没人想听你那没用的“口供”了。",
+            1
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 201,
+        "Params": [
+            1,
+            500059,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 201,
+        "Params": [
+            2,
+            500058,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
+        "Params": [
+            1,
+            "学者B&学者C",
+            "还和她废什么话，怎么不来搭把手!",
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "另外两位正在准备实验器材的学者，向这边没好气地抱怨着。"
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 201,
+        "Params": [
+            1,
+            501406
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 301,
+        "Params": [
+            1,
+            "学者A",
+            "……来了来了，一会把她丢到外边的时候，千万别松开那魔枷。",
+            1
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 201,
+        "Params": [
+            1,
+            501602,
+            7
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "但少女却忽然惊恐地左顾右盼，仿佛是听到了什么古怪的声音。"
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "等等!你……有没有听到什么奇怪的声音……?",
+            1
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "埃琳娜",
+            "那边……就在那边!有东西……啊，怪物……不要过来!",
+            1
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她害怕地蜷缩起身体，仿佛是真的在学者身后的黑暗中看到了极为恐怖的所在。"
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "站在她面前的那位学者下意识地偏头望向身后，但还未等他看清身后黑暗中究竟有什么，后脑就传来了一阵重击。"
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 201,
+        "Params": [
+            1,
+            501406
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "Params": [
+            1,
+            "学者A",
+            "Uh...",
+            1
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 401,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 203,
+        "Params": [
+            1,
+            0.4,
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "毫无防备的学者后脑受了重重一击，倒了下去。"
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "而不远处的两位学者在这番变数之前还未反应过来，一个轻灵的人影转瞬间便逼近了他们。"
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "方才一直被捆缚着的埃琳娜，竟然从椅子上站了起来，重获自由。"
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 201,
+        "Params": [
+            1,
+            500059,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 201,
+        "Params": [
+            2,
+            500058,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "学者B&学者C",
+            "...!",
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 401,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 203,
+        "Params": [
+            1,
+            0.4,
+            -400,
+            -50
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 202,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 401,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 203,
+        "Params": [
+            2,
+            0.4,
+            400,
+            -50
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他们甚至都还没反应过来：她究竟是怎样挣脱开那“魔枷”的，就一个接一个地被少女的“异能”击晕在地。"
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 201,
+        "Params": [
+            1,
+            501602
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 301,
+        "Params": [
+            1,
+            "埃琳娜",
+            "区区这点“束缚”，小意思，还难不倒我~",
+            1
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 401,
+        "Params": [
+            2,
+            6341
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "少女露出一个顽皮的微笑，将原本一直藏在掌中的一个小物件放回了口袋。"
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那是在审判庭上的混乱中，她借由“拥抱”人类的机会，从<M>他</M><W>她</W>外套饰带上扯下的一枚小小物件。"
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那枚灰羽形状的金属饰物，成为了她顺利脱逃的“作弊工具”。"
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "嘻，骗你的，那边什么都没有。",
+            1
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 204,
+        "Params": [
+            1,
+            10
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "明明是“学者”，结果脑子里居然没有一点防备之心，还真是好对付。",
+            1
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "那么，离开这里的钥匙，我就作为“礼物”收下了，拜拜啦~",
+            1
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 203,
+        "Params": [
+            1,
+            0.35,
+            "",
+            -40
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 401,
+        "Params": [
+            2,
+            5526
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "少女俯下身，在晕倒的几位学者口袋搜寻了一番，找到了实验室的钥匙。"
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "重获自由的少女，轻盈的身姿消失在门外。"
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg"
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "已是临近午夜时分，若有若无的雾气萦绕在街头。"
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 401,
+        "Params": [
+            2,
+            5842
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "铛——铛——铛——"
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "午夜的钟声响了起来，宣告着人类一行的丧钟。"
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 402,
+        "Params": [
+            5842
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab"
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1471.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1471.jpg"
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 201,
+        "Params": [
+            1,
+            500863
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "审判长",
+            "证据确凿，宣判完毕，今晚的午夜十二点，将这些“异种”全部押到钟楼执行绞刑!",
+            1
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 201,
+        "Params": [
+            1,
+            501433
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "行刑官",
+            "你们这群怪胎，上路的时候到了!",
+            1
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg"
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 201,
+        "Params": [
+            1,
+            501602,
+            14
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "埃琳娜",
+            "【kuroname】...",
+            1
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "少女的神色转为难以言喻的哀伤，怔怔地看着弥漫的雾气。"
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "然而这短暂的忧伤并未持续太久，她迈开脚步，向着钟楼的方向快步跑去。"
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 401,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 501,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 101,
+        "EndDelay": 800.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory941.jpg"
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "而与此同时，在她离开之后的实验室，某种异象正在逐渐蔓延。"
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "某种不为人知的诡异存在，似乎感受到了方才她存在过的某些迹象，悄然降临于此。"
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "方才被埃琳娜击倒的学者，渐渐从昏迷的眩晕中苏醒过来。"
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 201,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            1,
+            501406
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 301,
+        "Params": [
+            1,
+            "学者A",
+            "该死……头好痛……",
+            1
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 301,
+        "Params": [
+            "",
+            "学者A",
+            "那小丫头片子……竟敢……",
+            1
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 401,
+        "Params": [
+            2,
+            4929
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 501,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 501,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 306,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "学者头顶上的煤气灯，开始怪异地闪动起来，随后，那些灯由远而近地一盏盏地熄灭了。"
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "黑暗中，响起了轻微而诡谲的声音，越来越近。"
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "无形的冰冷威压，宣告着那并非来自人间的声音。"
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 301,
+        "Params": [
+            "",
+            "???",
+            "▆▁▂▄▁……在哪……▁▃▄……你……在哪……"
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 301,
+        "Params": [
+            "",
+            "???",
+            "▁▃▄……你……不应当……▃▅▆▁▂▄▁……存在……"
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 301,
+        "Params": [
+            "",
+            "???",
+            "抹除……▃▅▆▁……销毁……▆▁▂▄▁……"
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "古怪的声音在黑暗中游荡着，却因为寻觅不到那位本应属于祂“猎物”的少女。"
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "祂对此并不满意，转而继续播撒着冰冷无形的恐惧。"
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "刚刚苏醒的学者，感觉到仿佛是有什么古怪的无形力道，扼住了他的咽喉。"
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 306,
+        "EndDelay": 500.0
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "学者A",
+            "呃啊……咕……呃……"
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 401,
+        "Params": [
+            2,
+            4005
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "黑暗中，学者们的理智和生命，悄无声息地消散了。"
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "最终，此处所有的声音和惨状，也都一起被浓重的黑暗所彻底笼罩。"
+        ]
+    }
+]

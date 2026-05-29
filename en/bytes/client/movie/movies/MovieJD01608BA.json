@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory260.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             201
@@ -30,42 +20,29 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001,
+            "",
             -600
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500026,
+            "",
             600
         ]
     },
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             500166
@@ -74,54 +51,40 @@
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "You pass through the cluster of Program Ghosts and keeps walking, until an armored protection layer stops you in your tracks."
         ]
     },
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "A highly complicated data blockade stands in front of a closed space."
         ]
     },
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Given the complexity of the blockade, it will probably take you quite some time to deactivate it."
         ]
     },
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "...We don't have time to go back now. We need to come up with a method to force our way through.",
             3
@@ -130,13 +93,9 @@
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "It seems like it. What should we do?",
             2
@@ -145,26 +104,18 @@
     {
         "Id": 11,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "...The team is looking your way now."
         ]
     },
     {
         "Id": 12,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 305,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             13,
             16
@@ -173,27 +124,20 @@
     {
         "Id": 13,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The space behind becomes accessible as soon as the blockade is deactivated."
         ]
     },
     {
         "Id": 14,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "Great. Let's keep moving.",
             3
@@ -202,31 +146,26 @@
     {
         "Id": 15,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yeah, let's go."
         ]
     },
     {
         "Id": 16,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
             3,
+            "",
+            "",
             1
         ]
     }

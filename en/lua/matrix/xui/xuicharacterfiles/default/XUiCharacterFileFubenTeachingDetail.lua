@@ -83,7 +83,7 @@ function XUiCharacterFileFubenTeachingDetail:OnBtnEnterClick()
         end
         self.RootUi:CloseStageDetails()
         --self:Close() 
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageCfg.StageId
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageCfg.StageId
         , XDataCenter.TeamManager.GetXTeamByStageId(self.StageCfg.StageId)
         , require("XUi/XUiNewChar/XUiTutoriaBattleRoleRoom"))
     end

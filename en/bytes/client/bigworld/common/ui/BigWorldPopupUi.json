@@ -1,47 +1,58 @@
 [
     {
         "UiName": "UiBigWorldMessageTips",
-        "IsModality": false,
-        "Priority": 1,
-        "SpecificModalityUi": [],
+        "IsModality": true,
+        "Priority": 2001,
         "CustomModalityParams": [
             1
         ]
     },
     {
-        "UiName": "UiBigWorldPopupTeach",
+        "UiName": "UiBigWorldPopupMessageSingle",
         "IsModality": true,
-        "Priority": 3,
-        "SpecificModalityUi": []
+        "Priority": 2001
     },
     {
         "UiName": "UiBigWorldTaskObtain",
         "IsModality": true,
-        "Priority": 2,
-        "SpecificModalityUi": []
+        "Priority": 1031
+    },
+    {
+        "UiName": "UiBigWorldTrialRolePopup",
+        "IsModality": true,
+        "Priority": 1031
+    },
+    {
+        "UiName": "UiBigWorldTaskObtainInvitation",
+        "IsModality": true,
+        "Priority": 1031
     },
     {
         "UiName": "UiBigWorldTaskObtainDrama",
         "IsModality": true,
-        "Priority": 3,
-        "SpecificModalityUi": []
+        "Priority": 1002
     },
     {
         "UiName": "UiBigWorldTaskObtainDramaHeart",
         "IsModality": true,
-        "Priority": 3,
-        "SpecificModalityUi": []
+        "Priority": 1001
     },
     {
         "UiName": "UiBigWorldRewardSidebar",
-        "IsModality": true,
-        "Priority": 4,
-        "SpecificModalityUi": []
+        "Priority": 101
     },
     {
-        "UiName": "UiBigWorldPopupMessageSingle",
+        "UiName": "UiBigWorldPopupTeach",
         "IsModality": true,
-        "Priority": 1,
-        "SpecificModalityUi": []
+        "Priority": 3001
+    },
+    {
+        "UiName": "UiBigWorldTeachTips",
+        "Priority": 3002
+    },
+    {
+        "UiName": "UiBigWorldTaskPopupEndingDetail",
+        "IsModality": true,
+        "Priority": 4001
     }
 ]

@@ -72,7 +72,7 @@ function XUiChessPursuitFightTips:OnBtnTeamChangeClick()
         CaptainPos = curTeamData.CaptainPos,
         FirstFightPos = curTeamData.FirstFightPos,
     }
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId)
 end
 
 function XUiChessPursuitFightTips:OnBtnResetClick()

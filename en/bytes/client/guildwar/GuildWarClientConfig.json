@@ -138,9 +138,9 @@
         "Key": "PassRewardShow",
         "Comment": "Difficulty selection screen reward preview",
         "Values": [
-            67823,
-            67824,
-            67825
+            69102,
+            69103,
+            69104
         ]
     },
     {
@@ -359,9 +359,9 @@
     },
     {
         "Key": "BossRewardEntranceIntercept",
-        "Comment": "boss奖励入口（主界面左边【领主】）的拦截提示文本",
+        "Comment": "Boss reward entry interception prompt (Main UI left side [Slumberer])",
         "Values": [
-            "Participated in expedition(s) in other Command Bureau(s). Cannot claim the Boss rewards of this round"
+            "Participated in expedition(s) in other Command Bureau(s). Cannot claim Slumberer rewards this round."
         ]
     },
     {
@@ -372,35 +372,35 @@
     },
     {
         "Key": "DragonRageLevelTips",
-        "Comment": "Mist Level Description",
+        "Comment": "Nightmare Level Description",
         "Values": [
-            "Mist Level increases along with the cycle. Same with the difficulty of all stages."
+            "Nightmare Level increases along with the cycle. Same with the difficulty of all stages."
         ]
     },
     {
         "Key": "DragonRageLevel",
-        "Comment": "Mist Level Format",
+        "Comment": "Nightmare Level Format",
         "Values": [
             "LV.{0}"
         ]
     },
     {
         "Key": "DragonRageToRelicTitle",
-        "Comment": "Mist Mode Node to Ruins Pop-Up Window Title",
+        "Comment": "Nightmare Node to Ruins Pop-Up Window Title",
         "Values": [
-            "The Sovereign has become more violent. The following node(s) has/have become ruins."
+            "The Slumberer has become more powerful. The following node(s) has/have become ruins."
         ]
     },
     {
         "Key": "DragonRageEffectShowLowerLimit",
-        "Comment": "Mist Mode Progress Bar Displays Effect Lower Limit Percentage",
+        "Comment": "Nightmare Progress Bar Displays Effect Lower Limit Percentage",
         "Values": [
             0
         ]
     },
     {
         "Key": "DragonRageSweepTips",
-        "Comment": "Mist Mode Available for Auto Clear",
+        "Comment": "Nightmare Mode Available for Auto Clear",
         "Values": [
             "Current cycle not manually cleared yet. Auto Clear will grant the points from the previous manual clear."
         ]
@@ -458,9 +458,10 @@
     },
     {
         "Key": "PanelRoleStationProgressShow",
-        "Comment": "Garrison progress and effect description in the Stage Details panel",
+        "Comment": "Garrison progress and effect description in the Stage Details panel. 1: effect not at max, 2: effect at max.",
         "Values": [
-            "Guild has garrisoned <color=#34AFF8>{0}/{1}</color> frames. On the next cycle refresh, Node HP here will be reduced by <color=#34AFF8>{2}%</color>."
+            "Guild has garrisoned <color=#34AFF8>{0}/{1}</color> frames. On the next cycle refresh, Node HP here will be reduced by <color=#34AFF8>{2}%</color>.",
+            "[Max Node Garrison Effect Reached] Guild has garrisoned <color=#34AFF8>{0}/{1}</color> frames. On the next cycle refresh, Node HP here will be reduced by <color=#34AFF8>{2}%</color>."
         ]
     },
     {

@@ -1,13 +1,11 @@
 [
     {
-        "Id": 0,
         "Type": 1,
         "UiType": 1,
         "Name": "Tang Pei",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal02.png",
         "Text": "Old Version Main Story Iteration",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10,
@@ -16,8 +14,7 @@
         "Name": "Guy on the Left",
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "Dialogue Here 1",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11,
@@ -27,8 +24,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "<color=#7FFF00>Dialogue Here 1 (Reversed Sprite)</color>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -40,8 +38,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "<size=30>Dialogue Here 1 (playalone on)</size>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -53,8 +51,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "Dialogue Here 1 (Reversed Sprite: playalone on)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1
         ]
@@ -67,7 +65,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png",
         "Text": "Dialogue Here 2",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -80,9 +77,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png",
         "Text": "Dialogue Here 2 (Reversed Sprite)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
             1
         ]
     },
@@ -94,8 +91,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal03.png",
         "Text": "Dialogue Here 3 (playalone on)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -107,7 +104,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal02.png",
         "Text": "Dialogue Here 4 (playalone on)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
             1
@@ -119,8 +115,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "<color=#7FFF00>Top Left Dialogue 1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 21,
@@ -128,8 +123,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal02.png",
         "Text": "<size=30>Top Left Dialogue 2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 22,
@@ -137,8 +131,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
         "Text": "Top Left Dialogue 3 (1s)",
-        "Duration": 1,
-        "IsMask": false
+        "Duration": 1
     },
     {
         "Id": 23,
@@ -146,8 +139,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal04.png",
         "Text": "Top Left Dialogue 4 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 30,
@@ -155,16 +147,14 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>Cutscene Animation 1</color>",
         "Text": "<color=#7FFF00>Dialogue Here 1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 31,
         "Type": 3,
         "UiType": 1,
         "Text": "<size=30>Dialogue Here 2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 32,
@@ -172,8 +162,7 @@
         "UiType": 1,
         "Name": "Cutscene Animation 3",
         "Text": "Dialogue Here 3 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 40,
@@ -181,24 +170,21 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>Connection Dialogue A</color>",
         "Text": "<color=#7FFF00>Connection Dialogue 123</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 41,
         "Type": 4,
         "UiType": 1,
         "Text": "Connection Dialogue 234 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 42,
         "Type": 4,
         "UiType": 1,
         "Name": "Connection Dialogue With Only Names",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 50,
@@ -207,8 +193,7 @@
         "Name": "<color=#7FFF00>Custom Chat Box</color>",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "<size=30>Custom Chat Box 1</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 51,
@@ -217,8 +202,7 @@
         "Name": "<size=15>Custom Chat Box</size>",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal02.png",
         "Text": "<color=#7FFF00>Custom Chat Box 2</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 52,
@@ -227,8 +211,7 @@
         "Name": "Custom Chat Box",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
         "Text": "Custom Chat Box 3 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1,
@@ -236,8 +219,7 @@
         "UiType": 1,
         "Name": "Main Story Chapter 9 Fallen Star",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090101,
@@ -246,8 +228,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LifuNormal01.png",
         "Text": "According to the map, we've landed at the designated location—",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090102,
@@ -256,8 +237,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LifuNormal01.png",
         "Text": "The data analysis cabin on space station.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090103,
@@ -266,8 +246,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LifuNormal01.png",
         "Text": "But... our aircraft has been destroyed...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090104,
@@ -277,7 +256,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/LuxiyaNormal01.png",
         "Text": "If we can destroy the space station's defense system, we're able to retreat when the main forces arrive.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -289,8 +267,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LiangNomal01.png",
         "Text": "These terminals seem bizarre...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090106,
@@ -299,8 +276,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LiangNomal01.png",
         "Text": "Those are what the report said—the corruption occurred on this space station only.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090107,
@@ -310,7 +286,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/LuxiyaNormal01.png",
         "Text": "You must be careful, Lee.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -322,8 +297,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LiangNomal01.png",
         "Text": "That's...!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090109,
@@ -332,8 +306,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LiangNomal01.png",
         "Text": "More authorities unlocked...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090110,
@@ -343,7 +316,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/LuxiyaNormal01.png",
         "Text": "Wait, that cross is guarding the gate...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -355,8 +327,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LifuNormal01.png",
         "Text": "According to my preliminary scan result, this type of enemy doesn't have a typical mechanical structure inside its body...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090112,
@@ -365,8 +336,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LifuNormal01.png",
         "Text": "It is... composed entirely of Punishing Virus...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090113,
@@ -376,7 +346,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/LiangNomal01.png",
         "Text": "This space station must be hiding some important secrets...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -389,7 +358,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/LiangNomal01.png",
         "Text": "It seems we can do more than just destroying it.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -401,8 +369,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LifuNormal01.png",
         "Text": "Guys, I've turned off the space station's remote sensing system.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10090116,
@@ -412,7 +379,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/LiangNomal01.png",
         "Text": "Well done, Liv.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -425,7 +391,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/LiangNomal01.png",
         "Text": "It should be able to reduce its attacks against Babylonia.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -437,8 +402,7 @@
         "Name": "Lucia",
         "Icon": "Assets/Product/Texture/Image/RoleStory/LuxiyaNormal01.png",
         "Text": "Yep, this is the first step for us.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010401,
@@ -447,8 +411,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "It's a theme park in the water...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010402,
@@ -457,8 +420,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Obtain the first Sea Fairy here.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010403,
@@ -467,8 +429,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "The first battle is going to take place here.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010404,
@@ -477,8 +438,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Explore the next scene.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010405,
@@ -487,8 +447,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "A handle of some trap. Something seems to be missing here.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010406,
@@ -497,8 +456,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "The iron gate is closed. There's a round groove on it.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010407,
@@ -507,8 +465,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Please image that Lamia is going into the water next.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 408,
@@ -516,8 +473,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "It seems you can't use it here.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 409,
@@ -525,8 +481,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Obtained: <color=#7FFF00>Wooden Pony</color>",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 410,
@@ -534,8 +489,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Obtained: <color=#7FFF00>Door Disk (Right)</color>",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 411,
@@ -543,17 +497,14 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Obtained: <color=#7FFF00>Door Disk (Left)</color>",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 412,
         "Type": 4,
-        "UiType": 0,
         "Name": "<color=#00FFFF>Electronic Voice</color>",
         "Text": "We're in the underwater protection mode. Would you like to start the drainage program?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 413,
@@ -562,8 +513,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "There should be some useful information over there.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 414,
@@ -572,8 +522,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "So much for the investigation. Let get out of here by the way we came.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 415,
@@ -582,8 +531,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Looks like we need a bit of manual manipulation here.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 416,
@@ -592,8 +540,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Now it's acting in a funny way after being soaked.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011801,
@@ -603,7 +550,6 @@
         "Icon": 500739,
         "Text": "Now there's no water. Look around and see if there's any useful information.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
             1,
@@ -616,8 +562,7 @@
         "UiType": 1,
         "Name": "<color=#00FFFF>Electronic Voice</color>",
         "Text": "Underwater protection removed. Gate back to normal.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10401,
@@ -626,8 +571,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "The sky... is the sea?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10402,
@@ -636,8 +580,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Is there really nothing wrong here?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10403,
@@ -646,8 +589,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Eek! That little thing is leading me to the enemies! Is it the defense system of this place?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10404,
@@ -656,8 +598,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Seems like someone used to live around here...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10405,
@@ -665,8 +606,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Is this a letter?",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 10406,
@@ -675,8 +615,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "A handle. Something seems to be missing...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10407,
@@ -685,8 +624,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "The gate won't open. There's a round groove on it.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10408,
@@ -695,8 +633,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "A little horse floating on the Red Tide?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10409,
@@ -704,8 +641,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Would this wooden horse have something to do with that handle?",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 10410,
@@ -713,8 +649,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Another letter.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 10411,
@@ -722,8 +657,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "It's not meant to be used here.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 10412,
@@ -731,8 +665,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Alright, new area opened.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 10413,
@@ -740,8 +673,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "A game room? Hate it...",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 10414,
@@ -749,8 +681,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Half of an iron disk. The other half seems to be missing.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 10415,
@@ -758,8 +689,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "There used to be a lot of people here, I guess.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 10416,
@@ -767,8 +697,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Half of an iron disk. Should be able to open that gate with another half.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 10417,
@@ -777,8 +706,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "This place looks more and more like a virtual reality game hall... Did Lithos provide these things for people for entertainment?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10418,
@@ -787,8 +715,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Wait, that's...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11701,
@@ -797,8 +724,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Water everywhere... Is this also one of Lithos' defense measures? It seems that he has regained control over this place.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11702,
@@ -807,17 +733,14 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Only I can get through. Keep moving onward.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11703,
         "Type": 4,
-        "UiType": 0,
         "Name": "<color=#00FFFF>Electronic Voice</color>",
         "Text": "Activate the forced drainage system?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11704,
@@ -826,8 +749,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Alright. You can come over now.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11801,
@@ -836,8 +758,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "A-anyway, I should see if there's anything useful.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11802,
@@ -846,8 +767,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Access control should be back to normal now, right?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11803,
@@ -856,8 +776,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "What a hassle...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11804,
@@ -866,8 +785,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Cthylla's children are here as well? Oh, it's just some test subjects...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11805,
@@ -876,8 +794,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "I should be able to find some information there.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11806,
@@ -886,8 +803,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "Some archived news reports? I'll gather them all for now. I should leave the way I came.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11807,
@@ -896,8 +812,7 @@
         "Name": "Lamia",
         "Icon": 500739,
         "Text": "A tricky puzzle again... Are those working for Vonnegut all into this kind of stuff?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 12101,
@@ -905,8 +820,7 @@
         "UiType": 1,
         "Name": "Lamia",
         "Text": "Lithos... I don't want to kill you.",
-        "Duration": 7.5,
-        "IsMask": false
+        "Duration": 7.5
     },
     {
         "Id": 12102,
@@ -914,8 +828,7 @@
         "UiType": 1,
         "Name": "Lithos",
         "Text": "We don't have a choice.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 12103,
@@ -923,8 +836,7 @@
         "UiType": 1,
         "Name": "Lithos",
         "Text": "Let me struggle bitterly until the end.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 287301,
@@ -934,7 +846,6 @@
         "Icon": 500694,
         "Text": "Looking for truth? I see...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -947,7 +858,6 @@
         "Icon": 500694,
         "Text": "But will you really find what you are looking for behind this door?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -960,7 +870,6 @@
         "Icon": 500694,
         "Text": "Oops, sorry. I talked too much again.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -973,7 +882,6 @@
         "Icon": 500694,
         "Text": "Then again, what difference does it make to a walking corpse like you?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -986,7 +894,6 @@
         "Icon": 500694,
         "Text": "Don't underestimate me, challenger.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -999,7 +906,6 @@
         "Icon": 500694,
         "Text": "Is this the price of arrogance...?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1011,8 +917,7 @@
         "Name": "Jetavie",
         "Icon": 500728,
         "Text": "Is this the gate to the center?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 287401,
@@ -1022,7 +927,6 @@
         "Icon": 700008,
         "Text": "You are like an injured beast...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1035,7 +939,6 @@
         "Icon": 700008,
         "Text": "All that killing intent is just a desperate attempt to hide your fear.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1047,8 +950,7 @@
         "Name": "Jetavie Beta",
         "Icon": 500893,
         "Text": "What, is your fear making you uncomfortable?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 287404,
@@ -1057,8 +959,7 @@
         "Name": "Jetavie Beta",
         "Icon": 500893,
         "Text": "You are nothing but a pathetic coward.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 287405,
@@ -1068,7 +969,6 @@
         "Icon": 700008,
         "Text": "How much of this vast wisdom can you truly grasp?!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1081,7 +981,6 @@
         "Icon": 700008,
         "Text": "The only thing I know is that I know nothing...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1094,7 +993,6 @@
         "Icon": 500615,
         "Text": "Those who are numb to fear will be the first to die.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1106,8 +1004,7 @@
         "Name": "Jetavie Beta",
         "Icon": 500893,
         "Text": "Image of Desire, you talk too much.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 287503,
@@ -1117,7 +1014,6 @@
         "Icon": 500615,
         "Text": "Talking to your enemy—you are lonely, aren't you?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1129,8 +1025,7 @@
         "Name": "Jetavie Beta",
         "Icon": 500893,
         "Text": "How about we fight till death instead of hugging each other?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 287505,
@@ -1140,7 +1035,6 @@
         "Icon": 500615,
         "Text": "Hey, can you still move?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1153,7 +1047,6 @@
         "Icon": 500615,
         "Text": "Good. It would be too boring if you collapse so early. Let's keep going!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1166,7 +1059,6 @@
         "Icon": 500615,
         "Text": "After all... No matter how many times I tried, I'm still no match for you.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1174,20 +1066,16 @@
     {
         "Id": 287508,
         "Type": 4,
-        "UiType": 0,
         "Name": "Image of Desire",
         "Text": "Oh little cutie, can you tell which side is which?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 287509,
         "Type": 4,
-        "UiType": 0,
         "Name": "Image of Desire",
         "Text": "The real one is here, little fool.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 287601,
@@ -1197,7 +1085,6 @@
         "Icon": 700004,
         "Text": "Those who dare to ignore love must be corrected.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1210,7 +1097,6 @@
         "Icon": 700004,
         "Text": "You will hate me, love me.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1223,7 +1109,6 @@
         "Icon": 700004,
         "Text": "Then become my puppet.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1236,8 +1121,10 @@
         "Icon": 500728,
         "Text": "I have no idea what you're talking about...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
             5
         ]
     },
@@ -1247,8 +1134,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TifaNomal02.png",
         "Text": "Is my love not enough?",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 287606,
@@ -1256,8 +1142,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/TifaNomal02.png",
         "Text": "Just give me your heart!",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 287607,
@@ -1267,7 +1152,6 @@
         "Icon": 700004,
         "Text": "Don't leave me... Why can't you understand love?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1280,7 +1164,6 @@
         "Icon": 700004,
         "Text": "How is that little one better than me?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1293,18 +1176,18 @@
         "Icon": 500728,
         "Text": "Who are you calling little?!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
             5
         ]
     },
     {
         "Id": 30062801,
         "Type": 4,
-        "UiType": 0,
         "Text": "I'll pay you back twofold... no, fourfold!",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 287801,
@@ -1313,8 +1196,7 @@
         "Name": "Sword of the Brave",
         "Icon": 500097,
         "Text": "I only need my left hand to defeat you.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 287901,
@@ -1323,8 +1205,7 @@
         "Name": "Moth",
         "Icon": 500248,
         "Text": "You will end up just like their corpses...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 288001,
@@ -1333,8 +1214,7 @@
         "Name": "Sisyphus",
         "Icon": 500015,
         "Text": "Useless! All your efforts will be in vain!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 288101,
@@ -1344,7 +1224,6 @@
         "Icon": 500017,
         "Text": "Your blood will be my paint. Your flesh and bones will be my altar!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1356,8 +1235,7 @@
         "Name": "???",
         "Icon": 500101,
         "Text": "As a warrior of Satan, you're incredibly powerful, but you have betrayed the Abyss Cult!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 288301,
@@ -1367,7 +1245,6 @@
         "Icon": 500505,
         "Text": "Roarrrr!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1379,8 +1256,7 @@
         "Name": "Girl Chess Player",
         "Icon": 500765,
         "Text": "I'll beat you until you want to play with me!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 288701,
@@ -1389,7 +1265,6 @@
         "Name": "Gate Keeper",
         "Icon": 700007,
         "Text": "Outsider! Don't even think about causing trouble under my watch!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     }
 ]

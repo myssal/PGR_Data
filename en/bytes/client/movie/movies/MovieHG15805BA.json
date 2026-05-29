@@ -2,12 +2,7 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_01.jpg"
         ]
@@ -15,12 +10,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 111,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab"
@@ -29,12 +19,7 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab",
             3
@@ -43,13 +28,8 @@
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             6205
@@ -58,12 +38,7 @@
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             5165
@@ -72,28 +47,21 @@
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After the north wind howls again, silence falls abruptly over the land."
         ]
     },
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Open your eyes)",
             8
         ]
@@ -101,11 +69,7 @@
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 50.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab",
@@ -115,12 +79,7 @@
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 111,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0,
             "Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab"
@@ -129,25 +88,17 @@
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1800.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab"
         ]
     },
     {
         "Id": 11,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_02.png",
@@ -159,84 +110,76 @@
     {
         "Id": 12,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|80|0",
             0,
+            "",
             3
         ]
     },
     {
         "Id": 13,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1500.0,
         "Params": [
             "0|0|0",
             1,
+            "",
             3
         ]
     },
     {
         "Id": 14,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The woman in silver stands alone in the wind and snow."
         ]
     },
     {
         "Id": 15,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "...",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010909
         ]
     },
     {
         "Id": 16,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Pure white snowflakes freeze her despair and extinguish her faith... The snow falls on her shoulders and upon the lives she took with her own hands."
         ]
     },
     {
         "Id": 17,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "DialogDisable"
         ]
@@ -244,14 +187,10 @@
     {
         "Id": 18,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
+            "",
             0,
             1,
             0
@@ -260,12 +199,8 @@
     {
         "Id": 19,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
         "EndDelay": 300.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_03.jpg"
@@ -274,27 +209,20 @@
     {
         "Id": 20,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She stands there, dazed, frozen in place."
         ]
     },
     {
         "Id": 21,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca...",
             22
         ]
@@ -302,26 +230,32 @@
     {
         "Id": 22,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "...?",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010910
         ]
     },
     {
         "Id": 23,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -330,11 +264,7 @@
     {
         "Id": 24,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 200.0,
         "Params": [
             2,
@@ -344,11 +274,7 @@
     {
         "Id": 25,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             999,
@@ -361,12 +287,7 @@
     {
         "Id": 26,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_06.jpg"
         ]
@@ -374,12 +295,7 @@
     {
         "Id": 27,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999
         ]
@@ -387,25 +303,18 @@
     {
         "Id": 28,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Bianca slowly turns around, and crimson bursts into view. Her silver attire is stained with the blood of her sins. It's undeniable proof that she has slain those closest to her."
         ]
     },
     {
         "Id": 29,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -414,12 +323,7 @@
     {
         "Id": 30,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
@@ -431,12 +335,7 @@
     {
         "Id": 31,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1004,
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_04.png",
@@ -448,61 +347,60 @@
     {
         "Id": 32,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "-200|0|0",
             0,
+            "",
             4
         ]
     },
     {
         "Id": 33,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1200.0,
         "Params": [
             "0|0|0",
             1,
+            "",
             4
         ]
     },
     {
         "Id": 34,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Commandant...?",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010911
         ]
     },
     {
         "Id": 35,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
+            "",
             0,
             1,
             0
@@ -511,14 +409,10 @@
     {
         "Id": 36,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1004,
+            "",
             0,
             1,
             0
@@ -527,11 +421,7 @@
     {
         "Id": 37,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -540,12 +430,7 @@
     {
         "Id": 38,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1514
@@ -554,12 +439,8 @@
     {
         "Id": 39,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_05.jpg"
@@ -568,40 +449,30 @@
     {
         "Id": 40,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The bloody Sacred Sword is dragging across the snow as the figure in red and white approaches you slowly."
         ]
     },
     {
         "Id": 41,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The \"Witch,\" like the one in the eerie fairy tale that the children whisper about. Will you become another soul taken by that blade?"
         ]
     },
     {
         "Id": 42,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Try to escape)",
             43,
             "(Wait quietly for her)",
@@ -613,37 +484,28 @@
         "ActionId": 43,
         "NextActionId": 45,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Your body is too wounded and overwhelmed by fatigue, making you no longer able to escape."
         ]
     },
     {
         "Id": 44,
         "ActionId": 44,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Your intuition is reminding you that Bianca is still the same Bianca."
         ]
     },
     {
         "Id": 45,
         "ActionId": 45,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -652,12 +514,7 @@
     {
         "Id": 46,
         "ActionId": 46,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_01.jpg"
         ]
@@ -665,12 +522,7 @@
     {
         "Id": 47,
         "ActionId": 47,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|50|0",
             0
@@ -679,12 +531,8 @@
     {
         "Id": 48,
         "ActionId": 48,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
         "EndDelay": 1000.0,
         "Params": [
             "0|0|0",
@@ -694,11 +542,7 @@
     {
         "Id": 49,
         "ActionId": 49,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             2,
@@ -708,12 +552,7 @@
     {
         "Id": 50,
         "ActionId": 50,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_04.png",
@@ -725,11 +564,7 @@
     {
         "Id": 51,
         "ActionId": 51,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1200.0,
         "Params": [
             1007,
@@ -742,12 +577,7 @@
     {
         "Id": 52,
         "ActionId": 52,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_04.png"
         ]
@@ -755,14 +585,10 @@
     {
         "Id": 53,
         "ActionId": 53,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
+            "",
             0,
             1,
             0
@@ -771,11 +597,7 @@
     {
         "Id": 54,
         "ActionId": 54,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1500.0,
         "Params": [
             "0|0|-50",
@@ -785,54 +607,70 @@
     {
         "Id": 55,
         "ActionId": 55,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
         "EndDelay": 1500.0,
         "Params": [
+            "",
+            "",
             "The \"Witch\" leans close, her weary eyes struggling to make out the human face before her."
         ]
     },
     {
         "Id": 56,
         "ActionId": 56,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1500.0,
         "Params": [
+            "",
             "Bianca",
             "Ah... Thank goodness... Thank goodness...",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010912
         ]
     },
     {
         "Id": 57,
         "ActionId": 57,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "<color=#DDA117><size=40><i>Commandant, you see, my sword is dripping with the blood of countless of our own...</i></size></color>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010913
         ]
     },
     {
         "Id": 58,
         "ActionId": 58,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -841,12 +679,7 @@
     {
         "Id": 59,
         "ActionId": 59,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_06.png",
@@ -858,11 +691,7 @@
     {
         "Id": 60,
         "ActionId": 60,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             1005,
@@ -875,12 +704,7 @@
     {
         "Id": 61,
         "ActionId": 61,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1004,
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_07.png",
@@ -892,42 +716,30 @@
     {
         "Id": 62,
         "ActionId": 62,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "-400|-200|0",
             0,
+            "",
             4
         ]
     },
     {
         "Id": 63,
         "ActionId": 63,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 3000.0,
         "Params": [
             "0|0|0",
             3,
+            "",
             4
         ]
     },
     {
         "Id": 64,
         "ActionId": 64,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_08.png"
         ]
@@ -935,14 +747,10 @@
     {
         "Id": 65,
         "ActionId": 65,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
+            "",
             0,
             1,
             0
@@ -951,14 +759,10 @@
     {
         "Id": 66,
         "ActionId": 66,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1005,
+            "",
             0,
             1,
             0
@@ -967,14 +771,10 @@
     {
         "Id": 67,
         "ActionId": 67,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1004,
+            "",
             0,
             1,
             0
@@ -983,27 +783,35 @@
     {
         "Id": 68,
         "ActionId": 68,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": 300.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "<color=#DDA117><size=40><i>I killed my beloved friends, killed the father who raised me, ruined this church that was once... filled with moments of joy and laughter with you...</i></size></color>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010914
         ]
     },
     {
         "Id": 69,
         "ActionId": 69,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1012,14 +820,10 @@
     {
         "Id": 70,
         "ActionId": 70,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1007,
+            "",
             0,
             1,
             0
@@ -1028,12 +832,8 @@
     {
         "Id": 71,
         "ActionId": 71,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_09.jpg"
@@ -1042,25 +842,18 @@
     {
         "Id": 72,
         "ActionId": 72,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "\"Those who wield the Sacred Sword will one day be cut by its thorns.\" This is the price of her powers."
         ]
     },
     {
         "Id": 73,
         "ActionId": 73,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1069,11 +862,7 @@
     {
         "Id": 74,
         "ActionId": 74,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             999,
@@ -1086,12 +875,7 @@
     {
         "Id": 75,
         "ActionId": 75,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_10.jpg"
         ]
@@ -1099,14 +883,10 @@
     {
         "Id": 76,
         "ActionId": 76,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
+            "",
             0,
             1,
             0
@@ -1115,26 +895,33 @@
     {
         "Id": 77,
         "ActionId": 77,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "<color=#DDA117><size=40><i>I loathe the virus, but I hate myself even more. I hate that all I could do was take lives with my own hands.</i></size></color>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010915
         ]
     },
     {
         "Id": 78,
         "ActionId": 78,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1143,12 +930,7 @@
     {
         "Id": 79,
         "ActionId": 79,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1505
@@ -1157,11 +939,7 @@
     {
         "Id": 80,
         "ActionId": 80,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1700.0,
         "Params": [
             1003,
@@ -1174,27 +952,34 @@
     {
         "Id": 81,
         "ActionId": 81,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "<color=#DDA117><size=40><i>By the time I came to my senses, my sins were already beyond redemption...</i></size></color>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010916
         ]
     },
     {
         "Id": 82,
         "ActionId": 82,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1203,14 +988,10 @@
     {
         "Id": 83,
         "ActionId": 83,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
+            "",
             0,
             1,
             0
@@ -1219,12 +1000,8 @@
     {
         "Id": 84,
         "ActionId": 84,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_01.jpg"
@@ -1233,27 +1010,33 @@
     {
         "Id": 85,
         "ActionId": 85,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "I'm sorry... Commandant...",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010917
         ]
     },
     {
         "Id": 86,
         "ActionId": 86,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1262,12 +1045,7 @@
     {
         "Id": 87,
         "ActionId": 87,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_02.png",
@@ -1279,27 +1057,18 @@
     {
         "Id": 88,
         "ActionId": 88,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "50|0|0",
             0,
+            "",
             3
         ]
     },
     {
         "Id": 89,
         "ActionId": 89,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1543
@@ -1308,29 +1077,22 @@
     {
         "Id": 90,
         "ActionId": 90,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1500.0,
         "Params": [
             "0|0|0",
             1,
+            "",
             3
         ]
     },
     {
         "Id": 91,
         "ActionId": 91,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
+            "",
             0,
             1,
             0
@@ -1339,12 +1101,7 @@
     {
         "Id": 92,
         "ActionId": 92,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_03.jpg"
         ]
@@ -1352,40 +1109,58 @@
     {
         "Id": 93,
         "ActionId": 93,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "<color=#DDA117><size=40><i>These hands no longer deserve to hold anyone close.</i></size></color>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010918
         ]
     },
     {
         "Id": 94,
         "ActionId": 94,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "<color=#DDA117><size=40><i>But... Commandant... I am so grateful...</i></size></color>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010919
         ]
     },
     {
         "Id": 95,
         "ActionId": 95,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1394,12 +1169,7 @@
     {
         "Id": 96,
         "ActionId": 96,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_04.png",
@@ -1411,27 +1181,18 @@
     {
         "Id": 97,
         "ActionId": 97,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|-100|0",
             0,
+            "",
             3
         ]
     },
     {
         "Id": 98,
         "ActionId": 98,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4895
@@ -1440,28 +1201,21 @@
     {
         "Id": 99,
         "ActionId": 99,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1500.0,
         "Params": [
             "0|0|0",
             0.8,
+            "",
             3
         ]
     },
     {
         "Id": 100,
         "ActionId": 100,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...Don't go.",
             101,
             "...Bianca, this isn't your fault.",
@@ -1473,11 +1227,7 @@
     {
         "Id": 101,
         "ActionId": 101,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1500.0,
         "Params": [
             1004,
@@ -1490,12 +1240,7 @@
     {
         "Id": 102,
         "ActionId": 102,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_05.jpg"
         ]
@@ -1503,14 +1248,10 @@
     {
         "Id": 103,
         "ActionId": 103,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
+            "",
             0,
             1,
             0
@@ -1519,14 +1260,10 @@
     {
         "Id": 104,
         "ActionId": 104,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1004,
+            "",
             0,
             1,
             0
@@ -1535,26 +1272,33 @@
     {
         "Id": 105,
         "ActionId": 105,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "<color=#DDA117><size=40><i>...I get to see you one last time... before I leave...</i></size></color>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010920
         ]
     },
     {
         "Id": 106,
         "ActionId": 106,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1563,12 +1307,8 @@
     {
         "Id": 107,
         "ActionId": 107,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
         "EndDelay": 300.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_04_01.jpg"
@@ -1577,26 +1317,33 @@
     {
         "Id": 108,
         "ActionId": 108,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "<color=#DDA117><size=40><i>I will pray for you... pray for the calamity to end, for the living to find solace, for the dead to find peace... and pray that your life continues to unfold with peace and joy...</i></size></color>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010921
         ]
     },
     {
         "Id": 109,
         "ActionId": 109,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1605,11 +1352,7 @@
     {
         "Id": 110,
         "ActionId": 110,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             999,
@@ -1622,12 +1365,7 @@
     {
         "Id": 111,
         "ActionId": 111,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_04_02.jpg"
         ]
@@ -1635,14 +1373,10 @@
     {
         "Id": 112,
         "ActionId": 112,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
+            "",
             0,
             1,
             0
@@ -1651,28 +1385,34 @@
     {
         "Id": 113,
         "ActionId": 113,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Don't worry... reinforcements will come for you soon...",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010922
         ]
     },
     {
         "Id": 114,
         "ActionId": 114,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1681,12 +1421,7 @@
     {
         "Id": 115,
         "ActionId": 115,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_01.png"
         ]
@@ -1694,26 +1429,18 @@
     {
         "Id": 116,
         "ActionId": 116,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_02.png",
+            "",
+            "",
             3
         ]
     },
     {
         "Id": 117,
         "ActionId": 117,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "200|0|0",
             0
@@ -1722,28 +1449,19 @@
     {
         "Id": 118,
         "ActionId": 118,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "-200|0|0",
             0,
+            "",
             3
         ]
     },
     {
         "Id": 119,
         "ActionId": 119,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|0|0",
             5.5
@@ -1752,56 +1470,72 @@
     {
         "Id": 120,
         "ActionId": 120,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             "0|0|0",
             5.5,
+            "",
             3
         ]
     },
     {
         "Id": 121,
         "ActionId": 121,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
+            "",
+            "",
             "<color=#DDA117><size=40><i>Until then... I may have to commit one last sin.</i></size></color>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010923
         ]
     },
     {
         "Id": 122,
         "ActionId": 122,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2500.0,
         "Params": [
+            "",
             "Bianca",
             "Please take care of yourself... Commandant...",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010924
         ]
     },
     {
         "Id": 123,
         "ActionId": 123,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1810,13 +1544,11 @@
     {
         "Id": 124,
         "ActionId": 124,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
+            "",
             3,
             1
         ]
@@ -1824,40 +1556,30 @@
     {
         "Id": 125,
         "ActionId": 125,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_03.jpg",
+            "",
+            "",
             4
         ]
     },
     {
         "Id": 126,
         "ActionId": 126,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 800.0,
         "Params": [
             "0|110|0",
             1,
+            "",
             4
         ]
     },
     {
         "Id": 127,
         "ActionId": 127,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             1005,
@@ -1870,26 +1592,19 @@
     {
         "Id": 128,
         "ActionId": 128,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She grips your hand tightly, very tightly... Then she gradually lets go, gently prying apart your fingers."
         ]
     },
     {
         "Id": 129,
         "ActionId": 129,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -1898,14 +1613,10 @@
     {
         "Id": 130,
         "ActionId": 130,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1005,
+            "",
             0,
             1,
             0
@@ -1914,26 +1625,18 @@
     {
         "Id": 131,
         "ActionId": 131,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_05.png",
+            "",
+            "",
             4
         ]
     },
     {
         "Id": 132,
         "ActionId": 132,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_06.png"
         ]
@@ -1941,13 +1644,8 @@
     {
         "Id": 133,
         "ActionId": 133,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1003,
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_07.png",
@@ -1959,43 +1657,34 @@
     {
         "Id": 134,
         "ActionId": 134,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "60|0|-50",
             0,
+            "",
             3
         ]
     },
     {
         "Id": 135,
         "ActionId": 135,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1200.0,
         "Params": [
             "0|0|0",
             0.8,
+            "",
             3
         ]
     },
     {
         "Id": 136,
         "ActionId": 136,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
+            "",
             3,
             1
         ]
@@ -2003,12 +1692,7 @@
     {
         "Id": 137,
         "ActionId": 137,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_08.jpg"
         ]
@@ -2016,25 +1700,18 @@
     {
         "Id": 138,
         "ActionId": 138,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The Witch//Holy Maiden's figure slowly fades into the distance..."
         ]
     },
     {
         "Id": 139,
         "ActionId": 139,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "DialogDisable"
@@ -2043,13 +1720,11 @@
     {
         "Id": 140,
         "ActionId": 140,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
+            "",
             4,
             1
         ]
@@ -2057,12 +1732,7 @@
     {
         "Id": 141,
         "ActionId": 141,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1514
@@ -2071,11 +1741,7 @@
     {
         "Id": 142,
         "ActionId": 142,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             999,
@@ -2088,12 +1754,7 @@
     {
         "Id": 143,
         "ActionId": 143,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_09.jpg"
         ]
@@ -2101,12 +1762,7 @@
     {
         "Id": 144,
         "ActionId": 144,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999
         ]
@@ -2114,27 +1770,19 @@
     {
         "Id": 145,
         "ActionId": 145,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The footprints buried deep in the snow look like the path once taken, or the way home."
         ]
     },
     {
         "Id": 146,
         "ActionId": 146,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             5165
         ]
@@ -2142,11 +1790,7 @@
     {
         "Id": 147,
         "ActionId": 147,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             1,
@@ -2156,12 +1800,7 @@
     {
         "Id": 148,
         "ActionId": 148,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             120
@@ -2170,12 +1809,7 @@
     {
         "Id": 149,
         "ActionId": 149,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
@@ -2183,12 +1817,7 @@
     {
         "Id": 150,
         "ActionId": 150,
-        "NextActionId": 0,
         "Type": 308,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             151,
             153
@@ -2197,84 +1826,91 @@
     {
         "Id": 151,
         "ActionId": 151,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "???",
             "【kuroname】, wake up!",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010925
         ]
     },
     {
         "Id": 152,
         "ActionId": 152,
-        "NextActionId": 0,
         "Type": 308,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             155
         ]
     },
     {
         "Id": 153,
         "ActionId": 153,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "???",
             "【kuroname】, wake up!",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010926
         ]
     },
     {
         "Id": 154,
         "ActionId": 154,
-        "NextActionId": 0,
         "Type": 308,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             155
         ]
     },
     {
         "Id": 155,
         "ActionId": 155,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You are so cold."
         ]
     },
     {
         "Id": 156,
         "ActionId": 156,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Open your eyes)",
             157
         ]
@@ -2282,11 +1918,7 @@
     {
         "Id": 157,
         "ActionId": 157,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 50.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab",
@@ -2296,12 +1928,7 @@
     {
         "Id": 158,
         "ActionId": 158,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg"
         ]
@@ -2309,58 +1936,58 @@
     {
         "Id": 159,
         "ActionId": 159,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500726,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 160,
         "ActionId": 160,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "You struggle to focus your vision as a girl with purple hair anxiously shakes your body."
         ]
     },
     {
         "Id": 161,
         "ActionId": 161,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "???",
             "Wake up... We need to go back!",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010927
         ]
     },
     {
         "Id": 162,
         "ActionId": 162,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosie?",
             163,
             "Bianca...?",
@@ -2370,12 +1997,7 @@
     {
         "Id": 163,
         "ActionId": 163,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2383,25 +2005,17 @@
     {
         "Id": 164,
         "ActionId": 164,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As consciousness returns, bone-piercing cold seeps into your bones. Pain is chiseling at your joints like ice picks, and each shiver drives the sharp agony even deeper."
         ]
     },
     {
         "Id": 165,
         "ActionId": 165,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500726
@@ -2410,14 +2024,10 @@
     {
         "Id": 166,
         "ActionId": 166,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "Hearing her name, the girl's tense expression finally eases."
         ]
     },
@@ -2426,26 +2036,31 @@
         "ActionId": 167,
         "NextActionId": 173,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosie",
             "Thank goodness. You still remember me.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010928
         ]
     },
     {
         "Id": 168,
         "ActionId": 168,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2453,38 +2068,27 @@
     {
         "Id": 169,
         "ActionId": 169,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As consciousness returns, bone-piercing cold seeps into your bones. Pain is chiseling at your joints like ice picks, and each shiver drives the sharp agony even deeper."
         ]
     },
     {
         "Id": 170,
         "ActionId": 170,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The surface under you is hard and cold. It's not a bed and certainly not an embrace... Bianca isn't here. Your mind quickly registers this fact."
         ]
     },
     {
         "Id": 171,
         "ActionId": 171,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500726
@@ -2493,47 +2097,60 @@
     {
         "Id": 172,
         "ActionId": 172,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Rosie",
             "I'm \"Rosie\". Bianca... she's gone.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010929
         ]
     },
     {
         "Id": 173,
         "ActionId": 173,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosie",
             "How do you feel?",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010930
         ]
     },
     {
         "Id": 174,
         "ActionId": 174,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...I had a nightmare.",
             175
         ]
@@ -2541,13 +2158,9 @@
     {
         "Id": 175,
         "ActionId": 175,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "In it... Bianca was forced to kill her father figure...",
             176
         ]
@@ -2555,13 +2168,9 @@
     {
         "Id": 176,
         "ActionId": 176,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...And kindhearted soldiers...",
             177
         ]
@@ -2569,30 +2178,35 @@
     {
         "Id": 177,
         "ActionId": 177,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosie",
             "What happened after that?",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010931
         ]
     },
     {
         "Id": 178,
         "ActionId": 178,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "After that, she left me in the wind and snow, and never came back...",
             179
         ]
@@ -2600,28 +2214,32 @@
     {
         "Id": 179,
         "ActionId": 179,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosie",
             "Yeah... that was her nightmare, but now we're living in it.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010932
         ]
     },
     {
         "Id": 180,
         "ActionId": 180,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2629,12 +2247,7 @@
     {
         "Id": 181,
         "ActionId": 181,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2642,126 +2255,117 @@
     {
         "Id": 182,
         "ActionId": 182,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Rosie silently steps to the side, revealing a blue-black dome adorned with religious murals. This church is familiar, but it's not the one where you first met Bianca."
         ]
     },
     {
         "Id": 183,
         "ActionId": 183,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Voices of abuse and mockery surge in from all directions."
         ]
     },
     {
         "Id": 184,
         "ActionId": 184,
-        "NextActionId": 0,
-        "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 306
     },
     {
         "Id": 185,
         "ActionId": 185,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500813,
+            "",
             400
         ]
     },
     {
         "Id": 186,
         "ActionId": 186,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500133,
+            "",
             -400
         ]
     },
     {
         "Id": 187,
         "ActionId": 187,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Reinforcement",
             "She killed them! When we got there, she was covered in blood, running off alone with her sword!",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010933
         ]
     },
     {
         "Id": 188,
         "ActionId": 188,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Sister A",
             "O Lord... but she's the Holy Maiden chosen by You!",
             2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010934
         ]
     },
     {
         "Id": 189,
         "ActionId": 189,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 190,
         "ActionId": 190,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500055
@@ -2770,94 +2374,113 @@
     {
         "Id": 191,
         "ActionId": 191,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bonnie",
             "The Holy Maiden must have her reasons. She prayed for us, for everyone, even at the cost of her own life. The children and I saw this with our own eyes.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010935
         ]
     },
     {
         "Id": 192,
         "ActionId": 192,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 193,
         "ActionId": 193,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500133,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 194,
         "ActionId": 194,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "PanelActor1Shake",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Sister A",
             "It's a curse... It must be the Sacred Sword's curse!",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010936
         ]
     },
     {
         "Id": 195,
         "ActionId": 195,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Sister A",
             "Anyone who tries to use the Sacred Sword's power will be consumed by it... She drew the Sacred Sword, so she turned into a killer!",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010937
         ]
     },
     {
         "Id": 196,
         "ActionId": 196,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "The infected will only kill more people.",
             197
         ]
@@ -2865,13 +2488,9 @@
     {
         "Id": 197,
         "ActionId": 197,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "She had no choice but to put an end to their sins.",
             198
         ]
@@ -2879,12 +2498,7 @@
     {
         "Id": 198,
         "ActionId": 198,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
@@ -2894,95 +2508,122 @@
     {
         "Id": 199,
         "ActionId": 199,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500813,
+            "",
             400
         ]
     },
     {
         "Id": 200,
         "ActionId": 200,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Reinforcement",
             "It's you? Are you that commandant? The only one who survived?",
             2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010938
         ]
     },
     {
         "Id": 201,
         "ActionId": 201,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Reinforcement",
             "Did you know that she killed Father Snow? The priest who raised her?",
             2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010939
         ]
     },
     {
         "Id": 202,
         "ActionId": 202,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Reinforcement",
             "And Toby! That man was my brother-in-arms! We faced life and death together! He promised to bring me wine from the Snowfields, but I'll never get to drink with him again because he died under her sword!",
             2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010940
         ]
     },
     {
         "Id": 203,
         "ActionId": 203,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Sister A",
             "I watched Toby grow up! He was a ball of sunshine and was always so cheerful and kind to everyone. He had a bright future ahead of him, but the Witch took it all...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010941
         ]
     },
     {
         "Id": 204,
         "ActionId": 204,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "She betrayed her sacred role and killed those she loves...",
             205,
             "...",
@@ -2992,13 +2633,9 @@
     {
         "Id": 205,
         "ActionId": 205,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Can't you tell she's suffering the most?",
             206
         ]
@@ -3006,44 +2643,46 @@
     {
         "Id": 206,
         "ActionId": 206,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Sister A",
             "Regardless, her hands are already stained with blood, and the church will never accept a witch like her!",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010942
         ]
     },
     {
         "Id": 207,
         "ActionId": 207,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 208,
         "ActionId": 208,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500055
@@ -3052,135 +2691,141 @@
     {
         "Id": 209,
         "ActionId": 209,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "RImgBg1Shake",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bonnie",
             "Why can't we wait until she comes back?",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010943
         ]
     },
     {
         "Id": 210,
         "ActionId": 210,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 211,
         "ActionId": 211,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500813,
+            "",
             400
         ]
     },
     {
         "Id": 212,
         "ActionId": 212,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500133,
+            "",
             -400
         ]
     },
     {
         "Id": 213,
         "ActionId": 213,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Sister A",
             "Then why did she kill them? Is this how she treats people who once helped her? Will she do the same to us? Like how she killed Father Snow and Toby?!",
             2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010944
         ]
     },
     {
         "Id": 214,
         "ActionId": 214,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Reinforcement",
             "I'm going to avenge Toby and Father Snow! Don't stop me!",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010945
         ]
     },
     {
         "Id": 215,
         "ActionId": 215,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Surprisingly, these angry people refuse to believe a word from you and Bonnie and only grow more furious."
         ]
     },
     {
         "Id": 216,
         "ActionId": 216,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 217,
         "ActionId": 217,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539,
@@ -3190,41 +2835,29 @@
     {
         "Id": 218,
         "ActionId": 218,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
+            "",
+            "",
             -20
         ]
     },
     {
         "Id": 219,
         "ActionId": 219,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "As you try to explain some more, Rosie tugs at the corner of your shirt."
         ]
     },
     {
         "Id": 220,
         "ActionId": 220,
-        "NextActionId": 0,
         "Type": 308,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             221,
             223
@@ -3233,84 +2866,90 @@
     {
         "Id": 221,
         "ActionId": 221,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosie?",
             "【kuroname】... It's no use... Let's go back...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010946
         ]
     },
     {
         "Id": 222,
         "ActionId": 222,
-        "NextActionId": 0,
         "Type": 308,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             225
         ]
     },
     {
         "Id": 223,
         "ActionId": 223,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosie?",
             "【kuroname】... It's no use... Let's go back...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010947
         ]
     },
     {
         "Id": 224,
         "ActionId": 224,
-        "NextActionId": 0,
         "Type": 308,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             225
         ]
     },
     {
         "Id": 225,
         "ActionId": 225,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 226,
         "ActionId": 226,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501148
@@ -3319,43 +2958,45 @@
     {
         "Id": 227,
         "ActionId": 227,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Father Leon",
             "The bloodthirsty witch who has defiled this sacred ground will one day be banished from this world by divine will!",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010948
         ]
     },
     {
         "Id": 228,
         "ActionId": 228,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 229,
         "ActionId": 229,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4982
@@ -3364,27 +3005,18 @@
     {
         "Id": 230,
         "ActionId": 230,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             500426,
+            "",
             -600
         ]
     },
     {
         "Id": 231,
         "ActionId": 231,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             4,
             500133
@@ -3393,42 +3025,29 @@
     {
         "Id": 232,
         "ActionId": 232,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             5,
             500813,
+            "",
             600
         ]
     },
     {
         "Id": 233,
         "ActionId": 233,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "RImgBg1Shake",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "\"Kill the Witch, kill the Witch!\" The seething crowd shouts with their arms high, yelling the merciless judgment their respective \"Gods\" have brought down upon Bianca."
         ]
     },
     {
         "Id": 234,
         "ActionId": 234,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             4982
         ]
@@ -3436,59 +3055,42 @@
     {
         "Id": 235,
         "ActionId": 235,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539,
             14,
             100,
+            "",
             -20
         ]
     },
     {
         "Id": 236,
         "ActionId": 236,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
             50,
+            "",
             -20
         ]
     },
     {
         "Id": 237,
         "ActionId": 237,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "Rosie tugs at the corner of your clothes, pulling you out of the crowds."
         ]
     },
     {
         "Id": 238,
         "ActionId": 238,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -3496,25 +3098,17 @@
     {
         "Id": 239,
         "ActionId": 239,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Even a child could easily accomplish that—"
         ]
     },
     {
         "Id": 240,
         "ActionId": 240,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4833
@@ -3523,12 +3117,7 @@
     {
         "Id": 241,
         "ActionId": 241,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.5
@@ -3537,12 +3126,7 @@
     {
         "Id": 242,
         "ActionId": 242,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             0.5,
@@ -3554,15 +3138,11 @@
     {
         "Id": 243,
         "ActionId": 243,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             4,
             0.5,
+            "",
             -100,
             -200
         ]
@@ -3570,11 +3150,7 @@
     {
         "Id": 244,
         "ActionId": 244,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 450.0,
         "Params": [
             5,
@@ -3587,12 +3163,7 @@
     {
         "Id": 245,
         "ActionId": 245,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             4833
         ]
@@ -3600,12 +3171,7 @@
     {
         "Id": 246,
         "ActionId": 246,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             4,
@@ -3615,37 +3181,25 @@
     {
         "Id": 247,
         "ActionId": 247,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "For your semi-transparent bodies can pass directly through other people, like souls without physical form."
         ]
     },
     {
         "Id": 248,
         "ActionId": 248,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndAnim": "DialogDisable"
     },
     {
         "Id": 249,
         "ActionId": 249,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "What in the world is going on...",
             250
         ]
@@ -3653,13 +3207,9 @@
     {
         "Id": 250,
         "ActionId": 250,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa.",
             251,
             "Rosie.",
@@ -3671,45 +3221,60 @@
         "ActionId": 251,
         "NextActionId": 253,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "So you already know...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010949
         ]
     },
     {
         "Id": 252,
         "ActionId": 252,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "It's me, Rosa! Asimov's assistant!",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010950
         ]
     },
     {
         "Id": 253,
         "ActionId": 253,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Why are you here?",
             254
         ]
@@ -3717,26 +3282,20 @@
     {
         "Id": 254,
         "ActionId": 254,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 255,
         "ActionId": 255,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4387
@@ -3745,12 +3304,7 @@
     {
         "Id": 256,
         "ActionId": 256,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -3759,12 +3313,7 @@
     {
         "Id": 257,
         "ActionId": 257,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory16.jpg"
         ]
@@ -3772,26 +3321,18 @@
     {
         "Id": 258,
         "ActionId": 258,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            "",
+            "",
             4
         ]
     },
     {
         "Id": 259,
         "ActionId": 259,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0.7
         ]
@@ -3799,59 +3340,60 @@
     {
         "Id": 260,
         "ActionId": 260,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 261,
         "ActionId": 261,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
             "We'll have people monitoring the data at all times, but it still comes down to you two in the end...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010951
         ]
     },
     {
         "Id": 262,
         "ActionId": 262,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 263,
         "ActionId": 263,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -3860,12 +3402,7 @@
     {
         "Id": 264,
         "ActionId": 264,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg"
         ]
@@ -3873,13 +3410,11 @@
     {
         "Id": 265,
         "ActionId": 265,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
+            "",
             4,
             1
         ]
@@ -3887,12 +3422,7 @@
     {
         "Id": 266,
         "ActionId": 266,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0
         ]
@@ -3900,29 +3430,23 @@
     {
         "Id": 267,
         "ActionId": 267,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539,
             14,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 268,
         "ActionId": 268,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "So you're the one who was sent to collect data...",
             272,
             "Why didn't you tell me sooner?",
@@ -3932,33 +3456,51 @@
     {
         "Id": 269,
         "ActionId": 269,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "Asimov said... I'm just there to collect data... He told me to just play my role.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010952
         ]
     },
     {
         "Id": 270,
         "ActionId": 270,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "He also said we should try not to interfere with the dream world before Bianca wakes up.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010953
         ]
     },
@@ -3967,44 +3509,59 @@
         "ActionId": 271,
         "NextActionId": 273,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "But the conditions for her waking up have been met, so I came to bring you back with me.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010954
         ]
     },
     {
         "Id": 272,
         "ActionId": 272,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "Yes... Now that the conditions for Bianca to wake up have been met, we can leave together.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010955
         ]
     },
     {
         "Id": 273,
         "ActionId": 273,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "The conditions...? What conditions?",
             274
         ]
@@ -4012,29 +3569,34 @@
     {
         "Id": 274,
         "ActionId": 274,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "Her drawing the <color=#ff4e4eff><b>Sacred Sword</b></color>.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010956
         ]
     },
     {
         "Id": 275,
         "ActionId": 275,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "But Asimov said keep her from things that cause her pain.",
             276
         ]
@@ -4042,12 +3604,7 @@
     {
         "Id": 276,
         "ActionId": 276,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -4055,25 +3612,17 @@
     {
         "Id": 277,
         "ActionId": 277,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "And the Sacred Sword is obviously one."
         ]
     },
     {
         "Id": 278,
         "ActionId": 278,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539,
@@ -4083,46 +3632,59 @@
     {
         "Id": 279,
         "ActionId": 279,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Rosa",
             "To be honest... I found that strange, too. Maybe it's because she's now able to directly face her most painful past. After using the Sacred Sword, Bianca's frame readings are all improving.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010957
         ]
     },
     {
         "Id": 280,
         "ActionId": 280,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "This means she can now safely use the power of her Crepuscule frame, and we've achieved our goal, so we can leave her dream world now.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010958
         ]
     },
     {
         "Id": 281,
         "ActionId": 281,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "But this nightmare is still going on.",
             282
         ]
@@ -4130,29 +3692,34 @@
     {
         "Id": 282,
         "ActionId": 282,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "That's true...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010959
         ]
     },
     {
         "Id": 283,
         "ActionId": 283,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "If I had cleared the snow from the west side earlier, maybe everyone could have evacuated safely.",
             284,
             "...",
@@ -4162,29 +3729,34 @@
     {
         "Id": 284,
         "ActionId": 284,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "Then the monsters from the east would have attacked even earlier.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010960
         ]
     },
     {
         "Id": 285,
         "ActionId": 285,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "If I had ended Toby and the priest's lives earlier, Bianca wouldn't have had to do it herself.",
             286,
             "...",
@@ -4194,29 +3766,34 @@
     {
         "Id": 286,
         "ActionId": 286,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "You couldn't kill them... Only the Sacred Sword can...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010961
         ]
     },
     {
         "Id": 287,
         "ActionId": 287,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "If we had tried harder, everyone would have understood what Bianca did.",
             288,
             "...",
@@ -4226,29 +3803,34 @@
     {
         "Id": 288,
         "ActionId": 288,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "We could never have won because that was her own inner voice...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010962
         ]
     },
     {
         "Id": 289,
         "ActionId": 289,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...",
             290
         ]
@@ -4256,61 +3838,84 @@
     {
         "Id": 290,
         "ActionId": 290,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "Before you performed the Deep M.I.N.D. connection, I had already collected several rounds of data. This world has its own laws, and certain things are bound to happen according to its logic.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010963
         ]
     },
     {
         "Id": 291,
         "ActionId": 291,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "Asimov told me that human dreams are all constructed from past experiences. We can change the \"future,\" but we cannot change the \"past\"...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010964
         ]
     },
     {
         "Id": 292,
         "ActionId": 292,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "By helping her draw the Sacred Sword and face the painful past that is tormenting her, you've already done so much for her. That's why she can wake up now.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010965
         ]
     },
     {
         "Id": 293,
         "ActionId": 293,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...And then? Will she still have nightmares like this?",
             294
         ]
@@ -4318,30 +3923,35 @@
     {
         "Id": 294,
         "ActionId": 294,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "I don't know... She might, since memories can't be changed...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010966
         ]
     },
     {
         "Id": 295,
         "ActionId": 295,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "If I leave right now...",
             296
         ]
@@ -4349,13 +3959,9 @@
     {
         "Id": 296,
         "ActionId": 296,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "She might be able to use her Crepuscule frame...",
             297
         ]
@@ -4363,13 +3969,9 @@
     {
         "Id": 297,
         "ActionId": 297,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "But her nightmares would continue to torment her...",
             298
         ]
@@ -4377,31 +3979,36 @@
     {
         "Id": 298,
         "ActionId": 298,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "Wait, Commandant! Where are you going?",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010967
         ]
     },
     {
         "Id": 299,
         "ActionId": 299,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "To find Bianca.",
             300
         ]
@@ -4409,14 +4016,10 @@
     {
         "Id": 300,
         "ActionId": 300,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "To change the \"future.\"",
             301
         ]
@@ -4424,26 +4027,20 @@
     {
         "Id": 301,
         "ActionId": 301,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 302,
         "ActionId": 302,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "DialogEnable"
         ]
@@ -4451,11 +4048,7 @@
     {
         "Id": 303,
         "ActionId": 303,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             1,
@@ -4465,12 +4058,7 @@
     {
         "Id": 304,
         "ActionId": 304,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             100
@@ -4479,12 +4067,7 @@
     {
         "Id": 305,
         "ActionId": 305,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory1089.jpg"
         ]
@@ -4492,26 +4075,19 @@
     {
         "Id": 306,
         "ActionId": 306,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "It is April, the season of recovery, yet swirling snow is hiding the lush spring scenery beneath its veil."
         ]
     },
     {
         "Id": 307,
         "ActionId": 307,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             999,
@@ -4524,12 +4100,7 @@
     {
         "Id": 308,
         "ActionId": 308,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory1092.jpg"
         ]
@@ -4537,12 +4108,7 @@
     {
         "Id": 309,
         "ActionId": 309,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999
         ]
@@ -4550,12 +4116,7 @@
     {
         "Id": 310,
         "ActionId": 310,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539
@@ -4564,31 +4125,35 @@
     {
         "Id": 311,
         "ActionId": 311,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Rosa",
             "They're saying that after the Abyss monsters appeared, many people became followers of the Abyss.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010968
         ]
     },
     {
         "Id": 312,
         "ActionId": 312,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Followers of the Abyss?",
             313
         ]
@@ -4596,12 +4161,7 @@
     {
         "Id": 313,
         "ActionId": 313,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             14
@@ -4610,44 +4170,57 @@
     {
         "Id": 314,
         "ActionId": 314,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "Yes, followers of the Abyss are supposed to be immune to the Abyss and thus find happiness.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010969
         ]
     },
     {
         "Id": 315,
         "ActionId": 315,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "And Bianca became the \"Witch.\" The sword she carried also became the Devil Sword... They believe she takes their happiness away.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010970
         ]
     },
     {
         "Id": 316,
         "ActionId": 316,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -4655,25 +4228,17 @@
     {
         "Id": 317,
         "ActionId": 317,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You spend your time searching and asking around the town with Rosa, yet all you learn are nothing but rumors."
         ]
     },
     {
         "Id": 318,
         "ActionId": 318,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4387
@@ -4682,11 +4247,7 @@
     {
         "Id": 319,
         "ActionId": 319,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1800.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
@@ -4696,12 +4257,7 @@
     {
         "Id": 320,
         "ActionId": 320,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory698.jpg"
         ]
@@ -4709,25 +4265,17 @@
     {
         "Id": 321,
         "ActionId": 321,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Clinging to a glimmer of hope, you ride back together to the Snowfields."
         ]
     },
     {
         "Id": 322,
         "ActionId": 322,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539
@@ -4736,12 +4284,7 @@
     {
         "Id": 323,
         "ActionId": 323,
-        "NextActionId": 0,
         "Type": 308,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             324,
             326
@@ -4750,72 +4293,77 @@
     {
         "Id": 324,
         "ActionId": 324,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Rosa",
             "We're here, 【kuroname】.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010971
         ]
     },
     {
         "Id": 325,
         "ActionId": 325,
-        "NextActionId": 0,
         "Type": 308,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             328
         ]
     },
     {
         "Id": 326,
         "ActionId": 326,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Rosa",
             "We're here, 【kuroname】.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010972
         ]
     },
     {
         "Id": 327,
         "ActionId": 327,
-        "NextActionId": 0,
         "Type": 308,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             328
         ]
     },
     {
         "Id": 328,
         "ActionId": 328,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             14
@@ -4824,28 +4372,32 @@
     {
         "Id": 329,
         "ActionId": 329,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "There are no signs of monsters here, just like I thought... but...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010973
         ]
     },
     {
         "Id": 330,
         "ActionId": 330,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -4853,25 +4405,17 @@
     {
         "Id": 331,
         "ActionId": 331,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "But... it is now nothing but ruins."
         ]
     },
     {
         "Id": 332,
         "ActionId": 332,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4636
@@ -4880,38 +4424,27 @@
     {
         "Id": 333,
         "ActionId": 333,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You dismount with Rosa and walk toward the once-magnificent church. It's now buried in a thick blanket of snow and is as silent as a tombstone."
         ]
     },
     {
         "Id": 334,
         "ActionId": 334,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Could Bianca be here?"
         ]
     },
     {
         "Id": 335,
         "ActionId": 335,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539,
@@ -4921,30 +4454,33 @@
     {
         "Id": 336,
         "ActionId": 336,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Rosa",
             "This is where we used to listen to Bianca tell stories. You were here, too. All of us gathered around you...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010974
         ]
     },
     {
         "Id": 337,
         "ActionId": 337,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -4952,12 +4488,7 @@
     {
         "Id": 338,
         "ActionId": 338,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4876
@@ -4966,11 +4497,7 @@
     {
         "Id": 339,
         "ActionId": 339,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1500.0,
         "Params": [
             999,
@@ -4983,12 +4510,7 @@
     {
         "Id": 340,
         "ActionId": 340,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory707.jpg"
         ]
@@ -4996,12 +4518,7 @@
     {
         "Id": 341,
         "ActionId": 341,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999
         ]
@@ -5009,26 +4526,18 @@
     {
         "Id": 342,
         "ActionId": 342,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You walk with Rosa among ruins, pull open the frozen windows, and step into what was once the courtyard..."
         ]
     },
     {
         "Id": 343,
         "ActionId": 343,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539,
@@ -5038,43 +4547,45 @@
     {
         "Id": 344,
         "ActionId": 344,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Rosa",
             "We used to have snowball fights. Bianca tried to catch the misbehaving kids, but always ended up catching you instead.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010975
         ]
     },
     {
         "Id": 345,
         "ActionId": 345,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 346,
         "ActionId": 346,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             2593
@@ -5083,12 +4594,7 @@
     {
         "Id": 347,
         "ActionId": 347,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -5097,26 +4603,18 @@
     {
         "Id": 348,
         "ActionId": 348,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png",
+            "",
+            "",
             4
         ]
     },
     {
         "Id": 349,
         "ActionId": 349,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0.7
         ]
@@ -5124,56 +4622,44 @@
     {
         "Id": 350,
         "ActionId": 350,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501280,
             5,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 351,
         "ActionId": 351,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "The day Bianca chose to draw the Sacred Sword, the courtyard was stained with blood."
         ]
     },
     {
         "Id": 352,
         "ActionId": 352,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 353,
         "ActionId": 353,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -5182,13 +4668,11 @@
     {
         "Id": 354,
         "ActionId": 354,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
+            "",
             4,
             1
         ]
@@ -5196,12 +4680,7 @@
     {
         "Id": 355,
         "ActionId": 355,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0
         ]
@@ -5209,25 +4688,17 @@
     {
         "Id": 356,
         "ActionId": 356,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You know very well she had a painful past, but not even in dreams can she have the slightest peace."
         ]
     },
     {
         "Id": 357,
         "ActionId": 357,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539
@@ -5236,29 +4707,32 @@
     {
         "Id": 358,
         "ActionId": 358,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Rosa",
             "...The snow in front of the steps is so thin, and there's even a small shelter in the middle of the courtyard. Huh... was someone here?",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010976
         ]
     },
     {
         "Id": 359,
         "ActionId": 359,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -5266,25 +4740,17 @@
     {
         "Id": 360,
         "ActionId": 360,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Beyond the steps is the courtyard that holds memories, and at its center are seeds that crystallize hope. The snow has been carefully cleared, while the seeds are sheltered beneath a roof."
         ]
     },
     {
         "Id": 361,
         "ActionId": 361,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4385
@@ -5293,12 +4759,7 @@
     {
         "Id": 362,
         "ActionId": 362,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -5307,12 +4768,7 @@
     {
         "Id": 363,
         "ActionId": 363,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0.7
         ]
@@ -5320,45 +4776,46 @@
     {
         "Id": 364,
         "ActionId": 364,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501280,
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 365,
         "ActionId": 365,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
             "When spring comes, you'll return to the church and watch the lilies bloom with me.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010979
         ]
     },
     {
         "Id": 366,
         "ActionId": 366,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -5367,12 +4824,7 @@
     {
         "Id": 367,
         "ActionId": 367,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0
         ]
@@ -5380,45 +4832,46 @@
     {
         "Id": 368,
         "ActionId": 368,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539,
             14,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 369,
         "ActionId": 369,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Rosa",
             "Spring has arrived...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010977
         ]
     },
     {
         "Id": 370,
         "ActionId": 370,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -5426,40 +4879,30 @@
     {
         "Id": 371,
         "ActionId": 371,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "But the buds beneath the snow have already withered in the bitter cold."
         ]
     },
     {
         "Id": 372,
         "ActionId": 372,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The seeds you planted together lie buried deep in the earth alongside your unfinished feelings, never to bloom."
         ]
     },
     {
         "Id": 373,
         "ActionId": 373,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...Bianca, we made a promise.",
             374,
             "...",
@@ -5469,11 +4912,7 @@
     {
         "Id": 374,
         "ActionId": 374,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             1,
@@ -5483,12 +4922,7 @@
     {
         "Id": 375,
         "ActionId": 375,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             229
@@ -5497,12 +4931,7 @@
     {
         "Id": 376,
         "ActionId": 376,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory699.jpg"
         ]
@@ -5510,59 +4939,57 @@
     {
         "Id": 377,
         "ActionId": 377,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501280,
             9,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 378,
         "ActionId": 378,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "It is the end of March. Having just buried the last body from the church in the white graveyard, Bianca puts her hands together to pray."
         ]
     },
     {
         "Id": 379,
         "ActionId": 379,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "...Please welcome their souls and let them rest in eternal peace...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010978
         ]
     },
     {
         "Id": 380,
         "ActionId": 380,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -5570,25 +4997,18 @@
     {
         "Id": 381,
         "ActionId": 381,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After confirming your safety from a hidden corner of the town, she sets off once again to return to this church."
         ]
     },
     {
         "Id": 382,
         "ActionId": 382,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             999,
@@ -5601,12 +5021,7 @@
     {
         "Id": 383,
         "ActionId": 383,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory707.jpg"
         ]
@@ -5614,12 +5029,7 @@
     {
         "Id": 384,
         "ActionId": 384,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999
         ]
@@ -5627,39 +5037,28 @@
     {
         "Id": 385,
         "ActionId": 385,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The extreme cold has driven away the reinforcements who came to investigate, so Bianca arrives at the church's courtyard and clears the snow from its steps alone."
         ]
     },
     {
         "Id": 386,
         "ActionId": 386,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "But she still silently cleans the courtyard, tills the soil, waters and fertilizes it, and finally sets up a small shelter..."
         ]
     },
     {
         "Id": 387,
         "ActionId": 387,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501280,
@@ -5669,29 +5068,32 @@
     {
         "Id": 388,
         "ActionId": 388,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
             "\"When spring comes, you'll return to the church and watch the lilies bloom with me.\"",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010979
         ]
     },
     {
         "Id": 389,
         "ActionId": 389,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -5699,28 +5101,32 @@
     {
         "Id": 390,
         "ActionId": 390,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Spring has arrived.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010980
         ]
     },
     {
         "Id": 391,
         "ActionId": 391,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -5728,25 +5134,17 @@
     {
         "Id": 392,
         "ActionId": 392,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She stands up with a soft sigh, white mist drifting into the snow."
         ]
     },
     {
         "Id": 393,
         "ActionId": 393,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -5754,65 +5152,48 @@
     {
         "Id": 394,
         "ActionId": 394,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She senses that she has unrealistic hopes for these seeds—she longs for them to bloom."
         ]
     },
     {
         "Id": 395,
         "ActionId": 395,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "But does she want to see her commandant or not?"
         ]
     },
     {
         "Id": 396,
         "ActionId": 396,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Does she wish for the petals to bring her commandant back to her, or does she wish for the children to stay by her commandant's side in her place?"
         ]
     },
     {
         "Id": 397,
         "ActionId": 397,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She struggles to find her answers."
         ]
     },
     {
         "Id": 398,
         "ActionId": 398,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "DialogDisable"
         ]
@@ -5820,12 +5201,7 @@
     {
         "Id": 399,
         "ActionId": 399,
-        "NextActionId": 0,
         "Type": 509,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory954.png",
             2
@@ -5834,12 +5210,7 @@
     {
         "Id": 400,
         "ActionId": 400,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory1039.png"
         ]
@@ -5847,23 +5218,14 @@
     {
         "Id": 401,
         "ActionId": 401,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 400.0
     },
     {
         "Id": 402,
         "ActionId": 402,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab",
             3
@@ -5872,11 +5234,7 @@
     {
         "Id": 403,
         "ActionId": 403,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2500.0,
         "Params": [
             2,
@@ -5886,98 +5244,73 @@
     {
         "Id": 404,
         "ActionId": 404,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab"
         ]
     },
     {
         "Id": 405,
         "ActionId": 405,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "That day, the light from the sword that cut through the sin also split her memories into two parts—one bitter yet radiant, the other drowned in darkness."
         ]
     },
     {
         "Id": 406,
         "ActionId": 406,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501280,
+            "",
             -680
         ]
     },
     {
         "Id": 407,
         "ActionId": 407,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500678,
+            "",
             550
         ]
     },
     {
         "Id": 408,
         "ActionId": 408,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "Bianca stands on one end, 【kuroname】 the other."
         ]
     },
     {
         "Id": 409,
         "ActionId": 409,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 410,
         "ActionId": 410,
-        "NextActionId": 0,
         "Type": 510,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 450.0,
         "Params": [
             2
@@ -5986,12 +5319,7 @@
     {
         "Id": 411,
         "ActionId": 411,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory707.jpg"
         ]
@@ -5999,45 +5327,47 @@
     {
         "Id": 412,
         "ActionId": 412,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501280,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 413,
         "ActionId": 413,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
             "...No matter what, I hope you stay in the light.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010981
         ]
     },
     {
         "Id": 414,
         "ActionId": 414,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -6045,12 +5375,7 @@
     {
         "Id": 415,
         "ActionId": 415,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1543
@@ -6059,26 +5384,18 @@
     {
         "Id": 416,
         "ActionId": 416,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After securing the greenhouse, she gently closes the gate to the courtyard."
         ]
     },
     {
         "Id": 417,
         "ActionId": 417,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
             3
@@ -6087,12 +5404,7 @@
     {
         "Id": 418,
         "ActionId": 418,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory1112.jpg"
         ]
@@ -6100,26 +5412,18 @@
     {
         "Id": 419,
         "ActionId": 419,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Horses gallop as you ride together with Rosa toward the snowy mountain where Bianca once prayed."
         ]
     },
     {
         "Id": 420,
         "ActionId": 420,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500539,
@@ -6129,59 +5433,69 @@
     {
         "Id": 421,
         "ActionId": 421,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Rosa",
             "It's so cold...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010982
         ]
     },
     {
         "Id": 422,
         "ActionId": 422,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Lost in thought, Rosa watches the icy crystals drift into the distance."
         ]
     },
     {
         "Id": 423,
         "ActionId": 423,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "...She's crying...",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010983
         ]
     },
     {
         "Id": 424,
         "ActionId": 424,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...",
             425,
             "...?",
@@ -6191,12 +5505,7 @@
     {
         "Id": 425,
         "ActionId": 425,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -6206,39 +5515,41 @@
         "ActionId": 426,
         "NextActionId": 430,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Snowflakes fall with desolate beauty, clear and fragile like teardrops."
         ]
     },
     {
         "Id": 427,
         "ActionId": 427,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "...Bianca is crying.",
             1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             100010984
         ]
     },
     {
         "Id": 428,
         "ActionId": 428,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -6246,25 +5557,17 @@
     {
         "Id": 429,
         "ActionId": 429,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Rosa repeats her words. She watches the snowflakes fall with desolate beauty, clear and fragile like teardrops."
         ]
     },
     {
         "Id": 430,
         "ActionId": 430,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             5165
@@ -6273,11 +5576,7 @@
     {
         "Id": 431,
         "ActionId": 431,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 300.0,
         "Params": [
             "0|10|-5",
@@ -6287,12 +5586,7 @@
     {
         "Id": 432,
         "ActionId": 432,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|0|-10",
             0.25
@@ -6301,39 +5595,29 @@
     {
         "Id": 433,
         "ActionId": 433,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You slowly climb the frozen path, as frosty winds hurl fragments of crystal as sharp as ice blades against you."
         ]
     },
     {
         "Id": 434,
         "ActionId": 434,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Could she be here?"
         ]
     },
     {
         "Id": 435,
         "ActionId": 435,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca—!",
             436,
             "...",
@@ -6343,26 +5627,19 @@
     {
         "Id": 436,
         "ActionId": 436,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The only response is the chaotic sound of wind in your ears."
         ]
     },
     {
         "Id": 437,
         "ActionId": 437,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Push forward)",
             438,
             "...",
@@ -6372,12 +5649,7 @@
     {
         "Id": 438,
         "ActionId": 438,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab",
             2
@@ -6386,11 +5658,7 @@
     {
         "Id": 439,
         "ActionId": 439,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 300.0,
         "Params": [
             "0|10|-15",
@@ -6400,11 +5668,7 @@
     {
         "Id": 440,
         "ActionId": 440,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 300.0,
         "Params": [
             "0|10|-10",
@@ -6414,11 +5678,7 @@
     {
         "Id": 441,
         "ActionId": 441,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 300.0,
         "Params": [
             "0|15|-15",
@@ -6428,12 +5688,7 @@
     {
         "Id": 442,
         "ActionId": 442,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|0|-20",
             0.25
@@ -6442,26 +5697,19 @@
     {
         "Id": 443,
         "ActionId": 443,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You two struggle upward with each step, only to be blown back by the wind... By the time you're halfway up, you can no longer move another inch."
         ]
     },
     {
         "Id": 444,
         "ActionId": 444,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Beat against the snow veil)",
             445,
             "...",
@@ -6471,12 +5719,7 @@
     {
         "Id": 445,
         "ActionId": 445,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1514
@@ -6485,11 +5728,7 @@
     {
         "Id": 446,
         "ActionId": 446,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 250.0,
         "Params": [
             "RImgBg1Shake"
@@ -6498,12 +5737,7 @@
     {
         "Id": 447,
         "ActionId": 447,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1514
         ]
@@ -6511,26 +5745,19 @@
     {
         "Id": 448,
         "ActionId": 448,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Dense snowflakes form a spinning whirl before you, trapping the upper mountain within."
         ]
     },
     {
         "Id": 449,
         "ActionId": 449,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Force your way through)",
             450,
             "...",
@@ -6540,12 +5767,7 @@
     {
         "Id": 450,
         "ActionId": 450,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
@@ -6553,12 +5775,7 @@
     {
         "Id": 451,
         "ActionId": 451,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             3077
@@ -6567,12 +5784,7 @@
     {
         "Id": 452,
         "ActionId": 452,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             5165
         ]
@@ -6580,38 +5792,25 @@
     {
         "Id": 453,
         "ActionId": 453,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab"
         ]
     },
     {
         "Id": 454,
         "ActionId": 454,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab"
         ]
     },
     {
         "Id": 455,
         "ActionId": 455,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -6620,24 +5819,17 @@
     {
         "Id": 456,
         "ActionId": 456,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The world before your eyes plunges into darkness."
         ]
     },
     {
         "Id": 457,
         "ActionId": 457,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 50.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab",
@@ -6647,12 +5839,7 @@
     {
         "Id": 458,
         "ActionId": 458,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory105.png"
         ]
@@ -6660,12 +5847,7 @@
     {
         "Id": 459,
         "ActionId": 459,
-        "NextActionId": 0,
         "Type": 111,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab"
@@ -6674,25 +5856,17 @@
     {
         "Id": 460,
         "ActionId": 460,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "When your vision clears again, you find yourself back at the mountain's base with Rosa."
         ]
     },
     {
         "Id": 461,
         "ActionId": 461,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -6700,27 +5874,22 @@
     {
         "Id": 462,
         "ActionId": 462,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The two of you drift like a tiny ship in a vast, white ocean. You move forward, only to be dragged back to the beginning by waves of snow."
         ]
     },
     {
         "Id": 463,
         "ActionId": 463,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Whether she's still here or not, her heart has already sealed itself off."
         ]
     }

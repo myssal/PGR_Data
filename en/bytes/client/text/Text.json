@@ -404,6 +404,10 @@
         "Text": "Reward Details"
     },
     {
+        "Key": "WeeklyActiveRewardTitle",
+        "Text": "Reward Details"
+    },
+    {
         "Key": "SettingCheckSave",
         "Text": "Save changes?"
     },
@@ -1152,6 +1156,10 @@
         "Text": "Progress {0}"
     },
     {
+        "Key": "BossSingleChallengeButtonScoreDisplay",
+        "Text": "{0}/<color=#525963>{1}</color>"
+    },
+    {
         "Key": "BossSingleNoNeedScore",
         "Text": "All obtained"
     },
@@ -1166,6 +1174,10 @@
     {
         "Key": "BossSingleMinuteHideBoss",
         "Text": "<color=#e53632>{0}m</color>"
+    },
+    {
+        "Key": "BossSingleTimeLimit",
+        "Text": "Clear Time Limit: {0} minute(s)"
     },
     {
         "Key": "BossSingleLevel",
@@ -3498,7 +3510,7 @@
     },
     {
         "Key": "PurchaseYKDes",
-        "Text": "[Monthly Pass A]\\n1. Purchase the Monthly Pass A to claim 100 Black Cards at 07:00 AM UTC every day for 30 days.\\n2. You may purchase up to 2 Monthly Pass A only. Cannot own Monthly Pass A & Monthly Pass C in a same period.\\n3. Once you have purchased a Monthly Pass A, you will receive 300 Black Cards immediately.\\n\\n[Monthly Pass C]\\n1. Purchase the Monthly Pass C to claim 90 Black Cards at 07:00 AM UTC every day for 30 days.\\n2. You may purchase up to 2 Monthly Pass C only. Cannot own Monthly Pass A and Monthly Pass C in a same period.\\n3. Once you have purchased a Monthly Pass C, you will receive 300 Black Cards immediately."
+        "Text": "月卡购买后，持续30日，每日5:00，可领取100黑卡。\\n月卡最多购买6张，时间叠加，每天只能领取一次100黑卡奖励。\\n购买后可立即获取300黑卡。"
     },
     {
         "Key": "SaveShowSetting",
@@ -17818,7 +17830,7 @@
     },
     {
         "Key": "BossSingleDetailAllScore",
-        "Text": "<color=#0E70BDFF>{0}</color>"
+        "Text": "{0}"
     },
     {
         "Key": "ActivityOpenMonthDayTime",
@@ -18411,6 +18423,42 @@
     {
         "Key": "BossInshotFightTips",
         "Text": "Incomplete tutorial stage. Go immediately?"
+    },
+    {
+        "Key": "BossInshotToastTowerUp",
+        "Text": "成功升层"
+    },
+    {
+        "Key": "BossInshotToastTowerDown",
+        "Text": "降层触发"
+    },
+    {
+        "Key": "BossInshotToastTowerClear",
+        "Text": "恭喜通关"
+    },
+    {
+        "Key": "BossInshotToastTowerDownProtected",
+        "Text": "降层保护触发"
+    },
+    {
+        "Key": "BossInshotToastTowerFloor",
+        "Text": "{0}F"
+    },
+    {
+        "Key": "BossInshotToastTowerDescUp",
+        "Text": "评分达{0}，上升{1}层。"
+    },
+    {
+        "Key": "BossInshotToastTowerDescDown",
+        "Text": "评分未达{0}，降至{1}层。"
+    },
+    {
+        "Key": "BossInshotToastTowerDescClear",
+        "Text": "可选择其他Boss挑战，获取更高排名。\\n失败不再触发降层。"
+    },
+    {
+        "Key": "BossInshotToastTowerDescDownProtected",
+        "Text": "首次未达{0}，不降层。"
     },
     {
         "Key": "DlcRoomKickOutTip",
@@ -19038,7 +19086,7 @@
     },
     {
         "Key": "NonogramSettlementTitleAllFinish",
-        "Text": "You've explored all night explorations!"
+        "Text": "恭喜完成所有暗房探索"
     },
     {
         "Key": "NonogramSettlementTitleExit",
@@ -23506,7 +23554,7 @@
     },
     {
         "Key": "PurchaseMonthPlusDesc",
-        "Text": "1. Rules: Upon purchase, you will immediately receive 1000 Event R&D Tickets and 1 [Black Card Monthly Pass] (Black Card Monthly Pass provides a total of 3300 Black Cards).\\n2. Black Card Monthly Pass: Immediately grants 300 Black Cards when obtained. Starting from the day of purchase, you can log in daily to claim 100 Black Cards for 30 consecutive days. Daily rewards will be automatically claimed when you log in after 05:00 UTC every day, or you can manually claim the rewards in the [Monthly Pass] tab at [Main Interface - Event]. This tab also displays your remaining days of the Black Card Monthly Pass.\\n3. Purchase Limit: [Beginner Monthly Pass Combo Supply] can only be purchased once and is not affected by the purchase limit of the current [Black Card Monthly Pass]. For example, if you currently have 6 active monthly passes (maximum 6), you can still purchase the [Beginner Monthly Pass Combo Supply]. After purchase, the remaining days of the Black Card Monthly Pass will be extended accordingly.\\nSpecial Note: You are unable to purchase [Beginner Monthly Pass Combo Supply] if you have already purchased [Monthly Pass C]."
+        "Text": "1. Rules: Upon purchase, you will immediately receive 1000 Event R&D Tickets and 1 [Black Card Monthly Pass] (Black Card Monthly Pass provides a total of 3300 Black Cards).\\n2. Black Card Monthly Pass: Immediately grants 300 Black Cards when obtained. Starting from the activation date, you can log in daily to claim 100 Black Cards for 30 consecutive days. Daily rewards will be automatically claimed when you log in after 05:00 UTC every day, or you can manually claim the rewards in the [Monthly Pass] tab at [Main Interface - Event]. This tab also displays your remaining days of the Black Card Monthly Pass.\\n3. Purchase Limit: [Monthly Pass R&D Ticket Bundle] can only be purchased once and is not affected by the purchase limit of the current [Black Card Monthly Pass]. For example, if you currently have 2 active monthly passes (the maximum), you can still purchase the [Monthly Pass R&D Ticket Bundle]. After purchase, the remaining days of the Black Card Monthly Pass will be extended accordingly.\\nSpecial Note: You are unable to purchase [Monthly Pass R&D Ticket Bundle] if you have already purchased [Monthly Pass C]."
     },
     {
         "Key": "PurchaseComboTitle",
@@ -23514,7 +23562,7 @@
     },
     {
         "Key": "PurchaseComboContent",
-        "Text": "1. Rules: A bundle contains multiple Supply Packs. Upon purchase, you will receive the contents of multiple Supply Packs at a discounted price.\\n2. Supply Packs purchased individually do not affect the bundle's pricing calculation.\\n3. After purchase, all Supply Packs contained in the bundle will be marked as sold out and cannot be purchased again."
+        "Text": "1. Rules: A bundle contains multiple Supply Packs. Upon purchase, you will receive the contents of multiple Supply Packs at the displayed price.\\n2. Supply Packs purchased individually do not affect the bundle's pricing calculation.\\n3. After purchase, all Supply Packs contained in the bundle will be marked as sold out and cannot be purchased again."
     },
     {
         "Key": "PurchaseFirstRechargeTipTitle",
@@ -23737,6 +23785,102 @@
         "Text": "Current: {0}"
     },
     {
+        "Key": "Theatre6StoryProgress",
+        "Text": "Progress: {0}/{1}"
+    },
+    {
+        "Key": "Theatre6StoryConsumeNoEnought",
+        "Text": "Insufficient Sealed Writs"
+    },
+    {
+        "Key": "Theatre6StoryConsumeTip",
+        "Text": "Obtainable from stages: {0}"
+    },
+    {
+        "Key": "Theatre6StoryPurchaseTip",
+        "Text": "Insufficient {0}. Obtain more from stages."
+    },
+    {
+        "Key": "Theatre6StoryGiveUp",
+        "Text": "Abandon the current progress?"
+    },
+    {
+        "Key": "Theatre6Save",
+        "Text": "Save"
+    },
+    {
+        "Key": "Theatre6SaveReplace",
+        "Text": "Compare & Replace"
+    },
+    {
+        "Key": "Theatre6AttrPackTypeName",
+        "Text": "Relics"
+    },
+    {
+        "Key": "Theatre6BuffEffectTimes",
+        "Text": "Active: {0}"
+    },
+    {
+        "Key": "Theatre6BuffRemainingTimes",
+        "Text": "Remaining: {0}"
+    },
+    {
+        "Key": "Theatre6TaskFinish",
+        "Text": "Completed"
+    },
+    {
+        "Key": "Theatre6StoryUnlock",
+        "Text": "Unlock {0}"
+    },
+    {
+        "Key": "Theatre6FreeRefresh",
+        "Text": "Free"
+    },
+    {
+        "Key": "Theatre6TaskGoldTip",
+        "Text": "Insufficient Ancient Coins"
+    },
+    {
+        "Key": "Theatre6TaskRefreshTip",
+        "Text": "Refresh limit reached"
+    },
+    {
+        "Key": "Theatre6TaskChooseCountTip",
+        "Text": "Please select {0} mission(s)"
+    },
+    {
+        "Key": "Theatre6TaskProgressFinish",
+        "Text": "Perfectly Done!"
+    },
+    {
+        "Key": "Theatre6TaskChooseLimit",
+        "Text": "Mission selection limit reached"
+    },
+    {
+        "Key": "Theatre6FightEquipSkillTip",
+        "Text": "Equippable skills available. Enter battle anyway?"
+    },
+    {
+        "Key": "Theatre6FightHighSkillTip",
+        "Text": "存在更高等级的技能，是否直接进入战斗"
+    },
+    {
+        "Key": "Theatre6TalentLvRichText",
+        "Text": "<size=28><b>Lv.</b></size>{0}"
+    },
+    {
+        "Key": "Theatre6TaskShopTimeLabel",
+        "Text": "Remaining time: {0}"
+    },
+    {
+        "Key": "Theatre6EntranceTimeLabel",
+        "Text": "Limited-Time Rewards expire in: {0}"
+    },
+    {
+        "Key": "Theatre6ChooseMaxTaskTip",
+        "Text": "Select 3 missions"
+    },
+    {
         "Key": "UsePackageOverMaxCount",
         "Text": "{0} usage limit reached"
     },
@@ -23809,6 +23953,14 @@
         "Text": "Failed to retrieve stage data"
     },
     {
+        "Key": "Theatre6GiveUpTitle",
+        "Text": "放弃归档"
+    },
+    {
+        "Key": "Theatre6SaveGiveUpContent",
+        "Text": "是否放弃归档"
+    },
+    {
         "Key": "DownloadAllCharacterFashion",
         "Text": "All Coatings for this member"
     },
@@ -23818,7 +23970,7 @@
     },
     {
         "Key": "FashionDownloadAllCharacterDesc",
-        "Text": "All undownloaded Coating resources for {0}"
+        "Text": "{0}所有未下载的涂装资源"
     },
     {
         "Key": "FubenRepeatChallengeDoubleRewardTimes",
@@ -23829,12 +23981,68 @@
         "Text": "Download Started"
     },
     {
+        "Key": "BtnPvpTip",
+        "Text": "在后续版本内，可以使用角色归档与其他玩家进行对战"
+    },
+    {
+        "Key": "BtnPvpTipTitle",
+        "Text": "Stay tuned"
+    },
+    {
+        "Key": "Theatre6Shop",
+        "Text": "Shop"
+    },
+    {
+        "Key": "Theatre6Task",
+        "Text": "Mission"
+    },
+    {
         "Key": "SelectFashionToUninstall",
         "Text": "Select the Coating resources to uninstall"
     },
     {
         "Key": "SelectFashionToDownload",
         "Text": "Select the Coating resources to download"
+    },
+    {
+        "Key": "Theatre6StoryGiveUpTitle",
+        "Text": "Abandon Progress"
+    },
+    {
+        "Key": "Theatre6ActiveSkill",
+        "Text": "Active Skill"
+    },
+    {
+        "Key": "Theatre6BattleSkill",
+        "Text": "Parry Skill"
+    },
+    {
+        "Key": "Theatre6CSSkill",
+        "Text": "Counter Skill"
+    },
+    {
+        "Key": "Theatre6InsertSkill",
+        "Text": "Trigger Skill"
+    },
+    {
+        "Key": "Theatre6DifficultyEasy",
+        "Text": "EASY"
+    },
+    {
+        "Key": "Theatre6DifficultyHard",
+        "Text": "HARD"
+    },
+    {
+        "Key": "Theatre6CoinNotEnough",
+        "Text": "Insufficient Ancient Coins. Cannot purchase."
+    },
+    {
+        "Key": "Theatre6SkillMax",
+        "Text": "Skill limit reached. Cannot purchase."
+    },
+    {
+        "Key": "Theatre6OverClockEfficiency",
+        "Text": "DMG Multiplier"
     },
     {
         "Key": "DownloadFashionFinished",
@@ -23851,6 +24059,46 @@
     {
         "Key": "UninstallFashionConfirm",
         "Text": "Uninstall the selected Coating resources?"
+    },
+    {
+        "Key": "Theatre6SkillCSMag",
+        "Text": "DMG Multiplier"
+    },
+    {
+        "Key": "PassportCloudGameDesc",
+        "Text": "Can be used for PGR Cloud Gaming (Must log into cloud gaming before the version ends to activate)"
+    },
+    {
+        "Key": "ChangeGetFashionGroup",
+        "Text": "Set Changed"
+    },
+    {
+        "Key": "ChangeNoGetFashionGroup",
+        "Text": "Complete Coating set not owned. Owned Coating equipped."
+    },
+    {
+        "Key": "Theatre6SanTitleNormal",
+        "Text": "Sanity Normal"
+    },
+    {
+        "Key": "Theatre6SanTitleDeath",
+        "Text": "Maddening Whispers"
+    },
+    {
+        "Key": "Theatre6SanTitleAbnormal",
+        "Text": "Sanity Abnormal"
+    },
+    {
+        "Key": "Theatre6SanTipDesc",
+        "Text": "Current Sanity status. Negative Reverbs will trigger when Sanity drops too low."
+    },
+    {
+        "Key": "Theatre6BattleShopName",
+        "Text": "Intel Space"
+    },
+    {
+        "Key": "Theatre6BattleShopTipExitConfirm",
+        "Text": "placeholder_还有可购买商品或免费刷新次数，是否确认离开商店？"
     },
     {
         "Key": "BattleFashionUndownloadedTipTitle",
@@ -23873,11 +24121,163 @@
         "Text": "Resource download in progress. Cancel download before proceeding."
     },
     {
+        "Key": "Theatre6PopupSkillLevelUpNotShow",
+        "Text": "无可升级技能"
+    },
+    {
+        "Key": "Theatre6PopupSkillLevelUpCancel",
+        "Text": "确定要放弃升级吗？"
+    },
+    {
+        "Key": "Theatre6SkillCoinNotEnough",
+        "Text": "Insufficient Ancient Coins"
+    },
+    {
+        "Key": "PurchaseYKRetroactiveNotNeeded",
+        "Text": "No make-up sign-in needed"
+    },
+    {
+        "Key": "PurchaseYKRetroactiveHelpTitle",
+        "Text": "Makeup Sign-in Details"
+    },
+    {
+        "Key": "PurchaseYKRetroactiveHelpContent",
+        "Text": "Spend a Makeup Sign-in Card to complete one missed monthly sign-in.\\nComplete Weekly Missions to obtain Makeup Sign-in Cards.\\nAt the month's end, available cards will be automatically consumed to fill any missing sign-ins.\\nUnused Makeup Sign-in Cards will expire when the month ends."
+    },
+    {
+        "Key": "PurchaseYKRetroactiveNeedMoreItems",
+        "Text": "Insufficient Makeup Sign-in Cards"
+    },
+    {
+        "Key": "PassportFashionBuyBtnText",
+        "Text": "Paid Intelligence"
+    },
+    {
         "Key": "FashionSuitProgressComplate",
         "Text": "Complete"
     },
     {
+        "Key": "PassportAutoWindowTitleOpen",
+        "Text": "Tactical Assessment Manual now available"
+    },
+    {
+        "Key": "PassportAutoWindowTitleSprint",
+        "Text": "Tactical Assessment Manual in full swing"
+    },
+    {
+        "Key": "PassportAutoWindowTitleNearEnd",
+        "Text": "Tactical Assessment Manual ending soon"
+    },
+    {
+        "Key": "PassportAutoWindowSubtitleOpen",
+        "Text": "Unlock intel to claim premium rewards"
+    },
+    {
+        "Key": "PassportAutoWindowSubtitleDoubleExp",
+        "Text": "Limited-time double intel value"
+    },
+    {
+        "Key": "PassportObtain",
+        "Text": "This Pass period has <color=#57f0fb>4</color> rounds. Compensation rewards have been sent to you."
+    },
+    {
+        "Key": "ShopItemRoleTips",
+        "Text": "Current Level: {0}. Purchase {1} more to reach Level {2}"
+    },
+    {
+        "Key": "ExportPerformanceTipsDesc",
+        "Text": "Start auto-export?"
+    },
+    {
+        "Key": "ExportPerformanceCancelTipsDesc",
+        "Text": "Export in progress. Cancel?"
+    },
+    {
         "Key": "WaitingForDownloadFashionTip",
         "Text": "Pending other downloads. Press [Cancel Download] to stop."
+    },
+    {
+        "Key": "Theatre6SkillUpGrade",
+        "Text": "等级提升"
+    },
+    {
+        "Key": "Theatre6GetSkill",
+        "Text": "Skill Obtained"
+    },
+    {
+        "Key": "Theatre6GetAttrPack",
+        "Text": "Relics Obtained"
+    },
+    {
+        "Key": "FuBenBossSingleResetNotUsable",
+        "Text": "Cannot reset at the moment"
+    },
+    {
+        "Key": "SetTeamTag",
+        "Text": "Save changes?"
+    },
+    {
+        "Key": "FashionColorLock",
+        "Text": "尚未获得当前异色涂装"
+    },
+    {
+        "Key": "Theatre6SkillChangeError1",
+        "Text": "低等级技能无法替换装备中的高等级技能"
+    },
+    {
+        "Key": "Theatre6SkillChangeError2",
+        "Text": "已装备相同技能,无法重复装备"
+    },
+    {
+        "Key": "Theatre6SkillSlotFull",
+        "Text": "装备槽已满"
+    },
+    {
+        "Key": "Theatre6ShopStatus1",
+        "Text": "Current Refresh"
+    },
+    {
+        "Key": "Theatre6ShopStatus2",
+        "Text": "Free Refresh"
+    },
+    {
+        "Key": "Theatre6ShopStatus3",
+        "Text": "Refresh Limit"
+    },
+    {
+        "Key": "Theatre6SkillBagFull",
+        "Text": "当前背包已满，%s 将自动转换为金币%s，确定要继续吗？"
+    },
+    {
+        "Key": "Theatre6SkillReplaceHigh",
+        "Text": "已替换为高级技能"
+    },
+    {
+        "Key": "Theatre6SkillAutoToBag",
+        "Text": "无法装备低等级技能，自动进入背包"
+    },
+    {
+        "Key": "GameCollectionTips1",
+        "Text": "当前已有其他玩法进行中，是否结算后开始新的玩法？"
+    },
+    {
+        "Key": "GameCollectionTips2",
+        "Text": "是否放弃{0}进度，并立即结算"
+    },
+    {
+        "Key": "GameCollectionTitle1",
+        "Text": "Highest Resource Points"
+    },
+    {
+        "Key": "GameCollectionTitle2",
+        "Text": "Highest Score"
+    },
+    {
+        "Key": "GameCollectionBreakRecordTitle",
+        "Text": "恭喜你在-{0}中再一次突破自己"
+    },
+    {
+        "Key": "Theatre6SkillMoveError",
+        "Text": "技能类型不正确，无法交换"
     }
 ]

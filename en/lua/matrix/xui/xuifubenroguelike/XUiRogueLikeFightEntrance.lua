@@ -122,7 +122,7 @@ function XUiRogueLikeFightEntrance:OnFightClick(stageId)
 
     self.UiRoot:Close()
     local data = {NodeId = self.Node.Id}
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId, data)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, data)
 end
 
 

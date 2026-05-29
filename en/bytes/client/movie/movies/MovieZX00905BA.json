@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory119.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 1000,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             201
@@ -30,12 +20,7 @@
     {
         "Id": 3,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500101
@@ -44,13 +29,8 @@
     {
         "Id": 4,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Gabriel",
@@ -61,40 +41,31 @@
     {
         "Id": 5,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 6,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "RImgBg1Shake",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Boom—"
         ]
     },
     {
         "Id": 7,
         "ActionId": 1001,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             10007502
@@ -103,26 +74,18 @@
     {
         "Id": 8,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "RImgBg1Shake",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Boom—"
         ]
     },
     {
         "Id": 9,
         "ActionId": 1002,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             10007502
@@ -131,25 +94,17 @@
     {
         "Id": 10,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As Gabriel reports to Luna, he continues to bombard the cabin walls of the space station with a hand cannon."
         ]
     },
     {
         "Id": 11,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500101
@@ -158,13 +113,8 @@
     {
         "Id": 12,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Gabriel",
@@ -175,12 +125,7 @@
     {
         "Id": 13,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500105
@@ -189,26 +134,17 @@
     {
         "Id": 14,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 15,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Luna",
@@ -219,13 +155,9 @@
     {
         "Id": 16,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Luna",
             "Those people are also in the space station, but they are not our mission target. Avoid contact if possible.",
             1
@@ -234,26 +166,18 @@
     {
         "Id": 17,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 18,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500101
@@ -262,12 +186,7 @@
     {
         "Id": 19,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Gabriel",
@@ -278,12 +197,7 @@
     {
         "Id": 20,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500105
@@ -292,26 +206,17 @@
     {
         "Id": 21,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 22,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Luna",
@@ -322,13 +227,9 @@
     {
         "Id": 23,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Luna",
             "...I'll pick you up in person.",
             1
@@ -337,26 +238,18 @@
     {
         "Id": 24,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 25,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500101
@@ -365,12 +258,7 @@
     {
         "Id": 26,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Gabriel",
@@ -381,40 +269,31 @@
     {
         "Id": 27,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 28,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "RImgBg1Shake",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Boom—"
         ]
     },
     {
         "Id": 29,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500101
@@ -423,12 +302,7 @@
     {
         "Id": 30,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Gabriel",
@@ -439,39 +313,30 @@
     {
         "Id": 31,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 32,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The entire space station starts trembling vigorously. The connecting joints between compartments slowly disintegrate, layer by layer."
         ]
     },
     {
         "Id": 33,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500101
@@ -480,13 +345,8 @@
     {
         "Id": 34,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Gabriel",
@@ -497,26 +357,20 @@
     {
         "Id": 35,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 36,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory118.png"
         ]
@@ -524,14 +378,10 @@
     {
         "Id": 37,
         "ActionId": 46546,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Broadcast",
             "Dear children, we are now demonstrating how the immune system of the human body works—"
         ]
@@ -539,13 +389,9 @@
     {
         "Id": 38,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Broadcast",
             "Cells infected by bacteria or viruses will be... destroyed and discarded..."
         ]
@@ -553,12 +399,7 @@
     {
         "Id": 39,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001
@@ -567,12 +408,7 @@
     {
         "Id": 40,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Liv",
@@ -583,13 +419,9 @@
     {
         "Id": 41,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "It's the self-defense mechanism.",
             38,
             "I think so.",
@@ -599,52 +431,40 @@
     {
         "Id": 42,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 43,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After a lot of trembling, you look out from the window. Many compartments have already been tossed into space..."
         ]
     },
     {
         "Id": 44,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Some compartments do not have the time to release pressure, and are pushed away instead by their content, including air and Babylonia troops..."
         ]
     },
     {
         "Id": 45,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500080
@@ -653,12 +473,7 @@
     {
         "Id": 46,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Watanabe",
@@ -669,12 +484,7 @@
     {
         "Id": 47,
         "ActionId": 43,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1021001
@@ -683,12 +493,7 @@
     {
         "Id": 48,
         "ActionId": 44,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",
@@ -699,12 +504,7 @@
     {
         "Id": 49,
         "ActionId": 45,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500080
@@ -713,12 +513,7 @@
     {
         "Id": 50,
         "ActionId": 46,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Watanabe",
@@ -729,13 +524,9 @@
     {
         "Id": 51,
         "ActionId": 47,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Watanabe",
             "You destroyed the space station's observation room and weapon control system, which was akin to disabling its attack and defense functions.",
             1
@@ -744,13 +535,9 @@
     {
         "Id": 52,
         "ActionId": 48,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Watanabe",
             "Now that your troops start to land, they have triggered the immune system \"within\" the space station.",
             1
@@ -759,12 +546,7 @@
     {
         "Id": 53,
         "ActionId": 49,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1011001
@@ -773,12 +555,7 @@
     {
         "Id": 54,
         "ActionId": 50,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lee",
@@ -789,13 +566,9 @@
     {
         "Id": 55,
         "ActionId": 51,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Because as long as the gravity core still exists, it can attract and restructure nearby matters like it did in the past...",
             1
@@ -804,13 +577,9 @@
     {
         "Id": 56,
         "ActionId": 52,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "But the integration surely is devastating to us.",
             1
@@ -819,12 +588,7 @@
     {
         "Id": 57,
         "ActionId": 53,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500080
@@ -833,12 +597,7 @@
     {
         "Id": 58,
         "ActionId": 54,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Watanabe",
@@ -849,13 +608,9 @@
     {
         "Id": 59,
         "ActionId": 55,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "I'm ready.",
             56,
             "We're not just gonna sit here and wait.",
@@ -865,12 +620,7 @@
     {
         "Id": 60,
         "ActionId": 56,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1021001
@@ -879,13 +629,9 @@
     {
         "Id": 61,
         "ActionId": 57,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",

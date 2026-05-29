@@ -3,19 +3,20 @@
         "UiName": "UiBigWorldMenu",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsQueue": true
     },
     {
         "UiName": "UiBigWorldTaskMain",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
+        "ImpactIds": [
+            1
+        ]
+    },
+    {
+        "UiName": "UiBigWorldTaskMainInvitation",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
         "ImpactIds": [
             1
         ]
@@ -23,311 +24,198 @@
     {
         "UiName": "UiBigWorldLineChapter",
         "IsPauseFight": true,
-        "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
         "UiName": "UiBigWorldPopupConfirm",
         "IsPauseFight": true,
-        "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
         "UiName": "UiBigWorldMessageTips",
-        "IsPauseFight": false,
-        "IsChangeInput": false,
         "IsQueue": true,
-        "IsHideFightUi": true,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsHideFightUi": true
     },
     {
         "UiName": "UiBigWorldTaskObtain",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsQueue": true
     },
     {
         "UiName": "UiBigWorldTaskObtainDrama",
-        "IsPauseFight": false,
         "IsChangeInput": true,
         "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "ImpactIds": [
+            2
+        ]
     },
     {
         "UiName": "UiBigWorldTaskObtainDramaHeart",
-        "IsPauseFight": false,
         "IsChangeInput": true,
         "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "ImpactIds": [
+            2
+        ]
+    },
+    {
+        "UiName": "UiBigWorldTaskObtainInvitation",
+        "IsChangeInput": true,
+        "IsQueue": true,
+        "ImpactIds": [
+            1
+        ]
+    },
+    {
+        "UiName": "UiBigWorldTaskPopupEndingDetail",
+        "IsChangeInput": true,
+        "IsQueue": true
     },
     {
         "UiName": "UiSkyGardenCafeMain",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenCafeHandBook",
-        "IsPauseFight": false,
-        "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
         "UiName": "UiSkyGardenCafeGame",
-        "IsPauseFight": false,
-        "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
         "UiName": "UiBigWorldMessage",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
         "IsHideFightUi": true,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiBigWorldPopupMessage",
-        "IsPauseFight": false,
-        "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
         "UiName": "UiBigWorldPopupMessageSingle",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsQueue": true
     },
     {
         "UiName": "UiBigWorldLittleMap",
-        "IsPauseFight": false,
-        "IsChangeInput": false,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
         "IsVirtual": true
     },
     {
         "UiName": "UiBigWorldMapDetail",
         "IsPauseFight": true,
-        "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
         "UiName": "UiBigWorldMap",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
+        "UiName": "UiBigWorldMapOverview",
+        "IsPauseFight": true,
+        "IsChangeInput": true
+    },
+    {
         "UiName": "UiBigWorldDIY",
         "IsPauseFight": true,
-        "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
         "UiName": "UiBigWorldBackpack",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": true,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsHideFightUi": true
     },
     {
         "UiName": "UiBigWorldObtain",
         "IsPauseFight": true,
-        "IsChangeInput": true,
-        "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
-        "UiName": "UiBigWorldObtainSpecial",
-        "IsPauseFight": false,
-        "IsChangeInput": false,
-        "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "UiName": "UiBigWorldObtainSpecial"
     },
     {
         "UiName": "UiSkyGardenShoppingStreetMain",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenShoppingStreetGame",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenShoppingStreetInsideBuild",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenShoppingStreetBuild",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenShoppingStreetTarget",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenShoppingStreetPopupRoundEnd",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenShoppingStreetLight",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenShoppingStreetUpgrade",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenShoppingStreetSale",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenDormPhotoWall",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiSkyGardenDormCoating",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
@@ -336,28 +224,16 @@
         "UiName": "UiBigWorldPopupTeach",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsQueue": true
     },
     {
         "UiName": "UiBigWorldPopupQuitShow",
         "IsPauseFight": true,
-        "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
         "UiName": "UiBigWorldPhotographControl",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
@@ -366,76 +242,58 @@
         "UiName": "UiBigWorldPhotographPopupAlbum",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "ImpactIds": [
+            1
+        ]
     },
     {
         "UiName": "UiBigWorldPhotographPopupAlbumDetail",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "ImpactIds": [
+            1
+        ]
     },
     {
         "UiName": "UiBigWorldPhotographPopupPhoto",
-        "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "ImpactIds": [
+            1
+        ]
     },
     {
         "UiName": "UiBigWorldTrialRolePopup",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsQueue": true
     },
     {
         "UiName": "UiBigWorldTeachTips",
-        "IsPauseFight": false,
-        "IsChangeInput": false,
-        "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsQueue": true
     },
     {
         "UiName": "UiBigWorldProcess",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
+        "ImpactIds": [
+            1
+        ]
+    },
+    {
+        "UiName": "UiBigWorldPopupNews",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiBigWorldRewardSidebar",
-        "IsPauseFight": false,
-        "IsChangeInput": false,
-        "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsQueue": true
     },
     {
         "UiName": "UiBigWorldRoleRoom",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
@@ -444,10 +302,6 @@
         "UiName": "UiBigWorldCoating",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
@@ -456,51 +310,104 @@
         "UiName": "UiBigWorldSet",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiBigWorldTeachMain",
-        "IsPauseFight": false,
         "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false,
         "ImpactIds": [
             1
         ]
     },
     {
         "UiName": "UiBigWorldSettlement",
-        "IsPauseFight": false,
-        "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
         "UiName": "UiBigWorldPopupSkipDialogue",
         "IsPauseFight": true,
-        "IsChangeInput": true,
-        "IsQueue": false,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsChangeInput": true
     },
     {
         "UiName": "UiBigWorldTip",
         "IsPauseFight": true,
+        "IsChangeInput": true
+    },
+    {
+        "UiName": "UiBigWorldPopupDelivery",
+        "IsChangeInput": true
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneGame",
+        "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": true,
-        "IsHideFightUi": false,
-        "IsCloseCameraControl": false,
-        "IsVirtual": false
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneMain",
+        "IsChangeInput": true,
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneLoading",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneChapter",
+        "IsChangeInput": true,
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneStageDetail",
+        "IsChangeInput": true,
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneStage",
+        "IsChangeInput": true,
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupSettlement",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupDetail",
+        "IsChangeInput": true,
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupStop",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiBigWorldPurchaseItem",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneShop",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsHideFightUi": true
+    },
+    {
+        "UiName": "UiBigWorldCollegeBanner",
+        "IsPauseFight": true,
+        "IsChangeInput": true
+    },
+    {
+        "UiName": "UiBigWorldPopupTaskInterception",
+        "IsPauseFight": true,
+        "IsChangeInput": true
     }
 ]

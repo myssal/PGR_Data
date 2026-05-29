@@ -197,7 +197,7 @@ function XUiPanelTrialSelect:EnterFight(stage)
         local groupId = XDataCenter.BfrtManager.GetGroupIdByBaseStage(stage.StageId)
         XLuaUiManager.Open("UiBfrtDeploy", groupId)
     else
-        XLuaUiManager.Open("UiBattleRoleRoom", stage.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stage.StageId)
     end
 end
 return XUiPanelTrialSelect

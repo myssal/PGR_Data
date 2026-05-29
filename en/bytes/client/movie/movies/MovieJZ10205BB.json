@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             203
@@ -30,27 +20,18 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500032,
+            "",
             400
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500031,
@@ -61,28 +42,20 @@
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "Lucia and Luna return to the surface..."
         ]
     },
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Luna",
             "Lucia...",
             2
@@ -91,13 +64,9 @@
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "We don't have a choice...",
             1
@@ -106,13 +75,9 @@
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "We have to head out together and search for food...",
             1
@@ -121,14 +86,11 @@
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "Luna, follow tight...",
             1

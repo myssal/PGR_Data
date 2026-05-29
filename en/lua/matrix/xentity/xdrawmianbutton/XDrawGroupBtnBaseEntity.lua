@@ -13,6 +13,7 @@ function XDrawGroupBtnBaseEntity:Ctor()
     self.SwitchDrawIdCount = 0
     self.MaxSwitchDrawIdCount = 0
     self.Order = 0
+    self.ConditionId = 0
 end
 
 function XDrawGroupBtnBaseEntity:GetId()
@@ -65,6 +66,23 @@ end
 
 function XDrawGroupBtnBaseEntity:GetOrder()
     return self.Order
+end
+
+function XDrawGroupBtnBaseEntity:GetConditionId()
+    return self.ConditionId or 0
+end
+
+function XDrawGroupBtnBaseEntity:JudgeCanOpen(isShowHint)
+    local conditionId = self:GetConditionId()
+    if not XTool.IsNumberValid(conditionId) then
+        return true
+    end
+
+    local isOpen, desc = XConditionManager.CheckCondition(conditionId)
+    if isShowHint and not isOpen then
+        XUiManager.TipError(desc)
+    end
+    return isOpen
 end
 
 ---@param root XUiNewDrawMain

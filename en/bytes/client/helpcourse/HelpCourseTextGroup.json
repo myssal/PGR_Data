@@ -402,10 +402,9 @@
     {
         "Id": 1020304,
         "Texts": [
-            "①. Moves Left: Normal Stages have limited moves, but Infinite Stages let you play freely.",
+            "①.当前步数：当前行动的次数",
             "②. Enhanced Moves: Level up to enter Fluffy Time and gain Enhanced Moves, during which the <color=#0E70BD>numbered blocks generated become larger</color>.",
-            "③. Special blocks that will appear in the current level. Tap to view details.",
-            "④. When the board level maxes out, Normal Stages will automatically complete."
+            "③. Special blocks that will appear in the current level. Tap to view details."
         ]
     },
     {
@@ -413,7 +412,7 @@
         "Texts": [
             "①. Score: Earn points whenever you clear or merge blocks.",
             "②. Dream Level: Shows how close you are to the target Dream Level based on your score.",
-            "③. Reach the target Dream Level to finish early."
+            "③.点击右上角可提前结算"
         ]
     },
     {
@@ -474,16 +473,15 @@
         "Id": 1021502,
         "Texts": [
             "① Easy and Hard are available by default. Nightmare and Inferno unlock only after clearing the <color=#0E70BD>previous difficulty</color>.",
-            "② Tap here to view <color=#0E70BD>enemy move details</color>.",
-            "③ Tap here to expand the <color=#0E70BD>Challenge Missions</color> for the enemy.",
-            "④ Certain difficulties are limited to <color=#0E70BD>specific characters</color>."
+            "② Each bounty target features multiple missions that offer rewards upon completion.",
+            "③ Certain difficulties are limited to specific characters."
         ]
     },
     {
         "Id": 1021503,
         "Texts": [
             "① Each bounty target features multiple missions that offer <color=#0E70BD>rewards</color> upon completion.",
-            "② Tap here to view <color=#0E70BD>enemy move details for Challenge Missions</color>."
+            "② Tap here to view <color=#0E70BD>enemy move details</color> for Challenge Missions."
         ]
     },
     {
@@ -999,7 +997,7 @@
     {
         "Id": 1004504,
         "Texts": [
-            "① Complete certain sets of puzzle shards to claim the Set Piece Reward."
+            "① Complete certain sets of puzzle pieces to claim the Set Piece Reward."
         ]
     },
     {
@@ -1073,6 +1071,121 @@
             "③ Sprint Charge: Affects the speed at which sprint charges up.",
             "④ Knockback: Affects how far targets are knocked back when hit by basic attacks.",
             "⑤ Chain Duration: The duration of the state when the chain stack count is at 1. The higher the chain stack count, the faster the stacks decay."
+        ]
+    },
+    {
+        "Id": 1022501,
+        "Texts": [
+            "① 旧世游艺共有三种旧世玩法，分别是：喵星淘金点、绵绵眠梦和鲨鲨破坏王，点击切换按钮可以切换游玩游戏。",
+            "② If your score beats your previous best, your high score will be updated.",
+            "③ Tap Give Up to end your current game. If it's your best attempt so far, your high score will still be updated."
+        ]
+    },
+    {
+        "Id": 1020201,
+        "Texts": [
+            "① 完成【倒映浸景】活动可获得【片面自我】。",
+            "② <color=#0E70BD>消耗一定数量【片面自我】</color>解锁活动章节。"
+        ]
+    },
+    {
+        "Id": 1020202,
+        "Texts": [
+            "① 完成倒映浸景关卡后可获得<color=#0E70BD>【“凝固记忆”】</color>。",
+            "② 点击【开始游戏】，进入对应章节关卡。",
+            "③ 收集一定数量的【“凝固记忆”】后可解锁章节剧情图，并获得奖励。"
+        ]
+    },
+    {
+        "Id": 1020203,
+        "Texts": [
+            "① 工作台<color=#0E70BD>上方</color>的数字提示代表该列有N个印记。工作台<color=#0E70BD>下方</color>的数字提示代表该列有N个印记。在有限时间内，根据数字提示<color=#0E70BD>找出工作台内所有的海伦汀胶片</color>。"
+        ]
+    },
+    {
+        "Id": 1020204,
+        "Texts": [
+            "① <color=#0E70BD>高亮格子</color>是来自海伦汀的友好提示，<color=#0E70BD>高亮格子</color>一定是印记格。",
+            "② 若点中错误格，会扣除一定时间倒计时为0后，游戏结束。"
+        ]
+    },
+    {
+        "Id": 1020205,
+        "Texts": [
+            "① 每一章节有对应的【“凝固记忆”】，挑战所有关卡，揭开海伦汀的故事剧情吧。"
+        ]
+    },
+    {
+        "Id": 1016501,
+        "Texts": [
+            "① View the stage effects in Battle Instructions.",
+            "② The current Nightmare Points will carry over into the stage. The Stage Slumberer fills the Nightmare bar when attacked and enters a temporary Berserk state once the bar is full."
+        ]
+    },
+    {
+        "Id": 1014901,
+        "Texts": [
+            "① View the stage effects in Battle Instructions.",
+            "② The current Nightmare Points will carry over into the stage. The Stage Slumberer fills the Nightmare bar when attacked and enters a temporary Berserk state once the bar is full."
+        ]
+    },
+    {
+        "Id": 1012201,
+        "Texts": [
+            "① There are 3 difficulty levels this time. Clear one to proceed to the next one. The number of Nodes varies greatly depending on the selected difficulty. Choose carefully depending on the state of the Command Bureau.",
+            "② Check the summary of the Command Bureau in the last few rounds. Check the performance of the Command Bureau and its members."
+        ]
+    },
+    {
+        "Id": 1012202,
+        "Texts": [
+            "① Juncture: Regular Nodes. Clear to advance.",
+            "② Pass: Clear all Passes to approach Dangerous Cliff.",
+            "③ Cliff Fortress: You must clear the Cliff Fortress before advancing to the subsequent Junctures."
+        ]
+    },
+    {
+        "Id": 1012203,
+        "Texts": [
+            "④ Dangerous Cliff: Final Boss! Clearing this will clear all Nodes and start a new cycle where you can stage your next challenge!",
+            "⑤ Broken Walls: At full Nightmare Points, certain Nodes transform into Broken Walls Nodes. When Nightmare Points are emptied, these Nodes will revert to their original state.",
+            "⑥ Ruins: Once a new cycle starts, certain Nodes transform into Ruins Nodes. Ruins can be directly cleared by consuming Stamina."
+        ]
+    },
+    {
+        "Id": 1012204,
+        "Texts": [
+            "① Recover 70 Expedition Supplies every day at 20:00 (UTC). You can stock 210 of them at most. Use them promptly.",
+            "② Tap to view basic information about the expedition. All of the rewards of this expedition can be claimed in Missions."
+        ]
+    },
+    {
+        "Id": 1012205,
+        "Texts": [
+            "① Display the Node's remaining HP and your best record. Auto Clear rewards are based on your best record.",
+            "② After clearing a Node this cycle, you can dispatch members there. This will directly reduce that Node's HP in the next cycle.",
+            "③ Due to supply limits, you can only challenge a Node after arriving at the location. Auto Clear is unlocked after clearing the stage, but it will only grant 85% of the rewards (Points from Bosses will be calculated separately). Capable commandants are recommended to challenge them manually."
+        ]
+    },
+    {
+        "Id": 1012206,
+        "Texts": [
+            "① Every Node has a Points and HP deduction limit. Take note, Commandant.",
+            "② Expedition Supplies are only consumed after tapping \"Confirm\". Quit and challenge again if you are not happy with the results."
+        ]
+    },
+    {
+        "Id": 1012207,
+        "Texts": [
+            "① Babylonia will evaluate and rank each Bureau's performance when an expedition is over."
+        ]
+    },
+    {
+        "Id": 1012208,
+        "Texts": [
+            "① Defeating the Cliff Fortress Node unlocks the Nightmare feature. Nightmare Points grow as you clear stages. At full Nightmare Points, certain Nodes transform into Broken Walls Nodes.",
+            "② Enemies at the Broken Walls Node are significantly enhanced.",
+            "③ After the Dangerous Cliff is cleared, a new cycle of Guild Expedition starts, where enemies are enhanced and increased points will be granted."
         ]
     }
 ]

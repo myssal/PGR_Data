@@ -133,7 +133,6 @@ local function TryUnlock(achievementEnum)
     end
     XLog.Debug("[PGS] UnlockAchievement: " .. achievementEnum .. " id=" .. achievementId)
     local result = CS.XHeroSdkAgent.PGSUnlockAchievement(achievementId)
-    XLog.Error("[PGS] UnlockAchievement result: " .. tostring(result))
     if IsSDKResultSuccessful(result) then
         UnlockedCache[achievementId] = true
     end
@@ -149,7 +148,6 @@ local function TryIncrement(achievementEnum, step)
     end
     XLog.Debug("[PGS] IncrementAchievement: " .. achievementEnum .. " step=" .. tostring(step) .. " id=" .. achievementId)
     local result = CS.XHeroSdkAgent.PGSIncrementAchievement(achievementId, step)
-    XLog.Error("[PGS] IncrementAchievement result: " .. tostring(result))
 end
 
 -------------------------------

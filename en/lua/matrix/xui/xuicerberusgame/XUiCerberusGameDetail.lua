@@ -114,7 +114,7 @@ function XUiCerberusGameDetail:OnBtnEnterClick()
     -- XMVCA.XCerberusGame:ReInitXTeam(self.GridStage.GridIndex, xStage.StageId, 
     -- canSeleRole, self.ChapterId, self.CurrDifficulty)
 
-    XLuaUiManager.Open("UiBattleRoleRoom", xStage.StageId, xTeam, require("XUi/XUiCerberusGame/Proxy/XUiCerberusGameBattleRoomProxy"))
+    XMVCA.XFuben:OpenUiBattleRoleRoom(xStage.StageId, xTeam, require("XUi/XUiCerberusGame/Proxy/XUiCerberusGameBattleRoomProxy"))
 end
 
 function XUiCerberusGameDetail:OnDestroy()

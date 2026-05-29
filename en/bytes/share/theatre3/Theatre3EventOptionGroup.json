@@ -4,121 +4,77 @@
         "GroupId": 101,
         "OptionDesc": "Take the heavy big package",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10101
     },
     {
         "Id": 2,
         "GroupId": 101,
         "OptionDesc": "Take the delicate small package",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10102
     },
     {
         "Id": 3,
         "GroupId": 101,
         "OptionDesc": "The strong don't need pity",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10103,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10103
     },
     {
         "Id": 4,
         "GroupId": 201,
         "OptionDesc": "Open the box",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20101
     },
     {
         "Id": 5,
         "GroupId": 201,
         "OptionDesc": "Let her return it to its owner",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20102
     },
     {
         "Id": 6,
         "GroupId": 302,
         "OptionDesc": "In break (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30201
     },
     {
         "Id": 7,
         "GroupId": 302,
         "OptionDesc": "Depart directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30202
     },
     {
         "Id": 8,
         "GroupId": 402,
         "OptionDesc": "In break (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40201
     },
     {
         "Id": 9,
         "GroupId": 402,
         "OptionDesc": "Depart directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40202
     },
     {
         "Id": 10,
         "GroupId": 502,
         "OptionDesc": "Enter the workshop (reforge specified equipment)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50201
     },
     {
         "Id": 11,
         "GroupId": 502,
         "OptionDesc": "Take a break on the spot (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50202
     },
     {
         "Id": 12,
@@ -126,27 +82,20 @@
         "OptionDesc": "Insert Processing Units",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 60101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             50
-        ]
+        ],
+        "OptionNextStepGroupId": 60101
     },
     {
         "Id": 13,
         "GroupId": 601,
         "OptionDesc": "Actually, never mind",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 60102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 60102
     },
     {
         "Id": 14,
@@ -154,16 +103,14 @@
         "OptionDesc": "Cheat",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 60103,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020285,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9029
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 60103,
+        "OptionShowCondition": 1020285
     },
     {
         "Id": 15,
@@ -171,27 +118,20 @@
         "OptionDesc": "Continue operating",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 60901,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             50
-        ]
+        ],
+        "OptionNextStepGroupId": 60901
     },
     {
         "Id": 16,
         "GroupId": 609,
         "OptionDesc": "Actually, never mind",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 60902,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 60902
     },
     {
         "Id": 17,
@@ -199,16 +139,14 @@
         "OptionDesc": "Continue cheating",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 60903,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020285,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9029
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 60903,
+        "OptionShowCondition": 1020285
     },
     {
         "Id": 18,
@@ -216,27 +154,20 @@
         "OptionDesc": "Continue operating",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 61701,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             50
-        ]
+        ],
+        "OptionNextStepGroupId": 61701
     },
     {
         "Id": 19,
         "GroupId": 617,
         "OptionDesc": "Actually, never mind",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 61702,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 61702
     },
     {
         "Id": 20,
@@ -244,16 +175,14 @@
         "OptionDesc": "Continue cheating",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 61703,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020285,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9029
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 61703,
+        "OptionShowCondition": 1020285
     },
     {
         "Id": 21,
@@ -261,27 +190,20 @@
         "OptionDesc": "Continue operating",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 62501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             50
-        ]
+        ],
+        "OptionNextStepGroupId": 62501
     },
     {
         "Id": 22,
         "GroupId": 625,
         "OptionDesc": "Actually, never mind",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 62502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 62502
     },
     {
         "Id": 23,
@@ -289,71 +211,49 @@
         "OptionDesc": "Continue cheating",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 62503,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020285,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9029
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 62503,
+        "OptionShowCondition": 1020285
     },
     {
         "Id": 24,
         "GroupId": 701,
         "OptionDesc": "Accept",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 70101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 70101
     },
     {
         "Id": 25,
         "GroupId": 701,
         "OptionDesc": "Leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 70102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 70102
     },
     {
         "Id": 26,
         "GroupId": 703,
         "OptionDesc": "<color=#EA4323>\"Queen\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 70301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 70301
     },
     {
         "Id": 27,
         "GroupId": 703,
         "OptionDesc": "<color=#FBBC05>\"Maid\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 70302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 70302
     },
     {
         "Id": 28,
         "GroupId": 703,
         "OptionDesc": "<color=#34A853>\"Catgirl\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 70303,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 70303
     },
     {
         "Id": 29,
@@ -361,60 +261,41 @@
         "OptionDesc": "Continue",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 71301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             50
-        ]
+        ],
+        "OptionNextStepGroupId": 71301
     },
     {
         "Id": 30,
         "GroupId": 713,
         "OptionDesc": "Leave the table",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 71302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 71302
     },
     {
         "Id": 31,
         "GroupId": 714,
         "OptionDesc": "<color=#EA4323>\"Queen\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 71401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 71401
     },
     {
         "Id": 32,
         "GroupId": 714,
         "OptionDesc": "<color=#FBBC05>\"Maid\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 71402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 71402
     },
     {
         "Id": 33,
         "GroupId": 714,
         "OptionDesc": "<color=#34A853>\"Catgirl\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 71403,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 71403
     },
     {
         "Id": 34,
@@ -422,60 +303,41 @@
         "OptionDesc": "Continue",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 72401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             100
-        ]
+        ],
+        "OptionNextStepGroupId": 72401
     },
     {
         "Id": 35,
         "GroupId": 724,
         "OptionDesc": "Leave the table",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 72402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 72402
     },
     {
         "Id": 36,
         "GroupId": 725,
         "OptionDesc": "<color=#EA4323>\"Queen\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 72501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 72501
     },
     {
         "Id": 37,
         "GroupId": 725,
         "OptionDesc": "<color=#FBBC05>\"Maid\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 72502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 72502
     },
     {
         "Id": 38,
         "GroupId": 725,
         "OptionDesc": "<color=#34A853>\"Catgirl\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 72503,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 72503
     },
     {
         "Id": 39,
@@ -483,203 +345,132 @@
         "OptionDesc": "Stud Poker",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 73501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             150
-        ]
+        ],
+        "OptionNextStepGroupId": 73501
     },
     {
         "Id": 40,
         "GroupId": 735,
         "OptionDesc": "Leave the table",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 73502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 73502
     },
     {
         "Id": 41,
         "GroupId": 736,
         "OptionDesc": "<color=#EA4323>\"Queen\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 73601,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 73601
     },
     {
         "Id": 42,
         "GroupId": 736,
         "OptionDesc": "<color=#FBBC05>\"Maid\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 73602,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 73602
     },
     {
         "Id": 43,
         "GroupId": 736,
         "OptionDesc": "<color=#34A853>\"Catgirl\"</color>",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 73603,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 73603
     },
     {
         "Id": 44,
         "GroupId": 30102,
         "OptionDesc": "Call out to Jetavie to dodge",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3010201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3010201
     },
     {
         "Id": 45,
         "GroupId": 30202,
         "OptionDesc": "Examine Jetavie's body",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3020201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3020201
     },
     {
         "Id": 46,
         "GroupId": 30202,
         "OptionDesc": "Ask how Jetavie is doing",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3020202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3020202
     },
     {
         "Id": 47,
         "GroupId": 30203,
         "OptionDesc": "Ask about the brand",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3020301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3020301
     },
     {
         "Id": 48,
         "GroupId": 30203,
         "OptionDesc": "Ask her if it hurts",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3020302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3020302
     },
     {
         "Id": 49,
         "GroupId": 30208,
         "OptionDesc": "In break (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3020801,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3020801
     },
     {
         "Id": 50,
         "GroupId": 30208,
         "OptionDesc": "Depart directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3020802,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3020802
     },
     {
         "Id": 51,
         "GroupId": 30302,
         "OptionDesc": "Push Jetavie away",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3030201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3030201
     },
     {
         "Id": 52,
         "GroupId": 30403,
         "OptionDesc": "Ask her why she hits you",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3040301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3040301
     },
     {
         "Id": 53,
         "GroupId": 30403,
         "OptionDesc": "Ask her why she hugs you",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3040302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3040302
     },
     {
         "Id": 54,
         "GroupId": 30409,
         "OptionDesc": "In break (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3040901,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3040901
     },
     {
         "Id": 55,
         "GroupId": 30409,
         "OptionDesc": "Depart directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3040902,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3040902
     },
     {
         "Id": 56,
         "GroupId": 50102,
         "OptionDesc": "Hold Jetavie's hand firmly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 5010201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 5010201
     },
     {
         "Id": 57,
@@ -687,181 +478,118 @@
         "OptionDesc": "Take out the <color=#b73a3a>Access Key</color>",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 5020101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2005
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 5020101
     },
     {
         "Id": 58,
         "GroupId": 60102,
         "OptionDesc": "Press on together",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 6010201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 6010201
     },
     {
         "Id": 59,
         "GroupId": 100101,
         "OptionDesc": "Venture toward the source of the sound",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10010101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10010101
     },
     {
         "Id": 60,
         "GroupId": 100101,
         "OptionDesc": "Recycle the toolbox",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10010102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10010102
     },
     {
         "Id": 61,
         "GroupId": 100102,
         "OptionDesc": "Remove its monitor",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10010201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10010201
     },
     {
         "Id": 62,
         "GroupId": 100102,
         "OptionDesc": "Return the way you came",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10010202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10010202
     },
     {
         "Id": 63,
         "GroupId": 100201,
         "OptionDesc": "Head to the garden to water flowers",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10020101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10020101
     },
     {
         "Id": 64,
         "GroupId": 100201,
         "OptionDesc": "Take the chip and leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10020102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10020102
     },
     {
         "Id": 65,
         "GroupId": 100201,
         "OptionDesc": "Check out the study",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10020103,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10020103
     },
     {
         "Id": 66,
         "GroupId": 101101,
         "OptionDesc": "Admire Venus de Milo closely",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10110101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10110101
     },
     {
         "Id": 67,
         "GroupId": 101101,
         "OptionDesc": "Admire the replica of David closely",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10110102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10110102
     },
     {
         "Id": 68,
         "GroupId": 101103,
         "OptionDesc": "Take the capsule",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10110301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10110301
     },
     {
         "Id": 69,
         "GroupId": 101103,
         "OptionDesc": "Don't do anything",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10110302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10110302
     },
     {
         "Id": 70,
         "GroupId": 200103,
         "OptionDesc": "Inspect the huge plush bear",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20010301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20010301
     },
     {
         "Id": 71,
         "GroupId": 200103,
         "OptionDesc": "Inspect the humanoid in a nurse uniform",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20010302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20010302
     },
     {
         "Id": 72,
         "GroupId": 200103,
         "OptionDesc": "Turn around to look behind yourself",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20010303,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20010303
     },
     {
         "Id": 73,
@@ -869,60 +597,41 @@
         "OptionDesc": "Offer him some Processing Units",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 20020101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             70
-        ]
+        ],
+        "OptionNextStepGroupId": 20020101
     },
     {
         "Id": 74,
         "GroupId": 200201,
         "OptionDesc": "Refuse to exchange and leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20020102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20020102
     },
     {
         "Id": 75,
         "GroupId": 201101,
         "OptionDesc": "Refuse to show the capsule",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20110101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20110101
     },
     {
         "Id": 76,
         "GroupId": 201101,
         "OptionDesc": "Show the capsule",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20110102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20110102
     },
     {
         "Id": 77,
         "GroupId": 201102,
         "OptionDesc": "Put away the capsule and leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20110201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20110201
     },
     {
         "Id": 78,
@@ -930,258 +639,167 @@
         "OptionDesc": "Take the water and swallow the capsule",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 20110202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2004
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 20110202
     },
     {
         "Id": 79,
         "GroupId": 201202,
         "OptionDesc": "Help him",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20120201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20120201
     },
     {
         "Id": 80,
         "GroupId": 201202,
         "OptionDesc": "Leave him",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20120202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20120202
     },
     {
         "Id": 81,
         "GroupId": 201302,
         "OptionDesc": "Take the girl to look for her brother",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20130201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20130201
     },
     {
         "Id": 82,
         "GroupId": 201302,
         "OptionDesc": "Ask the girl about the insect",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20130202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20130202
     },
     {
         "Id": 83,
         "GroupId": 300101,
         "OptionDesc": "Cut the power cord and save it",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30010101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30010101
     },
     {
         "Id": 84,
         "GroupId": 300101,
         "OptionDesc": "Prioritize activating the archive",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30010102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30010102
     },
     {
         "Id": 85,
         "GroupId": 300201,
         "OptionDesc": "Connect to the gaming terminal",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30020101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30020101
     },
     {
         "Id": 86,
         "GroupId": 300201,
         "OptionDesc": "Take the chip from the gaming machine",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30020102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30020102
     },
     {
         "Id": 87,
         "GroupId": 300301,
         "OptionDesc": "Read the experiment journal",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30030101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30030101
     },
     {
         "Id": 88,
         "GroupId": 300301,
         "OptionDesc": "Take the gold from the pocket",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30030102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30030102
     },
     {
         "Id": 89,
         "GroupId": 301103,
         "OptionDesc": "Engage in battle",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30110301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30110301
     },
     {
         "Id": 90,
         "GroupId": 301103,
         "OptionDesc": "Escape",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30110302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30110302
     },
     {
         "Id": 91,
         "GroupId": 301202,
         "OptionDesc": "Tear the huge oil painting",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30120201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30120201
     },
     {
         "Id": 92,
         "GroupId": 301202,
         "OptionDesc": "Sleep on the spot first",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30120202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30120202
     },
     {
         "Id": 93,
         "GroupId": 301302,
         "OptionDesc": "Ignore the pitiful man",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30130201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30130201
     },
     {
         "Id": 94,
         "GroupId": 301302,
         "OptionDesc": "Ask him about the monster",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30130202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30130202
     },
     {
         "Id": 95,
         "GroupId": 301304,
         "OptionDesc": "Track down the monster for him",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30130401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30130401
     },
     {
         "Id": 96,
         "GroupId": 301304,
         "OptionDesc": "Briefly comfort him and leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30130402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30130402
     },
     {
         "Id": 97,
         "GroupId": 301402,
         "OptionDesc": "Investigate the gray-haired boy with a butterfly knife",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30140201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30140201
     },
     {
         "Id": 98,
         "GroupId": 301402,
         "OptionDesc": "Investigate the purple-haired girl cowering in the corner",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30140202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30140202
     },
     {
         "Id": 99,
         "GroupId": 301402,
         "OptionDesc": "Investigate Lily, the cheerful pink-haired girl",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30140203,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30140203
     },
     {
         "Id": 100,
         "GroupId": 301502,
         "OptionDesc": "Reject Lily's request",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30150201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30150201
     },
     {
         "Id": 101,
@@ -1189,192 +807,126 @@
         "OptionDesc": "Accept Lily's request",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 30150202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             150
-        ]
+        ],
+        "OptionNextStepGroupId": 30150202
     },
     {
         "Id": 102,
         "GroupId": 400101,
         "OptionDesc": "Accept her offer",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40010101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40010101
     },
     {
         "Id": 103,
         "GroupId": 400101,
         "OptionDesc": "Lift the girl's veil",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40010102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40010102
     },
     {
         "Id": 104,
         "GroupId": 400101,
         "OptionDesc": "Mention the death of the tree",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 40010103,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020229,
-        "QuantumEffectShowType": 0
+        "OptionShowCondition": 1020229
     },
     {
         "Id": 105,
         "GroupId": 400105,
         "OptionDesc": "Ask her about what happened",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40010501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40010501
     },
     {
         "Id": 106,
         "GroupId": 400105,
         "OptionDesc": "Stop asking and leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40010502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40010502
     },
     {
         "Id": 107,
         "GroupId": 400106,
         "OptionDesc": "Accept prayer",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40010601,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40010601
     },
     {
         "Id": 108,
         "GroupId": 400106,
         "OptionDesc": "Reject her",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40010602,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40010602
     },
     {
         "Id": 109,
         "GroupId": 400111,
         "OptionDesc": "Subdue",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40011101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40011101
     },
     {
         "Id": 110,
         "GroupId": 400111,
         "OptionDesc": "Apologize",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40011102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40011102
     },
     {
         "Id": 111,
         "GroupId": 400202,
         "OptionDesc": "Let her try",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40020201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40020201
     },
     {
         "Id": 112,
         "GroupId": 400202,
         "OptionDesc": "Move away",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40020202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40020202
     },
     {
         "Id": 113,
         "GroupId": 400203,
         "OptionDesc": "Pull back the rope with all strength",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40020301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40020301
     },
     {
         "Id": 114,
         "GroupId": 400203,
         "OptionDesc": "Trust Jetavie's ability to handle it alone",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40020302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40020302
     },
     {
         "Id": 115,
         "GroupId": 400302,
         "OptionDesc": "Story about a traveler",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40030201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40030201
     },
     {
         "Id": 116,
         "GroupId": 400302,
         "OptionDesc": "Story about a traitor",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40030202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40030202
     },
     {
         "Id": 117,
         "GroupId": 400302,
         "OptionDesc": "Refuse to listen",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40030203,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40030203
     },
     {
         "Id": 118,
@@ -1382,104 +934,69 @@
         "OptionDesc": "Offer him some Processing Units",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 40040101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             100
-        ]
+        ],
+        "OptionNextStepGroupId": 40040101
     },
     {
         "Id": 119,
         "GroupId": 400401,
         "OptionDesc": "Refuse to exchange and leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40040102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40040102
     },
     {
         "Id": 120,
         "GroupId": 401102,
         "OptionDesc": "Apologize to her",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40110201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40110201
     },
     {
         "Id": 121,
         "GroupId": 401102,
         "OptionDesc": "Throw a punch at her",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40110202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40110202
     },
     {
         "Id": 122,
         "GroupId": 401202,
         "OptionDesc": "Accept her blessing",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40120201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40120201
     },
     {
         "Id": 123,
         "GroupId": 401202,
         "OptionDesc": "Reject her offer",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40120202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40120202
     },
     {
         "Id": 124,
         "GroupId": 401302,
         "OptionDesc": "Accept Jetavie's suggestion",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40130201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40130201
     },
     {
         "Id": 125,
         "GroupId": 401302,
         "OptionDesc": "Immediately turn around and leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40130202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40130202
     },
     {
         "Id": 126,
         "GroupId": 401402,
         "OptionDesc": "The best way to overcome fear is to confront it!",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40140201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40140201
     },
     {
         "Id": 127,
@@ -1487,368 +1004,238 @@
         "OptionDesc": "Toss the treasure aside",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 40140202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2007
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 40140202
     },
     {
         "Id": 128,
         "GroupId": 500102,
         "OptionDesc": "Investigate the robot's chip",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50010201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50010201
     },
     {
         "Id": 129,
         "GroupId": 500102,
         "OptionDesc": "Investigate the stargazer's system",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50010202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50010202
     },
     {
         "Id": 130,
         "GroupId": 500202,
         "OptionDesc": "Accept his request",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50020201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50020201
     },
     {
         "Id": 131,
         "GroupId": 500202,
         "OptionDesc": "Reject his request",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50020202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50020202
     },
     {
         "Id": 132,
         "GroupId": 500202,
         "OptionDesc": "Tell Robert the truth",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 50020203,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020228,
-        "QuantumEffectShowType": 0
+        "OptionShowCondition": 1020228
     },
     {
         "Id": 133,
         "GroupId": 500302,
         "OptionDesc": "Buy a poem from him",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50030201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50030201
     },
     {
         "Id": 134,
         "GroupId": 500302,
         "OptionDesc": "Sell poems to him for money",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50030202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50030202
     },
     {
         "Id": 135,
         "GroupId": 501102,
         "OptionDesc": "No matter how many times... this is why I'm standing here.",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50110201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50110201
     },
     {
         "Id": 136,
         "GroupId": 501102,
         "OptionDesc": "Repeated failure will not create a miracle. Give up on entering the door",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50110202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50110202
     },
     {
         "Id": 137,
         "GroupId": 501202,
         "OptionDesc": "Confront the formidable enemy",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50120201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50120201
     },
     {
         "Id": 138,
         "GroupId": 501202,
         "OptionDesc": "Run away",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50120202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50120202
     },
     {
         "Id": 139,
         "GroupId": 100302,
         "OptionDesc": "The oil painting's fragrance",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10030201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10030201
     },
     {
         "Id": 140,
         "GroupId": 100302,
         "OptionDesc": "Songs played in the museum",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10030202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10030202
     },
     {
         "Id": 141,
         "GroupId": 100302,
         "OptionDesc": "The moonlight that comes in at night",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10030203,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10030203
     },
     {
         "Id": 142,
         "GroupId": 101203,
         "OptionDesc": "A silver lining",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10120301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10120301
     },
     {
         "Id": 143,
         "GroupId": 101203,
         "OptionDesc": "The end of a fairytale",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10120302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10120302
     },
     {
         "Id": 144,
         "GroupId": 101204,
         "OptionDesc": "Go up and take the note down",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10120401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10120401
     },
     {
         "Id": 145,
         "GroupId": 101204,
         "OptionDesc": "Go after the woman",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 10120402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 10120402
     },
     {
         "Id": 146,
         "GroupId": 200302,
         "OptionDesc": "Check the safe",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20030201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20030201
     },
     {
         "Id": 147,
         "GroupId": 200302,
         "OptionDesc": "Investigate the storage room",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20030202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20030202
     },
     {
         "Id": 148,
         "GroupId": 200402,
         "OptionDesc": "Dig",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20040201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20040201
     },
     {
         "Id": 149,
         "GroupId": 200402,
         "OptionDesc": "Leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20040202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20040202
     },
     {
         "Id": 150,
         "GroupId": 200404,
         "OptionDesc": "Search around the cemetery",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20040401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20040401
     },
     {
         "Id": 151,
         "GroupId": 200404,
         "OptionDesc": "Search the cemetery's backyard",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20040402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20040402
     },
     {
         "Id": 152,
         "GroupId": 200404,
         "OptionDesc": "Search the well",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20040403,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20040403
     },
     {
         "Id": 153,
         "GroupId": 200405,
         "OptionDesc": "Bury the bones",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20040501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20040501
     },
     {
         "Id": 154,
         "GroupId": 200405,
         "OptionDesc": "Continue searching",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20040502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20040502
     },
     {
         "Id": 155,
         "GroupId": 200503,
         "OptionDesc": "Have the purple-red rabbit hotpot first",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20050301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20050301
     },
     {
         "Id": 156,
         "GroupId": 200503,
         "OptionDesc": "Have the colorful mushroom platter first",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20050302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20050302
     },
     {
         "Id": 157,
         "GroupId": 200503,
         "OptionDesc": "Have the indescribable stir-fried vegetables first",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20050303,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20050303
     },
     {
         "Id": 158,
         "GroupId": 201402,
         "OptionDesc": "Face up to it",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20140201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20140201
     },
     {
         "Id": 159,
         "GroupId": 201402,
         "OptionDesc": "Turn around and run",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20140202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20140202
     },
     {
         "Id": 160,
@@ -1856,16 +1243,13 @@
         "OptionDesc": "Take out the Orphanage Employee ID Card",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 20140203,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2011
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 20140203
     },
     {
         "Id": 161,
@@ -1873,60 +1257,41 @@
         "OptionDesc": "Give her the employee ID card.",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 20140701,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2011
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 20140701
     },
     {
         "Id": 162,
         "GroupId": 201407,
         "OptionDesc": "Remain silent",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 20140702,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 20140702
     },
     {
         "Id": 163,
         "GroupId": 300402,
         "OptionDesc": "This is a stupid mistake of the staff",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30040201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30040201
     },
     {
         "Id": 164,
         "GroupId": 300402,
         "OptionDesc": "This is a carefully planned murder",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30040202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30040202
     },
     {
         "Id": 165,
         "GroupId": 301603,
         "OptionDesc": "Find the safe zone",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30160301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30160301
     },
     {
         "Id": 166,
@@ -1934,16 +1299,13 @@
         "OptionDesc": "Inject the serum (enter a battle)",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 30160302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2015
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 30160302
     },
     {
         "Id": 167,
@@ -1951,104 +1313,69 @@
         "OptionDesc": "Show the Lab Employee ID Card",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 30160401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2017
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 30160401
     },
     {
         "Id": 168,
         "GroupId": 301604,
         "OptionDesc": "Turn around and prepare to fight",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30160402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30160402
     },
     {
         "Id": 169,
         "GroupId": 301702,
         "OptionDesc": "Go inside",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30170201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30170201
     },
     {
         "Id": 170,
         "GroupId": 301702,
         "OptionDesc": "Turn to leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30170202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30170202
     },
     {
         "Id": 171,
         "GroupId": 301703,
         "OptionDesc": "Take the materials at all costs",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30170301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30170301
     },
     {
         "Id": 172,
         "GroupId": 301703,
         "OptionDesc": "Wait for the fire to die out",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30170302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30170302
     },
     {
         "Id": 173,
         "GroupId": 401502,
         "OptionDesc": "Venture into it",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40150201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40150201
     },
     {
         "Id": 174,
         "GroupId": 401502,
         "OptionDesc": "Throw a stone at it",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40150202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40150202
     },
     {
         "Id": 175,
         "GroupId": 401503,
         "OptionDesc": "Rush over and grab it",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 40150301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 40150301
     },
     {
         "Id": 176,
@@ -2056,38 +1383,28 @@
         "OptionDesc": "Get Jetavie running",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 40150302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020112,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2018
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 40150302,
+        "OptionShowCondition": 1020112
     },
     {
         "Id": 177,
         "GroupId": 500402,
         "OptionDesc": "Ask the refugee about Jetavie's weapon",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50040201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50040201
     },
     {
         "Id": 178,
         "GroupId": 500402,
         "OptionDesc": "Ask the refugee what Jetavie said",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50040202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50040202
     },
     {
         "Id": 179,
@@ -2095,27 +1412,20 @@
         "OptionDesc": "Offer supplies",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 50040301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             100
-        ]
+        ],
+        "OptionNextStepGroupId": 50040301
     },
     {
         "Id": 180,
         "GroupId": 500403,
         "OptionDesc": "Turn to leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50040302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50040302
     },
     {
         "Id": 181,
@@ -2123,16 +1433,14 @@
         "OptionDesc": "Put the data crystal in your hand before the mirror",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 50130201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020113,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2021
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 50130201,
+        "OptionShowCondition": 1020113
     },
     {
         "Id": 182,
@@ -2140,70 +1448,48 @@
         "OptionDesc": "Put the bloodstone in the slot of the mirror",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 50130202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2020
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 50130202
     },
     {
         "Id": 183,
         "GroupId": 501302,
         "OptionDesc": "Let Jetavie to have a look",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50130203,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50130203
     },
     {
         "Id": 184,
         "GroupId": 501309,
         "OptionDesc": "Supply",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50130901,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50130901
     },
     {
         "Id": 185,
         "GroupId": 501309,
         "OptionDesc": "Remain silent",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50130902,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50130902
     },
     {
         "Id": 186,
         "GroupId": 501309,
         "OptionDesc": "100 Wishes",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 50130903,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 50130903
     },
     {
         "Id": 187,
         "GroupId": 9000102,
         "OptionDesc": "Continue to approach",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 900010201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 2
     },
     {
@@ -2211,20 +1497,14 @@
         "GroupId": 9000102,
         "OptionDesc": "Think about quitting",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900010202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900010202
     },
     {
         "Id": 189,
         "GroupId": 9000103,
         "OptionDesc": "Forced activation (skip story)",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 900010301,
-        "OptionCondition": 0,
         "OptionShowCondition": 1020224,
         "QuantumEffectShowType": 2
     },
@@ -2233,10 +1513,7 @@
         "GroupId": 9000103,
         "OptionDesc": "Observe",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 900010302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 2
     },
     {
@@ -2244,75 +1521,49 @@
         "GroupId": 9000203,
         "OptionDesc": "Take a break (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900020301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900020301
     },
     {
         "Id": 192,
         "GroupId": 9000203,
         "OptionDesc": "Depart directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900020302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900020302
     },
     {
         "Id": 193,
         "GroupId": 9000303,
         "OptionDesc": "In break (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900030301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900030301
     },
     {
         "Id": 194,
         "GroupId": 9000303,
         "OptionDesc": "Leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900030302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900030302
     },
     {
         "Id": 195,
         "GroupId": 9000402,
         "OptionDesc": "Enter the workshop (reforge specified equipment)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900040201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900040201
     },
     {
         "Id": 196,
         "GroupId": 9000402,
         "OptionDesc": "Take a break on the spot (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900040202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900040202
     },
     {
         "Id": 197,
         "GroupId": 9000503,
         "OptionDesc": "Read the data",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 900050301,
-        "OptionCondition": 0,
         "OptionShowCondition": 1020232,
         "QuantumEffectShowType": 2
     },
@@ -2321,31 +1572,22 @@
         "GroupId": 9000503,
         "OptionDesc": "Read the data",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 900050302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020233,
-        "QuantumEffectShowType": 0
+        "OptionShowCondition": 1020233
     },
     {
         "Id": 199,
         "GroupId": 9000503,
         "OptionDesc": "Decline",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900050303,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900050303
     },
     {
         "Id": 200,
         "GroupId": 9000603,
         "OptionDesc": "Read the data",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 900060301,
-        "OptionCondition": 0,
         "OptionShowCondition": 1020232,
         "QuantumEffectShowType": 2
     },
@@ -2354,32 +1596,22 @@
         "GroupId": 9000603,
         "OptionDesc": "Read the data",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 900060302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020233,
-        "QuantumEffectShowType": 0
+        "OptionShowCondition": 1020233
     },
     {
         "Id": 202,
         "GroupId": 9000603,
         "OptionDesc": "Decline",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900060303,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900060303
     },
     {
         "Id": 203,
         "GroupId": 9000703,
         "OptionDesc": "Read the data",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 900070301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 1
     },
     {
@@ -2387,55 +1619,35 @@
         "GroupId": 9000703,
         "OptionDesc": "Decline",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900070302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900070302
     },
     {
         "Id": 205,
         "GroupId": 9001003,
         "OptionDesc": "Open Fire",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900100301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900100301
     },
     {
         "Id": 206,
         "GroupId": 9001105,
         "OptionDesc": "In break (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900110501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900110501
     },
     {
         "Id": 207,
         "GroupId": 9001105,
         "OptionDesc": "Depart directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900110502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900110502
     },
     {
         "Id": 208,
         "GroupId": 9001202,
         "OptionDesc": "Use the weapon",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900120201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900120201
     },
     {
         "Id": 209,
@@ -2443,49 +1655,34 @@
         "OptionDesc": "Take out the <color=#ff6767>Ultralimit Key</color>",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 900120202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9005
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 900120202
     },
     {
         "Id": 210,
         "GroupId": 9001203,
         "OptionDesc": "High-speed dash",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900120301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900120301
     },
     {
         "Id": 211,
         "GroupId": 9001204,
         "OptionDesc": "Throw the key",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900120401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900120401
     },
     {
         "Id": 212,
         "GroupId": 9001204,
         "OptionDesc": "Put away the key",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900120402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900120402
     },
     {
         "Id": 213,
@@ -2493,92 +1690,62 @@
         "OptionDesc": "Take out the <color=#b73a3a>\"Queen of Spades\"</color>",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 3050201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9003
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 3050201
     },
     {
         "Id": 214,
         "GroupId": 30502,
         "OptionDesc": "Call out to Jetavie to dodge",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3050202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3050202
     },
     {
         "Id": 215,
         "GroupId": 30507,
         "OptionDesc": "Who are you really, Lily?",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3050203,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3050203
     },
     {
         "Id": 216,
         "GroupId": 30606,
         "OptionDesc": "In break (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3060601,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3060601
     },
     {
         "Id": 217,
         "GroupId": 30606,
         "OptionDesc": "Depart directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3060602,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3060602
     },
     {
         "Id": 218,
         "GroupId": 70104,
         "OptionDesc": "Don't block the way",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 7010401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 7010401
     },
     {
         "Id": 219,
         "GroupId": 70104,
         "OptionDesc": "The central area is behind that door?",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 7010402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 7010402
     },
     {
         "Id": 220,
         "GroupId": 9001302,
         "OptionDesc": "Accept the trade",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 900130201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 2
     },
     {
@@ -2586,11 +1753,7 @@
         "GroupId": 9001302,
         "OptionDesc": "Decline the trade",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900130202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900130202
     },
     {
         "Id": 222,
@@ -2598,16 +1761,14 @@
         "OptionDesc": "Lend it to the merchant",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 900130301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 2,
         "OptionItemId": [
             9003
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 900130301,
+        "QuantumEffectShowType": 2
     },
     {
         "Id": 223,
@@ -2615,38 +1776,28 @@
         "OptionDesc": "Trade for a reward",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 900130302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020235,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9003
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 900130302,
+        "OptionShowCondition": 1020235
     },
     {
         "Id": 224,
         "GroupId": 9001303,
         "OptionDesc": "Decline the request",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900130303,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900130303
     },
     {
         "Id": 225,
         "GroupId": 30703,
         "OptionDesc": "Take the card",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3070301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3070301
     },
     {
         "Id": 226,
@@ -2654,27 +1805,21 @@
         "OptionDesc": "Take out the projector",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 3070302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020341,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9001
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 3070302,
+        "OptionShowCondition": 1020341
     },
     {
         "Id": 227,
         "GroupId": 30703,
         "OptionDesc": "Move away",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3070303,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3070303
     },
     {
         "Id": 228,
@@ -2682,10 +1827,6 @@
         "OptionDesc": "Hand in the \"Queen of Hearts\" and the \"Queen of Spades\"",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 900140301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 2,
         "OptionItemId": [
             9004,
             9003
@@ -2693,7 +1834,9 @@
         "OptionItemCount": [
             1,
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 900140301,
+        "QuantumEffectShowType": 2
     },
     {
         "Id": 229,
@@ -2701,48 +1844,35 @@
         "OptionDesc": "Hand in two \"Queen of Spades\"",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 900140302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 2,
         "OptionItemId": [
             9003
         ],
         "OptionItemCount": [
             2
-        ]
+        ],
+        "OptionNextStepGroupId": 900140302,
+        "QuantumEffectShowType": 2
     },
     {
         "Id": 230,
         "GroupId": 9001403,
         "OptionDesc": "Decline the trade",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900140303,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900140303
     },
     {
         "Id": 231,
         "GroupId": 9210002,
         "OptionDesc": "Launch an ambush",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 921000201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 921000201
     },
     {
         "Id": 232,
         "GroupId": 9210002,
         "OptionDesc": "Invite the monster to fight you",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 921000202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 2
     },
     {
@@ -2750,10 +1880,7 @@
         "GroupId": 9210005,
         "OptionDesc": "Strike first (<color=#ff6767>a small chance of success</color>)",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 921000501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 2
     },
     {
@@ -2761,10 +1888,7 @@
         "GroupId": 9210005,
         "OptionDesc": "Fair Fight",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 921000502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 2
     },
     {
@@ -2772,10 +1896,7 @@
         "GroupId": 210002,
         "OptionDesc": "Wind up the clockwork",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 21000201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 1
     },
     {
@@ -2783,43 +1904,28 @@
         "GroupId": 210002,
         "OptionDesc": "Move away",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 21000202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 21000202
     },
     {
         "Id": 237,
         "GroupId": 9310001,
         "OptionDesc": "Choose Door Three",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 931000101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 931000101
     },
     {
         "Id": 238,
         "GroupId": 9310001,
         "OptionDesc": "Choose Door Seven",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 931000102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 931000102
     },
     {
         "Id": 239,
         "GroupId": 9310001,
         "OptionDesc": "Choose Door Nine",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 931000103,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 2
     },
     {
@@ -2828,27 +1934,20 @@
         "OptionDesc": "Promise to hand over the chips",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 931000201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             50
-        ]
+        ],
+        "OptionNextStepGroupId": 931000201
     },
     {
         "Id": 241,
         "GroupId": 9310002,
         "OptionDesc": "Open the door with force",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 931000202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 931000202
     },
     {
         "Id": 242,
@@ -2856,37 +1955,27 @@
         "OptionDesc": "Agree",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 931000601,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             50
-        ]
+        ],
+        "OptionNextStepGroupId": 931000601
     },
     {
         "Id": 243,
         "GroupId": 9310006,
         "OptionDesc": "Give up the weapon",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 931000602,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 931000602
     },
     {
         "Id": 244,
         "GroupId": 9310009,
         "OptionDesc": "Release the monster",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 931000901,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 2
     },
     {
@@ -2894,32 +1983,21 @@
         "GroupId": 9310009,
         "OptionDesc": "Reject the monster",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 931000902,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 931000902
     },
     {
         "Id": 246,
         "GroupId": 9410002,
         "OptionDesc": "Stop, count, and turn around",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 941000201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 941000201
     },
     {
         "Id": 247,
         "GroupId": 9410002,
         "OptionDesc": "Do as promised and finish counting",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 941000202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 2
     },
     {
@@ -2927,32 +2005,21 @@
         "GroupId": 9410003,
         "OptionDesc": "Fire at the sky",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 941000301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 941000301
     },
     {
         "Id": 249,
         "GroupId": 9410003,
         "OptionDesc": "Put away the gun quietly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 941000302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 941000302
     },
     {
         "Id": 250,
         "GroupId": 9510002,
         "OptionDesc": "Wind up the clockwork",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 951000201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 2
     },
     {
@@ -2960,32 +2027,21 @@
         "GroupId": 9510002,
         "OptionDesc": "Move away",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 951000202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 951000202
     },
     {
         "Id": 252,
         "GroupId": 310002,
         "OptionDesc": "Enter the mansion",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 31000201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 31000201
     },
     {
         "Id": 253,
         "GroupId": 310002,
         "OptionDesc": "Chase after the flame",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 31000202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 1
     },
     {
@@ -2993,43 +2049,28 @@
         "GroupId": 310004,
         "OptionDesc": "Place the luminous pearl",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 31000401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 31000401
     },
     {
         "Id": 255,
         "GroupId": 310004,
         "OptionDesc": "Place the gem",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 31000402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 31000402
     },
     {
         "Id": 256,
         "GroupId": 310007,
         "OptionDesc": "Observe the direction of the moon",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 31000701,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 31000701
     },
     {
         "Id": 257,
         "GroupId": 310007,
         "OptionDesc": "Observe the direction of the mansion",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 31000702,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 1
     },
     {
@@ -3037,21 +2078,14 @@
         "GroupId": 410001,
         "OptionDesc": "Use the compound bow",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 41000101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 41000101
     },
     {
         "Id": 259,
         "GroupId": 410001,
         "OptionDesc": "Find something to eat",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 41000102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 1
     },
     {
@@ -3059,21 +2093,14 @@
         "GroupId": 410003,
         "OptionDesc": "Use the compound bow",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 41000301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 41000301
     },
     {
         "Id": 261,
         "GroupId": 410003,
         "OptionDesc": "Stop and admire",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 41000302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 1
     },
     {
@@ -3081,10 +2108,7 @@
         "GroupId": 510001,
         "OptionDesc": "Enter the center of the arena",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 51000102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 1
     },
     {
@@ -3092,21 +2116,14 @@
         "GroupId": 510001,
         "OptionDesc": "Leave quickly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 51000101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 51000101
     },
     {
         "Id": 264,
         "GroupId": 510005,
         "OptionDesc": "Strike first (<color=#b73a3a>a small chance of success</color>)",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 51000501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 1
     },
     {
@@ -3114,10 +2131,7 @@
         "GroupId": 510005,
         "OptionDesc": "Wait for the right moment",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 51000502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
         "QuantumEffectShowType": 1
     },
     {
@@ -3125,550 +2139,351 @@
         "GroupId": 9200102,
         "OptionDesc": "Prioritize defeating the cultists",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920010201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920010201
     },
     {
         "Id": 267,
         "GroupId": 9200102,
         "OptionDesc": "Prioritize saving the trapped girl",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920010202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920010202
     },
     {
         "Id": 268,
         "GroupId": 9200105,
         "OptionDesc": "Take the girl and leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920010501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920010501
     },
     {
         "Id": 269,
         "GroupId": 9200105,
         "OptionDesc": "Let the girl be embraced by the cultists",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920010502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920010502
     },
     {
         "Id": 270,
         "GroupId": 9200202,
         "OptionDesc": "Investigate the robot's chip",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920020201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920020201
     },
     {
         "Id": 271,
         "GroupId": 9200202,
         "OptionDesc": "Investigate the stargazer's system",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920020202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920020202
     },
     {
         "Id": 272,
         "GroupId": 9200203,
         "OptionDesc": "Insert the new chip",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920020303,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920020303
     },
     {
         "Id": 273,
         "GroupId": 9200203,
         "OptionDesc": "Remove the damaged chip",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920020304,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920020304
     },
     {
         "Id": 274,
         "GroupId": 9200302,
         "OptionDesc": "Spend time to defeat the monsters",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920030201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920030201
     },
     {
         "Id": 275,
         "GroupId": 9200302,
         "OptionDesc": "Convince the refugees to move",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920030202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920030202
     },
     {
         "Id": 276,
         "GroupId": 9300101,
         "OptionDesc": "Kill the giant tree",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930010101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930010101
     },
     {
         "Id": 277,
         "GroupId": 9300101,
         "OptionDesc": "Mentor the girl",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930010102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930010102
     },
     {
         "Id": 278,
         "GroupId": 9300201,
         "OptionDesc": "Offer the giant rat some food",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930020101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930020101
     },
     {
         "Id": 279,
         "GroupId": 9300201,
         "OptionDesc": "Aim at the giant rat",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930020102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930020102
     },
     {
         "Id": 280,
         "GroupId": 9300201,
         "OptionDesc": "Try to communicate with it",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930020103,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930020103
     },
     {
         "Id": 281,
         "GroupId": 9300302,
         "OptionDesc": "Encountering the Chosen One",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930030201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930030201
     },
     {
         "Id": 282,
         "GroupId": 9300302,
         "OptionDesc": "Disappearance of the Chosen One",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930030202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930030202
     },
     {
         "Id": 283,
         "GroupId": 9300302,
         "OptionDesc": "Close the diary",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930030203,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930030203
     },
     {
         "Id": 284,
         "GroupId": 9400101,
         "OptionDesc": "Connect to the console and play",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940010101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940010101
     },
     {
         "Id": 285,
         "GroupId": 9400101,
         "OptionDesc": "Try to program the console",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940010102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940010102
     },
     {
         "Id": 286,
         "GroupId": 9400201,
         "OptionDesc": "Fire and defeat the two-headed Corrupted",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940020101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940020101
     },
     {
         "Id": 287,
         "GroupId": 9400201,
         "OptionDesc": "Ask the scientist what he is doing",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940020102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940020102
     },
     {
         "Id": 288,
         "GroupId": 9400301,
         "OptionDesc": "Ask for a reward",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940030101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940030101
     },
     {
         "Id": 289,
         "GroupId": 9400301,
         "OptionDesc": "Refuse",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940030102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940030102
     },
     {
         "Id": 290,
         "GroupId": 9500101,
         "OptionDesc": "Fire and take care of the Corrupted",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950010101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950010101
     },
     {
         "Id": 291,
         "GroupId": 9500101,
         "OptionDesc": "Increase the weapon voltage",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950010102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950010102
     },
     {
         "Id": 292,
         "GroupId": 9500102,
         "OptionDesc": "Check the guide robot",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950010201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950010201
     },
     {
         "Id": 293,
         "GroupId": 9500102,
         "OptionDesc": "Recycle the Corrupted parts",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950010202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950010202
     },
     {
         "Id": 294,
         "GroupId": 9500201,
         "OptionDesc": "Look at the giant bear puppet",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950020101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950020101
     },
     {
         "Id": 295,
         "GroupId": 9500201,
         "OptionDesc": "Look at the nurse automaton",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950020102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950020102
     },
     {
         "Id": 296,
         "GroupId": 9500201,
         "OptionDesc": "Turn around to look behind yourself",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950020103,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950020103
     },
     {
         "Id": 297,
         "GroupId": 9500302,
         "OptionDesc": "Investigate the garden",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950030201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950030201
     },
     {
         "Id": 298,
         "GroupId": 9500302,
         "OptionDesc": "Investigate the library",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950030202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950030202
     },
     {
         "Id": 299,
         "GroupId": 9500304,
         "OptionDesc": "Enter a random passcode",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950030401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950030401
     },
     {
         "Id": 300,
         "GroupId": 9500304,
         "OptionDesc": "Rely on the sixth sense",
         "OptionType": 3,
-        "OptionItemType": 0,
         "OptionNextStepGroupId": 950030402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 1020231,
-        "QuantumEffectShowType": 0
+        "OptionShowCondition": 1020231
     },
     {
         "Id": 301,
         "GroupId": 9500401,
         "OptionDesc": "Shoot the large pitcher",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950040101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950040101
     },
     {
         "Id": 302,
         "GroupId": 9500401,
         "OptionDesc": "Shoot the small pitcher",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950040102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950040102
     },
     {
         "Id": 303,
         "GroupId": 9500401,
         "OptionDesc": "Kill the pitcher plant directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950040103,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950040103
     },
     {
         "Id": 304,
         "GroupId": 9500502,
         "OptionDesc": "Let him hand over his supplies",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950050201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950050201
     },
     {
         "Id": 305,
         "GroupId": 9500502,
         "OptionDesc": "Let him lead the way",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950050202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950050202
     },
     {
         "Id": 306,
         "GroupId": 9201101,
         "OptionDesc": "Open the door and enter",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920110101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920110101
     },
     {
         "Id": 307,
         "GroupId": 9201101,
         "OptionDesc": "Ask the girl",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920110102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920110102
     },
     {
         "Id": 308,
         "GroupId": 9201102,
         "OptionDesc": "Offer the sacrifice",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920110201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920110201
     },
     {
         "Id": 309,
         "GroupId": 9201102,
         "OptionDesc": "Destroy the altar",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920110202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920110202
     },
     {
         "Id": 310,
         "GroupId": 9301102,
         "OptionDesc": "Attack the source of the signal directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930110201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930110201
     },
     {
         "Id": 311,
         "GroupId": 9301102,
         "OptionDesc": "Stay quiet",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930110202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930110202
     },
     {
         "Id": 312,
         "GroupId": 9401101,
         "OptionDesc": "Advance.",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940110101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940110101
     },
     {
         "Id": 313,
         "GroupId": 9401101,
         "OptionDesc": "Rest",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940110102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940110102
     },
     {
         "Id": 314,
         "GroupId": 9401102,
         "OptionDesc": "Look around",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940110201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940110201
     },
     {
         "Id": 315,
         "GroupId": 9401102,
         "OptionDesc": "Use the weapon",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940110202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940110202
     },
     {
         "Id": 316,
@@ -3676,115 +2491,76 @@
         "OptionDesc": "Offer the \"eyes\"",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 940110301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9017
         ],
         "OptionItemCount": [
             2
-        ]
+        ],
+        "OptionNextStepGroupId": 940110301
     },
     {
         "Id": 317,
         "GroupId": 9401103,
         "OptionDesc": "Tear down the painting",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940110302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940110302
     },
     {
         "Id": 318,
         "GroupId": 9201202,
         "OptionDesc": "Help the black-clad figures",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920120201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920120201
     },
     {
         "Id": 319,
         "GroupId": 9201202,
         "OptionDesc": "Charge into the temple from the front",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920120202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920120202
     },
     {
         "Id": 320,
         "GroupId": 9201203,
         "OptionDesc": "Punch a way in",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920120301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920120301
     },
     {
         "Id": 321,
         "GroupId": 9201203,
         "OptionDesc": "Fire at the sky",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920120302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920120302
     },
     {
         "Id": 322,
         "GroupId": 9201207,
         "OptionDesc": "Exit the temple",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920120701,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920120701
     },
     {
         "Id": 323,
         "GroupId": 9201207,
         "OptionDesc": "Open Fire",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920120702,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920120702
     },
     {
         "Id": 324,
         "GroupId": 9301201,
         "OptionDesc": "Save the sheep",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930120101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930120101
     },
     {
         "Id": 325,
         "GroupId": 9301201,
         "OptionDesc": "Catch the sheep",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930120102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930120102
     },
     {
         "Id": 326,
@@ -3792,49 +2568,34 @@
         "OptionDesc": "Buy the sheep",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 930120201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             100
-        ]
+        ],
+        "OptionNextStepGroupId": 930120201
     },
     {
         "Id": 327,
         "GroupId": 9301202,
         "OptionDesc": "Take out the weapon",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930120202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930120202
     },
     {
         "Id": 328,
         "GroupId": 9301207,
         "OptionDesc": "Eden",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930120701,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930120701
     },
     {
         "Id": 329,
         "GroupId": 9301207,
         "OptionDesc": "Serpent",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930120702,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930120702
     },
     {
         "Id": 330,
@@ -3842,10 +2603,6 @@
         "OptionDesc": "Show the tokens",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 940120301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9020,
             9021
@@ -3853,62 +2610,43 @@
         "OptionItemCount": [
             1,
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 940120301
     },
     {
         "Id": 331,
         "GroupId": 9401203,
         "OptionDesc": "Refuse",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940120302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940120302
     },
     {
         "Id": 332,
         "GroupId": 9301302,
         "OptionDesc": "Shoot the monster",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930130201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930130201
     },
     {
         "Id": 333,
         "GroupId": 9301302,
         "OptionDesc": "Continue observing",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930130202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930130202
     },
     {
         "Id": 334,
         "GroupId": 9401301,
         "OptionDesc": "Agree to help",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940130101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940130101
     },
     {
         "Id": 335,
         "GroupId": 9401301,
         "OptionDesc": "Leave the weapon",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940130102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940130102
     },
     {
         "Id": 336,
@@ -3916,60 +2654,41 @@
         "OptionDesc": "Take out the \"blood sample\"",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 940130201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9023
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 940130201
     },
     {
         "Id": 337,
         "GroupId": 9401302,
         "OptionDesc": "Try to prepare it yourself",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940130202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940130202
     },
     {
         "Id": 338,
         "GroupId": 9501101,
         "OptionDesc": "Investigate the sculpture area",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950110101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950110101
     },
     {
         "Id": 339,
         "GroupId": 9501101,
         "OptionDesc": "Investigate the gallery",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950110102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950110102
     },
     {
         "Id": 340,
         "GroupId": 9501107,
         "OptionDesc": "Prepare for Battle",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950110701,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950110701
     },
     {
         "Id": 341,
@@ -3977,60 +2696,41 @@
         "OptionDesc": "Use the staff ID",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 950110702,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9024
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 950110702
     },
     {
         "Id": 342,
         "GroupId": 9301402,
         "OptionDesc": "Accept the challenge",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930140201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930140201
     },
     {
         "Id": 343,
         "GroupId": 9301402,
         "OptionDesc": "Refuse the challenge",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930140202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930140202
     },
     {
         "Id": 344,
         "GroupId": 9401402,
         "OptionDesc": "Hello",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940140201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940140201
     },
     {
         "Id": 345,
         "GroupId": 9401402,
         "OptionDesc": "Ask about the exit",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940140202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940140202
     },
     {
         "Id": 346,
@@ -4038,71 +2738,48 @@
         "OptionDesc": "Yes",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 940140301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             100
-        ]
+        ],
+        "OptionNextStepGroupId": 940140301
     },
     {
         "Id": 347,
         "GroupId": 9401403,
         "OptionDesc": "No",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940140302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940140302
     },
     {
         "Id": 348,
         "GroupId": 9501202,
         "OptionDesc": "Issue a challenge",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950120201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950120201
     },
     {
         "Id": 349,
         "GroupId": 9501202,
         "OptionDesc": "Refuse the challenge",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 950120202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 950120202
     },
     {
         "Id": 350,
         "GroupId": 9201302,
         "OptionDesc": "Find the Void Merchant",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920130201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920130201
     },
     {
         "Id": 351,
         "GroupId": 9201302,
         "OptionDesc": "Find the otherworld communication point",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920130202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920130202
     },
     {
         "Id": 352,
@@ -4110,115 +2787,76 @@
         "OptionDesc": "Pay the demanded chips",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 920130401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             100
-        ]
+        ],
+        "OptionNextStepGroupId": 920130401
     },
     {
         "Id": 353,
         "GroupId": 9201304,
         "OptionDesc": "Leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920130402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920130402
     },
     {
         "Id": 354,
         "GroupId": 301802,
         "OptionDesc": "Accept",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30180201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30180201
     },
     {
         "Id": 355,
         "GroupId": 301802,
         "OptionDesc": "Leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 30180202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 30180202
     },
     {
         "Id": 356,
         "GroupId": 9401501,
         "OptionDesc": "Open Fire",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940150101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940150101
     },
     {
         "Id": 357,
         "GroupId": 9401501,
         "OptionDesc": "Protect the machine",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940150102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940150102
     },
     {
         "Id": 358,
         "GroupId": 9001501,
         "OptionDesc": "Enter the fissure",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900150101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900150101
     },
     {
         "Id": 359,
         "GroupId": 9001501,
         "OptionDesc": "Leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900150102,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900150102
     },
     {
         "Id": 360,
         "GroupId": 9001503,
         "OptionDesc": "Query key variables",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900150301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900150301
     },
     {
         "Id": 361,
         "GroupId": 9001503,
         "OptionDesc": "Check the exit",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900150302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900150302
     },
     {
         "Id": 362,
@@ -4226,60 +2864,41 @@
         "OptionDesc": "Try to activate",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 900160101,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9034
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 900160101
     },
     {
         "Id": 363,
         "GroupId": 9001602,
         "OptionDesc": "Open Fire",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900160201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900160201
     },
     {
         "Id": 364,
         "GroupId": 9001602,
         "OptionDesc": "Try to communicate",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900160202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900160202
     },
     {
         "Id": 365,
         "GroupId": 9001705,
         "OptionDesc": "In break (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900170501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900170501
     },
     {
         "Id": 366,
         "GroupId": 9001705,
         "OptionDesc": "Depart directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900170502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900170502
     },
     {
         "Id": 367,
@@ -4287,16 +2906,13 @@
         "OptionDesc": "Observing cautiously",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 3080201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2005
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 3080201
     },
     {
         "Id": 368,
@@ -4304,38 +2920,27 @@
         "OptionDesc": "Venture into it",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 3080202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9031
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 3080202
     },
     {
         "Id": 369,
         "GroupId": 30802,
         "OptionDesc": "Leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3080203,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3080203
     },
     {
         "Id": 370,
         "GroupId": 30804,
         "OptionDesc": "Decline.",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 3080401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 3080401
     },
     {
         "Id": 371,
@@ -4343,10 +2948,6 @@
         "OptionDesc": "Take out the key",
         "OptionType": 1,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 5030201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             2005,
             9005
@@ -4354,7 +2955,8 @@
         "OptionItemCount": [
             1,
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 5030201
     },
     {
         "Id": 372,
@@ -4362,38 +2964,27 @@
         "OptionDesc": "Stop Jetavie",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 8010201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9035
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 8010201
     },
     {
         "Id": 373,
         "GroupId": 9001904,
         "OptionDesc": "In break (adjust equipment positions)",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900190401,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900190401
     },
     {
         "Id": 374,
         "GroupId": 9001904,
         "OptionDesc": "Depart directly",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 900190402,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 900190402
     },
     {
         "Id": 375,
@@ -4401,10 +2992,6 @@
         "OptionDesc": "Check the invitation",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 900200201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9032,
             9033
@@ -4412,7 +2999,8 @@
         "OptionItemCount": [
             1,
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 900200201
     },
     {
         "Id": 376,
@@ -4420,16 +3008,13 @@
         "OptionDesc": "Hand over the invitation",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 900200202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9032
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 900200202
     },
     {
         "Id": 377,
@@ -4437,82 +3022,55 @@
         "OptionDesc": "Offer some Processing Units",
         "OptionType": 1,
         "OptionItemType": 1,
-        "OptionNextStepGroupId": 900200203,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             96189
         ],
         "OptionItemCount": [
             100
-        ]
+        ],
+        "OptionNextStepGroupId": 900200203
     },
     {
         "Id": 378,
         "GroupId": 9201403,
         "OptionDesc": "The Flawless",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920140301,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920140301
     },
     {
         "Id": 379,
         "GroupId": 9201403,
         "OptionDesc": "The Inferior",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920140302,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920140302
     },
     {
         "Id": 380,
         "GroupId": 9201403,
         "OptionDesc": "The Defective",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920140303,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920140303
     },
     {
         "Id": 381,
         "GroupId": 9201406,
         "OptionDesc": "The Flawless",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920140601,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920140601
     },
     {
         "Id": 382,
         "GroupId": 9201406,
         "OptionDesc": "The Inferior",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920140602,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920140602
     },
     {
         "Id": 383,
         "GroupId": 9201406,
         "OptionDesc": "The Defective",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 920140603,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 920140603
     },
     {
         "Id": 384,
@@ -4520,60 +3078,41 @@
         "OptionDesc": "Add dice",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 930150201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9037
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 930150201
     },
     {
         "Id": 385,
         "GroupId": 9301502,
         "OptionDesc": "Turn to leave",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 930150202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 930150202
     },
     {
         "Id": 386,
         "GroupId": 9401602,
         "OptionDesc": "Pick up the flowers",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940160201,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940160201
     },
     {
         "Id": 387,
         "GroupId": 9401602,
         "OptionDesc": "Tidy up the area",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940160202,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940160202
     },
     {
         "Id": 388,
         "GroupId": 9401605,
         "OptionDesc": "Put the photo away",
         "OptionType": 3,
-        "OptionItemType": 0,
-        "OptionNextStepGroupId": 940160501,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0
+        "OptionNextStepGroupId": 940160501
     },
     {
         "Id": 389,
@@ -4581,15 +3120,12 @@
         "OptionDesc": "Take out the other half",
         "OptionType": 2,
         "OptionItemType": 2,
-        "OptionNextStepGroupId": 940160502,
-        "OptionCondition": 0,
-        "OptionShowCondition": 0,
-        "QuantumEffectShowType": 0,
         "OptionItemId": [
             9038
         ],
         "OptionItemCount": [
             1
-        ]
+        ],
+        "OptionNextStepGroupId": 940160502
     }
 ]

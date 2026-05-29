@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory114.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 1000,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             101
@@ -30,43 +20,30 @@
     {
         "Id": 3,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1011001,
+            "",
             400
         ]
     },
     {
         "Id": 4,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1021001,
+            "",
             -400
         ]
     },
     {
         "Id": 5,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",
@@ -77,13 +54,9 @@
     {
         "Id": 6,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "This area seems to have more puzzles.",
             1
@@ -92,13 +65,9 @@
     {
         "Id": 7,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "If we force our way through, the large number of Heteromer shards could form enemies like what we saw.",
             2
@@ -107,27 +76,20 @@
     {
         "Id": 8,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 9,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001
@@ -136,12 +98,7 @@
     {
         "Id": 10,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Liv",
@@ -152,12 +109,7 @@
     {
         "Id": 11,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             7
@@ -166,13 +118,9 @@
     {
         "Id": 12,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "I know! It's the information from the log data. However...",
             1
@@ -181,12 +129,7 @@
     {
         "Id": 13,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -194,13 +137,9 @@
     {
         "Id": 14,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "These parts have been contaminated by the Punishing Virus and cannot be read.",
             1
@@ -209,13 +148,9 @@
     {
         "Id": 15,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "Hmm... Could this be a coincidence...?",
             1
@@ -224,56 +159,42 @@
     {
         "Id": 16,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 17,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1011001,
+            "",
             400
         ]
     },
     {
         "Id": 18,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1021001,
+            "",
             -400
         ]
     },
     {
         "Id": 19,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lee",
@@ -284,13 +205,9 @@
     {
         "Id": 20,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "Looks like... We have to force our way through...",
             2
@@ -299,40 +216,30 @@
     {
         "Id": 21,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 22,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Connecting—"
         ]
     },
     {
         "Id": 23,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500110
@@ -341,26 +248,17 @@
     {
         "Id": 24,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 25,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ayla",
@@ -371,13 +269,9 @@
     {
         "Id": 26,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yes.",
             26,
             "And you are?",
@@ -389,11 +283,8 @@
         "ActionId": 26,
         "NextActionId": 28,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "Watanabe's guess wasn't wrong.",
             1
@@ -402,13 +293,9 @@
     {
         "Id": 28,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "You must be the legendary commandant, aren't you?",
             1
@@ -417,26 +304,18 @@
     {
         "Id": 29,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 30,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001
@@ -445,12 +324,7 @@
     {
         "Id": 31,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Liv",
@@ -461,12 +335,7 @@
     {
         "Id": 32,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             7
@@ -475,12 +344,7 @@
     {
         "Id": 33,
         "ActionId": 9527,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             204
@@ -489,13 +353,9 @@
     {
         "Id": 34,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "W-wait... Is that Miss Ayla?",
             1
@@ -504,12 +364,7 @@
     {
         "Id": 35,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500110
@@ -518,26 +373,17 @@
     {
         "Id": 36,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 37,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ayla",
@@ -548,26 +394,18 @@
     {
         "Id": 38,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 39,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1011001
@@ -576,12 +414,7 @@
     {
         "Id": 40,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lee",
@@ -592,12 +425,7 @@
     {
         "Id": 41,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1021001
@@ -606,12 +434,7 @@
     {
         "Id": 42,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",
@@ -622,12 +445,7 @@
     {
         "Id": 43,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1011001
@@ -636,12 +454,7 @@
     {
         "Id": 44,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lee",
@@ -652,12 +465,7 @@
     {
         "Id": 45,
         "ActionId": 43,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001,
@@ -667,12 +475,7 @@
     {
         "Id": 46,
         "ActionId": 44,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Liv",
@@ -683,12 +486,7 @@
     {
         "Id": 47,
         "ActionId": 45,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1021001
@@ -697,12 +495,7 @@
     {
         "Id": 48,
         "ActionId": 46,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",
@@ -713,12 +506,7 @@
     {
         "Id": 49,
         "ActionId": 546,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500110
@@ -727,26 +515,17 @@
     {
         "Id": 50,
         "ActionId": 15151,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 51,
         "ActionId": 48,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ayla",
@@ -757,12 +536,7 @@
     {
         "Id": 52,
         "ActionId": 9528,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             101
@@ -771,13 +545,9 @@
     {
         "Id": 53,
         "ActionId": 49,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "Oh, I should probably talk about that later. I've got more important things to tell you.",
             1
@@ -786,13 +556,9 @@
     {
         "Id": 54,
         "ActionId": 50,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "My mission here is to rescue a Construct named Selena. She's a very important friend of mine.",
             1
@@ -801,13 +567,9 @@
     {
         "Id": 55,
         "ActionId": 51,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "Selena already had access to all the information within the database of this space station.",
             1
@@ -816,13 +578,9 @@
     {
         "Id": 56,
         "ActionId": 52,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "She said some of it could be vital to you, as it was related to the design of these... rings.",
             1
@@ -831,26 +589,18 @@
     {
         "Id": 57,
         "ActionId": 53,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 58,
         "ActionId": 54,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1021001
@@ -859,12 +609,7 @@
     {
         "Id": 59,
         "ActionId": 55,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",
@@ -875,12 +620,7 @@
     {
         "Id": 60,
         "ActionId": 1001,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500110
@@ -889,26 +629,17 @@
     {
         "Id": 61,
         "ActionId": 56,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 62,
         "ActionId": 57,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ayla",
@@ -919,13 +650,9 @@
     {
         "Id": 63,
         "ActionId": 58,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "It has to come to me before I can tell you. Is that alright?",
             1
@@ -934,13 +661,9 @@
     {
         "Id": 64,
         "ActionId": 59,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Of course.",
             60,
             "Can you tell me the reason?",
@@ -950,26 +673,18 @@
     {
         "Id": 65,
         "ActionId": 60,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 66,
         "ActionId": 61,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1011001
@@ -980,10 +695,6 @@
         "ActionId": 62,
         "NextActionId": 68,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lee",
@@ -994,13 +705,9 @@
     {
         "Id": 68,
         "ActionId": 63,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "...",
             1
@@ -1009,13 +716,9 @@
     {
         "Id": 69,
         "ActionId": 64,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "Given Selena's current state, she is unable to... explain it in person.",
             1
@@ -1024,26 +727,18 @@
     {
         "Id": 70,
         "ActionId": 65,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 71,
         "ActionId": 66,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1021001
@@ -1052,12 +747,7 @@
     {
         "Id": 72,
         "ActionId": 67,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",
@@ -1068,12 +758,7 @@
     {
         "Id": 73,
         "ActionId": 68,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001,
@@ -1083,13 +768,9 @@
     {
         "Id": 74,
         "ActionId": 69,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Liv",

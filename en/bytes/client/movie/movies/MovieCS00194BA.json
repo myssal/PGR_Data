@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory833.jpg"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             36
@@ -30,32 +20,29 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Test 1: Read Text Graying Function"
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yes 2",
             5,
             "Yes 3",
             6,
             "Yes 70",
             7,
+            "",
+            "",
+            "",
+            "",
             -1,
             -1,
             -1
@@ -66,11 +53,8 @@
         "ActionId": 5,
         "NextActionId": 8,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nanami",
             "Wrong! It's 70! Looks like you're not fully awake yet, Commandant."
         ]
@@ -80,11 +64,8 @@
         "ActionId": 6,
         "NextActionId": 8,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nanami",
             "Wrong! It's 70! Looks like you're not fully awake yet, Commandant."
         ]
@@ -92,13 +73,9 @@
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nanami",
             "Bingo! It's 70! Looks like you're wide awake now, Commandant!"
         ]
@@ -106,56 +83,49 @@
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Though everything else remains blank, you somehow remember that the girl before you is called Nanami."
         ]
     },
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You try to move your body, and a slight stinging sensation runs across your back—summer is when the grass grows most abundantly and when its blades are at their prickliest."
         ]
     },
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Test 2-1: Unlock Option - Conditional Node (Before)"
         ]
     },
     {
         "Id": 11,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Fine.",
             12,
             "Let's go together! (Available after reading [The season to try being active...])",
             12,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             -1,
             9
         ]
@@ -163,13 +133,9 @@
     {
         "Id": 12,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nanami",
             "Hooray—!"
         ]
@@ -177,30 +143,29 @@
     {
         "Id": 13,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Test 2-2: Unlock Option - Conditional Node (After)"
         ]
     },
     {
         "Id": 14,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "I'm okay.",
             15,
             "I'm a bit tired. (Available after reading [Rosa: Should we... connect?])",
             15,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             -1,
             17
         ]
@@ -208,39 +173,29 @@
     {
         "Id": 15,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The endless cicada chirping outside the window and the empty streets below echo the cosmic loneliness that quietly creeps into your heart."
         ]
     },
     {
         "Id": 16,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Test 3: Unlock Option - Dialogue Branch Conditional Options"
         ]
     },
     {
         "Id": 17,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Rosa",
             "Should we connect right now?"
         ]
@@ -248,17 +203,19 @@
     {
         "Id": 18,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Wait a moment.",
             19,
             "Connect now. (Only unlocked by selecting [Yes 2])",
             21,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             -1,
             "4|1"
         ]
@@ -266,53 +223,42 @@
     {
         "Id": 19,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You have complete faith in Asimov's notes, but..."
         ]
     },
     {
         "Id": 20,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You can't be sure if this is actually going to work.  Given that Nanami is lost in the chaos of theoretical simulations, according to Cervantes, you can't be sure if you'll really be able to reach her."
         ]
     },
     {
         "Id": 21,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After all this work, you can't blow it now. Besides, Lucia's still waiting back there in the past."
         ]
     },
     {
         "Id": 22,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The End"
         ]
     }

@@ -5,32 +5,7 @@
         "NameEn": "GM1-0",
         "ChapterId": 1,
         "Type": 1,
-        "ShowType": 1,
-        "OpenHour": 0,
-        "FightBasicPurification": 0,
-        "FightFactor": 0,
-        "CleanNeed": 0,
-        "AutoGrow": 0,
-        "StageId": 0,
-        "PurificationExp": 0,
-        "MailId": 0,
-        "ShowRewardId": 0,
-        "RewardId": 0,
-        "ActionPoint": 0,
-        "DetachActionPoint": 0,
-        "DetachBasicPurification": 0,
-        "DetachBasicRewardId": 0,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
-        "RepeatChallengeActionPoint": 0,
-        "DetachRepeatChallengeActionPoint": 0,
-        "RepeatChallengeRewardId": 0,
-        "DetachRepeatChallengeRewardId": 0,
-        "LevelType": 0,
-        "SideBlockId": [],
-        "AuctionCionReward": 0,
-        "DetachAuctionCionReward": 0
+        "ShowType": 1
     },
     {
         "Id": 2,
@@ -39,40 +14,33 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            1
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 4125000,
-        "AutoGrow": 0,
         "StageId": 30061745,
-        "PurificationExp": 0,
         "MailId": 21023,
         "ShowRewardId": 67425,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            1
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 3,
@@ -81,40 +49,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 8,
-        "OpenHour": 0,
+        "PreBlockId": [
+            1
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061758,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63836,
         "RewardId": 63836,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            1
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 4,
@@ -123,40 +83,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            2
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061784,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Parkour Dash",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            2
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 5,
@@ -165,40 +117,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            4
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061689,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67426,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Flying Kuroro",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            4
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 6,
@@ -207,40 +151,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 2,
-        "OpenHour": 0,
+        "PreBlockId": [
+            4
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061759,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63838,
         "RewardId": 63838,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            4
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 7,
@@ -249,40 +185,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            5
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061721,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Time-limited Survival",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            5
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 8,
@@ -291,40 +219,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            5
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061753,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67427,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            5
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 9,
@@ -333,40 +253,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            7
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061760,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            7
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 10,
@@ -375,40 +287,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            8
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061746,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            8
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 11,
@@ -417,40 +321,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            9
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061725,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67428,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Arrow Shooting",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            9
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 12,
@@ -459,40 +355,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            56
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061747,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67429,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            56
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 13,
@@ -501,40 +389,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            12
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061738,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Find the Same",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            12
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 14,
@@ -543,40 +423,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            12
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061761,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            12
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 15,
@@ -585,40 +457,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 8,
-        "OpenHour": 0,
+        "PreBlockId": [
+            13
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061692,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63836,
         "RewardId": 63836,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            13
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 16,
@@ -627,40 +491,33 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            13
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061723,
-        "PurificationExp": 0,
         "MailId": 21024,
         "ShowRewardId": 67430,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Pick up Cogs",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            13
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 17,
@@ -669,40 +526,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 2,
-        "OpenHour": 0,
+        "PreBlockId": [
+            15
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061762,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63838,
         "RewardId": 63838,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            15
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 18,
@@ -711,40 +560,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            16
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061724,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Flying Kuroro",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            16
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 19,
@@ -753,40 +594,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            16
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061748,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67431,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            16
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 20,
@@ -795,40 +628,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            17
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061763,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            17
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 21,
@@ -837,40 +662,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            18
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061785,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67432,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Parkour Dash",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            18
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 22,
@@ -879,40 +696,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            20
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061749,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            20
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 23,
@@ -921,40 +730,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            20
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061734,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67433,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Tag",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            20
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 24,
@@ -963,40 +764,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 2,
-        "OpenHour": 0,
+        "PreBlockId": [
+            21
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061764,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63838,
         "RewardId": 63838,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            21
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 25,
@@ -1005,40 +798,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            22
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061731,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Arrow Shooting",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            22
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 26,
@@ -1047,40 +832,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            57
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061750,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67434,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            57
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 27,
@@ -1089,40 +866,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            26
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061788,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Protect the Target",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            26
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 28,
@@ -1131,40 +900,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            26
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061766,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            26
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 29,
@@ -1173,40 +934,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 8,
-        "OpenHour": 0,
+        "PreBlockId": [
+            27
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061765,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63836,
         "RewardId": 63836,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            27
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 30,
@@ -1215,40 +968,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            27
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061729,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67435,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Pick up Cogs",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            27
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 31,
@@ -1257,40 +1002,33 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            29
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061751,
-        "PurificationExp": 0,
         "MailId": 21025,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            29
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 32,
@@ -1299,40 +1037,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 2,
-        "OpenHour": 0,
+        "PreBlockId": [
+            30
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061791,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63838,
         "RewardId": 63838,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Find the Same",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            30
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 33,
@@ -1341,40 +1071,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            30
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061693,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67436,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            30
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 34,
@@ -1383,40 +1105,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            31
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061767,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            31
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 35,
@@ -1425,40 +1139,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            32
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061728,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Tag",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            32
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 36,
@@ -1467,40 +1173,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            34
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061752,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67437,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            34
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 37,
@@ -1509,40 +1207,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 2,
-        "OpenHour": 0,
+        "PreBlockId": [
+            34
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061730,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63838,
         "RewardId": 63838,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Flying Kuroro",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            34
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 38,
@@ -1551,40 +1241,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            35
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061768,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            35
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 39,
@@ -1593,40 +1275,32 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            36
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061727,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Time-limited Survival",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            36
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 40,
@@ -1635,40 +1309,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            58
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061769,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67438,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            58
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 41,
@@ -1677,40 +1343,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            40
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061786,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Parkour Dash",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            40
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 42,
@@ -1719,40 +1377,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            40
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061754,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            40
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 43,
@@ -1761,40 +1411,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 8,
-        "OpenHour": 0,
+        "PreBlockId": [
+            41
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061770,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63836,
         "RewardId": 63836,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            41
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 44,
@@ -1803,40 +1445,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            41
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061690,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67439,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Pick up Cogs",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            41
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 45,
@@ -1845,40 +1479,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            43
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061755,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            43
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 46,
@@ -1887,40 +1513,33 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 2,
-        "OpenHour": 0,
+        "PreBlockId": [
+            44
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061792,
-        "PurificationExp": 0,
         "MailId": 21026,
         "ShowRewardId": 63838,
         "RewardId": 63838,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Arrow Shooting",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            44
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 47,
@@ -1929,40 +1548,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            44
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061694,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67440,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            44
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 48,
@@ -1971,40 +1582,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            45
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061733,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Time-limited Survival",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            45
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 49,
@@ -2013,40 +1616,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 6,
-        "OpenHour": 0,
+        "PreBlockId": [
+            46
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061771,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 67441,
         "RewardId": 63835,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            46
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 50,
@@ -2055,40 +1650,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 2,
-        "OpenHour": 0,
+        "PreBlockId": [
+            48
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061756,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63838,
         "RewardId": 63838,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Minion",
-        "SideBlockId": [],
         "AuctionCionReward": 3000,
-        "DetachAuctionCionReward": 3000,
-        "PreBlockId": [
-            48
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 3000
     },
     {
         "Id": 51,
@@ -2097,40 +1684,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            48
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061790,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Protect the Target",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            48
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 52,
@@ -2139,40 +1718,32 @@
         "ChapterId": 4,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            49
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061772,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            49
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 53,
@@ -2181,35 +1752,24 @@
         "ChapterId": 4,
         "Type": 3,
         "ShowType": 3,
-        "OpenHour": 0,
+        "PreBlockId": [
+            51
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 50000,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061688,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63839,
         "RewardId": 63839,
         "ActionPoint": 30,
-        "DetachActionPoint": 0,
-        "DetachBasicPurification": 0,
-        "DetachBasicRewardId": 0,
-        "DetachExtraRewardId": [],
         "WorldBossStartHour": 10,
         "WorldBossEndHour": 21,
         "RepeatChallengeActionPoint": 30,
-        "DetachRepeatChallengeActionPoint": 0,
         "RepeatChallengeRewardId": 63841,
-        "DetachRepeatChallengeRewardId": 0,
         "LevelType": 1,
         "LevelDesc": "Powered.",
-        "SideBlockId": [],
         "AuctionCionReward": 30000,
-        "DetachAuctionCionReward": 30000,
-        "PreBlockId": [
-            51
-        ]
+        "DetachAuctionCionReward": 30000
     },
     {
         "Id": 54,
@@ -2218,40 +1778,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 2,
-        "OpenHour": 0,
+        "PreBlockId": [
+            9
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061691,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63838,
         "RewardId": 63838,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Elite",
-        "SideBlockId": [],
         "AuctionCionReward": 8000,
-        "DetachAuctionCionReward": 8000,
-        "PreBlockId": [
-            9
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 8000
     },
     {
         "Id": 55,
@@ -2260,40 +1812,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 5,
-        "OpenHour": 0,
+        "PreBlockId": [
+            11
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 10,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061722,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63837,
         "RewardId": 63837,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 2,
         "LevelDesc": "Minigame: Tag",
-        "SideBlockId": [],
         "AuctionCionReward": 5000,
-        "DetachAuctionCionReward": 5000,
-        "PreBlockId": [
-            11
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 5000
     },
     {
         "Id": 56,
@@ -2302,40 +1846,32 @@
         "ChapterId": 1,
         "Type": 2,
         "ShowType": 9,
-        "OpenHour": 0,
+        "PreBlockId": [
+            11
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 50000,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061685,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63839,
         "RewardId": 63839,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Madorea",
-        "SideBlockId": [],
         "AuctionCionReward": 15000,
-        "DetachAuctionCionReward": 15000,
-        "PreBlockId": [
-            11
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 15000
     },
     {
         "Id": 57,
@@ -2344,40 +1880,32 @@
         "ChapterId": 2,
         "Type": 2,
         "ShowType": 9,
-        "OpenHour": 0,
+        "PreBlockId": [
+            23
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 50000,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061686,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63839,
         "RewardId": 63839,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Madam Monzano",
-        "SideBlockId": [],
         "AuctionCionReward": 15000,
-        "DetachAuctionCionReward": 15000,
-        "PreBlockId": [
-            23
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 15000
     },
     {
         "Id": 58,
@@ -2386,39 +1914,31 @@
         "ChapterId": 3,
         "Type": 2,
         "ShowType": 9,
-        "OpenHour": 0,
+        "PreBlockId": [
+            37
+        ],
         "FightBasicPurification": 120,
         "FightFactor": 50000,
         "CleanNeed": 300000000,
-        "AutoGrow": 0,
         "StageId": 30061687,
-        "PurificationExp": 0,
-        "MailId": 0,
         "ShowRewardId": 63839,
         "RewardId": 63839,
         "ActionPoint": 30,
         "DetachActionPoint": 30,
         "DetachBasicPurification": 80,
+        "DetachExtraPurification": [
+            0,
+            0,
+            0
+        ],
         "DetachBasicRewardId": 63840,
-        "DetachExtraRewardId": [],
-        "WorldBossStartHour": 0,
-        "WorldBossEndHour": 0,
         "RepeatChallengeActionPoint": 30,
         "DetachRepeatChallengeActionPoint": 30,
         "RepeatChallengeRewardId": 63841,
         "DetachRepeatChallengeRewardId": 63840,
         "LevelType": 1,
         "LevelDesc": "Gwynplaine",
-        "SideBlockId": [],
         "AuctionCionReward": 15000,
-        "DetachAuctionCionReward": 15000,
-        "PreBlockId": [
-            37
-        ],
-        "DetachExtraPurification": [
-            0,
-            0,
-            0
-        ]
+        "DetachAuctionCionReward": 15000
     }
 ]

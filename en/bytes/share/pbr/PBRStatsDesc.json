@@ -5,9 +5,7 @@
         "StatsDesc": "Placeholder_角色初始普攻伤害百分比",
         "ValueBase": 1,
         "ShowPriority": 24,
-        "IsHide": false,
         "MaxValue": 99999900,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconBasicAttackDmg.png"
     },
     {
@@ -16,9 +14,7 @@
         "StatsDesc": "Placeholder_角色初始信号球伤害百分比",
         "ValueBase": 1,
         "ShowPriority": 23,
-        "IsHide": false,
         "MaxValue": 99999900,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconSignalOrbsDmg.png"
     },
     {
@@ -27,9 +23,7 @@
         "StatsDesc": "Placeholder_角色初始暴击几率百分比",
         "ValueBase": 1,
         "ShowPriority": 22,
-        "IsHide": false,
         "MaxValue": 10000,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconCritRate.png"
     },
     {
@@ -38,31 +32,24 @@
         "StatsDesc": "Placeholder_角色初始暴击伤害百分比",
         "ValueBase": 1,
         "ShowPriority": 21,
-        "IsHide": false,
         "MaxValue": 99999900,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconCritDmg.png"
     },
     {
         "StatsId": 75,
         "StatsName": "Range",
         "StatsDesc": "Placeholder_角色普攻射程单位距离",
-        "ValueBase": 0,
         "ShowPriority": 10,
-        "IsHide": false,
         "MaxValue": 99999,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconBasicAttackRange.png"
     },
     {
         "StatsId": 21,
         "StatsName": "Normal Attack Targeting Range",
         "StatsDesc": "Placeholder_角色普攻射程基础值",
-        "ValueBase": 0,
         "ShowPriority": 1,
         "IsHide": true,
-        "MaxValue": 99999,
-        "FightValueSrc": 0
+        "MaxValue": 99999
     },
     {
         "StatsId": 154,
@@ -70,9 +57,7 @@
         "StatsDesc": "Placeholder_角色普攻命中时红球掉率百分比",
         "ValueBase": 1,
         "ShowPriority": 18,
-        "IsHide": false,
         "MaxValue": 99999900,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconRedOrbsAttackDropRate.png"
     },
     {
@@ -81,9 +66,7 @@
         "StatsDesc": "Placeholder_角色普攻命中时黄球掉率百分比",
         "ValueBase": 1,
         "ShowPriority": 16,
-        "IsHide": false,
         "MaxValue": 99999900,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconBlueOrbsAttackDropRate.png"
     },
     {
@@ -92,31 +75,23 @@
         "StatsDesc": "Placeholder_角色普攻命中时蓝球掉率百分比",
         "ValueBase": 1,
         "ShowPriority": 17,
-        "IsHide": false,
         "MaxValue": 99999900,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconYellowOrbsAttackDropRate.png"
     },
     {
         "StatsId": 77,
         "StatsName": "Combo Duration",
         "StatsDesc": "Placeholder_角色连锁增幅效果持续窗口时长",
-        "ValueBase": 0,
         "ShowPriority": 2,
-        "IsHide": false,
         "MaxValue": 99999,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconComboBoostWindow.png"
     },
     {
         "StatsId": 78,
         "StatsName": "Knockback",
         "StatsDesc": "Placeholder_角色普攻击退距离",
-        "ValueBase": 0,
         "ShowPriority": 3,
-        "IsHide": false,
         "MaxValue": 99999,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconBasicAttackKnockback.png"
     },
     {
@@ -125,9 +100,7 @@
         "StatsDesc": "Placeholder_角色吸血概率百分比",
         "ValueBase": 1,
         "ShowPriority": 15,
-        "IsHide": false,
         "MaxValue": 2000,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconLifestealRate.png"
     },
     {
@@ -136,9 +109,7 @@
         "StatsDesc": "Placeholder_角色吸血概率百分比上限",
         "ValueBase": 1,
         "ShowPriority": 14,
-        "IsHide": false,
         "MaxValue": 2000,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconLifestealRateLimit.png"
     },
     {
@@ -147,9 +118,7 @@
         "StatsDesc": "Placeholder_角色闪避概率百分比",
         "ValueBase": 1,
         "ShowPriority": 13,
-        "IsHide": false,
         "MaxValue": 6000,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconDodgeRate.png"
     },
     {
@@ -158,29 +127,22 @@
         "StatsDesc": "Placeholder_角色闪避概率百分比上限",
         "ValueBase": 1,
         "ShowPriority": 12,
-        "IsHide": false,
         "MaxValue": 6000,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconDodgeRateLimit.png"
     },
     {
         "StatsId": 3,
         "StatsName": "Speed",
         "StatsDesc": "Placeholder_角色移动速度",
-        "ValueBase": 0,
         "ShowPriority": 11,
-        "IsHide": false,
         "MaxValue": 999999,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconMoveSpeed.png"
     },
     {
         "StatsId": 1,
         "StatsName": "Max HP",
         "StatsDesc": "Placeholder_角色最大生命值",
-        "ValueBase": 0,
         "ShowPriority": 20,
-        "IsHide": false,
         "MaxValue": 999999,
         "FightValueSrc": 1,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconMaxHP.png"
@@ -189,33 +151,24 @@
         "StatsId": 17,
         "StatsName": "HP Growth",
         "StatsDesc": "Placeholder_角色每级固定增加的生命值",
-        "ValueBase": 0,
         "ShowPriority": 19,
-        "IsHide": false,
         "MaxValue": 999999,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconHpPerLevel.png"
     },
     {
         "StatsId": 33,
         "StatsName": "Armor",
         "StatsDesc": "Placeholder_角色护甲值",
-        "ValueBase": 0,
         "ShowPriority": 9,
-        "IsHide": false,
         "MaxValue": 999999,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconArmor.png"
     },
     {
         "StatsId": 145,
         "StatsName": "Luck",
         "StatsDesc": "Placeholder_角色幸运值",
-        "ValueBase": 0,
         "ShowPriority": 8,
-        "IsHide": false,
         "MaxValue": 999999,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconLuck.png"
     },
     {
@@ -224,20 +177,15 @@
         "StatsDesc": "Placeholder_角色普攻攻速加成百分比",
         "ValueBase": 1,
         "ShowPriority": 7,
-        "IsHide": false,
         "MaxValue": 40000,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconBasicAttackSpeedRate.png"
     },
     {
         "StatsId": 146,
         "StatsName": "Penetration",
         "StatsDesc": "Placeholder_角色贯穿",
-        "ValueBase": 0,
         "ShowPriority": 6,
-        "IsHide": false,
         "MaxValue": 999,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconPierceNum.png"
     },
     {
@@ -246,51 +194,41 @@
         "StatsDesc": "Placeholder_角色冲刺充能次数上限",
         "ValueBase": 1,
         "ShowPriority": 5,
-        "IsHide": false,
         "MaxValue": 9999999,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconDashLimitNum.png"
     },
     {
         "StatsId": 55,
         "StatsName": "Sprint Charge limit (200000/use)",
         "StatsDesc": "Placeholder_角色初始冲刺充能次数",
-        "ValueBase": 0,
         "ShowPriority": 4,
         "IsHide": true,
         "MaxValue": 4000000,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconDashInitialNum.png"
     },
     {
         "StatsId": 50,
         "StatsName": "Speed",
         "StatsDesc": "Placeholder_怪物图鉴用碰撞伤害显示",
-        "ValueBase": 0,
         "ShowPriority": 50,
         "IsHide": true,
         "MaxValue": 99999900,
-        "FightValueSrc": 0,
         "Icon": "Assets/Product/Texture/Atlas/UiPBR/IconMoveSpeed.png"
     },
     {
         "StatsId": 51,
         "StatsName": "Health",
         "StatsDesc": "Placeholder_怪物图鉴用血量显示",
-        "ValueBase": 0,
         "ShowPriority": 51,
         "IsHide": true,
-        "MaxValue": 99999900,
-        "FightValueSrc": 0
+        "MaxValue": 99999900
     },
     {
         "StatsId": 52,
         "StatsName": "Collision DMG",
         "StatsDesc": "Placeholder_怪物图鉴用移动速度显示",
-        "ValueBase": 0,
         "ShowPriority": 52,
         "IsHide": true,
-        "MaxValue": 99999900,
-        "FightValueSrc": 0
+        "MaxValue": 99999900
     }
 ]

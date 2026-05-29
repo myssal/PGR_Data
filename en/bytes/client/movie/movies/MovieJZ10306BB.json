@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory18.jpg"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 1000,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             203
@@ -30,12 +20,7 @@
     {
         "Id": 3,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500005
@@ -44,13 +29,8 @@
     {
         "Id": 4,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Officer",
@@ -60,13 +40,9 @@
     {
         "Id": 5,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Soldier",
             "...But... there's not enough time for a retreat, there's a large number of wounded still in there...",
             1
@@ -75,14 +51,11 @@
     {
         "Id": 6,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Officer",
             "...I know! But we have no choice! The Corrupted here is an army! The longer we stay here, the more of us die!"
         ]

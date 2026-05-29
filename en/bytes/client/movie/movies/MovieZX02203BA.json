@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory14.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             204
@@ -30,52 +20,39 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Babylonia's artificial sun has set for now. Apart from some soldiers on patrol and the lively crowd in the markets, most people have fallen asleep."
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As for you, you are sitting in front of the desk inside the Gray Raven break room, going over the recent mission logs."
         ]
     },
     {
         "Id": 5,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The logs have been arranged from left to right chronologically by Liv. Your fingertip flips over a page, and another memory is reawakened in your mind."
         ]
     },
     {
         "Id": 6,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1000.0,
         "Params": [
             1,
@@ -85,12 +62,7 @@
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory256.png"
         ]
@@ -98,12 +70,7 @@
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0.7
         ]
@@ -111,12 +78,7 @@
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             209
@@ -125,26 +87,18 @@
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Sitting on the transport craft returning from Atlantis, you receive President Hassen's encrypted transmission all of a sudden."
         ]
     },
     {
         "Id": 11,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011
@@ -153,26 +107,17 @@
     {
         "Id": 12,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 13,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Hassen",
@@ -183,13 +128,9 @@
     {
         "Id": 14,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "\"Confidential special ops\"...",
             15,
             "Rest?",
@@ -199,13 +140,9 @@
     {
         "Id": 15,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "That's right. You must be able to tell from reuniting with your team that Kurono's control over Gray Raven has been dismantled by us.",
             1
@@ -214,13 +151,9 @@
     {
         "Id": 16,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "You have proven yourself with your actions, and it's only fair that we reward you with more than just empty words and congratulations.",
             1
@@ -229,13 +162,9 @@
     {
         "Id": 17,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "When you're back on Babylonia, we will host the grandest welcome ceremony for you.",
             1
@@ -244,13 +173,9 @@
     {
         "Id": 18,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "It's not just to congratulate me, I suppose.",
             19,
             "...",
@@ -262,11 +187,8 @@
         "ActionId": 19,
         "NextActionId": 22,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "Haha, you're smart. Now's a pretty good time to do this...",
             1
@@ -275,13 +197,9 @@
     {
         "Id": 20,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "Your reaction seems to suggest that you've got something to say.",
             1
@@ -290,13 +208,9 @@
     {
         "Id": 21,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "You're a smart person. I suppose this is not that bad a time.",
             1
@@ -305,26 +219,19 @@
     {
         "Id": 22,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Hassen smiles and nods."
         ]
     },
     {
         "Id": 23,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "After this ceremony, Gray Raven will no longer be an ordinary squad under the Task Force but war heroes that make the impossible possible.",
             1
@@ -333,13 +240,9 @@
     {
         "Id": 24,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "The people will follow you. They will look up to you. You have brought them a spark of hope for victory and overcome desperate situations time and time again.",
             1
@@ -348,13 +251,9 @@
     {
         "Id": 25,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "They will see every move the Gray Ravens make.",
             1
@@ -363,13 +262,9 @@
     {
         "Id": 26,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "And because of that, Kurono can no longer take Gray Raven away—from the people.",
             1
@@ -378,13 +273,9 @@
     {
         "Id": 27,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Is this necessary?",
             28,
             "Why this?",
@@ -396,11 +287,8 @@
         "ActionId": 28,
         "NextActionId": 30,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "Absolutely. People are looking for heroes—for hopes that will bring the war to an end, and the Gray Ravens are the perfect candidates.",
             1
@@ -409,13 +297,9 @@
     {
         "Id": 29,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "Because people are looking for heroes—for hopes that will bring the war to an end, and the Gray Ravens are the perfect candidates.",
             1
@@ -424,13 +308,9 @@
     {
         "Id": 30,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "To carry out this plan, Gray Raven's main mission in the coming days will be to boost morale in each fighting region to establish people's hope for victory.",
             1
@@ -439,14 +319,10 @@
     {
         "Id": 31,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "That's what the people want, and that's how we protect you.",
             1
@@ -455,12 +331,7 @@
     {
         "Id": 32,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             36
@@ -469,40 +340,31 @@
     {
         "Id": 33,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 34,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 35,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory14.png"
         ]
@@ -510,12 +372,7 @@
     {
         "Id": 36,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0
         ]
@@ -523,12 +380,7 @@
     {
         "Id": 37,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             207
@@ -537,67 +389,53 @@
     {
         "Id": 38,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You have not seen Vera and the Cerberus members for a long time since the welcoming ceremony."
         ]
     },
     {
         "Id": 39,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Apart from returning to Babylonia to hand in your mission logs, you and the Gray Ravens have spent most of your time going from safe zone to safe zone among different areas on the surface, far away from the frontline."
         ]
     },
     {
         "Id": 40,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "It might be more free carrying out the Parliament's mission and being forbidden to contact some people than being locked in Kurono's cell, this overprotection has nonetheless grown weary on you."
         ]
     },
     {
         "Id": 41,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The Babylonia night is still far from over. You open the mission log on the desk to confirm the final details before submitting."
         ]
     },
     {
         "Id": 42,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As it opens, the recorded scenes play out before you as projections one by one."
         ]
     }

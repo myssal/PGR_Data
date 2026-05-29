@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory38.jpg"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 1000,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             202
@@ -30,43 +20,30 @@
     {
         "Id": 3,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1011001,
+            "",
             -400
         ]
     },
     {
         "Id": 4,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500015,
+            "",
             400
         ]
     },
     {
         "Id": 5,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lee",
@@ -77,13 +54,9 @@
     {
         "Id": 6,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Iron Maiden",
             "You found out, hm?",
             2
@@ -92,13 +65,9 @@
     {
         "Id": 7,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "If we weren't constantly running missions, I would never have allowed it to stay within me normally.",
             1
@@ -107,13 +76,9 @@
     {
         "Id": 8,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "But conversely, it's also a path for me to understand and research you.",
             1
@@ -122,13 +87,9 @@
     {
         "Id": 9,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Iron Maiden",
             "You are quite the talker. Shame it ends here now.",
             2
@@ -137,13 +98,9 @@
     {
         "Id": 10,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "You're not Tifa, what are you?",
             1
@@ -152,14 +109,11 @@
     {
         "Id": 11,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Iron Maiden",
             "I have no reason to answer you.",
             2

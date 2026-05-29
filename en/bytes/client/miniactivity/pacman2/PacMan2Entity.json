@@ -4,12 +4,6 @@
         "Desc": "Executable code. The number of Benign Code Blocks determines the success of the emergency repair.",
         "Type": 1,
         "Name": "Benign Code Blocks",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon07.png"
     },
     {
@@ -17,12 +11,6 @@
         "Desc": "Collect the required number of Benign Code Blocks to complete the project.",
         "Type": 2,
         "Name": "Logic Block Endpoint",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon15.png"
     },
     {
@@ -30,49 +18,31 @@
         "Desc": "Restores HP when picked up.",
         "Type": 3,
         "Name": "Syntax Highlighting",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon04.png",
         "Params": [
             1
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon04.png"
     },
     {
         "Id": 4,
         "Desc": "Can be collected after entering the Pursuit Phase. When picked up, defeats enemies on contact for a short duration.",
         "Type": 4,
         "Name": "Troubleshooting Mode",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon12.png",
         "Params": [
             5,
             10
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon12.png"
     },
     {
         "Id": 5,
         "Desc": "Pick it up to move faster for a certain amount of time and turn all enemies on the map to running shoes. Touch the shoes to refresh the duration.",
         "Type": 5,
         "Name": "Sprinter",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png",
         "Params": [
             5
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png"
     },
     {
         "Id": 6,
@@ -80,11 +50,6 @@
         "Type": 6,
         "Name": "Syntax Error",
         "Speed": 55,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon02.png"
     },
     {
@@ -97,7 +62,6 @@
         "AlertX": 4,
         "AlertY": 4,
         "AlertVisibility": true,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon05.png"
     },
     {
@@ -106,17 +70,14 @@
         "Type": 8,
         "Name": "Ooze",
         "Speed": 18,
-        "TurningDuration": 0,
         "AlertX": 4,
         "AlertY": 4,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png",
         "Params": [
             90,
             3,
             3
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png"
     },
     {
         "Id": 9,
@@ -124,17 +85,12 @@
         "Type": 9,
         "Name": "Shoes",
         "Speed": 18,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon20.png",
         "Params": [
             5,
             35,
             2
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon20.png"
     },
     {
         "Id": 10,
@@ -142,16 +98,11 @@
         "Type": 10,
         "Name": "Clone",
         "Speed": 30,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon08.png",
         "Params": [
             2,
             1
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon08.png"
     },
     {
         "Id": 11,
@@ -159,11 +110,6 @@
         "Type": 11,
         "Name": "Food",
         "Speed": 30,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon06.png"
     },
     {
@@ -171,12 +117,6 @@
         "Desc": "Touch to teleport between breakpoints of the same color.",
         "Type": 12,
         "Name": "Loop Breakpoint",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon11.png"
     },
     {
@@ -185,15 +125,10 @@
         "Type": 13,
         "Name": "Stack Overflow",
         "Speed": 60,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png",
         "Params": [
             7
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png"
     },
     {
         "Id": 14,
@@ -201,49 +136,32 @@
         "Type": 14,
         "Name": "Memory Leak",
         "Speed": 80,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon05.png",
         "Params": [
             55,
             12
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon05.png"
     },
     {
         "Id": 15,
         "Desc": "When picked up, slows down all errors, making troubleshooting easier.",
         "Type": 15,
         "Name": "Step Debugging",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon10.png",
         "Params": [
             5000,
             5
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon10.png"
     },
     {
         "Id": 16,
         "Desc": "When picked up, moves faster for a duration.",
         "Type": 16,
         "Name": "Quick Traversal",
-        "Speed": 0,
-        "TurningDuration": 0,
-        "AlertX": 0,
-        "AlertY": 0,
-        "AlertVisibility": false,
-        "Score": 0,
-        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png",
         "Params": [
             5000,
             5
-        ]
+        ],
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png"
     }
 ]

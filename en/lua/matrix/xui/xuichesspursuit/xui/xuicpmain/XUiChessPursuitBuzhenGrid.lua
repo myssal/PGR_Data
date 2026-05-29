@@ -52,7 +52,7 @@ function XUiChessPursuitBuzhenGrid:OnBtnBuzhen01Click()
     if not curTeam then
         curTeam = {TeamData = {0,0,0}, CaptainPos = 1, FirstFightPos = 1}
     end
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId, {
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, {
         ChessPursuitData = {
             RobotList = robotList,
             TeamGridIndex = self.TeamGridIndex,

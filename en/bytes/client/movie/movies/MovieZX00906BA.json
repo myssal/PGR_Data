@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory117.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 1000,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             202
@@ -30,43 +20,30 @@
     {
         "Id": 3,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001,
+            "",
             -400
         ]
     },
     {
         "Id": 4,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1011001,
+            "",
             400
         ]
     },
     {
         "Id": 5,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Liv",
@@ -77,13 +54,9 @@
     {
         "Id": 6,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Is that good?",
             6,
             "What's wrong?",
@@ -93,13 +66,9 @@
     {
         "Id": 7,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "It could be due to the space station's expelling action.",
             1
@@ -108,13 +77,9 @@
     {
         "Id": 8,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Good, the electromagnetic lock is still functioning. This is an old system, so it shouldn't be too difficult to manually change the parameters.",
             2
@@ -123,13 +88,9 @@
     {
         "Id": 9,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "If we can infiltrate the main system...",
             9
         ]
@@ -137,13 +98,9 @@
     {
         "Id": 10,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "I agree.",
             2
@@ -152,13 +109,9 @@
     {
         "Id": 11,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Liv, how long can you stay in hacking mode?",
             2
@@ -167,13 +120,9 @@
     {
         "Id": 12,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "About three minutes...",
             1
@@ -182,13 +131,9 @@
     {
         "Id": 13,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "That's not enough. It takes at least five from changing the parameters and initialization till the lock is up and running.",
             2
@@ -197,57 +142,42 @@
     {
         "Id": 14,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 15,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1021001,
+            "",
             -400
         ]
     },
     {
         "Id": 16,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500080,
+            "",
             400
         ]
     },
     {
         "Id": 17,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Watanabe",
@@ -258,13 +188,9 @@
     {
         "Id": 18,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "I'd think so too.",
             1
@@ -273,27 +199,20 @@
     {
         "Id": 19,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 20,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001,
@@ -304,27 +223,18 @@
     {
         "Id": 21,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1011001,
+            "",
             400
         ]
     },
     {
         "Id": 22,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Liv",
@@ -335,12 +245,7 @@
     {
         "Id": 23,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -348,13 +253,9 @@
     {
         "Id": 24,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Babylonia and the Forsaken are still hostile toward each other. This may put Liv in an awkward situation—",
             2
@@ -363,13 +264,9 @@
     {
         "Id": 25,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Don't expect us to hide your secrets.",
             2
@@ -378,57 +275,42 @@
     {
         "Id": 26,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 27,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1021001,
+            "",
             -400
         ]
     },
     {
         "Id": 28,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500080,
+            "",
             400
         ]
     },
     {
         "Id": 29,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Watanabe",
@@ -439,13 +321,9 @@
     {
         "Id": 30,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Watanabe",
             "As for my consciousness...",
             2
@@ -454,13 +332,9 @@
     {
         "Id": 31,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Watanabe",
             "—I expected good manners from Gray Raven. Right? Commandant of Gray Raven.",
             2
@@ -469,13 +343,9 @@
     {
         "Id": 32,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "We don't have to do that.",
             32,
             "Of course.",
@@ -485,57 +355,42 @@
     {
         "Id": 33,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 34,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001,
+            "",
             -400
         ]
     },
     {
         "Id": 35,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1011001,
+            "",
             400
         ]
     },
     {
         "Id": 36,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Liv",
@@ -546,13 +401,9 @@
     {
         "Id": 37,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "Commandant, is this okay?",
             1
@@ -561,13 +412,9 @@
     {
         "Id": 38,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Let's do it then.",
             38,
             "Well, nothing bad will come out of this.",
@@ -577,57 +424,42 @@
     {
         "Id": 39,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 40,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1021001,
+            "",
             -400
         ]
     },
     {
         "Id": 41,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500080,
+            "",
             400
         ]
     },
     {
         "Id": 42,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",
@@ -638,14 +470,11 @@
     {
         "Id": 43,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "If there is any danger, Commandant, please wake us immediately.",
             1

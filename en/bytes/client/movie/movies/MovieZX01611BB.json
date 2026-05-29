@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory256.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             208
@@ -30,26 +20,18 @@
     {
         "Id": 3,
         "ActionId": 1113,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Shortly after, Asimov contacts you on the comms as anticipated."
         ]
     },
     {
         "Id": 4,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004
@@ -58,43 +40,31 @@
     {
         "Id": 5,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 6,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
             "...Do you copy? I'm assuming you've disembarked by now.",
+            "",
             1
         ]
     },
     {
         "Id": 7,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Just in time.",
             7,
             "Just finished enhancing the Inver-Devices.",
@@ -104,13 +74,9 @@
     {
         "Id": 8,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "There should still be visual interference from the virtual space, right? Don't worry about it for now.",
             1
@@ -119,13 +85,9 @@
     {
         "Id": 9,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "You disengaged from the virtual space too abruptly, preventing the Spear of F.O.S. from shutting down in time, leaving the real-time virtual spatial data generation in your cognitions.",
             1
@@ -134,13 +96,9 @@
     {
         "Id": 10,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Generally speaking, it shouldn't be too much of a hindrance. You would've made a full recovery after a few days of rest in the infirmary. But time is of the essence, and I think we can use it to our advantage.",
             1
@@ -149,13 +107,9 @@
     {
         "Id": 11,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "I'm going to try to upload the Spear of F.O.S. to your command link to synchronize it with your senses. This should allow you to restore, record, and playback the spatial data that you find.",
             1
@@ -164,13 +118,9 @@
     {
         "Id": 12,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "...In other words, you can connect to Gestalt's massive computing power with a security device, allowing you to perceive and analyze scenarios, connect with entire systems, even restore and simulate past events.",
             1
@@ -179,13 +129,9 @@
     {
         "Id": 13,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "We can restore anything we want?",
             13
         ]
@@ -193,13 +139,9 @@
     {
         "Id": 14,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "As long as there is fragmented data nearby, you can use Gestalt to restore it.",
             1
@@ -208,12 +150,7 @@
     {
         "Id": 15,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
@@ -223,27 +160,18 @@
     {
         "Id": 16,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500026,
+            "",
             -400
         ]
     },
     {
         "Id": 17,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lee",
@@ -254,13 +182,9 @@
     {
         "Id": 18,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "You can use key data from people and objects to display the information in the area. They can come in any shape—they can even just be names. However, you must acquire the data first.",
             1
@@ -269,13 +193,9 @@
     {
         "Id": 19,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "By the way, since most people have been dispatched to the surface, Babylonia is now short-handed. A new liaison officer will take over for now. Also...",
             1
@@ -284,13 +204,9 @@
     {
         "Id": 20,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Wait, I'll connect you to him.",
             1
@@ -299,41 +215,33 @@
     {
         "Id": 21,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 22,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 23,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "...It seems that we will maintain this perspective until the end of this mission.",
             2
@@ -342,12 +250,7 @@
     {
         "Id": 24,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500146,
@@ -358,26 +261,17 @@
     {
         "Id": 25,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 26,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Murray",
@@ -388,13 +282,9 @@
     {
         "Id": 27,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Murray?",
             2
@@ -403,13 +293,9 @@
     {
         "Id": 28,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Murray",
             "Nothing strange about this, Lee. We can catch up once this crisis is averted.",
             1
@@ -418,13 +304,9 @@
     {
         "Id": 29,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Murray",
             "Now, let Bridget give you the security terminal that Asimov mentioned.",
             1
@@ -433,26 +315,19 @@
     {
         "Id": 30,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Bridget smiles and hands over a package containing more than a dozen sophisticated cube-like devices."
         ]
     },
     {
         "Id": 31,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Murray",
             "I'm sure Asimov has explained what these are for.",
             1
@@ -461,13 +336,9 @@
     {
         "Id": 32,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Take the bag)",
             32,
             "This thing weighs a ton!",
@@ -477,13 +348,9 @@
     {
         "Id": 33,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Murray",
             "The weight hasn't been adjusted yet. Please bear with it for now.",
             1
@@ -492,13 +359,9 @@
     {
         "Id": 34,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Murray",
             "But as long as the secure terminal is active, you'll be able to investigate the area more easily.",
             1
@@ -507,13 +370,9 @@
     {
         "Id": 35,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Murray",
             "That's all we have to prepare for now. Any questions?",
             1
@@ -522,13 +381,9 @@
     {
         "Id": 36,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nope.",
             36
         ]
@@ -536,13 +391,9 @@
     {
         "Id": 37,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Murray",
             "I wish you all the best.",
             1
@@ -551,54 +402,40 @@
     {
         "Id": 38,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Alright, let's move out."
         ]
     },
     {
         "Id": 39,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 40,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 41,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500167
@@ -607,12 +444,7 @@
     {
         "Id": 42,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bridget",
@@ -623,13 +455,9 @@
     {
         "Id": 43,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "If you want to go into more dangerous areas later, you'll need to enhance it with a few mods. But don't put them on for too long! It'll take the breath right out of you, especially during vigorous activities.",
             1
@@ -638,13 +466,9 @@
     {
         "Id": 44,
         "ActionId": 43,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "But I'm sure you're already familiar with the basics. Unlike those rookie commandants that forget basic safety rules in the heat of the moment.",
             1
@@ -653,14 +477,11 @@
     {
         "Id": 45,
         "ActionId": 44,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "Well, then. I wish you all the best!",
             1

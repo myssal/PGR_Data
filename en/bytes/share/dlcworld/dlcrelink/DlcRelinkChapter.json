@@ -1,12 +1,6 @@
 [
     {
         "ChapterId": 1,
-        "TimeId": 0,
-        "Name": "Radiant Dragon",
-        "Icon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkChooseBossJiedian01.png",
-        "RoomIcon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkRoomBossTu.png",
-        "OdSkills": [],
-        "IsTutorial": false,
         "LevelIds": [
             9002,
             9003,
@@ -14,6 +8,9 @@
             9005,
             9006
         ],
+        "Name": "Radiant Dragon",
+        "Icon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkChooseBossJiedian01.png",
+        "RoomIcon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkRoomBossTu.png",
         "Skills": [
             1,
             2,
@@ -29,12 +26,6 @@
     },
     {
         "ChapterId": 2,
-        "TimeId": 0,
-        "Name": "Nocturne Stalker",
-        "Icon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkChooseBossJiedian011.png",
-        "RoomIcon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkRoomBossTu2.png",
-        "OdSkills": [],
-        "IsTutorial": false,
         "Condition": [
             864003
         ],
@@ -44,6 +35,9 @@
             9010,
             9011
         ],
+        "Name": "Nocturne Stalker",
+        "Icon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkChooseBossJiedian011.png",
+        "RoomIcon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkRoomBossTu2.png",
         "Skills": [
             6,
             7,
@@ -58,14 +52,33 @@
     },
     {
         "ChapterId": 3,
-        "TimeId": 0,
-        "Name": "Simulation Training",
-        "RoomIcon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkRoomBossTu.png",
-        "OdSkills": [],
-        "IsTutorial": true,
         "LevelIds": [
             9001,
             9012
+        ],
+        "Name": "Simulation Training",
+        "RoomIcon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkRoomBossTu.png",
+        "IsTutorial": true
+    },
+    {
+        "ChapterId": 4,
+        "LevelIds": [
+            90009
+        ],
+        "Name": "千子测试",
+        "Icon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkChooseBossJiedian01.png",
+        "RoomIcon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkRoomBossTu.png",
+        "Skills": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "TrueOccupations": [
+            1,
+            2,
+            3
         ]
     }
 ]

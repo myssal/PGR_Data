@@ -1,0 +1,147 @@
+[
+    {
+        "Id": 1,
+        "GroupId": 1,
+        "Note": "Bed Decor Interaction",
+        "ShowButtonName": "Lay Down",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "SLEEP"
+    },
+    {
+        "Id": 2,
+        "GroupId": 2,
+        "Note": "Chair Decor Interaction",
+        "ShowButtonName": "Sit Down",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "CHAIR"
+    },
+    {
+        "Id": 3,
+        "GroupId": 3,
+        "Note": "Stool Decor Interaction (Action Height Different From Chair)",
+        "ShowButtonName": "Sit Down",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "BENCH"
+    },
+    {
+        "Id": 4,
+        "GroupId": 4,
+        "Note": "Shelf Decor Interaction",
+        "ShowButtonName": "Search",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "CABINET"
+    },
+    {
+        "Id": 5,
+        "GroupId": 5,
+        "Note": "Fireworks Decor Interaction",
+        "ShowButtonName": "Set off Fireworks",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "FIREWORK"
+    },
+    {
+        "Id": 101,
+        "GroupId": 100,
+        "Note": "Tactical terminal decor interaction. Opens the Simulated Siege interface.",
+        "ShowButtonName": "Simulated Siege",
+        "ButtonType": 2,
+        "ButtonArg": 84040,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 102,
+        "GroupId": 200,
+        "Note": "Music player interaction. Opens the player interface.",
+        "ShowButtonName": "Player",
+        "ButtonType": 2,
+        "ButtonArg": 85014,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 103,
+        "GroupId": 300,
+        "Note": "Fortune Machine interaction not signed in mainly due to different button display contents",
+        "ConditionType": 3,
+        "ConditionArg": "CONDITION_GUILD_SIGN_REWARD",
+        "ConditionState": 1,
+        "ShowButtonName": "Get an Oracle",
+        "ButtonType": 2,
+        "ButtonArg": 88001,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 104,
+        "GroupId": 300,
+        "Note": "Fortune Machine interaction signed in mainly due to different button display contents",
+        "ConditionType": 3,
+        "ConditionArg": "CONDITION_GUILD_SIGN_REWARD",
+        "ShowButtonName": "Check Oracle",
+        "ButtonType": 2,
+        "ButtonArg": 88001,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 6,
+        "GroupId": 6,
+        "Note": "Fireworks Decor Interaction",
+        "ShowButtonName": "Set off Fireworks",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "NEWFIREWORK"
+    },
+    {
+        "Id": 7,
+        "GroupId": 7,
+        "Note": "Trash Can Interaction",
+        "ShowButtonName": "Search",
+        "ButtonType": 4,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 8,
+        "GroupId": 8,
+        "Note": "Drink Machine",
+        "ShowButtonName": "What to Drink",
+        "ButtonType": 5,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 9,
+        "GroupId": 9,
+        "Note": "Statue",
+        "ShowButtonName": "Stare at the Statue",
+        "ButtonType": 4,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 10,
+        "GroupId": 10,
+        "Note": "European Tea Table",
+        "ShowButtonName": "Look closely",
+        "ButtonType": 4,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 11,
+        "GroupId": 11,
+        "Note": "Lotus",
+        "ShowButtonName": "Look closely",
+        "ButtonType": 4,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 12,
+        "GroupId": 400,
+        "Note": "I want to play the piano",
+        "ShowButtonName": "Play the Piano",
+        "ButtonType": 1,
+        "ButtonArg": 90019,
+        "InteractPoint": 1,
+        "BehaviorType": "PLAYPIANO"
+    }
+]

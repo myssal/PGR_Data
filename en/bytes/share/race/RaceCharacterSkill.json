@@ -4,177 +4,145 @@
         "Name": "Emergency Cooling",
         "Desc": "During the first half of the race, each time you collect a Red Orb, there is a chance to gain a small speed boost.",
         "Condition": 5,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2,
         "Name": "Hyperspace Lag",
         "UltraShout": "Your speed is under my control!",
         "Desc": "Significantly slows down all other characters.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             3
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 3,
         "Name": "Lulu Chef",
         "Desc": "When gaining a Signal Orb, there is a chance to invite one random character ahead to a \"meal\" to slow them down.",
         "Condition": 6,
-        "Times": 0,
-        "Probability": 500,
-        "EmojiTime": 0
+        "Probability": 500
     },
     {
         "Id": 4,
         "Name": "Froggie's Protection",
         "UltraShout": "Froggie, lead me through the mist and the abyss!",
         "Desc": "Gains Froggie's protection, granting acceleration and immunity to debuffs.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 5,
         "Name": "Emergency Rescue",
         "Desc": "When affected by debuffs, there's a chance to gain 1 random Signal Orb",
         "Condition": 7,
-        "Times": 0,
-        "Probability": 400,
-        "EmojiTime": 0
+        "Probability": 400
     },
     {
         "Id": 6,
         "Name": "Training Plan",
         "UltraShout": "Liv, activate acceleration mode!",
         "Desc": "Analyzes the track conditions and adapts driving style to gain long-lasting acceleration.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 7,
         "Name": "Light-Dark Cycle",
         "Desc": "Starts in Dark Form and switches to Light Form in the second half of the race.",
         "Condition": 9,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 8,
         "Name": "Final Prayer",
         "UltraShout": "Hearken now... to the dirge of the engine!",
         "Desc": "While in Dark Form, slows all other characters when triggered; while in Light Form, gains a speed boost instead.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 9,
         "Name": "Nanami Percent",
         "Desc": "70% chance to gain 1 additional Signal Orb when gaining a Signal Orb.",
         "Condition": 6,
-        "Times": 0,
-        "Probability": 700,
-        "EmojiTime": 0
+        "Probability": 700
     },
     {
         "Id": 10,
         "Name": "Let's Go!",
         "UltraShout": "Nanami charge! Let's roll!",
         "Desc": "Gain a major speed boost, with a 70% chance to extend its duration by 2 seconds.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 11,
         "Name": "Battle! Awesome!",
         "Desc": "When affected by a debuff, there's a chance to be immune to it.",
         "Condition": 76,
-        "Times": 0,
-        "Probability": 500,
-        "EmojiTime": 0
+        "Probability": 500
     },
     {
         "Id": 12,
         "Name": "Master Heartflow",
         "UltraShout": "I'll cut my own path with speed!",
         "Desc": "Enter Master Mode until the end of the race, gaining increased speed and improved nitro gain from drifting.",
-        "Condition": 0,
-        "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
+            "",
             2
-        ]
+        ],
+        "Times": 1,
+        "Probability": 1000
     },
     {
         "Id": 13,
         "Name": "Infrastructure Engineering",
         "Desc": "Modify your current track to gain extra acceleration during the first half of the race.",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 14,
         "Name": "Center Stage",
         "UltraShout": "Spotlight, right here!",
         "Desc": "Gain a major speed boost. Other characters gain a minor speed boost.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 15,
         "Name": "The Forsaken",
         "Desc": "Immune to all effects",
         "Condition": 17,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 16,
         "Name": "Fearless",
         "UltraShout": "I no longer fear disruptions!",
         "Desc": "Lose the Forsaken effect and gain permanent speed and acceleration boosts. Can only occur once per game.",
-        "Condition": 0,
-        "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             3
-        ]
+        ],
+        "Times": 1,
+        "Probability": 1000
     },
     {
         "Id": 17,
@@ -182,129 +150,103 @@
         "Desc": "Immediately gain 3 random Signal Orbs at the start of the race.",
         "Condition": 1,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 18,
         "Name": "Roar",
         "UltraShout": "I will break all limits of speed!",
         "Desc": "Gain a major speed boost.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 19,
         "Name": "Big Spender",
         "Desc": "When gaining Signal Orbs in the first half of the race, there is a chance to gain 1 additional random Signal Orb.",
         "Condition": 18,
-        "Times": 0,
-        "Probability": 750,
-        "EmojiTime": 0
+        "Probability": 750
     },
     {
         "Id": 20,
         "Name": "Color Mixing",
         "UltraShout": "This is my draft for \"Acceleration.\"",
         "Desc": "Gain a minor speed boost.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "SignalBallCosts": "{0: 2}",
+        "Probability": 1000
     },
     {
         "Id": 21,
         "Name": "Better Safe Than Sorry",
         "Desc": "Immune to debuffs in the first half of the race.",
         "Condition": 19,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 22,
         "Name": "Change of Plans!",
         "UltraShout": "Time for the backup plan.",
         "Desc": "Removes all debuffs from all characters while granting yourself a large speed boost.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 23,
         "Name": "It's Mine!",
         "Desc": "During the first half of the race, upon entering a curve, steals one random Signal Orb from a random character.",
         "Condition": 21,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 24,
         "Name": "Evernight Flame",
         "UltraShout": "The flames shall reveal the empty finish line I leave behind!",
         "Desc": "Casts Evernight Flame, reducing the speed and acceleration of all other characters.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 25,
         "Name": "Multiplication will descend here",
         "Desc": "In the second half of the race, the number of Signal Orbs gained each time is doubled.",
         "Condition": 22,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 26,
         "Name": "Ascension Calculation",
         "UltraShout": "This is the power of the Ascension-Network!",
         "Desc": "Slows all characters ranked above you.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 27,
         "Name": "My Turn",
         "Desc": "Each time you enter a curve, there's a chance to gain one random Signal Orb and activate its effect.",
         "Condition": 20,
-        "Times": 0,
-        "Probability": 750,
-        "EmojiTime": 0
+        "Probability": 750
     },
     {
         "Id": 28,
         "Name": "I'm here to help!",
         "UltraShout": "Can you keep up with my speed?",
         "Desc": "Grants a speed boost and debuff immunity to yourself and one random racer ranked below you.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             1,
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 29,
@@ -312,226 +254,188 @@
         "Desc": "Triggers when your rank drops in the second half of the race, granting an instant large speed boost. Can trigger once per race.",
         "Condition": 24,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 30,
         "Name": "Will of Kowloong",
         "UltraShout": "Face the combined will... of Kowloong!",
         "Desc": "All characters gain a small speed boost, while you gain an additional large speed boost.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 31,
         "Name": "Nap",
         "Desc": "In the latter half of the race, may randomly fall asleep, gaining a random Signal Orb but slowing down briefly.",
         "Condition": 45,
-        "Times": 0,
-        "Probability": 300,
-        "EmojiTime": 0
+        "Probability": 300
     },
     {
         "Id": 32,
         "Name": "Morning Grumpiness",
         "UltraShout": "Do not disturb my dreams!",
         "Desc": "Locks onto 6 random targets ahead and launches an attack.",
-        "Condition": 0,
-        "Times": 0,
+        "SignalBallCosts": [
+            "",
+            "",
+            2
+        ],
         "Probability": 1000,
         "Emoji": "Assets/Product/Texture/Image/UiPokerGuessing2/UiPokerGuessingEmote03.png",
-        "EmojiTime": 1500,
-        "SignalBallCosts": [
-            2
-        ]
+        "EmojiTime": 1500
     },
     {
         "Id": 33,
         "Name": "Recitativo",
         "Desc": "During the first half of the race, gains and activates one random Signal Orb upon entering a straight section.",
         "Condition": 47,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 34,
         "Name": "Concerto",
         "UltraShout": "Come, let us perform this piece together.",
         "Desc": "Gains a speed boost and has a chance to slow down 3 random characters ahead.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
+            "",
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 35,
         "Name": "Alpha Wolf",
         "Desc": "Gains a brief large boost at the start of the race.",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 36,
         "Name": "Pursuer",
         "UltraShout": "Scents of my prey!",
         "Desc": "Marks 3 random targets and steals their speed for a duration.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 37,
         "Name": "Echoes",
         "Desc": "Each time you gain a speed boost, there is a chance to extend the duration of all your current speed boosts.",
         "Condition": 48,
-        "Times": 0,
-        "Probability": 500,
-        "EmojiTime": 0
+        "Probability": 500
     },
     {
         "Id": 38,
         "Name": "Encore",
         "UltraShout": "The melody refuses to fade. Shall we continue?",
         "Desc": "Gain a medium speed boost and has a chance to recover 1-2 Signal Orbs.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 39,
         "Name": "Positive Bolster",
         "Desc": "When affected by a debuff, gains a speed boost.",
         "Condition": 49,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 40,
         "Name": "Cecily!",
         "UltraShout": "Cecily! Help me!",
         "Desc": "Someone hidden nearby lends a push from the side, giving you a major speed boost.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             2
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 41,
         "Name": "Chill",
         "Desc": "Slightly decelerates during the first half of the race. In the second half, has a chance to gain a medium speed boost at any time.",
         "Condition": 45,
-        "Times": 0,
-        "Probability": 300,
-        "EmojiTime": 0
+        "Probability": 300
     },
     {
         "Id": 42,
         "Name": "Siren Song",
         "UltraShout": "Sink to the bottom of this sea.",
         "Desc": "Inflicts deceleration on a random number of other characters.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
             1,
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 43,
         "Name": "Wish-Mael",
         "Desc": "When entering the second half of the race, grants yourself and the character in last place a brief large speed boost.",
         "Condition": 2,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 44,
         "Name": "Chaotic Dimension",
         "UltraShout": "Would you like to see something beyond the dimensions?",
         "Desc": "Summons a strike from higher-dimensional energy, attacking a random number of other characters.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "Emoji": "Assets/Product/Texture/Image/UiPokerGuessing2/UiPokerGuessingEmote03.png",
-        "EmojiTime": 1500,
         "SignalBallCosts": [
             1,
             1
-        ]
+        ],
+        "Probability": 1000,
+        "Emoji": "Assets/Product/Texture/Image/UiPokerGuessing2/UiPokerGuessingEmote03.png",
+        "EmojiTime": 1500
     },
     {
         "Id": 45,
         "Name": "Winner Takes All",
         "Desc": "After using a Signature Move, becomes immune to debuffs for a short time.",
         "Condition": 52,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 46,
         "Name": "Loaded Die",
         "UltraShout": "Guess your card.",
         "Desc": "All characters, including Lilith, gain one random Signal Orb and immediately trigger its effect (will not trigger skill effects).",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
+            "",
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 47,
         "Name": "Potential Charge",
         "Desc": "Starts at a lower speed but gradually increases maximum speed throughout the race.",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 48,
         "Name": "True Dragon Stance",
         "UltraShout": "Speed keeps me alive!",
         "Desc": "\"1Enters Dragoon Mode. Can only trigger once per race. Afterward, gains a short-duration shield every set distance traveled.\"",
-        "Condition": 0,
-        "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             2
-        ]
+        ],
+        "Times": 1,
+        "Probability": 1000
     },
     {
         "Id": 1000,
@@ -539,8 +443,7 @@
         "Desc": "Starts with Mark Buff",
         "Condition": 1,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1001,
@@ -548,181 +451,145 @@
         "Desc": "Remove Mark Buff after the midpoint",
         "Condition": 2,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1002,
         "Name": "Bianca Dark Signature",
         "Condition": 11,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1003,
         "Name": "Bianca Light Signature",
         "Condition": 12,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1004,
         "Name": "Nanami Signature extension and acceleration",
         "Condition": 13,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1005,
         "Name": "Karenina Past Halfway Remove Passive",
         "Condition": 2,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1006,
         "Name": "Forsaken Actual Effect",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1007,
         "Name": "Chrome Passive Effect",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1008,
         "Name": "Remove Chrome Passive",
         "Condition": 2,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1009,
         "Name": "Lamia Passive Acceleration",
         "Condition": 78,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1010,
         "Name": "Lamia Passive Deceleration",
         "Condition": 1,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1011,
         "Name": "Veronica Passive Actual Effect",
         "Condition": 73,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 1012,
         "Name": "Veronica Signature Move Shield",
         "Condition": 75,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2000,
         "Name": "Shark-speare Skill",
         "Desc": "During the first half of the race, there is a chance to gain a small speed boost upon collecting a Red Orb.",
         "Condition": 5,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2001,
         "Name": "Shark-speare Signature",
         "UltraShout": "Shark-speare, begin testing!",
         "Desc": "Significantly slows down all other characters.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             3
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 2002,
         "Name": "Pointy Skill",
         "Desc": "When affected by a debuff, there's a chance to be immune to it.",
         "Condition": 76,
-        "Times": 0,
-        "Probability": 500,
-        "EmojiTime": 0
+        "Probability": 500
     },
     {
         "Id": 2003,
         "Name": "Pointy Signature",
         "UltraShout": "Pointy, begin testing!",
         "Desc": "Gain increased speed and improved nitro gain from drifting until the end of the race.",
-        "Condition": 0,
-        "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
+            "",
+            "",
             2
-        ]
+        ],
+        "Times": 1,
+        "Probability": 1000
     },
     {
         "Id": 2004,
         "Name": "Pokey Skill",
         "Desc": "When gaining Signal Orbs in the first half of the race, there is a chance to gain 1 additional random Signal Orb.",
         "Condition": 18,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2005,
         "Name": "Pokey Signature",
         "UltraShout": "Pokey, begin testing!",
         "Desc": "Gain a small speed boost.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "SignalBallCosts": "{0: 2}",
+        "Probability": 1000
     },
     {
         "Id": 2006,
         "Name": "Rose Skill",
         "Desc": "Immune to all effects.",
         "Condition": 17,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2007,
         "Name": "Rose Signature",
         "UltraShout": "Rose, begin testing!",
         "Desc": "Lose the skill effects and gain permanent speed and acceleration boosts. Can only occur once per game.",
-        "Condition": 0,
-        "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             3
-        ]
+        ],
+        "Times": 1,
+        "Probability": 1000
     },
     {
         "Id": 2008,
@@ -730,44 +597,36 @@
         "Desc": "Triggers when dropping in ranks in the second half of the race, granting an instant large speed boost. Can trigger once per race.",
         "Condition": 24,
         "Times": 1,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2009,
         "Name": "Spray Signature",
         "UltraShout": "Spray, begin testing!",
         "Desc": "All characters gain a small speed boost, while you gain an additional large speed boost.",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
             1
-        ]
+        ],
+        "Probability": 1000
     },
     {
         "Id": 2010,
         "Name": "Repair Skill",
         "Desc": "After using a Signature Move, becomes immune to debuffs for a short duration.",
         "Condition": 52,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0
+        "Probability": 1000
     },
     {
         "Id": 2011,
         "Name": "Repair Signature",
         "UltraShout": "Repair, begin testing!",
         "Desc": "All characters, including Lilith, gain one random Signal Orb and immediately trigger its effect (will not trigger skill effects).",
-        "Condition": 0,
-        "Times": 0,
-        "Probability": 1000,
-        "EmojiTime": 0,
         "SignalBallCosts": [
             1,
+            "",
             1
-        ]
+        ],
+        "Probability": 1000
     }
 ]

@@ -1,44 +1,79 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiPassportPanel = require("XUi/XUiPassport/XUiPassportPanel")
-local XUiPassportPanelTaskActivity = require("XUi/XUiPassport/XUiPassportPanelTaskActivity")
-local XUiPassportPanelTaskDaily = require("XUi/XUiPassport/XUiPassportPanelTaskDaily")
-local XUiPassportPanelTaskWeekly = require("XUi/XUiPassport/XUiPassportPanelTaskWeekly")
+local XUiPassportPanelTask = require("XUi/XUiPassport/XUiPassportPanelTask")
+local XUiPassport3D = require("XUi/XUiPassport/XUiPassport3D")
 
 ---@field _Control XPassportControl
 ---@class XUiPassport:XLuaUi
 local XUiPassport = XLuaUiManager.Register(XLuaUi, "UiPassport")
 
-local tableInsert = table.insert
-local BtnTaskChildMaxCount = 3     --任务页签的子页签最大数量
-local BtnGetClickDefaultIndex = 3   --点击跳转至挑战任务页签的下标
 local PassportSingleAnimaTime = CS.XGame.ClientConfig:GetFloat("PassportSingleAnimaTime")
+
+local MainTabIndex = {
+    Passport = 1,
+    Task = 2,
+}
 
 --战斗通行证主界面
 function XUiPassport:OnAwake()
-    self.CurWeeklyGroupId = self._Control:GetPassportTaskGroupIdByType(XEnumConst.PASSPORT.TASK_TYPE.WEEKLY)      --记录当前第几周
+    self.CurWeeklyGroupId = self._Control:GetPassportTaskGroupIdByType(XEnumConst.PASSPORT.TASK_TYPE.WEEKLY)
 end
 
 function XUiPassport:OnStart(params)
+    self.Model3D = XUiPassport3D.New(self.UiModelGo.transform, self, self.UiModel)
     self:InitData()
     self:InitPanel()
     self:RegisterButtonEvent()
     self:InitUi()
     self:InitTab()
     self:InitRedPoint()
-    
+
     if params then
-        -- 打开最后一个按钮
         if params.OpenLastPassport then
             self.PassportPanel:OpenLastPassport()
         end
+
+        if params.OpenPassportCard then
+            XLuaUiManager.Open("UiPassportCard", handler(self, self.Refresh), self)
+        end
+    end
+
+    self:CheckAndGetSupplyReward()
+    self:RefreshCoating()
+end
+
+function XUiPassport:RefreshCoating()
+    local typeInfoIdList = self._Control:GetPassportActivityIdToTypeInfoIdList()
+    if XTool.IsTableEmpty(typeInfoIdList) then
+        return
+    end
+
+    local _, maxTypeInfoId = XTool.MaxBy(typeInfoIdList, function(_, v)
+        return self._Control:GetPassportTypeInfoCostItemCount(v)
+    end)
+
+    local fashionId = self._Control:GetPassportBuyFashionShowFashionId(maxTypeInfoId)
+    if not XTool.IsNumberValid(fashionId) then
+        return
+    end
+
+    local fashionShowConfig = self._Control._Model:GetPassportBuyFashionShowConfig(maxTypeInfoId)
+    local fashionType = fashionShowConfig.FashionType  -- 0=普通时装, 1=武器投影, 2=FashionColor
+    self.Model3D:SetModel(fashionId, fashionType)
+end
+
+function XUiPassport:CheckAndGetSupplyReward()
+    if not self._Control:GetIsGetSupplyReward() then
+        self._Control:RequestPassportGetSupplyReward()
     end
 end
 
 function XUiPassport:OnEnable()
+    CS.XGraphicManager.UseUiLightDir = true
+
     self:CheckOpenAutoGetTaskRewardListView()
 
     if not self._Control:CheckActivityIsOpen() then
-        --开着一些弹窗打开其他界面，再从其他界面回来会影响活动结束回到主界面
         self:StartTimer()
         return
     end
@@ -46,7 +81,7 @@ function XUiPassport:OnEnable()
     self.IsKeepUpdateTaskPanel = false
     self.ImgLevelEffect.gameObject:SetActiveEx(false)
 
-    XEventManager.AddEventListener(XEventId.EVENT_BUY_EXP_COMPLEATE, self.UpdatePanel, self)
+    XEventManager.AddEventListener(XEventId.EVENT_BUY_EXP_COMPLEATE, self.UpdateMainPanel, self)
     XEventManager.AddEventListener(XEventId.EVENT_NOTIFY_PASSPORT_BASE_INFO, self.CheckPlayExpAddAnima, self)
     XEventManager.AddEventListener(XEventId.EVENT_AUTO_GET_TASK_REWARD_LIST, self.CheckOpenAutoGetTaskRewardListView, self)
     XEventManager.AddEventListener(XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. XDataCenter.ItemManager.ItemId.PassportExp, self.CheckPlayExpAddAnima, self)
@@ -56,14 +91,16 @@ function XUiPassport:OnEnable()
 end
 
 function XUiPassport:OnDisable()
+    CS.XGraphicManager.UseUiLightDir = false
+
     self:StopDelayUpdateTaskPanelTimer()
     self:StopTimer()
-    for _, panel in ipairs(self.PanelViews) do
+    for _, panel in ipairs(self.MainPanelViews) do
         if not XTool.IsTableEmpty(panel) then
             panel:Hide()
         end
     end
-    XEventManager.RemoveEventListener(XEventId.EVENT_BUY_EXP_COMPLEATE, self.UpdatePanel, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_BUY_EXP_COMPLEATE, self.UpdateMainPanel, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_NOTIFY_PASSPORT_BASE_INFO, self.CheckPlayExpAddAnima, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_AUTO_GET_TASK_REWARD_LIST, self.CheckOpenAutoGetTaskRewardListView, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. XDataCenter.ItemManager.ItemId.PassportExp, self.CheckPlayExpAddAnima, self)
@@ -88,71 +125,45 @@ function XUiPassport:InitData()
     local passportBaseInfo = self._Control:GetPassportBaseInfo()
     self.OldLevel = passportBaseInfo:GetLevel()
 
-    self.IsPlayingExpAddAnima = false   --是否正在播放升级动画中
-    self.IsRePlayExpAddAnima = false    --正在播放升级动画中有新的数据过来，等动画播完了再重新播放一次动画
+    self.IsPlayingExpAddAnima = false
+    self.IsRePlayExpAddAnima = false
 end
 
 function XUiPassport:InitRedPoint()
-    self:AddRedPointEvent(self.Btn01, self.OnCheckRewardRedPoint, self, { XRedPointConditions.Types.CONDITION_PASSPORT_PANEL_REWARD_RED })
-    self:AddRedPointEvent(self.Btn02, self.OnCheckTaskRedPoint, self,
+    self:AddRedPointEvent(self.BtnPassport, self.OnCheckRewardRedPoint, self, { XRedPointConditions.Types.CONDITION_PASSPORT_PANEL_REWARD_RED })
+    self:AddRedPointEvent(self.BtnTask, self.OnCheckTaskRedPoint, self,
             { XRedPointConditions.Types.CONDITION_PASSPORT_TASK_DAILY_RED,
               XRedPointConditions.Types.CONDITION_PASSPORT_TASK_WEEKLY_RED,
               XRedPointConditions.Types.CONDITION_PASSPORT_TASK_ACTIVITY_RED })
-    self:AddRedPointEvent(self.BtnChild01, self.OnCheckTaskDailyRedPoint, self, { XRedPointConditions.Types.CONDITION_PASSPORT_TASK_DAILY_RED })
-    self:AddRedPointEvent(self.BtnChild02, self.OnCheckTaskWeeklyRedPoint, self, { XRedPointConditions.Types.CONDITION_PASSPORT_TASK_WEEKLY_RED })
-    self:AddRedPointEvent(self.BtnChild03, self.OnCheckTaskActivityRedPoint, self, { XRedPointConditions.Types.CONDITION_PASSPORT_TASK_ACTIVITY_RED })
 end
 
 function XUiPassport:InitPanel()
     ---@type XUiPassportPanel
     self.PassportPanel = XUiPassportPanel.New(self.PanelPassport, self)
-    self.PassportPanelTaskActivity = XUiPassportPanelTaskActivity.New(self.PanelTaskActivity, self)
-    self.PassportPanelTaskDaily = XUiPassportPanelTaskDaily.New(self.PanelTaskDaily, self)
-    self.PassportPanelTaskWeekly = XUiPassportPanelTaskWeekly.New(self.PanelTaskWeekly, self)
-    self:InitSubPanel()
-end
+    ---@type XUiPassportPanelTask
+    self.TaskPanel = XUiPassportPanelTask.New(self.PanelTaskMain, self, self.Model3D)
 
-function XUiPassport:InitSubPanel()
-    self.PanelViews = {}
-    tableInsert(self.PanelViews, self.PassportPanel)
-    tableInsert(self.PanelViews, {})    --为了和页签数量相同占位用
-    tableInsert(self.PanelViews, self.PassportPanelTaskDaily)
-    tableInsert(self.PanelViews, self.PassportPanelTaskWeekly)
-    tableInsert(self.PanelViews, self.PassportPanelTaskActivity)
+    self.MainPanelViews = {
+        [MainTabIndex.Passport] = self.PassportPanel,
+        [MainTabIndex.Task] = self.TaskPanel,
+    }
 end
 
 function XUiPassport:InitTab()
-    self.BtnGroupList = {}
+    self.CurrMainTabIndex = 0
 
-    tableInsert(self.BtnGroupList, self.Btn01)     --战略补给
-    tableInsert(self.BtnGroupList, self.Btn02)     --任务
-
-    --任务下的子页签
-    local tagCount = #self.BtnGroupList
-    local btn
-    for i = 1, BtnTaskChildMaxCount do
-        btn = self["BtnChild0" .. i]
-        if btn then
-            self["BtnChild0" .. i].SubGroupIndex = tagCount
-            tableInsert(self.BtnGroupList, btn)
-        end
-    end
-
-    local defaultTagIndex = self._Control:GetCurrMainViewSelectTagIndex()
-    self.PanelNoticeTitleBtnGroup:Init(self.BtnGroupList, function(index)
-        self:OnSelectedTag(index)
+    self.PanelTopTab:Init({ self.BtnPassport, self.BtnTask }, function(index)
+        self:OnSelectedMainTab(index)
     end)
-    self.PanelNoticeTitleBtnGroup:SelectIndex(defaultTagIndex)
+    self.PanelTopTab:SelectIndex(MainTabIndex.Passport)
 end
 
-function XUiPassport:OnSelectedTag(index)
-    if self.CurrSelectTagIndex == index then
+function XUiPassport:OnSelectedMainTab(index)
+    if self.CurrMainTabIndex == index then
         return
     end
-
-    self.CurrSelectTagIndex = index
-    self._Control:CatchCurrMainViewSelectTagIndex(index)
-    self:UpdatePanel()
+    self.CurrMainTabIndex = index
+    self:UpdateMainPanel()
 end
 
 function XUiPassport:InitUi()
@@ -160,16 +171,42 @@ function XUiPassport:InitUi()
 end
 
 function XUiPassport:Refresh()
-    self:UpdateActivityTime()
-    self:UpdateLevel()
-    self:CheckPlayExpAddAnima()
-    self:UpdatePanel()
+    if self.GameObject.activeInHierarchy then
+        self:UpdateActivityTime()
+        self:UpdateLevel()
+        self:UpdateCoatingName()
+        self:UpdateArchivesName()
+        self:CheckPlayExpAddAnima()
+        self:UpdateMainPanel()
+    end
 end
 
-function XUiPassport:UpdatePanel()
-    local currSelectTagIndex = self:GetCurrSelectTagIndex()
-    for i, panel in ipairs(self.PanelViews) do
-        if i == currSelectTagIndex then
+function XUiPassport:UpdateArchivesName()
+    self.TextArchives.text = self._Control:GetPassportActivityName()
+end
+
+function XUiPassport:UpdateCoatingName()
+    if not self.TxtCoatingName then
+        return
+    end
+    local typeInfoIdList = self._Control:GetPassportActivityIdToTypeInfoIdList()
+    for _, typeInfoId in ipairs(typeInfoIdList) do
+        local name = self._Control:GetPassportBuyFashionName(typeInfoId)
+        if name and name ~= "" then
+            self.TxtCoatingName.text = name
+            return
+        end
+    end
+    self.TxtCoatingName.text = ""
+end
+
+function XUiPassport:UpdateMainPanel()
+    local isPassport = self.CurrMainTabIndex == MainTabIndex.Passport
+    -- PanelPassportMain 是 PanelPassport 的父节点，需要单独控制显隐
+    self.PanelPassportMain.gameObject:SetActiveEx(isPassport)
+
+    for i, panel in ipairs(self.MainPanelViews) do
+        if i == self.CurrMainTabIndex then
             panel:Show()
         elseif not XTool.IsTableEmpty(panel) then
             panel:Hide()
@@ -178,9 +215,7 @@ function XUiPassport:UpdatePanel()
 end
 
 function XUiPassport:UpdateTaskPanel()
-    self.PassportPanelTaskDaily:Refresh()
-    self.PassportPanelTaskActivity:Refresh()
-    self.PassportPanelTaskWeekly:Refresh()
+    self.TaskPanel:Refresh()
 end
 
 function XUiPassport:UpdateLevel(isPlayEffect)
@@ -211,22 +246,26 @@ function XUiPassport:UpdateActivityTime()
 end
 
 function XUiPassport:RegisterButtonEvent()
-    self:RegisterClickEvent(self.BtnBack, self.Close)
-    self:RegisterClickEvent(self.BtnMainUi, function()
+    self.BtnBack:AddEventListener(handler(self, self.Close))
+    self.BtnMainUi:AddEventListener(function()
         XLuaUiManager.RunMain()
     end)
-    self:RegisterClickEvent(self.BtnGet, self.OnBtnGetClick)
-    self:RegisterClickEvent(self.BtnBuy, self.OnBtnBuyClick)
+    self.BtnGet:AddEventListener(handler(self, self.OnBtnGetClick))
+    self.BtnBuyLevel:AddEventListener(handler(self, self.OnBtnBuyLevelClick))
+    self.BtnBuyBp:AddEventListener(handler(self, self.OnBtnBuyPassportClick))
+    self.BtnTongBlack:AddEventListener(handler(self, self.OnBtnTongBlackClick))
+    self.BtnExchange:AddEventListener(handler(self, self.OnBtnExchangeClick))
+    self.BtnOpen:AddEventListener(handler(self, self.OnBtnOpenClick))
     self:BindHelpBtn(self.BtnHelp, "Passport")
 end
 
---跳转至挑战任务页签
+--跳转至任务页签
 function XUiPassport:OnBtnGetClick()
-    self.PanelNoticeTitleBtnGroup:SelectIndex(BtnGetClickDefaultIndex)
+    self.PanelTopTab:SelectIndex(MainTabIndex.Task)
 end
 
 --购买等级
-function XUiPassport:OnBtnBuyClick()
+function XUiPassport:OnBtnBuyLevelClick()
     local passportBaseInfo = self._Control:GetPassportBaseInfo()
     local level = passportBaseInfo:GetLevel()
     local maxLevel = self._Control:GetPassportMaxBuyableLevel()
@@ -235,6 +274,47 @@ function XUiPassport:OnBtnBuyClick()
         return
     end
     XLuaUiManager.Open("UiPassportUpLevel")
+end
+
+--一键领取/完成，根据当前页签切换行为
+function XUiPassport:OnBtnTongBlackClick()
+    if self.CurrMainTabIndex == MainTabIndex.Passport then
+        self._Control:RequestPassportRecvAllReward(handler(self, self.Refresh), self)
+    elseif self.CurrMainTabIndex == MainTabIndex.Task then
+        self.TaskPanel:FinishMultiTask()
+    end
+end
+
+--购买通行证（统一入口）
+function XUiPassport:OnBtnBuyPassportClick()
+    XLuaUiManager.Open("UiPassportCard", handler(self, self.Refresh), self)
+end
+
+--打开兑换商店
+function XUiPassport:OnBtnExchangeClick()
+    CS.XRecord.Record("20027", "OnEnterShopFromBP")
+    XLuaUiManager.Open("UiShop", XShopManager.ShopType.Points)
+end
+
+function XUiPassport:OnBtnOpenClick()
+    local typeInfoIdList = self._Control:GetPassportActivityIdToTypeInfoIdList()
+    for _, typeInfoId in ipairs(typeInfoIdList) do
+        local fashionId = self._Control:GetPassportBuyFashionShowFashionId(typeInfoId)
+        if XTool.IsNumberValid(fashionId) then
+            local fashionType = self._Control:GetPassportBuyFashionShowType(typeInfoId)
+            local buyData = self._Control:GetPassportFashionBuyData(
+                typeInfoId,
+                function()
+                    XLuaUiManager.CloseWithCallback(
+                        "UiPassportFashionDetail",
+                        function()
+                            self:OnBtnBuyPassportClick()
+                        end)
+                end)
+            XLuaUiManager.Open("UiPassportFashionDetail", fashionId, fashionType, buyData)
+            return
+        end
+    end
 end
 
 function XUiPassport:OnGetEvents()
@@ -270,28 +350,12 @@ function XUiPassport:StopDelayUpdateTaskPanelTimer()
     end
 end
 
-function XUiPassport:GetCurrSelectTagIndex()
-    return self.CurrSelectTagIndex
-end
-
 function XUiPassport:OnCheckRewardRedPoint(count)
-    self.Btn01:ShowReddot(count >= 0)
+    self.BtnPassport:ShowReddot(count >= 0)
 end
 
 function XUiPassport:OnCheckTaskRedPoint(count)
-    self.Btn02:ShowReddot(count >= 0)
-end
-
-function XUiPassport:OnCheckTaskDailyRedPoint(count)
-    self.BtnChild01:ShowReddot(count >= 0)
-end
-
-function XUiPassport:OnCheckTaskWeeklyRedPoint(count)
-    self.BtnChild02:ShowReddot(count >= 0)
-end
-
-function XUiPassport:OnCheckTaskActivityRedPoint(count)
-    self.BtnChild03:ShowReddot(count >= 0)
+    self.BtnTask:ShowReddot(count >= 0)
 end
 
 function XUiPassport:StartTimer()
@@ -313,7 +377,7 @@ function XUiPassport:StartTimer()
             return
         end
 
-        self.PassportPanelTaskWeekly:UpdateTime()
+        self.TaskPanel:UpdateTime()
     end, XScheduleManager.SECOND)
 end
 
@@ -336,10 +400,10 @@ function XUiPassport:CheckPlayExpAddAnima()
     self.IsPlayingExpAddAnima = true
 
     local passportBaseInfo = self._Control:GetPassportBaseInfo()
-    local level = passportBaseInfo:GetLevel()                   --当前等级
-    local maxLevel = self._Control:GetPassportMaxLevel()     --最大等级
+    local level = passportBaseInfo:GetLevel()
+    local maxLevel = self._Control:GetPassportMaxLevel()
     local itemId = XDataCenter.ItemManager.ItemId.PassportExp
-    local curExp = XDataCenter.ItemManager.GetCount(itemId)     --当前拥有的经验
+    local curExp = XDataCenter.ItemManager.GetCount(itemId)
     local oldExp = self.OldExp
     local oldLevel = self.OldLevel
     local progress
@@ -365,10 +429,10 @@ function XUiPassport:CheckPlayExpAddAnima()
 
     local oldLevelOfNextLevel = math.min(maxLevel, oldLevel + 1)
     local oldLevelOfNextLevelId = self._Control:GetPassportLevelId(oldLevelOfNextLevel)
-    local oldLevelOfNextLevelTotalExp = oldLevelOfNextLevelId and self._Control:GetPassportLevelTotalExp(oldLevelOfNextLevelId)        --等级改变前升至下一级需要的总经验
-    local changeExp = level > oldLevel and oldLevelOfNextLevelTotalExp - oldExp or curExp - oldExp          --等级改变前经验的变化量
+    local oldLevelOfNextLevelTotalExp = oldLevelOfNextLevelId and self._Control:GetPassportLevelTotalExp(oldLevelOfNextLevelId)
+    local changeExp = level > oldLevel and oldLevelOfNextLevelTotalExp - oldExp or curExp - oldExp
     local oldLevelId = XTool.IsNumberValid(oldLevel) and self._Control:GetPassportLevelId(oldLevel)
-    local oldLevelTotalExp = oldLevelId and self._Control:GetPassportLevelTotalExp(oldLevelId) or 0      --等级改变前的最大经验
+    local oldLevelTotalExp = oldLevelId and self._Control:GetPassportLevelTotalExp(oldLevelId) or 0
 
     local upperLevel = oldLevel - 1
     local oldLevelShowExp = upperLevel > 0 and oldExp - oldLevelTotalExp or oldExp
@@ -391,7 +455,7 @@ function XUiPassport:CheckPlayExpAddAnima()
 
         curExpTemp = math.min(oldLevelShowExp + math.floor(f * changeExp), nextLevelShowTotalExp)
         progress = curExpTemp / nextLevelShowTotalExp
-        self.TxtPointNum.text = CS.XTextManager.GetText("PassportExp", curExpTemp, nextLevelShowTotalExp)    --（玩家总经验-之前等级升级需要经验之和）/ 升至下一等级需要的经验
+        self.TxtPointNum.text = CS.XTextManager.GetText("PassportExp", curExpTemp, nextLevelShowTotalExp)
         self.ImgProgress.fillAmount = math.min(1, progress)
 
     end, function()
@@ -412,4 +476,14 @@ function XUiPassport:CheckPlayExpAddAnima()
             CheckRePlayExpAddAnima()
         end
     end)
+end
+
+function XUiPassport:OnShowCard()
+    self.SafeAreaContentPane.gameObject:SetActive(false)
+    self.Model3D:ShowCardCamera(true)
+end
+
+function XUiPassport:OnHideCard()
+    self.SafeAreaContentPane.gameObject:SetActive(true)
+    self.Model3D:ShowCardCamera(false)
 end

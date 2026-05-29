@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory283.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             201
@@ -30,40 +20,30 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You are now entering an abandoned residential area..."
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Projections and the Corrupted coexist and roam the area."
         ]
     },
     {
         "Id": 5,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Let's look into these projections first.",
             7
         ]
@@ -71,42 +51,29 @@
     {
         "Id": 6,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001,
+            "",
             -600
         ]
     },
     {
         "Id": 7,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500026,
+            "",
             600
         ]
     },
     {
         "Id": 8,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             500166
@@ -115,12 +82,7 @@
     {
         "Id": 9,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lee",
@@ -131,13 +93,9 @@
     {
         "Id": 10,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "I ran a search with information of the Ascendants and Huaxu but I wasn't able to find anything. We can really use information that's more detailed.",
             1
@@ -146,13 +104,9 @@
     {
         "Id": 11,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "All these projections and the Corrupted here, though. Could this be a sign of something?",
             3
@@ -161,13 +115,9 @@
     {
         "Id": 12,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "It could be, but of what?",
             1
@@ -176,13 +126,9 @@
     {
         "Id": 13,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee, what's your thought?",
             15,
             "Lucia, let's get rid of them all!",
@@ -194,13 +140,9 @@
     {
         "Id": 14,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "As I said, a record this huge and complicated would take quite some time to calculate.",
             2
@@ -209,13 +151,9 @@
     {
         "Id": 15,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "The Spear of F.O.S. isn't turning up anything with the information we have. It's only giving us this sea of data.",
             2
@@ -226,11 +164,8 @@
         "ActionId": 17,
         "NextActionId": 24,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Let's see what Liv has to say.",
             2
@@ -239,12 +174,7 @@
     {
         "Id": 17,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             5
@@ -253,13 +183,9 @@
     {
         "Id": 18,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "Sure. Let's keep fighting, Commandant!",
             3
@@ -268,12 +194,7 @@
     {
         "Id": 19,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3
         ]
@@ -281,13 +202,9 @@
     {
         "Id": 20,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Hold on! But we came here for leads!",
             2
@@ -296,13 +213,9 @@
     {
         "Id": 21,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "The record is only going to get bigger and more complicated if we destroy all the Corrupted here!",
             2
@@ -313,11 +226,8 @@
         "ActionId": 23,
         "NextActionId": 24,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Let's see what Liv has to say.",
             2
@@ -326,14 +236,10 @@
     {
         "Id": 23,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "...Um. Let me think about it.",
             1
@@ -342,12 +248,7 @@
     {
         "Id": 24,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 305,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             26,
             32
@@ -356,14 +257,10 @@
     {
         "Id": 25,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "Most of these Corrupted bodies are new. The only ones with dust on them are placed high up.",
             1
@@ -372,13 +269,9 @@
     {
         "Id": 26,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "I think these Corrupted only got here recently.",
             1
@@ -387,13 +280,9 @@
     {
         "Id": 27,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "So, something drew them here, or maybe the Ascendants summoned them.",
             2
@@ -402,13 +291,9 @@
     {
         "Id": 28,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "Correct, and the remains on the ground have been recycled.",
             1
@@ -417,13 +302,9 @@
     {
         "Id": 29,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "Uhm... Why did they only recycle the ones on the ground, though?",
             1
@@ -432,31 +313,27 @@
     {
         "Id": 30,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The four of you think for a bit to no avail. You will just need to keep looking for clues."
         ]
     },
     {
         "Id": 31,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
             3,
+            "",
+            "",
             1
         ]
     }

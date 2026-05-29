@@ -1,0 +1,653 @@
+[
+    {
+        "Id": 1,
+        "NpcId": 1111002,
+        "Name": "ソフィア",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D08.png",
+        "TextStageEnter": [
+            "指揮官、一緒に完成させよう"
+        ],
+        "TextStageSettle": [
+            "アディレ商業連盟の礼儀上、贈り物をするべきだけど……もう指揮官はただの商業相手じゃない。楽しかった、ありがとう"
+        ],
+        "TextChooseBlock": [
+            "うん、最適解だと思う",
+            "次は、指揮官の番"
+        ],
+        "TextMoveBlock": [
+            "先手を打たれた……",
+            "指揮官、一緒にしよう"
+        ],
+        "SmartPutDownBlock": 70
+    },
+    {
+        "Id": 2,
+        "NpcId": 1261003,
+        "Name": "エコー",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D010.png",
+        "TextStageEnter": [
+            "一緒に花提灯で祝福しましょう"
+        ],
+        "TextStageSettle": [
+            "レシピ通りに作ったチョコレートと、花を贈ります。これで合っているのでしょうか?指揮官との絆は……とても大切なものなので"
+        ],
+        "TextChooseBlock": [
+            "私なら……そこを選びます",
+            "そこはどうですか?"
+        ],
+        "TextMoveBlock": [
+            "もっといい場所があるのですか?",
+            "指揮官の判断を信じます"
+        ],
+        "SmartPutDownBlock": 90
+    },
+    {
+        "Id": 3,
+        "NpcId": 1021004,
+        "Name": "Lucia",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D09.png",
+        "TextStageEnter": [
+            "一緒に光を集めましょう"
+        ],
+        "TextStageSettle": [
+            "実は、花提灯をたどって指揮官を探していたんです。あなたと再び触れ合えるように、光が導いてくれました"
+        ],
+        "TextChooseBlock": [
+            "指揮官から一番近い場所に置きましょう",
+            "一緒にこの光を灯しましょう"
+        ],
+        "TextMoveBlock": [
+            "光が集まってきましたね",
+            "……指揮官、手を繋いでくれますか?"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 4,
+        "NpcId": 1011004,
+        "Name": "Lee",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D01.png",
+        "TextStageEnter": [
+            "来ると思ってましたよ"
+        ],
+        "TextStageSettle": [
+            "祈るだけで叶うなら苦労はしませんが……あなたに関することは全て叶いました。指揮官の願いも叶いましたか?"
+        ],
+        "TextChooseBlock": [
+            "測定結果によると、そこが最適ですね",
+            "よし、置きましょう"
+        ],
+        "TextMoveBlock": [
+            "……お好きにどうぞ",
+            "悪くないですね"
+        ],
+        "SmartPutDownBlock": 90
+    },
+    {
+        "Id": 5,
+        "NpcId": 1031001,
+        "Name": "Liv",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D07.png",
+        "TextStageEnter": [
+            "想いを花提灯に託しましょう"
+        ],
+        "TextStageSettle": [
+            "指揮官がご多忙なことも、一緒にいる時間が変わっていないこともわかってるんです。でも……もっと一緒にいたいです、指揮官"
+        ],
+        "TextChooseBlock": [
+            "そこに置いても……いいですか?",
+            "どうかこの光が失われませんように"
+        ],
+        "TextMoveBlock": [
+            "水面に映ってる……とても綺麗ですね",
+            "花提灯が灯った……"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 6,
+        "NpcId": 1171004,
+        "Name": "Luna",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D06.png",
+        "TextStageEnter": [
+            "この灯りを一緒に見届けましょう"
+        ],
+        "TextStageSettle": [
+            "私にとっては霧がかったような暗い行事だったけど……あなたがいるのなら、次があってもいいかもね"
+        ],
+        "TextChooseBlock": [
+            "私なら……そこを選ぶわ",
+            "そこに置いた方が面白そうよ"
+        ],
+        "TextMoveBlock": [
+            "あなたには別の考えがあるみたいね",
+            "あなたの考えを教えて"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 7,
+        "NpcId": 1521004,
+        "Name": "曲",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D011.png",
+        "TextStageEnter": [
+            "あなたの実力を見せなさい"
+        ],
+        "TextStageSettle": [
+            "今日は縁のある者と出かける日だとか……なので、私も時間を作りました。ともに夜語りでもしますか?"
+        ],
+        "TextChooseBlock": [
+            "良し悪しは私が決めます",
+            "行動は思考に基づきます。軽率な行動は避けなさい"
+        ],
+        "TextMoveBlock": [
+            "これがあなたの判断ですか?",
+            "英雄の見解は似通っている……"
+        ],
+        "SmartPutDownBlock": 90
+    },
+    {
+        "Id": 8,
+        "NpcId": 1121003,
+        "Name": "クロム",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D05.png",
+        "TextStageEnter": [
+            "一緒に完成させるのが楽しみです"
+        ],
+        "TextStageSettle": [
+            "君とは多くの言葉を交わさなくとも、互いに理解し合える……一緒に過ごせて嬉しかったです。次は私からお誘いします"
+        ],
+        "TextChooseBlock": [
+            "置きましょう",
+            "私がしましょうか?"
+        ],
+        "TextMoveBlock": [
+            "素晴らしい一歩です",
+            "位置を変えましょう"
+        ],
+        "SmartPutDownBlock": 90
+    },
+    {
+        "Id": 9,
+        "NpcId": 1131002,
+        "Name": "Vera",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D04.png",
+        "TextStageEnter": [
+            "ねぇ、ちょっと楽しいことでもしない?"
+        ],
+        "TextStageSettle": [
+            "まさかこれだけのつもり?この時間を有意義なものにするために、指揮官は一体何をしてくれるのかしら?"
+        ],
+        "TextChooseBlock": [
+            "そこが気に入ったの?",
+            "次はあなたに任せるわ"
+        ],
+        "TextMoveBlock": [
+            "安心して置いていいわよ",
+            "こんな些細なことで迷ってどうするの?"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 10,
+        "NpcId": 1071004,
+        "Name": "Karenina",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D03.png",
+        "TextStageEnter": [
+            "お前が誘ったんだからな!"
+        ],
+        "TextStageSettle": [
+            "人が多いのは慣れねーな……「秘密基地」に戻ろうぜ。何でって……そこにプレゼントを置いてるからに決まってんだろーが!"
+        ],
+        "TextChooseBlock": [
+            "次はそこに置くよな?",
+            "そこでいいのか!?いいんだな!?"
+        ],
+        "TextMoveBlock": [
+            "……オレもそこに置きたかったんだよ!",
+            "もう決めたか?これが以心伝心か……"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 11,
+        "NpcId": 1041003,
+        "Name": "Bianca",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D02.png",
+        "TextStageEnter": [
+            "指揮官殿とであれば、どこへでも"
+        ],
+        "TextStageSettle": [
+            "もう少しだけ川沿いを歩きませんか?ふたりで過ごせる時間は貴重なので……叶うのであれば、もっとあなたのお傍にいたいです"
+        ],
+        "TextChooseBlock": [
+            "そこにしましょう",
+            "指揮官殿はどう思われますか?"
+        ],
+        "TextMoveBlock": [
+            "なるほど……さすがは指揮官殿です",
+            "あなたの選択は相変わらず的確ですね"
+        ],
+        "SmartPutDownBlock": 70
+    },
+    {
+        "Id": 12,
+        "NpcId": 1091003,
+        "Name": "アイラ",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D22.png",
+        "TextStageEnter": [
+            "シーンコーディネートなら任せて!"
+        ],
+        "TextStageSettle": [
+            "あなたがいるから、より華やかな日になったわ。やっぱり想像だけじゃ駄目ね、次はもっと多くの色を体験しましょ!"
+        ],
+        "TextChooseBlock": [
+            "さぁ、描くわよ!",
+            "よし、そこは完成ね"
+        ],
+        "TextMoveBlock": [
+            "指揮官の構想を教えて?",
+            "私の構想は指揮官と似てるの"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 13,
+        "NpcId": 1571003,
+        "Name": "ノアン",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D31.png",
+        "TextStageEnter": [
+            "暗い夜には明かりを灯そう"
+        ],
+        "TextStageSettle": [
+            "こういう行事は慣れたと思ったけど……花提灯の隙間から君が見えた時、いつもと違う喜びを感じたよ。この夜が長く続けばいいのに"
+        ],
+        "TextChooseBlock": [
+            "この花提灯、売られてたやつかい?",
+            "花提灯を見たら、また違う気持ちになる"
+        ],
+        "TextMoveBlock": [
+            "花提灯に願いを乗せてみようか",
+            "うん、いいと思うよ"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 14,
+        "NpcId": 1231002,
+        "Name": "バンビナータ",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D21.png",
+        "TextStageEnter": [
+            "指揮官、バンビナータを助けていただけませんか?"
+        ],
+        "TextStageSettle": [
+            "記憶データによると、今日はとても特別な日です。踊った方がよろしいですか?それとも、他に何かお望みでしょうか?"
+        ],
+        "TextChooseBlock": [
+            "バンビナータは、そこが好きです",
+            "そこでいいのですか?"
+        ],
+        "TextMoveBlock": [
+            "指揮官の思うままでいいのです",
+            "指揮官の考えなら、間違いなんてありません"
+        ],
+        "SmartPutDownBlock": 60
+    },
+    {
+        "Id": 15,
+        "NpcId": 1081004,
+        "Name": "ワタナベ",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D29.png",
+        "TextStageEnter": [
+            "花提灯が完成した。一緒に灯そう"
+        ],
+        "TextStageSettle": [
+            "普段は準備に回るから参加することは滅多になくてな。いろんなことを思い出したよ……今度、ゆっくりと聞かせてやろう"
+        ],
+        "TextChooseBlock": [
+            "先に置くぞ?",
+            "そこに置けば問題ないはずだ"
+        ],
+        "TextMoveBlock": [
+            "置く前に全体を見ろ",
+            "ずいぶんとうまいな"
+        ],
+        "SmartPutDownBlock": 70
+    },
+    {
+        "Id": 16,
+        "NpcId": 1141003,
+        "Name": "ロゼッタ",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D012.png",
+        "TextStageEnter": [
+            "一緒に新しい障害を乗り越えよう"
+        ],
+        "TextStageSettle": [
+            "今日みたいな日は、これまでは吹雪に覆われた何でもない日だったけど……あなたがいるから、幸運で特別な日になった"
+        ],
+        "TextChooseBlock": [
+            "もう、迷わない",
+            "そこだと思う"
+        ],
+        "TextMoveBlock": [
+            "勝利に近付いていってる",
+            "あなたの行動全てが、勝利へ導いてくれる"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 17,
+        "NpcId": 1051004,
+        "Name": "ナナミ",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D013.png",
+        "TextStageEnter": [
+            "ナナミの実力、とくとご覧あれ!"
+        ],
+        "TextStageSettle": [
+            "指揮官に魔法をかけておいたよ!かかった人はずーっと愛する人と幸せに過ごせるの!……ナナミにも同じ魔法をかけてくれる?"
+        ],
+        "TextChooseBlock": [
+            "そこだー!",
+            "あそこにしよっ!"
+        ],
+        "TextMoveBlock": [
+            "ナナミ、楽しみだなぁ",
+            "ナナミ、大賛成!"
+        ],
+        "SmartPutDownBlock": 90
+    },
+    {
+        "Id": 18,
+        "NpcId": 1061002,
+        "Name": "カムイ",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D015.png",
+        "TextStageEnter": [
+            "一緒にゲームしようぜ!"
+        ],
+        "TextStageSettle": [
+            "指揮官ってさ、俺よりも俺のこと知ってるよな?まさか、ずっと監視してる!?って、冗談冗談!また一緒にやろうな!"
+        ],
+        "TextChooseBlock": [
+            "本当にいいのか!?",
+            "そこに決めた!"
+        ],
+        "TextMoveBlock": [
+            "指揮官が選んだ位置もアリだな!",
+            "指揮官ってホントこういうゲーム得意だよな!"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 19,
+        "NpcId": 1211002,
+        "Name": "バンジ",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D017.png",
+        "TextStageEnter": [
+            "ふわぁ……一緒に灯りをつけようか"
+        ],
+        "TextStageSettle": [
+            "疲れた……少し気を張りつめすぎたかも。今日は特別な日だから、君と過ごす時間を1秒でも無駄にしたくなかったんだ"
+        ],
+        "TextChooseBlock": [
+            "よし、できた",
+            "なんか……ナイトランプみたいだね"
+        ],
+        "TextMoveBlock": [
+            "どこにでも置いてもいいよ",
+            "適当でもいいんじゃない?"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 20,
+        "NpcId": 1511003,
+        "Name": "カム",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D016.png",
+        "TextStageEnter": [
+            "……面倒だが、どうしてもというのなら仕方ない"
+        ],
+        "TextStageSettle": [
+            "慣れないが、お前との時間は……まぁ悪くなかった。今日という日を覚えてやらんこともない"
+        ],
+        "TextChooseBlock": [
+            "お前もそこに置こうとしたのか?",
+            "そこだ"
+        ],
+        "TextMoveBlock": [
+            "こっちに助けを求めるな",
+            "いい判断だったんじゃないか?"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 21,
+        "NpcId": 1021005,
+        "Name": "α",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D23.png",
+        "TextStageEnter": [
+            "面白そうじゃない。やってもいいわよ"
+        ],
+        "TextStageSettle": [
+            "あなたと出会うまでは気にも留めない行事だったけど……あなたが望むなら、また付き合ってあげる"
+        ],
+        "TextChooseBlock": [
+            "そこが私の選択よ",
+            "次はあなたよ"
+        ],
+        "TextMoveBlock": [
+            "どう選択するか、見ものね",
+            "調整した方がいいわ"
+        ],
+        "SmartPutDownBlock": 80
+    },
+    {
+        "Id": 22,
+        "NpcId": 1541003,
+        "Name": "Roland",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D014.png",
+        "TextStageEnter": [
+            "おや、私の手を取ってくれるのかい?"
+        ],
+        "TextStageSettle": [
+            "これでまた私たちのエンディングが増えたね。……満足していないのかい?じゃあ、次はどんなエンディングを目指そうか?"
+        ],
+        "TextChooseBlock": [
+            "そこが好きなのかい?",
+            "もうエンディングが見えたようだね"
+        ],
+        "TextMoveBlock": [
+            "あんたはどんな判断をするのかな?",
+            "思うままに物語を進めよう"
+        ],
+        "SmartPutDownBlock": 90
+    },
+    {
+        "Id": 23,
+        "NpcId": 1271003,
+        "Name": "Lamia",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D28.png",
+        "TextStageEnter": [
+            "い、一緒にやってみる……?"
+        ],
+        "TextStageSettle": [
+            "手作りのプレゼントとか面倒……受け取ってもらえないかもだし……え?受け取ってくれるの?じゃあ、頑張ってみようかな……"
+        ],
+        "TextChooseBlock": [
+            "ほ、本当にそこでいい?",
+            "とにかく、そこにしよう……"
+        ],
+        "TextMoveBlock": [
+            "ゆっくり考えたらいい……",
+            "あ……!いや……なんでもない"
+        ],
+        "SmartPutDownBlock": 50
+    },
+    {
+        "Id": 24,
+        "NpcId": 1531003,
+        "Name": "セレーナ",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D019.png",
+        "TextStageEnter": [
+            "一緒にこの瞬間を奏でましょう"
+        ],
+        "TextStageSettle": [
+            "……もう一度だけ私と踊ってください。感情が人を盲目にするのなら、私はあなたとともに暗闇を歩きます"
+        ],
+        "TextChooseBlock": [
+            "そこがいいかと",
+            "灯りが導いてくれましたね"
+        ],
+        "TextMoveBlock": [
+            "星と海を全てあなたに捧げます",
+            "あなたが握る光は、朝焼けのようですね"
+        ],
+        "SmartPutDownBlock": 70
+    },
+    {
+        "Id": 25,
+        "NpcId": 1561003,
+        "Name": "ハカマ",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D30.png",
+        "TextStageEnter": [
+            "誘う相手の条件は「惹かれる人」とのことです"
+        ],
+        "TextStageSettle": [
+            "感情モジュールで「喜び」を検出、その源はあなたです。私も同程度のポジティブな信号をお返ししたいです"
+        ],
+        "TextChooseBlock": [
+            "パラメータ較正を実行中……",
+            "配置.exe実行中……"
+        ],
+        "TextMoveBlock": [
+            "指揮官の思考回路は学ぶ価値があります",
+            "これが人間の最適解を演算する方法なのですね"
+        ],
+        "SmartPutDownBlock": 70
+    },
+    {
+        "Id": 26,
+        "NpcId": 1241002,
+        "Name": "含英",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D24.png",
+        "TextStageEnter": [
+            "指揮官も花提灯がお好きですか?"
+        ],
+        "TextStageSettle": [
+            "甘い香りに包まれながら、好きな人と寄り添う日……美味しい焼き菓子を用意しないといけませんね"
+        ],
+        "TextChooseBlock": [
+            "そこがいいと思います",
+            "自信はありませんが……"
+        ],
+        "TextMoveBlock": [
+            "あなたを見て、学ばせていただきます",
+            "素晴らしい調整ですね"
+        ],
+        "SmartPutDownBlock": 70
+    },
+    {
+        "Id": 27,
+        "NpcId": 1221003,
+        "Name": "No. 21",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D25.png",
+        "TextStageEnter": [
+            "ガオー。21号と、勝負しよう"
+        ],
+        "TextStageSettle": [
+            "今日は特別な日。何が好きかわからないから、21号が好きなマンゴーアイスを買ってきた。溶けないうちに、取りに来て"
+        ],
+        "TextChooseBlock": [
+            "わからない。とりあえず置こう",
+            "ここも悪くなさそう"
+        ],
+        "TextMoveBlock": [
+            "指揮官、油断したの?",
+            "決まった?"
+        ],
+        "SmartPutDownBlock": 60
+    },
+    {
+        "Id": 28,
+        "NpcId": 1251002,
+        "Name": "Noctis",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D26.png",
+        "TextStageEnter": [
+            "ドカンとやってやろうぜ!指揮官!"
+        ],
+        "TextStageSettle": [
+            "もう終わりか?つまんねぇな。そうだ、特別に秘蔵のプレイリストを聴かせてやるよ。っしゃ!ついでに飲みに行こうぜ!"
+        ],
+        "TextChooseBlock": [
+            "見てろ、先手必勝ってな!",
+            "それ……爆発するんじゃねぇか?"
+        ],
+        "TextMoveBlock": [
+            "こういう作業はお前に任せるぜ",
+            "アンタの判断を疑っちゃいねぇよ"
+        ],
+        "SmartPutDownBlock": 60
+    },
+    {
+        "Id": 29,
+        "NpcId": 1551003,
+        "Name": "蒲牢",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D020.png",
+        "TextStageEnter": [
+            "指揮官と一緒なら、絶対にできます!"
+        ],
+        "TextStageSettle": [
+            "これからもたくさん遊びましょうね!楽しめそうな場所を探したんですが、指揮官と一緒にいることが一番楽しいです!"
+        ],
+        "TextChooseBlock": [
+            "そこで間違いありません!",
+            "そこにしましょう!"
+        ],
+        "TextMoveBlock": [
+            "指揮官はそこがいいんですね?",
+            "指揮官はそこを選択、っと……メモメモ……"
+        ],
+        "SmartPutDownBlock": 30
+    },
+    {
+        "Id": 30,
+        "NpcId": 1291002,
+        "Name": "Teddy",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D27.png",
+        "TextStageEnter": [
+            "こんな簡単なゲーム、余裕でしょ"
+        ],
+        "TextStageSettle": [
+            "今日?もちろん知ってるわ。予定も立ててあるの。大丈夫、「お邪魔虫」はいないから。せっかくだもの、ふたりで楽しまないとね"
+        ],
+        "TextChooseBlock": [
+            "適当に置いてみたら?",
+            "暇つぶしにはちょうどいいわね"
+        ],
+        "TextMoveBlock": [
+            "面白い選択ね",
+            "……やるじゃない"
+        ],
+        "SmartPutDownBlock": 90
+    },
+    {
+        "Id": 31,
+        "NpcId": 1161002,
+        "Name": "常羽",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D018.png",
+        "TextStageEnter": [
+            "面白そうだな!一緒にやってみようぜ!"
+        ],
+        "TextStageSettle": [
+            "こんな日に花提灯を飾るのは、なんか斬新だな……。ま、お前と一緒にいられるならいいか!"
+        ],
+        "TextChooseBlock": [
+            "花提灯は綺麗だけど、いくらかかってるんだ?",
+            "なんか舞台のセッティングみたいだな"
+        ],
+        "TextMoveBlock": [
+            "お!いい判断だ!",
+            "一度置いたら後戻りはなし。それが原則だ"
+        ],
+        "SmartPutDownBlock": 80
+    }
+]

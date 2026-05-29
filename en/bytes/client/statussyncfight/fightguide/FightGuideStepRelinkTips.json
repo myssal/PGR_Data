@@ -1,22 +1,12 @@
 [
     {
         "Id": 90005201,
-        "IsTimeStop": false,
-        "Text": "Preparing for the first entropy-flow simulation. The combat target is extremely dangerous. Proceed with caution!",
-        "Duration": 0.0,
-        "NeedSendCommonClick": false,
-        "OffsetY": 0.0,
-        "IsMask": false,
-        "MaskTargetUi": 0,
-        "NextGuide": 0
+        "Text": "Preparing for the first entropy-flow simulation. The combat target is extremely dangerous. Proceed with caution!"
     },
     {
         "Id": 90005202,
         "IsTimeStop": true,
         "Text": "Hit enemies continuously with <color=#ffda58>Basic Attack</color> to gain <color=#ffda58>[Skill Orbs]</color>.",
-        "Duration": 0.0,
-        "NeedSendCommonClick": false,
-        "OffsetY": 0.0,
         "IsMask": true,
         "MaskTargetWidget": "UiFightDlcCommonControl/SafeAreaContentPane/UiDlcRelinkCharacterControlPanel3/ButtonFocus",
         "MaskTargetUi": 1,
@@ -24,14 +14,9 @@
     },
     {
         "Id": 90005203,
-        "IsTimeStop": false,
         "Text": "Tap <color=#ffda58>[Skill Orbs]</color> to trigger the Exclusive Skill.",
-        "Duration": 0.0,
-        "NeedSendCommonClick": false,
-        "OffsetY": 0.0,
         "IsMask": true,
         "MaskTargetWidget": "UiFightDlcRelinkExtraControl/SafeAreaContentPane/UiDlcRelinkControlPanel/BtnQTE2",
-        "MaskTargetUi": 1,
-        "NextGuide": 0
+        "MaskTargetUi": 1
     }
 ]

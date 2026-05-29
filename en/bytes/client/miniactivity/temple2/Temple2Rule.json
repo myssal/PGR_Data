@@ -1,0 +1,327 @@
+[
+    {
+        "Id": 101,
+        "RuleType": 1,
+        "Name": "Different Color",
+        "RuleDesc": "Connecting two different-color tiles grants 2 points.",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 201,
+        "RuleType": 2,
+        "Name": "Same Color",
+        "RuleDesc": "Connecting two same-color tiles grants 2 points per tile connected.",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 301,
+        "RuleType": 3,
+        "Name": "Different-Color Double",
+        "RuleDesc": "Different-color tiles connected to this tile will have their final score x2.",
+        "Params": [
+            2
+        ],
+        "IconRule": "IconRuleDouble",
+        "IconGrid": "IconGridDouble"
+    },
+    {
+        "Id": 401,
+        "RuleType": 4,
+        "Name": "Same-Color Double",
+        "RuleDesc": "Same-color tiles connected to this tile will have their final score x2.",
+        "Params": [
+            2
+        ],
+        "IconRule": "IconRuleDouble",
+        "IconGrid": "IconGridDouble"
+    },
+    {
+        "Id": 601,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Yata: Japanese Cuisine Stall",
+        "Bubble": 101,
+        "NpcId": 1001,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 602,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Lucia: Toy Stall",
+        "Bubble": 102,
+        "NpcId": 1002,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 603,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Lee: Four-wheel Drive Assembly Store",
+        "Bubble": 103,
+        "NpcId": 1003,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 604,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Selena: Piano",
+        "Bubble": 104,
+        "NpcId": 1004,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 605,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Liv: Flower Shop",
+        "Bubble": 105,
+        "NpcId": 1005,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 606,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Nanami: Norman Hero Game Console",
+        "Bubble": 106,
+        "NpcId": 1006,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 607,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Bianca: Japanese Movie Poster",
+        "Bubble": 107,
+        "NpcId": 1007,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 608,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Wanshi: Balloon Shooting Stall",
+        "Bubble": 108,
+        "NpcId": 1008,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 609,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Chrome: Suit Store",
+        "Bubble": 109,
+        "NpcId": 1009,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 701,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Yata: Japanese Cuisine Stall",
+        "Bubble": 301,
+        "NpcId": 1001
+    },
+    {
+        "Id": 702,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Lucia: Toy Stall",
+        "Bubble": 302,
+        "NpcId": 1002
+    },
+    {
+        "Id": 703,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Lee: Four-wheel Drive Assembly Store",
+        "Bubble": 303,
+        "NpcId": 1003
+    },
+    {
+        "Id": 704,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Selena: Piano",
+        "Bubble": 304,
+        "NpcId": 1004
+    },
+    {
+        "Id": 705,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Liv: Flower Shop",
+        "Bubble": 305,
+        "NpcId": 1005
+    },
+    {
+        "Id": 706,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Nanami: Norman Hero Game Console",
+        "Bubble": 306,
+        "NpcId": 1006
+    },
+    {
+        "Id": 707,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Bianca: Japanese Movie Poster",
+        "Bubble": 307,
+        "NpcId": 1007
+    },
+    {
+        "Id": 708,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Wanshi: Balloon Shooting Stall",
+        "Bubble": 308,
+        "NpcId": 1008
+    },
+    {
+        "Id": 709,
+        "RuleType": 5,
+        "Name": "Special",
+        "RuleDesc": "Chrome: Suit Store",
+        "Bubble": 309,
+        "NpcId": 1009
+    },
+    {
+        "Id": 801,
+        "RuleType": 7,
+        "Name": "Not Connected",
+        "RuleDesc": "Not connected to anything.",
+        "Params": [
+            1000
+        ],
+        "IconRule": "IconRuleTask",
+        "IconGrid": "IconGridTask"
+    },
+    {
+        "Id": 901,
+        "RuleType": 8,
+        "Name": "Incredible",
+        "RuleDesc": "Artwork above 10 points nearby.",
+        "Params": [
+            1000,
+            1,
+            10
+        ],
+        "IconRule": "IconRuleTask",
+        "IconGrid": "IconGridTask"
+    },
+    {
+        "Id": 1001,
+        "RuleType": 9,
+        "Name": "Story",
+        "RuleDesc": "Yata exceeding a specific score, play story",
+        "Params": [
+            0
+        ],
+        "Bubble": 201,
+        "NpcId": 1001
+    },
+    {
+        "Id": 1002,
+        "RuleType": 9,
+        "Name": "Story",
+        "RuleDesc": "Lucia exceeding a specific score, play story",
+        "Params": [
+            0
+        ],
+        "Bubble": 202,
+        "NpcId": 1002
+    },
+    {
+        "Id": 1003,
+        "RuleType": 9,
+        "Name": "Story",
+        "RuleDesc": "Lee exceeding a specific score, play story",
+        "Params": [
+            0
+        ],
+        "Bubble": 203,
+        "NpcId": 1003
+    },
+    {
+        "Id": 1004,
+        "RuleType": 9,
+        "Name": "Story",
+        "RuleDesc": "Selena exceeding a specific score, play story",
+        "Params": [
+            0
+        ],
+        "Bubble": 204,
+        "NpcId": 1004
+    },
+    {
+        "Id": 1005,
+        "RuleType": 9,
+        "Name": "Story",
+        "RuleDesc": "Liv exceeding a specific score, play story",
+        "Params": [
+            0
+        ],
+        "Bubble": 205,
+        "NpcId": 1005
+    },
+    {
+        "Id": 1006,
+        "RuleType": 9,
+        "Name": "Story",
+        "RuleDesc": "Nanami exceeding a specific score, play story",
+        "Params": [
+            0
+        ],
+        "Bubble": 206,
+        "NpcId": 1006
+    },
+    {
+        "Id": 1007,
+        "RuleType": 9,
+        "Name": "Story",
+        "RuleDesc": "Bianca exceeding a specific score, play story",
+        "Params": [
+            0
+        ],
+        "Bubble": 207,
+        "NpcId": 1007
+    },
+    {
+        "Id": 1008,
+        "RuleType": 9,
+        "Name": "Story",
+        "RuleDesc": "Wanshi exceeding a specific score, play story",
+        "Params": [
+            0
+        ],
+        "Bubble": 208,
+        "NpcId": 1008
+    },
+    {
+        "Id": 1009,
+        "RuleType": 9,
+        "Name": "Story",
+        "RuleDesc": "Chrome exceeding a specific score, play story",
+        "Params": [
+            0
+        ],
+        "Bubble": 209,
+        "NpcId": 1009
+    }
+]

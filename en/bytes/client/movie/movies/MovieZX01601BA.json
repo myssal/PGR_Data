@@ -2,12 +2,7 @@
     {
         "Id": 1,
         "ActionId": 10000,
-        "NextActionId": 0,
         "Type": 102,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Fake Ascension",
             "Eden Fallen",
@@ -17,12 +12,7 @@
     {
         "Id": 2,
         "ActionId": 10001,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "ThemeEnable"
         ]
@@ -30,13 +20,8 @@
     {
         "Id": 3,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory264.png"
         ]
@@ -44,12 +29,7 @@
     {
         "Id": 4,
         "ActionId": 6524,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             209
@@ -58,12 +38,7 @@
     {
         "Id": 5,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004
@@ -72,27 +47,18 @@
     {
         "Id": 6,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 7,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
@@ -103,53 +69,42 @@
     {
         "Id": 8,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Your surroundings begin to distort immediately after departing the redundant block."
         ]
     },
     {
         "Id": 9,
         "ActionId": 5000,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 10,
         "ActionId": 5001,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 11,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1500.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab",
@@ -159,12 +114,7 @@
     {
         "Id": 12,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
@@ -172,12 +122,7 @@
     {
         "Id": 13,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -185,40 +130,29 @@
     {
         "Id": 14,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab"
         ]
     },
     {
         "Id": 15,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Asimov's voice from the comms echoes inside your head."
         ]
     },
     {
         "Id": 16,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "【kuroname】, do you copy? I know matrix immersions would create sensual distortions, but there's no time to waste!"
         ]
@@ -226,13 +160,9 @@
     {
         "Id": 17,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "C-C-Commandant... W-w-what's wrong...?"
         ]
@@ -240,13 +170,9 @@
     {
         "Id": 18,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Sensual... d-distort... S-stabilize the...c-connection..."
         ]
@@ -254,26 +180,18 @@
     {
         "Id": 19,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "..."
         ]
     },
     {
         "Id": 20,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory264.png"
         ]
@@ -281,40 +199,29 @@
     {
         "Id": 21,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The surroundings become gray and fuzzy as you lose control of your body..."
         ]
     },
     {
         "Id": 22,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "In this strange and frightening experience, even the voices from your team members around you become distant..."
         ]
     },
     {
         "Id": 23,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory261.png"
         ]
@@ -322,12 +229,7 @@
     {
         "Id": 24,
         "ActionId": 6000,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0
         ]
@@ -335,12 +237,7 @@
     {
         "Id": 25,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             208
@@ -349,92 +246,70 @@
     {
         "Id": 26,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "A few hours ago..."
         ]
     },
     {
         "Id": 27,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Aboard Babylonia's deep space colonial ship, \"the last Eden of humankind.\""
         ]
     },
     {
         "Id": 28,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After finishing their work, the crews walk around the crowded cafes and bars located in the leisure module."
         ]
     },
     {
         "Id": 29,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "A transport craft carrying Task Force members and support mechanoids leaves the port for the surface, while another with minerals and roughly processed industrial goods returns from the conservation area on the ground."
         ]
     },
     {
         "Id": 30,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "In the distance, members of the logistics team stand at attention to make way for the passing teacher and children."
         ]
     },
     {
         "Id": 31,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The teacher salutes the logistics team after all the children have gone through."
         ]
     },
     {
         "Id": 32,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Teacher",
             "Thank you for your service."
         ]
@@ -442,25 +317,17 @@
     {
         "Id": 33,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The logistics leader salutes in return."
         ]
     },
     {
         "Id": 34,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500005
@@ -469,12 +336,7 @@
     {
         "Id": 35,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Logistics Officer",
@@ -485,40 +347,31 @@
     {
         "Id": 36,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 37,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The logistics officers and children go their separate ways and proceed to their destinations."
         ]
     },
     {
         "Id": 38,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory260.png"
         ]
@@ -526,26 +379,18 @@
     {
         "Id": 39,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Eden 32-MO Module, Dominik Memorial Park."
         ]
     },
     {
         "Id": 40,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500114
@@ -554,12 +399,7 @@
     {
         "Id": 41,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Tour Guide",
@@ -570,13 +410,9 @@
     {
         "Id": 42,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Tour Guide",
             "For information on Dominik's achievements, please turn to Part B of Chapter Two in your digital guides...",
             1
@@ -585,13 +421,9 @@
     {
         "Id": 43,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Children",
             "Ok—"
         ]
@@ -599,13 +431,9 @@
     {
         "Id": 44,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Tour Guide",
             "As we all know, the \"New Earth Almanac\" was issued in the year 2130 of the New Earth Calendar...",
             1
@@ -614,40 +442,31 @@
     {
         "Id": 45,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The children listen carefully to the tour guide's explanation, occasionally gasping in awe."
         ]
     },
     {
         "Id": 46,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 47,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory266.png"
         ]
@@ -655,14 +474,10 @@
     {
         "Id": 48,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Worker A",
             "Did you hear the news? Is the leadership—om nom—haffing an—nom nom—emergeshy meeching today?"
         ]
@@ -670,13 +485,9 @@
     {
         "Id": 49,
         "ActionId": 43,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Worker B",
             "It's just another regular meeting. The President's not even there. And quit talking with your mouth full and finish your breakfast, will ya?"
         ]
@@ -684,13 +495,9 @@
     {
         "Id": 50,
         "ActionId": 44,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Worker A",
             "Gulp... I heard the engineering force had an urgent assembly this morning. Think everything's alright?"
         ]
@@ -698,13 +505,9 @@
     {
         "Id": 51,
         "ActionId": 45,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Worker B",
             "We got the Parliament and Gestalt in the sky, and the Task Force on the ground. What's there to worry about? Let's just mind our own business."
         ]
@@ -712,13 +515,9 @@
     {
         "Id": 52,
         "ActionId": 46,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Worker A",
             "Guess you're right... ****, only six minutes left. Hope we can make it!"
         ]
@@ -726,13 +525,9 @@
     {
         "Id": 53,
         "ActionId": 47,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Worker B",
             "Don't come cryin' to me lookin' for meds if you get heartburns from eating on the road."
         ]
@@ -740,26 +535,18 @@
     {
         "Id": 54,
         "ActionId": 48,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Slightly flustered, the workers exit the stairwell and hurry toward Parliament."
         ]
     },
     {
         "Id": 55,
         "ActionId": 49,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory284.jpg"
         ]
@@ -767,14 +554,10 @@
     {
         "Id": 56,
         "ActionId": 50,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Task Force Member",
             "What's the schedule for today?"
         ]
@@ -782,13 +565,9 @@
     {
         "Id": 57,
         "ActionId": 51,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "The briefing will begin soon. Please proceed to briefing room 302-B..."
         ]
@@ -796,13 +575,9 @@
     {
         "Id": 58,
         "ActionId": 52,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Intelligence Force Member",
             "Today's routine HUMIT intel summary, priority: intermediate."
         ]
@@ -810,13 +585,9 @@
     {
         "Id": 59,
         "ActionId": 53,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "Understood. Go over there and fill out the report..."
         ]
@@ -824,12 +595,7 @@
     {
         "Id": 60,
         "ActionId": 54,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             203
@@ -838,12 +604,7 @@
     {
         "Id": 61,
         "ActionId": 55,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1501
@@ -852,12 +613,7 @@
     {
         "Id": 62,
         "ActionId": 56,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab",
             2
@@ -866,26 +622,18 @@
     {
         "Id": 63,
         "ActionId": 57,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "—Suddenly, an untimely alarm disrupts the peaceful moment."
         ]
     },
     {
         "Id": 64,
         "ActionId": 58,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory261.png"
         ]
@@ -893,12 +641,7 @@
     {
         "Id": 65,
         "ActionId": 59,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1501
@@ -907,14 +650,10 @@
     {
         "Id": 66,
         "ActionId": 60,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Researcher",
             "...What's happening?"
         ]
@@ -922,13 +661,9 @@
     {
         "Id": 67,
         "ActionId": 61,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Broadcast",
             "All passengers in the Eden 16-B module, please evacuate this module within ten minutes."
         ]
@@ -936,13 +671,9 @@
     {
         "Id": 68,
         "ActionId": 62,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Broadcast",
             "Emergency thermal ventilation through the 16-B-C1 and C2 dispersal systems will be initiated."
         ]
@@ -950,13 +681,9 @@
     {
         "Id": 69,
         "ActionId": 63,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Broadcast",
             "This is not a drill. Repeat, this is not a drill."
         ]
@@ -964,13 +691,9 @@
     {
         "Id": 70,
         "ActionId": 64,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Soldier",
             "Please leave the premises immediately. Follow orders from the Military Constructs and take refuge."
         ]
@@ -978,13 +701,9 @@
     {
         "Id": 71,
         "ActionId": 65,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Researcher",
             "Refuge? W-wait..."
         ]
@@ -992,26 +711,19 @@
     {
         "Id": 72,
         "ActionId": 66,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Seeing the researcher not reacting immediately, the two soldiers grab the researcher and move without so much as an explanation."
         ]
     },
     {
         "Id": 73,
         "ActionId": 67,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Soldier",
             "Sorry, please cooperate. We have no time to waste."
         ]
@@ -1019,13 +731,9 @@
     {
         "Id": 74,
         "ActionId": 68,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Researcher",
             "No, I... I'm waiting for someone here..."
         ]
@@ -1033,13 +741,9 @@
     {
         "Id": 75,
         "ActionId": 69,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Soldier",
             "You can rest assured that no one's coming here now."
         ]
@@ -1047,14 +751,10 @@
     {
         "Id": 76,
         "ActionId": 70,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Researcher",
             "Hey! You—"
         ]
@@ -1062,12 +762,7 @@
     {
         "Id": 77,
         "ActionId": 71,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory260.png"
         ]
@@ -1075,12 +770,7 @@
     {
         "Id": 78,
         "ActionId": 72,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1501
@@ -1089,12 +779,7 @@
     {
         "Id": 79,
         "ActionId": 73,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500114
@@ -1103,13 +788,8 @@
     {
         "Id": 80,
         "ActionId": 74,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Tour Guide",
@@ -1120,13 +800,9 @@
     {
         "Id": 81,
         "ActionId": 75,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Child A",
             "Look! The signs and banners! They're all red!"
         ]
@@ -1134,13 +810,9 @@
     {
         "Id": 82,
         "ActionId": 76,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Child B",
             "I've never seen this before... My dad told me that if you see them turn red, something bad is about to happen!"
         ]
@@ -1148,13 +820,9 @@
     {
         "Id": 83,
         "ActionId": 77,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Soldier",
             "Please leave the premises immediately. Follow orders from the Military Constructs and take refuge."
         ]
@@ -1162,13 +830,9 @@
     {
         "Id": 84,
         "ActionId": 78,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Tour Guide",
             "What? You... I...",
             1
@@ -1177,13 +841,9 @@
     {
         "Id": 85,
         "ActionId": 79,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Soldier",
             "There's no time. We must proceed to the shelter!"
         ]
@@ -1191,13 +851,9 @@
     {
         "Id": 86,
         "ActionId": 80,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Tour Guide",
             "Eh... O-of course.",
             1
@@ -1206,40 +862,31 @@
     {
         "Id": 87,
         "ActionId": 81,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Soldiers line up to escort the children and the tour guide to the nearby shelter."
         ]
     },
     {
         "Id": 88,
         "ActionId": 82,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 89,
         "ActionId": 83,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory284.jpg"
         ]
@@ -1247,12 +894,7 @@
     {
         "Id": 90,
         "ActionId": 84,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1501
@@ -1261,39 +903,28 @@
     {
         "Id": 91,
         "ActionId": 85,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The bridge area is already in chaos five minutes after the alarm."
         ]
     },
     {
         "Id": 92,
         "ActionId": 86,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Almost all terminals are flashing warnings in red. Up above, the altitude indicator continues to plummet."
         ]
     },
     {
         "Id": 93,
         "ActionId": 87,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1501
@@ -1302,13 +933,9 @@
     {
         "Id": 94,
         "ActionId": 88,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System Notice",
             "W A R N I N G. Power reducing in Fusion Units 1 to 16."
         ]
@@ -1316,12 +943,7 @@
     {
         "Id": 95,
         "ActionId": 89,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1501
@@ -1330,13 +952,9 @@
     {
         "Id": 96,
         "ActionId": 90,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System Notice",
             "W A R N I N G. Orbital height fluctuation: minus 479 meters."
         ]
@@ -1344,13 +962,9 @@
     {
         "Id": 97,
         "ActionId": 91,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System Notice",
             "W A R N I N G. Orbital height fluctuation: minus 523 meters."
         ]
@@ -1358,13 +972,9 @@
     {
         "Id": 98,
         "ActionId": 92,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System Notice",
             "W A R N I N G. Orbital height fluctuation: minus 599 meters."
         ]
@@ -1372,12 +982,7 @@
     {
         "Id": 99,
         "ActionId": 93,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1501
@@ -1386,13 +991,9 @@
     {
         "Id": 100,
         "ActionId": 94,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Chief of Bridge Officers",
             "Hey! Controller! Our altitude is dropping! What the hell is going on?!"
         ]
@@ -1400,13 +1001,9 @@
     {
         "Id": 101,
         "ActionId": 95,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "Hold on, I'm checking... Dammit, all the query requests sent to Gestalt have timed out!"
         ]
@@ -1414,13 +1011,9 @@
     {
         "Id": 102,
         "ActionId": 96,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Technician",
             "I'm on it! Transfer virtual jumper... ****! Connection rejected? That's never happened before..."
         ]
@@ -1428,13 +1021,9 @@
     {
         "Id": 103,
         "ActionId": 97,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Technician",
             "Right... I-is Chief Technician Asimov here?"
         ]
@@ -1442,13 +1031,9 @@
     {
         "Id": 104,
         "ActionId": 98,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Chief of Bridge Officers",
             "...Asimov was just called into a meeting."
         ]
@@ -1456,13 +1041,9 @@
     {
         "Id": 105,
         "ActionId": 99,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Technician",
             "In that case, I'll inform the Engineering Force, the Support Force, and the personnel on duty in the engine room first."
         ]
@@ -1470,13 +1051,9 @@
     {
         "Id": 106,
         "ActionId": 100,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "Then I'll find someone to go to the conference room. Now is not the time to worry about interrupting a meeting."
         ]
@@ -1484,26 +1061,19 @@
     {
         "Id": 107,
         "ActionId": 101,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "But then, the controller notices a warning flashing on the nearby terminal, requesting immediate attention. The operator that should have been attending to it, however, is missing."
         ]
     },
     {
         "Id": 108,
         "ActionId": 102,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "Dammit... All hell has broken loose. Was he called to handle some other issue?"
         ]
@@ -1511,13 +1081,9 @@
     {
         "Id": 109,
         "ActionId": 103,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "The controller tries to operate the other terminal himself, but a more urgent situation suddenly appears on his own."
         ]
@@ -1525,26 +1091,19 @@
     {
         "Id": 110,
         "ActionId": 104,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "All he can do is operate the one in front of him and shout—"
         ]
     },
     {
         "Id": 111,
         "ActionId": 105,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "I need a hand here—"
         ]
@@ -1552,12 +1111,7 @@
     {
         "Id": 112,
         "ActionId": 106,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500026
@@ -1566,12 +1120,7 @@
     {
         "Id": 113,
         "ActionId": 107,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lee",
@@ -1582,26 +1131,19 @@
     {
         "Id": 114,
         "ActionId": 108,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Lee quickly walks to the terminal and presses a button to activate it, expanding the interface."
         ]
     },
     {
         "Id": 115,
         "ActionId": 109,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Gravity engines operating at 22.7%. Babylonia is falling.",
             1
@@ -1610,13 +1152,9 @@
     {
         "Id": 116,
         "ActionId": 110,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "You have to deploy the Engineering and Support Forces to all energy sectors immediately. Where's Celica?",
             1
@@ -1625,27 +1163,22 @@
     {
         "Id": 117,
         "ActionId": 111,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 118,
         "ActionId": 112,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "Ms. Celica and President Hassen are in the conference room."
         ]
@@ -1653,13 +1186,9 @@
     {
         "Id": 119,
         "ActionId": 113,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "...Why are you here?"
         ]
@@ -1667,42 +1196,29 @@
     {
         "Id": 120,
         "ActionId": 114,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500166,
+            "",
             600
         ]
     },
     {
         "Id": 121,
         "ActionId": 115,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             1031001,
+            "",
             -600
         ]
     },
     {
         "Id": 122,
         "ActionId": 116,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500026
@@ -1711,27 +1227,19 @@
     {
         "Id": 123,
         "ActionId": 117,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "The controller looks at Lee, and behind him stands Lucia, Liv, and..."
         ]
     },
     {
         "Id": 124,
         "ActionId": 118,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "Commandant 【kuroname】, you and the Gray Ravens should be..."
         ]
@@ -1739,13 +1247,9 @@
     {
         "Id": 125,
         "ActionId": 119,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "We've just finished our mission and returned.",
             1
@@ -1754,13 +1258,9 @@
     {
         "Id": 126,
         "ActionId": 120,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "We wanted to report to Ms. Celica and President Hassen on the bridge first, but...",
             2
@@ -1769,13 +1269,9 @@
     {
         "Id": 127,
         "ActionId": 121,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Military Construct",
             "Are you 【kuroname】 and the Gray Ravens?"
         ]
@@ -1783,13 +1279,9 @@
     {
         "Id": 128,
         "ActionId": 122,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yes.",
             123
         ]
@@ -1797,13 +1289,9 @@
     {
         "Id": 129,
         "ActionId": 123,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Military Construct",
             "Come with me. President Hassen wants to see you."
         ]
@@ -1811,13 +1299,9 @@
     {
         "Id": 130,
         "ActionId": 124,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "But...",
             125
         ]
@@ -1825,13 +1309,9 @@
     {
         "Id": 131,
         "ActionId": 125,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Military Construct",
             "Save it for later."
         ]
@@ -1839,13 +1319,9 @@
     {
         "Id": 132,
         "ActionId": 126,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...You got it.",
             127
         ]
@@ -1853,13 +1329,9 @@
     {
         "Id": 133,
         "ActionId": 127,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Then let's go. Remember to contact the Engineering Force and the Support Force like I told you.",
             1
@@ -1868,14 +1340,10 @@
     {
         "Id": 134,
         "ActionId": 128,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Controller",
             "O-of course."
         ]
@@ -1883,41 +1351,29 @@
     {
         "Id": 135,
         "ActionId": 129,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
             3,
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 136,
         "ActionId": 130,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab"
         ]
     },
     {
         "Id": 137,
         "ActionId": 131,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory82.jpg"
         ]
@@ -1925,12 +1381,7 @@
     {
         "Id": 138,
         "ActionId": 132,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1111001,
@@ -1941,12 +1392,7 @@
     {
         "Id": 139,
         "ActionId": 133,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500167,
@@ -1957,13 +1403,8 @@
     {
         "Id": 140,
         "ActionId": 134,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bridget",
@@ -1974,13 +1415,9 @@
     {
         "Id": 141,
         "ActionId": 135,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "And... Gravity engines operating at 19.6%! We're still falling!",
             2
@@ -1989,13 +1426,9 @@
     {
         "Id": 142,
         "ActionId": 136,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "I was going to ask you! We've fallen almost 1,000 meters while we talk!",
             1
@@ -2004,13 +1437,9 @@
     {
         "Id": 143,
         "ActionId": 137,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "Forget it! We'd be fine as long as the power is restored, but the exhaust valve terminal keeps returning error messages!",
             2
@@ -2019,13 +1448,9 @@
     {
         "Id": 144,
         "ActionId": 138,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "Bridget! Tell your people to turn off the automatic controls of all the exhaust valves! If more than 5% of them are still blocked by the ****ing safety regulations, we're dead meat!",
             1
@@ -2034,13 +1459,9 @@
     {
         "Id": 145,
         "ActionId": 139,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "What do you think I'm doing! Team 4 and Team 8, are you in position?!",
             2
@@ -2049,14 +1470,10 @@
     {
         "Id": 146,
         "ActionId": 140,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "RImgBg1Shake",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Engineer Construct",
             "Boss! The secondary unit said that the R3 pipeline is also busted!"
         ]
@@ -2064,13 +1481,9 @@
     {
         "Id": 147,
         "ActionId": 141,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "Dammit... If this keeps up, there's only one outcome.",
             2
@@ -2079,12 +1492,7 @@
     {
         "Id": 148,
         "ActionId": 142,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2092,13 +1500,9 @@
     {
         "Id": 149,
         "ActionId": 143,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "What do you mean?",
             1
@@ -2107,13 +1511,9 @@
     {
         "Id": 150,
         "ActionId": 144,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "If we can't restore the engines, we 'll crash into the ground.",
             2
@@ -2122,12 +1522,7 @@
     {
         "Id": 151,
         "ActionId": 145,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             5
@@ -2136,13 +1531,9 @@
     {
         "Id": 152,
         "ActionId": 146,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "...****! Babylonia will be blown to pieces long before we hit the ground! If the enemy has some goddamn railguns or anti-aircraft guns pointing at us once we're close enough—",
             1
@@ -2151,13 +1542,9 @@
     {
         "Id": 153,
         "ActionId": 147,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "Hurry up with the exhaust system restoration, or the core and the ejector will be gone!",
             1
@@ -2166,13 +1553,9 @@
     {
         "Id": 154,
         "ActionId": 148,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Engineer Construct",
             "The staff from C1 and C2 dispersal systems have evacuated. Initiating exhaust ventilation! But..."
         ]
@@ -2180,13 +1563,9 @@
     {
         "Id": 155,
         "ActionId": 149,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "But what?!",
             1
@@ -2195,13 +1574,9 @@
     {
         "Id": 156,
         "ActionId": 150,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Engineer Construct",
             "The module's air conditioning system hasn't been switched to circulation mode, so the exhaust..."
         ]
@@ -2209,13 +1584,9 @@
     {
         "Id": 157,
         "ActionId": 151,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "The exhaust isn't ventilating! Got it! I'll take care of it myself!",
             1
@@ -2224,13 +1595,9 @@
     {
         "Id": 158,
         "ActionId": 152,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "Really? But the exhaust outside is too hot!",
             2
@@ -2239,14 +1606,10 @@
     {
         "Id": 159,
         "ActionId": 153,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "I'm a Construct! I'll be fine! Just disassemble me, hang me up, and clean my parts if things go south!",
             1
@@ -2255,27 +1618,20 @@
     {
         "Id": 160,
         "ActionId": 154,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 161,
         "ActionId": 155,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory232.png"
         ]
@@ -2283,12 +1639,7 @@
     {
         "Id": 162,
         "ActionId": 156,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1501
@@ -2297,12 +1648,7 @@
     {
         "Id": 163,
         "ActionId": 157,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             202
@@ -2311,27 +1657,20 @@
     {
         "Id": 164,
         "ActionId": 158,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Preparation Room."
         ]
     },
     {
         "Id": 165,
         "ActionId": 159,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Why are we brought here?",
             160
         ]
@@ -2339,13 +1678,9 @@
     {
         "Id": 166,
         "ActionId": 160,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "What's going on?",
             161
         ]
@@ -2353,42 +1688,29 @@
     {
         "Id": 167,
         "ActionId": 161,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500166,
+            "",
             -400
         ]
     },
     {
         "Id": 168,
         "ActionId": 162,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500026,
+            "",
             400
         ]
     },
     {
         "Id": 169,
         "ActionId": 163,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",
@@ -2399,13 +1721,9 @@
     {
         "Id": 170,
         "ActionId": 164,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Even so, it would have been discussed during the mission review.",
             2
@@ -2414,13 +1732,9 @@
     {
         "Id": 171,
         "ActionId": 165,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "Not to mention, we've received notification that Babylonia is falling. It doesn't appear to be a drill.",
             2
@@ -2429,13 +1743,9 @@
     {
         "Id": 172,
         "ActionId": 166,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lucia",
             "Babylonia is falling, and we're told to sit here and wait?",
             1
@@ -2444,13 +1754,9 @@
     {
         "Id": 173,
         "ActionId": 167,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lee",
             "It's an order from President Hassen. I'm sure he has his reasons.",
             2
@@ -2459,14 +1765,10 @@
     {
         "Id": 174,
         "ActionId": 168,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Alright, let's wait then.",
             169
         ]
@@ -2474,27 +1776,20 @@
     {
         "Id": 175,
         "ActionId": 169,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 176,
         "ActionId": 170,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory40.jpg"
         ]
@@ -2502,12 +1797,7 @@
     {
         "Id": 177,
         "ActionId": 171,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             22
@@ -2516,78 +1806,58 @@
     {
         "Id": 178,
         "ActionId": 172,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Earlier..."
         ]
     },
     {
         "Id": 179,
         "ActionId": 173,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "With no chair in his cabin, Hassen sat upright on his bed."
         ]
     },
     {
         "Id": 180,
         "ActionId": 174,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Having lived a modest life for so many years, Hassen remained remarkably stalwart even as the President."
         ]
     },
     {
         "Id": 181,
         "ActionId": 175,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "He would wake up, shower, and go back and forth between his chamber and the bridge. With his minimalist lifestyle, no one cared if he were to leave his door open. Not even rats would visit such a plain chamber."
         ]
     },
     {
         "Id": 182,
         "ActionId": 176,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "But this time, having just woken up, he had no intention to head to the bridge immediately."
         ]
     },
     {
         "Id": 183,
         "ActionId": 177,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011
@@ -2596,12 +1866,7 @@
     {
         "Id": 184,
         "ActionId": 178,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Hassen",
@@ -2612,13 +1877,9 @@
     {
         "Id": 185,
         "ActionId": 179,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "How many times has it been?",
             1
@@ -2627,13 +1888,9 @@
     {
         "Id": 186,
         "ActionId": 180,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "First, it was the \"Downtown Tyrant\", then the City 104, then...",
             1
@@ -2642,13 +1899,9 @@
     {
         "Id": 187,
         "ActionId": 181,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "Hmph... I'm gettin' old. My memory isn't quite like what it used to be. I can't remember much of anything anymore.",
             1
@@ -2657,13 +1910,9 @@
     {
         "Id": 188,
         "ActionId": 182,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "Paz... Jaskier... Ledger... Grey... David... Wu... Aoki...",
             1
@@ -2672,13 +1921,9 @@
     {
         "Id": 189,
         "ActionId": 183,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "All of the people that I've met along the way... Are they all just faceless names now...?",
             1
@@ -2687,78 +1932,58 @@
     {
         "Id": 190,
         "ActionId": 184,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Hassen quietly reached for his left eye and touched the eye patch made of cloth and metal. The doctors warned him not to open it except during routine check-ups at the infirmary."
         ]
     },
     {
         "Id": 191,
         "ActionId": 185,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Yet he still reached for it, knowing that only a hole remained."
         ]
     },
     {
         "Id": 192,
         "ActionId": 186,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "And when his finger touched the cloth, he felt a sharp twinge of pain—something he wanted to feel right now."
         ]
     },
     {
         "Id": 193,
         "ActionId": 187,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Phantom pain surrounded the empty eye socket, gradually spreading down his neck to the other wounds on his body."
         ]
     },
     {
         "Id": 194,
         "ActionId": 188,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Every wound the pain flowed through seemed to awaken something in his memories. Something that would otherwise fade away with age."
         ]
     },
     {
         "Id": 195,
         "ActionId": 189,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1516
@@ -2767,12 +1992,7 @@
     {
         "Id": 196,
         "ActionId": 190,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             202
@@ -2781,14 +2001,10 @@
     {
         "Id": 197,
         "ActionId": 191,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "???",
             "President."
         ]
@@ -2796,13 +2012,9 @@
     {
         "Id": 198,
         "ActionId": 192,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "...",
             1
@@ -2811,12 +2023,7 @@
     {
         "Id": 199,
         "ActionId": 193,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
@@ -2826,27 +2033,18 @@
     {
         "Id": 200,
         "ActionId": 194,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500001,
+            "",
             400
         ]
     },
     {
         "Id": 201,
         "ActionId": 195,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Celica",
@@ -2857,13 +2055,9 @@
     {
         "Id": 202,
         "ActionId": 196,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "...Is it time?",
             1
@@ -2872,13 +2066,9 @@
     {
         "Id": 203,
         "ActionId": 197,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "Everyone is waiting for you.",
             2
@@ -2887,13 +2077,9 @@
     {
         "Id": 204,
         "ActionId": 198,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "I'll be there momentarily.",
             1
@@ -2902,14 +2088,10 @@
     {
         "Id": 205,
         "ActionId": 199,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "If the Gray Ravens return... Have them wait in the preparation room.",
             1
@@ -2918,27 +2100,20 @@
     {
         "Id": 206,
         "ActionId": 200,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 207,
         "ActionId": 201,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory46.jpg"
         ]
@@ -2946,26 +2121,18 @@
     {
         "Id": 208,
         "ActionId": 202,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The Babylonian conference room was bustling with a crowd of people."
         ]
     },
     {
         "Id": 209,
         "ActionId": 203,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1509
@@ -2974,68 +2141,49 @@
     {
         "Id": 210,
         "ActionId": 204,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As the automatic doors opened, Hassen and Celica entered the conference room one after another, and the commotion of the crowd subsided in an instant."
         ]
     },
     {
         "Id": 211,
         "ActionId": 205,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Everyone had their eyes on Hassen, including Asimov and Nikola sitting off to the side. Hassen took his seat under their gazes."
         ]
     },
     {
         "Id": 212,
         "ActionId": 206,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011,
+            "",
             -400
         ]
     },
     {
         "Id": 213,
         "ActionId": 207,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500001,
+            "",
             400
         ]
     },
     {
         "Id": 214,
         "ActionId": 208,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Hassen",
@@ -3046,13 +2194,9 @@
     {
         "Id": 215,
         "ActionId": 209,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "Yes, President. Everyone, this is the situation we are facing now...",
             2
@@ -3061,53 +2205,40 @@
     {
         "Id": 216,
         "ActionId": 210,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Celica said as she opened a series of high-definition remote sensing imagery on the holo-screen."
         ]
     },
     {
         "Id": 217,
         "ActionId": 211,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 218,
         "ActionId": 212,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The first area to bear the brunt of the attack was the northern seaside, which has just begun to thaw. On the coastline, the destroyed ports and beyond show signs of damage, but the settlements are largely intact."
         ]
     },
     {
         "Id": 219,
         "ActionId": 213,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500001,
@@ -3117,12 +2248,7 @@
     {
         "Id": 220,
         "ActionId": 214,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Celica",
@@ -3133,13 +2259,9 @@
     {
         "Id": 221,
         "ActionId": 215,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "The jamming method was very similar to what we experienced at Venus Splash Park. We speculated that it was the work of an Ascendant, which was later confirmed by Team Ouroboros.",
             1
@@ -3148,13 +2270,9 @@
     {
         "Id": 222,
         "ActionId": 216,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "Soon after that, the Forest Guard in New Sophiasburgh and the Forsaken stationed nearby began to mobilize towards New Murmansk.",
             1
@@ -3163,12 +2281,7 @@
     {
         "Id": 223,
         "ActionId": 217,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500012
@@ -3177,12 +2290,7 @@
     {
         "Id": 224,
         "ActionId": 218,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Nikola",
@@ -3193,12 +2301,7 @@
     {
         "Id": 225,
         "ActionId": 219,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500001,
@@ -3208,12 +2311,7 @@
     {
         "Id": 226,
         "ActionId": 220,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Celica",
@@ -3224,13 +2322,9 @@
     {
         "Id": 227,
         "ActionId": 221,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "We are still investigating the motive behind the Ascendants.",
             1
@@ -3239,13 +2333,9 @@
     {
         "Id": 228,
         "ActionId": 222,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "As for reports on casualties... I know the data might seem ludicrous, but please believe the first-hand reports from our Support Force.",
             1
@@ -3254,13 +2344,9 @@
     {
         "Id": 229,
         "ActionId": 223,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "The old Nefheim Institute sustained heavy damage, so almost all reports overestimated the casualty counts. But after over two weeks of search and rescue, we have found that the casualty is far below previous estimates.",
             1
@@ -3269,42 +2355,29 @@
     {
         "Id": 230,
         "ActionId": 224,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011,
+            "",
             -400
         ]
     },
     {
         "Id": 231,
         "ActionId": 225,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500012,
+            "",
             400
         ]
     },
     {
         "Id": 232,
         "ActionId": 226,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Nikola",
@@ -3315,13 +2388,9 @@
     {
         "Id": 233,
         "ActionId": 227,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "What do you mean? Maybe it's just... Some people are just unreasonable. Whatever the reason... I'll take it as a sign of luck.",
             1
@@ -3330,27 +2399,20 @@
     {
         "Id": 234,
         "ActionId": 228,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 235,
         "ActionId": 229,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004
@@ -3359,12 +2421,7 @@
     {
         "Id": 236,
         "ActionId": 230,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
@@ -3375,58 +2432,48 @@
     {
         "Id": 237,
         "ActionId": 231,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 238,
         "ActionId": 232,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011,
+            "",
             -400,
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 239,
         "ActionId": 233,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500012,
+            "",
             400,
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 240,
         "ActionId": 234,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Nikola",
@@ -3437,13 +2484,9 @@
     {
         "Id": 241,
         "ActionId": 235,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "That's fine, Asimov. Say what it is you have to say.",
             1
@@ -3452,27 +2495,20 @@
     {
         "Id": 242,
         "ActionId": 236,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 243,
         "ActionId": 237,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004
@@ -3481,12 +2517,7 @@
     {
         "Id": 244,
         "ActionId": 238,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
@@ -3497,13 +2528,9 @@
     {
         "Id": 245,
         "ActionId": 239,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "I believe the Ascendants have shown significant strength, and the restrain to match it.",
             1
@@ -3512,13 +2539,9 @@
     {
         "Id": 246,
         "ActionId": 240,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Unlike conventional artillery, they were capable of precision attacks. Otherwise, at least half of the people in New Murmansk would have died.",
             1
@@ -3527,13 +2550,9 @@
     {
         "Id": 247,
         "ActionId": 241,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Whether it was a demonstration of strength or simply because there were hints of humanity within them—I couldn't care less.",
             1
@@ -3542,13 +2561,9 @@
     {
         "Id": 248,
         "ActionId": 242,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "What I care about the most is how will we view this threat?",
             1
@@ -3557,13 +2572,9 @@
     {
         "Id": 249,
         "ActionId": 243,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Tifa, Metropolis, New Murmansk... After what happened in Metropolis, it is highly likely that they have control over Huaxu.",
             1
@@ -3572,13 +2583,9 @@
     {
         "Id": 250,
         "ActionId": 244,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "President, they aren't just a few dozen disorganized soldiers using rusty rifles and lies to catch us off guard.",
             1
@@ -3587,13 +2594,9 @@
     {
         "Id": 251,
         "ActionId": 245,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "They've already become a highly organized threat with targeted hostility towards Babylonia.",
             1
@@ -3602,13 +2605,9 @@
     {
         "Id": 252,
         "ActionId": 246,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Therefore, my suggestion as a consultant is to fully disclose information on the Ascendants, and mobilize all of Babylonia—not just the Task Force—to deal with them.",
             1
@@ -3617,58 +2616,48 @@
     {
         "Id": 253,
         "ActionId": 247,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 254,
         "ActionId": 248,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011,
+            "",
             -400,
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 255,
         "ActionId": 249,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500012,
+            "",
             400,
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 256,
         "ActionId": 250,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Nikola",
@@ -3679,13 +2668,9 @@
     {
         "Id": 257,
         "ActionId": 251,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nikola",
             "I've always advocated taking the initiative with a full-scale attack.",
             2
@@ -3694,13 +2679,9 @@
     {
         "Id": 258,
         "ActionId": 252,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nikola",
             "Enlist everyone into combat roles, and push the Ascendants into our firing range through saturation attacks...",
             2
@@ -3709,13 +2690,9 @@
     {
         "Id": 259,
         "ActionId": 253,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "You're calling for the complete military mobilization of Babylonia.",
             1
@@ -3724,13 +2701,9 @@
     {
         "Id": 260,
         "ActionId": 254,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "I cannot agree to this.",
             1
@@ -3739,13 +2712,9 @@
     {
         "Id": 261,
         "ActionId": 255,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nikola",
             "Hmph, and that's one of the reasons why we haven't made any progress, isn't it?",
             2
@@ -3754,13 +2723,9 @@
     {
         "Id": 262,
         "ActionId": 256,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "...",
             1
@@ -3769,13 +2734,9 @@
     {
         "Id": 263,
         "ActionId": 257,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nikola",
             "Hassen, I mean it this time. Now is the time to decide.",
             2
@@ -3784,13 +2745,9 @@
     {
         "Id": 264,
         "ActionId": 258,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nikola",
             "If there were nothing worth saving on the surface when we finally decide to launch a full-scale attack, it would be too late.",
             2
@@ -3799,65 +2756,49 @@
     {
         "Id": 265,
         "ActionId": 259,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "..."
         ]
     },
     {
         "Id": 266,
         "ActionId": 260,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "An awkward and perilous silence hung over the conference room."
         ]
     },
     {
         "Id": 267,
         "ActionId": 261,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Celica looked at Asimov, who shrugged helplessly."
         ]
     },
     {
         "Id": 268,
         "ActionId": 262,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Everyone present could do nothing but look at Hassen and Nikola expectantly."
         ]
     },
     {
         "Id": 269,
         "ActionId": 263,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "...",
             1
@@ -3866,14 +2807,10 @@
     {
         "Id": 270,
         "ActionId": 264,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nikola",
             "...",
             2
@@ -3882,27 +2819,20 @@
     {
         "Id": 271,
         "ActionId": 265,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 272,
         "ActionId": 266,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory48.jpg"
         ]
@@ -3910,12 +2840,7 @@
     {
         "Id": 273,
         "ActionId": 267,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             203
@@ -3924,12 +2849,7 @@
     {
         "Id": 274,
         "ActionId": 268,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1501
@@ -3938,12 +2858,7 @@
     {
         "Id": 275,
         "ActionId": 269,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab",
             2
@@ -3952,12 +2867,7 @@
     {
         "Id": 276,
         "ActionId": 270,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "RImgBg1Shake"
         ]
@@ -3965,26 +2875,18 @@
     {
         "Id": 277,
         "ActionId": 271,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Right at that moment, the unceasing buzzing of the alarm disrupted their confrontation."
         ]
     },
     {
         "Id": 278,
         "ActionId": 272,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004
@@ -3993,12 +2895,7 @@
     {
         "Id": 279,
         "ActionId": 273,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
@@ -4009,12 +2906,7 @@
     {
         "Id": 280,
         "ActionId": 274,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500019
@@ -4023,12 +2915,7 @@
     {
         "Id": 281,
         "ActionId": 275,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Logistics Construct",
@@ -4039,12 +2926,7 @@
     {
         "Id": 282,
         "ActionId": 276,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011
@@ -4053,12 +2935,7 @@
     {
         "Id": 283,
         "ActionId": 277,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Hassen",
@@ -4069,12 +2946,7 @@
     {
         "Id": 284,
         "ActionId": 278,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500019
@@ -4083,12 +2955,7 @@
     {
         "Id": 285,
         "ActionId": 279,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Logistics Construct",
@@ -4099,12 +2966,7 @@
     {
         "Id": 286,
         "ActionId": 280,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004
@@ -4113,12 +2975,7 @@
     {
         "Id": 287,
         "ActionId": 281,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
@@ -4129,12 +2986,7 @@
     {
         "Id": 288,
         "ActionId": 282,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500019
@@ -4143,12 +2995,7 @@
     {
         "Id": 289,
         "ActionId": 283,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Logistics Construct",
@@ -4159,12 +3006,7 @@
     {
         "Id": 290,
         "ActionId": 284,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004
@@ -4173,12 +3015,7 @@
     {
         "Id": 291,
         "ActionId": 285,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
@@ -4189,12 +3026,7 @@
     {
         "Id": 292,
         "ActionId": 286,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
@@ -4204,27 +3036,18 @@
     {
         "Id": 293,
         "ActionId": 287,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500011,
+            "",
             -400
         ]
     },
     {
         "Id": 294,
         "ActionId": 288,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Hassen",
@@ -4235,13 +3058,9 @@
     {
         "Id": 295,
         "ActionId": 289,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "...I can't guarantee your safety.",
             1
@@ -4250,13 +3069,9 @@
     {
         "Id": 296,
         "ActionId": 290,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "You'll be in trouble if there is a button that says \"highest clearance only,\" but no one with the clearance there to press it.",
             2
@@ -4265,14 +3080,10 @@
     {
         "Id": 297,
         "ActionId": 291,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Alright... If you insist.",
             1
@@ -4281,40 +3092,29 @@
     {
         "Id": 298,
         "ActionId": 292,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 299,
         "ActionId": 293,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab"
         ]
     },
     {
         "Id": 300,
         "ActionId": 294,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory82.jpg"
         ]
@@ -4322,12 +3122,7 @@
     {
         "Id": 301,
         "ActionId": 295,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500028
@@ -4336,13 +3131,8 @@
     {
         "Id": 302,
         "ActionId": 296,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Support Force",
@@ -4353,12 +3143,7 @@
     {
         "Id": 303,
         "ActionId": 297,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500167,
@@ -4369,27 +3154,18 @@
     {
         "Id": 304,
         "ActionId": 298,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1111001,
+            "",
             -400
         ]
     },
     {
         "Id": 305,
         "ActionId": 299,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bridget",
@@ -4400,12 +3176,7 @@
     {
         "Id": 306,
         "ActionId": 300,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             5
@@ -4414,13 +3185,9 @@
     {
         "Id": 307,
         "ActionId": 301,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "President Hassen! What are you doing here?!",
             2
@@ -4429,42 +3196,29 @@
     {
         "Id": 308,
         "ActionId": 302,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011,
+            "",
             -400
         ]
     },
     {
         "Id": 309,
         "ActionId": 303,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500004,
+            "",
             400
         ]
     },
     {
         "Id": 310,
         "ActionId": 304,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Hassen",
@@ -4475,12 +3229,7 @@
     {
         "Id": 311,
         "ActionId": 305,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500167,
@@ -4491,27 +3240,18 @@
     {
         "Id": 312,
         "ActionId": 306,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1111001,
+            "",
             -400
         ]
     },
     {
         "Id": 313,
         "ActionId": 307,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bridget",
@@ -4522,13 +3262,9 @@
     {
         "Id": 314,
         "ActionId": 308,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "Now it's impossible to maintain orbital altitude.",
             1
@@ -4537,13 +3273,9 @@
     {
         "Id": 315,
         "ActionId": 309,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "Yeah, but the problem is... It's not an issue with the hardware.",
             2
@@ -4552,12 +3284,7 @@
     {
         "Id": 316,
         "ActionId": 310,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25
@@ -4566,12 +3293,7 @@
     {
         "Id": 317,
         "ActionId": 311,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             0.25,
@@ -4581,28 +3303,20 @@
     {
         "Id": 318,
         "ActionId": 312,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             500004,
+            "",
             600,
+            "",
             1
         ]
     },
     {
         "Id": 319,
         "ActionId": 313,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
@@ -4613,13 +3327,9 @@
     {
         "Id": 320,
         "ActionId": 314,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "All of the gravity engines are stalling.",
             2
@@ -4628,13 +3338,9 @@
     {
         "Id": 321,
         "ActionId": 315,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "It seems that something is sending them a constant stream of forced shutdown commands.",
             2
@@ -4643,13 +3349,9 @@
     {
         "Id": 322,
         "ActionId": 316,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bridget",
             "What?",
             1
@@ -4658,13 +3360,9 @@
     {
         "Id": 323,
         "ActionId": 317,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Even if you ignore this command, it initiates a countdown sequence, which overwrites the normal ignition command.",
             3
@@ -4673,13 +3371,9 @@
     {
         "Id": 324,
         "ActionId": 318,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "...Hence the stalling.",
             2
@@ -4688,13 +3382,9 @@
     {
         "Id": 325,
         "ActionId": 319,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "As for the source...",
             3
@@ -4703,13 +3393,9 @@
     {
         "Id": 326,
         "ActionId": 320,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "...They have to be direct commands from the head of the program, set with the highest priority to circumvent any interference from the fault-tolerant system.",
             3
@@ -4718,13 +3404,9 @@
     {
         "Id": 327,
         "ActionId": 321,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "...Call me crazy, but I think there's something wrong with Gestalt.",
             2
@@ -4733,13 +3415,9 @@
     {
         "Id": 328,
         "ActionId": 322,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "How is that possible...",
             3
@@ -4748,28 +3426,20 @@
     {
         "Id": 329,
         "ActionId": 323,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
             3,
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 330,
         "ActionId": 324,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011
@@ -4778,12 +3448,7 @@
     {
         "Id": 331,
         "ActionId": 325,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Hassen",
@@ -4794,12 +3459,7 @@
     {
         "Id": 332,
         "ActionId": 326,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1111001
@@ -4808,12 +3468,7 @@
     {
         "Id": 333,
         "ActionId": 327,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Karenina",
@@ -4824,25 +3479,17 @@
     {
         "Id": 334,
         "ActionId": 328,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "At this time, Hassen's portal terminal suddenly rang. He opened the terminal before looking up at Asimov."
         ]
     },
     {
         "Id": 335,
         "ActionId": 329,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011
@@ -4851,12 +3498,7 @@
     {
         "Id": 336,
         "ActionId": 330,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Hassen",
@@ -4867,13 +3509,9 @@
     {
         "Id": 337,
         "ActionId": 331,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "Looks like we'll have to put the discussion we planned with them on hold and solve the issue at hand.",
             1
@@ -4882,14 +3520,10 @@
     {
         "Id": 338,
         "ActionId": 332,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "Bridget, take some men to try and restore the thrust. Buy us as much time as you can.",
             1
@@ -4898,26 +3532,20 @@
     {
         "Id": 339,
         "ActionId": 333,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 340,
         "ActionId": 334,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory46.jpg"
         ]
@@ -4925,12 +3553,7 @@
     {
         "Id": 341,
         "ActionId": 335,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             101
@@ -4939,27 +3562,20 @@
     {
         "Id": 342,
         "ActionId": 336,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After anxiously waiting, you are called to the conference room."
         ]
     },
     {
         "Id": 343,
         "ActionId": 337,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "What's going on?",
             338
         ]
@@ -4967,42 +3583,29 @@
     {
         "Id": 344,
         "ActionId": 338,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500011,
+            "",
             -400
         ]
     },
     {
         "Id": 345,
         "ActionId": 339,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500004,
+            "",
             400
         ]
     },
     {
         "Id": 346,
         "ActionId": 340,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Hassen",
@@ -5013,13 +3616,9 @@
     {
         "Id": 347,
         "ActionId": 341,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hassen",
             "Asimov.",
             1
@@ -5028,13 +3627,9 @@
     {
         "Id": 348,
         "ActionId": 342,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Um let me see... Well, this is not what I was expecting, so pardon me while I try to figure out how to phrase it...",
             2
@@ -5043,13 +3638,9 @@
     {
         "Id": 349,
         "ActionId": 343,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Alright, well...",
             2
@@ -5058,26 +3649,20 @@
     {
         "Id": 350,
         "ActionId": 344,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 351,
         "ActionId": 345,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             0.25
@@ -5086,13 +3671,9 @@
     {
         "Id": 352,
         "ActionId": 346,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "As you can see, the ship is at 10% power, and reports show four groups of gravity engines being taken over and locked in to propel in the opposite direction at maximum capacity, causing our rapid descent.",
             2
@@ -5101,13 +3682,9 @@
     {
         "Id": 353,
         "ActionId": 347,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "While we speak, Babylonia is plummeting towards the ground at an increasing speed.",
             2
@@ -5116,13 +3693,9 @@
     {
         "Id": 354,
         "ActionId": 348,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "The cause of this crisis is unknown. I speculated that it was from an update made to Gestalt... but I have just discovered a vulnerability in the program. I'm sure you understand the seriousness of such ramifications.",
             2
@@ -5131,13 +3704,9 @@
     {
         "Id": 355,
         "ActionId": 349,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "I know you have many questions, but there's no time for details. So consider the following an order—",
             2
@@ -5146,13 +3715,9 @@
     {
         "Id": 356,
         "ActionId": 350,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "To identify and solve this problem, I need you to carry out an emergency operation.",
             2
@@ -5161,13 +3726,9 @@
     {
         "Id": 357,
         "ActionId": 351,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "We will use the tactical environment simulation interface, Spear of F.O.S., from the Military Academy as assistance.",
             2
@@ -5176,13 +3737,9 @@
     {
         "Id": 358,
         "ActionId": 352,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "As a tactical environment simulation system, it will translate the data in front of you into comprehensible intel and provide tactical evaluations and suggestions.",
             2
@@ -5191,13 +3748,9 @@
     {
         "Id": 359,
         "ActionId": 353,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "If the situation allows you to connect directly with Babylonia, it can also provide additional functions... But that depends on what happens on the scene.",
             2
@@ -5206,13 +3759,9 @@
     {
         "Id": 360,
         "ActionId": 354,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "However, you will only need to use the graphical interface inside Gestalt for now. We'll talk about the rest later.",
             2
@@ -5221,13 +3770,9 @@
     {
         "Id": 361,
         "ActionId": 355,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "The way this works, Gray Raven, is that you will \"infiltrate\" Gestalt.",
             2
@@ -5236,13 +3781,9 @@
     {
         "Id": 362,
         "ActionId": 356,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "In short, I will export your M.I.N.D.s and your commandant's consciousness as virtual programs and upload them into the Gestalt, where you will uncover the issue and resolve it.",
             2
@@ -5251,13 +3792,9 @@
     {
         "Id": 363,
         "ActionId": 357,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Care to explain?",
             359,
             "This order seems like an act of desperation!",
@@ -5271,11 +3808,8 @@
         "ActionId": 358,
         "NextActionId": 372,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Of course, a veteran of your caliber can easily understand the situation at hand when I have yet to grasp what is happening.",
             2
@@ -5284,13 +3818,9 @@
     {
         "Id": 365,
         "ActionId": 359,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Huh? Do I really need to explain further... Good grief.",
             2
@@ -5299,13 +3829,9 @@
     {
         "Id": 366,
         "ActionId": 360,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Long story short, Babylonia lacks power and is currently falling out of orbit, as you know.",
             2
@@ -5314,13 +3840,9 @@
     {
         "Id": 367,
         "ActionId": 361,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "The fundamental cause is Gestalt blocking ignition commands to the engines.",
             2
@@ -5329,13 +3851,9 @@
     {
         "Id": 368,
         "ActionId": 362,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Now, for some reason, Gestalt has activated strict anti-interference protocols, which are blocking access from all programs.",
             2
@@ -5344,13 +3862,9 @@
     {
         "Id": 369,
         "ActionId": 363,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "So I came up with an idea, using your M.I.N.D.s as access channels while using the military exercise version of Spear of F.O.S., a command assistant program, as your graphical interface.",
             2
@@ -5359,13 +3873,9 @@
     {
         "Id": 370,
         "ActionId": 364,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Clear so far? I'll load the Constructs' M.I.N.D.s into the virtual space in the form of a \"virtual program,\" then I'll install authorization on your commandant's terminal.",
             2
@@ -5374,13 +3884,9 @@
     {
         "Id": 371,
         "ActionId": 365,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "If you can't wrap your head around it, think of yourselves as characters in a video game, and the commandant is the one on the controller.",
             2
@@ -5389,13 +3895,9 @@
     {
         "Id": 372,
         "ActionId": 366,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Then you infiltrate Gestalt, find out why it triggered the lockdown, and resolve the issue. That's it.",
             2
@@ -5404,13 +3906,9 @@
     {
         "Id": 373,
         "ActionId": 367,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "This is the only solution I can think of for our current debacle. We have no other choice.",
             2
@@ -5419,13 +3917,9 @@
     {
         "Id": 374,
         "ActionId": 369,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "I will continue to monitor your status and help you locate the vulnerability in Gestalt in real-time. But, enough talking... You'll learn more once you are in the immersion process.",
             2
@@ -5434,13 +3928,9 @@
     {
         "Id": 375,
         "ActionId": 370,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "I'll ask one more time. Do you remember everything I just said?",
             2
@@ -5449,13 +3939,9 @@
     {
         "Id": 376,
         "ActionId": 371,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...Yes.",
             372
         ]
@@ -5463,40 +3949,31 @@
     {
         "Id": 377,
         "ActionId": 372,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "With that, Asimov pushes you into the immersion frame behind you."
         ]
     },
     {
         "Id": 378,
         "ActionId": 373,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 379,
         "ActionId": 374,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
@@ -5504,12 +3981,7 @@
     {
         "Id": 380,
         "ActionId": 375,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             36
@@ -5518,11 +3990,7 @@
     {
         "Id": 381,
         "ActionId": 376,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1000.0,
         "Params": [
             2,
@@ -5532,26 +4000,18 @@
     {
         "Id": 382,
         "ActionId": 377,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As the door closes, the ear-piercing alarm, the cries from the residents... All noise comes to an abrupt halt as you descend into darkness."
         ]
     },
     {
         "Id": 383,
         "ActionId": 378,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1509
@@ -5560,12 +4020,7 @@
     {
         "Id": 384,
         "ActionId": 379,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab",
             2
@@ -5574,26 +4029,18 @@
     {
         "Id": 385,
         "ActionId": 380,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Immediately, a ray of light lights up below your feet and scans your entire body."
         ]
     },
     {
         "Id": 386,
         "ActionId": 381,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
@@ -5601,53 +4048,39 @@
     {
         "Id": 387,
         "ActionId": 382,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Comman—dant..."
         ]
     },
     {
         "Id": 388,
         "ActionId": 383,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Commandant...!"
         ]
     },
     {
         "Id": 389,
         "ActionId": 384,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Commandant!"
         ]
     },
     {
         "Id": 390,
         "ActionId": 385,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory264.png"
         ]
@@ -5655,12 +4088,7 @@
     {
         "Id": 391,
         "ActionId": 386,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             203
@@ -5669,41 +4097,29 @@
     {
         "Id": 392,
         "ActionId": 387,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The darkness in front of you gradually disperses, and the voices around you return."
         ]
     },
     {
         "Id": 393,
         "ActionId": 388,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1031001,
+            "",
             -600
         ]
     },
     {
         "Id": 394,
         "ActionId": 389,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500026
@@ -5712,27 +4128,18 @@
     {
         "Id": 395,
         "ActionId": 390,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             500166,
+            "",
             600
         ]
     },
     {
         "Id": 396,
         "ActionId": 391,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",
@@ -5743,13 +4150,9 @@
     {
         "Id": 397,
         "ActionId": 392,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Liv",
             "Lucia, quit shaking the commandant... Asimov has stabilized the link again...",
             1
@@ -5758,28 +4161,20 @@
     {
         "Id": 398,
         "ActionId": 393,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
             3,
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 399,
         "ActionId": 394,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004
@@ -5788,26 +4183,17 @@
     {
         "Id": 400,
         "ActionId": 395,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 401,
         "ActionId": 396,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
@@ -5818,13 +4204,9 @@
     {
         "Id": 402,
         "ActionId": 397,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "How long was I out?",
             398
         ]
@@ -5832,13 +4214,9 @@
     {
         "Id": 403,
         "ActionId": 398,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "Not long. Not even long enough for you to complete the immersion process.",
             1
@@ -5847,13 +4225,9 @@
     {
         "Id": 404,
         "ActionId": 399,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "?",
             400
         ]
@@ -5861,13 +4235,9 @@
     {
         "Id": 405,
         "ActionId": 400,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Asimov",
             "We're just using an unnoticeably small amount of bandwidth to test the adaptability of the Spear of F.O.S. with Gestalt.",
             1
@@ -5876,26 +4246,18 @@
     {
         "Id": 406,
         "ActionId": 401,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 407,
         "ActionId": 402,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500026
@@ -5904,12 +4266,7 @@
     {
         "Id": 408,
         "ActionId": 403,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lee",
@@ -5920,12 +4277,7 @@
     {
         "Id": 409,
         "ActionId": 404,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004
@@ -5934,26 +4286,17 @@
     {
         "Id": 410,
         "ActionId": 405,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 411,
         "ActionId": 406,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
@@ -5964,13 +4307,9 @@
     {
         "Id": 412,
         "ActionId": 407,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "I'm fine.",
             408
         ]
@@ -5978,26 +4317,18 @@
     {
         "Id": 413,
         "ActionId": 408,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 414,
         "ActionId": 409,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500166
@@ -6006,12 +4337,7 @@
     {
         "Id": 415,
         "ActionId": 410,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lucia",
@@ -6022,12 +4348,7 @@
     {
         "Id": 416,
         "ActionId": 411,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500004
@@ -6036,26 +4357,17 @@
     {
         "Id": 417,
         "ActionId": 412,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
             1
         ]
     },
     {
         "Id": 418,
         "ActionId": 413,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Asimov",
@@ -6066,14 +4378,11 @@
     {
         "Id": 419,
         "ActionId": 414,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Of course."
         ]
     }

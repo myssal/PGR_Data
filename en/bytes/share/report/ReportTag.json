@@ -1,0 +1,624 @@
+[
+    {
+        "Id": 1,
+        "Name": "Chat Content",
+        "SelectPriority": 1,
+        "OrderPriority": 10
+    },
+    {
+        "Id": 2,
+        "Name": "Player Nickname",
+        "OrderPriority": 9,
+        "ContentType": 1
+    },
+    {
+        "Id": 3,
+        "Name": "Player Intro",
+        "OrderPriority": 8,
+        "ContentType": 2
+    },
+    {
+        "Id": 4,
+        "Name": "Dormitory Name",
+        "OrderPriority": 7
+    },
+    {
+        "Id": 5,
+        "Name": "Game Behavior",
+        "OrderPriority": 6
+    },
+    {
+        "Id": 6,
+        "Name": "Displayed Nickname",
+        "OrderPriority": 5,
+        "ContentType": 1
+    },
+    {
+        "Id": 7,
+        "Name": "Displayed Message",
+        "OrderPriority": 4,
+        "ContentType": 3
+    },
+    {
+        "Id": 8,
+        "Name": "Internal Communications",
+        "OrderPriority": 3,
+        "ContentType": 4
+    },
+    {
+        "Id": 101,
+        "Name": "Taunting & Insult",
+        "ParentId": 1,
+        "OrderPriority": 9
+    },
+    {
+        "Id": 102,
+        "Name": "Politics & Sensitive Info",
+        "ParentId": 1,
+        "OrderPriority": 8
+    },
+    {
+        "Id": 103,
+        "Name": "Vulgar & Pornography",
+        "ParentId": 1,
+        "OrderPriority": 7
+    },
+    {
+        "Id": 104,
+        "Name": "Fraud & Advertising",
+        "ParentId": 1,
+        "OrderPriority": 6
+    },
+    {
+        "Id": 105,
+        "Name": "Gamble Related",
+        "ParentId": 1,
+        "OrderPriority": 5
+    },
+    {
+        "Id": 106,
+        "Name": "Hacking & Cheating",
+        "ParentId": 1,
+        "OrderPriority": 4
+    },
+    {
+        "Id": 107,
+        "Name": "Off-line Transaction",
+        "ParentId": 1,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 108,
+        "Name": "Others",
+        "ParentId": 1,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 109,
+        "Name": "Harmful information for minors",
+        "ParentId": 1,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 111,
+        "Name": "Taunting & Insult",
+        "ParentId": 2,
+        "OrderPriority": 9
+    },
+    {
+        "Id": 112,
+        "Name": "Politics & Sensitive Info",
+        "ParentId": 2,
+        "OrderPriority": 8
+    },
+    {
+        "Id": 113,
+        "Name": "Vulgar & Pornography",
+        "ParentId": 2,
+        "OrderPriority": 7
+    },
+    {
+        "Id": 114,
+        "Name": "Fraud & Advertising",
+        "ParentId": 2,
+        "OrderPriority": 6
+    },
+    {
+        "Id": 115,
+        "Name": "Gamble Related",
+        "ParentId": 2,
+        "OrderPriority": 5
+    },
+    {
+        "Id": 116,
+        "Name": "Hacking & Cheating",
+        "ParentId": 2,
+        "OrderPriority": 4
+    },
+    {
+        "Id": 117,
+        "Name": "Off-line Transaction",
+        "ParentId": 2,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 118,
+        "Name": "Others",
+        "ParentId": 2,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 119,
+        "Name": "Harmful information for minors",
+        "ParentId": 2,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 121,
+        "Name": "Taunting & Insult",
+        "ParentId": 3,
+        "OrderPriority": 9
+    },
+    {
+        "Id": 122,
+        "Name": "Politics & Sensitive Info",
+        "ParentId": 3,
+        "OrderPriority": 8
+    },
+    {
+        "Id": 123,
+        "Name": "Vulgar & Pornography",
+        "ParentId": 3,
+        "OrderPriority": 7
+    },
+    {
+        "Id": 124,
+        "Name": "Fraud & Advertising",
+        "ParentId": 3,
+        "OrderPriority": 6
+    },
+    {
+        "Id": 125,
+        "Name": "Gamble Related",
+        "ParentId": 3,
+        "OrderPriority": 5
+    },
+    {
+        "Id": 126,
+        "Name": "Hacking & Cheating",
+        "ParentId": 3,
+        "OrderPriority": 4
+    },
+    {
+        "Id": 127,
+        "Name": "Off-line Transaction",
+        "ParentId": 3,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 128,
+        "Name": "Others",
+        "ParentId": 3,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 129,
+        "Name": "Harmful information for minors",
+        "ParentId": 3,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 131,
+        "Name": "Taunting & Insult",
+        "ParentId": 4,
+        "OrderPriority": 9
+    },
+    {
+        "Id": 132,
+        "Name": "Politics & Sensitive Info",
+        "ParentId": 4,
+        "OrderPriority": 8
+    },
+    {
+        "Id": 133,
+        "Name": "Vulgar & Pornography",
+        "ParentId": 4,
+        "OrderPriority": 7
+    },
+    {
+        "Id": 134,
+        "Name": "Fraud & Advertising",
+        "ParentId": 4,
+        "OrderPriority": 6
+    },
+    {
+        "Id": 135,
+        "Name": "Gamble Related",
+        "ParentId": 4,
+        "OrderPriority": 5
+    },
+    {
+        "Id": 136,
+        "Name": "Hacking & Cheating",
+        "ParentId": 4,
+        "OrderPriority": 4
+    },
+    {
+        "Id": 137,
+        "Name": "Off-line Transaction",
+        "ParentId": 4,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 138,
+        "Name": "Others",
+        "ParentId": 4,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 139,
+        "Name": "Harmful information for minors",
+        "ParentId": 4,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 141,
+        "Name": "Taunting & Insult",
+        "ParentId": 5,
+        "OrderPriority": 9
+    },
+    {
+        "Id": 142,
+        "Name": "Politics & Sensitive Info",
+        "ParentId": 5,
+        "OrderPriority": 8
+    },
+    {
+        "Id": 143,
+        "Name": "Vulgar & Pornography",
+        "ParentId": 5,
+        "OrderPriority": 7
+    },
+    {
+        "Id": 144,
+        "Name": "Fraud & Advertising",
+        "ParentId": 5,
+        "OrderPriority": 6
+    },
+    {
+        "Id": 145,
+        "Name": "Gamble Related",
+        "ParentId": 5,
+        "OrderPriority": 5
+    },
+    {
+        "Id": 146,
+        "Name": "Hacking & Cheating",
+        "ParentId": 5,
+        "OrderPriority": 4
+    },
+    {
+        "Id": 147,
+        "Name": "Off-line Transaction",
+        "ParentId": 5,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 148,
+        "Name": "Others",
+        "ParentId": 5,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 149,
+        "Name": "Harmful information for minors",
+        "ParentId": 5,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 151,
+        "Name": "Taunting & Insult",
+        "ParentId": 6,
+        "OrderPriority": 9
+    },
+    {
+        "Id": 152,
+        "Name": "Politics & Sensitive Info",
+        "ParentId": 6,
+        "OrderPriority": 8
+    },
+    {
+        "Id": 153,
+        "Name": "Vulgar & Pornography",
+        "ParentId": 6,
+        "OrderPriority": 7
+    },
+    {
+        "Id": 154,
+        "Name": "Fraud & Advertising",
+        "ParentId": 6,
+        "OrderPriority": 6
+    },
+    {
+        "Id": 155,
+        "Name": "Gamble Related",
+        "ParentId": 6,
+        "OrderPriority": 5
+    },
+    {
+        "Id": 156,
+        "Name": "Hacking & Cheating",
+        "ParentId": 6,
+        "OrderPriority": 4
+    },
+    {
+        "Id": 157,
+        "Name": "Off-line Transaction",
+        "ParentId": 6,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 158,
+        "Name": "Others",
+        "ParentId": 6,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 159,
+        "Name": "Harmful information for minors",
+        "ParentId": 6,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 161,
+        "Name": "Taunting & Insult",
+        "ParentId": 7,
+        "OrderPriority": 9
+    },
+    {
+        "Id": 162,
+        "Name": "Politics & Sensitive Info",
+        "ParentId": 7,
+        "OrderPriority": 8
+    },
+    {
+        "Id": 163,
+        "Name": "Vulgar & Pornography",
+        "ParentId": 7,
+        "OrderPriority": 7
+    },
+    {
+        "Id": 164,
+        "Name": "Fraud & Advertising",
+        "ParentId": 7,
+        "OrderPriority": 6
+    },
+    {
+        "Id": 165,
+        "Name": "Gamble Related",
+        "ParentId": 7,
+        "OrderPriority": 5
+    },
+    {
+        "Id": 166,
+        "Name": "Hacking & Cheating",
+        "ParentId": 7,
+        "OrderPriority": 4
+    },
+    {
+        "Id": 167,
+        "Name": "Off-line Transaction",
+        "ParentId": 7,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 168,
+        "Name": "Others",
+        "ParentId": 7,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 169,
+        "Name": "Harmful information for minors",
+        "ParentId": 7,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 171,
+        "Name": "Taunting & Insult",
+        "ParentId": 8,
+        "OrderPriority": 9
+    },
+    {
+        "Id": 172,
+        "Name": "Politics & Sensitive Info",
+        "ParentId": 8,
+        "OrderPriority": 8
+    },
+    {
+        "Id": 173,
+        "Name": "Vulgar & Pornography",
+        "ParentId": 8,
+        "OrderPriority": 7
+    },
+    {
+        "Id": 174,
+        "Name": "Fraud & Advertising",
+        "ParentId": 8,
+        "OrderPriority": 6
+    },
+    {
+        "Id": 175,
+        "Name": "Gamble Related",
+        "ParentId": 8,
+        "OrderPriority": 5
+    },
+    {
+        "Id": 176,
+        "Name": "Hacking & Cheating",
+        "ParentId": 8,
+        "OrderPriority": 4
+    },
+    {
+        "Id": 177,
+        "Name": "Off-line Transaction",
+        "ParentId": 8,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 178,
+        "Name": "Others",
+        "ParentId": 8,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 179,
+        "Name": "Harmful information for minors",
+        "ParentId": 8,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 1001,
+        "Name": "Multiplayer",
+        "ParentId": 106,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 1002,
+        "Name": "War Zone",
+        "ParentId": 106,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 1003,
+        "Name": "Phantom Pain Cage",
+        "ParentId": 106,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 1101,
+        "Name": "Multiplayer",
+        "ParentId": 116,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 1102,
+        "Name": "War Zone",
+        "ParentId": 116,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 1103,
+        "Name": "Phantom Pain Cage",
+        "ParentId": 116,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 1201,
+        "Name": "Multiplayer",
+        "ParentId": 126,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 1202,
+        "Name": "War Zone",
+        "ParentId": 126,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 1203,
+        "Name": "Phantom Pain Cage",
+        "ParentId": 126,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 1301,
+        "Name": "Multiplayer",
+        "ParentId": 136,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 1302,
+        "Name": "War Zone",
+        "ParentId": 136,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 1303,
+        "Name": "Phantom Pain Cage",
+        "ParentId": 136,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 1401,
+        "Name": "Multiplayer",
+        "ParentId": 146,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 1402,
+        "Name": "War Zone",
+        "ParentId": 146,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 1403,
+        "Name": "Phantom Pain Cage",
+        "ParentId": 146,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 1501,
+        "Name": "Multiplayer",
+        "ParentId": 156,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 1502,
+        "Name": "War Zone",
+        "ParentId": 156,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 1503,
+        "Name": "Phantom Pain Cage",
+        "ParentId": 156,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 1601,
+        "Name": "Multiplayer",
+        "ParentId": 166,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 1602,
+        "Name": "War Zone",
+        "ParentId": 166,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 1603,
+        "Name": "Phantom Pain Cage",
+        "ParentId": 166,
+        "OrderPriority": 1
+    },
+    {
+        "Id": 1701,
+        "Name": "Multiplayer",
+        "ParentId": 176,
+        "OrderPriority": 3
+    },
+    {
+        "Id": 1702,
+        "Name": "War Zone",
+        "ParentId": 176,
+        "OrderPriority": 2
+    },
+    {
+        "Id": 1703,
+        "Name": "Phantom Pain Cage",
+        "ParentId": 176,
+        "OrderPriority": 1
+    }
+]

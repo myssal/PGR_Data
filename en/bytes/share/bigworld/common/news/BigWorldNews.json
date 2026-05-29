@@ -1,0 +1,72 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "Name": "Toward Undiscovered Beauty",
+        "Title": "Toward Undiscovered Beauty",
+        "Content": "Complete the prerequisite missions to unlock more content in Babylonia.",
+        "Priority": 1,
+        "ShowReward": 2002,
+        "BgPic": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldNews/UiBigWorldPopupNewsBg10.png",
+        "TextDialogId": 1001,
+        "Params": [
+            2002,
+            7001
+        ]
+    },
+    {
+        "Id": 2,
+        "Type": 2,
+        "Name": "Frostheart Shadow",
+        "Title": "Frostheart Shadow",
+        "Content": "Glacier rifts swallow the dawn. The shadow of Frostheart lies hidden. Beneath Babylonia's dome, a crisis stirs beneath the surface.",
+        "Priority": 2,
+        "ShowReward": 2001,
+        "SpineBanner": "Assets/Product/Ui/Spine/BigWorld/Common/PopuNews/V42UiBigWorldPopupNews_Lusaita_b.prefab",
+        "SkipId": 200106,
+        "Params": [
+            1002
+        ],
+        "PreConditions": [
+            50002053
+        ],
+        "PreSkipIds": [
+            200105
+        ]
+    },
+    {
+        "Id": 3,
+        "Type": 2,
+        "Name": "Homecoming and A New Journey",
+        "Title": "Homecoming and A New Journey",
+        "Content": "After overcoming the catastrophe, the Military Command is preparing to award medals to all who fought valiantly. Prepare your formal attire and step into F.O.S. once again as a graduate representative.",
+        "Priority": 3,
+        "ShowReward": 2003,
+        "ShowTimeId": 47001,
+        "ShowCountDown": 3542400,
+        "ShowTimeRewardTitle": "Complete time-limited missions",
+        "ShowTimeRewardContent": "to claim Commandant Coating",
+        "ShowTimeRewardTip": "限时领取将于2026/07/15 05:00截止",
+        "TagHideCondition": 50003202,
+        "EarlyAccessCondition": 50003203,
+        "BgPic": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldNews/UiBigWorldPopupNewsBg109.png",
+        "SkipId": 200122,
+        "RewardShowSkipId": 1204,
+        "TaskGroupId": 701,
+        "IsSpecial": true,
+        "CustomParamId": 2001,
+        "EarlyAccessTextDialogId": 1002,
+        "EarlyAccessSkipIds": [
+            200121
+        ],
+        "Params": [
+            7003
+        ],
+        "PreConditions": [
+            50003206
+        ],
+        "PreSkipIds": [
+            200121
+        ]
+    }
+]

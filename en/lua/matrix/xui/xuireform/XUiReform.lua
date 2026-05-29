@@ -165,7 +165,7 @@ function XUiReformReadyPanel:OnBtnEnterClicked()
     if diff > 1 then
         evolvableStage:InheritTeamFromEvolableStage(self.BaseStage:GetEvolvableStageByDiffIndex(diff - 1))
     end
-    XLuaUiManager.Open("UiBattleRoleRoom",
+    XMVCA.XFuben:OpenUiBattleRoleRoom(
     self.BaseStage:GetId(),
     evolvableStage:GetTeam(),
     require("XUi/XUiReform/XUiReformBattleRoleRoom"))

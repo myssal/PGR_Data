@@ -130,7 +130,7 @@ function XUiFubenSpringFestivalStageDetail:OnBtnEnterClick()
             self.RootUi:ClearNodesSelect()
             self.RootUi:CloseStageDetails()
         end
-        XLuaUiManager.Open("UiBattleRoleRoom", self.FStage:GetStageId())
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.FStage:GetStageId())
     end
 end
 

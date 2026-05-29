@@ -5,8 +5,7 @@
         "Priority": 98,
         "Name": "Lounge Decoration",
         "IsPause": true,
-        "IsForce": true,
-        "IsHide": false
+        "IsForce": true
     },
     {
         "Id": 2001,
@@ -23,8 +22,7 @@
         "Priority": 99,
         "Name": "Kuroro Coffee Tutorial",
         "IsPause": true,
-        "IsForce": true,
-        "IsHide": false
+        "IsForce": true
     },
     {
         "Id": 2002,
@@ -50,35 +48,38 @@
         "Priority": 99,
         "Name": "Space Leap Tutorial",
         "IsPause": true,
-        "IsForce": true,
-        "IsHide": false
+        "IsForce": true
     },
     {
         "Id": 1040,
         "GroupId": 2,
         "Priority": 99,
         "Name": "Supply Crate Tutorial",
-        "IsPause": true,
-        "IsForce": false,
-        "IsHide": false
+        "IsPause": true
     },
     {
         "Id": 1001,
         "GroupId": 2,
         "Priority": 90,
-        "Name": "Map",
-        "IsPause": false,
-        "IsForce": false,
-        "IsHide": false
+        "Name": "Map"
     },
     {
         "Id": 1002,
         "GroupId": 2,
         "Priority": 99,
-        "Name": "Members & Teams",
-        "IsPause": false,
-        "IsForce": false,
-        "IsHide": false
+        "Name": "Members & Teams"
+    },
+    {
+        "Id": 1003,
+        "GroupId": 2,
+        "Priority": 99,
+        "Name": "Invitation Mission"
+    },
+    {
+        "Id": 1004,
+        "GroupId": 2,
+        "Priority": 98,
+        "Name": "Commandant Outfits"
     },
     {
         "Id": 2010,
@@ -86,8 +87,7 @@
         "Priority": 99,
         "Name": "Business Development Plan - Basic Content",
         "IsPause": true,
-        "IsForce": true,
-        "IsHide": false
+        "IsForce": true
     },
     {
         "Id": 2011,
@@ -95,8 +95,7 @@
         "Priority": 99,
         "Name": "Business Development Plan - Inner Ring Stores",
         "IsPause": true,
-        "IsForce": true,
-        "IsHide": false
+        "IsForce": true
     },
     {
         "Id": 2012,
@@ -104,8 +103,7 @@
         "Priority": 99,
         "Name": "Business Development Plan - Outer Ring Stores",
         "IsPause": true,
-        "IsForce": true,
-        "IsHide": false
+        "IsForce": true
     },
     {
         "Id": 2013,
@@ -113,23 +111,31 @@
         "Priority": 99,
         "Name": "Business Development Plan - Marquee",
         "IsPause": true,
-        "IsForce": true,
-        "IsHide": false
-    },
-    {
-        "Id": 1003,
-        "GroupId": 2,
-        "Priority": 99,
-        "Name": "Invitation Mission",
-        "IsPause": false,
-        "IsForce": false,
-        "IsHide": false
+        "IsForce": true
     },
     {
         "Id": 2014,
         "GroupId": 3,
         "Priority": 99,
         "Name": "Guided Cannon",
+        "IsPause": true,
+        "IsForce": true,
+        "IsHide": true
+    },
+    {
+        "Id": 3025,
+        "GroupId": 3,
+        "Priority": 99,
+        "Name": "Scan Vision",
+        "IsPause": true,
+        "IsForce": true,
+        "IsHide": true
+    },
+    {
+        "Id": 3020,
+        "GroupId": 3,
+        "Priority": 99,
+        "Name": "Battle Tutorial",
         "IsPause": true,
         "IsForce": true,
         "IsHide": true

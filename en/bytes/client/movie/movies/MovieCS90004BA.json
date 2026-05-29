@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory14.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             36
@@ -30,27 +20,20 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Custom Text Test"
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Our sum-engines never drop a <color=#ff4e4eff><size=60>figure</size></color>, nor our looms a stitch;"
@@ -59,13 +42,9 @@
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             "<size=100>Nanami</size>",
@@ -76,15 +55,12 @@
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             "<size=200>Nanami</size>",
+            "",
             -150,
             -360
         ]
@@ -92,16 +68,13 @@
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             4,
             "<size=300>Nanami</size>",
+            "",
             -200,
             180
         ]
@@ -109,12 +82,7 @@
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500175
@@ -123,15 +91,12 @@
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             5,
             "Or, again, is it the eye, or the little see-engine, which has shown us the existence of infinitely minute organisms which swarm unsuspected around us?",
+            "",
             -250,
             30
         ]
@@ -139,16 +104,14 @@
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             6,
             "Who can say that the vapour engine has not a kind of consciousness?",
+            "",
             -300,
             -180
         ]

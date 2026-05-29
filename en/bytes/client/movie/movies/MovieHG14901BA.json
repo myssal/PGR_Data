@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory14.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             208
@@ -30,12 +20,7 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1099
@@ -44,27 +29,20 @@
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The terminal vibrates, showing an incoming communication request."
         ]
     },
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Pick up the call)",
             6
         ]
@@ -72,12 +50,7 @@
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab",
             3
@@ -86,12 +59,7 @@
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500001
@@ -100,12 +68,7 @@
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Celica",
@@ -116,13 +79,9 @@
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "Good news—your vacation time has finally come.",
             1
@@ -131,13 +90,9 @@
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Perfect timing. I've just wrapped up all my missions for now.",
             11,
             "...And the bad news is?",
@@ -149,11 +104,8 @@
         "ActionId": 11,
         "NextActionId": 15,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "Well, the thing is... this vacation is kind of a \"mission\" too, in a way.",
             1
@@ -162,12 +114,7 @@
     {
         "Id": 12,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             4
@@ -178,11 +125,8 @@
         "ActionId": 13,
         "NextActionId": 14,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "Hey, don't just assume there's bad news—",
             1
@@ -191,12 +135,7 @@
     {
         "Id": 14,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -204,13 +143,9 @@
     {
         "Id": 15,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "Seeing how you've been working around the clock lately, the higher-ups decided to give you something a bit more relaxing... A standard mission, for the sake of work-life balance.",
             1
@@ -219,13 +154,9 @@
     {
         "Id": 16,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "As you know, we've recently reclaimed the Hydrangea Artificial Island, and everything there is in the process of reconstruction.",
             1
@@ -234,13 +165,9 @@
     {
         "Id": 17,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "Many of the Golden Age islanders are now returning home to hold a reclamation festival, celebrating the construction of conservation area.",
             1
@@ -249,13 +176,9 @@
     {
         "Id": 18,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "Your mission is to help with the festival preparations. I've double-checked—no combat assignments involved. It's purely for relaxation, I promise.",
             1
@@ -264,13 +187,9 @@
     {
         "Id": 19,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "That sounds pretty good.",
             20
         ]
@@ -278,13 +197,9 @@
     {
         "Id": 20,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "The organizers are expecting a large turnout, so they're hoping the staff heading to the island could bring along some more supplies.",
             1
@@ -293,13 +208,9 @@
     {
         "Id": 21,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "The detailed list is in the mission briefing—construction materials and some special civilian goods. All purchasing expenses will be reimbursed. Would you mind helping us out, Gray Raven Commandant?",
             1
@@ -308,13 +219,9 @@
     {
         "Id": 22,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Roger.",
             23
         ]
@@ -322,14 +229,10 @@
     {
         "Id": 23,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Celica",
             "Oh right, for this mission, the military has also assigned you a temporary squad member. Their information is also included in the briefing. You can contact them directly.",
             1
@@ -338,12 +241,7 @@
     {
         "Id": 24,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -351,11 +249,7 @@
     {
         "Id": 25,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 400.0,
         "Params": [
             "DialogDisable"
@@ -364,25 +258,16 @@
     {
         "Id": 26,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab"
         ]
     },
     {
         "Id": 27,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1515
@@ -391,13 +276,8 @@
     {
         "Id": 28,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory14.png"
         ]
@@ -405,26 +285,18 @@
     {
         "Id": 29,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The communication ends. As you open the mission details, the temporary member's portrait looks familiar, as if you've seen her somewhere before."
         ]
     },
     {
         "Id": 30,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
             3
@@ -433,66 +305,51 @@
     {
         "Id": 31,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500374,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 32,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "—Yata, member of the Scarab Squad, terminal ID..."
         ]
     },
     {
         "Id": 33,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Beyond these basic details, there's practically no other information available. The Scarab Squad certainly lives up to its reputation for secrecy."
         ]
     },
     {
         "Id": 34,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Your last impression of Yata comes from your previous joint operations. Word has it that she's been spotted with a new frame recently, and you can't help but wonder how she's doing."
         ]
     },
     {
         "Id": 35,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 400.0,
         "Params": [
             "DialogDisable"
@@ -501,12 +358,7 @@
     {
         "Id": 36,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -514,26 +366,18 @@
     {
         "Id": 37,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab"
         ]
     },
     {
         "Id": 38,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Send a communication request to Yata)",
             39
         ]
@@ -541,12 +385,7 @@
     {
         "Id": 39,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             887
@@ -555,14 +394,10 @@
     {
         "Id": 40,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Terminal",
             "Beep... beep... beep..."
         ]
@@ -570,13 +405,9 @@
     {
         "Id": 41,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Terminal",
             "Your call cannot be connected..."
         ]
@@ -584,12 +415,7 @@
     {
         "Id": 42,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             887
         ]
@@ -597,13 +423,9 @@
     {
         "Id": 43,
         "ActionId": 43,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Maybe she's busy?",
             44
         ]
@@ -611,39 +433,28 @@
     {
         "Id": 44,
         "ActionId": 44,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After several failed attempts to make contact, you decide to go purchase the supplies first."
         ]
     },
     {
         "Id": 45,
         "ActionId": 45,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "With that thought, you turn off your terminal and break free from your busy duties, stepping toward the beckoning promise of a vacation."
         ]
     },
     {
         "Id": 46,
         "ActionId": 46,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             10042416
@@ -652,12 +463,7 @@
     {
         "Id": 47,
         "ActionId": 47,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             36
@@ -666,12 +472,7 @@
     {
         "Id": 48,
         "ActionId": 48,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory261.png"
         ]
@@ -679,12 +480,7 @@
     {
         "Id": 49,
         "ActionId": 49,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             204
@@ -693,12 +489,7 @@
     {
         "Id": 50,
         "ActionId": 50,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500460
@@ -707,13 +498,8 @@
     {
         "Id": 51,
         "ActionId": 51,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Elderly Shopkeeper",
@@ -724,13 +510,9 @@
     {
         "Id": 52,
         "ActionId": 52,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Is a lot of people going?",
             53
         ]
@@ -738,13 +520,9 @@
     {
         "Id": 53,
         "ActionId": 53,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Elderly Shopkeeper",
             "Yeah. I hear they're celebrating the reclamation of lost territory. Many of the displaced citizens volunteered to help with the reconstruction, and they even got approval for a festival. Quite a few shop owners from this street alone are going to join in the festivities.",
             2
@@ -753,13 +531,9 @@
     {
         "Id": 54,
         "ActionId": 54,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "You're not going?",
             55
         ]
@@ -767,13 +541,9 @@
     {
         "Id": 55,
         "ActionId": 55,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Elderly Shopkeeper",
             "At my age, I don't have the energy for such trips anymore. The reclamation is wonderful news, but my hometown is so far away... I wonder if I'll even live to see that day.",
             2
@@ -782,14 +552,10 @@
     {
         "Id": 56,
         "ActionId": 56,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Elderly Shopkeeper",
             "Sigh. Well... being in Babylonia isn't so bad, I guess. Here you go, kid. Careful now.",
             2
@@ -798,12 +564,7 @@
     {
         "Id": 57,
         "ActionId": 57,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2
         ]
@@ -811,11 +572,7 @@
     {
         "Id": 58,
         "ActionId": 58,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 400.0,
         "Params": [
             "DialogDisable"
@@ -824,13 +581,8 @@
     {
         "Id": 59,
         "ActionId": 59,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory538.png"
         ]
@@ -838,12 +590,7 @@
     {
         "Id": 60,
         "ActionId": 60,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1099
@@ -852,40 +599,30 @@
     {
         "Id": 61,
         "ActionId": 61,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Just as you step out of the shop, your terminal chimes with a notification."
         ]
     },
     {
         "Id": 62,
         "ActionId": 62,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The sender is none other than Yata, who had been out of contact until now."
         ]
     },
     {
         "Id": 63,
         "ActionId": 63,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "I've reviewed the mission briefing. For efficiency's sake, let's split up."
         ]
@@ -893,14 +630,10 @@
     {
         "Id": 64,
         "ActionId": 64,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "I've sent you the planned routes. Let's meet up at the shop at the last stop."
         ]
@@ -908,12 +641,7 @@
     {
         "Id": 65,
         "ActionId": 65,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory261.png"
         ]
@@ -921,52 +649,38 @@
     {
         "Id": 66,
         "ActionId": 66,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Shoppers stroll through the commercial district, chatting and laughing."
         ]
     },
     {
         "Id": 67,
         "ActionId": 67,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After several rounds of shopping, half the items on the checklist are crossed off. Your hands are full of purchases—everything's going smoothly so far."
         ]
     },
     {
         "Id": 68,
         "ActionId": 68,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After borrowing a small cart for the supplies, you make your way through the bustling lunch crowd to reach the shop where Yata and you agreed to meet."
         ]
     },
     {
         "Id": 69,
         "ActionId": 69,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4090
@@ -975,28 +689,22 @@
     {
         "Id": 70,
         "ActionId": 70,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Just as you are about to push the cart up the slope, the door suddenly swings open from the inside. The wind chimes above the entrance tinkle, and a familiar figure comes into view."
         ]
     },
     {
         "Id": 71,
         "ActionId": 71,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501041,
+            "",
+            "",
             -75,
             50
         ]
@@ -1004,12 +712,7 @@
     {
         "Id": 72,
         "ActionId": 72,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Yata",
@@ -1020,25 +723,17 @@
     {
         "Id": 73,
         "ActionId": 73,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The Construct holds a can of cherry blossom soda in each hand, while her mechanical arms on the back are carrying shopping bags and waving goodbye to those inside the shop."
         ]
     },
     {
         "Id": 74,
         "ActionId": 74,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1046,11 +741,7 @@
     {
         "Id": 75,
         "ActionId": 75,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 400.0,
         "Params": [
             "DialogDisable"
@@ -1059,13 +750,9 @@
     {
         "Id": 76,
         "ActionId": 76,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hello, Yata.",
             77,
             "I see you got here first.",
@@ -1075,12 +762,7 @@
     {
         "Id": 77,
         "ActionId": 77,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4373
@@ -1089,12 +771,7 @@
     {
         "Id": 78,
         "ActionId": 78,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501040
@@ -1103,15 +780,12 @@
     {
         "Id": 79,
         "ActionId": 79,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 120.0,
         "Params": [
             1,
             0.1,
+            "",
             -50,
             -10
         ]
@@ -1119,12 +793,7 @@
     {
         "Id": 80,
         "ActionId": 80,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.1
@@ -1133,41 +802,30 @@
     {
         "Id": 81,
         "ActionId": 81,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "Yata leaps down the steps and lands in front of you, her mechanical arms already moving to rearrange the scattered goods in the cart."
         ]
     },
     {
         "Id": 82,
         "ActionId": 82,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The bustling crowds in the distance continue their chatter as her copper-colored eyes meet yours."
         ]
     },
     {
         "Id": 83,
         "ActionId": 83,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "I was just wondering when you'd show up.",
             1
@@ -1176,12 +834,7 @@
     {
         "Id": 84,
         "ActionId": 84,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -1190,26 +843,19 @@
     {
         "Id": 85,
         "ActionId": 85,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Yata flashes you a smile. The sunlight falls on her, accentuating her gallant demeanor."
         ]
     },
     {
         "Id": 86,
         "ActionId": 86,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Speak of the devil, I guess.",
             1
@@ -1218,13 +864,9 @@
     {
         "Id": 87,
         "ActionId": 87,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Here, this is for you.",
             1
@@ -1233,12 +875,7 @@
     {
         "Id": 88,
         "ActionId": 88,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1246,26 +883,19 @@
     {
         "Id": 89,
         "ActionId": 89,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Yata hands you a can of soda, opens it, and raises hers for a toast."
         ]
     },
     {
         "Id": 90,
         "ActionId": 90,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "I sent you a message earlier.",
             91
         ]
@@ -1273,13 +903,9 @@
     {
         "Id": 91,
         "ActionId": 91,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Couldn't reach you, so I went ahead with the shopping.",
             92
         ]
@@ -1287,12 +913,7 @@
     {
         "Id": 92,
         "ActionId": 92,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4421
@@ -1301,26 +922,19 @@
     {
         "Id": 93,
         "ActionId": 93,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Beep, beep— Right as you finish speaking, Yata's terminal chimes with a new message notification."
         ]
     },
     {
         "Id": 94,
         "ActionId": 94,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "...It was already a bit late by the time I saw your message. Rather than waste time meeting up, I figured it'd be more efficient to split up.",
             1
@@ -1329,12 +943,7 @@
     {
         "Id": 95,
         "ActionId": 95,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4421
@@ -1343,25 +952,17 @@
     {
         "Id": 96,
         "ActionId": 96,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Beep, beep— Another notification chimes."
         ]
     },
     {
         "Id": 97,
         "ActionId": 97,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             4
@@ -1370,26 +971,19 @@
     {
         "Id": 98,
         "ActionId": 98,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "With a resigned sigh, Yata takes out her terminal. Her brows furrow slightly as countless flickering characters reflect in her eyes."
         ]
     },
     {
         "Id": 99,
         "ActionId": 99,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Tch, what a hassle...",
             1
@@ -1398,13 +992,9 @@
     {
         "Id": 100,
         "ActionId": 100,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "What's wrong?",
             101
         ]
@@ -1412,13 +1002,9 @@
     {
         "Id": 101,
         "ActionId": 101,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Since we're working together today, I tried to whitelist you from my Do Not Disturb settings.",
             1
@@ -1427,13 +1013,9 @@
     {
         "Id": 102,
         "ActionId": 102,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Instead... I think I tapped something that disabled Do Not Disturb for everyone. Now my terminal's flooded with notifications.",
             1
@@ -1442,26 +1024,19 @@
     {
         "Id": 103,
         "ActionId": 103,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You lean over to peek at Yata's terminal screen. The entire display is covered in notifications, with a huge \"99+\" counter in the top right."
         ]
     },
     {
         "Id": 104,
         "ActionId": 104,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Who designed this gaudy interface... I really hate it when I have to clear these red dots one by one.",
             1
@@ -1470,13 +1045,9 @@
     {
         "Id": 105,
         "ActionId": 105,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Do you need a hand?",
             106
         ]
@@ -1484,12 +1055,7 @@
     {
         "Id": 106,
         "ActionId": 106,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1497,26 +1063,19 @@
     {
         "Id": 107,
         "ActionId": 107,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Yata turns to you and nods."
         ]
     },
     {
         "Id": 108,
         "ActionId": 108,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "You handle it. I rarely use these features.",
             1
@@ -1525,25 +1084,17 @@
     {
         "Id": 109,
         "ActionId": 109,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Taking her terminal, you open the communication settings, mark all as read, and enable Do Not Disturb for everyone—in the blink of an eye, all the cluttered notifications vanish from the screen."
         ]
     },
     {
         "Id": 110,
         "ActionId": 110,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -1552,13 +1103,9 @@
     {
         "Id": 111,
         "ActionId": 111,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Ah, that's much easier on the eyes now.",
             1
@@ -1567,26 +1114,19 @@
     {
         "Id": 112,
         "ActionId": 112,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As she speaks, she takes back her terminal and carefully navigates to the priority notifications feature, dragging your profile into the empty list."
         ]
     },
     {
         "Id": 113,
         "ActionId": 113,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "There. Now you can reach me anytime.",
             1
@@ -1595,13 +1135,9 @@
     {
         "Id": 114,
         "ActionId": 114,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "You're only whitelisting me? What about your commandant?",
             115
         ]
@@ -1609,12 +1145,7 @@
     {
         "Id": 115,
         "ActionId": 115,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             8
@@ -1623,13 +1154,9 @@
     {
         "Id": 116,
         "ActionId": 116,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "...You're right. That is very important.",
             1
@@ -1638,25 +1165,17 @@
     {
         "Id": 117,
         "ActionId": 117,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You watch as Yata drags Valeria's profile into the blocked list."
         ]
     },
     {
         "Id": 118,
         "ActionId": 118,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1664,13 +1183,9 @@
     {
         "Id": 119,
         "ActionId": 119,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "At least no one will interrupt me during this mission now.",
             1
@@ -1679,13 +1194,9 @@
     {
         "Id": 120,
         "ActionId": 120,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Anyway, let's sync up the shopping list. What are we still missing?",
             1
@@ -1694,13 +1205,9 @@
     {
         "Id": 121,
         "ActionId": 121,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Here, take a look.",
             122,
             "Let me check.",
@@ -1710,13 +1217,10 @@
     {
         "Id": 122,
         "ActionId": 122,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After receiving the shared list, Yata methodically marks and adjusts the items on it. Her fingers dance across the screen with precision, and within a minute, the newly edited list is sent back to you."
         ]
     },
@@ -1725,11 +1229,8 @@
         "ActionId": 123,
         "NextActionId": 126,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Green marks what we've purchased, orange for excess purchases, and red for items we still need.",
             1
@@ -1738,13 +1239,10 @@
     {
         "Id": 124,
         "ActionId": 124,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Yata gives you an intrigued look before sharing her list with you."
         ]
     },
@@ -1753,24 +1251,18 @@
         "ActionId": 125,
         "NextActionId": 126,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Her remarkable progress demonstrates her efficiency at every turn. After checking the list, you can't help but be impressed."
         ]
     },
     {
         "Id": 126,
         "ActionId": 126,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Almost done then.",
             127
         ]
@@ -1778,13 +1270,9 @@
     {
         "Id": 127,
         "ActionId": 127,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "...Right, we've settled everything with the construction material suppliers. All that's left are some civilian goods.",
             1
@@ -1793,13 +1281,9 @@
     {
         "Id": 128,
         "ActionId": 128,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "If all goes well, we'll have about half an hour of free time before the shuttle takes off.",
             1
@@ -1808,13 +1292,9 @@
     {
         "Id": 129,
         "ActionId": 129,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "I say that's a good start.",
             1
@@ -1823,25 +1303,17 @@
     {
         "Id": 130,
         "ActionId": 130,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The Construct nods in satisfaction."
         ]
     },
     {
         "Id": 131,
         "ActionId": 131,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             6
@@ -1850,13 +1322,9 @@
     {
         "Id": 132,
         "ActionId": 132,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Oh, by the way.",
             1
@@ -1865,13 +1333,9 @@
     {
         "Id": 133,
         "ActionId": 133,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Um...",
             1
@@ -1880,26 +1344,19 @@
     {
         "Id": 134,
         "ActionId": 134,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Yata, who had been full of spirit until now, suddenly becomes flustered and averts your gaze, running her fingers through her silver curls."
         ]
     },
     {
         "Id": 135,
         "ActionId": 135,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hm?",
             136
         ]
@@ -1907,13 +1364,9 @@
     {
         "Id": 136,
         "ActionId": 136,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Ahem, I'd like to interview you about something.",
             1
@@ -1922,12 +1375,7 @@
     {
         "Id": 137,
         "ActionId": 137,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -1936,13 +1384,9 @@
     {
         "Id": 138,
         "ActionId": 138,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "What do you think of my new frame?",
             1
@@ -1951,39 +1395,29 @@
     {
         "Id": 139,
         "ActionId": 139,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "In an instant, Yata regains her gallant composure, placing her hands on her hips and fixing her gaze upon you."
         ]
     },
     {
         "Id": 140,
         "ActionId": 140,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She looks just like a fashion model—if you ignore the mechanical arms behind her carrying several sacks."
         ]
     },
     {
         "Id": 141,
         "ActionId": 141,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Don't just stand there staring. What do you think?",
             1
@@ -1992,13 +1426,9 @@
     {
         "Id": 142,
         "ActionId": 142,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "You're... even cuter now.",
             143,
             "You look even cooler now.",
@@ -2010,12 +1440,7 @@
     {
         "Id": 143,
         "ActionId": 143,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             7
@@ -2024,13 +1449,9 @@
     {
         "Id": 144,
         "ActionId": 144,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "...?",
             1
@@ -2039,12 +1460,7 @@
     {
         "Id": 145,
         "ActionId": 145,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             6
@@ -2053,13 +1469,9 @@
     {
         "Id": 146,
         "ActionId": 146,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "...",
             1
@@ -2068,13 +1480,9 @@
     {
         "Id": 147,
         "ActionId": 147,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "?",
             148
         ]
@@ -2082,25 +1490,17 @@
     {
         "Id": 148,
         "ActionId": 148,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Yata glances around nervously, making sure no one else has heard your conversation."
         ]
     },
     {
         "Id": 149,
         "ActionId": 149,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2108,12 +1508,7 @@
     {
         "Id": 150,
         "ActionId": 150,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4044
@@ -2122,14 +1517,11 @@
     {
         "Id": 151,
         "ActionId": 151,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "RImgBg1Shake",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Then with a thump, she taps your shoulder with her mechanical arm—not too hard, not too soft, but just enough to betray her feelings."
         ]
     },
@@ -2138,12 +1530,9 @@
         "ActionId": 152,
         "NextActionId": 163,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Forget I asked. This conversation never happened.",
             1
@@ -2152,12 +1541,7 @@
     {
         "Id": 153,
         "ActionId": 153,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -2166,13 +1550,9 @@
     {
         "Id": 154,
         "ActionId": 154,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Right? That's exactly what I was thinking too!",
             1
@@ -2181,28 +1561,21 @@
     {
         "Id": 155,
         "ActionId": 155,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Yata extends her right fist, inviting you for a fist bump."
         ]
     },
     {
         "Id": 156,
         "ActionId": 156,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
+            "",
             -50,
             -150
         ]
@@ -2210,12 +1583,7 @@
     {
         "Id": 157,
         "ActionId": 157,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4044
@@ -2224,15 +1592,12 @@
     {
         "Id": 158,
         "ActionId": 158,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.5,
+            "",
+            "",
             -100
         ]
     },
@@ -2241,12 +1606,9 @@
         "ActionId": 159,
         "NextActionId": 163,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "As expected of the Gray Raven Commandant. Great minds think alike, after all.",
             1
@@ -2255,12 +1617,7 @@
     {
         "Id": 160,
         "ActionId": 160,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             6
@@ -2269,13 +1626,9 @@
     {
         "Id": 161,
         "ActionId": 161,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Ah...",
             1
@@ -2286,12 +1639,9 @@
         "ActionId": 162,
         "NextActionId": 163,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Oh, okay...",
             1
@@ -2300,12 +1650,7 @@
     {
         "Id": 163,
         "ActionId": 163,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2313,12 +1658,7 @@
     {
         "Id": 164,
         "ActionId": 164,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory262.png"
         ]
@@ -2326,53 +1666,40 @@
     {
         "Id": 165,
         "ActionId": 165,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After delivering all the available supplies to the transport area, you return with Yata to complete the remaining procurement tasks."
         ]
     },
     {
         "Id": 166,
         "ActionId": 166,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As you check off another item from the list, a mechanical arm moves ahead of you, lifting away the hefty cargo with ease."
         ]
     },
     {
         "Id": 167,
         "ActionId": 167,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Such tasks come naturally to her, as if she's determined to live up to the principle that great power comes with great responsibility."
         ]
     },
     {
         "Id": 168,
         "ActionId": 168,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Speaking of which, I heard...",
             169
         ]
@@ -2380,13 +1707,9 @@
     {
         "Id": 169,
         "ActionId": 169,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "That the Scarab Squad took part in the operation to reclaim Hydrangea Island, didn't they?",
             170
         ]
@@ -2394,25 +1717,17 @@
     {
         "Id": 170,
         "ActionId": 170,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As those words hang in the air, Yata, who was walking ahead, suddenly comes to a halt."
         ]
     },
     {
         "Id": 171,
         "ActionId": 171,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501040
@@ -2421,12 +1736,7 @@
     {
         "Id": 172,
         "ActionId": 172,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Yata",
@@ -2437,13 +1747,9 @@
     {
         "Id": 173,
         "ActionId": 173,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "A lot of nasty things happened during that time. What? You interested in hearing about it?",
             1
@@ -2452,13 +1758,9 @@
     {
         "Id": 174,
         "ActionId": 174,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "No pressure if you'd rather not talk about it.",
             175
         ]
@@ -2466,12 +1768,7 @@
     {
         "Id": 175,
         "ActionId": 175,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             8
@@ -2480,13 +1777,9 @@
     {
         "Id": 176,
         "ActionId": 176,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Hey, no need to be so formal with me. It's not classified information or anything, just a long story. We can sit down and talk about it properly some other time.",
             1
@@ -2495,13 +1788,9 @@
     {
         "Id": 177,
         "ActionId": 177,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "It's a deal, then.",
             178
         ]
@@ -2509,12 +1798,7 @@
     {
         "Id": 178,
         "ActionId": 178,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2522,13 +1806,9 @@
     {
         "Id": 179,
         "ActionId": 179,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Anyway, how much do you know about this island?",
             1
@@ -2537,14 +1817,10 @@
     {
         "Id": 180,
         "ActionId": 180,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hydrangea Artificial Island...",
             181
         ]
@@ -2552,12 +1828,7 @@
     {
         "Id": 181,
         "ActionId": 181,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory1065.jpg"
         ]
@@ -2565,12 +1836,7 @@
     {
         "Id": 182,
         "ActionId": 182,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2578,12 +1844,7 @@
     {
         "Id": 183,
         "ActionId": 183,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2591,12 +1852,7 @@
     {
         "Id": 184,
         "ActionId": 184,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4792
@@ -2605,12 +1861,7 @@
     {
         "Id": 185,
         "ActionId": 185,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
             2
@@ -2619,89 +1870,63 @@
     {
         "Id": 186,
         "ActionId": 186,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "One of the Golden Age's hidden gems. It was a hub for technical talent, home to the prestigious Misono High."
         ]
     },
     {
         "Id": 187,
         "ActionId": 187,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The academy boasted an exceptional faculty and consistently produced top talent for the entire world. However, when the Punishing Virus outbreak occurred, this island became one of humanity's first major strongholds to fall."
         ]
     },
     {
         "Id": 188,
         "ActionId": 188,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As of today, Babylonia's recent reclamation operation has eliminated all the Corrupted from the island, and reconstruction efforts are now in full swing."
         ]
     },
     {
         "Id": 189,
         "ActionId": 189,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "This festival marks a new beginning for Hydrangea Island as it takes a step into the future."
         ]
     },
     {
         "Id": 190,
         "ActionId": 190,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
         ]
     },
     {
         "Id": 191,
         "ActionId": 191,
-        "NextActionId": 0,
-        "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 306
     },
     {
         "Id": 192,
         "ActionId": 192,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory261.png"
         ]
@@ -2709,12 +1934,7 @@
     {
         "Id": 193,
         "ActionId": 193,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             501040
@@ -2723,13 +1943,8 @@
     {
         "Id": 194,
         "ActionId": 194,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Yata",
@@ -2740,13 +1955,9 @@
     {
         "Id": 195,
         "ActionId": 195,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "When V... Valeria assigned me this mission, she said to treat it as a vacation. And seeing how cheerful you've been on the way here, I'm guessing you're here for some rest and relaxation too?",
             1
@@ -2755,13 +1966,9 @@
     {
         "Id": 196,
         "ActionId": 196,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Since we'll be keeping each other company for the next few days, let me know if you have any plans besides the festival. And if you don't...",
             1
@@ -2770,25 +1977,17 @@
     {
         "Id": 197,
         "ActionId": 197,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Yata grabs some human snacks and energy drinks from the shelf, adding them to her shopping cart."
         ]
     },
     {
         "Id": 198,
         "ActionId": 198,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -2797,13 +1996,9 @@
     {
         "Id": 199,
         "ActionId": 199,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Then you'd better stick close to me. Wouldn't want our great hero here getting into any trouble during my watch.",
             1
@@ -2812,13 +2007,9 @@
     {
         "Id": 200,
         "ActionId": 200,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "What about you? Got any plans?",
             201
         ]
@@ -2826,12 +2017,7 @@
     {
         "Id": 201,
         "ActionId": 201,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             6
@@ -2840,13 +2026,9 @@
     {
         "Id": 202,
         "ActionId": 202,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Hmm... Not sure yet. Maybe a jog around the island?",
             1
@@ -2855,12 +2037,7 @@
     {
         "Id": 203,
         "ActionId": 203,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -2869,13 +2046,9 @@
     {
         "Id": 204,
         "ActionId": 204,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Wanna join me? Jogging's pretty fun!",
             1
@@ -2884,13 +2057,9 @@
     {
         "Id": 205,
         "ActionId": 205,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Sure thing! I'm quite the athlete, you know.",
             206,
             "Is there maybe a less exhausting option...",
@@ -2900,12 +2069,7 @@
     {
         "Id": 206,
         "ActionId": 206,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -2916,11 +2080,8 @@
         "ActionId": 207,
         "NextActionId": 210,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Tell you what—if you make it through the jog, I'll take you to the island's famous hot spring.",
             1
@@ -2929,12 +2090,7 @@
     {
         "Id": 208,
         "ActionId": 208,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -2945,11 +2101,8 @@
         "ActionId": 209,
         "NextActionId": 210,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Then how about joining me for some training at the waterfall? There's a nice hot spring right nearby.",
             1
@@ -2958,25 +2111,17 @@
     {
         "Id": 210,
         "ActionId": 210,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As soon as those words leave her mouth, Yata's expression turns somewhat dejected."
         ]
     },
     {
         "Id": 211,
         "ActionId": 211,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             6
@@ -2985,13 +2130,9 @@
     {
         "Id": 212,
         "ActionId": 212,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "...Oh wait, no. The hot springs were destroyed during the Punishing outbreak.",
             1
@@ -3000,13 +2141,9 @@
     {
         "Id": 213,
         "ActionId": 213,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Pretty much everything's under reconstruction. Misono High is probably the only place that's still mostly intact.",
             1
@@ -3015,12 +2152,7 @@
     {
         "Id": 214,
         "ActionId": 214,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -3029,13 +2161,9 @@
     {
         "Id": 215,
         "ActionId": 215,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "You seem to know that place pretty well.",
             216
         ]
@@ -3043,13 +2171,9 @@
     {
         "Id": 216,
         "ActionId": 216,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Of course. I used to be a student there.",
             1
@@ -3058,13 +2182,9 @@
     {
         "Id": 217,
         "ActionId": 217,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "This is technically classified info, but since it's you, I don't really mind. Just keep it under wraps, yeah?",
             1
@@ -3073,12 +2193,7 @@
     {
         "Id": 218,
         "ActionId": 218,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -3086,39 +2201,29 @@
     {
         "Id": 219,
         "ActionId": 219,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Unlike the secretive nature of the Scarab Squad you remember, Yata openly shares information about herself."
         ]
     },
     {
         "Id": 220,
         "ActionId": 220,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "With one hand on her hip, her gaze falls on your face, yet her eyes seem focused on something far more distant."
         ]
     },
     {
         "Id": 221,
         "ActionId": 221,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "In all of Babylonia, nobody knows that place better than I do.",
             1
@@ -3127,12 +2232,7 @@
     {
         "Id": 222,
         "ActionId": 222,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -3141,14 +2241,11 @@
     {
         "Id": 223,
         "ActionId": 223,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yata",
             "Just a bit more shopping to do. Get ready for your well-deserved break, Gray Raven Commandant.",
             1

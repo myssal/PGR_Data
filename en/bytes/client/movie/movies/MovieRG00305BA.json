@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory15.jpg"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             201
@@ -30,12 +20,7 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500176
@@ -44,13 +29,8 @@
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Camu",
@@ -61,12 +41,7 @@
     {
         "Id": 5,
         "ActionId": 2001,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
@@ -76,27 +51,18 @@
     {
         "Id": 6,
         "ActionId": 2002,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500180,
+            "",
             -400
         ]
     },
     {
         "Id": 7,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Karenina",
@@ -107,13 +73,9 @@
     {
         "Id": 8,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "Just based on my experience. I have seen similar plots in the games that Kamui played.",
             1
@@ -122,13 +84,9 @@
     {
         "Id": 9,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "The humble-looking King could actually be the final Boss.",
             1
@@ -137,13 +95,9 @@
     {
         "Id": 10,
         "ActionId": 2003,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "That's a lot of detail!",
             8,
             "I don't think Hassen is like that.",
@@ -155,11 +109,8 @@
         "ActionId": 8,
         "NextActionId": 10,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "Details are always good. They help us to locate the objective. Don't you think?",
             1
@@ -170,11 +121,8 @@
         "ActionId": 9,
         "NextActionId": 10,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "Remember, this is a game. That wasn't the real Hassen.",
             1
@@ -183,13 +131,9 @@
     {
         "Id": 13,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "I kind of learned what type of person Celica was yesterday. This King is probably set like Hassen in purpose to make others think he is a good guy.",
             1
@@ -198,13 +142,9 @@
     {
         "Id": 14,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "A disguise, huh? Are you saying this Hassen is evil, and the Demons are good?",
             2
@@ -213,13 +153,9 @@
     {
         "Id": 15,
         "ActionId": 2004,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Both can be evil though.",
             1001,
             "Are you so sure that Hassen is evil?",
@@ -231,10 +167,6 @@
         "ActionId": 1001,
         "NextActionId": 1002,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
@@ -246,10 +178,6 @@
         "ActionId": 1002,
         "NextActionId": 1003,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             0.25,
@@ -261,10 +189,6 @@
         "ActionId": 1003,
         "NextActionId": 12,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             500181
@@ -275,10 +199,6 @@
         "ActionId": 12,
         "NextActionId": 15,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Vera",
@@ -291,10 +211,6 @@
         "ActionId": 1004,
         "NextActionId": 1005,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
@@ -306,10 +222,6 @@
         "ActionId": 1005,
         "NextActionId": 1006,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             0.25,
@@ -321,10 +233,6 @@
         "ActionId": 1006,
         "NextActionId": 13,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             3,
             500181
@@ -335,10 +243,6 @@
         "ActionId": 13,
         "NextActionId": 14,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Vera",
@@ -351,11 +255,8 @@
         "ActionId": 14,
         "NextActionId": 15,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "Yeah, no matter what we said, he was always smiling. Disgusting.",
             2
@@ -364,13 +265,9 @@
     {
         "Id": 25,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Vera",
             "So why didn't we just beat that Hassen up? If he was evil, we could have skipped a lot of hassle.",
             3
@@ -379,13 +276,9 @@
     {
         "Id": 26,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "He had no HP bar.",
             1
@@ -394,13 +287,9 @@
     {
         "Id": 27,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "HP bar... What is that?",
             2
@@ -409,13 +298,9 @@
     {
         "Id": 28,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "Remember the enemies we fought earlier on? I could check their status and remaining health through the system, but not NPCs like Hassen.",
             1
@@ -424,13 +309,9 @@
     {
         "Id": 29,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "They were not configured as enemies that we could attack.",
             1
@@ -439,13 +320,9 @@
     {
         "Id": 30,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "This is a game. Even if we can attack him, if he has no HP bar, he \"cannot\" be killed.",
             1
@@ -454,13 +331,9 @@
     {
         "Id": 31,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Karenina",
             "...How are we going to deal with enemies like that?",
             2
@@ -469,13 +342,9 @@
     {
         "Id": 32,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "There are many ways, but all are up to the game settings, we can't really change that from our end.",
             1
@@ -484,13 +353,9 @@
     {
         "Id": 33,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Vera",
             "How annoying... Anyway, let's focus on the Demons and Liv now.",
             3
@@ -499,13 +364,9 @@
     {
         "Id": 34,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Camu",
             "True. But if my guess is right, Hassen should be the final Boss.",
             1
@@ -514,13 +375,9 @@
     {
         "Id": 35,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Vera",
             "What a boring plot.",
             3
@@ -529,38 +386,27 @@
     {
         "Id": 36,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The three villain Constructs kept attacking the old-school plot and inappropriate game settings, as if they were professional game designers."
         ]
     },
     {
         "Id": 37,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Which completely destroyed the unfortunate listener's interests and dreams."
         ]
     },
     {
         "Id": 38,
         "ActionId": 2005,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
@@ -570,12 +416,7 @@
     {
         "Id": 39,
         "ActionId": 2006,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500013
@@ -584,12 +425,7 @@
     {
         "Id": 40,
         "ActionId": 2007,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1508
@@ -598,12 +434,7 @@
     {
         "Id": 41,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Demon",
@@ -614,12 +445,7 @@
     {
         "Id": 42,
         "ActionId": 2008,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500181,
@@ -629,12 +455,7 @@
     {
         "Id": 43,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Vera",
@@ -645,13 +466,9 @@
     {
         "Id": 44,
         "ActionId": 2009,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Just do whatever you want.",
             30,
             "Alright, leave it to me.",
@@ -661,14 +478,11 @@
     {
         "Id": 45,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Vera",
             "Fine, we don't need a stable mind to unlock our full strength here. Just hide somewhere safe, okay?",
             1
@@ -677,12 +491,7 @@
     {
         "Id": 46,
         "ActionId": 3000,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500180
@@ -691,13 +500,9 @@
     {
         "Id": 47,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Karenina",

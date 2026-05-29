@@ -1,0 +1,249 @@
+[
+    {
+        "Id": 1,
+        "NodeGroups": [
+            52
+        ],
+        "ReviveCount": 100,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "StarRewardTemplateId": 1,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 800,
+        "RoundScore": -30,
+        "ReviveScore": 80,
+        "KillScore": 30,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "Prologue",
+        "TargetDesc": [
+            "Learn the ropes."
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "EnterCommunicationId": 1,
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg01.png"
+    },
+    {
+        "Id": 2,
+        "NodeGroups": [
+            53
+        ],
+        "ReviveCount": 100,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "StarRewardTemplateId": 2,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 800,
+        "RoundScore": -30,
+        "ReviveScore": 80,
+        "KillScore": 30,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "Chapter 1",
+        "TargetDesc": [
+            "Powerful enemies await"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "EnterCommunicationId": 2,
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg02.png",
+        "ShowBossId": [
+            1001
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon01.png"
+        ]
+    },
+    {
+        "Id": 3,
+        "NodeGroups": [
+            54
+        ],
+        "ReviveCount": 100,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "StarRewardTemplateId": 3,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 800,
+        "RoundScore": -30,
+        "ReviveScore": 80,
+        "KillScore": 30,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "Chapter 2",
+        "TargetDesc": [
+            "Game difficulty has increased. Please be more cautious."
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg01.png"
+    },
+    {
+        "Id": 4,
+        "NodeGroups": [
+            55
+        ],
+        "ReviveCount": 100,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "StarRewardTemplateId": 4,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 800,
+        "RoundScore": -30,
+        "ReviveScore": 80,
+        "KillScore": 30,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "Chapter 3",
+        "TargetDesc": [
+            "Some shark has been waiting for a long while. Watch out for its moves!"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "EnterCommunicationId": 3,
+        "ExitCommunicationId": 4,
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg04.png",
+        "ShowBossId": [
+            1002
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon02.png"
+        ]
+    },
+    {
+        "Id": 5,
+        "NodeGroups": [
+            56
+        ],
+        "ReviveCount": 100,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "StarRewardTemplateId": 5,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 800,
+        "RoundScore": -30,
+        "ReviveScore": 80,
+        "KillScore": 30,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "Chapter 4",
+        "TargetDesc": [
+            "A comprehensive game with two bosses."
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg05.png",
+        "ShowBossId": [
+            1001,
+            1002
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon01.png",
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon02.png"
+        ]
+    },
+    {
+        "Id": 6,
+        "NodeGroups": [
+            57
+        ],
+        "ReviveCount": 8,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 500,
+        "RoundScore": -20,
+        "ReviveScore": 2000,
+        "KillScore": 60,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "Chapter 1 β",
+        "TargetDesc": [
+            "Less revivals. Stronger enemies. Higher points."
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg02.png",
+        "ShowBossId": [
+            1001
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon01.png"
+        ]
+    },
+    {
+        "Id": 7,
+        "NodeGroups": [
+            58
+        ],
+        "ReviveCount": 8,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 500,
+        "RoundScore": -20,
+        "ReviveScore": 2000,
+        "KillScore": 60,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "Chapter 2 β",
+        "TargetDesc": [
+            "Less revivals. Stronger enemies. Higher points."
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg01.png"
+    },
+    {
+        "Id": 8,
+        "NodeGroups": [
+            59
+        ],
+        "ReviveCount": 8,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 500,
+        "RoundScore": -20,
+        "ReviveScore": 2000,
+        "KillScore": 60,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "Chapter 3 β",
+        "TargetDesc": [
+            "Less revivals. Stronger enemies. Higher points."
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg04.png",
+        "ShowBossId": [
+            1002
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon02.png"
+        ]
+    },
+    {
+        "Id": 9,
+        "NodeGroups": [
+            60
+        ],
+        "ReviveCount": 8,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 500,
+        "RoundScore": -20,
+        "ReviveScore": 2000,
+        "KillScore": 60,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "Chapter 4 β",
+        "TargetDesc": [
+            "Less revivals. Stronger enemies. Higher points."
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg05.png",
+        "ShowBossId": [
+            1001,
+            1002
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon01.png",
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon02.png"
+        ]
+    }
+]

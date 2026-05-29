@@ -2,12 +2,7 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory672.jpg"
         ]
@@ -15,13 +10,8 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab",
             3
@@ -30,12 +20,7 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             201
@@ -44,87 +29,64 @@
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500581,
+            "",
             400
         ]
     },
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500576,
+            "",
             -400
         ]
     },
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "The simulation begins, and they see the girl with purple hair walking alone on the screen. Not far ahead of Echo stands a familiar Construct with pink hair waving the paintbrush in her hand."
         ]
     },
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab"
         ]
     },
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory673.jpg"
         ]
@@ -132,11 +94,7 @@
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 509,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 600.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory579.jpg",
@@ -146,28 +104,19 @@
     {
         "Id": 11,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500598,
+            "",
             -500
         ]
     },
     {
         "Id": 12,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500585,
@@ -178,13 +127,8 @@
     {
         "Id": 13,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Cervantes",
@@ -195,13 +139,9 @@
     {
         "Id": 14,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Dulcinea",
             "Indeed. Ayla and Echo had encountered each other in Constellia before. She is the best choice to kickstart this simulation.",
             1
@@ -210,13 +150,9 @@
     {
         "Id": 15,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Cervantes",
             "Ayla and Echo...",
             2
@@ -225,13 +161,9 @@
     {
         "Id": 16,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Cervantes",
             "I wonder what kind of story will happen to them.",
             2
@@ -240,13 +172,9 @@
     {
         "Id": 17,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Dulcinea",
             "According to the program, Ayla will block Echo's path forward until she passes Ayla's test.",
             1
@@ -255,13 +183,9 @@
     {
         "Id": 18,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Dulcinea",
             "Ayla is a very positive person. I placed this variable here to see if this kind of personality will affect Echo in any way.",
             1
@@ -270,12 +194,7 @@
     {
         "Id": 19,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2
         ]
@@ -283,13 +202,9 @@
     {
         "Id": 20,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Cervantes",
             "Are there any prospects we can decide? Perhaps we can choose the state in which Echo approaches Ayla.",
             2
@@ -298,13 +213,9 @@
     {
         "Id": 21,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Dulcinea",
             "I haven't designed such a program. All I did was enter their data samples into the simulation machine. Everything they do afterward is based on the codes in their samples.",
             1
@@ -313,13 +224,9 @@
     {
         "Id": 22,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Dulcinea",
             "I want to mimic Echo's potential encounters on the surface as closely as possible...",
             1
@@ -328,13 +235,9 @@
     {
         "Id": 23,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Dulcinea",
             "...They've met.",
             1
@@ -343,14 +246,12 @@
     {
         "Id": 24,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Echo has already come face to face with Ayla on the screen of the simulation machine."
         ]
     }

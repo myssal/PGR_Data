@@ -1881,16 +1881,26 @@
         "Name": "Guild Expedition",
         "Function": "GuildWarHelp",
         "Describe": "Guild Expedition Image Guide",
-        "IsShowCourse": 1,
+        "IsShowCourse": 3,
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiHelpGuildWar1.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpGuildWar2.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpGuildWar3.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpGuildWar4.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpGuildWar15.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpGuildWar5.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpGuildWar6.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpGuildWar7.png"
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarHelp01.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarHelp02.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarHelp03.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarHelp04.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarHelp05.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarHelp06.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarHelp07.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarHelp09.png"
+        ],
+        "TextGroupIds": [
+            1012201,
+            1012202,
+            1012203,
+            1012204,
+            1012205,
+            1012206,
+            1012207,
+            1012208
         ]
     },
     {
@@ -1948,7 +1958,7 @@
         "Id": 10127,
         "Name": "Black Card Monthly Pass",
         "Function": "MonthcardBg02",
-        "Describe": "After purchasing the [Black Card Monthly Pass], you'll instantly get 300 Black Cards. Starting from the day of purchase, you can claim Black Card x100 at 05:00 UTC per day for 30 days.\\nYou can purchase up to 2 of these Monthly Passes, which will extend the validity period automatically, but you are still entitled to only one claim per day.",
+        "Describe": "【黑卡月卡】购买后可立即获得300黑卡。从购买当日开始，持续30日，每日5：00，可领取黑卡*100。\\n 此月卡最多同时购买6张，时间叠加，每天只能领取一次。",
         "IsShowCourse": 2
     },
     {
@@ -2014,9 +2024,9 @@
         "Describe": "Cat Grab Image Guide",
         "IsShowCourse": 3,
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiGoldenMiner/UiHelpGoldenMinerv601.png",
-            "Assets/Product/Texture/Image/UiGoldenMiner/UiHelpGoldenMinerv602.png",
-            "Assets/Product/Texture/Image/UiGoldenMiner/UiHelpGoldenMinerv603.png"
+            "Assets/Product/Texture/Image/UiMiniGamesCollection/UiGameCollection02.png",
+            "Assets/Product/Texture/Image/UiMiniGamesCollection/UiGameCollection03.png",
+            "Assets/Product/Texture/Image/UiMiniGamesCollection/UiGameCollection04.png"
         ],
         "TextGroupIds": [
             1022101,
@@ -2228,9 +2238,12 @@
         "Name": "Guild Expedition Dangerous Cliff",
         "Function": "GuildWarHelpPanda",
         "Describe": "Guild Expedition Image Guide",
-        "IsShowCourse": 1,
+        "IsShowCourse": 3,
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiHelpGuildWar14.png"
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarHelp08.png"
+        ],
+        "TextGroupIds": [
+            1014901
         ]
     },
     {
@@ -2457,9 +2470,12 @@
         "Name": "Guild Expedition Dangerous Cliff",
         "Function": "GuildWarHelpTwins",
         "Describe": "Guild Expedition Image Guide",
-        "IsShowCourse": 1,
+        "IsShowCourse": 3,
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiHelpGuildWar14.png"
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarHelp08.png"
+        ],
+        "TextGroupIds": [
+            1016501
         ]
     },
     {
@@ -2786,8 +2802,7 @@
             "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai04V306.png",
             "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai05V306.png",
             "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai06V306.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai07V306.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai08V306.png"
+            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai07V306.png"
         ]
     },
     {
@@ -3010,17 +3025,23 @@
     },
     {
         "Id": 10202,
-        "Name": "Dusk's Shade",
+        "Name": "倒映浸景",
         "Function": "UiNonogramMain",
         "Describe": "Dusk's Shade Image Guide",
-        "IsShowCourse": 1,
+        "IsShowCourse": 3,
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiHelpNonogram01.png",
             "Assets/Product/Texture/Image/UiHelp/UiHelpNonogram02.png",
             "Assets/Product/Texture/Image/UiHelp/UiHelpNonogram03.png",
             "Assets/Product/Texture/Image/UiHelp/UiHelpNonogram04.png",
             "Assets/Product/Texture/Image/UiHelp/UiHelpNonogram05.png",
             "Assets/Product/Texture/Image/UiHelp/UiHelpNonogram06.png"
+        ],
+        "TextGroupIds": [
+            1020201,
+            1020202,
+            1020203,
+            1020204,
+            1020205
         ]
     },
     {
@@ -3033,7 +3054,7 @@
             "Assets/Product/Texture/Image/UiGame2048/UiGame2048V4P0Help01.png",
             "Assets/Product/Texture/Image/UiGame2048/UiGame2048V4P0Help02.png",
             "Assets/Product/Texture/Image/UiGame2048/UiGame2048V4P0Help03.png",
-            "Assets/Product/Texture/Image/UiGame2048/UiGame2048V4P0Help04.png",
+            "Assets/Product/Texture/Image/UiMiniGamesCollection/UiGameCollection05.png",
             "Assets/Product/Texture/Image/UiGame2048/UiGame2048V4P0Help05.png",
             "Assets/Product/Texture/Image/UiGame2048/UiGame2048V4P0Help06.png",
             "Assets/Product/Texture/Image/UiGame2048/UiGame2048V4P0Help07.png"
@@ -3109,7 +3130,7 @@
         "Id": 21000,
         "Name": "Rules",
         "Function": "UiReCallActivity",
-        "Describe": "Requirement\\nCommandant ≥Lv.40\\n\\nReturning Commandant\\nCommandant ≥Lv.40 and Consecutive Offline Days ≥30\\n\\nEvent Time\\n2026/05/26 05:00:00 (UTC) - 2026/07/16 05:00:00 (UTC)\\nInvite and Mission Time\\n2026/05/26 05:00:00 (UTC) - 2026/07/16 05:00:00 (UTC)\\n\\nEvent Info\\n1. During the event, Commandants who get invited and come back can claim rewards after logging in to the game and entering the invite code.\\n2. Each invite code can be used multiple times (up to 10 players). Returning Commandants can complete designated Activity Missions for rewards.\\n3. Both the inviter and the invitee can claim rewards (only once) after sharing or downloading and saving the picture for the first time.\\n4. Returning Commandants cannot unbind or change the invite code after entering it.\\n5. During the event, returning Commandants will receive exclusive Service Missions. Complete them to claim the corresponding rewards.\\n6. During the event, returning Commandants will have opportunities to earn double rewards in [Simulated Battlefield]. Complete [Simulated Battlefield] challenges within the designated number of attempts to earn double Simulation Score (excluding first clear rewards).\\n7. Each Commandant can only participate in the event once. Once the event ends, you'll not be able to claim the rewards.",
+        "Describe": "Requirement\\nCommandant ≥Lv.40\\n\\nReturning Commandant\\nCommandant ≥Lv.40 and Consecutive Offline Days ≥30\\n\\nEvent Time\\n2026/05/26 05:00:00 (UTC) - 2026/07/15 05:00:00 (UTC)\\nInvite and Mission Time\\n2026/05/26 05:00:00 (UTC) -  2026/07/16 05:00:00 (UTC)\\n\\nEvent Info\\n1. During the event, Commandants who get invited and come back can claim rewards after logging in to the game and entering the invite code.\\n2. Each invite code can be used multiple times (up to 10 players). Returning Commandants can complete designated Activity Missions for rewards.\\n3. Both the inviter and the invitee can claim rewards (only once) after sharing or downloading and saving the picture for the first time.\\n4. Returning Commandants cannot unbind or change the invite code after entering it.\\n5. During the event, returning Commandants will receive exclusive Service Missions. Complete them to claim the corresponding rewards.\\n6. During the event, returning Commandants will have opportunities to earn double rewards in [Simulated Battlefield]. Complete [Simulated Battlefield] challenges within the designated number of attempts to earn double Simulation Score (excluding first clear rewards).\\n7. Each Commandant can only participate in the event once. Once the event ends, you'll not be able to claim the rewards.",
         "IsShowCourse": 2,
         "TextGroupIds": [
             0
@@ -3492,6 +3513,19 @@
             1022404,
             1022405,
             1022406
+        ]
+    },
+    {
+        "Id": 10225,
+        "Name": "Retro Arcade",
+        "Function": "UiGameCollection",
+        "Describe": "Retro Arcade Image Guide",
+        "IsShowCourse": 3,
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiMiniGamesCollection/UiGameCollection01.png"
+        ],
+        "TextGroupIds": [
+            1022501
         ]
     }
 ]

@@ -1,8 +1,10 @@
 [
     {
         "Id": 1,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What do you need? I'll help you.",
@@ -15,10 +17,6 @@
         "UnOpenDesc": "Supplies are limited, first come, first served.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -26,8 +24,10 @@
     },
     {
         "Id": 2,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What do you need? I'll help you.",
@@ -40,10 +40,6 @@
         "UnOpenDesc": "Supply is limited, thank you for understanding.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -51,8 +47,12 @@
     },
     {
         "Id": 3,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What do you need? I'll help you.",
@@ -65,12 +65,6 @@
         "UnOpenDesc": "Supply has increased, come take a look!",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -78,8 +72,12 @@
     },
     {
         "Id": 4,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What do you need? I'll help you.",
@@ -92,12 +90,6 @@
         "UnOpenDesc": "Supply is normal, and support is available at any time.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -105,8 +97,12 @@
     },
     {
         "Id": 5,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What do you need? I'll help you.",
@@ -119,12 +115,6 @@
         "UnOpenDesc": "Supply is normal, and support is available at any time.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -132,8 +122,12 @@
     },
     {
         "Id": 6,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What do you need? I'll help you.",
@@ -146,12 +140,6 @@
         "UnOpenDesc": "Supply will be interrupted soon, come get them while you can.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -159,8 +147,11 @@
     },
     {
         "Id": 7,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            101,
+            102,
+            103
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/RoleStory/IceguideNomal.png",
         "RoleName": "Diana",
         "RoleContent": "We can exchange goods for the supplies we need.",
@@ -172,11 +163,6 @@
         "UnOpenDesc": "This is the special supply station. What can I get for you?",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            101,
-            102,
-            103
-        ],
         "RefreshCost": [
             150,
             300
@@ -184,8 +170,11 @@
     },
     {
         "Id": 8,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            201,
+            202,
+            203
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/RoleStory/IceguideNomal.png",
         "RoleName": "Diana",
         "RoleContent": "We can exchange goods for the supplies we need.",
@@ -197,11 +186,6 @@
         "UnOpenDesc": "This is the special supply station. What can I get for you?",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            201,
-            202,
-            203
-        ],
         "RefreshCost": [
             150,
             300
@@ -209,8 +193,12 @@
     },
     {
         "Id": 9,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            301,
+            302,
+            303,
+            304
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/RoleStory/V129HsyhNormal01.png",
         "RoleName": "Strange Voice",
         "RoleContent": "Awesome! You truly are the best visitors. No challenge is too difficult for you!",
@@ -222,12 +210,6 @@
         "UnOpenDesc": "Over here!",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            301,
-            302,
-            303,
-            304
-        ],
         "RefreshCost": [
             150,
             300
@@ -235,8 +217,11 @@
     },
     {
         "Id": 10,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What do you need? I'll help you.",
@@ -249,11 +234,6 @@
         "UnOpenDesc": "Supply will be interrupted soon, come get them while you can.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -261,8 +241,10 @@
     },
     {
         "Id": 101,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "All products in the store are displayed here.",
@@ -275,10 +257,6 @@
         "UnOpenDesc": "Supplies are limited, first come, first served.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -286,8 +264,10 @@
     },
     {
         "Id": 102,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "Couldn't find the one you want? Try one of our branches.",
@@ -300,10 +280,6 @@
         "UnOpenDesc": "Supplies are limited, first come, first served.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -311,8 +287,10 @@
     },
     {
         "Id": 103,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What's taking you so long? Did you zone out? Or are you just... indecisive?",
@@ -325,10 +303,6 @@
         "UnOpenDesc": "Supplies are limited, first come, first served.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -336,8 +310,10 @@
     },
     {
         "Id": 104,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "\"Don't forget to pay!\" ...Cough, you didn't hear anything!",
@@ -350,10 +326,6 @@
         "UnOpenDesc": "Supplies are limited, first come, first served.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -361,8 +333,10 @@
     },
     {
         "Id": 201,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "All products in the store are displayed here.",
@@ -375,10 +349,6 @@
         "UnOpenDesc": "Supply is limited, thank you for understanding.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -386,8 +356,10 @@
     },
     {
         "Id": 202,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "Couldn't find the one you want? Try one of our branches.",
@@ -400,10 +372,6 @@
         "UnOpenDesc": "Supply is limited, thank you for understanding.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -411,8 +379,10 @@
     },
     {
         "Id": 203,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What's taking you so long? Did you zone out? Or are you just... indecisive?",
@@ -425,10 +395,6 @@
         "UnOpenDesc": "Supply is limited, thank you for understanding.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -436,8 +402,10 @@
     },
     {
         "Id": 204,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "\"Don't forget to pay!\" ...Cough, you didn't hear anything!",
@@ -450,10 +418,6 @@
         "UnOpenDesc": "Supply is limited, thank you for understanding.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -461,8 +425,12 @@
     },
     {
         "Id": 301,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "All products in the store are displayed here.",
@@ -475,12 +443,6 @@
         "UnOpenDesc": "Supply has increased, come take a look!",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -488,8 +450,12 @@
     },
     {
         "Id": 302,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "Couldn't find the one you want? Try one of our branches.",
@@ -502,12 +468,6 @@
         "UnOpenDesc": "Supply has increased, come take a look!",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -515,8 +475,12 @@
     },
     {
         "Id": 303,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What's taking you so long? Did you zone out? Or are you just... indecisive?",
@@ -529,12 +493,6 @@
         "UnOpenDesc": "Supply has increased, come take a look!",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -542,8 +500,12 @@
     },
     {
         "Id": 304,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "\"Don't forget to pay!\" ...Cough, you didn't hear anything!",
@@ -556,12 +518,6 @@
         "UnOpenDesc": "Supply has increased, come take a look!",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -569,8 +525,12 @@
     },
     {
         "Id": 401,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "All products in the store are displayed here.",
@@ -583,12 +543,6 @@
         "UnOpenDesc": "Supply is normal, and support is available at any time.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -596,8 +550,12 @@
     },
     {
         "Id": 402,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "Couldn't find the one you want? Try one of our branches.",
@@ -610,12 +568,6 @@
         "UnOpenDesc": "Supply is normal, and support is available at any time.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -623,8 +575,12 @@
     },
     {
         "Id": 403,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What's taking you so long? Did you zone out? Or are you just... indecisive?",
@@ -637,12 +593,6 @@
         "UnOpenDesc": "Supply is normal, and support is available at any time.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -650,8 +600,12 @@
     },
     {
         "Id": 404,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "\"Don't forget to pay!\" ...Cough, you didn't hear anything!",
@@ -664,12 +618,6 @@
         "UnOpenDesc": "Supply is normal, and support is available at any time.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -677,8 +625,12 @@
     },
     {
         "Id": 501,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "All products in the store are displayed here.",
@@ -691,12 +643,6 @@
         "UnOpenDesc": "Supply is normal, and support is available at any time.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -704,8 +650,12 @@
     },
     {
         "Id": 502,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "Couldn't find the one you want? Try one of our branches.",
@@ -718,12 +668,6 @@
         "UnOpenDesc": "Supply is normal, and support is available at any time.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -731,8 +675,12 @@
     },
     {
         "Id": 503,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What's taking you so long? Did you zone out? Or are you just... indecisive?",
@@ -745,12 +693,6 @@
         "UnOpenDesc": "Supply is normal, and support is available at any time.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -758,8 +700,12 @@
     },
     {
         "Id": 504,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "\"Don't forget to pay!\" ...Cough, you didn't hear anything!",
@@ -772,12 +718,6 @@
         "UnOpenDesc": "Supply is normal, and support is available at any time.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -785,8 +725,12 @@
     },
     {
         "Id": 601,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "All products in the store are displayed here.",
@@ -799,12 +743,6 @@
         "UnOpenDesc": "Supply will be interrupted soon, come get them while you can.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -812,8 +750,12 @@
     },
     {
         "Id": 602,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "Couldn't find the one you want? Try one of our branches.",
@@ -826,12 +768,6 @@
         "UnOpenDesc": "Supply will be interrupted soon, come get them while you can.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -839,8 +775,12 @@
     },
     {
         "Id": 603,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "What's taking you so long? Did you zone out? Or are you just... indecisive?",
@@ -853,12 +793,6 @@
         "UnOpenDesc": "Supply will be interrupted soon, come get them while you can.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300
@@ -866,8 +800,12 @@
     },
     {
         "Id": 604,
-        "ConditionId": [],
-        "RewardId": 0,
+        "GoodsGroupId": [
+            1,
+            2,
+            3,
+            3
+        ],
         "RoleIcon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4RoleLuosaita.png",
         "RoleName": "Rosetta",
         "RoleContent": "\"Don't forget to pay!\" ...Cough, you didn't hear anything!",
@@ -880,12 +818,6 @@
         "UnOpenDesc": "Supply will be interrupted soon, come get them while you can.",
         "RefreshLimit": 3,
         "RefreshFreeTimes": 1,
-        "GoodsGroupId": [
-            1,
-            2,
-            3,
-            3
-        ],
         "RefreshCost": [
             150,
             300

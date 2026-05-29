@@ -1,0 +1,2193 @@
+[
+    {
+        "Id": 10101,
+        "Pos": 1,
+        "Name": "Urban Area A"
+    },
+    {
+        "Id": 10102,
+        "Pos": 5,
+        "Name": "Burning Ruins",
+        "Desc": "The fire on the ruins is still burning even until this moment. We can only pray for the fire to show us some mercy and leave something that we can still use...",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            101020
+        ]
+    },
+    {
+        "Id": 10103,
+        "Pos": 3,
+        "PrePlaceId": 10102,
+        "Name": "Empty Library",
+        "Desc": "It's more realistic to look for books to burn than food to eat in this place.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            101030
+        ]
+    },
+    {
+        "Id": 10104,
+        "Pos": 7,
+        "PrePlaceId": 10103,
+        "Name": "Riverside Camp",
+        "Desc": "There is smoke rising from the stones. Could it be the Corrupted? Or the campfire made by survivors?",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            101040
+        ]
+    },
+    {
+        "Id": 10105,
+        "Pos": 20,
+        "PrePlaceId": 10103,
+        "Name": "Run-Down Slum",
+        "Desc": "I can hear people crying even from the outside. I'm afraid the situation is worse than we expected... Should we accept them? Or put an end to their misery...?",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            101050
+        ]
+    },
+    {
+        "Id": 10106,
+        "Pos": 6,
+        "PrePlaceId": 10102,
+        "Name": "Crowded Street",
+        "Desc": "There are burns on every car on this crowded street. Apparently, their owners didn't have the chance to drive them out of the city.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            101060
+        ]
+    },
+    {
+        "Id": 10107,
+        "Pos": 11,
+        "PrePlaceId": 10106,
+        "Name": "Quiet Bomb Shelter",
+        "Desc": "It's hard to imagine how this bomb shelter has survived everything. However, we could find something we need here...",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            101070
+        ]
+    },
+    {
+        "Id": 10108,
+        "Pos": 14,
+        "PrePlaceId": 10107,
+        "Name": "Collapsed Skyscraper",
+        "Desc": "The ruins look like the corpse of a giant. No matter what's in there, it will definitely not be pleasant.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            101080
+        ]
+    },
+    {
+        "Id": 10201,
+        "Pos": 1,
+        "Name": "Urban Area B"
+    },
+    {
+        "Id": 10202,
+        "Pos": 6,
+        "Name": "Signal Station",
+        "Desc": "Recently, we have found the signal tower under the ruins. But the huge signal tower now only has a fragile, damaged base left standing in the center of the city.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            102020
+        ]
+    },
+    {
+        "Id": 10203,
+        "Pos": 5,
+        "PrePlaceId": 10202,
+        "Name": "High-End Residential Area",
+        "Desc": "Despite the broken columns at the entrance, the delicate architecture still looks amazing. If it hadn't been the disaster, it would have been a dream come true to live there.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            102030
+        ]
+    },
+    {
+        "Id": 10204,
+        "Pos": 3,
+        "PrePlaceId": 10203,
+        "Name": "Fine Dining Restaurant",
+        "Desc": "It's said that it was a popular fine dining restaurant, famous for its huge number of underground cold storage rooms and its wide range of food in store.",
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "EventId": [
+            102040
+        ]
+    },
+    {
+        "Id": 10205,
+        "Pos": 20,
+        "PrePlaceId": 10203,
+        "Name": "Two-Story House",
+        "Desc": "This small building looks almost intact. It's just that sometimes there are strange cries coming out from it. Are there any Scavengers in there? Or it is another trap?",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            102050
+        ]
+    },
+    {
+        "Id": 10206,
+        "Pos": 7,
+        "PrePlaceId": 10204,
+        "Name": "Quiet Cabin",
+        "Desc": "There is still a faint light coming out from this clean little cabin, making it stand out among the black ruins around it.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            102060
+        ]
+    },
+    {
+        "Id": 10207,
+        "Pos": 19,
+        "PrePlaceId": 10206,
+        "Name": "Convenience Store Ruins",
+        "Desc": "It offers fewer choices of items than a supermarket but is enough to fulfill your daily needs.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            102070
+        ]
+    },
+    {
+        "Id": 10208,
+        "Pos": 24,
+        "PrePlaceId": 10207,
+        "Name": "Bloody Church",
+        "Desc": "There is blood and unidentified remains everywhere. Wait. Did you hear that? Was it the bells... from up there...?",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            102080
+        ]
+    },
+    {
+        "Id": 10209,
+        "Pos": 12,
+        "PrePlaceId": 10202,
+        "Name": "Supermarket in Mist",
+        "Desc": "Is it because of the terrain? This place is full of mist. Hope we can find the supermarket marked on the map before using up our supplies.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            102090
+        ]
+    },
+    {
+        "Id": 10210,
+        "Pos": 9,
+        "PrePlaceId": 10209,
+        "Name": "Collapsed School",
+        "Desc": "The disaster didn't show mercy to this place even though there was the hope of the inheritance of human civilization behind that wall. This is a fact that we learned a long time ago.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            102100
+        ]
+    },
+    {
+        "Id": 10211,
+        "Pos": 14,
+        "PrePlaceId": 10209,
+        "Name": "Wasteland",
+        "Desc": "The Punishing Virus broke out before any construction plan was able to be carried out here.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            102110
+        ]
+    },
+    {
+        "Id": 10212,
+        "Pos": 11,
+        "PrePlaceId": 10211,
+        "Name": "City Hospital",
+        "Desc": "Were it not for the bold characters on the map, no one would know that this black burnt \"pile of dirt\"\" used to be a \"\"hospital.\"",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            102120
+        ]
+    },
+    {
+        "Id": 10213,
+        "Pos": 4,
+        "Name": "Rocky Riverbank",
+        "Desc": "The river has long dried out. There is smoke rising from the rocks. Could it be the Corrupted? Or the campfire made by Scavengers?",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "UnlockCondition": [
+            102130
+        ],
+        "EventId": [
+            102130
+        ]
+    },
+    {
+        "Id": 10214,
+        "Pos": 10,
+        "PrePlaceId": 10213,
+        "Name": "Suburban Farm",
+        "Desc": "It seems the farm didn't survive the disaster even though it locates far from the city. Nevertheless, it's still a precious location for us to stay.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            102140
+        ]
+    },
+    {
+        "Id": 10301,
+        "Pos": 1,
+        "Name": "Urban Area C"
+    },
+    {
+        "Id": 10302,
+        "Pos": 5,
+        "Name": "Traveler's Cabin",
+        "Desc": "This is the only intact building we see walking along the road. We can still see a faint light in it through the window. Could there still be Scavengers in there?",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            103020
+        ]
+    },
+    {
+        "Id": 10303,
+        "Pos": 4,
+        "Name": "Roadside Gas Station",
+        "Desc": "Apart from the convenience store that was broken open violently, this roadside gas station still remains how it looked when just abandoned.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            103030
+        ]
+    },
+    {
+        "Id": 10304,
+        "Pos": 3,
+        "PrePlaceId": 10302,
+        "Name": "Industrial Park",
+        "Desc": "There is a giant toy statue at the entrance to the park. Half of its face was blown off, leaving only half of its huge smile on the face.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            103040
+        ]
+    },
+    {
+        "Id": 10305,
+        "Pos": 6,
+        "PrePlaceId": 10302,
+        "Name": "Abandoned Market",
+        "Desc": "The degree of damage to the market makes me wonder if it was already abandoned before the disaster. Hope we can find something useful in it.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            103050
+        ]
+    },
+    {
+        "Id": 10306,
+        "Pos": 10,
+        "PrePlaceId": 10303,
+        "Name": "Abandoned Port",
+        "Desc": "The ships stranded on the shore have formed a natural fortress, making me wonder if there are any remaining supplies or Scavengers in the ship cabins.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            103060
+        ]
+    },
+    {
+        "Id": 10307,
+        "Pos": 13,
+        "PrePlaceId": 10303,
+        "Name": "Quiet Bomb Shelter",
+        "Desc": "It's hard to imagine how this bomb shelter has survived everything. However, we could find something we need here.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            103070
+        ]
+    },
+    {
+        "Id": 10308,
+        "Pos": 7,
+        "PrePlaceId": 10304,
+        "Name": "Collapsed Mansion",
+        "Desc": "A mansion with astonishing design and size. If it hadn't been the disaster, it would have been the place for most of the \"upper class\" to hang out on weekends.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            103080
+        ]
+    },
+    {
+        "Id": 10309,
+        "Pos": 21,
+        "PrePlaceId": 10304,
+        "Name": "Golden Farm",
+        "Desc": "In the past, the farm was known for its high yield of rice and the golden rice field during harvest. Even now, we can still see the golden light of the farm under the sun from afar.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            103090
+        ]
+    },
+    {
+        "Id": 10310,
+        "Pos": 16,
+        "PrePlaceId": 10306,
+        "Name": "Armed Dwelling",
+        "Desc": "It's said that there are a group of armed Scavengers with sufficient supplies here... Hope I can negotiate with them and get us some supplies. However, if things go sideways... I think I'd better bring a weapon with me...",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            103100
+        ]
+    },
+    {
+        "Id": 10311,
+        "Pos": 11,
+        "PrePlaceId": 10307,
+        "Name": "Empty Trench",
+        "Desc": "The air is full of the bad smell of burnt bodies. Fortunately, we didn't find any traces of the Corrupted around here. I thought I was already used to the smell of death, but I still feel like throwing up standing here...",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            103110
+        ]
+    },
+    {
+        "Id": 10312,
+        "Pos": 18,
+        "PrePlaceId": 10307,
+        "Name": "Forest Valley",
+        "Desc": "The ruts full of water stretch all the way into the valley. After observation, we find traces of tents in the woods. Perhaps we can find some Scavengers here.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            103120
+        ]
+    },
+    {
+        "Id": 10313,
+        "Pos": 19,
+        "PrePlaceId": 10308,
+        "Name": "Abandoned Mine",
+        "Desc": "The complex structure of the tunnels provides a good shelter for the Scavengers. However, even the thick stone walls can't stop the burnt smell of flesh from coming out. It won't look good in there. Should we still go in there?",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            103130
+        ]
+    },
+    {
+        "Id": 10314,
+        "Pos": 8,
+        "Name": "Riverside Camp",
+        "Desc": "It seems the river has dried out a long time ago. The black \"corpses\" of the burnt trees have created a natural wall for this place, making it hard for us to see what is going on in the camp. Maybe we should take a closer look.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "UnlockCondition": [
+            103140
+        ],
+        "EventId": [
+            103140
+        ]
+    },
+    {
+        "Id": 10315,
+        "Pos": 15,
+        "Name": "Orchard",
+        "Desc": "This place used to be a productive orchard with rivers full of fish floating through. Now there are only broken, bare, burnt branches... Is it possible to find any supplies or Scavengers here?",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "UnlockCondition": [
+            103150
+        ],
+        "EventId": [
+            103150
+        ]
+    },
+    {
+        "Id": 10316,
+        "Pos": 15,
+        "Name": "Orchard",
+        "Desc": "This place used to be a productive orchard with rivers full of fish floating through. Now there are only broken, bare, burnt branches... Is it possible to find any supplies or Scavengers here?",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "UnlockCondition": [
+            103160
+        ],
+        "EventId": [
+            103160
+        ]
+    },
+    {
+        "Id": 10401,
+        "Pos": 1,
+        "Name": "Area D"
+    },
+    {
+        "Id": 10402,
+        "Pos": 5,
+        "Name": "Empty Trench",
+        "Desc": "The air is full of the bad smell of burnt bodies. Fortunately, we didn't find any traces of the Corrupted around here. I thought I was already used to the smell of death, but I still feel like throwing up standing here...",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            104020
+        ]
+    },
+    {
+        "Id": 10403,
+        "Pos": 4,
+        "Name": "Crowded Street",
+        "Desc": "There are burns on every car on this crowded street. Apparently, their owners didn't have the chance to drive them out of the city.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            104030
+        ]
+    },
+    {
+        "Id": 10404,
+        "Pos": 3,
+        "PrePlaceId": 10402,
+        "Name": "Camp Amidst Woods",
+        "Desc": "From the outside, the camp seems to be well stocked with supplies. Maybe there are survivors. Even if they don't want to join us, at least we can try if we can get some food or other resources from them.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            104040
+        ]
+    },
+    {
+        "Id": 10405,
+        "Pos": 6,
+        "PrePlaceId": 10402,
+        "Name": "Supermarket",
+        "Desc": "Most of the windows have lost their glass. It looks like this place has been bombarded or ransacked by other Scavengers, or both. We can only imagine what the place looked like with the broken sign left here.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            104050
+        ]
+    },
+    {
+        "Id": 10406,
+        "Pos": 8,
+        "PrePlaceId": 10402,
+        "Name": "Bloody Church",
+        "Desc": "There is blood and unidentified remains everywhere. Wait. Did you hear that? Was it the bells... from up there...?",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            104060
+        ]
+    },
+    {
+        "Id": 10407,
+        "Pos": 7,
+        "PrePlaceId": 10404,
+        "Name": "Cabin Amidst Woods",
+        "Desc": "The creaks of the broken door can scare people off even in the broad daylight.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            104070
+        ]
+    },
+    {
+        "Id": 10408,
+        "Pos": 21,
+        "PrePlaceId": 10404,
+        "Name": "Quiet Bomb Shelter",
+        "Desc": "It's hard to imagine how this bomb shelter has survived everything. However, we could find something we need here.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            104080
+        ]
+    },
+    {
+        "Id": 10409,
+        "Pos": 20,
+        "PrePlaceId": 10404,
+        "Name": "Small Fishery",
+        "Desc": "The fishery is just a simple shanty plus some broken fishing nets. We may still find something useful if we are lucky.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            104090
+        ]
+    },
+    {
+        "Id": 10410,
+        "Pos": 12,
+        "PrePlaceId": 10405,
+        "Name": "Dilapidated Building",
+        "Desc": "The building is a bit shaky in the winter. Should we still go in there?",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            104100
+        ]
+    },
+    {
+        "Id": 10411,
+        "Pos": 10,
+        "PrePlaceId": 10403,
+        "Name": "Run-Down Slum",
+        "Desc": "I can hear people crying even from the outside. I'm afraid the situation is worse than we expected... Should we accept them? Or put an end to their misery...?",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            104110
+        ]
+    },
+    {
+        "Id": 10412,
+        "Pos": 17,
+        "PrePlaceId": 10403,
+        "Name": "Empty Library",
+        "Desc": "It's more realistic to look for books to burn than food to eat in this place.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            104120
+        ]
+    },
+    {
+        "Id": 10501,
+        "Pos": 1,
+        "Name": "Urban Area E"
+    },
+    {
+        "Id": 10502,
+        "Pos": 5,
+        "Name": "Overlook Point",
+        "Desc": "We could have a bird's eye view of the city if we reach that spot up there.",
+        "EventId": [
+            105020
+        ]
+    },
+    {
+        "Id": 10503,
+        "Pos": 6,
+        "PrePlaceId": 10502,
+        "Name": "Lab Building",
+        "Desc": "The building is like the second landmark of the city. You can see it from anywhere in the city without going to the overlook point. However, there is a strange defensive line before the building. No one is guarding there anymore.",
+        "EventId": [
+            105030
+        ]
+    },
+    {
+        "Id": 10504,
+        "Pos": 4,
+        "PrePlaceId": 10502,
+        "Name": "Armed Dwelling",
+        "Desc": "My friends tell me that there are a group of armed Scavengers with sufficient supplies here... Hope I can negotiate with them and get us some supplies. However, if things go sideways... I think I'd better bring a weapon with me...",
+        "EventId": [
+            105040
+        ]
+    },
+    {
+        "Id": 10505,
+        "Pos": 3,
+        "PrePlaceId": 10502,
+        "Name": "Radio Station",
+        "Desc": "The radio station is also a mess, but we could find some useful information here.",
+        "EventId": [
+            105050
+        ]
+    },
+    {
+        "Id": 10506,
+        "Pos": 12,
+        "PrePlaceId": 10503,
+        "Name": "Strange Opening",
+        "Desc": "There is a big hole in the ground. I can smell gasoline and a fishy odor when standing close to it. When I look into the hole, it looks like a huge bottomless abyss that has been holding the secret behind the destruction of the conservation area.",
+        "EventId": [
+            105060
+        ]
+    },
+    {
+        "Id": 10507,
+        "Pos": 20,
+        "PrePlaceId": 10503,
+        "Name": "Quarantine Area",
+        "Desc": "There is a biohazard sign at the entrance to the quarantine area. Everything inside seems to be ruined. Could we find anything useful in a place like this?",
+        "EventId": [
+            105070
+        ]
+    },
+    {
+        "Id": 10508,
+        "Pos": 14,
+        "PrePlaceId": 10506,
+        "Name": "Underground Lab",
+        "Desc": "What appears before us is a giant lab. No matter who created this place, that person must be supported by a powerful organization.",
+        "EventId": [
+            105080
+        ]
+    },
+    {
+        "Id": 10509,
+        "Pos": 11,
+        "PrePlaceId": 10508,
+        "Name": "Hidden Room",
+        "Desc": "This metal wall in the lab is full of scratches. It sounds weird when we knock on the wall. There must be a hidden space behind it.",
+        "EventId": [
+            105090
+        ]
+    },
+    {
+        "Id": 10510,
+        "Pos": 13,
+        "PrePlaceId": 10509,
+        "Name": "Outer City",
+        "Desc": "Behind the lab is a channel leading to the outside of the city. The faint light at the end of the tunnel tells us that the dark night of the city will pass soon.",
+        "EventId": [
+            105100
+        ]
+    },
+    {
+        "Id": 10511,
+        "Pos": 7,
+        "PrePlaceId": 10505,
+        "Name": "Residential Area",
+        "Desc": "The density of buildings here suggests that it was a busy area, but now there is only dead silence.",
+        "EventId": [
+            105110
+        ]
+    },
+    {
+        "Id": 10512,
+        "Pos": 8,
+        "PrePlaceId": 10511,
+        "Name": "Supermarket in Mist",
+        "Desc": "Is it because of the terrain? This place is full of mist. Hope we can find the supermarket marked on the map before using up our supplies.",
+        "EventId": [
+            105120
+        ]
+    },
+    {
+        "Id": 20100,
+        "Pos": 1,
+        "Name": "Exercise Camp",
+        "Desc": "A small camp set up for the survival exercise. It has reproduced the living environment of the Scavengers on the ground to the maximum extent.",
+        "CanGetPeople": true
+    },
+    {
+        "Id": 20101,
+        "Pos": 2,
+        "PrePlaceId": 20100,
+        "Name": "Quiet Apartment",
+        "Desc": "Even though most of the paint has come off the walls and revealed the bloody red bricks, the building still remains in good shape. Hope there is something we can use inside it.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2010100
+        ]
+    },
+    {
+        "Id": 20102,
+        "Pos": 3,
+        "PrePlaceId": 20101,
+        "Name": "Camp Amidst Woods",
+        "Desc": "If it were not for the flash of light at night, we wouldn't have found this camp. It's well hidden. In other words, it's a perfect shelter.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2010200
+        ]
+    },
+    {
+        "Id": 20103,
+        "Pos": 4,
+        "PrePlaceId": 20102,
+        "Name": "Roadside Gas Station",
+        "Desc": "From the outside, the roadside gas station still looks abandoned. Even the door of the convenience store deep inside is closed. Everything is peaceful and quiet.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            4
+        ],
+        "EventId": [
+            2010300
+        ]
+    },
+    {
+        "Id": 20104,
+        "Pos": 5,
+        "PrePlaceId": 20103,
+        "Name": "Wastewater Treatment Plant",
+        "Desc": "This distorted building is the Golden Age wastewater treatment plant marked on the map. However, it is the only building that still looks like a \"building\" in the area.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2010400
+        ]
+    },
+    {
+        "Id": 20105,
+        "Pos": 6,
+        "PrePlaceId": 20104,
+        "Name": "Suburban Quarantine Station",
+        "Desc": "The quarantine station is located far away from the city center, which is probably the reason why it is still in a good state. There are ruts left by survivors outside the station. We could find plenty of useful things if we are lucky.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2010500
+        ]
+    },
+    {
+        "Id": 20106,
+        "Pos": 7,
+        "PrePlaceId": 20102,
+        "Name": "Resource Landfill Site",
+        "Desc": "... Compared to the weird Red Tide and the smell of blood, the smell of this landfill site is rather \"pleasant\". It could hold some useful supplies. A place worth exploring.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            2
+        ],
+        "EventId": [
+            2010600
+        ]
+    },
+    {
+        "Id": 20107,
+        "Pos": 8,
+        "PrePlaceId": 20101,
+        "Name": "Empty Trench",
+        "Desc": "We can smell gunpowder even from a distance. Thankfully, we haven't seen any traces of the Corrupted around here. Should we take a look?",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "EventId": [
+            2010700
+        ]
+    },
+    {
+        "Id": 20108,
+        "Pos": 9,
+        "PrePlaceId": 20107,
+        "Name": "Battlefield Ruins",
+        "Desc": "One can still see a pile of the remains of the Corrupted in the center of the battlefield even from a distance. In other words, if it is safe enough, it must hold many usable supplies.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2010800
+        ]
+    },
+    {
+        "Id": 20109,
+        "Pos": 10,
+        "PrePlaceId": 20100,
+        "Name": "Community Hospital",
+        "Desc": "There is dim light coming out through the windows. Are the Scavengers who escaped from the forest camp staying here?",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "UnlockCondition": [
+            20109
+        ],
+        "EventId": [
+            2010900
+        ]
+    },
+    {
+        "Id": 20110,
+        "Pos": 11,
+        "PrePlaceId": 20109,
+        "Name": "Suburban Signal Station",
+        "Desc": "The huge signal station only has its damaged base remaining, which looks like a giant's body with its upper half missing. It stands vulnerably and firmly in the wilderness.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2011000
+        ]
+    },
+    {
+        "Id": 20111,
+        "Pos": 12,
+        "PrePlaceId": 20110,
+        "Name": "Southern Woods",
+        "Desc": "From the outside, we can see the wet ruts extending deep into the forest. Perhaps we can find some survivors by following the ruts.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2011100
+        ]
+    },
+    {
+        "Id": 20200,
+        "Pos": 1,
+        "Name": "Camp",
+        "Desc": "A temporary camp. The exploration team needs to return to the camp to recycle the resources in the backpack."
+    },
+    {
+        "Id": 20201,
+        "Pos": 2,
+        "PrePlaceId": 20200,
+        "Name": "Abandoned Postal Station",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "EventId": [
+            2020100
+        ]
+    },
+    {
+        "Id": 20202,
+        "Pos": 3,
+        "PrePlaceId": 20200,
+        "Name": "Mountain Village",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "EventId": [
+            2020200
+        ]
+    },
+    {
+        "Id": 20203,
+        "Pos": 4,
+        "PrePlaceId": 20202,
+        "Name": "Cableway",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "UnlockCondition": [
+            20203
+        ],
+        "EventId": [
+            2020300
+        ]
+    },
+    {
+        "Id": 20204,
+        "Pos": 5,
+        "PrePlaceId": 20203,
+        "Name": "Relatively Flat Mountain Road",
+        "ResourceId": [
+            1,
+            2,
+            4
+        ],
+        "EventId": [
+            2020400
+        ]
+    },
+    {
+        "Id": 20205,
+        "Pos": 6,
+        "PrePlaceId": 20204,
+        "Name": "Mountaintop Viewpoint",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "EventId": [
+            2020500
+        ]
+    },
+    {
+        "Id": 20206,
+        "Pos": 7,
+        "PrePlaceId": 20205,
+        "Name": "Cliff Lake",
+        "CanGetPeople": true,
+        "EventId": [
+            2020600
+        ]
+    },
+    {
+        "Id": 20207,
+        "Pos": 8,
+        "PrePlaceId": 20206,
+        "Name": "Mountain Valley",
+        "CanGetPeople": true,
+        "EventId": [
+            2020700,
+            2020710,
+            2020720
+        ]
+    },
+    {
+        "Id": 20208,
+        "Pos": 9,
+        "PrePlaceId": 20207,
+        "Name": "Southern Evacuation Point",
+        "CanGetPeople": true,
+        "EventId": [
+            2020800
+        ]
+    },
+    {
+        "Id": 20209,
+        "Pos": 10,
+        "PrePlaceId": 20201,
+        "Name": "Resource Transfer Depot",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2020900
+        ]
+    },
+    {
+        "Id": 20210,
+        "Pos": 11,
+        "PrePlaceId": 20209,
+        "Name": "Eastern Resource Depot",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2021000
+        ]
+    },
+    {
+        "Id": 20211,
+        "Pos": 12,
+        "PrePlaceId": 20200,
+        "Name": "Path of Fallen Leaves",
+        "ResourceId": [
+            1
+        ],
+        "EventId": [
+            2021100
+        ]
+    },
+    {
+        "Id": 20212,
+        "Pos": 13,
+        "PrePlaceId": 20211,
+        "Name": "Forest Edge",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "UnlockCondition": [
+            20212
+        ],
+        "EventId": [
+            2021210,
+            2021220
+        ]
+    },
+    {
+        "Id": 20213,
+        "Pos": 14,
+        "PrePlaceId": 20212,
+        "Name": "Burnt Forest",
+        "ResourceId": [
+            1,
+            2,
+            4
+        ],
+        "EventId": [
+            2021310,
+            2021320
+        ]
+    },
+    {
+        "Id": 20214,
+        "Pos": 15,
+        "PrePlaceId": 20213,
+        "Name": "Dark Path",
+        "Desc": "The forest seems to be boundless as if it's sending... a silent invitation.",
+        "CanGetPeople": true,
+        "EventId": [
+            2021410,
+            2021420,
+            2021430
+        ]
+    },
+    {
+        "Id": 20215,
+        "Pos": 16,
+        "PrePlaceId": 20214,
+        "Name": "Hunting Trap",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2,
+            4
+        ],
+        "EventId": [
+            2021510,
+            2021520,
+            2021530
+        ]
+    },
+    {
+        "Id": 20216,
+        "Pos": 17,
+        "PrePlaceId": 20213,
+        "Name": "Hunter's Cabin",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "EventId": [
+            2021600
+        ]
+    },
+    {
+        "Id": 20217,
+        "Pos": 18,
+        "PrePlaceId": 20211,
+        "Name": "Rocky Riverbank",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2021700
+        ]
+    },
+    {
+        "Id": 20218,
+        "Pos": 19,
+        "PrePlaceId": 20217,
+        "Name": "Lumberjack's Cabin",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2021800
+        ]
+    },
+    {
+        "Id": 20219,
+        "Pos": 20,
+        "PrePlaceId": 20218,
+        "Name": "Old Logging Site",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2021900
+        ]
+    },
+    {
+        "Id": 20300,
+        "Pos": 7,
+        "Name": "Camp"
+    },
+    {
+        "Id": 20301,
+        "Pos": 8,
+        "PrePlaceId": 20300,
+        "Name": "Temporary Shelter",
+        "Desc": "This temporary shelter is actually a huge, tattered tent, inside which live many emaciated refugees.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            203010
+        ]
+    },
+    {
+        "Id": 20302,
+        "Pos": 1,
+        "PrePlaceId": 20300,
+        "Name": "Flat Area",
+        "Desc": "This is a barren land with cement fragments scattered on it.",
+        "EventId": [
+            203020
+        ]
+    },
+    {
+        "Id": 20303,
+        "Pos": 13,
+        "PrePlaceId": 20300,
+        "Name": "Abandoned Hospital",
+        "Desc": "An abandoned hospital without electricity. Looking from the outside, the hospital is just as creepy as the typical haunted hospital in the movie.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            203030
+        ]
+    },
+    {
+        "Id": 20304,
+        "Pos": 9,
+        "PrePlaceId": 20301,
+        "Name": "Forest Edge",
+        "Desc": "This is a dense forest that the wind could hardly blow through. It's dark deep in the forest. And there seem to be howls of beasts coming from it.",
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "EventId": [
+            203040
+        ]
+    },
+    {
+        "Id": 20305,
+        "Pos": 2,
+        "PrePlaceId": 20302,
+        "Name": "Abandoned Gas Station",
+        "Desc": "An abandoned gas station. It's old, but its staff room can still be used as a shelter.",
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "EventId": [
+            203050
+        ]
+    },
+    {
+        "Id": 20306,
+        "Pos": 3,
+        "PrePlaceId": 20305,
+        "Name": "Abandoned Road",
+        "Desc": "Long in disrepair, the road is bumpy and covered in bird droppings.",
+        "EventId": [
+            203060
+        ]
+    },
+    {
+        "Id": 20307,
+        "Pos": 4,
+        "PrePlaceId": 20306,
+        "Name": "Abandoned Farm",
+        "Desc": "An abandoned farm. Judging from the situation inside it, a family of seven used to live here.",
+        "UnlockCondition": [
+            20312
+        ],
+        "EventId": [
+            203070
+        ]
+    },
+    {
+        "Id": 20308,
+        "Pos": 5,
+        "PrePlaceId": 20307,
+        "Name": "Giant Wheel",
+        "Desc": "A huge mechanical device that gives off a ghostly silver metallic light. Its core is rotating at a tremendous speed with a roaring sound.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            203080
+        ]
+    },
+    {
+        "Id": 20309,
+        "Pos": 14,
+        "PrePlaceId": 20303,
+        "Name": "Abandoned School",
+        "Desc": "An abandoned school that looks good. A perfect shelter from wind and rain.",
+        "CanGetPeople": true,
+        "EventId": [
+            203090
+        ]
+    },
+    {
+        "Id": 20400,
+        "Pos": 3,
+        "Name": "Camp"
+    },
+    {
+        "Id": 20401,
+        "Pos": 18,
+        "PrePlaceId": 20400,
+        "Name": "Ruins",
+        "Desc": "This place used to be a large amusement park full of the laughter of the children. The war turned this land of happiness into ruins.",
+        "EventId": [
+            204010
+        ]
+    },
+    {
+        "Id": 20402,
+        "Pos": 1,
+        "PrePlaceId": 20401,
+        "Name": "Highway 68",
+        "Desc": "A chemical plant was blown up in the war, leaving heavy pollution in the air and water nearby. We have to wear masks to proceed in the toxic mist here.",
+        "EventId": [
+            204020
+        ]
+    },
+    {
+        "Id": 20403,
+        "Pos": 23,
+        "PrePlaceId": 20406,
+        "Name": "City Outskirts",
+        "Desc": "There are many supplies scattered around on the ground of the city outskirts. They must be left by people who fled the war in a hurry. Where are they right now?",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            204030
+        ]
+    },
+    {
+        "Id": 20404,
+        "Pos": 20,
+        "PrePlaceId": 20403,
+        "Name": "City Entrance",
+        "Desc": "Even though the city has gone through the war and is severely damaged, this extravagant building is still standing in the city center. Disgusting.",
+        "EventId": [
+            204040
+        ]
+    },
+    {
+        "Id": 20405,
+        "Pos": 21,
+        "PrePlaceId": 20404,
+        "Name": "City Center",
+        "Desc": "It is where everything started. Expose the evil with your hands and end this absurd drama.",
+        "EventId": [
+            204050,
+            204052
+        ]
+    },
+    {
+        "Id": 20406,
+        "Pos": 19,
+        "PrePlaceId": 20402,
+        "Name": "Church",
+        "Desc": "A church that was blown up by bombs. It used to be the place where people make prayers. God, will you save humans today?",
+        "EventId": [
+            204060
+        ]
+    },
+    {
+        "Id": 20407,
+        "Pos": 2,
+        "PrePlaceId": 20400,
+        "Name": "Dilapidated Building",
+        "Desc": "A building that has gone through the war. It could be a watchtower but is already hard to recognize its original form. The walls are full of bullet holes, revealing some of the steel bars, as if the building is about to collapse at any minute.",
+        "EventId": [
+            204070
+        ]
+    },
+    {
+        "Id": 20408,
+        "Pos": 9,
+        "PrePlaceId": 20407,
+        "Name": "Hillside Villa",
+        "Desc": "A small hill with a relatively complete big house on the hillside. It could be the private villa of a rich family. Shhh. It seems there is someone in the villa. Let's get closer.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            204080
+        ]
+    },
+    {
+        "Id": 20500,
+        "Pos": 1,
+        "Name": "Camp",
+        "Desc": "A secondary island located relatively far away from the Hexagon Island."
+    },
+    {
+        "Id": 20502,
+        "Pos": 2,
+        "PrePlaceId": 20500,
+        "Name": "Smart Gate One",
+        "Desc": "The first gate of the Hexagon Island. It used to be the place where Scavengers' intelligence got tested before the island was sealed off.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "EventId": [
+            2050200,
+            2050206
+        ]
+    },
+    {
+        "Id": 20503,
+        "Pos": 3,
+        "PrePlaceId": 20502,
+        "Name": "Survival Gate Two",
+        "Desc": "The second gate of the Hexagon Island. It used to be the place where Scavengers' survival skills got tested before the island was sealed off.",
+        "ResourceId": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "EventId": [
+            2050300,
+            2050304,
+            2050306,
+            2050308
+        ]
+    },
+    {
+        "Id": 20504,
+        "Pos": 4,
+        "PrePlaceId": 20503,
+        "Name": "Strength Gate Three",
+        "Desc": "The third gate of the Hexagon Island. It used to be the place where Scavengers' strength got tested before the island was sealed off.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "UnlockCondition": [
+            20504
+        ],
+        "EventId": [
+            2050400,
+            2050404,
+            2050406,
+            2050408
+        ]
+    },
+    {
+        "Id": 20505,
+        "Pos": 5,
+        "PrePlaceId": 20503,
+        "Name": "Honor Island",
+        "Desc": "An island of honor for Scavengers who passed all six trials. The towering alloy pillar in the middle is carved with the name of the Hexagon Warriors in the order of time. Will your name appear where the pillar touches the sky?",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2050500
+        ]
+    },
+    {
+        "Id": 20506,
+        "Pos": 6,
+        "PrePlaceId": 20503,
+        "Name": "Cultivation Area",
+        "Desc": "The area that produces most of the food for the islanders. It is also where the Scavengers exchange supplies.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2050600
+        ]
+    },
+    {
+        "Id": 20507,
+        "Pos": 7,
+        "PrePlaceId": 20504,
+        "Name": "War Gate Four",
+        "Desc": "The fourth gate of the Hexagon Island. It used to be the place where Scavengers' combat capabilities got tested before the island was sealed off.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "UnlockCondition": [
+            20507
+        ],
+        "EventId": [
+            2050700,
+            2050704,
+            2050706,
+            2050708
+        ]
+    },
+    {
+        "Id": 20508,
+        "Pos": 8,
+        "PrePlaceId": 20504,
+        "Name": "Unnamed Island",
+        "Desc": "An island that is only halfway developed and now surrounded by warning lines. The rusty gate at its entrance is quietly closed.",
+        "EventId": [
+            2050800,
+            2050803,
+            2050805
+        ]
+    },
+    {
+        "Id": 20509,
+        "Pos": 9,
+        "PrePlaceId": 20504,
+        "Name": "Fresh Water Treatment Area",
+        "Desc": "An advanced water treatment device that provides fresh water for the island.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2050900,
+            2050902
+        ]
+    },
+    {
+        "Id": 20510,
+        "Pos": 10,
+        "PrePlaceId": 20509,
+        "Name": "Comms Depot",
+        "Desc": "A base that sends and receives signals. It was destroyed after the island was sealed and still hasn't been repaired up to this day.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2051000,
+            2051002,
+            2051004
+        ]
+    },
+    {
+        "Id": 20511,
+        "Pos": 11,
+        "PrePlaceId": 20507,
+        "Name": "Defense Gate Five",
+        "Desc": "The fifth gate of the Hexagon Island. It used to be the place where Scavengers' defense capabilities got tested before the island was sealed off.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "UnlockCondition": [
+            20511
+        ],
+        "EventId": [
+            2051100
+        ]
+    },
+    {
+        "Id": 20512,
+        "Pos": 12,
+        "PrePlaceId": 20507,
+        "Name": "Medical Depot",
+        "Desc": "The place where the island distributes serum and heals patients. It is also where Beverly works.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2051200,
+            2051203,
+            2051205
+        ]
+    },
+    {
+        "Id": 20513,
+        "Pos": 13,
+        "PrePlaceId": 20512,
+        "Name": "Residential Area",
+        "Desc": "It is where the islanders live. Hexagon Warriors live in the most luxurious places in this area.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2051300,
+            2051305
+        ]
+    },
+    {
+        "Id": 20514,
+        "Pos": 14,
+        "PrePlaceId": 20512,
+        "Name": "Warehouse",
+        "Desc": "It holds many emergency supplies. Only the island chief can enter.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2051400,
+            2051403
+        ]
+    },
+    {
+        "Id": 20515,
+        "Pos": 15,
+        "PrePlaceId": 20513,
+        "Name": "Residence of the Island Chief",
+        "Desc": "It is where the island chief's family lives and where they meet guests. It's said that among the island chief's family members, there is an outsider who passed the Hexagon trials.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2051500,
+            2051503
+        ]
+    },
+    {
+        "Id": 20516,
+        "Pos": 16,
+        "PrePlaceId": 20511,
+        "Name": "Mechanical Gate Six",
+        "Desc": "The sixth gate of the Hexagon Island. It used to be the place where Scavengers' mastery of various weapons got tested before the island was sealed off.",
+        "UnlockCondition": [
+            20516
+        ],
+        "EventId": [
+            2051600,
+            2051604,
+            2051608
+        ]
+    },
+    {
+        "Id": 20517,
+        "Pos": 17,
+        "PrePlaceId": 20511,
+        "Name": "Shipwreck Point",
+        "Desc": "A luxury ship sank here 3 years ago.",
+        "EventId": [
+            2051700
+        ]
+    },
+    {
+        "Id": 20518,
+        "Pos": 18,
+        "PrePlaceId": 20516,
+        "Name": "Fishery",
+        "Desc": "It's a fishery and an open fishing pool. There are many assault boats here.",
+        "EventId": [
+            2051800,
+            2051803,
+            2051805
+        ]
+    },
+    {
+        "Id": 20600,
+        "Pos": 1,
+        "Name": "Camp",
+        "Desc": "A temporary camp. The exploration team needs to return to the camp to recycle the resources in the backpack.",
+        "CanGetPeople": true
+    },
+    {
+        "Id": 20601,
+        "Pos": 2,
+        "PrePlaceId": 20600,
+        "Name": "Roadside Cabin",
+        "Desc": "The only building that is relatively complete by the roadside. There is occasionally smoke coming out of the chimney. Are there any Scavengers inside?",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2060100
+        ]
+    },
+    {
+        "Id": 20602,
+        "Pos": 3,
+        "PrePlaceId": 20601,
+        "Name": "Mangshan Pass",
+        "Desc": "The only entrance to Mangshan. One can see the outline of the misty Mangshan from here.",
+        "ResourceId": [
+            1,
+            2
+        ],
+        "EventId": [
+            2060200
+        ]
+    },
+    {
+        "Id": 20603,
+        "Pos": 4,
+        "PrePlaceId": 20602,
+        "Name": "Hiking Trail",
+        "Desc": "It's more like a relatively flat mountain road than a hiking trail. It's a detour to enter the mountain.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "UnlockCondition": [
+            206030
+        ],
+        "EventId": [
+            2060300
+        ]
+    },
+    {
+        "Id": 20604,
+        "Pos": 5,
+        "PrePlaceId": 20603,
+        "Name": "Mountain Farm",
+        "Desc": "A farm on the hillside. It seems it was famous in the area due to its high yield of corn.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            4,
+            1,
+            2
+        ],
+        "EventId": [
+            2060400
+        ]
+    },
+    {
+        "Id": 20605,
+        "Pos": 6,
+        "PrePlaceId": 20604,
+        "Name": "Collapsed Road",
+        "Desc": "A path found with the military facility map. It's barely passable.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4,
+            1,
+            2
+        ],
+        "UnlockCondition": [
+            206050
+        ],
+        "EventId": [
+            2060510
+        ]
+    },
+    {
+        "Id": 20606,
+        "Pos": 7,
+        "PrePlaceId": 20605,
+        "Name": "Medical Camp",
+        "Desc": "A medical camp set up by survivors after the Mangshan battle.",
+        "CanGetPeople": true,
+        "EventId": [
+            2060610,
+            2060620,
+            2060630
+        ]
+    },
+    {
+        "Id": 20607,
+        "Pos": 8,
+        "PrePlaceId": 20606,
+        "Name": "Mangshan Entrance",
+        "Desc": "The last checkpoint outside the Mangshan Camp.",
+        "CanGetPeople": true,
+        "EventId": [
+            2060700
+        ]
+    },
+    {
+        "Id": 20608,
+        "Pos": 9,
+        "PrePlaceId": 20607,
+        "Name": "Mangshan Camp",
+        "Desc": "Jersey's hometown.",
+        "CanGetPeople": true,
+        "EventId": [
+            2060810,
+            2060820,
+            2060830
+        ]
+    },
+    {
+        "Id": 20609,
+        "Pos": 10,
+        "PrePlaceId": 20606,
+        "Name": "Signal Station",
+        "Desc": "It shows that there are medicine, food, wood, iron, and survivors.",
+        "CanGetPeople": true,
+        "UnlockCondition": [
+            206090
+        ],
+        "EventId": [
+            2060910
+        ]
+    },
+    {
+        "Id": 20610,
+        "Pos": 11,
+        "PrePlaceId": 20603,
+        "Name": "West Mountain Road",
+        "Desc": "This is a road that links the Health Center, the Military Facility, and Mangshan Pass. Originally nameless, it was named the \"West Mountain Road\" as it is located on the west of the mountain.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2061000
+        ]
+    },
+    {
+        "Id": 20611,
+        "Pos": 12,
+        "PrePlaceId": 20610,
+        "Name": "Health Center",
+        "Desc": "A health center established in the Golden Age. It is still operating in a difficult state. It's the medicine hub of the surrounding area.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4
+        ],
+        "UnlockCondition": [
+            206110
+        ],
+        "EventId": [
+            2061100
+        ]
+    },
+    {
+        "Id": 20612,
+        "Pos": 13,
+        "PrePlaceId": 20611,
+        "Name": "Warship Remains",
+        "Desc": "No one knows how long the warship remains have been here.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            2
+        ],
+        "EventId": [
+            2061200
+        ]
+    },
+    {
+        "Id": 20613,
+        "Pos": 14,
+        "PrePlaceId": 20612,
+        "Name": "Military Facility",
+        "Desc": "A military facility that emits strange signals. The Corrupted nearby are probably attracted here by it.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            2
+        ],
+        "EventId": [
+            2061310,
+            2061320
+        ]
+    },
+    {
+        "Id": 20614,
+        "Pos": 15,
+        "PrePlaceId": 20611,
+        "Name": "Transfer Station",
+        "Desc": "A transfer station of the old times. It was still the main transportation hub not long ago.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2061400
+        ]
+    },
+    {
+        "Id": 20615,
+        "Pos": 16,
+        "PrePlaceId": 20601,
+        "Name": "Abandoned Hotel",
+        "Desc": "A hotel near the mountain. The location is perfect, but the hotel itself is already abandoned.",
+        "ResourceId": [
+            4,
+            2
+        ],
+        "EventId": [
+            2061500
+        ]
+    },
+    {
+        "Id": 20616,
+        "Pos": 17,
+        "PrePlaceId": 20615,
+        "Name": "Temporary Camp",
+        "Desc": "A temporary camp built as a shelter from the mountain wind. It's just a place to temporarily take a rest.",
+        "ResourceId": [
+            3,
+            4,
+            1
+        ],
+        "EventId": [
+            2061600
+        ]
+    },
+    {
+        "Id": 20617,
+        "Pos": 18,
+        "PrePlaceId": 20600,
+        "Name": "Deep Pit",
+        "Desc": "A huge pit that cuts off the road to the west.",
+        "ResourceId": [
+            3
+        ],
+        "UnlockCondition": [
+            206170
+        ],
+        "EventId": [
+            2061700
+        ]
+    },
+    {
+        "Id": 20618,
+        "Pos": 19,
+        "PrePlaceId": 20600,
+        "Name": "Dongshan Racecourse",
+        "Desc": "A famous racecourse in the Golden Age. It has already been abandoned for years.",
+        "ResourceId": [
+            3,
+            4,
+            1,
+            2
+        ],
+        "UnlockCondition": [
+            206180
+        ],
+        "EventId": [
+            2061800
+        ]
+    },
+    {
+        "Id": 20619,
+        "Pos": 20,
+        "PrePlaceId": 20618,
+        "Name": "Grassland of Horses",
+        "Desc": "A place for the racecourse horses to rest. The golf course seems to be ahead.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "UnlockCondition": [
+            206190
+        ],
+        "EventId": [
+            2061900
+        ]
+    },
+    {
+        "Id": 20620,
+        "Pos": 21,
+        "PrePlaceId": 20619,
+        "Name": "Golf Course",
+        "Desc": "A golf course with astonishing design and size. If it hadn't been the disaster, it would have been the place for most of the \"upper class\" to hang out on weekends.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2062000
+        ]
+    },
+    {
+        "Id": 20621,
+        "Pos": 22,
+        "PrePlaceId": 20600,
+        "Name": "Forest Park",
+        "Desc": "A forest park on the edge of the city. There is even a supermarket in it. We could probably find some supplies here.",
+        "ResourceId": [
+            3,
+            4,
+            1,
+            2
+        ],
+        "UnlockCondition": [
+            206210
+        ],
+        "EventId": [
+            2062100
+        ]
+    },
+    {
+        "Id": 20622,
+        "Pos": 23,
+        "PrePlaceId": 20621,
+        "Name": "Park Supermarket",
+        "Desc": "It offers fewer choices of items than a supermarket but is enough to fulfill your daily needs.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2062200
+        ]
+    },
+    {
+        "Id": 20623,
+        "Pos": 24,
+        "PrePlaceId": 20622,
+        "Name": "Park Management Office",
+        "Desc": "The management office of the park. There seems to be light coming out from the office. Perhaps there are survivors inside.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2062300
+        ]
+    },
+    {
+        "Id": 20625,
+        "Pos": 26,
+        "PrePlaceId": 20622,
+        "Name": "Black Lighthouse",
+        "Desc": "A black lighthouse that stands quietly by the lake.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2062500
+        ]
+    },
+    {
+        "Id": 20626,
+        "Pos": 27,
+        "PrePlaceId": 20625,
+        "Name": "Lakeside Cave",
+        "Desc": "A weird cave. There seem to be traces left by a tent deep inside.",
+        "ResourceId": [
+            3,
+            4
+        ],
+        "EventId": [
+            2062600
+        ]
+    },
+    {
+        "Id": 20627,
+        "Pos": 28,
+        "PrePlaceId": 20600,
+        "Name": "Abandoned Industrial Park",
+        "Desc": "The previous big industrial park is now in ruins.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            1,
+            2
+        ],
+        "UnlockCondition": [
+            206270
+        ],
+        "EventId": [
+            2062700
+        ]
+    },
+    {
+        "Id": 20628,
+        "Pos": 29,
+        "PrePlaceId": 20627,
+        "Name": "Freight Station",
+        "Desc": "A freight station of the old times. There could be other supplies in the warehouse.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4,
+            2
+        ],
+        "EventId": [
+            2062800
+        ]
+    },
+    {
+        "Id": 20629,
+        "Pos": 30,
+        "PrePlaceId": 20627,
+        "Name": "Abandoned Platform",
+        "Desc": "... An abandoned platform. It seems that someone has camped here. We can smell blood even from the outside. We'd better get prepared before we go inside.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4,
+            1
+        ],
+        "UnlockCondition": [
+            206290
+        ],
+        "EventId": [
+            2062900
+        ]
+    },
+    {
+        "Id": 20630,
+        "Pos": 31,
+        "PrePlaceId": 20629,
+        "Name": "Dispatching Center",
+        "Desc": "The dispatching center of the freight station. It's probably the only building that is relatively complete around here.",
+        "CanGetPeople": true,
+        "ResourceId": [
+            3,
+            4,
+            1,
+            2
+        ],
+        "EventId": [
+            2063010,
+            2063020
+        ]
+    }
+]

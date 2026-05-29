@@ -3,771 +3,672 @@
         "Id": 10000,
         "Name": "01 Decision Altitude",
         "Desc": "77.3% of the conventional engines have been forcibly shut down. Babylonia is falling!",
-        "StageType": 0,
+        "Condition": [
+            770400
+        ],
         "StageId": 10130200,
         "TRPGRewardId": 10000,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png",
-        "Condition": [
-            770400
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png"
     },
     {
         "Id": 13002,
         "Name": "02 A Familiar Sight",
         "Desc": "The virtual space looks completely normal, but there is something hidden underneath.",
-        "StageType": 0,
-        "StageId": 10130171,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightSquare.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa01.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa01a.png",
         "Condition": [
             100811
-        ]
+        ],
+        "StageId": 10130171,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightSquare.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa01.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa01a.png"
     },
     {
         "Id": 13003,
         "Name": "03 Unexpected Bolt",
         "Desc": "You encounter unexpected events, both friendly and hostile... both commanded and improvised.",
-        "StageType": 0,
-        "StageId": 10130172,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa02.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa02.png",
         "Condition": [
             100812
-        ]
+        ],
+        "StageId": 10130172,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa02.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa02.png"
     },
     {
         "Id": 11004,
         "Name": "04 Fake Friendship",
         "Desc": "False is false.",
-        "StageType": 0,
-        "StageId": 10130201,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png",
         "Condition": [
             100813
-        ]
+        ],
+        "StageId": 10130201,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png"
     },
     {
         "Id": 11005,
         "Name": "05 Profile of Bait",
         "Desc": "Veritas ends in pursuit.",
-        "StageType": 0,
-        "StageId": 10130202,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png",
         "Condition": [
             100814
-        ]
+        ],
+        "StageId": 10130202,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png"
     },
     {
         "Id": 11007,
         "Name": "06 Fragile Relationship",
         "Desc": "Is relationship and bond between people strong or frail?",
-        "StageType": 0,
+        "Condition": [
+            100815
+        ],
         "StageId": 10130203,
         "TRPGRewardId": 11007,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png",
-        "Condition": [
-            100815
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png"
     },
     {
         "Id": 13008,
         "Name": "07 Breaking a Deadlock",
         "Desc": "Finally, there is a hope to break the deadlock.",
-        "StageType": 0,
-        "StageId": 10130173,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa03.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa03.png",
         "Condition": [
             100816
-        ]
+        ],
+        "StageId": 10130173,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa03.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa03.png"
     },
     {
         "Id": 11009,
         "Name": "08 Shutting",
         "Desc": "All signals come to a screeching halt here.",
-        "StageType": 0,
+        "Condition": [
+            100817
+        ],
         "StageId": 10130204,
         "TRPGRewardId": 11009,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png",
-        "Condition": [
-            100817
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png"
     },
     {
         "Id": 13011,
         "Name": "09 \"Huaxu\"",
         "Desc": "No matter who \"it\" works for, you've got to make it stop.",
-        "StageType": 0,
-        "StageId": 10130174,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangleBoss.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa04.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa04.png",
         "Condition": [
             100818
-        ]
+        ],
+        "StageId": 10130174,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangleBoss.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa04.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageAa04.png"
     },
     {
         "Id": 13012,
         "Name": "10S.S.D.D",
         "Desc": "The crisis in Babylonia is lifted temporarily. And everything returns to normal.",
-        "StageType": 0,
+        "Condition": [
+            100819
+        ],
         "StageId": 10130205,
         "TRPGRewardId": 11012,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png",
-        "Condition": [
-            100819
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryAa01.png"
     },
     {
         "Id": 20000,
         "Name": "01 Enhance Inverse",
         "Desc": "If you see something too dangerous, don't let curiosity get the best of you.",
-        "StageType": 0,
+        "Condition": [
+            100820
+        ],
         "StageId": 10130206,
         "TRPGRewardId": 20000,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
         "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa01.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
-        "Condition": [
-            100820
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 21001,
         "Name": "02 Restore Clue",
         "Desc": "It seems that we will maintain this perspective until the end of this mission.",
-        "StageType": 0,
-        "StageId": 10130207,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
         "Condition": [
             100821
-        ]
+        ],
+        "StageId": 10130207,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 21003,
         "Name": "03 Enemies in Sight",
         "Desc": "Projections of Corrupted, the Corrupted, growths of punishing...",
-        "StageType": 0,
-        "StageId": 10130208,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
         "Condition": [
             100822
-        ]
+        ],
+        "StageId": 10130208,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 23004,
         "Name": "04 Crimson Tide",
         "Desc": "The four of you gaze into the red tide of life and death, just like how it gazes back.",
-        "StageType": 0,
-        "StageId": 10130175,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightSquare.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa02.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa02a.png",
         "Condition": [
             100823
-        ]
+        ],
+        "StageId": 10130175,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightSquare.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa02.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa02a.png"
     },
     {
         "Id": 21005,
         "Name": "05 Shades of the Past",
         "Desc": "Looks like... this commandant must have been dead for over a week.",
-        "StageType": 0,
-        "StageId": 10130209,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
         "Condition": [
             100824
-        ]
+        ],
+        "StageId": 10130209,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 21011,
         "Name": "06 Piper",
         "Desc": "They seem to be lured by the \"sound of the flute\" and submerge in the sea of crimson.",
-        "StageType": 0,
+        "Condition": [
+            100825
+        ],
         "StageId": 10130210,
         "TRPGRewardId": 21001,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
-        "Condition": [
-            100825
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 23014,
         "Name": "07 Hetero-Creature",
         "Desc": "These Corrupted have started to develop biological traits. Simply calling them \"Corrupted\" would be inaccurate.",
-        "StageType": 0,
-        "StageId": 10130176,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa03.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa03.png",
         "Condition": [
             100826
-        ]
+        ],
+        "StageId": 10130176,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa03.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa03.png"
     },
     {
         "Id": 21016,
         "Name": "08 Plunder & Sacrifice",
         "Desc": "In order to survive, we have to decide what to accept, as difficult to bear as they are... That's the price.",
-        "StageType": 0,
-        "StageId": 10130211,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
         "Condition": [
             100827
-        ]
+        ],
+        "StageId": 10130211,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 21017,
         "Name": "09 Past & Future",
         "Desc": "Please don't hate me.",
-        "StageType": 0,
-        "StageId": 10130212,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
         "Condition": [
             100828
-        ]
+        ],
+        "StageId": 10130212,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 21020,
         "Name": "10 Blood Link",
         "Desc": "...Will I become someone like her?",
-        "StageType": 0,
+        "Condition": [
+            100829
+        ],
         "StageId": 10130213,
         "TRPGRewardId": 21011,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
-        "Condition": [
-            100829
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 21026,
         "Name": "11 Continue Forward",
         "Desc": "Carefully, Liv opens the faded cover, and a white petal falls out onto her hand.",
-        "StageType": 0,
-        "StageId": 10130214,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
         "Condition": [
             100830
-        ]
+        ],
+        "StageId": 10130214,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 21032,
         "Name": "12 Full of Thorns",
         "Desc": "There are more traps ahead, so be careful.",
-        "StageType": 0,
-        "StageId": 10130215,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
         "Condition": [
             100831
-        ]
+        ],
+        "StageId": 10130215,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 23033,
         "Name": "13 We Were Here",
         "Desc": "I would still have some foolish hope had that never happened.",
-        "StageType": 0,
-        "StageId": 10130177,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangleBoss.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa04.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa04.png",
         "Condition": [
             100832
-        ]
+        ],
+        "StageId": 10130177,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangleBoss.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa04.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageBa04.png"
     },
     {
         "Id": 21034,
         "Name": "14 Shattered Fragments",
         "Desc": "It's up to you to decide when to let Lucia get that memory back.",
-        "StageType": 0,
+        "Condition": [
+            100833
+        ],
         "StageId": 10130216,
         "TRPGRewardId": 21034,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png",
-        "Condition": [
-            100833
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryBa01.png"
     },
     {
         "Id": 31000,
         "Name": "01 City of Fakes",
         "Desc": "It's not that it was abandoned... It was never even occupied.",
-        "StageType": 0,
+        "Condition": [
+            100834
+        ],
         "StageId": 10130217,
         "TRPGRewardId": 30000,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
-        "Condition": [
-            100834
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 31001,
         "Name": "02 Red Tide's Guidance",
         "Desc": "Go back to the source—to the abyss.",
-        "StageType": 0,
-        "StageId": 10130218,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100835
-        ]
+        ],
+        "StageId": 10130218,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 33003,
         "Name": "03 Welcoming Ceremony",
         "Desc": "The broken remains remind you of \"corpses.\"",
-        "StageType": 0,
-        "StageId": 10130178,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa01.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa01.png",
         "Condition": [
             100836
-        ]
+        ],
+        "StageId": 10130178,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa01.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa01.png"
     },
     {
         "Id": 39001,
         "Name": "04 Curtain",
         "Desc": "Since our guests have arrived at the door, there is no reason not to entertain them.",
-        "StageType": 0,
-        "StageId": 10130219,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100837
-        ]
+        ],
+        "StageId": 10130219,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 31005,
         "Name": "05 Unexpected Support",
         "Desc": "Then, let me be your mission support from now on.",
-        "StageType": 0,
-        "StageId": 10130220,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100838
-        ]
+        ],
+        "StageId": 10130220,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 33006,
         "Name": "06 Ascension Secrets",
         "Desc": "A blindfolded queen, an advisor, and a beast.",
-        "StageType": 0,
+        "Condition": [
+            100839
+        ],
         "StageId": 10130179,
         "TRPGRewardId": 31006,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
         "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa02.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa02.png",
-        "Condition": [
-            100839
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa02.png"
     },
     {
         "Id": 39002,
         "Name": "07 Test",
         "Desc": "Or is this another \"test\" of yours?",
-        "StageType": 0,
-        "StageId": 10130221,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100840
-        ]
+        ],
+        "StageId": 10130221,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 33007,
         "Name": "08 Question",
         "Desc": "Can you really put that blade of yours in Luna's heart?",
-        "StageType": 0,
-        "StageId": 10130180,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightSquare.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa03.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa03a.png",
         "Condition": [
             100841
-        ]
+        ],
+        "StageId": 10130180,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightSquare.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa03.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa03a.png"
     },
     {
         "Id": 39003,
         "Name": "09 Fury of the Agent",
         "Desc": "If these weaklings are your \"final plan,\" I must say I'm quite disappointed.",
-        "StageType": 0,
-        "StageId": 10130181,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa04.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa04.png",
         "Condition": [
             100842
-        ]
+        ],
+        "StageId": 10130181,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa04.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa04.png"
     },
     {
         "Id": 31008,
         "Name": "10 Master of Ceremony",
         "Desc": "Miss Luna, this is my answer to your question—",
-        "StageType": 0,
-        "StageId": 10130222,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100843
-        ]
+        ],
+        "StageId": 10130222,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 31009,
         "Name": "11 Cross the Bridge",
         "Desc": "Whether in sight or out of sight, the Support Sorce are always working.",
-        "StageType": 0,
-        "StageId": 10130223,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100844
-        ]
+        ],
+        "StageId": 10130223,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 31010,
         "Name": "12 Huaxu's Projection",
         "Desc": "What does the appearance of Huaxu's projection here really mean?",
-        "StageType": 0,
+        "Condition": [
+            100845
+        ],
         "StageId": 10130224,
         "TRPGRewardId": 31010,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
-        "Condition": [
-            100845
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 31011,
         "Name": "13 Visitor",
         "Desc": "Be careful of that Lucia.",
-        "StageType": 0,
-        "StageId": 10130225,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100846
-        ]
+        ],
+        "StageId": 10130225,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 31012,
         "Name": "14 Crimson Resolve",
         "Desc": "Lucia... Quickly! Commandant's going to...",
-        "StageType": 0,
-        "StageId": 10130226,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100847
-        ]
+        ],
+        "StageId": 10130226,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 39004,
         "Name": "15 Divergence Point",
         "Desc": "I will accept your everything—your pain, your choices.",
-        "StageType": 0,
-        "StageId": 10130227,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100848
-        ]
+        ],
+        "StageId": 10130227,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 39005,
         "Name": "16 Sealed Past",
         "Desc": "Don't worry, you'll be the next.",
-        "StageType": 0,
-        "StageId": 10130228,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100849
-        ]
+        ],
+        "StageId": 10130228,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 31013,
         "Name": "17 Shards of Remorse",
         "Desc": "Before falling into complete silence, Lucia clutches the nameplate in her hand...",
-        "StageType": 0,
-        "StageId": 10130229,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100850
-        ]
+        ],
+        "StageId": 10130229,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 39006,
         "Name": "18 Chaotic Memories",
         "Desc": "The shards of each other's memories cross the boundary between them, like fragments of glass pouring down after it breaks, scattering in front of their eyes.",
-        "StageType": 0,
-        "StageId": 10130230,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100851
-        ]
+        ],
+        "StageId": 10130230,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 39007,
         "Name": "19 Lost Heart",
         "Desc": "Running your mouth when you're so lost and miserable. Is that who you are now?",
-        "StageType": 0,
-        "StageId": 10130231,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
         "Condition": [
             100852
-        ]
+        ],
+        "StageId": 10130231,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 31015,
         "Name": "20 Lucia",
         "Desc": "This is your reward for facing your past.",
-        "StageType": 0,
-        "StageId": 10130182,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangleBoss.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa05.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa05.png",
         "Condition": [
             100853
-        ]
+        ],
+        "StageId": 10130182,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangleBoss.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa05.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageCa05.png"
     },
     {
         "Id": 31016,
         "Name": "21 To the Future",
         "Desc": "Welcome back, Lucia.",
-        "StageType": 0,
+        "Condition": [
+            100854
+        ],
         "StageId": 10130232,
         "TRPGRewardId": 31016,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png",
-        "Condition": [
-            100854
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryCa01.png"
     },
     {
         "Id": 40000,
         "Name": "01 Polyphage Abyss",
         "Desc": "Underneath this behemoth is a lake composed of the Red Tide, shimmering in its fearsome scarlet glow.",
-        "StageType": 0,
+        "Condition": [
+            100855
+        ],
         "StageId": 10130233,
         "TRPGRewardId": 40000,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png",
-        "Condition": [
-            100855
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png"
     },
     {
         "Id": 41001,
         "Name": "02 A Perfect Disguise?",
         "Desc": "If it was not Murray, who is it?",
-        "StageType": 0,
-        "StageId": 10130234,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png",
         "Condition": [
             100856
-        ]
+        ],
+        "StageId": 10130234,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png"
     },
     {
         "Id": 41003,
         "Name": "03 Audio Analysis",
         "Desc": "It is impossible to find Lamia by blindly searching, so this is the time to check the tips.",
-        "StageType": 0,
-        "StageId": 10130235,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png",
         "Condition": [
             100857
-        ]
+        ],
+        "StageId": 10130235,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png"
     },
     {
         "Id": 41803,
         "Name": "04 Mermaid's Gift",
         "Desc": "Hee hee, take it—it's Lamia's petty concern.",
-        "StageType": 0,
-        "StageId": 10130236,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png",
         "Condition": [
             100858
-        ]
+        ],
+        "StageId": 10130236,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png"
     },
     {
         "Id": 41004,
         "Name": "05 Mermaid Caught Up",
         "Desc": "Lamia has nowhere to run.",
-        "StageType": 0,
-        "StageId": 10130237,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png",
         "Condition": [
             100859
-        ]
+        ],
+        "StageId": 10130237,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png"
     },
     {
         "Id": 41005,
         "Name": "06 Horrifying Marks",
         "Desc": "Only cracked and shattered rocks remain when you arrive at the epicenter.",
-        "StageType": 0,
-        "StageId": 10130238,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png",
         "Condition": [
             100860
-        ]
+        ],
+        "StageId": 10130238,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png"
     },
     {
         "Id": 43006,
         "Name": "07 Cannibalism",
         "Desc": "Miss Luna... Please serve your final duty as an agent...",
-        "StageType": 0,
-        "StageId": 10130183,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
-        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa01.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa01.png",
         "Condition": [
             100861
-        ]
+        ],
+        "StageId": 10130183,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa01.png",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa01.png"
     },
     {
         "Id": 41007,
         "Name": "08 Resolve",
         "Desc": "Besides, Gray Raven is at its best when we are together, right?",
-        "StageType": 0,
-        "StageId": 10130239,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png",
         "Condition": [
             100862
-        ]
+        ],
+        "StageId": 10130239,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png"
     },
     {
         "Id": 41009,
         "Name": "09 Mermaid's Purpose",
         "Desc": "\"Go, complete your task.\"",
-        "StageType": 0,
-        "StageId": 10130240,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png",
         "Condition": [
             100863
-        ]
+        ],
+        "StageId": 10130240,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png"
     },
     {
         "Id": 43011,
         "Name": "10 Huge Threat",
         "Desc": "Battle is the only option against the roaring Polyphage.",
-        "StageType": 0,
+        "Condition": [
+            100864
+        ],
         "StageId": 10130184,
         "TRPGRewardId": 43011,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
         "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa02.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa02.png",
-        "Condition": [
-            100864
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa02.png"
     },
     {
         "Id": 41812,
         "Name": "11 Confession",
         "Desc": "This time, I'm choosing to believe in \"myself.\"",
-        "StageType": 0,
-        "StageId": 10130241,
-        "TRPGRewardId": 0,
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png",
         "Condition": [
             100865
-        ]
+        ],
+        "StageId": 10130241,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagTRPGStory.prefab",
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageStoryDa01.png"
     },
     {
         "Id": 43012,
         "Name": "12 Race Against Time",
         "Desc": "Despite the many enemies ahead of her, Lucia knows the bullets and beams coming from her teammates will clear her way.",
-        "StageType": 0,
+        "Condition": [
+            100866
+        ],
         "StageId": 10130185,
         "TRPGRewardId": 43012,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangle.prefab",
         "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa03.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa03.png",
-        "Condition": [
-            100866
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa03.png"
     },
     {
         "Id": 43013,
         "Name": "13 Awake and Destroy",
         "Desc": "The end... is nigh!",
+        "Condition": [
+            100867
+        ],
         "StageType": 1,
         "StageId": 10130186,
         "TRPGRewardId": 43013,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageTRPGFightRectangleBoss.prefab",
         "Icon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa04.png",
-        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa04.png",
-        "Condition": [
-            100867
-        ]
+        "DialogIcon": "Assets/Product/Texture/Image/UiTRPG/FubenTRPGStageDa04.png"
     }
 ]

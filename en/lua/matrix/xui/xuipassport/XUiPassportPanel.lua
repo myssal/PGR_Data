@@ -7,45 +7,42 @@ local XUiPassportPanelGrid = require("XUi/XUiPassport/XUiPassportPanelGrid")
 local XUiPassportPanel = XClass(XUiNode, "XUiPassportPanel")
 
 --通行证面板
-function XUiPassportPanel:Ctor(ui, rootUi)
-    self.GameObject = ui.gameObject
-    self.Transform = ui.transform
-    self.RootUi = rootUi
-    -- 当前选中普通区or无限区,打开时根据level选择最近的
-    self.RewardType = XEnumConst.PASSPORT.REWARD_TYPE.NONE
-    self.LastRewardType = XEnumConst.PASSPORT.REWARD_TYPE.NONE
-    self.IsShowInfReward = false
-
-    self.LevelIdListNormal = false
-    self.LevelIdListInf = false
-    XTool.InitUiObject(self)
-
+function XUiPassportPanel:OnStart()
+    self.LevelIdList = false
     self:InitRightGrids()
     self:InitDynamicList()
     self:AutoAddListener()
     self:InitData()
-    self:InitInfBtn()
-
-    self:AddRedPointEvent(
-            self.BtnTongBlack,
-            self.OnCheckRewardRedPoint,
-            self,
-            { XRedPointConditions.Types.CONDITION_PASSPORT_PANEL_REWARD_RED }
-    )
 end
 
 function XUiPassportPanel:InitRightGrids()
     self.RightGrids = {}
+    self.RightGridData = {}
     local typeInfoIdList = self._Control:GetPassportActivityIdToTypeInfoIdList()
     for i in ipairs(typeInfoIdList) do
-        self.RightGrids[i] = XUiGridCommon.New(self.RootUi, self["GridCommonRight" .. i])
+        self.RightGrids[i] = XUiGridCommon.New(self.Parent, self["GridCommonRight" .. i])
+        --只在初始化时绑定一次，点击时读取RightGridData决定行为
+        local slotIndex = i
+        self.RightGrids[i]:SetClickCallback(function() self:OnRightGridClick(slotIndex) end)
+    end
+end
+
+--点击右侧固定格子：可领取则领取，否则走默认的查看tip逻辑
+function XUiPassportPanel:OnRightGridClick(i)
+    local data = self.RightGridData[i]
+    if data and not data.isReceiveReward and data.isCanReceiveReward then
+        self:GridOnClick(data.passportRewardId)
+    else
+        local grid = self.RightGrids[i]
+        if grid then
+            grid:OnBtnClickClick()
+        end
     end
 end
 
 function XUiPassportPanel:InitData()
     local activityId = self._Control:GetDefaultActivityId()
-    self.LevelIdListNormal = self._Control:GetPassportLevelIdListByRewardType(activityId, XEnumConst.PASSPORT.REWARD_TYPE.NORMAL)
-    self.LevelIdListInf = self._Control:GetPassportLevelIdListByRewardType(activityId, XEnumConst.PASSPORT.REWARD_TYPE.INFINITE)
+    self.LevelIdList = self._Control:GetPassportLevelIdListByRewardType(activityId, XEnumConst.PASSPORT.REWARD_TYPE.NORMAL)
 end
 
 function XUiPassportPanel:InitDynamicList()
@@ -63,17 +60,11 @@ function XUiPassportPanel:AutoAddListener()
     local typeInfoIdList = self._Control:GetPassportActivityIdToTypeInfoIdList()
     for i, typeInfoId in ipairs(typeInfoIdList) do
         if self["BtnUnlockLeftGrid" .. i] then
-            XUiHelper.RegisterClickEvent(
-                    self,
-                    self["BtnUnlockLeftGrid" .. i],
-                    function()
-                        self:OnBtnUnlockLeftGridClick(typeInfoId)
-                    end
-            )
+            self["BtnUnlockLeftGrid" .. i]:AddEventListener(function()
+                self:OnBtnUnlockLeftGridClick(typeInfoId)
+            end)
         end
     end
-
-    XUiHelper.RegisterClickEvent(self, self.BtnTongBlack, self.OnBtnTongBlackClick)
 end
 
 function XUiPassportPanel:Refresh()
@@ -106,14 +97,13 @@ function XUiPassportPanel:UpdateRightGrid()
     local rewardData
     local typeInfoIdList = self._Control:GetPassportActivityIdToTypeInfoIdList()
 
-    local isReceiveReward  --是否已领取奖励
-    local isCanReceiveReward  --是否可领取奖励
-    local isUnLock  --是否已解锁当前通行证奖励
-    local isShowEffect  --是否显示特效
-    local isPrimeReward  --是否贵重奖励
+    local isReceiveReward
+    local isCanReceiveReward
+    local isShowEffect
+    local isPrimeReward
 
     for i, typeInfoId in ipairs(typeInfoIdList) do
-        local passportRewardId = self._Control:GetRewardIdByPassportIdAndLevel(typeInfoId, targetLevel) --通行证奖励表的id
+        local passportRewardId = self._Control:GetRewardIdByPassportIdAndLevel(typeInfoId, targetLevel)
         grid = self.RightGrids[i]
 
         if grid then
@@ -124,18 +114,19 @@ function XUiPassportPanel:UpdateRightGrid()
 
                 isReceiveReward = self._Control:IsReceiveReward(typeInfoId, passportRewardId)
                 isCanReceiveReward = self._Control:IsCanReceiveReward(typeInfoId, passportRewardId)
-                if not isReceiveReward and isCanReceiveReward then
-                    grid:SetClickCallback(
-                            function()
-                                self:GridOnClick(passportRewardId)
-                            end
-                    )
-                else
-                    grid:AutoAddListener()
+
+                --只更新数据，不重新绑定按钮
+                if not self.RightGridData[i] then
+                    self.RightGridData[i] = {}
                 end
+                local slotData = self.RightGridData[i]
+                slotData.passportRewardId = passportRewardId
+                slotData.isReceiveReward = isReceiveReward
+                slotData.isCanReceiveReward = isCanReceiveReward
             else
                 isCanReceiveReward = nil
                 isReceiveReward = nil
+                self.RightGridData[i] = nil
                 grid.GameObject:SetActive(false)
             end
         end
@@ -187,83 +178,47 @@ function XUiPassportPanel:UpdateLeftGrid()
 end
 
 function XUiPassportPanel:UpdateDynamicTable()
-    self.IsShowInfReward = #self.LevelIdListInf > 0
-
-    local index = self:GetDynamicIndexAndChooseRewardType()
-    self.DynamicTable:SetDataSource(self:GetLevelIdList())
+    local index = self:GetDefaultIndex()
+    self.DynamicTable:SetDataSource(self.LevelIdList)
     self.DynamicTable:ReloadDataSync(index)
 end
 
 function XUiPassportPanel:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_INIT then
-        grid:Init(self.RootUi)
+        grid:Init(self.Parent)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
-        local levelId = self:GetLevelIdList()[index]
+        local levelId = self.LevelIdList[index]
         grid:Refresh(levelId)
         self:UpdateRightGrid()
-        self:UpdateInfBtnVisible()
     end
 end
 
--- 获得默认选中index，同时需要更新rewardType
-function XUiPassportPanel:GetDynamicIndexAndChooseRewardType()
+-- 获得默认选中index
+function XUiPassportPanel:GetDefaultIndex()
     local baseInfo = self._Control:GetPassportBaseInfo()
     local currLevel = baseInfo:GetLevel()
-    if self.RewardType == XEnumConst.PASSPORT.REWARD_TYPE.NONE then
-        local rewardType
-        if self.IsShowInfReward and currLevel >= self._Control:GetPassportMaxLevel() then
-            rewardType = XEnumConst.PASSPORT.REWARD_TYPE.INFINITE
-        else
-            local currId = self._Control:GetPassportLevelId(currLevel + 1)
-            if currId then
-                rewardType = self._Control:GetRewardType(currId)
-            end
-        end
-        self.RewardType = rewardType or XEnumConst.PASSPORT.REWARD_TYPE.NORMAL
-    end
-
-    local levelIdList = self:GetLevelIdList()
-    -- 手动从普通区切换到无限区的时候，从1开始；反之亦然
-    if self.RewardType == XEnumConst.PASSPORT.REWARD_TYPE.NORMAL and
-            self.LastRewardType == XEnumConst.PASSPORT.REWARD_TYPE.INFINITE
-    then
-        return #levelIdList
-    end
-    if self.RewardType == XEnumConst.PASSPORT.REWARD_TYPE.INFINITE and
-            self.LastRewardType == XEnumConst.PASSPORT.REWARD_TYPE.NORMAL
-    then
-        return 1
-    end
-
     local level = -1
     local index = 0
-    for i, levelId in ipairs(levelIdList) do
+
+    for i, levelId in ipairs(self.LevelIdList) do
         level = self._Control:GetPassportLevel(levelId)
         if level >= currLevel then
             index = i
             break
         end
     end
+
     -- 当前等级超出配置，拉到最后
     if level < currLevel then
-        index = #levelIdList
+        index = #self.LevelIdList
     end
 
-    index = math.max(1, index - self.DynamicTableOffsetIndex) --居中显示
+    index = math.max(1, index - self.DynamicTableOffsetIndex)
     return index
 end
 
-function XUiPassportPanel:OnBtnUnlockLeftGridClick(typeInfoId)
-    XLuaUiManager.Open("UiPassportCard", typeInfoId, handler(self, self.Refresh))
-end
-
---一键领取
-function XUiPassportPanel:OnBtnTongBlackClick()
-    self._Control:RequestPassportRecvAllReward(handler(self, self.Refresh))
-end
-
-function XUiPassportPanel:OnCheckRewardRedPoint(count)
-    self.BtnTongBlack:ShowReddot(count >= 0)
+function XUiPassportPanel:OnBtnUnlockLeftGridClick()
+    XLuaUiManager.Open("UiPassportCard", handler(self, self.Refresh), self.Parent)
 end
 
 function XUiPassportPanel:Show()
@@ -279,64 +234,7 @@ function XUiPassportPanel:GridOnClick(passportRewardId)
     local cb = function()
         self.DynamicTable:ReloadDataASync()
     end
-    self._Control:RequestPassportRecvReward(passportRewardId, cb)
-end
-
--- inf = 无限
-function XUiPassportPanel:UpdateInfBtnVisible()
-    -- 当玩家将列表拉至正常区最后面位置时
-    if self.IsShowInfReward
-            and self.RewardType == XEnumConst.PASSPORT.REWARD_TYPE.NORMAL
-            and self.DynamicTable:GetGridByIndex(#self:GetLevelIdList())
-    then
-        -- 当玩家将列表拉至无限区最前面位置时
-        self.BtnPlusRight.gameObject:SetActiveEx(true)
-        self.BtnPlusLeft.gameObject:SetActiveEx(false)
-    elseif self.RewardType == XEnumConst.PASSPORT.REWARD_TYPE.INFINITE and self.DynamicTable:GetGridByIndex(1) then
-        self.BtnPlusRight.gameObject:SetActiveEx(false)
-        self.BtnPlusLeft.gameObject:SetActiveEx(true)
-    else
-        self.BtnPlusRight.gameObject:SetActiveEx(false)
-        self.BtnPlusLeft.gameObject:SetActiveEx(false)
-    end
-end
-
-function XUiPassportPanel:InitInfBtn()
-    XUiHelper.RegisterClickEvent(self, self.BtnPlusRight, self.OnBtnRewardInfClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnPlusLeft, self.OnBtnRewardNormalClick)
-end
-
-function XUiPassportPanel:OnBtnRewardNormalClick()
-    self:SwitchRewardType(XEnumConst.PASSPORT.REWARD_TYPE.NORMAL, true)
-end
-
-function XUiPassportPanel:OnBtnRewardInfClick()
-    self:SwitchRewardType(XEnumConst.PASSPORT.REWARD_TYPE.INFINITE, true)
-end
-
-function XUiPassportPanel:SwitchRewardType(rewardType, playSwitchAnimation)
-    if self.RewardType == rewardType then
-        return
-    end
-    self.LastRewardType = self.RewardType
-    self.RewardType = rewardType
-
-    self:UpdateDynamicTable()
-    self:UpdateInfBtnVisible()
-
-    if playSwitchAnimation then
-        self.RootUi:PlayAnimation("QieHuan")
-    end
-end
-
-function XUiPassportPanel:GetLevelIdList()
-    if self.RewardType == XEnumConst.PASSPORT.REWARD_TYPE.NORMAL then
-        return self.LevelIdListNormal
-    end
-    if self.RewardType == XEnumConst.PASSPORT.REWARD_TYPE.INFINITE then
-        return self.LevelIdListInf
-    end
-    return self.LevelIdListNormal
+    self._Control:RequestPassportRecvReward(passportRewardId, cb, self.Parent)
 end
 
 function XUiPassportPanel:OpenLastPassport()

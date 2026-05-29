@@ -144,7 +144,7 @@ function XUiFubenBranchStageDetail:OnBtnEnterClick()
     local stage = self.Stage
     if XDataCenter.FubenManager.CheckPreFight(stage) then
         self.Parent:CloseStageDetail()
-        XLuaUiManager.Open("UiBattleRoleRoom", stage.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stage.StageId)
     end
 end
 

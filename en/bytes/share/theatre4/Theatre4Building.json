@@ -2,20 +2,18 @@
     {
         "Id": 1001,
         "Type": 1,
-        "MaxCountInChapter": 0,
+        "Params": [
+            1
+        ],
         "Name": "Energy Supply Station",
         "Icon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon08.png",
         "Title": "Energy Supply Station",
         "Desc": "Energy Supply Station: Reveals the contents within 2 tiles in a cross shape and permanently gives 1 Construction Permit daily.",
-        "SkillPicture": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon08.png",
-        "Params": [
-            1
-        ]
+        "SkillPicture": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon08.png"
     },
     {
         "Id": 1002,
         "Type": 2,
-        "MaxCountInChapter": 0,
         "Name": "Sentry Tower",
         "Icon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon09.png",
         "Title": "Sentry Tower",
@@ -25,41 +23,40 @@
     {
         "Id": 1003,
         "Type": 3,
-        "MaxCountInChapter": 0,
+        "Params": [
+            150
+        ],
         "Name": "Supply Depot",
         "Icon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon10.png",
         "Title": "Supply Depot",
         "Desc": "Supply Depot: Explore the area around Supply Depot to receive Colored Resource +150.",
-        "SkillPicture": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon10.png",
-        "Params": [
-            150
-        ]
+        "SkillPicture": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon10.png"
     },
     {
         "Id": 1004,
         "Type": 4,
+        "Params": [
+            2
+        ],
         "MaxCountInChapter": 1,
         "Name": "Residential Area",
         "Icon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon11.png",
         "Title": "Residential Area",
         "Desc": "Residential Area: Action Point +2 daily within this area.",
-        "SkillPicture": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon11.png",
-        "Params": [
-            2
-        ]
+        "SkillPicture": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon11.png"
     },
     {
         "Id": 1005,
         "Type": 5,
+        "Params": [
+            150,
+            1
+        ],
         "MaxCountInChapter": 3,
         "Name": "Temporary Base",
         "Icon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon18.png",
         "Title": "Temporary Base",
         "Desc": "Temporary Base: You can preview 2 tiles in the cross-shaped area. Permanently provides 1 Construction Permit every day. Clears 1 random Danger Zone within range. Areas Within Range of Exploration: Colored Resources +150.",
-        "SkillPicture": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon18.png",
-        "Params": [
-            150,
-            1
-        ]
+        "SkillPicture": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon18.png"
     }
 ]

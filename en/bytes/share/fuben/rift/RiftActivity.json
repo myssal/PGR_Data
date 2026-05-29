@@ -1,27 +1,13 @@
 [
     {
         "Id": 1,
-        "TimeId": 0,
         "Name": "Simulacrum Submersion",
-        "ResetNoCdTimes": 0,
         "ResetCdIncrease": 1,
         "ResetCdMax": 1,
         "DailySweepTimes": 3,
         "PluginPeakloadInit": 7,
         "PluginPeakloadMax": 30,
         "AttrLevelSetCount": 5,
-        "PeriodTimeIds": [],
-        "RankLayerLimits": [],
-        "MaxLuckyValue": 50,
-        "RankLayerLimit": 1,
-        "SeasonTaskGroupId": 172,
-        "AttrSetNameLength": 7,
-        "MopupCd": 0,
-        "MaxWeight": 1000000,
-        "AffixWeightVersion": 0,
-        "TimeIntervalToLucky": 360,
-        "TimeAddValueToLucky": 1,
-        "GainRewardLuckyValue": 100,
         "ShopId": [
             1236,
             1235
@@ -29,31 +15,25 @@
         "TaskGroupId": [
             171,
             172
-        ]
+        ],
+        "MaxLuckyValue": 50,
+        "RankLayerLimit": 1,
+        "SeasonTaskGroupId": 172,
+        "AttrSetNameLength": 7,
+        "MaxWeight": 1000000,
+        "TimeIntervalToLucky": 360,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 100
     },
     {
         "Id": 2,
-        "TimeId": 0,
         "Name": "Simulacrum Submersion",
-        "ResetNoCdTimes": 0,
         "ResetCdIncrease": 1,
         "ResetCdMax": 1,
         "DailySweepTimes": 3,
         "PluginPeakloadInit": 7,
         "PluginPeakloadMax": 30,
         "AttrLevelSetCount": 5,
-        "PeriodTimeIds": [],
-        "RankLayerLimits": [],
-        "MaxLuckyValue": 50,
-        "RankLayerLimit": 1,
-        "SeasonTaskGroupId": 282,
-        "AttrSetNameLength": 7,
-        "MopupCd": 86400,
-        "MaxWeight": 1000000,
-        "AffixWeightVersion": 0,
-        "TimeIntervalToLucky": 360,
-        "TimeAddValueToLucky": 1,
-        "GainRewardLuckyValue": 100,
         "ShopId": [
             1296,
             1295,
@@ -75,36 +55,31 @@
             "\"End Sequence: When the enemy has no allies within 5m around them, they deal more damage and have higher DMG Reduction.\"",
             "Loop Sequence: Killing enemies will make the character deal more damage for 5s. Triggering the effect again will refresh the duration and add stacks."
         ],
+        "MaxLuckyValue": 50,
+        "RankLayerLimit": 1,
         "PeriodName": [
             "Primo Sequence",
             "Evolving Sequence",
             "End Sequence",
             "Loop Sequence"
-        ]
+        ],
+        "SeasonTaskGroupId": 282,
+        "AttrSetNameLength": 7,
+        "MopupCd": 86400,
+        "MaxWeight": 1000000,
+        "TimeIntervalToLucky": 360,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 100
     },
     {
         "Id": 3,
-        "TimeId": 0,
         "Name": "Stellar Witching Hour",
-        "ResetNoCdTimes": 0,
         "ResetCdIncrease": 1,
         "ResetCdMax": 1,
         "DailySweepTimes": 3,
         "PluginPeakloadInit": 18,
         "PluginPeakloadMax": 30,
         "AttrLevelSetCount": 5,
-        "PeriodTimeIds": [],
-        "RankLayerLimits": [],
-        "MaxLuckyValue": 200,
-        "RankLayerLimit": 1,
-        "SeasonTaskGroupId": 0,
-        "AttrSetNameLength": 7,
-        "MopupCd": 86400,
-        "MaxWeight": 1000000,
-        "AffixWeightVersion": 0,
-        "TimeIntervalToLucky": 360,
-        "TimeAddValueToLucky": 1,
-        "GainRewardLuckyValue": 100,
         "ShopId": [
             1432,
             1433
@@ -112,31 +87,25 @@
         "TaskGroupId": [
             391,
             392
-        ]
+        ],
+        "MaxLuckyValue": 200,
+        "RankLayerLimit": 1,
+        "AttrSetNameLength": 7,
+        "MopupCd": 86400,
+        "MaxWeight": 1000000,
+        "TimeIntervalToLucky": 360,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 100
     },
     {
         "Id": 4,
-        "TimeId": 41804,
         "Name": "Path of Buried Wishes",
-        "ResetNoCdTimes": 0,
         "ResetCdIncrease": 1,
         "ResetCdMax": 1,
         "DailySweepTimes": 3,
         "PluginPeakloadInit": 18,
         "PluginPeakloadMax": 30,
         "AttrLevelSetCount": 5,
-        "PeriodTimeIds": [],
-        "RankLayerLimits": [],
-        "MaxLuckyValue": 360,
-        "RankLayerLimit": 1,
-        "SeasonTaskGroupId": 0,
-        "AttrSetNameLength": 7,
-        "MopupCd": 86400,
-        "MaxWeight": 1000000,
-        "AffixWeightVersion": 1,
-        "TimeIntervalToLucky": 240,
-        "TimeAddValueToLucky": 1,
-        "GainRewardLuckyValue": 180,
         "ShopId": [
             1447,
             1448
@@ -144,6 +113,15 @@
         "TaskGroupId": [
             552,
             553
-        ]
+        ],
+        "MaxLuckyValue": 360,
+        "RankLayerLimit": 1,
+        "AttrSetNameLength": 7,
+        "MopupCd": 86400,
+        "MaxWeight": 1000000,
+        "AffixWeightVersion": 1,
+        "TimeIntervalToLucky": 240,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 180
     }
 ]

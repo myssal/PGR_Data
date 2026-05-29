@@ -144,7 +144,7 @@ function XUiFubenChristmasStageDetail:OnBtnEnterClick()
         if self.RootUi then
             self.RootUi:ClearNodesSelect()
         end
-        XLuaUiManager.Open("UiBattleRoleRoom", self.FStage:GetStageId())
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.FStage:GetStageId())
         self.RootUi.BtnCloseDetail.gameObject:SetActiveEx(false)
         self.RootUi.PanelStageContentRaycast.raycastTarget = true
         self:Close()

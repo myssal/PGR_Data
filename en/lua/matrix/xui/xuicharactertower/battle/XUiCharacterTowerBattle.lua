@@ -144,7 +144,7 @@ function XUiCharacterTowerBattle:EnterFight(stage)
     if not XDataCenter.FubenManager.CheckPreFight(stage) then
         return
     end
-    XLuaUiManager.Open("UiBattleRoleRoom", stage.StageId, nil, {
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stage.StageId, nil, {
         GetRoleDetailProxy = function(proxy)
             return require("XUi/XUiCharacterTower/BattleRoleRoom/XUiCharacterTowerBattleRoomRoleDetail")
         end

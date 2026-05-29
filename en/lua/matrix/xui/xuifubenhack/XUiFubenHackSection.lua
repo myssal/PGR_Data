@@ -181,7 +181,7 @@ function XUiFubenHackSection:OnBtnEnterClick()
 
     if XDataCenter.FubenManager.CheckPreFight(stageCfg) then
         XEventManager.DispatchEvent(XEventId.EVENT_FUBEN_CLOSE_FUBENSTAGEDETAIL)
-        XLuaUiManager.Open("UiBattleRoleRoom", stageCfg.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageCfg.StageId)
         self:Close()
     end
 end

@@ -1,12 +1,10 @@
 [
     {
-        "Id": 0,
         "Type": 1,
         "UiType": 1,
         "Name": "Tang Pei",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal02.png",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9910,
@@ -15,8 +13,7 @@
         "Name": "Guy on the Left",
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "Dialogue Here 1",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9911,
@@ -26,8 +23,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "<color=#7FFF00>Dialogue Here 1 (Reversed Sprite)</color>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -39,8 +37,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "<size=30>Dialogue Here 1 (playalone on)</size>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -52,8 +50,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "Dialogue Here 1 (Reversed Sprite: playalone on)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1
         ]
@@ -66,7 +64,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png",
         "Text": "Dialogue Here 2",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -79,9 +76,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png",
         "Text": "Dialogue Here 2 (Reversed Sprite)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
             1
         ]
     },
@@ -93,8 +90,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal03.png",
         "Text": "Dialogue Here 3 (playalone on)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -106,7 +103,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal02.png",
         "Text": "Dialogue Here 4 (playalone on)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
             1
@@ -118,8 +114,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "<color=#7FFF00>Top Left Dialogue 1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9919,
@@ -127,8 +122,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal02.png",
         "Text": "<size=30>Top Left Dialogue 2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9920,
@@ -136,8 +130,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
         "Text": "Top Left Dialogue 3 (1s)",
-        "Duration": 1,
-        "IsMask": false
+        "Duration": 1
     },
     {
         "Id": 9921,
@@ -145,8 +138,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal04.png",
         "Text": "Top Left Dialogue 4 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 9922,
@@ -154,16 +146,14 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>Cutscene Animation 1</color>",
         "Text": "<color=#7FFF00>Dialogue Here 1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9923,
         "Type": 3,
         "UiType": 1,
         "Text": "<size=30>Dialogue Here 2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9924,
@@ -171,8 +161,7 @@
         "UiType": 1,
         "Name": "Cutscene Animation 3",
         "Text": "Dialogue Here 3 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 9925,
@@ -180,24 +169,21 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>Connection Dialogue A</color>",
         "Text": "<color=#7FFF00>Connection Dialogue 123</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9926,
         "Type": 4,
         "UiType": 1,
         "Text": "Connection Dialogue 234 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 9927,
         "Type": 4,
         "UiType": 1,
         "Name": "Connection Dialogue With Only Names",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9928,
@@ -206,8 +192,7 @@
         "Name": "<color=#7FFF00>Custom Chat Box</color>",
         "Icon": 500618,
         "Text": "<size=30>Custom Chat Box 1</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9929,
@@ -216,8 +201,7 @@
         "Name": "<size=15>Custom Chat Box</size>",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal02.png",
         "Text": "<color=#7FFF00>Custom Chat Box 2</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 9930,
@@ -226,8 +210,7 @@
         "Name": "Custom Chat Box",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
         "Text": "Custom Chat Box 3 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1,
@@ -235,8 +218,7 @@
         "UiType": 1,
         "Name": "96992301-Test Stage Custom Dialogue",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 2301000,
@@ -245,8 +227,7 @@
         "Name": "It's me",
         "Icon": 500618,
         "Text": "<color=#4cc758>So Green</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 2301001,
@@ -256,8 +237,9 @@
         "Icon": 500618,
         "Text": "<size=50><color=#fb4141>So red</color></size><size=30> ← Size of characters can be changed </size>Param3: Sprite Flip",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -269,8 +251,8 @@
         "Icon": 500618,
         "Text": "<size=18><color=#32c2f7>So blue</color></size><size=30> ← In smaller characters (sad)</size>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -282,9 +264,9 @@
         "Icon": 500569,
         "Text": "param1: On the right of sprite display; Plus a sprite flip; Plus the size change of the characters of the name in display",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
             1
         ]
     },
@@ -296,8 +278,8 @@
         "Icon": 500569,
         "Text": "\"Flip Sprite + Playalone, so Playalone is <bold>param2</bold>.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1
         ]
@@ -308,8 +290,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Li5.png",
         "Text": "Editable Duration",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 2301006,
@@ -317,8 +298,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Li5.png",
         "Text": "Leave name blank (?)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 2301007,
@@ -326,8 +306,7 @@
         "UiType": 1,
         "Name": "[Beautiful Black Screen]",
         "Text": "That's right",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 2301008,
@@ -335,8 +314,7 @@
         "UiType": 1,
         "Name": "NPC：",
         "Text": "Words",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 2,
@@ -344,8 +322,7 @@
         "UiType": 1,
         "Name": "□□□□□□□96992302 - [2.9] Main Story - 4□□□□□□□",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 2302001,
@@ -354,8 +331,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210zjNormal01.png",
         "Text": "\"Lucia, the coordinates of the first node have been transmitted.\"",
         "Duration": 3.5,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             3
         ]
     },
@@ -366,8 +344,7 @@
         "Name": "Lucia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Luxiya1.png",
         "Text": "(Lucia) line 1",
-        "Duration": 1,
-        "IsMask": false
+        "Duration": 1
     },
     {
         "Id": 2302004,
@@ -375,8 +352,7 @@
         "UiType": 1,
         "Name": "Lucia",
         "Text": "Their position should be nearby.",
-        "Duration": 1.8,
-        "IsMask": false
+        "Duration": 1.8
     },
     {
         "Id": 2302005,
@@ -384,8 +360,7 @@
         "UiType": 1,
         "Name": "Lucia",
         "Text": "This should be it.",
-        "Duration": 1,
-        "IsMask": false
+        "Duration": 1
     },
     {
         "Id": 749795103,
@@ -394,10 +369,11 @@
         "Name": "Yazi",
         "Text": "......",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1,
+            "",
             1,
             1
         ]
@@ -409,10 +385,11 @@
         "Name": "Yazi",
         "Text": "\"This is safer than outside, but we can't let our guard down yet.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1,
+            "",
             1
         ]
     },
@@ -423,10 +400,11 @@
         "Name": "Yazi",
         "Text": "\"If you don't need me, I'll go back to patrolling. (Related to Pulao's mood; help her do some work.)\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1,
+            "",
             1,
             1
         ]
@@ -438,10 +416,11 @@
         "Name": "Yazi",
         "Text": "It's lost.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1,
+            "",
             1,
             1
         ]
@@ -453,10 +432,11 @@
         "Name": "Yazi",
         "Text": "This umbrella...",
         "Duration": 1.5,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1,
+            "",
             1,
             1
         ]
@@ -468,10 +448,11 @@
         "Name": "Yazi",
         "Text": "(Thanks for getting it back)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1,
+            "",
             1,
             1
         ]
@@ -483,10 +464,11 @@
         "Name": "Yazi",
         "Text": "(Thanks again for getting her umbrella back)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1,
+            "",
             1,
             1
         ]
@@ -498,10 +480,11 @@
         "Name": "Yazi",
         "Text": "Nothing unusual in Tabula Akasha. (Continue patrolling)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1,
+            "",
             1,
             1
         ]
@@ -513,8 +496,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "This...",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 749786104,
@@ -523,8 +505,7 @@
         "Name": "Lucia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZsLuxiyaNormal01.png",
         "Text": "What's wrong?",
-        "Duration": 1.8,
-        "IsMask": false
+        "Duration": 1.8
     },
     {
         "Id": 749786105,
@@ -533,8 +514,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "Why is her umbrella here?",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786106,
@@ -543,8 +523,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "She might have left it during the evacuation.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786107,
@@ -553,8 +532,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Let's take it with us.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786108,
@@ -563,8 +541,7 @@
         "Name": "Lucia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZsLuxiyaNormal01.png",
         "Text": "Yeah. Let's give it back to her.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786109,
@@ -573,8 +550,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "I wonder how it is going out there...",
-        "Duration": 2.4,
-        "IsMask": false
+        "Duration": 2.4
     },
     {
         "Id": 749786110,
@@ -583,8 +559,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Umbrella?",
-        "Duration": 1.8,
-        "IsMask": false
+        "Duration": 1.8
     },
     {
         "Id": 749786111,
@@ -592,8 +567,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "<color=#D1D1D1>A Kowloong resident who failed to evacuate. All vital signs are lost.</color>",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786112,
@@ -602,8 +576,7 @@
         "Name": "Lucia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZsLuxiyaNormal01.png",
         "Text": "We're late...",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 749786113,
@@ -612,8 +585,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Too late...",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 749786114,
@@ -621,8 +593,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "<color=#D1D1D1>A barely recognizable body of an old human that has been burned by the Light Wall.</color>",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786119,
@@ -631,8 +602,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "What is that?",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786122,
@@ -641,8 +611,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "Huh? A note?",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786123,
@@ -651,8 +620,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "I can't believe they dodged the Light Wall...",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786124,
@@ -661,8 +629,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "This...",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786180,
@@ -671,8 +638,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "It's a note to Zhishi.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786127,
@@ -682,8 +648,11 @@
         "Icon": 500445,
         "Text": "Position calibration completed.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -695,9 +664,11 @@
         "Icon": 500309,
         "Text": "Two more backup redundancy nodes to configure.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -709,8 +680,11 @@
         "Icon": 500166,
         "Text": "The first node is on standby now.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -721,9 +695,11 @@
         "Name": "Communication - Commandant",
         "Text": "There's no time. We can't afford a loss.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -735,8 +711,11 @@
         "Icon": 500166,
         "Text": "Got it. Heading to the next area.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -747,8 +726,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Watch out!",
-        "Duration": 1.2,
-        "IsMask": false
+        "Duration": 1.2
     },
     {
         "Id": 749786133,
@@ -757,8 +735,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "Behind you!",
-        "Duration": 1.2,
-        "IsMask": false
+        "Duration": 1.2
     },
     {
         "Id": 749786134,
@@ -768,9 +745,11 @@
         "Icon": 500309,
         "Text": "It was a near miss.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -782,9 +761,11 @@
         "Icon": 500445,
         "Text": "Phew... That was close...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -795,8 +776,11 @@
         "Name": "Communication - Commandant",
         "Text": "Lucia? Lucia! Are you alright?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -808,9 +792,11 @@
         "Icon": 500166,
         "Text": "\"Just a sneak attack. Don't worry, Commandant.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -821,8 +807,11 @@
         "Name": "Communication - Commandant",
         "Text": "Glad that you're fine...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -833,8 +822,11 @@
         "Name": "Communication - Commandant",
         "Text": "You're in charge now. Watch your back.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -846,9 +838,11 @@
         "Icon": 500166,
         "Text": "\"Roger that, Commandant... Hmm? The communication... is interrupted?\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -860,9 +854,11 @@
         "Icon": 500445,
         "Text": "Over there! The Hetero-Creatures!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -874,8 +870,11 @@
         "Icon": 500445,
         "Text": "The Punishing signals must have interfered with the long-wave transmission! We must stop them from destroying the Light Wall node!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -887,9 +886,11 @@
         "Icon": 500309,
         "Text": "We must configure the next set of coordinates as soon as possible. There's no time.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -901,8 +902,11 @@
         "Icon": 500166,
         "Text": "\"I'll bring up the rear. Go, Pulao. You know the place better.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -914,9 +918,11 @@
         "Icon": 500445,
         "Text": "\"Follow me. Take care, Lucia.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -928,8 +934,11 @@
         "Icon": 500309,
         "Text": "\"Make sure you withdraw in time once you finish the configuration, Lucia.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -940,8 +949,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "Lucia! I'll help you!",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 749717151,
@@ -950,8 +958,7 @@
         "Name": "Lucia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZsLuxiyaNormal01.png",
         "Text": "Pulao!",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749717152,
@@ -960,8 +967,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "Only one left.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749717153,
@@ -970,8 +976,7 @@
         "Name": "Pulao",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadPulao1.png",
         "Text": "The setup on the other side is completed. I'm just worried about you.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 749717154,
@@ -980,8 +985,7 @@
         "Name": "Lucia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZsLuxiyaNormal01.png",
         "Text": "Thank you...",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 749717155,
@@ -989,8 +993,7 @@
         "UiType": 1,
         "Name": "Pulao",
         "Text": "\"Over there, Lucia!\"",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749717156,
@@ -998,8 +1001,7 @@
         "UiType": 1,
         "Name": "Lucia",
         "Text": "The Light Wall is rising!",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749717157,
@@ -1007,8 +1009,7 @@
         "UiType": 1,
         "Name": "Lucia",
         "Text": "...Come on!",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 749717158,
@@ -1016,8 +1017,7 @@
         "UiType": 1,
         "Name": "Chrome",
         "Text": "Let's hurry.",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 749717159,
@@ -1025,8 +1025,7 @@
         "UiType": 1,
         "Name": "Pulao",
         "Text": "This way!",
-        "Duration": 1,
-        "IsMask": false
+        "Duration": 1
     },
     {
         "Id": 749833011,
@@ -1036,9 +1035,11 @@
         "Icon": 500309,
         "Text": "The processing nodes are our top priority now.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1050,9 +1051,11 @@
         "Icon": 500309,
         "Text": "\"Once you finish, go help Lucia immediately.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1064,9 +1067,11 @@
         "Icon": 500445,
         "Text": "Hmm? Where did we come from?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1078,9 +1083,11 @@
         "Icon": 500309,
         "Text": "All we need to do now is calibrate the coordinates...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1092,9 +1099,11 @@
         "Icon": 500309,
         "Text": "This is the final step.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1106,9 +1115,11 @@
         "Icon": 500309,
         "Text": "\"Lucia, your priority is to configure the Light Wall.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1120,9 +1131,11 @@
         "Icon": 500309,
         "Text": "\"Lucia, that's not where the coordinates Commandant sent are.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1134,9 +1147,11 @@
         "Icon": 500445,
         "Text": "\"Hey, Lucia! Wrong way!\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1148,9 +1163,11 @@
         "Icon": 500445,
         "Text": "Hmm? Is it this way? Doesn't look very familiar to me...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1162,9 +1179,11 @@
         "Icon": 500445,
         "Text": "\"Over here, Lucia.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1176,9 +1195,11 @@
         "Icon": 500309,
         "Text": "Time never waits.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1188,8 +1209,7 @@
         "UiType": 1,
         "Name": "<color=#d95e32>Fallen</color> <color=#ededed>Stone Lion</color>",
         "Text": "Oops—I fell down.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749716172,
@@ -1197,8 +1217,7 @@
         "UiType": 1,
         "Name": "<color=#d95e32>Fallen</color> <color=#ededed>Stone Lion</color>",
         "Text": "...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749716173,
@@ -1206,8 +1225,7 @@
         "UiType": 1,
         "Name": "<color=#d95e32>Fallen</color> <color=#ededed>Stone Lion</color>",
         "Text": "Help! Anybody here—?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749716174,
@@ -1215,8 +1233,7 @@
         "UiType": 1,
         "Name": "<color=#d95e32>Fallen</color> <color=#ededed>Stone Lion</color>",
         "Text": "I—fell—down—",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749716194,
@@ -1224,8 +1241,7 @@
         "UiType": 1,
         "Name": "<color=#d95e32>Fallen</color> <color=#ededed>Stone Lion</color>",
         "Text": "\"Help me, kind sir.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749716204,
@@ -1233,8 +1249,7 @@
         "UiType": 1,
         "Name": "<color=#d95e32>Angry</color> <color=#ededed>Fallen Stone Lion</color>",
         "Text": "I'm a stone lion. Not a dead lion...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749716214,
@@ -1242,8 +1257,7 @@
         "UiType": 1,
         "Name": "<color=#d4d0cd>Desperate</color> <color=#ededed>Fallen Stone Lion</color>",
         "Text": "(._ .)...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749716175,
@@ -1251,8 +1265,7 @@
         "UiType": 1,
         "Name": "<color=##92ed74>Standing</color> <color=#ededed>Stone Lion</color>",
         "Text": "Thanks. You are so kind!",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 749716176,
@@ -1260,8 +1273,7 @@
         "UiType": 1,
         "Name": "<color=#d95e32>Fallen</color> <color=#ededed>Stone Lion</color>",
         "Text": "Please—help—",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 749716177,
@@ -1269,8 +1281,7 @@
         "UiType": 1,
         "Name": "<color=#d95e32>Fallen</color> <color=#ededed>Stone Lion</color>",
         "Text": "No—",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 749716162,
@@ -1278,8 +1289,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "<color=#D1D1D1>A Guardian I with its key component damaged. Barely conscious.</color>",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 749716163,
@@ -1289,9 +1299,11 @@
         "Icon": 500247,
         "Text": "\"We could only set up obstacles along the way, but they couldn't be stopped...\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1303,9 +1315,11 @@
         "Icon": 500247,
         "Text": "I will fight... till the last moment...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1317,8 +1331,11 @@
         "Icon": 500309,
         "Text": "\"I don't know if it's the right model, but you should be able to install it.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1330,8 +1347,11 @@
         "Icon": 500309,
         "Text": "\"Sorry, but there's nothing I can do.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1343,9 +1363,11 @@
         "Icon": 500247,
         "Text": "\"Argh... Tell me, did we manage to... hold the line?\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1357,9 +1379,11 @@
         "Icon": 500247,
         "Text": "Thank you...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1370,7 +1394,6 @@
         "Name": "Injured Guardian",
         "Text": "Rebooting battle protocol... I'll be back soon.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             2.5
         ]
@@ -1381,8 +1404,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "<color=#D1D1D1>Blubber Component (xxxx)</color>",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 749716181,
@@ -1392,9 +1414,11 @@
         "Icon": 500445,
         "Text": "The calibration of Light Wall node... is complete!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1406,9 +1430,11 @@
         "Icon": 500445,
         "Text": "But it's so quiet here. I don't see any enemies on the street...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1420,8 +1446,11 @@
         "Icon": 500445,
         "Text": "Dammit!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1433,9 +1462,11 @@
         "Icon": 500309,
         "Text": "They sure come on time...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1447,9 +1478,11 @@
         "Icon": 500309,
         "Text": "Prepare for battle!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1461,9 +1494,11 @@
         "Icon": 500445,
         "Text": "It's Lucia!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -1475,9 +1510,11 @@
         "Icon": 500309,
         "Text": "Leave this to me.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1489,8 +1526,11 @@
         "Icon": 500445,
         "Text": "I'll go help Lucia!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1502,9 +1542,11 @@
         "Icon": 500309,
         "Text": "What is going on...!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1516,9 +1558,11 @@
         "Icon": 500247,
         "Text": "...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1530,9 +1574,11 @@
         "Icon": 500247,
         "Text": "You are not Kowloong's enemy.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -1542,8 +1588,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "<color=#D1D1D1>(Dead)</color>",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 749786301,
@@ -1551,8 +1596,8 @@
         "UiType": 1,
         "Text": "\"<color=#D1D1D1><size=35>Kowloong - Rebooting Light Wall </size></color>\\n<size=28>No. 57 Light Wall Node</size>\\n<size=28>Nov 9, 20:57</size>\"",
         "Duration": 4.5,
-        "IsMask": false,
         "Params": [
+            "",
             10
         ]
     },
@@ -1562,8 +1607,7 @@
         "UiType": 1,
         "Name": "Please select",
         "Text": "Continue",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 74984000,
@@ -1572,8 +1616,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "The elevator!",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 74984001,
@@ -1582,8 +1625,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Someone's getting off the elevator!",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 74984002,
@@ -1592,8 +1634,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "Watch out—!",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 74984003,
@@ -1602,8 +1643,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "We are running out of time!",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 74984004,
@@ -1612,8 +1652,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Dammit!",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 74984005,
@@ -1622,8 +1661,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "So many lives were lost...",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 74984006,
@@ -1632,8 +1670,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "\"Keep going, Liv.\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984007,
@@ -1642,8 +1679,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "We should be able to start the elevator.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984100,
@@ -1652,8 +1688,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "\"Cover my back, Lee.\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984101,
@@ -1662,8 +1697,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "More enemies here!",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984102,
@@ -1672,8 +1706,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "We need to evacuate the civilians!",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984103,
@@ -1682,8 +1715,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "\"Commandant, set up defenses on Level 2!\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984104,
@@ -1692,8 +1724,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "\"Ready to go, Commandant!\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984105,
@@ -1702,8 +1733,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "\"Over there, Commandant!\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984106,
@@ -1712,8 +1742,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "\"Get ready, Commandant.\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984107,
@@ -1722,8 +1751,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Are they ever going to stop?",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984108,
@@ -1732,8 +1760,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "Lucia's still outside!",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984109,
@@ -1742,8 +1769,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "She will be in trouble.",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 74984110,
@@ -1752,8 +1778,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "What—?",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984111,
@@ -1762,8 +1787,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Li1.png",
         "Text": "The evacuation is complete. I'm back.",
-        "Duration": 5.5,
-        "IsMask": false
+        "Duration": 5.5
     },
     {
         "Id": 74984112,
@@ -1772,8 +1796,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "\"We need backup, Lee!\"",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 74984113,
@@ -1782,8 +1805,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "\"Stay close to me, Commandant.\"",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 74984114,
@@ -1792,8 +1814,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Li1.png",
         "Text": "I need some time.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984115,
@@ -1802,8 +1823,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Li1.png",
         "Text": "\"Meanwhile, I'll continue to provide long-range support.\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984116,
@@ -1812,8 +1832,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Li1.png",
         "Text": "\"I'll leave it to you, Commandant.\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984117,
@@ -1822,8 +1841,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Let's buy Lee some time.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984118,
@@ -1832,8 +1850,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "\"We have plenty of ammunition, Commandant.\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984119,
@@ -1842,8 +1859,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Li1.png",
         "Text": "\"Get out of there, Commandant!\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984120,
@@ -1852,8 +1868,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Cover Commandant.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984121,
@@ -1862,8 +1877,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "\"Let's go, Commandant.\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 749841501,
@@ -1871,8 +1885,7 @@
         "UiType": 1,
         "Name": "Liv",
         "Text": "The elevator should be on the other side.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749841511,
@@ -1880,8 +1893,7 @@
         "UiType": 1,
         "Name": "Chrome",
         "Text": "\"Right now, the priority is to establish a line of defense on Level 2.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749841502,
@@ -1889,8 +1901,7 @@
         "UiType": 1,
         "Name": "Liv",
         "Text": "It probably needs a power supply...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749841512,
@@ -1898,8 +1909,7 @@
         "UiType": 1,
         "Name": "Chrome",
         "Text": "Look for the switch.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749841503,
@@ -1907,16 +1917,14 @@
         "UiType": 1,
         "Name": "<color=#C4C4C4>Elevator power supply</color>",
         "Text": "<color=#A8A8A8>Enter command</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749841504,
         "Type": 4,
         "UiType": 1,
         "Text": "<color=#A8A8A8>Start the elevator</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 749841505,
@@ -1925,8 +1933,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "More enemies over there!",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 749841506,
@@ -1935,8 +1942,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Hold our ground first.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 749841507,
@@ -1945,8 +1951,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Let's go to the other side.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 749841508,
@@ -1955,8 +1960,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "Level 1 is getting better.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 749841509,
@@ -1965,8 +1969,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Move to the right. The mission will continue.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 74984199,
@@ -1974,8 +1977,8 @@
         "UiType": 4,
         "Text": "\"<color=#D1D1D1><size=35>Tabula Akasha Central Control Room</size></color>\\n<size=28>To Fight, or to Die</size>\\n<size=28>30 minutes till Huaxu's firewall collapses</size>\"",
         "Duration": 7,
-        "IsMask": false,
         "Params": [
+            "",
             10
         ]
     },
@@ -1987,7 +1990,6 @@
         "Icon": 500309,
         "Text": "I appreciate your assistance.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -1999,8 +2001,7 @@
         "Name": "Lee",
         "Icon": 500568,
         "Text": "No problem. Level 2 is all settled. Commandant and I have come down to double check the situation.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29200003,
@@ -2010,7 +2011,6 @@
         "Icon": 500309,
         "Text": "\"I'll leave this place to you, Gray Raven. Kamui and others are still in the outer engineering tunnel. I'll go meet them now.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2023,7 +2023,6 @@
         "Icon": 500309,
         "Text": "There are also some soldiers who just fell back in here. I'll entrust them to your care.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2035,8 +2034,7 @@
         "Name": "Lee",
         "Icon": 500568,
         "Text": "Sure. Thanks for taking care of the outside.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29200006,
@@ -2046,7 +2044,6 @@
         "Icon": 500309,
         "Text": "I'll contact you if there is a situation.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2059,9 +2056,11 @@
         "Icon": 500309,
         "Text": "\"By the way, I found this outside the town. It seems to belong to Yazi.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2071,8 +2070,7 @@
         "UiType": 1,
         "Name": "Lee",
         "Text": "\"Anyway, go investigate this place.\"",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 29201001,
@@ -2080,8 +2078,7 @@
         "UiType": 1,
         "Name": "Pulao",
         "Text": "Lady Qu...? Kowloong is currently facing real hardship...",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29201002,
@@ -2089,8 +2086,7 @@
         "UiType": 1,
         "Name": "Qu",
         "Text": "I know.",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29201003,
@@ -2098,8 +2094,7 @@
         "UiType": 1,
         "Name": "Qu",
         "Text": "Has everybody been evacuated?",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29201004,
@@ -2107,8 +2102,7 @@
         "UiType": 1,
         "Name": "Pulao",
         "Text": "Yes... Except those who were already lost.",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29201005,
@@ -2117,8 +2111,11 @@
         "Name": "Qu",
         "Text": "What should I say...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2130,8 +2127,11 @@
         "Icon": 500150,
         "Text": "No one could easily kill me.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2143,8 +2143,11 @@
         "Icon": 500150,
         "Text": "Gabriel... Hmph. Only an Ascendant.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2156,8 +2159,11 @@
         "Icon": 500150,
         "Text": "The Kowloong people aren't intruders. You are.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2169,8 +2175,11 @@
         "Icon": 500150,
         "Text": "How they see me is their own business.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2182,8 +2191,11 @@
         "Icon": 500150,
         "Text": "This is the center of Tabula Akasha. Of course it's my usual post.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2195,8 +2207,11 @@
         "Icon": 500150,
         "Text": "Even if I die... I will die here.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2208,8 +2223,11 @@
         "Icon": 500150,
         "Text": "Kowloong has its own method to defeat all invaders.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2221,8 +2239,11 @@
         "Icon": 500150,
         "Text": "We never fear war.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2234,8 +2255,11 @@
         "Icon": 500150,
         "Text": "\"Alright, enough questions.\"",
         "Duration": 4,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1,
             1
         ]
@@ -2246,8 +2270,7 @@
         "UiType": 1,
         "Name": "Pulao",
         "Text": "Huh?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010131,
@@ -2256,8 +2279,7 @@
         "Name": "Pulao",
         "Icon": 500445,
         "Text": "Yeah... I thought I could hide it...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010132,
@@ -2266,8 +2288,7 @@
         "Name": "Pulao",
         "Icon": 500445,
         "Text": "The people on the Nighter still need us. But we don't even know how to defeat these enemies.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010133,
@@ -2276,8 +2297,7 @@
         "Name": "Pulao",
         "Icon": 500445,
         "Text": "And... Hanying...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010888,
@@ -2287,8 +2307,11 @@
         "Icon": 500445,
         "Text": "Sigh. I'll go take a walk...",
         "Duration": 4,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2298,8 +2321,7 @@
         "UiType": 1,
         "Name": "Qu",
         "Text": "Next...",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29201022,
@@ -2307,8 +2329,7 @@
         "UiType": 1,
         "Name": "Qu",
         "Text": "Huaxu's processing power...",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 292010211,
@@ -2318,8 +2339,11 @@
         "Icon": 500150,
         "Text": "Has no one told you that you should bow to a sovereign when entering her residence?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2331,9 +2355,11 @@
         "Icon": 500568,
         "Text": "...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2345,8 +2371,10 @@
         "Icon": 500150,
         "Text": "Whatever. I'll close one eye this time. Just don't touch anything.",
         "Duration": 4,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
             1,
             1
         ]
@@ -2357,8 +2385,7 @@
         "UiType": 1,
         "Name": "[Tip]",
         "Text": "The ending point has spawned near the elevator. You can go there anytime to end this stage.",
-        "Duration": 7,
-        "IsMask": false
+        "Duration": 7
     },
     {
         "Id": 29201031,
@@ -2366,8 +2393,7 @@
         "UiType": 1,
         "Name": "Qu",
         "Text": "At least...",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 29201032,
@@ -2375,8 +2401,7 @@
         "UiType": 1,
         "Name": "Qu",
         "Text": "From here onward... Kowloong's future...",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 29201033,
@@ -2384,8 +2409,7 @@
         "UiType": 1,
         "Name": "Qu",
         "Text": "People must have a goal...",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 29201034,
@@ -2393,8 +2417,7 @@
         "UiType": 1,
         "Name": "Qu",
         "Text": "Whatever it takes...",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 292010301,
@@ -2404,8 +2427,11 @@
         "Icon": 500150,
         "Text": "\"Instead of holding information from you, I would rather be open and honest.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2417,9 +2443,11 @@
         "Icon": 500568,
         "Text": "...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2431,8 +2459,11 @@
         "Icon": 500150,
         "Text": "Don't disturb me.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -2443,8 +2474,7 @@
         "Name": "Pulao",
         "Icon": 500445,
         "Text": "\"Oh, you're here too.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29202002,
@@ -2454,7 +2484,6 @@
         "Icon": 500568,
         "Text": "Liv will come and treat you again later in the order of priority.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2466,8 +2495,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "Hmm... Thanks.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29202004,
@@ -2477,7 +2505,6 @@
         "Icon": 500405,
         "Text": "\"Alright, stop talking...\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2489,8 +2516,7 @@
         "Name": "Pulao",
         "Icon": 500445,
         "Text": "\"Alright, just lie down.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292020011,
@@ -2499,8 +2525,7 @@
         "Name": "Pulao",
         "Icon": 500445,
         "Text": "\"Um, actually... I found a letter earlier on. It was for you.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292020012,
@@ -2510,7 +2535,6 @@
         "Icon": 500823,
         "Text": "Huh?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2522,8 +2546,7 @@
         "Name": "Pulao",
         "Icon": 500445,
         "Text": "This is for you.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292020014,
@@ -2533,7 +2556,6 @@
         "Icon": 500823,
         "Text": "\"My granddaughter, maybe you...\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2545,8 +2567,7 @@
         "Name": "Pulao",
         "Icon": 500445,
         "Text": "...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292020016,
@@ -2556,7 +2577,6 @@
         "Icon": 500823,
         "Text": "\"...Thank you, Madam Pulao.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2568,8 +2588,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "Not bad. Thanks to Liv and Wanshi...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292030052,
@@ -2579,7 +2598,6 @@
         "Icon": 500405,
         "Text": "You are also recovering exceptionally well. You must be very fit.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2591,8 +2609,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "I guess so...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292030061,
@@ -2601,8 +2618,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "I have only heard her story from Grandpa. She and her father established Kowloong's glory and prosperity.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292030065,
@@ -2611,8 +2627,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "If she really is Lady Qu... I'm willing to follow her.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292030063,
@@ -2621,8 +2636,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "I'm sure she can make Kowloong thrive again!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292030071,
@@ -2631,8 +2645,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "I wronged him. I didn't even get to see him one last time...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292030072,
@@ -2641,8 +2654,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "He... died a soldier.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292030073,
@@ -2651,8 +2663,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "\"He won't be the only one. My father, and I... will do the same.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292030081,
@@ -2661,8 +2672,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "Hmm. It could be a part used on Blubber's exoskeleton. Let me take a look...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292030082,
@@ -2672,7 +2682,6 @@
         "Icon": 500405,
         "Text": "\"Hey, your wounds aren't healed yet!\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2684,8 +2693,7 @@
         "Name": "Zhishi",
         "Icon": 500823,
         "Text": "\"Great, I can use it. Thanks!\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29203001,
@@ -2693,8 +2701,7 @@
         "UiType": 1,
         "Name": "Zhishi",
         "Text": "\"Ouch, my whole body hurts...\"",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29203002,
@@ -2702,8 +2709,7 @@
         "UiType": 1,
         "Name": "Medic",
         "Text": "Told you not to move...",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29200000,
@@ -2711,8 +2717,8 @@
         "UiType": 4,
         "Text": "<color=#D1D1D1><size=35>Tabula Akasha Central Control Room</size></color>\\n<size=28>Relocation and Evacuation</size>\\n<size=28>1 hour till Huaxu's firewall collapses</size>",
         "Duration": 8.5,
-        "IsMask": false,
         "Params": [
+            "",
             10
         ]
     },
@@ -2722,8 +2728,7 @@
         "UiType": 1,
         "Name": "Pulao",
         "Text": "Get some rest.",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 292020022,
@@ -2731,8 +2736,7 @@
         "UiType": 1,
         "Name": "Pulao",
         "Text": "You are recovering so fast.",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29204001,
@@ -2740,8 +2744,7 @@
         "UiType": 1,
         "Name": "Yazi",
         "Text": "...What is it?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292040021,
@@ -2749,8 +2752,7 @@
         "UiType": 1,
         "Name": "Yazi",
         "Text": "\"I last saw this \"\"Lady Qu\"\" in the battle of Kowloong. She didn't let the Nighter go home back then; I thought she would reject it forever.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292040022,
@@ -2758,8 +2760,7 @@
         "UiType": 1,
         "Name": "Yazi",
         "Text": "\"But now that I think about it, she didn't really reject us back then, nor did she this time.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292040023,
@@ -2767,8 +2768,7 @@
         "UiType": 1,
         "Name": "Yazi",
         "Text": "I wonder if she has a better way to hold off the Punishing outside...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292040024,
@@ -2776,8 +2776,7 @@
         "UiType": 1,
         "Name": "Yazi",
         "Text": "Pulao must be feeling very lost too.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29204003,
@@ -2786,8 +2785,11 @@
         "Name": "Yazi",
         "Text": "I'll go help the Pulao Crew.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1,
             1
         ]
@@ -2799,8 +2801,7 @@
         "Name": "Yazi",
         "Icon": 500143,
         "Text": "\"Oh, this is my umbrella indeed. Thanks.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292040042,
@@ -2809,8 +2810,7 @@
         "Name": "Yazi",
         "Icon": 500143,
         "Text": "\"Regardless of the weather, no matter what happens, I must hold this umbrella up for Kowloong...\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292040051,
@@ -2818,8 +2818,7 @@
         "UiType": 1,
         "Name": "Yazi",
         "Text": "Nothing abnormal...",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 292040052,
@@ -2827,8 +2826,7 @@
         "UiType": 1,
         "Name": "Yazi",
         "Text": "Stay vigilant.",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 292040053,
@@ -2836,8 +2834,7 @@
         "UiType": 1,
         "Name": "Yazi",
         "Text": "I wonder if Lady Qu is alright...",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 292092011,
@@ -2845,8 +2842,7 @@
         "UiType": 1,
         "Name": "Hanged Man",
         "Text": "Anything I can do for you?",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 292092012,
@@ -2854,8 +2850,7 @@
         "UiType": 1,
         "Name": "Mr. Hu",
         "Text": "Could you move that rock away?",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 292092013,
@@ -2863,8 +2858,7 @@
         "UiType": 1,
         "Name": "He",
         "Text": "Right. There are too many people here. We don't have enough room to sit...",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 292092021,
@@ -2872,8 +2866,7 @@
         "UiType": 1,
         "Name": "Hanged Man",
         "Text": "Hello. Is there anything I can do for you?",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 292092022,
@@ -2881,8 +2874,7 @@
         "UiType": 1,
         "Name": "Mr. Hu",
         "Text": "\"He, your food...\"",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 292092023,
@@ -2890,8 +2882,7 @@
         "UiType": 1,
         "Name": "He",
         "Text": "I need rice to cook...",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 29209301,
@@ -2899,8 +2890,7 @@
         "UiType": 1,
         "Name": "Kowloong Resident",
         "Text": "I don't feel like eating at all.",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 29209302,
@@ -2908,8 +2898,7 @@
         "UiType": 1,
         "Name": "Kowloong Resident",
         "Text": "At least have some porridge. You have to eat something...",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 29205001,
@@ -2917,8 +2906,7 @@
         "UiType": 1,
         "Name": "Injured Worker",
         "Text": "Cough...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29205002,
@@ -2926,8 +2914,7 @@
         "UiType": 1,
         "Name": "Liv",
         "Text": "I'm here.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292050031,
@@ -2937,7 +2924,6 @@
         "Icon": 1031001,
         "Text": "\"Are you done communicating with Commandant, Lee? How's it going?\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2949,8 +2935,7 @@
         "Name": "Lee",
         "Icon": 500568,
         "Text": "\"Yeah, everything should be fine. The Pulao Crew are also doing good.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292050033,
@@ -2960,7 +2945,6 @@
         "Icon": 500136,
         "Text": "\"Oh, did you come from outside? Have the Chiwen Crew evacuated the people in the factory? My son—\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -2972,8 +2956,7 @@
         "Name": "Liv",
         "Icon": 1031001,
         "Text": "\"Don't worry, mister. He'll be alright.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292050035,
@@ -2982,8 +2965,7 @@
         "Name": "Liv",
         "Icon": 1031001,
         "Text": "Ahem. Should we... change a topic?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292050036,
@@ -2993,7 +2975,6 @@
         "Icon": 500568,
         "Text": "Got it...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -3006,8 +2987,11 @@
         "Icon": 500136,
         "Text": "What's going on...?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1,
             1
         ]
@@ -3020,8 +3004,11 @@
         "Icon": 500136,
         "Text": "I see. I knew it...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -3031,8 +3018,7 @@
         "UiType": 1,
         "Name": "Injured Worker",
         "Text": "Thank you...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29205008,
@@ -3040,8 +3026,7 @@
         "UiType": 1,
         "Name": "Liv",
         "Text": "Things will get better...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29206011,
@@ -3049,8 +3034,7 @@
         "UiType": 1,
         "Name": "Kowloong Crew Construct",
         "Text": "So this is Tabula Akasha...",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29206012,
@@ -3058,8 +3042,7 @@
         "UiType": 1,
         "Name": "Kowloong Crew Construct",
         "Text": "I have never seen such a majestic building before...",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29206013,
@@ -3067,8 +3050,7 @@
         "UiType": 1,
         "Name": "Kowloong Crew Construct",
         "Text": "What about this way?",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 29206014,
@@ -3076,8 +3058,7 @@
         "UiType": 1,
         "Name": "Kowloong Crew Construct",
         "Text": "This place seems safer.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 29206015,
@@ -3085,8 +3066,7 @@
         "UiType": 1,
         "Name": "Kowloong Crew Construct",
         "Text": "We can't keep doing this forever...",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 29206021,
@@ -3094,8 +3074,7 @@
         "UiType": 1,
         "Name": "Kowloong Crew Construct",
         "Text": "Better go through this first.",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 29206022,
@@ -3103,8 +3082,7 @@
         "UiType": 1,
         "Name": "Kowloong Crew Construct",
         "Text": "Wait until the battle is over...",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 29206023,
@@ -3112,8 +3090,7 @@
         "UiType": 1,
         "Name": "Kowloong Crew Construct",
         "Text": "Best to ask Medic. She should be near the elevator...",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 29206031,
@@ -3121,8 +3098,7 @@
         "UiType": 1,
         "Name": "Kowloong Crew Construct",
         "Text": "Um... Anything I can help with?",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 292060321,
@@ -3131,8 +3107,7 @@
         "Name": "Kowloong Crew Construct",
         "Icon": 500019,
         "Text": "\"You mean her? Other than Medic, we still have a few more teammates outside. They should be with Strike Hawk now.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292060322,
@@ -3141,8 +3116,7 @@
         "Name": "Kowloong Crew Construct",
         "Icon": 500019,
         "Text": "\"Yeah, this female Construct is one of my teammates. Another one from my team is waiting outside, probably with other Babylonian Constructs.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292060323,
@@ -3151,8 +3125,7 @@
         "Name": "Kowloong Crew Construct",
         "Icon": 500019,
         "Text": "I have been walking around here. I just want to check if there is anything I could help.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292060324,
@@ -3162,7 +3135,6 @@
         "Icon": 500405,
         "Text": "Don't give me more work to do. Just watch over this place.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -3174,8 +3146,7 @@
         "Name": "Kowloong Crew Construct",
         "Icon": 500019,
         "Text": "\"Alright then. When she's back, you should make her stay here and watch over the place. I'm better off fighting outside.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292060326,
@@ -3185,7 +3156,6 @@
         "Icon": 500405,
         "Text": "Okay. Just get going.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -3197,8 +3167,7 @@
         "Name": "Kowloong Crew Construct",
         "Icon": 500019,
         "Text": "On it!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292060328,
@@ -3207,8 +3176,7 @@
         "Name": "Kowloong Crew Construct",
         "Icon": 500019,
         "Text": "Um... Sorry for letting you see that.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292060329,
@@ -3218,7 +3186,6 @@
         "Icon": 500568,
         "Text": "I guess we are all just doing what we can.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -3229,16 +3196,14 @@
         "UiType": 1,
         "Name": "Cardboard box on the shelf",
         "Text": "The box seems to contain Qu's personal items.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010223,
         "Type": 4,
         "UiType": 1,
         "Text": "\"It has an antique style with a faint, lingering fragrance.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010232,
@@ -3246,16 +3211,14 @@
         "UiType": 1,
         "Name": "Some paper documents scattered on the ground",
         "Text": "\"The data consists of mostly parameters of Kowloong and the Nighter, with notes written by Qu.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010233,
         "Type": 4,
         "UiType": 1,
         "Text": "She seems to really care about the life of the Nighter's residents.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010242,
@@ -3263,16 +3226,14 @@
         "UiType": 1,
         "Name": "A still operating control terminal on the desk",
         "Text": "Qu seems to write random things and thoughts in this journal.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010243,
         "Type": 4,
         "UiType": 1,
         "Text": "Even someone like Qu would also forget things occasionally...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010252,
@@ -3280,24 +3241,21 @@
         "UiType": 1,
         "Name": "Documents on the wall",
         "Text": "\"There is information about Luna, as well as forms of the Science Council.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010253,
         "Type": 4,
         "UiType": 1,
         "Text": "\"The operating parameters of Babylonia, a report about Hetero Tower, and a lot of other things...\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 292010254,
         "Type": 4,
         "UiType": 1,
         "Text": "As well as the files of Gray Raven.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207011,
@@ -3305,16 +3263,14 @@
         "UiType": 1,
         "Name": "Stone Lion",
         "Text": "\"Oh kind-hearted person, please help me.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207012,
         "Type": 4,
         "UiType": 1,
         "Text": "\"Oops, I fell down again—Why did I say \"\"again\"\"?\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207013,
@@ -3322,16 +3278,14 @@
         "UiType": 1,
         "Name": "Stone Lion",
         "Text": "I can't get up...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207014,
         "Type": 4,
         "UiType": 1,
         "Text": "\"Help me, another Mr. Construct—Why did I say \"\"another\"\"?\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207016,
@@ -3339,8 +3293,7 @@
         "UiType": 1,
         "Name": "Stone Lion",
         "Text": "Thanks. You are so kind!",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29207021,
@@ -3348,8 +3301,7 @@
         "UiType": 1,
         "Name": "Stone Lion",
         "Text": "The ground is so slippery...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207022,
@@ -3357,16 +3309,14 @@
         "UiType": 1,
         "Name": "Stone Lion",
         "Text": "I fell down again...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207023,
         "Type": 4,
         "UiType": 1,
         "Text": "\"Please, help me one more time. I promise I won't fall again!\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207025,
@@ -3374,8 +3324,7 @@
         "UiType": 1,
         "Name": "Stone Lion",
         "Text": "Thanks. You are so kind!",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29207031,
@@ -3383,8 +3332,7 @@
         "UiType": 1,
         "Name": "Stone Lion",
         "Text": "...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207032,
@@ -3392,8 +3340,7 @@
         "UiType": 1,
         "Name": "Stone Lion",
         "Text": "Um...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207033,
@@ -3401,8 +3348,7 @@
         "UiType": 1,
         "Name": "Stone Lion",
         "Text": "\"...Please, let me explain.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207035,
@@ -3411,8 +3357,7 @@
         "Name": "Lee",
         "Icon": 500568,
         "Text": "...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207036,
@@ -3421,7 +3366,6 @@
         "Name": "Stone Lion",
         "Text": "...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -3433,8 +3377,7 @@
         "Name": "Lee",
         "Icon": 500568,
         "Text": "...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207038,
@@ -3443,7 +3386,6 @@
         "Name": "Stone Lion",
         "Text": "...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -3455,8 +3397,7 @@
         "Name": "Lee",
         "Icon": 500568,
         "Text": "\"I'll get going, then.\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207040,
@@ -3465,7 +3406,6 @@
         "Name": "Stone Lion",
         "Text": "Wait! Mr. Construct!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -3477,7 +3417,6 @@
         "Name": "Stone Lion",
         "Text": "Please! Don't go!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -3489,7 +3428,6 @@
         "Name": "Stone Lion",
         "Text": "\"I promise I will never run around again! Please, help me.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -3501,8 +3439,7 @@
         "Name": "Lee",
         "Icon": 500568,
         "Text": "One last time.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 29207044,
@@ -3510,8 +3447,7 @@
         "UiType": 1,
         "Name": "Stone Lion",
         "Text": "\"Thank you for being so kind to me, Mr. Construct.\"",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 29209101,
@@ -3519,8 +3455,7 @@
         "UiType": 1,
         "Name": "Kemuri",
         "Text": "Why is Guardian not back yet...?",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 29209102,
@@ -3528,8 +3463,7 @@
         "UiType": 1,
         "Name": "Kemuri",
         "Text": "Question. How did Guardian get back here?",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 29209103,
@@ -3537,8 +3471,7 @@
         "UiType": 1,
         "Name": "Guardian",
         "Text": "A kind-hearted Construct saved me...",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 74984131,
@@ -3547,8 +3480,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Li1.png",
         "Text": "That Construct...",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 74984132,
@@ -3557,8 +3489,7 @@
         "Name": "Liv",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/LifuNormal02.png",
         "Text": "What's wrong?",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 74984133,
@@ -3567,8 +3498,7 @@
         "Name": "Chrome",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ZskuluomuNormal01.png",
         "Text": "Hmm...",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 74984134,
@@ -3577,8 +3507,7 @@
         "Name": "Lee",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Li1.png",
         "Text": "Nothing.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 74984135,
@@ -3586,8 +3515,7 @@
         "UiType": 1,
         "Name": "Corrupted Construct",
         "Text": "Medic... H-help... me...",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 74989501,
@@ -3595,8 +3523,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "I should hurry up.",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 74989502,
@@ -3604,8 +3531,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "There's no time to waste.",
-        "Duration": 1.8,
-        "IsMask": false
+        "Duration": 1.8
     },
     {
         "Id": 300123001,
@@ -3613,8 +3539,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Now...",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 300123002,
@@ -3622,8 +3547,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "The rift... is closed.",
-        "Duration": 2.7,
-        "IsMask": false
+        "Duration": 2.7
     },
     {
         "Id": 300123003,
@@ -3631,8 +3555,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Huh?",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 300123004,
@@ -3640,8 +3563,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "\"Hmph, still relying on your boring little tricks?\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300123005,
@@ -3649,8 +3571,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "\"Whatever you're trying to do, I'll stop you.\"",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 300123006,
@@ -3658,8 +3579,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "\"Whatever you're trying to do, I'll stop you.\"",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 300123007,
@@ -3667,8 +3587,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "Luna...",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 300123008,
@@ -3676,8 +3595,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "These crystals are dangerous.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 300123009,
@@ -3685,8 +3603,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Not again?",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 300123010,
@@ -3694,8 +3611,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "(Deleted)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300123011,
@@ -3703,8 +3619,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "These crystals...",
-        "Duration": 1.7,
-        "IsMask": false
+        "Duration": 1.7
     },
     {
         "Id": 300123012,
@@ -3712,8 +3627,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "(Deleted)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300123013,
@@ -3721,8 +3635,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "A trap...?",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 300123014,
@@ -3730,8 +3643,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Hmm...",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 300123015,
@@ -3739,8 +3651,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Continue.",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 300123016,
@@ -3748,8 +3659,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "(Deleted)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300123017,
@@ -3757,8 +3667,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "(Deleted)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300123018,
@@ -3766,8 +3675,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "(Deleted)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300123019,
@@ -3775,8 +3683,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "The door's over there...",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 300123020,
@@ -3784,8 +3691,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "\"I understand, Luna. The shackles in your heart can't be easily removed.\"",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 300123021,
@@ -3793,8 +3699,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "\"But because of that, your true growth will come when you break free from them.\"",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300123022,
@@ -3802,8 +3707,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "You have immense potential. All you need is a little guidance.",
-        "Duration": 4.2,
-        "IsMask": false
+        "Duration": 4.2
     },
     {
         "Id": 300123023,
@@ -3811,8 +3715,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Shut up!",
-        "Duration": 1.7,
-        "IsMask": false
+        "Duration": 1.7
     },
     {
         "Id": 300123024,
@@ -3820,8 +3723,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "I'll wait for you at the end.",
-        "Duration": 1.8,
-        "IsMask": false
+        "Duration": 1.8
     },
     {
         "Id": 300123025,
@@ -3829,8 +3731,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "(Deleted)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300123026,
@@ -3838,8 +3739,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "(Deleted)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300123027,
@@ -3847,8 +3747,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "\"At last, the re-filtering process is about to begin.\"",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 300123100,
@@ -3856,8 +3755,7 @@
         "UiType": 1,
         "Name": "<color=#D1D1D1>[Tip]</color>",
         "Text": "<color=#D1D1D1>The portal is activated</color>",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300122001,
@@ -3865,8 +3763,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "(Text deleted)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300122002,
@@ -3874,8 +3771,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Hmm?!",
-        "Duration": 0.9,
-        "IsMask": false
+        "Duration": 0.9
     },
     {
         "Id": 300122003,
@@ -3883,8 +3779,7 @@
         "UiType": 1,
         "Name": "Hetero-Sapien",
         "Text": "(Sound)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300122004,
@@ -3892,8 +3787,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "She has planned all of this.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 300122005,
@@ -3901,8 +3795,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Get rid of the obstacles first.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 300122006,
@@ -3910,8 +3803,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "\"Remove the obstacles, and a path will show up.\"",
-        "Duration": 2.8,
-        "IsMask": false
+        "Duration": 2.8
     },
     {
         "Id": 300122007,
@@ -3919,8 +3811,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "I should hurry up.",
-        "Duration": 1.2,
-        "IsMask": false
+        "Duration": 1.2
     },
     {
         "Id": 300122008,
@@ -3928,8 +3819,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "There's no time to waste.",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 300122009,
@@ -3937,8 +3827,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Selene's interference is still lingering.",
-        "Duration": 2.4,
-        "IsMask": false
+        "Duration": 2.4
     },
     {
         "Id": 300122010,
@@ -3946,8 +3835,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Did I miss something?",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 300122011,
@@ -3955,8 +3843,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "Are we going to continue?",
-        "Duration": 1.2,
-        "IsMask": false
+        "Duration": 1.2
     },
     {
         "Id": 300122012,
@@ -3964,8 +3851,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "(Recovery)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300122013,
@@ -3973,8 +3859,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "Sludge...",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 300122014,
@@ -3982,8 +3867,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Hmm? Who's there?",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 300122015,
@@ -3991,8 +3875,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "A black world...",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 300122016,
@@ -4000,8 +3883,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Is this... Selene's memory fragment?",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 300122017,
@@ -4009,8 +3891,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "I... have seen it...",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300122018,
@@ -4018,8 +3899,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "I can't hear clearly...",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 300122019,
@@ -4027,8 +3907,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "That's why I hate...",
-        "Duration": 1.7,
-        "IsMask": false
+        "Duration": 1.7
     },
     {
         "Id": 300122020,
@@ -4036,8 +3915,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "...",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 300122021,
@@ -4045,8 +3923,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "(Laughter)",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 300122022,
@@ -4054,8 +3931,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "Open it...",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 300122023,
@@ -4063,8 +3939,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "The obstacle's gone.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300122024,
@@ -4072,8 +3947,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "The ground has disappeared...",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300122025,
@@ -4081,8 +3955,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "The path is blocked...",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300122026,
@@ -4090,8 +3963,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "A path has appeared.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300101001,
@@ -4100,8 +3972,8 @@
         "Name": "Robotic Voice",
         "Text": "<size=25>\\n \\n \\n> Initializing Omniframe systems . . . \\n>>  . . . . . . . . . . </size>",
         "Duration": 10,
-        "IsMask": false,
         "Params": [
+            "",
             6
         ]
     },
@@ -4112,8 +3984,8 @@
         "Name": "Robotic Voice",
         "Text": "<size=25>\\n \\n \\n> . . . . . . Basic system functions. . . \\n>> . . . Successfully configured . . . . . . . </size>",
         "Duration": 10,
-        "IsMask": false,
         "Params": [
+            "",
             6
         ]
     },
@@ -4123,8 +3995,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "Commencing simulation.",
-        "Duration": 2.4,
-        "IsMask": false
+        "Duration": 2.4
     },
     {
         "Id": 300101004,
@@ -4132,8 +4003,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "Next phase.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 300101005,
@@ -4142,8 +4012,8 @@
         "Name": "Robotic Voice",
         "Text": "<size=25>\\n \\n \\n> Core functionality data . . . \\n>>> . . . . . . . . Adaptation completed</size>",
         "Duration": 5,
-        "IsMask": false,
         "Params": [
+            "",
             8
         ]
     },
@@ -4153,8 +4023,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "The margin of error of real-life combat results is within the acceptable range.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300101007,
@@ -4162,8 +4031,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "This simulation is expected to reach theoretical benchmarks.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300101008,
@@ -4171,8 +4039,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "Further iterations are still required.",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 300101009,
@@ -4181,8 +4048,8 @@
         "Name": "Robotic Voice",
         "Text": "<size=25>\\n \\n \\n> . . . Based on cumulative simulation results. . . . . . \\n>> Activating. . . functionality enhancement protocol. . . . . . . . . . . </size>",
         "Duration": 8,
-        "IsMask": false,
         "Params": [
+            "",
             5
         ]
     },
@@ -4192,8 +4059,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "Continuing with further iterations...",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 300101011,
@@ -4202,8 +4068,8 @@
         "Name": "Robotic Voice",
         "Text": "<size=25>\\n \\n \\n> Results align with. . . expected parameters. . . . . .  \\n>> Attempting to load. . . . . . [specific data] . . . . . . . . . </size>",
         "Duration": 8.5,
-        "IsMask": false,
         "Params": [
+            "",
             5
         ]
     },
@@ -4214,8 +4080,8 @@
         "Name": "Robotic Voice",
         "Text": "<size=25>\\n \\n \\n> . . . All functionality established. . . . . .\\n >> . . . Maximizing performance. . . . . . . . . . . . . .</size>",
         "Duration": 6,
-        "IsMask": false,
         "Params": [
+            "",
             6
         ]
     },
@@ -4225,8 +4091,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "Data has met the standard...",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 300101014,
@@ -4235,8 +4100,8 @@
         "Name": "Robotic Voice",
         "Text": "<size=25>\\n \\n \\n> Results align with expectations. . . . . . \\n>> Concluding simulation. . . . . . . .</size>",
         "Duration": 9,
-        "IsMask": false,
         "Params": [
+            "",
             4
         ]
     },
@@ -4246,8 +4111,7 @@
         "UiType": 1,
         "Name": "Selene",
         "Text": "\"Go, Luna. End it all.\"",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 999666777,
@@ -4255,8 +4119,7 @@
         "UiType": 1,
         "Name": "[Camera/Performance/Subtitles/Others]",
         "Text": "Placeholder",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 999666778,
@@ -4264,8 +4127,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "No response",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 999666779,
@@ -4273,8 +4135,7 @@
         "UiType": 1,
         "Name": "Luna",
         "Text": "(Interjection)",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 999666776,
@@ -4282,8 +4143,7 @@
         "UiType": 1,
         "Name": "[Placeholder]",
         "Text": "timeline placeholder",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 999666775,
@@ -4291,8 +4151,7 @@
         "UiType": 1,
         "Name": "[Placeholder]",
         "Text": "Easy Stage Opening Camera Placeholder",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 999666774,
@@ -4300,8 +4159,7 @@
         "UiType": 1,
         "Name": "[Guide Placeholder]",
         "Text": "\"Display indicator, prepare to check timeline trigger\"",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 999666773,
@@ -4309,8 +4167,7 @@
         "UiType": 1,
         "Name": "[Placeholder]",
         "Text": "\"Repeat teleporting 2 times -> After battle with enemy, show results: Result node not written yet\"",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 300101110,
@@ -4318,7 +4175,6 @@
         "UiType": 1,
         "Name": "???",
         "Duration": 9999,
-        "IsMask": false,
         "Params": [
             5000,
             6000
@@ -4332,7 +4188,6 @@
         "Text": "Adapting core functionality data...",
         "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightTips/PanelFightScanbar.prefab",
         "Duration": 9999,
-        "IsMask": false,
         "Params": [
             500,
             8900
@@ -4344,8 +4199,7 @@
         "UiType": 1,
         "Name": "[Test Submission Instructions]",
         "Text": "Disable Luna's Core and Signature on the 1st wave of enemy; only Basic Attack enabled now",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300109902,
@@ -4353,8 +4207,7 @@
         "UiType": 1,
         "Name": "[Test Submission Instructions]",
         "Text": "3-Ping unlocked after the battle has started for some time (approx. 10s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300109903,
@@ -4362,8 +4215,7 @@
         "UiType": 1,
         "Name": "[Test Submission Instructions]",
         "Text": "Unlock Core",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300109904,
@@ -4371,8 +4223,7 @@
         "UiType": 1,
         "Name": "[Test Submission Instructions]",
         "Text": "Unlock Signature",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 300109905,
@@ -4380,8 +4231,7 @@
         "UiType": 1,
         "Name": "—Select—",
         "Text": "Skip the simple tutorial of [Luna: Oblivion]?",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 300109906,
@@ -4391,7 +4241,6 @@
         "Text": "Testing core performance stability...",
         "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightTips/PanelFightScanbar.prefab",
         "Duration": 9999,
-        "IsMask": false,
         "Params": [
             500,
             8900
@@ -4403,8 +4252,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "\"The Hetero-Creature's saliva mixes with blood, painting a grim picture of the victim's final moments of torment.\"",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28017720,
@@ -4412,8 +4260,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "\"Supplies are scattered all around the transport vehicle, while the driver is...\"",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28017721,
@@ -4421,16 +4268,14 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "\"Supplies are scattered all around the transport vehicle, while the driver is...\"",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28017730,
         "Type": 4,
         "UiType": 1,
         "Name": "[Supply Shipment List]",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28017731,
@@ -4438,8 +4283,7 @@
         "UiType": 1,
         "Name": "[Supply Shipment List]",
         "Text": "Titanium Ore (Unrefined)... 10 crates",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28017732,
@@ -4447,8 +4291,7 @@
         "UiType": 1,
         "Name": "[Supply Shipment List]",
         "Text": "Rare Earth Ore... 5 crates",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28017733,
@@ -4456,8 +4299,7 @@
         "UiType": 1,
         "Name": "[Supply Shipment List]",
         "Text": "Steel Rebar... 10 bundles",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28017734,
@@ -4465,8 +4307,7 @@
         "UiType": 1,
         "Name": "[Supply Shipment List]",
         "Text": "Venison... 10 crates",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28017740,
@@ -4474,8 +4315,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "\"Instead of the gun that flew off, what is in his hand is a blurry family photo—the last thing he held onto before he died.\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28017750,
@@ -4483,8 +4323,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "The body lies face down as if trying to protect something even in their final moment.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28990001,
@@ -4492,8 +4331,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "A soldier's corpse lies there in a pool of liquid blood—they must have died not long ago.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28990011,
@@ -4501,8 +4339,7 @@
         "UiType": 1,
         "Name": "[Investigate]",
         "Text": "A Soldier's Corpse",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991010,
@@ -4510,8 +4347,7 @@
         "UiType": 1,
         "Name": "Andre",
         "Text": "\"Hey, didn't that good-for-nothing lord of the city tighten their policies lately?\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991020,
@@ -4519,8 +4355,7 @@
         "UiType": 1,
         "Name": "Axia",
         "Text": "\"Lord? You mean Aleksei? If you ask me, that guy's nothing but a traitor to humanity.\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991030,
@@ -4528,8 +4363,7 @@
         "UiType": 1,
         "Name": "Andre",
         "Text": "Traitor? I've heard that this vile human—",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991031,
@@ -4537,8 +4371,7 @@
         "UiType": 1,
         "Name": "Andre",
         "Text": "—has been in cahoots with mechanoids for his own benefit.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991040,
@@ -4546,8 +4379,7 @@
         "UiType": 1,
         "Name": "Axia",
         "Text": "That's not all.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991041,
@@ -4555,8 +4387,7 @@
         "UiType": 1,
         "Name": "Axia",
         "Text": "I bet he even wants to turn himself into a mechanoid.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991050,
@@ -4564,8 +4395,7 @@
         "UiType": 1,
         "Name": "Andre",
         "Text": "What is wrong with him? What doesn't he like about being human?",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991051,
@@ -4573,8 +4403,7 @@
         "UiType": 1,
         "Name": "Andre",
         "Text": "Why would he want to turn himself into a mechanoid?",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991060,
@@ -4582,8 +4411,7 @@
         "UiType": 1,
         "Name": "Axia",
         "Text": "Just like a hopeless machine geek.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991061,
@@ -4591,8 +4419,7 @@
         "UiType": 1,
         "Name": "Axia",
         "Text": "\"He used to study that stuff,\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991062,
@@ -4600,8 +4427,7 @@
         "UiType": 1,
         "Name": "Axia",
         "Text": "Just like how I'm studying this wrecked car now.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991070,
@@ -4609,8 +4435,7 @@
         "UiType": 1,
         "Name": "(Transport Vehicle)",
         "Text": "(Beep—beep—crackle—)",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991080,
@@ -4618,8 +4443,7 @@
         "UiType": 1,
         "Name": "Axia",
         "Text": "\"Tch, what bad luck.\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991081,
@@ -4627,8 +4451,7 @@
         "UiType": 1,
         "Name": "Andre",
         "Text": "Axia—",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991083,
@@ -4636,8 +4459,7 @@
         "UiType": 1,
         "Name": "Andre",
         "Text": "Where were we just now?",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991084,
@@ -4645,8 +4467,7 @@
         "UiType": 1,
         "Name": "Andre",
         "Text": "About Aleksei being a hopeless machine geek...?",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991090,
@@ -4654,8 +4475,7 @@
         "UiType": 1,
         "Name": "Axia",
         "Text": "I heard that the guy even got his eyes replaced with mechanical ones recently.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991091,
@@ -4663,8 +4483,7 @@
         "UiType": 1,
         "Name": "Axia",
         "Text": "\"Oh, let's stop. That name annoys me so much I can't even fix the car properly.\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998101,
@@ -4672,8 +4491,7 @@
         "UiType": 1,
         "Name": "Patient Receiving Treatment",
         "Text": "\"Tch, I thought the Corrupted only scratched my skin... ouch.\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998102,
@@ -4681,8 +4499,7 @@
         "UiType": 1,
         "Name": "Medical Staff",
         "Text": "Bear with me. It's not too bad.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998103,
@@ -4690,8 +4507,7 @@
         "UiType": 1,
         "Name": "Patient Receiving Treatment",
         "Text": "The serum... Our team hasn't gotten any yet?",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998104,
@@ -4699,8 +4515,7 @@
         "UiType": 1,
         "Name": "Medical Staff",
         "Text": "We've only gotten a few vials. Those metal heads have been pretty stingy lately.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998114,
@@ -4708,8 +4523,7 @@
         "UiType": 1,
         "Name": "Medical Staff",
         "Text": "The few vials we got went to the critically wounded. Just hang in there a little longer.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998105,
@@ -4717,8 +4531,7 @@
         "UiType": 1,
         "Name": "Resting Soldier",
         "Text": "The brothers we lost today... we were still drinking together yesterday...",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998115,
@@ -4726,8 +4539,7 @@
         "UiType": 1,
         "Name": "Resting Soldier",
         "Text": "\"Damn it, I can't stand this any longer.\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998106,
@@ -4735,8 +4547,7 @@
         "UiType": 1,
         "Name": "Resting Soldier",
         "Text": "Never thought I'd see the day where mechanoids would be the ones working us to death.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998116,
@@ -4744,8 +4555,7 @@
         "UiType": 1,
         "Name": "Resting Soldier",
         "Text": "Tch... What right do they have to order us around?",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998107,
@@ -4753,8 +4563,7 @@
         "UiType": 1,
         "Name": "Resting Soldier",
         "Text": "\"I heard there's a mechanoid in the city who takes in humans who can't work anymore,\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998117,
@@ -4762,8 +4571,7 @@
         "UiType": 1,
         "Name": "Resting Soldier",
         "Text": "Maybe I should try my luck there... I'm so damn tired of living like this.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998108,
@@ -4771,8 +4579,7 @@
         "UiType": 1,
         "Name": "Guard on Duty",
         "Text": "\"In the city, we have to live under those metal scrap's thumb...\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998118,
@@ -4780,8 +4587,7 @@
         "UiType": 1,
         "Name": "Guard on Duty",
         "Text": "\"Outside, we have to deal with the Corrupted... *sigh*\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998109,
@@ -4789,8 +4595,7 @@
         "UiType": 1,
         "Name": "Guard on Duty",
         "Text": "\"Going back into the city sucks, but it ain't exactly safe wandering around out here either...\"",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28998119,
@@ -4798,8 +4603,7 @@
         "UiType": 1,
         "Name": "Guard on Duty",
         "Text": "I guess it's about time to head out.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28999901,
@@ -4807,8 +4611,7 @@
         "UiType": 1,
         "Name": "Cargo Crew Soldier",
         "Text": "\"Oh, a human... Come with us then.\"",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 28999911,
@@ -4816,8 +4619,7 @@
         "UiType": 1,
         "Name": "Cargo Crew Soldier",
         "Text": "The convoy is taking a break. Feel free to look around.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 28999902,
@@ -4825,8 +4627,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "\"...Okay, thanks.\"",
-        "Duration": 1.5,
-        "IsMask": false
+        "Duration": 1.5
     },
     {
         "Id": 28999903,
@@ -4834,8 +4635,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "What... is this place? So many strange things going on... I should investigate the area first.",
-        "Duration": 6.5,
-        "IsMask": false
+        "Duration": 6.5
     },
     {
         "Id": 28999904,
@@ -4843,8 +4643,7 @@
         "UiType": 1,
         "Name": "Human Soldier",
         "Text": "Are you ready to go?",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28999905,
@@ -4852,8 +4651,7 @@
         "UiType": 1,
         "Name": "Human Soldier",
         "Text": "Hurry up! It's not safe here.",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 28999906,
@@ -4861,8 +4659,7 @@
         "UiType": 1,
         "Name": "Human Soldier",
         "Text": "\"Get in, we'll take you somewhere safe.\"",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 28998001,
@@ -4870,8 +4667,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "My pipa probably needs tuning.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 28998011,
@@ -4879,8 +4675,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "I should play something to check if it's in tune.",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 28998002,
@@ -4888,8 +4683,7 @@
         "UiType": 1,
         "Name": "Cargo Crew Soldier D",
         "Text": "Such a beautiful piece. It reminds me of Kowloong...",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 28998003,
@@ -4899,9 +4693,11 @@
         "Icon": 500916,
         "Text": "Are you from Kowloong too?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
@@ -4913,9 +4709,11 @@
         "Icon": 500005,
         "Text": "Yeah. I ended up here after Kowloong fell during the Punishing Virus outbreak.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -4927,9 +4725,11 @@
         "Icon": 500005,
         "Text": "\"How lucky I am to hear the sound of pipa in this remote place. You're a talented musician, ma'am.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -4941,8 +4741,11 @@
         "Icon": 500916,
         "Text": "I appreciate it. You mentioned this is a remote place. Do you know where we are?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -4954,9 +4757,11 @@
         "Icon": 500005,
         "Text": "\"We're still in Kowloong territory, but we're far away from Kowloong itself. Humans have a hard time here. You'll understand when we arrive in the city.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
+            "",
+            "",
             1,
             1
         ]
@@ -4967,8 +4772,7 @@
         "UiType": 1,
         "Name": "Human Soldier C",
         "Text": "Strange... Where was it?",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28993002,
@@ -4977,7 +4781,6 @@
         "Name": "Human Soldier C",
         "Text": "Ah—was I in your way? My apologies.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -4989,7 +4792,6 @@
         "Name": "Human Soldier C",
         "Text": "I seem to have lost my necklace...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -5001,7 +4803,6 @@
         "Name": "Human Soldier C",
         "Text": "Are you... the one Captain just took in?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -5012,8 +4813,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "I am. It appears something's bothering you. Can I help?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 28993006,
@@ -5022,7 +4822,6 @@
         "Name": "Human Soldier C",
         "Text": "I lost my necklace when I was fighting those Corrupted.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -5033,8 +4832,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "I found a necklace with a bullet pendant on my way here. Is this the one?",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 28993008,
@@ -5043,7 +4841,6 @@
         "Name": "Human Soldier C",
         "Text": "Yeah! That's the one! A toaster shot that bullet right into my head.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -5055,7 +4852,6 @@
         "Name": "Human Soldier C",
         "Text": "\"Heh, but I survived, and now it's a memento... Feels like picking up an extra life to have this back. Thanks.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -5066,8 +4862,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "\"You're welcome. By the way, weren't you fighting the Corrupted? Who are these \"\"toasters\"\"?\"",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 28993011,
@@ -5076,7 +4871,6 @@
         "Name": "Human Soldier C",
         "Text": "\"Who else? The mechanoids in the city, obviously. They were the ones who made us come here and fight the Corrupted.\"",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -5087,8 +4881,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "Mechanoids... Hm.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 28993013,
@@ -5097,7 +4890,6 @@
         "Name": "Human Soldier C",
         "Text": "You'll understand when you get to the city. Don't overthink it.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -5108,8 +4900,7 @@
         "UiType": 1,
         "Name": "Cargo Crew Soldier A",
         "Text": "Tch. Why are we even hauling all this scrap metal all the time?",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 28992002,
@@ -5117,8 +4908,7 @@
         "UiType": 1,
         "Name": "Cargo Crew Soldier B",
         "Text": "Stop guessing what those toasters in the city want.",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 992001,
@@ -5126,8 +4916,7 @@
         "UiType": 1,
         "Name": "Cargo Crew Soldier A",
         "Text": "Tch. Why are we even hauling all this scrap metal all the time?",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 992002,
@@ -5135,8 +4924,7 @@
         "UiType": 1,
         "Name": "Cargo Crew Soldier B",
         "Text": "Stop guessing what those toasters in the city want.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28992003,
@@ -5144,8 +4932,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "Something's not right... Why is the convoy only delivering scrap metal?",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 28991001,
@@ -5153,8 +4940,7 @@
         "UiType": 1,
         "Name": "Injured Soldier A",
         "Text": "Tch. These Corrupted almost killed me.",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 28991002,
@@ -5162,8 +4948,7 @@
         "UiType": 1,
         "Name": "Injured Soldier B",
         "Text": "We wouldn't have come to this hellhole if it weren't for those toasters.",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 991001,
@@ -5171,8 +4956,7 @@
         "UiType": 1,
         "Name": "Injured Soldier A",
         "Text": "Tch. These Corrupted almost killed me.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 991002,
@@ -5180,8 +4964,7 @@
         "UiType": 1,
         "Name": "Injured Soldier B",
         "Text": "We wouldn't have come to this hellhole if it weren't for those toasters.",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     },
     {
         "Id": 28991003,
@@ -5189,8 +4972,7 @@
         "UiType": 1,
         "Name": "Injured Soldier A",
         "Text": "Hmph... They won't be hopping around anymore soon.",
-        "Duration": 6,
-        "IsMask": false
+        "Duration": 6
     },
     {
         "Id": 28991004,
@@ -5198,8 +4980,7 @@
         "UiType": 1,
         "Name": "Injured Soldier B",
         "Text": "What exactly are the supplies we're moving for?",
-        "Duration": 4.5,
-        "IsMask": false
+        "Duration": 4.5
     },
     {
         "Id": 28991005,
@@ -5207,8 +4988,7 @@
         "UiType": 1,
         "Name": "Injured Soldier A",
         "Text": "Keep your mouth shut. You'll know soon enough.",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 28991006,
@@ -5216,8 +4996,7 @@
         "UiType": 1,
         "Name": "Injured Soldier B",
         "Text": "\"Okay, okay, okay.\"",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 28991007,
@@ -5225,8 +5004,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "Are they... planning something?",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 28010001,
@@ -5234,8 +5012,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "This hairpin is my blade!",
-        "Duration": 1.2,
-        "IsMask": false
+        "Duration": 1.2
     },
     {
         "Id": 28010002,
@@ -5243,8 +5020,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "It's not over yet? There must be a better way to fight them.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 28010003,
@@ -5252,8 +5028,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "Are those... tire tracks? They're a mess.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 28010004,
@@ -5261,8 +5036,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "Those transport vehicles might still be in danger. I have to find out where they are now.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 28010005,
@@ -5270,8 +5044,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "There are high concentrations of Punishing Virus on those tracks. The Hetero-Creatures must still be attacking the convoy.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 28999001,
@@ -5279,8 +5052,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "The trails are fresh. They should be nearby.",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 28019001,
@@ -5288,8 +5060,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "I should check out that area.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 28019002,
@@ -5297,8 +5068,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "Time is running out. I need to make sure the convoy is safe.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 28010006,
@@ -5306,8 +5076,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "Right. I should be able to locate the convoy with these tracks.",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 28050001,
@@ -5315,8 +5084,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "I may be able to pass through there... Should I go take a look?",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 28050002,
@@ -5324,8 +5092,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "Hm? What's that?",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 28050003,
@@ -5333,8 +5100,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "I need to clear these obstacles to take a closer look.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 28050004,
@@ -5342,8 +5108,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "A necklace with a bullet pendant? Someone must have dropped it accidentally. I'll bring it with me.",
-        "Duration": 10,
-        "IsMask": false
+        "Duration": 10
     },
     {
         "Id": 28990000,
@@ -5351,8 +5116,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "There are still some Hetero-Creatures left. I can't just let them be.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 28040001,
@@ -5360,8 +5124,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "Hm... Is it this way?",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 28040002,
@@ -5369,8 +5132,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "I don't think this is the way. I should turn back.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 28049999,
@@ -5378,8 +5140,7 @@
         "UiType": 1,
         "Name": "Waiting for combat text...",
         "Text": "\"Combat voiceovers are still being worked on. Without them, we can't sync the text and time them. Let's just use what we have for now=-=...\"",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 28059999,
@@ -5387,8 +5148,7 @@
         "UiType": 1,
         "Name": "Elbow Strike!",
         "Text": "Elbow Strike on target! (Waiting for combat text and voice-over)",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 28010007,
@@ -5396,8 +5156,7 @@
         "UiType": 1,
         "Name": "Hanying",
         "Text": "Perhaps there's more to discover with this hairpin. I'll give it a shot.",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 20899003,
@@ -5405,8 +5164,7 @@
         "UiType": 1,
         "Name": "—Select—",
         "Text": "Skip battle and proceed to camp?",
-        "Duration": 9999,
-        "IsMask": false
+        "Duration": 9999
     },
     {
         "Id": 30436001,
@@ -5414,8 +5172,7 @@
         "UiType": 1,
         "Name": "Abbot",
         "Text": "The leader... A puppet...",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 30436002,
@@ -5423,8 +5180,7 @@
         "UiType": 1,
         "Name": "Abbot",
         "Text": "A phantom... created by latent desires.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 30436003,
@@ -5432,8 +5188,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "Delay is futile.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 30436004,
@@ -5441,8 +5196,7 @@
         "UiType": 1,
         "Name": "Abbot",
         "Text": "Whatever form you take, it is still proof of who you are.",
-        "Duration": 5,
-        "IsMask": false
+        "Duration": 5
     },
     {
         "Id": 30436014,
@@ -5450,8 +5204,7 @@
         "UiType": 1,
         "Name": "Abbot",
         "Text": "It is the manifestation of your desires from your subconscious.",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 30436005,
@@ -5459,8 +5212,7 @@
         "UiType": 1,
         "Name": "Abbot",
         "Text": "Examine, judge, and choose your own path.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 30436006,
@@ -5468,8 +5220,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "You arrive right on time.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 30435001,
@@ -5477,8 +5228,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "Is this really the time to be spacing out?",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 30435002,
@@ -5486,8 +5236,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "Save the sightseeing for another time.",
-        "Duration": 2.2,
-        "IsMask": false
+        "Duration": 2.2
     },
     {
         "Id": 30435003,
@@ -5495,8 +5244,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "This way.",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 30435004,
@@ -5504,8 +5252,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "Oh Buddha, have mercy and save us!",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 30435005,
@@ -5513,8 +5260,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "Survive... We just want to survive...",
-        "Duration": 4,
-        "IsMask": false
+        "Duration": 4
     },
     {
         "Id": 30435006,
@@ -5522,8 +5268,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "If the Buddha won't answer our prayers, then we can only blame our own misfortune...",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 30435007,
@@ -5531,8 +5276,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "Hunger, cold, despair... We can't take it anymore...",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 30435008,
@@ -5540,8 +5284,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "Are you here to save us?",
-        "Duration": 1.8,
-        "IsMask": false
+        "Duration": 1.8
     },
     {
         "Id": 30435009,
@@ -5549,8 +5292,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "Get lost, you soulless husks!",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 30435010,
@@ -5558,8 +5300,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "Why did you abandon us?",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 30435011,
@@ -5567,8 +5308,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "What will happen to us if our leader also abandons us?!",
-        "Duration": 4.8,
-        "IsMask": false
+        "Duration": 4.8
     },
     {
         "Id": 30435012,
@@ -5576,8 +5316,7 @@
         "UiType": 1,
         "Name": "???",
         "Text": "Unforgivable... This is unforgivable!",
-        "Duration": 4.1,
-        "IsMask": false
+        "Duration": 4.1
     },
     {
         "Id": 30435013,
@@ -5585,8 +5324,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "Pitiful spirits, worthless phantoms",
-        "Duration": 3.2,
-        "IsMask": false
+        "Duration": 3.2
     },
     {
         "Id": 30435014,
@@ -5594,8 +5332,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "I'm right here. Draw your blade!",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 30435015,
@@ -5603,8 +5340,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "The area's clear. Let's go.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 30435016,
@@ -5612,8 +5348,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "I don't need to rest, but you should take a break.",
-        "Duration": 3.2,
-        "IsMask": false
+        "Duration": 3.2
     },
     {
         "Id": 30435017,
@@ -5621,8 +5356,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "Hmph...",
-        "Duration": 1,
-        "IsMask": false
+        "Duration": 1
     },
     {
         "Id": 30435018,
@@ -5630,8 +5364,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "What are you looking at?",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 30435019,
@@ -5639,8 +5372,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "Come on, it's time to face the real thing.",
-        "Duration": 2.8,
-        "IsMask": false
+        "Duration": 2.8
     },
     {
         "Id": 30435020,
@@ -5648,8 +5380,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "Heads up!",
-        "Duration": 2,
-        "IsMask": false
+        "Duration": 2
     },
     {
         "Id": 30435021,
@@ -5657,8 +5388,7 @@
         "UiType": 1,
         "Name": "Alpha",
         "Text": "If the battle gets rough, hide.",
-        "Duration": 3.5,
-        "IsMask": false
+        "Duration": 3.5
     },
     {
         "Id": 30435022,
@@ -5666,15 +5396,13 @@
         "UiType": 1,
         "Name": "【kuroname】",
         "Text": "I'm not letting you fight alone.",
-        "Duration": 2.5,
-        "IsMask": false
+        "Duration": 2.5
     },
     {
         "Id": 231401,
         "Type": 3,
         "UiType": 1,
         "Text": "Test subtitle, leave the name blank",
-        "Duration": 999,
-        "IsMask": false
+        "Duration": 999
     }
 ]

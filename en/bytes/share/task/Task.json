@@ -18711,7 +18711,8 @@
         "RewardId": 3003900,
         "SkipId": 30001,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Clear"
+        "Suffix": "Clear",
+        "Tag": 1
     },
     {
         "Id": 30040,
@@ -18728,7 +18729,8 @@
         "RewardId": 3004000,
         "SkipId": 30002,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Clear"
+        "Suffix": "Clear",
+        "Tag": 1
     },
     {
         "Id": 30041,
@@ -18745,7 +18747,8 @@
         "RewardId": 3004100,
         "SkipId": 30003,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Clear"
+        "Suffix": "Clear",
+        "Tag": 1
     },
     {
         "Id": 30042,
@@ -18762,7 +18765,8 @@
         "RewardId": 3004200,
         "SkipId": 30004,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Clear"
+        "Suffix": "Clear",
+        "Tag": 1
     },
     {
         "Id": 30043,
@@ -18779,7 +18783,8 @@
         "RewardId": 3004300,
         "SkipId": 30005,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Clear"
+        "Suffix": "Clear",
+        "Tag": 1
     },
     {
         "Id": 30044,
@@ -18796,7 +18801,8 @@
         "RewardId": 3004400,
         "SkipId": 30006,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Clear"
+        "Suffix": "Clear",
+        "Tag": 1
     },
     {
         "Id": 30045,
@@ -18813,7 +18819,8 @@
         "RewardId": 3004500,
         "SkipId": 30011,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Target"
+        "Suffix": "Target",
+        "Tag": 1
     },
     {
         "Id": 30046,
@@ -18830,7 +18837,8 @@
         "RewardId": 3004600,
         "SkipId": 30012,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Target"
+        "Suffix": "Target",
+        "Tag": 1
     },
     {
         "Id": 30047,
@@ -18847,7 +18855,8 @@
         "RewardId": 3004700,
         "SkipId": 30013,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Clear"
+        "Suffix": "Clear",
+        "Tag": 1
     },
     {
         "Id": 30048,
@@ -18864,7 +18873,8 @@
         "RewardId": 3004800,
         "SkipId": 30014,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Clear"
+        "Suffix": "Clear",
+        "Tag": 1
     },
     {
         "Id": 30049,
@@ -18881,7 +18891,8 @@
         "RewardId": 3004900,
         "SkipId": 30019,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Target"
+        "Suffix": "Target",
+        "Tag": 1
     },
     {
         "Id": 30050,
@@ -18898,7 +18909,8 @@
         "RewardId": 3005000,
         "SkipId": 30026,
         "StartTime": "2026/3/23 5:00",
-        "Suffix": "Target"
+        "Suffix": "Target",
+        "Tag": 1
     },
     {
         "Id": 50000,
@@ -37124,6 +37136,53 @@
         "ShowCondition": 845030
     },
     {
+        "Id": 12549,
+        "SourceGroupId": 45011,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "倒映浸景 (1)",
+        "Desc": "Log in to the game for the 1st time today",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanV305.png",
+        "Condition": [
+            12139
+        ],
+        "Result": 1,
+        "RewardId": 66494,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 12550,
+        "SourceGroupId": 45011,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "倒映浸景 (2)",
+        "Desc": "Use a total of 200 Serum today",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanV305.png",
+        "Condition": [
+            12140
+        ],
+        "Result": 200,
+        "RewardId": 66495,
+        "SkipId": 2016,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 12551,
+        "SourceGroupId": 45011,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "倒映浸景 (3)",
+        "Desc": "Total Activity has reached 100 points today",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanV305.png",
+        "Condition": [
+            12141
+        ],
+        "Result": 100,
+        "RewardId": 66496,
+        "SkipId": 20038,
+        "Suffix": "Event"
+    },
+    {
         "Id": 120001,
         "Type": 11,
         "Priority": 9700,
@@ -48088,7 +48147,8 @@
         "SkipId": 15001,
         "StartTime": "2020/8/20 5:00",
         "EndTime": "2025/1/13 7:00",
-        "Suffix": "師団"
+        "Suffix": "師団",
+        "Tag": 1
     },
     {
         "Id": 20000,
@@ -59650,6 +59710,34 @@
         "Suffix": "Event"
     },
     {
+        "Id": 79998,
+        "Type": 51,
+        "Priority": 10001,
+        "Title": "Beginner Limited Mission (Test)",
+        "Desc": "Sign in for 3 days (check for progress)",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80030
+        ],
+        "Result": 3,
+        "RewardId": 800027,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 79999,
+        "Type": 51,
+        "Priority": 10001,
+        "Title": "Return-Exclusive Mission (Test)",
+        "Desc": "Sign in for 3 days (check for progress)",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80052
+        ],
+        "Result": 3,
+        "RewardId": 800027,
+        "Suffix": "Event"
+    },
+    {
         "Id": 80000,
         "Type": 51,
         "Priority": 10000,
@@ -62543,6 +62631,302 @@
         "Result": 1,
         "RewardId": 800039,
         "SkipId": 89093,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80225,
+        "Type": 51,
+        "Priority": 20000,
+        "Title": "Beginner Mission: Log-in I",
+        "Desc": "Login for a total of 3 days",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80225
+        ],
+        "Result": 3,
+        "RewardId": 800102,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80226,
+        "Type": 51,
+        "Priority": 19900,
+        "Title": "Beginner Mission: Log-in II",
+        "Desc": "Login for a total of 7 days",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80226
+        ],
+        "Result": 7,
+        "RewardId": 800103,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80227,
+        "Type": 51,
+        "Priority": 19800,
+        "Title": "Beginner Mission: Serum Consumption I",
+        "Desc": "Use a total of 1000 Serum",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80227
+        ],
+        "Result": 1000,
+        "RewardId": 800102,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80228,
+        "Type": 51,
+        "Priority": 19700,
+        "Title": "Beginner Mission: Serum Consumption II",
+        "Desc": "Use a total of 3000 Serum",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80228
+        ],
+        "Result": 3000,
+        "RewardId": 800103,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80229,
+        "Type": 51,
+        "Priority": 19600,
+        "Title": "Beginner Mission: Level Upgrade I",
+        "Desc": "Commandant reaches Lv.40",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80229
+        ],
+        "Result": 40,
+        "RewardId": 800104,
+        "SkipId": 8029,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80230,
+        "Type": 51,
+        "Priority": 19500,
+        "Title": "Beginner Mission: Level Upgrade II",
+        "Desc": "Commandant reaches Lv.60",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80230
+        ],
+        "Result": 60,
+        "RewardId": 800105,
+        "SkipId": 8029,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80231,
+        "Type": 51,
+        "Priority": 19400,
+        "Title": "Beginner Mission: War Zone First Clear",
+        "Desc": "Clear 2 War Zone stages for the first time",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80231
+        ],
+        "Result": 2,
+        "RewardId": 800103,
+        "SkipId": 30013,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80232,
+        "Type": 51,
+        "Priority": 19300,
+        "Title": "Beginner Mission: Cage First Clear",
+        "Desc": "Clear 3 Phantom Pain Cage stages for the first time",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80232
+        ],
+        "Result": 3,
+        "RewardId": 800103,
+        "SkipId": 30001,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80233,
+        "Type": 51,
+        "Priority": 19200,
+        "Title": "Beginner Mission: Research Protocol",
+        "Desc": "Use a total of 2500 Event Construct R&D Tickets",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80233
+        ],
+        "Result": 2500,
+        "RewardId": 800104,
+        "SkipId": 20131,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80234,
+        "Type": 51,
+        "Priority": 19100,
+        "Title": "Return Mission: Log-in I",
+        "Desc": "Login for a total of 3 days",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80234
+        ],
+        "Result": 3,
+        "RewardId": 800100,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80235,
+        "Type": 51,
+        "Priority": 19000,
+        "Title": "Return Mission: Log-in II",
+        "Desc": "Login for a total of 7 days",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80235
+        ],
+        "Result": 7,
+        "RewardId": 800101,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80236,
+        "Type": 51,
+        "Priority": 18900,
+        "Title": "Return Mission: Serum Consumption I",
+        "Desc": "Use a total of 1500 Serum",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80236
+        ],
+        "Result": 1500,
+        "RewardId": 800100,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80237,
+        "Type": 51,
+        "Priority": 18800,
+        "Title": "Return Mission: Serum Consumption II",
+        "Desc": "Use a total of 3000 Serum",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80237
+        ],
+        "Result": 3000,
+        "RewardId": 800101,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80238,
+        "Type": 51,
+        "Priority": 18700,
+        "Title": "Return Mission: War Zone First Clear",
+        "Desc": "Clear 4 War Zone stages for the first time",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80238
+        ],
+        "Result": 4,
+        "RewardId": 800103,
+        "SkipId": 30013,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80239,
+        "Type": 51,
+        "Priority": 18600,
+        "Title": "Return Mission: Cage First Clear",
+        "Desc": "Clear 6 Phantom Pain Cage stages for the first time",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80239
+        ],
+        "Result": 6,
+        "RewardId": 800103,
+        "SkipId": 30001,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80240,
+        "Type": 51,
+        "Priority": 18500,
+        "Title": "Return Mission: Simulated Siege",
+        "Desc": "Clear 3 Simulated Siege stages for the first time",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80240
+        ],
+        "Result": 3,
+        "RewardId": 800103,
+        "SkipId": 15001,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80241,
+        "Type": 51,
+        "Priority": 18400,
+        "Title": "Return Mission: Research Protocol",
+        "Desc": "Use a total of 2500 Event Construct R&D Tickets",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80241
+        ],
+        "Result": 2500,
+        "RewardId": 800103,
+        "SkipId": 20131,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80242,
+        "Type": 51,
+        "Priority": 10000,
+        "Title": "Rapid Pursuit",
+        "Desc": "Clear [Moon Eater - Hard]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80242
+        ],
+        "Result": 1,
+        "RewardId": 800037,
+        "SkipId": 89093,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80243,
+        "Type": 51,
+        "Priority": 9900,
+        "Title": "Retro Arcade",
+        "Desc": "Participate in any game mode 15 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80243
+        ],
+        "Result": 15,
+        "RewardId": 800038,
+        "SkipId": 1300640,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80244,
+        "Type": 51,
+        "Priority": 9800,
+        "Title": "Nebulous Vigil",
+        "Desc": "Clear [Yonder]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80244
+        ],
+        "Result": 1,
+        "RewardId": 800039,
+        "SkipId": 11724,
         "Suffix": "Event"
     },
     {
@@ -71720,6 +72104,86 @@
         "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskBattle.png",
         "Condition": [
             11071005
+        ],
+        "Result": 580000,
+        "RewardId": 30484,
+        "SkipId": 3043,
+        "Suffix": "Battle",
+        "AchvType": 1
+    },
+    {
+        "Id": 11072001,
+        "Type": 4,
+        "Priority": 19414,
+        "Title": "Ultimate - The Pseudo-Unwinged Challenge I",
+        "Desc": "Ultimate Zone Progress reaches",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskBattle.png",
+        "Condition": [
+            11072001
+        ],
+        "Result": 48000,
+        "RewardId": 30480,
+        "SkipId": 3043,
+        "Suffix": "Battle",
+        "AchvType": 1
+    },
+    {
+        "Id": 11072002,
+        "Type": 4,
+        "Priority": 19413,
+        "Title": "Ultimate - The Pseudo-Unwinged Challenge II",
+        "Desc": "Ultimate Zone Progress reaches",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskBattle.png",
+        "Condition": [
+            11072002
+        ],
+        "Result": 128000,
+        "RewardId": 30481,
+        "SkipId": 3043,
+        "Suffix": "Battle",
+        "AchvType": 1
+    },
+    {
+        "Id": 11072003,
+        "Type": 4,
+        "Priority": 19412,
+        "Title": "Ultimate - The Pseudo-Unwinged Challenge III",
+        "Desc": "Ultimate Zone Progress reaches",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskBattle.png",
+        "Condition": [
+            11072003
+        ],
+        "Result": 240000,
+        "RewardId": 30482,
+        "SkipId": 3043,
+        "Suffix": "Battle",
+        "AchvType": 1
+    },
+    {
+        "Id": 11072004,
+        "Type": 4,
+        "Priority": 19411,
+        "Title": "Ultimate - The Pseudo-Unwinged Challenge IV",
+        "Desc": "Ultimate Zone Progress reaches",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskBattle.png",
+        "Condition": [
+            11072004
+        ],
+        "Result": 480000,
+        "RewardId": 30483,
+        "SkipId": 3043,
+        "Suffix": "Battle",
+        "AchvType": 1
+    },
+    {
+        "Id": 11072005,
+        "Type": 4,
+        "Priority": 19410,
+        "Title": "Ultimate - The Pseudo-Unwinged Challenge V",
+        "Desc": "Ultimate Zone Progress reaches",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskBattle.png",
+        "Condition": [
+            11072005
         ],
         "Result": 580000,
         "RewardId": 30484,
@@ -82944,6 +83408,141 @@
         "AchvType": 3
     },
     {
+        "Id": 4496,
+        "Type": 4,
+        "Priority": 25131,
+        "Title": "Born a Stranger I",
+        "Desc": "Upgrade Inverse Crown to Lv.10",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            4496
+        ],
+        "Result": 1,
+        "RewardId": 34300,
+        "SkipId": 3430,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 4497,
+        "Type": 4,
+        "Priority": 25130,
+        "Title": "Born a Stranger II",
+        "Desc": "Upgrade Inverse Crown to Lv.20",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            4497
+        ],
+        "Result": 1,
+        "RewardId": 34310,
+        "SkipId": 3431,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4496,
+        "AchvType": 3
+    },
+    {
+        "Id": 4498,
+        "Type": 4,
+        "Priority": 25129,
+        "Title": "Born a Stranger III",
+        "Desc": "Upgrade Inverse Crown to Lv.30",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            4498
+        ],
+        "Result": 1,
+        "RewardId": 34320,
+        "SkipId": 3432,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4497,
+        "AchvType": 3
+    },
+    {
+        "Id": 4499,
+        "Type": 4,
+        "Priority": 25128,
+        "Title": "Born a Stranger IV",
+        "Desc": "Upgrade Inverse Crown to Lv.40",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            4499
+        ],
+        "Result": 1,
+        "RewardId": 34330,
+        "SkipId": 3433,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4498,
+        "AchvType": 3
+    },
+    {
+        "Id": 4500,
+        "Type": 4,
+        "Priority": 25127,
+        "Title": "Born a Stranger V",
+        "Desc": "Upgrade Inverse Crown to Lv.50",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            4500
+        ],
+        "Result": 1,
+        "RewardId": 34340,
+        "SkipId": 3434,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4499,
+        "AchvType": 3
+    },
+    {
+        "Id": 4501,
+        "Type": 4,
+        "Priority": 25126,
+        "Title": "Born a Stranger VI",
+        "Desc": "Upgrade Inverse Crown to Lv.60",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            4501
+        ],
+        "Result": 1,
+        "RewardId": 34350,
+        "SkipId": 3435,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4500,
+        "AchvType": 3
+    },
+    {
+        "Id": 4502,
+        "Type": 4,
+        "Priority": 25125,
+        "Title": "Born a Stranger VII",
+        "Desc": "Upgrade Inverse Crown to Lv.70",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            4502
+        ],
+        "Result": 1,
+        "RewardId": 34360,
+        "SkipId": 3436,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4501,
+        "AchvType": 3
+    },
+    {
+        "Id": 4503,
+        "Type": 4,
+        "Priority": 25124,
+        "Title": "Born a Stranger VIII",
+        "Desc": "Upgrade Inverse Crown to Lv.80",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            4503
+        ],
+        "Result": 1,
+        "RewardId": 34370,
+        "SkipId": 3437,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4502,
+        "AchvType": 3
+    },
+    {
         "Id": 3130,
         "Type": 4,
         "Priority": 26099,
@@ -85977,6 +86576,38 @@
         "AchvType": 3
     },
     {
+        "Id": 21058111,
+        "Type": 4,
+        "Priority": 25661,
+        "Title": "The True Power of Inverse Crown I",
+        "Desc": "Evolve Inverse Crown to SS-Rank",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            21058111
+        ],
+        "Result": 1,
+        "RewardId": 37081,
+        "SkipId": 3300,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 21058112,
+        "Type": 4,
+        "Priority": 25660,
+        "Title": "The True Power of Inverse Crown II",
+        "Desc": "Evolve Inverse Crown to SSS-Rank",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            21058112
+        ],
+        "Result": 1,
+        "RewardId": 37181,
+        "SkipId": 3300,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
         "Id": 3500,
         "Type": 4,
         "Priority": 25599,
@@ -87426,6 +88057,22 @@
         "AchvType": 3
     },
     {
+        "Id": 21078101,
+        "Type": 4,
+        "Priority": 25419,
+        "Title": "逆冕·终阶解放",
+        "Desc": "逆冕达成终阶解放",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            21078101
+        ],
+        "Result": 1,
+        "RewardId": 37281,
+        "SkipId": 19080,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
         "Id": 21080101,
         "Type": 4,
         "Priority": 25000,
@@ -88702,6 +89349,22 @@
         "Result": 1,
         "RewardId": 37500,
         "SkipId": 19079,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 21088101,
+        "Type": 4,
+        "Priority": 24921,
+        "Title": "Inverse Crown: Infinitas Awaken",
+        "Desc": "Awaken Inverse Crown's Infinitas Rank",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            21088101
+        ],
+        "Result": 1,
+        "RewardId": 37500,
+        "SkipId": 19080,
         "Suffix": "Train",
         "AchvType": 3
     },
@@ -92383,6 +93046,73 @@
         "AchvType": 3
     },
     {
+        "Id": 23013901,
+        "Type": 4,
+        "Priority": 24727,
+        "Title": "Allos Deployed I",
+        "Desc": "Upgrade Allos to Lv.10",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet40.png",
+        "Condition": [
+            23013901
+        ],
+        "Result": 1,
+        "RewardId": 374211,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 23013902,
+        "Type": 4,
+        "Priority": 24726,
+        "Title": "Allos Deployed II",
+        "Desc": "Upgrade Allos to Lv.15",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet40.png",
+        "Condition": [
+            23013902
+        ],
+        "Result": 1,
+        "RewardId": 374212,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 23013901,
+        "AchvType": 3
+    },
+    {
+        "Id": 23013903,
+        "Type": 4,
+        "Priority": 24725,
+        "Title": "Allos Deployed III",
+        "Desc": "Upgrade Allos to Lv.25",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet40.png",
+        "Condition": [
+            23013903
+        ],
+        "Result": 1,
+        "RewardId": 374213,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 23013902,
+        "AchvType": 3
+    },
+    {
+        "Id": 23013904,
+        "Type": 4,
+        "Priority": 24724,
+        "Title": "Allos Deployed IV",
+        "Desc": "Upgrade Allos to Lv.30",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet40.png",
+        "Condition": [
+            23013904
+        ],
+        "Result": 1,
+        "RewardId": 374214,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 23013903,
+        "AchvType": 3
+    },
+    {
         "Id": 23020001,
         "Type": 4,
         "Priority": 24599,
@@ -93898,6 +94628,38 @@
         ],
         "Result": 1,
         "RewardId": 37538,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 23043901,
+        "Type": 4,
+        "Priority": 24423,
+        "Title": "Leave That Allos to Me I",
+        "Desc": "Evolve Allos to SS-Rank",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet40.png",
+        "Condition": [
+            23043901
+        ],
+        "Result": 1,
+        "RewardId": 37419,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 23043902,
+        "Type": 4,
+        "Priority": 24422,
+        "Title": "Leave That Allos to Me II",
+        "Desc": "Evolve Allos to SSS-Rank",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet40.png",
+        "Condition": [
+            23043902
+        ],
+        "Result": 1,
+        "RewardId": 37539,
         "SkipId": 20110,
         "Suffix": "Train",
         "AchvType": 3
@@ -96121,6 +96883,22 @@
         ],
         "Result": 1,
         "RewardId": 37380,
+        "SkipId": 3653,
+        "Suffix": "Challenge",
+        "AchvType": 2
+    },
+    {
+        "Id": 31098101,
+        "Type": 4,
+        "Priority": 19521,
+        "Title": "Inverse Crown's Gift",
+        "Desc": "Inverse Crown's Affection reaches Lv.8",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
+        "Condition": [
+            31098101
+        ],
+        "Result": 1,
+        "RewardId": 37381,
         "SkipId": 3653,
         "Suffix": "Challenge",
         "AchvType": 2
@@ -140264,6 +141042,32 @@
         "Suffix": "Event"
     },
     {
+        "Id": 99040,
+        "Type": 94,
+        "Priority": 10000,
+        "Title": "Alpha Big Affection 1",
+        "Desc": "Clear Story 3",
+        "Condition": [
+            99065
+        ],
+        "Result": 1,
+        "RewardId": 64880,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99041,
+        "Type": 94,
+        "Priority": 9900,
+        "Title": "Alpha Big Affection 2",
+        "Desc": "Clear Story 7",
+        "Condition": [
+            99066
+        ],
+        "Result": 1,
+        "RewardId": 64881,
+        "Suffix": "Event"
+    },
+    {
         "Id": 100100,
         "SourceGroupId": 44005,
         "Type": 86,
@@ -140372,7 +141176,7 @@
         "Id": 100107,
         "SourceGroupId": 44005,
         "Type": 86,
-        "Priority": 9200,
+        "Priority": 9300,
         "Title": "Camping Life 4",
         "Desc": "Obtain 16 stars in Gourmet Quest chapters",
         "Icon": "Assets/Product/Texture/Image/UiLineArithmetic3/UiLineArithmetic3TaskBg02.png",
@@ -140387,7 +141191,7 @@
         "Id": 100108,
         "SourceGroupId": 44005,
         "Type": 86,
-        "Priority": 9300,
+        "Priority": 9200,
         "Title": "Team-Building Chronicles 5",
         "Desc": "Clear Gourmet Quest 7",
         "Icon": "Assets/Product/Texture/Image/UiLineArithmetic3/UiLineArithmetic3TaskBg02.png",
@@ -140432,7 +141236,7 @@
         "Id": 100111,
         "SourceGroupId": 44005,
         "Type": 86,
-        "Priority": 8800,
+        "Priority": 8900,
         "Title": "Camping Life 6",
         "Desc": "Obtain 16 stars in Anchored Tent chapters",
         "Icon": "Assets/Product/Texture/Image/UiLineArithmetic3/UiLineArithmetic3TaskBg02.png",
@@ -140447,7 +141251,7 @@
         "Id": 100112,
         "SourceGroupId": 44005,
         "Type": 86,
-        "Priority": 8900,
+        "Priority": 8800,
         "Title": "Team-Building Chronicles 7",
         "Desc": "Clear Anchored Tent 7",
         "Icon": "Assets/Product/Texture/Image/UiLineArithmetic3/UiLineArithmetic3TaskBg02.png",
@@ -140492,7 +141296,7 @@
         "Id": 100115,
         "SourceGroupId": 44005,
         "Type": 86,
-        "Priority": 8400,
+        "Priority": 8500,
         "Title": "Camping Life 8",
         "Desc": "Obtain 16 stars in Emergency Sleep chapters",
         "Icon": "Assets/Product/Texture/Image/UiLineArithmetic3/UiLineArithmetic3TaskBg02.png",
@@ -140507,7 +141311,7 @@
         "Id": 100116,
         "SourceGroupId": 44005,
         "Type": 86,
-        "Priority": 8500,
+        "Priority": 8400,
         "Title": "Team-Building Chronicles 9",
         "Desc": "Clear Emergency Sleep 7",
         "Icon": "Assets/Product/Texture/Image/UiLineArithmetic3/UiLineArithmetic3TaskBg02.png",
@@ -152232,6 +153036,104 @@
         "Suffix": "Event"
     },
     {
+        "Id": 131001,
+        "Type": 105,
+        "Priority": 10000,
+        "Title": "Phylotree Dossier",
+        "Desc": "Unlock Dossier - Liv: Limpidity",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            131001
+        ],
+        "Result": 1,
+        "RewardId": 69081,
+        "Suffix": "Phylotree"
+    },
+    {
+        "Id": 131002,
+        "Type": 105,
+        "Priority": 9999,
+        "Title": "Phylotree Dossier",
+        "Desc": "Unlock Dossier - Teddy: Spectre",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            131002
+        ],
+        "Result": 1,
+        "RewardId": 69080,
+        "Suffix": "Phylotree"
+    },
+    {
+        "Id": 131003,
+        "Type": 105,
+        "Priority": 9998,
+        "Title": "Phylotree Dossier",
+        "Desc": "Unlock Dossier - Rosetta: Arete",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            131003
+        ],
+        "Result": 1,
+        "RewardId": 69080,
+        "Suffix": "Phylotree"
+    },
+    {
+        "Id": 131004,
+        "Type": 105,
+        "Priority": 9997,
+        "Title": "Phylotree Dossier",
+        "Desc": "Unlock Dossier - Nirvatia: Dirge",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            131004
+        ],
+        "Result": 1,
+        "RewardId": 69080,
+        "Suffix": "Phylotree"
+    },
+    {
+        "Id": 131005,
+        "Type": 105,
+        "Priority": 9996,
+        "Title": "Phylotree Dossier",
+        "Desc": "Unlock Dossier - Kamui: Aeternion",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            131005
+        ],
+        "Result": 1,
+        "RewardId": 69080,
+        "Suffix": "Phylotree"
+    },
+    {
+        "Id": 131006,
+        "Type": 105,
+        "Priority": 9995,
+        "Title": "Phylotree Dossier",
+        "Desc": "Unlock Dossier - Lucia: Inverse Crown [1]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            131006
+        ],
+        "Result": 1,
+        "RewardId": 69082,
+        "Suffix": "Phylotree"
+    },
+    {
+        "Id": 131007,
+        "Type": 105,
+        "Priority": 9994,
+        "Title": "Phylotree Dossier",
+        "Desc": "Unlock Dossier - Lucia: Inverse Crown [2]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            131007
+        ],
+        "Result": 1,
+        "RewardId": 69083,
+        "Suffix": "Phylotree"
+    },
+    {
         "Id": 91127,
         "Type": 11,
         "Priority": 9000,
@@ -157699,6 +158601,125 @@
         "Suffix": "Event"
     },
     {
+        "Id": 99792,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Daily Mission",
+        "Desc": "Log in to the game for the 1st time today",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99792
+        ],
+        "Result": 1,
+        "RewardId": 68780,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99793,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "Daily Mission",
+        "Desc": "Use a total of 300 Serum in a day",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99793
+        ],
+        "Result": 300,
+        "RewardId": 68790,
+        "SkipId": 2016,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99794,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "Daily Mission",
+        "Desc": "Total Activity has reached 100 points today",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99794
+        ],
+        "Result": 100,
+        "RewardId": 68800,
+        "SkipId": 20038,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99795,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "Shrouded Requiem",
+        "Desc": "Complete 1 battle in [Shrouded Requiem]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99795
+        ],
+        "Result": 1,
+        "RewardId": 68810,
+        "SkipId": 89102,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99796,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "Rapid Pursuit",
+        "Desc": "Clear [Primal Projection] on Easy or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99796
+        ],
+        "Result": 1,
+        "RewardId": 68820,
+        "SkipId": 89093,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99797,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "Retro Arcade",
+        "Desc": "Participate in any game mode 3 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99797
+        ],
+        "Result": 3,
+        "RewardId": 68830,
+        "SkipId": 1300640,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99798,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "Nebulous Vigil",
+        "Desc": "Clear [Banished]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99798
+        ],
+        "Result": 1,
+        "RewardId": 68840,
+        "SkipId": 11724,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99799,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "Guild Expedition",
+        "Desc": "Clear an expedition stage of Flat difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99799
+        ],
+        "Result": 1,
+        "RewardId": 68850,
+        "SkipId": 85016,
+        "Suffix": "Event"
+    },
+    {
         "Id": 150001,
         "SourceGroupId": 44006,
         "Type": 11,
@@ -158089,6 +159110,398 @@
         ],
         "Result": 1,
         "RewardId": 67996
+    },
+    {
+        "Id": 150029,
+        "SourceGroupId": 40006,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Wanted: Mother",
+        "Desc": "Use any character to clear <color=#009fe1>Easy</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150029
+        ],
+        "Result": 1,
+        "RewardId": 68331
+    },
+    {
+        "Id": 150030,
+        "SourceGroupId": 40006,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "Wanted: Mother",
+        "Desc": "Use any limited character to clear <color=#009fe1>Hard</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150030
+        ],
+        "Result": 1,
+        "RewardId": 68332
+    },
+    {
+        "Id": 150031,
+        "SourceGroupId": 40006,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "Wanted: Mother",
+        "Desc": "Successfully parry 5 times on <color=#009fe1>Hard</color> difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150031
+        ],
+        "Result": 1,
+        "RewardId": 68333
+    },
+    {
+        "Id": 150032,
+        "SourceGroupId": 40006,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "Wanted: Mother",
+        "Desc": "Use Chrome: Glory to clear <color=#009fe1>Nightmare</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150032
+        ],
+        "Result": 1,
+        "RewardId": 68334
+    },
+    {
+        "Id": 150033,
+        "SourceGroupId": 40006,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "Wanted: Mother",
+        "Desc": "Trigger [Knockdown] at least twice on <color=#009fe1>Nightmare</color> difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150033
+        ],
+        "Result": 1,
+        "RewardId": 68335
+    },
+    {
+        "Id": 150034,
+        "SourceGroupId": 40006,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "Wanted: Mother",
+        "Desc": "Clear <color=#009fe1>Inferno</color> difficulty once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150034
+        ],
+        "Result": 1,
+        "RewardId": 68336
+    },
+    {
+        "Id": 150035,
+        "SourceGroupId": 40006,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "Wanted: Mother",
+        "Desc": "Get hit no more than 5 times on <color=#009fe1>Inferno</color> difficulty",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150035
+        ],
+        "Result": 1,
+        "RewardId": 68337
+    },
+    {
+        "Id": 150036,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "Wanted: Primal Projection",
+        "Desc": "Use any character to clear <color=#009fe1>Easy</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150036
+        ],
+        "Result": 1,
+        "RewardId": 68338
+    },
+    {
+        "Id": 150037,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "Wanted: Primal Projection",
+        "Desc": "Use any limited character to clear <color=#009fe1>Hard</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150037
+        ],
+        "Result": 1,
+        "RewardId": 68339
+    },
+    {
+        "Id": 150038,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 9100,
+        "Title": "Wanted: Primal Projection",
+        "Desc": "Get hit by [Dimensional Snare] no more than once on <color=#009fe1>Hard</color> difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150038
+        ],
+        "Result": 1,
+        "RewardId": 68340
+    },
+    {
+        "Id": 150039,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 9000,
+        "Title": "Wanted: Primal Projection",
+        "Desc": "Use Lee: Hyperreal to clear <color=#009fe1>Nightmare</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150039
+        ],
+        "Result": 1,
+        "RewardId": 68341
+    },
+    {
+        "Id": 150040,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "Wanted: Primal Projection",
+        "Desc": "Successfully parry 3 times on <color=#009fe1>Nightmare</color> difficulty",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150040
+        ],
+        "Result": 1,
+        "RewardId": 68342
+    },
+    {
+        "Id": 150041,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "Wanted: Primal Projection",
+        "Desc": "Clear <color=#009fe1>Inferno</color> difficulty once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150041
+        ],
+        "Result": 1,
+        "RewardId": 68343
+    },
+    {
+        "Id": 150042,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "Wanted: Primal Projection",
+        "Desc": "Get hit no more than 3 times on <color=#009fe1>Inferno</color> difficulty",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150042
+        ],
+        "Result": 1,
+        "RewardId": 68344
+    },
+    {
+        "Id": 150043,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "Wanted: Moon Eater",
+        "Desc": "Use any character to clear <color=#009fe1>Easy</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150043
+        ],
+        "Result": 1,
+        "RewardId": 68345
+    },
+    {
+        "Id": 150044,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "Wanted: Moon Eater",
+        "Desc": "Use any limited character to clear <color=#009fe1>Hard</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150044
+        ],
+        "Result": 1,
+        "RewardId": 68346
+    },
+    {
+        "Id": 150045,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "Wanted: Moon Eater",
+        "Desc": "Avoid getting hit by [Luminous Downfall] on <color=#009fe1>Hard</color> difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150045
+        ],
+        "Result": 1,
+        "RewardId": 68347
+    },
+    {
+        "Id": 150046,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "Wanted: Moon Eater",
+        "Desc": "Use Karenina: Scire to clear <color=#009fe1>Nightmare</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150046
+        ],
+        "Result": 1,
+        "RewardId": 68348
+    },
+    {
+        "Id": 150047,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "Wanted: Moon Eater",
+        "Desc": "Trigger [Declining Corruption] at least once on <color=#009fe1>Nightmare</color> difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150047
+        ],
+        "Result": 1,
+        "RewardId": 68349
+    },
+    {
+        "Id": 150048,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "Wanted: Moon Eater",
+        "Desc": "Clear <color=#009fe1>Inferno</color> difficulty once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150048
+        ],
+        "Result": 1,
+        "RewardId": 68350
+    },
+    {
+        "Id": 150049,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "Wanted: Moon Eater",
+        "Desc": "Get hit no more than 5 times on <color=#009fe1>Inferno</color> difficulty",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150049
+        ],
+        "Result": 1,
+        "RewardId": 68351
+    },
+    {
+        "Id": 150050,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "Wanted: Zack the Frostheart Emperor",
+        "Desc": "Use any character to clear <color=#009fe1>Easy</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150050
+        ],
+        "Result": 1,
+        "RewardId": 68352
+    },
+    {
+        "Id": 150051,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "Wanted: Zack the Frostheart Emperor",
+        "Desc": "Use any limited character to clear <color=#009fe1>Hard</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150051
+        ],
+        "Result": 1,
+        "RewardId": 68353
+    },
+    {
+        "Id": 150052,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "Wanted: Zack the Frostheart Emperor",
+        "Desc": "Get hit no more than 10 times on <color=#009fe1>Hard</color> difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150052
+        ],
+        "Result": 1,
+        "RewardId": 68354
+    },
+    {
+        "Id": 150053,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "Wanted: Zack the Frostheart Emperor",
+        "Desc": "Use Rosetta: Arete to clear <color=#009fe1>Nightmare</color> difficulty or above once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150053
+        ],
+        "Result": 1,
+        "RewardId": 68355
+    },
+    {
+        "Id": 150054,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "Wanted: Zack the Frostheart Emperor",
+        "Desc": "Trigger [Retaliatory Tide] at least once on <color=#009fe1>Nightmare</color> difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150054
+        ],
+        "Result": 1,
+        "RewardId": 68356
+    },
+    {
+        "Id": 150055,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "Wanted: Zack the Frostheart Emperor",
+        "Desc": "Clear <color=#009fe1>Inferno</color> difficulty once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150055
+        ],
+        "Result": 1,
+        "RewardId": 68357
+    },
+    {
+        "Id": 150056,
+        "SourceGroupId": 45008,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "Wanted: Zack the Frostheart Emperor",
+        "Desc": "On <color=#009fe1>Inferno</color> difficulty, reduce Phase 2 Zack's HP below 20% within 3 minutes and see through [Sea of Frostheart].",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            150056
+        ],
+        "Result": 1,
+        "RewardId": 68358
     },
     {
         "Id": 91137,
@@ -158609,6 +160022,81 @@
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
         "Condition": [
             95406
+        ],
+        "Result": 4050,
+        "RewardId": 67005,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 91172,
+        "Type": 11,
+        "Priority": 9000,
+        "Title": "Permanent Material",
+        "Desc": "Use a total of 240 Serum in material stages",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91172
+        ],
+        "Result": 240,
+        "RewardId": 67001,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 91173,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "Permanent Material",
+        "Desc": "Use a total of 840 Serum in material stages",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91173
+        ],
+        "Result": 840,
+        "RewardId": 67002,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 91174,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "Permanent Material",
+        "Desc": "Use a total of 1710 Serum in material stages",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91174
+        ],
+        "Result": 1710,
+        "RewardId": 67003,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 91175,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "Permanent Material",
+        "Desc": "Use a total of 2820 Serum in material stages",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91175
+        ],
+        "Result": 2820,
+        "RewardId": 67004,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 91176,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "Permanent Material",
+        "Desc": "Use a total of 4050 Serum in material stages",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91176
         ],
         "Result": 4050,
         "RewardId": 67005,
@@ -160589,7 +162077,7 @@
         "Id": 120662,
         "Type": 11,
         "Priority": 10000,
-        "Title": "Lost Voyage I",
+        "Title": "无归的航道Ⅰ",
         "Desc": "Log in to the game for the 1st time today",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanv404.png",
         "Condition": [
@@ -160603,7 +162091,7 @@
         "Id": 120663,
         "Type": 11,
         "Priority": 9900,
-        "Title": "Lost Voyage II",
+        "Title": "无归的航道Ⅱ",
         "Desc": "Total Activity has reached 100 points today",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanv404.png",
         "Condition": [
@@ -160618,7 +162106,7 @@
         "Id": 120664,
         "Type": 11,
         "Priority": 9800,
-        "Title": "Lost Voyage III",
+        "Title": "无归的航道Ⅲ",
         "Desc": "Use a total of 200 Serum today",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanv404.png",
         "Condition": [
@@ -160627,6 +162115,204 @@
         "Result": 200,
         "RewardId": 68305,
         "SkipId": 2016,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120665,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Simulated Battlefield",
+        "Desc": "Clear [Simulated Battlefield] 1 time",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev405.png",
+        "Condition": [
+            120665
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120666,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "Simulated Battlefield",
+        "Desc": "Clear [Simulated Battlefield] 5 times",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev405.png",
+        "Condition": [
+            120666
+        ],
+        "Result": 5,
+        "RewardId": 15215,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120667,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "Shrouded Requiem",
+        "Desc": "参与【雾夜异闻】1次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev405.png",
+        "Condition": [
+            120667
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 89102,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120668,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "Rapid Pursuit",
+        "Desc": "通关简单及以上难度的【母体】",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev405.png",
+        "Condition": [
+            120668
+        ],
+        "Result": 1,
+        "RewardId": 15216,
+        "SkipId": 89093,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120669,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "Retro Arcade",
+        "Desc": "Participate in any game mode 3 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev405.png",
+        "Condition": [
+            120669
+        ],
+        "Result": 3,
+        "RewardId": 15216,
+        "SkipId": 1300640,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120670,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "Nebulous Vigil",
+        "Desc": "Clear [Banished]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev405.png",
+        "Condition": [
+            120670
+        ],
+        "Result": 1,
+        "RewardId": 15219,
+        "SkipId": 11724,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120671,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "Long Live the Crowned I",
+        "Desc": "Complete Character Challenge Stage [Echoes of Crimson] Stage 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveCharacterTryv405.png",
+        "Condition": [
+            120671
+        ],
+        "Result": 1,
+        "RewardId": 15217,
+        "SkipId": 20235,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120672,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "Long Live the Crowned II",
+        "Desc": "Complete Character Challenge Stage [Echoes of Crimson] Stage 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveCharacterTryv405.png",
+        "Condition": [
+            120672
+        ],
+        "Result": 1,
+        "RewardId": 15217,
+        "SkipId": 20235,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120673,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "Long Live the Crowned III",
+        "Desc": "Complete Character Challenge Stage [Echoes of Crimson] Stage 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveCharacterTryv405.png",
+        "Condition": [
+            120673
+        ],
+        "Result": 1,
+        "RewardId": 15217,
+        "SkipId": 20235,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120674,
+        "Type": 11,
+        "Priority": 9100,
+        "Title": "Adaptation Fitting - Ignis",
+        "Desc": "Complete [Adaptation Fitting: Ignis]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActivePartnerTryv405.png",
+        "Condition": [
+            120674
+        ],
+        "Result": 1,
+        "RewardId": 15218,
+        "SkipId": 7107,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120675,
+        "SourceGroupId": 45002,
+        "Type": 11,
+        "Priority": 9000,
+        "Title": "Nightshroud Coronet",
+        "Desc": "Clear the trial stage of Coating: [Nightshroud Coronet]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveLuciaEffectCoatingv405.png",
+        "Condition": [
+            120675
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 10035,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120676,
+        "SourceGroupId": 45003,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "Stygian Pinion",
+        "Desc": "Clear the trial stage of Coating: [Stygian Pinion]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveVeronicaEffectCoatingv405.png",
+        "Condition": [
+            120676
+        ],
+        "Result": 1,
+        "RewardId": 15216,
+        "SkipId": 10035,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120677,
+        "SourceGroupId": 45004,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "Fluttering Ballet",
+        "Desc": "Clear [In the Name of Home]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveLivEffectCoatingV405.png",
+        "Condition": [
+            120677
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 20364,
         "Suffix": "Event"
     },
     {
@@ -162945,6 +164631,89 @@
         ],
         "Result": 1,
         "SkipId": 89101,
+        "Suffix": "Story"
+    },
+    {
+        "Id": 99714,
+        "Type": 106,
+        "Priority": 1,
+        "Title": "【对玩家不可见】4.5空花新闻判断玩家是否已领取指挥官涂装",
+        "Desc": "【对玩家不可见】4.5空花新闻判断玩家是否已领取指挥官涂装",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99714
+        ],
+        "Result": 1,
+        "Suffix": "Story"
+    },
+    {
+        "Id": 99715,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "placeholder_烬土逐夜(47)",
+        "Desc": "placeholder_完成1场战斗",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99715
+        ],
+        "Result": 1,
+        "RewardId": 67278,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99716,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "placeholder_烬土逐夜(48)",
+        "Desc": "placeholder_完成2场战斗",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99716
+        ],
+        "Result": 2,
+        "RewardId": 67279,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99717,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "placeholder_裁断进程 Ⅰ",
+        "Desc": "placeholder_完成1场战斗",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99717
+        ],
+        "Result": 1,
+        "RewardId": 67280,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99718,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "placeholder_裁断进程 Ⅱ",
+        "Desc": "placeholder_完成2场战斗",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99718
+        ],
+        "Result": 2,
+        "RewardId": 67281,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99719,
+        "Type": 106,
+        "Priority": 1,
+        "Title": "【对玩家不可见】4.5空花2.0历程Quest完成判定用任务",
+        "Desc": "【对玩家不可见】4.5空花2.0历程Quest完成判定用任务",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            99719
+        ],
+        "Result": 1,
+        "SkipId": 89104,
         "Suffix": "Story"
     },
     {
@@ -190148,6 +191917,2834 @@
         "Suffix": "Event"
     },
     {
+        "Id": 95407,
+        "Type": 65,
+        "Priority": 10000,
+        "Title": "1st Round Challenge I - Flat",
+        "Desc": "Challenge Guild Expedition 5 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95407
+        ],
+        "Result": 5,
+        "RewardId": 68100,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95408,
+        "Type": 65,
+        "Priority": 9990,
+        "Title": "1st Round Challenge II - Flat",
+        "Desc": "Challenge Guild Expedition 10 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95408
+        ],
+        "Result": 10,
+        "RewardId": 68101,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95409,
+        "Type": 65,
+        "Priority": 9980,
+        "Title": "1st Round Challenge III - Flat",
+        "Desc": "Challenge Guild Expedition 15 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95409
+        ],
+        "Result": 15,
+        "RewardId": 68102,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95410,
+        "Type": 65,
+        "Priority": 9970,
+        "Title": "1st Round Challenge IV - Flat",
+        "Desc": "Challenge Guild Expedition 20 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95410
+        ],
+        "Result": 20,
+        "RewardId": 68103,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95411,
+        "Type": 65,
+        "Priority": 9960,
+        "Title": "1st Round Challenge V - Flat",
+        "Desc": "Challenge Guild Expedition 25 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95411
+        ],
+        "Result": 25,
+        "RewardId": 68104,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95412,
+        "Type": 65,
+        "Priority": 9950,
+        "Title": "2nd Round Challenge I - Flat",
+        "Desc": "Challenge Guild Expedition 5 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95412
+        ],
+        "Result": 5,
+        "RewardId": 68105,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95413,
+        "Type": 65,
+        "Priority": 9940,
+        "Title": "2nd Round Challenge II - Flat",
+        "Desc": "Challenge Guild Expedition 10 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95413
+        ],
+        "Result": 10,
+        "RewardId": 68106,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95414,
+        "Type": 65,
+        "Priority": 9930,
+        "Title": "2nd Round Challenge III - Flat",
+        "Desc": "Challenge Guild Expedition 15 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95414
+        ],
+        "Result": 15,
+        "RewardId": 68107,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95415,
+        "Type": 65,
+        "Priority": 9920,
+        "Title": "2nd Round Challenge IV - Flat",
+        "Desc": "Challenge Guild Expedition 20 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95415
+        ],
+        "Result": 20,
+        "RewardId": 68108,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95416,
+        "Type": 65,
+        "Priority": 9910,
+        "Title": "2nd Round Challenge V - Flat",
+        "Desc": "Challenge Guild Expedition 25 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95416
+        ],
+        "Result": 25,
+        "RewardId": 68109,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95417,
+        "Type": 65,
+        "Priority": 9900,
+        "Title": "3rd Round Challenge I - Flat",
+        "Desc": "Challenge Guild Expedition 5 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95417
+        ],
+        "Result": 5,
+        "RewardId": 68110,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95418,
+        "Type": 65,
+        "Priority": 9890,
+        "Title": "3rd Round Challenge II - Flat",
+        "Desc": "Challenge Guild Expedition 10 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95418
+        ],
+        "Result": 10,
+        "RewardId": 68111,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95419,
+        "Type": 65,
+        "Priority": 9880,
+        "Title": "3rd Round Challenge III - Flat",
+        "Desc": "Challenge Guild Expedition 15 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95419
+        ],
+        "Result": 15,
+        "RewardId": 68112,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95420,
+        "Type": 65,
+        "Priority": 9870,
+        "Title": "3rd Round Challenge IV - Flat",
+        "Desc": "Challenge Guild Expedition 20 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95420
+        ],
+        "Result": 20,
+        "RewardId": 68113,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95421,
+        "Type": 65,
+        "Priority": 9860,
+        "Title": "3rd Round Challenge V - Flat",
+        "Desc": "Challenge Guild Expedition 25 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95421
+        ],
+        "Result": 25,
+        "RewardId": 68114,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95422,
+        "Type": 65,
+        "Priority": 9850,
+        "Title": "1st Round Points I - Flat",
+        "Desc": "Obtain a total of 2,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95422
+        ],
+        "Result": 2000,
+        "RewardId": 68115,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95423,
+        "Type": 65,
+        "Priority": 9840,
+        "Title": "1st Round Points II - Flat",
+        "Desc": "Obtain a total of 4,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95423
+        ],
+        "Result": 4000,
+        "RewardId": 68116,
+        "Suffix": "Serum"
+    },
+    {
+        "Id": 95424,
+        "Type": 65,
+        "Priority": 9830,
+        "Title": "1st Round Points III - Flat",
+        "Desc": "Obtain a total of 6,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95424
+        ],
+        "Result": 6000,
+        "RewardId": 68117,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95425,
+        "Type": 65,
+        "Priority": 9820,
+        "Title": "1st Round Points IV - Flat",
+        "Desc": "Obtain a total of 8,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95425
+        ],
+        "Result": 8000,
+        "RewardId": 68118,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95426,
+        "Type": 65,
+        "Priority": 9810,
+        "Title": "1st Round Points V - Flat",
+        "Desc": "Obtain a total of 10,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95426
+        ],
+        "Result": 10000,
+        "RewardId": 68119,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95427,
+        "Type": 65,
+        "Priority": 9800,
+        "Title": "1st Round Points VI - Flat",
+        "Desc": "Obtain a total of 12000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95427
+        ],
+        "Result": 12000,
+        "RewardId": 68120,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95428,
+        "Type": 65,
+        "Priority": 9790,
+        "Title": "2nd Round Points I - Flat",
+        "Desc": "Obtain a total of 2,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95428
+        ],
+        "Result": 2000,
+        "RewardId": 68121,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95429,
+        "Type": 65,
+        "Priority": 9780,
+        "Title": "2nd Round Points II - Flat",
+        "Desc": "Obtain a total of 4,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95429
+        ],
+        "Result": 4000,
+        "RewardId": 68122,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95430,
+        "Type": 65,
+        "Priority": 9770,
+        "Title": "2nd Round Points III - Flat",
+        "Desc": "Obtain a total of 6,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95430
+        ],
+        "Result": 6000,
+        "RewardId": 68123,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95431,
+        "Type": 65,
+        "Priority": 9760,
+        "Title": "2nd Round Points IV - Flat",
+        "Desc": "Obtain a total of 8,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95431
+        ],
+        "Result": 8000,
+        "RewardId": 68124,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95432,
+        "Type": 65,
+        "Priority": 9750,
+        "Title": "2nd Round Points V - Flat",
+        "Desc": "Obtain a total of 10,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95432
+        ],
+        "Result": 10000,
+        "RewardId": 68125,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95433,
+        "Type": 65,
+        "Priority": 9740,
+        "Title": "2nd Round Points VI - Flat",
+        "Desc": "Obtain a total of 12000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95433
+        ],
+        "Result": 12000,
+        "RewardId": 68126,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95434,
+        "Type": 65,
+        "Priority": 9730,
+        "Title": "3rd Round Points I - Flat",
+        "Desc": "Obtain a total of 2,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95434
+        ],
+        "Result": 2000,
+        "RewardId": 68127,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95435,
+        "Type": 65,
+        "Priority": 9720,
+        "Title": "3rd Round Points II - Flat",
+        "Desc": "Obtain a total of 4,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95435
+        ],
+        "Result": 4000,
+        "RewardId": 68128,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95436,
+        "Type": 65,
+        "Priority": 9710,
+        "Title": "3rd Round Points III - Flat",
+        "Desc": "Obtain a total of 6,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95436
+        ],
+        "Result": 6000,
+        "RewardId": 68129,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95437,
+        "Type": 65,
+        "Priority": 9700,
+        "Title": "3rd Round Points IV - Flat",
+        "Desc": "Obtain a total of 8,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95437
+        ],
+        "Result": 8000,
+        "RewardId": 68130,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95438,
+        "Type": 65,
+        "Priority": 9690,
+        "Title": "3rd Round Points V - Flat",
+        "Desc": "Obtain a total of 10,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95438
+        ],
+        "Result": 10000,
+        "RewardId": 68131,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95439,
+        "Type": 65,
+        "Priority": 9680,
+        "Title": "3rd Round Points VI - Flat",
+        "Desc": "Obtain a total of 12000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95439
+        ],
+        "Result": 12000,
+        "RewardId": 68132,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95440,
+        "Type": 65,
+        "Priority": 9670,
+        "Title": "Juncture Breakthrough I - Flat",
+        "Desc": "Clear a total of 1 juncture",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95440
+        ],
+        "Result": 1,
+        "RewardId": 68133,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95441,
+        "Type": 65,
+        "Priority": 9660,
+        "Title": "Juncture Breakthrough II - Flat",
+        "Desc": "Clear a total of 3 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95441
+        ],
+        "Result": 3,
+        "RewardId": 68134,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95442,
+        "Type": 65,
+        "Priority": 9650,
+        "Title": "Juncture Breakthrough I - Flat",
+        "Desc": "Clear a total of 1 juncture",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95442
+        ],
+        "Result": 1,
+        "RewardId": 68135,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95443,
+        "Type": 65,
+        "Priority": 9640,
+        "Title": "Juncture Breakthrough II - Flat",
+        "Desc": "Clear a total of 3 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95443
+        ],
+        "Result": 3,
+        "RewardId": 68136,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95444,
+        "Type": 65,
+        "Priority": 9630,
+        "Title": "Juncture Breakthrough I - Flat",
+        "Desc": "Clear a total of 1 juncture",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95444
+        ],
+        "Result": 1,
+        "RewardId": 68137,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95445,
+        "Type": 65,
+        "Priority": 9620,
+        "Title": "Juncture Breakthrough II - Flat",
+        "Desc": "Clear a total of 3 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95445
+        ],
+        "Result": 3,
+        "RewardId": 68138,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95446,
+        "Type": 65,
+        "Priority": 9610,
+        "Title": "Blockade Breakthrough I - Flat",
+        "Desc": "Clear a total of 1 Cliff Fortress",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95446
+        ],
+        "Result": 1,
+        "RewardId": 68139,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95447,
+        "Type": 65,
+        "Priority": 9600,
+        "Title": "Blockade Breakthrough I - Flat",
+        "Desc": "Clear a total of 1 Cliff Fortress",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95447
+        ],
+        "Result": 1,
+        "RewardId": 68140,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95448,
+        "Type": 65,
+        "Priority": 9590,
+        "Title": "Blockade Breakthrough I - Flat",
+        "Desc": "Clear a total of 1 Cliff Fortress",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95448
+        ],
+        "Result": 1,
+        "RewardId": 68141,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95449,
+        "Type": 65,
+        "Priority": 9580,
+        "Title": "Clear Cycle 1 Boss in Round 1 - Flat",
+        "Desc": "Clear Cycle 1 Boss in Round 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95449
+        ],
+        "Result": 1,
+        "RewardId": 68142,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95450,
+        "Type": 65,
+        "Priority": 9570,
+        "Title": "Clear Cycle 2 Boss in Round 1 - Flat",
+        "Desc": "Clear Cycle 2 Boss in Round 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95450
+        ],
+        "Result": 1,
+        "RewardId": 68143,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95451,
+        "Type": 65,
+        "Priority": 9560,
+        "Title": "Clear Cycle 3 Boss in Round 1 - Flat",
+        "Desc": "Clear Cycle 3 Boss in Round 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95451
+        ],
+        "Result": 1,
+        "RewardId": 68144,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95452,
+        "Type": 65,
+        "Priority": 9550,
+        "Title": "Clear Cycle 4 Boss in Round 1 - Flat",
+        "Desc": "Clear Cycle 4 Boss in Round 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95452
+        ],
+        "Result": 1,
+        "RewardId": 68145,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95453,
+        "Type": 65,
+        "Priority": 9540,
+        "Title": "Clear Cycle 5 Boss in Round 1 - Flat",
+        "Desc": "Clear Cycle 5 Boss in Round 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95453
+        ],
+        "Result": 1,
+        "RewardId": 68146,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95454,
+        "Type": 65,
+        "Priority": 9530,
+        "Title": "Clear Cycle 1 Boss in Round 2 - Flat",
+        "Desc": "Clear Cycle 1 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95454
+        ],
+        "Result": 1,
+        "RewardId": 68147,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95455,
+        "Type": 65,
+        "Priority": 9520,
+        "Title": "Clear Cycle 2 Boss in Round 2 - Flat",
+        "Desc": "Clear Cycle 2 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95455
+        ],
+        "Result": 1,
+        "RewardId": 68148,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95456,
+        "Type": 65,
+        "Priority": 9510,
+        "Title": "Clear Cycle 3 Boss in Round 2 - Flat",
+        "Desc": "Clear Cycle 3 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95456
+        ],
+        "Result": 1,
+        "RewardId": 68149,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95457,
+        "Type": 65,
+        "Priority": 9500,
+        "Title": "Clear Cycle 4 Boss in Round 2 - Flat",
+        "Desc": "Clear Cycle 4 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95457
+        ],
+        "Result": 1,
+        "RewardId": 68150,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95458,
+        "Type": 65,
+        "Priority": 9490,
+        "Title": "Clear Cycle 5 Boss in Round 2 - Flat",
+        "Desc": "Clear Cycle 5 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95458
+        ],
+        "Result": 1,
+        "RewardId": 68151,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95459,
+        "Type": 65,
+        "Priority": 9480,
+        "Title": "Clear Cycle 1 Boss in Round 3 - Flat",
+        "Desc": "Clear Cycle 1 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95459
+        ],
+        "Result": 1,
+        "RewardId": 68152,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95460,
+        "Type": 65,
+        "Priority": 9470,
+        "Title": "Clear Cycle 2 Boss in Round 3 - Flat",
+        "Desc": "Clear Cycle 2 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95460
+        ],
+        "Result": 1,
+        "RewardId": 68153,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95461,
+        "Type": 65,
+        "Priority": 9460,
+        "Title": "Clear Cycle 3 Boss in Round 3 - Flat",
+        "Desc": "Clear Cycle 3 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95461
+        ],
+        "Result": 1,
+        "RewardId": 68154,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95462,
+        "Type": 65,
+        "Priority": 9450,
+        "Title": "Clear Cycle 4 Boss in Round 3 - Flat",
+        "Desc": "Clear Cycle 4 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95462
+        ],
+        "Result": 1,
+        "RewardId": 68155,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95463,
+        "Type": 65,
+        "Priority": 9440,
+        "Title": "Clear Cycle 5 Boss in Round 3 - Flat",
+        "Desc": "Clear Cycle 5 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95463
+        ],
+        "Result": 1,
+        "RewardId": 68156,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95464,
+        "Type": 65,
+        "Priority": 10000,
+        "Title": "1st Round Challenge I - Dangerous",
+        "Desc": "Challenge Guild Expedition 3 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95464
+        ],
+        "Result": 3,
+        "RewardId": 68157,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95465,
+        "Type": 65,
+        "Priority": 9990,
+        "Title": "1st Round Challenge II - Dangerous",
+        "Desc": "Challenge Guild Expedition 6 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95465
+        ],
+        "Result": 6,
+        "RewardId": 68158,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95466,
+        "Type": 65,
+        "Priority": 9980,
+        "Title": "1st Round Challenge III - Dangerous",
+        "Desc": "Challenge Guild Expedition 9 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95466
+        ],
+        "Result": 9,
+        "RewardId": 68159,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95467,
+        "Type": 65,
+        "Priority": 9970,
+        "Title": "1st Round Challenge IV - Dangerous",
+        "Desc": "Challenge Guild Expedition 12 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95467
+        ],
+        "Result": 12,
+        "RewardId": 68160,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95468,
+        "Type": 65,
+        "Priority": 9960,
+        "Title": "1st Round Challenge V - Dangerous",
+        "Desc": "Challenge Guild Expedition 15 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95468
+        ],
+        "Result": 15,
+        "RewardId": 68161,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95469,
+        "Type": 65,
+        "Priority": 9950,
+        "Title": "1st Round Challenge VI - Dangerous",
+        "Desc": "Challenge Guild Expedition 18 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95469
+        ],
+        "Result": 18,
+        "RewardId": 68162,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95470,
+        "Type": 65,
+        "Priority": 9940,
+        "Title": "1st Round Challenge VII - Dangerous",
+        "Desc": "Challenge Guild Expedition 21 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95470
+        ],
+        "Result": 21,
+        "RewardId": 68163,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95471,
+        "Type": 65,
+        "Priority": 9930,
+        "Title": "1st Round Challenge VIII - Dangerous",
+        "Desc": "Challenge Guild Expedition 24 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95471
+        ],
+        "Result": 24,
+        "RewardId": 68164,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95472,
+        "Type": 65,
+        "Priority": 9920,
+        "Title": "1st Round Challenge IX - Dangerous",
+        "Desc": "Challenge Guild Expedition 27 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95472
+        ],
+        "Result": 27,
+        "RewardId": 68165,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95473,
+        "Type": 65,
+        "Priority": 9910,
+        "Title": "2nd Round Challenge I - Dangerous",
+        "Desc": "Challenge Guild Expedition 3 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95473
+        ],
+        "Result": 3,
+        "RewardId": 68166,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95474,
+        "Type": 65,
+        "Priority": 9900,
+        "Title": "2nd Round Challenge II - Dangerous",
+        "Desc": "Challenge Guild Expedition 6 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95474
+        ],
+        "Result": 6,
+        "RewardId": 68167,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95475,
+        "Type": 65,
+        "Priority": 9890,
+        "Title": "2nd Round Challenge III - Dangerous",
+        "Desc": "Challenge Guild Expedition 9 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95475
+        ],
+        "Result": 9,
+        "RewardId": 68168,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95476,
+        "Type": 65,
+        "Priority": 9880,
+        "Title": "2nd Round Challenge IV - Dangerous",
+        "Desc": "Challenge Guild Expedition 12 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95476
+        ],
+        "Result": 12,
+        "RewardId": 68169,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95477,
+        "Type": 65,
+        "Priority": 9870,
+        "Title": "2nd Round Challenge V - Dangerous",
+        "Desc": "Challenge Guild Expedition 15 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95477
+        ],
+        "Result": 15,
+        "RewardId": 68170,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95478,
+        "Type": 65,
+        "Priority": 9860,
+        "Title": "2nd Round Challenge VI - Dangerous",
+        "Desc": "Challenge Guild Expedition 18 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95478
+        ],
+        "Result": 18,
+        "RewardId": 68171,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95479,
+        "Type": 65,
+        "Priority": 9850,
+        "Title": "2nd Round Challenge VII - Dangerous",
+        "Desc": "Challenge Guild Expedition 21 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95479
+        ],
+        "Result": 21,
+        "RewardId": 68172,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95480,
+        "Type": 65,
+        "Priority": 9840,
+        "Title": "2nd Round Challenge VIII - Dangerous",
+        "Desc": "Challenge Guild Expedition 24 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95480
+        ],
+        "Result": 24,
+        "RewardId": 68173,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95481,
+        "Type": 65,
+        "Priority": 9830,
+        "Title": "2nd Round Challenge IX - Dangerous",
+        "Desc": "Challenge Guild Expedition 27 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95481
+        ],
+        "Result": 27,
+        "RewardId": 68174,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95482,
+        "Type": 65,
+        "Priority": 9820,
+        "Title": "3rd Round Challenge I - Dangerous",
+        "Desc": "Challenge Guild Expedition 3 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95482
+        ],
+        "Result": 3,
+        "RewardId": 68175,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95483,
+        "Type": 65,
+        "Priority": 9810,
+        "Title": "3rd Round Challenge II - Dangerous",
+        "Desc": "Challenge Guild Expedition 6 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95483
+        ],
+        "Result": 6,
+        "RewardId": 68176,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95484,
+        "Type": 65,
+        "Priority": 9800,
+        "Title": "3rd Round Challenge III - Dangerous",
+        "Desc": "Challenge Guild Expedition 9 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95484
+        ],
+        "Result": 9,
+        "RewardId": 68177,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95485,
+        "Type": 65,
+        "Priority": 9790,
+        "Title": "3rd Round Challenge IV - Dangerous",
+        "Desc": "Challenge Guild Expedition 12 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95485
+        ],
+        "Result": 12,
+        "RewardId": 68178,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95486,
+        "Type": 65,
+        "Priority": 9780,
+        "Title": "3rd Round Challenge V - Dangerous",
+        "Desc": "Challenge Guild Expedition 15 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95486
+        ],
+        "Result": 15,
+        "RewardId": 68179,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95487,
+        "Type": 65,
+        "Priority": 9770,
+        "Title": "3rd Round Challenge VI - Dangerous",
+        "Desc": "Challenge Guild Expedition 18 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95487
+        ],
+        "Result": 18,
+        "RewardId": 68180,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95488,
+        "Type": 65,
+        "Priority": 9760,
+        "Title": "3rd Round Challenge VII - Dangerous",
+        "Desc": "Challenge Guild Expedition 21 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95488
+        ],
+        "Result": 21,
+        "RewardId": 68181,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95489,
+        "Type": 65,
+        "Priority": 9750,
+        "Title": "3rd Round Challenge VIII - Dangerous",
+        "Desc": "Challenge Guild Expedition 24 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95489
+        ],
+        "Result": 24,
+        "RewardId": 68182,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95490,
+        "Type": 65,
+        "Priority": 9740,
+        "Title": "3rd Round Challenge IX - Dangerous",
+        "Desc": "Challenge Guild Expedition 27 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95490
+        ],
+        "Result": 27,
+        "RewardId": 68183,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95491,
+        "Type": 65,
+        "Priority": 9730,
+        "Title": "1st Round Points I - Dangerous",
+        "Desc": "Obtain a total of 4,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95491
+        ],
+        "Result": 4000,
+        "RewardId": 68184,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95492,
+        "Type": 65,
+        "Priority": 9720,
+        "Title": "1st Round Points II - Dangerous",
+        "Desc": "Obtain a total of 8,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95492
+        ],
+        "Result": 8000,
+        "RewardId": 68185,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95493,
+        "Type": 65,
+        "Priority": 9710,
+        "Title": "1st Round Points III - Dangerous",
+        "Desc": "Obtain a total of 12000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95493
+        ],
+        "Result": 12000,
+        "RewardId": 68186,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95494,
+        "Type": 65,
+        "Priority": 9700,
+        "Title": "1st Round Points IV - Dangerous",
+        "Desc": "Obtain a total of 16000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95494
+        ],
+        "Result": 16000,
+        "RewardId": 68187,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95495,
+        "Type": 65,
+        "Priority": 9690,
+        "Title": "1st Round Points V - Dangerous",
+        "Desc": "Obtain a total of 20000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95495
+        ],
+        "Result": 20000,
+        "RewardId": 68188,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95496,
+        "Type": 65,
+        "Priority": 9680,
+        "Title": "1st Round Points VI - Dangerous",
+        "Desc": "Obtain a total of 22000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95496
+        ],
+        "Result": 22000,
+        "RewardId": 68189,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95497,
+        "Type": 65,
+        "Priority": 9670,
+        "Title": "1st Round Points VII - Dangerous",
+        "Desc": "Obtain a total of 24000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95497
+        ],
+        "Result": 24000,
+        "RewardId": 68190,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95498,
+        "Type": 65,
+        "Priority": 9660,
+        "Title": "2nd Round Points I - Dangerous",
+        "Desc": "Obtain a total of 4,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95498
+        ],
+        "Result": 4000,
+        "RewardId": 68191,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95499,
+        "Type": 65,
+        "Priority": 9650,
+        "Title": "2nd Round Points II - Dangerous",
+        "Desc": "Obtain a total of 8,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95499
+        ],
+        "Result": 8000,
+        "RewardId": 68192,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95500,
+        "Type": 65,
+        "Priority": 9640,
+        "Title": "2nd Round Points III - Dangerous",
+        "Desc": "Obtain a total of 12000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95500
+        ],
+        "Result": 12000,
+        "RewardId": 68193,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95501,
+        "Type": 65,
+        "Priority": 9630,
+        "Title": "2nd Round Points IV - Dangerous",
+        "Desc": "Obtain a total of 16000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95501
+        ],
+        "Result": 16000,
+        "RewardId": 68194,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95502,
+        "Type": 65,
+        "Priority": 9620,
+        "Title": "2nd Round Points V - Dangerous",
+        "Desc": "Obtain a total of 20000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95502
+        ],
+        "Result": 20000,
+        "RewardId": 68195,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95503,
+        "Type": 65,
+        "Priority": 9610,
+        "Title": "2nd Round Points VI - Dangerous",
+        "Desc": "Obtain a total of 22000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95503
+        ],
+        "Result": 22000,
+        "RewardId": 68196,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95504,
+        "Type": 65,
+        "Priority": 9600,
+        "Title": "2nd Round Points VII - Dangerous",
+        "Desc": "Obtain a total of 24000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95504
+        ],
+        "Result": 24000,
+        "RewardId": 68197,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95505,
+        "Type": 65,
+        "Priority": 9590,
+        "Title": "3rd Round Points I - Dangerous",
+        "Desc": "Obtain a total of 4,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95505
+        ],
+        "Result": 4000,
+        "RewardId": 68198,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95506,
+        "Type": 65,
+        "Priority": 9580,
+        "Title": "3rd Round Points II - Dangerous",
+        "Desc": "Obtain a total of 8,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95506
+        ],
+        "Result": 8000,
+        "RewardId": 68199,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95507,
+        "Type": 65,
+        "Priority": 9570,
+        "Title": "3rd Round Points III - Dangerous",
+        "Desc": "Obtain a total of 12000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95507
+        ],
+        "Result": 12000,
+        "RewardId": 68200,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95508,
+        "Type": 65,
+        "Priority": 9560,
+        "Title": "3rd Round Points IV - Dangerous",
+        "Desc": "Obtain a total of 16000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95508
+        ],
+        "Result": 16000,
+        "RewardId": 68201,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95509,
+        "Type": 65,
+        "Priority": 9550,
+        "Title": "3rd Round Points V - Dangerous",
+        "Desc": "Obtain a total of 20000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95509
+        ],
+        "Result": 20000,
+        "RewardId": 68202,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95510,
+        "Type": 65,
+        "Priority": 9540,
+        "Title": "3rd Round Points VI - Dangerous",
+        "Desc": "Obtain a total of 22000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95510
+        ],
+        "Result": 22000,
+        "RewardId": 68203,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95511,
+        "Type": 65,
+        "Priority": 9530,
+        "Title": "3rd Round Points VII - Dangerous",
+        "Desc": "Obtain a total of 24000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95511
+        ],
+        "Result": 24000,
+        "RewardId": 68204,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95512,
+        "Type": 65,
+        "Priority": 9520,
+        "Title": "Juncture Breakthrough I - Dangerous",
+        "Desc": "Clear a total of 1 juncture",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95512
+        ],
+        "Result": 1,
+        "RewardId": 68205,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95513,
+        "Type": 65,
+        "Priority": 9510,
+        "Title": "Juncture Breakthrough II - Dangerous",
+        "Desc": "Clear a total of 2 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95513
+        ],
+        "Result": 2,
+        "RewardId": 68206,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95514,
+        "Type": 65,
+        "Priority": 9500,
+        "Title": "Juncture Breakthrough III - Dangerous",
+        "Desc": "Clear a total of 3 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95514
+        ],
+        "Result": 3,
+        "RewardId": 68207,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95515,
+        "Type": 65,
+        "Priority": 9490,
+        "Title": "Juncture Breakthrough IV - Dangerous",
+        "Desc": "Clear a total of 4 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95515
+        ],
+        "Result": 4,
+        "RewardId": 68208,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95516,
+        "Type": 65,
+        "Priority": 9480,
+        "Title": "Juncture Breakthrough V - Dangerous",
+        "Desc": "Clear a total of 5 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95516
+        ],
+        "Result": 5,
+        "RewardId": 68209,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95517,
+        "Type": 65,
+        "Priority": 9470,
+        "Title": "Juncture Breakthrough I - Dangerous",
+        "Desc": "Clear a total of 1 juncture",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95517
+        ],
+        "Result": 1,
+        "RewardId": 68210,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95518,
+        "Type": 65,
+        "Priority": 9460,
+        "Title": "Juncture Breakthrough II - Dangerous",
+        "Desc": "Clear a total of 2 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95518
+        ],
+        "Result": 2,
+        "RewardId": 68211,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95519,
+        "Type": 65,
+        "Priority": 9450,
+        "Title": "Juncture Breakthrough III - Dangerous",
+        "Desc": "Clear a total of 3 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95519
+        ],
+        "Result": 3,
+        "RewardId": 68212,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95520,
+        "Type": 65,
+        "Priority": 9440,
+        "Title": "Juncture Breakthrough IV - Dangerous",
+        "Desc": "Clear a total of 4 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95520
+        ],
+        "Result": 4,
+        "RewardId": 68213,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95521,
+        "Type": 65,
+        "Priority": 9430,
+        "Title": "Juncture Breakthrough V - Dangerous",
+        "Desc": "Clear a total of 5 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95521
+        ],
+        "Result": 5,
+        "RewardId": 68214,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95522,
+        "Type": 65,
+        "Priority": 9420,
+        "Title": "Juncture Breakthrough I - Dangerous",
+        "Desc": "Clear a total of 1 juncture",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95522
+        ],
+        "Result": 1,
+        "RewardId": 68215,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95523,
+        "Type": 65,
+        "Priority": 9410,
+        "Title": "Juncture Breakthrough II - Dangerous",
+        "Desc": "Clear a total of 2 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95523
+        ],
+        "Result": 2,
+        "RewardId": 68216,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95524,
+        "Type": 65,
+        "Priority": 9400,
+        "Title": "Juncture Breakthrough III - Dangerous",
+        "Desc": "Clear a total of 3 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95524
+        ],
+        "Result": 3,
+        "RewardId": 68217,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95525,
+        "Type": 65,
+        "Priority": 9390,
+        "Title": "Juncture Breakthrough IV - Dangerous",
+        "Desc": "Clear a total of 4 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95525
+        ],
+        "Result": 4,
+        "RewardId": 68218,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95526,
+        "Type": 65,
+        "Priority": 9380,
+        "Title": "Juncture Breakthrough V - Dangerous",
+        "Desc": "Clear a total of 5 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95526
+        ],
+        "Result": 5,
+        "RewardId": 68219,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95527,
+        "Type": 65,
+        "Priority": 9370,
+        "Title": "Blockade Breakthrough I - Dangerous",
+        "Desc": "Clear a total of 1 Cliff Fortress",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95527
+        ],
+        "Result": 1,
+        "RewardId": 68220,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95528,
+        "Type": 65,
+        "Priority": 9360,
+        "Title": "Blockade Breakthrough I - Dangerous",
+        "Desc": "Clear a total of 1 Cliff Fortress",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95528
+        ],
+        "Result": 1,
+        "RewardId": 68221,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95529,
+        "Type": 65,
+        "Priority": 9350,
+        "Title": "Blockade Breakthrough I - Dangerous",
+        "Desc": "Clear a total of 1 Cliff Fortress",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95529
+        ],
+        "Result": 1,
+        "RewardId": 68222,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95530,
+        "Type": 65,
+        "Priority": 9580,
+        "Title": "Clear Cycle 1 Boss in Round 1 - Dangerous",
+        "Desc": "Clear Cycle 1 Boss in Round 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95530
+        ],
+        "Result": 1,
+        "RewardId": 68223,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95531,
+        "Type": 65,
+        "Priority": 9570,
+        "Title": "Clear Cycle 2 Boss in Round 1 - Dangerous",
+        "Desc": "Clear Cycle 2 Boss in Round 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95531
+        ],
+        "Result": 1,
+        "RewardId": 68224,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95532,
+        "Type": 65,
+        "Priority": 9560,
+        "Title": "Clear Cycle 3 Boss in Round 1 - Dangerous",
+        "Desc": "Clear Cycle 3 Boss in Round 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95532
+        ],
+        "Result": 1,
+        "RewardId": 68225,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95533,
+        "Type": 65,
+        "Priority": 9550,
+        "Title": "Clear Cycle 4 Boss in Round 1 - Dangerous",
+        "Desc": "Clear Cycle 4 Boss in Round 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95533
+        ],
+        "Result": 1,
+        "RewardId": 68226,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95534,
+        "Type": 65,
+        "Priority": 9540,
+        "Title": "Clear Cycle 5 Boss in Round 1 - Dangerous",
+        "Desc": "Clear Cycle 5 Boss in Round 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95534
+        ],
+        "Result": 1,
+        "RewardId": 68227,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95535,
+        "Type": 65,
+        "Priority": 9530,
+        "Title": "Clear Cycle 1 Boss in Round 2 - Dangerous",
+        "Desc": "Clear Cycle 1 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95535
+        ],
+        "Result": 1,
+        "RewardId": 68228,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95536,
+        "Type": 65,
+        "Priority": 9520,
+        "Title": "Clear Cycle 2 Boss in Round 2 - Dangerous",
+        "Desc": "Clear Cycle 2 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95536
+        ],
+        "Result": 1,
+        "RewardId": 68229,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95537,
+        "Type": 65,
+        "Priority": 9510,
+        "Title": "Clear Cycle 3 Boss in Round 2 - Dangerous",
+        "Desc": "Clear Cycle 3 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95537
+        ],
+        "Result": 1,
+        "RewardId": 68230,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95538,
+        "Type": 65,
+        "Priority": 9500,
+        "Title": "Clear Cycle 4 Boss in Round 2 - Dangerous",
+        "Desc": "Clear Cycle 4 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95538
+        ],
+        "Result": 1,
+        "RewardId": 68231,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95539,
+        "Type": 65,
+        "Priority": 9490,
+        "Title": "Clear Cycle 5 Boss in Round 2 - Dangerous",
+        "Desc": "Clear Cycle 5 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95539
+        ],
+        "Result": 1,
+        "RewardId": 68232,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95540,
+        "Type": 65,
+        "Priority": 9480,
+        "Title": "Clear Cycle 1 Boss in Round 3 - Dangerous",
+        "Desc": "Clear Cycle 1 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95540
+        ],
+        "Result": 1,
+        "RewardId": 68233,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95541,
+        "Type": 65,
+        "Priority": 9470,
+        "Title": "Clear Cycle 2 Boss in Round 3 - Dangerous",
+        "Desc": "Clear Cycle 2 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95541
+        ],
+        "Result": 1,
+        "RewardId": 68234,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95542,
+        "Type": 65,
+        "Priority": 9460,
+        "Title": "Clear Cycle 3 Boss in Round 3 - Dangerous",
+        "Desc": "Clear Cycle 3 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95542
+        ],
+        "Result": 1,
+        "RewardId": 68235,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95543,
+        "Type": 65,
+        "Priority": 9450,
+        "Title": "Clear Cycle 4 Boss in Round 3 - Dangerous",
+        "Desc": "Clear Cycle 4 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95543
+        ],
+        "Result": 1,
+        "RewardId": 68236,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95544,
+        "Type": 65,
+        "Priority": 9440,
+        "Title": "Clear Cycle 5 Boss in Round 3 - Dangerous",
+        "Desc": "Clear Cycle 5 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95544
+        ],
+        "Result": 1,
+        "RewardId": 68237,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95545,
+        "Type": 65,
+        "Priority": 10000,
+        "Title": "2nd Round Challenge I - Rugged",
+        "Desc": "Challenge Guild Expedition 3 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95545
+        ],
+        "Result": 3,
+        "RewardId": 68238,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95546,
+        "Type": 65,
+        "Priority": 9990,
+        "Title": "2nd Round Challenge II - Rugged",
+        "Desc": "Challenge Guild Expedition 6 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95546
+        ],
+        "Result": 6,
+        "RewardId": 68239,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95547,
+        "Type": 65,
+        "Priority": 9980,
+        "Title": "2nd Round Challenge III - Rugged",
+        "Desc": "Challenge Guild Expedition 9 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95547
+        ],
+        "Result": 9,
+        "RewardId": 68240,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95548,
+        "Type": 65,
+        "Priority": 9970,
+        "Title": "2nd Round Challenge IV - Rugged",
+        "Desc": "Challenge Guild Expedition 12 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95548
+        ],
+        "Result": 12,
+        "RewardId": 68241,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95549,
+        "Type": 65,
+        "Priority": 9960,
+        "Title": "2nd Round Challenge V - Rugged",
+        "Desc": "Challenge Guild Expedition 15 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95549
+        ],
+        "Result": 15,
+        "RewardId": 68242,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95550,
+        "Type": 65,
+        "Priority": 9950,
+        "Title": "2nd Round Challenge VI - Rugged",
+        "Desc": "Challenge Guild Expedition 18 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95550
+        ],
+        "Result": 18,
+        "RewardId": 68243,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95551,
+        "Type": 65,
+        "Priority": 9940,
+        "Title": "2nd Round Challenge VII - Rugged",
+        "Desc": "Challenge Guild Expedition 21 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95551
+        ],
+        "Result": 21,
+        "RewardId": 68244,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95552,
+        "Type": 65,
+        "Priority": 9930,
+        "Title": "2nd Round Challenge VIII - Rugged",
+        "Desc": "Challenge Guild Expedition 24 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95552
+        ],
+        "Result": 24,
+        "RewardId": 68245,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95553,
+        "Type": 65,
+        "Priority": 9920,
+        "Title": "2nd Round Challenge IX - Rugged",
+        "Desc": "Challenge Guild Expedition 27 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95553
+        ],
+        "Result": 27,
+        "RewardId": 68246,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95554,
+        "Type": 65,
+        "Priority": 9910,
+        "Title": "3rd Round Challenge I - Rugged",
+        "Desc": "Challenge Guild Expedition 3 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95554
+        ],
+        "Result": 3,
+        "RewardId": 68247,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95555,
+        "Type": 65,
+        "Priority": 9900,
+        "Title": "3rd Round Challenge II - Rugged",
+        "Desc": "Challenge Guild Expedition 6 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95555
+        ],
+        "Result": 6,
+        "RewardId": 68248,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95556,
+        "Type": 65,
+        "Priority": 9890,
+        "Title": "3rd Round Challenge III - Rugged",
+        "Desc": "Challenge Guild Expedition 9 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95556
+        ],
+        "Result": 9,
+        "RewardId": 68249,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95557,
+        "Type": 65,
+        "Priority": 9880,
+        "Title": "3rd Round Challenge IV - Rugged",
+        "Desc": "Challenge Guild Expedition 12 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95557
+        ],
+        "Result": 12,
+        "RewardId": 68250,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95558,
+        "Type": 65,
+        "Priority": 9870,
+        "Title": "3rd Round Challenge V - Rugged",
+        "Desc": "Challenge Guild Expedition 15 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95558
+        ],
+        "Result": 15,
+        "RewardId": 68251,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95559,
+        "Type": 65,
+        "Priority": 9860,
+        "Title": "3rd Round Challenge VI - Rugged",
+        "Desc": "Challenge Guild Expedition 18 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95559
+        ],
+        "Result": 18,
+        "RewardId": 68252,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95560,
+        "Type": 65,
+        "Priority": 9850,
+        "Title": "3rd Round Challenge VII - Rugged",
+        "Desc": "Challenge Guild Expedition 21 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95560
+        ],
+        "Result": 21,
+        "RewardId": 68253,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95561,
+        "Type": 65,
+        "Priority": 9840,
+        "Title": "3rd Round Challenge VIII - Rugged",
+        "Desc": "Challenge Guild Expedition 24 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95561
+        ],
+        "Result": 24,
+        "RewardId": 68254,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95562,
+        "Type": 65,
+        "Priority": 9830,
+        "Title": "3rd Round Challenge IX - Rugged",
+        "Desc": "Challenge Guild Expedition 27 times in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95562
+        ],
+        "Result": 27,
+        "RewardId": 68255,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95563,
+        "Type": 65,
+        "Priority": 9820,
+        "Title": "2nd Round Points I - Rugged",
+        "Desc": "Obtain a total of 6,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95563
+        ],
+        "Result": 6000,
+        "RewardId": 68256,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95564,
+        "Type": 65,
+        "Priority": 9810,
+        "Title": "2nd Round Points II - Rugged",
+        "Desc": "Obtain a total of 12000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95564
+        ],
+        "Result": 12000,
+        "RewardId": 68257,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95565,
+        "Type": 65,
+        "Priority": 9800,
+        "Title": "2nd Round Points III - Rugged",
+        "Desc": "Obtain a total of 18,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95565
+        ],
+        "Result": 18000,
+        "RewardId": 68258,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95566,
+        "Type": 65,
+        "Priority": 9790,
+        "Title": "2nd Round Points IV - Rugged",
+        "Desc": "Obtain a total of 24000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95566
+        ],
+        "Result": 24000,
+        "RewardId": 68259,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95567,
+        "Type": 65,
+        "Priority": 9780,
+        "Title": "2nd Round Points V - Rugged",
+        "Desc": "Obtain a total of 30,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95567
+        ],
+        "Result": 30000,
+        "RewardId": 68260,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95568,
+        "Type": 65,
+        "Priority": 9770,
+        "Title": "2nd Round Points VI - Rugged",
+        "Desc": "Obtain a total of 33000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95568
+        ],
+        "Result": 33000,
+        "RewardId": 68261,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95569,
+        "Type": 65,
+        "Priority": 9760,
+        "Title": "2nd Round Points VII - Rugged",
+        "Desc": "Obtain a total of 36000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95569
+        ],
+        "Result": 36000,
+        "RewardId": 68262,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95570,
+        "Type": 65,
+        "Priority": 9750,
+        "Title": "3rd Round Points I - Rugged",
+        "Desc": "Obtain a total of 6,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95570
+        ],
+        "Result": 6000,
+        "RewardId": 68263,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95571,
+        "Type": 65,
+        "Priority": 9740,
+        "Title": "3rd Round Points II - Rugged",
+        "Desc": "Obtain a total of 12000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95571
+        ],
+        "Result": 12000,
+        "RewardId": 68264,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95572,
+        "Type": 65,
+        "Priority": 9730,
+        "Title": "3rd Round Points III - Rugged",
+        "Desc": "Obtain a total of 18,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95572
+        ],
+        "Result": 18000,
+        "RewardId": 68265,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95573,
+        "Type": 65,
+        "Priority": 9720,
+        "Title": "3rd Round Points IV - Rugged",
+        "Desc": "Obtain a total of 24000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95573
+        ],
+        "Result": 24000,
+        "RewardId": 68266,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95574,
+        "Type": 65,
+        "Priority": 9710,
+        "Title": "3rd Round Points V - Rugged",
+        "Desc": "Obtain a total of 30,000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95574
+        ],
+        "Result": 30000,
+        "RewardId": 68267,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95575,
+        "Type": 65,
+        "Priority": 9700,
+        "Title": "3rd Round Points VI - Rugged",
+        "Desc": "Obtain a total of 33000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95575
+        ],
+        "Result": 33000,
+        "RewardId": 68268,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95576,
+        "Type": 65,
+        "Priority": 9690,
+        "Title": "3rd Round Points VII - Rugged",
+        "Desc": "Obtain a total of 36000 Expedition Points",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95576
+        ],
+        "Result": 36000,
+        "RewardId": 68269,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95577,
+        "Type": 65,
+        "Priority": 9680,
+        "Title": "Juncture Breakthrough I - Rugged",
+        "Desc": "Clear a total of 1 juncture",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95577
+        ],
+        "Result": 1,
+        "RewardId": 68270,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95578,
+        "Type": 65,
+        "Priority": 9670,
+        "Title": "Juncture Breakthrough II - Rugged",
+        "Desc": "Clear a total of 2 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95578
+        ],
+        "Result": 2,
+        "RewardId": 68271,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95579,
+        "Type": 65,
+        "Priority": 9650,
+        "Title": "Juncture Breakthrough III - Rugged",
+        "Desc": "Clear a total of 3 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95579
+        ],
+        "Result": 3,
+        "RewardId": 68272,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95580,
+        "Type": 65,
+        "Priority": 9640,
+        "Title": "Juncture Breakthrough IV - Rugged",
+        "Desc": "Clear a total of 4 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95580
+        ],
+        "Result": 4,
+        "RewardId": 68273,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95581,
+        "Type": 65,
+        "Priority": 9630,
+        "Title": "Juncture Breakthrough V - Rugged",
+        "Desc": "Clear a total of 5 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95581
+        ],
+        "Result": 5,
+        "RewardId": 68274,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95582,
+        "Type": 65,
+        "Priority": 9620,
+        "Title": "Juncture Breakthrough I - Rugged",
+        "Desc": "Clear a total of 1 juncture",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95582
+        ],
+        "Result": 1,
+        "RewardId": 68275,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95583,
+        "Type": 65,
+        "Priority": 9610,
+        "Title": "Juncture Breakthrough II - Rugged",
+        "Desc": "Clear a total of 2 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95583
+        ],
+        "Result": 2,
+        "RewardId": 68276,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95584,
+        "Type": 65,
+        "Priority": 9590,
+        "Title": "Juncture Breakthrough III - Rugged",
+        "Desc": "Clear a total of 3 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95584
+        ],
+        "Result": 3,
+        "RewardId": 68277,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95585,
+        "Type": 65,
+        "Priority": 9580,
+        "Title": "Juncture Breakthrough IV - Rugged",
+        "Desc": "Clear a total of 4 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95585
+        ],
+        "Result": 4,
+        "RewardId": 68278,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95586,
+        "Type": 65,
+        "Priority": 9570,
+        "Title": "Juncture Breakthrough V - Rugged",
+        "Desc": "Clear a total of 5 junctures",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95586
+        ],
+        "Result": 5,
+        "RewardId": 68279,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95587,
+        "Type": 65,
+        "Priority": 9560,
+        "Title": "Blockade Breakthrough I - Rugged",
+        "Desc": "Clear a total of 1 Cliff Fortress",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95587
+        ],
+        "Result": 1,
+        "RewardId": 68280,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95588,
+        "Type": 65,
+        "Priority": 9550,
+        "Title": "Blockade Breakthrough I - Rugged",
+        "Desc": "Clear a total of 1 Cliff Fortress",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95588
+        ],
+        "Result": 1,
+        "RewardId": 68281,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95589,
+        "Type": 65,
+        "Priority": 9530,
+        "Title": "Clear Cycle 1 Boss in Round 2 - Rugged",
+        "Desc": "Clear Cycle 1 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95589
+        ],
+        "Result": 1,
+        "RewardId": 68282,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95590,
+        "Type": 65,
+        "Priority": 9520,
+        "Title": "Clear Cycle 2 Boss in Round 2 - Rugged",
+        "Desc": "Clear Cycle 2 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95590
+        ],
+        "Result": 1,
+        "RewardId": 68283,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95591,
+        "Type": 65,
+        "Priority": 9510,
+        "Title": "Clear Cycle 3 Boss in Round 2 - Rugged",
+        "Desc": "Clear Cycle 3 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95591
+        ],
+        "Result": 1,
+        "RewardId": 68284,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95592,
+        "Type": 65,
+        "Priority": 9500,
+        "Title": "Clear Cycle 4 Boss in Round 2 - Rugged",
+        "Desc": "Clear Cycle 4 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95592
+        ],
+        "Result": 1,
+        "RewardId": 68285,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95593,
+        "Type": 65,
+        "Priority": 9490,
+        "Title": "Clear Cycle 5 Boss in Round 2 - Rugged",
+        "Desc": "Clear Cycle 5 Boss in Round 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95593
+        ],
+        "Result": 1,
+        "RewardId": 68286,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95594,
+        "Type": 65,
+        "Priority": 9480,
+        "Title": "Clear Cycle 1 Boss in Round 3 - Rugged",
+        "Desc": "Clear Cycle 1 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95594
+        ],
+        "Result": 1,
+        "RewardId": 68287,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95595,
+        "Type": 65,
+        "Priority": 9470,
+        "Title": "Clear Cycle 2 Boss in Round 3 - Rugged",
+        "Desc": "Clear Cycle 2 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95595
+        ],
+        "Result": 1,
+        "RewardId": 68288,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95596,
+        "Type": 65,
+        "Priority": 9460,
+        "Title": "Clear Cycle 3 Boss in Round 3 - Rugged",
+        "Desc": "Clear Cycle 3 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95596
+        ],
+        "Result": 1,
+        "RewardId": 68289,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95597,
+        "Type": 65,
+        "Priority": 9450,
+        "Title": "Clear Cycle 4 Boss in Round 3 - Rugged",
+        "Desc": "Clear Cycle 4 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95597
+        ],
+        "Result": 1,
+        "RewardId": 68290,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95598,
+        "Type": 65,
+        "Priority": 9440,
+        "Title": "Clear Cycle 5 Boss in Round 3 - Rugged",
+        "Desc": "Clear Cycle 5 Boss in Round 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95598
+        ],
+        "Result": 1,
+        "RewardId": 68291,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95599,
+        "Type": 65,
+        "Priority": 9000,
+        "Title": "Expedition Garrison I",
+        "Desc": "Garrison 1 node",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95599
+        ],
+        "Result": 1,
+        "RewardId": 68292,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95600,
+        "Type": 65,
+        "Priority": 8900,
+        "Title": "Expedition Garrison II",
+        "Desc": "Garrison 4 nodes",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95600
+        ],
+        "Result": 4,
+        "RewardId": 68293,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95601,
+        "Type": 65,
+        "Priority": 8800,
+        "Title": "Expedition Garrison III",
+        "Desc": "Garrison 12 nodes",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95601
+        ],
+        "Result": 12,
+        "RewardId": 68294,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95602,
+        "Type": 65,
+        "Priority": 8700,
+        "Title": "Guild Expedition I",
+        "Desc": "Clear an expedition stage of Flat difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95602
+        ],
+        "Result": 1,
+        "RewardId": 68295,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95603,
+        "Type": 65,
+        "Priority": 8600,
+        "Title": "Guild Expedition II",
+        "Desc": "Clear an expedition stage of Dangerous difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95603
+        ],
+        "Result": 1,
+        "RewardId": 68296,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95604,
+        "Type": 65,
+        "Priority": 8500,
+        "Title": "Guild Expedition III",
+        "Desc": "Clear an expedition stage of Rugged difficulty or above",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95604
+        ],
+        "Result": 1,
+        "RewardId": 68297,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95605,
+        "Type": 65,
+        "Priority": 8400,
+        "Title": "Expedition Ranking I",
+        "Desc": "Enters the top 30% in the Command Bureau at the end of the event",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95605
+        ],
+        "Result": 1,
+        "RewardId": 68298,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95606,
+        "Type": 65,
+        "Priority": 8300,
+        "Title": "Expedition Ranking II",
+        "Desc": "Enters the top 20% in the Command Bureau at the end of the event",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95606
+        ],
+        "Result": 1,
+        "RewardId": 68299,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95607,
+        "Type": 65,
+        "Priority": 8200,
+        "Title": "Expedition Ranking III",
+        "Desc": "Enters the top 10% in the Command Bureau at the end of the event",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95607
+        ],
+        "Result": 1,
+        "RewardId": 68300,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 95608,
+        "Type": 65,
+        "Priority": 8100,
+        "Title": "Expedition Ranking IV",
+        "Desc": "Enters the top 5% in the Command Bureau at the end of the event",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            95608
+        ],
+        "Result": 1,
+        "RewardId": 68301,
+        "Suffix": "Event"
+    },
+    {
         "Id": 140001,
         "Type": 11,
         "Priority": 10000,
@@ -191211,6 +195808,342 @@
         ],
         "Result": 1,
         "RewardId": 68067,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140088,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Arcade Structure Verification I",
+        "Desc": "Play Cat Grab once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140109
+        ],
+        "Result": 1,
+        "RewardId": 69010,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140089,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "Arcade Structure Verification II",
+        "Desc": "Play Fluffy Snooze once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140110
+        ],
+        "Result": 1,
+        "RewardId": 69010,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140090,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "Arcade Structure Verification III",
+        "Desc": "Play Wreck-It Shark-speare once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140111
+        ],
+        "Result": 1,
+        "RewardId": 69010,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140091,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "Arcade Optimization",
+        "Desc": "Play any game mode once per day",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140112
+        ],
+        "Result": 1,
+        "RewardId": 69020,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140100,
+        "Type": 84,
+        "Priority": 10000,
+        "Title": "Spend 6 Rainbow Cards during the event",
+        "Desc": "Spend 6 Rainbow Cards during the event",
+        "Icon": "Assets/Product/Texture/Image/UiKotodama/UiKotodamaTiao.png",
+        "Condition": [
+            140113
+        ],
+        "Result": 6,
+        "RewardId": 69061,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140101,
+        "Type": 84,
+        "Priority": 9900,
+        "Title": "Spend 30 Rainbow Cards during the event",
+        "Desc": "Spend 30 Rainbow Cards during the event",
+        "Icon": "Assets/Product/Texture/Image/UiKotodama/UiKotodamaTiao.png",
+        "Condition": [
+            140114
+        ],
+        "Result": 30,
+        "RewardId": 69062,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140102,
+        "Type": 84,
+        "Priority": 9800,
+        "Title": "Spend 128 Rainbow Cards during the event",
+        "Desc": "Spend 128 Rainbow Cards during the event",
+        "Icon": "Assets/Product/Texture/Image/UiKotodama/UiKotodamaTiao.png",
+        "Condition": [
+            140115
+        ],
+        "Result": 128,
+        "RewardId": 69063,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140103,
+        "Type": 84,
+        "Priority": 9700,
+        "Title": "Spend 328 Rainbow Cards during the event",
+        "Desc": "Spend 328 Rainbow Cards during the event",
+        "Icon": "Assets/Product/Texture/Image/UiKotodama/UiKotodamaTiao.png",
+        "Condition": [
+            140116
+        ],
+        "Result": 328,
+        "RewardId": 69064,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140104,
+        "Type": 84,
+        "Priority": 9600,
+        "Title": "Spend 648 Rainbow Cards during the event",
+        "Desc": "Spend 648 Rainbow Cards during the event",
+        "Icon": "Assets/Product/Texture/Image/UiKotodama/UiKotodamaTiao.png",
+        "Condition": [
+            140117
+        ],
+        "Result": 648,
+        "RewardId": 69065,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140105,
+        "Type": 84,
+        "Priority": 9500,
+        "Title": "Spend 1000 Rainbow Cards during the event",
+        "Desc": "Spend 1000 Rainbow Cards during the event",
+        "Icon": "Assets/Product/Texture/Image/UiKotodama/UiKotodamaTiao.png",
+        "Condition": [
+            140118
+        ],
+        "Result": 1000,
+        "RewardId": 69066,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140106,
+        "Type": 11,
+        "Priority": 8000,
+        "Title": "雾夜镇魂曲（1）",
+        "Desc": "通关【迷局突围】难度1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140119
+        ],
+        "Result": 1,
+        "RewardId": 67961,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140107,
+        "Type": 11,
+        "Priority": 8100,
+        "Title": "雾夜镇魂曲（2）",
+        "Desc": "通关【迷局突围】难度2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140120
+        ],
+        "Result": 1,
+        "RewardId": 67962,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140108,
+        "Type": 11,
+        "Priority": 8200,
+        "Title": "雾夜镇魂曲（3）",
+        "Desc": "通关【迷局突围】难度3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140121
+        ],
+        "Result": 1,
+        "RewardId": 67963,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140109,
+        "Type": 11,
+        "Priority": 8300,
+        "Title": "雾夜镇魂曲（4）",
+        "Desc": "通关【迷局突围】难度4",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140122
+        ],
+        "Result": 1,
+        "RewardId": 67964,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140110,
+        "Type": 11,
+        "Priority": 8400,
+        "Title": "雾夜镇魂曲（5）",
+        "Desc": "维罗妮卡存档分达到45000",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140123
+        ],
+        "Result": 45000,
+        "RewardId": 67965,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140111,
+        "Type": 11,
+        "Priority": 8500,
+        "Title": "雾夜镇魂曲（6）",
+        "Desc": "阿尔法存档达到45000",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140124
+        ],
+        "Result": 45000,
+        "RewardId": 67966,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140112,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "雾夜镇魂曲（7）",
+        "Desc": "【抉择】累计达70次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140125
+        ],
+        "Result": 70,
+        "RewardId": 67967,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140113,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "雾夜镇魂曲（8）",
+        "Desc": "【抉择】累计达140次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140126
+        ],
+        "Result": 140,
+        "RewardId": 67968,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140114,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "雾夜镇魂曲（9）",
+        "Desc": "【抉择】累计达210次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140127
+        ],
+        "Result": 210,
+        "RewardId": 68074,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140115,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "雾夜镇魂曲（10）",
+        "Desc": "【任务完成】累计达6次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140128
+        ],
+        "Result": 6,
+        "RewardId": 68075,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140116,
+        "Type": 11,
+        "Priority": 9000,
+        "Title": "雾夜镇魂曲（11）",
+        "Desc": "【任务完成】累计达15次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140129
+        ],
+        "Result": 15,
+        "RewardId": 68076,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140117,
+        "Type": 11,
+        "Priority": 9100,
+        "Title": "雾夜镇魂曲（12）",
+        "Desc": "【任务完成】累计达30次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140130
+        ],
+        "Result": 30,
+        "RewardId": 67961,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140118,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "雾夜镇魂曲（13）",
+        "Desc": "维罗妮卡存档分达到45000",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140131
+        ],
+        "Result": 45000,
+        "RewardId": 67962,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140119,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "雾夜镇魂曲（14）",
+        "Desc": "阿尔法存档达到45000",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140132
+        ],
+        "Result": 45000,
+        "RewardId": 67963,
         "Suffix": "Event"
     }
 ]

@@ -1,0 +1,402 @@
+[
+    {
+        "Id": 1,
+        "Name": "The Staring Point",
+        "BgDesc": "It came from an ancient extraterrestrial civilization, but its true purpose is yet to be identified. Surprisingly, it gives those passing by a home-like, warm feeling. What could it be...?",
+        "BuildType": 1,
+        "GridOccupyType": 2,
+        "RangeType": 1,
+        "BuildingCount": 1,
+        "Events": [
+            1
+        ],
+        "FloorId": 2,
+        "ModelKey": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon03.png"
+    },
+    {
+        "Id": 2,
+        "Name": "Norman Star Mine",
+        "BgDesc": "A wandering mine that traveled all the way from a distant blue planet. It has long been abandoned, but is still producing shiny Star Ore relentlessly.",
+        "BuildType": 2,
+        "GridOccupyType": 2,
+        "RangeType": 1,
+        "BuildingCount": 100,
+        "Cast": 150,
+        "CanRecovery": true,
+        "CanSelect": true,
+        "CycleLevelUp": 1,
+        "Events": [
+            2,
+            5
+        ],
+        "FloorId": 2,
+        "ModelKey": 2,
+        "LimitNumStageIds": [
+            401,
+            402,
+            403
+        ],
+        "LimitNums": [
+            3,
+            2,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon01.png",
+        "RelyOnBuilding": 3,
+        "ComboEvent": 3
+    },
+    {
+        "Id": 3,
+        "Name": "Star Training Field",
+        "BgDesc": "Noctis never liked this training method, but No. 21 has a different view on it. She believes if Noctis were to run a shop, it would close down within a week.",
+        "BuildType": 2,
+        "GridOccupyType": 2,
+        "RangeType": 1,
+        "BuildingCount": 6,
+        "Cast": 100,
+        "CanRecovery": true,
+        "CanSelect": true,
+        "CycleLevelUp": 1,
+        "Events": [
+            4
+        ],
+        "FloorId": 2,
+        "ModelKey": 3,
+        "IsShowBuildingCount": true,
+        "LimitNumStageIds": [
+            505
+        ],
+        "LimitNums": [
+            99
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon06.png"
+    },
+    {
+        "Id": 4,
+        "Name": "Virtual Range",
+        "BgDesc": "\"The lack of virtual shooting range to simulate interstellar wars is the fundamental reason for loss!\" Said the owner who refused to disclose their name.",
+        "UnlockStageId": 303,
+        "BuildType": 3,
+        "GridOccupyType": 2,
+        "BuildingCount": 100,
+        "Cast": 420,
+        "CanRecovery": true,
+        "CanSelect": true,
+        "CycleLevelUp": 1,
+        "Events": [
+            6
+        ],
+        "FloorId": 2,
+        "ModelKey": 4,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon02.png",
+        "UnlockTimeId": 17405
+    },
+    {
+        "Id": 5,
+        "Name": "\"Dawnlight\" Bar",
+        "BgDesc": "\"The cruising electrolyte made by the pink owner has a warm, gentle taste.\"",
+        "UnlockStageId": 101,
+        "BuildType": 5,
+        "GridOccupyType": 2,
+        "RangeType": 1,
+        "BuildingCount": 100,
+        "Cast": 100,
+        "CanRecovery": true,
+        "CanSelect": true,
+        "CycleLevelUp": 1,
+        "Events": [
+            8
+        ],
+        "FloorId": 2,
+        "ModelKey": 5,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon04.png",
+        "RelyOnBuilding": 3,
+        "ComboEvent": 9
+    },
+    {
+        "Id": 6,
+        "Name": "Brilliance Observatory",
+        "BgDesc": "The owner of the observatory had embarked on a journey through the universe. She left starry gifts and blessing songs for travelers passing by.",
+        "UnlockStageId": 203,
+        "BuildType": 5,
+        "GridOccupyType": 2,
+        "RangeType": 1,
+        "BuildingCount": 100,
+        "Cast": 420,
+        "CanRecovery": true,
+        "CanSelect": true,
+        "CycleLevelUp": 1,
+        "Events": [
+            10
+        ],
+        "FloorId": 2,
+        "ModelKey": 6,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon05.png",
+        "RelyOnBuilding": 2,
+        "ComboEvent": 11,
+        "UnlockTimeId": 17404
+    },
+    {
+        "Id": 7,
+        "Name": "Leap Star Tower",
+        "BgDesc": "The deserted tower silently narrates the history of struggles of ancient civilizations. It can still be of help even on a barren planet.",
+        "UnlockStageId": 103,
+        "BuildType": 3,
+        "GridOccupyType": 2,
+        "BuildingCount": 100,
+        "Cast": 420,
+        "CanRecovery": true,
+        "CanSelect": true,
+        "CycleLevelUp": 1,
+        "Events": [
+            12
+        ],
+        "FloorId": 2,
+        "ModelKey": 7,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon07.png"
+    },
+    {
+        "Id": 101,
+        "Name": "Alien Star Rock",
+        "BgDesc": "It is just an ordinary rock no matter how you look at it... right?",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 5,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "FloorId": 4,
+        "FloorHeight": 0.5,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon04.png",
+        "RelyOnBuilding": 3,
+        "ComboEvent": 101
+    },
+    {
+        "Id": 102,
+        "Name": "Alien Vegetation",
+        "BgDesc": "The purple color of this fluffy, mossy vegetation is said to be related to the origin of life. As time goes on, life is still looking for a path.",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 5,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "Events": [
+            103,
+            102
+        ],
+        "FloorId": 3,
+        "FloorHeight": 0.2,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon03.png"
+    },
+    {
+        "Id": 103,
+        "Name": "Barren Sandstone",
+        "BgDesc": "\"Each time humans recognize how insignificant they are, mankind would make a giant leap forward.\"",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 5,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "FloorId": 7,
+        "FloorHeight": 0.5,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon06.png",
+        "RelyOnBuilding": 6,
+        "ComboEvent": 109
+    },
+    {
+        "Id": 104,
+        "Name": "Desert Oasis",
+        "BgDesc": "That man wants to see the barren land covered in oases. He has always been working on it.",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 5,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "Events": [
+            108,
+            107
+        ],
+        "FloorId": 8,
+        "FloorHeight": 0.2,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon05.png"
+    },
+    {
+        "Id": 105,
+        "Name": "Frozen Mountain",
+        "BgDesc": "\"Someone once used the glaciers from an entire planet to create a marvelous artwork. It was but 'a tip of the iceberg.'\"",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 5,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "FloorId": 11,
+        "FloorHeight": 0.6,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon02.png",
+        "RelyOnBuilding": 7,
+        "ComboEvent": 106
+    },
+    {
+        "Id": 106,
+        "Name": "Eternal Glacier",
+        "BgDesc": "The ice has frozen all sins and memories. Everything awaits for awakening in silence.",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 5,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "Events": [
+            105,
+            104
+        ],
+        "FloorId": 12,
+        "FloorHeight": 0.2,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon01.png"
+    },
+    {
+        "Id": 107,
+        "Name": "Volcano Crystal",
+        "BgDesc": "\"Death and suffering led them to trigger a volcanic eruption. Their ending is not hard to imagine; nobody lived to retrieve the treasures from the lava.\"",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 5,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "FloorId": 16,
+        "FloorHeight": 0.5,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon08.png",
+        "RelyOnBuilding": 4,
+        "ComboEvent": 112
+    },
+    {
+        "Id": 108,
+        "Name": "Lava Flow",
+        "BgDesc": "It will never stop flowing as long as the planet's heart is still burning.",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 5,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "Events": [
+            111,
+            110
+        ],
+        "FloorId": 15,
+        "FloorHeight": 0.2,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon07.png"
+    },
+    {
+        "Id": 109,
+        "Name": "Mont Red Velvet",
+        "BgDesc": "\"LOL, this soil actually tastes sweet...\", \"Noctis, so unhygienic... Um, it is very sweet indeed.\"",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 50,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "Events": [
+            113
+        ],
+        "FloorId": 19,
+        "FloorHeight": 0.5,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon10.png"
+    },
+    {
+        "Id": 110,
+        "Name": "Almond Mousse",
+        "BgDesc": "This desert is perfect in both look and taste, yet it can be found everywhere on this planet. It must be a dream.",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 50,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "FloorId": 20,
+        "FloorHeight": 0.5,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon09.png",
+        "RelyOnBuilding": 2,
+        "ComboEvent": 114
+    },
+    {
+        "Id": 111,
+        "Name": "Mont Red Velvet",
+        "BgDesc": "\"LOL, this soil actually tastes sweet...\", \"Noctis, so unhygienic... Um, it is very sweet indeed.\"",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 140,
+        "Recovery": 1.0,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "Events": [
+            113
+        ],
+        "FloorId": 19,
+        "FloorHeight": 0.5,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon10.png"
+    },
+    {
+        "Id": 112,
+        "Name": "Almond Mousse",
+        "BgDesc": "This desert is perfect in both look and taste, yet it can be found everywhere on this planet. It must be a dream.",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 140,
+        "Recovery": 1.0,
+        "CanRecovery": true,
+        "BatchBuild": 1,
+        "FloorId": 20,
+        "FloorHeight": 0.5,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon09.png",
+        "RelyOnBuilding": 2,
+        "ComboEvent": 114
+    },
+    {
+        "Id": 1001,
+        "Name": "Gigantic Iceberg",
+        "BgDesc": "It has no special effect but can hardly be destroyed.",
+        "BuildType": 4,
+        "GridOccupyType": 1,
+        "BuildingCount": 999,
+        "Cast": 9999,
+        "FloorId": 11,
+        "FloorHeight": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBaseIcon02.png"
+    },
+    {
+        "Id": 90001,
+        "Name": "The Staring Point",
+        "BgDesc": "It came from an ancient extraterrestrial civilization, but its true purpose is yet to be identified. Surprisingly, it gives those passing by a home-like, warm feeling. What could it be...?",
+        "BuildType": 1,
+        "GridOccupyType": 2,
+        "RangeType": 1,
+        "BuildingCount": 1,
+        "Events": [
+            90001
+        ],
+        "FloorId": 2,
+        "ModelKey": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon03.png"
+    },
+    {
+        "Id": 90002,
+        "Name": "The Staring Point",
+        "BgDesc": "It came from an ancient extraterrestrial civilization, but its true purpose is yet to be identified. Surprisingly, it gives those passing by a home-like, warm feeling. What could it be...?",
+        "BuildType": 1,
+        "GridOccupyType": 2,
+        "RangeType": 1,
+        "BuildingCount": 1,
+        "FloorId": 2,
+        "ModelKey": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon03.png"
+    }
+]

@@ -97,7 +97,7 @@ function XUiExpeditionBattleDetailProxy:OnClickBtnEnter()
         return
     end
     self:Hide()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.Ui.EStage:GetStageId())
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.Ui.EStage:GetStageId())
 end
 --================
 --初始化增益图标面板

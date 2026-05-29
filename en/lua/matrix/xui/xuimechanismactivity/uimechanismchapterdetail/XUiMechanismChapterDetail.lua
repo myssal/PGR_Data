@@ -24,7 +24,7 @@ end
 
 
 function XUiMechanismChapterDetail:OnBtnEnerEvent()
-    XLuaUiManager.Open("UiBattleRoleRoom",self._StageId,self._Control:GetTeamDataByChapterId(self._ChapterId),require('XUi/XUiMechanismActivity/UiMechanismBattleRoleRoom/XUiMechanismBattleRoleRoom'))
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self._StageId,self._Control:GetTeamDataByChapterId(self._ChapterId),require('XUi/XUiMechanismActivity/UiMechanismBattleRoleRoom/XUiMechanismBattleRoleRoom'))
 end
 
 --region 三星目标显示

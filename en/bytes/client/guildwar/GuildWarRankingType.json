@@ -2,10 +2,7 @@
     {
         "Id": 1,
         "Name": "Command Bureau Ranking",
-        "TabType": "BtnFirstHasSnd",
-        "FatherTab": 0,
-        "RankingTarget": 0,
-        "RoundId": 0
+        "TabType": "BtnFirstHasSnd"
     },
     {
         "Id": 2,
@@ -13,7 +10,6 @@
         "TabType": "BtnSecondAll",
         "FatherTab": 1,
         "RankingTarget": 1,
-        "RoundId": 0,
         "Params": [
             1,
             0
@@ -22,10 +18,7 @@
     {
         "Id": 3,
         "Name": "Command Bureau Report",
-        "TabType": "BtnFirstHasSnd",
-        "FatherTab": 0,
-        "RankingTarget": 0,
-        "RoundId": 0
+        "TabType": "BtnFirstHasSnd"
     },
     {
         "Id": 4,
@@ -33,7 +26,6 @@
         "TabType": "BtnSecondTop",
         "FatherTab": 3,
         "RankingTarget": 2,
-        "RoundId": 0,
         "Params": [
             2,
             0
@@ -45,11 +37,11 @@
         "TabType": "BtnSecond",
         "FatherTab": 3,
         "RankingTarget": 2,
-        "RoundId": 1,
         "Params": [
             2,
             1
-        ]
+        ],
+        "RoundId": 1
     },
     {
         "Id": 6,
@@ -57,11 +49,11 @@
         "TabType": "BtnSecond",
         "FatherTab": 3,
         "RankingTarget": 2,
-        "RoundId": 2,
         "Params": [
             2,
             2
-        ]
+        ],
+        "RoundId": 2
     },
     {
         "Id": 7,
@@ -69,10 +61,10 @@
         "TabType": "BtnSecondBottom",
         "FatherTab": 3,
         "RankingTarget": 2,
-        "RoundId": 3,
         "Params": [
             2,
             3
-        ]
+        ],
+        "RoundId": 3
     }
 ]

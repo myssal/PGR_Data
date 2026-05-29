@@ -2,12 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
         "EndDelay": 1000.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory0.png"
@@ -16,12 +12,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             36
@@ -30,12 +21,7 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1005,
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
@@ -47,27 +33,24 @@
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 109,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 5000.0,
         "Params": [
             1,
             "<color=#ffffffff><size=50><i>May every child of humanity be able to return home safely.</i></size></color>",
+            "",
             50,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2000.0,
         "Params": [
             1005,
@@ -80,23 +63,14 @@
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
-        "Type": 110,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 110
     },
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 503,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             50001
         ]

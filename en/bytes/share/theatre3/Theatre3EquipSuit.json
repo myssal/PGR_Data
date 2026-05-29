@@ -101,7 +101,6 @@
     },
     {
         "Id": 6,
-        "AttType": 0,
         "SuitName": "Diesel",
         "UseType": 2,
         "SuitEffectGroupId": 6,
@@ -115,7 +114,6 @@
     },
     {
         "Id": 7,
-        "AttType": 0,
         "SuitName": "Boone",
         "UseType": 2,
         "SuitEffectGroupId": 7,
@@ -129,23 +127,22 @@
     },
     {
         "Id": 8,
-        "AttType": 0,
         "SuitName": "Turing",
         "UseType": 2,
         "SuitEffectGroupId": 8,
         "Desc": "· [<u>Wound</u>] max stacking limit <color=#4a70b9>+20</color>\\n· When a battle starts, inflicts <color=#4a70b9>20</color> stacks of [<u>Wound</u>] on all enemies.",
-        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ETulingI01002.png",
-        "RecommendDesc": "- Recommended Battlefield Characters -",
-        "SimpleEffectDesc": "· [<u>Wound</u>] max stacking limit increases.\\n· When a battle starts, inflicts copious stacks of [<u>Wound</u>] on all enemies.",
-        "QubitSuitEffectGroupId": 1008,
-        "QubitDesc": "· [<u>Rip</u>] max stacking limit <color=#17f5cf>+30</color>\\n· When a battle starts, inflicts <color=#17f5cf>30</color> stacks of [<u>Rip</u>] on all enemies.",
-        "QubitSampleEffectDesc": "· [<u>Rip</u>] max stacking limit increases.\\n· When a battle starts, inflicts copious stacks of [<u>Rip</u>] on all enemies.",
         "TraitName": [
             "Wound"
         ],
         "TraitDesc": [
             "· Upon taking Basic Attack DMG, inflicts Elemental DMG equal to the Wound stack x<color=#4a70b9>200%</color> (same element as the bearer's), with a <color=#4a70b9>4</color>s cooldown.\\n· Wound can stack up to <color=#4a70b9>20</color> times for <color=#4a70b9>10</color>s (refreshes when obtained repeatedly)."
         ],
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ETulingI01002.png",
+        "RecommendDesc": "- Recommended Battlefield Characters -",
+        "SimpleEffectDesc": "· [<u>Wound</u>] max stacking limit increases.\\n· When a battle starts, inflicts copious stacks of [<u>Wound</u>] on all enemies.",
+        "QubitSuitEffectGroupId": 1008,
+        "QubitDesc": "· [<u>Rip</u>] max stacking limit <color=#17f5cf>+30</color>\\n· When a battle starts, inflicts <color=#17f5cf>30</color> stacks of [<u>Rip</u>] on all enemies.",
+        "QubitSampleEffectDesc": "· [<u>Rip</u>] max stacking limit increases.\\n· When a battle starts, inflicts copious stacks of [<u>Rip</u>] on all enemies.",
         "QubitTraitName": [
             "Rip"
         ],
@@ -155,7 +152,6 @@
     },
     {
         "Id": 9,
-        "AttType": 0,
         "SuitName": "Charlotte",
         "UseType": 2,
         "SuitEffectGroupId": 9,
@@ -169,7 +165,6 @@
     },
     {
         "Id": 10,
-        "AttType": 0,
         "SuitName": "Samantha",
         "UseType": 2,
         "SuitEffectGroupId": 10,
@@ -183,7 +178,6 @@
     },
     {
         "Id": 11,
-        "AttType": 0,
         "SuitName": "Fran",
         "UseType": 2,
         "SuitEffectGroupId": 11,
@@ -197,7 +191,6 @@
     },
     {
         "Id": 12,
-        "AttType": 0,
         "SuitName": "Tifa",
         "UseType": 2,
         "SuitEffectGroupId": 12,
@@ -211,7 +204,6 @@
     },
     {
         "Id": 13,
-        "AttType": 0,
         "SuitName": "Seraphine",
         "UseType": 2,
         "SuitEffectGroupId": 13,
@@ -225,7 +217,6 @@
     },
     {
         "Id": 14,
-        "AttType": 0,
         "SuitName": "Cunningham",
         "UseType": 2,
         "SuitEffectGroupId": 14,
@@ -239,23 +230,22 @@
     },
     {
         "Id": 15,
-        "AttType": 0,
         "SuitName": "Voltaire",
         "UseType": 2,
         "SuitEffectGroupId": 15,
         "Desc": "· When a battle ends, grants <color=#4a70b9>1</color> stack of [<u>Execution</u>] (permanently stackable within one run).\\n· Grants <color=#4a70b9>4</color> stacks in a boss fight.{0}",
-        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EFuertaiI01002.png",
-        "RecommendDesc": "- Recommended Battlefield Characters -",
-        "SimpleEffectDesc": "· When clearing battle nodes, grants permanent stacks of [<u>Execution</u>] in one run.\\n· Grants additional stacks in a boss fight.",
-        "QubitSuitEffectGroupId": 1015,
-        "QubitDesc": "· When a battle ends, grants <color=#17f5cf>2</color> stacks of [<u>Execution</u>] (permanently stackable within one run).\\n· Grants <color=#17f5cf>5</color> stacks in a boss fight.{0}",
-        "QubitSampleEffectDesc": "· When clearing battle nodes, grants permanent stacks of [<u>Execution</u>] in one run.\\n· Grants additional stacks in a boss fight.",
         "TraitName": [
             "Execution"
         ],
         "TraitDesc": [
             "· Upon dealing damage, instantly executes an enemy if the target's HP Percentage is lower than the number of Execution stacks."
         ],
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EFuertaiI01002.png",
+        "RecommendDesc": "- Recommended Battlefield Characters -",
+        "SimpleEffectDesc": "· When clearing battle nodes, grants permanent stacks of [<u>Execution</u>] in one run.\\n· Grants additional stacks in a boss fight.",
+        "QubitSuitEffectGroupId": 1015,
+        "QubitDesc": "· When a battle ends, grants <color=#17f5cf>2</color> stacks of [<u>Execution</u>] (permanently stackable within one run).\\n· Grants <color=#17f5cf>5</color> stacks in a boss fight.{0}",
+        "QubitSampleEffectDesc": "· When clearing battle nodes, grants permanent stacks of [<u>Execution</u>] in one run.\\n· Grants additional stacks in a boss fight.",
         "QubitTraitName": [
             "Execution"
         ],
@@ -265,23 +255,22 @@
     },
     {
         "Id": 16,
-        "AttType": 0,
         "SuitName": "Signa",
         "UseType": 2,
         "SuitEffectGroupId": 16,
         "Desc": "· Enemy [<u>Poison</u>] max stacking limit <color=#4a70b9>+30</color>\\n· When inflicting [<u>Poison</u>], inflicts <color=#4a70b9>1</color> additional stack.",
-        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXigenaI01002.png",
-        "RecommendDesc": "- Recommended Battlefield Characters -",
-        "SimpleEffectDesc": "· Enemy [<u>Poison</u>] max stacking limit increases.\\n· When inflicting [<u>Poison</u>], inflicts additional stacks.",
-        "QubitSuitEffectGroupId": 1016,
-        "QubitDesc": "· Enemy [<u>Blight</u>] stack limit <color=#17f5cf>+40</color>.\\n· When inflicting [<u>Blight</u>], grants <color=#17f5cf>1</color> additional stack.",
-        "QubitSampleEffectDesc": "· Enemy [<u>Blight</u>] max stacking limit increases.\\n· When inflicting [<u>Blight</u>], inflicts additional stacks.",
         "TraitName": [
             "Poison"
         ],
         "TraitDesc": [
             "· When poisoned, receives True DMG equal to <color=#4a70b9>600%</color> of the bearer's ATK, stacking up to <color=#4a70b9>30</color> times for <color=#4a70b9>5</color>s (refreshes when obtained repeatedly, with each stack's DMG calculated independently)."
         ],
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXigenaI01002.png",
+        "RecommendDesc": "- Recommended Battlefield Characters -",
+        "SimpleEffectDesc": "· Enemy [<u>Poison</u>] max stacking limit increases.\\n· When inflicting [<u>Poison</u>], inflicts additional stacks.",
+        "QubitSuitEffectGroupId": 1016,
+        "QubitDesc": "· Enemy [<u>Blight</u>] stack limit <color=#17f5cf>+40</color>.\\n· When inflicting [<u>Blight</u>], grants <color=#17f5cf>1</color> additional stack.",
+        "QubitSampleEffectDesc": "· Enemy [<u>Blight</u>] max stacking limit increases.\\n· When inflicting [<u>Blight</u>], inflicts additional stacks.",
         "QubitTraitName": [
             "Blight"
         ],
@@ -291,7 +280,6 @@
     },
     {
         "Id": 17,
-        "AttType": 0,
         "SuitName": "Derketo",
         "UseType": 2,
         "SuitEffectGroupId": 17,
@@ -305,7 +293,6 @@
     },
     {
         "Id": 18,
-        "AttType": 0,
         "SuitName": "Mozart",
         "UseType": 2,
         "SuitEffectGroupId": 18,
@@ -319,7 +306,6 @@
     },
     {
         "Id": 19,
-        "AttType": 0,
         "SuitName": "Lucrezia",
         "UseType": 2,
         "SuitEffectGroupId": 19,
@@ -333,7 +319,6 @@
     },
     {
         "Id": 20,
-        "AttType": 0,
         "SuitName": "Isabel",
         "UseType": 2,
         "SuitEffectGroupId": 20,
@@ -347,23 +332,22 @@
     },
     {
         "Id": 21,
-        "AttType": 0,
         "SuitName": "Shelley",
         "UseType": 2,
         "SuitEffectGroupId": 21,
         "Desc": "· [<u>Mechanoid</u>] evolves every <color=#4a70b9>10</color> levels, unlocking more powerful forms and effects.",
-        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXueLaiI01002.png",
-        "RecommendDesc": "- Recommended Battlefield Characters -",
-        "SimpleEffectDesc": "· [<u>Mechanoid</u>] evolves according to its levels.",
-        "QubitSuitEffectGroupId": 1021,
-        "QubitDesc": "· [<u>Mechanoid</u>] reaches max levels, exceeding its limits and evolving into its ultimate form.",
-        "QubitSampleEffectDesc": "· [<u>Mechanoid</u>] reaches max levels, exceeding its limits and evolving into its ultimate form.",
         "TraitName": [
             "Mechanoid"
         ],
         "TraitDesc": [
             "· The mechanoid follows the character to fight. It cannot be revived after it dies.\\n· The mechanoid's ATK and HP increase alongside its level.\\n· When a battle ends, the mechanoid's level <color=#4a70b9>+1</color>, up to Lv.<color=#4a70b9>30</color>."
         ],
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXueLaiI01002.png",
+        "RecommendDesc": "- Recommended Battlefield Characters -",
+        "SimpleEffectDesc": "· [<u>Mechanoid</u>] evolves according to its levels.",
+        "QubitSuitEffectGroupId": 1021,
+        "QubitDesc": "· [<u>Mechanoid</u>] reaches max levels, exceeding its limits and evolving into its ultimate form.",
+        "QubitSampleEffectDesc": "· [<u>Mechanoid</u>] reaches max levels, exceeding its limits and evolving into its ultimate form.",
         "QubitTraitName": [
             "Mechanoid"
         ],
@@ -373,7 +357,6 @@
     },
     {
         "Id": 22,
-        "AttType": 0,
         "SuitName": "Wu'an",
         "UseType": 2,
         "SuitEffectGroupId": 22,
@@ -401,7 +384,6 @@
     },
     {
         "Id": 50,
-        "AttType": 0,
         "SuitName": "Aline",
         "UseType": 3,
         "SuitEffectGroupId": 50,
@@ -415,7 +397,6 @@
     },
     {
         "Id": 51,
-        "AttType": 0,
         "SuitName": "Richelieu",
         "UseType": 3,
         "SuitEffectGroupId": 51,
@@ -429,7 +410,6 @@
     },
     {
         "Id": 52,
-        "AttType": 0,
         "SuitName": "Ike",
         "UseType": 3,
         "SuitEffectGroupId": 52,
@@ -443,7 +423,6 @@
     },
     {
         "Id": 53,
-        "AttType": 0,
         "SuitName": "Aife",
         "UseType": 3,
         "SuitEffectGroupId": 53,
@@ -457,7 +436,6 @@
     },
     {
         "Id": 54,
-        "AttType": 0,
         "SuitName": "Elizabeth",
         "UseType": 3,
         "SuitEffectGroupId": 54,
@@ -471,7 +449,6 @@
     },
     {
         "Id": 55,
-        "AttType": 0,
         "SuitName": "Unimate",
         "UseType": 3,
         "SuitEffectGroupId": 55,
@@ -485,7 +462,6 @@
     },
     {
         "Id": 56,
-        "AttType": 0,
         "SuitName": "Alice",
         "UseType": 3,
         "SuitEffectGroupId": 56,
@@ -499,7 +475,6 @@
     },
     {
         "Id": 57,
-        "AttType": 0,
         "SuitName": "Gloria",
         "UseType": 3,
         "SuitEffectGroupId": 57,
@@ -513,7 +488,6 @@
     },
     {
         "Id": 58,
-        "AttType": 0,
         "SuitName": "Carrielynn",
         "UseType": 3,
         "SuitEffectGroupId": 58,
@@ -527,7 +501,6 @@
     },
     {
         "Id": 59,
-        "AttType": 0,
         "SuitName": "Alphonse",
         "UseType": 3,
         "SuitEffectGroupId": 59,
@@ -541,7 +514,6 @@
     },
     {
         "Id": 60,
-        "AttType": 0,
         "SuitName": "Koya",
         "UseType": 3,
         "SuitEffectGroupId": 60,

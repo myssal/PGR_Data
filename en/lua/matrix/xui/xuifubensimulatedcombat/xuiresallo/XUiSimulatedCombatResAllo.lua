@@ -205,7 +205,7 @@ function XUiSimulatedCombatResAllo:OnBtnEnterRoomClick()
     end
     XDataCenter.FubenSimulatedCombatManager.SaveShopMap()
     XDataCenter.FubenSimulatedCombatManager.SendPreFightRequest(function()
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageInterCfg.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageInterCfg.StageId)
     end)
 end
 

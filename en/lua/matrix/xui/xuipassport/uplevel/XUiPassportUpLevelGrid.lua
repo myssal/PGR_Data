@@ -6,13 +6,10 @@ local XUiPassportUpLevelGrid = XClass(XUiNode, "XUiPassportUpLevelGrid")
 local CSXTextManagerGetText = CS.XTextManager.GetText
 local MaxGridCount = 3
 
-function XUiPassportUpLevelGrid:Ctor(ui)
-    self.RewardPanelList = {}
-    self:SetImgEffectActive(false)
-end
-
 function XUiPassportUpLevelGrid:Init(rootUi)
     self.RootUi = rootUi
+    self.RewardPanelList = {}
+    self:SetImgEffectActive(false)
 end
 
 function XUiPassportUpLevelGrid:Refresh(levelId)

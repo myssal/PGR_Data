@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory673.jpg"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             36
@@ -30,44 +20,36 @@
     {
         "Id": 3,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "Test test"
         ]
     },
     {
         "Id": 4,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 307,
         "IsBlock": 1,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Ayla had her own little fantasies about what Earth would be like before her first assignment.",
+            "",
+            "",
             "ffffffff"
         ]
     },
     {
         "Id": 5,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 307,
         "IsBlock": 1,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Having only read about Earth in textbooks, she'd often imagine what's become of Earth now...",
+            "",
+            "",
             "ffffffff",
             1
         ]
@@ -75,15 +57,14 @@
     {
         "Id": 6,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 307,
         "IsBlock": 1,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "The kind of poetry people on Earth are now writing, and how drastically different their culture must be from that of the Golden Age.",
+            "",
+            "",
             "ffffffff"
         ]
     }

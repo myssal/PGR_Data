@@ -3,15 +3,15 @@
         "Id": 101,
         "Name": "Crimson Slash",
         "Subtitle": "Kodachi Mode",
-        "Desc": "<b>[Kodachi Mode]</b> - <color=#ffdd93>Tap Basic Attack</color>\\nPerforms an attack with a maximum of 5 hits using Kodachi and martial arts techniques.\\n- Deals DMG equal to 728% ATK in total.\\n- Recovers 25 [Wildfire Value] in total.\\n- Recovers 15 Signature Energy in total.\\n<b>[Swordwave Attack]</b> - <color=#ffdd93>Kodachi Mode + Basic Attack's 4th hit/After Extreme Dodge/After Skill 2 + Blade Flashes + Tap Basic Attack</color>\\nRepeatedly tap Basic Attack to unleash multiple swordwaves, dealing damage, up to 4 hits. After the swordwaves end, automatically casts a finishing slash.\\n- Deals DMG equal to 646% ATK in total.\\n- Recovers 50 [Wildfire Value] in total.\\n- Recovers 15 Signature Energy in total.\\n<b>[Crimson Plunge]</b> - <color=#ffdd93>Kodachi Mode + Airborne + Tap Basic Attack</color>\\nPerforms a plunge attack against enemies while airborne.\\n- Deals DMG equal to 140% ATK in total.\\n- Recovers 3 Signature Energy in total.\\n- Recovers 5 [Wildfire Value] in total.",
-        "SimpleDesc": "<b>[Kodachi Mode]</b> - <color=#ffdd93>Tap Basic Attack</color>\\nPerforms an attack with a maximum of 5 hits using Kodachi and martial arts techniques.\\n<b>[Swordwave Attack]</b> - <color=#ffdd93>Kodachi Mode + Basic Attack's 4th hit/After Extreme Dodge/After Skill 2 + Blade Flashes + Tap Basic Attack</color>\\nRepeatedly tap Basic Attack to unleash multiple swordwaves, dealing damage, up to 4 hits. After the swordwaves end, automatically casts a finishing slash.\\n<b>[Crimson Plunge]</b> - <color=#ffdd93>Kodachi Mode + Airborne + Tap Basic Attack</color>\\nPerforms a plunge attack against enemies while airborne.",
+        "Desc": "<b>【小太刀模式】</b>-<color=#ffdd93>点击普攻</color>\\n使用小太刀和体术对目标进行至多{0}段攻击。\\n-共造成{1}%攻击力的伤害\\n-共回复{2}点【燎荒值】\\n-共回复{3}点必杀能量\\n<b>【剑气攻击】</b>-<color=#ffdd93>小太刀模式+第四段普攻/极限闪避后/二技能后+刀上出现闪光+点击普攻</color>\\n释放剑气攻击敌人，连点普攻可连续释放剑气造成伤害，至多攻击{4}段。剑气结束后自动释放收招斩击。\\n-共造成{5}%攻击力的伤害\\n-共回复{6}点【燎荒值】\\n-共回复{7}点必杀能量\\n<b>【深红坠击】</b>-<color=#ffdd93>小太刀模式+处于空中+点击普攻</color>\\n在空中进行下劈攻击敌人。\\n-共造成{8}%攻击力的伤害\\n-共回复{9}点必杀能量\\n-共回复{10}点【燎荒值】",
+        "DescNum": "5|728|25|15|4|646|50|15|140|3|5",
+        "SimpleDesc": "<b>【小太刀模式】</b>-<color=#ffdd93>点击普攻</color>\\n使用小太刀和体术对目标进行至多{0}段攻击。\\n<b>【剑气攻击】</b>- <color=#ffdd93>小太刀模式+第四段普攻/极限闪避后/二技能后+刀上出现闪光+点击普攻</color>\\n释放剑气攻击敌人，连点普攻可连续释放剑气造成伤害，至多攻击{1}段。剑气结束后自动释放收招斩击。\\n<b>【深红坠击】</b>- <color=#ffdd93>小太刀模式+处于空中+点击普攻</color>\\n在空中进行下劈攻击敌人。",
+        "SimpleDescNum": "5|4",
         "TypeDesc": "Basic Attack",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R5Luxiyapugong1.png",
-        "Cd": 0,
         "BaseDamageLimit": 22207,
         "Rate": 57800,
         "AttribType": 1,
-        "VideoConfigId": 33007,
         "Tags": [
             "Basic Attack DMG"
         ],
@@ -23,6 +23,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33007,
         "SecondSkill": [
             102
         ]
@@ -31,15 +32,15 @@
         "Id": 102,
         "Name": "Crimson Slash",
         "Subtitle": "Odachi Mode",
-        "Desc": "<b>[Odachi Mode]</b> - <color=#ffdd93>Tap Basic Attack</color>\\nPerforms a 5-hit attack using Odachi.\\n- Deals DMG equal to 440% ATK in total.\\n- Recovers 100 [Wildfire Value] in total.\\n- Recovers 15 Signature Energy in total.\\n<b>[Swordwave Attack]</b> - <color=#ffdd93>Odachi Mode + Basic Attack's 4th hit/After Extreme Dodge/After Skill 2 + Blade Flashes + Tap Basic Attack</color>\\nRepeatedly tap Basic Attack to unleash multiple swordwaves, dealing damage, up to 4 hits. After the swordwaves end, tap Basic Attack again to cast a finishing slash.\\n- Deals DMG equal to 365% ATK in total.\\n- Recovers 100 [Wildfire Value] in total.\\n- Recovers 15 Signature Energy in total.\\n<b>[Crimson Plunge]</b> - <color=#ffdd93>Odachi Mode + Airborne + Tap Basic Attack</color>\\nPerforms a plunge attack against enemies while airborne.\\n- Deals DMG equal to 140% ATK in total.\\n- Recovers 10 [Wildfire Value] in total.",
-        "SimpleDesc": "<b>[Odachi Mode]</b> - <color=#ffdd93>Tap Basic Attack</color>\\nPerforms up to 5 hits using Odachi and martial arts techniques.\\n<b>[Swordwave Attack]</b> - <color=#ffdd93>Odachi Mode + Basic Attack's 4th hit/After Dodge + Blade Flashes + Tap Basic Attack</color>\\nRepeatedly tap Basic Attack to unleash multiple swordwaves, dealing damage, up to 4 hits. After the swordwaves end, tap Basic Attack again to cast a finishing slash.\\n<b>[Crimson Plunge]</b> - <color=#ffdd93>Odachi Mode + Airborne + Tap Basic Attack</color>\\nPerforms a plunge attack against enemies while airborne.",
+        "Desc": "<b>【大太刀模式】</b>-<color=#ffdd93>点击普攻</color>\\n使用大太刀对目标进行{0}段式攻击。\\n-共造成{1}%攻击力的伤害\\n-共回复{2}点【燎荒值】\\n-共回复{3}点必杀能量\\n<b>【剑气攻击】</b>-<color=#ffdd93>大太刀模式+第四段普攻/闪避后+刀上出现闪光+点击普攻</color>\\n释放剑气攻击目标，连点普攻可连续释放剑气造成伤害，至多攻击{4}段。剑气结束后，再次点击普攻释放收招斩击。\\n-共造成{5}%攻击力的伤害\\n-共回复{6}点【燎荒值】\\n-共回复{7}点必杀能量\\n<b>【深红坠击】</b>-<color=#ffdd93>大太刀模式+处于空中+点击普攻</color>\\n在空中进行下劈攻击敌人。\\n-共造成{8}%攻击力的伤害\\n-共回复{9}点必杀能量\\n-共回复{10}点【燎荒值】",
+        "DescNum": "5|440|100|15|4|365|100|15|140|3|10",
+        "SimpleDesc": "<b>【大太刀模式】</b>-<color=#ffdd93>点击普攻</color>\\n使用小太刀和体术对目标进行至多{0}段攻击。\\n<b>【剑气攻击】</b>-<color=#ffdd93>大太刀模式+第四段普攻/闪避后+刀上出现闪光+点击普攻</color>\\n释放剑气攻击敌人，连点普攻可连续释放剑气造成伤害，至多攻击{1}段。剑气结束后，再次点击普攻释放收招斩击。\\n<b>【深红坠击】</b>-<color=#ffdd93>大太刀模式+处于空中+点击普攻</color>\\n在空中进行下劈攻击敌人。",
+        "SimpleDescNum": "4|4",
         "TypeDesc": "Basic Attack",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R5Luxiyapugong1.png",
-        "Cd": 0,
         "BaseDamageLimit": 16168,
         "Rate": 44600,
         "AttribType": 1,
-        "VideoConfigId": 33001,
         "Tags": [
             "Basic Attack DMG"
         ],
@@ -50,20 +51,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33001
     },
     {
         "Id": 103,
         "Name": "Path of Anatta",
-        "Desc": "<b>[Wildfire Value]</b> - <color=#ffdd93>Automatically gained when casting Whirling Thrash/Sundered Delusion/Basic Attack/Swordwave Attack</color>\\nCasting Skill 1, Skill 2, Basic Attack, or Swordwave Attack grants [Wildfire Value]. [Wildfire Value] cap is 200.\\n<b>[Wildfire Slash]</b> - <color=#ffdd93>Max Wildfire Value + Press and Hold Basic Attack</color>\\nAt max [Wildfire Value], press and hold Basic Attack to consume all [Wildfire Value] and cast [Wildfire Slash], dealing DMG to enemies in the area.\\n- Deals DMG equal to 602% ATK in [Kodachi Mode].\\n- Deals DMG equal to 582% ATK in [Odachi Mode].\\n- Recovers 45 Signature Energy in total.",
-        "SimpleDesc": "<b>[Wildfire Value]</b> - <color=#ffdd93>Automatically gained when casting Whirling Thrash/Sundered Delusion/Basic Attack/Swordwave Attack</color>\\nCasting Skill 1, Skill 2, Basic Attack, or Swordwave Attack grants [Wildfire Value]. [Wildfire Value] cap is 200.\\n<b>[Wildfire Slash]</b> - <color=#ffdd93>Max Wildfire Value + Press and Hold Basic Attack</color>\\nAt max [Wildfire Value], press and hold Basic Attack to consume all [Wildfire Value] and cast [Wildfire Slash], dealing DMG to enemies in the area.",
+        "Desc": "<b>【燎荒值】</b>-<color=#ffdd93>释放溯轮杀/无妄不斩/普通攻击/剑气攻击时自动获取</color>\\n释放一技能、二技能、普通攻击、剑气攻击，可获得【燎荒值】。【燎荒值】上限为{0}点。\\n<b>【燎荒斩】</b>-<color=#ffdd93>燎荒值达到上限时+长按普攻</color>\\n【燎荒值】达到上限时，可长按普攻消耗全部【燎荒值】释放【燎荒斩】，对范围内敌人造成伤害。\\n-【小太刀模式】下共造成{1}%攻击力的伤害\\n-【大太刀模式】下共造成{2}%攻击力的伤害\\n-共回复{3}点必杀能量",
+        "DescNum": "200|602|582|45",
+        "SimpleDesc": "<b>【燎荒值】</b>- <color=#ffdd93>释放溯轮杀/无妄不斩/普通攻击/剑气攻击时自动获取</color>\\n释放一技能、二技能、普通攻击、剑气攻击，可获得【燎荒值】。【燎荒值】上限为{0}点。\\n<b>【燎荒斩】</b>- <color=#ffdd93>燎荒值达到上限时+长按普攻</color>\\n【燎荒值】达到上限时，可长按普攻消耗全部【燎荒值】释放【燎荒斩】，对范围内敌人造成伤害。",
+        "SimpleDescNum": 200,
         "TypeDesc": "Core Passive",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya01.png",
-        "Cd": 0,
         "BaseDamageLimit": 36502,
         "Rate": 60200,
         "AttribType": 1,
-        "VideoConfigId": 33005,
         "Tags": [
             "Core DMG",
             "Uninterruptible",
@@ -76,12 +78,14 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33005
     },
     {
         "Id": 105,
         "Name": "Whirling Thrash",
-        "Desc": "<b>[Whirling Thrash]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 1</color>\\nSlashes the enemy swiftly. Within a short window, the skill can be cast again to leap into the air and strike downward.\\n- Deals total DMG equal to 281% ATK.\\n- Recovers 40 [Wildfire Value] in total.\\n- Recovers 30 Signature Energy in total.",
+        "Desc": "<b>【溯轮杀】</b>- <color=#ffdd93>小太刀模式+点击一技能</color>\\n快速斩击敌人，一段时间内可以再次释放并跃起砍向敌人\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点【燎荒值】\\n-共回复{2}点必杀能量",
+        "DescNum": "281|40|30",
         "SimpleDesc": "<b>[Whirling Thrash]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 1</color>\\nSlashes the enemy swiftly. Within a short window, the skill can be cast again to leap into the air and strike downward.",
         "TypeDesc": "Core Skill 1",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya21.png",
@@ -89,7 +93,6 @@
         "BaseDamageLimit": 17409,
         "Rate": 20100,
         "AttribType": 1,
-        "VideoConfigId": 33008,
         "Tags": [
             "Skill DMG",
             "Phaseshift"
@@ -101,12 +104,14 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33008
     },
     {
         "Id": 106,
         "Name": "Sundered Delusion",
-        "Desc": "<b>[Sundered Delusion]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 2</color>\\nEnters [Afterimage Stance], can perform Flash Block during this state. After a brief delay, casts [Iaido Slash β] to charge forward with multiple slashes, dealing massive DMG. If cast after a successful block, refunds partial cooldown.\\n- Deals total DMG equal to 405% ATK.\\n- Recovers 75 [Wildfire Value] in total.\\n- Recovers 20 Signature Energy in total.\\n- Refunds 50% cooldown after successful block.\\nAfter successfully casting [Iaido Slash β], immediately tap Basic Attack to directly cast [Swordwave Attack].",
+        "Desc": "<b>【无妄不斩】</b>- <color=#ffdd93>小太刀模式+点击二技能</color>\\n进入【残影架势】，期间可进行瞬击格挡。短暂延迟后释放【居合斩·极】冲向前方进行多段斩击，造成大量伤害。若在格挡成功后释放则返还一定冷却。\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点【燎荒值】\\n-共回复{2}点必杀能量\\n-格挡后返还{3}%冷却\\n【居合斩·极】释放成功后立即点击普攻可直接释放【剑气攻击】。",
+        "DescNum": "405|75|20|50",
         "SimpleDesc": "<b>[Sundered Delusion]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 2</color>\\nEnters [Afterimage Stance], can perform Flash Block during this state. After a brief delay, casts [Iaido Slash β] to charge forward with multiple slashes, dealing massive DMG. If cast after a successful block, refunds partial cooldown.\\nAfter successfully casting [Iaido Slash β], immediately tap Basic Attack to directly cast [Swordwave Attack].",
         "TypeDesc": "Core Skill 2",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya31.png",
@@ -114,7 +119,6 @@
         "BaseDamageLimit": 21168,
         "Rate": 36000,
         "AttribType": 1,
-        "VideoConfigId": 33009,
         "Tags": [
             "Skill DMG",
             "Uninterruptible",
@@ -127,13 +131,15 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33009
     },
     {
         "Id": 107,
         "Name": "Splashing Thunder",
         "Subtitle": "Kodachi Mode",
-        "Desc": "<b>[Splashing Thunder]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 3</color>\\nSlowly draws the Odachi, summoning lightning to deal DMG in a large area and entering [Odachi Mode].\\n- Deals DMG equal to 236% ATK in total.\\nIn [Odachi Mode], Skill 3 is replaced with [Flashstorm], Skills 1 and 2 become unusable, and Basic Attack is replaced with [Odachi Mode]. [Swordwave Attack] can be cast directly after Dodge.\\nAfter casting [Splashing Thunder], gains 50% DMG Bonus, Interrupt Immunity, and 15% Extra DMG Reduction for 17s.",
+        "Desc": "<b>【乱霆开曜】</b>- <color=#ffdd93>小太刀模式+点击三技能</color>\\n缓慢拔出大太刀，召出雷霆对周围目标造成大范围伤害，进入【大太刀模式】。\\n-共造成{0}%攻击力的伤害\\n【大太刀模式】下三技能替换为【疾光掣岚】，无法使用一技能、二技能，普攻替换为【大太刀模式】，闪避后可直接释放【剑气攻击】。\\n释放【乱霆开曜】后自身获得{1}%伤害加成、免疫打断与{2}%额外伤害减免效果，持续{3}秒。",
+        "DescNum": "236|50|15|17",
         "SimpleDesc": "<b>[Splashing Thunder]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 3</color>\\nSlowly draws the Odachi, summoning lightning to deal DMG in a large area and entering [Odachi Mode].\\nIn [Odachi Mode], Skill 3 is replaced with [Flashstorm], Skills 1 and 2 become unusable, and Basic Attack is replaced with [Odachi Mode]. [Swordwave Attack] can be cast directly after Dodge.\\nAfter casting [Splashing Thunder], gains DMG Bonus, Interrupt Immunity, and Extra DMG Reduction for a certain duration.",
         "TypeDesc": "Core Skill 3",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya32.png",
@@ -141,7 +147,6 @@
         "BaseDamageLimit": 8672,
         "Rate": 23600,
         "AttribType": 1,
-        "VideoConfigId": 33010,
         "Tags": [
             "Skill DMG",
             "Uninterruptible",
@@ -155,6 +160,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33010,
         "SecondSkill": [
             104
         ]
@@ -163,15 +169,16 @@
         "Id": 104,
         "Name": "Flashstorm",
         "Subtitle": "Odachi Mode",
-        "Desc": "<b>[Flashstorm]</b> - <color=#ffdd93>Odachi Mode + Tap Skill 3</color>\\nAfter briefly charging up, performs a 4-hit [Shadow Strike], then casts [Thunderous Bash] to deal massive DMG to enemies.\\nReturns to [Kodachi Mode] afterward. - Deals DMG equal to 765% ATK in total.\\n- Recovers 45 Signature Energy in total.\\nDMG of [Shadow Strike] [Thunderous Bash] counts as Core DMG.\\n- Lucia gains 20% Extra DMG Reduction upon casting.",
-        "SimpleDesc": "<b>[Flashstorm]</b> - <color=#ffdd93>Odachi Mode + Tap Skill 3</color>\\nGains DMG Reduction. After briefly charging up, performs a 4-hit [Shadow Strike], then casts [Thunderous Bash] to deal massive DMG to enemies.\\nReturns to [Kodachi Mode] afterward.\\nDMG of [Shadow Strike] [Thunderous Bash] counts as Core DMG.",
+        "Desc": "<b>【疾光掣岚】</b>- <color=#ffdd93>大太刀模式+点击三技能</color>\\n短暂蓄力后释放{0}段【影袭】，随后释放【振雷斩】对敌人造成大量伤害。\\n使用后回到【小太刀模式】。-共造成{1}%攻击力的伤害\\n-共回复{2}点必杀能量\\n【影袭】和【振雷斩】均视为核心伤害。\\n-释放时露西亚获得{3}%额外伤害减免效果",
+        "DescNum": "4|765|45|20",
+        "SimpleDesc": "<b>【疾光掣岚】</b>- <color=#ffdd93>大太刀模式+点击三技能</color>\\n获得伤害减免效果，短暂蓄力后释放{0}段【影袭】，随后释放【振雷斩】对敌人造成大量伤害。\\n使用后回到【小太刀模式】。\\n【影袭】和【振雷斩】均视为核心伤害。",
+        "SimpleDescNum": 4,
         "TypeDesc": "Core Skill 3",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya32.png",
         "Cd": 18,
         "BaseDamageLimit": 46385,
         "Rate": 76500,
         "AttribType": 1,
-        "VideoConfigId": 33003,
         "Tags": [
             "Core DMG",
             "DMG Immunity"
@@ -183,20 +190,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33003
     },
     {
         "Id": 108,
         "Name": "Phantom Step",
-        "Desc": "<b>[Phantom Step]</b> - <color=#ffdd93>Drag Joystick + Tap Dodge</color>\\nLucia dodges in the target direction. Without joystick input, dodges backward. Can trigger Extreme Dodge during this move.\\n- After a successful Extreme Dodge, becomes Invincible for 1.5s.\\n<b>[Iaido Slash]</b> - <color=#ffdd93>Kodachi Mode + Press and hold Dodge</color>\\nEnters [Focus Stance], gaining DMG Reduction. Can perform Flash Block during this state.\\nRelease Dodge to cast [Iaido Slash]. If Flash Block is triggered during [Focus Stance], immediately casts [Iaido Slash β].\\n- Deals DMG equal to up to 405% ATK.\\n- Recovers up to 20 Signature Energy.\\n- Recovers up to 75 [Wildfire Value].\\nDodge Energy does not recover during [Focus Stance].",
-        "SimpleDesc": "<b>[Phantom Step]</b> - <color=#ffdd93>Drag Joystick + Tap Dodge</color>\\nLucia dodges in the target direction. Without joystick input, dodges backward. Can trigger Extreme Dodge during this move.\\n- After a successful Extreme Dodge, becomes Invincible briefly.\\n<b>[Iaido Slash]</b> - <color=#ffdd93>Kodachi Mode + Press and hold Dodge</color>\\nEnters [Focus Stance], gaining 30% DMG Reduction. Can perform Flash Block during this state.\\nRelease Dodge to cast [Iaido Slash]. If Flash Block is triggered during [Focus Stance], immediately casts [Iaido Slash β].\\nDodge Gauge does not recover during [Focus Stance].",
+        "Desc": "<b>【游身绝影】</b>-<color=#ffdd93>拖动摇杆+点击闪避</color>\\n露西亚向指定方向闪避。无摇杆输入时，向身后进行闪避。期间可触发极限闪避。\\n——极限闪避成功后获得{0}秒的无敌效果。\\n<b>【居合斩】</b>-<color=#ffdd93>小太刀模式+长按闪避</color>\\n进入【气合架势】，获得伤害减免效果，期间可进行瞬击格挡。\\n抬起闪避可释放【居合斩】，若【气合架势】期间触发瞬击格挡则立即释放【居合斩·极】。\\n-最高造成{1}%攻击力的伤害\\n-最高回复{2}点必杀能量\\n-最高回复{3}点【燎荒值】\\n【气合架势】期间不回复闪避能量。",
+        "DescNum": "1.5|405|20|75",
+        "SimpleDesc": "<b>【游身绝影】</b>-<color=#ffdd93>拖动摇杆+点击闪避</color>\\n露西亚向指定方向闪避。无摇杆输入时，向身后进行闪避。期间可触发极限闪避。\\n——极限闪避成功后获得短暂无敌效果。\\n<b>【居合斩】</b>-<color=#ffdd93>小太刀模式+长按闪避</color>\\n进入【气合架势】，获得{0}%伤害减免效果，期间可进行瞬击格挡。\\n抬起闪避可释放【居合斩】，若【气合架势】期间触发瞬击格挡则立即释放【居合斩·极】。\\n【气合架势】期间不回复闪避能量。",
+        "SimpleDescNum": 30,
         "TypeDesc": "Dodge",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/UiDlcRelinkDodge.png",
-        "Cd": 0,
         "BaseDamageLimit": 21168,
         "Rate": 36000,
         "AttribType": 1,
-        "VideoConfigId": 33012,
         "Tags": [
             "Dodge Check",
             "Uninterruptible",
@@ -209,20 +217,20 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33012
     },
     {
         "Id": 109,
         "Name": "Flowing Petals",
-        "Desc": "<b>[Flowing Petals]</b> - <color=#ffdd93>Enemy Imbalanced + Tap QTE</color>\\nLucia leaps into the air, briefly charges up, then performs a follow-up attack on enemies.\\n- Deals total DMG equal to 800% ATK.\\n- Recovers 40 Signature Energy in total.\\n- Recovers 35 Ultimate Energy for the team.",
+        "Desc": "<b>【流水残花】</b>-<color=#ffdd93>敌人处于失衡状态+点击QTE</color>\\n露西亚跃至空中，短暂蓄力后追击敌人。\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点必杀能量\\n-为队伍回复{2}点极限技能量",
+        "DescNum": "800|40|35",
         "SimpleDesc": "<b>[Flowing Petals]</b> - <color=#ffdd93>Enemy Imbalanced + Tap QTE</color>\\nLucia leaps into the air, briefly charges up, then performs a follow-up attack on enemies.",
         "TypeDesc": "Follow-Up Skill",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkPr.png",
-        "Cd": 0,
         "BaseDamageLimit": 29400,
         "Rate": 80000,
         "AttribType": 1,
-        "VideoConfigId": 33011,
         "Tags": [
             "Follow-Up DMG"
         ],
@@ -233,20 +241,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33011
     },
     {
         "Id": 110,
         "Name": "Karmic Inferno",
-        "Desc": "<b>[Karmic Inferno]</b> - <color=#ffdd93>1000 Signature Energy + Tap Signature</color>\\nTap Signature to consume Signature Energy and cast [Karmic Inferno], dealing DMG to enemies in a large area.\\n- Deals total DMG equal to 2010% ATK.\\n- Recovers 50 Ultimate Energy for the team.",
-        "SimpleDesc": "<b>[Karmic Inferno]</b> - <color=#ffdd93>1000 Signature Energy + Tap Signature</color>\\nTap Signature to consume Signature Energy and cast [Karmic Inferno], dealing DMG to enemies in a large area.",
+        "Desc": "<b>【浮世业火】</b>-<color=#ffdd93>{0}点必杀能量+点击必杀</color>\\n点击必杀消耗必杀能量，释放【浮世业火】，对大范围内敌人造成伤害\\n-共造成{1}%攻击力的伤害\\n-为队伍回复{2}点极限技能量",
+        "DescNum": "1000|2010|50",
+        "SimpleDesc": "<b>【浮世业火】</b>-<color=#ffdd93>{0}点必杀能量+点击必杀</color>\\n点击必杀消耗必杀能量，释放【浮世业火】，对大范围内敌人造成伤害",
+        "SimpleDescNum": 1000,
         "TypeDesc": "Signature",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya51.png",
-        "Cd": 0,
         "BaseDamageLimit": 73867,
         "Rate": 201000,
         "AttribType": 1,
-        "VideoConfigId": 33004,
         "Tags": [
             "Signature DMG",
             "DMG Immunity",
@@ -259,20 +268,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33004
     },
     {
         "Id": 111,
         "Name": "Karmic Inferno - Mod",
-        "Desc": "<b>[Karmic Inferno - Mod]</b> - <color=#ffdd93>100 Ultimate Points + Tap Character Portrait</color>\\nConsumes Ultimate Points to cast the Signature Move [Karmic Inferno]. [Karmic Inferno - Mod] can also be used in a Signature chain.",
-        "SimpleDesc": "<b>[Karmic Inferno - Mod]</b> - <color=#ffdd93>100 Ultimate Points + Tap Character Portrait</color>\\nConsumes Ultimate Points to cast the Signature Move [Karmic Inferno]. [Karmic Inferno - Mod] can also be used in a Signature chain.",
+        "Desc": "<b>【浮世业火·改】</b>-<color=#ffdd93>{0}点极限值+点击角色头像</color>\\n消耗极限值释放必杀技能【浮世业火】，【浮世业火·改】也可以参与必杀连锁。",
+        "DescNum": 100,
+        "SimpleDesc": "<b>【浮世业火·改】</b>-<color=#ffdd93>{0}点极限值+点击角色头像</color>\\n消耗极限值释放必杀技能【浮世业火】，【浮世业火·改】也可以参与必杀连锁。",
+        "SimpleDescNum": 100,
         "TypeDesc": "Ultimate Skill",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya51Ex.png",
-        "Cd": 0,
         "BaseDamageLimit": 73867,
         "Rate": 201000,
         "AttribType": 1,
-        "VideoConfigId": 33006,
         "Tags": [
             "Signature DMG",
             "DMG Immunity",
@@ -285,21 +295,22 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33006
     },
     {
         "Id": 201,
         "Name": "Crimson Slash",
         "Subtitle": "Kodachi Mode",
-        "Desc": "<b>[Kodachi Mode]</b> - <color=#ffdd93>Tap Basic Attack</color>\\nPerforms an attack with a maximum of 5 hits using Kodachi and martial arts techniques.\\n- Deals DMG up to 502% ATK in total.\\n- Recovers up to 25 [Swordwave Energy].\\n- Recovers up to 12 Signature Energy.\\n<b>[Swordwave Attack]</b> - <color=#ffdd93>Swordwave Energy above 20 + Kodachi Mode+ After Dodge/Skill 2 + Tap Basic Attack</color>\\nConsumes [Swordwave Energy] to cast Swordwave Attack against enemies. Repeatedly tap Basic Attack to unleash multiple swordwaves, dealing damage. Each [Swordwave Attack] makes the next [Swordwave Attack] faster. When the remaining [Swordwave Energy] is insufficient to cast [Swordwave Attack], the character will exit [Swordwave Attack]. [Swordwave Attack]'s DMG is considered Core DMG.\\n- Deals DMG up to 548% ATK.\\n- Recovers up to 18 Signature Energy.\\nAfter [Swordwave Attack] ends, automatically casts a finishing slash. The finishing slash's DMG is considered Basic Attack DMG.\\n- Deals DMG equal to 163% ATK in total.\\n- Recovers 3 Signature Energy in total.\\n<b>[Crimson Plunge]</b> - <color=#ffdd93>Kodachi Mode + Airborne + Tap Basic Attack</color>\\nPerforms a plunge attack against enemies while airborne.\\n- Deals DMG equal to 200% ATK in total.\\n- Recovers 3 Signature Energy in total.\\n- Recovers 5 [Swordwave Energy] in total.",
-        "SimpleDesc": "<b>[Kodachi Mode]</b> - <color=#ffdd93>Tap Basic Attack</color>\\nPerforms an attack with a maximum of 5 hits using Kodachi and martial arts techniques.\\n<b>[Swordwave Attack]</b> - <color=#ffdd93>Swordwave Energy above 20 + Kodachi Mode+ After Dodge/Skill 2 + Tap Basic Attack</color>\\nConsumes [Swordwave Energy] to cast Swordwave Attack against enemies. Repeatedly tap Basic Attack to unleash multiple swordwaves, dealing damage. Each [Swordwave Attack] makes the next [Swordwave Attack] faster. When the remaining [Swordwave Energy] is insufficient to cast [Swordwave Attack], the character will exit [Swordwave Attack].\\nAfter [Swordwave Attack] ends, automatically casts a finishing slash.\\n<b>[Crimson Plunge]</b> - <color=#ffdd93>Kodachi Mode + Airborne + Tap Basic Attack</color>\\nPerforms a plunge attack against enemies while airborne.",
+        "Desc": "<b>【小太刀模式】</b>-<color=#ffdd93>点击普攻</color>\\n使用小太刀和体术对目标进行至多{0}段攻击。\\n-最高造成{1}%攻击力的伤害\\n-共最高复{2}点【剑气值】\\n-最高回复{3}点必杀能量\\n<b>【剑气攻击】</b>- <color=#ffdd93>剑气值大于{4}点+小太刀模式+闪避后/二技能后+点击普攻</color>\\n消耗【剑气值】释放剑气攻击敌人，连点普攻可连续释放剑气造成伤害。每次【剑气攻击】会加速下一次【剑气攻击】的速度，当剩余【剑气值】不足以释放【剑气攻击】时，角色将会退出【剑气攻击】。【剑气攻击】视为核心伤害。\\n-最高造成{5}%攻击力的伤害\\n-最高回复{6}点必杀能量\\n【剑气攻击】结束后自动释放收招斩击。收招斩击视为普攻伤害。\\n-共造成{7}%攻击力的伤害\\n-共回复{8}点必杀能量\\n<b>【深红坠击】</b>-<color=#ffdd93>小太刀模式+处于空中+点击普攻</color>\\n在空中进行下劈攻击敌人。\\n-共造成{9}%攻击力的伤害\\n-共回复{10}点必杀能量\\n-共回复{11}点【剑气值】",
+        "DescNum": "5|502|25|12|20|548|18|163|3|200|3|5",
+        "SimpleDesc": "<b>【小太刀模式】</b>-<color=#ffdd93>点击普攻</color>\\n使用小太刀和体术对目标进行至多{0}段攻击。\\n<b>【剑气攻击】</b>- <color=#ffdd93>剑气值大于{1}点+小太刀模式+闪避后/二技能后+点击普攻</color>\\n消耗【剑气值】释放剑气攻击敌人，连点普攻可连续释放剑气造成伤害。每次【剑气攻击】会加速下一次【剑气攻击】的速度，当剩余【剑气值】不足以释放【剑气攻击】时，角色将会退出【剑气攻击】。\\n【剑气攻击】结束后自动释放收招斩击。\\n<b>【深红坠击】</b>- <color=#ffdd93>小太刀模式+处于空中+点击普攻</color>\\n在空中进行下劈攻击敌人。",
+        "SimpleDescNum": "5|20",
         "TypeDesc": "Basic Attack",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R5Luxiyapugong1.png",
-        "Cd": 0,
         "BaseDamageLimit": 17673,
         "Rate": 50200,
         "AttribType": 1,
-        "VideoConfigId": 33007,
         "Tags": [
             "Basic Attack DMG"
         ],
@@ -311,6 +322,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33007,
         "SecondSkill": [
             202
         ]
@@ -319,15 +331,15 @@
         "Id": 202,
         "Name": "Crimson Slash",
         "Subtitle": "Odachi Mode",
-        "Desc": "<b>[Odachi Mode]</b> - <color=#ffdd93>Odachi in Hand + Tap Basic Attack</color>\\nPerforms a 5-hit attack using the Odachi.\\n- Deals DMG equal to 420% ATK in total.\\n- Recovers 120 [Swordwave Energy] in total.\\n- Recovers 15 Signature Energy in total.\\n<b>[Swordwave Attack]</b> - <color=#ffdd93>Swordwave Energy above 20 + Odachi in Hand+ After Dodge + Blade Flashes + Tap Basic Attack</color>\\nConsumes [Swordwave Energy] to cast Swordwave Attack against enemies. Repeatedly tap Basic Attack to unleash multiple swordwaves, dealing damage. Each [Swordwave Attack] makes the next [Swordwave Attack] faster. When the remaining [Swordwave Energy] is insufficient to cast [Swordwave Attack], the character will exit [Swordwave Attack]. [Swordwave Attack]'s DMG is considered Core DMG.\\n- Deals DMG up to 425% ATK.\\n- Recovers up to 18 Signature Energy.\\nAfter [Swordwave Attack] ends, automatically casts a finishing slash. The finishing slash's DMG is considered Basic Attack DMG.\\n- Deals DMG equal to 131% ATK in total.\\n- Recovers 3 Signature Energy in total.\\n<b>[Crimson Plunge]</b> - <color=#ffdd93>Odachi Mode + Airborne + Tap Basic Attack</color>\\nPerforms a plunge attack against enemies while airborne.\\n- Deals DMG equal to 200% ATK in total.\\n- Recovers 3 Signature Energy in total.\\n- Recovers 10 [Swordwave Energy] in total.",
-        "SimpleDesc": "<b>[Odachi Mode]</b> - <color=#ffdd93>Tap Basic Attack</color>\\nPerforms a 5-hit attack using Odachi.\\n<b>[Swordwave Attack]</b> - <color=#ffdd93>Swordwave Energy above 20 + Odachi Mode+ After Dodge + Tap Basic Attack</color>\\nConsumes [Swordwave Energy] to cast Swordwave Attack against enemies. Repeatedly tap Basic Attack to unleash multiple swordwaves, dealing damage. Each [Swordwave Attack] makes the next [Swordwave Attack] faster. When the remaining [Swordwave Energy] is insufficient to cast [Swordwave Attack], the character will exit [Swordwave Attack].\\nAfter [Swordwave Attack] ends, automatically casts a finishing slash.\\n<b>[Crimson Plunge]</b> - <color=#ffdd93>Odachi Mode + Airborne + Tap Basic Attack</color>\\nPerforms a plunge attack against enemies while airborne.",
+        "Desc": "<b>【大太刀模式】</b>-<color=#ffdd93>手持大太刀+点击普攻</color>\\n使用大太刀对目标进行{0}段式攻击。\\n-共造成{1}%攻击力的伤害\\n-共回复{2}点【剑气值】\\n-共回复{3}点必杀能量\\n<b>【剑气攻击】</b>-<color=#ffdd93>剑气值大于{4}点+手持大太刀+闪避后+刀上出现闪光+点击普攻</color>\\n消耗【剑气值】释放剑气攻击敌人，连点普攻可连续释放剑气造成伤害。每次【剑气攻击】会加速下一次【剑气攻击】的速度，当剩余【剑气值】不足以释放【剑气攻击】时，角色将会退出【剑气攻击】。【剑气攻击】视为核心伤害。\\n-最高造成{5}%攻击力的伤害\\n-最高回复{6}点必杀能量\\n【剑气攻击】结束后自动释放收招斩击。收招斩击视为普通攻击伤害。\\n-共造成{7}%攻击力的伤害\\n-共回复{8}点必杀能量\\n<b>【深红坠击】</b>- <color=#ffdd93>大太刀模式+处于空中+点击普攻</color>\\n在空中进行下劈攻击敌人。\\n-共造成{9}%攻击力的伤害\\n-共回复{10}点必杀能量\\n-共回复{11}点【剑气值】",
+        "DescNum": "5|420|120|15|20|425|18|131|3|200|3|10",
+        "SimpleDesc": "<b>【大太刀模式】</b>-<color=#ffdd93>点击普攻</color>\\n使用大太刀对目标进行{0}段式攻击。\\n<b>【剑气攻击】</b>-<color=#ffdd93>剑气值大于{1}点+大太刀模式+闪避后+点击普攻</color>\\n消耗【剑气值】释放剑气攻击敌人，连点普攻可连续释放剑气造成伤害。每次【剑气攻击】会加速下一次【剑气攻击】的速度，当剩余【剑气值】不足以释放【剑气攻击】时，角色将会退出【剑气攻击】。\\n【剑气攻击】结束后自动释放收招斩击。\\n<b>【深红坠击】</b>- <color=#ffdd93>大太刀模式+处于空中+点击普攻</color>\\n在空中进行下劈攻击敌人。",
+        "SimpleDescNum": "5|20",
         "TypeDesc": "Basic Attack",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R5Luxiyapugong1.png",
-        "Cd": 0,
         "BaseDamageLimit": 17013,
         "Rate": 42000,
         "AttribType": 1,
-        "VideoConfigId": 33001,
         "Tags": [
             "Basic Attack DMG"
         ],
@@ -338,21 +350,22 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33001
     },
     {
         "Id": 203,
         "Name": "Seamless Glare",
         "Subtitle": "Kodachi Mode",
-        "Desc": "<b>[Swordwave Energy]</b> - <color=#ffdd93>Automatically gained when casting Whirling Thrash/Sundered Delusion/Basic Attack.</color>\\nIn [Kodachi Mode], Skill 1/Skill 2/Basic Attack grants [Swordwave Energy].\\n[Swordwave Energy] cap is 120.\\nConsumes Swordwave Energy to cast [Swordwave Attack].\\n<b>[Swordbreak]</b> - <color=#ffdd93>[Kodachi Mode] + Automatically Applied When Swordwaves Hit</color>\\nIn [Kodachi Mode], swordwaves inflict [Swordbreak] on hit enemies, up to 10 stacks. Enemies with [Swordbreak] take 10% increased DMG and consume 1 stack of [Swordbreak] every 1s to deal DMG equal to 14.5% ATK.\\nDMG dealt by [Swordbreak] and [Swordwave Attack] is considered Core DMG.",
-        "SimpleDesc": "<b>[Swordwave Energy]</b> - <color=#ffdd93>Automatically gained when casting Whirling Thrash/Sundered Delusion/Basic Attack.</color>\\nIn [Kodachi Mode], Skill 1/Skill 2/Basic Attack grants [Swordwave Energy].\\n[Swordwave Energy] cap is 120.\\nConsumes Swordwave Energy to cast [Swordwave Attack].\\n<b>[Swordbreak]</b> - <color=#ffdd93>[Kodachi Mode] + Automatically Applied When Swordwaves Hit</color>\\nIn [Kodachi Mode], swordwaves inflict [Swordbreak] on hit enemies, up to 10 stacks. Enemies with [Swordbreak] take 10% increased DMG and consume 1 stack of [Swordbreak] every 1s to deal DMG once. DMG dealt by [Swordbreak] and [Swordwave Attack] is considered Core DMG.",
+        "Desc": "<b>【剑气值】</b>- <color=#ffdd93>释放溯轮杀/无妄不斩/普通攻击时自动获取</color>\\n【小太刀模式】下释放一技能、二技能、普通攻击，可获得【剑气值】。\\n【剑气值】上限为{0}点。\\n消耗剑气值可释放【剑气攻击】。\\n<b>【剑损】</b>-<color=#ffdd93>【小太刀模式】+剑气命中敌人后自动添加</color>\\n【小太刀模式】下剑气会对命中敌人施加【剑损】，上限{1}层。拥有【剑损】的敌人受到的伤害提升{2}%，每{3}秒消耗{4}层【剑损】造成{5}次{6}%攻击力的伤害。\\n【剑损】和【剑气攻击】造成的伤害均视为核心伤害。",
+        "DescNum": "120|10|10|1|1|1|14.5",
+        "SimpleDesc": "<b>【剑气值】</b>- <color=#ffdd93>释放溯轮杀/无妄不斩/普通攻击时自动获取</color>\\n【小太刀模式】下释放一技能、二技能、普通攻击，可获得【剑气值】。\\n【剑气值】上限为{0}点。\\n消耗剑气值可释放【剑气攻击】。\\n<b>【剑损】</b>-<color=#ffdd93>【小太刀模式】+剑气命中敌人后自动添加</color>\\n【小太刀模式】下剑气会对命中敌人施加【剑损】，上限{1}层。拥有【剑损】的敌人受到的伤害提升，每{2}秒消耗{3}层【剑损】造成{4}次伤害。【剑损】和【剑气攻击】造成的伤害均视为核心伤害。",
+        "SimpleDescNum": "120|10|1|1|1",
         "TypeDesc": "Core Passive",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya01.png",
-        "Cd": 0,
         "BaseDamageLimit": 607,
         "Rate": 1450,
         "AttribType": 1,
-        "VideoConfigId": 33013,
         "Tags": [
             "Core DMG",
             "Uninterruptible"
@@ -365,6 +378,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33013,
         "SecondSkill": [
             204
         ]
@@ -373,15 +387,15 @@
         "Id": 204,
         "Name": "Seamless Glare",
         "Subtitle": "Odachi Mode",
-        "Desc": "<b>[Swordwave Energy]</b> - <color=#ffdd93>Automatically gained when performing Basic Attack.</color>\\nIn [Odachi Mode], Basic Attack grants [Swordwave Energy].\\n[Swordwave Energy] cap is 120.\\nConsumes Swordwave Energy to cast [Swordwave Attack].\\n<b>[Swordbreak β]</b> - <color=#ffdd93>[Odachi Mode] + Automatically Applied When Swordwaves Hit</color>\\nIn [Odachi Mode], swordwaves inflict [Swordbreak β] on hit enemies, up to 30 stacks. Enemies with [Swordbreak β] take 10% increased DMG and consume 1 stack of [Swordbreak β] every 1s to deal DMG equal to 14.5% ATK.\\nDMG dealt by [Swordbreak β] and [Swordwave Attack] is considered Core DMG.",
-        "SimpleDesc": "<b>[Swordwave Energy]</b> - <color=#ffdd93>Automatically gained when performing Basic Attack.</color>\\nIn [Odachi Mode], Basic Attack grants [Swordwave Energy]. Consumes Swordwave Energy to cast [Swordwave Attack].\\n<b>[Swordbreak β]</b> - <color=#ffdd93>[Odachi Mode] + Automatically Applied When Swordwaves Hit</color>\\nIn [Odachi Mode], swordwaves inflict [Swordbreak β] on hit enemies, up to 30 stacks. Enemies with [Swordbreak β] take increased DMG and consume 1 stack of [Swordbreak β] every 1s to deal DMG once. DMG dealt by [Swordbreak β] and [Swordwave Attack] is considered Core DMG.",
+        "Desc": "<b>【剑气值】</b>- <color=#ffdd93>释放普通攻击时自动获取</color>\\n【大太刀模式】下普通攻击，可获得【剑气值】。\\n【剑气值】上限为{0}点。\\n消耗剑气值可释放【剑气攻击】。\\n<b>【剑损·极】</b>-<color=#ffdd93>【大太刀模式】+剑气命中敌人后自动添加</color>\\n【大太刀模式】下剑气会对命中敌人施加【剑损·极】，上限{1}层。拥有【剑损·极】的敌人受到的伤害提升{2}%，每{3}秒消耗{4}层【剑损·极】造成{5}次{6}%攻击力的伤害。\\n【剑损·极】和【剑气攻击】造成的伤害均视为核心伤害。",
+        "DescNum": "120|30|10|1|1|1|14.5",
+        "SimpleDesc": "<b>【剑气值】</b>- <color=#ffdd93>释放普通攻击时自动获取</color>\\n【大太刀模式】下普通攻击，可获得【剑气值】。消耗剑气值可释放【剑气攻击】。\\n<b>【剑损·极】</b>-<color=#ffdd93>【大太刀模式】+剑气命中敌人后自动添加</color>\\n【大太刀模式】下剑气会对命中敌人施加【剑损·极】，上限{0}层。拥有【剑损·极】的敌人受到的伤害提升，每{1}秒消耗{2}层【剑损·极】造成{3}次伤害。【剑损·极】和【剑气攻击】造成的伤害均视为核心伤害。",
+        "SimpleDescNum": "30|1|1|1",
         "TypeDesc": "Core Passive",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya01.png",
-        "Cd": 0,
         "BaseDamageLimit": 607,
         "Rate": 1450,
         "AttribType": 1,
-        "VideoConfigId": 33013,
         "Tags": [
             "Core DMG",
             "Uninterruptible"
@@ -393,12 +407,14 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33013
     },
     {
         "Id": 205,
         "Name": "Whirling Thrash",
-        "Desc": "<b>[Whirling Thrash]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 1</color>\\nSlashes the enemy swiftly. Within a short window, the skill can be cast again to leap into the air and strike downward.\\n- Deals total DMG equal to 165% ATK.\\n- Recovers 40 [Swordwave Energy] in total.\\n- Recovers 30 Signature Energy in total.",
+        "Desc": "<b>【溯轮杀】</b>-<color=#ffdd93>小太刀模式+点击一技能</color>\\n快速斩击敌人，一段时间内可以再次释放并跃起砍向敌人\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点【剑气值】\\n-共回复{2}点必杀能量",
+        "DescNum": "165|40|30",
         "SimpleDesc": "<b>[Whirling Thrash]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 1</color>\\nSlashes the enemy swiftly. Within a short window, the skill can be cast again to leap into the air and strike downward.",
         "TypeDesc": "Core Skill 1",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya21.png",
@@ -406,7 +422,6 @@
         "BaseDamageLimit": 9750,
         "Rate": 16500,
         "AttribType": 1,
-        "VideoConfigId": 33008,
         "Tags": [
             "Skill DMG",
             "Phaseshift"
@@ -418,12 +433,14 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33008
     },
     {
         "Id": 206,
         "Name": "Sundered Delusion",
-        "Desc": "<b>[Sundered Delusion]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 2</color>\\nGains 50% DMG Reduction. Enters [Afterimage Stance], can perform Flash Block during this state. After a brief delay, casts [Iaido Slash β] to charge forward with multiple slashes, dealing massive DMG. If cast after a successful block, refunds partial cooldown.\\n- Deals total DMG equal to 221% ATK.\\n- Recovers 80 [Swordwave Energy] in total.\\n- Recovers 20 Signature Energy in total.\\n- Refunds 50% cooldown after successful block.\\nAfter successfully casting [Iaido Slash β], immediately tap Basic Attack to directly cast [Swordwave Attack].",
+        "Desc": "<b>【无妄不斩】</b>-<color=#ffdd93>小太刀模式+点击二技能</color>\\n获得{0}%伤害减免效果，进入【残影架势】，期间可进行瞬击格挡。短暂延迟后释放【居合斩·极】冲向前方进行多段斩击，造成大量伤害。若在格挡成功后释放则返还一定冷却。\\n-共造成{1}%攻击力的伤害\\n-共回复{2}点【剑气值】\\n-共回复{3}点必杀能量\\n-格挡后返还{4}%冷却\\n【居合斩·极】释放成功后立即点击普攻可直接释放【剑气攻击】。",
+        "DescNum": "50|221|80|20|50",
         "SimpleDesc": "<b>[Sundered Delusion]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 2</color>\\nGains DMG Reduction. Enters [Afterimage Stance], can perform Flash Block during this state. After a brief delay, casts [Iaido Slash β] to charge forward with multiple slashes, dealing massive DMG. If cast after a successful block, refunds partial cooldown.\\nAfter successfully casting [Iaido Slash β], immediately tap Basic Attack to directly cast [Swordwave Attack].",
         "TypeDesc": "Core Skill 2",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya31.png",
@@ -431,7 +448,6 @@
         "BaseDamageLimit": 6600,
         "Rate": 19600,
         "AttribType": 1,
-        "VideoConfigId": 33009,
         "Tags": [
             "Skill DMG",
             "Uninterruptible",
@@ -444,13 +460,15 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33009
     },
     {
         "Id": 207,
         "Name": "Splashing Thunder",
         "Subtitle": "Kodachi Mode",
-        "Desc": "<b>[Splashing Thunder]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 3</color>\\nCasts [Wildfire Slash] against enemies, converting all [Swordbreak] on enemies to [Swordbreak β], and enters [Odachi Mode].\\n- Deals total DMG equal to 321% ATK.\\n- Recovers 45 Signature Energy in total.\\nIn [Odachi Mode], Skill 3 is replaced with [Flashstorm], Skills 1 and 2 become unusable, basic attack is replaced with [Odachi Mode], and [Swordwave Attack] can be cast directly after Dodge.\\nAfter casting Splashing Thunder, gains 50% DMG Bonus, Super Armor, and 15% DMG Reduction for 17s.",
+        "Desc": "<b>【乱霆开曜】</b>-<color=#ffdd93>小太刀模式+点击三技能</color>\\n对敌人释放一次【燎荒斩】，将敌人身上的【剑损】全部转换为【剑损·极】，进入【大太刀模式】。\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点必杀能量\\n【大太刀模式】下三技能替换为【疾光掣岚】，无法使用一技能、二技能，普攻替换为【大太刀模式】，闪避后可直接释放【剑气攻击】。\\n释放乱霆开曜后自身获得{2}%伤害加成、霸体与{3}%伤害减免效果，持续{4}秒。",
+        "DescNum": "321|45|50|15|17",
         "SimpleDesc": "<b>[Splashing Thunder]</b> - <color=#ffdd93>Kodachi Mode + Tap Skill 3</color>\\nGains DMG Reduction. Casts [Wildfire Slash] against enemies, converting all [Swordbreak] on enemies to [Swordbreak β], and enters [Odachi Mode].\\nIn [Odachi Mode], Skill 3 is replaced with [Flashstorm], Skills 1 and 2 become unusable, and Basic Attack is replaced with [Odachi Mode].\\nAfter casting [Splashing Thunder], gains DMG Bonus, Interrupt Immunity, and Extra DMG Reduction for a certain duration.",
         "TypeDesc": "Core Skill 3",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya32.png",
@@ -458,7 +476,6 @@
         "BaseDamageLimit": 11273,
         "Rate": 26800,
         "AttribType": 1,
-        "VideoConfigId": 33014,
         "Tags": [
             "Skill DMG",
             "Uninterruptible",
@@ -472,6 +489,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33014,
         "SecondSkill": [
             209
         ]
@@ -480,15 +498,16 @@
         "Id": 209,
         "Name": "Flashstorm",
         "Subtitle": "Odachi Mode",
-        "Desc": "<b>[Flashstorm]</b> - <color=#ffdd93>Odachi Mode + Tap Skill 3</color>\\nAfter briefly charging up, performs 4 hits with [Shadow Strike], then casts [Thunderous Bash] to deal massive DMG to enemies before sheathing the Odachi and entering [Kodachi Mode].\\n- Deals total DMG equal to 410% ATK.\\n- Recovers 45 Signature Energy in total.\\nThe final hit of [Thunderous Bash] detonates all [Swordbreak β] on the target, dealing additional high DMG.\\n- Each detonated [Swordbreak] stack deals additional DMG equal to 14.5% ATK.\\n- Detonation DMG counts as Core DMG.",
-        "SimpleDesc": "<b>[Flashstorm]</b> - <color=#ffdd93>Odachi Mode + Tap Skill 3</color>\\nAfter briefly charging up, performs 4 hits with [Shadow Strike], then casts [Thunderous Bash] to deal massive DMG to enemies before sheathing the Odachi and entering [Kodachi Mode].\\nThe final hit of [Thunderous Bash] detonates all [Swordbreak β] on the target, dealing additional high DMG.\\n- Detonation DMG counts as Core DMG.",
+        "Desc": "<b>【疾光掣岚】</b>-<color=#ffdd93>大太刀模式+点击三技能</color>\\n短暂蓄力后释放{0}段【影袭】，随后释放【振雷斩】对敌人造成大量伤害后，收纳大太刀进入【小太刀模式】。\\n-共造成{1}%攻击力的伤害\\n-共回复{2}点必杀能量\\n【振雷斩】最后一击会引爆目标身上的所有【剑损·极】，额外造成一次高额伤害。\\n-每引爆一层【剑损】额外造成{3}%攻击力的伤害\\n-引爆伤害视为核心伤害",
+        "DescNum": "4|410|45|14.5",
+        "SimpleDesc": "<b>【疾光掣岚】</b>-<color=#ffdd93>大太刀模式+点击三技能</color>\\n短暂蓄力后释放{0}段【影袭】，随后释放【振雷斩】对敌人造成大量伤害后，收纳大太刀进入【小太刀模式】。\\n【振雷斩】最后一击会引爆目标身上的所有【剑损·极】，额外造成一次高额伤害。\\n-该引爆视为核心伤害",
+        "SimpleDescNum": 4,
         "TypeDesc": "Core Skill 3",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Luxiya32.png",
         "Cd": 21,
         "BaseDamageLimit": 17242,
         "Rate": 41000,
         "AttribType": 1,
-        "VideoConfigId": 33003,
         "Tags": [
             "Skill DMG",
             "Core DMG",
@@ -501,20 +520,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33003
     },
     {
         "Id": 208,
         "Name": "Phantom Step",
-        "Desc": "<b>[Phantom Step]</b> - <color=#ffdd93>Drag Joystick + Tap Dodge</color>\\nLucia dodges in the target direction. Without joystick input, dodges backward. Can trigger Extreme Dodge during this move.\\n- After a successful Extreme Dodge, becomes Invincible for 1.5s and recovers 40 [Swordwave Energy].\\n<b>[Iaido Slash]</b> - <color=#ffdd93>Kodachi Mode + Press and hold Dodge</color>\\nEnters [Focus Stance], gaining DMG Reduction. Can perform Flash Block during this state.\\nRelease Dodge to cast [Iaido Slash]. If Flash Block is triggered during [Focus Stance], immediately casts [Iaido Slash β].\\n- Deals DMG equal to up to 221% ATK.\\n- Recovers up to 20 Signature Energy.\\n- Recovers up to 80 [Swordwave Energy].\\nDodge Energy does not recover during [Focus Stance].",
-        "SimpleDesc": "<b>[Phantom Step]</b> - <color=#ffdd93>Drag Joystick + Tap Dodge</color>\\nLucia dodges in the target direction. Without joystick input, dodges backward. Can trigger Extreme Dodge during this move.\\n- After a successful Extreme Dodge, becomes Invincible briefly and restores [Swordwave Energy].\\n<b>[Iaido Slash]</b> - <color=#ffdd93>Kodachi Mode + Press and hold Dodge</color>\\nEnters [Focus Stance], gaining 30% DMG Reduction. Can perform Flash Block during this state.\\nRelease Dodge to cast [Iaido Slash]. If Flash Block is triggered during [Focus Stance], immediately casts [Iaido Slash β].\\nDodge Gauge does not recover during [Focus Stance].",
+        "Desc": "<b>【游身绝影】</b>-<color=#ffdd93>拖动摇杆+点击闪避</color>\\n露西亚向指定方向闪避。无摇杆输入时，向身后进行闪避。期间可触发极限闪避。\\n——极限闪避成功后获得{0}无敌效果并回复{1}点【剑气值】。\\n<b>【居合斩】</b>-<color=#ffdd93>小太刀模式+长按闪避</color>\\n进入【气合架势】，获得伤害减免效果，期间可进行瞬击格挡。\\n抬起闪避可释放【居合斩】，若【气合架势】期间触发瞬击格挡则立即释放【居合斩·极】。\\n-最高造成{2}%攻击力的伤害\\n-最高回复{3}点必杀能量\\n-最高回复{4}点【剑气值】\\n【气合架势】期间不回复闪避能量。",
+        "DescNum": "1.5|40|221|20|80",
+        "SimpleDesc": "<b>【游身绝影】</b>-<color=#ffdd93>拖动摇杆+点击闪避</color>\\n露西亚向指定方向闪避。无摇杆输入时，向身后进行闪避。期间可触发极限闪避。\\n——极限闪避成功后获得短暂无敌效果并回复一定【剑气值】。\\n<b>【居合斩】</b>-<color=#ffdd93>小太刀模式+长按闪避</color>\\n进入【气合架势】，获得{0}%伤害减免效果，期间可进行瞬击格挡。\\n抬起闪避可释放【居合斩】，若【气合架势】期间触发瞬击格挡则立即释放【居合斩·极】。\\n【气合架势】期间不回复闪避能量。",
+        "SimpleDescNum": 30,
         "TypeDesc": "Dodge",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/UiDlcRelinkDodge.png",
-        "Cd": 0,
         "BaseDamageLimit": 21168,
         "Rate": 36000,
         "AttribType": 1,
-        "VideoConfigId": 33012,
         "Tags": [
             "Dodge Check",
             "Uninterruptible",
@@ -527,21 +547,22 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33012
     },
     {
         "Id": 301,
         "Name": "Wandering Starburst",
         "Subtitle": "Sword Shield Mode",
-        "Desc": "<b>[Wandering Starburst]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Basic Attack</color>\\nAlternates between sword and shield attacks, dealing DMG.\\n- Deals total DMG equal to 252% ATK.\\n- Recovers 100 [Starcore Value] in total.\\n- Recovers 24 Signature Energy in total.\\n<b>[Lightning Cleave]</b> - <color=#ffdd93>Sword & Shield in Hand + [Starcore Value] Not Less Than 100 + Press and Hold Basic Attack</color>\\nConsumes 100 [Starcore Value] to perform a jumping slash attack on enemies.\\n- Deals total DMG equal to 63% ATK.\\n- Recovers 6 Signature Energy in total.\\n<b>[Starlit Slam]</b> - <color=#ffdd93>Airborne + Sword & Shield in Hand + Tap Basic Attack</color>\\nFlips and raises the shield, unleashing a lightning strike and rapidly slamming into the ground to deal DMG.\\n- Deals total DMG equal to 14% ATK.\\n- Recovers 6 Signature Energy in total.\\n",
-        "SimpleDesc": "<b>[Wandering Starburst]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Basic Attack</color>\\nAlternates between sword and shield attacks, dealing DMG.\\n<b>[Lightning Cleave]</b> - <color=#ffdd93>Sword & Shield in Hand + [Starcore Value] No Less Than 100 + Press and Hold Basic Attack</color>\\nConsumes 100 [Starcore Value] and unleashes a leap strike.\\n<b>[Starlit Slam]</b> - <color=#ffdd93>Airborne + Sword & Shield in Hand + Tap Basic Attack</color>\\nFlips and raises the shield, unleashing a lightning strike and rapidly slamming into the ground to deal DMG.",
+        "Desc": "<b>【游星辉击】</b>-<color=#ffdd93>手持剑盾+点击普攻</color>\\n使用剑盾交替攻击，造成伤害\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点【星芯值】\\n-共回复{2}点必杀能量\\n<b>【疾雷重劈】</b>-<color=#ffdd93>手持剑盾+【星芯值】不小于{3}点+长按普攻</color>\\n消耗{4}点【星芯值】并跳劈敌人\\n-共造成{5}%攻击力的伤害\\n-共回复{6}点必杀能量\\n<b>【星辉坠地】</b>-<color=#ffdd93>位于空中+手持剑盾+点击普攻</color>\\n翻身举盾，引雷冲击，快速落地，造成伤害\\n-共造成{7}%攻击力的伤害\\n-共回复{8}点必杀能量\\n",
+        "DescNum": "252|100|24|100|100|63|6|14|6",
+        "SimpleDesc": "<b>【游星辉击】</b>-<color=#ffdd93>手持剑盾+点击普攻</color>\\n使用剑盾交替攻击，造成伤害\\n<b>【疾雷重劈】</b>-<color=#ffdd93>手持剑盾+【星芯值】不小于{0}点+长按普攻</color>\\n消耗{1}点【星芯值】并跳劈敌人\\n<b>【星辉坠地】</b>-<color=#ffdd93>位于空中+手持剑盾+点击普攻</color>\\n翻身举盾，引雷冲击，快速落地，造成伤害",
+        "SimpleDescNum": "100|100",
         "TypeDesc": "Basic Attack",
         "Icon": "Assets/Product/Texture/Image/UiFightDlc/FightSkillIconRelinkR5Yongyechao11.png",
-        "Cd": 0,
         "BaseDamageLimit": 17205,
         "Rate": 25200,
         "AttribType": 1,
-        "VideoConfigId": 33108,
         "Tags": [
             "Basic Attack DMG"
         ],
@@ -553,6 +574,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33108,
         "SecondSkill": [
             302
         ]
@@ -561,15 +583,14 @@
         "Id": 302,
         "Name": "Thunder Vortex",
         "Subtitle": "Shield Axe Mode",
-        "Desc": "<b>[Thunder Vortex]</b> - <color=#ffdd93>Shield & Axe in Hand + Tap Basic Attack</color>\\nAttacks using the Shield & Axe, dealing DMG.\\n- Deals total DMG equal to 334% ATK.\\n- Recovers 24 Signature Energy in total.\\n- Recovers 200 Starcore Value in total.\\n<b>[Thunderous Cleave]</b> - <color=#ffdd93>Airborne + Shield & Axe in Hand + Tap Basic Attack</color>\\nDrags the Shield & Axe, spins around, then slams it down to deal DMG.\\n- Deals total DMG equal to 28% ATK.\\n- Recovers 6 Signature Energy in total.",
+        "Desc": "<b>【轰雷旋风】</b>-<color=#ffdd93>手持盾斧+点击普攻</color>\\n使用盾斧攻击，造成伤害\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点必杀能量\\n-共回复{2}点【星芯值】\\n<b>【轰雷重劈】</b>-<color=#ffdd93>位于空中+手持盾斧+点击普攻</color>\\n拖拽盾斧，旋身转动，重斩落地，造成伤害\\n-共造成{3}%攻击力的伤害\\n-共回复{4}点必杀能量",
+        "DescNum": "334|24|200|28|6",
         "SimpleDesc": "<b>[Thunder Vortex]</b> - <color=#ffdd93>Shield Axe in Hand + Tap Basic Attack</color>\\nAttacks using the Shield Axe, dealing DMG.\\n<b>[Thunderous Cleave]</b> - <color=#ffdd93>Airborne + Shield Axe in Hand + Tap Basic Attack</color>\\nDrags the Shield Axe, spins around, then slams it down to deal DMG.",
         "TypeDesc": "Basic Attack",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao12.png",
-        "Cd": 0,
         "BaseDamageLimit": 22795,
         "Rate": 33400,
         "AttribType": 1,
-        "VideoConfigId": 33101,
         "Tags": [
             "Basic Attack DMG"
         ],
@@ -580,20 +601,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33101
     },
     {
         "Id": 303,
         "Name": "Meteoric Doom",
-        "Desc": "<b>[Class Skill]</b>\\nAttacks reduce targets' Extra DMG Reduction by 10% for 5s.\\nCharacter's own Extra DMG Reduction increases by 25%.\\nWhen shielded, the character won't be stunned by enemies' basic attacks.\\n<b>[Meteoric Doom]</b> - <color=#ffdd93>Shield & Axe in Hand + [Starcore Value] No Less Than 400 + Press and Hold Basic Attack</color>\\nConsumes all [Starcore Value] to cast [Meteoric Doom].\\n- Deals DMG equal to 317% ATK in total.\\n- Recovers 15 Signature Energy in total.",
-        "SimpleDesc": "<b>[Class Skill]</b>\\nAttacks reduce targets' Extra DMG Reduction for 5s.\\nCharacter's own Extra DMG Reduction increases.\\nWhen shielded, the character won't be stunned by enemies' basic attacks.\\n<b>[Meteoric Doom]</b> - <color=#ffdd93>Shield Axe in Hand + [Starcore Value] No Less Than 400 + Press and Hold Basic Attack</color>\\nConsumes all [Starcore Value] to cast [Meteoric Doom].",
+        "Desc": "<b>【职业技】</b>\\n攻击使目标额外伤害减免降低{0}%，持续{1}秒。\\n角色自身的额外伤害减免提高{2}%。\\n角色存在护盾时可免疫怪物的普通攻击硬直。\\n<b>【坠星崩殛】</b>-<color=#ffdd93>手持盾斧+【星芯值】不少于{3}点+长按普攻</color>\\n消耗所有【星芯值】释放【坠星崩殛】\\n-共造成{4}%攻击力的伤害\\n-共回复{5}点必杀能量",
+        "DescNum": "10|5|25|400|317|15",
+        "SimpleDesc": "<b>【职业技】</b>\\n攻击使目标额外伤害减免降低。\\n角色自身的额外伤害减免提高。\\n角色存在护盾时可免疫怪物的普通攻击硬直。\\n<b>【坠星崩殛】</b>-<color=#ffdd93>手持盾斧+【星芯值】不少于{0}点+长按普攻</color>\\n消耗所有【星芯值】释放【坠星崩殛】",
+        "SimpleDescNum": 400,
         "TypeDesc": "Core Passive",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R5Yongyechaohexin1.png",
-        "Cd": 0,
         "BaseDamageLimit": 10389,
         "Rate": 31700,
         "AttribType": 1,
-        "VideoConfigId": 33105,
         "Tags": [
             "Core DMG",
             "DMG Immunity",
@@ -606,20 +628,22 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33105
     },
     {
         "Id": 304,
         "Name": "Comet Burst",
-        "Desc": "<b>[Comet Burst]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Skill 1</color>\\nBashes enemies with the shield and gains Shield, with the option to cast [Lightning Blade Slash] within a brief window.\\n<b>[Lightning Blade Slash]</b> - <color=#ffdd93>After [Comet Burst] + Tap Skill 1</color>\\nThe round shield extends serrated edges to continuously slash enemies and gains Shield. Casting the skill grants Shield and an 8s [Assault].\\nAfter casting [Comet Burst] and [Lightning Blade Slash], gains Shield equal to 425 + 3.75% of the character's max HP and an 8s [Assault].\\n[Assault]: Basic Attacks gain 30% DMG Bonus for the duration.\\n- Deals DMG up to 124% ATK.\\n- Recovers up to 16 Signature Energy.\\n- Recovers up to 150 Starcore Value.\\nShield lasts for 6s. Shield obtained by casting [Comet Burst] or [Lightning Blade Slash] can stack up to 2 times. Repeatedly gaining this Shield refreshes the current Shield value and duration.",
-        "SimpleDesc": "<b>[Comet Burst]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Skill 1</color>\\nBashes enemies with the shield and gains Shield, with the option to cast [Lightning Blade Slash] within a certain window.\\n<b>[Lightning Blade Slash]</b> - <color=#ffdd93>After casting [Comet Burst] + Tap Skill 1</color>\\nThe round shield extends serrated edges to continuously slash enemies. Gains Shield. After casting the skill, gains Shield and an 8s [Assault].\\n- [Assault]: Basic Attacks gain DMG Bonus for the duration.",
+        "Desc": "<b>【奔星突烁】</b>-<color=#ffdd93>手持剑盾+点击一技能</color>\\n持盾撞向敌人，获得护盾，一段时间内可以追加释放【斩刃雷割】。\\n<b>【斩刃雷割】</b>-<color=#ffdd93>使用【奔星突烁】后+点击一技能</color>\\n圆盾展开锯齿持续切割敌人，获得护盾，技能释放之后获得护盾和{0}秒的【强攻】\\n释放【奔星突烁】和【斩刃雷割】之后获得{1}+{2}%角色最大生命值的护盾和{3}秒的【强攻】\\n【强攻】：持续时间内普通攻击获得伤害加成{4}%。\\n-最高造成{5}%攻击力的伤害\\n-最高回复{6}点必杀能量\\n-最高回复{7}星芯值\\n护盾持续{8}s，通过释放【奔星突烁】或【斩刃雷割】获得的护盾最多可叠{9}层，且重复获得本护盾时，刷新本护盾的当前护盾值和持续时间",
+        "DescNum": "8|425|3.75|8|30|124|16|150|6|2",
+        "SimpleDesc": "<b>【奔星突烁】</b>-<color=#ffdd93>手持剑盾+点击一技能</color>\\n持盾撞向敌人，获得护盾，一段时间内可以追加释放【斩刃雷割】。\\n<b>【斩刃雷割】</b>-<color=#ffdd93>使用【奔星突烁】后+点击一技能</color>\\n圆盾展开锯齿持续切割敌人，获得护盾，技能释放之后获得护盾和{0}秒的【强攻】\\n【强攻】：持续时间内普通攻击获得伤害加成。",
+        "SimpleDescNum": 8,
         "TypeDesc": "Core Skill 1",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao21.png",
         "Cd": 10,
         "BaseDamageLimit": 6521,
         "Rate": 12400,
         "AttribType": 1,
-        "VideoConfigId": 33109,
         "Tags": [
             "Skill DMG",
             "Shield",
@@ -632,20 +656,20 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33109
     },
     {
         "Id": 305,
         "Name": "Golden Roar",
-        "Desc": "<b>[Golden Roar]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Skill 2</color>\\nTakes a threatening stance, bursts with energy, and taunts enemies.\\nAfter casting the skill, gains Shield equal to 1700 + 15% of the character's max HP and an 8s [Assault].\\n[Assault]: Basic Attacks gain 30% DMG Bonus for the duration.\\nShield lasts for 12s. Repeatedly gaining Shield from casting [Golden Roar] refreshes the current Shield value and duration.\\n- Recovers 15 Signature Energy in total.\\n- Recovers up to 50 Starcore Value.",
-        "SimpleDesc": "<b>[Golden Roar]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Skill 2</color>\\nTakes a threatening stance, bursts with energy, and taunts enemies. After casting the skill, gains Shield and an 8s [Assault].\\n[Assault]: Basic Attacks gain DMG Bonus for the duration.",
+        "Desc": "<b>【金辉怒嚎】</b>-<color=#ffdd93>手持剑盾+点击二技能</color>\\n摆好架势迸发能量并嘲讽敌人。\\n技能释放之后获得{0}+{1}%角色最大生命值的护盾和{2}秒的【强攻】\\n【强攻】：持续时间内普通攻击获得伤害加成{3}%。\\n护盾持续{4}s，重复获得通过释放【金辉怒嚎】获得的护盾时，刷新本护盾的当前护盾值和持续时间\\n-总共回复{5}点必杀能量\\n-最高回复{6}星芯值",
+        "DescNum": "1700|15|8|30|12|15|50",
+        "SimpleDesc": "<b>【金辉怒嚎】</b>-<color=#ffdd93>手持剑盾+点击二技能</color>\\n摆好架势迸发能量并嘲讽敌人。技能释放之后获得护盾和{0}秒的【强攻】\\n【强攻】：持续时间内普通攻击获得伤害加成。",
+        "SimpleDescNum": 8,
         "TypeDesc": "Core Skill 2",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao31.png",
         "Cd": 10,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33110,
         "Tags": [
             "Taunt",
             "Shield",
@@ -658,20 +682,22 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33110
     },
     {
         "Id": 306,
         "Name": "Aetherstrike",
-        "Desc": "<b>[Aetherstrike]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Skill 3</color>\\nPerforms a spinning attack on enemies, combines weapons into Shield & Axe, and deals DMG.\\n- Deals DMG equal to 110% ATK in total.\\n- Recovers 10 Signature Energy in total.\\nGrants the character [Assault] and [Resolved] for 15s.\\n[Assault]: Grants 30% Basic Attack Amplification for the duration.\\n[Resolved]: Supernova Burst deals bonus DMG equal to 59% ATK for the duration.\\nWhen casting, gains Shield based on the character's current [Starcore Value].\\n- Gains Shield up to 2850 + 25% of the character's max HP.\\n- Shield lasts for 20s. Repeatedly gaining Shield from casting [Aetherstrike] refreshes the current Shield value and duration.\\nTransformation does not clear the character's current [Starcore Value].\\n<b>[Prismatic Thrust]</b> - <color=#ffdd93>Shield & Axe in Hand + Tap Skill 3</color>\\nCharges at enemies, splits Shield & Axe back into Sword & Shield, and deals DMG.\\n- Deals DMG equal to 46% ATK in total.\\n- Recovers 10 Signature Energy in total.\\nTransformation clears the current [Starcore Value] and grants Shield based on the cleared [Starcore Value].\\n- Gains Shield up to 40% of the character's max HP.\\n- Shield lasts for 20s. Repeatedly gaining Shield from casting [Prismatic Thrust] refreshes the current Shield value and duration.",
-        "SimpleDesc": "<b>[Aetherstrike]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Skill 3</color>\\nPerforms a spinning attack on enemies, combines weapons into Shield Axe, and deals DMG.\\nGrants the character [Assault] and [Resolved] for 15s.\\n[Assault]: Basic Attacks gain DMG Bonus for the duration.\\n[Resolved]: Increases Supernova Burst's DMG.\\nGains Shield based on the character's current [Starcore Value] when casting.\\nTransformation does not clear the character's current [Starcore Value].\\n<b>[Prismatic Thrust]</b> - <color=#ffdd93>Shield Axe in Hand + Tap Skill 3</color>\\nCharges at enemies, splits Shield Axe back into Sword & Shield, and deals DMG.\\nTransformation will clear the character's current [Starcore Value] and grant Shield based on the cleared [Starcore Value].",
+        "Desc": "<b>【遥穹合斩】</b>-<color=#ffdd93>手持剑盾+点击三技能</color>\\n旋转攻击敌人，将武器组合为盾斧，造成伤害。\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点必杀能量\\n赋予角色{2}秒【强攻】和【斗志昂扬】。\\n【强攻】：持续时间内普攻伤害加深{3}%。\\n【斗志昂扬】：持续时间内超新星爆发额外造成{4}%攻击力的伤害。\\n释放时根据角色当前的【星芯值】获得护盾。\\n-最高获得{5}+{6}%角色最大生命值的护盾\\n-护盾持续{7}s，重复获得通过释放【遥穹合斩】获得的护盾时，刷新本护盾的当前护盾值和持续时间\\n变身不清除当前角色的【星芯值】。\\n<b>【疾虹突刺】</b>-<color=#ffdd93>手持盾斧+点击三技能</color>\\n冲刺攻击敌人，将盾斧拆分为剑盾，造成伤害。\\n-共造成{8}%攻击力的伤害\\n-共回复{9}点必杀能量\\n变身时会清空角色当前的【星芯值】，并根据清空的【星芯值】获得护盾\\n-最高获得{10}%角色最大生命值的护盾\\n-护盾持续{11}s，重复获得通过释放【疾虹突刺】获得的护盾时，刷新本护盾的当前护盾值和持续时间",
+        "DescNum": "110|10|15|30|59|2850|25|20|46|10|40|20",
+        "SimpleDesc": "<b>【遥穹合斩】</b>-<color=#ffdd93>手持剑盾+点击三技能</color>\\n旋转攻击敌人，将武器组合为盾斧，造成伤害。\\n赋予角色{0}秒【强攻】和【斗志昂扬】。\\n【强攻】：持续时间内普通攻击获得伤害加成。\\n【斗志昂扬】：提升造成的超新星爆发伤害。\\n释放时根据角色当前的【星芯值】获得护盾\\n变身不清除当前角色的【星芯值】。\\n<b>【疾虹突刺】</b>-<color=#ffdd93>手持盾斧+点击三技能</color>\\n冲刺攻击敌人，将盾斧拆分为剑盾，造成伤害。\\n变身时会清空角色当前的【星芯值】，并根据清空的【星芯值】获得护盾",
+        "SimpleDescNum": 15,
         "TypeDesc": "Core Skill 3",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao41.png",
         "Cd": 15,
         "BaseDamageLimit": 5796,
         "Rate": 11000,
         "AttribType": 1,
-        "VideoConfigId": 33111,
         "Tags": [
             "Skill DMG",
             "Shield",
@@ -684,21 +710,22 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33111
     },
     {
         "Id": 307,
         "Name": "Starlight Barrier",
         "Subtitle": "Sword Shield Mode",
-        "Desc": "<b>[Gravity Launch]</b> - <color=#ffdd93>Drag joystick + Tap Dodge</color>\\nNanami dodges in the target direction.\\n- Becomes Invincible for 1.5s after a successful dodge\\n<b>[Bulwark of Glimmer]</b> - <color=#ffdd93>Tap Dodge without moving joystick</color>\\nWhen tapping the Dodge button without moving the joystick, triggers a defensive action. Provides 15% Extra DMG Reduction in the process.\\nPress and hold Dodge to maintain the defensive state. When attacked in this state, consumes Dodge Gauge and blocks the attack.\\nWhen hit during the defensive state, triggers Block and gains 25 [Starcore Value].\\nUpon a successful block, gains 35% Extra DMG Reduction. Triggering a Perfect Block grants 45% Extra DMG Reduction.\\nUpon a Perfect Block, gains Shield equal to 500 + 2% of the character's max HP. Repeatedly gaining this Shield refreshes the current Shield value.\\n<b>[Thunder Plow]</b> - <color=#ffdd93>Trigger Block + Tap Basic Attack</color>\\nUpon a successful block, tap Basic Attack to quickly switch to Shield Axe and launch an enhanced attack.\\n- Deals DMG equal to 280% ATK in total.\\n- Recovers 10 Signature Energy in total.",
-        "SimpleDesc": "<b>[Gravity Launch]</b> - <color=#ffdd93>Drag joystick + Tap Dodge</color>\\nNanami dodges in the target direction.\\n- Becomes Invincible for 1.5s after a successful dodge\\n<b>[Bulwark of Glimmer]</b> - <color=#ffdd93>Tap Dodge without moving joystick</color>\\nWhen tapping the Dodge button without moving the joystick, triggers a defensive action. Provides DMG Reduction in the process.\\nPress and hold Dodge to maintain the defensive state. When attacked in this state, consumes Dodge Gauge and blocks the attack.\\nWhen hit during the defensive state, triggers Block and gains [Starcore Value].\\nUpon a successful block, gains DMG Reduction. Triggering a Perfect Block grants additional DMG Reduction.\\n<b>[Thunder Plow]</b> - <color=#ffdd93>Trigger Block + Tap Basic Attack</color>\\nUpon a successful block, tap Basic Attack to quickly switch to Shield Axe and launch an enhanced attack.",
+        "Desc": "<b>【引力弹射】</b>-<color=#ffdd93>拖动摇杆+点击闪避</color>\\n七实向指定方向闪避。\\n-闪避成功后获得{0}s无敌状态\\n<b>【辉尘光壁】</b>-<color=#ffdd93>不拖动摇杆点击闪避</color>\\n无方向键输入且点按闪避键时，触发防御动作。防御期间提供{1}%的额外伤害减免。\\n长按闪避可以持续保持防御状态，防御状态下受到攻击会消耗一定闪避能量并格挡该攻击。\\n防御期间受击，触发格挡并获得{2}点【星芯值】。\\n格挡成功时，获得{3}%额外伤害减免，若触发精确格挡获得{4}%额外伤害减免。\\n精确格挡成功时会获得{5}+{6}%角色最大生命值的护盾，重复获得本护盾时刷新本护盾的当前护盾值\\n<b>【雷引犁地】</b>-<color=#ffdd93>触发格挡+点按普攻</color>\\n格挡成功时点击普攻迅速切换为盾斧并发动{7}次强化攻击。\\n-共造成{8}%攻击力的伤害\\n-共回复{9}点必杀能量",
+        "DescNum": "1.5|15|25|35|45|500|2|1|280|10",
+        "SimpleDesc": "<b>【引力弹射】</b>-<color=#ffdd93>拖动摇杆+点击闪避</color>\\n七实向指定方向闪避。\\n-闪避成功后获得{0}s无敌状态\\n<b>【辉尘光壁】</b>-<color=#ffdd93>不拖动摇杆点击闪避</color>\\n无方向键输入且点按闪避键时，触发防御动作。防御期间提供一定量的减伤。\\n长按闪避可以持续保持防御状态，防御状态下受到攻击会消耗一定闪避能量并格挡该攻击。\\n防御期间受击，触发格挡并获得一定【星芯值】。\\n格挡成功时，获得一定的减伤，若触发精确格挡获得更多的减伤。\\n<b>【雷引犁地】</b>-<color=#ffdd93>触发格挡+点按普攻</color>\\n格挡成功时点击普攻迅速切换为盾斧并发动{1}次强化攻击。",
+        "SimpleDescNum": "1.5|1",
         "TypeDesc": "Dodge/Block",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5YongyechaoTk.png",
-        "Cd": 0,
         "BaseDamageLimit": 14700,
         "Rate": 14000,
         "AttribType": 1,
-        "VideoConfigId": 33113,
         "Tags": [
             "Dodge Check",
             "Block Check"
@@ -711,6 +738,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33113,
         "SecondSkill": [
             308
         ]
@@ -719,15 +747,13 @@
         "Id": 308,
         "Name": "Flare Stasis",
         "Subtitle": "Shield Axe Mode",
-        "Desc": "<b>[Comet Stream]</b> - <color=#ffdd93>Move Joystick + Tap Dodge</color>\\nNanami dodges in the target direction.\\n- Becomes Invincible for 1.5s after a successful dodge.\\n<b>[Lightstorm]</b> - <color=#ffdd93>Tap Dodge without moving joystick</color>\\nWhen tapping the Dodge button without directional input, triggers a defensive action. Provides a certain amount of DMG Reduction during defensive state.\\nPress and hold Dodge to maintain defensive state. When attacked while in defensive state, consumes some Dodge Energy and blocks the attack. Can perform consecutive blocks.\\nWhen hit during defensive state, triggers Block and gains 50 [Starcore Value].\\nWhen successfully blocking, gains 35% Extra DMG Reduction. Triggering a Perfect Block grants 45% Extra DMG Reduction.\\nWhen successfully blocking, the next attack hit deals Extra DMG.\\n- Deals Extra DMG equal to 120% ATK.",
-        "SimpleDesc": "<b>[Comet Stream]</b> - <color=#ffdd93>Move Joystick + Tap Dodge</color>\\nNanami dodges in the target direction.\\n- Becomes Invincible for 1.5s after a successful dodge.\\n[Lightstorm] - Tap Dodge without moving the joystick.\\nWhen tapping the Dodge button without directional input, triggers a defensive action. Provides a certain amount of DMG Reduction during defensive state.\\nPress and hold Dodge to maintain defensive state. When attacked while in defensive state, consumes some Dodge Energy and blocks the attack. Can perform consecutive blocks.\\nWhen hit during defensive state, triggers Block and gains some [Starcore Value].\\nWhen successfully blocking, gains DMG Reduction. Triggering a Perfect Block grants additional DMG Reduction.\\nWhen successfully blocking, the next attack hit deals Extra DMG.",
+        "Desc": "<b>【彗尾曳流】</b>-<color=#ffdd93>拖动摇杆+点击闪避</color>\\n七实向指定方向闪避。\\n-闪避成功后获得{0}s无敌状态\\n<b>【恒光旋涌】</b>-<color=#ffdd93>不拖动摇杆点击闪避</color>\\n无方向键输入且点按闪避键时，触发防御动作。防御期间提供一定量的减伤。\\n长按闪避可以持续保持防御状态，防御状态下受到攻击会消耗一定闪避能量并格挡该攻击，可连续格挡。\\n防御期间受击，触发格挡并获得{1}点【星芯值】。\\n格挡成功时，获得{2}%额外伤害减免，若触发精确格挡获得{3}%额外伤害减免。\\n格挡成功时，下一次攻击命中时造成额外伤害。\\n-造成{4}%攻击力的额外伤害",
+        "DescNum": "1.5|50|35|45|120",
+        "SimpleDesc": "<b>【彗尾曳流】</b>-<color=#ffdd93>拖动摇杆+点击闪避</color>\\n七实向指定方向闪避。\\n-闪避成功后获得{0}s无敌状态\\n【恒光旋涌】-不拖动摇杆点击闪避\\n无方向键输入且点按闪避键时，触发防御动作。防御期间提供一定量的减伤。\\n长按闪避可以持续保持防御状态，防御状态下受到攻击会消耗一定闪避能量并格挡该攻击，可连续格挡。\\n防御期间受击，触发格挡并获得一定【星芯值】。\\n格挡成功时，获得一定的减伤，若触发精确格挡获得更多的减伤。\\n格挡成功时，下一次攻击命中时造成额外伤害。",
+        "SimpleDescNum": 1.5,
         "TypeDesc": "Dodge/Block",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5YongyechaoTk.png",
-        "Cd": 0,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33104,
         "Tags": [
             "Dodge Check",
             "Block Check"
@@ -739,20 +765,20 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33104
     },
     {
         "Id": 309,
         "Name": "Startrail Descent",
-        "Desc": "<b>[Lightning Cleave]</b> - <color=#ffdd93>Enemy Imbalanced + Tap QTE + Hold Sword & Shield</color>\\nFlips and leaps up, delivering an enhanced greatsword heavy strike that paralyzes enemies, dealing DMG.\\n- Deals DMG equal to 800% ATK in total.\\n- Restores 35 Ultimate Energy for the team.\\n<b>[Lightning Descent]</b> - <color=#ffdd93>Enemy Imbalanced + Tap QTE + Hold Shield Axe</color>\\nSwings the Shield Axe and descends from above, delivering a heavy strike that paralyzes enemies, dealing DMG.\\n- Deals DMG equal to 800% ATK in total.\\n- Restores 35 Ultimate Energy for the team.",
+        "Desc": "<b>【疾雷重劈】</b>-<color=#ffdd93>敌人处于失衡状态+点按QTE+手持剑盾</color>\\n翻身跃起，强化大剑重击瘫痪敌人，造成伤害。\\n-共造成{0}%攻击力的伤害\\n-为队伍回复{1}点极限技能量\\n<b>【降雷回转】</b>-<color=#ffdd93>敌人处于失衡状态+点按QTE+手持盾斧</color>\\n抡起盾斧从天而降，重击瘫痪敌人，造成伤害。\\n-共造成{2}%攻击力的伤害\\n-为队伍回复{3}点极限技能量",
+        "DescNum": "800|35|800|35",
         "SimpleDesc": "<b>[Lightning Cleave]</b> - <color=#ffdd93>Enemy Imbalanced + Tap QTE + Hold Sword & Shield</color>\\nFlips and leaps up, delivering an enhanced greatsword heavy strike that paralyzes enemies, dealing DMG.\\n<b>[Lightning Descent]</b> - <color=#ffdd93>Enemy Imbalanced + Tap QTE + Hold Shield & Axe</color>\\nSwings the Shield & Axe and descends from above, delivering a heavy strike that paralyzes enemies, dealing DMG.",
         "TypeDesc": "Follow-Up Skill",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkPr.png",
-        "Cd": 0,
         "BaseDamageLimit": 67200,
         "Rate": 80000,
         "AttribType": 1,
-        "VideoConfigId": 33106,
         "Tags": [
             "Follow-Up DMG"
         ],
@@ -763,20 +789,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33106
     },
     {
         "Id": 310,
         "Name": "Cosmic Starpiercer",
-        "Desc": "<b>[Cosmic Starpiercer]</b> - <color=#ffdd93>1000 Signature Energy + Hold Sword & Shield + Tap Signature</color>\\nCombines weapons into a Shield & Axe and cleaves enemies, dealing DMG.\\n- Deals total DMG equal to 1980% ATK.\\n- Recovers 50 Ultimate Energy for the team.\\n<b>[Starshard Slash]</b> - <color=#ffdd93>1000 Signature Energy + Hold Shield & Axe + Tap Signature</color>\\nUses the Shield & Axe to cleave enemies, dealing DMG.\\n- Deals total DMG equal to 2000% ATK.\\n- Recovers 50 Ultimate Energy for the team.",
-        "SimpleDesc": "<b>[Cosmic Starpiercer]</b> - <color=#ffdd93>1000 Signature Energy + Hold Sword & Shield + Tap Signature</color>\\nCombines weapons into a Shield & Axe and cleaves enemies, dealing DMG.\\n<b>[Starshard Slash]</b> - <color=#ffdd93>1000 Signature Energy + Hold Shield & Axe + Tap Signature</color>\\nUses the Shield & Axe to cleave enemies, dealing DMG.",
+        "Desc": "<b>【天宇贯穿星击】</b>-<color=#ffdd93>{0}必杀能量+手持剑盾+点按必杀</color>\\n将武器组合为盾斧并劈砍敌人，造成伤害\\n-共造成{1}%攻击力的伤害\\n-为队伍回复{2}点极限技能量\\n<b>【万兆碎星斩】</b>-<color=#ffdd93>{3}必杀能量+手持盾斧+点按必杀</color>\\n使用盾斧劈砍敌人，造成伤害\\n-共造成{4}%攻击力的伤害\\n-为队伍回复{5}点极限技能量",
+        "DescNum": "1000|1980|50|1000|2000|50",
+        "SimpleDesc": "<b>【天宇贯穿星击】</b>-<color=#ffdd93>{0}必杀能量+手持剑盾+点按必杀</color>\\n将武器组合为盾斧并劈砍敌人，造成伤害\\n<b>【万兆碎星斩】</b>-<color=#ffdd93>{1}必杀能量+手持盾斧+点按必杀</color>\\n使用盾斧劈砍敌人，造成伤害",
+        "SimpleDescNum": "1000|1000",
         "TypeDesc": "Signature",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao51.png",
-        "Cd": 0,
         "BaseDamageLimit": 280000,
         "Rate": 200000,
         "AttribType": 1,
-        "VideoConfigId": 33112,
         "Tags": [
             "Signature DMG",
             "DMG Immunity",
@@ -789,20 +816,19 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33112
     },
     {
         "Id": 311,
         "Name": "Celestial Armor",
-        "Desc": "<b>[Celestial Armor]</b> - <color=#ffdd93>100 Ultimate Points + Tap Character Portrait</color>\\nConsumes Ultimate Points to provide the entire team with a shield equal to 90% max HP for 15s.",
-        "SimpleDesc": "<b>[Celestial Armor]</b> - <color=#ffdd93>100 Ultimate Points + Tap Character Portrait</color>\\nConsumes Ultimate Points to provide the entire team with a shield based on max HP.",
+        "Desc": "<b>【穹宇装甲】</b>-<color=#ffdd93>{0}点极限值+点击角色头像</color>\\n消耗极限值给全队提供一个基于自身{1}%最大生命值的护盾,持续{2}秒。",
+        "DescNum": "100|90|15",
+        "SimpleDesc": "<b>【穹宇装甲】</b>-<color=#ffdd93>{0}点极限值+点击角色头像</color>\\n消耗极限值给全队提供一个基于自身最大生命值的护盾。",
+        "SimpleDescNum": 100,
         "TypeDesc": "Ultimate Skill",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5YongyechaoEx.png",
-        "Cd": 0,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33107,
         "Tags": [
             "Shield"
         ],
@@ -813,21 +839,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33107
     },
     {
         "Id": 501,
         "Name": "Wandering Starburst",
         "Subtitle": "Sword Shield Mode",
-        "Desc": "<b>[Wandering Starburst]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Basic Attack</color>\\nAlternates between sword and shield attacks, gaining [Sharpness Value] and dealing DMG.\\n- Deals total DMG equal to 235% ATK.\\n- Recovers 100 [Sharpness Value] in total\\n- Recovers 20 Signature Energy in total.\\n<b>[Starlit Slam]</b> - <color=#ffdd93>Airborne + Hold Sword & Shield + Tap Basic Attack</color>\\nFlips and raises the shield, unleashing a lightning strike and rapidly slamming into the ground to deal DMG.\\n- Deals total DMG equal to 14% ATK.\\n- Recovers 6 Signature Energy in total.",
+        "Desc": "<b>【游星辉击】</b>-<color=#ffdd93>手持剑盾+点击普攻</color>\\n使用剑盾交替攻击，获得【锋锐值】并造成伤害\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点【锋锐值】\\n-共回复{2}点必杀能量\\n<b>【星辉坠地】</b>-<color=#ffdd93>位于空中+手持剑盾+点击普攻</color>\\n翻身举盾，引雷冲击，快速落地，造成伤害\\n-共造成{3}%攻击力的伤害\\n-共回复{4}点必杀能量",
+        "DescNum": "235|100|20|14|6",
         "SimpleDesc": "<b>[Wandering Starburst]</b> - <color=#ffdd93>Hold Sword & Shield + Tap Basic Attack</color>\\nAlternates between sword and shield attacks, gaining [Sharpness Value] and dealing DMG.\\n<b>[Starlit Slam]</b> - <color=#ffdd93>Airborne + Hold Sword & Shield + Tap Basic Attack</color>\\nFlips and raises the shield, unleashing a lightning strike and rapidly slamming into the ground to deal DMG.",
         "TypeDesc": "Basic Attack",
         "Icon": "Assets/Product/Texture/Image/UiFightDlc/FightSkillIconRelinkR5Yongyechao11.png",
-        "Cd": 0,
         "BaseDamageLimit": 12816,
         "Rate": 23500,
         "AttribType": 1,
-        "VideoConfigId": 33108,
         "Tags": [
             "Basic Attack DMG"
         ],
@@ -839,6 +865,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33108,
         "SecondSkill": [
             502
         ]
@@ -847,15 +874,14 @@
         "Id": 502,
         "Name": "Thunder Vortex",
         "Subtitle": "Shield Axe Mode",
-        "Desc": "<b>[Thunder Vortex]</b> - <color=#ffdd93>Hold Shield & Axe + Tap Basic Attack</color>\\nAttacks using the Shield & Axe, dealing DMG. If there is sufficient [Sharpness Value], consumes [Sharpness Value] when attacking to gain [Infinitas Value].\\n- Deals total DMG equal to 308% ATK.\\n- Recovers 20 Signature Energy in total.\\n<b>[Thunderous Cleave]</b> - <color=#ffdd93>Airborne + Hold Shield & Axe + Tap Basic Attack</color>\\nDrags the Shield & Axe, spins around, then slams it down to deal DMG.\\n- Deals total DMG equal to 28% ATK.\\n- Recovers 6 Signature Energy in total.",
+        "Desc": "<b>【轰雷旋风】</b>-<color=#ffdd93>手持盾斧+点击普攻</color>\\n使用盾斧攻击，造成伤害。若拥有足够的【锋锐值】，则攻击时消耗【锋锐值】获得【超解值】\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点必杀能量\\n<b>【轰雷重劈】</b>-<color=#ffdd93>位于空中+手持盾斧+点击普攻</color>\\n拖拽盾斧，旋身转动，重斩落地，造成伤害\\n-共造成{2}%攻击力的伤害\\n-共回复{3}点必杀能量",
+        "DescNum": "308|20|28|6",
         "SimpleDesc": "<b>[Thunder Vortex]</b> - <color=#ffdd93>Hold Shield Axe + Tap Basic Attack</color>\\nAttacks using the Shield Axe, dealing DMG. If there is sufficient [Sharpness Value], consumes [Sharpness Value] when attacking to gain [Infinitas Value].\\n<b>[Thunderous Cleave]</b> - <color=#ffdd93>Airborne + Hold Shield Axe + Tap Basic Attack</color>\\nDrags the Shield Axe, spins around, then slams it down to deal DMG.",
         "TypeDesc": "Basic Attack",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao12.png",
-        "Cd": 0,
         "BaseDamageLimit": 16823,
         "Rate": 30800,
         "AttribType": 1,
-        "VideoConfigId": 33101,
         "Tags": [
             "Basic Attack DMG"
         ],
@@ -866,20 +892,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33101
     },
     {
         "Id": 503,
         "Name": "Meteoric Doom",
-        "Desc": "<b>[Class Skill]</b>\\nAttacks reduce targets' Extra DMG Reduction by 10% for 5s.\\nCharacter's own Extra DMG Reduction increases by 25%.\\nWhen shielded, the character won't be stunned by enemies' basic attacks.\\n<b>[Meteoric Doom]</b> - <color=#ffdd93>Hold Shield & Axe + [Infinitas Value] Not Less Than 300 + Press and Hold Basic Attack</color>\\nConsumes all [Infinitas Value] to cast [Meteoric Doom]. When casting [Meteoric Doom], deals extra DMG based on [Infinitas Value] consumed.\\n- Deals DMG equal to up to 282% ATK.\\n- Recovers 12 Signature Energy in total.\\n[Sharpness Value] cap: 300\\n[Infinitas Value] cap: 900\\nWhen 600 [Infinitas Value] is consumed while casting [Meteoric Doom], deals an additional instance of DMG.\\n- Deals total DMG equal to 237% ATK.\\nWhen 900 [Infinitas Value] is consumed while casting [Meteoric Doom], creates an electric field that lasts for 5s, continuously dealing DMG to enemies within range. Electric field DMG triggers every 0.5s.\\n- Deals 20% ATK as DMG each time.\\n",
-        "SimpleDesc": "<b>[Class Skill]</b>\\nAttacks reduce targets' Extra DMG Reduction.\\nCharacter's own Extra DMG Reduction increases.\\nWhen shielded, the character won't be stunned by enemies' basic attacks.\\n<b>[Meteoric Doom]</b> - <color=#ffdd93>Shield Axe in Hand + [Core Energy] No Less Than 300 + Press and Hold Basic Attack</color>\\nConsumes all [Infinitas Value] to cast [Meteoric Doom]. When casting [Meteoric Doom], deals extra DMG based on [Infinitas Value] consumed.\\nImmediately gains 300 [Infinitas Value] upon enemy Poise break.\\nWhen 600 [Infinitas Value] is consumed while casting [Meteoric Doom], deals an additional instance of DMG.\\nWhen 900 [Infinitas Value] is consumed while casting [Meteoric Doom], creates an electric field, continuously dealing DMG to enemies within range.",
+        "Desc": "<b>【职业技】</b>\\n攻击使目标额外伤害减免降低{0}%，持续{1}秒。\\n角色自身的额外伤害减免提高{2}%。\\n角色存在护盾时可免疫怪物的普通攻击硬直。\\n<b>【坠星崩殛】</b>-<color=#ffdd93>手持盾斧+【超解值】不少于{3}点+长按普攻</color>\\n消耗所有【超解值】释放【坠星崩殛】。释放【坠星崩殛】时，根据消耗的【超解值】追加额外伤害\\n-最高造成{4}%攻击力的伤害\\n-共回复{5}点必杀能量\\n【锋锐值】上限为{6}\\n【超解值】上限为{7}\\n若释放【坠星崩殛】时消耗了{8}点【超解值】，则会额外追加一段伤害\\n-共造成{9}%攻击力的伤害\\n若释放【坠星崩殛】时消耗了{10}点【超解值】，则会在原地留下一个存在{11}s的电圈，持续对范围内敌人造成伤害。电圈伤害每{12}秒触发一次\\n-每次造成{13}%攻击力的伤害\\n",
+        "DescNum": "10|5|25|300|282|12|300|900|600|237|900|5|0.5|20",
+        "SimpleDesc": "<b>【职业技】</b>\\n攻击使目标额外伤害减免降低。\\n角色自身的额外伤害减免提高。\\n角色存在护盾时可免疫怪物的普通攻击硬直。\\n<b>【坠星崩殛】</b>-<color=#ffdd93>手持盾斧+【核心能量】不少于{0}点+长按普攻</color>\\n消耗所有【超解值】释放【坠星崩殛】。释放【坠星崩殛】时，根据消耗的【超解值】追加额外伤害\\n怪物被破韧后立即获得{1}点【超解值】\\n若释放【坠星崩殛】时消耗了{2}点【超解值】，则会额外追加一段伤害\\n若释放【坠星崩殛】时消耗了{3}点【超解值】，则会在则会在原地留下一个电圈，持续对范围内敌人造成伤害",
+        "SimpleDescNum": "300|300|600|900",
         "TypeDesc": "Core Mechanics",
         "Icon": "Assets/Product/Texture/Image/IconSkill/R5Yongyechaohexin1.png",
-        "Cd": 0,
         "BaseDamageLimit": 21077,
         "Rate": 28200,
         "AttribType": 1,
-        "VideoConfigId": 33105,
         "Tags": [
             "Core DMG",
             "DMG Immunity",
@@ -892,13 +919,15 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33105
     },
     {
         "Id": 504,
         "Name": "Comet Burst",
         "Subtitle": "Sword Shield Mode",
-        "Desc": "<b>[Comet Burst]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Skill 1</color>\\nBashes enemies with the shield, with the option to cast [Lightning Blade Slash] within a certain window. Gains [Sharpness Value] after casting the skill.\\n<b>[Lightning Blade Slash]</b> - <color=#ffdd93>After casting [Comet Burst] + Tap Skill 1</color>\\nThe round shield extends serrated edges to continuously slash enemies. Gains [Sharpness Value] after casting the skill.\\n- Deals DMG up to 173% ATK.\\n- Recovers up to 12 Signature Energy.\\n- Recovers up to 100 [Sharpness Value].\\n",
+        "Desc": "<b>【奔星突烁】</b>-<color=#ffdd93>手持剑盾+点击一技能</color>\\n持盾撞向敌人，一段时间内可以追加释放【斩刃雷割】。技能释放之后获得【锋锐值】。\\n<b>【斩刃雷割】</b>-<color=#ffdd93>使用【奔星突烁】后+点击一技能</color>\\n圆盾展开锯齿持续切割敌人。技能释放之后获得【锋锐值】\\n-最高造成{0}%攻击力的伤害\\n-最高回复{1}点必杀能量\\n-最高回复{2}【锋锐值】\\n",
+        "DescNum": "173|12|100",
         "SimpleDesc": "<b>[Comet Burst]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Skill 1</color>\\nBashes enemies with the shield, with the option to cast [Lightning Blade Slash] within a certain window. Gains [Sharpness Value] after casting the skill.\\n<b>[Lightning Blade Slash]</b> - <color=#ffdd93>After casting [Comet Burst] + Tap Skill 1</color>\\nThe round shield extends serrated edges to continuously slash enemies. Gains [Sharpness Value] after casting the skill.",
         "TypeDesc": "Core Skill 1",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao61.png",
@@ -906,7 +935,6 @@
         "BaseDamageLimit": 8092,
         "Rate": 14800,
         "AttribType": 1,
-        "VideoConfigId": 33109,
         "Tags": [
             "Skill DMG"
         ],
@@ -918,6 +946,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33109,
         "SecondSkill": [
             505
         ]
@@ -926,7 +955,8 @@
         "Id": 505,
         "Name": "Inferno Cyclone",
         "Subtitle": "Shield Axe Mode",
-        "Desc": "<b>[Inferno Cyclone]</b> - <color=#ffdd93>Hold Shield & Axe + Press and Hold Skill 1</color>\\nContinuously slashes enemies and deals DMG. Releasing Skill 1 immediately ends the current skill. Continuing to hold the skill transforms it into [Inferno Cyclone β].\\n<b>[Inferno Cyclone β]</b> - <color=#ffdd93>Hold [Inferno Cyclone] Until It Ends + Press and Hold Skill 1</color>\\nContinuously slashes enemies with the Shield & Axe, dealing DMG. Releasing Skill 1 immediately ends the current skill.\\n- Deals DMG equal to up to 480% ATK.\\n- Recovers up to 12 Signature Energy.\\n- Recovers up to 150 [Infinitas Value].",
+        "Desc": "<b>【裂轮焚冲】</b>-<color=#ffdd93>手持盾斧+长按一技能</color>\\n持续切割敌人并造成伤害，松开一技能则立马终止当前技能释放。持续按压技能，技能会被替换为【裂轮焚冲-极】。\\n<b>【裂轮焚冲-极】</b>-<color=#ffdd93>长压释放【烈轮焚冲】结束后+长按一技能</color>\\n使用盾斧持续切割敌人并造成伤害，松开一技能则立马终止当前技能释放。\\n-最高造成{0}%攻击力的伤害\\n-最高回复{1}点必杀能量\\n-最高回复{2}【超解值】",
+        "DescNum": "480|12|150",
         "SimpleDesc": "<b>[Inferno Cyclone]</b> - <color=#ffdd93>Shield Axe in Hand + Press and Hold Skill 1</color>\\nCharges toward enemies, continuously slashes them with the Shield Axe, and deals DMG. Releasing Skill 1 immediately ends the skill. Continuing to hold the skill transforms it into [Inferno Cyclone β].\\n<b>[Inferno Cyclone β]</b> - <color=#ffdd93>Hold [Inferno Cyclone] Until It Ends + Press and Hold Skill 1</color>\\nContinuously slashes enemies with the Shield Axe, dealing DMG. Releasing Skill 1 immediately ends the skill.",
         "TypeDesc": "Core Skill 1",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao71.png",
@@ -934,7 +964,6 @@
         "BaseDamageLimit": 26256,
         "Rate": 48000,
         "AttribType": 1,
-        "VideoConfigId": 33116,
         "Tags": [
             "Skill DMG"
         ],
@@ -945,13 +974,15 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33116
     },
     {
         "Id": 506,
         "Name": "Thunderflare Storm",
         "Subtitle": "Sword Shield Mode",
-        "Desc": "<b>[Thunderflare Storm]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Skill 2</color>\\nPerforms a spinning slash against enemies, with the option to cast [Lightning Cleave] within a brief window. Gains [Sharpness Value] after casting the skill.\\n<b>[Lightning Cleave]</b> - <color=#ffdd93>After casting [Thunderflare Storm] + Tap Skill 2</color>\\nFlips and leaps up, delivering an enhanced greatsword heavy strike against enemies.\\nGains [Sharpness Value] after casting the skill.\\n- Deals DMG equal to up to 161% ATK.\\n- Recovers up to 17 Signature Energy.\\n- Recovers up to 100 [Sharpness Value].\\nAfter casting the skill, all team characters gain a shield equal to 1140 + 10% of Mad Dissection's max HP. Shields gained from casting Thunderflare Storm/Lightning Cleave can stack, up to 2 times.\\n- The shield lasts for 10s. Gaining this shield again refreshes both shield amount and duration.",
+        "Desc": "<b>【耀雷风暴】</b>-<color=#ffdd93>手持剑盾+点击二技能</color>\\n旋转挥砍敌人，一段时间内可以追加释放【疾雷重劈】。技能释放之后获得【锋锐值】\\n<b>【疾雷重劈】</b>-<color=#ffdd93>释放【耀雷风暴】后+点击二技能</color>\\n翻身跃起，强化大剑重击敌人。\\n技能释放之后获得【锋锐值】\\n-最高造成{0}%攻击力的伤害\\n-最高回复{1}点必杀能量\\n-最高回复{2}【锋锐值】\\n技能释放之后全队角色获得{3}+狂锯崩解{4}%最大生命值的护盾，通过释放耀雷风暴/疾雷重劈获得的护盾可重复叠加，最高可叠两层\\n-护盾持续时间{5}s，重复获得本护盾刷新护盾量和持续时间",
+        "DescNum": "161|17|100|1140|10|10",
         "SimpleDesc": "<b>[Thunderflare Storm]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Skill 2</color>\\nPerforms a spinning slash against enemies, with the option to cast [Lightning Cleave] within a brief window. \\nCasting the skill grants all members Shield.\\nGains [Sharpness Value] after casting the skill.\\n<b>[Lightning Cleave]</b> - <color=#ffdd93>After casting [Thunderflare Storm] + Tap Skill 2</color>\\nFlips and leaps up, delivering an enhanced greatsword heavy strike against enemies.\\nGains [Sharpness Value] after casting the skill.",
         "TypeDesc": "Core Skill 2",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao81.png",
@@ -959,7 +990,6 @@
         "BaseDamageLimit": 8820,
         "Rate": 16100,
         "AttribType": 1,
-        "VideoConfigId": 33119,
         "Tags": [
             "Skill DMG",
             "Shield"
@@ -972,6 +1002,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33119,
         "SecondSkill": [
             507
         ]
@@ -980,7 +1011,8 @@
         "Id": 507,
         "Name": "Lightning Sweep",
         "Subtitle": "Shield Axe Mode",
-        "Desc": "<b>[Lightning Sweep]</b> - <color=#ffdd93>Hold Shield & Axe + Tap Skill 2</color>\\nPerforms a spinning slash against enemies, with the option to cast [Lightning Descent] within a brief window. Gains [Infinitas Value] after casting the skill.\\n<b>[Lightning Descent]</b> - <color=#ffdd93>After casting [Lightning Sweep] + Tap Skill 2</color>\\nSwings the Shield & Axe and descends from above, delivering a heavy strike against enemies, dealing DMG.\\nGains [Infinitas Value] after casting the skill.\\n- Deals DMG equal to up to 247% ATK.\\n- Recovers up to 12 Signature Energy.\\n- Recovers up to 150 [Infinitas Value].\\nAfter casting the skill, all team characters gain a shield equal to 1140 + 10% of Mad Dissection's max HP. Shields gained from casting Lightning Sweep/Lightning Descent can stack, up to 2 times.\\n- The shield lasts for 10s. Gaining this shield again refreshes both shield amount and duration.\\n",
+        "Desc": "<b>【旋雷横扫】</b>-<color=#ffdd93>手持盾斧+点击二技能</color>\\n旋转挥砍敌人，一段时间内可以追加释放【降雷回转】。技能释放之后获得【超解值】\\n<b>【降雷回转】</b>-<color=#ffdd93>释放【降雷回转】后+点击二技能</color>\\n抡起盾斧从天而降，重击敌人，造成伤害。\\n技能释放之后获得【超解值】\\n-最高造成{0}%攻击力的伤害\\n-最高回复{1}点必杀能量\\n-最高回复{2}点【超解值】\\n技能释放之后全队角色获得{3}+狂锯崩解{4}%最大生命值的护盾，通过释放旋雷横扫/降雷回转获得的护盾可重复叠加，最高可叠两层\\n-护盾持续时间{5}s，重复获得本护盾刷新护盾量和持续时间\\n",
+        "DescNum": "247|12|150|1140|10|10",
         "SimpleDesc": "<b>[Lightning Sweep]</b> - <color=#ffdd93>Shield Axe in Hand + Tap Skill 2</color>\\nPerforms a spinning slash against enemies, with the option to cast [Lightning Descent] within a brief window.\\nCasting the skill grants all members Shield.\\nGains [Infinitas Value] after casting the skill.\\n<b>[Lightning Descent]</b> - <color=#ffdd93>After casting [Lightning Sweep] + Tap Skill 2</color>\\nSwings the Shield Axe and descends from above, delivering a heavy strike against enemies, dealing DMG.\\nGains [Infinitas Value] after casting the skill.",
         "TypeDesc": "Core Skill 2",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao81.png",
@@ -988,7 +1020,6 @@
         "BaseDamageLimit": 13481,
         "Rate": 25700,
         "AttribType": 1,
-        "VideoConfigId": 33117,
         "Tags": [
             "Skill DMG",
             "Shield"
@@ -1000,20 +1031,22 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33117
     },
     {
         "Id": 508,
         "Name": "Aetherstrike",
-        "Desc": "<b>[Aetherstrike]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Aetherstrike</color>\\nPerforms a spinning attack on enemies, combines weapons into Shield & Axe, and deals DMG.\\n- Deals DMG equal to 114% ATK in total.\\n- Recovers 10 Signature Energy in total.\\nGrants the character [Blazing Edge] for 17s.\\n[Blazing Edge]: Provides up to 30% DMG Bonus based on [Sharpness Value] at the time of transformation.\\nTransformation does not clear the character's current [Sharpness Value].\\nWhen casting [Aetherstrike], gains Shield equal to 2050 + 25% of the character's max HP. This shield refreshes when repeatedly gained or when casting [Prismatic Thrust].\\n<b>[Prismatic Thrust]</b> - <color=#ffdd93>Shield & Axe in Hand + Tap Prismatic Thrust</color>\\nCharges at enemies, splits Shield & Axe back into Sword & Shield, and deals DMG.\\n- Deals DMG equal to 80% ATK in total.\\n- Recovers 10 Signature Energy in total.\\nTransformation does not clear the character's current [Infinitas Value].\\nWhen casting [Prismatic Thrust], gains Shield equal to 2050 + 25% of the character's max HP. This shield refreshes when repeatedly gained or when casting [Aetherstrike].",
-        "SimpleDesc": "<b>[Aetherstrike]</b> - <color=#ffdd93>Sword & Shield in Hand + Tap Aetherstrike</color>\\nPerforms a spinning attack on enemies, combines weapons into Shield Axe, and deals DMG, gaining Super Armor in the process.\\nGrants the character [Blazing Edge] for 17s.\\n[Blazing Edge]: Provides DMG Bonus based on [Sharpness Value] at the time of transformation.\\nTransformation does not clear the character's current [Sharpness Value].\\nNanami gains Shield when switching to Shield Axe.\\n<b>[Prismatic Thrust]</b> - <color=#ffdd93>Shield Axe in Hand + Tap Prismatic Thrust</color>\\nCharges at enemies, splits Shield Axe back into Sword & Shield, and deals DMG, gaining Super Armor in the process.\\nTransformation does not clear the character's current [Infinitas Value].\\nNanami gains Shield when switching to Sword & Shield.",
+        "Desc": "<b>【遥穹合斩】</b>-<color=#ffdd93>手持剑盾+点击遥穹合斩</color>\\n旋转攻击敌人，将武器组合为盾斧，造成伤害。\\n-共造成{0}%攻击力的伤害\\n-共回复{1}点必杀能量\\n赋予角色{2}秒【烈刃】。\\n【烈刃】：根据形态转变时的【锋锐值】给角色提供最高{3}%的伤害加成效果。\\n变身不清除当前角色的【锋锐值】。\\n释放【遥穹合斩】时，获得{4}+角色最大生命值{5}%的护盾，该护盾在重复获得或释放【疾虹突刺】时刷新。\\n<b>【疾虹突刺】</b>-<color=#ffdd93>手持盾斧+点击疾虹突刺</color>\\n冲刺攻击敌人，将盾斧拆分为剑盾，造成伤害。\\n-共造成{6}%攻击力的伤害\\n-共回复{7}点必杀能量\\n变身时不清除当前角色的【超解值】\\n释放【疾虹突刺】时，获得{8}+角色最大生命值{9}%的护盾，该护盾在重复获得或释放【遥穹合斩】时刷新。",
+        "DescNum": "114|10|17|30|2050|25|80|10|2050|25",
+        "SimpleDesc": "<b>【遥穹合斩】</b>-<color=#ffdd93>手持剑盾+点击遥穹合斩</color>\\n旋转攻击敌人，将武器组合为盾斧，造成伤害，期间霸体。\\n赋予角色{0}秒【烈刃】。\\n【烈刃】：根据形态转变时的【锋锐值】给角色提供伤害加成效果。\\n变身不清除当前角色的【锋锐值】。\\n七实切换为盾斧时，获得护盾\\n<b>【疾虹突刺】</b>-<color=#ffdd93>手持盾斧+点击疾虹突刺</color>\\n冲刺攻击敌人，将盾斧拆分为剑盾，造成伤害，期间霸体。\\n变身时不清除当前角色的【超解值】\\n七实切换为剑盾时，获得护盾",
+        "SimpleDescNum": 17,
         "TypeDesc": "Core Skill 3",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR5Yongyechao41.png",
         "Cd": 15,
         "BaseDamageLimit": 6222,
         "Rate": 11400,
         "AttribType": 1,
-        "VideoConfigId": 33102,
         "Tags": [
             "Skill DMG",
             "Shield"
@@ -1025,21 +1058,22 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33102
     },
     {
         "Id": 509,
         "Name": "Phantom Radiance",
         "Subtitle": "Sword Shield Mode",
-        "Desc": "<b>[Gravity Launch]</b> - <color=#ffdd93>Sword & Shield in Hand + Drag Joystick + Tap Dodge</color>\\nNanami dodges in the target direction.\\n- After a successful Extreme Dodge, becomes Invincible for 1.5s.\\n<b>[Thunder Plow]</b> - <color=#ffdd93>Trigger Extreme Dodge + Tap Basic Attack</color>\\nTap Basic Attack to quickly switch to Shield Axe and perform an enhanced attack.\\n- Deals DMG equal to 140% ATK in total.\\n- Recovers 5 Signature Energy in total.",
-        "SimpleDesc": "<b>[Gravity Launch]</b> - <color=#ffdd93>Sword & Shield in Hand + Drag Joystick + Tap Dodge</color>\\nNanami dodges in the target direction.\\n- After a successful Extreme Dodge, becomes Invincible for 1.5s.\\n<b>[Thunder Plow]</b> - <color=#ffdd93>Trigger Extreme Dodge + Tap Basic Attack</color>\\nTap Basic Attack to quickly switch to Shield Axe and perform an enhanced attack.",
+        "Desc": "<b>【引力弹射】</b>-<color=#ffdd93>手持剑盾+拖动摇杆+点击闪避</color>\\n七实向指定方向进行闪避\\n-成功触发极限闪避后获得{0}s无敌状态\\n<b>【雷引犁地】</b>-<color=#ffdd93>触发极限闪避+点击普攻</color>\\n点击普攻迅速切换为盾斧并发动{1}次强化攻击。\\n-共造成{2}%攻击力的伤害\\n-共回复{3}必杀能量",
+        "DescNum": "1.5|1|140|5",
+        "SimpleDesc": "<b>【引力弹射】</b>-<color=#ffdd93>手持剑盾+拖动摇杆+点击闪避</color>\\n七实向指定方向进行闪避\\n-成功触发极限闪避后获得{0}s无敌状态\\n<b>【雷引犁地】</b>-<color=#ffdd93>触发极限闪避+点击普攻</color>\\n点击普攻迅速切换为盾斧并发动{1}次强化攻击。",
+        "SimpleDescNum": "1.5|1",
         "TypeDesc": "Dodge",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/UiDlcRelinkDodge.png",
-        "Cd": 0,
         "BaseDamageLimit": 7644,
         "Rate": 14000,
         "AttribType": 1,
-        "VideoConfigId": 33120,
         "Tags": [
             "Dodge Check"
         ],
@@ -1051,6 +1085,7 @@
             "Mechanism 1 Description",
             "Mechanism 2 Description"
         ],
+        "VideoConfigId": 33120,
         "SecondSkill": [
             510
         ]
@@ -1059,15 +1094,15 @@
         "Id": 510,
         "Name": "Pulse Dash",
         "Subtitle": "Shield Axe Mode",
-        "Desc": "<b>[Comet Stream]</b> - <color=#ffdd93>Hold Shield & Axe + Drag Joystick + Tap Dodge</color>\\nNanami dodges in the target direction.\\n- After a successful Extreme Dodge, becomes Invincible for 1.5s.\\n<b>[Thunder Whirlwind]</b> - <color=#ffdd93>Trigger Extreme Dodge + Tap Basic Attack</color>\\nTap Basic Attack to perform a powerful spinning slash.\\n- Deals total DMG equal to 350% ATK.\\n- Recovers 5 Signature Energy in total.",
-        "SimpleDesc": "<b>[Comet Stream]</b> - <color=#ffdd93>Hold Shield & Axe + Drag Joystick + Tap Dodge</color>\\nNanami dodges in the target direction.\\n- After a successful Extreme Dodge, becomes Invincible for 1.5s.\\n<b>[Thunder Whirlwind]</b> - <color=#ffdd93>Trigger Extreme Dodge + Tap Basic Attack</color>\\nTap Basic Attack to perform a powerful spinning slash.",
+        "Desc": "<b>【彗尾曳流】</b>-<color=#ffdd93>手持盾斧+拖动摇杆+点击闪避</color>\\n七实向指定方向进行闪避\\n-成功触发极限闪避后获得{0}s无敌状态\\n<b>【轰雷卷动】</b>-<color=#ffdd93>触发极限闪避+点击普攻</color>\\n点击普攻发动一次强力回旋斩击\\n-共造成{1}%攻击力的伤害\\n-共回复{2}必杀能量",
+        "DescNum": "1.5|350|5",
+        "SimpleDesc": "<b>【彗尾曳流】</b>-<color=#ffdd93>手持盾斧+拖动摇杆+点击闪避</color>\\n七实向指定方向进行闪避\\n-成功触发极限闪避后获得{0}s无敌状态\\n<b>【轰雷卷动】</b>-<color=#ffdd93>触发极限闪避+点击普攻</color>\\n点击普攻发动一次强力回旋斩击",
+        "SimpleDescNum": 1.5,
         "TypeDesc": "Dodge",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/UiDlcRelinkDodge.png",
-        "Cd": 0,
         "BaseDamageLimit": 16380,
         "Rate": 30000,
         "AttribType": 1,
-        "VideoConfigId": 33118,
         "Tags": [
             "Dodge Check"
         ],
@@ -1078,20 +1113,19 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33118
     },
     {
         "Id": 401,
         "Name": "Ode for Everlight",
-        "Desc": "<b>[Ode for Everlight]</b> - <color=#0d70bc>Liv: Empyrea can accumulate [Chant Stacks] through Holywings Mass, Zodiacal Grace, Purity Oath, and the final hit of her basic attack</color>, up to 12 stacks.\\n- For every 4 stacks accumulated, two homing healing projectiles are fired, instantly recovering 10% of Liv's max HP for teammates, after which affected teammates and Liv receive a [Healing Support] effect for 5s.\\n[Healing Support]: Recovers 2.5% of Liv: Empyrea's max HP per second.\\n- When [Chant Stacks] reach maximum, press and hold Basic Attack to cast [Divine Prayer], clearing all [Chant Stacks] and entering <color=#D91414>[Empyrea Form]</color>.\\n[Empyrea Form]: Lasts for 8s, grants a 20% healing boost that lasts for 15s, and replaces [Nighttime Prayer] with [Azure Firmament]. In this form, Liv cannot accumulate [Chant Stacks]. Press and hold Basic Attack to cast two enhanced skills: [Radiant Judgment I] and [Radiant Judgment II]. Automatically exits [Empyrea Form] after casting [Radiant Judgment II].",
-        "SimpleDesc": "<b>[Ode for Everlight]</b> - <color=#0d70bc>Liv: Empyrea can accumulate [Chant Stacks] through Holywings Mass, Zodiacal Grace, Purity Oath, and the final hit of her basic attack</color>, up to 12 stacks.\\n- For every 4 stacks accumulated, two homing healing projectiles are fired, instantly recovering HP for teammates, after which affected teammates and Liv receive a [Healing Support] effect for 5s.\\n[Healing Support]: Recovers 2.5% of Liv: Empyrea's max HP per second.\\n- When [Chant Stacks] reach maximum, press and hold Basic Attack to cast [Divine Prayer], clearing all [Chant Stacks] and entering <color=#D91414>[Empyrea Form]</color>.\\n[Empyrea Form]: Lasts for 8s, grants a healing boost that lasts for 15s, and replaces [Nighttime Prayer] with [Azure Firmament]. In this form, Liv cannot accumulate [Chant Stacks]. Press and hold Basic Attack to cast two enhanced skills: [Radiant Judgment I] and [Radiant Judgment II]. Automatically exits [Empyrea Form] after casting [Radiant Judgment II].",
+        "Desc": "<b>【永昼颂歌】</b>-<color=#0d70bc>—— 丽芙·极昼可通过光羽弥撒、黄道恩典、纯挚宣誓和普攻最后一段</color>累计【颂奏层数】，最高{0}层\\n—— 每累计四层被动，会发射两枚追踪治疗弹瞬间恢复队友基于丽芙最大生命值{1}%的生命值，之后被命中的队友和丽芙获得一个持续{2}s的【援助治疗】效果 \\n【援助治疗】：每秒恢复基于丽芙·极昼最大生命值{3}%的生命值；\\n—— 当【颂奏层数】累计满层时，可通过长按普攻释放【颂歌祷告】清空【颂奏层数】进入<color=#D91414>【极昼形态】</color>\\n【极昼形态】：【极昼形态】持续{4}s，同时获得{5}%的治疗增幅效果，持续{6}S，且替换【长夜祈光】为【苍色穹壁】，该形态期间丽芙不可累计【颂奏层数】，开启后可通过长按普攻释放两段强化技能——【裁决辉迹I】和【裁决辉迹II】，并在释放【裁决辉迹II】后自动退出【极昼形态】；",
+        "DescNum": "12|10|5|2.5|8|20|15",
+        "SimpleDesc": "<b>【永昼颂歌】</b>-<color=#0d70bc>—— 丽芙·极昼可通过光羽弥撒、黄道恩典、纯挚宣誓和普攻最后一段</color>累计【颂奏层数】，最高{0}层\\n—— 每累计四层被动，会发射两枚追踪治疗弹瞬间恢复队友的生命值，之后被命中的队友和丽芙获得一个持续{1}s的【援助治疗】效果 \\n【援助治疗】：每秒恢复基于丽芙·极昼最大生命值{2}%的生命值；\\n—— 当【颂奏层数】累计满层时，可通过长按普攻释放【颂歌祷告】清空【颂奏层数】进入<color=#D91414>【极昼形态】</color>\\n【极昼形态】：【极昼形态】持续{3}s，同时获得治疗增幅效果，持续{4}S，且替换【长夜祈光】为【苍色穹壁】，该形态期间丽芙不可累计【颂奏层数】，开启后可通过长按普攻释放两段强化技能——【裁决辉迹I】和【裁决辉迹II】，并在释放【裁决辉迹II】后自动退出【极昼形态】；",
+        "SimpleDescNum": "12|5|2.5|8|15",
         "TypeDesc": "Core Passive",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4LifuFz.png",
-        "Cd": 0,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33208,
         "Tags": [
             "Heal",
             "DMG Immunity"
@@ -1103,20 +1137,19 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33208
     },
     {
         "Id": 402,
         "Name": "Luminous Chant",
-        "Desc": "<b>[Luminous Chant]</b> <color=#0d70bc>- Liv: Empyrea can accumulate [Chant Stacks] through Holywings Mass, Zodiacal Grace, Purity Oath, and the final hit of her basic attack</color>, up to 12 stacks.\\n- Consume 8 [Chant Stacks] to enter [Empyrea Form], where she gains a 10% ATK boost and can cast [Radiant Judgment I] and [Radiant Judgment II] by pressing and holding Basic Attack. Replaces [Nighttime Prayer] with [Azure Firmament], and Liv cannot accumulate [Chant Stacks] in this form.\\n- When [Chant Stacks] reach 4 or more, unlocks [Nighttime Prayer] and [Crimson Crown]. Consumes 4 [Chant Stacks] to cast these skills",
-        "SimpleDesc": "<b>[Luminous Chant]</b> <color=#0d70bc>- Liv: Empyrea can accumulate [Chant Stacks] through Holywings Mass, Zodiacal Grace, Purity Oath, and the final hit of her basic attack</color>, up to 12 stacks.\\n- Consume 8 [Chant Stacks] to enter [Empyrea Form], where she gains an ATK boost and can cast [Radiant Judgment I] and [Radiant Judgment II] by pressing and holding Basic Attack. Replaces [Nighttime Prayer] with [Azure Firmament], and Liv cannot accumulate [Chant Stacks] in this form.\\n- When [Chant Stacks] reach 4 or more, unlocks [Nighttime Prayer] and [Crimson Crown]. Consumes 4 [Chant Stacks] to cast these skills",
+        "Desc": "<b>【祈光颂奏】</b>-<color=#0d70bc>—— 丽芙·极昼可通过光羽弥撒、黄道恩典、纯挚宣誓和普攻最后一段</color>累计【颂奏层数】，最高{0}层\\n—— 消耗{1}层【颂奏层数】即可开启【极昼形态】，期间攻击力获得{2}%提升，且长按普攻可释放【裁决辉迹I】和【裁决辉迹II】，替换【长夜祈光】为【苍色穹壁】，该形态期间丽芙不可累计【颂奏层数】；\\n—— 当【颂奏层数】大于等于{3}层时，解锁【长夜祈光】和【赤染棘冠】，消耗{4}层【颂奏层数】释放以上两个技能",
+        "DescNum": "12|8|10|4|4",
+        "SimpleDesc": "<b>【祈光颂奏】</b>-<color=#0d70bc>—— 丽芙·极昼可通过光羽弥撒、黄道恩典、纯挚宣誓和普攻最后一段</color>累计【颂奏层数】，最高{0}层\\n—— 消耗{1}层【颂奏层数】即可开启【极昼形态】，期间攻击力获得提升，且长按普攻可释放【裁决辉迹I】和【裁决辉迹II】，替换【长夜祈光】为【苍色穹壁】，该形态期间丽芙不可累计【颂奏层数】；\\n—— 当【颂奏层数】大于等于{2}层时，解锁【长夜祈光】和【赤染棘冠】，消耗{3}层【颂奏层数】释放以上两个技能",
+        "SimpleDescNum": "12|8|4|4",
         "TypeDesc": "Core Passive",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4LifuSc.png",
-        "Cd": 0,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33208,
         "Tags": [
             "DMG Buff"
         ],
@@ -1127,20 +1160,20 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33208
     },
     {
         "Id": 403,
         "Name": "Radiant Judgment I",
-        "Desc": "<b>[Radiant Judgment I]</b> - <color=#0d70bc>[Empyrea Form] + Press and Hold Basic Attack</color>\\nLiv: Empyrea waves her scepter to release energy, controlling two tactical drones to continuously fire devastating lasers that deal multiple hits to enemies.\\n- Deals a total of 250% DMG.\\n- Gains 30 Signature Energy.\\n- Liv gains 20% DMG Reduction when casting.\\n<b>[Radiant Judgment II]</b> - <color=#0d70bc>[Empyrea Form] + Cast [Radiant Judgment I] + Press and Hold Basic Attack</color>\\nLiv: Empyrea commands her tactical drones to advance on enemy positions, raining laser beams upon them. She then ascends, recalls all drones, and unleashes two devastating laser beams that sweep forward in a straight line.\\n- Deals up to 380% total DMG.\\n- Gains 30 Signature Energy.\\n- Liv gains 20% DMG Reduction upon casting.",
+        "Desc": "<b>【裁决辉迹I】</b>-<color=#0d70bc>【极昼形态】+ 长按普攻</color>\\n丽芙·极昼挥动权杖释放能量，控制两架战术随行单位持续发射超强力激光，对敌人造成多段伤害\\n——总计造成{0}%伤害\\n——获得{1}点必杀能量\\n——释放时丽芙获得{2}%伤害减免\\n<b>【裁决辉迹II】</b>-<color=#0d70bc>【极昼形态】+ 释放【裁决辉迹I】+长按普攻</color>\\n丽芙·极昼指挥战术随行单位飞向敌人位置，对敌人当前头顶落下数段激光，最后腾空蓄力召回所有战术随行单位，发射两道超强力激光扫过面前直线方向上的所有敌人\\n——最多造成总计{3}%伤害\\n——获得{4}点必杀能量\\n——释放时丽芙获得{5}%伤害减免",
+        "DescNum": "250|30|20|380|30|20",
         "SimpleDesc": "<b>[Radiant Judgment I]</b> - <color=#0d70bc>[Empyrea Form] + Press and Hold Basic Attack</color>\\nLiv: Empyrea waves her scepter to release energy, controlling two tactical drones to continuously fire devastating lasers that deal multiple hits to enemies.\\n<b>[Radiant Judgment II]</b> - <color=#0d70bc>[Empyrea Form] + Cast [Radiant Judgment I] + Press and Hold Basic Attack</color>\\nLiv: Empyrea commands her tactical drones to advance on enemy positions, raining laser beams upon them. She then ascends, recalls all drones, and unleashes two devastating laser beams that sweep forward in a straight line.",
         "TypeDesc": "Core Skill 1",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu12.png",
-        "Cd": 0,
         "BaseDamageLimit": 10500,
         "Rate": 25000,
         "AttribType": 1,
-        "VideoConfigId": 33209,
         "Tags": [
             "Core DMG",
             "Uninterruptible"
@@ -1152,20 +1185,20 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33209
     },
     {
         "Id": 404,
         "Name": "Radiant Judgment II",
-        "Desc": "<b>[Radiant Judgment II]</b> - <color=#0d70bc>[Empyrea Form] + Press and Hold Basic Attack</color>\\nLiv: Empyrea commands her tactical drones to advance on enemy positions, raining laser beams upon them. She then ascends, recalls all drones, and unleashes two devastating laser beams that sweep forward in a straight line.\\n- Deals a total of 300% DMG.\\n- Gains 30 Signature Energy.\\n- Liv gains 20% DMG Reduction upon casting.",
+        "Desc": "<b>【裁决辉迹II】</b>-<color=#0d70bc>【极昼形态】+ 长按普攻</color>\\n丽芙·极昼指挥战术随行单位飞向敌人位置，对敌人当前头顶落下数段激光，最后腾空蓄力召回所有战术随行单位，发射两道超强力激光扫过面前直线方向上的所有敌人\\n——造成总计{0}%伤害\\n——获得{1}点必杀能量\\n——释放时丽芙获得{2}%伤害减免",
+        "DescNum": "300|30|20",
         "SimpleDesc": "<b>[Radiant Judgment I]</b> - <color=#0d70bc>[Empyrea Form] + Press and Hold Basic Attack</color>\\nLiv: Empyrea commands her tactical drones to advance on enemy positions, raining laser beams upon them. She then ascends, recalls all drones, and unleashes two devastating laser beams that sweep forward in a straight line.",
         "TypeDesc": "Core Skill 2",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu12.png",
-        "Cd": 0,
         "BaseDamageLimit": 12600,
         "Rate": 30000,
         "AttribType": 1,
-        "VideoConfigId": 33209,
         "Tags": [
             "Core DMG",
             "Uninterruptible"
@@ -1177,20 +1210,20 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33209
     },
     {
         "Id": 405,
         "Name": "Psalm from Afar",
-        "Desc": "<b>[Psalm from Afar]</b> - <color=#0d70bc>Tap Basic Attack</color>\\nLiv: Empyrea performs beam attacks with her scepter and tactical drones.\\n- Deals a total of 360.49% DMG.\\n- The final hit of Basic Attack grants 1 [Chant Stack].\\n- Each hit grants 1 Signature Energy.",
+        "Desc": "<b>【悠远祝赞】</b>-<color=#0d70bc>点击普攻</color>\\n丽芙·极昼使用权杖与战术随行单位造成光束攻击\\n——造成总计{0}%伤害\\n——普攻最后一段获得{1}层【颂奏层数】\\n——每段攻击获得{2}点必杀能量",
+        "DescNum": "360.49|1|1",
         "SimpleDesc": "<b>[Psalm from Afar]</b> - <color=#0d70bc>Tap Basic Attack</color>\\nLiv: Empyrea performs beam attacks with her scepter and tactical drones.",
         "TypeDesc": "Basic Attack",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu11.png",
-        "Cd": 0,
         "BaseDamageLimit": 12936,
         "Rate": 30800,
         "AttribType": 1,
-        "VideoConfigId": 33201,
         "Tags": [
             "Basic Attack DMG"
         ],
@@ -1201,20 +1234,22 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33201
     },
     {
         "Id": 406,
         "Name": "Holywings Mass",
-        "Desc": "<b>[Holywings Mass]</b> - <color=#0d70bc>Tap Skill 1</color>\\nLiv: Empyrea spreads her wings and dashes in the joystick direction, gaining a dodge check during the dash, and releases 10 light feathers to attack enemies.\\n- Deals a total of 150% DMG.\\n- Gains 2 [Chant Stacks].\\n- Gains 10 Signature Energy.",
-        "SimpleDesc": "<b>[Holywings Mass]</b> - <color=#0d70bc>Tap Skill 1</color>\\nLiv: Empyrea spreads her wings and dashes in the joystick direction, gaining a dodge check during the dash, and releases 10 light feathers to attack enemies.",
+        "Desc": "<b>【光羽弥撒】</b>-<color=#0d70bc>点击一技能</color>\\n丽芙·极昼驱动羽翼，向摇杆前进方向冲刺，期间带有闪避判定，并释放{0}枚光羽对敌人进行攻击\\n——造成总计{1}%伤害\\n——获得{2}层【颂奏层数】\\n——获得{3}点必杀能量",
+        "DescNum": "10|150|2|10",
+        "SimpleDesc": "<b>【光羽弥撒】</b>-<color=#0d70bc>点击一技能</color>\\n丽芙·极昼驱动羽翼，向摇杆前进方向冲刺，期间带有闪避判定，并释放{0}枚光羽对敌人进行攻击",
+        "SimpleDescNum": 10,
         "TypeDesc": "Skill 1",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu21.png",
         "Cd": 6,
         "BaseDamageLimit": 6300,
         "Rate": 15000,
         "AttribType": 1,
-        "VideoConfigId": 33202,
         "Tags": [
             "Skill DMG",
             "Dodge Check"
@@ -1226,12 +1261,14 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33202
     },
     {
         "Id": 407,
         "Name": "Chaos Oath",
-        "Desc": "<b>[Chaos Oath]</b> - <color=#0d70bc>Continuously tap Skill 1</color>\\nLiv: Empyrea casts Chaos Oath, creating a black hole that pulls in enemies in an extremely large area and deals damage.\\n- Deals a total of 100% DMG.\\n- Gains 2 [Chant Stacks].\\n- Gains 10 Signature Energy.",
+        "Desc": "<b>【纷乱宣誓】</b>-<color=#0d70bc>连续点击一技能</color>\\n丽芙·极昼释放纷乱宣誓，创造出黑洞牵引极大范围的敌人并造成伤害\\n——总计{0}%伤害\\n——获得{1}层【颂奏层数】\\n——获得{2}点必杀能量",
+        "DescNum": "100|2|10",
         "SimpleDesc": "<b>[Chaos Oath]</b> - <color=#0d70bc>Continuously tap Skill 1</color>\\nLiv: Empyrea casts Chaos Oath, creating a black hole that pulls in enemies in an extremely large area and deals damage.",
         "TypeDesc": "Enhanced Skill 1",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu21.png",
@@ -1239,7 +1276,6 @@
         "BaseDamageLimit": 5040,
         "Rate": 12000,
         "AttribType": 1,
-        "VideoConfigId": 33212,
         "Tags": [
             "Skill DMG"
         ],
@@ -1250,12 +1286,14 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33212
     },
     {
         "Id": 408,
         "Name": "Zodiacal Grace",
-        "Desc": "<b>[Zodiacal Grace]</b> - <color=#0d70bc>Tap Skill 2</color>\\nLiv: Empyrea fires an energy beam to attack enemies.\\n- Deals a total of 262.88% DMG in a large area.\\n- Gains 1 [Chant Stack]\\n- Gains 20 Signature Energy.\\n- Continuously tap to trigger [Purity Oath].\\n<b>[Purity Oath]</b> - <color=#0d70bc>Continuously tap Skill 2</color>\\nLiv: Empyrea fires an enormous energy beam from the ground to attack enemies.\\n- Deals a total of 311.2% DMG in a massive area.\\n- Gains 1 [Chant Stack].\\n- Gains 20 Signature Energy.",
+        "Desc": "<b>【黄道恩典】</b>-<color=#0d70bc>点击二技能</color>\\n丽芙·极昼释放能量光束，对敌人进行攻击\\n——造成大范围总计{0}%伤害\\n——获得{1}层【颂奏层数】\\n——获得{2}点必杀能量\\n——连续点击可触发【纯挚宣誓】\\n<b>【纯挚宣誓】</b>-<color=#0d70bc>连续点击二技能</color>\\n丽芙·极昼从地面释放出超大型能量光束，对敌人进行攻击\\n——造成超大范围总计{3}%伤害\\n——获得{4}层【颂奏层数】\\n——获得{5}点必杀能量",
+        "DescNum": "262.88|1|20|311.2|1|20",
         "SimpleDesc": "<b>[Zodiacal Grace]</b> - <color=#0d70bc>Tap Skill 2</color>\\nLiv: Empyrea fires an energy beam to attack enemies.\\n- Continuously tap to trigger [Purity Oath].\\n<b>[Purity Oath]</b> - <color=#0d70bc>Continuously tap Skill 2</color>\\nLiv: Empyrea fires an enormous energy beam from the ground to attack enemies.",
         "TypeDesc": "Skill 2",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu31.png",
@@ -1263,7 +1301,6 @@
         "BaseDamageLimit": 9660,
         "Rate": 23000,
         "AttribType": 1,
-        "VideoConfigId": 33203,
         "Tags": [
             "Skill DMG"
         ],
@@ -1274,12 +1311,14 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33203
     },
     {
         "Id": 409,
         "Name": "Purity Oath",
-        "Desc": "<b>[Purity Oath]</b> - <color=#0d70bc>Continuously tap Skill 2</color>\\nLiv: Empyrea fires an enormous energy beam from the ground to attack enemies.\\n- Deals a total of 280% DMG in a massive area.\\n- Gains 1 [Chant Stack].\\n- Gains 20 Signature Energy.",
+        "Desc": "<b>【纯挚宣誓】</b>-<color=#0d70bc>连续点击二技能</color>\\n丽芙·极昼从地面释放出超大型能量光束，对敌人进行攻击\\n——造成超大范围总计{0}%伤害\\n——获得{1}层【颂奏层数】\\n——获得{2}点必杀能量",
+        "DescNum": "280|1|20",
         "SimpleDesc": "<b>[Purity Oath]</b> - <color=#0d70bc>Continuously tap Skill 2</color>\\nLiv: Empyrea fires an enormous energy beam from the ground to attack enemies.",
         "TypeDesc": "Enhanced Skill 2",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu31.png",
@@ -1287,7 +1326,6 @@
         "BaseDamageLimit": 11760,
         "Rate": 28000,
         "AttribType": 1,
-        "VideoConfigId": 33213,
         "Tags": [
             "Skill DMG"
         ],
@@ -1298,20 +1336,19 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33213
     },
     {
         "Id": 410,
         "Name": "Nighttime Prayer",
-        "Desc": "<b>[Nighttime Prayer]</b> - <color=#0d70bc>Tap Skill 3</color>\\nLiv: Empyrea performs an Empyreal Prayer, summoning a healing array from above to restore her own HP, then releases beams of light that heal all allies.\\n- Restores HP equal to 25% of Liv's max HP to all allied units on the battlefield\\n- Gains 20 Signature Energy.\\n- Enters [Empyrea Form], then switches to [Azure Firmament].\\nLiv gains 20% DMG Reduction when casting.\\n<b>[Azure Firmament]</b> - <color=#0d70bc>Empyrea Form + Tap Skill 3</color>\\nLiv: Empyrea deploys Azure Firmament, and heals all allies.\\n- Restores HP equal to 25% of Liv's max HP to all allied units on the battlefield.\\n- [Azure Firmament]: Allies within the area gain 90% DMG Reduction.\\n- Gains 20 Signature Energy.\\n- Liv gains 20% DMG Reduction when casting.",
+        "Desc": "<b>【长夜祈光】</b>-<color=#0d70bc>点击三技能</color>\\n丽芙·极昼祷告从空中召唤治疗法阵同时治疗自己，随后落下光束为全场友方单位进行治疗\\n——为全场友方单位恢复丽芙最大生命值{0}%的生命值\\n——获得{1}点必杀能量\\n——进入【极昼形态】后切换为【苍色穹壁】\\n——释放时丽芙获得{2}%伤害减免\\n<b>【苍色穹壁】</b>-<color=#0d70bc>极昼形态+点击三技能</color>\\n丽芙·极昼展开【苍色穹壁】并治疗全场友方单位\\n——为全场友方单位恢复丽芙最大生命值{3}%的生命值\\n——【苍色穹壁】：位于其中的友方单位获得{4}%伤害减免\\n——获得{5}点必杀能量\\n——释放时丽芙获得{6}%伤害减免",
+        "DescNum": "25|20|20|25|90|20|20",
         "SimpleDesc": "<b>[Nighttime Prayer]</b> - <color=#0d70bc>Tap Skill 3</color>\\nLiv: Empyrea performs an Empyreal Prayer, summoning a healing array from above to restore her own HP, then releases beams of light that heal all allies.\\n- Enters [Empyrea Form], then switches to [Azure Firmament].\\n<b>[Azure Firmament]</b> - <color=#0d70bc>Empyrea Form + Tap Skill 3</color>\\nLiv: Empyrea deploys Azure Firmament, and heals all allies.",
         "TypeDesc": "Skill 3",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu41.png",
         "Cd": 16,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33204,
         "Tags": [
             "Area Healing",
             "Uninterruptible"
@@ -1323,20 +1360,19 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33204
     },
     {
         "Id": 411,
         "Name": "Azure Firmament",
-        "Desc": "<b>[Azure Firmament]</b> - <color=#0d70bc>Empyrea Form + Tap Skill 3</color>\\nLiv: Empyrea deploys Azure Firmament and heals all allies.\\n- Restores HP equal to 25% of Liv's max HP to all allied units on the battlefield.\\n- [Azure Firmament]: Allies within the area gain 90% DMG Reduction.\\n- Gains 20 Signature Energy.\\n- Liv gains 20% DMG Reduction when casting.",
+        "Desc": "<b>【苍色穹壁】</b>-<color=#0d70bc>【极昼形态】+点击三技能</color>\\n丽芙·极昼展开【苍色穹壁】并治疗全场友方单位\\n——为全场友方单位恢复丽芙最大生命值{0}%的生命值\\n——【苍色穹壁】：位于其中的友方单位获得{1}%伤害减免\\n——获得{2}点必杀能量\\n——释放时丽芙获得{3}%伤害减免",
+        "DescNum": "25|90|20|20",
         "SimpleDesc": "<b>[Azure Firmament]</b> - <color=#0d70bc>Empyrea Form + Tap Skill 3</color>\\nLiv: Empyrea deploys Azure Firmament and heals all allies.",
         "TypeDesc": "Enhanced Skill 3",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu41.png",
         "Cd": 40,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33205,
         "Tags": [
             "Area Healing",
             "DMG Reduction",
@@ -1349,20 +1385,19 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33205
     },
     {
         "Id": 412,
         "Name": "Crimson Crown",
-        "Desc": "<b>[Crimson Crown]</b> - <color=#0d70bc>Tap Skill 4</color>\\nLiv: Empyrea pushes beyond her limits, activating the Omega Module and granting all allied units Cleansing.\\n- Increases all allied units' damage by 50% for 10s.\\n- Gains 30 Signature Energy.\\n- Liv gains 20% DMG Reduction when casting.",
+        "Desc": "<b>【赤染棘冠】</b>-<color=#0d70bc>点击四技能</color>\\n丽芙·极昼决意超越极限，启动机体中的Ω模块，为全场友方单位施加“净化”\\n——为全体友方单位提供{0}%伤害增幅效果，持续{1}s\\n——获得{2}点必杀能量\\n——释放时丽芙获得{3}%伤害减免",
+        "DescNum": "50|10|30|20",
         "SimpleDesc": "<b>[Crimson Crown]</b> - <color=#0d70bc>Tap Skill 4</color>\\nLiv: Empyrea pushes beyond her limits, activating the Omega Module and granting all allied units Cleansing.",
         "TypeDesc": "Skill 4",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu43.png",
         "Cd": 60,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33206,
         "Tags": [
             "DMG Buff",
             "Uninterruptible"
@@ -1374,20 +1409,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33206
     },
     {
         "Id": 413,
         "Name": "Empyreal Oath",
-        "Desc": "<b>[Empyreal Oath]</b> - <color=#0d70bc>1000 Signature Energy + Tap Signature</color>\\nLiv: Empyrea enters a prayer stance and fires a massive beam, dealing damage to enemies in a large area.\\n- Deals a total of 2000% DMG.\\n- Gains 50 Ultimate Energy.",
-        "SimpleDesc": "<b>[Empyreal Oath]</b> - <color=#0d70bc>1000 Signature Energy + Tap Signature</color>\\nLiv: Empyrea enters a prayer stance and fires a massive beam, dealing damage to enemies in a large area.",
+        "Desc": "<b>【极昼宣誓】</b>-<color=#0d70bc>{0}必杀能量+点击必杀</color>\\n丽芙·极昼进入祷告，并释放超大范围的伤害光束，对敌人进行攻击\\n——造成总计{1}%伤害\\n——获得{2}点极限技值",
+        "DescNum": "1000|2000|50",
+        "SimpleDesc": "<b>【极昼宣誓】</b>-<color=#0d70bc>{0}必杀能量+点击必杀</color>\\n丽芙·极昼进入祷告，并释放超大范围的伤害光束，对敌人进行攻击",
+        "SimpleDescNum": 1000,
         "TypeDesc": "Signature",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu51.png",
-        "Cd": 0,
         "BaseDamageLimit": 84000,
         "Rate": 200000,
         "AttribType": 1,
-        "VideoConfigId": 33207,
         "Tags": [
             "Signature DMG",
             "DMG Immunity",
@@ -1400,7 +1436,8 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33207
     },
     {
         "Id": 414,
@@ -1409,11 +1446,7 @@
         "SimpleDesc": "<b>[Oracle of Grace]</b> - <color=#0d70bc>Liv: Empyrea heals all allies to max HP and revives all dying allies.",
         "TypeDesc": "Ultimate Skill",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4LifuEX.png",
-        "Cd": 0,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33210,
         "Tags": [
             "Area Healing",
             "DMG Immunity"
@@ -1425,20 +1458,21 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33210
     },
     {
         "Id": 415,
         "Name": "Withering Gospel",
-        "Desc": "<b>[Withering Gospel]</b> - <color=#0d70bc>Forward Dodge: Move the joystick to make Liv: Empyrea dodge in the designated direction. Backward Dodge: Dodge backward without directional input.</color>\\n- A successful dodge grants 1.5s of invincibility.\\nDuring this window, pressing Basic Attack triggers Dodge Counterattack - [Withering Gospel].\\n- [Withering Gospel]: Liv: Empyrea deploys an energy matrix, dealing damage in a rectangular area near the target.\\n- Deals a total of 70% DMG.",
-        "SimpleDesc": "<b>[Withering Gospel]</b> - <color=#0d70bc>Forward Dodge: Move the joystick to make Liv: Empyrea dodge in the designated direction. Backward Dodge: Dodge backward without directional input.</color>\\n- A successful dodge grants 1.5s of invincibility.\\nDuring this window, pressing Basic Attack triggers Dodge Counterattack - [Withering Gospel].\\n- [Withering Gospel]: Liv: Empyrea deploys an energy matrix, dealing damage in a rectangular area near the target.",
+        "Desc": "<b>【阑珊福音】</b>-<color=#0d70bc>前闪-左摇杆输入，丽芙·极昼向指定方向进行闪避；后闪-无摇杆输入，丽芙·极昼向身后进行闪避</color>\\n——闪避成功后获得{0}s无敌状态\\n此时输入普攻可派生闪避反击-【阑珊福音】\\n——【阑珊福音】：丽芙·极昼释放能量矩阵，对目标附近矩形范围造成伤害\\n——造成总计{1}%伤害",
+        "DescNum": "1.5|70",
+        "SimpleDesc": "<b>【阑珊福音】</b>-<color=#0d70bc>前闪-左摇杆输入，丽芙·极昼向指定方向进行闪避；后闪-无摇杆输入，丽芙·极昼向身后进行闪避</color>\\n——闪避成功后获得{0}s无敌状态\\n此时输入普攻可派生闪避反击-【阑珊福音】\\n——【阑珊福音】：丽芙·极昼释放能量矩阵，对目标附近矩形范围造成伤害",
+        "SimpleDescNum": 1.5,
         "TypeDesc": "Dodge",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/UiDlcRelinkDodge.png",
-        "Cd": 0,
         "BaseDamageLimit": 2940,
         "Rate": 7000,
         "AttribType": 1,
-        "VideoConfigId": 33214,
         "Tags": [
             "Dodge Check"
         ],
@@ -1449,20 +1483,20 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33214
     },
     {
         "Id": 416,
         "Name": "Radiant Judgment I",
-        "Desc": "<b>[Radiant Judgment I]</b> - <color=#0d70bc>[Empyrea Form] + Press and Hold Basic Attack</color>\\nLiv: Empyrea waves her scepter to release energy, controlling two tactical drones to continuously fire devastating lasers that deal multiple hits to enemies.\\n- Deals a total of 360% DMG.\\n- Gains 30 Signature Energy.\\n- Liv gains 20% DMG Reduction when casting.\\n<b>[Radiant Judgment II]</b> - <color=#0d70bc>[Empyrea Form] + Cast [Radiant Judgment I] + Press and Hold Basic Attack</color>\\nLiv: Empyrea commands her tactical drones to advance on enemy positions, raining laser beams upon them. She then ascends, recalls all drones, and unleashes two devastating laser beams that sweep forward in a straight line.\\n- Deals up to 594% total DMG.\\n- Gains 30 Signature Energy.",
+        "Desc": "<b>【裁决辉迹I】</b>-<color=#0d70bc>【极昼形态】+ 长按普攻</color>\\n丽芙·极昼挥动权杖释放能量，控制两架战术随行单位持续发射超强力激光，对敌人造成多段伤害\\n——总计造成{0}%伤害\\n——获得{1}点必杀能量\\n——释放时丽芙获得{2}%伤害减免\\n<b>【裁决辉迹II】</b>-<color=#0d70bc>【极昼形态】+  释放【裁决辉迹I】+长按普攻</color>\\n丽芙·极昼指挥战术随行单位飞向敌人位置，对敌人当前头顶落下数段激光，最后腾空蓄力召回所有战术随行单位，发射两道超强力激光扫过面前直线方向上的所有敌人\\n——最多造成总计{3}%伤害\\n——获得{4}点必杀能量\\n——释放时丽芙获得{5}%伤害减免",
+        "DescNum": "360|30|20|594|30|20",
         "SimpleDesc": "<b>[Radiant Judgment I]</b> - <color=#0d70bc>[Empyrea Form] + Press and Hold Basic Attack</color>\\nLiv: Empyrea waves her scepter to release energy, controlling two tactical drones to continuously fire devastating lasers that deal multiple hits to enemies.\\n<b>[Radiant Judgment II]</b> - <color=#0d70bc>[Empyrea Form] + Cast [Radiant Judgment I] + Press and Hold Basic Attack</color>\\nLiv: Empyrea commands her tactical drones to advance on enemy positions, raining laser beams upon them. She then ascends, recalls all drones, and unleashes two devastating laser beams that sweep forward in a straight line.",
         "TypeDesc": "Core Skill 1",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu12.png",
-        "Cd": 0,
         "BaseDamageLimit": 15120,
         "Rate": 36000,
         "AttribType": 1,
-        "VideoConfigId": 33209,
         "Tags": [
             "Core DMG"
         ],
@@ -1473,20 +1507,20 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33209
     },
     {
         "Id": 417,
         "Name": "Radiant Judgment II",
-        "Desc": "<b>[Radiant Judgment II]</b> - <color=#0d70bc>[Empyrea Form] + Press and Hold Basic Attack</color>\\nLiv: Empyrea commands her tactical drones to advance on enemy positions, raining laser beams upon them. She then ascends, recalls all drones, and unleashes two devastating laser beams that sweep forward in a straight line.\\n- Deals a total of 459% DMG.\\n- Gains 30 Signature Energy.\\n- Liv gains 20% DMG Reduction upon casting.",
+        "Desc": "<b>【裁决辉迹II】</b>-<color=#0d70bc>【极昼形态】+ 长按普攻</color>\\n丽芙·极昼指挥战术随行单位飞向敌人位置，对敌人当前头顶落下数段激光，最后腾空蓄力召回所有战术随行单位，发射两道超强力激光扫过面前直线方向上的所有敌人\\n——造成总计{0}%伤害\\n——获得{1}点必杀能量\\n——释放时丽芙获得{2}%伤害减免",
+        "DescNum": "459|30|20",
         "SimpleDesc": "<b>[Radiant Judgment I]</b> - <color=#0d70bc>[Empyrea Form] + Press and Hold Basic Attack</color>\\nLiv: Empyrea commands her tactical drones to advance on enemy positions, raining laser beams upon them. She then ascends, recalls all drones, and unleashes two devastating laser beams that sweep forward in a straight line.",
         "TypeDesc": "Core Skill 2",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu12.png",
-        "Cd": 0,
         "BaseDamageLimit": 24948,
         "Rate": 59400,
         "AttribType": 1,
-        "VideoConfigId": 33209,
         "Tags": [
             "Core DMG"
         ],
@@ -1497,20 +1531,22 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33209
     },
     {
         "Id": 418,
         "Name": "Holywings Mass",
-        "Desc": "<b>[Holywings Mass]</b> - <color=#0d70bc>Tap Skill 1</color>\\nLiv: Empyrea spreads her wings and dashes in the joystick direction, gaining a dodge check during the dash, and releases 10 light feathers to attack enemies.\\n- Deals a total of 100% DMG.\\n- Gains 2 [Chant Stacks].\\n- Gains 10 Signature Energy.\\n- Continuously tapping triggers [Chaos Oath].\\n<b>[Chaos Oath]</b> - <color=#0d70bc>Continuously Tap Skill 1</color>\\nLiv: Empyrea casts Chaos Oath, creating a black hole that pulls in enemies over an extremely large area and deals DMG.\\n- Deals a total of 100% DMG.\\n- Gains 2 [Chant Stacks].\\n- Gains 10 Signature Energy.",
-        "SimpleDesc": "<b>[Holywings Mass]</b> - <color=#0d70bc>Tap Skill 1</color>\\nLiv: Empyrea spreads her wings and dashes in the joystick direction, gaining a dodge check during the dash, and releases 10 light feathers to attack enemies.\\n- Continuous tapping can trigger [Chaos Oath].\\n<b>[Chaos Oath]</b> - <color=#0d70bc>Continuously Tap Skill 1</color>\\nLiv: Empyrea casts Chaos Oath, creating a black hole that pulls in enemies over an extremely large area and deals DMG.",
+        "Desc": "<b>【光羽弥撒】</b>-<color=#0d70bc>点击一技能</color>\\n丽芙·极昼驱动羽翼，向摇杆前进方向冲刺，期间带有闪避判定，并释放{0}枚光羽对敌人进行攻击\\n——造成总计{1}%伤害\\n——获得{2}层【颂奏层数】\\n——获得{3}点必杀能量\\n——连续点击可触发【纷乱宣誓】\\n<b>【纷乱宣誓】</b>-<color=#0d70bc>连续点击一技能</color>\\n丽芙·极昼释放纷乱宣誓，创造出黑洞牵引极大范围的敌人并造成伤害\\n——总计{4}%伤害\\n——获得{5}层【颂奏层数】\\n——获得{6}点必杀能量",
+        "DescNum": "10|100|2|10|100|2|10",
+        "SimpleDesc": "<b>【光羽弥撒】</b>-<color=#0d70bc>点击一技能</color>\\n丽芙·极昼驱动羽翼，向摇杆前进方向冲刺，期间带有闪避判定，并释放{0}枚光羽对敌人进行攻击\\n——连续点击可触发【纷乱宣誓】\\n<b>【纷乱宣誓】</b>-<color=#0d70bc>连续点击一技能</color>\\n丽芙·极昼释放纷乱宣誓，创造出黑洞牵引极大范围的敌人并造成伤害",
+        "SimpleDescNum": 10,
         "TypeDesc": "Skill 1",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu61.png",
         "Cd": 6,
         "BaseDamageLimit": 4200,
         "Rate": 10000,
         "AttribType": 1,
-        "VideoConfigId": 33202,
         "Tags": [
             "Skill DMG",
             "Dodge Check"
@@ -1522,20 +1558,20 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33202
     },
     {
         "Id": 419,
         "Name": "Sacred Downpour",
-        "Desc": "<b>[Sacred Downpour]</b> - <color=#0d70bc>Enemy Imbalanced + Tap QTE</color>\\nLiv: Empyrea quickly ascends into the air and fires multiple enhanced light projectiles at enemies. If all projectiles hit, triggers an additional explosion.\\n- Deals a total of 800% DMG.\\n- Gains 20 Signature Energy.\\n- Gains 35 Ultimate Points.",
+        "Desc": "<b>【圣雨倾泻】</b>-<color=#0d70bc>敌人处于失衡状态+点击QTE</color>\\n丽芙·极昼快速起飞至空中，发射出多枚强化光弹攻击敌人，全部命中后产生一次额外的爆炸\\n——造成总计{0}%伤害\\n——获得{1}点必杀能量\\n——获得{2}点极限技值",
+        "DescNum": "800|20|35",
         "SimpleDesc": "<b>[Sacred Downpour]</b> - <color=#0d70bc>Enemy Imbalanced + Tap QTE</color>\\nLiv: Empyrea quickly ascends into the air and fires multiple enhanced light projectiles at enemies. If all projectiles hit, triggers an additional explosion.",
         "TypeDesc": "Follow-Up Skill",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkPr.png",
-        "Cd": 0,
         "BaseDamageLimit": 33600,
         "Rate": 80000,
         "AttribType": 1,
-        "VideoConfigId": 33211,
         "Tags": [
             "Follow-Up DMG",
             "DMG Immunity"
@@ -1547,20 +1583,19 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33211
     },
     {
         "Id": 420,
         "Name": "Nighttime Prayer",
-        "Desc": "<b>[Nighttime Prayer]</b> - <color=#0d70bc>4 [Chant Stacks] + Tap Skill 3</color>\\nLiv: Empyrea performs an Empyreal Prayer, summoning a healing array from above to restore her own HP, then releases beams of light that heal all allies.\\n- Restores HP equal to 30% of Liv's max HP to all allied units on the battlefield.\\n- Gains 20 Signature Energy.\\n- Liv gains 20% DMG Reduction when casting.\\n<b>[Azure Firmament]</b> - <color=#0d70bc>[Empyrea Form] + Tap Skill 3</color>\\nLiv: Empyrea deploys [Azure Firmament] and heals all allies.\\n- Restores HP equal to 30% of Liv's max HP to all allied units on the battlefield.\\n- [Azure Firmament]: Allies within the area gain 90% DMG Reduction.\\n- Gains 20 Signature Energy.\\n- Liv gains 20% DMG Reduction when casting.",
+        "Desc": "<b>【长夜祈光】</b>-<color=#0d70bc>{0}层【颂奏层数】+点击三技能</color>\\n丽芙·极昼祷告从空中召唤治疗法阵同时治疗自己，随后落下光束为全场友方单位进行治疗\\n——为全场友方单位恢复丽芙最大生命值{1}%的生命值\\n——获得{2}点必杀能量\\n——释放时丽芙获得{3}%伤害减免\\n<b>【苍色穹壁】</b>-<color=#0d70bc>【极昼形态】+点击三技能</color>\\n丽芙·极昼展开【苍色穹壁】并治疗全场友方单位\\n——为全场友方单位恢复丽芙最大生命值{4}%的生命值\\n——【苍色穹壁】：位于其中的友方单位获得{5}%伤害减免\\n——获得{6}点必杀能量\\n——释放时丽芙获得{7}%减伤",
+        "DescNum": "4|30|20|20|30|90|20|20",
         "SimpleDesc": "<b>[Nighttime Prayer]</b> - <color=#0d70bc>Tap Skill 3</color>\\nLiv: Empyrea performs an Empyreal Prayer, summoning a healing array from above to restore her own HP, then releases beams of light that heal all allies.\\n- Enters [Empyrea Form], then switches to [Azure Firmament].\\n<b>[Azure Firmament]</b> - <color=#0d70bc>Empyrea Form + Tap Skill 3</color>\\nLiv: Empyrea deploys Azure Firmament, and heals all allies.",
         "TypeDesc": "Skill 3",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu41.png",
         "Cd": 20,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33204,
         "Tags": [
             "Area Healing",
             "Uninterruptible"
@@ -1572,20 +1607,20 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33204
     },
     {
         "Id": 421,
         "Name": "Crimson Crown",
-        "Desc": "<b>[Crimson Crown]</b> - <color=#0d70bc>4 [Chant Stacks] + Tap Skill 4</color>\\nLiv: Empyrea pushes beyond her limits, activating the Omega Module and granting all allied units Cleansing.\\n- Increases all allied units' damage by 60% for 10s.\\n- Gains 30 Signature Energy.\\n- Liv gains 20% DMG Reduction when casting.",
-        "SimpleDesc": "<b>[Crimson Crown]</b> - <color=#0d70bc>4 [Chant Stacks] + Tap Skill 4</color>\\nLiv: Empyrea pushes beyond her limits, activating the Omega Module and granting all allied units Cleansing.",
+        "Desc": "<b>【赤染棘冠】</b>-<color=#0d70bc>{0}层【颂奏层数】+点击四技能</color>\\n丽芙·极昼决意超越极限，启动机体中的Ω模块，为全场友方单位施加“净化”\\n——为全体友方单位提供{1}%伤害增幅效果，持续{2}s\\n——获得{3}点必杀能量\\n——释放时丽芙获得{4}%伤害减免",
+        "DescNum": "4|60|10|30|20",
+        "SimpleDesc": "<b>【赤染棘冠】</b>-<color=#0d70bc>{0}层【颂奏层数】+点击四技能</color>\\n丽芙·极昼决意超越极限，启动机体中的Ω模块，为全场友方单位施加“净化”",
+        "SimpleDescNum": 4,
         "TypeDesc": "Skill 4",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu43.png",
         "Cd": 70,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33206,
         "Tags": [
             "DMG Buff",
             "Uninterruptible"
@@ -1597,20 +1632,19 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33206
     },
     {
         "Id": 422,
         "Name": "Azure Firmament",
-        "Desc": "<b>[Azure Firmament]</b> - <color=#0d70bc>Empyrea Form + Tap Skill 3</color>\\nLiv: Empyrea deploys Azure Firmament and heals all allies.\\n- Restores HP equal to 30% of Liv's max HP to all allied units on the battlefield.\\n- [Azure Firmament]: Allies within the area gain 90% DMG Reduction.\\n- Gains 20 Signature Energy.\\n- Liv gains 20% DMG Reduction when casting.",
+        "Desc": "<b>【苍色穹壁】</b>-<color=#0d70bc>【极昼形态】+点击三技能</color>\\n丽芙·极昼展开【苍色穹壁】并治疗全场友方单位\\n——为全场友方单位恢复丽芙最大生命值{0}%的生命值\\n——【苍色穹壁】：位于其中的友方单位获得{1}%伤害减免\\n——获得{2}点必杀能量\\n——释放时丽芙获得{3}%伤害减免",
+        "DescNum": "30|90|20|20",
         "SimpleDesc": "<b>[Azure Firmament]</b> - <color=#0d70bc>Empyrea Form + Tap Skill 3</color>\\nLiv: Empyrea deploys Azure Firmament and heals all allies.",
         "TypeDesc": "Enhanced Skill 3",
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillIconRelink/IconSkillIconRelinkR4Lifu41.png",
         "Cd": 50,
-        "BaseDamageLimit": 0,
-        "Rate": 0,
         "AttribType": 1,
-        "VideoConfigId": 33205,
         "Tags": [
             "Area Healing",
             "DMG Reduction",
@@ -1623,6 +1657,7 @@
         "EntryDesc": [
             "Mechanism 1 Description",
             "Mechanism 2 Description"
-        ]
+        ],
+        "VideoConfigId": 33205
     }
 ]

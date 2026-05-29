@@ -4,26 +4,20 @@
         "Name": "[Infection] Main Story Pack",
         "Index": 1,
         "Type": 1,
-        "Desc": "Contains the necessary resources required for [Infection] and subsequent main story stages.",
-        "AllowDelete": false,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             201
-        ]
+        ],
+        "Desc": "Contains the necessary resources required for [Infection] and subsequent main story stages."
     },
     {
         "Id": 202,
         "Name": "[Whirlpool] Main Story Pack",
         "Index": 2,
         "Type": 1,
-        "Desc": "Contains the necessary resources required for [Whirlpool] and subsequent main story stages.",
-        "AllowDelete": false,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             202
         ],
+        "Desc": "Contains the necessary resources required for [Whirlpool] and subsequent main story stages.",
         "PreIds": [
             201
         ]
@@ -33,15 +27,12 @@
         "Name": "[Catastrophe] Main Story Pack",
         "Index": 3,
         "Type": 1,
-        "Desc": "Contains the necessary resources required for [Catastrophe] and subsequent main story stages.",
-        "AllowDelete": false,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             203,
             3031,
             3033
         ],
+        "Desc": "Contains the necessary resources required for [Catastrophe] and subsequent main story stages.",
         "PreIds": [
             201,
             202
@@ -52,15 +43,12 @@
         "Name": "[Destiny] Main Story Pack",
         "Index": 4,
         "Type": 1,
-        "Desc": "Contains the necessary resources required for [Destiny] and subsequent main story stages.",
-        "AllowDelete": false,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             204,
             3038,
             3039
         ],
+        "Desc": "Contains the necessary resources required for [Destiny] and subsequent main story stages.",
         "PreIds": [
             201,
             202,
@@ -72,64 +60,52 @@
         "Name": "Babylonia",
         "Index": 1,
         "Type": 2,
-        "Desc": "Necessary resources for experiencing Babylonia",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             301,
             402,
             403
-        ]
+        ],
+        "Desc": "Necessary resources for experiencing Babylonia",
+        "AllowDelete": true
     },
     {
         "Id": 901,
         "Name": "Cantonese Voiceover",
         "Index": 1,
         "Type": 2,
-        "Desc": "Can use Cantonese voiceover once it's downloaded.",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             901
-        ]
+        ],
+        "Desc": "Can use Cantonese voiceover once it's downloaded.",
+        "AllowDelete": true
     },
     {
         "Id": 902,
         "Name": "Japanese Voiceover",
         "Index": 2,
         "Type": 2,
-        "Desc": "Can use Japanese voiceover once it's downloaded.",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             902
-        ]
+        ],
+        "Desc": "Can use Japanese voiceover once it's downloaded.",
+        "AllowDelete": true
     },
     {
         "Id": 903,
         "Name": "English Voiceover",
         "Index": 3,
         "Type": 2,
-        "Desc": "Can use English voiceover once it's downloaded.",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             903
-        ]
+        ],
+        "Desc": "Can use English voiceover once it's downloaded.",
+        "AllowDelete": true
     },
     {
         "Id": 904,
         "Name": "Story Video",
         "Index": 4,
         "Type": 2,
-        "Desc": "Download to play all story videos.",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             1002,
             1003,
@@ -187,17 +163,15 @@
             1055,
             1056,
             1057
-        ]
+        ],
+        "Desc": "Download to play all story videos.",
+        "AllowDelete": true
     },
     {
         "Id": 905,
         "Name": "Game Mode Video",
         "Index": 5,
         "Type": 2,
-        "Desc": "Download to play all game mode videos.",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             2000,
             2001,
@@ -213,32 +187,28 @@
             2011,
             2012,
             2013
-        ]
+        ],
+        "Desc": "Download to play all game mode videos.",
+        "AllowDelete": true
     },
     {
         "Id": 3000,
         "Name": "Theme Music",
         "Index": 6,
         "Type": 2,
-        "Desc": "Necessary resources for using Music Player in Main Interface and Music Box in Guild",
-        "AllowDelete": true,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             3000,
             3001,
             3002
-        ]
+        ],
+        "Desc": "Necessary resources for using Music Player in Main Interface and Music Box in Guild",
+        "AllowDelete": true
     },
     {
         "Id": 4000,
         "Name": "Character Coating",
         "Index": 7,
         "Type": 2,
-        "Desc": "Download to use all character Coatings.",
-        "AllowDelete": false,
-        "CustomSkipId": 89103,
-        "DownloadTaskId": 0,
         "ResIds": [
             4000,
             4001,
@@ -436,18 +406,19 @@
             4193,
             4194,
             4195,
-            4196
-        ]
+            4196,
+            4197,
+            4198,
+            4199
+        ],
+        "Desc": "Download to use all character Coatings.",
+        "CustomSkipId": 89103
     },
     {
         "Id": 9999,
         "Name": "Expansion Pack",
         "Index": 5,
         "Type": 1,
-        "Desc": "Contains the necessary resources required for new main story stages and events.",
-        "AllowDelete": false,
-        "CustomSkipId": 0,
-        "DownloadTaskId": 0,
         "ResIds": [
             9999,
             3041,
@@ -463,17 +434,17 @@
             3054,
             3055,
             3056,
-            3057,
             3058,
             3059,
-            3060,
-            3062,
-            3065,
+            3061,
+            3063,
             3066,
             3067,
-            3069,
-            3071
+            3068,
+            3070,
+            3072
         ],
+        "Desc": "Contains the necessary resources required for new main story stages and events.",
         "PreIds": [
             201,
             202,

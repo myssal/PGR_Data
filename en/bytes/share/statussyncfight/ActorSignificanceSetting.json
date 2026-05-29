@@ -1,44 +1,38 @@
 [
     {
         "ActorSignificance": 1,
-        "NeedLod": true,
-        "NeedStreaming": true,
-        "NeedMove": true,
-        "MinTickDelta": 0.1
+        "NeedLod": 1,
+        "NeedStreaming": 1,
+        "NeedMove": 1,
+        "MinTickDelta": 1000
     },
     {
         "ActorSignificance": 2,
-        "NeedLod": true,
-        "NeedStreaming": true,
-        "NeedMove": true,
-        "MinTickDelta": 10.0
+        "NeedLod": 1,
+        "NeedStreaming": 1,
+        "NeedMove": 1,
+        "MinTickDelta": 100000
     },
     {
         "ActorSignificance": 3,
-        "NeedLod": true,
-        "NeedStreaming": true,
-        "NeedMove": false,
-        "MinTickDelta": 10.0
+        "NeedLod": 1,
+        "NeedStreaming": 1,
+        "MinTickDelta": 100000
     },
     {
         "ActorSignificance": 4,
-        "NeedLod": false,
-        "NeedStreaming": true,
-        "NeedMove": true,
-        "MinTickDelta": 0.5
+        "NeedStreaming": 1,
+        "NeedMove": 1,
+        "MinTickDelta": 5000
     },
     {
         "ActorSignificance": 5,
-        "NeedLod": true,
-        "NeedStreaming": true,
-        "NeedMove": false,
-        "MinTickDelta": 10.0
+        "NeedLod": 1,
+        "NeedStreaming": 1,
+        "MinTickDelta": 100000
     },
     {
         "ActorSignificance": 6,
-        "NeedLod": false,
-        "NeedStreaming": false,
-        "NeedMove": false,
-        "MinTickDelta": 10.0
+        "MinTickDelta": 100000
     }
 ]

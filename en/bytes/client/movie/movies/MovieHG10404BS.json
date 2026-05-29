@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory121.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             204
@@ -30,27 +20,20 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Hologram Theatre, Babylonia. 2:20 pm."
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System",
             "Welcome to the Hologram Theatre. Which movie do you want to watch today?"
         ]
@@ -58,12 +41,7 @@
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -72,12 +50,7 @@
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -88,13 +61,9 @@
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "I'll leave the decision to you, Commandant.",
             1
@@ -103,13 +72,9 @@
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "A thriller.",
             9,
             "A romance.",
@@ -119,27 +84,22 @@
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System",
             "Understood. Here is the most popular thriller—"
         ]
@@ -149,11 +109,8 @@
         "ActionId": 11,
         "NextActionId": 14,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System",
             "\"Dark Alley\" is the thriller we are showing today. The closest showing is at 10:15 pm."
         ]
@@ -161,27 +118,22 @@
     {
         "Id": 12,
         "ActionId": 1000,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 13,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System",
             "Understood. Here is the most popular romance—"
         ]
@@ -189,13 +141,9 @@
     {
         "Id": 14,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System",
             "\"Promise of a Vacuum Baby 4: Two Souls\" is the romance we are showing today. The closest showing is at 6:06 pm."
         ]
@@ -203,13 +151,9 @@
     {
         "Id": 15,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Let's see if anything's showing now.",
             15,
             "That's way too late.",
@@ -219,13 +163,9 @@
     {
         "Id": 16,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System",
             "Understood. Here are the movies showing now—"
         ]
@@ -233,13 +173,9 @@
     {
         "Id": 17,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "System",
             "\"A Hundred Years of Convenient Romance\", 2:35 pm, House 4; \"Dominik and the Beautiful Siren 2: Holographic Remastered\", 2:38 pm, House 3."
         ]
@@ -247,13 +183,9 @@
     {
         "Id": 18,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Are you interested in any one of them?",
             18
         ]
@@ -261,12 +193,7 @@
     {
         "Id": 19,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -275,12 +202,7 @@
     {
         "Id": 20,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -291,13 +213,9 @@
     {
         "Id": 21,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "I can pick one if you're not sure.",
             21
         ]
@@ -305,12 +223,7 @@
     {
         "Id": 22,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -319,12 +232,7 @@
     {
         "Id": 23,
         "ActionId": 500,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             4,
             104003
@@ -333,13 +241,9 @@
     {
         "Id": 24,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "That would be great.",
             1
@@ -348,13 +252,9 @@
     {
         "Id": 25,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "\"A Hundred Years of Convenient Romance\".",
             24,
             "\"Dominik and the Beautiful Siren 2: Holographic Remastered\".",
@@ -364,41 +264,33 @@
     {
         "Id": 26,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 27,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "\"Are you purchasing tickets for 'A Hundred Years of Convenient Romance'?\""
         ]
     },
     {
         "Id": 28,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "The name sounds oddly familiar... We'll pick this one.",
             27
         ]
@@ -406,12 +298,7 @@
     {
         "Id": 29,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory67.jpg"
         ]
@@ -419,12 +306,7 @@
     {
         "Id": 30,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -433,13 +315,8 @@
     {
         "Id": 31,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -450,13 +327,9 @@
     {
         "Id": 32,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "No one's here.",
             1
@@ -465,26 +338,18 @@
     {
         "Id": 33,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "I guess we'll have the place to ourselves!"
         ]
     },
     {
         "Id": 34,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "This is the first time I've seen a public space in Babylonia empty...",
             1
@@ -493,13 +358,9 @@
     {
         "Id": 35,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Have you been here for the movies before, Bianca?",
             34
         ]
@@ -507,13 +368,9 @@
     {
         "Id": 36,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "No, this is my first time in the theatre.",
             1
@@ -522,13 +379,9 @@
     {
         "Id": 37,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "...This isn't a place for Constructs.",
             1
@@ -537,13 +390,9 @@
     {
         "Id": 38,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Then you should take this opportunity to enjoy it!",
             37
         ]
@@ -551,13 +400,9 @@
     {
         "Id": 39,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Okay.",
             1
@@ -566,13 +411,9 @@
     {
         "Id": 40,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Here. This is for you.",
             39
         ]
@@ -580,13 +421,9 @@
     {
         "Id": 41,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Do I... put this on now?",
             1
@@ -595,13 +432,9 @@
     {
         "Id": 42,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yeah, this is the device for the virtual experience.",
             41,
             "You don't have to, but how about you give it a shot?",
@@ -611,13 +444,9 @@
     {
         "Id": 43,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Hmm...",
             1
@@ -626,13 +455,9 @@
     {
         "Id": 44,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Let me help you.",
             43,
             "Just put it on like I did.",
@@ -642,39 +467,30 @@
     {
         "Id": 45,
         "ActionId": 43,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 46,
         "ActionId": 44,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Bianca replies with an earnest \"yes,\" then she sits straight and observes how you put on the device. Afterward, her golden irises stare straight at you, unaware of how close the two of you have become."
         ]
     },
     {
         "Id": 47,
         "ActionId": 45,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -683,12 +499,7 @@
     {
         "Id": 48,
         "ActionId": 46,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -699,52 +510,40 @@
     {
         "Id": 49,
         "ActionId": 47,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 50,
         "ActionId": 48,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "\"Welcome to the Holographic Theatre. We will be testing the projection devices in a second. Follow the instructions presented; press the button on your right hand if you encounter problems. Thank you, and enjoy the show.\""
         ]
     },
     {
         "Id": 51,
         "ActionId": 49,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "\"The movie you are watching is 'A Hundred Years of Convenient Romance'. Blink to confirm.\""
         ]
     },
     {
         "Id": 52,
         "ActionId": 501,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1509
@@ -753,25 +552,17 @@
     {
         "Id": 53,
         "ActionId": 50,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "\"Please choose a theme for the viewing environment.\""
         ]
     },
     {
         "Id": 54,
         "ActionId": 51,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory126.png"
         ]
@@ -779,38 +570,27 @@
     {
         "Id": 55,
         "ActionId": 52,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "..."
         ]
     },
     {
         "Id": 56,
         "ActionId": 53,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "With the equipment calibrated, the opening credits begin to play. The giant logo of Galactic Pictures appears in the air, followed by all the production studios involved."
         ]
     },
     {
         "Id": 57,
         "ActionId": 502,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             205
@@ -819,25 +599,17 @@
     {
         "Id": 58,
         "ActionId": 54,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As the movie plays, Bianca focuses intensely on it, her eyes widening, her brows frowning as the story ebbs and flows. When a zombie rushes toward Bianca, she looks as if she has just witnessed a new kind of Corrupted."
         ]
     },
     {
         "Id": 59,
         "ActionId": 55,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -846,12 +618,7 @@
     {
         "Id": 60,
         "ActionId": 56,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -862,13 +629,9 @@
     {
         "Id": 61,
         "ActionId": 57,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "That's a zombie.",
             58,
             "A monster that humans turned into in the myths.",
@@ -878,13 +641,9 @@
     {
         "Id": 62,
         "ActionId": 58,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Is that so...",
             1
@@ -893,13 +652,9 @@
     {
         "Id": 63,
         "ActionId": 59,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "I think the Corrupted might be cuter...",
             1
@@ -908,13 +663,9 @@
     {
         "Id": 64,
         "ActionId": 60,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "???",
             61,
             "Excuse me?",
@@ -924,39 +675,30 @@
     {
         "Id": 65,
         "ActionId": 61,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 66,
         "ActionId": 62,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As the plot unfolds, the romantic comedy part of the movie becomes obvious. As the protagonists meet each other in a hilarious manner, Bianca's solemn expression begins to relax."
         ]
     },
     {
         "Id": 67,
         "ActionId": 63,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128,
@@ -966,12 +708,7 @@
     {
         "Id": 68,
         "ActionId": 503,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             4,
             104004
@@ -980,12 +717,7 @@
     {
         "Id": 69,
         "ActionId": 64,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -996,13 +728,9 @@
     {
         "Id": 70,
         "ActionId": 65,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Can't believe this kind of comedy will make Bianca laugh.)",
             66
         ]
@@ -1010,39 +738,30 @@
     {
         "Id": 71,
         "ActionId": 66,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 72,
         "ActionId": 67,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Bianca pays no attention to you. Her eyes are glued to the moving pictures, her mind obsessed with where the story is going."
         ]
     },
     {
         "Id": 73,
         "ActionId": 68,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -1051,12 +770,7 @@
     {
         "Id": 74,
         "ActionId": 504,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             4,
             104002
@@ -1065,12 +779,7 @@
     {
         "Id": 75,
         "ActionId": 69,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -1081,13 +790,9 @@
     {
         "Id": 76,
         "ActionId": 70,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Relax...",
             71,
             "It's for the plot...",
@@ -1097,13 +802,9 @@
     {
         "Id": 77,
         "ActionId": 71,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "If his lie is exposed...",
             1
@@ -1112,13 +813,9 @@
     {
         "Id": 78,
         "ActionId": 72,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Is it impossible for a human and non-human to get a happy ending?",
             1
@@ -1127,13 +824,9 @@
     {
         "Id": 79,
         "ActionId": 73,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hah...",
             74
         ]
@@ -1141,13 +834,9 @@
     {
         "Id": 80,
         "ActionId": 74,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "What are you laughing at?",
             1
@@ -1156,13 +845,9 @@
     {
         "Id": 81,
         "ActionId": 75,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Nothing. I just thought it's cute how serious you are.",
             76,
             "I just found you a little different than how I remembered.",
@@ -1172,39 +857,30 @@
     {
         "Id": 82,
         "ActionId": 76,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 83,
         "ActionId": 77,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Bianca is too preoccupied with the movie to notice what you said. She bites her lips, having seen another nonsensical sequence."
         ]
     },
     {
         "Id": 84,
         "ActionId": 78,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -1213,12 +889,7 @@
     {
         "Id": 85,
         "ActionId": 79,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -1229,13 +900,9 @@
     {
         "Id": 86,
         "ActionId": 80,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Please get through this safely...",
             1
@@ -1244,69 +911,58 @@
     {
         "Id": 87,
         "ActionId": 81,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 88,
         "ActionId": 82,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "..."
         ]
     },
     {
         "Id": 89,
         "ActionId": 83,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 90,
         "ActionId": 84,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "\"Are you purchasing tickets for 'Dominik and the Beautiful Siren 2: Holographic Remastered'?\""
         ]
     },
     {
         "Id": 91,
         "ActionId": 85,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "A movie about Dominik! Let's watch this!",
             86
         ]
@@ -1314,12 +970,7 @@
     {
         "Id": 92,
         "ActionId": 86,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory67.jpg"
         ]
@@ -1327,12 +978,7 @@
     {
         "Id": 93,
         "ActionId": 87,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -1341,13 +987,8 @@
     {
         "Id": 94,
         "ActionId": 88,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -1358,13 +999,9 @@
     {
         "Id": 95,
         "ActionId": 89,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "No one's here.",
             1
@@ -1373,13 +1010,9 @@
     {
         "Id": 96,
         "ActionId": 90,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Not surprising.",
             91,
             "It's the name, I bet.",
@@ -1389,13 +1022,9 @@
     {
         "Id": 97,
         "ActionId": 91,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Sorry?",
             1
@@ -1404,13 +1033,9 @@
     {
         "Id": 98,
         "ActionId": 92,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Cough—nothing.",
             93
         ]
@@ -1418,13 +1043,9 @@
     {
         "Id": 99,
         "ActionId": 93,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "This is the first time I've seen a public space in Babylonia empty...",
             1
@@ -1433,13 +1054,9 @@
     {
         "Id": 100,
         "ActionId": 94,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Have you been here for the movies before, Bianca?",
             95
         ]
@@ -1447,13 +1064,9 @@
     {
         "Id": 101,
         "ActionId": 95,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "No, this is my first time in the theatre.",
             1
@@ -1462,13 +1075,9 @@
     {
         "Id": 102,
         "ActionId": 96,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "...This isn't a place for Constructs.",
             1
@@ -1477,13 +1086,9 @@
     {
         "Id": 103,
         "ActionId": 97,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Then you should take this opportunity to enjoy it!",
             98
         ]
@@ -1491,13 +1096,9 @@
     {
         "Id": 104,
         "ActionId": 98,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Okay.",
             1
@@ -1506,13 +1107,9 @@
     {
         "Id": 105,
         "ActionId": 99,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Here. This is for you.",
             100
         ]
@@ -1520,13 +1117,9 @@
     {
         "Id": 106,
         "ActionId": 100,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Do I... put this on now?",
             1
@@ -1535,13 +1128,9 @@
     {
         "Id": 107,
         "ActionId": 101,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Yeah, this is the device for the virtual experience.",
             102,
             "You don't have to, but how about you give it a shot?",
@@ -1551,13 +1140,9 @@
     {
         "Id": 108,
         "ActionId": 102,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Hmm...",
             1
@@ -1566,13 +1151,9 @@
     {
         "Id": 109,
         "ActionId": 103,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Let me help you.",
             104,
             "Just put it on like I did.",
@@ -1582,39 +1163,30 @@
     {
         "Id": 110,
         "ActionId": 104,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 111,
         "ActionId": 105,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Bianca replies with an earnest \"yes,\" then she sits straight and observes how you put on the device. Afterward, her golden irises stare straight at you, unaware of how close the two of you have become."
         ]
     },
     {
         "Id": 112,
         "ActionId": 106,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128,
@@ -1624,12 +1196,7 @@
     {
         "Id": 113,
         "ActionId": 107,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -1640,13 +1207,9 @@
     {
         "Id": 114,
         "ActionId": 108,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Th-that's alright...",
             109
         ]
@@ -1654,65 +1217,50 @@
     {
         "Id": 115,
         "ActionId": 109,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 116,
         "ActionId": 110,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "\"Welcome to the Holographic Theatre. We will be testing the projection devices in a second. Follow the instructions presented; press the button on your right hand if you encounter problems. Thank you, and enjoy the show.\""
         ]
     },
     {
         "Id": 117,
         "ActionId": 111,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "\"The movie you are watching is 'Dominik and the Beautiful Siren 2: Holographic Remastered'. Blink to confirm.\""
         ]
     },
     {
         "Id": 118,
         "ActionId": 112,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "\"Please choose a theme for the viewing environment.\""
         ]
     },
     {
         "Id": 119,
         "ActionId": 113,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory139.png"
         ]
@@ -1720,12 +1268,7 @@
     {
         "Id": 120,
         "ActionId": 505,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1509
@@ -1734,38 +1277,27 @@
     {
         "Id": 121,
         "ActionId": 114,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "..."
         ]
     },
     {
         "Id": 122,
         "ActionId": 115,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "With the equipment calibrated, the opening credits begin to play. The giant logo of Allen Brothers appears in the air, followed by all the production studios involved."
         ]
     },
     {
         "Id": 123,
         "ActionId": 506,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             205
@@ -1774,25 +1306,17 @@
     {
         "Id": 124,
         "ActionId": 116,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As the movie plays, Bianca focuses intensely on it, her eyes widening, her brows frowning as the story ebbs and flows. When Dominik shows up, she looks as if she has just witnessed a new kind of Corrupted."
         ]
     },
     {
         "Id": 125,
         "ActionId": 117,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -1801,12 +1325,7 @@
     {
         "Id": 126,
         "ActionId": 118,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -1817,13 +1336,9 @@
     {
         "Id": 127,
         "ActionId": 119,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "No one has actually seen the real Dominik...",
             120,
             "It's just a movie!",
@@ -1833,13 +1348,9 @@
     {
         "Id": 128,
         "ActionId": 120,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "I've heard so many rumors of him on Babylonia, but this is the first time I've seen his face...",
             1
@@ -1848,53 +1359,41 @@
     {
         "Id": 129,
         "ActionId": 121,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "I'll take you to watch \"The Legends of Dominik\" next time.",
+            "",
             "He was a great hero of a new era, after all."
         ]
     },
     {
         "Id": 130,
         "ActionId": 122,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 131,
         "ActionId": 123,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "When the magnificent lead actress shows up, Bianca is already fully swayed by the characters. She leans forward as if trying to reach for the figures in the movie."
         ]
     },
     {
         "Id": 132,
         "ActionId": 124,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -1903,12 +1402,7 @@
     {
         "Id": 133,
         "ActionId": 125,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -1919,13 +1413,9 @@
     {
         "Id": 134,
         "ActionId": 126,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "...Is so beautiful.",
             1
@@ -1934,13 +1424,9 @@
     {
         "Id": 135,
         "ActionId": 127,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "I think so too.",
             128,
             "Not as beautiful as you.",
@@ -1950,39 +1436,30 @@
     {
         "Id": 136,
         "ActionId": 128,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 137,
         "ActionId": 129,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As the plot unfolds, the story reaches its climax, with Dominik about to leave his lover for the battlefield, and Bianca's expressions intensify."
         ]
     },
     {
         "Id": 138,
         "ActionId": 130,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -1991,12 +1468,7 @@
     {
         "Id": 139,
         "ActionId": 131,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -2007,13 +1479,9 @@
     {
         "Id": 140,
         "ActionId": 132,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Why would Dominik leave her like this...?",
             1
@@ -2022,13 +1490,9 @@
     {
         "Id": 141,
         "ActionId": 133,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca, don't feel too sad...",
             134,
             "It's okay. It's just a movie.",
@@ -2038,13 +1502,9 @@
     {
         "Id": 142,
         "ActionId": 134,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Who can say if this story is not real?",
             1
@@ -2053,13 +1513,9 @@
     {
         "Id": 143,
         "ActionId": 135,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "How many lovers had parted because of the war...",
             1
@@ -2068,40 +1524,32 @@
     {
         "Id": 144,
         "ActionId": 136,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 145,
         "ActionId": 137,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Fixated, Bianca's eyes begin to turn red."
         ]
     },
     {
         "Id": 146,
         "ActionId": 138,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "H-here, a napkin!",
             139,
             "Three months of my salary on them being together in the end!",
@@ -2111,25 +1559,17 @@
     {
         "Id": 147,
         "ActionId": 139,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Bianca is too preoccupied with the movie to notice what you said. She bites her lips, having witnessed the characters' nonsensical separation."
         ]
     },
     {
         "Id": 148,
         "ActionId": 140,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500128
@@ -2138,12 +1578,7 @@
     {
         "Id": 149,
         "ActionId": 141,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Bianca",
@@ -2154,13 +1589,9 @@
     {
         "Id": 150,
         "ActionId": 142,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Bianca",
             "Please get through this safely...",
             1
@@ -2169,28 +1600,25 @@
     {
         "Id": 151,
         "ActionId": 143,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 152,
         "ActionId": 144,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "..."
         ]
     }

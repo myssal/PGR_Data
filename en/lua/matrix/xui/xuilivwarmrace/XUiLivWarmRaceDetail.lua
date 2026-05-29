@@ -115,5 +115,5 @@ function XUiLivWarmRaceDetail:OnBtnEnterFightClick()
             ["StageGroupId"] = self.GroupId
         }
     }
-    XLuaUiManager.PopThenOpen("UiBattleRoleRoom", self.StageId)
+    XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(self.StageId)
 end

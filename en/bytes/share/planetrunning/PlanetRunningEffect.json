@@ -1,0 +1,1604 @@
+[
+    {
+        "Id": 1001,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Recovers 50% of the team's max HP",
+        "Params": [
+            2,
+            1,
+            0,
+            1,
+            5000
+        ],
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab"
+    },
+    {
+        "Id": 1002,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Get 50 Star Ore when passing a Mine",
+        "Params": [
+            2,
+            55
+        ],
+        "BubbleControllerId": 3
+    },
+    {
+        "Id": 1003,
+        "Type": 3,
+        "Overlying": true,
+        "Desc": "Mine Synergy Summon Enemy",
+        "Params": [
+            2,
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 1004,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Permanent increases the team's ATK by 3",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            3
+        ],
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 1005,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Permanent increases the team's HP by 5",
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 1006,
+        "Type": 3,
+        "Overlying": true,
+        "Desc": "Mine summons 1 enemy",
+        "Params": [
+            1,
+            3,
+            0
+        ]
+    },
+    {
+        "Id": 1007,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Shooting Range temporarily increases the team's CRIT Rate by 35%",
+        "Params": [
+            2,
+            2,
+            4,
+            2,
+            2000
+        ],
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 1008,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Temporarily increases the team's CRIT DMG by 30% when Shooting Range is adjacent to Training Field",
+        "Params": [
+            2,
+            2,
+            5,
+            2,
+            3000
+        ],
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 1009,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Recovers 8% of the team's max HP",
+        "Params": [
+            2,
+            1,
+            0,
+            1,
+            800
+        ],
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab"
+    },
+    {
+        "Id": 1010,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Recovers 8% of the team's max HP",
+        "Params": [
+            2,
+            1,
+            0,
+            1,
+            800
+        ]
+    },
+    {
+        "Id": 1011,
+        "Type": 8,
+        "Overlying": true,
+        "Desc": "Draw 1 item",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 1012,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Bonus item deducts 50 Star Ore",
+        "Params": [
+            2,
+            -50
+        ]
+    },
+    {
+        "Id": 1013,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Ion Tower grants bonus ATK SPD within range",
+        "Params": [
+            2,
+            2,
+            6,
+            2,
+            2800
+        ],
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 1014,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Ion Tower Synergy deducts 50 Star Ore",
+        "Params": [
+            2,
+            -50
+        ]
+    },
+    {
+        "Id": 1015,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Bonus 3 ATK when Mutated Rock is adjacent to Training Field",
+        "Params": [
+            2,
+            2,
+            2,
+            2,
+            3
+        ],
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 1017,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Mutated Grass restores 1 HP",
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1018,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Grass takes effect immediately. HP +1",
+        "Params": [
+            2,
+            2,
+            1,
+            2,
+            1
+        ],
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab"
+    },
+    {
+        "Id": 1019,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Icy Star Rock restores 1 HP",
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1020,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Icy Star Rock takes effect immediately. HP +1",
+        "Params": [
+            2,
+            2,
+            1,
+            2,
+            1
+        ],
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab"
+    },
+    {
+        "Id": 1021,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Bonus ATK SPD when Icy Star Surface is adjacent to Training Field",
+        "Params": [
+            2,
+            2,
+            6,
+            2,
+            100
+        ],
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 1022,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Sand Star Oasis restores 1 HP",
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1023,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Sand Star Oasis takes effect immediately. HP +1",
+        "Params": [
+            2,
+            2,
+            1,
+            2,
+            1
+        ],
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab"
+    },
+    {
+        "Id": 1024,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Sand Star Rock & Divination House Synergy Bonus ATK",
+        "Params": [
+            2,
+            2,
+            2,
+            2,
+            3
+        ],
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 1025,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Fire Star Lava restores 1 HP",
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1026,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Fire Star Lava takes effect immediately. HP +1",
+        "Params": [
+            2,
+            2,
+            1,
+            2,
+            1
+        ],
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab"
+    },
+    {
+        "Id": 1027,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Fire Star Crystal & Shooting Range Synergy - Bonus CRIT Rate",
+        "Params": [
+            2,
+            2,
+            4,
+            2,
+            100
+        ],
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 1028,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Fire Star Crystal & Shooting Range Synergy - Bonus CRIT DMG",
+        "Params": [
+            2,
+            2,
+            5,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 1031,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Synergy: Get 10 Star Ore from killing an enemy",
+        "Params": [
+            2,
+            15
+        ],
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 1032,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Shooting Range temporarily increases the team's CRIT DMG by 25%",
+        "Params": [
+            2,
+            2,
+            5,
+            2,
+            2500
+        ]
+    },
+    {
+        "Id": 1033,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Red Velvet Cake: ATK +5 - Removed when dismantled",
+        "Params": [
+            2,
+            2,
+            2,
+            2,
+            5
+        ],
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab"
+    },
+    {
+        "Id": 1034,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Red Velvet Cake: HP +10 - Removed when dismantled",
+        "Params": [
+            2,
+            2,
+            1,
+            2,
+            10
+        ],
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab"
+    },
+    {
+        "Id": 1035,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Almond Cake & Mine Synergy: Star Ore +50",
+        "Params": [
+            2,
+            50
+        ],
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 2001,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Each enemy killed reduces the team's current HP by 2",
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            -2
+        ]
+    },
+    {
+        "Id": 2002,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Each item defeated permanently increases the team's ATK by 1",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 2003,
+        "Type": 4,
+        "Desc": "Miasma Weather: Bonus base event. Base does not recover HP",
+        "Params": [
+            503,
+            0,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 2004,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Miasma Weather: Base cannot recover HP. The Miasma will nullify the HP recovered by Base",
+        "Params": [
+            2,
+            1,
+            0,
+            1,
+            -5000
+        ]
+    },
+    {
+        "Id": 2005,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Each item obtained increases the team's ATK by 20",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            20
+        ]
+    },
+    {
+        "Id": 2006,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Each item obtained increases the team's CRIT DMG by 10%",
+        "Params": [
+            2,
+            1,
+            5,
+            1,
+            1000
+        ]
+    },
+    {
+        "Id": 2007,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Each item obtained increases the team's HP by 5%",
+        "Params": [
+            2,
+            1,
+            1,
+            1,
+            500
+        ]
+    },
+    {
+        "Id": 2008,
+        "Type": 6,
+        "TriggerCountLimit": 1,
+        "Desc": "Icy Star Theme: Get 100 Star Ore after completing Construction Mission 1",
+        "Params": [
+            2,
+            100
+        ],
+        "BubbleControllerId": 3
+    },
+    {
+        "Id": 2009,
+        "Type": 4,
+        "TriggerCountLimit": 1,
+        "Desc": "Icy Star Theme: Completing Construction Mission grants a buff that adds stats every cycle",
+        "Params": [
+            512,
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 2010,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Permanent increases the team's ATK by 3",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            5
+        ],
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 2011,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Permanent increases the team's HP by 10",
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 2020,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Sand Star Theme: Each item obtained increases the team's ATK by 5",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            5
+        ],
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 2021,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Sand Star Theme: Each item obtained increases the team's HP by 10",
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 2022,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Icy Star Theme 2: Get 50 Star Ore when getting an item",
+        "Params": [
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 2030,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Fire Star Theme 1: Get 200 Star Ore every cycle",
+        "Params": [
+            2,
+            200
+        ]
+    },
+    {
+        "Id": 2031,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Fire Star Theme 4, 5: Get 500 Star Ore every cycle",
+        "Params": [
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 2100,
+        "Type": 6,
+        "TriggerCountLimit": 1,
+        "Desc": "Icy Star Theme: Get 100 Star Ore after completing Construction Mission 2",
+        "Params": [
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 2101,
+        "Type": 6,
+        "TriggerCountLimit": 1,
+        "Desc": "Icy Star Theme: Get 100 Star Ore after completing Construction Mission 3",
+        "Params": [
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 3024,
+        "Type": 4,
+        "Desc": "Icy Star Sunny: Bonus Star Ore from enemy event",
+        "Params": [
+            1002,
+            0,
+            4
+        ]
+    },
+    {
+        "Id": 3025,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Icy Star Sunny: Get Star Ore from killing an enemy",
+        "Params": [
+            2,
+            20
+        ]
+    },
+    {
+        "Id": 3026,
+        "Type": 4,
+        "Desc": "Arctic Weather: Mine gets an event that deducts Star Ore",
+        "Params": [
+            1005,
+            0,
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 3027,
+        "Type": 4,
+        "Desc": "Arctic Weather: Training Field gets an event that deducts Star Ore",
+        "Params": [
+            1005,
+            0,
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 3028,
+        "Type": 4,
+        "Desc": "Arctic Weather: Shooting Range gets an event that deducts Star Ore",
+        "Params": [
+            1005,
+            0,
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 3029,
+        "Type": 4,
+        "Desc": "Arctic Weather: Bar gets an event that deducts Star Ore",
+        "Params": [
+            1005,
+            0,
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 3030,
+        "Type": 4,
+        "Desc": "Arctic Weather: Ion Tower gets an event that deducts Star Ore",
+        "Params": [
+            1005,
+            0,
+            3,
+            7
+        ]
+    },
+    {
+        "Id": 3031,
+        "Type": 6,
+        "Desc": "Icy Star Arctic: Construction deducts 999 Star Ore",
+        "Params": [
+            2,
+            -999
+        ],
+        "BubbleControllerId": 6
+    },
+    {
+        "Id": 3040,
+        "Type": 4,
+        "Desc": "Desert Sunny: Divination House gets an event that gives item",
+        "Params": [
+            1011,
+            0,
+            3,
+            6
+        ]
+    },
+    {
+        "Id": 3041,
+        "Type": 8,
+        "Overlying": true,
+        "Desc": "3040 Draw 1 item",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 3042,
+        "Type": 4,
+        "Desc": "Desert Sunny: Base gets an event that gives Star Ore",
+        "Params": [
+            1031,
+            0,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 3043,
+        "Type": 6,
+        "Desc": "Desert Sunny: Get Star Ore when passing Base",
+        "Params": [
+            2,
+            200
+        ]
+    },
+    {
+        "Id": 3045,
+        "Type": 4,
+        "Desc": "3-1 Sandstorm: Wanderer gets 100% bonus CRIT Rate",
+        "Params": [
+            1013,
+            0,
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 3046,
+        "Type": 4,
+        "Desc": "3-1 Sandstorm: Pirate gets 100% bonus CRIT Rate",
+        "Params": [
+            1013,
+            0,
+            5,
+            2
+        ]
+    },
+    {
+        "Id": 3047,
+        "Type": 2,
+        "Desc": "Sandstorm all units get +100% CRIT Rate",
+        "Params": [
+            4,
+            2,
+            4,
+            2,
+            10000
+        ]
+    },
+    {
+        "Id": 3048,
+        "Type": 4,
+        "Desc": "3-1 Sandstorm: Mine gets 3049",
+        "Params": [
+            1015,
+            0,
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 3049,
+        "Type": 8,
+        "Overlying": true,
+        "Desc": "Get an item when passing Mine in Sandstorm",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 3100,
+        "Type": 3,
+        "Overlying": true,
+        "Desc": "Fire Star Sunny: Summon normal enemy on random road",
+        "Params": [
+            1,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 3101,
+        "Type": 4,
+        "Desc": "Fire Star Embers Weather: Shooting Range gets an event that summons enemy",
+        "Params": [
+            1052,
+            0,
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 3102,
+        "Type": 3,
+        "Overlying": true,
+        "Desc": "Fire Star Embers: Summon Elite Enemy on random road",
+        "Params": [
+            3,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 3103,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "CRIT DMG +7% after killing enemy",
+        "Params": [
+            2,
+            1,
+            5,
+            2,
+            700
+        ]
+    },
+    {
+        "Id": 3150,
+        "Type": 4,
+        "Desc": "Phantom: Red Velvet gets 10 Star Ore refund. 1 stack",
+        "Params": [
+            1080,
+            0,
+            3,
+            109
+        ]
+    },
+    {
+        "Id": 3151,
+        "Type": 4,
+        "Desc": "Phantom: Red Velvet gets 10 Star Ore refund. 2 stacks",
+        "Params": [
+            1081,
+            0,
+            3,
+            109
+        ]
+    },
+    {
+        "Id": 3152,
+        "Type": 4,
+        "Desc": "Phantom: Red Velvet gets 10 Star Ore refund. 3 stacks",
+        "Params": [
+            1082,
+            0,
+            3,
+            109
+        ]
+    },
+    {
+        "Id": 3153,
+        "Type": 4,
+        "Desc": "Phantom: Red Velvet gets 10 Star Ore refund. 4 stacks",
+        "Params": [
+            1083,
+            0,
+            3,
+            109
+        ]
+    },
+    {
+        "Id": 3154,
+        "Type": 4,
+        "Desc": "Phantom: Red Velvet gets 10 Star Ore refund. 5 stacks",
+        "Params": [
+            1084,
+            0,
+            3,
+            109
+        ]
+    },
+    {
+        "Id": 3155,
+        "Type": 4,
+        "Desc": "Phantom: Almond gets 10 Star Ore refund. 1 stack",
+        "Params": [
+            1080,
+            0,
+            3,
+            110
+        ]
+    },
+    {
+        "Id": 3156,
+        "Type": 4,
+        "Desc": "Phantom: Almond gets 10 Star Ore refund. 2 stacks",
+        "Params": [
+            1081,
+            0,
+            3,
+            110
+        ]
+    },
+    {
+        "Id": 3157,
+        "Type": 4,
+        "Desc": "Phantom: Almond gets 10 Star Ore refund. 3 stacks",
+        "Params": [
+            1082,
+            0,
+            3,
+            110
+        ]
+    },
+    {
+        "Id": 3158,
+        "Type": 4,
+        "Desc": "Phantom: Almond gets 10 Star Ore refund. 4 stacks",
+        "Params": [
+            1083,
+            0,
+            3,
+            110
+        ]
+    },
+    {
+        "Id": 3159,
+        "Type": 4,
+        "Desc": "Phantom: Almond gets 10 Star Ore refund. 5 stacks",
+        "Params": [
+            1084,
+            0,
+            3,
+            110
+        ]
+    },
+    {
+        "Id": 3180,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Phantom Refund",
+        "Params": [
+            2,
+            10
+        ],
+        "BubbleControllerId": 6
+    },
+    {
+        "Id": 3190,
+        "Type": 4,
+        "Desc": "5-5 Phantom: Bonus Star Ore from enemy event",
+        "Params": [
+            1101,
+            0,
+            4
+        ]
+    },
+    {
+        "Id": 3191,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "5-5 Phantom: Get Star Ore from killing an enemy",
+        "Params": [
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 3192,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "5-5 Mist: Each enemy defeated reduces the team's current HP by 2",
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            -2
+        ]
+    },
+    {
+        "Id": 3193,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "5-5 Mist: Each enemy defeated permanently increases the team's ATK by 1",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 3200,
+        "Type": 3,
+        "Overlying": true,
+        "Desc": "Fire Star Thunderstorm summons Pirate on random road",
+        "Params": [
+            2,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 4001,
+        "Type": 5,
+        "Desc": "Desert Sunny item (Weather ID to be updated)",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 4002,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Desert enhance item: Team ATK +3",
+        "Params": [
+            4,
+            1,
+            2,
+            2,
+            3
+        ],
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    },
+    {
+        "Id": 4003,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Desert enhance item: Team HP +5",
+        "Params": [
+            4,
+            1,
+            1,
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 4004,
+        "Type": 2,
+        "Desc": "Desert Cooling item: CRIT Rate -100%",
+        "Params": [
+            4,
+            1,
+            4,
+            2,
+            -10000
+        ]
+    },
+    {
+        "Id": 4005,
+        "Type": 6,
+        "Desc": "Desert item gives 50 Star Ore",
+        "Params": [
+            2,
+            50
+        ],
+        "BubbleControllerId": 3
+    },
+    {
+        "Id": 4006,
+        "Type": 4,
+        "Desc": "Worker gets HP deduct event",
+        "Params": [
+            2006,
+            0,
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 4007,
+        "Type": 4,
+        "Desc": "Pointy gets HP deduct event",
+        "Params": [
+            2006,
+            0,
+            5,
+            2
+        ]
+    },
+    {
+        "Id": 4008,
+        "Type": 2,
+        "Desc": "After using item, Worker and Pointy's HP -99%",
+        "Params": [
+            4,
+            1,
+            1,
+            1,
+            -9900
+        ]
+    },
+    {
+        "Id": 4009,
+        "Type": 2,
+        "Desc": "Using the item restores 10% team HP",
+        "Params": [
+            4,
+            1,
+            0,
+            1,
+            1000
+        ],
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab"
+    },
+    {
+        "Id": 4010,
+        "Type": 6,
+        "Desc": "Desert item gives 1 Star Ore",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 4011,
+        "Type": 6,
+        "Desc": "Sweet Star 1 More Chance Item",
+        "Params": [
+            2,
+            420
+        ],
+        "BubbleControllerId": 3
+    },
+    {
+        "Id": 4012,
+        "Type": 6,
+        "Desc": "Sweet Star 2 More Chances Item",
+        "Params": [
+            2,
+            840
+        ]
+    },
+    {
+        "Id": 4013,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Sweet Star ATK",
+        "Params": [
+            4,
+            1,
+            2,
+            2,
+            7
+        ]
+    },
+    {
+        "Id": 4014,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Sweet Star HP",
+        "Params": [
+            4,
+            1,
+            1,
+            2,
+            77
+        ]
+    },
+    {
+        "Id": 4015,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Sweet Star CRIT Rate",
+        "Params": [
+            4,
+            1,
+            4,
+            2,
+            770
+        ]
+    },
+    {
+        "Id": 4016,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Sweet Star CRIT DMG",
+        "Params": [
+            4,
+            1,
+            5,
+            2,
+            770
+        ]
+    },
+    {
+        "Id": 4017,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Sweet Star Speed Bonus",
+        "Params": [
+            4,
+            1,
+            6,
+            2,
+            770
+        ]
+    },
+    {
+        "Id": 5001,
+        "Type": 2,
+        "Desc": "Boss ATK reduced by 70%",
+        "Params": [
+            4,
+            1,
+            2,
+            1,
+            -8500
+        ]
+    },
+    {
+        "Id": 5002,
+        "Type": 2,
+        "Desc": "Boss ATK SPD reduced by 10%",
+        "Params": [
+            4,
+            1,
+            6,
+            2,
+            -1000
+        ]
+    },
+    {
+        "Id": 10001,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team ATK +1",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 10101,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Exploration Team Initial Star Ore +5",
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 10201,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team HP +1",
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 10301,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team CRIT Rate +1%",
+        "Params": [
+            2,
+            1,
+            4,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 20101,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Exploration Team Initial Star Ore +5",
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 20201,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team ATK SPD Bonus +1%",
+        "Params": [
+            2,
+            1,
+            6,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 20301,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team CRIT DMG +1%",
+        "Params": [
+            2,
+            1,
+            5,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 30101,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team ATK +1",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 30201,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team HP +1",
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 30301,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team CRIT Rate +1%",
+        "Params": [
+            2,
+            1,
+            4,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 40101,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Exploration Team Initial Star Ore +5",
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 40201,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team CRIT DMG +1%",
+        "Params": [
+            2,
+            1,
+            5,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 40301,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team ATK +1",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 50101,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team ATK SPD Bonus +1%",
+        "Params": [
+            2,
+            1,
+            6,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 50201,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team CRIT Rate +1%",
+        "Params": [
+            2,
+            1,
+            4,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 50301,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team ATK +1",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80001,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Exploration Team Initial Star Ore +1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80002,
+        "Type": 6,
+        "Overlying": true,
+        "Desc": "Exploration Team Initial Star Ore +1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80003,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team HP +1",
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80004,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team HP +2",
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 80005,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team HP +1",
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80006,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team ATK +1",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80007,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team ATK +1",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80008,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Exploration Team ATK +1",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 90001,
+        "Type": 2,
+        "Overlying": true,
+        "Desc": "Recovers 25% of the team's max HP",
+        "Params": [
+            2,
+            1,
+            0,
+            1,
+            2500
+        ],
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab"
+    },
+    {
+        "Id": 90002,
+        "Type": 8,
+        "TriggerCountLimit": 1,
+        "Desc": "Guide draw 1 item",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 90050,
+        "Type": 6,
+        "Desc": "Embers bonus 80 Star Ore when defeating an enemy",
+        "Params": [
+            2,
+            80
+        ],
+        "BubbleControllerId": 3,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab"
+    }
+]

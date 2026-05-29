@@ -1,13 +1,11 @@
 [
     {
-        "Id": 0,
         "Type": 1,
         "UiType": 1,
         "Name": "Tang Pei",
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal02.png",
         "Text": "Old Version Main Story Iteration",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 10,
@@ -16,8 +14,7 @@
         "Name": "Guy on the Left",
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "Dialogue Here 1",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 11,
@@ -27,8 +24,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "<color=#7FFF00>Dialogue Here 1 (Reversed Sprite)</color>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
+            "",
             1
         ]
     },
@@ -40,8 +38,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "<size=30>Dialogue Here 1 (playalone on)</size>",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -53,8 +51,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/HanyingNormal01.png",
         "Text": "Dialogue Here 1 (Reversed Sprite: playalone on)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1,
             1
         ]
@@ -67,7 +65,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png",
         "Text": "Dialogue Here 2",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -80,9 +77,9 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png",
         "Text": "Dialogue Here 2 (Reversed Sprite)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
+            "",
             1
         ]
     },
@@ -94,8 +91,8 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal03.png",
         "Text": "Dialogue Here 3 (playalone on)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
+            "",
             1
         ]
     },
@@ -107,7 +104,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V250ylsNormal02.png",
         "Text": "Dialogue Here 4 (playalone on)",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1,
             1
@@ -119,8 +115,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "<color=#7FFF00>Top Left Dialogue 1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 21,
@@ -128,8 +123,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal02.png",
         "Text": "<size=30>Top Left Dialogue 2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 22,
@@ -137,8 +131,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
         "Text": "Top Left Dialogue 3 (1s)",
-        "Duration": 1,
-        "IsMask": false
+        "Duration": 1
     },
     {
         "Id": 23,
@@ -146,8 +139,7 @@
         "UiType": 1,
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal04.png",
         "Text": "Top Left Dialogue 4 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 30,
@@ -155,16 +147,14 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>Cutscene Animation 1</color>",
         "Text": "<color=#7FFF00>Dialogue Here 1</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 31,
         "Type": 3,
         "UiType": 1,
         "Text": "<size=30>Dialogue Here 2</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 32,
@@ -172,8 +162,7 @@
         "UiType": 1,
         "Name": "Cutscene Animation 3",
         "Text": "Dialogue Here 3 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 40,
@@ -181,24 +170,21 @@
         "UiType": 1,
         "Name": "<color=#7FFF00>Connection Dialogue A</color>",
         "Text": "<color=#7FFF00>Connection Dialogue 123</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 41,
         "Type": 4,
         "UiType": 1,
         "Text": "Connection Dialogue 234 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 42,
         "Type": 4,
         "UiType": 1,
         "Name": "Connection Dialogue With Only Names",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 50,
@@ -207,8 +193,7 @@
         "Name": "<color=#7FFF00>Custom Chat Box</color>",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal01.png",
         "Text": "<size=30>Custom Chat Box 1</size>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 51,
@@ -217,8 +202,7 @@
         "Name": "<size=15>Custom Chat Box</size>",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal02.png",
         "Text": "<color=#7FFF00>Custom Chat Box 2</color>",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 52,
@@ -227,8 +211,7 @@
         "Name": "Custom Chat Box",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
         "Text": "Custom Chat Box 3 (3s)",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1,
@@ -236,8 +219,7 @@
         "UiType": 1,
         "Name": "Main Story Chapter 9 Fallen Star",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V210aefNormal03.png",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010201,
@@ -246,8 +228,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "There's nowhere to hide.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1026010202,
@@ -256,8 +237,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "It's dangerous here.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1026010203,
@@ -266,8 +246,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "The elevator is broken. Can't hide here.",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1026010204,
@@ -276,8 +255,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "There's no time...",
-        "Duration": 3,
-        "IsMask": false
+        "Duration": 3
     },
     {
         "Id": 1026010205,
@@ -286,8 +264,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Need to find a place to hide...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010206,
@@ -297,7 +274,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "I'll wait until he walks away...",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -310,7 +286,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "Alright, I should leave here quickly.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -322,8 +297,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Have to go somewhere safe.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010209,
@@ -332,8 +306,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "These Corrupted are not manipulated. It's okay to attack them.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010210,
@@ -343,7 +316,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "Alright. Let's roll.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -355,8 +327,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "I haven't fully recovered yet, but there's no other option. I'll do everything I can...",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026010212,
@@ -366,7 +337,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "This door looks weird. Is it some virtual projection in a game space?",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -379,7 +349,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "That guy again! Let's get through here first!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -392,7 +361,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "Wait. Someone's here.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -405,7 +373,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "Is that... a Corrupted? No. He's controlled by the Ascendant!",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]
@@ -417,8 +384,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Caused quite a stir here. Gotta quickly find the way out.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011101,
@@ -427,8 +393,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "I didn't fall into chaos upon touching the egg. Maybe I can use it now!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011102,
@@ -437,8 +402,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "I can suppress Lithos' control!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011103,
@@ -447,8 +411,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "That thing has flown off. Gotta get rid of these minions first.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011104,
@@ -457,8 +420,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "I can swim after it from that waterfall.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011105,
@@ -467,8 +429,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "I'm not afraid of you anymore!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011106,
@@ -477,8 +438,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Let me keep using the power of the egg!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011107,
@@ -487,8 +447,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "I am the predator now!",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026011108,
@@ -497,8 +456,7 @@
         "Name": "Lamia",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Lamiya1.png",
         "Text": "Use the power of the egg to beat them.",
-        "Duration": 0,
-        "IsMask": false
+        "Duration": 0
     },
     {
         "Id": 1026012501,
@@ -508,7 +466,6 @@
         "Icon": "Assets/Product/Texture/Image/RoleStory/V260lmyNormal01.png",
         "Text": "She is disrupting my M.I.N.D. I must do something about it.",
         "Duration": 0,
-        "IsMask": false,
         "Params": [
             1
         ]

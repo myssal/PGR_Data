@@ -1,0 +1,356 @@
+[
+    {
+        "Name": "Life",
+        "Id": 1001,
+        "Type": 1,
+        "Des": "HP",
+        "Power": 0.2,
+        "DescEn": "HEALTH"
+    },
+    {
+        "Name": "Attack",
+        "Id": 1002,
+        "Type": 1,
+        "Des": "Attack",
+        "Power": 1.0,
+        "DescEn": "DAMAGE"
+    },
+    {
+        "Name": "AttackIntensity",
+        "Id": 1003,
+        "Type": 1,
+        "Des": "Attack Boost"
+    },
+    {
+        "Name": "Defense",
+        "Id": 1004,
+        "Type": 1,
+        "Des": "DEF",
+        "Power": 0.5,
+        "DescEn": "DEFENCE"
+    },
+    {
+        "Name": "DefensePierceP",
+        "Id": 1005,
+        "Type": 1,
+        "Des": "Defense Piercing",
+        "IsPercent": true
+    },
+    {
+        "Name": "CritP",
+        "Id": 2001,
+        "Type": 2,
+        "Des": "CRIT Rate",
+        "IsPercent": true
+    },
+    {
+        "Name": "CritResistanceP",
+        "Id": 2002,
+        "Type": 2,
+        "Des": "CRIT Resistance",
+        "IsPercent": true
+    },
+    {
+        "Name": "CritDmgRateP",
+        "Id": 2003,
+        "Type": 2,
+        "Des": "CRIT DMG Rate",
+        "IsPercent": true
+    },
+    {
+        "Name": "CritDmgRateReductionP",
+        "Id": 2004,
+        "Type": 2,
+        "Des": "CRIT DMG Rate Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "ShieldEfficiencyP",
+        "Id": 3001,
+        "Type": 3,
+        "Des": "Shield Efficiency",
+        "IsPercent": true
+    },
+    {
+        "Name": "ShieldAmpP",
+        "Id": 3002,
+        "Type": 3,
+        "Des": "Shield Bonus",
+        "IsPercent": true
+    },
+    {
+        "Name": "ShieldReductionP",
+        "Id": 3003,
+        "Type": 3,
+        "Des": "Shield Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "ShieldGainBonusP",
+        "Id": 3004,
+        "Type": 3,
+        "Des": "Shield Bonus Received",
+        "IsPercent": true
+    },
+    {
+        "Name": "ShieldGainReductionP",
+        "Id": 3005,
+        "Type": 3,
+        "Des": "Shield Reduction Received",
+        "IsPercent": true
+    },
+    {
+        "Name": "PhysicalAmpP",
+        "Id": 4001,
+        "Type": 4,
+        "Des": "Physical DMG Increase",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element1AmpP",
+        "Id": 4002,
+        "Type": 4,
+        "Des": "Fire DMG Increase",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element2AmpP",
+        "Id": 4003,
+        "Type": 4,
+        "Des": "Lightning DMG Increase",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element3AmpP",
+        "Id": 4004,
+        "Type": 4,
+        "Des": "Ice DMG Increase",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element4AmpP",
+        "Id": 4005,
+        "Type": 4,
+        "Des": "Dark DMG Increase",
+        "IsPercent": true
+    },
+    {
+        "Name": "PhysicalReductionP",
+        "Id": 4006,
+        "Type": 4,
+        "Des": "Physical DMG Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element1ReductionP",
+        "Id": 4007,
+        "Type": 4,
+        "Des": "Fire DMG Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element2ReductionP",
+        "Id": 4008,
+        "Type": 4,
+        "Des": "Lightning DMG Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element3ReductionP",
+        "Id": 4009,
+        "Type": 4,
+        "Des": "Ice DMG Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element4ReductionP",
+        "Id": 4010,
+        "Type": 4,
+        "Des": "Dark DMG Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "PhysicalPierceP",
+        "Id": 4011,
+        "Type": 4,
+        "Des": "Piercing Physical DMG",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element1PierceP",
+        "Id": 4012,
+        "Type": 4,
+        "Des": "Piercing Fire DMG",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element2PierceP",
+        "Id": 4013,
+        "Type": 4,
+        "Des": "Piercing Lightning DMG",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element3PierceP",
+        "Id": 4014,
+        "Type": 4,
+        "Des": "Piercing Ice DMG",
+        "IsPercent": true
+    },
+    {
+        "Name": "Element4PierceP",
+        "Id": 4015,
+        "Type": 4,
+        "Des": "Piercing Dark DMG",
+        "IsPercent": true
+    },
+    {
+        "Name": "SignalSkillDmgAmpP",
+        "Id": 5001,
+        "Type": 5,
+        "Des": "Signal Orb Skill DMG Bonus",
+        "IsPercent": true
+    },
+    {
+        "Name": "CoreSkillDmgAmpP",
+        "Id": 5002,
+        "Type": 5,
+        "Des": "Core Skill DMG Bonus",
+        "IsPercent": true
+    },
+    {
+        "Name": "NormalAtkDmgAmpP",
+        "Id": 5003,
+        "Type": 5,
+        "Des": "Basic Attack Skill DMG Bonus",
+        "IsPercent": true
+    },
+    {
+        "Name": "ExSkillDmgAmpP",
+        "Id": 5004,
+        "Type": 5,
+        "Des": "Signature Move DMG Bonus",
+        "IsPercent": true
+    },
+    {
+        "Name": "HuntSkillDmgAmpP",
+        "Id": 5005,
+        "Type": 5,
+        "Des": "Anchor Skill DMG Bonus",
+        "IsPercent": true
+    },
+    {
+        "Name": "SignalSkillDmgReductionP",
+        "Id": 5006,
+        "Type": 5,
+        "Des": "Signal Orb Skill DMG Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "SpecialSkillDmgReductionP",
+        "Id": 5007,
+        "Type": 5,
+        "Des": "Special Skill DMG Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "NormalAtkDmgReductionP",
+        "Id": 5008,
+        "Type": 5,
+        "Des": "Basic Attack Skill DMG Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "ExSkillDmgReductionP",
+        "Id": 5009,
+        "Type": 5,
+        "Des": "Signature Move DMG Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "HuntSkillDmgReductionP",
+        "Id": 5010,
+        "Type": 5,
+        "Des": "Anchor Skill DMG Reduction",
+        "IsPercent": true
+    },
+    {
+        "Name": "ThreatRate",
+        "Id": 6001,
+        "Type": 6,
+        "Des": "Aggro converted from DMG",
+        "IsPercent": true
+    },
+    {
+        "Name": "CharacterValue",
+        "Id": 6002,
+        "Type": 6,
+        "Des": "Character Value"
+    },
+    {
+        "Name": "ExSkillPoint",
+        "Id": 6003,
+        "Type": 6,
+        "Des": "Signature Points"
+    },
+    {
+        "Name": "IdleSpinningSpeed",
+        "Id": 6004,
+        "Type": 6,
+        "Des": "Standby Turn Rate"
+    },
+    {
+        "Name": "RunSpinningSpeed",
+        "Id": 6005,
+        "Type": 6,
+        "Des": "Running Turn Rate"
+    },
+    {
+        "Name": "DodgeEnergy",
+        "Id": 6006,
+        "Type": 6,
+        "Des": "Dodge Energy"
+    },
+    {
+        "Name": "JumpEnergy",
+        "Id": 6007,
+        "Type": 6,
+        "Des": "Jump Energy"
+    },
+    {
+        "Name": "DodgeEnergyRegen",
+        "Id": 6008,
+        "Type": 6,
+        "Des": "Dodge Energy Regeneration"
+    },
+    {
+        "Name": "JumpEnergyRegen",
+        "Id": 6009,
+        "Type": 6,
+        "Des": "Jump Energy Regeneration"
+    },
+    {
+        "Name": "CustomEnergyGroup1",
+        "Id": 6010,
+        "Type": 6,
+        "Des": "Custom Energy Set 1"
+    },
+    {
+        "Name": "CustomEnergyGroup2",
+        "Id": 6011,
+        "Type": 6,
+        "Des": "Custom Energy Set 2"
+    },
+    {
+        "Name": "CustomEnergyGroup3",
+        "Id": 6012,
+        "Type": 6,
+        "Des": "Custom Energy Set 3"
+    },
+    {
+        "Name": "CustomEnergyGroup4",
+        "Id": 6013,
+        "Type": 6,
+        "Des": "Custom Energy Set 4"
+    }
+]

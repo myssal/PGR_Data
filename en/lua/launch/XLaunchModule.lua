@@ -166,11 +166,8 @@ InitGame = function(urlTable, hashTable)
     end
 
     CsGameEventManager:Notify(CS.XEventId.EVENT_LAUNCH_START_LOADING)
-
-    local import = CS.XLuaEngine.Import
-
-    import("XLaunchCommon")
-    import("XLaunchUi")
+    
+    require("XLaunchCommon/XMessagePack")
 
     urlTable = urlTable or {}
 
@@ -225,7 +222,7 @@ CheckUpdate = function(isReloaded)
                 CsStringEx.Format(CsApplication.GetText("UpdateApplication"), CsInfo.Version), nil, function()
                 local jumpCB = function()
                     print("[Apk] - Failed to Download Apk.")
-                    CsTool.WaitCoroutine(CsApplication.GoToUpdateURL(PathModule.GetAppUpgradeUrl()), nil)
+                    CsTool.WaitCoroutine(CsApplication.GoToUpdateURL(PathModule.GetAppUpgradeUrl(), true), nil)
                 end
                 local downloadCB = function(url)
                     BeforeDownloadApk(url)

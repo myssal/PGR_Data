@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory186.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500581
@@ -30,13 +20,8 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Echo",
@@ -47,12 +32,7 @@
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4382
@@ -61,12 +41,7 @@
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -75,13 +50,9 @@
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "This should be good.",
             1
@@ -90,26 +61,19 @@
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You meet Echo by the park's artificial lake, where Echo straightens her rain boots before cautiously stepping onto a small wooden boat."
         ]
     },
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "Now it's your turn, Commandant.",
             1
@@ -118,13 +82,9 @@
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "(Jump onto the boat)",
             10,
             "(Board the boat with caution)",
@@ -134,12 +94,7 @@
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             7
@@ -148,13 +103,9 @@
     {
         "Id": 11,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "Waiiit!",
             1
@@ -163,12 +114,7 @@
     {
         "Id": 12,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -176,12 +122,7 @@
     {
         "Id": 13,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             9327108
@@ -190,12 +131,7 @@
     {
         "Id": 14,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab",
             2
@@ -204,15 +140,12 @@
     {
         "Id": 15,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "RImgBg1Shake",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The boat lurches, and Echo's expression flashes with panic. She scrambles to steady the rocking vessel."
         ]
     },
@@ -221,23 +154,15 @@
         "ActionId": 16,
         "NextActionId": 20,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab"
         ]
     },
     {
         "Id": 17,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             10
@@ -246,13 +171,10 @@
     {
         "Id": 18,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You've been as cautious as you can, but you notice Echo is still gripping the edge of the boat tightly."
         ]
     },
@@ -261,11 +183,7 @@
         "ActionId": 19,
         "NextActionId": 20,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -273,11 +191,7 @@
     {
         "Id": 20,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 400.0,
         "Params": [
             "DialogDisable"
@@ -286,12 +200,7 @@
     {
         "Id": 21,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory538.png"
         ]
@@ -299,17 +208,16 @@
     {
         "Id": 22,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 109,
         "IsBlock": 1,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "<size=45>...A few minutes earlier</size>",
+            "",
+            "",
+            "",
             1,
             1,
             1,
@@ -319,23 +227,13 @@
     {
         "Id": 23,
         "ActionId": 23,
-        "NextActionId": 0,
-        "Type": 110,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 110
     },
     {
         "Id": 24,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory186.png"
         ]
@@ -343,12 +241,7 @@
     {
         "Id": 25,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             278
@@ -357,65 +250,48 @@
     {
         "Id": 26,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "It's evening when you receive Echo's message and make your way to the lakeside."
         ]
     },
     {
         "Id": 27,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Even though it's already late, on a day like today—this festival has only just begun."
         ]
     },
     {
         "Id": 28,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Small, scattered boats glide across the lake."
         ]
     },
     {
         "Id": 29,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Echo is here, waiting patiently. From a distance, she seems to be writing in a small notebook."
         ]
     },
     {
         "Id": 30,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500581,
@@ -425,12 +301,7 @@
     {
         "Id": 31,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Echo",
@@ -441,26 +312,19 @@
     {
         "Id": 32,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She lifts her gaze and locks eyes with you. The tension on her face fades in an instant."
         ]
     },
     {
         "Id": 33,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Hey, Echo.",
             34
         ]
@@ -468,13 +332,9 @@
     {
         "Id": 34,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "Good evening, Commandant.",
             1
@@ -483,13 +343,9 @@
     {
         "Id": 35,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Long time no see.",
             36
         ]
@@ -497,13 +353,9 @@
     {
         "Id": 36,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "Long time no see.",
             1
@@ -512,26 +364,19 @@
     {
         "Id": 37,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She turns around to look at the boat behind her."
         ]
     },
     {
         "Id": 38,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "Even though it's not my first time attending an event like this, I'm still picking up plenty of new knowledge and local customs today.",
             1
@@ -540,13 +385,9 @@
     {
         "Id": 39,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "But... this time, I've found something I really want to do with you, Commandant.",
             1
@@ -555,13 +396,9 @@
     {
         "Id": 40,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "Maybe it fits the Double Seventh Festival theme better... spending time with someone who matters?",
             1
@@ -570,26 +407,19 @@
     {
         "Id": 41,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Echo explains this with a solemn air."
         ]
     },
     {
         "Id": 42,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "So...",
             43
         ]
@@ -597,13 +427,9 @@
     {
         "Id": 43,
         "ActionId": 43,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Are we going rowing?",
             44
         ]
@@ -611,25 +437,17 @@
     {
         "Id": 44,
         "ActionId": 44,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Echo nods and, looking a little shy, starts to speak."
         ]
     },
     {
         "Id": 45,
         "ActionId": 45,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             6
@@ -638,13 +456,9 @@
     {
         "Id": 46,
         "ActionId": 46,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "I may know the basics of rowing, but I'm still a long way from mastering it.",
             1
@@ -653,13 +467,9 @@
     {
         "Id": 47,
         "ActionId": 47,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "Plus, the instructions in the survival manual aren't exactly clear, so I'd like to learn from you, Commandant.",
             1
@@ -668,12 +478,7 @@
     {
         "Id": 48,
         "ActionId": 48,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -681,25 +486,17 @@
     {
         "Id": 49,
         "ActionId": 49,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "..."
         ]
     },
     {
         "Id": 50,
         "ActionId": 50,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             9339045
@@ -708,25 +505,17 @@
     {
         "Id": 51,
         "ActionId": 51,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You take hold of the oar, and the armor—absent a moment ago—shows up and gently nudges the boat away from the shore, easing Echo's earlier nervousness."
         ]
     },
     {
         "Id": 52,
         "ActionId": 52,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500581,
@@ -736,12 +525,7 @@
     {
         "Id": 53,
         "ActionId": 53,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Echo",
@@ -752,12 +536,7 @@
     {
         "Id": 54,
         "ActionId": 54,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             9339045
         ]
@@ -765,12 +544,7 @@
     {
         "Id": 55,
         "ActionId": 55,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             911
@@ -779,38 +553,27 @@
     {
         "Id": 56,
         "ActionId": 56,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Echo hunches over her notebook, writing and sketching at lightning speed."
         ]
     },
     {
         "Id": 57,
         "ActionId": 57,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You slow your motions as much as you can, breaking down every paddle stroke into careful, deliberate steps."
         ]
     },
     {
         "Id": 58,
         "ActionId": 58,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             7
@@ -819,13 +582,9 @@
     {
         "Id": 59,
         "ActionId": 59,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "Hmm?",
             1
@@ -834,26 +593,19 @@
     {
         "Id": 60,
         "ActionId": 60,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You look Echo in the eye, noticing the spark of curiosity gleaming there."
         ]
     },
     {
         "Id": 61,
         "ActionId": 61,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo, want to try it out?",
             62
         ]
@@ -861,12 +613,7 @@
     {
         "Id": 62,
         "ActionId": 62,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             10
@@ -875,13 +622,9 @@
     {
         "Id": 63,
         "ActionId": 63,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "Huh? Right now?",
             1
@@ -890,26 +633,19 @@
     {
         "Id": 64,
         "ActionId": 64,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Echo's hand automatically tightens around the edge of the boat again."
         ]
     },
     {
         "Id": 65,
         "ActionId": 65,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Naturally, getting each movement right really matters.",
             66
         ]
@@ -917,13 +653,9 @@
     {
         "Id": 66,
         "ActionId": 66,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "But it's best to experience it firsthand.",
             67
         ]
@@ -931,13 +663,9 @@
     {
         "Id": 67,
         "ActionId": 67,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "Experience it firsthand...",
             1
@@ -946,13 +674,9 @@
     {
         "Id": 68,
         "ActionId": 68,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...No need to jot that down.",
             69
         ]
@@ -960,25 +684,17 @@
     {
         "Id": 69,
         "ActionId": 69,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "At last, the young Construct musters the courage to grab an oar from the boat's hold."
         ]
     },
     {
         "Id": 70,
         "ActionId": 70,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             5
@@ -987,13 +703,9 @@
     {
         "Id": 71,
         "ActionId": 71,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "I'll give it my all!",
             1
@@ -1002,12 +714,7 @@
     {
         "Id": 72,
         "ActionId": 72,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1015,39 +722,29 @@
     {
         "Id": 73,
         "ActionId": 73,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Echo, eyes fixed with determination, quietly repeats the notes she just recorded and dips the oar into the water, while you help her keep the boat steady."
         ]
     },
     {
         "Id": 74,
         "ActionId": 74,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The boat drifts forward under her careful strokes. It's obvious she hasn't quite found the right rhythm yet, so the progress stays slow and steady."
         ]
     },
     {
         "Id": 75,
         "ActionId": 75,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "You've got real talent, Echo.",
             76
         ]
@@ -1055,12 +752,7 @@
     {
         "Id": 76,
         "ActionId": 76,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -1069,13 +761,9 @@
     {
         "Id": 77,
         "ActionId": 77,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "I did it! ...Ahem.",
             1
@@ -1084,39 +772,29 @@
     {
         "Id": 78,
         "ActionId": 78,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Echo can't help letting out a quick gasp of joy, then immediately pulls herself together."
         ]
     },
     {
         "Id": 79,
         "ActionId": 79,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Somehow, the small boat has already reached the center of the lake. It's not a full-moon night, but the stars glow brightly, making it feel like you're sailing through a cosmic sea."
         ]
     },
     {
         "Id": 80,
         "ActionId": 80,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "These stars... they're so beautiful...",
             1
@@ -1125,12 +803,7 @@
     {
         "Id": 81,
         "ActionId": 81,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             7
@@ -1139,13 +812,9 @@
     {
         "Id": 82,
         "ActionId": 82,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "This feeling... Please hold on a second!",
             1
@@ -1154,26 +823,19 @@
     {
         "Id": 83,
         "ActionId": 83,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Echo takes a finely crafted notebook out of her pocket and sets it on her lap. She flips to a blank page and starts scribbling furiously."
         ]
     },
     {
         "Id": 84,
         "ActionId": 84,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Can I see it?",
             85
         ]
@@ -1181,12 +843,7 @@
     {
         "Id": 85,
         "ActionId": 85,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -1195,13 +852,9 @@
     {
         "Id": 86,
         "ActionId": 86,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "It's just a sudden rush of inspiration... I haven't polished it yet.",
             1
@@ -1210,13 +863,9 @@
     {
         "Id": 87,
         "ActionId": 87,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Still, a first impression is always the most important, right?",
             88
         ]
@@ -1224,25 +873,17 @@
     {
         "Id": 88,
         "ActionId": 88,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Echo doesn't recite her poem right away like she used to. Instead, she hands the notebook over to you."
         ]
     },
     {
         "Id": 89,
         "ActionId": 89,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             6
@@ -1251,14 +892,10 @@
     {
         "Id": 90,
         "ActionId": 90,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Echo",
             "P-please... don't make it too loud...",
             1
@@ -1267,12 +904,7 @@
     {
         "Id": 91,
         "ActionId": 91,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1280,11 +912,7 @@
     {
         "Id": 92,
         "ActionId": 92,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 400.0,
         "Params": [
             "DialogDisable"
@@ -1293,12 +921,7 @@
     {
         "Id": 93,
         "ActionId": 93,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg"
         ]
@@ -1306,190 +929,155 @@
     {
         "Id": 94,
         "ActionId": 94,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "This night isn't the moon's birthday,",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1
         ]
     },
     {
         "Id": 95,
         "ActionId": 95,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Like what we imagined.",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1
         ]
     },
     {
         "Id": 96,
         "ActionId": 96,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "We're stumbling as we go,",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1
         ]
     },
     {
         "Id": 97,
         "ActionId": 97,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "I hope you also pick up a bit of this dirt.",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1
         ]
     },
     {
         "Id": 98,
         "ActionId": 98,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "We nurture the heart that grows from the soil.",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1
         ]
     },
     {
         "Id": 99,
         "ActionId": 99,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "In reunion,",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1
         ]
     },
     {
         "Id": 100,
         "ActionId": 100,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "All we can do,",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1
         ]
     },
     {
         "Id": 101,
         "ActionId": 101,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Is give the sun its own light once more.",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1
         ]
     },
     {
         "Id": 102,
         "ActionId": 102,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Or maybe shape a river from the moon's soft glow.",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1
         ]
     },
     {
         "Id": 103,
         "ActionId": 103,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Return our feelings,",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1
         ]
     },
     {
         "Id": 104,
         "ActionId": 104,
-        "NextActionId": 0,
         "Type": 304,
         "IsBlock": 1,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "In love's purest form...",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory786.jpg",
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 105,
         "ActionId": 105,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500581,
@@ -1499,13 +1087,8 @@
     {
         "Id": 106,
         "ActionId": 106,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "RImgBg1Shake",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             903
@@ -1514,27 +1097,18 @@
     {
         "Id": 107,
         "ActionId": 107,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "A sudden undercurrent rocks the small boat, snapping both of you out of your daydream."
         ]
     },
     {
         "Id": 108,
         "ActionId": 108,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             6
@@ -1543,26 +1117,19 @@
     {
         "Id": 109,
         "ActionId": 109,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
+            "",
+            "",
             -100
         ]
     },
     {
         "Id": 110,
         "ActionId": 110,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 120.0,
         "Params": [
             2,
@@ -1572,12 +1139,7 @@
     {
         "Id": 111,
         "ActionId": 111,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             9339045
@@ -1586,14 +1148,12 @@
     {
         "Id": 112,
         "ActionId": 112,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Water sprays in all directions as the Construct girl instinctively topples right into your arms."
         ]
     }

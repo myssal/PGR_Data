@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 201,
-        "NextActionId": 0,
         "Type": 504,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 200,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             22
@@ -30,17 +20,13 @@
     {
         "Id": 3,
         "ActionId": 301,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "System booting up...",
             "000000ff",
             1,
             "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            "",
             1,
             2
         ]
@@ -48,43 +34,31 @@
     {
         "Id": 4,
         "ActionId": 302,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "..."
         ]
     },
     {
         "Id": 5,
         "ActionId": 400,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Pairing successful",
             "000000ff",
             1,
             "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            "",
             1
         ]
     },
     {
         "Id": 6,
         "ActionId": 300,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "DialogDisable"
         ]
@@ -92,48 +66,37 @@
     {
         "Id": 7,
         "ActionId": 401,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Frame status: Stable",
             "000000ff",
             1,
             "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            "",
             1
         ]
     },
     {
         "Id": 8,
         "ActionId": 402,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Verifying Memory Data...",
             "000000ff",
             1,
             "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            "",
             1,
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 9,
         "ActionId": 101,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cg1101_7.jpg"
         ]
@@ -141,27 +104,19 @@
     {
         "Id": 10,
         "ActionId": 102,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Memory 1"
         ]
     },
     {
         "Id": 11,
         "ActionId": 103,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cg109_2.jpg"
         ]
@@ -169,27 +124,19 @@
     {
         "Id": 12,
         "ActionId": 104,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Memory 2"
         ]
     },
     {
         "Id": 13,
         "ActionId": 105,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cgsd001.jpg"
         ]
@@ -197,27 +144,19 @@
     {
         "Id": 14,
         "ActionId": 106,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Memory 3"
         ]
     },
     {
         "Id": 15,
         "ActionId": 107,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cg416_1.jpg"
         ]
@@ -225,27 +164,19 @@
     {
         "Id": 16,
         "ActionId": 108,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Memory 4"
         ]
     },
     {
         "Id": 17,
         "ActionId": 109,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cg516_1.jpg"
         ]
@@ -253,27 +184,19 @@
     {
         "Id": 18,
         "ActionId": 110,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Memory 5"
         ]
     },
     {
         "Id": 19,
         "ActionId": 111,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cg1201_4.jpg"
         ]
@@ -281,50 +204,39 @@
     {
         "Id": 20,
         "ActionId": 112,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Memory 6"
         ]
     },
     {
         "Id": 21,
         "ActionId": 113,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Memory Data verification complete.",
             "000000ff",
             1,
             "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            "",
             1
         ]
     },
     {
         "Id": 22,
         "ActionId": 403,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Preparing to initialize...",
             "000000ff",
             1,
             "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            "",
             1,
             4
         ]
@@ -332,19 +244,18 @@
     {
         "Id": 23,
         "ActionId": 404,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Begin loading",
             "000000ff",
             1,
             "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            "",
             1,
+            "",
+            "",
             1
         ]
     }

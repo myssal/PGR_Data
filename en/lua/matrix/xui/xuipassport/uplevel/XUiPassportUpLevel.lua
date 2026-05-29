@@ -157,6 +157,10 @@ function XUiPassportUpLevel:UpdateDynamicTable(levelIdList)
     table.sort(dataProvider, function(a, b)
         local colorA = XItemConfigs.GetQualityById(a.TemplateId)
         local colorB = XItemConfigs.GetQualityById(b.TemplateId)
+
+        if not colorA then return true end
+        if not colorB then return false end
+
         if colorA ~= colorB then
             return colorA > colorB
         end

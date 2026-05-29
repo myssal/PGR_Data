@@ -1,0 +1,406 @@
+[
+    {
+        "Id": 101,
+        "Name": "Island Auction House",
+        "Desc": "Get anything you want here with money",
+        "LandformId": 1301,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon05.png",
+        "Type": 2,
+        "Quality": 3,
+        "RefreshTurnCount": 5,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 400000,
+        "TipId": 1101
+    },
+    {
+        "Id": 102,
+        "Name": "Wishing Pond",
+        "Desc": "Always works. No tricks.\\n<i>Once activated, you can put in Copper Coins to make a wish every 4 quarters.</i>",
+        "LandformId": 1302,
+        "Icon": "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimChooseCity02.png",
+        "Type": 2,
+        "Quality": 3,
+        "RefreshTurnCount": 4,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 400000
+    },
+    {
+        "Id": 103,
+        "Name": "Win-Win Bank",
+        "Desc": "Up up, my investments (or me)!",
+        "LandformId": 1303,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon01.png",
+        "Type": 2,
+        "Quality": 3,
+        "RefreshTurnCount": 3,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 410000,
+        "TipId": 1103
+    },
+    {
+        "Id": 111,
+        "Name": "Island Auction House",
+        "Desc": "Get anything you want here with money",
+        "LandformId": 1301,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon05.png",
+        "Type": 2,
+        "Quality": 3,
+        "RefreshTurnCount": 3,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 400001,
+        "TipId": 1101
+    },
+    {
+        "Id": 113,
+        "Name": "Win-Win Bank",
+        "Desc": "Up up, my investments (or me)!",
+        "LandformId": 1303,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon01.png",
+        "Type": 2,
+        "Quality": 3,
+        "RefreshTurnCount": 2,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 410001,
+        "TipId": 1103
+    },
+    {
+        "Id": 1001,
+        "Name": "Coconut Factory Lv.1",
+        "Desc": "Produces <color=#a46800>Coconut</color> x{0} every quarter",
+        "DescParam": 60,
+        "LandformId": 101,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandJiagong001.png",
+        "Type": 3,
+        "Quality": 1,
+        "RefreshTurnCount": 1,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 2001
+    },
+    {
+        "Id": 1002,
+        "Name": "Rabbit Sawmill Lv.1",
+        "Desc": "Produces <color=#a46800>Wood</color> x{0} every quarter",
+        "DescParam": 100,
+        "LandformId": 102,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormCarrotWindmill001.png",
+        "Type": 3,
+        "Quality": 1,
+        "RefreshTurnCount": 1,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 2002
+    },
+    {
+        "Id": 1003,
+        "Name": "Petroleum Refinery Lv.1",
+        "Desc": "Produces <color=#a46800>Petroleum</color> x{0} every quarter",
+        "DescParam": 25,
+        "LandformId": 103,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon06.png",
+        "Type": 3,
+        "Quality": 1,
+        "RefreshTurnCount": 1,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 2003
+    },
+    {
+        "Id": 1004,
+        "Name": "Cat Warehouse Lv.1",
+        "Desc": "Item stock limit +20%",
+        "LandformId": 104,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandMaowu001.png",
+        "Type": 1,
+        "Quality": 1,
+        "BuffIds": [
+            101,
+            111
+        ]
+    },
+    {
+        "Id": 1005,
+        "Name": "Area Discount (S)",
+        "Desc": "Island purchase price -10%",
+        "LandformId": 105,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormSuperLivChandeliers001.png",
+        "Type": 1,
+        "Quality": 1,
+        "BuffIds": [
+            102,
+            112
+        ]
+    },
+    {
+        "Id": 1006,
+        "Name": "Supervision Tower Lv.1",
+        "Desc": "Item production CRIT rate +5%, production CRIT effect +10%",
+        "LandformId": 106,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandTower001.png",
+        "Type": 1,
+        "Quality": 1,
+        "BuffIds": [
+            103,
+            104,
+            113,
+            114
+        ],
+        "ShowScores": [
+            100,
+            100,
+            100
+        ],
+        "ActualScores": [
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 1008,
+        "Name": "Artifact Workshop",
+        "Desc": "Produces Artifact Box x1 every 2 quarters",
+        "LandformId": 108,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormLuosaitaSushe001.png",
+        "Type": 3,
+        "Quality": 3,
+        "RefreshTurnCount": 2,
+        "RefreshType": 2,
+        "RefreshRewardDropId": 110
+    },
+    {
+        "Id": 1009,
+        "Name": "Lucky Star",
+        "Desc": "Item production CRIT rate +20%. Artifact Boxes have a slightly higher chance to grant Advanced Artifacts",
+        "LandformId": 109,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon03.png",
+        "Type": 1,
+        "Quality": 3,
+        "BuffIds": [
+            105,
+            106,
+            115,
+            116
+        ],
+        "ShowScores": [
+            100,
+            100,
+            100
+        ],
+        "ActualScores": [
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 2001,
+        "Name": "Coconut Factory Lv.2",
+        "Desc": "Produces <color=#a46800>Coconut</color> x{0} every quarter",
+        "DescParam": 90,
+        "LandformId": 112,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandJiagong001.png",
+        "Type": 3,
+        "Quality": 2,
+        "RefreshTurnCount": 1,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 2011
+    },
+    {
+        "Id": 2002,
+        "Name": "Rabbit Sawmill Lv.2",
+        "Desc": "Produces <color=#a46800>Wood</color> x{0} every quarter",
+        "DescParam": 150,
+        "LandformId": 113,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormCarrotWindmill001.png",
+        "Type": 3,
+        "Quality": 2,
+        "RefreshTurnCount": 1,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 2012
+    },
+    {
+        "Id": 2003,
+        "Name": "Petroleum Refinery Lv.2",
+        "Desc": "Produces <color=#a46800>Petroleum</color> x{0} every quarter",
+        "DescParam": 40,
+        "LandformId": 114,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon06.png",
+        "Type": 3,
+        "Quality": 2,
+        "RefreshTurnCount": 1,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 2013
+    },
+    {
+        "Id": 2004,
+        "Name": "Supervision Tower Lv.2",
+        "Desc": "Item production CRIT rate +10%, production CRIT effect +20%",
+        "LandformId": 117,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandTower001.png",
+        "Type": 1,
+        "Quality": 2,
+        "BuffIds": [
+            202,
+            203,
+            212,
+            213
+        ],
+        "ShowScores": [
+            200,
+            200,
+            200
+        ],
+        "ActualScores": [
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 2005,
+        "Name": "Moon Pound Lv.2",
+        "Desc": "Vegetable harvest buildings' profits +30%",
+        "LandformId": 110,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandShuichi001.png",
+        "Type": 1,
+        "Quality": 2,
+        "BuffIds": [
+            204,
+            214
+        ],
+        "ShowScores": [
+            150,
+            150,
+            150
+        ],
+        "ActualScores": [
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 2006,
+        "Name": "Cat Warehouse Lv.2",
+        "Desc": "Item stock limit +50%",
+        "LandformId": 115,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandMaowu001.png",
+        "Type": 1,
+        "Quality": 2,
+        "BuffIds": [
+            201,
+            211
+        ]
+    },
+    {
+        "Id": 2007,
+        "Name": "Area Discount (M)",
+        "Desc": "Island purchase price -30%",
+        "LandformId": 116,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormSuperLivChandeliers001.png",
+        "Type": 1,
+        "Quality": 2,
+        "BuffIds": [
+            205,
+            215
+        ]
+    },
+    {
+        "Id": 3001,
+        "Name": "Coconut Factory Lv.3",
+        "Desc": "Produces <color=#a46800>Coconut</color> x{0} every quarter",
+        "DescParam": 120,
+        "LandformId": 118,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandJiagong001.png",
+        "Type": 3,
+        "Quality": 3,
+        "RefreshTurnCount": 1,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 2021
+    },
+    {
+        "Id": 3002,
+        "Name": "Rabbit Sawmill Lv.3",
+        "Desc": "Produces <color=#a46800>Wood</color> x{0} every quarter",
+        "DescParam": 200,
+        "LandformId": 119,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormCarrotWindmill001.png",
+        "Type": 3,
+        "Quality": 3,
+        "RefreshTurnCount": 1,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 2022
+    },
+    {
+        "Id": 3003,
+        "Name": "Petroleum Refinery Lv.3",
+        "Desc": "Produces <color=#a46800>Petroleum</color> x{0} every quarter",
+        "DescParam": 55,
+        "LandformId": 120,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetBuildIcon06.png",
+        "Type": 3,
+        "Quality": 3,
+        "RefreshTurnCount": 1,
+        "RefreshType": 2,
+        "RefreshRewardGroupId": 2023
+    },
+    {
+        "Id": 3004,
+        "Name": "Cat Warehouse Lv.3",
+        "Desc": "Item stock limit +100%",
+        "LandformId": 121,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandMaowu001.png",
+        "Type": 1,
+        "Quality": 3,
+        "BuffIds": [
+            301,
+            311
+        ]
+    },
+    {
+        "Id": 3005,
+        "Name": "Supervision Tower Lv.3",
+        "Desc": "Item production CRIT rate +15%, production CRIT effect +30%",
+        "LandformId": 122,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandTower001.png",
+        "Type": 1,
+        "Quality": 3,
+        "BuffIds": [
+            302,
+            303,
+            312,
+            313
+        ],
+        "ShowScores": [
+            300,
+            300,
+            300
+        ],
+        "ActualScores": [
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 3006,
+        "Name": "Moon Pound Lv.3",
+        "Desc": "Vegetable harvest buildings' profits +60%",
+        "LandformId": 111,
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormIslandShuichi001.png",
+        "Type": 1,
+        "Quality": 3,
+        "BuffIds": [
+            304,
+            314
+        ],
+        "ShowScores": [
+            300,
+            300,
+            300
+        ],
+        "ActualScores": [
+            0,
+            0,
+            0
+        ]
+    }
+]

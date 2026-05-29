@@ -58,7 +58,7 @@ function XUiCerberusGameTipsV2P9:OnBtnEnterClick()
     -- 检查队伍
     XMVCA.XCerberusGame:ReInitXTeamV2P9(canSeleRole, self.ChapterId)
 
-    XLuaUiManager.PopThenOpen("UiBattleRoleRoom", self.StageId
+    XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(self.StageId
             , xTeam
             , require("XUi/XUiCerberusGame/Proxy/XUiCerberusGameBattleRoomProxy"))
 end

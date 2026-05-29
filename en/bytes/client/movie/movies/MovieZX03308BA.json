@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             36
@@ -30,14 +20,10 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "???",
             "Hey, Carl! Wake up! Come on!"
         ]
@@ -45,12 +31,7 @@
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "DialogDisable"
         ]
@@ -58,12 +39,7 @@
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1515
@@ -72,12 +48,7 @@
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             2759
@@ -86,92 +57,75 @@
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             ">>> Voice command detected, exiting sleep mode <<<",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
             1
         ]
     },
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             ">>> Visual module reconnected, date change detected, automatically generating log according to protocol <<<",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
             1
         ]
     },
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             ">>> Confirming... World time synchronized: 00:23 AM, UTC+4 <<<",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
             1
         ]
     },
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             ">>> Personality simulation online, load complete <<<",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
             1
         ]
     },
     {
         "Id": 11,
         "ActionId": 11,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             ">>> Saving log in text form <<<",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 12,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2759
         ]
@@ -179,12 +133,7 @@
     {
         "Id": 13,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             210
@@ -193,11 +142,7 @@
     {
         "Id": 14,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             999,
@@ -210,14 +155,10 @@
     {
         "Id": 15,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
+            "",
             1,
             0,
             0
@@ -226,12 +167,7 @@
     {
         "Id": 16,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory210.png"
         ]
@@ -239,104 +175,78 @@
     {
         "Id": 17,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Yesterday was the 23rd day since we left Murmansk Port."
         ]
     },
     {
         "Id": 18,
         "ActionId": 18,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "According to plan, the Moses-class icebreaker \"Naval\" left Barentshavet on the 22nd day and entered the border of the Greenland Sea and the Norwegian Sea."
         ]
     },
     {
         "Id": 19,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After periodically ingesting diphenhydramine, Michele's condition of sea sickness has improved."
         ]
     },
     {
         "Id": 20,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "It is the seventh time he has tried to paint on the decks, he persisted for thirty minutes this time, but ultimately had to stop due to the strong wind."
         ]
     },
     {
         "Id": 21,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "In the evening, Captain Fleming caught a cod that weighs two pounds and he enjoyed sashimi together with Michele."
         ]
     },
     {
         "Id": 22,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Daily alcohol consumption is 23% over the doctor's recommended amount. I received a verbal promise when trying to stop Michele from consuming more, but according to the past six months, there is an 89% chance that he will not keep his promise."
         ]
     },
     {
         "Id": 23,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "16:47 PM, UTC+4, Michele went back to his room to sleep, 21 minutes later than his average sleep time."
         ]
     },
     {
         "Id": 24,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "DialogDisable"
         ]
@@ -344,12 +254,7 @@
     {
         "Id": 25,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1515
@@ -358,28 +263,20 @@
     {
         "Id": 26,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             ">>> Recording complete, releasing cache <<<",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
             1
         ]
     },
     {
         "Id": 27,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
@@ -387,28 +284,23 @@
     {
         "Id": 28,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             ">>> Restarting log mode <<<",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 29,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             215
@@ -417,11 +309,7 @@
     {
         "Id": 30,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             999,
@@ -434,14 +322,10 @@
     {
         "Id": 31,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
+            "",
             1,
             0,
             0
@@ -450,12 +334,7 @@
     {
         "Id": 32,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory390.jpg"
         ]
@@ -463,12 +342,7 @@
     {
         "Id": 33,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500594
@@ -477,13 +351,8 @@
     {
         "Id": 34,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Carl",
@@ -494,13 +363,9 @@
     {
         "Id": 35,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "This is not your usual waking time, is there an emergency?",
             1
@@ -509,12 +374,7 @@
     {
         "Id": 36,
         "ActionId": 36,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
@@ -524,27 +384,18 @@
     {
         "Id": 37,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500460,
+            "",
             400
         ]
     },
     {
         "Id": 38,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Michele",
@@ -555,13 +406,9 @@
     {
         "Id": 39,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "You look very happy, Michele.",
             1
@@ -570,13 +417,9 @@
     {
         "Id": 40,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "I was still missing land a few days ago, but now my love is for the sea. Humans are really fickle, aren't we, Carl?",
             2
@@ -585,13 +428,9 @@
     {
         "Id": 41,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "Three months ago, you said you would \"stab your eyes with a pencil if you had to watch another one of those rubbish films by UC Entertainment,\" two weeks later, you secretly went to see the premier of \"Beyond the Wild\" by yourself.",
             1
@@ -600,13 +439,9 @@
     {
         "Id": 42,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "I think this supports your idea.",
             1
@@ -615,13 +450,9 @@
     {
         "Id": 43,
         "ActionId": 43,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "The main character wasn't that good but there was a little boy in one of the supporting roles who blew us away with his acting... Wait, how'd you know I went to watch it? I thought I hid it from you.",
             2
@@ -630,13 +461,9 @@
     {
         "Id": 44,
         "ActionId": 44,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "Different from humans, mechanoids have more ways to obtain information.",
             1
@@ -645,13 +472,9 @@
     {
         "Id": 45,
         "ActionId": 45,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "If the need arises, I can find out everything about you.",
             1
@@ -660,13 +483,9 @@
     {
         "Id": 46,
         "ActionId": 46,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "Haha, I guess that's true, you always remember everything.",
             2
@@ -675,13 +494,9 @@
     {
         "Id": 47,
         "ActionId": 47,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "Come, Carl, let's go to the decks.",
             2
@@ -690,52 +505,39 @@
     {
         "Id": 48,
         "ActionId": 48,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Michele pats his assistant on the shoulder, treating him like an old friend like he has for the past ten years."
         ]
     },
     {
         "Id": 49,
         "ActionId": 49,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The sun still has not risen above the horizon yet when they push open the cabin doors, but what appears in front of them is not pitch black darkness as they near the Arctic Circle, but a faint aurora dancing across the skies before dawn comes."
         ]
     },
     {
         "Id": 50,
         "ActionId": 50,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "A lot of crewmates are already on the deck. Today is the resting day on the Naval, a whole day of freedom."
         ]
     },
     {
         "Id": 51,
         "ActionId": 51,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "The Vikings used to think auroras were rays of light reflected from the goddess Valkyrie's armor. They called it \"God's skirt\". The aurora is believed to lead the souls of dead warriors to Valhalla, where they would bask in eternal glory.",
             2
@@ -744,13 +546,9 @@
     {
         "Id": 52,
         "ActionId": 52,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "This is an old myth passed on for generations way before the establishment of the Arctic Route Union.",
             1
@@ -759,13 +557,9 @@
     {
         "Id": 53,
         "ActionId": 53,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "Even now, a lot of people in the Union still believe it's true.",
             1
@@ -774,13 +568,9 @@
     {
         "Id": 54,
         "ActionId": 54,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "What about you, Carl? What do you think the aurora represents?",
             2
@@ -789,13 +579,9 @@
     {
         "Id": 55,
         "ActionId": 55,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "...",
             1
@@ -804,52 +590,39 @@
     {
         "Id": 56,
         "ActionId": 56,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Mechanoids do not believe in religion, so naturally, he does not believe there is a palace of the gods up above the auroras."
         ]
     },
     {
         "Id": 57,
         "ActionId": 57,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "It is merely a reaction brought on by plasma molecules, a visual effect caused by the ionization of molecules in the upper atmosphere when solar wind is captured by Earth's magnetic field."
         ]
     },
     {
         "Id": 58,
         "ActionId": 58,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "No matter how magnificent or mysterious something is in the eyes of humans, after understanding the mechanics behind it, it no longer retains its fascination."
         ]
     },
     {
         "Id": 59,
         "ActionId": 59,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "I don't know what kind of answer you're expecting, Michele.",
             1
@@ -858,26 +631,19 @@
     {
         "Id": 60,
         "ActionId": 60,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "He knows Michele. This artist has a personality that stands out even in the society he is in, Michele would not be asking this expecting an explanation on how auroras are formed."
         ]
     },
     {
         "Id": 61,
         "ActionId": 61,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "There's not really an answer I'm expecting to hear, Carl.",
             2
@@ -886,13 +652,9 @@
     {
         "Id": 62,
         "ActionId": 62,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "I just think that this would be good fuel for your paintings.",
             1
@@ -901,13 +663,9 @@
     {
         "Id": 63,
         "ActionId": 63,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "If you're a creator like me, would you want to paint this scene?",
             2
@@ -916,13 +674,9 @@
     {
         "Id": 64,
         "ActionId": 64,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "...I'm not sure, Michele.",
             1
@@ -931,13 +685,9 @@
     {
         "Id": 65,
         "ActionId": 65,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "As long as I download the relevant learning modules, I can use deep learning to master all drawing techniques, imitate the strokes of all famous painters, and even combine these skills to create paintings of auroras no one has ever seen before.",
             1
@@ -946,13 +696,9 @@
     {
         "Id": 66,
         "ActionId": 66,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "Yet, just as you disapprove of the mechanoids currently in art, that is not true \"creating,\" is it?",
             1
@@ -961,13 +707,9 @@
     {
         "Id": 67,
         "ActionId": 67,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "Imitation and coupling cannot birth new things, but that doesn't mean mechanoids are limited to that.",
             2
@@ -976,13 +718,9 @@
     {
         "Id": 68,
         "ActionId": 68,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "I look forward to the day when mechanoids create real art, but it may be too long of a wait for someone as old as me.",
             2
@@ -991,13 +729,9 @@
     {
         "Id": 69,
         "ActionId": 69,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "...Michele, please don't be pessimistic about your health situation.",
             1
@@ -1006,13 +740,9 @@
     {
         "Id": 70,
         "ActionId": 70,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "You still have a lot you want to do, a lot that you will do.",
             1
@@ -1021,13 +751,9 @@
     {
         "Id": 71,
         "ActionId": 71,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "You're even responsible for designing that city, it'll become your greatest work.",
             1
@@ -1036,13 +762,9 @@
     {
         "Id": 72,
         "ActionId": 72,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "This may just be the selfishness of an artist.",
             2
@@ -1051,13 +773,9 @@
     {
         "Id": 73,
         "ActionId": 73,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "Sometimes I feel that I just don't want to let go of the brush.",
             2
@@ -1066,13 +784,9 @@
     {
         "Id": 74,
         "ActionId": 74,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "But thanks to that, I'm still fighting to live longer.",
             2
@@ -1081,13 +795,9 @@
     {
         "Id": 75,
         "ActionId": 75,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "You're right, I still have things I want to do and I will do—heck, isn't that why we're on this ship in the first place!",
             2
@@ -1096,13 +806,9 @@
     {
         "Id": 76,
         "ActionId": 76,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "I'm sure you'll be able to return satisfied from this trip.",
             1
@@ -1111,26 +817,19 @@
     {
         "Id": 77,
         "ActionId": 77,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Carl lowers his head, as if praying for his master."
         ]
     },
     {
         "Id": 78,
         "ActionId": 78,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "Look, Carl! Something's coming!",
             2
@@ -1139,13 +838,9 @@
     {
         "Id": 79,
         "ActionId": 79,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "...",
             1
@@ -1154,51 +849,37 @@
     {
         "Id": 80,
         "ActionId": 80,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Pointing at the sea, Michele suppresses his excitement and whispers to Carl."
         ]
     },
     {
         "Id": 81,
         "ActionId": 81,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Carl's eyes do not capture anything abnormal. Unlike humans, mechanoids do not possess \"intuition\" or \"the sixth sense,\" they do not know what it feels like to have a premonition."
         ]
     },
     {
         "Id": 82,
         "ActionId": 82,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "He remains silent. His logical circuits cannot comprehend how he got the same conclusion as Michele, ignoring all the rigid rules of coding."
         ]
     },
     {
         "Id": 83,
         "ActionId": 83,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             36
@@ -1207,12 +888,7 @@
     {
         "Id": 84,
         "ActionId": 84,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1220,40 +896,30 @@
     {
         "Id": 85,
         "ActionId": 85,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 86,
         "ActionId": 86,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The deck quiets down as the crewmates all hold their breaths, their hands freeze midair while holding their alcohol."
         ]
     },
     {
         "Id": 87,
         "ActionId": 87,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "DialogDisable"
         ]
@@ -1261,11 +927,7 @@
     {
         "Id": 88,
         "ActionId": 88,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             2,
@@ -1275,12 +937,7 @@
     {
         "Id": 89,
         "ActionId": 89,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             855
@@ -1289,12 +946,7 @@
     {
         "Id": 90,
         "ActionId": 90,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             187
@@ -1303,11 +955,7 @@
     {
         "Id": 91,
         "ActionId": 91,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             999,
@@ -1320,14 +968,10 @@
     {
         "Id": 92,
         "ActionId": 92,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
+            "",
             1,
             0,
             0
@@ -1336,12 +980,7 @@
     {
         "Id": 93,
         "ActionId": 93,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory389.jpg"
         ]
@@ -1349,87 +988,63 @@
     {
         "Id": 94,
         "ActionId": 94,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Like the first cry of the world, a huge black-and-white silhouette jumps out of the water."
         ]
     },
     {
         "Id": 95,
         "ActionId": 95,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "A humpback whale. Huge waves are stirred up by the whale, splashing onto Carl and Michele, and also all the crewmates on the deck."
         ]
     },
     {
         "Id": 96,
         "ActionId": 96,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The crewmates cheer enthusiastically. They drink in glee, singing sea shanties from the Viking times, celebrating this scene they just witnessed under the auroras of dawn."
         ]
     },
     {
         "Id": 97,
         "ActionId": 97,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "After the Arctic Route Union was founded, all whale hunting activity was banned around the world, and the people devised a new rule."
         ]
     },
     {
         "Id": 98,
         "ActionId": 98,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The whales became new nautical guardians. Every time people see a whale, they celebrate to commemorate the encounter."
         ]
     },
     {
         "Id": 99,
         "ActionId": 99,
-        "NextActionId": 0,
-        "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 306
     },
     {
         "Id": 100,
         "ActionId": 100,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             999,
@@ -1442,14 +1057,10 @@
     {
         "Id": 101,
         "ActionId": 101,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
+            "",
             1,
             0,
             0
@@ -1458,12 +1069,7 @@
     {
         "Id": 102,
         "ActionId": 102,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory390.jpg"
         ]
@@ -1471,42 +1077,29 @@
     {
         "Id": 103,
         "ActionId": 103,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500594,
+            "",
             -400
         ]
     },
     {
         "Id": 104,
         "ActionId": 104,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500460,
+            "",
             400
         ]
     },
     {
         "Id": 105,
         "ActionId": 105,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Michele",
@@ -1517,13 +1110,9 @@
     {
         "Id": 106,
         "ActionId": 106,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "About that... there's not a definite biological explanation yet.",
             1
@@ -1532,13 +1121,9 @@
     {
         "Id": 107,
         "ActionId": 107,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "Maybe it is for communication, or it is a part of their respiration cycle. There are also people who think they get rid of parasites this way...",
             1
@@ -1547,13 +1132,9 @@
     {
         "Id": 108,
         "ActionId": 108,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "And do you know why humans celebrate it like this?",
             2
@@ -1562,13 +1143,9 @@
     {
         "Id": 109,
         "ActionId": 109,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "...I cannot fully comprehend the psychological reasons behind this action.",
             1
@@ -1577,13 +1154,9 @@
     {
         "Id": 110,
         "ActionId": 110,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "But, I think it may be similar to the feeling when people see the aurora.",
             1
@@ -1592,13 +1165,9 @@
     {
         "Id": 111,
         "ActionId": 111,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "When did you learn to be ambiguous, Carl?",
             2
@@ -1607,26 +1176,19 @@
     {
         "Id": 112,
         "ActionId": 112,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Michele smiles meaningfully at Carl. Carl once again finds himself unable to analyze Michele's current feelings."
         ]
     },
     {
         "Id": 113,
         "ActionId": 113,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "What we see isn't the whale, but \"ourselves.\"",
             2
@@ -1635,13 +1197,9 @@
     {
         "Id": 114,
         "ActionId": 114,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "We think we are observing the world around us, but in truth, we are all merely looking at ourselves.",
             2
@@ -1650,13 +1208,9 @@
     {
         "Id": 115,
         "ActionId": 115,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "Ourselves...?",
             1
@@ -1665,13 +1219,9 @@
     {
         "Id": 116,
         "ActionId": 116,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Michele",
             "What did you see, Carl? What was it that you saw, when the whale burst through the waters?",
             2
@@ -1680,13 +1230,9 @@
     {
         "Id": 117,
         "ActionId": 117,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "...",
             1
@@ -1695,13 +1241,9 @@
     {
         "Id": 118,
         "ActionId": 118,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "I...",
             1
@@ -1710,13 +1252,9 @@
     {
         "Id": 119,
         "ActionId": 119,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Carl",
             "I saw...",
             1
@@ -1725,12 +1263,7 @@
     {
         "Id": 120,
         "ActionId": 120,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             215
         ]
@@ -1738,27 +1271,20 @@
     {
         "Id": 121,
         "ActionId": 121,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             2,
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 122,
         "ActionId": 122,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1515
@@ -1767,12 +1293,7 @@
     {
         "Id": 123,
         "ActionId": 123,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             36
@@ -1781,28 +1302,24 @@
     {
         "Id": 124,
         "ActionId": 124,
-        "NextActionId": 0,
         "Type": 304,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             ">>> Recording stopped <<<",
             "ffffffff",
+            "",
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 125,
         "ActionId": 125,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 300.0,
         "Params": [
             "DialogDisable"
@@ -1811,13 +1328,8 @@
     {
         "Id": 126,
         "ActionId": 126,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory675.jpg"
         ]
@@ -1825,12 +1337,7 @@
     {
         "Id": 127,
         "ActionId": 127,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             201
@@ -1839,26 +1346,18 @@
     {
         "Id": 128,
         "ActionId": 128,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The memory data finishes playing."
         ]
     },
     {
         "Id": 129,
         "ActionId": 129,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500576,
@@ -1868,12 +1367,7 @@
     {
         "Id": 130,
         "ActionId": 130,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ayla",
@@ -1884,26 +1378,19 @@
     {
         "Id": 131,
         "ActionId": 131,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Ayla opens her eyes and sees the other three looking at her with bated breath."
         ]
     },
     {
         "Id": 132,
         "ActionId": 132,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "Why is everyone so nervous?",
             1
@@ -1912,12 +1399,7 @@
     {
         "Id": 133,
         "ActionId": 133,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
@@ -1927,27 +1409,18 @@
     {
         "Id": 134,
         "ActionId": 134,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500586,
+            "",
             -400
         ]
     },
     {
         "Id": 135,
         "ActionId": 135,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Trojan",
@@ -1958,12 +1431,7 @@
     {
         "Id": 136,
         "ActionId": 136,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             10
@@ -1972,13 +1440,9 @@
     {
         "Id": 137,
         "ActionId": 137,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "I didn't see you guys worrying before when you picked me to read it.",
             1
@@ -1987,27 +1451,18 @@
     {
         "Id": 138,
         "ActionId": 138,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500581,
+            "",
             400
         ]
     },
     {
         "Id": 139,
         "ActionId": 139,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500560,
@@ -2018,12 +1473,7 @@
     {
         "Id": 140,
         "ActionId": 140,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lena",
@@ -2034,12 +1484,7 @@
     {
         "Id": 141,
         "ActionId": 141,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1
@@ -2048,13 +1493,9 @@
     {
         "Id": 142,
         "ActionId": 142,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lena",
             "But if something did happen, our \"reliable\" commandant would've been the first to dive into your M.I.N.D. to save you.",
             1
@@ -2063,13 +1504,9 @@
     {
         "Id": 143,
         "ActionId": 143,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Sica",
             "Ayla, what did you see?",
             2
@@ -2078,26 +1515,20 @@
     {
         "Id": 144,
         "ActionId": 144,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 145,
         "ActionId": 145,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500576,
@@ -2107,12 +1538,7 @@
     {
         "Id": 146,
         "ActionId": 146,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ayla",
@@ -2123,26 +1549,19 @@
     {
         "Id": 147,
         "ActionId": 147,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Ayla tells the others what she saw."
         ]
     },
     {
         "Id": 148,
         "ActionId": 148,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "Although I had a feeling, I didn't expect to actually see Michele from when he was still alive.",
             1
@@ -2151,27 +1570,18 @@
     {
         "Id": 149,
         "ActionId": 149,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500581,
+            "",
             400
         ]
     },
     {
         "Id": 150,
         "ActionId": 150,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500560,
@@ -2182,12 +1592,7 @@
     {
         "Id": 151,
         "ActionId": 151,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Sica",
@@ -2198,13 +1603,9 @@
     {
         "Id": 152,
         "ActionId": 152,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Lena",
             "If he is Cervantes... then that would explain how he found this city before humans did.",
             1
@@ -2213,26 +1614,20 @@
     {
         "Id": 153,
         "ActionId": 153,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 154,
         "ActionId": 154,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500586
@@ -2241,12 +1636,7 @@
     {
         "Id": 155,
         "ActionId": 155,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Trojan",
@@ -2257,13 +1647,9 @@
     {
         "Id": 156,
         "ActionId": 156,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Trojan",
             "If that is true, what happened to him in the past few decades that led to him appearing in front of us like this...?",
             1
@@ -2272,12 +1658,7 @@
     {
         "Id": 157,
         "ActionId": 157,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500576,
@@ -2287,12 +1668,7 @@
     {
         "Id": 158,
         "ActionId": 158,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ayla",
@@ -2303,13 +1679,9 @@
     {
         "Id": 159,
         "ActionId": 159,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "Just because he saw a frightening battle, and because he had seen the previous glory of the Arctic Route Union, so he wanted to record it down permanently?",
             1
@@ -2318,12 +1690,7 @@
     {
         "Id": 160,
         "ActionId": 160,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500560,
@@ -2333,12 +1700,7 @@
     {
         "Id": 161,
         "ActionId": 161,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Sica",
@@ -2349,12 +1711,7 @@
     {
         "Id": 162,
         "ActionId": 162,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500576,
@@ -2364,12 +1721,7 @@
     {
         "Id": 163,
         "ActionId": 163,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ayla",
@@ -2380,13 +1732,9 @@
     {
         "Id": 164,
         "ActionId": 164,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "Although I currently don't have any ideas...",
             1
@@ -2395,26 +1743,20 @@
     {
         "Id": 165,
         "ActionId": 165,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 166,
         "ActionId": 166,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2422,50 +1764,37 @@
     {
         "Id": 167,
         "ActionId": 167,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Even though it was just a scene from a memory, and that it was seen through someone else's eyes..."
         ]
     },
     {
         "Id": 168,
         "ActionId": 168,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The huge shadow of the whale blocking the breaking of dawn, people breaking through the ice while singing, heading toward the tip of the world."
         ]
     },
     {
         "Id": 169,
         "ActionId": 169,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The ruins of the Naval silently stand atop of the manmade ice, they may not be replicas at all, but actual pieces of the ocean liner he had been on."
         ]
     },
     {
         "Id": 170,
         "ActionId": 170,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             999,
@@ -2478,14 +1807,10 @@
     {
         "Id": 171,
         "ActionId": 171,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
+            "",
             1,
             0,
             0
@@ -2494,12 +1819,7 @@
     {
         "Id": 172,
         "ActionId": 172,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgUi/BgFightLoading9.jpg"
         ]
@@ -2507,24 +1827,17 @@
     {
         "Id": 173,
         "ActionId": 173,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The Arctic Route Union's last line of defense—the centaur galloping on the snowfields."
         ]
     },
     {
         "Id": 174,
         "ActionId": 174,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             999,
@@ -2537,14 +1850,10 @@
     {
         "Id": 175,
         "ActionId": 175,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
+            "",
             1,
             0,
             0
@@ -2553,12 +1862,7 @@
     {
         "Id": 176,
         "ActionId": 176,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory675.jpg"
         ]
@@ -2566,48 +1870,32 @@
     {
         "Id": 177,
         "ActionId": 177,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She attacked the white-haired Construct countless times and became a dome that sheltered everyone when the cave collapsed."
         ]
     },
     {
         "Id": 178,
         "ActionId": 178,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Her replica was put here as the last guardian of these images of the \"past.\""
         ]
     },
     {
         "Id": 179,
         "ActionId": 179,
-        "NextActionId": 0,
-        "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 306
     },
     {
         "Id": 180,
         "ActionId": 180,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500576
@@ -2616,12 +1904,7 @@
     {
         "Id": 181,
         "ActionId": 181,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ayla",
@@ -2632,12 +1915,7 @@
     {
         "Id": 182,
         "ActionId": 182,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.25,
@@ -2647,27 +1925,18 @@
     {
         "Id": 183,
         "ActionId": 183,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             500581,
+            "",
             -400
         ]
     },
     {
         "Id": 184,
         "ActionId": 184,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Lena",
@@ -2678,13 +1947,9 @@
     {
         "Id": 185,
         "ActionId": 185,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "It's just a feeling, nothing for sure.",
             1
@@ -2693,13 +1958,9 @@
     {
         "Id": 186,
         "ActionId": 186,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "A well-planned musical would put its dramatic plot twist in the very end. All reviews before the end do not hold water.",
             1
@@ -2708,13 +1969,9 @@
     {
         "Id": 187,
         "ActionId": 187,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "This museum is Cervantes' \"art.\" We have to at least see it in full before jumping to conclusions.",
             1
@@ -2723,13 +1980,9 @@
     {
         "Id": 188,
         "ActionId": 188,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "This is not only out of respect for the creator...",
             1
@@ -2738,13 +1991,9 @@
     {
         "Id": 189,
         "ActionId": 189,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "Since he wants something from me who belongs to the WGAA...",
             1
@@ -2753,14 +2002,11 @@
     {
         "Id": 190,
         "ActionId": 190,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ayla",
             "Then I have to respond to him in the \"WGAA\" way.",
             1

@@ -1,0 +1,230 @@
+[
+    {
+        "Id": 10101,
+        "GroupId": 1,
+        "Desc": "Perhaps there is nothing in the end, but does that mean it is pointless?",
+        "BtnTag": [
+            10102
+        ]
+    },
+    {
+        "Id": 10102,
+        "GroupId": 1,
+        "Desc": "Even if you win, this may not change anything. Is this really what you want to do?",
+        "BtnStr": [
+            "Decline",
+            "Accept"
+        ],
+        "BtnTag": [
+            10201,
+            10301
+        ]
+    },
+    {
+        "Id": 10201,
+        "GroupId": 1,
+        "Desc": "If you decide to stick to your choice...",
+        "BtnStr": [
+            "Select quit",
+            "Continue fighting"
+        ],
+        "BtnTag": [
+            10202,
+            10301
+        ]
+    },
+    {
+        "Id": 10202,
+        "GroupId": 1,
+        "Type": 1
+    },
+    {
+        "Id": 10301,
+        "GroupId": 1,
+        "Type": 2
+    },
+    {
+        "Id": 20101,
+        "GroupId": 2,
+        "Desc": "It may not be possible... to fight against fate in the end.",
+        "BtnTag": [
+            20102
+        ]
+    },
+    {
+        "Id": 20102,
+        "GroupId": 2,
+        "ShowBullet": 1,
+        "Desc": "Even if unwilling, even if angry, perhaps this will result in nothing.",
+        "BtnTag": [
+            20103
+        ]
+    },
+    {
+        "Id": 20103,
+        "GroupId": 2,
+        "Desc": "Is this really worth your persistence?",
+        "BtnStr": [
+            "Decline",
+            "Accept"
+        ],
+        "BtnTag": [
+            20201,
+            20301
+        ]
+    },
+    {
+        "Id": 20201,
+        "GroupId": 2,
+        "Desc": "If that is what you want, so be it.",
+        "BtnStr": [
+            "Accept",
+            "Decline"
+        ],
+        "BtnTag": [
+            20202,
+            20301
+        ]
+    },
+    {
+        "Id": 20202,
+        "GroupId": 2,
+        "Type": 1
+    },
+    {
+        "Id": 20301,
+        "GroupId": 2,
+        "Desc": "If you decide to stick to your choice...",
+        "BtnStr": [
+            "Decline",
+            "Accept"
+        ],
+        "BtnTag": [
+            20201,
+            20302
+        ]
+    },
+    {
+        "Id": 20302,
+        "GroupId": 2,
+        "Type": 2,
+        "BtnStr": [
+            "Decline",
+            "Accept"
+        ],
+        "BtnTag": [
+            20201
+        ]
+    },
+    {
+        "Id": 30101,
+        "GroupId": 3,
+        "Desc": "To make the impossible possible by relying on others...",
+        "BtnTag": [
+            30102
+        ]
+    },
+    {
+        "Id": 30102,
+        "GroupId": 3,
+        "Desc": "If it was the commandant... Perhaps it's not that hard to understand.",
+        "BtnTag": [
+            30103
+        ]
+    },
+    {
+        "Id": 30103,
+        "GroupId": 3,
+        "Desc": "Somewhere on the network, perhaps there are other commandants caught in a struggle.",
+        "BtnTag": [
+            30104
+        ]
+    },
+    {
+        "Id": 30104,
+        "GroupId": 3,
+        "Desc": "Similar to just now, you can make the same \"sacrifice\" to help them.",
+        "BtnStr": [
+            "Decline",
+            "Accept"
+        ],
+        "BtnTag": [
+            30201,
+            30301
+        ]
+    },
+    {
+        "Id": 30201,
+        "GroupId": 3,
+        "Desc": "Well, cowardice and weakness may happen if that's what you wish.",
+        "BtnStr": [
+            "Leave",
+            "Make a Sacrifice"
+        ],
+        "BtnTag": [
+            30202,
+            30301
+        ]
+    },
+    {
+        "Id": 30202,
+        "GroupId": 3,
+        "Type": 1
+    },
+    {
+        "Id": 30301,
+        "GroupId": 3,
+        "Desc": "Making such a \"sacrifice\" means changing something forever. Do you accept it?",
+        "BtnStr": [
+            "Decline",
+            "Accept"
+        ],
+        "BtnTag": [
+            30201,
+            30302
+        ]
+    },
+    {
+        "Id": 30302,
+        "GroupId": 3,
+        "Desc": "And you have no right to decide what kind of people will benefit from this \"sacrifice.\" Do you accept it?",
+        "BtnStr": [
+            "Decline",
+            "Accept"
+        ],
+        "BtnTag": [
+            30201,
+            30303
+        ]
+    },
+    {
+        "Id": 30303,
+        "GroupId": 3,
+        "Desc": "Well, is there anything else you want to say?",
+        "BtnStr": [
+            "Edit Message"
+        ],
+        "BtnTag": [
+            30304
+        ]
+    },
+    {
+        "Id": 30304,
+        "GroupId": 3,
+        "Type": 2
+    },
+    {
+        "Id": 40101,
+        "GroupId": 4,
+        "Desc": "Your sacrifice and will have been recognized.",
+        "BtnExStr": "Press anywhere to leave",
+        "BtnTag": [
+            40102
+        ]
+    },
+    {
+        "Id": 40102,
+        "GroupId": 4,
+        "Type": 2
+    }
+]

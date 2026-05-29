@@ -2,13 +2,8 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory669.jpg"
         ]
@@ -16,12 +11,7 @@
     {
         "Id": 2,
         "ActionId": 2,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             208
@@ -30,15 +20,12 @@
     {
         "Id": 3,
         "ActionId": 3,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500488,
+            "",
+            "",
             -250,
             400
         ]
@@ -46,13 +33,8 @@
     {
         "Id": 4,
         "ActionId": 4,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Event Staff",
@@ -63,26 +45,19 @@
     {
         "Id": 5,
         "ActionId": 5,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As you walk through the streets of Constellia, a mechanoid suddenly steps in front of you, cheerfully handing over a flyer."
         ]
     },
     {
         "Id": 6,
         "ActionId": 6,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Event Staff",
             "According to research, the glow of a sunset fades slowly after the sun goes down. But if you run toward the horizon during that time, it can create the visual illusion that the colors linger just a little longer.",
             1
@@ -91,13 +66,9 @@
     {
         "Id": 7,
         "ActionId": 7,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Event Staff",
             "To help with that, we've set up a special viewing platform and a scenic running path that points straight toward the horizon. You'll find all the details on the back of the flyer. We'd love to have you join us!",
             1
@@ -106,12 +77,7 @@
     {
         "Id": 8,
         "ActionId": 8,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -119,12 +85,7 @@
     {
         "Id": 9,
         "ActionId": 9,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -132,49 +93,32 @@
     {
         "Id": 10,
         "ActionId": 10,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You take the flyer and glance at the location. The terminal shows it isn't far. A quick check of the time confirms it's close to dusk. If you head over now, you should catch the sunset just in time."
         ]
     },
     {
         "Id": 11,
         "ActionId": 11,
-        "NextActionId": 0,
-        "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 306
     },
     {
         "Id": 12,
         "ActionId": 12,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "The sunset, huh..."
         ]
     },
     {
         "Id": 13,
         "ActionId": 13,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -183,12 +127,7 @@
     {
         "Id": 14,
         "ActionId": 14,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
@@ -196,66 +135,51 @@
     {
         "Id": 15,
         "ActionId": 15,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500380,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 16,
         "ActionId": 16,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "You repeat the words under your breath, and without thinking, a certain pink-haired Construct comes to mind."
         ]
     },
     {
         "Id": 17,
         "ActionId": 17,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 18,
         "ActionId": 18,
-        "NextActionId": 0,
-        "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 306
     },
     {
         "Id": 19,
         "ActionId": 19,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1000.0,
         "Params": [
             1,
@@ -265,12 +189,7 @@
     {
         "Id": 20,
         "ActionId": 20,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             5068
@@ -279,12 +198,7 @@
     {
         "Id": 21,
         "ActionId": 21,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory106.png"
         ]
@@ -292,43 +206,34 @@
     {
         "Id": 22,
         "ActionId": 22,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500380,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 23,
         "ActionId": 23,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
             "You arrive at the event site, and just as expected, Ishmael is already there. She's standing at the edge of the platform, one hand resting lightly on the railing, quietly watching the sky at the far end of the sea."
         ]
     },
     {
         "Id": 24,
         "ActionId": 24,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "You're here. Come closer, I found a perfect spot.",
             1
@@ -337,13 +242,9 @@
     {
         "Id": 25,
         "ActionId": 25,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "Look at that. The whole sky painted in color... and the ocean sparkling beneath it. It's all right here in front of us.",
             1
@@ -352,26 +253,20 @@
     {
         "Id": 26,
         "ActionId": 26,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 27,
         "ActionId": 27,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -379,26 +274,18 @@
     {
         "Id": 28,
         "ActionId": 28,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Her voice is calm, like always. It's almost as if she knew you'd show up. You never plan these encounters, and you never go looking for her. But somehow, every time you wish you could see her, she's already there."
         ]
     },
     {
         "Id": 29,
         "ActionId": 29,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
             "Assets/Product/Texture/Image/BgStory/BgStory783.jpg",
@@ -410,27 +297,19 @@
     {
         "Id": 30,
         "ActionId": 30,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 2500.0,
         "Params": [
             "0|-100|-200",
             2,
+            "",
             3
         ]
     },
     {
         "Id": 31,
         "ActionId": 31,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory783.jpg"
         ]
@@ -438,12 +317,7 @@
     {
         "Id": 32,
         "ActionId": 32,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|-100|-200",
             0
@@ -452,12 +326,7 @@
     {
         "Id": 33,
         "ActionId": 33,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999
         ]
@@ -465,51 +334,35 @@
     {
         "Id": 34,
         "ActionId": 34,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|0|0",
             0,
+            "",
             3
         ]
     },
     {
         "Id": 35,
         "ActionId": 35,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You step up beside her. Following her gaze, you see the sky filled with streaks of crimson and gold, flowing gently downward, casting a luminous glow over the endless sea."
         ]
     },
     {
         "Id": 36,
         "ActionId": 36,
-        "NextActionId": 0,
-        "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 306
     },
     {
         "Id": 37,
         "ActionId": 37,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 550.0,
         "Params": [
             999,
@@ -522,12 +375,7 @@
     {
         "Id": 38,
         "ActionId": 38,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999
         ]
@@ -535,12 +383,7 @@
     {
         "Id": 39,
         "ActionId": 39,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory106.png"
         ]
@@ -548,12 +391,7 @@
     {
         "Id": 40,
         "ActionId": 40,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500380
@@ -562,13 +400,8 @@
     {
         "Id": 41,
         "ActionId": 41,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ishmael",
@@ -579,27 +412,20 @@
     {
         "Id": 42,
         "ActionId": 42,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Ishmael hums an unfamiliar tune as the sunset light warms her face. Mysterious and distant as she always is, something about her in this moment feels unexpectedly intimate."
         ]
     },
     {
         "Id": 43,
         "ActionId": 43,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "You really like sunsets, don't you?",
             44
         ]
@@ -607,40 +433,31 @@
     {
         "Id": 44,
         "ActionId": 44,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 45,
         "ActionId": 45,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png",
+            "",
+            "",
             4
         ]
     },
     {
         "Id": 46,
         "ActionId": 46,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -649,11 +466,7 @@
     {
         "Id": 47,
         "ActionId": 47,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 550.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory923.jpg"
@@ -662,12 +475,7 @@
     {
         "Id": 48,
         "ActionId": 48,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -676,11 +484,7 @@
     {
         "Id": 49,
         "ActionId": 49,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 550.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory394.jpg"
@@ -689,12 +493,7 @@
     {
         "Id": 50,
         "ActionId": 50,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -703,11 +502,7 @@
     {
         "Id": 51,
         "ActionId": 51,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 5000.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory263.png"
@@ -716,27 +511,22 @@
     {
         "Id": 52,
         "ActionId": 52,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You realize that she always stops to watch the sunset. Whether she's on a mountaintop, by the sea, or under Babylonia's artificial sky, she never misses that beautiful moment when the sunlight begins to fade."
         ]
     },
     {
         "Id": 53,
         "ActionId": 53,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
+            "",
             4,
             1
         ]
@@ -744,12 +534,7 @@
     {
         "Id": 54,
         "ActionId": 54,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -758,12 +543,7 @@
     {
         "Id": 55,
         "ActionId": 55,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory106.png"
         ]
@@ -771,12 +551,7 @@
     {
         "Id": 56,
         "ActionId": 56,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500380
@@ -785,12 +560,7 @@
     {
         "Id": 57,
         "ActionId": 57,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ishmael",
@@ -801,26 +571,19 @@
     {
         "Id": 58,
         "ActionId": 58,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As if reading your mind, she turns to you. There's a soft smile in her eyes."
         ]
     },
     {
         "Id": 59,
         "ActionId": 59,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "Maybe it's the ever-changing beauty of nature. Maybe it's how the scenery reflects their thoughts. Or maybe the scene helps them keep a certain memory alive.",
             1
@@ -829,13 +592,9 @@
     {
         "Id": 60,
         "ActionId": 60,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "So, Gray Raven, what do you think my reason is?",
             1
@@ -844,26 +603,19 @@
     {
         "Id": 61,
         "ActionId": 61,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Whenever she watches the sunset, her eyes always drift far beyond the sky in front of her, as if they're searching for something out of reach..."
         ]
     },
     {
         "Id": 62,
         "ActionId": 62,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Seems like there's a story behind it.",
             63
         ]
@@ -871,25 +623,17 @@
     {
         "Id": 63,
         "ActionId": 63,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She doesn't answer—just smiles quietly, which pretty much confirms your guess."
         ]
     },
     {
         "Id": 64,
         "ActionId": 64,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -897,12 +641,7 @@
     {
         "Id": 65,
         "ActionId": 65,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
@@ -914,25 +653,17 @@
     {
         "Id": 66,
         "ActionId": 66,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She looks toward the horizon. The colors are already starting to fade. After a moment of silence, she speaks again."
         ]
     },
     {
         "Id": 67,
         "ActionId": 67,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500380
@@ -941,12 +672,7 @@
     {
         "Id": 68,
         "ActionId": 68,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ishmael",
@@ -957,13 +683,9 @@
     {
         "Id": 69,
         "ActionId": 69,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "End?",
             70
         ]
@@ -971,12 +693,7 @@
     {
         "Id": 70,
         "ActionId": 70,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             12
@@ -985,13 +702,9 @@
     {
         "Id": 71,
         "ActionId": 71,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "At first, I thought it was simple. Today's sunset fades, tomorrow's comes right on time. Day after day. Always there, never changing.",
             1
@@ -1000,13 +713,9 @@
     {
         "Id": 72,
         "ActionId": 72,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "But later, I realized that nothing in this world lasts forever. Even the things we believe will never change—given enough time, they wear away like stone turning to sand and eventually vanish.",
             1
@@ -1015,12 +724,7 @@
     {
         "Id": 73,
         "ActionId": 73,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1028,13 +732,9 @@
     {
         "Id": 74,
         "ActionId": 74,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "So maybe I watch sunsets because they remind me of things that will eventually disappear. Or maybe... because it feels like a small way to hold on to something that's slowly slipping away. Probably both.",
             1
@@ -1043,26 +743,20 @@
     {
         "Id": 75,
         "ActionId": 75,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 76,
         "ActionId": 76,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
@@ -1074,38 +768,27 @@
     {
         "Id": 77,
         "ActionId": 77,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "The last streak of crimson sinks beneath the horizon. Night falls slowly, like ink spilling across the sky. The light fades from her eyes, leaving only a quiet calm, deep and still as the ocean."
         ]
     },
     {
         "Id": 78,
         "ActionId": 78,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "In that silence, Ishmael seems to come back from wherever her thoughts had drifted."
         ]
     },
     {
         "Id": 79,
         "ActionId": 79,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500380
@@ -1114,12 +797,7 @@
     {
         "Id": 80,
         "ActionId": 80,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ishmael",
@@ -1130,14 +808,10 @@
     {
         "Id": 81,
         "ActionId": 81,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "Then we should go too.",
             1
@@ -1146,26 +820,20 @@
     {
         "Id": 82,
         "ActionId": 82,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 83,
         "ActionId": 83,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1173,11 +841,7 @@
     {
         "Id": 84,
         "ActionId": 84,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1000.0,
         "Params": [
             1,
@@ -1187,12 +851,7 @@
     {
         "Id": 85,
         "ActionId": 85,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4638
@@ -1201,14 +860,10 @@
     {
         "Id": 86,
         "ActionId": 86,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
+            "",
             0,
             1,
             0
@@ -1217,12 +872,7 @@
     {
         "Id": 87,
         "ActionId": 87,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory668.jpg"
         ]
@@ -1230,39 +880,28 @@
     {
         "Id": 88,
         "ActionId": 88,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "AniZhuanchangEnd",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Ishmael steps away from the railing. The streetlights along the path begin to flicker on as she starts walking slowly toward the exit, her steps casting long shadows."
         ]
     },
     {
         "Id": 89,
         "ActionId": 89,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "But you stay where you are, not following her. For some reason, the look on Ishmael's face just now won't leave your mind. It doesn't feel right to end the day like this."
         ]
     },
     {
         "Id": 90,
         "ActionId": 90,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1504
@@ -1271,36 +910,23 @@
     {
         "Id": 91,
         "ActionId": 91,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Someone runs past, and it's only then that you notice the path ahead is full of people sprinting toward the sunset. As you watch them go, an idea suddenly hits you."
         ]
     },
     {
         "Id": 92,
         "ActionId": 92,
-        "NextActionId": 0,
-        "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 306
     },
     {
         "Id": 93,
         "ActionId": 93,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             4638
         ]
@@ -1308,12 +934,7 @@
     {
         "Id": 94,
         "ActionId": 94,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             181
@@ -1322,13 +943,9 @@
     {
         "Id": 95,
         "ActionId": 95,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael!",
             96
         ]
@@ -1336,12 +953,7 @@
     {
         "Id": 96,
         "ActionId": 96,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500380,
@@ -1351,13 +963,8 @@
     {
         "Id": 97,
         "ActionId": 97,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ishmael",
@@ -1368,12 +975,7 @@
     {
         "Id": 98,
         "ActionId": 98,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4044
@@ -1382,27 +984,20 @@
     {
         "Id": 99,
         "ActionId": 99,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             1,
             0.25,
+            "",
+            "",
             -100
         ]
     },
     {
         "Id": 100,
         "ActionId": 100,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1410,27 +1005,20 @@
     {
         "Id": 101,
         "ActionId": 101,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You grab Ishmael's hand."
         ]
     },
     {
         "Id": 102,
         "ActionId": 102,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Let's go chase the sunset!",
             103
         ]
@@ -1438,12 +1026,7 @@
     {
         "Id": 103,
         "ActionId": 103,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4331
@@ -1452,12 +1035,7 @@
     {
         "Id": 104,
         "ActionId": 104,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             2617
@@ -1466,12 +1044,7 @@
     {
         "Id": 105,
         "ActionId": 105,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab",
             2
@@ -1480,11 +1053,7 @@
     {
         "Id": 106,
         "ActionId": 106,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 550.0,
         "Params": [
             "0|0|-200",
@@ -1494,26 +1063,18 @@
     {
         "Id": 107,
         "ActionId": 107,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As your lungs protest, the breath you've been barely holding together slips, and your body can't keep up the pace. You slow down, first to a jog, then a walk, until you finally stop."
         ]
     },
     {
         "Id": 108,
         "ActionId": 108,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|-100|-150",
             1
@@ -1522,26 +1083,18 @@
     {
         "Id": 109,
         "ActionId": 109,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Panting heavily, you lift your head. Ishmael is still beside you, but the rest of the path is empty. Looks like you unknowingly left everyone else behind in your full-on sprint."
         ]
     },
     {
         "Id": 110,
         "ActionId": 110,
-        "NextActionId": 0,
         "Type": 402,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2617
         ]
@@ -1549,11 +1102,7 @@
     {
         "Id": 111,
         "ActionId": 111,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 550.0,
         "Params": [
             999,
@@ -1566,12 +1115,7 @@
     {
         "Id": 112,
         "ActionId": 112,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999
         ]
@@ -1579,12 +1123,7 @@
     {
         "Id": 113,
         "ActionId": 113,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory785.jpg"
         ]
@@ -1592,41 +1131,30 @@
     {
         "Id": 114,
         "ActionId": 114,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "And yet, no matter how hard you run, the sky on the horizon keeps dimming. The fading sunset doesn't pause, not even for a second."
         ]
     },
     {
         "Id": 115,
         "ActionId": 115,
-        "NextActionId": 0,
         "Type": 505,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab"
         ]
     },
     {
         "Id": 116,
         "ActionId": 116,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Knew it... there's no catching up...",
             117
         ]
@@ -1634,12 +1162,7 @@
     {
         "Id": 117,
         "ActionId": 117,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500380
@@ -1648,13 +1171,8 @@
     {
         "Id": 118,
         "ActionId": 118,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ishmael",
@@ -1665,27 +1183,19 @@
     {
         "Id": 119,
         "ActionId": 119,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             0.5,
+            "",
+            "",
             -50
         ]
     },
     {
         "Id": 120,
         "ActionId": 120,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             1543
@@ -1694,25 +1204,17 @@
     {
         "Id": 121,
         "ActionId": 121,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Your full sprint clearly didn't faze Ishmael. Her voice is steady, as always. While she talks, she gently pats your back, helping calm your breathing."
         ]
     },
     {
         "Id": 122,
         "ActionId": 122,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             12
@@ -1721,13 +1223,9 @@
     {
         "Id": 123,
         "ActionId": 123,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "You knew it was impossible. So why did you run?",
             1
@@ -1736,27 +1234,20 @@
     {
         "Id": 124,
         "ActionId": 124,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "She tilts her head slightly, looking right at you. There's a hint of curiosity in her silvery eyes."
         ]
     },
     {
         "Id": 125,
         "ActionId": 125,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "I just thought... I'd run anyway.",
             126
         ]
@@ -1764,13 +1255,9 @@
     {
         "Id": 126,
         "ActionId": 126,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Doesn't matter if I catch up. What matters is getting moving...",
             127
         ]
@@ -1778,12 +1265,7 @@
     {
         "Id": 127,
         "ActionId": 127,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1791,40 +1273,30 @@
     {
         "Id": 128,
         "ActionId": 128,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Ishmael doesn't say anything. She just keeps looking at you, long enough that you start wondering if pulling her into this on such a flimsy excuse was a bit ridiculous. Then, suddenly, she smiles."
         ]
     },
     {
         "Id": 129,
         "ActionId": 129,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "It's barely there, just the corner of her mouth turning up. But for some reason, it feels like she's smiling from the heart."
         ]
     },
     {
         "Id": 130,
         "ActionId": 130,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "You're still exactly the same...",
             1
@@ -1833,13 +1305,9 @@
     {
         "Id": 131,
         "ActionId": 131,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "...?",
             132
         ]
@@ -1847,26 +1315,19 @@
     {
         "Id": 132,
         "ActionId": 132,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Ishmael doesn't explain. Instead, she looks back to the sky, where the last traces of color remain. After watching in silence for a moment, she speaks again, her tone light and clear."
         ]
     },
     {
         "Id": 133,
         "ActionId": 133,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "There's a simpler way to hold on to the sunset than chasing it.",
             1
@@ -1875,13 +1336,9 @@
     {
         "Id": 134,
         "ActionId": 134,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "Gray Raven, hold tight.",
             1
@@ -1890,27 +1347,19 @@
     {
         "Id": 135,
         "ActionId": 135,
-        "NextActionId": 0,
         "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             1,
+            "",
+            "",
             -100
         ]
     },
     {
         "Id": 136,
         "ActionId": 136,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1918,25 +1367,17 @@
     {
         "Id": 137,
         "ActionId": 137,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Ishmael moves in closer and slips her arm around your waist, like a dance partner."
         ]
     },
     {
         "Id": 138,
         "ActionId": 138,
-        "NextActionId": 0,
         "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -1944,12 +1385,7 @@
     {
         "Id": 139,
         "ActionId": 139,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|-100|-100",
             0.4
@@ -1958,12 +1394,7 @@
     {
         "Id": 140,
         "ActionId": 140,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             5517
@@ -1972,26 +1403,18 @@
     {
         "Id": 141,
         "ActionId": 141,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Before you can say anything, the ground vanishes beneath your feet."
         ]
     },
     {
         "Id": 142,
         "ActionId": 142,
-        "NextActionId": 0,
         "Type": 111,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab"
@@ -2000,12 +1423,7 @@
     {
         "Id": 143,
         "ActionId": 143,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -2014,11 +1432,7 @@
     {
         "Id": 144,
         "ActionId": 144,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 550.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory534.jpg"
@@ -2027,12 +1441,7 @@
     {
         "Id": 145,
         "ActionId": 145,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -2041,12 +1450,7 @@
     {
         "Id": 146,
         "ActionId": 146,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/Bgstory537.jpg"
         ]
@@ -2054,11 +1458,7 @@
     {
         "Id": 147,
         "ActionId": 147,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 550.0,
         "Params": [
             "0|-100|-300",
@@ -2068,12 +1468,7 @@
     {
         "Id": 148,
         "ActionId": 148,
-        "NextActionId": 0,
         "Type": 501,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             3
@@ -2082,12 +1477,7 @@
     {
         "Id": 149,
         "ActionId": 149,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory550.jpg"
         ]
@@ -2095,26 +1485,18 @@
     {
         "Id": 150,
         "ActionId": 150,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Images rush through your mind all at once—falling ground, the blue sky, clouds rushing toward you. They flash by in no clear order, leaving you momentarily dizzy."
         ]
     },
     {
         "Id": 151,
         "ActionId": 151,
-        "NextActionId": 0,
         "Type": 111,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             0,
             "Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab"
@@ -2123,11 +1505,7 @@
     {
         "Id": 152,
         "ActionId": 152,
-        "NextActionId": 0,
         "Type": 111,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             1,
@@ -2137,25 +1515,18 @@
     {
         "Id": 153,
         "ActionId": 153,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "As the dizziness subsides, you suddenly realize you're already high in the sky."
         ]
     },
     {
         "Id": 154,
         "ActionId": 154,
-        "NextActionId": 0,
         "Type": 502,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 500.0,
         "Params": [
             "RImgBg1Shake"
@@ -2164,12 +1535,7 @@
     {
         "Id": 155,
         "ActionId": 155,
-        "NextActionId": 0,
         "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             2,
             4895
@@ -2178,11 +1544,7 @@
     {
         "Id": 156,
         "ActionId": 156,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 550.0,
         "Params": [
             1004,
@@ -2195,40 +1557,28 @@
     {
         "Id": 157,
         "ActionId": 157,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Gravity pulls at you, trying to drag you down, but Ishmael holds you close, steadying your body with a gentle embrace."
         ]
     },
     {
         "Id": 158,
         "ActionId": 158,
-        "NextActionId": 0,
-        "Type": 306,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "Type": 306
     },
     {
         "Id": 159,
         "ActionId": 159,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500380,
             12,
+            "",
             -50,
             -100
         ]
@@ -2236,13 +1586,8 @@
     {
         "Id": 160,
         "ActionId": 160,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "EndAnim": "DialogDisable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ishmael",
@@ -2253,26 +1598,20 @@
     {
         "Id": 161,
         "ActionId": 161,
-        "NextActionId": 0,
         "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
         "Id": 162,
         "ActionId": 162,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1004,
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
@@ -2284,12 +1623,7 @@
     {
         "Id": 163,
         "ActionId": 163,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999,
             "Assets/Product/Texture/Image/BgStory/BgStory783.jpg",
@@ -2301,27 +1635,19 @@
     {
         "Id": 164,
         "ActionId": 164,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
         "EndDelay": 1550.0,
         "Params": [
             "0|-100|-300",
             0,
+            "",
             3
         ]
     },
     {
         "Id": 165,
         "ActionId": 165,
-        "NextActionId": 0,
         "Type": 101,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory783.jpg"
         ]
@@ -2329,12 +1655,7 @@
     {
         "Id": 166,
         "ActionId": 166,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|-100|-300",
             0
@@ -2343,12 +1664,7 @@
     {
         "Id": 167,
         "ActionId": 167,
-        "NextActionId": 0,
         "Type": 205,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             999
         ]
@@ -2356,55 +1672,41 @@
     {
         "Id": 168,
         "ActionId": 168,
-        "NextActionId": 0,
         "Type": 104,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             "0|0|0",
             0,
+            "",
             3
         ]
     },
     {
         "Id": 169,
         "ActionId": 169,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "You follow her gaze. A vast sea of churning crimson clouds stretches out below. The sun, which had already dipped below the horizon, now pours its final, fiercest light across the sky."
         ]
     },
     {
         "Id": 170,
         "ActionId": 170,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
+            "",
             "Golden light sets every cloud aglow like burning amber. Up here, with just the two of you, time and sound seem to disappear. All that remains is the breathtaking beauty of an endless dusk."
         ]
     },
     {
         "Id": 171,
         "ActionId": 171,
-        "NextActionId": 0,
         "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "What a view.",
             172,
             "...",
@@ -2414,12 +1716,7 @@
     {
         "Id": 172,
         "ActionId": 172,
-        "NextActionId": 0,
         "Type": 201,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             500380,
@@ -2429,12 +1726,7 @@
     {
         "Id": 173,
         "ActionId": 173,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1,
             "Ishmael",
@@ -2445,12 +1737,7 @@
     {
         "Id": 174,
         "ActionId": 174,
-        "NextActionId": 0,
         "Type": 204,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
             1
         ]
@@ -2458,14 +1745,11 @@
     {
         "Id": 175,
         "ActionId": 175,
-        "NextActionId": 0,
         "Type": 301,
-        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
         "Params": [
+            "",
             "Ishmael",
             "This is the glow we chased. Stay with me a little longer, until the very last bit of light fades.",
             1

@@ -30,7 +30,7 @@ function XUiFubenMaintaineractionFighting:OnBtnEnterClick()
         XUiManager.TipText("MaintainerActionFightCompleteText")
         return
     end
-    XLuaUiManager.PopThenOpen("UiBattleRoleRoom", self.StageId)
+    XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(self.StageId)
 end
 
 function XUiFubenMaintaineractionFighting:OnBtnRunClick()

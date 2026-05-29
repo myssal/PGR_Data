@@ -1,0 +1,130 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "Name": "Main Story Target Point",
+        "Desc": "Track the target to progress in the stage",
+        "TemplateDesc": "Process Main Target Point",
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint01.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "Type": 1,
+        "Name": "Secondary Target Point",
+        "Desc": "Detailed Description After Tapping the Thumbtack (Secondary Target Point)",
+        "TemplateDesc": "Process Secondary Target Point",
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint02.png"
+        ]
+    },
+    {
+        "Id": 3,
+        "Type": 1,
+        "Name": "Enemy",
+        "Desc": "Enemy/The Corrupted/Other Description",
+        "TemplateDesc": "Enemy",
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint03.png"
+        ]
+    },
+    {
+        "Id": 4,
+        "Type": 1,
+        "Name": "Ally",
+        "Desc": "Ally NPC/Interactive NPC/Other",
+        "TemplateDesc": "Ally",
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint04.png"
+        ]
+    },
+    {
+        "Id": 5,
+        "Type": 1,
+        "Name": "Entrance/Exit",
+        "Desc": "Entrance/Exit",
+        "TemplateDesc": "Entrance/Exit or Joint Point of Different Maps",
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint05.png"
+        ]
+    },
+    {
+        "Id": 6,
+        "Type": 1,
+        "Name": "Investigation Point (Item)",
+        "TemplateDesc": "Interactive/Investigate Item",
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint06.png"
+        ]
+    },
+    {
+        "Id": 7,
+        "Type": 2,
+        "Name": "Location Name Front Size 36",
+        "Desc": "Location Position Information(No display of text-type descriptions)",
+        "TemplateDesc": "(No display of text-type descriptions)",
+        "IntParams": [
+            36
+        ],
+        "FloatParams": [
+            0.8396
+        ],
+        "StrParams": [
+            "LocationPin"
+        ]
+    },
+    {
+        "Id": 8,
+        "Type": 2,
+        "Name": "<i><b>Location Name in Bold Italics</b></i>",
+        "Desc": "Location Position Information(No display of text-type descriptions)",
+        "TemplateDesc": "(No display of text-type descriptions)",
+        "IntParams": [
+            45
+        ],
+        "FloatParams": [
+            0.7547
+        ]
+    },
+    {
+        "Id": 9,
+        "Type": 1,
+        "Name": "Current Position",
+        "Desc": "Character Current Position",
+        "TemplateDesc": "Current Position",
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPlayer.png"
+        ]
+    },
+    {
+        "Id": 10,
+        "Type": 2,
+        "Name": "<i>Location Name Font Size</i>",
+        "IntParams": [
+            30
+        ],
+        "FloatParams": [
+            0.9056
+        ]
+    },
+    {
+        "Id": 11,
+        "Type": 1,
+        "Name": "Investigated",
+        "Desc": "Location recorded",
+        "TemplateDesc": "Recorded achievement connection point",
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint07.png"
+        ]
+    },
+    {
+        "Id": 12,
+        "Type": 1,
+        "Name": "Investigation Point",
+        "TemplateDesc": "Available Investigation Targets",
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint02.png"
+        ]
+    }
+]

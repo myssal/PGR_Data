@@ -1,0 +1,146 @@
+[
+    {
+        "Id": 1,
+        "Kind": 1,
+        "NextItemId": 15,
+        "Name": "Score Reduction",
+        "Desc": "Choose a color and reduce all cubes of that color by 1 unit",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai14.png",
+        "BlockTypes": [
+            2
+        ]
+    },
+    {
+        "Id": 2,
+        "Kind": 2,
+        "Name": "Code Extermination",
+        "Desc": "Choose any area and clear all cubes in that row once",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai01.png"
+    },
+    {
+        "Id": 3,
+        "Kind": 3,
+        "NextItemId": 17,
+        "Name": "Melody Simplification",
+        "Desc": "Choose a color and divide all blocks of that color into 1-unit blocks.",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai03.png",
+        "BlockTypes": [
+            3
+        ]
+    },
+    {
+        "Id": 4,
+        "Kind": 4,
+        "Params": [
+            2
+        ],
+        "Name": "Deadline Rescue",
+        "Desc": "Gain 2 turns after use",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai05.png"
+    },
+    {
+        "Id": 5,
+        "Kind": 5,
+        "Name": "Sequence Reset",
+        "Desc": "Choose any 2 areas and swap their locations",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai06.png"
+    },
+    {
+        "Id": 6,
+        "Kind": 6,
+        "Name": "Domain Recovery",
+        "Desc": "Choose any 2 adjacent cubes and swap their locations",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai04.png"
+    },
+    {
+        "Id": 7,
+        "Kind": 7,
+        "Name": "Freeze Convert",
+        "Desc": "Freeze the ascending bar once. No cubes will be ascended starting the next round (This effect can be stacked up to 3 times.)",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai07.png"
+    },
+    {
+        "Id": 8,
+        "Kind": 8,
+        "Name": "Directed Movement",
+        "Desc": "Choose any area and snap all cubes in that row in the chosen direction.",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai08.png"
+    },
+    {
+        "Id": 9,
+        "Kind": 9,
+        "Name": "Random Function α",
+        "Desc": "Randomly select a color and apply a random effect to it. (Random effects: Structural Adjustment, Data Simplification, Parameter Inflation, and Filter Inflation)",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai09.png"
+    },
+    {
+        "Id": 10,
+        "Kind": 10,
+        "Name": "Random Function β",
+        "Desc": "Randomly select a column and apply a random effect to it. (Random effects: Code Extermination, Sequence Reset, and Directed Movement)",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai13.png"
+    },
+    {
+        "Id": 11,
+        "Kind": 11,
+        "Name": "Restore Parameter",
+        "Desc": "Randomly purify 1 Special Cube (no effect if none exists).",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai10.png"
+    },
+    {
+        "Id": 12,
+        "Kind": 12,
+        "Params": [
+            8
+        ],
+        "Name": "Parameter Inflation",
+        "Desc": "Choose a color and add 8 units to all cubes of that color.",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai11.png"
+    },
+    {
+        "Id": 13,
+        "Kind": 13,
+        "NextItemId": 16,
+        "Name": "Sustain",
+        "Desc": "Select a color. Generate multiple unit cubes of the same color in the empty spaces adjacent to all existing cubes of that color until they encounter other blocks.",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai12.png",
+        "BlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 14,
+        "Kind": 14,
+        "Name": "Ultima Slash",
+        "Desc": "Slash once where the Sword Mark is.",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai09.png",
+        "ItemType": 1
+    },
+    {
+        "Id": 15,
+        "Kind": 15,
+        "BackItemId": 1,
+        "Name": "Score Reduction β",
+        "Desc": "Reduce all Normal Blocks, regardless of color, by 1 unit.",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai15.png",
+        "ItemType": 1
+    },
+    {
+        "Id": 16,
+        "Kind": 16,
+        "BackItemId": 13,
+        "Name": "Sustain β",
+        "Desc": "Generate multiple 1-unit blocks in the empty spaces adjacent to all existing Normal Blocks (regardless of color) until they encounter other blocks.",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai17.png",
+        "ItemType": 1
+    },
+    {
+        "Id": 17,
+        "Kind": 17,
+        "BackItemId": 3,
+        "Name": "Melody Simplification β",
+        "Desc": "Divide all existing Normal Blocks, regardless of color, into 1-unit blocks.",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai16.png",
+        "ItemType": 1
+    }
+]

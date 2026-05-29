@@ -7,7 +7,6 @@
         "DetailShowType": 1,
         "Name": "HP",
         "Desc": "Increases Base HP",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 102
     },
@@ -31,7 +30,6 @@
         "DetailShowType": 1,
         "Name": "Attack",
         "Desc": "Increases Base ATK",
-        "IsPercent": 0,
         "MaxLevel": 39,
         "Order": 101
     },
@@ -187,7 +185,6 @@
         "DetailShowType": 1,
         "Name": "Imbalance Buff",
         "Desc": "Increases balance damage against bosses",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 116
     },
@@ -222,7 +219,6 @@
         "DetailShowType": 1,
         "Name": "Starting Energy",
         "Desc": "Gains <color=#ffdd93>Signature Energy</color> upon entering battle.",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1001
     },
@@ -233,7 +229,6 @@
         "DetailShowType": 1,
         "Name": "Follow-Up Skill DMG Increase",
         "Desc": "Follow-Up Skill DMG Bonus",
-        "IsPercent": 0,
         "MaxLevel": 26,
         "Order": 1006
     },
@@ -256,7 +251,6 @@
         "DetailShowType": 1,
         "Name": "Bloodburn Bonus",
         "Desc": "Lower <color=#ffdd93>remaining HP</color> grants a greater <color=#ffdd93>total DMG Bonus</color>.",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1008
     },
@@ -267,7 +261,6 @@
         "DetailShowType": 1,
         "Name": "Healing Assault",
         "Desc": "<color=#ffdd93>Extra DMG Bonus</color> increases for 20s after <color=#ffdd93>healing</color> other players.",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1009
     },
@@ -278,7 +271,6 @@
         "DetailShowType": 1,
         "Name": "Shield Slam Boost",
         "Desc": "Increases <color=#ffdd93>Extra DMG Bonus</color> while <color=#ffdd93>shielded</color> and for 3 seconds after <color=#ffdd93>the shield disappears</color>.",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1010
     },
@@ -289,31 +281,38 @@
         "DetailShowType": 1,
         "Name": "Support DMG Reduction",
         "Desc": "<color=#ffdd93>DMG Reduction</color> increases while <color=#ffdd93>reviving other players</color>.",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1011
     },
     {
         "Id": 21012,
+        "AttributeName": "CritDmgRateP",
         "AttributeType": 1,
         "LevelOverlyingType": 1,
         "DetailShowType": 1,
         "Name": "CRIT DMG Buff",
         "Desc": "When ATK Amplification ≥50%, <color=#ffdd93>CRIT DMG</color> increases.",
-        "IsPercent": 0,
+        "IsPercent": 1,
         "MaxLevel": 13,
-        "Order": 1012
+        "Order": 1012,
+        "Condition": [
+            866475
+        ]
     },
     {
         "Id": 21013,
+        "AttributeName": "CritDmgRateP",
         "AttributeType": 1,
         "LevelOverlyingType": 1,
         "DetailShowType": 1,
         "Name": "Absolute Advantage",
         "Desc": "When HP ≥16000, <color=#ffdd93>CRIT DMG</color> increases.",
-        "IsPercent": 0,
+        "IsPercent": 1,
         "MaxLevel": 13,
-        "Order": 1013
+        "Order": 1013,
+        "Condition": [
+            866476
+        ]
     },
     {
         "Id": 21014,
@@ -322,7 +321,6 @@
         "DetailShowType": 1,
         "Name": "Wrath Strike",
         "Desc": "Deals more <color=#ffdd93>Extra DMG</color> against enemies in <color=#ffdd93>Wrath</color> state.",
-        "IsPercent": 0,
         "MaxLevel": 26,
         "Order": 1014
     },
@@ -333,7 +331,6 @@
         "DetailShowType": 1,
         "Name": "Imbalance Specialist",
         "Desc": "Deals more <color=#ffdd93>Extra DMG</color> against enemies in <color=#ffdd93>Imbalanced</color> state.",
-        "IsPercent": 0,
         "MaxLevel": 26,
         "Order": 1015
     },
@@ -344,7 +341,6 @@
         "DetailShowType": 1,
         "Name": "Miraculous Survival",
         "Desc": "Triggers <color=#ffdd93>Auto Revival</color> when dying. Can trigger again after <color=#ffdd93>cooldown</color> ends.",
-        "IsPercent": 0,
         "MaxLevel": 16,
         "Order": 1016
     },
@@ -355,7 +351,6 @@
         "DetailShowType": 1,
         "Name": "Bloodburn Assault",
         "Desc": "Increases <color=#ffdd93>ATK Amplification</color> but reduces Max HP by 20%.",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1017
     },
@@ -366,7 +361,6 @@
         "DetailShowType": 1,
         "Name": "Victory Pursuit",
         "Desc": "Higher <color=#ffdd93>remaining HP</color> grants a greater <color=#ffdd93>total DMG Bonus</color>.",
-        "IsPercent": 0,
         "MaxLevel": 13,
         "Order": 1018
     },
@@ -375,197 +369,197 @@
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Thunder Brand (Unique)",
+        "Name": "Thunder Brand",
         "Desc": "[Crimson Weave]'s [Wildfire Slash], [Shadow Strike], and [Thunderous Bash] all gain a <color=#ffdd93>DMG bonus</color>. [Lucia: Crimson Weave]'s attacks have a chance to leave [Wounds] on enemies. Up to 5 [Wounds] can exist. When [Wildfire Slash] deals DMG, detonates all [Wounds] to call down <color=#ffdd93>lightning strikes that deal Extra DMG</color>.",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 1
+        "Order": 1,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31002,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Ashen Memory (Unique)",
+        "Name": "Ashen Memory",
         "Desc": "[Crimson Weave]'s [swordwaves] and [Swordwave Attack] gain a <color=#ffdd93>DMG bonus</color>. When casting [Swordwave Attack], heals for 0.5% Max HP. When attacking targets with [Swordbreak Marks], deals additional Swordbreak DMG without consuming [Swordbreak Mark stacks]. This effect can trigger once every 0.5s.",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 2
+        "Order": 2,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31003,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Chain Blaze (Unique)",
+        "Name": "Chain Blaze",
         "Desc": "When casting [Whirling Thrash], [Crimson Weave] gains interruption resistance. When [Whirling Thrash] deals DMG, gains a <color=#ffdd93>DMG bonus</color> and increases the <color=#ffdd93>max DMG</color>.",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 7
+        "Order": 7,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31004,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Void Sheath (Unique)",
+        "Name": "Void Sheath",
         "Desc": "When [Crimson Weave] casts [Iaido Slash β] while holding a movement button, triggers [Dash Iaido] and returns to the original casting position. When [Iaido Slash β] is cast, gains a <color=#ffdd93>DMG bonus</color>.",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 8
+        "Order": 8,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31005,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Void Silence (Unique)",
+        "Name": "Void Silence",
         "Desc": "When [Crimson Weave] casts [Splashing Thunder], <color=#ffdd93>DMG bonus</color> and <color=#ffdd93>Extra DMG Reduction</color> gained are enhanced.",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 9
+        "Order": 9,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31006,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Arc Scar (Unique)",
+        "Name": "Arc Scar",
         "Desc": "When casting [Thunderous Bash], [Alpha: Crimson] Weave leaves fissures on the ground. <color=#ffdd93>Fissures</color> deal DMG to targets within range once per second for 8s.",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 10
+        "Order": 10,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Luxiya1.png"
     },
     {
         "Id": 31007,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Radiant Guard (Unique)",
+        "Name": "Radiant Guard",
         "Desc": "When [Startrail] performs a Block Counter, she gains increased <color=#ffdd93>Extra DMG Reduction</color>, and the Block Counter gains a <color=#ffdd93>DMG bonus</color>. When a Perfect Block is performed in [Sword & Shield] State and [Starcore Value] is full, press and hold Basic Attack to cast [Meteoric Doom].",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 3
+        "Order": 3,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31008,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Stellar Focus (Unique)",
+        "Name": "Stellar Focus",
         "Desc": "While in [Shield & Axe State], [Startrail] gains interruption resistance, <color=#ffdd93>Extra DMG Reduction</color>, and an increased <color=#ffdd93>Imbalance buff</color>. When enemies are Imbalanced, gains a <color=#ffdd93>DMG bonus</color> for 15s. If in <color=#ffdd93>[Mad Dissection] Form</color>, extends the duration of the bonus to 60s.",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 4
+        "Order": 4,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31009,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Jet Boost (Unique)",
+        "Name": "Jet Boost",
         "Desc": "When [Startrail] casts [Comet Burst], increases [Comet Burst]'s movement distance, and activates Block detection during the cast. Can be cast using the joystick.",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 11
+        "Order": 11,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31010,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Cosmic Edge (Unique)",
+        "Name": "Cosmic Edge",
         "Desc": "For 10s after [Startrail] casts [Aetherstrike] or [Prismatic Thrust], increases the efficiency of gaining [Starcore Value], [Infinitas Value], and [Sharpness Value], and gains <color=#ffdd93>DMG Bonus</color>. Reduces the <color=#ffdd93>cooldown</color> of [Aetherstrike] and [Prismatic Thrust]. While casting either skill, gains interruption resistance and <color=#ffdd93>Extra DMG Reduction</color>.",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 12
+        "Order": 12,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31011,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Guided Focus (Unique)",
+        "Name": "Guided Focus",
         "Desc": "After [Startrail] casts [Splashing Thunder], <color=#ffdd93>Aggro Focus</color> increases whenever she deals DMG. For a period of time, attacking taunted enemies deals <color=#ffdd93>one additional instance of DMG</color>. This effect can trigger at most once per second.",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 13
+        "Order": 13,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31012,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Unfurled Stars (Unique)",
+        "Name": "Unfurled Stars",
         "Desc": "When [Startrail] performs the 3rd hit of [Wandering Starburst] while in [Sword & Shield] state, tap [Thunderflare Storm] to gain an Enhanced Combo Strike and a large amount of [Sharpness Value].",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 14
+        "Order": 14,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR6Yongyechao1.png"
     },
     {
         "Id": 31013,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Sacred Hymn (Unique)",
+        "Name": "Sacred Hymn",
         "Desc": "At max [Chant Stacks], [Empyrea] enhances the next [Nighttime Prayer] and [Azure Firmament]. Enhanced [Nighttime Prayer] and [Azure Firmament] will heal other players while <color=#ffdd93>additionally restoring HP to all players</color>.",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 5
+        "Order": 5,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     },
     {
         "Id": 31014,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Divine Decree (Unique)",
+        "Name": "Divine Decree",
         "Desc": "When [Empyrea]'s [Radiant Judgment II] strikes an enemy with its final hit, creates an additional <color=#ffdd93>explosion</color> and gains 2 [Chant Stacks].",
-        "IsPercent": 0,
         "MaxLevel": 2,
-        "Order": 6
+        "Order": 6,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     },
     {
         "Id": 31015,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Final Verdict (Unique)",
+        "Name": "Final Verdict",
         "Desc": "After casting [Crimson Crown], [Empyrea] enters [Empyreal Form].",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 15
+        "Order": 15,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     },
     {
         "Id": 31016,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Sacred Dawn (Unique)",
+        "Name": "Sacred Dawn",
         "Desc": "After casting [Empyreal Oath], [Empyrea] gains a <color=#ffdd93>healing buff</color> for 20s and casts [Nighttime Prayer] once.",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 16
+        "Order": 16,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     },
     {
         "Id": 31017,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Absolution Turn (Unique)",
+        "Name": "Absolution Turn",
         "Desc": "When a boss in [Wrath Form] casts high-threat skills, immediately refreshes [Azure Firmament] and gains 12 [Chant Stacks].",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 17
+        "Order": 17,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     },
     {
         "Id": 31018,
         "AttributeType": 1,
         "LevelOverlyingType": 2,
         "DetailShowType": 3,
-        "Name": "Devout Chant (Unique)",
+        "Name": "Devout Chant",
         "Desc": "When [Empyrea] enters [Empyreal Form], reduces cooldown by 33% for [Nighttime Prayer], [Azure Firmament], and [Crimson Crown].",
-        "IsPercent": 0,
         "MaxLevel": 1,
-        "Order": 18
+        "Order": 18,
+        "CharacterIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR4Lifu1.png"
     }
 ]

@@ -150,7 +150,7 @@ end
 function XUiKillZoneStageDetail:OnClickBtnEnter()
     local stageId = self.StageId
     local team = XDataCenter.KillZoneManager.GetTeam(stageId)
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, require("XUi/XUiKillZone/Battle/XUiKillZoneBattleRoleRoom"))
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, require("XUi/XUiKillZone/Battle/XUiKillZoneBattleRoleRoom"))
 end
 
 function XUiKillZoneStageDetail:OnClickBtnBuffTip()
