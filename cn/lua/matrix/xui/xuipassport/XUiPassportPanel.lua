@@ -13,6 +13,7 @@ function XUiPassportPanel:OnStart()
     self:InitDynamicList()
     self:AutoAddListener()
     self:InitData()
+    self:Refresh()
 end
 
 function XUiPassportPanel:InitRightGrids()

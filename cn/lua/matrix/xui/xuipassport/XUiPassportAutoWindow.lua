@@ -122,6 +122,12 @@ function XUiPassportAutoWindow:UpdateEndTime()
 end
 
 function XUiPassportAutoWindow:OnBtnBigSkinClick()
-    XLuaUiManager.Open("UiPassport", { OpenPassportCard = true })
-    self:Close()
+    XLuaUiManager.Open(
+        "UiPassport",
+        {
+            OpenPassportCard = true,
+            OnClose = function()
+                self:Close()
+            end
+        })
 end

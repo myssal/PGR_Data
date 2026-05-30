@@ -312,14 +312,16 @@ function XBigWorldAgency:DoRegisterMVCA()
         return
     end
     self._IsMVCARegistered = true
+    local newlyRegistered = {}
     --先注册BigWorld
-    for _, moduleId in pairs(self._MVCAList) do
+    for _, moduleId in ipairs(self._MVCAList) do
         if not XMVCA:IsRegisterAgency(moduleId) then
             XMVCA:RegisterAgency(moduleId)
+            newlyRegistered[#newlyRegistered + 1] = moduleId
         end
     end
-    --再初始化，为了不影响Agency顺序
-    for _, moduleId in pairs(self._MVCAList) do
+    --再初始化，为了不影响Agency顺序；只对本次新建的调 InitDynamicRegister，避免重复 hook RPC/Event
+    for _, moduleId in ipairs(newlyRegistered) do
         local agency = XMVCA:GetAgency(moduleId)
         if agency then
             agency:InitDynamicRegister()
@@ -333,6 +335,9 @@ function XBigWorldAgency:OnRegisterMVCA()
 end
 
 function XBigWorldAgency:DoUnRegisterMVCA()
+    if not self._IsMVCARegistered then
+        return
+    end
     self._IsMVCARegistered = false
     --先注销子类
     self:OnUnRegisterMVCA()
@@ -687,8 +692,8 @@ function XBigWorldAgency:ExGetDlcModelIdByCharacterData(characterData)
     return XMVCA.XBigWorldCharacter:ExGetDlcModelIdByCharacterData(characterData)
 end
 
-function XBigWorldAgency:ExGetDlcModelIdByFashionId(characterId, fashionId)
-    local uiModelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId)
+function XBigWorldAgency:ExGetDlcModelIdByFashionId(characterId, fashionId, colorId)
+    local uiModelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId, colorId, true)
 
     return XMVCA.XBigWorldResource:GetDlcModelId(uiModelId)
 end

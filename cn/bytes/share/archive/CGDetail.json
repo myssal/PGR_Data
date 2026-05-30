@@ -3730,6 +3730,18 @@
         "Id": 101312,
         "GroupId": 1,
         "Order": 312,
+        "Name": "致群星",
+        "Desc": "她对死难者敬礼。",
+        "Bg": "Assets/Product/Texture/Image/BgCg/Cg6501_6.jpg",
+        "LockBg": "Assets/Product/Texture/Image/UiArchiveStoryBanner/ArchiveStoryBannerr00.png",
+        "Condition": 84103410,
+        "BgWidth": 1920,
+        "BgHigh": 1080
+    },
+    {
+        "Id": 101313,
+        "GroupId": 1,
+        "Order": 313,
         "Name": "深红冠冕",
         "Desc": "承载所有幸福……的冠冕……给你。",
         "Bg": "Assets/Product/Texture/Image/BgCg/Cg6501_12.jpg",
@@ -3739,9 +3751,21 @@
         "BgHigh": 1080
     },
     {
-        "Id": 101313,
+        "Id": 101314,
         "GroupId": 1,
-        "Order": 313,
+        "Order": 314,
+        "Name": "破碎凝望",
+        "Desc": "在一个空洞的未来。",
+        "Bg": "Assets/Product/Texture/Image/BgCg/Cg6501_10.jpg",
+        "LockBg": "Assets/Product/Texture/Image/UiArchiveStoryBanner/ArchiveStoryBannerr00.png",
+        "Condition": 84103414,
+        "BgWidth": 1920,
+        "BgHigh": 1080
+    },
+    {
+        "Id": 101315,
+        "GroupId": 1,
+        "Order": 315,
         "Name": "远航者",
         "Desc": "阿尔法，这首校歌的名字，叫什么？",
         "Bg": "Assets/Product/Texture/Image/BgCg/Cg6501_20.jpg",
@@ -3751,9 +3775,9 @@
         "BgHigh": 1080
     },
     {
-        "Id": 101314,
+        "Id": 101316,
         "GroupId": 1,
-        "Order": 314,
+        "Order": 316,
         "Name": "航迹终点",
         "Desc": "也许只是形同陌路，也许是彻底的分道扬镳。",
         "Bg": "Assets/Product/Texture/Image/BgCg/Cg6501_16.jpg",
@@ -3763,38 +3787,14 @@
         "BgHigh": 1080
     },
     {
-        "Id": 101315,
+        "Id": 101317,
         "GroupId": 1,
-        "Order": 315,
+        "Order": 317,
         "Name": "擦肩而过",
         "Desc": "她坚定地走向与人们相悖的方向。",
         "Bg": "Assets/Product/Texture/Image/BgCg/Cg6501_17.jpg",
         "LockBg": "Assets/Product/Texture/Image/UiArchiveStoryBanner/ArchiveStoryBannerr00.png",
         "Condition": 84103416,
-        "BgWidth": 1920,
-        "BgHigh": 1080
-    },
-    {
-        "Id": 101316,
-        "GroupId": 1,
-        "Order": 316,
-        "Name": "致群星",
-        "Desc": "她对死难者敬礼。",
-        "Bg": "Assets/Product/Texture/Image/BgCg/Cg6501_6.jpg",
-        "LockBg": "Assets/Product/Texture/Image/UiArchiveStoryBanner/ArchiveStoryBannerr00.png",
-        "Condition": 1007255,
-        "BgWidth": 1920,
-        "BgHigh": 1080
-    },
-    {
-        "Id": 101317,
-        "GroupId": 1,
-        "Order": 317,
-        "Name": "破碎凝望",
-        "Desc": "在一个空洞的未来。",
-        "Bg": "Assets/Product/Texture/Image/BgCg/Cg6501_10.jpg",
-        "LockBg": "Assets/Product/Texture/Image/UiArchiveStoryBanner/ArchiveStoryBannerr00.png",
-        "Condition": 853018,
         "BgWidth": 1920,
         "BgHigh": 1080
     },
@@ -7557,6 +7557,7 @@
         "Name": "悠羽倾舞",
         "Desc": "是羽翼掠过湖面的涟漪，是愿望成真前的屏息。少女倾尽心意，邀命定之人共赴一舞。",
         "Bg": "Assets/Product/Texture/Image/BgCg/Cghb102.png",
+        "SpineBg": "Assets/Product/Ui/Spine/4_5_Spine/V45AutoWindow_LiFu_SkinTEH/V45CGDetail_LiFu_TEHSkin.prefab",
         "LockBg": "Assets/Product/Texture/Image/UiArchiveStoryBanner/ArchiveStoryBannerr00.png",
         "Condition": 84330030,
         "IsShowRedPoint": 1,
@@ -8344,7 +8345,7 @@
     {
         "Id": 110054,
         "GroupId": 10,
-        "Order": 54,
+        "Order": 55,
         "Name": "烈日将烬",
         "Bg": "Assets/Product/Texture/Image/UiArchiveStoryBanner/Login57.png",
         "LockBg": "Assets/Product/Texture/Image/UiArchiveStoryBanner/ArchiveStoryBannerr00.png",
@@ -10522,8 +10523,9 @@
         "Order": 8,
         "Name": "月夜下的重逢",
         "Desc": "一起去雾中……“调查真相”吧。",
-        "Bg": "Assets/Product/Texture/Image/BgCg/Cg5701_24.jpg",
+        "Bg": "Assets/Product/Texture/Image/BgCg/Cg6501_4.jpg",
         "LockBg": "Assets/Product/Texture/Image/UiArchiveStoryBanner/ArchiveStoryBannerr00.png",
+        "Condition": 1021001,
         "BgWidth": 1920,
         "BgHigh": 1080
     },
@@ -10533,8 +10535,9 @@
         "Order": 9,
         "Name": "雾夜镇魂曲",
         "Desc": "人间的混沌与恐惧不断滋长，而被称为“异种”之人，却依旧在雾中，寻找被掩盖已久的真相。",
-        "Bg": "Assets/Product/Texture/Image/BgCg/Cg5701_25.jpg",
+        "Bg": "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg",
         "LockBg": "Assets/Product/Texture/Image/UiArchiveStoryBanner/ArchiveStoryBannerr00.png",
+        "Condition": 1021001,
         "BgWidth": 1920,
         "BgHigh": 1080
     }

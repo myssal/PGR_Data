@@ -2,15 +2,774 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "Type": 101,
-        "BeginAnim": "AniZhuanchangEnd",
+        "Type": 401,
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            1,
+            7154
         ]
     },
     {
         "Id": 2,
         "ActionId": 2,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1506.jpg"
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 205,
+        "EndAnim": "AniZhuanchangEnd",
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            0.4,
+            0.4,
+            0
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 310,
+        "Params": [
+            "这个世界安稳、有条不紊地流淌了两年。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 310,
+        "Params": [
+            "零点能反应堆进入了最终调试阶段，月面基地的第四期扩建已在规划中，哥白尼前哨站上个月刚送回了第一批火星岩芯的样本。"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 310,
+        "Params": [
+            "小行星带的采矿船队终于驶出了船坞，第一批无人采掘船正在向谷神星轨道加速，预计明年春天就能传回第一组资源数据……"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 205,
+        "EndDelay": 2300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory146.png",
+            0,
+            1,
+            1.8
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory146.png"
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 310,
+        "Params": [
+            "第二届、第三届毕业生相继走出校门，散入了高歌猛进的文明版图之中。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 310,
+        "Params": [
+            "有人去了太空，有人留在了地面，在统一战争最后几处战场执行维和任务，或是科学理事会的重点项目中攻坚克难。"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 310,
+        "Params": [
+            "而法奥斯一期生们，也大多奋战在最需要他们的位置上。",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory309.png",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory309.png"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 310,
+        "Params": [
+            "露西亚成了一名出色的战地指挥官。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 310,
+        "Params": [
+            "她驻守在阿迪莱的前沿阵地，在沙漠的营帐里度过了大部分的日子，"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 310,
+        "Params": [
+            "偶尔会在深夜打开终端，看一眼另一个半球的时间。"
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 310,
+        "Params": [
+            "因为【kuroname】在地球的另一面。"
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory895.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory895.jpg"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 310,
+        "Params": [
+            "<M>他</M><W>她</W>被派驻到南太平洋的维和行动中，负责指挥三座岛链基地之间的防务体系重建，每天都要沉在开不完的会议，审不完的文件里。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 310,
+        "Params": [
+            "两个人见面的时间不多，但<M>他们</M><W>她们</W>总能找到那么十几二十分钟。",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory939.png",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory939.png"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 310,
+        "Params": [
+            "有时是露西亚凌晨三点突然拨过去一个通讯，说不了几句话，但光是听见【kuroname】的声音，就足以让自己在一天的疲惫中欣然安眠。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 104,
+        "Params": [
+            "160|90|-180",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory783.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 104,
+        "Params": [
+            "160|90|-180",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory783.jpg"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 310,
+        "Params": [
+            "有时是【kuroname】在会议间隙发来一张照片——南太平洋的日落，橘红色的，底下配一句“这边的太阳比你那边大”。"
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 310,
+        "Params": [
+            "偶尔假期重合的时候，<M>他们</M><W>她们</W>会在印度洋上找一座度假的小岛，一天什么都不干，只是在彼此的依偎中吹着海风，看着夕阳落下，直至曙光初现。"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1431.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1431.jpg"
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            0.4,
+            0.6,
+            0.2
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 310,
+        "Params": [
+            "露娜也已经上了大学，她自己选了摄影专业，那两个叫做罗兰和拉弥亚的好朋友也一直陪在她身边，据说他们的乐队事业蒸蒸日上，已经有好几家大公司愿意签约。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 310,
+        "Params": [
+            "每次提到妹妹，露西亚的嘴角总是压不住地笑着。今年的某个夏夜，露西亚和【kuroname】约定好了，等这一阵子忙完了，就带<M>他</M><W>她</W>去见见露娜和父母。",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1317.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1317.jpg"
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            0.6,
+            0.3,
+            0.2
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 310,
+        "Params": [
+            "乔安和奥菲莉娅的实验室合并在了一起，在两年的配合协作中，二人成为了科学理事会最年轻的技术专家。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 310,
+        "Params": [
+            "奥菲莉娅攻克了纳米技术的难关，而乔安则从中受到启发，重新解释了16年前“朗道号”收到的工程学数据，为【王冠】质点的开发带来了新的突破。"
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 310,
+        "Params": [
+            "最近的半年时间里，露西亚和【kuroname】时常被邀请至二人的实验室，配合进行【王冠】的适配性测试。"
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 310,
+        "Params": [
+            "测试内容繁琐而抽象，需要定期回到法奥斯接受大脑深层扫描。每次测试完，露西亚都觉得脑子里被人翻了个底朝天，像是有人把她所有的记忆拆开看了一遍又装回去。"
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 310,
+        "Params": [
+            "她不太喜欢这种感觉，但【kuroname】说这对人类很重要，她就忍了。",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1264.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1264.jpg"
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 310,
+        "Params": [
+            "阿德莱德走了一条最远的路，又走了回来。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 310,
+        "Params": [
+            "在一次轨道空投行动中，阿德莱德的着陆舱出了问题，导致右膝韧带撕裂。"
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 310,
+        "Params": [
+            "手术很成功，恢复得也不错。但军医的评估报告写得很清楚："
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 310,
+        "Params": [
+            "不再适合一线作战。"
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1492.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1492.jpg"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 310,
+        "Params": [
+            "她没有抗议，而是回到了法奥斯，成了一名教官。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 310,
+        "Params": [
+            "她带的学员说她严厉、沉默、不苟言笑。但每次野外训练她永远走在最前面，哪怕右膝总是会隐隐作痛。"
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 310,
+        "Params": [
+            "奥菲莉娅已经习惯了每半个月带她去诊所复查，而阿德莱德抽屉的最上层，也永远放着大家一起送来的膏药。",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            0.4,
+            0.7,
+            0.2
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1489.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1489.jpg"
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 502,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 310,
+        "Params": [
+            "2160年，法奥斯校庆日前夕，所有法奥斯一期生都收到了来自母校的校庆晚会邀请。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 310,
+        "Params": [
+            "几乎是同一时刻，乔安、阿德莱德、奥菲莉娅又额外收到了两封邮件。"
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 310,
+        "Params": [
+            "一封来自露西亚，一封来自【kuroname】——从内容来看，<M>他们</M><W>她们</W>俩并没有告知彼此，看起来是想保持些神秘感。"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 310,
+        "Params": [
+            "大家读邮件时都忍不住笑出了声……阿德莱德除外，她嘴角的弧度可能会更低一点。"
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 310,
+        "Params": [
+            "看起来，这会是一场喜上加喜的晚宴。"
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 310,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "于是，她们都各自翻出了自己当年的校服，满心期待着校庆日的到来。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
         "Type": 401,
         "Params": [
             1,
@@ -18,26 +777,8010 @@
         ]
     },
     {
-        "Id": 3,
-        "ActionId": 3,
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 505,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 205,
+        "EndDelay": 500.0,
+        "Params": [
+            1005
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1485.jpg"
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 401,
+        "Params": [
+            1,
+            6179
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 401,
+        "Params": [
+            2,
+            5840
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 107,
+        "Params": [
+            "校庆日·晚宴会场",
+            "2160年6月20日",
+            "",
+            "法奥斯军事学院"
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "2160年6月20日\\n法奥斯军事学院\\n校庆日·晚宴会场"
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 108,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "今天的晚宴会在学院礼堂举行，卡桑德拉在两年前跟联合政府的预算拉锯战中“胜出”，硬是把天花板改成了一座星空穹顶。"
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 104,
+        "Params": [
+            "0|-145|-220",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 205,
+        "EndDelay": 550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1485.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 104,
+        "Params": [
+            "0|-145|-220",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1485.jpg"
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
-            "测试1"
+            "整个穹顶是一块完整的弧形投影屏，能够实时接收轨道天文台的数据，将真实的星空投射在头顶。"
         ]
     },
     {
-        "Id": 4,
-        "ActionId": 4,
+        "Id": 94,
+        "ActionId": 94,
         "Type": 301,
-        "IsEnd": 1,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "今晚的投影格外清晰，银河从穹顶的一端铺到另一端，仔细看甚至能分辨出木星的四颗伽利略卫星。"
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 402,
+        "Params": [
+            5840
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 104,
+        "EndDelay": 2000.0,
+        "Params": [
+            "0|-70|-100",
+            1.5,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            2
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "卡桑德拉",
+            "哈哈哈，看到了吗？这就是我当初说的星空穹顶！",
+            1
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "联合政府的人说“多余”、“浪费预算”、“不符合军事设施标准”，我说你们懂什么？这些孩子在战壕一样的教学楼里蹲了好几年了，让他们在星星底下吃顿饭怎么了？",
+            1
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "最后我是怎么拿下来的呢——？",
+            1
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 201,
+        "Params": [
+            2,
+            500856
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 301,
+        "Params": [
+            1,
+            "司机",
+            "您威胁多米尼克，连续投诉了十七次，校董。",
+            2
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 201,
+        "Params": [
+            1,
+            501629
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡桑德拉",
+            "有钱人的事，能算投诉嘛？那叫据理力争。",
+            1
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 401,
+        "Params": [
+            2,
+            5526
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她扬起自己的长发，指节上今天特意装了一圈小灯珠，一闪一闪的，跟头顶的星空遥相呼应。"
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "卡桑德拉",
+            "总之，今晚所有人都给我好好享受，校庆嘛！",
+            1
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1485.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1485.jpg"
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "宴乐奏响时，礼堂里已经坐满了人。"
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "不止是一期生，各届的毕业生代表、教官、研究员、甚至理事会的工程师都被邀请了。长桌上铺着白色的台布，餐具在星空穹顶的光辉下泛着微光，美食的热气缓缓升腾。"
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "但所有人的目光，都会时不时地飘向大厅中央的两个位置。"
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 201,
+        "Params": [
+            15,
+            501600
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "……",
+            15
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚穿着学院赠与的礼服——剪裁利落，肩线笔挺，胸前别着一枚小小的法奥斯校徽。她很少穿这种正式的衣服，坐在椅子上的时候总是不自觉地拽一下袖口。"
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "【kuroname】坐在她旁边，穿着同款的礼服，只是颜色稍深一些。<M>他</M><W>她</W>的胸前有一道新的勋章，上个月刚结束的维和行动中授予的小队徽标。"
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 203,
+        "Params": [
+            15,
+            0.3,
+            200
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 201,
+        "Params": [
+            2,
+            501609,
+            11,
+            -400
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 203,
+        "Params": [
+            2,
+            0.45,
+            -250
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "乔安从对面探过身子来，掩着嘴小声说道："
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 204,
+        "Params": [
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "露西亚，你礼服的领口歪了。",
+            2
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "没歪。",
+            15
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "歪了，往左偏了一点——",
+            2
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 204,
+        "Params": [
+            15,
+            8
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "那是设计，我说了没……",
+            15
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 204,
+        "Params": [
+            15,
+            7
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这时，【kuroname】伸出手，帮露西亚把领口正了正。"
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 204,
+        "Params": [
+            15,
+            0
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "…………",
+            15
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚偏了一下头——但没有躲开。"
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 204,
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "嘿嘿。",
+            2
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "……你笑什么？",
+            15
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 204,
+        "Params": [
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "没有没有，什么都没有！",
+            2
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 202,
+        "Params": [
+            15,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 401,
+        "Params": [
+            2,
+            4044
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            3,
+            -450
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 203,
+        "Params": [
+            1,
+            0.35,
+            -280
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 201,
+        "Params": [
+            15,
+            501609,
+            "",
+            250
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "奥菲莉娅端着高脚杯从人群中挤过来，坐到了乔安旁边。她今天穿回了校裙，散开了长发，看上去跟实验室里那个永远扎着马尾叉着腰的人完全不像。"
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "行了，别盯着人家俩看了，你那眼神跟偷拍的狗仔队似的。",
+            1
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 204,
+        "Params": [
+            15,
+            7
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "我没有偷拍！我就是……看看……",
+            15
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "看什么看，<M>他们</M><W>她们</W>又不是今天才在一起的。",
+            1
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 204,
+        "Params": [
+            15,
+            5
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "可是今天不一样嘛！今天可是——",
+            15
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 204,
+        "Params": [
+            15,
+            8
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "嘘。",
+            1
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 204,
+        "Params": [
+            15,
+            0
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "奥菲莉娅用杯子挡着嘴，目光扫了一圈周围，确认露西亚和【kuroname】没在注意这边。"
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "我知道，都准备好了。",
+            1
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 204,
+        "Params": [
+            15,
+            3
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "所以真的是……<M>他们</M><W>她们</W>俩都……？",
+            15
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 204,
+        "Params": [
+            15,
+            7
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "乔安",
+            "天哪，那岂不是——",
+            15
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 204,
+        "Params": [
+            15,
+            3
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "闭嘴，被听到就没惊喜了。",
+            1
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 204,
+        "Params": [
+            15,
+            2
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "乔安拼命点头，双手捂着嘴，但眼睛已经弯成了月牙。"
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 204,
+        "Params": [
+            15,
+            0
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "话说，今晚多米尼克老师就要进行第一次点火实验了，你们实验室是知道的吧？",
+            15
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "你说零点能反应堆？知道啊，但我不去，这里不比实验室有意思多了？",
+            1
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "实验是永远做不完的，但好朋友……总是看一眼少一眼，或许吧。",
+            1
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 202,
+        "Params": [
+            15,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 201,
+        "Params": [
+            5,
+            501627,
+            "",
+            0
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "阿德莱德坐在角落的位置，跟几个年轻的在校学生坐在一起，他们是她现在带的学员。"
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 202,
+        "Params": [
+            5,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 201,
+        "Params": [
+            2,
+            501596,
+            "",
+            450
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 203,
+        "Params": [
+            2,
+            0.4,
+            300
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            "",
+            -280,
+            -30
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "奥菲莉娅端着酒杯走了过去。"
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "怎么坐这么远？",
+            2
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "我带的学生在这边。",
+            1
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "让他们自己坐。",
+            2
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "教官应该跟学员在一起。",
+            1
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "今天不是教官——今天是校庆，你是校友。",
+            2
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 203,
+        "Params": [
+            2,
+            0.35,
+            300,
+            -30
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 204,
+        "Params": [
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "奥菲莉娅在她旁边坐了下来，把另一个杯子推到她面前。"
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 401,
+        "Params": [
+            2,
+            5281
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "喝一杯。",
+            2
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "我不……",
+            1
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 204,
+        "Params": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "怎么，升官就不给大伙面子了？",
+            2
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "阿德莱德看了看酒杯，又看了看奥菲莉娅。"
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "……就一杯。",
+            1
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 401,
+        "Params": [
+            2,
+            5288
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 204,
+        "Params": [
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "阿德莱德仰头将酒水一饮而尽，奥菲莉娅低下视线，瞥了瞥她穿着外骨骼的右腿。"
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "最近还疼吗？",
+            2
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "不疼，只是变天的时候会有一点感觉。",
+            1
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "……你说得好轻巧。",
+            2
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 204,
+        "Params": [
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "因为确实不严重。",
+            1
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "从七百米的高空砸了下来，你跟我说不严重？",
+            2
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "任务目标达成了，人质全员安全撤出。",
+            1
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "…………",
+            2
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 401,
+        "Params": [
+            "",
+            4079
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 204,
+        "Params": [
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她喝了一大口酒，把杯子重重放在桌上。"
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "你真的很烦，你知道吗。",
+            2
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "嗯，你说过很多次了。",
+            1
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "以后别再做这种事了，大家都很担心你。",
+            2
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "阿德莱德没有回答。"
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "<color=#ffffffff>阿·德·莱·德。</color>",
+            2
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "……我会注意的。",
+            1
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "奥菲莉娅知道这句话的意思是“我不保证”。"
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "但今天她不想吵。"
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "晚宴的气氛很好，大概是因为今晚所有人都心照不宣地在等着什么，连平时最严肃的人都带了几分松快。"
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "觥筹交错间，有人在讲这两年的经历，有人在跟低年级的学弟学妹吹当年的英勇事迹，有人端着酒杯绕了半个大厅只为了跟某个许久不见的老同学碰一下杯。"
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 201,
+        "Params": [
+            1,
+            501600
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "露西亚和【kuroname】并排坐在长桌的中央——优秀毕业生代表的位置，礼服笔挺，校徽在穹顶的星光下泛着微光。"
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她面前的餐盘几乎没怎么动，倒是一直在听【kuroname】跟旁边的人聊天，偶尔插一句，偶尔只是听着。"
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她的右手放在桌面下面，偶尔会无意识地碰一下礼服内侧口袋里的某样东西。"
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "【kuroname】的左手也有同样的小动作——两个人都没有注意到对方在做一模一样的事。"
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            2,
+            "",
+            -35
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "但乔安注意到了，她感觉到二人似乎都在等待着某个合适的契机。"
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "呼…………",
+            1
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 203,
+        "Params": [
+            1,
+            0.3,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "于是，她深吸一口气，握紧了自己的终端，从座位上站了起来。"
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "各位——！抱歉打扰一下——！",
+            1
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "大厅里的嘈杂声渐渐安静下来。"
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 401,
+        "Params": [
+            1,
+            7152
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "就在昨天夜里，我收到了实验室的消息……",
+            1
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她的声音在发抖。"
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "【王冠】质点的第三阶段解析，终于通过了。",
+            1
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 401,
+        "Params": [
+            2,
+            6710
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "大厅里安静得能听到穹顶投影的嗡鸣。"
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "经过这些年的技术迭代，我们终于，终于把匹配门槛降到了可执行的范围。",
+            1
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "格式塔已经完成了全球范围的匹配扫描——",
+            1
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 201,
+        "Params": [
+            1,
+            501600,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "她看向了露西亚和【kuroname】。"
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            2,
+            "",
+            -35,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "在全世界的适役人口中，只有两个人的意识结构能够完美适配【王冠】质点。",
+            1
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "就是你们两个，露西亚，【kuroname】。",
+            1
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "大厅里爆发出一阵巨大的骚动，有人惊呼，有人鼓掌，有人什么都没听懂但跟着激动了起来。"
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "Type": 201,
+        "Params": [
+            1,
+            501600
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "露西亚看向【kuroname】，没有说话。"
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "Type": 302,
+        "Params": [
+            "",
+            "……这意味着什么？",
+            296
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront162.png",
+            0,
+            1,
+            0.35,
+            "",
+            "0|0|155"
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "Type": 205,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront1.png",
+            0,
+            0.7,
+            0.4,
+            "",
+            "80|55|820"
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1146.jpg",
+            0,
+            1,
+            0.5,
+            "",
+            "40|0|520"
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "她把终端翻转过来，屏幕上显示着一张引力场干涉模型的示意图。"
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "Type": 201,
+        "Params": [
+            18,
+            501609,
+            "",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "如果【王冠】成功运行，人类就可以对局部空间的引力场进行直接干涉，简单来说——我们可以折叠空间。",
+            18
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "星际航行将不再受限，人类可以去到比邻星、天狼星……甚至更远的地方。更极端的情况，我们也许可以干涉过去，让历史航向一个更美好的未来。",
+            18
+        ]
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她的声音越来越亮。"
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 201,
+        "Params": [
+            18,
+            501609,
+            "",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "多米尼克老师十六年前收到那段宇宙信号的时候，就已经看到了这条路。我们花了这么多年，这么多人的心血……",
+            18
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "终于走到这里了。",
+            18
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "Type": 202,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "她的眼眶红了，但笑得很灿烂。"
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
+        "Type": 201,
+        "Params": [
+            18,
+            501609,
+            8,
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 312,
+        "ActionId": 312,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "你们，露西亚，【kuroname】。",
+            18
+        ]
+    },
+    {
+        "Id": 313,
+        "ActionId": 313,
+        "Type": 204,
+        "Params": [
+            18,
+            1
+        ]
+    },
+    {
+        "Id": 314,
+        "ActionId": 314,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "你们可能是人类历史上第一批——真正触摸到星星的人。",
+            18
+        ]
+    },
+    {
+        "Id": 315,
+        "ActionId": 315,
+        "Type": 202,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 316,
+        "ActionId": 316,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront162.png",
+            1,
+            0,
+            0.25,
+            "",
+            "0|0|155"
+        ]
+    },
+    {
+        "Id": 317,
+        "ActionId": 317,
+        "Type": 205,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront1.png",
+            0.7,
+            0,
+            0.3,
+            "",
+            "80|55|820"
+        ]
+    },
+    {
+        "Id": 318,
+        "ActionId": 318,
+        "Type": 205,
+        "EndDelay": 300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1146.jpg",
+            1,
+            0,
+            0.35,
+            "",
+            "40|0|520"
+        ]
+    },
+    {
+        "Id": 319,
+        "ActionId": 319,
+        "Type": 401,
+        "Params": [
+            2,
+            4329
+        ]
+    },
+    {
+        "Id": 320,
+        "ActionId": 320,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "掌声再次响起来，这一次更大了。"
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
+        "Type": 104,
+        "EndDelay": 1000.0,
+        "Params": [
+            "0|-30|0",
+            0.9,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 322,
+        "ActionId": 322,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 323,
+        "ActionId": 323,
+        "Type": 205,
+        "EndDelay": 450.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1110.jpg",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 324,
+        "ActionId": 324,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1110.jpg"
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "露西亚安静地听完了这一切，然后抬起了头。"
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "星空穹顶上，银河横亘在正上方，每一颗星都在安静地亮着。那些光穿越了几百、几千、几万光年才抵达这里，而现在乔安告诉她，有一天她可能亲手触摸到它们的源头。"
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "她看了很久，【kuroname】也是同样。两个人并排仰着头，星光落在<M>他们</M><W>她们</W>的脸上，落在礼服上。"
+        ]
+    },
+    {
+        "Id": 331,
+        "ActionId": 331,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 332,
+        "ActionId": 332,
+        "Type": 205,
+        "EndDelay": 450.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1485.jpg",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 333,
+        "ActionId": 333,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1485.jpg"
+        ]
+    },
+    {
+        "Id": 334,
+        "ActionId": 334,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 335,
+        "ActionId": 335,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 336,
+        "ActionId": 336,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "露西亚忽然伸出手，指尖碰了一下【kuroname】的手背。"
+        ]
+    },
+    {
+        "Id": 337,
+        "ActionId": 337,
+        "Type": 201,
+        "Params": [
+            1,
+            501600,
+            1
+        ]
+    },
+    {
+        "Id": 338,
+        "ActionId": 338,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "……我们好像什么都没变。",
+            1
+        ]
+    },
+    {
+        "Id": 339,
+        "ActionId": 339,
+        "Type": 302,
+        "Params": [
+            "",
+            "什么意思？",
+            340
+        ]
+    },
+    {
+        "Id": 340,
+        "ActionId": 340,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "露西亚",
+            "入学那天，我们仰头看曙光III号，现在又在仰头看星星。",
+            1
+        ]
+    },
+    {
+        "Id": 341,
+        "ActionId": 341,
+        "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "是啊……",
+            342
+        ]
+    },
+    {
+        "Id": 342,
+        "ActionId": 342,
+        "Type": 202,
+        "EndDelay": 100.0,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 343,
+        "ActionId": 343,
+        "Type": 104,
+        "Params": [
+            "220|0|-200",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 344,
+        "ActionId": 344,
+        "Type": 101,
+        "EndAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_15.jpg"
+        ]
+    },
+    {
+        "Id": 345,
+        "ActionId": 345,
+        "Type": 104,
+        "EndDelay": 2000.0,
+        "Params": [
+            "220|-100|-200",
+            1.5,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 346,
+        "ActionId": 346,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "露西亚转过头，看着【kuroname】，眼神坚定，像是终于下定了决心。"
+        ]
+    },
+    {
+        "Id": 347,
+        "ActionId": 347,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "【kuroname】，我有话要跟你说。"
+        ]
+    },
+    {
+        "Id": 348,
+        "ActionId": 348,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "也几乎是与此同时，【kuroname】也开口了。"
+        ]
+    },
+    {
+        "Id": 349,
+        "ActionId": 349,
+        "Type": 302,
+        "Params": [
+            "",
+            "露西亚，我有话要对你说。"
+        ]
+    },
+    {
+        "Id": 350,
+        "ActionId": 350,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "……"
+        ]
+    },
+    {
+        "Id": 351,
+        "ActionId": 351,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "两个人同时愣了一下。"
+        ]
+    },
+    {
+        "Id": 352,
+        "ActionId": 352,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "……你先说。"
+        ]
+    },
+    {
+        "Id": 353,
+        "ActionId": 353,
+        "Type": 302,
+        "Params": [
+            "",
+            "你先。",
+            354
+        ]
+    },
+    {
+        "Id": 354,
+        "ActionId": 354,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "露西亚",
+            "我说了你先。"
+        ]
+    },
+    {
+        "Id": 355,
+        "ActionId": 355,
+        "Type": 302,
+        "Params": [
+            "",
+            "……那一起？",
+            356
+        ]
+    },
+    {
+        "Id": 356,
+        "ActionId": 356,
+        "Type": 104,
+        "Params": [
+            "-500|-180|-420",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 357,
+        "ActionId": 357,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_15.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 358,
+        "ActionId": 358,
+        "Type": 104,
+        "Params": [
+            "-500|-180|-420",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 359,
+        "ActionId": 359,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_15.jpg"
+        ]
+    },
+    {
+        "Id": 360,
+        "ActionId": 360,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 361,
+        "ActionId": 361,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "紧接着，两个人同时从礼服内侧的口袋中拿出了什么东西，各自藏在身后。"
+        ]
+    },
+    {
+        "Id": 362,
+        "ActionId": 362,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "……你还记不记得月球上的事？"
+        ]
+    },
+    {
+        "Id": 363,
+        "ActionId": 363,
+        "Type": 302,
+        "Params": [
+            "",
+            "飞月球车那次？",
+            364
+        ]
+    },
+    {
+        "Id": 364,
+        "ActionId": 364,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "露西亚",
+            "笨蛋，不是那个。"
+        ]
+    },
+    {
+        "Id": 365,
+        "ActionId": 365,
+        "Type": 302,
+        "Params": [
+            "",
+            "我知道。",
+            366
+        ]
+    },
+    {
+        "Id": 366,
+        "ActionId": 366,
+        "Type": 104,
+        "EndDelay": 1600.0,
+        "Params": [
+            "-400|-180|-420",
+            1.5,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 367,
+        "ActionId": 367,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 368,
+        "ActionId": 368,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_15.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 369,
+        "ActionId": 369,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 370,
+        "ActionId": 370,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_15.jpg"
+        ]
+    },
+    {
+        "Id": 371,
+        "ActionId": 371,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 372,
+        "ActionId": 372,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "几百多双眼睛注视着<M>他们</M><W>她们</W>，穹顶上的星光把二人的影子投在桌面上，交叠在一起。"
+        ]
+    },
+    {
+        "Id": 373,
+        "ActionId": 373,
+        "Type": 302,
+        "Params": [
+            "",
+            "我记得，你关掉了通讯频道，然后对我说了一句话。",
+            374
+        ]
+    },
+    {
+        "Id": 374,
+        "ActionId": 374,
+        "Type": 302,
+        "Params": [
+            "",
+            "说了之后脸有些红了。",
+            375
+        ]
+    },
+    {
+        "Id": 375,
+        "ActionId": 375,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "露西亚",
+            "我没有，那是地球反光。"
+        ]
+    },
+    {
+        "Id": 376,
+        "ActionId": 376,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚看着<M>他</M><W>她</W>，嘴唇动了一下，又抿住了。"
+        ]
+    },
+    {
+        "Id": 377,
+        "ActionId": 377,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "那时候我说，只说一次。"
+        ]
+    },
+    {
+        "Id": 378,
+        "ActionId": 378,
+        "Type": 302,
+        "Params": [
+            "",
+            "嗯。",
+            379
+        ]
+    },
+    {
+        "Id": 379,
+        "ActionId": 379,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "露西亚",
+            "我说谎了。"
+        ]
+    },
+    {
+        "Id": 380,
+        "ActionId": 380,
+        "Type": 104,
+        "Params": [
+            "200|-120|-235",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 381,
+        "ActionId": 381,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_15.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 382,
+        "ActionId": 382,
+        "Type": 104,
+        "Params": [
+            "200|-120|-235",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 383,
+        "ActionId": 383,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_15.jpg"
+        ]
+    },
+    {
+        "Id": 384,
+        "ActionId": 384,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 385,
+        "ActionId": 385,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "露西亚",
+            "在那之后，那句话我想说了很多次。"
+        ]
+    },
+    {
+        "Id": 386,
+        "ActionId": 386,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "在北非的时候，凌晨三点睡不着，想说。出任务之前检查装备的时候，想说。收到你发的那些照片的时候，南太平洋的日落，拍得实在很丑，但也想说。"
+        ]
+    },
+    {
+        "Id": 387,
+        "ActionId": 387,
+        "Type": 302,
+        "Params": [
+            "",
+            "……那你怎么不说？",
+            388
+        ]
+    },
+    {
+        "Id": 388,
+        "ActionId": 388,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "因为说了“只说一次”。"
+        ]
+    },
+    {
+        "Id": 389,
+        "ActionId": 389,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "所以我想了一个别的办法。"
+        ]
+    },
+    {
+        "Id": 390,
+        "ActionId": 390,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 391,
+        "ActionId": 391,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她的手从身后慢慢拿了出来。"
+        ]
+    },
+    {
+        "Id": 392,
+        "ActionId": 392,
+        "Type": 302,
+        "Params": [
+            "",
+            "真巧。",
+            393
+        ]
+    },
+    {
+        "Id": 393,
+        "ActionId": 393,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "露西亚",
+            "什么？"
+        ]
+    },
+    {
+        "Id": 394,
+        "ActionId": 394,
+        "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "我也想了一个办法。",
+            395
+        ]
+    },
+    {
+        "Id": 395,
+        "ActionId": 395,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 396,
+        "ActionId": 396,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 397,
+        "ActionId": 397,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1485.jpg"
+        ]
+    },
+    {
+        "Id": 398,
+        "ActionId": 398,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "两个人面对面站着，各自举着一个精致的礼盒，表情从震惊慢慢变成了一种很难形容的情绪，又想笑又想叹气，想说点什么，但却什么都说不出来。"
+        ]
+    },
+    {
+        "Id": 399,
+        "ActionId": 399,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "乔安已经快要哭了，奥菲莉娅憋着笑憋得脸通红，阿德莱德的嘴角动了一下，以她的标准来说，这已经等于大笑了。"
+        ]
+    },
+    {
+        "Id": 400,
+        "ActionId": 400,
+        "Type": 201,
+        "Params": [
+            1,
+            501600,
+            1
+        ]
+    },
+    {
+        "Id": 401,
+        "ActionId": 401,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "【kuroname】，你是否愿意……",
+            1
+        ]
+    },
+    {
+        "Id": 402,
+        "ActionId": 402,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "大厅里有人开始鼓掌，然后更多的掌声加入进来。"
+        ]
+    },
+    {
+        "Id": 403,
+        "ActionId": 403,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 404,
+        "ActionId": 404,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "所有人张开嘴，准备开始欢呼——"
+        ]
+    },
+    {
+        "Id": 405,
+        "ActionId": 405,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 406,
+        "ActionId": 406,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "但那欢快的笑声，全都消失在了嗓子里。"
+        ]
+    },
+    {
+        "Id": 407,
+        "ActionId": 407,
+        "Type": 401,
+        "Params": [
+            1,
+            7160
+        ]
+    },
+    {
+        "Id": 408,
+        "ActionId": 408,
+        "Type": 401,
+        "Params": [
+            2,
+            5383
+        ]
+    },
+    {
+        "Id": 409,
+        "ActionId": 409,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 410,
+        "ActionId": 410,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "头顶，一声巨响。"
+        ]
+    },
+    {
+        "Id": 411,
+        "ActionId": 411,
+        "Type": 401,
+        "Params": [
+            2,
+            5285
+        ]
+    },
+    {
+        "Id": 412,
+        "ActionId": 412,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 413,
+        "ActionId": 413,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "星空穹顶从中央开始龟裂，裂纹以肉眼可见的速度向四周蔓延，像蛛网，像闪电，像某种不该存在的东西正在从裂缝中挤进来。"
+        ]
+    },
+    {
+        "Id": 414,
+        "ActionId": 414,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4
+        ]
+    },
+    {
+        "Id": 415,
+        "ActionId": 415,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "阿德莱德",
+            "散开！！",
+            1
+        ]
+    },
+    {
+        "Id": 416,
+        "ActionId": 416,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 417,
+        "ActionId": 417,
+        "Type": 401,
+        "Params": [
+            2,
+            4929
+        ]
+    },
+    {
+        "Id": 418,
+        "ActionId": 418,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.7,
+            0.7,
+            0.2
+        ]
+    },
+    {
+        "Id": 419,
+        "ActionId": 419,
+        "Type": 402,
+        "Params": [
+            4929
+        ]
+    },
+    {
+        "Id": 420,
+        "ActionId": 420,
+        "Type": 205,
+        "EndDelay": 200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.8,
+            0.8,
+            0.2
+        ]
+    },
+    {
+        "Id": 421,
+        "ActionId": 421,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.7,
+            0.7,
+            0.2
+        ]
+    },
+    {
+        "Id": 422,
+        "ActionId": 422,
+        "Type": 205,
+        "EndDelay": 100.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.8,
+            1,
+            0.2
+        ]
+    },
+    {
+        "Id": 423,
+        "ActionId": 423,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 424,
+        "ActionId": 424,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 425,
+        "ActionId": 425,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab"
+        ]
+    },
+    {
+        "Id": 426,
+        "ActionId": 426,
+        "Type": 401,
+        "EndDelay": 50.0,
+        "Params": [
+            2,
+            2796
+        ]
+    },
+    {
+        "Id": 427,
+        "ActionId": 427,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 428,
+        "ActionId": 428,
+        "Type": 401,
+        "Params": [
+            2,
+            2655
+        ]
+    },
+    {
+        "Id": 429,
+        "ActionId": 429,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "",
+            "轰————"
+        ]
+    },
+    {
+        "Id": 430,
+        "ActionId": 430,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "穹顶的玻璃碎成了千万块，在灯光中折射出刺眼的光芒，像一场倒着下的暴雪。灯光闪了两下，然后全部熄灭。"
+        ]
+    },
+    {
+        "Id": 431,
+        "ActionId": 431,
+        "Type": 401,
+        "Params": [
+            2,
+            4225
+        ]
+    },
+    {
+        "Id": 432,
+        "ActionId": 432,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 433,
+        "ActionId": 433,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "与黑暗同时涌来的，是一层诡谲的雾气。"
+        ]
+    },
+    {
+        "Id": 434,
+        "ActionId": 434,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "白色的雾从碎裂的穹顶缝隙中倾泻而下，从大厅的每一扇门、每一扇窗、每一条通风管道涌进来。"
+        ]
+    },
+    {
+        "Id": 435,
+        "ActionId": 435,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这种雾有质感和重量，不像烟或水汽，流过皮肤的时候像冰凉的丝绸，它膨胀着，吞没了桌子和餐具，吞没了地面上所有的光。"
+        ]
+    },
+    {
+        "Id": 436,
+        "ActionId": 436,
+        "Type": 401,
+        "Params": [
+            2,
+            4784
+        ]
+    },
+    {
+        "Id": 437,
+        "ActionId": 437,
+        "Type": 401,
+        "Params": [
+            2,
+            2655
+        ]
+    },
+    {
+        "Id": 438,
+        "ActionId": 438,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "尖叫声、玻璃破碎声，所有声音都被那层不断增厚的白雾吸收、扭曲，变得遥远。"
+        ]
+    },
+    {
+        "Id": 439,
+        "ActionId": 439,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            5
+        ]
+    },
+    {
+        "Id": 440,
+        "ActionId": 440,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "怎么回事——！！",
+            1
+        ]
+    },
+    {
+        "Id": 441,
+        "ActionId": 441,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 442,
+        "ActionId": 442,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -250
+        ]
+    },
+    {
+        "Id": 443,
+        "ActionId": 443,
+        "Type": 201,
+        "Params": [
+            2,
+            501596,
+            5,
+            250
+        ]
+    },
+    {
+        "Id": 444,
+        "ActionId": 444,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "她本能地伸手去抓身边的人，手指碰到了奥菲莉娅的衣袖。"
+        ]
+    },
+    {
+        "Id": 445,
+        "ActionId": 445,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "走！乔安！这里要塌了！！",
+            2
+        ]
+    },
+    {
+        "Id": 446,
+        "ActionId": 446,
+        "Type": 401,
+        "Params": [
+            2,
+            2796
+        ]
+    },
+    {
+        "Id": 447,
+        "ActionId": 447,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 448,
+        "ActionId": 448,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 449,
+        "ActionId": 449,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "就在一秒前，露西亚和【kuroname】还站在她三步远的地方，各自手里举着戒指盒，脸上带着那种又惊又喜的傻表情。"
+        ]
+    },
+    {
+        "Id": 450,
+        "ActionId": 450,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "现在那里什么都没有了。"
+        ]
+    },
+    {
+        "Id": 451,
+        "ActionId": 451,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab"
+        ]
+    },
+    {
+        "Id": 452,
+        "ActionId": 452,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            7
+        ]
+    },
+    {
+        "Id": 453,
+        "ActionId": 453,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "……露西亚？",
+            1
+        ]
+    },
+    {
+        "Id": 454,
+        "ActionId": 454,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 455,
+        "ActionId": 455,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "露西亚！！【kuroname】！！",
+            1
+        ]
+    },
+    {
+        "Id": 456,
+        "ActionId": 456,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她的声音被白雾吞掉了，像被扔进了一片棉花做成的深渊。"
+        ]
+    },
+    {
+        "Id": 457,
+        "ActionId": 457,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "乔安",
+            "<M>他们</M><W>她们</W>……刚才就在这里……",
+            1
+        ]
+    },
+    {
+        "Id": 458,
+        "ActionId": 458,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 459,
+        "ActionId": 459,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "所有人冷静——不要分散——",
+            1
+        ]
+    },
+    {
+        "Id": 460,
+        "ActionId": 460,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 461,
+        "ActionId": 461,
+        "Type": 401,
+        "Params": [
+            2,
+            6738
+        ]
+    },
+    {
+        "Id": 462,
+        "ActionId": 462,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "大厅外面传来了更多的声音，仿佛有什么东西正在从地底隆起爬出，带着钢铁扭曲的尖啸，以及某种电子设备发出的刺耳嘶鸣。"
+        ]
+    },
+    {
+        "Id": 463,
+        "ActionId": 463,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            7
+        ]
+    },
+    {
+        "Id": 464,
+        "ActionId": 464,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "……呃！",
+            1
+        ]
+    },
+    {
+        "Id": 465,
+        "ActionId": 465,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBianHong.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 466,
+        "ActionId": 466,
+        "Type": 401,
+        "Params": [
+            2,
+            1505
+        ]
+    },
+    {
+        "Id": 467,
+        "ActionId": 467,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她忽然感到掌心发烫，抬起手，发现紧握的终端正在跳跃着血红色的诡异符号，整个装置像一块融化了的铁，泛出猩红色的电流，融蚀手套，撕裂她的肌肤。"
+        ]
+    },
+    {
+        "Id": 468,
+        "ActionId": 468,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBianHong.prefab"
+        ]
+    },
+    {
+        "Id": 469,
+        "ActionId": 469,
+        "Type": 401,
+        "Params": [
+            2,
+            4681
+        ]
+    },
+    {
+        "Id": 470,
+        "ActionId": 470,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 471,
+        "ActionId": 471,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她立刻把终端丢了出去。"
+        ]
+    },
+    {
+        "Id": 472,
+        "ActionId": 472,
+        "Type": 401,
+        "Params": [
+            2,
+            6613
+        ]
+    },
+    {
+        "Id": 473,
+        "ActionId": 473,
+        "Type": 201,
+        "Params": [
+            1,
+            501668
+        ]
+    },
+    {
+        "Id": 474,
+        "ActionId": 474,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            1,
+            "学生",
+            "啊啊啊啊啊！！",
+            1
+        ]
+    },
+    {
+        "Id": 475,
+        "ActionId": 475,
+        "Type": 203,
+        "EndDelay": 350.0,
+        "Params": [
+            1,
+            0.35,
+            "",
+            -30
+        ]
+    },
+    {
+        "Id": 476,
+        "ActionId": 476,
+        "Type": 203,
+        "Params": [
+            1,
+            0.6,
+            "",
+            -60
+        ]
+    },
+    {
+        "Id": 477,
+        "ActionId": 477,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 478,
+        "ActionId": 478,
+        "Type": 401,
+        "Params": [
+            2,
+            4802
+        ]
+    },
+    {
+        "Id": 479,
+        "ActionId": 479,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png",
+            0,
+            1,
+            0.2
+        ]
+    },
+    {
+        "Id": 480,
+        "ActionId": 480,
+        "Type": 402,
+        "Params": [
+            6613
+        ]
+    },
+    {
+        "Id": 481,
+        "ActionId": 481,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "乔安听到身侧传来惨叫，她转过头去，看到一个佩戴着战术目镜的学生跪倒在地，目镜泛着红光，像硫酸一样钻入她的眼鼻，腐蚀血肉。"
+        ]
+    },
+    {
+        "Id": 482,
+        "ActionId": 482,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 483,
+        "ActionId": 483,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "仅是几秒的时间，她的头颅就被融成一滩血水。"
+        ]
+    },
+    {
+        "Id": 484,
+        "ActionId": 484,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            13
+        ]
+    },
+    {
+        "Id": 485,
+        "ActionId": 485,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "乔安",
+            "！！！",
+            1
+        ]
+    },
+    {
+        "Id": 486,
+        "ActionId": 486,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 487,
+        "ActionId": 487,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 488,
+        "ActionId": 488,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "丢掉身上的所有电子设备！！快！！",
+            1
+        ]
+    },
+    {
+        "Id": 489,
+        "ActionId": 489,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            5,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 490,
+        "ActionId": 490,
+        "Type": 301,
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "到底是什么回事？恐怖袭击吗？！",
+            1
+        ]
+    },
+    {
+        "Id": 491,
+        "ActionId": 491,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            13,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 492,
+        "ActionId": 492,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "不……不对……",
+            1
+        ]
+    },
+    {
+        "Id": 493,
+        "ActionId": 493,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 494,
+        "ActionId": 494,
+        "Type": 401,
+        "EndDelay": 50.0,
+        "Params": [
+            2,
+            2796
+        ]
+    },
+    {
+        "Id": 495,
+        "ActionId": 495,
+        "Type": 401,
+        "EndDelay": 50.0,
+        "Params": [
+            2,
+            2655
+        ]
+    },
+    {
+        "Id": 496,
+        "ActionId": 496,
+        "Type": 401,
+        "Params": [
+            2,
+            1504
+        ]
+    },
+    {
+        "Id": 497,
+        "ActionId": 497,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 498,
+        "ActionId": 498,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "整个礼堂像是失去了骨架一般，在震天的巨响中摇摇欲坠。乔安被奥菲莉娅拉着手，怔愣地狂奔出去。"
+        ]
+    },
+    {
+        "Id": 499,
+        "ActionId": 499,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab"
+        ]
+    },
+    {
+        "Id": 500,
+        "ActionId": 500,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 501,
+        "ActionId": 501,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她回望着身后诡异的惨状，忽然有一种强烈的预感袭上心头。"
+        ]
+    },
+    {
+        "Id": 502,
+        "ActionId": 502,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            13
+        ]
+    },
+    {
+        "Id": 503,
+        "ActionId": 503,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "乔安",
+            "是……是零点能反应堆！！",
+            1
+        ]
+    },
+    {
+        "Id": 504,
+        "ActionId": 504,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -250
+        ]
+    },
+    {
+        "Id": 505,
+        "ActionId": 505,
+        "Type": 201,
+        "Params": [
+            2,
+            501596,
+            5,
+            250
+        ]
+    },
+    {
+        "Id": 506,
+        "ActionId": 506,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "零点能？你什么意思？",
+            2
+        ]
+    },
+    {
+        "Id": 507,
+        "ActionId": 507,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 508,
+        "ActionId": 508,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 509,
+        "ActionId": 509,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 510,
+        "ActionId": 510,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab"
+        ]
+    },
+    {
+        "Id": 511,
+        "ActionId": 511,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1518.jpg"
+        ]
+    },
+    {
+        "Id": 512,
+        "ActionId": 512,
+        "Type": 205,
+        "EndAnim": "AniZhuanchangEnd",
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront88.png",
+            0.9,
+            0.9,
+            0,
+            "",
+            "0|0|-200"
+        ]
+    },
+    {
+        "Id": 513,
+        "ActionId": 513,
+        "Type": 401,
+        "EndDelay": 50.0,
+        "Params": [
+            2,
+            2796
+        ]
+    },
+    {
+        "Id": 514,
+        "ActionId": 514,
+        "Type": 401,
+        "Params": [
+            2,
+            2796
+        ]
+    },
+    {
+        "Id": 515,
+        "ActionId": 515,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 516,
+        "ActionId": 516,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 517,
+        "ActionId": 517,
+        "Type": 201,
+        "Params": [
+            1,
+            500346,
+            "",
+            -600,
+            -1080
+        ]
+    },
+    {
+        "Id": 518,
+        "ActionId": 518,
+        "Type": 201,
+        "Params": [
+            2,
+            500346,
+            "",
+            "",
+            -1080
+        ]
+    },
+    {
+        "Id": 519,
+        "ActionId": 519,
+        "Type": 201,
+        "Params": [
+            3,
+            500346,
+            "",
+            600,
+            -1080
+        ]
+    },
+    {
+        "Id": 520,
+        "ActionId": 520,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "轰————"
+        ]
+    },
+    {
+        "Id": 521,
+        "ActionId": 521,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 522,
+        "ActionId": 522,
+        "Type": 401,
+        "EndDelay": 50.0,
+        "Params": [
+            2,
+            4376
+        ]
+    },
+    {
+        "Id": 523,
+        "ActionId": 523,
+        "Type": 203,
+        "Params": [
+            1,
+            0.35,
+            -600,
+            0
+        ]
+    },
+    {
+        "Id": 524,
+        "ActionId": 524,
+        "Type": 203,
+        "Params": [
+            2,
+            0.5,
+            "",
+            0
+        ]
+    },
+    {
+        "Id": 525,
+        "ActionId": 525,
+        "Type": 203,
+        "Params": [
+            3,
+            0.35,
+            600,
+            0
+        ]
+    },
+    {
+        "Id": 526,
+        "ActionId": 526,
+        "Type": 401,
+        "Params": [
+            2,
+            4376
+        ]
+    },
+    {
+        "Id": 527,
+        "ActionId": 527,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "窗户外的广场上，一排停放整齐的训练用战术机甲正在诡异地扭动，装甲板像活物一样弓起、撕裂，然后重新拼合，四肢以不符合机械结构的方式弯折过来。"
+        ]
+    },
+    {
+        "Id": 528,
+        "ActionId": 528,
+        "Type": 401,
+        "Params": [
+            2,
+            1508
+        ]
+    },
+    {
+        "Id": 529,
+        "ActionId": 529,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "它们的关节处挤出猩红色的电弧，像暴露的血管，驾驶舱的玻璃面罩碎裂开来，里面没有人，但它站了起来。",
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 530,
+        "ActionId": 530,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 531,
+        "ActionId": 531,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 532,
+        "ActionId": 532,
+        "Type": 201,
+        "Params": [
+            4,
+            501609,
+            5
+        ]
+    },
+    {
+        "Id": 533,
+        "ActionId": 533,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "如果……如果零点能反应堆接入了电网的瞬间，有什么东西沿着电网扩散了，所以那些电子设备才会……！",
+            4
+        ]
+    },
+    {
+        "Id": 534,
+        "ActionId": 534,
+        "Type": 201,
+        "Params": [
+            4,
+            501596,
+            5,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 535,
+        "ActionId": 535,
+        "Type": 301,
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "别说了！先走！",
+            4
+        ]
+    },
+    {
+        "Id": 536,
+        "ActionId": 536,
+        "Type": 201,
+        "Params": [
+            4,
+            501627,
+            4,
+            "",
+            -50,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 537,
+        "ActionId": 537,
+        "Type": 203,
+        "Params": [
+            4,
+            0.25,
+            "",
+            0
+        ]
+    },
+    {
+        "Id": 538,
+        "ActionId": 538,
+        "Type": 401,
+        "Params": [
+            2,
+            5953
+        ]
+    },
+    {
+        "Id": 539,
+        "ActionId": 539,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "阿德莱德从地上捡起一根断裂的金属桌腿，她掂了掂重量，握在手里。"
+        ]
+    },
+    {
+        "Id": 540,
+        "ActionId": 540,
+        "Type": 204,
+        "Params": [
+            4,
+            0
+        ]
+    },
+    {
+        "Id": 541,
+        "ActionId": 541,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她的右膝隐隐作痛，但步伐没有任何犹豫。"
+        ]
+    },
+    {
+        "Id": 542,
+        "ActionId": 542,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "所有人放弃智能火力！不要碰任何电子设备！",
+            4
+        ]
+    },
+    {
+        "Id": 543,
+        "ActionId": 543,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "以就近原则，三人编成临时小队！搜集一切可以使用的武器！",
+            4
+        ]
+    },
+    {
+        "Id": 544,
+        "ActionId": 544,
+        "Type": 202,
+        "Params": [
+            4,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 545,
+        "ActionId": 545,
+        "Type": 201,
+        "Params": [
+            1,
+            501662,
+            "",
+            -550
+        ]
+    },
+    {
+        "Id": 546,
+        "ActionId": 546,
+        "Type": 201,
+        "Params": [
+            2,
+            501668
+        ]
+    },
+    {
+        "Id": 547,
+        "ActionId": 547,
+        "Type": 201,
+        "Params": [
+            3,
+            501663,
+            "",
+            550
+        ]
+    },
+    {
+        "Id": 548,
+        "ActionId": 548,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生们",
+            "是！",
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 549,
+        "ActionId": 549,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 550,
+        "ActionId": 550,
+        "Type": 401,
+        "Params": [
+            2,
+            1504
+        ]
+    },
+    {
+        "Id": 551,
+        "ActionId": 551,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 552,
+        "ActionId": 552,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "礼堂外的廊道上没有武器库，但法奥斯的学生不需要它们。"
+        ]
+    },
+    {
+        "Id": 553,
+        "ActionId": 553,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 554,
+        "ActionId": 554,
+        "Type": 401,
+        "EndDelay": 50.0,
+        "Params": [
+            2,
+            4892
+        ]
+    },
+    {
+        "Id": 555,
+        "ActionId": 555,
+        "Type": 401,
+        "EndDelay": 50.0,
+        "Params": [
+            2,
+            5953
+        ]
+    },
+    {
+        "Id": 556,
+        "ActionId": 556,
+        "Type": 401,
+        "EndDelay": 50.0,
+        "Params": [
+            2,
+            4045
+        ]
+    },
+    {
+        "Id": 557,
+        "ActionId": 557,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "长桌的桌腿被拧下来，椅背的钢管被掰断，有人把餐刀攥在手里，有人把陶瓷花瓶砸碎，留下瓶底最锋利的那一块。"
+        ]
+    },
+    {
+        "Id": 558,
+        "ActionId": 558,
+        "Type": 401,
+        "Params": [
+            2,
+            1504
+        ]
+    },
+    {
+        "Id": 559,
+        "ActionId": 559,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "前后不到二十秒，大厅里站着的人们已经全部武装完毕。"
+        ]
+    },
+    {
+        "Id": 560,
+        "ActionId": 560,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 561,
+        "ActionId": 561,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4,
+            0
+        ]
+    },
+    {
+        "Id": 562,
+        "ActionId": 562,
+        "Type": 201,
+        "Params": [
+            2,
+            501662,
+            "",
+            -700
+        ]
+    },
+    {
+        "Id": 563,
+        "ActionId": 563,
+        "Type": 201,
+        "Params": [
+            3,
+            501648,
+            2,
+            700
+        ]
+    },
+    {
+        "Id": 564,
+        "ActionId": 564,
+        "Type": 201,
+        "Params": [
+            4,
+            501672,
+            "",
+            320
+        ]
+    },
+    {
+        "Id": 565,
+        "ActionId": 565,
+        "Type": 201,
+        "Params": [
+            5,
+            501668,
+            "",
+            -320
+        ]
+    },
+    {
+        "Id": 566,
+        "ActionId": 566,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "倒下的警卫智械那儿有一些老式手雷，每个小队一个，不要擅自使用。",
+            1
+        ]
+    },
+    {
+        "Id": 567,
+        "ActionId": 567,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "各小队跟紧我！往棱镜广场方向撤退！",
+            1
+        ]
+    },
+    {
+        "Id": 568,
+        "ActionId": 568,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "学生们",
+            "明白！！",
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    {
+        "Id": 569,
+        "ActionId": 569,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 570,
+        "ActionId": 570,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 571,
+        "ActionId": 571,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1493.jpg"
+        ]
+    },
+    {
+        "Id": 572,
+        "ActionId": 572,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.9,
+            0.9,
+            0,
+            "",
+            "0|0|0"
+        ]
+    },
+    {
+        "Id": 573,
+        "ActionId": 573,
+        "Type": 201,
+        "Params": [
+            15,
+            500346,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 574,
+        "ActionId": 574,
+        "Type": 201,
+        "Params": [
+            16,
+            500346
+        ]
+    },
+    {
+        "Id": 575,
+        "ActionId": 575,
+        "Type": 201,
+        "Params": [
+            17,
+            500346,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 576,
+        "ActionId": 576,
+        "Type": 401,
+        "Params": [
+            2,
+            1508
+        ]
+    },
+    {
+        "Id": 577,
+        "ActionId": 577,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "感染体",
+            "——嘶！！！",
+            15,
+            16,
+            17
+        ]
+    },
+    {
+        "Id": 578,
+        "ActionId": 578,
+        "Type": 202,
+        "Params": [
+            15,
+            16,
+            17,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 579,
+        "ActionId": 579,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 580,
+        "ActionId": 580,
+        "Type": 201,
+        "Params": [
+            1,
+            501662
+        ]
+    },
+    {
+        "Id": 581,
+        "ActionId": 581,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生A",
+            "来吧，怪物！！",
+            1
+        ]
+    },
+    {
+        "Id": 582,
+        "ActionId": 582,
+        "Type": 203,
+        "Params": [
+            1,
+            0.35,
+            "",
+            -50,
+            -50
+        ]
+    },
+    {
+        "Id": 583,
+        "ActionId": 583,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 584,
+        "ActionId": 584,
+        "Type": 201,
+        "Params": [
+            2,
+            501662,
+            "",
+            -750,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 585,
+        "ActionId": 585,
+        "Type": 201,
+        "Params": [
+            3,
+            500346,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 586,
+        "ActionId": 586,
+        "Type": 201,
+        "Params": [
+            4,
+            501668,
+            "",
+            750,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 587,
+        "ActionId": 587,
+        "Type": 203,
+        "Params": [
+            2,
+            0.2,
+            -450
+        ]
+    },
+    {
+        "Id": 588,
+        "ActionId": 588,
+        "Type": 203,
+        "Params": [
+            4,
+            0.2,
+            450
+        ]
+    },
+    {
+        "Id": 589,
+        "ActionId": 589,
+        "Type": 401,
+        "Params": [
+            2,
+            11106007
+        ]
+    },
+    {
+        "Id": 590,
+        "ActionId": 590,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 591,
+        "ActionId": 591,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 592,
+        "ActionId": 592,
+        "Type": 301,
+        "BeginAnim": "PanelActor3Shake",
+        "Params": [
+            1,
+            "",
+            "第一只感染体从侧面通道爬出，径直冲向学生队伍——六根钢管齐齐砸了下去。"
+        ]
+    },
+    {
+        "Id": 593,
+        "ActionId": 593,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25,
+            -750
+        ]
+    },
+    {
+        "Id": 594,
+        "ActionId": 594,
+        "Type": 203,
+        "Params": [
+            4,
+            0.25,
+            750
+        ]
+    },
+    {
+        "Id": 595,
+        "ActionId": 595,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 596,
+        "ActionId": 596,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "三个人正面迎敌，两个人封锁侧翼，一个人盯着后方。这是标准的六人制近身制压阵型，法奥斯一年级必修的基础课目。"
+        ]
+    },
+    {
+        "Id": 597,
+        "ActionId": 597,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 598,
+        "ActionId": 598,
+        "Type": 202,
+        "Params": [
+            2,
+            3,
+            4,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 599,
+        "ActionId": 599,
+        "Type": 201,
+        "Params": [
+            5,
+            501668
+        ]
+    },
+    {
+        "Id": 600,
+        "ActionId": 600,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "学生B",
+            "这东西不会死——！",
+            5
+        ]
+    },
+    {
+        "Id": 601,
+        "ActionId": 601,
+        "Type": 202,
+        "Params": [
+            5,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 602,
+        "ActionId": 602,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4
+        ]
+    },
+    {
+        "Id": 603,
+        "ActionId": 603,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "不用杀死它！打散结构，让它无法行动！瞄关节打！",
+            1
+        ]
+    },
+    {
+        "Id": 604,
+        "ActionId": 604,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 605,
+        "ActionId": 605,
+        "Type": 201,
+        "Params": [
+            2,
+            501662,
+            "",
+            -730
+        ]
+    },
+    {
+        "Id": 606,
+        "ActionId": 606,
+        "Type": 201,
+        "Params": [
+            3,
+            501648,
+            2,
+            -250
+        ]
+    },
+    {
+        "Id": 607,
+        "ActionId": 607,
+        "Type": 201,
+        "Params": [
+            4,
+            501672,
+            "",
+            250
+        ]
+    },
+    {
+        "Id": 608,
+        "ActionId": 608,
+        "Type": 201,
+        "Params": [
+            5,
+            501668,
+            "",
+            730
+        ]
+    },
+    {
+        "Id": 609,
+        "ActionId": 609,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "二波感染体涌上来的时候，学生们已经自发形成了交替掩护的撤退队形。前排接敌，后排观察，每退十步换一组人顶上去，受伤的被拉到队伍中间。"
+        ]
+    },
+    {
+        "Id": 610,
+        "ActionId": 610,
+        "Type": 401,
+        "Params": [
+            2,
+            1504
+        ]
+    },
+    {
+        "Id": 611,
+        "ActionId": 611,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25,
+            -730,
+            -50,
+            -50
+        ]
+    },
+    {
+        "Id": 612,
+        "ActionId": 612,
+        "Type": 203,
+        "Params": [
+            3,
+            0.35,
+            -250,
+            -50,
+            -50
+        ]
+    },
+    {
+        "Id": 613,
+        "ActionId": 613,
+        "Type": 203,
+        "Params": [
+            4,
+            0.25,
+            250,
+            -50,
+            -50
+        ]
+    },
+    {
+        "Id": 614,
+        "ActionId": 614,
+        "Type": 203,
+        "Params": [
+            5,
+            0.35,
+            730,
+            -50,
+            -50
+        ]
+    },
+    {
+        "Id": 615,
+        "ActionId": 615,
+        "Type": 202,
+        "Params": [
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    {
+        "Id": 616,
+        "ActionId": 616,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "没有人教过他们在这种情况下该怎么做，但法奥斯教过他们在任何情况下都该怎么做。"
+        ]
+    },
+    {
+        "Id": 617,
+        "ActionId": 617,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 618,
+        "ActionId": 618,
+        "Type": 401,
+        "EndDelay": 50.0,
+        "Params": [
+            2,
+            1503
+        ]
+    },
+    {
+        "Id": 619,
+        "ActionId": 619,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 620,
+        "ActionId": 620,
+        "Type": 401,
+        "Params": [
+            2,
+            844090
+        ]
+    },
+    {
+        "Id": 621,
+        "ActionId": 621,
+        "Type": 201,
+        "Params": [
+            1,
+            500020,
+            "",
+            950
+        ]
+    },
+    {
+        "Id": 622,
+        "ActionId": 622,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 623,
+        "ActionId": 623,
+        "Type": 301,
+        "Params": [
+            1,
+            "巨型感染体",
+            "吼！！！",
+            1
+        ]
+    },
+    {
+        "Id": 624,
+        "ActionId": 624,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 625,
+        "ActionId": 625,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 626,
+        "ActionId": 626,
+        "Type": 401,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 627,
+        "ActionId": 627,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 628,
+        "ActionId": 628,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 629,
+        "ActionId": 629,
+        "Type": 201,
+        "Params": [
+            2,
+            501643,
+            5
+        ]
+    },
+    {
+        "Id": 630,
+        "ActionId": 630,
+        "Type": 301,
+        "BeginAnim": "PanelActor2Shake",
+        "Params": [
+            1,
+            "尼娅",
+            "——呃！！",
+            2
+        ]
+    },
+    {
+        "Id": 631,
+        "ActionId": 631,
+        "Type": 203,
+        "EndDelay": 250.0,
+        "Params": [
+            2,
+            0.2,
+            -30,
+            -30
+        ]
+    },
+    {
+        "Id": 632,
+        "ActionId": 632,
+        "Type": 203,
+        "Params": [
+            2,
+            0.3,
+            0,
+            -50
+        ]
+    },
+    {
+        "Id": 633,
+        "ActionId": 633,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "尼娅被巨型感染体的尾部贯穿左腹，背部撞上了倒塌的石柱。"
+        ]
+    },
+    {
+        "Id": 634,
+        "ActionId": 634,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 635,
+        "ActionId": 635,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 636,
+        "ActionId": 636,
+        "Type": 201,
+        "Params": [
+            5,
+            501648,
+            2
+        ]
+    },
+    {
+        "Id": 637,
+        "ActionId": 637,
+        "Type": 301,
+        "BeginAnim": "PanelActor5Shake",
+        "Params": [
+            1,
+            "学生C",
+            "她受伤了！掩护！！呃啊啊啊——！！",
+            5
+        ]
+    },
+    {
+        "Id": 638,
+        "ActionId": 638,
+        "Type": 202,
+        "Params": [
+            5,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 639,
+        "ActionId": 639,
+        "Type": 201,
+        "Params": [
+            1,
+            500020,
+            "",
+            950
+        ]
+    },
+    {
+        "Id": 640,
+        "ActionId": 640,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5,
+            370,
+            0
+        ]
+    },
+    {
+        "Id": 641,
+        "ActionId": 641,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 642,
+        "ActionId": 642,
+        "Type": 401,
+        "Params": [
+            2,
+            11106007
+        ]
+    },
+    {
+        "Id": 643,
+        "ActionId": 643,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "另一个学生举起铁板冲了上去，感染体侧身挥击，铁钳窜出，如切黄油一般斩断了他的左腿。"
+        ]
+    },
+    {
+        "Id": 644,
+        "ActionId": 644,
+        "Type": 201,
+        "Params": [
+            18,
+            501643,
+            5
+        ]
+    },
+    {
+        "Id": 645,
+        "ActionId": 645,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 646,
+        "ActionId": 646,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "尼娅",
+            "呃！别管我——走！！",
+            18
+        ]
+    },
+    {
+        "Id": 647,
+        "ActionId": 647,
+        "Type": 201,
+        "Params": [
+            18,
+            501648,
+            2
+        ]
+    },
+    {
+        "Id": 648,
+        "ActionId": 648,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生C",
+            "咳啊……法奥斯……不会……",
+            18
+        ]
+    },
+    {
+        "Id": 649,
+        "ActionId": 649,
+        "Type": 301,
+        "Params": [
+            "",
+            "学生C",
+            "丢下任何一个人！！",
+            18
+        ]
+    },
+    {
+        "Id": 650,
+        "ActionId": 650,
+        "Type": 201,
+        "Params": [
+            18,
+            501672,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 651,
+        "ActionId": 651,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生D",
+            "一起顶上去！砸它的关节！！",
+            18
+        ]
+    },
+    {
+        "Id": 652,
+        "ActionId": 652,
+        "Type": 202,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 653,
+        "ActionId": 653,
+        "Type": 401,
+        "Params": [
+            2,
+            4225
+        ]
+    },
+    {
+        "Id": 654,
+        "ActionId": 654,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 655,
+        "ActionId": 655,
+        "Type": 401,
+        "Params": [
+            2,
+            4376
+        ]
+    },
+    {
+        "Id": 656,
+        "ActionId": 656,
+        "Type": 203,
+        "EndDelay": 250.0,
+        "Params": [
+            1,
+            0.2,
+            100,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 657,
+        "ActionId": 657,
+        "Type": 401,
+        "Params": [
+            2,
+            4376
+        ]
+    },
+    {
+        "Id": 658,
+        "ActionId": 658,
+        "Type": 203,
+        "EndDelay": 350.0,
+        "Params": [
+            1,
+            0.35,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 659,
+        "ActionId": 659,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "巨型感染体",
+            "——！！！",
+            1
+        ]
+    },
+    {
+        "Id": 660,
+        "ActionId": 660,
+        "Type": 401,
+        "Params": [
+            2,
+            4533
+        ]
+    },
+    {
+        "Id": 661,
+        "ActionId": 661,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "钢铁关节喷涌出灼热的蒸汽，将围上来的两名学生一并吹倒。"
+        ]
+    },
+    {
+        "Id": 662,
+        "ActionId": 662,
+        "Type": 401,
+        "Params": [
+            2,
+            4376
+        ]
+    },
+    {
+        "Id": 663,
+        "ActionId": 663,
+        "Type": 203,
+        "EndDelay": 350.0,
+        "Params": [
+            1,
+            0.35,
+            -80,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 664,
+        "ActionId": 664,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "它高举铁钳，迈前一步，猛地劈向倒在身前的男生。"
+        ]
+    },
+    {
+        "Id": 665,
+        "ActionId": 665,
+        "Type": 401,
+        "Params": [
+            2,
+            5715
+        ]
+    },
+    {
+        "Id": 666,
+        "ActionId": 666,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            "",
+            "",
+            "哐啷——铁钳在学生的面前停滞了，感染体向后看去，它的铁尾被钉在石柱的尼娅死死攥住，没法继续向前。"
+        ]
+    },
+    {
+        "Id": 667,
+        "ActionId": 667,
+        "Type": 402,
+        "Params": [
+            5715
+        ]
+    },
+    {
+        "Id": 668,
+        "ActionId": 668,
+        "Type": 201,
+        "Params": [
+            2,
+            501643,
+            5,
+            "",
+            -80
+        ]
+    },
+    {
+        "Id": 669,
+        "ActionId": 669,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "尼娅",
+            "——咳！！",
+            2
+        ]
+    },
+    {
+        "Id": 670,
+        "ActionId": 670,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 671,
+        "ActionId": 671,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png",
+            0,
+            1,
+            0.2,
+            "",
+            "0|0|0"
+        ]
+    },
+    {
+        "Id": 672,
+        "ActionId": 672,
+        "Type": 203,
+        "EndDelay": 300.0,
+        "Params": [
+            2,
+            0.25,
+            -30,
+            -50
+        ]
+    },
+    {
+        "Id": 673,
+        "ActionId": 673,
+        "Type": 203,
+        "Params": [
+            2,
+            0.4,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 674,
+        "ActionId": 674,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "尼娅吐出一口血，顺着贯穿腹部的铁尾，一点一点地向前，推着自己血肉模糊的身体，挪向感染体的躯干。"
+        ]
+    },
+    {
+        "Id": 675,
+        "ActionId": 675,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 676,
+        "ActionId": 676,
+        "Type": 301,
+        "Params": [
+            "",
+            "尼娅",
+            "尼娅……法奥斯一期生，编号374……！",
+            2
+        ]
+    },
+    {
+        "Id": 677,
+        "ActionId": 677,
+        "Type": 401,
+        "Params": [
+            2,
+            4803
+        ]
+    },
+    {
+        "Id": 678,
+        "ActionId": 678,
+        "Type": 401,
+        "Params": [
+            1,
+            7151
+        ]
+    },
+    {
+        "Id": 679,
+        "ActionId": 679,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她从腰间取出手雷，用染血的牙齿咬动引信。"
+        ]
+    },
+    {
+        "Id": 680,
+        "ActionId": 680,
+        "Type": 301,
+        "BeginAnim": "PanelActor2Shake",
+        "Params": [
+            "",
+            "尼娅",
+            "为明天——！！",
+            2
+        ]
+    },
+    {
+        "Id": 681,
+        "ActionId": 681,
+        "Type": 401,
+        "Params": [
+            2,
+            4805
+        ]
+    },
+    {
+        "Id": 682,
+        "ActionId": 682,
+        "Type": 401,
+        "Params": [
+            2,
+            555
+        ]
+    },
+    {
+        "Id": 683,
+        "ActionId": 683,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 684,
+        "ActionId": 684,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 685,
+        "ActionId": 685,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 686,
+        "ActionId": 686,
+        "Type": 205,
+        "Params": [
+            1005
+        ]
+    },
+    {
+        "Id": 687,
+        "ActionId": 687,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 688,
+        "ActionId": 688,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab"
+        ]
+    },
+    {
+        "Id": 689,
+        "ActionId": 689,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 690,
+        "ActionId": 690,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 691,
+        "ActionId": 691,
+        "Type": 401,
+        "Params": [
+            2,
+            5562
+        ]
+    },
+    {
+        "Id": 692,
+        "ActionId": 692,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 693,
+        "ActionId": 693,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "轰——————"
+        ]
+    },
+    {
+        "Id": 694,
+        "ActionId": 694,
+        "Type": 402,
+        "Params": [
+            5562
+        ]
+    },
+    {
+        "Id": 695,
+        "ActionId": 695,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab"
+        ]
+    },
+    {
+        "Id": 696,
+        "ActionId": 696,
+        "Type": 301,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "测试2"
+            "那一声轰鸣落在所有人的耳朵里，像一颗石子砸进了沉寂的水底。"
+        ]
+    },
+    {
+        "Id": 697,
+        "ActionId": 697,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory101.png"
+        ]
+    },
+    {
+        "Id": 698,
+        "ActionId": 698,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "它提醒了战场的每一个人，他们腰间还别着什么，他们的身体还能做什么。"
+        ]
+    },
+    {
+        "Id": 699,
+        "ActionId": 699,
+        "Type": 201,
+        "Params": [
+            15,
+            500346,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 700,
+        "ActionId": 700,
+        "Type": 201,
+        "Params": [
+            16,
+            500346
+        ]
+    },
+    {
+        "Id": 701,
+        "ActionId": 701,
+        "Type": 201,
+        "Params": [
+            17,
+            500346,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 702,
+        "ActionId": 702,
+        "Type": 401,
+        "Params": [
+            2,
+            1508
+        ]
+    },
+    {
+        "Id": 703,
+        "ActionId": 703,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 704,
+        "ActionId": 704,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "感染体如钢铁海浪般涌上来，一波退去，另一波的紧随其后，钢铁的嘶鸣声从四面八方挤压过来。"
+        ]
+    },
+    {
+        "Id": 705,
+        "ActionId": 705,
+        "Type": 401,
+        "Params": [
+            2,
+            4805
+        ]
+    },
+    {
+        "Id": 706,
+        "ActionId": 706,
+        "Type": 401,
+        "Params": [
+            2,
+            555
+        ]
+    },
+    {
+        "Id": 707,
+        "ActionId": 707,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 708,
+        "ActionId": 708,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 709,
+        "ActionId": 709,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab"
+        ]
+    },
+    {
+        "Id": 710,
+        "ActionId": 710,
+        "Type": 202,
+        "Params": [
+            15,
+            16,
+            17,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 711,
+        "ActionId": 711,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 712,
+        "ActionId": 712,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "第二声爆炸响了。"
+        ]
+    },
+    {
+        "Id": 713,
+        "ActionId": 713,
+        "Type": 504,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            0.5
+        ]
+    },
+    {
+        "Id": 714,
+        "ActionId": 714,
+        "Type": 304,
+        "Params": [
+            "<size=40>一期生汉尼夫，编号264。</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -4,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 715,
+        "ActionId": 715,
+        "Type": 304,
+        "Params": [
+            "<size=40>他被感染体砍断了右臂，用最后的力气拔掉了引信，</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 716,
+        "ActionId": 716,
+        "Type": 304,
+        "Params": [
+            "<size=40>冲向身边的两只感染体，把它们一起炸了个粉碎。</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            1,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 717,
+        "ActionId": 717,
+        "Type": 401,
+        "Params": [
+            2,
+            4805
+        ]
+    },
+    {
+        "Id": 718,
+        "ActionId": 718,
+        "Type": 401,
+        "Params": [
+            2,
+            555
+        ]
+    },
+    {
+        "Id": 719,
+        "ActionId": 719,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 720,
+        "ActionId": 720,
+        "Type": 304,
+        "Params": [
+            "<size=40>第三声，一期生比伯，编号197。</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -4,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 721,
+        "ActionId": 721,
+        "Type": 304,
+        "Params": [
+            "<size=40>第四声，二期生希卡，编号367。</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 722,
+        "ActionId": 722,
+        "Type": 304,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "<size=40>…………</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 723,
+        "ActionId": 723,
+        "Type": 401,
+        "Params": [
+            2,
+            4805
+        ]
+    },
+    {
+        "Id": 724,
+        "ActionId": 724,
+        "Type": 401,
+        "Params": [
+            2,
+            555
+        ]
+    },
+    {
+        "Id": 725,
+        "ActionId": 725,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 726,
+        "ActionId": 726,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 727,
+        "ActionId": 727,
+        "Type": 304,
+        "Params": [
+            "<size=40>一颗又一颗手雷的爆炸声响起，回荡在混乱的战场之上。</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -4,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 728,
+        "ActionId": 728,
+        "Type": 304,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "<size=40>他们用法奥斯教给他们的一切——包括自己，为同袍开辟出了唯一的生路。</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            "",
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 729,
+        "ActionId": 729,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab"
+        ]
+    },
+    {
+        "Id": 730,
+        "ActionId": 730,
+        "Type": 505,
+        "EndDelay": 500.0,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab"
+        ]
+    },
+    {
+        "Id": 731,
+        "ActionId": 731,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 732,
+        "ActionId": 732,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1492.jpg"
+        ]
+    },
+    {
+        "Id": 733,
+        "ActionId": 733,
+        "Type": 401,
+        "Params": [
+            2,
+            1504
+        ]
+    },
+    {
+        "Id": 734,
+        "ActionId": 734,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 735,
+        "ActionId": 735,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "等众人突破至一楼时，队伍已经缩了整整一截。"
+        ]
+    },
+    {
+        "Id": 736,
+        "ActionId": 736,
+        "Type": 104,
+        "EndDelay": 350.0,
+        "Params": [
+            "0|30|-50",
+            0.3
+        ]
+    },
+    {
+        "Id": 737,
+        "ActionId": 737,
+        "Type": 104,
+        "Params": [
+            "0|0|-100",
+            0.4
+        ]
+    },
+    {
+        "Id": 738,
+        "ActionId": 738,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "只要穿越一层的训练区，他们就能顺利冲入空旷的棱镜广场，打破室内作战的被动形势。"
+        ]
+    },
+    {
+        "Id": 739,
+        "ActionId": 739,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 740,
+        "ActionId": 740,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "就在众人准备出发时，乔安却悄悄留在了队尾，一个人走向相反的方向。"
+        ]
+    },
+    {
+        "Id": 741,
+        "ActionId": 741,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 742,
+        "ActionId": 742,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            6
+        ]
+    },
+    {
+        "Id": 743,
+        "ActionId": 743,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "乔安！你干嘛去！",
+            1
+        ]
+    },
+    {
+        "Id": 744,
+        "ActionId": 744,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 745,
+        "ActionId": 745,
+        "Type": 201,
+        "Params": [
+            2,
+            501609
+        ]
+    },
+    {
+        "Id": 746,
+        "ActionId": 746,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "……",
+            2
+        ]
+    },
+    {
+        "Id": 747,
+        "ActionId": 747,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 748,
+        "ActionId": 748,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "乔安站住了，她犹豫片刻，缓缓转过了头。"
+        ]
+    },
+    {
+        "Id": 749,
+        "ActionId": 749,
+        "Type": 204,
+        "Params": [
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 750,
+        "ActionId": 750,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "【王冠】还在实验楼里，我必须把它带回来。",
+            2
+        ]
+    },
+    {
+        "Id": 751,
+        "ActionId": 751,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 752,
+        "ActionId": 752,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            5
+        ]
+    },
+    {
+        "Id": 753,
+        "ActionId": 753,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "你疯了？！外面全是那些东西！",
+            1
+        ]
+    },
+    {
+        "Id": 754,
+        "ActionId": 754,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 755,
+        "ActionId": 755,
+        "Type": 201,
+        "Params": [
+            2,
+            501609,
+            14
+        ]
+    },
+    {
+        "Id": 756,
+        "ActionId": 756,
+        "Type": 301,
+        "Params": [
+            1,
+            "乔安",
+            "如果【王冠】也被感染了，先不论它会造成什么样的灾难……整整十六年，所有的研究，所有人的心血全都会付诸东流。",
+            2
+        ]
+    },
+    {
+        "Id": 757,
+        "ActionId": 757,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "有多少的牺牲凝聚在它身上……奥菲莉娅，你在环大西洋长大，你应该比我还要清楚。",
+            2
+        ]
+    },
+    {
+        "Id": 758,
+        "ActionId": 758,
+        "Type": 204,
+        "Params": [
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 759,
+        "ActionId": 759,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "我必须把它交到露西亚和【kuroname】手中。",
+            2
+        ]
+    },
+    {
+        "Id": 760,
+        "ActionId": 760,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 761,
+        "ActionId": 761,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            8
+        ]
+    },
+    {
+        "Id": 762,
+        "ActionId": 762,
+        "Type": 301,
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 763,
+        "ActionId": 763,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "奥菲莉娅张了张嘴，似乎想要骂些什么，却最终什么也没说。"
+        ]
+    },
+    {
+        "Id": 764,
+        "ActionId": 764,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 765,
+        "ActionId": 765,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "你连蚊子都拍不死，我跟你一起去。",
+            1
+        ]
+    },
+    {
+        "Id": 766,
+        "ActionId": 766,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 767,
+        "ActionId": 767,
+        "Type": 401,
+        "Params": [
+            2,
+            2987
+        ]
+    },
+    {
+        "Id": 768,
+        "ActionId": 768,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她绑紧了右肩的绷带，深吸一口气，朝着昏暗的后方走去。"
+        ]
+    },
+    {
+        "Id": 769,
+        "ActionId": 769,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4
+        ]
+    },
+    {
+        "Id": 770,
+        "ActionId": 770,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "等等。",
+            1
+        ]
+    },
+    {
+        "Id": 771,
+        "ActionId": 771,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 772,
+        "ActionId": 772,
+        "Type": 201,
+        "Params": [
+            2,
+            501596
+        ]
+    },
+    {
+        "Id": 773,
+        "ActionId": 773,
+        "Type": 301,
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "阿德莱德……？",
+            2
+        ]
+    },
+    {
+        "Id": 774,
+        "ActionId": 774,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 775,
+        "ActionId": 775,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 776,
+        "ActionId": 776,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "阿德莱德站在原地，目光在乔安和奥菲莉娅之间扫了一下，看向自己身侧的副官。"
+        ]
+    },
+    {
+        "Id": 777,
+        "ActionId": 777,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "带着大家去广场，去找大部队汇合。",
+            1
+        ]
+    },
+    {
+        "Id": 778,
+        "ActionId": 778,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 779,
+        "ActionId": 779,
+        "Type": 201,
+        "Params": [
+            2,
+            501673,
+            2
+        ]
+    },
+    {
+        "Id": 780,
+        "ActionId": 780,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生副官",
+            "……你们要去哪？",
+            2
+        ]
+    },
+    {
+        "Id": 781,
+        "ActionId": 781,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 782,
+        "ActionId": 782,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 783,
+        "ActionId": 783,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "【王冠】还在实验楼里。",
+            1
+        ]
+    },
+    {
+        "Id": 784,
+        "ActionId": 784,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 785,
+        "ActionId": 785,
+        "Type": 201,
+        "Params": [
+            2,
+            501673,
+            5
+        ]
+    },
+    {
+        "Id": 786,
+        "ActionId": 786,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生副官",
+            "就三个人太危险了，我们可以陪你一起。",
+            2
+        ]
+    },
+    {
+        "Id": 787,
+        "ActionId": 787,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 788,
+        "ActionId": 788,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 789,
+        "ActionId": 789,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "不，你们去广场。",
+            1
+        ]
+    },
+    {
+        "Id": 790,
+        "ActionId": 790,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 791,
+        "ActionId": 791,
+        "Type": 201,
+        "Params": [
+            2,
+            501673,
+            5
+        ]
+    },
+    {
+        "Id": 792,
+        "ActionId": 792,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生副官",
+            "阿德莱德——",
+            2
+        ]
+    },
+    {
+        "Id": 793,
+        "ActionId": 793,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 794,
+        "ActionId": 794,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4
+        ]
+    },
+    {
+        "Id": 795,
+        "ActionId": 795,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "【王冠】和法奥斯，都不能丢。三个人去实验楼够了，但外面那些东西不会等我们，广场上需要人开路、需要人护住伤员。",
+            1
+        ]
+    },
+    {
+        "Id": 796,
+        "ActionId": 796,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 797,
+        "ActionId": 797,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 798,
+        "ActionId": 798,
+        "Type": 201,
+        "Params": [
+            2,
+            501673,
+            2
+        ]
+    },
+    {
+        "Id": 799,
+        "ActionId": 799,
+        "Type": 201,
+        "Params": [
+            3,
+            501648,
+            2,
+            -550
+        ]
+    },
+    {
+        "Id": 800,
+        "ActionId": 800,
+        "Type": 201,
+        "Params": [
+            4,
+            501672,
+            "",
+            550
+        ]
+    },
+    {
+        "Id": 801,
+        "ActionId": 801,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "她看了看身后那些带着伤的同学们，又看了看副官。"
+        ]
+    },
+    {
+        "Id": 802,
+        "ActionId": 802,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 803,
+        "ActionId": 803,
+        "Type": 202,
+        "Params": [
+            3,
+            4,
+            2,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 804,
+        "ActionId": 804,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4
+        ]
+    },
+    {
+        "Id": 805,
+        "ActionId": 805,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "你在这几年的实战经验比我还多，带大家穿过这层楼，你做得到。",
+            1
+        ]
+    },
+    {
+        "Id": 806,
+        "ActionId": 806,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 807,
+        "ActionId": 807,
+        "Type": 201,
+        "Params": [
+            2,
+            501673,
+            2
+        ]
+    },
+    {
+        "Id": 808,
+        "ActionId": 808,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生副官",
+            "那你们呢？",
+            2
+        ]
+    },
+    {
+        "Id": 809,
+        "ActionId": 809,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 810,
+        "ActionId": 810,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4
+        ]
+    },
+    {
+        "Id": 811,
+        "ActionId": 811,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "去我们该去的地方，你们也是。",
+            1
+        ]
+    },
+    {
+        "Id": 812,
+        "ActionId": 812,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 813,
+        "ActionId": 813,
+        "Type": 201,
+        "Params": [
+            2,
+            501673,
+            2
+        ]
+    },
+    {
+        "Id": 814,
+        "ActionId": 814,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "副官沉默了两秒，然后点了一下头。"
+        ]
+    },
+    {
+        "Id": 815,
+        "ActionId": 815,
+        "Type": 301,
+        "Params": [
+            "",
+            "学生副官",
+            "都要活着回来。",
+            2
+        ]
+    },
+    {
+        "Id": 816,
+        "ActionId": 816,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 817,
+        "ActionId": 817,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            1
+        ]
+    },
+    {
+        "Id": 818,
+        "ActionId": 818,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "嗯，一定。",
+            1
+        ]
+    },
+    {
+        "Id": 819,
+        "ActionId": 819,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 820,
+        "ActionId": 820,
+        "Type": 401,
+        "Params": [
+            2,
+            1504
+        ]
+    },
+    {
+        "Id": 821,
+        "ActionId": 821,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 822,
+        "ActionId": 822,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "副官转过身，朝着队伍喊了一声，众人收拢阵型，向训练区方向推进。"
+        ]
+    },
+    {
+        "Id": 823,
+        "ActionId": 823,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            5
+        ]
+    },
+    {
+        "Id": 824,
+        "ActionId": 824,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "奥菲莉娅看着阿德莱德走过来，什么挖苦的话都准备好了，但最后只是“啧”了一声。"
+        ]
+    },
+    {
+        "Id": 825,
+        "ActionId": 825,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 826,
+        "ActionId": 826,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "……你膝盖还跑得动吗？",
+            1
+        ]
+    },
+    {
+        "Id": 827,
+        "ActionId": 827,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 828,
+        "ActionId": 828,
+        "Type": 201,
+        "Params": [
+            2,
+            501627
+        ]
+    },
+    {
+        "Id": 829,
+        "ActionId": 829,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "不影响。",
+            2
+        ]
+    },
+    {
+        "Id": 830,
+        "ActionId": 830,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 831,
+        "ActionId": 831,
+        "Type": 201,
+        "Params": [
+            1,
+            501596
+        ]
+    },
+    {
+        "Id": 832,
+        "ActionId": 832,
+        "Type": 301,
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "切，说的跟真的一样。",
+            1
+        ]
+    },
+    {
+        "Id": 833,
+        "ActionId": 833,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 834,
+        "ActionId": 834,
+        "Type": 201,
+        "Params": [
+            3,
+            501609
+        ]
+    },
+    {
+        "Id": 835,
+        "ActionId": 835,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "乔安抬起头，看着站在面前的两名战友，鼻子酸了一下。"
+        ]
+    },
+    {
+        "Id": 836,
+        "ActionId": 836,
+        "Type": 204,
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 837,
+        "ActionId": 837,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "谢——",
+            3
+        ]
+    },
+    {
+        "Id": 838,
+        "ActionId": 838,
+        "Type": 202,
+        "Params": [
+            3,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 839,
+        "ActionId": 839,
+        "Type": 201,
+        "Params": [
+            1,
+            501596
+        ]
+    },
+    {
+        "Id": 840,
+        "ActionId": 840,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "别浪费时间，走了。",
+            1
+        ]
+    },
+    {
+        "Id": 841,
+        "ActionId": 841,
+        "Type": 202,
+        "EndDelay": 50.0,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 842,
+        "ActionId": 842,
+        "Type": 401,
+        "Params": [
+            2,
+            1504
+        ]
+    },
+    {
+        "Id": 843,
+        "ActionId": 843,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 844,
+        "ActionId": 844,
+        "Type": 104,
+        "EndDelay": 350.0,
+        "Params": [
+            "0|30|-180",
+            0.3
+        ]
+    },
+    {
+        "Id": 845,
+        "ActionId": 845,
+        "Type": 104,
+        "Params": [
+            "0|0|-230",
+            0.4
+        ]
+    },
+    {
+        "Id": 846,
+        "ActionId": 846,
+        "Type": 301,
+        "IsEnd": 1,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "三个人转身，一起冲往通向实验楼的走廊。"
         ]
     }
 ]

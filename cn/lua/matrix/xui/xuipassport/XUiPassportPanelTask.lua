@@ -24,14 +24,6 @@ function XUiPassportPanelTask:OnStart(model3d)
     self:InitRedPoint()
 end
 
-function XUiPassportPanelTask:OnEnable()
-    self.Model3D:ShowTaskCamera(true)
-end
-
-function XUiPassportPanelTask:OnDisable()
-    self.Model3D:ShowTaskCamera(false)
-end
-
 function XUiPassportPanelTask:InitTab()
     local btnGroup = {}
     for i = 1, #TaskTabConfig do
@@ -86,7 +78,7 @@ function XUiPassportPanelTask:Refresh()
         taskData.ExRewardId = self._Control:GetPassportTaskExRewardId(taskData.Id)
     end
     self.DynamicTable:SetDataSource(self.Tasks)
-    self.DynamicTable:ReloadDataASync()
+    self.DynamicTable:ReloadDataSync()
     self:UpdateTabExRewardMark()
 end
 

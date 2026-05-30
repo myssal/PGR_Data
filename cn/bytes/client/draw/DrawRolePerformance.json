@@ -4,13 +4,25 @@
         "VoiceId": 160080,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3DanteMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3DanteMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3DanteMdCommon/R3DanteMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E3DdevilsworddanteMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E3DdevilsworddanteMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3DbalrogMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3DfaustMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3DcoyoteaMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3DivoryMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3DebonyMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2",
+            "WeaponCase3",
+            "WeaponCase4",
+            "WeaponCase5",
+            "WeaponCase6"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3DanteMd010011/Layer1/CTDante03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 7.0,
+        "UiShowTime": 6.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3DantePrefab/Common/FxR3DanteWinMA.prefab",
             "Assets/Product/Effect/Prefab/FxR3DantePrefab/Common/FxR3DanteWin.prefab",
@@ -31,14 +43,15 @@
         "VoiceId": 165080,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR5LifuMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R5LifuMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R5LifuMdCommon/R5LifuMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2LotusbladeMd010011.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/Lotusblade/LotusbladeCommon/Fight/CommonLayer/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2LotusbladeMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R5LifuMd010011/Common/CTLifu05Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 7.0,
+        "UiShowTime": 5.53,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR5LifuPrefab/Common/FxR5LifuWin.prefab",
             "Assets/Product/Effect/Prefab/FxR5LifuPrefab/Common/FxR5LifuWin02.prefab",
@@ -52,8 +65,8 @@
             "WeaponCaseR",
             "EffectRoot",
             "MainCamera",
-            "LotusBone03",
-            "LotusBone03"
+            "LotusBone03|LotusBone04|LotusBone05|LotusBone06|LotusBone07|LotusBone08|LotusBone09|LotusBone10",
+            "LotusBone03|LotusBone04|LotusBone05|LotusBone06|LotusBone07|LotusBone08|LotusBone09|LotusBone10"
         ]
     },
     {
@@ -61,26 +74,30 @@
         "VoiceId": 131078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR2HakamaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R2HakamaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R2HakamaMdCommon/R2HakamaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2SickMd040011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2SickMd040011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R2HakamaMd010031/Common/CTHakama02Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.17
+        "UiShowTime": 3.4
     },
     {
         "Id": 1511003,
         "VoiceId": 113071,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR2KamuMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R2KamuMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R2KamuMdCommon/R2KamuMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2KamuMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2KamuMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R2KamuMd010011/Common/CTKamu02Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 5.3299,
+        "UiShowTime": 4.5599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR2KamuPrefab/Common/FxR2KamuWin.prefab"
         ],
@@ -93,13 +110,17 @@
         "VoiceId": 126078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR2LuolanMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R2LuolanMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R2LuolanMdCommon/R2LuolanMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2LuolanMainMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2LuolanMainMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2LuolanSubMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R2LuolanMd010021/Common/CTLuolan02Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 5.5,
+        "UiShowTime": 4.73,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR2LuolanPrefab/Common/FxR2LuolanWin.prefab"
         ],
@@ -112,13 +133,17 @@
         "VoiceId": 133078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR2NuoanMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R2NuoanMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R2NuoanMdCommon/R2NuoanMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2NuoanMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2NuoanMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3NuoanSubMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R2NuoanMd010031/Common/CTNuoan02Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.0,
+        "UiShowTime": 5.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR2NuoanPrefab/Common/FxR2NuoanWinSound.prefab"
         ],
@@ -131,13 +156,15 @@
         "VoiceId": 129078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR2PulaoMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R2PulaoMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R2PulaoMdCommon/R2PulaoMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2BoomerangMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2BoomerangMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R2PulaoMd010031/Common/CTPulao02Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.0,
+        "UiShowTime": 3.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR2PulaoPrefab/Common/FxR2PulaoWin.prefab"
         ],
@@ -150,14 +177,15 @@
         "VoiceId": 116085,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR2QuMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R2QuMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R2QuMd010011/R2QuMd010011/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2QuMd010011.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/Qu/QuMdCommon/QuMdCommonFight/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2QuMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R2QuMd010011/Common/CTQu02Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.3299,
+        "UiShowTime": 5.5599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR2QuPrefab/Common/FxR2QuWin.prefab"
         ],
@@ -170,14 +198,15 @@
         "VoiceId": 137081,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3AilaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3AilaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3AilaMdCommon/R3AilaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2BeamlanceMd010011.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/Beamlance/BeamlanceMdCommon/Fight/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2BeamlanceMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3AilaMd010031/Common/CTAila03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.7699,
+        "UiShowTime": 4.0,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3AilaPrefab/Common/FxR3AilaWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3AilaPrefab/Common/FxR3AilaWinBip001Head.prefab",
@@ -200,13 +229,15 @@
         "VoiceId": 119046,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3AtwoMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3AtwoMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3AtwoMdCommon/R3AtwoMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E3A2Md010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E3A2Md010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCaseEx1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3AtwoMd010011/CTAtwo03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 2.67,
+        "UiShowTime": 1.8999,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3AtwoPrefab/FxR3AtwoWin.prefab"
         ],
@@ -219,13 +250,15 @@
         "VoiceId": 104170,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3BiankaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3BiankaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3BiankaMdCommon/R3BiankaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1BowMd030011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1BowMd030011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3BiankaMd010011/Common/CTBianka03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 3.3299,
+        "UiShowTime": 2.5599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3Bianka/Common/FxR3BiankaWin.prefab"
         ],
@@ -236,24 +269,28 @@
     {
         "Id": 1291003,
         "VoiceId": 166080,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3BuouxiongMd010021.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3BuouxiongMd010021.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3BuouxiongMdCommon/R3BuouxiongMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2ShoesMd010011R.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3BuouxiongMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3BuouxiongMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2ShoesMd010011R.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2ShoesMd010011L.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3BuouxiongMd010021/Common/CTBuouxiong03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 8.1999,
+        "UiShowTime": 4.4299,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3BuouxiongPrefab/Common/FxR3BuouxiongWinPingmu.prefab",
-            "Assets/Product/Effect/Prefab/FxR3BuouxiongPrefab/Common/FxR3BuouxiongAtk50Bip001Head.prefab",
-            "Assets/Product/Effect/Prefab/FxR3BuouxiongPrefab/Common/FxR3BuouxiongWinMA.prefab"
+            "Assets/Product/Effect/Prefab/FxR3BuouxiongPrefab/Common/FxR3BuouxiongWin.prefab",
+            "Assets/Product/Effect/Prefab/FxR3BuouxiongPrefab/Common/FxR3BuouxiongAtk50Bip001Head.prefab"
         ],
         "EffectBoneNames": [
             "MainCamera",
-            "Bip001Head",
-            "EffectRoot"
+            "EffectRoot",
+            "Bip001Head"
         ]
     },
     {
@@ -261,13 +298,17 @@
         "VoiceId": 155078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3CibeizheMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3CibeizheMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3CibeizheMdCommon/R3CibeizheMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2KeywandMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3CibeizheMd010021/Common/CTCibeizhe03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 7.9,
+        "UiShowTime": 7.13,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3CibeizhePrefab/Common/FxR3CibeizheWin01.prefab",
             "Assets/Product/Effect/Prefab/FxR3CibeizhePrefab/Common/FxR3CibeizheWin02.prefab",
@@ -278,25 +319,29 @@
         ],
         "EffectBoneNames": [
             "Bip001RFinger22",
-            0,
+            "EffectRoot",
             "MainCamera",
             "MainCamera",
-            0,
-            0
+            "EffectRoot",
+            "EffectRoot"
         ]
     },
     {
         "Id": 1241003,
         "VoiceId": 150077,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3HanyingMd010021.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3HanyingMd010021.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3HanyingMdCommon/R3HanyingMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3HanyingMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3HanyingMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2PipaMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3HanyingMd010021/Common/CTHanying03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.63,
+        "UiShowTime": 5.86,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3HanyingPrefab/Common/FxR3HanyingWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3HanyingPrefab/Common/FxR3HanyingWinTrail.prefab",
@@ -315,13 +360,15 @@
         "VoiceId": 107170,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3KalieninaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3KalieninaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3KalieninaMdCommon/R3KalieninaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1SleeveMd030011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1SleeveMd030011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3KalieninaMd010011/Common/CTKalinina03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 3.17,
+        "UiShowTime": 2.4,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3KalieninaPrefab/Common/FxR3KalieninaWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3KalieninaPrefab/Common/FxR3Kalienina019101Lianhong.prefab"
@@ -336,13 +383,17 @@
         "VoiceId": 123078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3KuluomuMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3KuluomuMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3KuluomuMdCommon/R3KuluomuMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2GunbladeMainMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2GunbladeMainMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2GunbladeSubMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3KuluomuMd010011/Common/CTKuluomu03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.0,
+        "UiShowTime": 3.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3KuluomuPrefab/Common/FxR3KuluomuWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3KuluomuPrefab/Common/FxR3KuluomuWinWp1.prefab",
@@ -357,15 +408,17 @@
     {
         "Id": 1271003,
         "VoiceId": 143078,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3LamiyaMd010031.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3LamiyaMd010031.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3LamiyaMdCommon/R3LamiyaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2LamiyaMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3LamiyaMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3LamiyaMd010011HX.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2LamiyaMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3LamiyaMd010031/Common/CTLamiya03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.0,
+        "UiShowTime": 5.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3LamiyaPrefab/Common/FxR3LamiyaWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3LamiyaPrefab/Common/FxR3LamiyaWinTailBoneM02.prefab",
@@ -382,13 +435,17 @@
         "VoiceId": 101170,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3LiangMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3LiangMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3LiangMd010011/R3LiangMd010011/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1GunMd030011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1GunMd030011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E1GunMd030011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3LiangMd010011/Common/CTLiang03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 2.67,
+        "UiShowTime": 1.8999,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3LiangPrefab/Common/FxR3LiangWin.prefab"
         ],
@@ -401,13 +458,17 @@
         "VoiceId": 103170,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3LifuMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3LifuMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3LifuMdCommon/R3LifuMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1FloatMd030011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1FloatMd030011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E1FloatMd030011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3LifuMd010011/Common/CTLifu03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.0,
+        "UiShowTime": 3.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3LifuPrefab/Common/FxR3LifuWin.prefab"
         ],
@@ -420,13 +481,15 @@
         "VoiceId": 156086,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3LilithMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3LilithMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3LilithMdCommon/R3LilithMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2BrollyMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2BrollyMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3LilithMd010011/Common/CTLilith03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.4,
+        "UiShowTime": 5.63,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3LilithPrefab/Common/FxR3LilithWin04.prefab",
             "Assets/Product/Effect/Prefab/FxR3LilithPrefab/Common/FxR3LilithWin01.prefab",
@@ -436,7 +499,7 @@
         ],
         "EffectBoneNames": [
             "EffectRoot",
-            "cardRoot001",
+            "cardRoot001|cardRoot002|cardRoot003|cardRoot004|cardRoot005|cardRoot006|cardRoot007|cardRoot008|cardRoot009|cardRoot010",
             "EffectRoot",
             "MainCamera",
             "EffectRoot"
@@ -447,13 +510,15 @@
         "VoiceId": 120077,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3LunaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3LunaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3LunaMdCommon/R3LunaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2RingMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2RingMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3LunaMd010011/Common/CTLuna03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.9299,
+        "UiShowTime": 4.1599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3LunaPrefab/Common/FxR3LunaWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3LunaPrefab/Common/FxR3LunaWintuowei.prefab",
@@ -461,8 +526,8 @@
         ],
         "EffectBoneNames": [
             "EffectRoot",
-            "WeaponCase3",
-            "WeaponCase7"
+            "WeaponCase3|WeaponCase4|WeaponCase5|WeaponCase6",
+            "WeaponCase7|WeaponCase8"
         ]
     },
     {
@@ -470,17 +535,25 @@
         "VoiceId": 114071,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3LuosaitaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3LuosaitaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3LuosaitaMdCommon/R3LuosaitaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2SpearJavelinMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2SpearJavelinMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2SpearShieldMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3LuosaitaMd010011/Common/CTLuosaita03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.1999,
+        "UiShowTime": 3.43,
         "EffectPrefabPaths": [
+            "Assets/Product/Effect/Prefab/FxR3LuosaitaPrefab/Common/FxR3LuosaitaBone002B.prefab",
+            "Assets/Product/Effect/Prefab/FxR3LuosaitaPrefab/Common/FxR3LuosaitaBone002mirroredB.prefab",
             "Assets/Product/Effect/Prefab/FxR3LuosaitaPrefab/Common/FxR3LuosaitaWin.prefab"
         ],
         "EffectBoneNames": [
+            "Bone002",
+            "Bone002mirrored",
             "EffectRoot"
         ]
     },
@@ -489,13 +562,15 @@
         "VoiceId": 1021038,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3LuxiyaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3LuxiyaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3LuxiyaMdCommon/R3LuxiyaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1SwordMd030011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1SwordMd030011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3LuxiyaMd010011/Common/CTLuxiya03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.67,
+        "UiShowTime": 3.9,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3LuxiyaPrefab/Common/FxR3LuxiyaWin.prefab"
         ],
@@ -505,17 +580,18 @@
     },
     {
         "Id": 1391003,
-        "VoiceId": 168118,
+        "VoiceId": 168137,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3NietiyaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3NietiyaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3NietiyaMdCommon/R3NietiyaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2SickleMd010011.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/R3NietiyaMd010021Sickle/R3NietiyaMd010021SickleCommon/Fight/CommonLayer/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2SickleMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3NietiyaMd010021/Common/CTNietiya03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 7.3299,
+        "UiShowTime": 6.5599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3NietiyaPrefab/Common/FxR3NietiyaWin01.prefab",
             "Assets/Product/Effect/Prefab/FxR3NietiyaPrefab/Common/FxR3NietiyaWin02.prefab",
@@ -542,13 +618,15 @@
         "VoiceId": 118060,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3NinesMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3NinesMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3NinesMdCommon/R3NinesMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E39SMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E39SMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3NinesMd010011/CTNines03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 3.3299,
+        "UiShowTime": 2.5599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3NinesPrefab/Common/FxR3NinesWin.prefab"
         ],
@@ -559,20 +637,24 @@
     {
         "Id": 1521004,
         "VoiceId": 146073,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3QuMd010031.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3QuMd010031.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3QuMdCommon/R3QuMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2JianMd010011.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/Jian/E3JianMd030011/Fight/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3QuMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3QuMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2JianMd010011.prefab",
+            "Assets/Product/Role/CharaterPrefab/R3QupeacockMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3QuMd010031/Common/CTQu03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 10.0,
+        "UiShowTime": 5.9,
         "EffectPrefabPaths": [
+            "Assets/Product/Effect/Prefab/FxR3QuPrefab/Common/FxR3QuWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3QuPrefab/Common/FxR3QuWinPingmu.prefab"
         ],
         "EffectBoneNames": [
+            "EffectRoot",
             "MainCamera"
         ]
     },
@@ -581,19 +663,23 @@
         "VoiceId": 121078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3SailinnaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3SailinnaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3SailinnaMdCommon/R3SailinnaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2CelloMainMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2CelloMainMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2CelloSubMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3SailinnaMd010011/Common/CTSailinna03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.8699,
+        "UiShowTime": 4.0999,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3Sailinna/Common/FxR3SailinnaWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3Sailinna/Common/FxR3SailinnaWin01.prefab"
         ],
         "EffectBoneNames": [
-            0,
+            "EffectRoot",
             "WeaponCase2"
         ]
     },
@@ -602,13 +688,15 @@
         "VoiceId": 1061017,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3ShenweiMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3ShenweiMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3ShenweiMd010011/R3ShenweiMd010011/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1ClaymoreMd030011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1ClaymoreMd030011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3ShenweiMd010011/Common/CTShenwei03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 2.5,
+        "UiShowTime": 1.73,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3ShenweiPrefab/Common/FxR3ShenweiWin.prefab"
         ],
@@ -619,15 +707,19 @@
     {
         "Id": 1221003,
         "VoiceId": 140078,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3TwentyoneMd010031.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3TwentyoneMd010031.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3TwentyoneMdCommon/R3TwentyoneMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2ClawMd010011L.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3TwentyoneMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3TwentyoneMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2ClawMd010011L.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2ClawMd010011R.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3TwentyoneMd010011/Common/CTTwentyone03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.0,
+        "UiShowTime": 5.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3TwentyonePrefab/Common/FxR3TwentyoneWin.prefab"
         ],
@@ -640,13 +732,17 @@
         "VoiceId": 117063,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3TwobMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3TwobMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3TwobMdCommon/R3TwobMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E32BSwordMd010011P01.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E32BSwordMd010011P01.prefab",
+            "Assets/Product/Role/WeaponPrefab/E32BBroadswordMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCaseEx1",
+            "WeaponCaseEx2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3TwobMd010011/CTTwob03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 3.9,
+        "UiShowTime": 3.13,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3TwobPrefab/FxR3TwobWin.prefab"
         ],
@@ -659,14 +755,21 @@
         "VoiceId": 161080,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3VergilMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3VergilMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3VergilMdCommon/R3VergilMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E3VyamatoMd010012.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/Yamato/E3VyamatoCommon/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E3VyamatoMd010012.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3VyamatoMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3VmirageedgeMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3VbeowulfMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2",
+            "WeaponCase3",
+            "WeaponCase4"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3VergilMd010011/CTVergil03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 7.0999,
+        "UiShowTime": 6.3299,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3VergilPrefab/Common/FxR3VergilMd010011Win.prefab"
         ],
@@ -677,28 +780,38 @@
     {
         "Id": 1211003,
         "VoiceId": 151073,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3WanshiMd010031.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3WanshiMd010031.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3WanshiMdCommon/R3WanshiMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2RevolverMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3WanshiMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3WanshiMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2RevolverMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2RevolverMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2RevolverMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2",
+            "WeaponCase4"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3WanshiMd010031/Common/CTWanshi03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.8299
+        "UiShowTime": 6.0599
     },
     {
         "Id": 1131003,
         "VoiceId": 125078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3WeilaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3WeilaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3WeilaMdCommon/R3WeilaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2LanceSubMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2LanceSubMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2LanceMainMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3WeilaMd010031/Common/CTWeila03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 5.17,
+        "UiShowTime": 4.4,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3WeilaPrefab/Common/FxR3WeilaWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3WeilaPrefab/Common/FxR3WeilaWinTrail.prefab"
@@ -713,17 +826,20 @@
         "VoiceId": 164078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3WeiluonikaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3WeiluonikaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3WeiluonikaMdCommon/R3WeiluonikaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2DragonlanceMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2DragonlanceMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3WeiluonikaMd010011/Common/CTWeiluonika03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.67,
+        "UiShowTime": 5.9,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3WeiluonikaPrefab/Common/FxR3WeiluonikaWin02.prefab",
             "Assets/Product/Effect/Prefab/FxR3WeiluonikaPrefab/Common/FxR3WeiluonikaWinWeaponCase1.prefab",
             "Assets/Product/Effect/Prefab/FxR3WeiluonikaPrefab/Common/FxR3WeiluonikaWinPingmu.prefab",
+            "Assets/Product/Effect/Prefab/FxR3WeiluonikaPrefab/Common/FxR3WeiluonikaWin01.prefab",
             "Assets/Product/Effect/Prefab/FxR3WeiluonikaPrefab/Common/FxR3WeiluonikaWinEye.prefab",
             "Assets/Product/Effect/Prefab/FxR3WeiluonikaPrefab/Common/FxR3WeiluonikaWinTrail.prefab"
         ],
@@ -731,6 +847,7 @@
             "Bip001LHand",
             "WeaponCase1",
             "MainCamera",
+            "EffectRoot",
             "Bip001Head",
             "Bip001Pelvis"
         ]
@@ -740,13 +857,16 @@
         "VoiceId": 142078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3YalishaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3YalishaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3YalishaMdCommon/R3YalishaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1BowMd030011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1BowMd030011.prefab",
+            "Assets/Product/Role/CharaterPrefab/R3AliyaMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3YalishaMd010011/Common/CTYalisha03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.5,
+        "UiShowTime": 5.73,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3YalishaPrefab/Common/FxR3YalishaWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3YalishaPrefab/Common/FxR3YalishaWin1.prefab"
@@ -761,13 +881,15 @@
         "VoiceId": 105170,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3YongyechaoMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3YongyechaoMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R3YongyechaoMdCommon/R3YongyechaoMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1SawMd030011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1SawMd030011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R3YongyechaoMd010011/Common/CTYyongyechao03win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 2.3299,
+        "UiShowTime": 1.5599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR3YongyechaoPrefab/Common/FxR3YongyechaoWin.prefab",
             "Assets/Product/Effect/Prefab/FxR3YongyechaoPrefab/Common/FxR3YongyechaoWin02.prefab"
@@ -780,16 +902,17 @@
     {
         "Id": 1041004,
         "VoiceId": 134095,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4BiankaMd010031.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4BiankaMd010031HX.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4BiankaMdCommon/R4BiankaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2BigswordMd010011.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/Bigsword/BigswordMdCommon/Fight/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4BiankaMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4BiankaMd010011HX.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2BigswordMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4BiankaMd019011/Common/CTBianka04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 5.4,
+        "UiShowTime": 4.63,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR4BiankaPrefab/Common/FxR4BiankaWin01Wuqi.prefab",
             "Assets/Product/Effect/Prefab/FxR4BiankaPrefab/Common/FxR4BiankaWinMd019241.prefab",
@@ -810,13 +933,15 @@
         "VoiceId": 145074,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4DubianMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4DubianMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4DubianMdCommon/R4DubianMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2SabreMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2SabreMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4DubianMd010011/Common/CTDubian04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 5.67,
+        "UiShowTime": 4.9,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR4DubianPrefab/Common/FxR4DubianWinWeaponCase2.prefab",
             "Assets/Product/Effect/Prefab/FxR4DubianPrefab/Common/FxR4DubianWin.prefab"
@@ -829,15 +954,17 @@
     {
         "Id": 1071004,
         "VoiceId": 132078,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4KalieninaMd010031.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4KalieninaMd010031.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4KalieninaMdCommon/R4KalieninaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2HammerMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4KalieninaMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4KalieninaMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2HammerMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4KalieninaMd010031/Common/CTKalienina04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.0,
+        "UiShowTime": 5.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR4KalieninaPrefab/Common/FxR4KalieninaWin.prefab"
         ],
@@ -848,15 +975,21 @@
     {
         "Id": 1011004,
         "VoiceId": 136080,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4LiangMd010031.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4LiangMd010031.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4LiangMdCommon/R4LiangMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2SuperliboxMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4LiangMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4LiangMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2SuperliboxMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2SuperligunMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2SuperlirifleMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2",
+            "WeaponCase3"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4LiangMd010031/Common/CTLiang04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.3299,
+        "UiShowTime": 5.5599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR4LiangPrefab/Common/FxR4LiangWin.prefab"
         ],
@@ -867,15 +1000,17 @@
     {
         "Id": 1031004,
         "VoiceId": 127078,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4LifuMd010021.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4LifuMd010021.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4LifuMdCommon/R4LifuMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2WandMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4LifuMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4LifuMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2WandMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4LifuMd010021/Common/CTLifu04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.0,
+        "UiShowTime": 3.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR4LifuPrefab/Common/FxR4LifuWin.prefab"
         ],
@@ -886,37 +1021,44 @@
     {
         "Id": 1171004,
         "VoiceId": 148078,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4LunaMd010021.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4LunaMd010021.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4LunaMdCommon/R4LunaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2CircleMd010011L.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/Circle/CircleMdCommon/Fight/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4LunaMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4LunaMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2CircleMd010011L.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2CircleMd010011R.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4LunaMd010021/Common/CTLuna04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.0,
+        "UiShowTime": 5.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR4LunaPrefab/Common/FxR4LunaAtkWin01.prefab",
-            "Assets/Product/Effect/Prefab/FxR4LunaPrefab/Common/FxR4LunaAtkWin02.prefab"
+            "Assets/Product/Effect/Prefab/FxR4LunaPrefab/Common/FxR4LunaAtkWin02.prefab",
+            "Assets/Product/Effect/Prefab/FxR4LunaPrefab/Common/FxR4LunaAtkWin.prefab"
         ],
         "EffectBoneNames": [
             "Bip001RHand",
-            "WeaponsBoneL"
+            "WeaponsBoneL",
+            "EffectRoot"
         ]
     },
     {
         "Id": 1141004,
         "VoiceId": 167105,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4LuosaitaMd010021.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4LuosaitaMd010021.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4LuosaitaMdCommon/R4LuosaitaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2HalberdMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4LuosaitaMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4LuosaitaMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2HalberdMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4LuosaitaMd010011/Common/CTLuosaita04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.67,
+        "UiShowTime": 5.9,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaWin01.prefab",
             "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaWinBip.prefab",
@@ -925,7 +1067,12 @@
             "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaPlanktonBoneLWin.prefab",
             "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaPlanktonBoneRWin.prefab",
             "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaHindBoneL05WinFire.prefab",
-            "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaHindBoneR05WinFire.prefab"
+            "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaHindBoneR05WinFire.prefab",
+            "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaWinWeaponHide.prefab",
+            "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaBip001WinTrail01.prefab",
+            "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaFireRHindBoneR07.prefab",
+            "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaFireLHindBoneL07.prefab",
+            "Assets/Product/Effect/Prefab/FxR4LuosaitaPrefab/Common/FxR4LuosaitaBip001WinTrail.prefab"
         ],
         "EffectBoneNames": [
             "EffectRoot",
@@ -935,7 +1082,12 @@
             "planktonBoneL00",
             "planktonBoneR00",
             "HindBoneL05",
-            "HindBoneR05"
+            "HindBoneR05",
+            "EffectRoot",
+            "EffectRoot",
+            "HindBoneR07",
+            "HindBoneL07",
+            "Bip001"
         ]
     },
     {
@@ -943,18 +1095,22 @@
         "VoiceId": 1022071,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4LuxiyaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4LuxiyaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4LuxiyaMdCommon/R4LuxiyaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E1SwordMd030011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E1SwordMd030011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4LuxiyaMd010011/Common/CTLuxiya04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.0,
+        "UiShowTime": 3.23,
         "EffectPrefabPaths": [
-            "Assets/Product/Effect/Prefab/FxR4LuxiyaPrefab/Common/FxR4LuxiyaApple.prefab"
+            "Assets/Product/Effect/Prefab/FxR4LuxiyaPrefab/Common/FxR4LuxiyaApple.prefab",
+            "Assets/Product/Effect/Prefab/FxR4LuxiyaPrefab/Common/FxR4LuxiyaWin.prefab"
         ],
         "EffectBoneNames": [
-            "Bip001LHand"
+            "Bip001LHand",
+            "EffectRoot"
         ]
     },
     {
@@ -962,38 +1118,42 @@
         "VoiceId": 128078,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4SailinnaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4SailinnaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4SailinnaMdCommon/R4SailinnaMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2FluntMd010011.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/Flunt/E2FluntMdCommon/Fight/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2FluntMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4SailinnaMd010021/Common/CTSailinna04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 4.5,
+        "UiShowTime": 3.73,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR4SailinnaPrefab/Common/FxR4SailinnaWin01.prefab",
             "Assets/Product/Effect/Prefab/FxR4SailinnaPrefab/Common/FxR4SailinnaWin02.prefab",
-            "Assets/Product/Effect/Prefab/FxR4SailinnaPrefab/Common/FxR4SailinnaWinballBoneA01.prefab"
+            "Assets/Product/Effect/Prefab/FxR4SailinnaPrefab/Common/FxR4SailinnaWinballBoneA01.prefab",
+            "Assets/Product/Effect/Prefab/FxR4SailinnaPrefab/Common/FxR4SailinnaWin03.prefab"
         ],
         "EffectBoneNames": [
             "Bone002",
             "EffectRoot",
-            "ballBoneA01"
+            "ballBoneA01",
+            "EffectRoot"
         ]
     },
     {
         "Id": 1061004,
         "VoiceId": 169084,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4ShenweiMd010021.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4ShenweiMd010021.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4ShenweiMdCommon/R4ShenweiMdCommon/BaseLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2GreatswordMd010011.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/R4ShenweiMd010021GreatSword/R4ShenweiMd010021SickleCommon/Fight/CommonLayer/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4ShenweiMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4ShenweiMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2GreatswordMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4ShenweiMd010021/Common/CTShenwei04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.9299,
+        "UiShowTime": 6.1599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR4ShenweiPrefab/Common/FxR4ShenweiWin.prefab",
             "Assets/Product/Effect/Prefab/FxR4ShenweiPrefab/Common/FxR4ShenweiWinPingmu.prefab"
@@ -1008,13 +1168,17 @@
         "VoiceId": 159077,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4WeilaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4WeilaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R4WeilaMdCommon/R4WeilaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2BladespearMd010011R.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2BladespearMd010011R.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2BladespearMd010011L.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R4WeilaMd010031/Common/CTWeila04Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.3299,
+        "UiShowTime": 5.5599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR4WeilaPrefab/Common/FxR4WeilaWin.prefab",
             "Assets/Product/Effect/Prefab/FxR4WeilaPrefab/Common/FxR4WeilaWinFace.prefab"
@@ -1027,16 +1191,17 @@
     {
         "Id": 1041005,
         "VoiceId": 162079,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR5BiankaMd010031.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R5BiankaMd010031.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R5BiankaMdCommon/R5BiankaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2ChainswordMd010011.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/CommonLayer/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR5BiankaMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R5BiankaMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2ChainswordMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R5BiankaMd010011/Common/CTBianka05Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 5.6999,
+        "UiShowTime": 4.9299,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR5BiankaPrefab/Common/FxR5BiankaWin.prefab",
             "Assets/Product/Effect/Prefab/FxR5BiankaPrefab/Common/FxR5BiankaWinBip001Head.prefab",
@@ -1051,16 +1216,17 @@
     {
         "Id": 1021005,
         "VoiceId": 138082,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR5LuxiyaMd010031.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R5LuxiyaMd010031.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R5LuxiyaMdCommon/R5LuxiyaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2AlphaMd010011.prefab",
-        "WeaponWinAnimPath": "Assets/Product/Role/WeaponAnimation/Alpha/AlphaMdCommon/Fight/CommonLayer/Win.anim",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR5LuxiyaMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R5LuxiyaMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2AlphaMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R5LuxiyaMd010031/Common/CTLuxiya05Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.0,
+        "UiShowTime": 5.23,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR5LuxiyaPrefab/Common/FxR5LuxiyaWinWeaponCase1.prefab",
             "Assets/Product/Effect/Prefab/FxR5LuxiyaPrefab/Common/FxR5LuxiyaWinBoneLForeArmTwist1.prefab",
@@ -1081,53 +1247,69 @@
         "VoiceId": 157084,
         "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR5SailinnaMd010011.playable",
         "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R5SailinnaMd010011.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R5SailinnaMdCommon/R5SailinnaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2BowrapierMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2BowrapierMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2DoublebassMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R5SailinnaMd010011/Common/CTSailinna05Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.67,
+        "UiShowTime": 5.9,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR5SailinnaPrefab/Common/FxR5SailinnaWin.prefab",
             "Assets/Product/Effect/Prefab/FxR5SailinnaPrefab/Common/FxR5SailinnaWinPingmu.prefab"
         ],
         "EffectBoneNames": [
-            0,
-            0
+            "EffectRoot",
+            "EffectRoot"
         ]
     },
     {
         "Id": 1051005,
         "VoiceId": 154079,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR5YongyechaoMd010021.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R5YongyechaoMd010021.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R5YongyechaoMdCommon/R5YongyechaoMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2BladeMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR5YongyechaoMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R5YongyechaoMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2BladeMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2AegisMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2AxeMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2",
+            "WeaponCase3"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R5YongyechaoMd010021/Common/CTYongyechao05Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.1999,
+        "UiShowTime": 5.4299,
         "EffectPrefabPaths": [
-            "Assets/Product/Effect/Prefab/FxR5YongyechaoPrefab/Common/FxR5YongyechaoWinTuoWei.prefab"
+            "Assets/Product/Effect/Prefab/FxR5YongyechaoPrefab/Common/FxR5YongyechaoWinTuoWei.prefab",
+            "Assets/Product/Effect/Prefab/FxR5YongyechaoPrefab/Common/FxR5YongyechaoWin.prefab"
         ],
         "EffectBoneNames": [
-            "MechaBoneR02"
+            "MechaBoneR02|MechaBoneL02",
+            "EffectRoot"
         ]
     },
     {
         "Id": 1021006,
         "VoiceId": 152075,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR6LuxiyaMd010031.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R6LuxiyaMd010031.prefab",
-        "CharacterWinAnimPath": "Assets/Product/Role/Animation/R6LuxiyaMdCommon/R6LuxiyaMdCommon/CommonLayer/Win.anim",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2TachiaMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR6LuxiyaMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R6LuxiyaMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2TachiaMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3TachibMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
         "CameraPrefabPath": "Assets/Product/Camera/Track/R6LuxiyaMd010031/Common/CTLuxiya06Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 6.5999,
+        "UiShowTime": 5.5599,
         "EffectPrefabPaths": [
             "Assets/Product/Effect/Prefab/FxR6LuxiyaPrefab/Common/FxR6LuxiyaWinpingmu.prefab",
             "Assets/Product/Effect/Prefab/FxR6LuxiyaPrefab/Common/FxR6LuxiyaWin.prefab",
@@ -1141,11 +1323,62 @@
     },
     {
         "Id": 1021007,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR7LuxiyaMd010021.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R7LuxiyaMd010021.prefab",
-        "HasWeapon": 1,
-        "WeaponPrefabPath": "Assets/Product/Role/WeaponPrefab/E2KodachiMd010011.prefab",
-        "WeaponMountBoneName": "WeaponCase1",
-        "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab"
+        "VoiceId": 170096,
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR7LuxiyaMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R7LuxiyaMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2KodachiMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2DachiMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "WeaponCase2"
+        ],
+        "CameraPrefabPath": "Assets/Product/Camera/Track/R7LuxiyaMd010021/Common/CTLuxiya07Win.prefab",
+        "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
+        "UiShowTime": 6.23,
+        "EffectPrefabPaths": [
+            "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaWin.prefab",
+            "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaWinPingmu.prefab",
+            "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaWinWeapon.prefab",
+            "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaWin01.prefab",
+            "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaWin02.prefab",
+            "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaWinHead.prefab",
+            "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaBuffWeaponQie01.prefab",
+            "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaBuffWeaponQie02.prefab"
+        ],
+        "EffectBoneNames": [
+            "EffectRoot",
+            "MainCamera",
+            "WeaponCase2",
+            "Bip001LForearm",
+            "Bip001Head",
+            "Bip001Head",
+            "EffectRoot",
+            "EffectRoot"
+        ]
+    },
+    {
+        "Id": 1051004,
+        "VoiceId": 130078,
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR4YongyechaobotMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R4YongyechaobotMd010011.prefab",
+        "WeaponPrefabPaths": [
+            "Assets/Product/Role/WeaponPrefab/E2CuttingMd010011.prefab",
+            "Assets/Product/Role/CharaterPrefab/R4YongyechaoMd010011.prefab"
+        ],
+        "WeaponMountBoneNames": [
+            "WeaponCase1",
+            "Bip001Spine1"
+        ],
+        "CameraPrefabPath": "Assets/Product/Camera/Track/R4YongyechaobotMd010031/Common/CTYongyechao04Win.prefab",
+        "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
+        "UiShowTime": 4.9,
+        "EffectPrefabPaths": [
+            "Assets/Product/Effect/Prefab/FxR4YongyechaobotPrefab/Common/FxR4YongyechaobotWinSound.prefab"
+        ],
+        "EffectBoneNames": [
+            "EffectRoot"
+        ]
     }
 ]

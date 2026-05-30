@@ -180,8 +180,7 @@ local GoodsQuality = {
     end,
 
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
-        local fashionId = XMVCA.XFashion:GetFashionColorOriginalFashionId(templateId)
-        return XDataCenter.FashionManager.GetFashionQuality(fashionId)
+        return XMVCA.XFashion:GetFashionColorQuality(templateId)
     end
 }
 
@@ -388,8 +387,7 @@ local GoodsDescription = {
         return template.Desc
     end,
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
-        local f = XMVCA.XFashion:GetFashionColorOriginalFashionId(templateId)
-        return XDataCenter.FashionManager.GetFashionDesc(f)
+        return XMVCA.XFashion:GetFashionColorDescription(templateId)
     end
 }
 
@@ -477,8 +475,7 @@ local GoodsWorldDesc = {
         return template.WorldDesc
     end,
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
-        local fashion = XMVCA.XFashion:GetFashionColorOriginalFashionId(templateId)
-        return XDataCenter.FashionManager.GetFashionWorldDescription(fashion)
+        return XMVCA.XFashion:GetFashionColorWorldDescription(templateId)
     end
 }
 
@@ -498,6 +495,10 @@ local GoodsSkipIdParams = {
     [XArrangeConfigs.Types.WeaponFashion] = function(templateId)
         return XWeaponFashionConfigs.GetFashionSkipIdParams(templateId)
     end,
+
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        return XMVCA.XFashion:GetFashionColorSkipIdParams(templateId)
+    end
 }
 
 local GoodsCurrentCount = {
@@ -603,6 +604,13 @@ local GoodsCurrentCount = {
     [XArrangeConfigs.Types.Filter] = function(templateId)
         return XMVCA.XBigWorldAlbum:IsUnlockFilterId(templateId) and 1 or 0
     end,
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        if XMVCA.XFashion:IsFashionColorHas(templateId) then
+            return 1
+        else
+            return 0
+        end
+    end
 }
 
 --==============================--
@@ -1024,14 +1032,13 @@ end
 
 GoodsShowParams[XArrangeConfigs.Types.FashionColor] = function(templateId)
     local fashionColorConf = XMVCA.XFashion:GetFashionColorById(templateId)
-    local fashionId = fashionColorConf.OriginalFashionId
 
     return {
         RewardType = XRewardManager.XRewardType.FashionColor,
         TemplateId = templateId,
         Name = fashionColorConf.FashionName,
         Icon = fashionColorConf.FashionIcon,
-        Quality = XDataCenter.FashionManager.GetFashionQuality(fashionId)
+        Quality = fashionColorConf.Quality
     }
 
 end

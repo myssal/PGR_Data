@@ -3948,7 +3948,7 @@
     },
     {
         "Key": "BossSingleAutoFightDesc",
-        "Text": "使用自动战斗可还原最高纪录的80%。\\n自动战斗将会扣除记录中编队成员耐力，并消耗当日次数。\\n自动战斗刷新周期内可使用3次。"
+        "Text": "使用自动战斗可还原最高纪录的100%。\\n自动战斗将会扣除记录中编队成员耐力，并消耗当日次数。\\n自动战斗刷新周期内可使用6次。"
     },
     {
         "Key": "BossSingleAutoFightRateDesc",
@@ -5992,7 +5992,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
+        "Text": "{0}/<color=#00EEEE><size=28>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -17174,6 +17174,10 @@
         "Text": "仅显示最近{0}条记录"
     },
     {
+        "Key": "TurntableCountNoEnough",
+        "Text": "【{0}】数量不足"
+    },
+    {
         "Key": "FashionStoryTrialPreStagePassTip",
         "Text": "通过{0}关卡后解锁"
     },
@@ -18799,7 +18803,7 @@
     },
     {
         "Key": "MainLineChapterTimeLimitTag",
-        "Text": "限时开放"
+        "Text": "最新开放"
     },
     {
         "Key": "SetNumberEmptyTips",
@@ -20534,6 +20538,10 @@
         "Text": "剩余：{0}"
     },
     {
+        "Key": "Theatre6BuffStackCount",
+        "Text": "数量：{0}"
+    },
+    {
         "Key": "Theatre6TaskFinish",
         "Text": "已完成"
     },
@@ -20571,7 +20579,7 @@
     },
     {
         "Key": "Theatre6FightHighSkillTip",
-        "Text": "存在更高等级的技能，是否直接进入战斗"
+        "Text": "存在可替换的高星级技能，是否直接进入战斗"
     },
     {
         "Key": "Theatre6TalentLvRichText",
@@ -20679,7 +20687,7 @@
     },
     {
         "Key": "FashionDownloadAllCharacterDesc",
-        "Text": "{0}所有未下载的涂装资源"
+        "Text": "{0}所有涂装资源"
     },
     {
         "Key": "FubenRepeatChallengeDoubleRewardTimes",
@@ -20810,6 +20818,14 @@
         "Text": "placeholder_还有可购买商品或免费刷新次数，是否确认离开商店？"
     },
     {
+        "Key": "Theatre6TaskSelectState",
+        "Text": "已选择"
+    },
+    {
+        "Key": "Theatre6TaskNormalState",
+        "Text": "选择"
+    },
+    {
         "Key": "BattleFashionUndownloadedTipTitle",
         "Text": "提示"
     },
@@ -20831,11 +20847,11 @@
     },
     {
         "Key": "Theatre6PopupSkillLevelUpNotShow",
-        "Text": "无可升级技能"
+        "Text": "无可升星技能"
     },
     {
         "Key": "Theatre6PopupSkillLevelUpCancel",
-        "Text": "确定要放弃升级吗？"
+        "Text": "确定要放弃升星吗？"
     },
     {
         "Key": "Theatre6SkillCoinNotEnough",
@@ -20907,7 +20923,7 @@
     },
     {
         "Key": "Theatre6SkillUpGrade",
-        "Text": "等级提升"
+        "Text": "星级提升"
     },
     {
         "Key": "Theatre6GetSkill",
@@ -20931,15 +20947,15 @@
     },
     {
         "Key": "Theatre6SkillChangeError1",
-        "Text": "低等级技能无法替换装备中的高等级技能"
+        "Text": "已装备更高星级的技能"
     },
     {
         "Key": "Theatre6SkillChangeError2",
-        "Text": "已装备相同技能,无法重复装备"
+        "Text": "已装备相同技能"
     },
     {
         "Key": "Theatre6SkillSlotFull",
-        "Text": "装备槽已满"
+        "Text": "暂无可装备槽位"
     },
     {
         "Key": "Theatre6ShopStatus1",
@@ -20955,15 +20971,15 @@
     },
     {
         "Key": "Theatre6SkillBagFull",
-        "Text": "当前背包已满，%s 将自动转换为金币%s，确定要继续吗？"
+        "Text": "暂无仓库槽位"
     },
     {
         "Key": "Theatre6SkillReplaceHigh",
-        "Text": "已替换为高级技能"
+        "Text": "已替换为高星技能"
     },
     {
         "Key": "Theatre6SkillAutoToBag",
-        "Text": "无法装备低等级技能，自动进入背包"
+        "Text": "无法装备低星级技能，自动进入技能档案"
     },
     {
         "Key": "GameCollectionTips1",
@@ -20988,5 +21004,33 @@
     {
         "Key": "Theatre6SkillMoveError",
         "Text": "技能类型不正确，无法交换"
+    },
+    {
+        "Key": "Theatre6Lock",
+        "Text": "冻结"
+    },
+    {
+        "Key": "Theatre6UnLock",
+        "Text": "解冻"
+    },
+    {
+        "Key": "Theatre6SkillBagOver",
+        "Text": "当前技能档案已满，%s 将转换为金币%s，可点击头像前往清理技能档案，或点击【确定】自动售出"
+    },
+    {
+        "Key": "Theatre6PopupSkillLevelUpCountOut",
+        "Text": "升级次数已用完"
+    },
+    {
+        "Key": "Theatre6BattleShopAllLocked",
+        "Text": "商品均冻结，无法刷新"
+    },
+    {
+        "Key": "TurntableDrawTimes",
+        "Text": "x{0}"
+    },
+    {
+        "Key": "TurntableDrawTimesWithNotEnough",
+        "Text": "<color=#FF6161>x{0}</color>"
     }
 ]

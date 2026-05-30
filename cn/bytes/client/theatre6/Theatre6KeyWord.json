@@ -1,23 +1,8 @@
 [
     {
-        "Id": 1,
-        "Name": "Placeholder_TestKeyWord1",
-        "Des": "Placeholder_This is test keyword 1 desc"
-    },
-    {
-        "Id": 2,
-        "Name": "Placeholder_TestKeyWord2",
-        "Des": "Placeholder_This is test keyword 2 desc"
-    },
-    {
-        "Id": 3,
-        "Name": "Placeholder_TestKeyWord3",
-        "Des": "Placeholder_This is test keyword 3 desc"
-    },
-    {
         "Id": 11,
         "Name": "晕眩",
-        "Des": "晕眩期间，无法获取<color=#516797><Icon=IconOverClock|45|45|0.5/>超序值</color>"
+        "Des": "晕眩期间，无法获取<Icon=IconOverClock|30|30|0.5/><color=#516797>超序值</color>"
     },
     {
         "Id": 12,
@@ -27,17 +12,17 @@
     {
         "Id": 13,
         "Name": "击飞",
-        "Des": "敌人被<color=#487F3B><Icon=IconHitFlyBlack|45|45|0.5/>击飞</color>期间，无法触发<color=#516797><Icon=IconBlock|45|45|0.5/>格挡</color>。"
+        "Des": "敌人被<Icon=IconHitFlyBlack|30|30|0.5/><color=#487F3B>击飞</color>期间，无法触发<Icon=IconBlock|30|30|0.5/><color=#516797>格挡</color>。"
     },
     {
         "Id": 14,
         "Name": "击倒",
-        "Des": "敌人被<color=#487F3B><Icon=IconHitDown|45|45|0.5/>击倒</color>期间，无法触发<color=#516797><Icon=IconBlock|45|45|0.5/>格挡</color>。"
+        "Des": "敌人被<Icon=IconHitDown|30|30|0.5/><color=#487F3B>击倒</color>期间，无法触发<Icon=IconBlock|30|30|0.5/><color=#516797>格挡</color>。"
     },
     {
         "Id": 15,
-        "Name": "洞察",
-        "Des": "下次使用技能时，消耗1层<color=#B96716><<Icon=IconCritBlack|45|45|0.5/>暴击></color>，使该次技能造成的伤害提升50%。持续时间无限，可无限叠加。"
+        "Name": "<暴击>",
+        "Des": "下次使用技能时，消耗1层<color=#B96716><</color><Icon=IconCritBlack|30|30|0.5/><color=#B96716>暴击></color>，使该次技能造成的伤害提升50%。持续时间无限，可无限叠加。"
     },
     {
         "Id": 16,
@@ -46,47 +31,57 @@
     },
     {
         "Id": 17,
-        "Name": "守势",
-        "Des": "下次对手技能命中时，消耗1层<color=#516797><<Icon=IconBlock|45|45|0.5/>格挡></color>，使自身受到该次技能的伤害降低50%。持续时间无限，可无限叠加。"
+        "Name": "<格挡>",
+        "Des": "下次对手技能命中时，消耗1层<color=#516797><</color><Icon=IconBlock|30|30|0.5/><color=#516797>格挡></color>，使自身受到该次技能的伤害降低50%。持续时间无限，可无限叠加，击飞与击倒状态下无法格挡。"
     },
     {
         "Id": 18,
         "Name": "格挡",
-        "Des": "受到此次技能的伤害降低50%。"
+        "Des": "受到此次技能的伤害降低50%，击飞与击倒状态下无法格挡。"
     },
     {
         "Id": 19,
         "Name": "怒火",
-        "Des": "通过使用技能，可以获得一定点数的<color=#9F3232><Icon=IconAnger|45|45|0.5/>怒火</color>，持续时间无限。\\n<color=#9F3232><Icon=IconAnger|45|45|0.5/>怒火</color>上限为100点，达到上限时，进入<color=#9F3232><Icon=IconAngry|45|45|0.5/>狂暴</color>。"
+        "Des": "通过使用技能，可以获得一定点数的<color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color>，持续时间无限。\\n<color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color>上限为100点，达到上限时，进入<color=#9F3232><Icon=IconAngry|30|30|0.5/>狂暴</color>。"
     },
     {
         "Id": 20,
         "Name": "狂袭",
-        "Des": "<color=#9F3232><Icon=IconAngry|45|45|0.5/>狂暴</color>状态下，造成伤害提高10%，使用任意技能均将消耗10点<color=#9F3232><Icon=IconAnger|45|45|0.5/>怒火</color>，部分技能将触发额外效果。\\n在<color=#9F3232><Icon=IconAnger|45|45|0.5/>怒火</color>消耗至0时，<color=#9F3232><Icon=IconAngry|45|45|0.5/>狂暴</color>状态结束。<color=#9F3232><Icon=IconAngry|45|45|0.5/>狂暴</color>无法叠加。"
+        "Des": "<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态下，造成伤害提高10%，使用任意技能均将消耗10点<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>，部分技能将触发额外效果。\\n在<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>消耗至0时，<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态结束。<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>无法叠加。"
     },
     {
         "Id": 21,
         "Name": "拼刀",
-        "Des": "战斗开始时以及双方<color=#6F4877><Icon=IconStamina|45|45|0.5/>战意值</color>均耗尽时，将触发一次<color=#B96716><Icon=IconWrestle|45|45|0.5/>拼刀</color>。在<color=#B96716><Icon=IconWrestle|45|45|0.5/>拼刀</color>中获胜的一方，将获得出手权。"
+        "Des": "战斗开始时以及双方<Icon=IconStamina|30|30|0.5/><color=#6F4877>战意值</color>均耗尽时，将触发一次<Icon=IconWrestle|30|30|0.5/><color=#B96716>拼刀</color>。在<Icon=IconWrestle|30|30|0.5/><color=#B96716>拼刀</color>中获胜的一方，将获得出手权。"
     },
     {
         "Id": 22,
         "Name": "反制",
-        "Des": "战斗中一方<color=#516797><Icon=IconOverClock|45|45|0.5/>超序值</color>达到100点时，将触发一次<color=#516797><Icon=IconOverClock|45|45|0.5/>反制</color>。在<color=#516797><Icon=IconOverClock|45|45|0.5/>反制</color>中获胜的一方，将获得出手权"
+        "Des": "战斗中一方<Icon=IconOverClock|30|30|0.5/>超<color=#516797>序值</color>达到100点时，将触发一次<Icon=IconOverClock|30|30|0.5/><color=#516797>反制</color>。在<Icon=IconOverClock|30|30|0.5/><color=#516797>反制</color>中获胜的一方，将获得出手权"
     },
     {
         "Id": 23,
         "Name": "先机",
-        "Des": "部分技能在<color=#B96716><Icon=IconWrestle|45|45|0.5/>先机</color>属性高时可以造成额外效果。"
+        "Des": "部分技能在<Icon=IconWrestle|30|30|0.5/><color=#B96716>先机</color>属性高时可以造成额外效果。"
     },
     {
         "Id": 24,
         "Name": "超序",
-        "Des": "部分技能在<color=#516797><Icon=IconOverClock|45|45|0.5/>超序</color>属性高时可以造成额外效果。"
+        "Des": "部分技能在<Icon=IconOverClock|30|30|0.5/><color=#516797>超序</color>属性高时可以造成额外效果。"
     },
     {
         "Id": 25,
         "Name": "战意",
-        "Des": "部分技能在<color=#6F4877><Icon=IconStamina|45|45|0.5/>战意</color>属性高时可以造成额外效果。"
+        "Des": "部分技能在<Icon=IconStamina|30|30|0.5/><color=#6F4877>战意</color>属性高时可以造成额外效果。"
+    },
+    {
+        "Id": 26,
+        "Name": "唯一",
+        "Des": "相同效果仅生效一次，无法叠加。"
+    },
+    {
+        "Id": 99,
+        "Name": "点燃",
+        "Des": "每有一层，对手技能命中时额外附加10%攻击的伤害，持续时间无限，可无限叠加。"
     }
 ]

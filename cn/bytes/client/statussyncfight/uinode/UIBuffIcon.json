@@ -62,52 +62,141 @@
         "Id": 1025101,
         "Name": "点燃",
         "Priority": 1,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo2.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon3802.png",
         "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgRed.png",
         "BorderColor": "#B47E7E",
         "ShowCount": 1,
-        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridDeBuff.prefab",
         "DetailDesc": [
-            "每有一层，对手技能命中时额外附加10%攻击的伤害，持续时间无限，可无限叠加"
+            "每有一层，对手技能命中时额外附加10%攻击的伤害"
         ]
     },
     {
         "Id": 1025104,
-        "Name": "<暴击>",
+        "Name": "暴击",
         "Priority": 1,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong2.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon3702.png",
         "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
         "BorderColor": "#7E9EB4",
         "ShowCount": 1,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
-            "下次使用技能时，消耗1层<暴击>，使该次技能造成的伤害提升50%。持续时间无限，可无限叠加"
+            "下次使用技能时，消耗1层暴击，使该次技能造成的伤害提升50%"
         ]
     },
     {
         "Id": 1025105,
-        "Name": "<格挡>",
+        "Name": "格挡",
         "Priority": 1,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei2.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon4002.png",
         "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
         "BorderColor": "#7E9EB4",
         "ShowCount": 1,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
-            "下次对手技能命中时，消耗1层<格挡>，使自身受到该次技能的伤害降低50%。持续时间无限，可无限叠加"
+            "下次对手技能命中时，消耗1层格挡，使自身受到该次技能的伤害降低50%，击飞与击倒状态下无法格挡"
+        ]
+    },
+    {
+        "Id": 1025107,
+        "Name": "怒火",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon4302.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "怒火上限为100点，达到上限时，在技能结束后进入狂暴状态"
+        ]
+    },
+    {
+        "Id": 1025108,
+        "Name": "狂暴",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon4202.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "造成伤害提高10%，使用任意技能均将消耗10点怒火，怒火消耗至0时，在技能结束后狂暴状态结束"
         ]
     },
     {
         "Id": 1025111,
         "Name": "疲劳",
         "Priority": 1,
-        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon007.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon3602.png",
         "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgRed.png",
         "BorderColor": "#B47E7E",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridDeBuff.prefab",
+        "DetailDesc": [
+            "双方持续失去生命值"
+        ]
+    },
+    {
+        "Id": 1025901,
+        "Name": "先机提升",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0502.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
         "ShowCount": 1,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
-            "双方持续失去生命值"
+            "角色先机属性提升1点"
+        ]
+    },
+    {
+        "Id": 1025902,
+        "Name": "超序提升",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0402.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "角色超序属性提升1点"
+        ]
+    },
+    {
+        "Id": 1025903,
+        "Name": "战意提升",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0302.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "角色战意属性提升1点"
+        ]
+    },
+    {
+        "Id": 1025904,
+        "Name": "攻击提升",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0202.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "角色攻击属性提升1点"
+        ]
+    },
+    {
+        "Id": 1025905,
+        "Name": "生命提升",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0102.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "角色生命属性提升1点"
         ]
     },
     {
@@ -178,5 +267,29 @@
         "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
         "BorderColor": "#7E9EB4",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkAffixTemplate.prefab"
+    },
+    {
+        "Id": 10255071,
+        "Name": "造成伤害提升",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0202.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "下次使用技能时，造成伤害提升25%"
+        ]
+    },
+    {
+        "Id": 10255091,
+        "Name": "返还体力",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0302.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "下次使用技能时，返还其消耗战意值的20%"
+        ]
     }
 ]

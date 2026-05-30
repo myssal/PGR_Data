@@ -317,17 +317,14 @@ function XUiLifeTreeMain:PlayStartAnimation()
     -- 场景动画
     self:StopSceneAnimation("AnimEnable02")
     self:StopSceneAnimation("AnimEnable03")
-    XLuaUiManager.SetMask(true)
-    self:PlaySceneAnimation("AnimEnable01", function()
-        XLuaUiManager.SetMask(false)
-    end)
+    self:PlaySceneAnimation("AnimEnable01")
 
     -- 摄像机动画
     self:PlayCameraAnimation("UiLifeTreeCamAnimEnable01")
 
     -- UI动画
     self:ShowUi(false)
-    self:PlayAnimation("Start", function()
+    self:PlayAnimationWithMask("Start", function()
         self:ShowUi(true)
     end)
 end
@@ -462,8 +459,8 @@ end
 
 -- 设置摄像机的X轴和Y轴的值，并通过动画逐渐切换到目标值
 function XUiLifeTreeMain:SetCameraValueWithAnim(aimXValue, aimYValue)
-    local curXValue = self.CamNearMain:GetXValue()
-    local curYValue = self.CamNearMain:GetYValue()
+    local curXValue = self.CamFarMain:GetXValue()
+    local curYValue = self.CamFarMain:GetYValue()
     local startTime = CS.UnityEngine.Time.realtimeSinceStartup
     self:RemoveSetCameraValueTimer()
     self.IsPlayCameraAnim = true
@@ -535,6 +532,9 @@ function XUiLifeTreeMain:PlayCameraZoomInAnimation(cb)
     self.CamFarMain.gameObject:SetActiveEx(false)
     self.LastFarCameraPosition = self.UiFarCamera.transform.position
 
+    -- 隐藏摄像机
+    self.UiNearCamera.gameObject:SetActiveEx(false)
+
     -- 界面压黑动画
     self:PlayAnimation("DarkDisable")
 
@@ -567,6 +567,9 @@ function XUiLifeTreeMain:PlayCameraResetAnimation(cb)
         self:ShowUi(true)
         self:CheckUpdateUiPointPos()
         self.CamFarMain.gameObject:SetActiveEx(true)
+
+        -- 显示摄像机
+        self.UiNearCamera.gameObject:SetActiveEx(true)
         if cb then cb() end
     end)
 end

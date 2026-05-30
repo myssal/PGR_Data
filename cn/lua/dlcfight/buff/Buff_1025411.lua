@@ -3,7 +3,7 @@ local XTheatre6BuffBase = require("Gameplay/Theatre6/XTheatre6BuffBase")
 local XBuffScript1025411 = XDlcScriptManager.RegBuffScript(1025411, "XBuffScript1025411", XTheatre6BuffBase)
 
 
---效果说明：【狂暴】状态下使用主动技能时，额外获得3点【体力值】。
+--效果说明：【狂暴】状态下使用技能时，额外获得3点【体力值】。
 
 function XBuffScript1025411:Init()
     --初始化
@@ -27,10 +27,9 @@ end
 function XBuffScript1025411:OnLuaSkillEnd(eventArgs)
     --XLog.Error(".....技能结束")
     --self:LogError("SkillEnd")
-    self.originAttrib1 = self._proxy:GetBuffStacks( self._uuid,1025108)
+    self.originAttrib1 = self._proxy:GetBuffStacks(self._uuid, 1025108)
     if self.originAttrib1 ~= 1 then return end
-    if eventArgs._launcherUUID == self._npcUUID then return end
-    --XLog.Error(".....抓到了玩家在狂暴状态下执行行为")
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
     self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.stackTL, 0) --恢复自己体力
     --return self._critController:AddSkillCount(self._stackCount)
 end

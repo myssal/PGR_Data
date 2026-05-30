@@ -45919,6 +45919,7 @@
             2,
             3
         ],
+        "IsBanGeneralSkill": true,
         "NextStageId": [
             10400102
         ]
@@ -46166,6 +46167,7 @@
             2,
             3
         ],
+        "IsBanGeneralSkill": true,
         "NextStageId": [
             10400108
         ]
@@ -46770,6 +46772,7 @@
             2,
             3
         ],
+        "IsBanGeneralSkill": true,
         "NextStageId": [
             10400123
         ]
@@ -46933,6 +46936,7 @@
             2,
             3
         ],
+        "IsBanGeneralSkill": true,
         "NextStageId": [
             10400127
         ]
@@ -65595,7 +65599,20 @@
         "NormalEventIdOnPassed": 1,
         "OrderId": 3,
         "LimitBuffId": 1,
-        "PassTimeLimit": 300
+        "PassTimeLimit": 300,
+        "OnlinePlayerLimit": 3,
+        "ForceConditionId": [
+            30000101
+        ],
+        "FunctionLeftBtn": 3,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
     },
     {
         "StageId": 30060101,
@@ -177045,8 +177062,8 @@
         "Type": 18,
         "Name": "眷旅，启程",
         "Description": "追随天光的锦缎，与你相见。",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu08.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaStory05.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian01.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -177077,8 +177094,8 @@
         "Type": 18,
         "Name": "以前行之名",
         "Description": "无畏荆墙与迷境，与你同往。",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu08.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaStory05.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg02.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian02.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -177112,8 +177129,8 @@
         "Type": 18,
         "Name": "以家园之名",
         "Description": "点亮归处的灯火，与你安居。",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu07.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaFight03.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg03.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian03.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -177159,8 +177176,8 @@
         "Type": 18,
         "Name": "以相守之名",
         "Description": "期许未至的明日，与你携手。",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu08.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaStory05.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg04.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian04.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -177194,8 +177211,8 @@
         "Type": 18,
         "Name": "澄愿，成愿",
         "Description": "方寸世界平生意趣，你我共筑。",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu08.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaStory05.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg05.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian05.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -177229,8 +177246,8 @@
         "Type": 18,
         "Name": "此心永恒",
         "Description": "爱与希望交织起舞，此心永恒。",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu08.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaStory05.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian06.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -204253,8 +204270,8 @@
     {
         "StageId": 30101120,
         "Type": 43,
-        "Name": "冥契妖翎",
-        "Description": "遵从与宿命结下的契约，在夜幕被最初一缕晨光撕裂之前，她背后双翼先行划破深浓的夜色。她巡猎着藏匿于雾中的怪物，关于生死的规则，由她全权书写。微光终将照彻长夜，而雾中的罪恶，也会在久违的光明下永恒沉睡。",
+        "Name": "雾夜赤冕",
+        "Description": "往事已被鲜红浸染，而裁决的权柄已牢牢握于掌中。她以女爵之名，向沉睡于雾中的旧时代道别。血色的满月再度升起之际，她重新握紧手中锋刃，步入雾霭流转的长街。在一切落下终幕之前，以绝不畏惧的意志，斩开死寂中的虚妄。",
         "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
         "BgmId": 101,
@@ -204282,8 +204299,8 @@
     {
         "StageId": 30101122,
         "Type": 43,
-        "Name": "雾夜赤冕",
-        "Description": "往事已被鲜红浸染，而裁决的权柄已牢牢握于掌中。她以女爵之名，向沉睡于雾中的旧时代道别。血色的满月再度升起之际，她重新握紧手中锋刃，步入雾霭流转的长街。在一切落下终幕之前，以绝不畏惧的意志，斩开死寂中的虚妄。",
+        "Name": "冥契妖翎",
+        "Description": "遵从与宿命结下的契约，在夜幕被最初一缕晨光撕裂之前，她背后双翼先行划破深浓的夜色。她巡猎着藏匿于雾中的怪物，关于生死的规则，由她全权书写。微光终将照彻长夜，而雾中的罪恶，也会在久违的光明下永恒沉睡。",
         "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
         "BgmId": 101,
@@ -299284,7 +299301,7 @@
         ],
         "FunctionRightBtn": 1,
         "RobotId": [
-            172387
+            172410
         ],
         "StageType": 1,
         "FightControlId": 1,

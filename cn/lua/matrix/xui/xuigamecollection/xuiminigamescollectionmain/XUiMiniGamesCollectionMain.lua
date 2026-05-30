@@ -33,6 +33,7 @@ end
 function XUiMiniGamesCollectionMain:OnStart(...)
     self:Refresh()
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.GameCollection)
+    XMVCA.XGameCollection:MarkFirstEnterMain()
 end
 
 function XUiMiniGamesCollectionMain:OnEnable()
@@ -42,8 +43,24 @@ function XUiMiniGamesCollectionMain:OnEnable()
     self:UpdateReddot()
     self._Timer = XScheduleManager.ScheduleForever(function()
         self:RefreshTime()
+        self:CheckActivityEnd()
     end, XScheduleManager.SECOND)
     self._Control:TryOpenExitRecord()
+end
+
+function XUiMiniGamesCollectionMain:CheckActivityEnd()
+    if self:IsDestroy() then
+        return
+    end
+    if not self._Control:IsActivityEnd() then
+        return
+    end
+    if self._Timer then
+        XScheduleManager.UnSchedule(self._Timer)
+        self._Timer = nil
+    end
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.GameCollection)
+    XLuaUiManager.RunMain()
 end
 
 function XUiMiniGamesCollectionMain:OnDisable()
@@ -157,7 +174,6 @@ function XUiMiniGamesCollectionMain:OnBtnGiveUpClick(eventData)
 
             self:RefreshActionButtons()
             self:RefreshMaxScore()
-            self._Control:TryOpenExitRecord()
         end)
     end)
 end
@@ -185,7 +201,6 @@ function XUiMiniGamesCollectionMain:OnBtnStartClick(eventData)
                 if self:IsDestroy() then
                     return
                 end
-
                 self._Control:RequestEnterGame(targetGameType)
             end)
         end)

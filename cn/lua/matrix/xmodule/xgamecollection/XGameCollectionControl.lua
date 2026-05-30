@@ -92,6 +92,14 @@ function XGameCollectionControl:GetActivityEndTime()
     return XFunctionManager.GetEndTimeByTimeId(timeId) or 0
 end
 
+function XGameCollectionControl:IsActivityEnd()
+    local endTime = self:GetActivityEndTime()
+    if endTime <= 0 then
+        return true
+    end
+    return XTime.GetServerNowTimestamp() >= endTime
+end
+
 function XGameCollectionControl:GetCollectionMaxScore(gameType)
     return self._Model:GetMaxScore(gameType)
 end
@@ -178,7 +186,7 @@ function XGameCollectionControl:RequestEnterGame(gameType)
         if res.Code ~= XCode.Success then
             return
         end
-        self:_StartLaunchSession(gameType, gameCfg.StageId, self:_BuildEnterScoreSnapshot(gameType))
+        self:_StartLaunchSession(gameType, gameCfg.StageId)
         self:EnterChildGame(gameType)
     end)
 end
@@ -272,13 +280,8 @@ function XGameCollectionControl:IsCanGiveUp(gameType)
     return self:IsGamePlaying(gameType)
 end
 
-function XGameCollectionControl:TryOpenExitRecord()
-    local record = self._Model:PopPendingExitRecord()
-    if XTool.IsTableEmpty(record) then
-        return
-    end
-
-    XLuaUiManager.Open("UiMiniGamesCollectionBreakTheRecord", record.GameName, record.NewScore)
+function XGameCollectionControl:TryOpenExitRecord(onClose)
+    return XMVCA.XGameCollection:TryOpenBreakRecord(onClose)
 end
 
 function XGameCollectionControl:_ResolveGameType(gameType)
@@ -302,9 +305,8 @@ function XGameCollectionControl:_ResolveGameType(gameType)
     end
 end
 
-function XGameCollectionControl:_StartLaunchSession(gameType, stageId, snapshot)
+function XGameCollectionControl:_StartLaunchSession(gameType, stageId)
     XMVCA.XGameCollection:SetLaunchContext(gameType, stageId)
-    self._Model:SetGameSnapshot(gameType, snapshot)
 end
 
 function XGameCollectionControl:_ClearLaunchSession(gameType)
@@ -318,20 +320,6 @@ function XGameCollectionControl:_ClearLaunchSession(gameType)
     end
 
     XMVCA.XGameCollection:ClearLaunchContext()
-    self._Model:ClearGameSnapshot(launchContext.GameType)
-end
-
-function XGameCollectionControl:_CreateGame2048Snapshot(stageId)
-    return {
-        StageId = stageId,
-        EnterMaxScore = XMVCA.XGame2048:GetStageMaxScoreById(stageId) or 0,
-    }
-end
-
-function XGameCollectionControl:_BuildEnterScoreSnapshot(gameType)
-    return {
-        EnterMaxScore = self._Model:GetMaxScore(gameType) or 0,
-    }
 end
 
 function XGameCollectionControl:_GetFangKuaiPlayingStageId(gameCfg)
@@ -352,14 +340,14 @@ function XGameCollectionControl:_RequestEnterGoldenMiner(gameCfg)
     local gameType = GetGameType(gameCfg)
     local useCharacterId = XMVCA.XGoldenMiner:GetUseCharacterId()
     XMVCA.XGoldenMiner:RequestGoldenMinerEnterGame(useCharacterId, function()
-        self:_StartLaunchSession(gameType, gameCfg.StageId, self:_BuildEnterScoreSnapshot(gameType))
+        self:_StartLaunchSession(gameType, gameCfg.StageId)
         XMVCA.XGoldenMiner:OpenGameUi()
     end)
 end
 
 function XGameCollectionControl:_ContinueGoldenMiner(gameCfg)
     local gameType = GetGameType(gameCfg)
-    self:_StartLaunchSession(gameType, gameCfg.StageId, self:_BuildEnterScoreSnapshot(gameType))
+    self:_StartLaunchSession(gameType, gameCfg.StageId)
     XMVCA.XGoldenMiner:ContinueGame()
 end
 
@@ -372,18 +360,12 @@ function XGameCollectionControl:_GiveUpGoldenMiner(gameCfg, cb)
     end
 
     local gameType = GetGameType(gameCfg)
-    local enterMaxScore = self._Model:GetMaxScore(gameType) or 0
-    local stageScores = XMVCA.XGoldenMiner:GetStageScores()
+    local dataDb = XMVCA.XGoldenMiner:GetMainDb()
+    local clearData = dataDb and dataDb:GetCurClearData()
+    local stageScores = (clearData and clearData.TotalScore) or (dataDb and dataDb:GetStageScores()) or 0
     XMVCA.XGoldenMiner:RequestGoldenMinerExitGame(0, function()
-        XMVCA.XGameCollection:RecordExitForGame(gameType, {
-            Score = stageScores or 0,
-            EnterMaxScore = enterMaxScore,
-            IsSettled = true,
-        })
         self:_ClearLaunchSession(gameType)
-        if cb then
-            cb()
-        end
+        self:TryOpenExitRecord(cb)
     end, nil, stageScores, stageScores)
 end
 
@@ -395,12 +377,11 @@ function XGameCollectionControl:_RequestEnterGame2048(gameCfg)
         return
     end
 
-    local snapshot = self:_CreateGame2048Snapshot(stageId)
     local stageData = XMVCA.XGame2048:GetCurStageData()
     if not XTool.IsTableEmpty(stageData) then
         if stageData.StageId == stageId then
             XMVCA.XGame2048:SetCurStageId(stageId)
-            self:_StartLaunchSession(gameType, stageId, snapshot)
+            self:_StartLaunchSession(gameType, stageId)
             XLuaUiManager.Open(UiNameGame2048, stageData)
             return
         end
@@ -408,7 +389,7 @@ function XGameCollectionControl:_RequestEnterGame2048(gameCfg)
         XMVCA.XGame2048:RequestGame2048GiveUp(function()
             XMVCA.XGame2048:RequestGame2048EnterStage(stageId, function(res)
                 XMVCA.XGame2048:SetCurStageId(stageId)
-                self:_StartLaunchSession(gameType, stageId, snapshot)
+                self:_StartLaunchSession(gameType, stageId)
                 XLuaUiManager.Open(UiNameGame2048, res.StageContext)
             end)
         end)
@@ -417,7 +398,7 @@ function XGameCollectionControl:_RequestEnterGame2048(gameCfg)
 
     XMVCA.XGame2048:RequestGame2048EnterStage(stageId, function(res)
         XMVCA.XGame2048:SetCurStageId(stageId)
-        self:_StartLaunchSession(gameType, stageId, snapshot)
+        self:_StartLaunchSession(gameType, stageId)
         XLuaUiManager.Open(UiNameGame2048, res.StageContext)
     end)
 end
@@ -429,7 +410,7 @@ function XGameCollectionControl:_ContinueGame2048(gameCfg)
     end
 
     XMVCA.XGame2048:SetCurStageId(stageData.StageId)
-    self:_StartLaunchSession(GetGameType(gameCfg), stageData.StageId, self:_CreateGame2048Snapshot(stageData.StageId))
+    self:_StartLaunchSession(GetGameType(gameCfg), stageData.StageId)
     XLuaUiManager.Open(UiNameGame2048, stageData)
 end
 
@@ -443,18 +424,9 @@ function XGameCollectionControl:_GiveUpGame2048(gameCfg, cb)
     end
 
     local gameType = GetGameType(gameCfg)
-    local stageId = stageData.StageId
-    local enterMaxScore = self._Model:GetMaxScore(gameType) or 0
     XMVCA.XGame2048:RequestGame2048Settle(XMVCA.XGame2048.EnumConst.SettleType.ByHand,function()
-        XMVCA.XGameCollection:RecordExitForGame(gameType, {
-            Score = XMVCA.XGame2048:GetStageMaxScoreById(stageId) or 0,
-            EnterMaxScore = enterMaxScore,
-            IsSettled = true,
-        })
         self:_ClearLaunchSession(gameType)
-        if cb then
-            cb()
-        end
+        self:TryOpenExitRecord(cb)
     end)
 end
 
@@ -467,7 +439,7 @@ function XGameCollectionControl:_RequestEnterFangKuai(gameCfg)
     end
 
     XMVCA.XFangKuai:OpenStageFromCollection(targetStageId, function(stageId)
-        self:_StartLaunchSession(gameType, stageId or targetStageId, self:_BuildEnterScoreSnapshot(gameType))
+        self:_StartLaunchSession(gameType, stageId or targetStageId)
     end)
 end
 
@@ -479,7 +451,7 @@ function XGameCollectionControl:_ContinueFangKuai(gameCfg)
     end
 
     XMVCA.XFangKuai:OpenStageFromCollection(currentStageId, function(stageId)
-        self:_StartLaunchSession(gameType, stageId or currentStageId, self:_BuildEnterScoreSnapshot(gameType))
+        self:_StartLaunchSession(gameType, stageId or currentStageId)
     end)
 end
 
@@ -493,18 +465,9 @@ function XGameCollectionControl:_GiveUpFangKuai(gameCfg, cb)
     end
 
     local gameType = GetGameType(gameCfg)
-    local enterMaxScore = self._Model:GetMaxScore(gameType) or 0
     XMVCA.XFangKuai:GiveUpStageFromCollection(currentStageId, function()
-        local settleData = XMVCA.XFangKuai:GetCurStageSettleData()
-        XMVCA.XGameCollection:RecordExitForGame(gameType, {
-            Score = settleData and settleData.Point or 0,
-            EnterMaxScore = enterMaxScore,
-            IsSettled = true,
-        })
         self:_ClearLaunchSession(gameType)
-        if cb then
-            cb()
-        end
+        self:TryOpenExitRecord(cb)
     end)
 end
 

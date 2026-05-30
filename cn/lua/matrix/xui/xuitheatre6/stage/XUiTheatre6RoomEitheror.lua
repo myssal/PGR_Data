@@ -14,6 +14,7 @@ function XUiTheatre6RoomEitheror:OnAwake()
 
     self:InitComponent()
     self:InitAnimation()
+    self:InitGuide()
 
     self.BtnTaskDetailClose:AddEventListener(handler(self, self.OnBtnTaskDetailCloseClick))
     self.BtnBossL:AddEventListener(handler(self, self.OnBtnBossLClick))
@@ -28,16 +29,13 @@ function XUiTheatre6RoomEitheror:OnStart()
     self:CheckFightReconnect()
     self:InitBackgroup()
     self:InitDrag()
-    self:TryOpenSellSkillPanel()
 
 end
 
 function XUiTheatre6RoomEitheror:OnEnable()
     --二择结束 进入任务结算界面
     if self._IsEnd then
-        local control = self._Control
-        self:Close()
-        control:OpenChooseRoom()
+        self._Control:OpenChooseRoom(true)
         return
     end
     self._Drag:InitDragToOriginalPos()
@@ -71,12 +69,13 @@ function XUiTheatre6RoomEitheror:InitComponent()
     self._PanelAsset = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6Asset").New(self.PanelAsset, self)
     ---@type XUiPanelTheatre6BottomBuffList
     self._PanelBuff = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6BottomBuffList").New(self.ListBuff, self)
+    ---@type XUiPanelTheatre6MessyCodeFx
+    self._MessyCodeFx = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6MessyCodeFx").New(self.MessyCodeFx, self)
 
     self._PanelTrigger = {}
     XUiHelper.InitUiClass(self._PanelTrigger, self.PanelTrigger)
 
     require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6TopStage").New(self.PanelStage, self)
-    require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6MessyCodeFx").New(self.MessyCodeFx, self)
 end
 
 function XUiTheatre6RoomEitheror:InitDrag()
@@ -119,6 +118,21 @@ function XUiTheatre6RoomEitheror:InitAnimation()
     self._ChooseAddMoveX = self._Control:GetIntClientConfigValue("EitherorChooseAddMoveX")
     self._ChooseAddRotationY = self._Control:GetIntClientConfigValue("EitherorChooseAddRotationY")
     self._IdleTime = self._Control:GetIntClientConfigValue("IdleWaitingTime")
+end
+
+function XUiTheatre6RoomEitheror:InitGuide()
+    --第一次选择二择后播放的引导
+    self._GuideId = self._Control:GetIntClientConfigValue("EitherorGuideId")
+    --在指定关卡、指定步数触发二择引导
+    self._TriggeredStageId = self._Control:GetIntClientConfigValue("EitherorGuide2", 1)
+    self._GuideStep = self._Control:GetIntClientConfigValue("EitherorGuide2", 2)
+    self._GuideId2 = self._Control:GetIntClientConfigValue("EitherorGuide2", 3)
+    --san值变为黄/红时触发引导
+    self._SanGuideCondition = self._Control:GetIntClientConfigValue("EitherorGuide3", 1)
+    self._SanYellowGuideId = self._Control:GetIntClientConfigValue("EitherorGuide3", 2)
+    self._SanYellowEffectId = self._Control:GetIntClientConfigValue("EitherorGuide3", 3)
+    self._SanRedGuideId = self._Control:GetIntClientConfigValue("EitherorGuide3", 4)
+    self._SanRedEffectId = self._Control:GetIntClientConfigValue("EitherorGuide3", 5)
 end
 
 function XUiTheatre6RoomEitheror:ShowRoleInfo()
@@ -185,6 +199,7 @@ function XUiTheatre6RoomEitheror:UpdateTask()
                 self:OnTaskClick(uiObject.GridTaskDetail, index)
             end)
         end
+        uiObject.UiPanelFinsh:SetAsLastSibling()
         uiObject.UiPanelFinsh.gameObject:SetActiveEx(isTaskFinish)
     end
 end
@@ -247,21 +262,36 @@ function XUiTheatre6RoomEitheror:ShowEvent()
 
     self:ShowBossInfo(self._FightDict[Direction.Left], self.PanelBossTipL, self.TxtBossNameL)
     self:ShowBossInfo(self._FightDict[Direction.Right], self.PanelBossTipR, self.TxtBossNameR)
+
+    self:CheckPlayGuide2()
+    self:CheckPlayGuide3()
 end
 
-function XUiTheatre6RoomEitheror:HideEventReward()
+function XUiTheatre6RoomEitheror:HideEventReward(direction)
     if not self._IsShowEventReward then
         return
     end
     self._IsShowEventReward = false
-    self.PanelRewardL.gameObject:SetActiveEx(false)
-    self.PanelRewardR.gameObject:SetActiveEx(false)
+    if direction == Direction.Left then
+        self.PanelRewardL.gameObject:SetActiveEx(false)
+    elseif direction == Direction.Right then
+        self.PanelRewardR.gameObject:SetActiveEx(false)
+    else
+        self.PanelRewardL.gameObject:SetActiveEx(false)
+        self.PanelRewardR.gameObject:SetActiveEx(false)
+    end
+    if self.RewardGrids then
+        for _, grid in pairs(self.RewardGrids) do
+            grid:Close()
+        end
+    end
     for _, gridList in pairs(self._TaskDemandGrids) do
         for _, grid in pairs(gridList) do
             grid:ShowHighLight(false)
         end
     end
 end
+
 
 function XUiTheatre6RoomEitheror:ShowEventReward(direction)
     local rewards = self._ShowRewardDict[direction]
@@ -275,10 +305,16 @@ function XUiTheatre6RoomEitheror:ShowEventReward(direction)
     self:ShowTaskRewardChange(direction)
     
     local node = isLeft and self.GridRewardL or self.GridRewardR
+    self.RewardGrids = self.RewardGrids or {}
     XUiHelper.RefreshCustomizedList(node.parent, node, count, function(i, go)
-        local grid = {}
-        XUiHelper.InitUiClass(grid, go)
-        self:ShowReward(grid, rewards[i])
+        local grid = self.RewardGrids[go]
+        if not grid then
+            grid = require("XUi/XUiTheatre6/Stage/Grid/XUiGridTheatre6Eitheror").New(go, self)
+            self.RewardGrids[go] = grid
+        else
+            grid:Open()
+        end
+        grid:Refresh(rewards[i])
     end)
 end
 
@@ -303,7 +339,7 @@ function XUiTheatre6RoomEitheror:ShowTaskRewardChange(direction)
                 local condConfig = self._Control:GetConditionConfig(conditionId)
                 if condConfig.Type == XEnumConst.Theatre6.TaskConditionType.Goods then
                     local needGoodsId = condConfig.Params[1]
-                    if needGoodsId and (needGoodsId == 0 or goodsIds[needGoodsId]) then
+                    if needGoodsId and not XTool.IsTableEmpty(goodsIds) and (needGoodsId == 0 or goodsIds[needGoodsId]) then
                         grid:ShowHighLight(true)
                     end
                 end
@@ -337,37 +373,6 @@ function XUiTheatre6RoomEitheror:InitShowRewards(direction, rewardDatas, showRew
         end
     end
     return showRewards
-end
-
----@param rewardData Theatre6PreviewRewardGoodsProtocol
-function XUiTheatre6RoomEitheror:ShowReward(grid, rewardData)
-    local icon = self._Control:GetEventRewardIcon(rewardData)
-    grid.TxtDesc.requestImage = XMVCA.XTheatre6.RichTextImageCallBack
-    grid.TxtDesc.text = self._Control:GetEventRewardDesc(rewardData)
-    grid.RImgReward.gameObject:SetActiveEx(true)
-    grid.ImgBg.gameObject:SetActiveEx(true)
-    grid.RImgReward:SetRawImage(icon)
-    grid.BtnClick.gameObject:SetActiveEx(false)
-    --遗物显示加成属性
-    if XTool.IsNumberValid(rewardData.AttrPack) then
-        grid.PanelAttr.gameObject:SetActiveEx(true)
-        local attrPackConfig = self._Control:GetAttrPackCfgById(rewardData.AttrPack)
-        local attrConfigs, attrValues = self._Control:GetShowAttribute(attrPackConfig.AttrTypes, attrPackConfig.AttrNums)
-        XUiHelper.RefreshCustomizedList(grid.PanelAttr, grid.GridAttr, #attrConfigs, function(i, go)
-            local config = attrConfigs[i]
-            local attrValue = attrValues[i]
-            local uiObj = {}
-            XUiHelper.InitUiClass(uiObj, go)
-            uiObj.ImgIcon:SetRawImage(config.Icon)
-            if attrValue >= 0 then
-                uiObj.TxtNum.text = string.format("%s + %s", config.Name, self._Control:FormatNumberWithUnit(attrValue))
-            else
-                uiObj.TxtNum.text = string.format("%s %s", config.Name, self._Control:FormatNumberWithUnit(attrValue))
-            end
-        end)
-    else
-        grid.PanelAttr.gameObject:SetActiveEx(false)
-    end
 end
 
 function XUiTheatre6RoomEitheror:OnBtnTaskDetailCloseClick()
@@ -510,9 +515,11 @@ function XUiTheatre6RoomEitheror:OnEndChoose(direction)
     end
 
     if self:TryOpenSellSkillPanel() then
+        self:PlayCardEnableAnim()
         return
     end
 
+    local control = self._Control
     local storyId = self._StoryIdDict and self._StoryIdDict[direction]
     self._Control:RequestChooseEvent(direction, function(isEnd, isFight)
         --游戏结束，进去结算流程
@@ -529,9 +536,7 @@ function XUiTheatre6RoomEitheror:OnEndChoose(direction)
 
         if isEnd then
             self:CheckPlayStory(storyId, function()
-                local control = self._Control
-                self:Close()
-                control:OpenChooseRoom()
+                control:OpenChooseRoom(true)
             end)
             return
         end
@@ -545,6 +550,7 @@ function XUiTheatre6RoomEitheror:OnEndChoose(direction)
         self:CheckPlayStory(storyId, function()
             self:PlayCardEnableAnim()
             self:ShowEvent()
+            self:CheckPlayGuide()
         end)
     end)
 end
@@ -593,6 +599,8 @@ function XUiTheatre6RoomEitheror:PlayTimelineAnimation(animTran)
     animTran:PlayTimelineAnimation(function()
         animTran.gameObject:SetActiveEx(false)
         XLuaUiManager.SetMask(false)
+        self:TryOpenSellSkillPanel()
+
     end)
 end
 
@@ -611,7 +619,7 @@ end
 function XUiTheatre6RoomEitheror:PlayLeftCardDisable()
     self:StopAnimation("PanelLeftEnable")
     self:PlayAnimationWithMask("PanelLeftDisable")
-    self:HideEventReward()
+    self:HideEventReward(Direction.Left)
 end
 
 function XUiTheatre6RoomEitheror:PlayRightCardEnable()
@@ -623,7 +631,7 @@ end
 function XUiTheatre6RoomEitheror:PlayRightCardDisable()
     self:StopAnimation("PanelRightEnable")
     self:PlayAnimationWithMask("PanelRightDisable")
-    self:HideEventReward()
+    self:HideEventReward(Direction.Right)
 end
 
 function XUiTheatre6RoomEitheror:ShowBossInfo(monsterId, panelBoss, txtBossName)
@@ -670,6 +678,57 @@ function XUiTheatre6RoomEitheror:StopDragGuideAnim()
     self.PanelTipsAnim.time = self.PanelTipsAnim.duration
     self.PanelTipsAnim:Evaluate()
     self.PanelTipsAnim.gameObject:SetActiveEx(false)
+end
+
+function XUiTheatre6RoomEitheror:CheckPlayGuide()
+    if not XTool.IsNumberValid(self._GuideId) then
+        return
+    end
+    local isGuidePlayed = XDataCenter.GuideManager.CheckIsGuide(self._GuideId)
+    if isGuidePlayed then
+        return
+    end
+    XDataCenter.GuideManager.PlayGuide(self._GuideId)
+end
+
+function XUiTheatre6RoomEitheror:CheckPlayGuide2()
+    if not XTool.IsNumberValid(self._GuideId2) then
+        return
+    end
+    if XDataCenter.GuideManager.CheckIsGuide(self._GuideId2) then
+        return
+    end
+    if self._ModelData.StageId ~= self._TriggeredStageId then
+        return
+    end
+    if self._RoomData.CurChoosePoolIdx + 1 ~= self._GuideStep then
+        return
+    end
+    XDataCenter.GuideManager.PlayGuide(self._GuideId2)
+end
+
+function XUiTheatre6RoomEitheror:CheckPlayGuide3()
+    if not XTool.IsNumberValid(self._SanGuideCondition) or not XConditionManager.CheckCondition(self._SanGuideCondition) then
+        return
+    end
+    if self:CheckSanGuide(self._SanYellowGuideId, self._SanYellowEffectId) then
+        return
+    end
+    self:CheckSanGuide(self._SanRedGuideId, self._SanRedEffectId)
+end
+
+function XUiTheatre6RoomEitheror:CheckSanGuide(guideId, effectId)
+    if not XTool.IsNumberValid(guideId) then
+        return false
+    end
+    if XDataCenter.GuideManager.CheckIsGuide(guideId) then
+        return false
+    end
+    if not self._MessyCodeFx:IsExist(effectId) then
+        return false
+    end
+    XDataCenter.GuideManager.PlayGuide(guideId)
+    return true
 end
 
 return XUiTheatre6RoomEitheror

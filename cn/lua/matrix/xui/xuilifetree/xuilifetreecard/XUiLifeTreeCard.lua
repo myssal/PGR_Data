@@ -80,10 +80,6 @@ function XUiLifeTreeCard:Refresh()
 end
 
 function XUiLifeTreeCard:OnBtnBackClick()
-    -- 跳转到星座详情界面时，点击返回需要重新打开UiLifeTreeMain界面
-    if not XLuaUiManager.IsUiLoad("UiLifeTreeMain") then
-        XLuaUiManager.Open("UiLifeTreeMain")
-    end
     self:Close()
 end
 
@@ -109,7 +105,7 @@ function XUiLifeTreeCard:PlayEnableAnim()
     local stateType = self._Control:GetCharacterDivineState(self.DivineCharacterCatalogId)
     local bgAnimName = XMVCA.XLifeTree.EnumConst.DIVINE_TYPE_TO_UI_CARD_BG_ANIM[stateType]
     if bgAnimName then
-        self:PlayAnimation(bgAnimName)
+        self:PlayAnimationWithMask(bgAnimName)
     end
 end
 
@@ -169,7 +165,9 @@ function XUiLifeTreeCard:InitCards()
 end
 
 function XUiLifeTreeCard:RefreshCards()
-    
+    for _, card in pairs(self.GridCards) do
+        card:Refresh()
+    end
 end
 
 -- 是否有卡牌处于动画播放中
@@ -196,7 +194,9 @@ function XUiLifeTreeCard:RefreshConstellation()
     -- 按钮状态
     if isShowSwitch then
         local isSelect = self.ConstellationStateIndex > 1 -- 第2个状态切换Select状态
-        self.BtnSwitch:SetButtonState(isSelect and XUiButtonState.Select or XUiButtonState.Normal) 
+        local state = isSelect and XUiButtonState.Select or XUiButtonState.Normal
+        self.BtnSwitch:SetButtonState(state)
+        self.BtnSwitch.TempState = state
     end
 end
 
@@ -225,12 +225,12 @@ end
 -- 非神卡牌显示动画
 function XUiLifeTreeCard:PlayNonDivineCardsAnimShow()
     self:ShowNonDivineCards(true)
-    self:PlayAnimation("ShowUI")
+    self:PlayAnimationWithMask("ShowUI")
 end
 
 -- 非神卡牌隐藏动画
 function XUiLifeTreeCard:PlayNonDivineCardsAnimHide()
-    self:PlayAnimation("HideUI", function()
+    self:PlayAnimationWithMask("HideUI", function()
         self:ShowNonDivineCards(false)
     end)
 end

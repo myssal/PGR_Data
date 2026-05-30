@@ -277,6 +277,25 @@ function XUiHelper.GetPanelRoot(ui)
     return ui
 end
 
+function XUiHelper.RebuildLayoutRecursive(rectTransform)
+    if XTool.UObjIsNil(rectTransform) or not rectTransform.gameObject.activeInHierarchy then
+        return
+    end
+
+    for i = 0, rectTransform.childCount - 1 do
+        local child = rectTransform:GetChild(i)
+
+        if child ~= nil then
+            XUiHelper.RebuildLayoutRecursive(child)
+        end
+    end
+
+    if rectTransform:GetComponent(typeof(CS.UnityEngine.UI.ContentSizeFitter)) ~= nil
+        or rectTransform:GetComponent(typeof(CS.UnityEngine.UI.LayoutGroup)) ~= nil then
+        CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform)
+    end
+end
+
 function XUiHelper.ScrollTo(scrollRect, targetTransform, isTween, tweenTime, finishCallback, easeMethod)
     if XTool.UObjIsNil(scrollRect) or XTool.UObjIsNil(targetTransform) then
         return
@@ -284,44 +303,53 @@ function XUiHelper.ScrollTo(scrollRect, targetTransform, isTween, tweenTime, fin
 
     local viewport = scrollRect.viewport
     local content = scrollRect.content
-    local scrollRectTransform = scrollRect:GetComponent(typeof(CS.UnityEngine.RectTransform))
-    local currentLocalPos = scrollRectTransform:InverseTransformVector(
-            XUiHelper.ConvertLocalToWorldPosWithPiovt(targetTransform, content))
-    local targetLocalPos = scrollRectTransform:InverseTransformVector(
-            XUiHelper.ConvertLocalToWorldPosWithPiovt(viewport, scrollRectTransform))
-    local diff = targetLocalPos - currentLocalPos
-    local normalizedPos = Vector2()
-    local widthOffset = content.rect.width - viewport.rect.width
-    local heightOffset = content.rect.height - viewport.rect.height
 
-    if widthOffset == 0 then
-        normalizedPos.x = 0
-    else
-        normalizedPos.x = diff.x / widthOffset
-    end
-    if heightOffset == 0 then
-        normalizedPos.y = 1
-    else
-        normalizedPos.y = 1 - diff.y / heightOffset
+    if XTool.UObjIsNil(viewport) or XTool.UObjIsNil(content) then
+        return
     end
 
-    normalizedPos = scrollRect.normalizedPosition - normalizedPos
+    -- 自底向上重建 content 及其所有子物体，兼容多层Layout和ContentSizeFitter情况
+    XUiHelper.RebuildLayoutRecursive(content)
 
-    normalizedPos.x = CS.UnityEngine.Mathf.Clamp(normalizedPos.x, 0, 1)
-    normalizedPos.y = CS.UnityEngine.Mathf.Clamp(normalizedPos.y, 0, 1)
+    local targetPosInContent = nil
+
+    -- target 在 content 内的位置（优先用 anchoredPosition，避免 transform 同步延迟）
+    if targetTransform.parent == content then
+        targetPosInContent = Vector3(targetTransform.anchoredPosition.x, targetTransform.anchoredPosition.y, 0)
+    else
+        targetPosInContent = content:InverseTransformPoint(targetTransform.position)
+    end
+
+    local contentRect = content.rect
+    local viewportRect = viewport.rect
+    local widthOffset = contentRect.width - viewportRect.width
+    local heightOffset = contentRect.height - viewportRect.height
+
+    local offsetX = targetPosInContent.x - contentRect.xMin - viewportRect.width * 0.5
+    local offsetY = targetPosInContent.y - contentRect.yMin - viewportRect.height * 0.5
+
+    local currentPos = scrollRect.normalizedPosition
+    local targetNormalizedPos = Vector2(currentPos.x, currentPos.y)
+
+    if widthOffset > 0 then
+        targetNormalizedPos.x = CS.UnityEngine.Mathf.Clamp(offsetX / widthOffset, 0, 1)
+    end
+    if heightOffset > 0 then
+        targetNormalizedPos.y = CS.UnityEngine.Mathf.Clamp(offsetY / heightOffset, 0, 1)
+    end
+
+    -- 阻止惯性/弹性覆盖
+    scrollRect:StopMovement()
 
     if isTween then
-        local currentPos = scrollRect.normalizedPosition
-        local diffPosition = currentPos - normalizedPos
-
         return XUiHelper.Tween(tweenTime or 1, function(time)
-            local x = currentPos.x + time * diffPosition.x
-            local y = currentPos.y - time * diffPosition.y
+            local x = currentPos.x + time * (targetNormalizedPos.x - currentPos.x)
+            local y = currentPos.y + time * (targetNormalizedPos.y - currentPos.y)
 
             scrollRect.normalizedPosition = Vector2(x, y)
         end, finishCallback, easeMethod)
     else
-        scrollRect.normalizedPosition = normalizedPos
+        scrollRect.normalizedPosition = targetNormalizedPos
     end
 end
 

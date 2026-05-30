@@ -14,7 +14,7 @@
         "Type": 401,
         "Params": [
             1,
-            6245
+            36
         ]
     },
     {
@@ -24,7 +24,7 @@
         "Params": [
             "<b>在你<color=#ff4e4eff>死前</color>，未竟的心愿是什么？</b>",
             "",
-            40,
+            60,
             "",
             "",
             1
@@ -35,21 +35,18 @@
         "ActionId": 4,
         "Type": 309,
         "IsBlock": 1,
+        "EndDelay": 200.0,
         "Params": [
             "",
-            "在你死前，未竟的心愿是什么？"
+            "在你<color=#ff4e4eff>死前</color>，未竟的心愿是什么？"
         ]
     },
     {
         "Id": 5,
         "ActionId": 5,
         "Type": 307,
-        "EndAnim": "AniZhuanchangBegin",
+        "EndDelay": 300.0,
         "Params": [
-            "<b>是想要成为拯救所有人的英雄，还是不想作为一个被万人唾弃的“异种”，屈辱地死去？</b>",
-            "",
-            40,
-            "",
             "",
             1
         ]
@@ -57,16 +54,31 @@
     {
         "Id": 6,
         "ActionId": 6,
-        "Type": 309,
-        "IsBlock": 1,
+        "Type": 307,
         "Params": [
+            "<b>是想要成为拯救所有人的英雄，\\n还是不想作为一个被万人唾弃的<color=#ff4e4eff>“异种”</color>，屈辱地死去？</b>",
             "",
-            "是想要成为拯救所有人的英雄，还是不想作为一个被万人唾弃的“异种”，屈辱地死去？"
+            55,
+            "",
+            "",
+            1
         ]
     },
     {
         "Id": 7,
         "ActionId": 7,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "是想要成为拯救所有人的英雄，还是不想作为一个被万人唾弃的<color=#ff4e4eff>“异种”</color>，屈辱地死去？"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
         "Type": 307,
         "Params": [
             "",
@@ -74,8 +86,17 @@
         ]
     },
     {
-        "Id": 8,
-        "ActionId": 8,
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 401,
+        "Params": [
+            1,
+            7169
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
         "Type": 101,
         "EndAnim": "AniZhuanchangEnd",
         "Params": [
@@ -83,8 +104,8 @@
         ]
     },
     {
-        "Id": 9,
-        "ActionId": 9,
+        "Id": 11,
+        "ActionId": 11,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
@@ -95,37 +116,37 @@
         ]
     },
     {
-        "Id": 10,
-        "ActionId": 10,
+        "Id": 12,
+        "ActionId": 12,
         "Type": 205,
-        "EndDelay": 2000.0,
+        "EndDelay": 1500.0,
         "Params": [
             999,
             "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg",
             0,
             1,
-            1.5
+            1
         ]
     },
     {
-        "Id": 11,
-        "ActionId": 11,
+        "Id": 13,
+        "ActionId": 13,
         "Type": 101,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg"
         ]
     },
     {
-        "Id": 12,
-        "ActionId": 12,
+        "Id": 14,
+        "ActionId": 14,
         "Type": 205,
         "Params": [
             999
         ]
     },
     {
-        "Id": 13,
-        "ActionId": 13,
+        "Id": 15,
+        "ActionId": 15,
         "Type": 401,
         "EndDelay": 500.0,
         "Params": [
@@ -134,8 +155,8 @@
         ]
     },
     {
-        "Id": 14,
-        "ActionId": 14,
+        "Id": 16,
+        "ActionId": 16,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -145,8 +166,8 @@
         ]
     },
     {
-        "Id": 15,
-        "ActionId": 15,
+        "Id": 17,
+        "ActionId": 17,
         "Type": 201,
         "Params": [
             18,
@@ -154,8 +175,8 @@
         ]
     },
     {
-        "Id": 16,
-        "ActionId": 16,
+        "Id": 18,
+        "ActionId": 18,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -166,16 +187,16 @@
         ]
     },
     {
-        "Id": 17,
-        "ActionId": 17,
+        "Id": 19,
+        "ActionId": 19,
         "Type": 202,
         "Params": [
             18
         ]
     },
     {
-        "Id": 18,
-        "ActionId": 18,
+        "Id": 20,
+        "ActionId": 20,
         "Type": 201,
         "Params": [
             1,
@@ -183,8 +204,8 @@
         ]
     },
     {
-        "Id": 19,
-        "ActionId": 19,
+        "Id": 21,
+        "ActionId": 21,
         "Type": 401,
         "Params": [
             2,
@@ -192,8 +213,8 @@
         ]
     },
     {
-        "Id": 20,
-        "ActionId": 20,
+        "Id": 22,
+        "ActionId": 22,
         "Type": 301,
         "Params": [
             1,
@@ -203,8 +224,8 @@
         ]
     },
     {
-        "Id": 21,
-        "ActionId": 21,
+        "Id": 23,
+        "ActionId": 23,
         "Type": 201,
         "Params": [
             18,
@@ -212,8 +233,8 @@
         ]
     },
     {
-        "Id": 22,
-        "ActionId": 22,
+        "Id": 24,
+        "ActionId": 24,
         "Type": 301,
         "Params": [
             1,
@@ -223,8 +244,8 @@
         ]
     },
     {
-        "Id": 23,
-        "ActionId": 23,
+        "Id": 25,
+        "ActionId": 25,
         "Type": 202,
         "Params": [
             1,
@@ -232,8 +253,8 @@
         ]
     },
     {
-        "Id": 24,
-        "ActionId": 24,
+        "Id": 26,
+        "ActionId": 26,
         "Type": 301,
         "Params": [
             "",
@@ -242,8 +263,8 @@
         ]
     },
     {
-        "Id": 25,
-        "ActionId": 25,
+        "Id": 27,
+        "ActionId": 27,
         "Type": 201,
         "Params": [
             1,
@@ -251,8 +272,8 @@
         ]
     },
     {
-        "Id": 26,
-        "ActionId": 26,
+        "Id": 28,
+        "ActionId": 28,
         "Type": 301,
         "Params": [
             1,
@@ -262,8 +283,8 @@
         ]
     },
     {
-        "Id": 27,
-        "ActionId": 27,
+        "Id": 29,
+        "ActionId": 29,
         "Type": 204,
         "Params": [
             1,
@@ -271,8 +292,8 @@
         ]
     },
     {
-        "Id": 28,
-        "ActionId": 28,
+        "Id": 30,
+        "ActionId": 30,
         "Type": 301,
         "Params": [
             "",
@@ -282,8 +303,8 @@
         ]
     },
     {
-        "Id": 29,
-        "ActionId": 29,
+        "Id": 31,
+        "ActionId": 31,
         "Type": 202,
         "Params": [
             1,
@@ -295,8 +316,8 @@
         ]
     },
     {
-        "Id": 30,
-        "ActionId": 30,
+        "Id": 32,
+        "ActionId": 32,
         "Type": 201,
         "Params": [
             1,
@@ -304,8 +325,8 @@
         ]
     },
     {
-        "Id": 31,
-        "ActionId": 31,
+        "Id": 33,
+        "ActionId": 33,
         "Type": 301,
         "Params": [
             1,
@@ -315,8 +336,8 @@
         ]
     },
     {
-        "Id": 32,
-        "ActionId": 32,
+        "Id": 34,
+        "ActionId": 34,
         "Type": 202,
         "Params": [
             1,
@@ -328,18 +349,18 @@
         ]
     },
     {
-        "Id": 33,
-        "ActionId": 33,
+        "Id": 35,
+        "ActionId": 35,
         "Type": 201,
         "Params": [
             1,
-            501620,
+            501621,
             11
         ]
     },
     {
-        "Id": 34,
-        "ActionId": 34,
+        "Id": 36,
+        "ActionId": 36,
         "Type": 301,
         "Params": [
             1,
@@ -349,8 +370,8 @@
         ]
     },
     {
-        "Id": 35,
-        "ActionId": 35,
+        "Id": 37,
+        "ActionId": 37,
         "Type": 401,
         "Params": [
             2,
@@ -358,8 +379,8 @@
         ]
     },
     {
-        "Id": 36,
-        "ActionId": 36,
+        "Id": 38,
+        "ActionId": 38,
         "Type": 301,
         "Params": [
             "",
@@ -368,8 +389,8 @@
         ]
     },
     {
-        "Id": 37,
-        "ActionId": 37,
+        "Id": 39,
+        "ActionId": 39,
         "Type": 401,
         "Params": [
             2,
@@ -377,31 +398,17 @@
         ]
     },
     {
-        "Id": 38,
-        "ActionId": 38,
-        "Type": 202,
-        "Params": [
-            1,
-            "",
-            "",
-            "",
-            "",
-            1
-        ]
-    },
-    {
-        "Id": 39,
-        "ActionId": 39,
-        "Type": 201,
-        "Params": [
-            1,
-            501620,
-            11
-        ]
-    },
-    {
         "Id": 40,
         "ActionId": 40,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
         "Type": 301,
         "BeginAnim": "PanelActor1Shake",
         "Params": [
@@ -411,8 +418,17 @@
         ]
     },
     {
-        "Id": 41,
-        "ActionId": 41,
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
         "Type": 301,
         "Params": [
             "",
@@ -422,9 +438,19 @@
         ]
     },
     {
-        "Id": 42,
-        "ActionId": 42,
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 204,
+        "Params": [
+            1,
+            11
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "“嗜血妖鸟”",
@@ -433,8 +459,8 @@
         ]
     },
     {
-        "Id": 43,
-        "ActionId": 43,
+        "Id": 46,
+        "ActionId": 46,
         "Type": 202,
         "EndDelay": 300.0,
         "Params": [
@@ -442,8 +468,8 @@
         ]
     },
     {
-        "Id": 44,
-        "ActionId": 44,
+        "Id": 47,
+        "ActionId": 47,
         "Type": 401,
         "Params": [
             2,
@@ -451,8 +477,8 @@
         ]
     },
     {
-        "Id": 45,
-        "ActionId": 45,
+        "Id": 48,
+        "ActionId": 48,
         "Type": 201,
         "Params": [
             1,
@@ -460,9 +486,10 @@
         ]
     },
     {
-        "Id": 46,
-        "ActionId": 46,
+        "Id": 49,
+        "ActionId": 49,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             1,
             "",
@@ -470,8 +497,8 @@
         ]
     },
     {
-        "Id": 47,
-        "ActionId": 47,
+        "Id": 50,
+        "ActionId": 50,
         "Type": 301,
         "Params": [
             "",
@@ -481,8 +508,8 @@
         ]
     },
     {
-        "Id": 48,
-        "ActionId": 48,
+        "Id": 51,
+        "ActionId": 51,
         "Type": 301,
         "Params": [
             "",
@@ -492,8 +519,8 @@
         ]
     },
     {
-        "Id": 49,
-        "ActionId": 49,
+        "Id": 52,
+        "ActionId": 52,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -504,8 +531,8 @@
         ]
     },
     {
-        "Id": 50,
-        "ActionId": 50,
+        "Id": 53,
+        "ActionId": 53,
         "Type": 301,
         "Params": [
             "",
@@ -515,16 +542,16 @@
         ]
     },
     {
-        "Id": 51,
-        "ActionId": 51,
+        "Id": 54,
+        "ActionId": 54,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 52,
-        "ActionId": 52,
+        "Id": 55,
+        "ActionId": 55,
         "Type": 401,
         "Params": [
             2,
@@ -532,8 +559,8 @@
         ]
     },
     {
-        "Id": 53,
-        "ActionId": 53,
+        "Id": 56,
+        "ActionId": 56,
         "Type": 301,
         "Params": [
             "",
@@ -542,8 +569,8 @@
         ]
     },
     {
-        "Id": 54,
-        "ActionId": 54,
+        "Id": 57,
+        "ActionId": 57,
         "Type": 201,
         "Params": [
             1,
@@ -552,8 +579,8 @@
         ]
     },
     {
-        "Id": 55,
-        "ActionId": 55,
+        "Id": 58,
+        "ActionId": 58,
         "Type": 301,
         "Params": [
             1,
@@ -563,8 +590,8 @@
         ]
     },
     {
-        "Id": 56,
-        "ActionId": 56,
+        "Id": 59,
+        "ActionId": 59,
         "Type": 301,
         "Params": [
             "",
@@ -574,8 +601,8 @@
         ]
     },
     {
-        "Id": 57,
-        "ActionId": 57,
+        "Id": 60,
+        "ActionId": 60,
         "Type": 204,
         "Params": [
             1,
@@ -583,8 +610,8 @@
         ]
     },
     {
-        "Id": 58,
-        "ActionId": 58,
+        "Id": 61,
+        "ActionId": 61,
         "Type": 301,
         "Params": [
             "",
@@ -594,16 +621,16 @@
         ]
     },
     {
-        "Id": 59,
-        "ActionId": 59,
+        "Id": 62,
+        "ActionId": 62,
         "Type": 204,
         "Params": [
             1
         ]
     },
     {
-        "Id": 60,
-        "ActionId": 60,
+        "Id": 63,
+        "ActionId": 63,
         "Type": 201,
         "Params": [
             18,
@@ -611,8 +638,8 @@
         ]
     },
     {
-        "Id": 61,
-        "ActionId": 61,
+        "Id": 64,
+        "ActionId": 64,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -623,8 +650,8 @@
         ]
     },
     {
-        "Id": 62,
-        "ActionId": 62,
+        "Id": 65,
+        "ActionId": 65,
         "Type": 202,
         "Params": [
             18,
@@ -636,8 +663,8 @@
         ]
     },
     {
-        "Id": 63,
-        "ActionId": 63,
+        "Id": 66,
+        "ActionId": 66,
         "Type": 201,
         "Params": [
             1,
@@ -646,8 +673,8 @@
         ]
     },
     {
-        "Id": 64,
-        "ActionId": 64,
+        "Id": 67,
+        "ActionId": 67,
         "Type": 301,
         "BeginAnim": "RImgBg1Shake",
         "Params": [
@@ -658,8 +685,8 @@
         ]
     },
     {
-        "Id": 65,
-        "ActionId": 65,
+        "Id": 68,
+        "ActionId": 68,
         "Type": 204,
         "Params": [
             1,
@@ -667,8 +694,8 @@
         ]
     },
     {
-        "Id": 66,
-        "ActionId": 66,
+        "Id": 69,
+        "ActionId": 69,
         "Type": 301,
         "Params": [
             "",
@@ -678,8 +705,8 @@
         ]
     },
     {
-        "Id": 67,
-        "ActionId": 67,
+        "Id": 70,
+        "ActionId": 70,
         "Type": 201,
         "Params": [
             18,
@@ -687,8 +714,8 @@
         ]
     },
     {
-        "Id": 68,
-        "ActionId": 68,
+        "Id": 71,
+        "ActionId": 71,
         "Type": 301,
         "Params": [
             1,
@@ -698,8 +725,8 @@
         ]
     },
     {
-        "Id": 69,
-        "ActionId": 69,
+        "Id": 72,
+        "ActionId": 72,
         "Type": 202,
         "Params": [
             1,
@@ -711,8 +738,8 @@
         ]
     },
     {
-        "Id": 70,
-        "ActionId": 70,
+        "Id": 73,
+        "ActionId": 73,
         "Type": 201,
         "Params": [
             1,
@@ -720,16 +747,16 @@
         ]
     },
     {
-        "Id": 71,
-        "ActionId": 71,
+        "Id": 74,
+        "ActionId": 74,
         "Type": 502,
         "Params": [
             "DialogShake"
         ]
     },
     {
-        "Id": 72,
-        "ActionId": 72,
+        "Id": 75,
+        "ActionId": 75,
         "Type": 301,
         "BeginAnim": "RImgBg1Shake",
         "EndAnim": "DialogDisable",
@@ -741,68 +768,35 @@
         ]
     },
     {
-        "Id": 73,
-        "ActionId": 73,
+        "Id": 76,
+        "ActionId": 76,
         "Type": 202,
-        "EndDelay": 300.0,
         "Params": [
             1
         ]
     },
     {
-        "Id": 74,
-        "ActionId": 74,
+        "Id": 77,
+        "ActionId": 77,
         "Type": 205,
         "Params": [
             999,
-            "Assets/Product/Texture/Image/BgCg/Cg6501_22.jpg",
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg",
             0,
             1,
-            1.5
-        ]
-    },
-    {
-        "Id": 75,
-        "ActionId": 75,
-        "Type": 104,
-        "Params": [
-            "0|50|0",
-            0,
-            "",
-            3
-        ]
-    },
-    {
-        "Id": 76,
-        "ActionId": 76,
-        "Type": 104,
-        "Params": [
-            "0|-50|0",
-            20,
-            "",
-            3
-        ]
-    },
-    {
-        "Id": 77,
-        "ActionId": 77,
-        "Type": 301,
-        "BeginAnim": "DialogEnable",
-        "Params": [
-            "",
-            "",
-            "冷彻的月光笼罩着地面上的一切，钟楼上的指针，渐渐逼近了死神降临的时刻。"
+            1.2
         ]
     },
     {
         "Id": 78,
         "ActionId": 78,
-        "Type": 301,
-        "EndAnim": "DialogDisable",
+        "Type": 104,
+        "EndDelay": 1500.0,
         "Params": [
+            "-300|-170|-250",
+            0,
             "",
-            "",
-            "下方观看的民众如同在期待一场精彩的戏剧上演，爆发出震耳欲聋的呼声。"
+            3
         ]
     },
     {
@@ -810,44 +804,29 @@
         "ActionId": 79,
         "Type": 101,
         "Params": [
-            "Assets/Product/Texture/Image/BgCg/Cg6501_23.jpg"
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg"
         ]
     },
     {
         "Id": 80,
         "ActionId": 80,
-        "Type": 205,
-        "EndDelay": 1000.0,
+        "Type": 104,
         "Params": [
-            999,
-            "Assets/Product/Texture/Image/BgCg/Cg6501_22.jpg",
-            1,
-            0,
-            1
+            "-300|-170|-250",
+            0
         ]
     },
     {
         "Id": 81,
         "ActionId": 81,
-        "Type": 502,
+        "Type": 205,
         "Params": [
-            "DialogEnable"
+            999
         ]
     },
     {
         "Id": 82,
         "ActionId": 82,
-        "Type": 301,
-        "BeginAnim": "DialogShake",
-        "Params": [
-            1,
-            "愤怒的民众A",
-            "绞死他们！绞死“异种”！"
-        ]
-    },
-    {
-        "Id": 83,
-        "ActionId": 83,
         "Type": 104,
         "Params": [
             "0|0|0",
@@ -857,8 +836,87 @@
         ]
     },
     {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "冷彻的月光笼罩着地面上的一切，钟楼上的指针，渐渐逼近了死神降临的时刻。"
+        ]
+    },
+    {
         "Id": 84,
         "ActionId": 84,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "下方观看的民众如同在期待一场精彩的戏剧上演，爆发出震耳欲聋的呼声。"
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_23.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_23.jpg"
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 401,
+        "Params": [
+            2,
+            4916
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "愤怒的民众A",
+            "绞死他们！绞死“异种”！"
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -868,8 +926,8 @@
         ]
     },
     {
-        "Id": 85,
-        "ActionId": 85,
+        "Id": 92,
+        "ActionId": 92,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -879,8 +937,8 @@
         ]
     },
     {
-        "Id": 86,
-        "ActionId": 86,
+        "Id": 93,
+        "ActionId": 93,
         "Type": 202,
         "Params": [
             1,
@@ -889,9 +947,10 @@
         ]
     },
     {
-        "Id": 87,
-        "ActionId": 87,
+        "Id": 94,
+        "ActionId": 94,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
@@ -899,210 +958,328 @@
         ]
     },
     {
-        "Id": 88,
-        "ActionId": 88,
-        "Type": 301,
-        "Params": [
-            "",
-            "",
-            "人们说，“异种”以自己的灵魂作为供奉，换取邪神所赐予的异能，成为祂行走于人间的眷属。"
-        ]
-    },
-    {
-        "Id": 89,
-        "ActionId": 89,
-        "Type": 301,
-        "EndAnim": "DialogDisable",
-        "Params": [
-            "",
-            "",
-            "“异种”招引迷雾为凭，行使那邪神的意志，任人类的恐惧和绝望于雾中滋长，以此作为敬献给祂的祭奉。"
-        ]
-    },
-    {
-        "Id": 90,
-        "ActionId": 90,
-        "Type": 205,
-        "Params": [
-            999,
-            "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg",
-            0,
-            1,
-            1
-        ]
-    },
-    {
-        "Id": 91,
-        "ActionId": 91,
-        "Type": 104,
-        "EndDelay": 1000.0,
-        "Params": [
-            "-300|-400|-600",
-            0,
-            "",
-            3
-        ]
-    },
-    {
-        "Id": 92,
-        "ActionId": 92,
-        "Type": 301,
-        "BeginAnim": "DialogEnable",
-        "Params": [
-            "",
-            "",
-            "其一名为“猩红女爵”，行于暗夜，播撒滋生于夜晚中的恐惧。"
-        ]
-    },
-    {
-        "Id": 93,
-        "ActionId": 93,
-        "Type": 205,
-        "Params": [
-            1004,
-            "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg",
-            0,
-            1,
-            1
-        ]
-    },
-    {
-        "Id": 94,
-        "ActionId": 94,
-        "Type": 104,
-        "EndDelay": 1000.0,
-        "Params": [
-            "500|300|-400",
-            0,
-            "",
-            4
-        ]
-    },
-    {
         "Id": 95,
         "ActionId": 95,
+        "Type": 402,
+        "Params": [
+            4916
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
         "Type": 205,
         "Params": [
             999
         ]
     },
     {
-        "Id": 96,
-        "ActionId": 96,
-        "Type": 301,
-        "Params": [
-            "",
-            "",
-            "其二名为“嗜血妖鸟”，日复一日地渴求着鲜血带来的生命力。"
-        ]
-    },
-    {
-        "Id": 97,
-        "ActionId": 97,
-        "Type": 205,
-        "Params": [
-            1005,
-            "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg",
-            0,
-            1,
-            1
-        ]
-    },
-    {
-        "Id": 98,
-        "ActionId": 98,
-        "Type": 104,
-        "EndDelay": 1000.0,
-        "Params": [
-            "-150|-100|-550",
-            0,
-            "",
-            5
-        ]
-    },
-    {
         "Id": 99,
         "ActionId": 99,
-        "Type": 205,
+        "Type": 307,
         "Params": [
-            1004
+            "人们说，“异种”以自己的灵魂作为供奉，换取邪神所赐予的异能，成为祂行走于人间的眷属。",
+            "",
+            50,
+            "",
+            "",
+            1
         ]
     },
     {
         "Id": 100,
         "ActionId": 100,
-        "Type": 301,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
         "Params": [
             "",
-            "",
-            "其三名为“猎魔巡狩”，然而其狩猎之物，却并非只有雾中的暗影。"
+            "人们说，“异种”以自己的灵魂作为供奉，换取邪神所赐予的异能，成为祂行走于人间的眷属。"
         ]
     },
     {
         "Id": 101,
         "ActionId": 101,
-        "Type": 205,
+        "Type": 307,
+        "EndDelay": 200.0,
         "Params": [
-            1006,
-            "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg",
-            0,
-            1,
+            "",
             1
         ]
     },
     {
         "Id": 102,
         "ActionId": 102,
-        "Type": 104,
-        "EndDelay": 1000.0,
+        "Type": 307,
         "Params": [
-            "-600|200|-500",
-            0,
+            "“异种”招引迷雾为凭，行使那邪神的意志，任人类的恐惧和绝望于雾中滋长，以此作为敬献给祂的祭奉。",
             "",
-            6
+            50,
+            "",
+            "",
+            1
         ]
     },
     {
         "Id": 103,
         "ActionId": 103,
-        "Type": 205,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
         "Params": [
-            1005
+            "",
+            "“异种”招引迷雾为凭，行使那邪神的意志，任人类的恐惧和绝望于雾中滋长，以此作为敬献给祂的祭奉。"
         ]
     },
     {
         "Id": 104,
         "ActionId": 104,
-        "Type": 301,
+        "Type": 307,
         "Params": [
             "",
-            "",
-            "其四名为“缄默送葬”，所行走过的万千路径，留下的唯有死亡。"
+            1
         ]
     },
     {
         "Id": 105,
         "ActionId": 105,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
         "Type": 101,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg"
         ]
     },
     {
-        "Id": 106,
-        "ActionId": 106,
-        "Type": 205,
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 104,
         "Params": [
-            1006,
-            "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg",
-            1,
-            0,
-            1
+            "-300|-200|-400",
+            0
         ]
     },
     {
-        "Id": 107,
-        "ActionId": 107,
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "？？",
+            "其一名为“猩红女爵”，行于暗夜，播撒滋生于夜晚中的恐惧。"
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg"
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 104,
+        "Params": [
+            "250|250|-400",
+            0
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 301,
+        "Params": [
+            "",
+            "？？",
+            "其二名为“嗜血妖鸟”，日复一日地渴求着鲜血带来的生命力。"
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg"
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 104,
+        "Params": [
+            "-100|0|-300",
+            0
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 301,
+        "Params": [
+            "",
+            "？？",
+            "其三名为“猎魔巡狩”，然而其狩猎之物，却并非只有雾中的暗影。"
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg"
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 104,
+        "Params": [
+            "-477|200|-400",
+            0
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "Params": [
+            "",
+            "？？",
+            "其四名为“缄默送葬”，所行走过的万千路径，留下的唯有死亡。"
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg"
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
         "Type": 301,
         "Params": [
             "",
@@ -1111,8 +1288,8 @@
         ]
     },
     {
-        "Id": 108,
-        "ActionId": 108,
+        "Id": 130,
+        "ActionId": 130,
         "Type": 301,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
@@ -1122,18 +1299,17 @@
         ]
     },
     {
-        "Id": 109,
-        "ActionId": 109,
+        "Id": 131,
+        "ActionId": 131,
         "Type": 101,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg"
         ]
     },
     {
-        "Id": 110,
-        "ActionId": 110,
+        "Id": 132,
+        "ActionId": 132,
         "Type": 205,
-        "EndDelay": 1000.0,
         "Params": [
             999,
             "Assets/Product/Texture/Image/BgCg/Cg6501_3.jpg",
@@ -1143,17 +1319,18 @@
         ]
     },
     {
-        "Id": 111,
-        "ActionId": 111,
+        "Id": 133,
+        "ActionId": 133,
         "Type": 401,
+        "EndDelay": 1000.0,
         "Params": [
             2,
             1088
         ]
     },
     {
-        "Id": 112,
-        "ActionId": 112,
+        "Id": 134,
+        "ActionId": 134,
         "Type": 201,
         "Params": [
             1,
@@ -1161,8 +1338,8 @@
         ]
     },
     {
-        "Id": 113,
-        "ActionId": 113,
+        "Id": 135,
+        "ActionId": 135,
         "Type": 301,
         "BeginAnim": "AniZhuanchangEnd",
         "Params": [
@@ -1172,8 +1349,8 @@
         ]
     },
     {
-        "Id": 114,
-        "ActionId": 114,
+        "Id": 136,
+        "ActionId": 136,
         "Type": 301,
         "Params": [
             "",
@@ -1183,18 +1360,18 @@
         ]
     },
     {
-        "Id": 115,
-        "ActionId": 115,
+        "Id": 137,
+        "ActionId": 137,
         "Type": 302,
         "Params": [
             "",
             "……",
-            116
+            138
         ]
     },
     {
-        "Id": 116,
-        "ActionId": 116,
+        "Id": 138,
+        "ActionId": 138,
         "Type": 301,
         "Params": [
             "",
@@ -1204,8 +1381,8 @@
         ]
     },
     {
-        "Id": 117,
-        "ActionId": 117,
+        "Id": 139,
+        "ActionId": 139,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -1216,8 +1393,8 @@
         ]
     },
     {
-        "Id": 118,
-        "ActionId": 118,
+        "Id": 140,
+        "ActionId": 140,
         "Type": 301,
         "Params": [
             "",
@@ -1226,8 +1403,8 @@
         ]
     },
     {
-        "Id": 119,
-        "ActionId": 119,
+        "Id": 141,
+        "ActionId": 141,
         "Type": 301,
         "BeginAnim": "RImgBg1Shake",
         "Params": [
@@ -1238,8 +1415,8 @@
         ]
     },
     {
-        "Id": 120,
-        "ActionId": 120,
+        "Id": 142,
+        "ActionId": 142,
         "Type": 301,
         "Params": [
             "",
@@ -1248,16 +1425,16 @@
         ]
     },
     {
-        "Id": 121,
-        "ActionId": 121,
+        "Id": 143,
+        "ActionId": 143,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 122,
-        "ActionId": 122,
+        "Id": 144,
+        "ActionId": 144,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -1267,23 +1444,24 @@
         ]
     },
     {
-        "Id": 123,
-        "ActionId": 123,
+        "Id": 145,
+        "ActionId": 145,
         "Type": 205,
-        "EndDelay": 1200.0,
+        "EndDelay": 1000.0,
         "Params": [
             999,
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
             0,
             1,
-            1.5
+            0.8
         ]
     },
     {
-        "Id": 124,
-        "ActionId": 124,
+        "Id": 146,
+        "ActionId": 146,
         "Type": 301,
         "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
@@ -1291,10 +1469,45 @@
         ]
     },
     {
-        "Id": 125,
-        "ActionId": 125,
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1471.jpg"
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 401,
+        "Params": [
+            1,
+            7166
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
         "Type": 301,
-        "EndAnim": "DialogDisable",
+        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
             "",
             "",
@@ -1302,29 +1515,8 @@
         ]
     },
     {
-        "Id": 126,
-        "ActionId": 126,
-        "Type": 101,
-        "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory1471.jpg"
-        ]
-    },
-    {
-        "Id": 127,
-        "ActionId": 127,
-        "Type": 205,
-        "EndDelay": 2000.0,
-        "Params": [
-            999,
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
-            1,
-            0,
-            1.5
-        ]
-    },
-    {
-        "Id": 128,
-        "ActionId": 128,
+        "Id": 152,
+        "ActionId": 152,
         "Type": 201,
         "Params": [
             1,
@@ -1332,8 +1524,8 @@
         ]
     },
     {
-        "Id": 129,
-        "ActionId": 129,
+        "Id": 153,
+        "ActionId": 153,
         "Type": 401,
         "Params": [
             2,
@@ -1341,10 +1533,9 @@
         ]
     },
     {
-        "Id": 130,
-        "ActionId": 130,
+        "Id": 154,
+        "ActionId": 154,
         "Type": 301,
-        "BeginAnim": "DialogEnable",
         "Params": [
             1,
             "审判长",
@@ -1353,8 +1544,8 @@
         ]
     },
     {
-        "Id": 131,
-        "ActionId": 131,
+        "Id": 155,
+        "ActionId": 155,
         "Type": 301,
         "Params": [
             "",
@@ -1364,8 +1555,8 @@
         ]
     },
     {
-        "Id": 132,
-        "ActionId": 132,
+        "Id": 156,
+        "ActionId": 156,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -1376,38 +1567,38 @@
         ]
     },
     {
-        "Id": 133,
-        "ActionId": 133,
+        "Id": 157,
+        "ActionId": 157,
         "Type": 302,
         "Params": [
             "",
             "你有什么证据判处我们的罪？",
-            134
+            158
         ]
     },
     {
-        "Id": 134,
-        "ActionId": 134,
+        "Id": 158,
+        "ActionId": 158,
         "Type": 302,
         "Params": [
             "",
             "我们从未用自己的力量让人疯狂，也没有犯下罪行。",
-            135
+            159
         ]
     },
     {
-        "Id": 135,
-        "ActionId": 135,
+        "Id": 159,
+        "ActionId": 159,
         "Type": 302,
         "Params": [
             "",
             "仅仅只是因为我们没有在迷雾中疯狂，你们就认为我们应当是罪人？",
-            136
+            160
         ]
     },
     {
-        "Id": 136,
-        "ActionId": 136,
+        "Id": 160,
+        "ActionId": 160,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
@@ -1419,28 +1610,28 @@
         ]
     },
     {
-        "Id": 137,
-        "ActionId": 137,
+        "Id": 161,
+        "ActionId": 161,
         "Type": 302,
         "Params": [
             "",
             "最起码要给我们一个证明的机会，杀了我们的话，这件事的真相或许永远不会被揭开。",
-            138
+            162
         ]
     },
     {
-        "Id": 138,
-        "ActionId": 138,
+        "Id": 162,
+        "ActionId": 162,
         "Type": 302,
         "Params": [
             "",
             "你们根本不愿去探索雾中有什么，只是一厢情愿地滥用权力而已！",
-            139
+            163
         ]
     },
     {
-        "Id": 139,
-        "ActionId": 139,
+        "Id": 163,
+        "ActionId": 163,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -1450,8 +1641,8 @@
         ]
     },
     {
-        "Id": 140,
-        "ActionId": 140,
+        "Id": 164,
+        "ActionId": 164,
         "Type": 301,
         "Params": [
             "",
@@ -1461,8 +1652,8 @@
         ]
     },
     {
-        "Id": 141,
-        "ActionId": 141,
+        "Id": 165,
+        "ActionId": 165,
         "Type": 202,
         "Params": [
             1,
@@ -1474,8 +1665,8 @@
         ]
     },
     {
-        "Id": 142,
-        "ActionId": 142,
+        "Id": 166,
+        "ActionId": 166,
         "Type": 201,
         "Params": [
             1,
@@ -1483,8 +1674,8 @@
         ]
     },
     {
-        "Id": 143,
-        "ActionId": 143,
+        "Id": 167,
+        "ActionId": 167,
         "Type": 401,
         "Params": [
             2,
@@ -1492,8 +1683,8 @@
         ]
     },
     {
-        "Id": 144,
-        "ActionId": 144,
+        "Id": 168,
+        "ActionId": 168,
         "Type": 301,
         "Params": [
             1,
@@ -1503,8 +1694,16 @@
         ]
     },
     {
-        "Id": 145,
-        "ActionId": 145,
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
         "Type": 301,
         "Params": [
             "",
@@ -1513,43 +1712,30 @@
         ]
     },
     {
-        "Id": 146,
-        "ActionId": 146,
-        "Type": 202,
-        "Params": [
-            1,
-            "",
-            "",
-            "",
-            "",
-            1
-        ]
-    },
-    {
-        "Id": 147,
-        "ActionId": 147,
+        "Id": 171,
+        "ActionId": 171,
         "Type": 201,
         "Params": [
             1,
             500617,
             "",
-            -400
+            400
         ]
     },
     {
-        "Id": 148,
-        "ActionId": 148,
+        "Id": 172,
+        "ActionId": 172,
         "Type": 201,
         "Params": [
             2,
             500863,
             "",
-            400
+            -400
         ]
     },
     {
-        "Id": 149,
-        "ActionId": 149,
+        "Id": 173,
+        "ActionId": 173,
         "Type": 301,
         "Params": [
             1,
@@ -1559,8 +1745,8 @@
         ]
     },
     {
-        "Id": 150,
-        "ActionId": 150,
+        "Id": 174,
+        "ActionId": 174,
         "Type": 301,
         "Params": [
             "",
@@ -1570,8 +1756,8 @@
         ]
     },
     {
-        "Id": 151,
-        "ActionId": 151,
+        "Id": 175,
+        "ActionId": 175,
         "Type": 301,
         "Params": [
             "",
@@ -1581,8 +1767,8 @@
         ]
     },
     {
-        "Id": 152,
-        "ActionId": 152,
+        "Id": 176,
+        "ActionId": 176,
         "Type": 301,
         "Params": [
             "",
@@ -1592,8 +1778,8 @@
         ]
     },
     {
-        "Id": 153,
-        "ActionId": 153,
+        "Id": 177,
+        "ActionId": 177,
         "Type": 301,
         "Params": [
             "",
@@ -1603,8 +1789,8 @@
         ]
     },
     {
-        "Id": 154,
-        "ActionId": 154,
+        "Id": 178,
+        "ActionId": 178,
         "Type": 301,
         "Params": [
             "",
@@ -1613,8 +1799,8 @@
         ]
     },
     {
-        "Id": 155,
-        "ActionId": 155,
+        "Id": 179,
+        "ActionId": 179,
         "Type": 301,
         "Params": [
             "",
@@ -1623,8 +1809,8 @@
         ]
     },
     {
-        "Id": 156,
-        "ActionId": 156,
+        "Id": 180,
+        "ActionId": 180,
         "Type": 301,
         "Params": [
             "",
@@ -1634,18 +1820,21 @@
         ]
     },
     {
-        "Id": 157,
-        "ActionId": 157,
+        "Id": 181,
+        "ActionId": 181,
         "Type": 202,
-        "EndDelay": 300.0,
         "Params": [
             1,
-            2
+            2,
+            "",
+            "",
+            "",
+            1
         ]
     },
     {
-        "Id": 158,
-        "ActionId": 158,
+        "Id": 182,
+        "ActionId": 182,
         "Type": 201,
         "Params": [
             1,
@@ -1655,8 +1844,8 @@
         ]
     },
     {
-        "Id": 159,
-        "ActionId": 159,
+        "Id": 183,
+        "ActionId": 183,
         "Type": 401,
         "Params": [
             2,
@@ -1664,8 +1853,8 @@
         ]
     },
     {
-        "Id": 160,
-        "ActionId": 160,
+        "Id": 184,
+        "ActionId": 184,
         "Type": 203,
         "Params": [
             1,
@@ -1674,28 +1863,11 @@
         ]
     },
     {
-        "Id": 161,
-        "ActionId": 161,
-        "Type": 401,
-        "Params": [
-            1,
-            36
-        ]
-    },
-    {
-        "Id": 162,
-        "ActionId": 162,
-        "Type": 401,
-        "Params": [
-            1,
-            229
-        ]
-    },
-    {
-        "Id": 163,
-        "ActionId": 163,
+        "Id": 185,
+        "ActionId": 185,
         "Type": 301,
         "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
         "Params": [
             1,
             "",
@@ -1703,18 +1875,16 @@
         ]
     },
     {
-        "Id": 164,
-        "ActionId": 164,
-        "Type": 301,
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 306,
         "Params": [
-            "",
-            "",
-            "然而她脸上却并没有半点死里逃生的庆幸，反而是以一种毫不服气的态度，径直冲到了审判长的面前。"
+            1
         ]
     },
     {
-        "Id": 165,
-        "ActionId": 165,
+        "Id": 187,
+        "ActionId": 187,
         "Type": 204,
         "Params": [
             1,
@@ -1722,19 +1892,78 @@
         ]
     },
     {
-        "Id": 166,
-        "ActionId": 166,
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 401,
+        "Params": [
+            2,
+            5526
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 203,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            0.35,
+            "",
+            -50,
+            -150
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
+            "",
+            "然而她脸上却并没有半点死里逃生的庆幸，反而是以一种毫不服气的态度，径直冲到了审判长的面前。"
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 306,
+        "EndDelay": 500.0
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 201,
+        "Params": [
+            1,
+            501602,
+            4
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
             "埃琳娜",
             "喂，你这种算是什么“审判长”，完全没有公平可言！",
             1
         ]
     },
     {
-        "Id": 167,
-        "ActionId": 167,
+        "Id": 195,
+        "ActionId": 195,
         "Type": 301,
         "Params": [
             "",
@@ -1744,8 +1973,8 @@
         ]
     },
     {
-        "Id": 168,
-        "ActionId": 168,
+        "Id": 196,
+        "ActionId": 196,
         "Type": 301,
         "Params": [
             "",
@@ -1754,8 +1983,8 @@
         ]
     },
     {
-        "Id": 169,
-        "ActionId": 169,
+        "Id": 197,
+        "ActionId": 197,
         "Type": 401,
         "Params": [
             2,
@@ -1763,8 +1992,8 @@
         ]
     },
     {
-        "Id": 170,
-        "ActionId": 170,
+        "Id": 198,
+        "ActionId": 198,
         "Type": 201,
         "Params": [
             1,
@@ -1772,8 +2001,8 @@
         ]
     },
     {
-        "Id": 171,
-        "ActionId": 171,
+        "Id": 199,
+        "ActionId": 199,
         "Type": 203,
         "Params": [
             1,
@@ -1782,8 +2011,8 @@
         ]
     },
     {
-        "Id": 172,
-        "ActionId": 172,
+        "Id": 200,
+        "ActionId": 200,
         "Type": 301,
         "Params": [
             1,
@@ -1792,8 +2021,8 @@
         ]
     },
     {
-        "Id": 173,
-        "ActionId": 173,
+        "Id": 201,
+        "ActionId": 201,
         "Type": 301,
         "Params": [
             "",
@@ -1802,8 +2031,8 @@
         ]
     },
     {
-        "Id": 174,
-        "ActionId": 174,
+        "Id": 202,
+        "ActionId": 202,
         "Type": 401,
         "Params": [
             2,
@@ -1811,8 +2040,8 @@
         ]
     },
     {
-        "Id": 175,
-        "ActionId": 175,
+        "Id": 203,
+        "ActionId": 203,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -1823,8 +2052,8 @@
         ]
     },
     {
-        "Id": 176,
-        "ActionId": 176,
+        "Id": 204,
+        "ActionId": 204,
         "Type": 202,
         "Params": [
             1,
@@ -1836,8 +2065,8 @@
         ]
     },
     {
-        "Id": 177,
-        "ActionId": 177,
+        "Id": 205,
+        "ActionId": 205,
         "Type": 201,
         "Params": [
             1,
@@ -1847,8 +2076,8 @@
         ]
     },
     {
-        "Id": 178,
-        "ActionId": 178,
+        "Id": 206,
+        "ActionId": 206,
         "Type": 201,
         "Params": [
             2,
@@ -1858,8 +2087,8 @@
         ]
     },
     {
-        "Id": 179,
-        "ActionId": 179,
+        "Id": 207,
+        "ActionId": 207,
         "Type": 301,
         "Params": [
             1,
@@ -1869,9 +2098,10 @@
         ]
     },
     {
-        "Id": 180,
-        "ActionId": 180,
+        "Id": 208,
+        "ActionId": 208,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
@@ -1879,28 +2109,18 @@
         ]
     },
     {
-        "Id": 181,
-        "ActionId": 181,
+        "Id": 209,
+        "ActionId": 209,
         "Type": 202,
-        "EndDelay": 300.0,
+        "EndDelay": 500.0,
         "Params": [
             1,
             2
         ]
     },
     {
-        "Id": 182,
-        "ActionId": 182,
-        "Type": 301,
-        "Params": [
-            "",
-            "",
-            "然而趁着这短暂的混乱之际，少女却向人类的方向扑去。"
-        ]
-    },
-    {
-        "Id": 183,
-        "ActionId": 183,
+        "Id": 210,
+        "ActionId": 210,
         "Type": 201,
         "Params": [
             1,
@@ -1910,8 +2130,8 @@
         ]
     },
     {
-        "Id": 184,
-        "ActionId": 184,
+        "Id": 211,
+        "ActionId": 211,
         "Type": 401,
         "Params": [
             2,
@@ -1919,8 +2139,8 @@
         ]
     },
     {
-        "Id": 185,
-        "ActionId": 185,
+        "Id": 212,
+        "ActionId": 212,
         "Type": 203,
         "Params": [
             1,
@@ -1929,18 +2149,42 @@
         ]
     },
     {
-        "Id": 186,
-        "ActionId": 186,
+        "Id": 213,
+        "ActionId": 213,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             1,
+            "",
+            "然而趁着这短暂的混乱之际，少女却向人类的方向扑去。"
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 301,
+        "Params": [
+            "",
             "",
             "即便是双手依旧被“魔枷”束缚着，无法拥抱眼前的人类，她也贴近了【kuroname】，仿佛是在以此做最后的道别。"
         ]
     },
     {
-        "Id": 187,
-        "ActionId": 187,
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 203,
+        "EndDelay": 550.0,
+        "Params": [
+            1,
+            0.5,
+            0,
+            -30,
+            -80
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
         "Type": 301,
         "Params": [
             "",
@@ -1950,18 +2194,18 @@
         ]
     },
     {
-        "Id": 188,
-        "ActionId": 188,
+        "Id": 217,
+        "ActionId": 217,
         "Type": 302,
         "Params": [
             "",
             "……",
-            189
+            218
         ]
     },
     {
-        "Id": 189,
-        "ActionId": 189,
+        "Id": 218,
+        "ActionId": 218,
         "Type": 202,
         "Params": [
             1,
@@ -1973,20 +2217,17 @@
         ]
     },
     {
-        "Id": 190,
-        "ActionId": 190,
+        "Id": 219,
+        "ActionId": 219,
         "Type": 201,
         "Params": [
-            18,
-            501433,
-            "",
-            "",
-            -150
+            1,
+            501433
         ]
     },
     {
-        "Id": 191,
-        "ActionId": 191,
+        "Id": 220,
+        "ActionId": 220,
         "Type": 401,
         "Params": [
             2,
@@ -1994,28 +2235,20 @@
         ]
     },
     {
-        "Id": 192,
-        "ActionId": 192,
+        "Id": 221,
+        "ActionId": 221,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
             1,
             "行刑官",
             "干什么？滚远点！",
-            18
+            1
         ]
     },
     {
-        "Id": 193,
-        "ActionId": 193,
-        "Type": 202,
-        "Params": [
-            18
-        ]
-    },
-    {
-        "Id": 194,
-        "ActionId": 194,
+        "Id": 222,
+        "ActionId": 222,
         "Type": 301,
         "Params": [
             "",
@@ -2024,8 +2257,21 @@
         ]
     },
     {
-        "Id": 195,
-        "ActionId": 195,
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
         "Type": 401,
         "Params": [
             2,
@@ -2033,60 +2279,52 @@
         ]
     },
     {
-        "Id": 196,
-        "ActionId": 196,
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 201,
+        "Params": [
+            1,
+            501602,
+            9
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            "",
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
         "Type": 301,
         "BeginAnim": "PanelActor1Shake",
         "Params": [
-            "",
+            1,
             "",
             "仿佛是不愿意与对方分别，埃琳娜的手指擦过人类的衣摆，依旧紧紧地攥着<M>他</M><W>她</W>外套上的饰带。"
         ]
     },
     {
-        "Id": 197,
-        "ActionId": 197,
+        "Id": 228,
+        "ActionId": 228,
         "Type": 201,
         "Params": [
             2,
             501433,
             "",
-            -400
+            600
         ]
     },
     {
-        "Id": 198,
-        "ActionId": 198,
-        "Type": 203,
-        "Params": [
-            1,
-            0.35,
-            50
-        ]
-    },
-    {
-        "Id": 199,
-        "ActionId": 199,
-        "Type": 202,
-        "Params": [
-            1
-        ]
-    },
-    {
-        "Id": 200,
-        "ActionId": 200,
-        "Type": 301,
-        "BeginAnim": "DialogShake",
-        "Params": [
-            1,
-            "行刑官",
-            "绕你一命还想搞事，是嫌命长？！",
-            2
-        ]
-    },
-    {
-        "Id": 201,
-        "ActionId": 201,
+        "Id": 229,
+        "ActionId": 229,
         "Type": 401,
         "Params": [
             2,
@@ -2094,18 +2332,41 @@
         ]
     },
     {
-        "Id": 202,
-        "ActionId": 202,
+        "Id": 230,
+        "ActionId": 230,
         "Type": 203,
+        "EndDelay": 300.0,
         "Params": [
             2,
-            0.4,
-            0
+            0.35,
+            300
         ]
     },
     {
-        "Id": 203,
-        "ActionId": 203,
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -300
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "行刑官",
+            "饶你一命还想搞事，是嫌命长？！",
+            2
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
         "Type": 301,
         "Params": [
             "",
@@ -2114,16 +2375,17 @@
         ]
     },
     {
-        "Id": 204,
-        "ActionId": 204,
+        "Id": 234,
+        "ActionId": 234,
         "Type": 202,
         "Params": [
+            1,
             2
         ]
     },
     {
-        "Id": 205,
-        "ActionId": 205,
+        "Id": 235,
+        "ActionId": 235,
         "Type": 301,
         "Params": [
             "",
@@ -2132,8 +2394,8 @@
         ]
     },
     {
-        "Id": 206,
-        "ActionId": 206,
+        "Id": 236,
+        "ActionId": 236,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -2143,18 +2405,18 @@
         ]
     },
     {
-        "Id": 207,
-        "ActionId": 207,
+        "Id": 237,
+        "ActionId": 237,
         "Type": 302,
         "Params": [
             "",
             "活下去吧，连同我的那份一起。",
-            208
+            238
         ]
     },
     {
-        "Id": 208,
-        "ActionId": 208,
+        "Id": 238,
+        "ActionId": 238,
         "Type": 306,
         "EndDelay": 500.0,
         "Params": [
@@ -2162,8 +2424,8 @@
         ]
     },
     {
-        "Id": 209,
-        "ActionId": 209,
+        "Id": 239,
+        "ActionId": 239,
         "Type": 201,
         "Params": [
             1,
@@ -2172,10 +2434,11 @@
         ]
     },
     {
-        "Id": 210,
-        "ActionId": 210,
+        "Id": 240,
+        "ActionId": 240,
         "Type": 301,
         "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
         "Params": [
             1,
             "",
@@ -2183,9 +2446,17 @@
         ]
     },
     {
-        "Id": 211,
-        "ActionId": 211,
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 306,
+        "EndDelay": 500.0
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "埃琳娜",
@@ -2194,48 +2465,25 @@
         ]
     },
     {
-        "Id": 212,
-        "ActionId": 212,
+        "Id": 243,
+        "ActionId": 243,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 213,
-        "ActionId": 213,
-        "Type": 306,
-        "BeginAnim": "AniZhuanchangBegin"
-    },
-    {
-        "Id": 214,
-        "ActionId": 214,
+        "Id": 244,
+        "ActionId": 244,
         "Type": 101,
+        "EndDelay": 1000.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg"
         ]
     },
     {
-        "Id": 215,
-        "ActionId": 215,
-        "Type": 401,
-        "Params": [
-            1,
-            36
-        ]
-    },
-    {
-        "Id": 216,
-        "ActionId": 216,
-        "Type": 401,
-        "Params": [
-            1,
-            201
-        ]
-    },
-    {
-        "Id": 217,
-        "ActionId": 217,
+        "Id": 245,
+        "ActionId": 245,
         "Type": 201,
         "Params": [
             1,
@@ -2243,8 +2491,8 @@
         ]
     },
     {
-        "Id": 218,
-        "ActionId": 218,
+        "Id": 246,
+        "ActionId": 246,
         "Type": 301,
         "BeginAnim": "AniZhuanchangEnd",
         "Params": [
@@ -2254,8 +2502,8 @@
         ]
     },
     {
-        "Id": 219,
-        "ActionId": 219,
+        "Id": 247,
+        "ActionId": 247,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -2266,8 +2514,8 @@
         ]
     },
     {
-        "Id": 220,
-        "ActionId": 220,
+        "Id": 248,
+        "ActionId": 248,
         "Type": 401,
         "Params": [
             2,
@@ -2275,8 +2523,16 @@
         ]
     },
     {
-        "Id": 221,
-        "ActionId": 221,
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
         "Type": 301,
         "Params": [
             "",
@@ -2285,28 +2541,37 @@
         ]
     },
     {
-        "Id": 222,
-        "ActionId": 222,
+        "Id": 251,
+        "ActionId": 251,
         "Type": 402,
         "Params": [
             5842
         ]
     },
     {
-        "Id": 223,
-        "ActionId": 223,
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 201,
+        "Params": [
+            1,
+            501433
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
-            "",
+            1,
             "行刑官",
             "行刑！就先从你这个叫【kuroname】的疯子开始！",
             1
         ]
     },
     {
-        "Id": 224,
-        "ActionId": 224,
+        "Id": 254,
+        "ActionId": 254,
         "Type": 401,
         "Params": [
             2,
@@ -2314,20 +2579,20 @@
         ]
     },
     {
-        "Id": 225,
-        "ActionId": 225,
+        "Id": 255,
+        "ActionId": 255,
         "Type": 203,
         "Params": [
             1,
             0.35,
             "",
             "",
-            -150
+            -100
         ]
     },
     {
-        "Id": 226,
-        "ActionId": 226,
+        "Id": 256,
+        "ActionId": 256,
         "Type": 301,
         "Params": [
             "",
@@ -2336,18 +2601,18 @@
         ]
     },
     {
-        "Id": 227,
-        "ActionId": 227,
+        "Id": 257,
+        "ActionId": 257,
         "Type": 302,
         "Params": [
             "",
             "你们都被骗了，我们并不是引来迷雾的人！",
-            228
+            258
         ]
     },
     {
-        "Id": 228,
-        "ActionId": 228,
+        "Id": 258,
+        "ActionId": 258,
         "Type": 301,
         "Params": [
             "",
@@ -2357,8 +2622,8 @@
         ]
     },
     {
-        "Id": 229,
-        "ActionId": 229,
+        "Id": 259,
+        "ActionId": 259,
         "Type": 301,
         "Params": [
             "",
@@ -2367,8 +2632,8 @@
         ]
     },
     {
-        "Id": 230,
-        "ActionId": 230,
+        "Id": 260,
+        "ActionId": 260,
         "Type": 401,
         "Params": [
             2,
@@ -2376,17 +2641,27 @@
         ]
     },
     {
-        "Id": 231,
-        "ActionId": 231,
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 232,
-        "ActionId": 232,
+        "Id": 263,
+        "ActionId": 263,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
@@ -2394,8 +2669,16 @@
         ]
     },
     {
-        "Id": 233,
-        "ActionId": 233,
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
         "Type": 111,
         "Params": [
             1,
@@ -2403,8 +2686,8 @@
         ]
     },
     {
-        "Id": 234,
-        "ActionId": 234,
+        "Id": 266,
+        "ActionId": 266,
         "Type": 501,
         "EndDelay": 500.0,
         "Params": [
@@ -2413,8 +2696,8 @@
         ]
     },
     {
-        "Id": 235,
-        "ActionId": 235,
+        "Id": 267,
+        "ActionId": 267,
         "Type": 111,
         "Params": [
             1,
@@ -2422,9 +2705,10 @@
         ]
     },
     {
-        "Id": 236,
-        "ActionId": 236,
+        "Id": 268,
+        "ActionId": 268,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -2432,8 +2716,8 @@
         ]
     },
     {
-        "Id": 237,
-        "ActionId": 237,
+        "Id": 269,
+        "ActionId": 269,
         "Type": 301,
         "Params": [
             "",
@@ -2442,64 +2726,70 @@
         ]
     },
     {
-        "Id": 238,
-        "ActionId": 238,
-        "Type": 401,
-        "Params": [
-            1,
-            36
-        ]
-    },
-    {
-        "Id": 239,
-        "ActionId": 239,
-        "Type": 401,
-        "Params": [
-            1,
-            202
-        ]
-    },
-    {
-        "Id": 240,
-        "ActionId": 240,
+        "Id": 270,
+        "ActionId": 270,
         "Type": 501,
-        "EndDelay": 1000.0,
+        "EndDelay": 1400.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
             3
         ]
     },
     {
-        "Id": 241,
-        "ActionId": 241,
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 306,
+        "EndDelay": 400.0
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 401,
+        "Params": [
+            1,
+            7168
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
         "Type": 111,
         "Params": [
-            "",
+            0,
             "Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab"
         ]
     },
     {
-        "Id": 242,
-        "ActionId": 242,
+        "Id": 274,
+        "ActionId": 274,
         "Type": 201,
-        "EndDelay": 800.0,
         "Params": [
             1,
-            501433
+            501433,
+            "",
+            "",
+            "",
+            "",
+            1
         ]
     },
     {
-        "Id": 243,
-        "ActionId": 243,
+        "Id": 275,
+        "ActionId": 275,
         "Type": 201,
         "Params": [
             18,
-            501283
+            501283,
+            "",
+            "",
+            "",
+            "",
+            1
         ]
     },
     {
-        "Id": 244,
-        "ActionId": 244,
+        "Id": 276,
+        "ActionId": 276,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -2510,8 +2800,8 @@
         ]
     },
     {
-        "Id": 245,
-        "ActionId": 245,
+        "Id": 277,
+        "ActionId": 277,
         "Type": 301,
         "Params": [
             "",
@@ -2521,16 +2811,16 @@
         ]
     },
     {
-        "Id": 246,
-        "ActionId": 246,
+        "Id": 278,
+        "ActionId": 278,
         "Type": 202,
         "Params": [
             18
         ]
     },
     {
-        "Id": 247,
-        "ActionId": 247,
+        "Id": 279,
+        "ActionId": 279,
         "Type": 301,
         "BeginAnim": "RImgBg1Shake",
         "Params": [
@@ -2540,8 +2830,8 @@
         ]
     },
     {
-        "Id": 248,
-        "ActionId": 248,
+        "Id": 280,
+        "ActionId": 280,
         "Type": 401,
         "Params": [
             2,
@@ -2549,8 +2839,33 @@
         ]
     },
     {
-        "Id": 249,
-        "ActionId": 249,
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            1,
+            0.25,
+            "",
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 203,
+        "Params": [
+            1,
+            0.1,
+            "",
+            "",
+            -80
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
         "Type": 301,
         "Params": [
             "",
@@ -2559,8 +2874,8 @@
         ]
     },
     {
-        "Id": 250,
-        "ActionId": 250,
+        "Id": 284,
+        "ActionId": 284,
         "Type": 301,
         "Params": [
             "",
@@ -2569,8 +2884,8 @@
         ]
     },
     {
-        "Id": 251,
-        "ActionId": 251,
+        "Id": 285,
+        "ActionId": 285,
         "Type": 301,
         "BeginAnim": "PanelActor1Shake",
         "Params": [
@@ -2580,8 +2895,8 @@
         ]
     },
     {
-        "Id": 252,
-        "ActionId": 252,
+        "Id": 286,
+        "ActionId": 286,
         "Type": 401,
         "Params": [
             2,
@@ -2589,27 +2904,29 @@
         ]
     },
     {
-        "Id": 253,
-        "ActionId": 253,
+        "Id": 287,
+        "ActionId": 287,
         "Type": 203,
+        "EndDelay": 200.0,
         "Params": [
             1,
             0.35,
             "",
-            -50
+            -200,
+            -80
         ]
     },
     {
-        "Id": 254,
-        "ActionId": 254,
+        "Id": 288,
+        "ActionId": 288,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 255,
-        "ActionId": 255,
+        "Id": 289,
+        "ActionId": 289,
         "Type": 301,
         "Params": [
             "",
@@ -2618,8 +2935,8 @@
         ]
     },
     {
-        "Id": 256,
-        "ActionId": 256,
+        "Id": 290,
+        "ActionId": 290,
         "Type": 301,
         "Params": [
             "",
@@ -2628,18 +2945,18 @@
         ]
     },
     {
-        "Id": 257,
-        "ActionId": 257,
+        "Id": 291,
+        "ActionId": 291,
         "Type": 501,
-        "EndDelay": 1000.0,
+        "EndDelay": 1800.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
             3
         ]
     },
     {
-        "Id": 258,
-        "ActionId": 258,
+        "Id": 292,
+        "ActionId": 292,
         "Type": 401,
         "Params": [
             2,
@@ -2647,29 +2964,30 @@
         ]
     },
     {
-        "Id": 259,
-        "ActionId": 259,
+        "Id": 293,
+        "ActionId": 293,
         "Type": 101,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cg6501_24.jpg"
         ]
     },
     {
-        "Id": 260,
-        "ActionId": 260,
+        "Id": 294,
+        "ActionId": 294,
         "Type": 301,
         "BeginAnim": "RImgBg1Shake",
         "EndAnim": "DialogDisable",
         "Params": [
-            1,
+            "",
             "恐惧的民众A",
             "雾！是迷雾来了！"
         ]
     },
     {
-        "Id": 261,
-        "ActionId": 261,
+        "Id": 295,
+        "ActionId": 295,
         "Type": 205,
+        "EndDelay": 550.0,
         "Params": [
             999,
             "Assets/Product/Texture/Image/BgCg/Cg6501_25.jpg",
@@ -2679,46 +2997,34 @@
         ]
     },
     {
-        "Id": 262,
-        "ActionId": 262,
-        "Type": 104,
-        "EndDelay": 500.0,
-        "Params": [
-            "0|0|0",
-            0,
-            "",
-            3
-        ]
-    },
-    {
-        "Id": 263,
-        "ActionId": 263,
+        "Id": 296,
+        "ActionId": 296,
         "Type": 101,
         "Params": [
             "Assets/Product/Texture/Image/BgCg/Cg6501_25.jpg"
         ]
     },
     {
-        "Id": 264,
-        "ActionId": 264,
+        "Id": 297,
+        "ActionId": 297,
         "Type": 205,
         "Params": [
             999
         ]
     },
     {
-        "Id": 265,
-        "ActionId": 265,
+        "Id": 298,
+        "ActionId": 298,
         "Type": 502,
         "Params": [
             "DialogEnable"
         ]
     },
     {
-        "Id": 266,
-        "ActionId": 266,
+        "Id": 299,
+        "ActionId": 299,
         "Type": 301,
-        "BeginAnim": "DialogShake",
+        "BeginAnim": "RImgBg1Shake",
         "EndAnim": "DialogDisable",
         "Params": [
             "",
@@ -2727,8 +3033,8 @@
         ]
     },
     {
-        "Id": 267,
-        "ActionId": 267,
+        "Id": 300,
+        "ActionId": 300,
         "Type": 202,
         "Params": [
             1,
@@ -2736,20 +3042,20 @@
         ]
     },
     {
-        "Id": 268,
-        "ActionId": 268,
+        "Id": 301,
+        "ActionId": 301,
         "Type": 205,
         "Params": [
             999,
             "Assets/Product/Texture/Image/BgCg/Cg6501_26.jpg",
             0,
             1,
-            1.5
+            1
         ]
     },
     {
-        "Id": 269,
-        "ActionId": 269,
+        "Id": 302,
+        "ActionId": 302,
         "Type": 104,
         "Params": [
             "0|50|-220",
@@ -2759,8 +3065,8 @@
         ]
     },
     {
-        "Id": 270,
-        "ActionId": 270,
+        "Id": 303,
+        "ActionId": 303,
         "Type": 104,
         "EndDelay": 2000.0,
         "Params": [
@@ -2771,8 +3077,8 @@
         ]
     },
     {
-        "Id": 271,
-        "ActionId": 271,
+        "Id": 304,
+        "ActionId": 304,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -2782,9 +3088,10 @@
         ]
     },
     {
-        "Id": 272,
-        "ActionId": 272,
+        "Id": 305,
+        "ActionId": 305,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
@@ -2792,9 +3099,58 @@
         ]
     },
     {
-        "Id": 273,
-        "ActionId": 273,
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_26.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_26.jpg"
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "Type": 205,
+        "Params": [
+            1004
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -2802,8 +3158,8 @@
         ]
     },
     {
-        "Id": 274,
-        "ActionId": 274,
+        "Id": 312,
+        "ActionId": 312,
         "Type": 301,
         "Params": [
             "",
@@ -2812,8 +3168,8 @@
         ]
     },
     {
-        "Id": 275,
-        "ActionId": 275,
+        "Id": 313,
+        "ActionId": 313,
         "Type": 301,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
@@ -2823,32 +3179,24 @@
         ]
     },
     {
-        "Id": 276,
-        "ActionId": 276,
+        "Id": 314,
+        "ActionId": 314,
         "Type": 402,
         "Params": [
             4916
         ]
     },
     {
-        "Id": 277,
-        "ActionId": 277,
-        "Type": 205,
-        "Params": [
-            999
-        ]
-    },
-    {
-        "Id": 278,
-        "ActionId": 278,
+        "Id": 315,
+        "ActionId": 315,
         "Type": 101,
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg"
+            "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg"
         ]
     },
     {
-        "Id": 279,
-        "ActionId": 279,
+        "Id": 316,
+        "ActionId": 316,
         "Type": 201,
         "Params": [
             1,
@@ -2856,8 +3204,8 @@
         ]
     },
     {
-        "Id": 280,
-        "ActionId": 280,
+        "Id": 317,
+        "ActionId": 317,
         "Type": 301,
         "BeginAnim": "AniZhuanchangEnd",
         "Params": [
@@ -2868,8 +3216,8 @@
         ]
     },
     {
-        "Id": 281,
-        "ActionId": 281,
+        "Id": 318,
+        "ActionId": 318,
         "Type": 301,
         "Params": [
             "",
@@ -2879,41 +3227,49 @@
         ]
     },
     {
-        "Id": 282,
-        "ActionId": 282,
-        "Type": 201,
+        "Id": 319,
+        "ActionId": 319,
+        "Type": 202,
         "Params": [
-            18,
-            501433,
+            1,
             "",
             "",
-            -170,
-            -100
+            "",
+            "",
+            1
         ]
     },
     {
-        "Id": 283,
-        "ActionId": 283,
+        "Id": 320,
+        "ActionId": 320,
+        "Type": 201,
+        "Params": [
+            1,
+            501433
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
         "Type": 301,
         "Params": [
             1,
             "行刑官",
             "这……是……我……对……祂……的……敬……奉……",
-            18
+            1
         ]
     },
     {
-        "Id": 284,
-        "ActionId": 284,
-        "Type": 202,
+        "Id": 322,
+        "ActionId": 322,
+        "Type": 306,
         "Params": [
-            1,
-            18
+            1
         ]
     },
     {
-        "Id": 285,
-        "ActionId": 285,
+        "Id": 323,
+        "ActionId": 323,
         "Type": 301,
         "Params": [
             "",
@@ -2922,8 +3278,27 @@
         ]
     },
     {
-        "Id": 286,
-        "ActionId": 286,
+        "Id": 324,
+        "ActionId": 324,
+        "Type": 111,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab"
+        ]
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
         "Type": 301,
         "Params": [
             "",
@@ -2932,9 +3307,53 @@
         ]
     },
     {
-        "Id": 287,
-        "ActionId": 287,
+        "Id": 327,
+        "ActionId": 327,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront79.png",
+            0,
+            1,
+            0.2
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "Type": 104,
+        "Params": [
+            "0|0|-300",
+            0,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "Type": 401,
+        "Params": [
+            2,
+            4825
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0.4,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 331,
+        "ActionId": 331,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
@@ -2942,29 +3361,76 @@
         ]
     },
     {
-        "Id": 288,
-        "ActionId": 288,
-        "Type": 201,
+        "Id": 332,
+        "ActionId": 332,
+        "Type": 205,
         "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront79.png",
             1,
-            501433
+            0,
+            0.3
         ]
     },
     {
-        "Id": 289,
-        "ActionId": 289,
+        "Id": 333,
+        "ActionId": 333,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 334,
+        "ActionId": 334,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab"
+        ]
+    },
+    {
+        "Id": 335,
+        "ActionId": 335,
+        "Type": 306,
+        "EndDelay": 300.0
+    },
+    {
+        "Id": 336,
+        "ActionId": 336,
+        "Type": 205,
+        "Params": [
+            1005,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 337,
+        "ActionId": 337,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 338,
+        "ActionId": 338,
         "Type": 301,
         "BeginAnim": "PanelActor1Shake",
         "Params": [
-            1,
+            "",
             "行刑官",
             "咕啊——呃啊——",
             1
         ]
     },
     {
-        "Id": 290,
-        "ActionId": 290,
+        "Id": 339,
+        "ActionId": 339,
         "Type": 401,
         "Params": [
             2,
@@ -2972,8 +3438,37 @@
         ]
     },
     {
-        "Id": 291,
-        "ActionId": 291,
+        "Id": 340,
+        "ActionId": 340,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            1,
+            0.35,
+            "",
+            -200
+        ]
+    },
+    {
+        "Id": 341,
+        "ActionId": 341,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 342,
+        "ActionId": 342,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab"
+        ]
+    },
+    {
+        "Id": 343,
+        "ActionId": 343,
         "Type": 301,
         "Params": [
             "",
@@ -2982,16 +3477,8 @@
         ]
     },
     {
-        "Id": 292,
-        "ActionId": 292,
-        "Type": 202,
-        "Params": [
-            1
-        ]
-    },
-    {
-        "Id": 293,
-        "ActionId": 293,
+        "Id": 344,
+        "ActionId": 344,
         "Type": 301,
         "Params": [
             "",
@@ -3000,9 +3487,10 @@
         ]
     },
     {
-        "Id": 294,
-        "ActionId": 294,
+        "Id": 345,
+        "ActionId": 345,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
@@ -3010,9 +3498,39 @@
         ]
     },
     {
-        "Id": 295,
-        "ActionId": 295,
+        "Id": 346,
+        "ActionId": 346,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 347,
+        "ActionId": 347,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg"
+        ]
+    },
+    {
+        "Id": 348,
+        "ActionId": 348,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 349,
+        "ActionId": 349,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -3020,8 +3538,8 @@
         ]
     },
     {
-        "Id": 296,
-        "ActionId": 296,
+        "Id": 350,
+        "ActionId": 350,
         "Type": 201,
         "Params": [
             1,
@@ -3031,8 +3549,8 @@
         ]
     },
     {
-        "Id": 297,
-        "ActionId": 297,
+        "Id": 351,
+        "ActionId": 351,
         "Type": 201,
         "Params": [
             2,
@@ -3042,8 +3560,8 @@
         ]
     },
     {
-        "Id": 298,
-        "ActionId": 298,
+        "Id": 352,
+        "ActionId": 352,
         "Type": 401,
         "Params": [
             2,
@@ -3051,9 +3569,10 @@
         ]
     },
     {
-        "Id": 299,
-        "ActionId": 299,
+        "Id": 353,
+        "ActionId": 353,
         "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
         "Params": [
             1,
             "恐惧的民众A",
@@ -3062,9 +3581,10 @@
         ]
     },
     {
-        "Id": 300,
-        "ActionId": 300,
+        "Id": 354,
+        "ActionId": 354,
         "Type": 301,
+        "BeginAnim": "DialogShake",
         "Params": [
             "",
             "恐惧的民众B",
@@ -3073,8 +3593,8 @@
         ]
     },
     {
-        "Id": 301,
-        "ActionId": 301,
+        "Id": 355,
+        "ActionId": 355,
         "Type": 202,
         "Params": [
             1,
@@ -3082,8 +3602,17 @@
         ]
     },
     {
-        "Id": 302,
-        "ActionId": 302,
+        "Id": 356,
+        "ActionId": 356,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 357,
+        "ActionId": 357,
         "Type": 301,
         "Params": [
             "",
@@ -3092,8 +3621,8 @@
         ]
     },
     {
-        "Id": 303,
-        "ActionId": 303,
+        "Id": 358,
+        "ActionId": 358,
         "Type": 301,
         "Params": [
             "",
@@ -3102,8 +3631,8 @@
         ]
     },
     {
-        "Id": 304,
-        "ActionId": 304,
+        "Id": 359,
+        "ActionId": 359,
         "Type": 201,
         "Params": [
             1,
@@ -3111,8 +3640,8 @@
         ]
     },
     {
-        "Id": 305,
-        "ActionId": 305,
+        "Id": 360,
+        "ActionId": 360,
         "Type": 301,
         "Params": [
             1,
@@ -3122,9 +3651,19 @@
         ]
     },
     {
-        "Id": 306,
-        "ActionId": 306,
+        "Id": 361,
+        "ActionId": 361,
+        "Type": 401,
+        "Params": [
+            2,
+            4411
+        ]
+    },
+    {
+        "Id": 362,
+        "ActionId": 362,
         "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
         "Params": [
             "",
             "",
@@ -3132,8 +3671,8 @@
         ]
     },
     {
-        "Id": 307,
-        "ActionId": 307,
+        "Id": 363,
+        "ActionId": 363,
         "Type": 301,
         "Params": [
             "",
@@ -3143,10 +3682,10 @@
         ]
     },
     {
-        "Id": 308,
-        "ActionId": 308,
+        "Id": 364,
+        "ActionId": 364,
         "Type": 301,
-        "EndAnim": "DialogDisable",
+        "BeginAnim": "PanelActor1Shake",
         "Params": [
             "",
             "疯狂的民众",
@@ -3155,16 +3694,45 @@
         ]
     },
     {
-        "Id": 309,
-        "ActionId": 309,
+        "Id": 365,
+        "ActionId": 365,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 310,
-        "ActionId": 310,
+        "Id": 366,
+        "ActionId": 366,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 367,
+        "ActionId": 367,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那是一场在人群中贸然上演的“盛宴”，在雾中被怪影狩猎的人群，又转而成为了追逐同类的癫狂的猎手。"
+        ]
+    },
+    {
+        "Id": 368,
+        "ActionId": 368,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "已经无人在意那场本应在午夜零点上演的绞刑，众人原本对于“异种”的愤恨，此刻已经转为了播撒在同类之间的癫狂。"
+        ]
+    },
+    {
+        "Id": 369,
+        "ActionId": 369,
         "Type": 401,
         "Params": [
             2,
@@ -3172,21 +3740,22 @@
         ]
     },
     {
-        "Id": 311,
-        "ActionId": 311,
+        "Id": 370,
+        "ActionId": 370,
         "Type": 205,
         "Params": [
             1005,
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
             0,
             1,
-            30
+            1.5
         ]
     },
     {
-        "Id": 312,
-        "ActionId": 312,
+        "Id": 371,
+        "ActionId": 371,
         "Type": 104,
+        "EndDelay": 1800.0,
         "Params": [
             "0|0|0",
             0,
@@ -3195,39 +3764,10 @@
         ]
     },
     {
-        "Id": 313,
-        "ActionId": 313,
-        "Type": 306,
-        "EndDelay": 500.0,
-        "Params": [
-            1
-        ]
-    },
-    {
-        "Id": 314,
-        "ActionId": 314,
+        "Id": 372,
+        "ActionId": 372,
         "Type": 301,
         "BeginAnim": "DialogEnable",
-        "Params": [
-            "",
-            "",
-            "那是一场在人群中贸然上演的“盛宴”，在雾中被怪影狩猎的人群，又转而成为了追逐同类的癫狂的猎手。"
-        ]
-    },
-    {
-        "Id": 315,
-        "ActionId": 315,
-        "Type": 301,
-        "Params": [
-            "",
-            "",
-            "已经无人在意那场本应在午夜零点上演的绞刑，众人原本对于“异种”的愤恨，此刻已经转为了播撒在同类之间的癫狂。"
-        ]
-    },
-    {
-        "Id": 316,
-        "ActionId": 316,
-        "Type": 301,
         "Params": [
             "",
             "",
@@ -3235,8 +3775,8 @@
         ]
     },
     {
-        "Id": 317,
-        "ActionId": 317,
+        "Id": 373,
+        "ActionId": 373,
         "Type": 301,
         "Params": [
             "",
@@ -3245,8 +3785,8 @@
         ]
     },
     {
-        "Id": 318,
-        "ActionId": 318,
+        "Id": 374,
+        "ActionId": 374,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -3256,26 +3796,26 @@
         ]
     },
     {
-        "Id": 319,
-        "ActionId": 319,
+        "Id": 375,
+        "ActionId": 375,
         "Type": 205,
         "Params": [
             1005,
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
             1,
             0,
-            0.5
+            0.4
         ]
     },
     {
-        "Id": 320,
-        "ActionId": 320,
+        "Id": 376,
+        "ActionId": 376,
         "Type": 306,
-        "EndDelay": 500.0
+        "EndDelay": 450.0
     },
     {
-        "Id": 321,
-        "ActionId": 321,
+        "Id": 377,
+        "ActionId": 377,
         "Type": 201,
         "Params": [
             1,
@@ -3283,8 +3823,8 @@
         ]
     },
     {
-        "Id": 322,
-        "ActionId": 322,
+        "Id": 378,
+        "ActionId": 378,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -3295,8 +3835,8 @@
         ]
     },
     {
-        "Id": 323,
-        "ActionId": 323,
+        "Id": 379,
+        "ActionId": 379,
         "Type": 301,
         "Params": [
             "",
@@ -3306,16 +3846,16 @@
         ]
     },
     {
-        "Id": 324,
-        "ActionId": 324,
+        "Id": 380,
+        "ActionId": 380,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 325,
-        "ActionId": 325,
+        "Id": 381,
+        "ActionId": 381,
         "Type": 401,
         "Params": [
             2,
@@ -3323,64 +3863,129 @@
         ]
     },
     {
-        "Id": 326,
-        "ActionId": 326,
-        "Type": 301,
-        "Params": [
-            "",
-            "",
-            "伴随着眷属的声音，越来越多的怪影从雾中现身，包围住混乱的人群，每一条怪影的触手，都发出渴求着人类理智和灵魂的声音。"
-        ]
-    },
-    {
-        "Id": 327,
-        "ActionId": 327,
-        "Type": 301,
-        "Params": [
-            "",
-            "",
-            "品味了行刑官的恐惧，怪影又将触手缠上了近旁的民众。"
-        ]
-    },
-    {
-        "Id": 328,
-        "ActionId": 328,
+        "Id": 382,
+        "ActionId": 382,
         "Type": 201,
         "Params": [
             1,
-            500340,
-            "",
-            400
-        ]
-    },
-    {
-        "Id": 329,
-        "ActionId": 329,
-        "Type": 201,
-        "Params": [
-            2,
             501404,
             "",
             -400
         ]
     },
     {
-        "Id": 330,
-        "ActionId": 330,
+        "Id": 383,
+        "ActionId": 383,
+        "Type": 201,
+        "Params": [
+            2,
+            501404,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 384,
+        "ActionId": 384,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "伴随着眷属的声音，越来越多的怪影从雾中现身，包围住混乱的人群，每一条怪影的触手，都发出渴求着人类理智和灵魂的声音。"
+        ]
+    },
+    {
+        "Id": 385,
+        "ActionId": 385,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 386,
+        "ActionId": 386,
+        "Type": 201,
+        "Params": [
+            1,
+            500340,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 387,
+        "ActionId": 387,
+        "Type": 201,
+        "Params": [
+            2,
+            501404,
+            "",
+            500
+        ]
+    },
+    {
+        "Id": 388,
+        "ActionId": 388,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25,
+            300
+        ]
+    },
+    {
+        "Id": 389,
+        "ActionId": 389,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "品味了行刑官的恐惧，怪影又将触手缠上了近旁的民众。"
+        ]
+    },
+    {
+        "Id": 390,
+        "ActionId": 390,
         "Type": 301,
         "BeginAnim": "PanelActor1Shake",
         "Params": [
-            1,
+            "",
             "疯狂的民众",
             "啊啊啊——放开我——！！！不要吃我——！！！",
             1
         ]
     },
     {
-        "Id": 331,
-        "ActionId": 331,
+        "Id": 391,
+        "ActionId": 391,
+        "Type": 401,
+        "Params": [
+            2,
+            4783
+        ]
+    },
+    {
+        "Id": 392,
+        "ActionId": 392,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25,
+            250,
+            -20
+        ]
+    },
+    {
+        "Id": 393,
+        "ActionId": 393,
         "Type": 301,
-        "BeginAnim": "DialogShake",
+        "BeginAnim": "PanelActor1Shake",
         "Params": [
             "",
             "怪影",
@@ -3389,8 +3994,8 @@
         ]
     },
     {
-        "Id": 332,
-        "ActionId": 332,
+        "Id": 394,
+        "ActionId": 394,
         "Type": 202,
         "Params": [
             1,
@@ -3398,9 +4003,44 @@
         ]
     },
     {
-        "Id": 333,
-        "ActionId": 333,
+        "Id": 395,
+        "ActionId": 395,
+        "Type": 402,
+        "Params": [
+            4783
+        ]
+    },
+    {
+        "Id": 396,
+        "ActionId": 396,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 397,
+        "ActionId": 397,
+        "Type": 401,
+        "Params": [
+            2,
+            10042416
+        ]
+    },
+    {
+        "Id": 398,
+        "ActionId": 398,
+        "Type": 402,
+        "Params": [
+            4916
+        ]
+    },
+    {
+        "Id": 399,
+        "ActionId": 399,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
@@ -3408,18 +4048,36 @@
         ]
     },
     {
-        "Id": 334,
-        "ActionId": 334,
+        "Id": 400,
+        "ActionId": 400,
+        "Type": 401,
+        "Params": [
+            1,
+            7171
+        ]
+    },
+    {
+        "Id": 401,
+        "ActionId": 401,
         "Type": 302,
         "Params": [
             "",
             "那些人不是你们的目标，冲我来吧。",
-            335
+            402
         ]
     },
     {
-        "Id": 335,
-        "ActionId": 335,
+        "Id": 402,
+        "ActionId": 402,
+        "Type": 306,
+        "EndDelay": 300.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 403,
+        "ActionId": 403,
         "Type": 201,
         "Params": [
             1,
@@ -3429,8 +4087,8 @@
         ]
     },
     {
-        "Id": 336,
-        "ActionId": 336,
+        "Id": 404,
+        "ActionId": 404,
         "Type": 201,
         "Params": [
             2,
@@ -3440,18 +4098,19 @@
         ]
     },
     {
-        "Id": 337,
-        "ActionId": 337,
+        "Id": 405,
+        "ActionId": 405,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             1,
             "",
-            "在人类声音响起的瞬间，众多怪影的触手迟滞了一瞬，而邪神眷属非人的冰冷目光，终于转向了那个灰衣的身影。"
+            "在人类声音响起的瞬间，众多怪影的触手迟滞了一瞬，"
         ]
     },
     {
-        "Id": 338,
-        "ActionId": 338,
+        "Id": 406,
+        "ActionId": 406,
         "Type": 202,
         "Params": [
             1,
@@ -3463,8 +4122,8 @@
         ]
     },
     {
-        "Id": 339,
-        "ActionId": 339,
+        "Id": 407,
+        "ActionId": 407,
         "Type": 201,
         "Params": [
             1,
@@ -3472,26 +4131,47 @@
         ]
     },
     {
-        "Id": 340,
-        "ActionId": 340,
-        "Type": 306,
+        "Id": 408,
+        "ActionId": 408,
+        "Type": 301,
         "Params": [
+            1,
+            "",
+            "而邪神眷属非人的冰冷目光，终于转向了那个灰衣的身影。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             1
         ]
     },
     {
-        "Id": 341,
-        "ActionId": 341,
+        "Id": 409,
+        "ActionId": 409,
         "Type": 301,
         "Params": [
-            1,
+            "",
             "",
             "<M>他</M><W>她</W>端然立在雾中，似乎一切源于雾中的恐惧都与这个身影无关。"
         ]
     },
     {
-        "Id": 342,
-        "ActionId": 342,
+        "Id": 410,
+        "ActionId": 410,
         "Type": 301,
         "Params": [
             "",
@@ -3500,8 +4180,8 @@
         ]
     },
     {
-        "Id": 343,
-        "ActionId": 343,
+        "Id": 411,
+        "ActionId": 411,
         "Type": 301,
         "Params": [
             "",
@@ -3510,14 +4190,13 @@
         ]
     },
     {
-        "Id": 344,
-        "ActionId": 344,
-        "Type": 306,
-        "EndDelay": 500.0
+        "Id": 412,
+        "ActionId": 412,
+        "Type": 306
     },
     {
-        "Id": 345,
-        "ActionId": 345,
+        "Id": 413,
+        "ActionId": 413,
         "Type": 301,
         "Params": [
             "",
@@ -3527,8 +4206,8 @@
         ]
     },
     {
-        "Id": 346,
-        "ActionId": 346,
+        "Id": 414,
+        "ActionId": 414,
         "Type": 301,
         "Params": [
             "",
@@ -3538,8 +4217,8 @@
         ]
     },
     {
-        "Id": 347,
-        "ActionId": 347,
+        "Id": 415,
+        "ActionId": 415,
         "Type": 301,
         "Params": [
             "",
@@ -3549,42 +4228,45 @@
         ]
     },
     {
-        "Id": 348,
-        "ActionId": 348,
-        "Type": 202,
-        "EndDelay": 300.0,
+        "Id": 416,
+        "ActionId": 416,
+        "Type": 203,
         "Params": [
-            1
+            1,
+            0.35,
+            "",
+            -80,
+            100
         ]
     },
     {
-        "Id": 349,
-        "ActionId": 349,
+        "Id": 417,
+        "ActionId": 417,
         "Type": 201,
         "Params": [
-            1,
+            15,
             501404,
             "",
             -400
         ]
     },
     {
-        "Id": 350,
-        "ActionId": 350,
+        "Id": 418,
+        "ActionId": 418,
         "Type": 201,
         "Params": [
-            2,
+            16,
             501404,
             "",
             400
         ]
     },
     {
-        "Id": 351,
-        "ActionId": 351,
+        "Id": 419,
+        "ActionId": 419,
         "Type": 203,
         "Params": [
-            1,
+            15,
             0.35,
             -400,
             "",
@@ -3592,11 +4274,11 @@
         ]
     },
     {
-        "Id": 352,
-        "ActionId": 352,
+        "Id": 420,
+        "ActionId": 420,
         "Type": 203,
         "Params": [
-            2,
+            16,
             0.35,
             400,
             "",
@@ -3604,8 +4286,8 @@
         ]
     },
     {
-        "Id": 353,
-        "ActionId": 353,
+        "Id": 421,
+        "ActionId": 421,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -3615,27 +4297,88 @@
         ]
     },
     {
-        "Id": 354,
-        "ActionId": 354,
+        "Id": 422,
+        "ActionId": 422,
         "Type": 302,
         "Params": [
             "",
             "去死吧！",
-            355
+            423
         ]
     },
     {
-        "Id": 355,
-        "ActionId": 355,
+        "Id": 423,
+        "ActionId": 423,
         "Type": 401,
         "Params": [
             2,
-            10028804
+            9342045
         ]
     },
     {
-        "Id": 356,
-        "ActionId": 356,
+        "Id": 424,
+        "ActionId": 424,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 425,
+        "ActionId": 425,
+        "Type": 104,
+        "Params": [
+            "0|0|-200",
+            0.25
+        ]
+    },
+    {
+        "Id": 426,
+        "ActionId": 426,
+        "Type": 203,
+        "Params": [
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 427,
+        "ActionId": 427,
+        "Type": 203,
+        "Params": [
+            15,
+            0.25,
+            -600,
+            "",
+            -120
+        ]
+    },
+    {
+        "Id": 428,
+        "ActionId": 428,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            16,
+            0.25,
+            600,
+            "",
+            -120
+        ]
+    },
+    {
+        "Id": 429,
+        "ActionId": 429,
+        "Type": 202,
+        "Params": [
+            15,
+            16
+        ]
+    },
+    {
+        "Id": 430,
+        "ActionId": 430,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -3645,18 +4388,27 @@
         ]
     },
     {
-        "Id": 357,
-        "ActionId": 357,
+        "Id": 431,
+        "ActionId": 431,
+        "Type": 401,
+        "Params": [
+            2,
+            10028804
+        ]
+    },
+    {
+        "Id": 432,
+        "ActionId": 432,
         "Type": 302,
         "Params": [
             "",
             "（开枪）",
-            358
+            433
         ]
     },
     {
-        "Id": 358,
-        "ActionId": 358,
+        "Id": 433,
+        "ActionId": 433,
         "Type": 401,
         "Params": [
             2,
@@ -3664,29 +4416,145 @@
         ]
     },
     {
-        "Id": 359,
-        "ActionId": 359,
+        "Id": 434,
+        "ActionId": 434,
         "Type": 501,
         "Params": [
-            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
             2
         ]
     },
     {
-        "Id": 360,
-        "ActionId": 360,
-        "Type": 301,
-        "BeginAnim": "RImgBg1Shake",
+        "Id": 435,
+        "ActionId": 435,
+        "Type": 505,
         "Params": [
             "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 436,
+        "ActionId": 436,
+        "Type": 201,
+        "Params": [
+            15,
+            500313,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 437,
+        "ActionId": 437,
+        "Type": 205,
+        "Params": [
+            1,
+            "",
+            1,
+            0,
+            1
+        ]
+    },
+    {
+        "Id": 438,
+        "ActionId": 438,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 439,
+        "ActionId": 439,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 440,
+        "ActionId": 440,
+        "Type": 301,
+        "BeginAnim": "PanelActor15Shake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
             "",
             "子弹出膛，射向眷属的眉心正中，洞穿出一抹鲜红的血花。"
         ]
     },
     {
-        "Id": 361,
-        "ActionId": 361,
+        "Id": 441,
+        "ActionId": 441,
+        "Type": 205,
+        "Params": [
+            1,
+            "",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 442,
+        "ActionId": 442,
+        "Type": 205,
+        "Params": [
+            15,
+            "",
+            1,
+            0,
+            0.8
+        ]
+    },
+    {
+        "Id": 443,
+        "ActionId": 443,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
+            1,
+            0,
+            0.8
+        ]
+    },
+    {
+        "Id": 444,
+        "ActionId": 444,
+        "Type": 402,
+        "Params": [
+            2593
+        ]
+    },
+    {
+        "Id": 445,
+        "ActionId": 445,
+        "Type": 202,
+        "Params": [
+            15,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 446,
+        "ActionId": 446,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -3694,39 +4562,21 @@
         ]
     },
     {
-        "Id": 362,
-        "ActionId": 362,
-        "Type": 202,
-        "EndDelay": 300.0,
-        "Params": [
-            1,
-            2
-        ]
-    },
-    {
-        "Id": 363,
-        "ActionId": 363,
-        "Type": 201,
-        "Params": [
-            1,
-            500305
-        ]
-    },
-    {
-        "Id": 364,
-        "ActionId": 364,
+        "Id": 447,
+        "ActionId": 447,
         "Type": 301,
         "Params": [
-            1,
+            "",
             "“邪神眷属”",
             "可笑的凡人。",
             1
         ]
     },
     {
-        "Id": 365,
-        "ActionId": 365,
+        "Id": 448,
+        "ActionId": 448,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
@@ -3734,18 +4584,35 @@
         ]
     },
     {
-        "Id": 366,
-        "ActionId": 366,
+        "Id": 449,
+        "ActionId": 449,
         "Type": 302,
         "Params": [
             "",
             "（扣动扳机）",
-            367
+            450
         ]
     },
     {
-        "Id": 367,
-        "ActionId": 367,
+        "Id": 450,
+        "ActionId": 450,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 451,
+        "ActionId": 451,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 452,
+        "ActionId": 452,
         "Type": 401,
         "EndDelay": 500.0,
         "Params": [
@@ -3754,8 +4621,17 @@
         ]
     },
     {
-        "Id": 368,
-        "ActionId": 368,
+        "Id": 453,
+        "ActionId": 453,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 454,
+        "ActionId": 454,
         "Type": 401,
         "EndDelay": 500.0,
         "Params": [
@@ -3764,9 +4640,10 @@
         ]
     },
     {
-        "Id": 369,
-        "ActionId": 369,
+        "Id": 455,
+        "ActionId": 455,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -3774,8 +4651,17 @@
         ]
     },
     {
-        "Id": 370,
-        "ActionId": 370,
+        "Id": 456,
+        "ActionId": 456,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 457,
+        "ActionId": 457,
         "Type": 301,
         "Params": [
             "",
@@ -3785,8 +4671,8 @@
         ]
     },
     {
-        "Id": 371,
-        "ActionId": 371,
+        "Id": 458,
+        "ActionId": 458,
         "Type": 301,
         "Params": [
             "",
@@ -3795,16 +4681,34 @@
         ]
     },
     {
-        "Id": 372,
-        "ActionId": 372,
+        "Id": 459,
+        "ActionId": 459,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 373,
-        "ActionId": 373,
+        "Id": 460,
+        "ActionId": 460,
+        "Type": 401,
+        "Params": [
+            2,
+            4663
+        ]
+    },
+    {
+        "Id": 461,
+        "ActionId": 461,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 462,
+        "ActionId": 462,
         "Type": 301,
         "Params": [
             "",
@@ -3813,8 +4717,8 @@
         ]
     },
     {
-        "Id": 374,
-        "ActionId": 374,
+        "Id": 463,
+        "ActionId": 463,
         "Type": 401,
         "Params": [
             2,
@@ -3822,9 +4726,49 @@
         ]
     },
     {
-        "Id": 375,
-        "ActionId": 375,
+        "Id": 464,
+        "ActionId": 464,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 465,
+        "ActionId": 465,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 466,
+        "ActionId": 466,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab"
+        ]
+    },
+    {
+        "Id": 467,
+        "ActionId": 467,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 468,
+        "ActionId": 468,
         "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
         "Params": [
             "",
             "",
@@ -3832,18 +4776,18 @@
         ]
     },
     {
-        "Id": 376,
-        "ActionId": 376,
+        "Id": 469,
+        "ActionId": 469,
         "Type": 302,
         "Params": [
             "",
             "！！！",
-            377
+            470
         ]
     },
     {
-        "Id": 377,
-        "ActionId": 377,
+        "Id": 470,
+        "ActionId": 470,
         "Type": 401,
         "Params": [
             2,
@@ -3851,8 +4795,8 @@
         ]
     },
     {
-        "Id": 378,
-        "ActionId": 378,
+        "Id": 471,
+        "ActionId": 471,
         "Type": 301,
         "Params": [
             "",
@@ -3861,18 +4805,30 @@
         ]
     },
     {
-        "Id": 379,
-        "ActionId": 379,
+        "Id": 472,
+        "ActionId": 472,
         "Type": 302,
         "Params": [
             "",
             "……",
-            380
+            473
         ]
     },
     {
-        "Id": 380,
-        "ActionId": 380,
+        "Id": 473,
+        "ActionId": 473,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 474,
+        "ActionId": 474,
         "Type": 201,
         "Params": [
             1,
@@ -3880,8 +4836,8 @@
         ]
     },
     {
-        "Id": 381,
-        "ActionId": 381,
+        "Id": 475,
+        "ActionId": 475,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -3892,16 +4848,16 @@
         ]
     },
     {
-        "Id": 382,
-        "ActionId": 382,
+        "Id": 476,
+        "ActionId": 476,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 383,
-        "ActionId": 383,
+        "Id": 477,
+        "ActionId": 477,
         "Type": 306,
         "EndDelay": 500.0,
         "Params": [
@@ -3909,8 +4865,17 @@
         ]
     },
     {
-        "Id": 384,
-        "ActionId": 384,
+        "Id": 478,
+        "ActionId": 478,
+        "Type": 401,
+        "Params": [
+            2,
+            4984
+        ]
+    },
+    {
+        "Id": 479,
+        "ActionId": 479,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -3920,8 +4885,8 @@
         ]
     },
     {
-        "Id": 385,
-        "ActionId": 385,
+        "Id": 480,
+        "ActionId": 480,
         "Type": 301,
         "Params": [
             "",
@@ -3930,8 +4895,16 @@
         ]
     },
     {
-        "Id": 386,
-        "ActionId": 386,
+        "Id": 481,
+        "ActionId": 481,
+        "Type": 402,
+        "Params": [
+            4984
+        ]
+    },
+    {
+        "Id": 482,
+        "ActionId": 482,
         "Type": 301,
         "Params": [
             "",
@@ -3940,8 +4913,8 @@
         ]
     },
     {
-        "Id": 387,
-        "ActionId": 387,
+        "Id": 483,
+        "ActionId": 483,
         "Type": 301,
         "Params": [
             "",
@@ -3950,8 +4923,8 @@
         ]
     },
     {
-        "Id": 388,
-        "ActionId": 388,
+        "Id": 484,
+        "ActionId": 484,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -3961,14 +4934,14 @@
         ]
     },
     {
-        "Id": 389,
-        "ActionId": 389,
+        "Id": 485,
+        "ActionId": 485,
         "Type": 306,
-        "EndDelay": 500.0
+        "EndDelay": 300.0
     },
     {
-        "Id": 390,
-        "ActionId": 390,
+        "Id": 486,
+        "ActionId": 486,
         "Type": 201,
         "Params": [
             1,
@@ -3976,8 +4949,8 @@
         ]
     },
     {
-        "Id": 391,
-        "ActionId": 391,
+        "Id": 487,
+        "ActionId": 487,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
@@ -3989,38 +4962,38 @@
         ]
     },
     {
-        "Id": 392,
-        "ActionId": 392,
+        "Id": 488,
+        "ActionId": 488,
         "Type": 302,
         "Params": [
             "",
             "我“读”到的，无非也只不过是一些见不得光的念头而已。",
-            393
+            489
         ]
     },
     {
-        "Id": 393,
-        "ActionId": 393,
+        "Id": 489,
+        "ActionId": 489,
         "Type": 302,
         "Params": [
             "",
             "他们都是活生生的人，不是什么你的“样本”。",
-            394
+            490
         ]
     },
     {
-        "Id": 394,
-        "ActionId": 394,
+        "Id": 490,
+        "ActionId": 490,
         "Type": 302,
         "Params": [
             "",
             "更不是什么你要献给你主子的“祭品”。",
-            395
+            491
         ]
     },
     {
-        "Id": 395,
-        "ActionId": 395,
+        "Id": 491,
+        "ActionId": 491,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -4030,16 +5003,34 @@
         ]
     },
     {
-        "Id": 396,
-        "ActionId": 396,
+        "Id": 492,
+        "ActionId": 492,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 397,
-        "ActionId": 397,
+        "Id": 493,
+        "ActionId": 493,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 494,
+        "ActionId": 494,
+        "Type": 401,
+        "Params": [
+            2,
+            4276
+        ]
+    },
+    {
+        "Id": 495,
+        "ActionId": 495,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -4049,35 +5040,47 @@
         ]
     },
     {
-        "Id": 398,
-        "ActionId": 398,
+        "Id": 496,
+        "ActionId": 496,
+        "Type": 401,
+        "Params": [
+            2,
+            4134
+        ]
+    },
+    {
+        "Id": 497,
+        "ActionId": 497,
         "Type": 501,
-        "EndDelay": 1500.0,
+        "EndDelay": 1200.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab",
             3
         ]
     },
     {
-        "Id": 399,
-        "ActionId": 399,
+        "Id": 498,
+        "ActionId": 498,
+        "Type": 205,
+        "Params": [
+            999,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 499,
+        "ActionId": 499,
         "Type": 101,
         "Params": [
-            "Assets/Product/Texture/Image/BgCg/Cg6501_27.jpg"
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg"
         ]
     },
     {
-        "Id": 400,
-        "ActionId": 400,
-        "Type": 104,
-        "Params": [
-            "0|-200|0",
-            25
-        ]
-    },
-    {
-        "Id": 401,
-        "ActionId": 401,
+        "Id": 500,
+        "ActionId": 500,
         "Type": 505,
         "Params": [
             "",
@@ -4085,18 +5088,63 @@
         ]
     },
     {
-        "Id": 402,
-        "ActionId": 402,
+        "Id": 501,
+        "ActionId": 501,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 502,
+        "ActionId": 502,
         "Type": 501,
-        "EndDelay": 1000.0,
+        "EndDelay": 100.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab",
             3
         ]
     },
     {
-        "Id": 403,
-        "ActionId": 403,
+        "Id": 503,
+        "ActionId": 503,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_27.jpg"
+        ]
+    },
+    {
+        "Id": 504,
+        "ActionId": 504,
+        "Type": 104,
+        "Params": [
+            "0|-120|-180",
+            0
+        ]
+    },
+    {
+        "Id": 505,
+        "ActionId": 505,
+        "Type": 104,
+        "Params": [
+            "0|110|-180",
+            15
+        ]
+    },
+    {
+        "Id": 506,
+        "ActionId": 506,
+        "Type": 401,
+        "EndDelay": 800.0,
+        "Params": [
+            1,
+            7172
+        ]
+    },
+    {
+        "Id": 507,
+        "ActionId": 507,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -4106,8 +5154,8 @@
         ]
     },
     {
-        "Id": 404,
-        "ActionId": 404,
+        "Id": 508,
+        "ActionId": 508,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -4117,42 +5165,18 @@
         ]
     },
     {
-        "Id": 405,
-        "ActionId": 405,
-        "Type": 205,
-        "Params": [
-            999,
-            "Assets/Product/Texture/Image/BgCg/Cg6501_28.jpg",
-            0,
-            1,
-            1.5
-        ]
-    },
-    {
-        "Id": 406,
-        "ActionId": 406,
-        "Type": 104,
-        "EndDelay": 2000.0,
-        "Params": [
-            "0|0|0",
-            0,
-            "",
-            3
-        ]
-    },
-    {
-        "Id": 407,
-        "ActionId": 407,
+        "Id": 509,
+        "ActionId": 509,
         "Type": 302,
         "Params": [
             "",
             "是时候了！",
-            408
+            510
         ]
     },
     {
-        "Id": 408,
-        "ActionId": 408,
+        "Id": 510,
+        "ActionId": 510,
         "Type": 501,
         "EndDelay": 1500.0,
         "Params": [
@@ -4161,24 +5185,24 @@
         ]
     },
     {
-        "Id": 409,
-        "ActionId": 409,
+        "Id": 511,
+        "ActionId": 511,
         "Type": 205,
         "Params": [
             999
         ]
     },
     {
-        "Id": 410,
-        "ActionId": 410,
+        "Id": 512,
+        "ActionId": 512,
         "Type": 101,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory00.png"
         ]
     },
     {
-        "Id": 411,
-        "ActionId": 411,
+        "Id": 513,
+        "ActionId": 513,
         "Type": 505,
         "Params": [
             "",
@@ -4186,17 +5210,27 @@
         ]
     },
     {
-        "Id": 412,
-        "ActionId": 412,
+        "Id": 514,
+        "ActionId": 514,
         "Type": 501,
+        "EndDelay": 200.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping02New.prefab",
             3
         ]
     },
     {
-        "Id": 413,
-        "ActionId": 413,
+        "Id": 515,
+        "ActionId": 515,
+        "Type": 401,
+        "Params": [
+            2,
+            1510
+        ]
+    },
+    {
+        "Id": 516,
+        "ActionId": 516,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -4206,8 +5240,8 @@
         ]
     },
     {
-        "Id": 414,
-        "ActionId": 414,
+        "Id": 517,
+        "ActionId": 517,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -4217,63 +5251,52 @@
         ]
     },
     {
-        "Id": 415,
-        "ActionId": 415,
+        "Id": 518,
+        "ActionId": 518,
         "Type": 307,
         "Params": [
             "被世人所不容的“异种”们，把你们的力量，借给我！",
             "",
-            40,
+            50,
             "000000ff",
             "",
             1
         ]
     },
     {
-        "Id": 416,
-        "ActionId": 416,
+        "Id": 519,
+        "ActionId": 519,
         "Type": 309,
         "IsBlock": 1,
+        "EndDelay": 200.0,
         "Params": [
             "",
             "被世人所不容的“异种”们，把你们的力量，借给我！"
         ]
     },
     {
-        "Id": 417,
-        "ActionId": 417,
+        "Id": 520,
+        "ActionId": 520,
         "Type": 307,
         "Params": [
-            "迷雾中，人类并非孤身一人。",
-            "",
-            40,
-            "000000ff",
             "",
             1
         ]
     },
     {
-        "Id": 418,
-        "ActionId": 418,
-        "Type": 309,
-        "IsBlock": 1,
+        "Id": 521,
+        "ActionId": 521,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
+            "",
             "",
             "迷雾中，人类并非孤身一人。"
         ]
     },
     {
-        "Id": 419,
-        "ActionId": 419,
-        "Type": 307,
-        "Params": [
-            "",
-            1
-        ]
-    },
-    {
-        "Id": 420,
-        "ActionId": 420,
+        "Id": 522,
+        "ActionId": 522,
         "Type": 401,
         "Params": [
             2,
@@ -4281,10 +5304,9 @@
         ]
     },
     {
-        "Id": 421,
-        "ActionId": 421,
+        "Id": 523,
+        "ActionId": 523,
         "Type": 301,
-        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -4292,8 +5314,8 @@
         ]
     },
     {
-        "Id": 422,
-        "ActionId": 422,
+        "Id": 524,
+        "ActionId": 524,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -4303,48 +5325,37 @@
         ]
     },
     {
-        "Id": 423,
-        "ActionId": 423,
-        "Type": 205,
-        "EndDelay": 2000.0,
+        "Id": 525,
+        "ActionId": 525,
+        "Type": 501,
+        "EndDelay": 500.0,
         "Params": [
-            999,
-            "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg",
-            0,
-            1,
-            1.5
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab",
+            3
         ]
     },
     {
-        "Id": 424,
-        "ActionId": 424,
-        "Type": 205,
+        "Id": 526,
+        "ActionId": 526,
+        "Type": 401,
+        "EndDelay": 1000.0,
         "Params": [
-            999
+            2,
+            819016
         ]
     },
     {
-        "Id": 425,
-        "ActionId": 425,
+        "Id": 527,
+        "ActionId": 527,
         "Type": 101,
+        "EndDelay": 500.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg"
         ]
     },
     {
-        "Id": 426,
-        "ActionId": 426,
-        "Type": 104,
-        "Params": [
-            "0|0|0",
-            0,
-            "",
-            1
-        ]
-    },
-    {
-        "Id": 427,
-        "ActionId": 427,
+        "Id": 528,
+        "ActionId": 528,
         "Type": 401,
         "Params": [
             2,
@@ -4352,8 +5363,8 @@
         ]
     },
     {
-        "Id": 428,
-        "ActionId": 428,
+        "Id": 529,
+        "ActionId": 529,
         "Type": 201,
         "Params": [
             1,
@@ -4362,8 +5373,8 @@
         ]
     },
     {
-        "Id": 429,
-        "ActionId": 429,
+        "Id": 530,
+        "ActionId": 530,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -4374,8 +5385,8 @@
         ]
     },
     {
-        "Id": 430,
-        "ActionId": 430,
+        "Id": 531,
+        "ActionId": 531,
         "Type": 204,
         "Params": [
             1,
@@ -4383,8 +5394,8 @@
         ]
     },
     {
-        "Id": 431,
-        "ActionId": 431,
+        "Id": 532,
+        "ActionId": 532,
         "Type": 301,
         "Params": [
             "",
@@ -4394,16 +5405,38 @@
         ]
     },
     {
-        "Id": 432,
-        "ActionId": 432,
+        "Id": 533,
+        "ActionId": 533,
+        "Type": 401,
+        "Params": [
+            2,
+            819016
+        ]
+    },
+    {
+        "Id": 534,
+        "ActionId": 534,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            1,
+            0.25,
+            "",
+            -40,
+            -100
+        ]
+    },
+    {
+        "Id": 535,
+        "ActionId": 535,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 433,
-        "ActionId": 433,
+        "Id": 536,
+        "ActionId": 536,
         "Type": 301,
         "Params": [
             "",
@@ -4412,17 +5445,8 @@
         ]
     },
     {
-        "Id": 434,
-        "ActionId": 434,
-        "Type": 201,
-        "Params": [
-            1,
-            501595
-        ]
-    },
-    {
-        "Id": 435,
-        "ActionId": 435,
+        "Id": 537,
+        "ActionId": 537,
         "Type": 201,
         "Params": [
             18,
@@ -4430,8 +5454,8 @@
         ]
     },
     {
-        "Id": 436,
-        "ActionId": 436,
+        "Id": 538,
+        "ActionId": 538,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -4442,17 +5466,46 @@
         ]
     },
     {
-        "Id": 437,
-        "ActionId": 437,
+        "Id": 539,
+        "ActionId": 539,
         "Type": 202,
         "Params": [
             18
         ]
     },
     {
-        "Id": 438,
-        "ActionId": 438,
+        "Id": 540,
+        "ActionId": 540,
+        "Type": 502,
+        "EndDelay": 250.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 541,
+        "ActionId": 541,
+        "Type": 401,
+        "EndDelay": 200.0,
+        "Params": [
+            2,
+            5310
+        ]
+    },
+    {
+        "Id": 542,
+        "ActionId": 542,
+        "Type": 401,
+        "Params": [
+            2,
+            5310
+        ]
+    },
+    {
+        "Id": 543,
+        "ActionId": 543,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -4460,28 +5513,38 @@
         ]
     },
     {
-        "Id": 439,
-        "ActionId": 439,
+        "Id": 544,
+        "ActionId": 544,
+        "Type": 201,
+        "Params": [
+            1,
+            501595,
+            8
+        ]
+    },
+    {
+        "Id": 545,
+        "ActionId": 545,
         "Type": 301,
         "Params": [
-            "",
+            1,
             "“缄默送葬”",
             "看来，还是有些家伙需要我这个“送葬人”出手相送一程。",
             1
         ]
     },
     {
-        "Id": 440,
-        "ActionId": 440,
+        "Id": 546,
+        "ActionId": 546,
         "Type": 204,
         "Params": [
             1,
-            8
+            5
         ]
     },
     {
-        "Id": 441,
-        "ActionId": 441,
+        "Id": 547,
+        "ActionId": 547,
         "Type": 301,
         "Params": [
             "",
@@ -4491,16 +5554,16 @@
         ]
     },
     {
-        "Id": 442,
-        "ActionId": 442,
+        "Id": 548,
+        "ActionId": 548,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 443,
-        "ActionId": 443,
+        "Id": 549,
+        "ActionId": 549,
         "Type": 301,
         "Params": [
             "",
@@ -4509,8 +5572,8 @@
         ]
     },
     {
-        "Id": 444,
-        "ActionId": 444,
+        "Id": 550,
+        "ActionId": 550,
         "Type": 201,
         "Params": [
             1,
@@ -4520,8 +5583,8 @@
         ]
     },
     {
-        "Id": 445,
-        "ActionId": 445,
+        "Id": 551,
+        "ActionId": 551,
         "Type": 201,
         "Params": [
             2,
@@ -4531,8 +5594,8 @@
         ]
     },
     {
-        "Id": 446,
-        "ActionId": 446,
+        "Id": 552,
+        "ActionId": 552,
         "Type": 203,
         "Params": [
             1,
@@ -4541,8 +5604,8 @@
         ]
     },
     {
-        "Id": 447,
-        "ActionId": 447,
+        "Id": 553,
+        "ActionId": 553,
         "Type": 203,
         "Params": [
             2,
@@ -4551,8 +5614,8 @@
         ]
     },
     {
-        "Id": 448,
-        "ActionId": 448,
+        "Id": 554,
+        "ActionId": 554,
         "Type": 401,
         "Params": [
             2,
@@ -4560,9 +5623,10 @@
         ]
     },
     {
-        "Id": 449,
-        "ActionId": 449,
+        "Id": 555,
+        "ActionId": 555,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             1,
             "",
@@ -4570,8 +5634,16 @@
         ]
     },
     {
-        "Id": 450,
-        "ActionId": 450,
+        "Id": 556,
+        "ActionId": 556,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 557,
+        "ActionId": 557,
         "Type": 401,
         "Params": [
             2,
@@ -4579,28 +5651,57 @@
         ]
     },
     {
-        "Id": 451,
-        "ActionId": 451,
+        "Id": 558,
+        "ActionId": 558,
         "Type": 501,
-        "EndDelay": 500.0,
+        "EndDelay": 200.0,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab",
-            2
+            2,
+            1
         ]
     },
     {
-        "Id": 452,
-        "ActionId": 452,
+        "Id": 559,
+        "ActionId": 559,
         "Type": 202,
         "Params": [
-            1,
+            1
+        ]
+    },
+    {
+        "Id": 560,
+        "ActionId": 560,
+        "Type": 401,
+        "Params": [
+            2,
+            2905
+        ]
+    },
+    {
+        "Id": 561,
+        "ActionId": 561,
+        "Type": 501,
+        "EndDelay": 200.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab",
+            2,
             2
         ]
     },
     {
-        "Id": 453,
-        "ActionId": 453,
+        "Id": 562,
+        "ActionId": 562,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 563,
+        "ActionId": 563,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -4608,8 +5709,30 @@
         ]
     },
     {
-        "Id": 454,
-        "ActionId": 454,
+        "Id": 564,
+        "ActionId": 564,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 565,
+        "ActionId": 565,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 566,
+        "ActionId": 566,
         "Type": 201,
         "Params": [
             1,
@@ -4618,9 +5741,30 @@
         ]
     },
     {
-        "Id": 455,
-        "ActionId": 455,
+        "Id": 567,
+        "ActionId": 567,
+        "Type": 401,
+        "Params": [
+            2,
+            5804
+        ]
+    },
+    {
+        "Id": 568,
+        "ActionId": 568,
+        "Type": 203,
+        "Params": [
+            1,
+            0.35,
+            "",
+            -30
+        ]
+    },
+    {
+        "Id": 569,
+        "ActionId": 569,
         "Type": 301,
+        "BeginAnim": "DialogShake",
         "Params": [
             1,
             "“猩红女爵”",
@@ -4629,16 +5773,16 @@
         ]
     },
     {
-        "Id": 456,
-        "ActionId": 456,
+        "Id": 570,
+        "ActionId": 570,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 457,
-        "ActionId": 457,
+        "Id": 571,
+        "ActionId": 571,
         "Type": 401,
         "Params": [
             2,
@@ -4646,8 +5790,8 @@
         ]
     },
     {
-        "Id": 458,
-        "ActionId": 458,
+        "Id": 572,
+        "ActionId": 572,
         "Type": 301,
         "Params": [
             "",
@@ -4656,28 +5800,46 @@
         ]
     },
     {
-        "Id": 459,
-        "ActionId": 459,
+        "Id": 573,
+        "ActionId": 573,
         "Type": 401,
-        "EndDelay": 500.0,
+        "EndDelay": 200.0,
         "Params": [
             2,
             5321
         ]
     },
     {
-        "Id": 460,
-        "ActionId": 460,
+        "Id": 574,
+        "ActionId": 574,
         "Type": 401,
         "Params": [
             2,
-            3077
+            4833
         ]
     },
     {
-        "Id": 461,
-        "ActionId": 461,
+        "Id": 575,
+        "ActionId": 575,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 576,
+        "ActionId": 576,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 577,
+        "ActionId": 577,
         "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
             "",
             "",
@@ -4685,17 +5847,18 @@
         ]
     },
     {
-        "Id": 462,
-        "ActionId": 462,
+        "Id": 578,
+        "ActionId": 578,
         "Type": 201,
         "Params": [
             18,
-            501586
+            501586,
+            4
         ]
     },
     {
-        "Id": 463,
-        "ActionId": 463,
+        "Id": 579,
+        "ActionId": 579,
         "Type": 301,
         "BeginAnim": "DialogShake",
         "Params": [
@@ -4706,55 +5869,35 @@
         ]
     },
     {
-        "Id": 464,
-        "ActionId": 464,
+        "Id": 580,
+        "ActionId": 580,
         "Type": 202,
         "Params": [
             18
         ]
     },
     {
-        "Id": 465,
-        "ActionId": 465,
-        "Type": 201,
+        "Id": 581,
+        "ActionId": 581,
+        "Type": 401,
         "Params": [
-            1,
-            501621
+            2,
+            6398
         ]
     },
     {
-        "Id": 466,
-        "ActionId": 466,
+        "Id": 582,
+        "ActionId": 582,
         "Type": 301,
         "Params": [
-            1,
+            "",
             "",
             "闻言的“嗜血妖鸟”瞬间展开背后的双翼，跃升而起，冲向人类坠落的方向。"
         ]
     },
     {
-        "Id": 467,
-        "ActionId": 467,
-        "Type": 203,
-        "Params": [
-            1,
-            0.4,
-            "",
-            50
-        ]
-    },
-    {
-        "Id": 468,
-        "ActionId": 468,
-        "Type": 202,
-        "EndDelay": 400.0,
-        "Params": [
-            1
-        ]
-    },
-    {
-        "Id": 469,
-        "ActionId": 469,
+        "Id": 583,
+        "ActionId": 583,
         "Type": 501,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
@@ -4762,27 +5905,57 @@
         ]
     },
     {
-        "Id": 470,
-        "ActionId": 470,
-        "Type": 401,
+        "Id": 584,
+        "ActionId": 584,
+        "Type": 505,
         "Params": [
-            2,
-            4895
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab"
         ]
     },
     {
-        "Id": 471,
-        "ActionId": 471,
+        "Id": 585,
+        "ActionId": 585,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg"
+        ]
+    },
+    {
+        "Id": 586,
+        "ActionId": 586,
+        "Type": 104,
+        "Params": [
+            "-300|-170|-250",
+            0
+        ]
+    },
+    {
+        "Id": 587,
+        "ActionId": 587,
+        "Type": 401,
+        "Params": [
+            2,
+            6398
+        ]
+    },
+    {
+        "Id": 588,
+        "ActionId": 588,
         "Type": 201,
         "Params": [
             1,
             501621,
-            11
+            11,
+            "",
+            "",
+            "",
+            1
         ]
     },
     {
-        "Id": 472,
-        "ActionId": 472,
+        "Id": 589,
+        "ActionId": 589,
         "Type": 501,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab",
@@ -4790,8 +5963,8 @@
         ]
     },
     {
-        "Id": 473,
-        "ActionId": 473,
+        "Id": 590,
+        "ActionId": 590,
         "Type": 301,
         "Params": [
             1,
@@ -4801,16 +5974,34 @@
         ]
     },
     {
-        "Id": 474,
-        "ActionId": 474,
+        "Id": 591,
+        "ActionId": 591,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 475,
-        "ActionId": 475,
+        "Id": 592,
+        "ActionId": 592,
+        "Type": 401,
+        "Params": [
+            2,
+            6398
+        ]
+    },
+    {
+        "Id": 593,
+        "ActionId": 593,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab"
+        ]
+    },
+    {
+        "Id": 594,
+        "ActionId": 594,
         "Type": 301,
         "Params": [
             "",
@@ -4819,8 +6010,8 @@
         ]
     },
     {
-        "Id": 476,
-        "ActionId": 476,
+        "Id": 595,
+        "ActionId": 595,
         "Type": 501,
         "EndDelay": 1000.0,
         "Params": [
@@ -4829,27 +6020,31 @@
         ]
     },
     {
-        "Id": 477,
-        "ActionId": 477,
-        "Type": 505,
+        "Id": 596,
+        "ActionId": 596,
+        "Type": 101,
         "EndDelay": 800.0,
         "Params": [
-            "",
-            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab"
+            "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg"
         ]
     },
     {
-        "Id": 478,
-        "ActionId": 478,
+        "Id": 597,
+        "ActionId": 597,
         "Type": 201,
         "Params": [
             1,
-            500305
+            500305,
+            1,
+            "",
+            "",
+            "",
+            1
         ]
     },
     {
-        "Id": 479,
-        "ActionId": 479,
+        "Id": 598,
+        "ActionId": 598,
         "Type": 301,
         "Params": [
             1,
@@ -4858,8 +6053,8 @@
         ]
     },
     {
-        "Id": 480,
-        "ActionId": 480,
+        "Id": 599,
+        "ActionId": 599,
         "Type": 301,
         "Params": [
             "",
@@ -4869,8 +6064,16 @@
         ]
     },
     {
-        "Id": 481,
-        "ActionId": 481,
+        "Id": 600,
+        "ActionId": 600,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 601,
+        "ActionId": 601,
         "Type": 301,
         "Params": [
             "",
@@ -4880,16 +6083,16 @@
         ]
     },
     {
-        "Id": 482,
-        "ActionId": 482,
+        "Id": 602,
+        "ActionId": 602,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 483,
-        "ActionId": 483,
+        "Id": 603,
+        "ActionId": 603,
         "Type": 301,
         "Params": [
             "",
@@ -4898,8 +6101,8 @@
         ]
     },
     {
-        "Id": 484,
-        "ActionId": 484,
+        "Id": 604,
+        "ActionId": 604,
         "Type": 401,
         "Params": [
             2,
@@ -4907,8 +6110,17 @@
         ]
     },
     {
-        "Id": 485,
-        "ActionId": 485,
+        "Id": 605,
+        "ActionId": 605,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 606,
+        "ActionId": 606,
         "Type": 301,
         "Params": [
             "",
@@ -4917,17 +6129,16 @@
         ]
     },
     {
-        "Id": 486,
-        "ActionId": 486,
-        "Type": 401,
+        "Id": 607,
+        "ActionId": 607,
+        "Type": 306,
         "Params": [
-            2,
-            3077
+            1
         ]
     },
     {
-        "Id": 487,
-        "ActionId": 487,
+        "Id": 608,
+        "ActionId": 608,
         "Type": 301,
         "Params": [
             "",
@@ -4936,8 +6147,8 @@
         ]
     },
     {
-        "Id": 488,
-        "ActionId": 488,
+        "Id": 609,
+        "ActionId": 609,
         "Type": 301,
         "Params": [
             "",
@@ -4946,8 +6157,13 @@
         ]
     },
     {
-        "Id": 489,
-        "ActionId": 489,
+        "Id": 610,
+        "ActionId": 610,
+        "Type": 306
+    },
+    {
+        "Id": 611,
+        "ActionId": 611,
         "Type": 201,
         "Params": [
             1,
@@ -4955,8 +6171,8 @@
         ]
     },
     {
-        "Id": 490,
-        "ActionId": 490,
+        "Id": 612,
+        "ActionId": 612,
         "Type": 301,
         "Params": [
             1,
@@ -4966,8 +6182,8 @@
         ]
     },
     {
-        "Id": 491,
-        "ActionId": 491,
+        "Id": 613,
+        "ActionId": 613,
         "Type": 401,
         "Params": [
             2,
@@ -4975,8 +6191,8 @@
         ]
     },
     {
-        "Id": 492,
-        "ActionId": 492,
+        "Id": 614,
+        "ActionId": 614,
         "Type": 501,
         "Params": [
             "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab",
@@ -4984,8 +6200,8 @@
         ]
     },
     {
-        "Id": 493,
-        "ActionId": 493,
+        "Id": 615,
+        "ActionId": 615,
         "Type": 301,
         "Params": [
             "",
@@ -4994,8 +6210,29 @@
         ]
     },
     {
-        "Id": 494,
-        "ActionId": 494,
+        "Id": 616,
+        "ActionId": 616,
+        "Type": 401,
+        "Params": [
+            2,
+            1505
+        ]
+    },
+    {
+        "Id": 617,
+        "ActionId": 617,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 618,
+        "ActionId": 618,
         "Type": 301,
         "Params": [
             "",
@@ -5004,28 +6241,118 @@
         ]
     },
     {
-        "Id": 495,
-        "ActionId": 495,
+        "Id": 619,
+        "ActionId": 619,
         "Type": 302,
         "Params": [
             "",
             "就是现在！",
-            496
+            620
         ]
     },
     {
-        "Id": 496,
-        "ActionId": 496,
-        "Type": 301,
+        "Id": 620,
+        "ActionId": 620,
+        "Type": 401,
+        "Params": [
+            2,
+            9389036
+        ]
+    },
+    {
+        "Id": 621,
+        "ActionId": 621,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 622,
+        "ActionId": 622,
+        "Type": 205,
+        "Params": [
+            999,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 623,
+        "ActionId": 623,
+        "Type": 505,
         "Params": [
             "",
-            "",
-            "人类凝聚起所有的意志，以身为刃，掌中的光芒贯穿了“邪神眷属的身躯。"
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab"
         ]
     },
     {
-        "Id": 497,
-        "ActionId": 497,
+        "Id": 624,
+        "ActionId": 624,
+        "Type": 201,
+        "Params": [
+            1,
+            500313,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 625,
+        "ActionId": 625,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            1,
+            "",
+            "人类凝聚起所有的意志，以身为刃，掌中的光芒贯穿了“邪神眷属”的身躯。"
+        ]
+    },
+    {
+        "Id": 626,
+        "ActionId": 626,
+        "Type": 401,
+        "Params": [
+            2,
+            2905
+        ]
+    },
+    {
+        "Id": 627,
+        "ActionId": 627,
+        "Type": 401,
+        "Params": [
+            2,
+            5325
+        ]
+    },
+    {
+        "Id": 628,
+        "ActionId": 628,
+        "Type": 401,
+        "Params": [
+            2,
+            6340
+        ]
+    },
+    {
+        "Id": 629,
+        "ActionId": 629,
+        "Type": 401,
+        "Params": [
+            2,
+            6569
+        ]
+    },
+    {
+        "Id": 630,
+        "ActionId": 630,
         "Type": 301,
         "Params": [
             "",
@@ -5034,46 +6361,36 @@
         ]
     },
     {
-        "Id": 498,
-        "ActionId": 498,
+        "Id": 631,
+        "ActionId": 631,
         "Type": 301,
-        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "“邪神眷属”",
-            "呵，竟然想要用从祂那里攫取的力量，来对抗祂。"
+            "呵，竟然想要用从祂那里攫取的力量，来对抗祂。",
+            1
         ]
     },
     {
-        "Id": 499,
-        "ActionId": 499,
+        "Id": 632,
+        "ActionId": 632,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 500,
-        "ActionId": 500,
-        "Type": 505,
+        "Id": 633,
+        "ActionId": 633,
+        "Type": 306,
         "Params": [
-            "",
-            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab"
+            1
         ]
     },
     {
-        "Id": 501,
-        "ActionId": 501,
-        "Type": 101,
-        "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
-        ]
-    },
-    {
-        "Id": 502,
-        "ActionId": 502,
+        "Id": 634,
+        "ActionId": 634,
         "Type": 301,
-        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
             "",
             "",
@@ -5081,8 +6398,8 @@
         ]
     },
     {
-        "Id": 503,
-        "ActionId": 503,
+        "Id": 635,
+        "ActionId": 635,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -5092,31 +6409,69 @@
         ]
     },
     {
-        "Id": 504,
-        "ActionId": 504,
+        "Id": 636,
+        "ActionId": 636,
+        "Type": 306,
+        "EndDelay": 300.0
+    },
+    {
+        "Id": 637,
+        "ActionId": 637,
         "Type": 302,
         "Params": [
             "",
             "……！！",
-            505
+            638
         ]
     },
     {
-        "Id": 505,
-        "ActionId": 505,
-        "Type": 205,
-        "EndDelay": 2000.0,
+        "Id": 638,
+        "ActionId": 638,
+        "Type": 401,
         "Params": [
-            999,
-            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg",
-            0,
             1,
-            1.5
+            36
         ]
     },
     {
-        "Id": 506,
-        "ActionId": 506,
+        "Id": 639,
+        "ActionId": 639,
+        "Type": 401,
+        "Params": [
+            2,
+            4385
+        ]
+    },
+    {
+        "Id": 640,
+        "ActionId": 640,
+        "Type": 501,
+        "EndDelay": 50.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 641,
+        "ActionId": 641,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg"
+        ]
+    },
+    {
+        "Id": 642,
+        "ActionId": 642,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 643,
+        "ActionId": 643,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -5126,8 +6481,8 @@
         ]
     },
     {
-        "Id": 507,
-        "ActionId": 507,
+        "Id": 644,
+        "ActionId": 644,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -5137,34 +6492,8 @@
         ]
     },
     {
-        "Id": 508,
-        "ActionId": 508,
-        "Type": 402,
-        "Params": [
-            4916
-        ]
-    },
-    {
-        "Id": 509,
-        "ActionId": 509,
-        "Type": 401,
-        "Params": [
-            1,
-            36
-        ]
-    },
-    {
-        "Id": 510,
-        "ActionId": 510,
-        "Type": 401,
-        "Params": [
-            1,
-            201
-        ]
-    },
-    {
-        "Id": 511,
-        "ActionId": 511,
+        "Id": 645,
+        "ActionId": 645,
         "Type": 401,
         "Params": [
             2,
@@ -5172,8 +6501,17 @@
         ]
     },
     {
-        "Id": 512,
-        "ActionId": 512,
+        "Id": 646,
+        "ActionId": 646,
+        "Type": 401,
+        "Params": [
+            1,
+            7168
+        ]
+    },
+    {
+        "Id": 647,
+        "ActionId": 647,
         "Type": 310,
         "Params": [
             "铛——铛——铛——钟楼的钟声，再一次敲响了。",
@@ -5184,8 +6522,8 @@
         ]
     },
     {
-        "Id": 513,
-        "ActionId": 513,
+        "Id": 648,
+        "ActionId": 648,
         "Type": 310,
         "Params": [
             "不再是宣告人类一行的死亡，而是奏响整座城市的丧钟。",
@@ -5196,32 +6534,32 @@
         ]
     },
     {
-        "Id": 514,
-        "ActionId": 514,
+        "Id": 649,
+        "ActionId": 649,
         "Type": 310,
         "Params": [
             "伴随着钟声，城市的各个角落，渐渐地响起了绝望的悲叹。",
             "",
             "",
             "",
-            2
+            1
         ]
     },
     {
-        "Id": 515,
-        "ActionId": 515,
+        "Id": 650,
+        "ActionId": 650,
         "Type": 310,
         "Params": [
             "那是人类无法以身躯所阻挡的迷雾，一点点弥散到了城市的每个角落。",
             "",
             "",
             "",
-            2
+            1
         ]
     },
     {
-        "Id": 516,
-        "ActionId": 516,
+        "Id": 651,
+        "ActionId": 651,
         "Type": 310,
         "Params": [
             "那些曾经在激愤的狂浪中，也同样怒吼着“异种去死”的人，此刻已经陷入了深深的绝望和哀伤中。",
@@ -5232,64 +6570,99 @@
         ]
     },
     {
-        "Id": 517,
-        "ActionId": 517,
+        "Id": 652,
+        "ActionId": 652,
         "Type": 310,
+        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "这座城市，已然辜负了他们真正的英雄。",
             "",
             "",
             "",
-            2,
+            1,
             "",
             1
         ]
     },
     {
-        "Id": 518,
-        "ActionId": 518,
+        "Id": 653,
+        "ActionId": 653,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab"
+        ]
+    },
+    {
+        "Id": 654,
+        "ActionId": 654,
         "Type": 402,
         "Params": [
             5842
         ]
     },
     {
-        "Id": 519,
-        "ActionId": 519,
+        "Id": 655,
+        "ActionId": 655,
+        "Type": 401,
+        "EndDelay": 1000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 656,
+        "ActionId": 656,
         "Type": 102,
         "Params": [
-            "时宇漫纪",
             "雾夜镇魂曲",
+            "时宇漫纪",
             "Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png"
         ]
     },
     {
-        "Id": 520,
-        "ActionId": 520,
+        "Id": 657,
+        "ActionId": 657,
         "Type": 502,
-        "EndDelay": 10000.0,
+        "EndDelay": 5000.0,
         "Params": [
             "ThemeEnable"
         ]
     },
     {
-        "Id": 521,
-        "ActionId": 521,
+        "Id": 658,
+        "ActionId": 658,
         "Type": 205,
-        "EndDelay": 1000.0,
+        "EndDelay": 5000.0,
         "Params": [
-            999,
-            "Assets/Product/Texture/Image/BgStory/BgStory1200.jpg",
-            0,
-            1,
-            1
+            999
         ]
     },
     {
-        "Id": 522,
-        "ActionId": 522,
+        "Id": 659,
+        "ActionId": 659,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 660,
+        "ActionId": 660,
+        "Type": 401,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            7167
+        ]
+    },
+    {
+        "Id": 661,
+        "ActionId": 661,
         "Type": 301,
         "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
@@ -5297,9 +6670,48 @@
         ]
     },
     {
-        "Id": 523,
-        "ActionId": 523,
+        "Id": 662,
+        "ActionId": 662,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 663,
+        "ActionId": 663,
+        "Type": 205,
+        "EndDelay": 2200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1200.jpg",
+            0,
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 664,
+        "ActionId": 664,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1200.jpg"
+        ]
+    },
+    {
+        "Id": 665,
+        "ActionId": 665,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 666,
+        "ActionId": 666,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -5307,8 +6719,8 @@
         ]
     },
     {
-        "Id": 524,
-        "ActionId": 524,
+        "Id": 667,
+        "ActionId": 667,
         "Type": 301,
         "Params": [
             "",
@@ -5317,8 +6729,8 @@
         ]
     },
     {
-        "Id": 525,
-        "ActionId": 525,
+        "Id": 668,
+        "ActionId": 668,
         "Type": 201,
         "Params": [
             1,
@@ -5328,8 +6740,8 @@
         ]
     },
     {
-        "Id": 526,
-        "ActionId": 526,
+        "Id": 669,
+        "ActionId": 669,
         "Type": 201,
         "Params": [
             2,
@@ -5339,8 +6751,8 @@
         ]
     },
     {
-        "Id": 527,
-        "ActionId": 527,
+        "Id": 670,
+        "ActionId": 670,
         "Type": 301,
         "Params": [
             1,
@@ -5350,8 +6762,8 @@
         ]
     },
     {
-        "Id": 528,
-        "ActionId": 528,
+        "Id": 671,
+        "ActionId": 671,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -5362,66 +6774,65 @@
         ]
     },
     {
-        "Id": 529,
-        "ActionId": 529,
+        "Id": 672,
+        "ActionId": 672,
         "Type": 302,
         "Params": [
             "",
             "荣幸之至。",
-            530
+            673
         ]
     },
     {
-        "Id": 530,
-        "ActionId": 530,
+        "Id": 673,
+        "ActionId": 673,
         "Type": 202,
-        "EndDelay": 300.0,
         "Params": [
             1,
             2
         ]
     },
     {
-        "Id": 531,
-        "ActionId": 531,
-        "Type": 205,
-        "Params": [
-            999,
-            "Assets/Product/Texture/Image/BgStory/BgStory1472.jpg",
-            0,
-            1,
-            1.5
-        ]
-    },
-    {
-        "Id": 532,
-        "ActionId": 532,
+        "Id": 674,
+        "ActionId": 674,
         "Type": 401,
         "Params": [
             2,
-            4161
+            6708
         ]
     },
     {
-        "Id": 533,
-        "ActionId": 533,
-        "Type": 501,
+        "Id": 675,
+        "ActionId": 675,
+        "Type": 205,
+        "EndDelay": 2200.0,
         "Params": [
-            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab",
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg",
+            0,
+            1,
             2
         ]
     },
     {
-        "Id": 534,
-        "ActionId": 534,
-        "Type": 504,
+        "Id": 676,
+        "ActionId": 676,
+        "Type": 101,
         "Params": [
-            0.7
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg"
         ]
     },
     {
-        "Id": 535,
-        "ActionId": 535,
+        "Id": 677,
+        "ActionId": 677,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 678,
+        "ActionId": 678,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -5431,8 +6842,8 @@
         ]
     },
     {
-        "Id": 536,
-        "ActionId": 536,
+        "Id": 679,
+        "ActionId": 679,
         "Type": 301,
         "Params": [
             "",
@@ -5441,31 +6852,73 @@
         ]
     },
     {
-        "Id": 537,
-        "ActionId": 537,
+        "Id": 680,
+        "ActionId": 680,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 681,
+        "ActionId": 681,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 682,
+        "ActionId": 682,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab"
+        ]
+    },
+    {
+        "Id": 683,
+        "ActionId": 683,
         "Type": 201,
         "Params": [
             1,
-            501383,
+            501605,
             "",
-            -400
+            -400,
+            "",
+            "",
+            1
         ]
     },
     {
-        "Id": 538,
-        "ActionId": 538,
+        "Id": 684,
+        "ActionId": 684,
         "Type": 201,
         "Params": [
             2,
-            501384,
+            501606,
             "",
-            400
+            400,
+            "",
+            "",
+            1
         ]
     },
     {
-        "Id": 539,
-        "ActionId": 539,
+        "Id": 685,
+        "ActionId": 685,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 686,
+        "ActionId": 686,
         "Type": 301,
+        "BeginAnim": "DialogShake",
         "Params": [
             1,
             "愤怒的民众",
@@ -5474,9 +6927,11 @@
         ]
     },
     {
-        "Id": 540,
-        "ActionId": 540,
+        "Id": 687,
+        "ActionId": 687,
         "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "愤怒的民众",
@@ -5485,88 +6940,121 @@
         ]
     },
     {
-        "Id": 541,
-        "ActionId": 541,
-        "Type": 302,
+        "Id": 688,
+        "ActionId": 688,
+        "Type": 501,
         "Params": [
-            "",
-            "……",
-            542
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
         ]
     },
     {
-        "Id": 542,
-        "ActionId": 542,
-        "Type": 202,
-        "BeginAnim": "AniZhuanchangBegin",
-        "EndDelay": 300.0,
+        "Id": 689,
+        "ActionId": 689,
+        "Type": 501,
         "Params": [
-            1,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab",
             2
         ]
     },
     {
-        "Id": 543,
-        "ActionId": 543,
-        "Type": 205,
-        "Params": [
-            999,
-            "Assets/Product/Texture/Image/BgStory/BgStory941.jpg",
-            0,
-            1,
-            0
-        ]
-    },
-    {
-        "Id": 544,
-        "ActionId": 544,
+        "Id": 690,
+        "ActionId": 690,
         "Type": 504,
         "Params": [
             0
         ]
     },
     {
-        "Id": 545,
-        "ActionId": 545,
-        "Type": 401,
+        "Id": 691,
+        "ActionId": 691,
+        "Type": 202,
         "Params": [
             1,
-            36
+            2,
+            "",
+            "",
+            "",
+            1
         ]
     },
     {
-        "Id": 546,
-        "ActionId": 546,
-        "Type": 401,
-        "Params": [
-            1,
-            6245
-        ]
-    },
-    {
-        "Id": 547,
-        "ActionId": 547,
-        "Type": 505,
+        "Id": 692,
+        "ActionId": 692,
+        "Type": 302,
         "Params": [
             "",
-            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab"
+            "……",
+            693
         ]
     },
     {
-        "Id": 548,
-        "ActionId": 548,
+        "Id": 693,
+        "ActionId": 693,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 694,
+        "ActionId": 694,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.9,
+            2
+        ]
+    },
+    {
+        "Id": 695,
+        "ActionId": 695,
+        "Type": 205,
+        "EndDelay": 2200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory941.jpg",
+            0,
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 696,
+        "ActionId": 696,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory941.jpg"
+        ]
+    },
+    {
+        "Id": 697,
+        "ActionId": 697,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 698,
+        "ActionId": 698,
         "Type": 201,
         "Params": [
             1,
-            501602,
-            14
+            501604,
+            "",
+            "",
+            -50
         ]
     },
     {
-        "Id": 549,
-        "ActionId": 549,
+        "Id": 699,
+        "ActionId": 699,
         "Type": 301,
-        "BeginAnim": "AniZhuanchangEnd",
+        "BeginAnim": "DialogEnable",
         "Params": [
             1,
             "",
@@ -5574,8 +7062,26 @@
         ]
     },
     {
-        "Id": 550,
-        "ActionId": 550,
+        "Id": 700,
+        "ActionId": 700,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 701,
+        "ActionId": 701,
+        "Type": 401,
+        "Params": [
+            2,
+            6341
+        ]
+    },
+    {
+        "Id": 702,
+        "ActionId": 702,
         "Type": 301,
         "Params": [
             "",
@@ -5584,18 +7090,8 @@
         ]
     },
     {
-        "Id": 551,
-        "ActionId": 551,
-        "Type": 401,
-        "Params": [
-            2,
-            6341,
-            14
-        ]
-    },
-    {
-        "Id": 552,
-        "ActionId": 552,
+        "Id": 703,
+        "ActionId": 703,
         "Type": 301,
         "Params": [
             "",
@@ -5605,8 +7101,8 @@
         ]
     },
     {
-        "Id": 553,
-        "ActionId": 553,
+        "Id": 704,
+        "ActionId": 704,
         "Type": 301,
         "Params": [
             "",
@@ -5616,8 +7112,8 @@
         ]
     },
     {
-        "Id": 554,
-        "ActionId": 554,
+        "Id": 705,
+        "ActionId": 705,
         "Type": 301,
         "Params": [
             "",
@@ -5627,19 +7123,9 @@
         ]
     },
     {
-        "Id": 555,
-        "ActionId": 555,
-        "Type": 204,
-        "Params": [
-            1,
-            10
-        ]
-    },
-    {
-        "Id": 556,
-        "ActionId": 556,
+        "Id": 706,
+        "ActionId": 706,
         "Type": 301,
-        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "埃琳娜",
@@ -5648,117 +7134,241 @@
         ]
     },
     {
-        "Id": 557,
-        "ActionId": 557,
+        "Id": 707,
+        "ActionId": 707,
+        "Type": 302,
+        "Params": [
+            "",
+            "别害怕，等着我。",
+            708
+        ]
+    },
+    {
+        "Id": 708,
+        "ActionId": 708,
         "Type": 202,
         "Params": [
             1
         ]
     },
     {
-        "Id": 558,
-        "ActionId": 558,
-        "Type": 302,
+        "Id": 709,
+        "ActionId": 709,
+        "Type": 501,
         "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            2,
             "",
-            "别害怕，等着我。",
-            559
+            "",
+            1
         ]
     },
     {
-        "Id": 559,
-        "ActionId": 559,
+        "Id": 710,
+        "ActionId": 710,
+        "Type": 511,
+        "Params": [
+            1,
+            0,
+            "0|400|0"
+        ]
+    },
+    {
+        "Id": 711,
+        "ActionId": 711,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "雾越来越浓，掩去了少女的面容。"
+        ]
+    },
+    {
+        "Id": 712,
+        "ActionId": 712,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 713,
+        "ActionId": 713,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 714,
+        "ActionId": 714,
+        "Type": 205,
+        "Params": [
+            1007
+        ]
+    },
+    {
+        "Id": 715,
+        "ActionId": 715,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab"
+        ]
+    },
+    {
+        "Id": 716,
+        "ActionId": 716,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 717,
+        "ActionId": 717,
         "Type": 205,
         "Params": [
             1004,
-            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            "",
             0,
             1,
-            2
+            0
         ]
     },
     {
-        "Id": 560,
-        "ActionId": 560,
-        "Type": 104,
+        "Id": 718,
+        "ActionId": 718,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
         "Params": [
-            "0|0|0",
+            "",
+            "",
+            "只余下关于迷雾的传说，回响在人类的脑海中。"
+        ]
+    },
+    {
+        "Id": 719,
+        "ActionId": 719,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 720,
+        "ActionId": 720,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 200.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_28.jpg"
+        ]
+    },
+    {
+        "Id": 721,
+        "ActionId": 721,
+        "Type": 205,
+        "EndDelay": 500.0,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
             0,
-            "",
-            4
+            0.9,
+            0.5
         ]
     },
     {
-        "Id": 561,
-        "ActionId": 561,
+        "Id": 722,
+        "ActionId": 722,
         "Type": 304,
         "Params": [
-            "雾越来越浓，掩去了少女的面容。",
-            "000000ff",
+            "<size=50><i>于某一日，邪神播撒迷雾，迷雾降临人间。</i></size>",
+            "ff4e4eff",
             "",
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
             "",
             1,
+            -3,
+            "",
+            "",
             1
         ]
     },
     {
-        "Id": 562,
-        "ActionId": 562,
+        "Id": 723,
+        "ActionId": 723,
         "Type": 304,
         "Params": [
-            "只余下关于迷雾的传说，回响在人类的脑海中。",
-            "000000ff",
+            "<size=50><i>凡行至雾中，听闻邪神的低语。</i></size>",
+            "ff4e4eff",
             "",
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
             "",
             1,
+            -1,
+            "",
+            "",
             1
         ]
     },
     {
-        "Id": 563,
-        "ActionId": 563,
-        "Type": 304,
+        "Id": 724,
+        "ActionId": 724,
+        "Type": 205,
+        "EndDelay": 1500.0,
         "Params": [
-            "于某一日，邪神播撒迷雾，迷雾降临人间。",
-            "000000ff",
-            "",
-            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
-            "",
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_22.jpg",
+            0,
             1,
-            1
+            1.2
         ]
     },
     {
-        "Id": 564,
-        "ActionId": 564,
-        "Type": 304,
+        "Id": 725,
+        "ActionId": 725,
+        "Type": 101,
         "Params": [
-            "凡行至雾中，听闻邪神的低语。",
-            "000000ff",
-            "",
-            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
-            "",
-            1,
-            1
+            "Assets/Product/Texture/Image/BgCg/Cg6501_22.jpg"
         ]
     },
     {
-        "Id": 565,
-        "ActionId": 565,
+        "Id": 726,
+        "ActionId": 726,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 727,
+        "ActionId": 727,
         "Type": 304,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
-            "聆听邪神低语者，陷入癫狂。",
-            "000000ff",
+            "<size=50><i>聆听邪神低语者，陷入癫狂。</i></size>",
+            "ff4e4eff",
             "",
             "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
             "",
             1,
+            -1,
             "",
-            "",
+            1,
             1
         ]
     }

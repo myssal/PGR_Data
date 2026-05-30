@@ -24,9 +24,9 @@ function XUiTheatre6RewardShop:OnAwake()
     self._TimerId = nil
     self.BtnBack:AddEventListener(handler(self, self.Close))
     self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
-    local itemId = self._Control:GetRewardShopCoin()
-    XUiHelper.NewPanelActivityAssetSafe({ itemId }, self.PanelSpecialTool, self, nil, function(_, index)
-        XLuaUiManager.Open("UiTheatre6PopupRewardDetail", itemId)
+    local itemIds = self._Control:GetRewardShopCoin()
+    XUiHelper.NewPanelActivityAssetSafe(itemIds, self.PanelSpecialTool, self, nil, function(_, index)
+        XLuaUiManager.Open("UiTheatre6PopupRewardDetail", itemIds[index])
     end)
 end
 
@@ -107,7 +107,7 @@ function XUiTheatre6RewardShop:InitTags()
     self.TimelimitIds = {}
 
     for _, taskShopType in pairs(firstTags) do
-        local secondTagCfgs = self._Control:GetValidShopOrTaskList(taskShopType)
+        local secondTagCfgs = XMVCA.XTheatre6:GetValidShopOrTaskList(taskShopType)
         if not XTool.IsTableEmpty(secondTagCfgs) then
             --过滤掉未开启的限时商店
             local validCfgs = {}
@@ -117,7 +117,11 @@ function XUiTheatre6RewardShop:InitTags()
                         table.insert(validCfgs, rewardCfg)
                     end
                 else
-                    table.insert(validCfgs, rewardCfg)
+                    local taskListCfg = XTaskConfig.GetTimeLimitTaskCfg(rewardCfg.TaskTimeLimitId)
+                    local timeId = taskListCfg.TimeId
+                    if not XTool.IsNumberValid(timeId) or XFunctionManager.CheckInTimeByTimeId(timeId) then
+                        table.insert(validCfgs, rewardCfg)
+                    end
                 end
             end
 

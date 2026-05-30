@@ -2,15 +2,2682 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "Type": 101,
+        "Type": 401,
         "BeginAnim": "AniZhuanchangEnd",
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            1,
+            36
         ]
     },
     {
         "Id": 2,
         "ActionId": 2,
+        "Type": 102,
+        "Params": [
+            "LUCIA",
+            "Chapter3",
+            "Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png"
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 502,
+        "EndDelay": 5000.0,
+        "Params": [
+            "ThemeEnable"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 101,
+        "EndAnim": "AniZhuanchangBegin",
+        "EndDelay": 5000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 502,
+        "Params": [
+            "AniZhuanchangEnd"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 401,
+        "Params": [
+            2,
+            5835
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "一声啼哭响起，像绿芽破土，像门被推开，像有人从很远很远的地方，终于走到了终点。"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 401,
+        "Params": [
+            1,
+            6186
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 501,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 501,
+        "EndDelay": 100.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_47.jpg"
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 104,
+        "Params": [
+            "-150|-150|-200",
+            0
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 104,
+        "Params": [
+            "125|40|-200",
+            30
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "房间里的灯光暖洋洋的，护士把她抱到母亲枕边时，窗外正落着夏天的第一场细雨。"
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "母亲侧过脸，发丝汗湿着贴在额角，呼吸里还带着分娩后的疲倦，却努力睁大眼睛，看着眼前这个小小的生命——看她皱巴巴的小脸、摇晃的小手，还有一小撮湿漉漉的胎发。"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "她伸出手，用指尖轻轻碰了碰婴儿的脸颊，声音轻得像怕惊扰什么。"
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_47.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "母亲",
+            "露西亚……"
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她把这个名字念了两遍，像在确认什么，又像在许愿。"
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "尽管眼皮沉得抬不起来，声音哑得几乎发不出，可她还是低下头，嘴唇贴着那小小的额头，轻轻地、轻轻地呢喃了一句——"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "像是说给怀里的宝贝听，又像是说给这个世界听。"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 301,
+        "Params": [
+            "",
+            "母亲",
+            "妈妈希望……你能度过幸福快乐的一生，露西亚。"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "窗外的雨花簌簌地落着，露西亚在她怀里动了动，没有睁眼。"
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚诞生了。"
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在一个遥远而陌生……或许没有那么陌生的世界里——"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "她再一次成为了母亲的孩子。"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_47.jpg"
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1196.jpg"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "时间一点一滴地流逝，母亲写完第一本婴幼儿成长日记的那天，露西亚也学会了呼唤她的名字。"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "日记上说，爸爸那晚嫉妒得连饭都没吃。"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory705.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory705.jpg"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "后来，露西亚学会了奔跑，从床沿到门口，从门口到院子，从院子到父亲下班回来的那条小路……她跑得越来越快，快到自己都刹不住，一头撞进父亲怀里。"
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "父亲接住她，笑着把她举起来，阳光落在他的警章上，亮亮的。"
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory365.png",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory365.png"
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "这一阵子，露西亚似乎总会做一些很长很长的梦。醒来什么都不记得，只觉得手心发烫，像是刚刚松开过什么握了很久的东西。"
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 111,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab"
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "她记不起梦的内容，唯一清楚的只有一种说不清的感觉——好像有什么事，还没有做完。"
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 101,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_48.jpg"
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "三年后的某天，母亲终于从医院回家了。露西亚被父亲抱到床边，看到了一个比自己还要稚嫩的小小生命。"
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "Params": [
+            "",
+            "父亲",
+            "是妹妹哦。"
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "父亲的声音很轻，带着一份无需掩抑的欢喜。"
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "唔……妹妹？"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "Params": [
+            "",
+            "父亲",
+            "她叫露娜。从今天开始，我们的露西亚就要当姐姐啦。"
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 301,
+        "Params": [
+            "",
+            "父亲",
+            "以后呀，你们两个一起玩，一起吃饭，一起睡觉。露西亚要教她说话，教她走路……"
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 301,
+        "Params": [
+            "",
+            "父亲",
+            "不管发生什么，都要和妹妹好好的哦。"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "嗯！好好的！"
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "露西亚开心地点了点头，虽然没能完全理解这些话，但得知家里多了一位玩伴，脸上还是不由得洋溢起了笑容。"
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1089.jpg"
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "第二年的冬天，第一场雪落下来的时候，露娜还在午睡。"
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "露西亚趴在窗台上，看着外面雪白的一片，就像是自己和妹妹头顶的发色。雪越落越大，越落越厚，最后把院子里的树都盖住了。"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab"
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 205,
+        "EndDelay": 1050.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1477.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1477.jpg"
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 201,
+        "Params": [
+            1,
+            501601,
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "露西亚",
+            "妈妈！下雪啦！",
+            1
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 201,
+        "Params": [
+            2,
+            501607,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "母亲正在厨房里，手还湿着，被她拉着跑到窗边。"
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 301,
+        "Params": [
+            "",
+            "母亲",
+            "真的诶……你觉得好看吗？喜欢吗？",
+            2
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她微笑着弯下腰，眼底流露着和女儿相仿的惊喜。"
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "好看！喜欢！",
+            1
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 301,
+        "Params": [
+            "",
+            "母亲",
+            "那等露娜醒了，我们一起出去堆雪人好不好？",
+            2
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "——好！",
+            1
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚靠在母亲怀里，看着窗外的雪。屋里很暖，厨房里飘着什么香味，露娜还在睡梦之中。"
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她左右摇摆着身体，但似乎自己也不知道到底为什么这么开心。"
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "她只是觉得，妈妈的怀抱很温暖，有妹妹在的小家真好。"
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1196.jpg"
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 401,
+        "Params": [
+            2,
+            2936
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "五岁时的一个清晨，母亲被一阵窸窸窣窣的声音吵醒了。"
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory365.png"
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 401,
+        "Params": [
+            2,
+            5704
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "她走到露西亚的房间门口，发现灯亮着，地面散了一圈蜡笔，露西亚正趴地上，努力地画着什么。"
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 402,
+        "Params": [
+            5704
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 201,
+        "Params": [
+            1,
+            501607
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 301,
+        "Params": [
+            1,
+            "母亲",
+            "露西亚？这么早……在画什么？",
+            1
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "母亲蹲下来，看了眼纸上的内容，到处都是灰色和白色的蜡笔痕迹，像是在画一大片什么都看不见的雾。"
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "灰白色的蜡笔铺满整张纸，像一大片雾。雾里面有几个火柴棍小人，站成一排，但有几个画到一半就断了，身体的线条被灰色盖住了，正在渐渐消失。"
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "最中间有个最矮的小朋友，两只手张得很大，但周围是空的，谁都没抱住。"
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 306
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 201,
+        "Params": [
+            1,
+            501607
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 301,
+        "Params": [
+            1,
+            "母亲",
+            "露西亚，做噩梦了？",
+            1
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚的蜡笔终于停了，她低着头看着自己画的东西，似乎也有些纳闷。"
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 201,
+        "Params": [
+            15,
+            501601,
+            8
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "妈妈，我好像梦到了……好大好大的雾。",
+            15
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 204,
+        "Params": [
+            15
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "有好多人在前面走，走得好快，我在后面追，怎么追都追不上。",
+            15
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 202,
+        "Params": [
+            15,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 201,
+        "Params": [
+            15,
+            501601,
+            "",
+            -150,
+            -80
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 201,
+        "Params": [
+            2,
+            501607,
+            "",
+            230
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "母亲把露西亚抱到腿上，轻轻抚摸着她的后背。"
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 301,
+        "Params": [
+            "",
+            "母亲",
+            "这些人是谁呀？",
+            2
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 204,
+        "Params": [
+            15
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "不知道……他们都不见了，一个一个不见了……",
+            15
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她翻过手掌给母亲看，小小的手心里什么也没有，但她盯着那里看了好久，像是在等什么东西重新出现。"
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "我明明站在旁边的，但我什么都做不了……",
+            15
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 203,
+        "Params": [
+            15,
+            0.4,
+            -100,
+            -80
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 203,
+        "Params": [
+            2,
+            0.4,
+            200,
+            -20
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "母亲把她搂进怀里，露西亚没有哭，只是把脸埋进母亲的睡衣里，闷闷地说着。"
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "妈妈，如果有一天有雾来了，我保护你好不好？",
+            15
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "母亲欣慰地笑了，亲了亲她的头顶。"
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 301,
+        "Params": [
+            "",
+            "母亲",
+            "好呀，我们露西亚来保护妈妈。",
+            2
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "还有爸爸，还有露娜……大家全都站在我的身后，我会保护大家。",
+            15
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "Params": [
+            "",
+            "母亲",
+            "嗯，就让露西亚保护大家。",
+            2
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 202,
+        "Params": [
+            15,
+            2
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "露西亚没有笑，她很认真地点了点头，把那张画折好塞进了枕头下。"
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory539.jpg"
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 401,
+        "Params": [
+            2,
+            4009
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "第二天，父亲早起晨跑的时候，发现露西亚也悄悄跟在自己的身后。"
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 402,
+        "Params": [
+            4009
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "五岁的小孩，两条腿倒腾得飞快，跑不了几百米就上气不接下气，摔倒了膝盖磕得通红，眼泪在眼眶里转了两圈，硬是没掉下来。"
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 201,
+        "Params": [
+            1,
+            501654
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
+        "Params": [
+            1,
+            "父亲",
+            "露西亚，怎么忽然要陪爸爸跑步啦？",
+            1
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 201,
+        "Params": [
+            2,
+            501601,
+            5,
+            400
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "我想要变厉害，跟爸爸一样厉害。",
+            2
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 301,
+        "Params": [
+            "",
+            "父亲",
+            "哦？变厉害了干嘛呀？",
+            1
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚想了想，掰着手指头。"
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 204,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "保护妈妈，保护爸爸，保护露娜。",
+            2
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她掰完三根手指，又看了看剩下的。"
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "还有……好多人！",
+            2
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 301,
+        "Params": [
+            "",
+            "父亲",
+            "好多人？",
+            1
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 204,
+        "Params": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "嗯！以后会有的！我要保护好多好多的人！",
+            2
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 201,
+        "Params": [
+            15,
+            501601,
+            2,
+            200,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 201,
+        "Params": [
+            1,
+            501654,
+            "",
+            -200,
+            -200
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 104,
+        "Params": [
+            "0|-80|-200",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "",
+            "父亲被她逗笑了，一把把她扛到肩膀上。"
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "父亲",
+            "行，那爸爸先教你怎么保护自己，再去保护别人，好不好？",
+            1
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 202,
+        "Params": [
+            1,
+            15
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory539.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 104,
+        "EndDelay": 1000.0,
+        "Params": [
+            "0|0|-350",
+            0,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "露西亚坐在父亲的肩膀上，比平时高了好多，能看到院子外面那条小路一直延伸到很远很远的地方。"
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 306
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory539.jpg",
+            1,
+            0,
+            0.5
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 201,
+        "Params": [
+            15,
+            501601,
+            3,
+            200
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 201,
+        "Params": [
+            1,
+            501654,
+            "",
+            -200,
+            -200
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "好！",
+            15
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 204,
+        "Params": [
+            15,
+            2
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "露西亚答应道，两只小手抓着父亲的头发，她忽然觉得——只要站得更高一些，应该就能看到那些雾后面的人了吧。"
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 202,
+        "Params": [
+            1,
+            15,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory705.jpg"
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 310,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "在那之后，露西亚又度过了许多平凡而幸福的年月。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 310,
+        "Params": [
+            "从某一天开始，她背上了书包，走出家门，探索起了外面新奇广阔的世界。"
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 310,
+        "Params": [
+            "第一次摘蒲公英，第一次背乘法口诀，第一次听摇滚乐。"
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 310,
+        "Params": [
+            "第一次跟妈妈学做饭，第一次弹吉他，第一次带露娜去看电影。"
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 310,
+        "Params": [
+            "第一次偷骑了爸爸的机车，第一次见到了那个绿油油的卡通青蛙。"
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 310,
+        "Params": [
+            "妈妈的日记本——关于两个孩子的日记本写得越来越满，露西亚正在幸福而普通地，被爱着长大。",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory368.png",
+            0,
+            1,
+            1.2
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory368.png"
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 310,
+        "Params": [
+            "渐渐地，露西亚迎来了自己的第十六个生日。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 310,
+        "Params": [
+            "她总是忘记这一天。忘记日历上那个被母亲用红笔圈起来的数字，忘记自己又长大了一岁。"
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 310,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "可总有人替她记得——记得她爱吃什么样的菜肴，记得她想要那馋了很久但没舍得买的唱片，记得她在太刀模型展前多停留的几秒。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory368.png"
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "那天早上她推开门，客厅里飘着气球，蛋糕上插着十六根蜡烛，露娜举着终端准备拍照，父亲站在一旁笑着，母亲从厨房探出头来，围裙上还沾着面粉。"
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 201,
+        "Params": [
+            1,
+            501654,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 201,
+        "Params": [
+            15,
+            500031
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 201,
+        "Params": [
+            3,
+            501607,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 301,
+        "Params": [
+            1,
+            "爸爸&妈妈&露娜",
+            "生日快乐！",
+            1,
+            15,
+            3
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "三个人喊得参差不齐，露娜的声音最大。"
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 202,
+        "Params": [
+            1,
+            15,
+            3
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚站在门口，愣了一会儿。"
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "然后她也笑了。"
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "大家都因露西亚的诞生展露笑容，就和十六年前，她来到这个世界的那天一样。"
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 401,
+        "Params": [
+            1,
+            371
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg"
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "与此同时，世界的另一端。"
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "一袭白衣的人站在指挥塔的落地窗前，身后是数据终端的冷光，身前是整个世界的轮廓。"
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 401,
+        "Params": [
+            2,
+            2914
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 205,
+        "EndDelay": 550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg"
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "远方的天际线上，运输舰队正以编队阵列缓缓驶入港区。它们来自不同的大陆，有些机身上还残留着旧国界的徽标，但此刻它们降落在同一条跑道上，向同一个方向熄灭引擎。"
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 402,
+        "Params": [
+            2914
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "数以万计的集装箱如同棋盘上的落子，沿着预设的网格精确归位。超导线圈、高密度储能模块、精密加工的真空腔体组件……"
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "每一批物资抵达时，工程师们就从各自的工位抬起头，目光短暂地越过屏幕，像是在确认一件事情正在发生——"
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "在港区的最深处，零点能引擎的骨架已经拔地而起。"
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 306
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 205,
+        "EndDelay": 450.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg"
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "多米尼克",
+            "我是多米尼克，以上便是提交给世界联合政府的0170号技官报告。"
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "多米尼克",
+            "由于该报告涉及的事件时间跨度过长，为协助各位议员理解，我接下来会进行一次简短的背景回顾。"
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1140.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1140.jpg"
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "多米尼克",
+            "距离科学理事会的“朗道号”探测器在拉格朗日L2点截获异常信号，已过去了整整十六年。"
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "十六年前的今天，深空探测器“朗道号”在执行常规引力波扫描任务时，主接收阵列捕捉到一组持续时长约11.3秒的非自然电磁脉冲。"
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "该脉冲并非来自任何已编录的天体辐射源，其频谱特征也不符合已知的任何宇宙背景噪声模型。"
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "多米尼克",
+            "简而言之，它是一组“信息”。"
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory856.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory856.jpg"
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "多米尼克",
+            "在长达十六个月的解码工作后，妮特博士从这11.3秒的信号中提取出了一组完整的信息图谱，图谱的总数据量远超其载波理论上能容纳的极限。"
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "这意味着，发信者以某种我们尚未完全理解的方式，实现了信息压缩。至于图谱中的内容，在语言学家的帮助下，我们破译出了三种内容——"
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "其一，一套基于十一维流形拓扑的数学模型，描述了一种全新的粒子相互作用机制。该机制不属于标准模型的任何已知扩展，但经过反复验证，其自洽性无可挑剔。"
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "多米尼克",
+            "以此为延申，科学理事会制定了一整套有关人造引力场的计划，我将其命名为“弦计划”。"
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory592.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory592.jpg"
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "多米尼克",
+            "其二，一组材料学与能量学的工程参数。像是有人已经完成了全部理论推导和实验验证，直接把结论和操作步骤递给了我们。"
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "多米尼克",
+            "有趣的是，这些参数与维里耶博士研究方向相仿。受到它的启发，我们完成了量子涨落的模型构建，真空零点能的开发成为可能。"
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg"
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "多米尼克",
+            "其三，也是最令我困惑的部分。图谱末端附带了一段无法归类的数据残片。它不是数学，不是工程参数，甚至不是任何可识别的编码语言，它是一段类似于生物神经脉冲的波形。"
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "人类的。"
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 306
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "我无法确定它承载了什么信息——也许是一段记忆，也许是一种情绪，也许只是噪声，我暂时无法对此做出任何科学解释。"
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "多米尼克",
+            "但不论如何，这是人类文明第一次接收到来自宇宙中的生命信息。在旅行者一号开启远航的两百年后，地球终于接收到了第一封回信。"
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory427.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory427.jpg"
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "多米尼克",
+            "接下来的就如诸位所知，在民意支持与武装冲突的双重推动下，世界上的主要国家终于达成了共识：人类文明是时候该团结一致，走出地球这座摇篮了。"
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "多米尼克",
+            "《新地球书》签订后，世界联合政府与人类统一运动孕育而生。航天科技事业得到了前所未有的支持，在科学理事会的领导下，行星改造工程与太空殖民计划如火如荼地开展起来。"
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg"
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "多米尼克",
+            "……"
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "口头报告已经进入了最后的总结，可恰好在这时候，多米尼克的眉头不禁微微蹙起——这是在实验失败前他常会出现的某种预感。"
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "首席技官没有在意这无关紧要的小插曲，继续着自己的陈述。"
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "多米尼克",
+            "格式塔、加速轨道“天堂桥”、月面基地、大西洋之眼，还有预计在六年后竣工的零点能反应堆……在过去的十六年里，人类已经将如此多地理想落地实现……"
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 401,
+        "Params": [
+            2,
+            6718
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 502,
+        "EndDelay": 300.0,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 402,
+        "Params": [
+            6718
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "某种急切的思绪仍旧挥之不散，几乎是同一时刻，室外传来了一两声人类的呼喊。"
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "多米尼克",
+            "……？"
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 401,
+        "Params": [
+            2,
+            10028615
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 205,
+        "EndDelay": 500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg"
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "多米尼克看向窗外，瞪大了双眼，一架运输机正从空中全速飞来，径直撞向堆满设施的空港仓库——"
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 205,
+        "Params": [
+            1006,
+            "Assets/Product/Texture/Image/BgStory/BgStory1210.jpg",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
         "Type": 401,
         "Params": [
             1,
@@ -18,26 +2685,5061 @@
         ]
     },
     {
-        "Id": 3,
-        "ActionId": 3,
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 402,
+        "Params": [
+            10028615
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 401,
+        "Params": [
+            2,
+            2926
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 301,
+        "BeginAnim": "RImgBg6Shake",
+        "Params": [
+            "",
+            "",
+            "轰————"
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 401,
+        "Params": [
+            2,
+            4008
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 205,
+        "Params": [
+            1006,
+            "Assets/Product/Texture/Image/BgStory/BgStory1210.jpg",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory844.jpg",
+            0,
+            0.15,
+            0
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "震天的爆鸣声中，一颗耀眼的火球腾空而起，剧烈的爆炸卷携着热浪，几乎掀翻吞没了大半个港区。"
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 401,
+        "Params": [
+            2,
+            1105
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "最高级别的警报声响起，上千吨的工业用品像爆竹一般殉爆炸裂，化作火海，几乎点亮了整条海岸线。警卫队与消防员立刻扑了上去，建立封锁线。"
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 205,
+        "Params": [
+            1007
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab"
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab"
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab"
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 111,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 402,
+        "Params": [
+            4008
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 306,
+        "EndDelay": 2000.0
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg"
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "Type": 401,
+        "Params": [
+            1,
+            50
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "多米尼克",
+            "……"
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "Type": 402,
+        "Params": [
+            2601
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "Type": 201,
+        "Params": [
+            1,
+            501639
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "Type": 301,
+        "Params": [
+            1,
+            "？？？？",
+            "你瞧，小多米尼克。",
+            1
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "一名雍容华贵的女人正坐在阴影中，慵懒地翘起双腿，华美的机械指节轻轻叩击着真皮沙发的扶手。"
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "Type": 301,
+        "Params": [
+            "",
+            "？？？？",
+            "你总是想押宝在理想的人性上。",
+            1
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "Type": 301,
+        "Params": [
+            "",
+            "？？？？",
+            "可它终归是斗不过利益的兽性。",
+            1
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她吐出一口烟，语气散漫地像是在谈论今天的天气。"
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "卡桑德拉，收好你的烟。"
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            6
+        ]
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡桑德拉",
+            "切，小气~",
+            1
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "女人耸耸肩，识趣地将烟头按灭在桌面的灰缸里——这里没有别人吸烟，是工作人员专门为她准备的。"
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "只靠一个从宇宙中捡到的漂流瓶，怎么可能说服所有人涂掉地图上的国界，把手里的飞机坦克原子弹全都熔掉，去支持你开拓一个下辈子都上不去的星星？",
+            1
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "哈哈哈，别傻了！那可是他们为之奋战了成百上千年的国家，是一个民族，一个宗族，一个企业……哦，还有我这样天赋异禀却仍刻苦努力、奋斗终身的天才们的成果。",
+            1
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "不论你签几轮条约，射几发火箭，把不同肤色的小孩撺掇起来唱几首歌，人类也始终是自私怕疼的动物，距离你的OC大同宇宙还有着两百万光年的时间。",
+            1
+        ]
+    },
+    {
+        "Id": 312,
+        "ActionId": 312,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "光年不是时间单位，卡桑德拉。"
+        ]
+    },
+    {
+        "Id": 313,
+        "ActionId": 313,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 314,
+        "ActionId": 314,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "……哎，看来你真的没有听懂笑话的天赋，小多米尼克。",
+            1
+        ]
+    },
+    {
+        "Id": 315,
+        "ActionId": 315,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她浮夸地摆了摆手。"
+        ]
+    },
+    {
+        "Id": 316,
+        "ActionId": 316,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 317,
+        "ActionId": 317,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "卡桑德拉，你是商人。你我的立场和视野不同，我很难让你完全理解，这些计划究竟可以给地球带来怎样的收益。"
+        ]
+    },
+    {
+        "Id": 318,
+        "ActionId": 318,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "我提议，我们可以及时中止这个话题，以避免无谓的时间和精力消耗。"
+        ]
+    },
+    {
+        "Id": 319,
+        "ActionId": 319,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 320,
+        "ActionId": 320,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "我不。既然我给你砸了那么多钱，你就有义务伺候好我的每一次来访~",
+            1
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
+        "Type": 401,
+        "Params": [
+            2,
+            5533
+        ]
+    },
+    {
+        "Id": 322,
+        "ActionId": 322,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她又挑衅似地点了根烟。"
+        ]
+    },
+    {
+        "Id": 323,
+        "ActionId": 323,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 324,
+        "ActionId": 324,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "哎，你们这群“理想主义者”，我见过太多了。到头来要么是被世界打碎，要么自己先碎了。",
+            1
+        ]
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "我说，小多米尼克，要不要跟我打个赌？",
+            1
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "卡桑德拉挑了挑眉。"
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "我猜未来的某一天，你会因“理想”而死，而我将靠着“兽性”震古烁今，美美地永世长存。",
+            1
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "……"
+        ]
+    },
+    {
+        "Id": 331,
+        "ActionId": 331,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 332,
+        "ActionId": 332,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg"
+        ]
+    },
+    {
+        "Id": 333,
+        "ActionId": 333,
+        "Type": 401,
+        "Params": [
+            2,
+            4008
+        ]
+    },
+    {
+        "Id": 334,
+        "ActionId": 334,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory844.jpg",
+            0,
+            0.15,
+            0
+        ]
+    },
+    {
+        "Id": 335,
+        "ActionId": 335,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 336,
+        "ActionId": 336,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 337,
+        "ActionId": 337,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 338,
+        "ActionId": 338,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "多米尼克从来不是一个掷骰子的学者。面对着咄咄逼人的投资商，首席技官依旧沉默以对，凝视窗外的乱作一团的海岸。"
+        ]
+    },
+    {
+        "Id": 339,
+        "ActionId": 339,
+        "Type": 201,
+        "Params": [
+            1,
+            500280,
+            "",
+            -200
+        ]
+    },
+    {
+        "Id": 340,
+        "ActionId": 340,
+        "Type": 201,
+        "Params": [
+            2,
+            500425,
+            "",
+            200
+        ]
+    },
+    {
+        "Id": 341,
+        "ActionId": 341,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "一个消防员正从废墟里抱出一个孩子，孩子的脸上全是灰，但还在哭——还活着。想必他也是某位工作人员的亲属，不远万里来到了这里。"
+        ]
+    },
+    {
+        "Id": 342,
+        "ActionId": 342,
+        "Type": 402,
+        "Params": [
+            4008
+        ]
+    },
+    {
+        "Id": 343,
+        "ActionId": 343,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 344,
+        "ActionId": 344,
+        "Type": 306
+    },
+    {
+        "Id": 345,
+        "ActionId": 345,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab"
+        ]
+    },
+    {
+        "Id": 346,
+        "ActionId": 346,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab"
+        ]
+    },
+    {
+        "Id": 347,
+        "ActionId": 347,
+        "Type": 111,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 348,
+        "ActionId": 348,
+        "Type": 205,
+        "EndDelay": 450.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 349,
+        "ActionId": 349,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg"
+        ]
+    },
+    {
+        "Id": 350,
+        "ActionId": 350,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 351,
+        "ActionId": 351,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            6
+        ]
+    },
+    {
+        "Id": 352,
+        "ActionId": 352,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "卡桑德拉",
+            "切，又装高冷，真没意思。刚才的报告做完了没？现在能聊聊，今天找我来到底是要干嘛的吧？",
+            1
+        ]
+    },
+    {
+        "Id": 353,
+        "ActionId": 353,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 354,
+        "ActionId": 354,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "起因是这些天，我有了一个新的想法。"
+        ]
+    },
+    {
+        "Id": 355,
+        "ActionId": 355,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "多米尼克知道，卡桑德拉的每一句挖苦都是真实的。人类的兽性是真实的，利益、恐惧、暴力——全都是真实的。"
+        ]
+    },
+    {
+        "Id": 356,
+        "ActionId": 356,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "但在火海之外，那些不同国籍的士兵、那些冲向火海的消防员、那些来自全球各地的工程师们，他们也全都是真实的。"
+        ]
+    },
+    {
+        "Id": 357,
+        "ActionId": 357,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "理想和兽性，从来就不是二选一的问题。"
+        ]
+    },
+    {
+        "Id": 358,
+        "ActionId": 358,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "人类同时拥有它们。问题只在于，当黑暗真正降临的时候——是由哪一个占据多数。"
+        ]
+    },
+    {
+        "Id": 359,
+        "ActionId": 359,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "也正因如此，我才需要让更多的理想汇聚在一起。"
+        ]
+    },
+    {
+        "Id": 360,
+        "ActionId": 360,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "多米尼克的声音低沉下来，像是在对自己说话。"
+        ]
+    },
+    {
+        "Id": 361,
+        "ActionId": 361,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "只靠一个人两个人是撑不住的，一间再大的实验室也不行。"
+        ]
+    },
+    {
+        "Id": 362,
+        "ActionId": 362,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "但一代人可以。"
+        ]
+    },
+    {
+        "Id": 363,
+        "ActionId": 363,
+        "Type": 401,
+        "Params": [
+            2,
+            1015
+        ]
+    },
+    {
+        "Id": 364,
+        "ActionId": 364,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 365,
+        "ActionId": 365,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "多米尼克走回桌前，调出了一份文件，扉页印着一行尚未被正式批准的标题——"
+        ]
+    },
+    {
+        "Id": 366,
+        "ActionId": 366,
+        "Type": 307,
+        "Params": [
+            "法奥斯军事学院 · 建设提案（第三稿）",
+            "",
+            45
+        ]
+    },
+    {
+        "Id": 367,
+        "ActionId": 367,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "法奥斯军事学院 · 建设提案（第三稿）。"
+        ]
+    },
+    {
+        "Id": 368,
+        "ActionId": 368,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 369,
+        "ActionId": 369,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab"
+        ]
+    },
+    {
+        "Id": 370,
+        "ActionId": 370,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            6
+        ]
+    },
+    {
+        "Id": 371,
+        "ActionId": 371,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "卡桑德拉",
+            "哦？光当科研首席还不满意？你还想去当个校长？",
+            1
+        ]
+    },
+    {
+        "Id": 372,
+        "ActionId": 372,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "卡桑德拉，如果有一天，你发现一个富豪把自己的全部财产都打包丢进了海里，你会怎么想？"
+        ]
+    },
+    {
+        "Id": 373,
+        "ActionId": 373,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 374,
+        "ActionId": 374,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "嗯——他要么疯了，要么快死了。",
+            1
+        ]
+    },
+    {
+        "Id": 375,
+        "ActionId": 375,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "这对我们捡到的“漂流瓶”同样适用。"
+        ]
+    },
+    {
+        "Id": 376,
+        "ActionId": 376,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 377,
+        "ActionId": 377,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "卡桑德拉停下手边的动作，神色终于正经了一些。"
+        ]
+    },
+    {
+        "Id": 378,
+        "ActionId": 378,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "所以呢？你真的相信半人马座上有大脚怪？",
+            1
+        ]
+    },
+    {
+        "Id": 379,
+        "ActionId": 379,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "形式逻辑不承认无前提的结论，行为也是。我不认为这是某种慈善行为，宇宙之外的某个人，或者某些人，一定是出于某种必要的原因，将他们所学习的一切发送了出来。"
+        ]
+    },
+    {
+        "Id": 380,
+        "ActionId": 380,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "如果是我，我会选择在地球爆炸前的一秒做这件事。"
+        ]
+    },
+    {
+        "Id": 381,
+        "ActionId": 381,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "呵，我宁可全都烧了，也不会让别人拿走我的钱。",
+            1
+        ]
+    },
+    {
+        "Id": 382,
+        "ActionId": 382,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "我并不知道那些人的结局是什么。但我知道，只有一个人接住这些遗产是不够的。"
+        ]
+    },
+    {
+        "Id": 383,
+        "ActionId": 383,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "我需要有更多人参与“远航”，带着这些知识投身于统一战争、科研建设、星际开拓之中。"
+        ]
+    },
+    {
+        "Id": 384,
+        "ActionId": 384,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 385,
+        "ActionId": 385,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "我还以为多大点事，就一个学校而已，还至于找我过来吗？",
+            1
+        ]
+    },
+    {
+        "Id": 386,
+        "ActionId": 386,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "钱的问题都不是问题，晚点联系我的秘书，上周刚换的那个，人别找错了。",
+            1
+        ]
+    },
+    {
+        "Id": 387,
+        "ActionId": 387,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 388,
+        "ActionId": 388,
+        "Type": 401,
+        "Params": [
+            2,
+            5291
+        ]
+    },
+    {
+        "Id": 389,
+        "ActionId": 389,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "卡桑德拉伸了个懒腰，像是个玩累了的孩子，脸色一变，朝着门口走去。"
+        ]
+    },
+    {
+        "Id": 390,
+        "ActionId": 390,
+        "Type": 402,
+        "Params": [
+            5291
+        ]
+    },
+    {
+        "Id": 391,
+        "ActionId": 391,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "法奥斯会是一座培育下一代的熔炉，每一个从这里走出去的人，都应该做好准备——为了建设新世界，也为了……以防万一。"
+        ]
+    },
+    {
+        "Id": 392,
+        "ActionId": 392,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            4
+        ]
+    },
+    {
+        "Id": 393,
+        "ActionId": 393,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡桑德拉",
+            "以防万一什么？",
+            1
+        ]
+    },
+    {
+        "Id": 394,
+        "ActionId": 394,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她站起来，走到门口，手搭在门把手上。"
+        ]
+    },
+    {
+        "Id": 395,
+        "ActionId": 395,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 396,
+        "ActionId": 396,
+        "Type": 301,
+        "Params": [
+            "",
+            "多米尼克",
+            "……"
+        ]
+    },
+    {
+        "Id": 397,
+        "ActionId": 397,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "多米尼克没有回答，或许自己也没有答案。那是一种直觉，一种比理性更深、比恐惧更沉的东西。"
+        ]
+    },
+    {
+        "Id": 398,
+        "ActionId": 398,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "就像是第一次看到那段信号末尾附带的人类神经波形时，多米尼克的眉心忽然吃痛了一下。"
+        ]
+    },
+    {
+        "Id": 399,
+        "ActionId": 399,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "好像有人在很远很远的地方，用尽了最后一口力气，用自己的血肉朝这个方向递出了一样东西。"
+        ]
+    },
+    {
+        "Id": 400,
+        "ActionId": 400,
+        "Type": 201,
+        "Params": [
+            1,
+            501629
+        ]
+    },
+    {
+        "Id": 401,
+        "ActionId": 401,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡桑德拉",
+            "你不抽烟的，但你留着吧。",
+            1
+        ]
+    },
+    {
+        "Id": 402,
+        "ActionId": 402,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "卡桑德拉轻笑着，朝桌上的名贵香烟递了个眼神。"
+        ]
+    },
+    {
+        "Id": 403,
+        "ActionId": 403,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "哦对，还有上次那个什么“质点原型机”的事……",
+            1
+        ]
+    },
+    {
+        "Id": 404,
+        "ActionId": 404,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "虽然我还是没看懂，但挺有意思的。继续，我要在今年看到成果。",
+            1
+        ]
+    },
+    {
+        "Id": 405,
+        "ActionId": 405,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 406,
+        "ActionId": 406,
+        "Type": 401,
+        "Params": [
+            2,
+            4202
+        ]
+    },
+    {
+        "Id": 407,
+        "ActionId": 407,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "卡桑德拉关上了房门，嘴里哼着难听的音乐，拨通了她秘书的电话。"
+        ]
+    },
+    {
+        "Id": 408,
+        "ActionId": 408,
+        "Type": 201,
+        "Params": [
+            18,
+            501660
+        ]
+    },
+    {
+        "Id": 409,
+        "ActionId": 409,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "卡桑德拉",
+            "呵，“远航”，多好听的词儿啊。",
+            18
+        ]
+    },
+    {
+        "Id": 410,
+        "ActionId": 410,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 411,
+        "ActionId": 411,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 412,
+        "ActionId": 412,
+        "Type": 401,
+        "EndDelay": 3000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 413,
+        "ActionId": 413,
+        "Type": 401,
+        "Params": [
+            1,
+            7154
+        ]
+    },
+    {
+        "Id": 414,
+        "ActionId": 414,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1181.jpg"
+        ]
+    },
+    {
+        "Id": 415,
+        "ActionId": 415,
+        "Type": 310,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "露西亚还记得那一天的阳光。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 416,
+        "ActionId": 416,
+        "Type": 310,
+        "Params": [
+            "太亮了，亮得让她在走出考场的时候，不得不抬起手遮住眼睛。"
+        ]
+    },
+    {
+        "Id": 417,
+        "ActionId": 417,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1415.jpg",
+            0,
+            1,
+            1.2
+        ]
+    },
+    {
+        "Id": 418,
+        "ActionId": 418,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1415.jpg"
+        ]
+    },
+    {
+        "Id": 419,
+        "ActionId": 419,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 420,
+        "ActionId": 420,
+        "Type": 310,
+        "Params": [
+            "晚春，成绩公示栏前围了很多人。她没有挤过去，只是站在远处，等人群慢慢散了，才走上前看了一眼。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 421,
+        "ActionId": 421,
+        "Type": 310,
+        "Params": [
+            "综合选拔，全球统考，第一轮通过率4.3%，她的名字在第一页。"
+        ]
+    },
+    {
+        "Id": 422,
+        "ActionId": 422,
+        "Type": 310,
+        "Params": [
+            "十六岁，她看着自己的名字在第一页上，深吸了一口气。"
+        ]
+    },
+    {
+        "Id": 423,
+        "ActionId": 423,
+        "Type": 310,
+        "Params": [
+            "心里有什么东西落定了，像是很久以前就开始在准备的事情，终于到了可以出发的时候。"
+        ]
+    },
+    {
+        "Id": 424,
+        "ActionId": 424,
+        "Type": 310,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "她戴上耳机，步子比来时快了一点。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 425,
+        "ActionId": 425,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 426,
+        "ActionId": 426,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1489.jpg"
+        ]
+    },
+    {
+        "Id": 427,
+        "ActionId": 427,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "三个月后，六月十日，她站在了法奥斯军事学院的门口。"
+        ]
+    },
+    {
+        "Id": 428,
+        "ActionId": 428,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "——准确地说，是法奥斯学院，兼齐奥尔科夫斯基航天城的门口。"
+        ]
+    },
+    {
+        "Id": 429,
+        "ActionId": 429,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 430,
+        "ActionId": 430,
+        "Type": 205,
+        "EndDelay": 550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 431,
+        "ActionId": 431,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg"
+        ]
+    },
+    {
+        "Id": 432,
+        "ActionId": 432,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 433,
+        "ActionId": 433,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
-            "测试1"
+            "法奥斯的选址并非任何一座城市，而是世界政府在赤道附近修建的超级综合体——以零点能引擎为心脏、以质量投射轨道为脊柱的，人类有史以来最庞大的单体工程。"
         ]
     },
     {
-        "Id": 4,
-        "ActionId": 4,
+        "Id": 434,
+        "ActionId": 434,
         "Type": 301,
-        "IsEnd": 1,
-        "EndAnim": "AniZhuanchangBegin",
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
-            "测试2"
+            "从地面仰望，那座平台像一柄插入云层的银白色巨剑。轨道沿着支撑塔笔直向上延伸，尽头消失在大气层的蔚蓝中，仿佛真的有一座桥，从人间通往天上。"
+        ]
+    },
+    {
+        "Id": 435,
+        "ActionId": 435,
+        "Type": 306
+    },
+    {
+        "Id": 436,
+        "ActionId": 436,
+        "Type": 205,
+        "EndDelay": 450.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1489.jpg",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 437,
+        "ActionId": 437,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1489.jpg"
+        ]
+    },
+    {
+        "Id": 438,
+        "ActionId": 438,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 439,
+        "ActionId": 439,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "露西亚到达的那天，“曙光III号”已经被固定在天堂桥的发射架上了。她循着终端上的指引寻找着“入学典礼场地”，却走到了发射场外围的观礼区上。"
+        ]
+    },
+    {
+        "Id": 440,
+        "ActionId": 440,
+        "Type": 201,
+        "Params": [
+            1,
+            501610
+        ]
+    },
+    {
+        "Id": 441,
+        "ActionId": 441,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "露西亚",
+            "……",
+            1
+        ]
+    },
+    {
+        "Id": 442,
+        "ActionId": 442,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 443,
+        "ActionId": 443,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 444,
+        "ActionId": 444,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1489.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 445,
+        "ActionId": 445,
+        "Type": 104,
+        "EndDelay": 800.0,
+        "Params": [
+            "0|50|-200",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 446,
+        "ActionId": 446,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1489.jpg"
+        ]
+    },
+    {
+        "Id": 447,
+        "ActionId": 447,
+        "Type": 104,
+        "Params": [
+            "0|50|-200",
+            0
+        ]
+    },
+    {
+        "Id": 448,
+        "ActionId": 448,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 449,
+        "ActionId": 449,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 450,
+        "ActionId": 450,
+        "Type": 201,
+        "Params": [
+            15,
+            501643,
+            1
+        ]
+    },
+    {
+        "Id": 451,
+        "ActionId": 451,
+        "Type": 201,
+        "Params": [
+            16,
+            501666,
+            "",
+            300
+        ]
+    },
+    {
+        "Id": 452,
+        "ActionId": 452,
+        "Type": 201,
+        "Params": [
+            1,
+            501648,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 453,
+        "ActionId": 453,
+        "Type": 201,
+        "Params": [
+            2,
+            501649,
+            "",
+            -750
+        ]
+    },
+    {
+        "Id": 454,
+        "ActionId": 454,
+        "Type": 201,
+        "Params": [
+            3,
+            501672,
+            "",
+            700
+        ]
+    },
+    {
+        "Id": 455,
+        "ActionId": 455,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "这里已经挤满了人，不同的面孔、不同的肤色、不同的口音，但身上穿着同一款的学员制服，他们都是从全球统考中筛选出来的，年龄从十六岁到十九岁不等，一共四百二十人。"
+        ]
+    },
+    {
+        "Id": 456,
+        "ActionId": 456,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "法奥斯一期生。"
+        ]
+    },
+    {
+        "Id": 457,
+        "ActionId": 457,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            15,
+            16
+        ]
+    },
+    {
+        "Id": 458,
+        "ActionId": 458,
+        "Type": 306
+    },
+    {
+        "Id": 459,
+        "ActionId": 459,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她面前是曙光III号巨大的剪影，身后是嘈杂而兴奋的同龄人，露西亚看着终端上的名单列表，观察着前后左右的同学们。"
+        ]
+    },
+    {
+        "Id": 460,
+        "ActionId": 460,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            6
+        ]
+    },
+    {
+        "Id": 461,
+        "ActionId": 461,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "啧，挤死了！为什么开学典礼会在发射场旁边举行啊？！",
+            1
+        ]
+    },
+    {
+        "Id": 462,
+        "ActionId": 462,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "装潢也是校服也是广场也是，都太太太没品味了，真不知道是什么神人设计的。",
+            1
+        ]
+    },
+    {
+        "Id": 463,
+        "ActionId": 463,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "要不是姐姐喜欢这里，我今天就去办转学手续！",
+            1
+        ]
+    },
+    {
+        "Id": 464,
+        "ActionId": 464,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 465,
+        "ActionId": 465,
+        "Type": 201,
+        "Params": [
+            2,
+            501627,
+            4,
+            400
+        ]
+    },
+    {
+        "Id": 466,
+        "ActionId": 466,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "同学，作为学院的一分子，我并不认为侮辱它对你有任何益处，请你收回刚才的发言。",
+            2
+        ]
+    },
+    {
+        "Id": 467,
+        "ActionId": 467,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 468,
+        "ActionId": 468,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "哈？你又是谁啊，我说什么关你什么事！",
+            1
+        ]
+    },
+    {
+        "Id": 469,
+        "ActionId": 469,
+        "Type": 204,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 470,
+        "ActionId": 470,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "阿德莱德，学员编号004。作为同期学员，我有义务维护学院的声誉与秩序。",
+            2
+        ]
+    },
+    {
+        "Id": 471,
+        "ActionId": 471,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "004？哈，第四名就这么大口气啊？",
+            1
+        ]
+    },
+    {
+        "Id": 472,
+        "ActionId": 472,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "学员编号不按成绩排序。",
+            2
+        ]
+    },
+    {
+        "Id": 473,
+        "ActionId": 473,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 474,
+        "ActionId": 474,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "哦——那就更没什么好炫耀的了吧？",
+            1
+        ]
+    },
+    {
+        "Id": 475,
+        "ActionId": 475,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "我并没有在炫耀，我只是在陈述事实——你刚才的言论已经违反了《学院行为守则》第二章第七条：不得以任何形式贬损学院形象及公共设施。",
+            2
+        ]
+    },
+    {
+        "Id": 476,
+        "ActionId": 476,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 477,
+        "ActionId": 477,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "哈？守则？？我猜你这人一定没有朋友！",
+            1
+        ]
+    },
+    {
+        "Id": 478,
+        "ActionId": 478,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 479,
+        "ActionId": 479,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "……交友情况与当前议题无关，请不要转移话题。",
+            2
+        ]
+    },
+    {
+        "Id": 480,
+        "ActionId": 480,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 481,
+        "ActionId": 481,
+        "Type": 301,
+        "Params": [
+            "",
+            "奥菲莉娅",
+            "这就是没有的意思吧！",
+            1
+        ]
+    },
+    {
+        "Id": 482,
+        "ActionId": 482,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 483,
+        "ActionId": 483,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 484,
+        "ActionId": 484,
+        "Type": 201,
+        "Params": [
+            1,
+            501610,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 485,
+        "ActionId": 485,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 486,
+        "ActionId": 486,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "露西亚站在队伍的末尾，这是她分配到的位置。"
+        ]
+    },
+    {
+        "Id": 487,
+        "ActionId": 487,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 488,
+        "ActionId": 488,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "前方不远处，两个同学正在吵架，声音不小，周围很多人。她扫了一眼，没有多看，低头确认了一下终端上的名单信息。"
+        ]
+    },
+    {
+        "Id": 489,
+        "ActionId": 489,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这里人少一些，刚好。"
+        ]
+    },
+    {
+        "Id": 490,
+        "ActionId": 490,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 491,
+        "ActionId": 491,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她戴上耳机，靠着观礼区的栏杆，等着典礼开始。"
+        ]
+    },
+    {
+        "Id": 492,
+        "ActionId": 492,
+        "Type": 401,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 493,
+        "ActionId": 493,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 494,
+        "ActionId": 494,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 495,
+        "ActionId": 495,
+        "Type": 502,
+        "Params": [
+            "DialogShake"
+        ]
+    },
+    {
+        "Id": 496,
+        "ActionId": 496,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "？？",
+            "要迟到了要迟到了要迟到了——"
+        ]
+    },
+    {
+        "Id": 497,
+        "ActionId": 497,
+        "Type": 402,
+        "Params": [
+            4331
+        ]
+    },
+    {
+        "Id": 498,
+        "ActionId": 498,
+        "Type": 401,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 499,
+        "ActionId": 499,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 500,
+        "ActionId": 500,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab"
+        ]
+    },
+    {
+        "Id": 501,
+        "ActionId": 501,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 502,
+        "ActionId": 502,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            200
+        ]
+    },
+    {
+        "Id": 503,
+        "ActionId": 503,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 504,
+        "ActionId": 504,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "砰，她的肩膀突然被什么冲出的东西从后面撞了一下，耳机飞落出去。"
+        ]
+    },
+    {
+        "Id": 505,
+        "ActionId": 505,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "露西亚",
+            "——！",
+            1
+        ]
+    },
+    {
+        "Id": 506,
+        "ActionId": 506,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 507,
+        "ActionId": 507,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab"
+        ]
+    },
+    {
+        "Id": 508,
+        "ActionId": 508,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 509,
+        "ActionId": 509,
+        "Type": 201,
+        "Params": [
+            2,
+            501609,
+            7,
+            "",
+            "",
+            -150,
+            1
+        ]
+    },
+    {
+        "Id": 510,
+        "ActionId": 510,
+        "Type": 201,
+        "Params": [
+            3,
+            501609,
+            7,
+            -20,
+            "",
+            -150,
+            1
+        ]
+    },
+    {
+        "Id": 511,
+        "ActionId": 511,
+        "Type": 201,
+        "Params": [
+            4,
+            501609,
+            7,
+            20,
+            "",
+            -150,
+            1
+        ]
+    },
+    {
+        "Id": 512,
+        "ActionId": 512,
+        "Type": 205,
+        "Params": [
+            2,
+            "",
+            0,
+            0.8,
+            0.8
+        ]
+    },
+    {
+        "Id": 513,
+        "ActionId": 513,
+        "Type": 205,
+        "Params": [
+            3,
+            "",
+            0,
+            0.4,
+            0.8
+        ]
+    },
+    {
+        "Id": 514,
+        "ActionId": 514,
+        "Type": 205,
+        "Params": [
+            4,
+            "",
+            0,
+            0.4,
+            0.8
+        ]
+    },
+    {
+        "Id": 515,
+        "ActionId": 515,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "她本能地侧身卸力，脚步往前踉跄了半步，回头只来得及看到一个模糊的影子——镜片的反光、散开的发尾、一只挥舞着的手臂。"
+        ]
+    },
+    {
+        "Id": 516,
+        "ActionId": 516,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab"
+        ]
+    },
+    {
+        "Id": 517,
+        "ActionId": 517,
+        "Type": 203,
+        "Params": [
+            3,
+            0.5,
+            "",
+            "",
+            -150
+        ]
+    },
+    {
+        "Id": 518,
+        "ActionId": 518,
+        "Type": 203,
+        "Params": [
+            4,
+            0.5,
+            "",
+            "",
+            -150
+        ]
+    },
+    {
+        "Id": 519,
+        "ActionId": 519,
+        "Type": 205,
+        "Params": [
+            2,
+            "",
+            0.8,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 520,
+        "ActionId": 520,
+        "Type": 205,
+        "Params": [
+            3,
+            "",
+            0.4,
+            0,
+            0.5
+        ]
+    },
+    {
+        "Id": 521,
+        "ActionId": 521,
+        "Type": 205,
+        "Params": [
+            4,
+            "",
+            0.4,
+            0,
+            0.5
+        ]
+    },
+    {
+        "Id": 522,
+        "ActionId": 522,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "一名同龄少女，正以一种完全失控的姿态往前栽去。"
+        ]
+    },
+    {
+        "Id": 523,
+        "ActionId": 523,
+        "Type": 306
+    },
+    {
+        "Id": 524,
+        "ActionId": 524,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "？？",
+            "哇啊啊！",
+            2
+        ]
+    },
+    {
+        "Id": 525,
+        "ActionId": 525,
+        "Type": 202,
+        "Params": [
+            2,
+            3,
+            4,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 526,
+        "ActionId": 526,
+        "Type": 201,
+        "Params": [
+            1,
+            501610,
+            "",
+            100,
+            -50
+        ]
+    },
+    {
+        "Id": 527,
+        "ActionId": 527,
+        "Type": 201,
+        "Params": [
+            15,
+            501609,
+            7,
+            -300,
+            -100
+        ]
+    },
+    {
+        "Id": 528,
+        "ActionId": 528,
+        "Type": 203,
+        "Params": [
+            1,
+            0.35,
+            200
+        ]
+    },
+    {
+        "Id": 529,
+        "ActionId": 529,
+        "Type": 203,
+        "Params": [
+            15,
+            0.35,
+            -200
+        ]
+    },
+    {
+        "Id": 530,
+        "ActionId": 530,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 531,
+        "ActionId": 531,
+        "Type": 111,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 532,
+        "ActionId": 532,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "露西亚没有犹豫，她的手先于意识伸了出去，精准扣住了对方的小臂，往回一带。"
+        ]
+    },
+    {
+        "Id": 533,
+        "ActionId": 533,
+        "Type": 202,
+        "Params": [
+            15,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 534,
+        "ActionId": 534,
+        "Type": 201,
+        "Params": [
+            15,
+            501676,
+            7,
+            -200
+        ]
+    },
+    {
+        "Id": 535,
+        "ActionId": 535,
+        "Type": 205,
+        "Params": [
+            2,
+            "",
+            1,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 536,
+        "ActionId": 536,
+        "Type": 205,
+        "Params": [
+            3,
+            "",
+            1,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 537,
+        "ActionId": 537,
+        "Type": 205,
+        "Params": [
+            4,
+            "",
+            1,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 538,
+        "ActionId": 538,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "女孩的身体在倾倒到一半的时候被拉住了，惯性让她整个人荡了一下，眼镜沿着鼻梁滑到了最前端，刚好掉了下来。"
+        ]
+    },
+    {
+        "Id": 539,
+        "ActionId": 539,
+        "Type": 301,
+        "BeginAnim": "PanelActor15Shake",
+        "Params": [
+            "",
+            "？？",
+            "欸……欸？",
+            15
+        ]
+    },
+    {
+        "Id": 540,
+        "ActionId": 540,
+        "Type": 202,
+        "Params": [
+            1,
+            15
+        ]
+    },
+    {
+        "Id": 541,
+        "ActionId": 541,
+        "Type": 401,
+        "Params": [
+            2,
+            2704
+        ]
+    },
+    {
+        "Id": 542,
+        "ActionId": 542,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她慌忙用另一只手去接，没接住，又弯腰去捡，弯腰太急差点又摔一次——露西亚不得不再拉了她一把。"
+        ]
+    },
+    {
+        "Id": 543,
+        "ActionId": 543,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            14,
+            -400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 544,
+        "ActionId": 544,
+        "Type": 201,
+        "Params": [
+            2,
+            501610,
+            "",
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 545,
+        "ActionId": 545,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "？？",
+            "啊啊……！",
+            1
+        ]
+    },
+    {
+        "Id": 546,
+        "ActionId": 546,
+        "Type": 301,
+        "Params": [
+            "",
+            "？？",
+            "对不起对不起……是我太着急了没看到前面，你……你没事吧……？",
+            1
+        ]
+    },
+    {
+        "Id": 547,
+        "ActionId": 547,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "我没事。走路别低着头，尤其是人这么多的地方。",
+            2
+        ]
+    },
+    {
+        "Id": 548,
+        "ActionId": 548,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "再着急也要注意自己的安全。",
+            2
+        ]
+    },
+    {
+        "Id": 549,
+        "ActionId": 549,
+        "Type": 204,
+        "Params": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 550,
+        "ActionId": 550,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚看了看女孩胸前的铭牌，文质彬彬的相片旁写有“乔安”的字样。"
+        ]
+    },
+    {
+        "Id": 551,
+        "ActionId": 551,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "慢点，来得及的。",
+            2
+        ]
+    },
+    {
+        "Id": 552,
+        "ActionId": 552,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 553,
+        "ActionId": 553,
+        "Type": 301,
+        "Params": [
+            "",
+            "乔安",
+            "谢……谢谢你！",
+            1
+        ]
+    },
+    {
+        "Id": 554,
+        "ActionId": 554,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 555,
+        "ActionId": 555,
+        "Type": 201,
+        "Params": [
+            2,
+            501610,
+            1
+        ]
+    },
+    {
+        "Id": 556,
+        "ActionId": 556,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "露西亚目送着女孩钻入了人群之中，稍稍露出了一丝笑意。"
+        ]
+    },
+    {
+        "Id": 557,
+        "ActionId": 557,
+        "Type": 204,
+        "Params": [
+            2,
+            9
+        ]
+    },
+    {
+        "Id": 558,
+        "ActionId": 558,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "她无意间伸手摸了摸右耳，忽然反应过来自己的耳机不见了。"
+        ]
+    },
+    {
+        "Id": 559,
+        "ActionId": 559,
+        "Type": 302,
+        "Params": [
+            "",
+            "同学，你好？",
+            560
+        ]
+    },
+    {
+        "Id": 560,
+        "ActionId": 560,
+        "Type": 302,
+        "Params": [
+            "",
+            "你的耳机。",
+            561
+        ]
+    },
+    {
+        "Id": 561,
+        "ActionId": 561,
+        "Type": 204,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 562,
+        "ActionId": 562,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "一个<M>男孩</M><W>女孩</W>站在她的左手边，手里正拿着一只耳机。"
+        ]
+    },
+    {
+        "Id": 563,
+        "ActionId": 563,
+        "Type": 204,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 564,
+        "ActionId": 564,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "……谢谢。",
+            2
+        ]
+    },
+    {
+        "Id": 565,
+        "ActionId": 565,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 566,
+        "ActionId": 566,
+        "Type": 204,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 567,
+        "ActionId": 567,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚伸出手，二人的视线就在这时碰到了一起。"
+        ]
+    },
+    {
+        "Id": 568,
+        "ActionId": 568,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "……？",
+            2
+        ]
+    },
+    {
+        "Id": 569,
+        "ActionId": 569,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 570,
+        "ActionId": 570,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚的手一瞬间顿了一下，非常短的一下，短到对方大概根本没有察觉。"
+        ]
+    },
+    {
+        "Id": 571,
+        "ActionId": 571,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "一种说不上来的熟悉感攫住了她，那种感觉稍纵即逝，快得像风吹过水面，涟漪还没来得及成形就散了。"
+        ]
+    },
+    {
+        "Id": 572,
+        "ActionId": 572,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她接过耳机，好像感觉哪里有些尴尬，连忙主动开口道。"
+        ]
+    },
+    {
+        "Id": 573,
+        "ActionId": 573,
+        "Type": 201,
+        "Params": [
+            1,
+            501610
+        ]
+    },
+    {
+        "Id": 574,
+        "ActionId": 574,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "你也是一期的？",
+            1
+        ]
+    },
+    {
+        "Id": 575,
+        "ActionId": 575,
+        "Type": 302,
+        "Params": [
+            "",
+            "嗯。",
+            576
+        ]
+    },
+    {
+        "Id": 576,
+        "ActionId": 576,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "我叫露西亚。",
+            1
+        ]
+    },
+    {
+        "Id": 577,
+        "ActionId": 577,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她也不知道自己为什么要主动自我介绍——她向来不做这种事。"
+        ]
+    },
+    {
+        "Id": 578,
+        "ActionId": 578,
+        "Type": 302,
+        "Params": [
+            "",
+            "我知道。",
+            579
+        ]
+    },
+    {
+        "Id": 579,
+        "ActionId": 579,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 580,
+        "ActionId": 580,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对方朝她的胸口方向点了一下头，露西亚低头一看——学员铭牌，名字印在上面，朝外挂着。"
+        ]
+    },
+    {
+        "Id": 581,
+        "ActionId": 581,
+        "Type": 306
+    },
+    {
+        "Id": 582,
+        "ActionId": 582,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 583,
+        "ActionId": 583,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 584,
+        "ActionId": 584,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她忽然觉得自己刚才那句话有点多余。"
+        ]
+    },
+    {
+        "Id": 585,
+        "ActionId": 585,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "对方没笑，但嘴角好像动了一下。"
+        ]
+    },
+    {
+        "Id": 586,
+        "ActionId": 586,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 587,
+        "ActionId": 587,
+        "Type": 302,
+        "Params": [
+            "",
+            "我刚刚在找自己的位置。",
+            588
+        ]
+    },
+    {
+        "Id": 588,
+        "ActionId": 588,
+        "Type": 302,
+        "Params": [
+            "",
+            "耳机飞过来，刚好砸到了我肩上。",
+            589
+        ]
+    },
+    {
+        "Id": 589,
+        "ActionId": 589,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 590,
+        "ActionId": 590,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "露西亚",
+            "……抱歉。",
+            1
+        ]
+    },
+    {
+        "Id": 591,
+        "ActionId": 591,
+        "Type": 302,
+        "Params": [
+            "",
+            "没关系，接住了。",
+            592
+        ]
+    },
+    {
+        "Id": 592,
+        "ActionId": 592,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 593,
+        "ActionId": 593,
+        "Type": 401,
+        "Params": [
+            2,
+            4086
+        ]
+    },
+    {
+        "Id": 594,
+        "ActionId": 594,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这时候，观礼台的音响忽然开启，响起了麦克风测试的声音。"
+        ]
+    },
+    {
+        "Id": 595,
+        "ActionId": 595,
+        "Type": 302,
+        "Params": [
+            "",
+            "看起来典礼要开始了。",
+            596
+        ]
+    },
+    {
+        "Id": 596,
+        "ActionId": 596,
+        "Type": 204,
+        "Params": [
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 597,
+        "ActionId": 597,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "嗯，谢谢你。",
+            1
+        ]
+    },
+    {
+        "Id": 598,
+        "ActionId": 598,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 599,
+        "ActionId": 599,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "对方微笑着，轻轻点了一下头，低头看了看终端上的位置编号——然后脚步顿了一下。"
+        ]
+    },
+    {
+        "Id": 600,
+        "ActionId": 600,
+        "Type": 104,
+        "EndDelay": 550.0,
+        "Params": [
+            "0|-50|-100",
+            0.5
+        ]
+    },
+    {
+        "Id": 601,
+        "ActionId": 601,
+        "Type": 104,
+        "EndDelay": 550.0,
+        "Params": [
+            "0|50|-100",
+            0.5
+        ]
+    },
+    {
+        "Id": 602,
+        "ActionId": 602,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "<M>他</M><W>她</W>抬起头，看了看露西亚，又看了看脚下地面上的列队标号。"
+        ]
+    },
+    {
+        "Id": 603,
+        "ActionId": 603,
+        "Type": 302,
+        "Params": [
+            "",
+            "原来就在旁边。",
+            604
+        ]
+    },
+    {
+        "Id": 604,
+        "ActionId": 604,
+        "Type": 201,
+        "Params": [
+            1,
+            501610
+        ]
+    },
+    {
+        "Id": 605,
+        "ActionId": 605,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "……",
+            1
+        ]
+    },
+    {
+        "Id": 606,
+        "ActionId": 606,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚也低头看了一眼，原来两个人的位置紧挨在一起。"
+        ]
+    },
+    {
+        "Id": 607,
+        "ActionId": 607,
+        "Type": 302,
+        "Params": [
+            "",
+            "真巧。",
+            608
+        ]
+    },
+    {
+        "Id": 608,
+        "ActionId": 608,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "的确……",
+            1
+        ]
+    },
+    {
+        "Id": 609,
+        "ActionId": 609,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 610,
+        "ActionId": 610,
+        "Type": 401,
+        "Params": [
+            2,
+            4923
+        ]
+    },
+    {
+        "Id": 611,
+        "ActionId": 611,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这时候，四周的扩音器响起了声音，学生们纷纷安静了下来。"
+        ]
+    },
+    {
+        "Id": 612,
+        "ActionId": 612,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚看向身旁的人，忽然想起来，自己忘了问对方的名字。"
+        ]
+    },
+    {
+        "Id": 613,
+        "ActionId": 613,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "但她又觉得——好像不用问。"
+        ]
+    },
+    {
+        "Id": 614,
+        "ActionId": 614,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "好像迟早会知道的。"
+        ]
+    },
+    {
+        "Id": 615,
+        "ActionId": 615,
+        "Type": 401,
+        "Params": [
+            2,
+            4086
+        ]
+    },
+    {
+        "Id": 616,
+        "ActionId": 616,
+        "Type": 201,
+        "Params": [
+            18,
+            501660
+        ]
+    },
+    {
+        "Id": 617,
+        "ActionId": 617,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡桑德拉",
+            "喂喂喂？大家都听得到嘛？",
+            18
+        ]
+    },
+    {
+        "Id": 618,
+        "ActionId": 618,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 619,
+        "ActionId": 619,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "卡桑德拉的声音从扩音器里传出来，尖锐得像指甲划过黑板，又带着一种不加掩饰的兴奋。"
+        ]
+    },
+    {
+        "Id": 620,
+        "ActionId": 620,
+        "Type": 205,
+        "EndDelay": 850.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory528.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 621,
+        "ActionId": 621,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory528.jpg"
+        ]
+    },
+    {
+        "Id": 622,
+        "ActionId": 622,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 623,
+        "ActionId": 623,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "最高处，一名身着长裙的女人正踩着高跟鞋走上临时搭建的演讲台。风吹起她的裙摆和发梢，露出右臂上流线型的机械构造——引起了台下的一阵窃窃私语。"
+        ]
+    },
+    {
+        "Id": 624,
+        "ActionId": 624,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            2
+        ]
+    },
+    {
+        "Id": 625,
+        "ActionId": 625,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡桑德拉",
+            "怎么，紧张啊？不用紧张嘛！身为你们的校董、作家、情感节目主持人、职业天使投资者、资深营养师，我，卡桑德拉女士，亲自来给大家讲话——",
+            1
+        ]
+    },
+    {
+        "Id": 626,
+        "ActionId": 626,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "这面子你们去别的学校找得到吗？找不到吧？",
+            1
+        ]
+    },
+    {
+        "Id": 627,
+        "ActionId": 627,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 628,
+        "ActionId": 628,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她停顿了一下，似乎在等掌声，没等到。"
+        ]
+    },
+    {
+        "Id": 629,
+        "ActionId": 629,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "——好冷漠啊这群小孩。",
+            1
+        ]
+    },
+    {
+        "Id": 630,
+        "ActionId": 630,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 631,
+        "ActionId": 631,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "行吧，那我长话短说。你们身后那个大铁柱子，叫“曙光III号”。它有多高呢？一百三十七米，比你们所有人趴着叠起来还高。那它有多贵呢？",
+            1
+        ]
+    },
+    {
+        "Id": 632,
+        "ActionId": 632,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "我不告诉你们，说出来怕你们有心理负担。",
+            1
+        ]
+    },
+    {
+        "Id": 633,
+        "ActionId": 633,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 634,
+        "ActionId": 634,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "零星的笑声从人群里冒出来。卡桑德拉的眼睛亮了一下，像是脱口秀演员终于找到了她的听众。"
+        ]
+    },
+    {
+        "Id": 635,
+        "ActionId": 635,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "好，笑了就好。我最怕一群人站在这里跟参加葬礼似的——咱们这可是开学典礼！",
+            1
+        ]
+    },
+    {
+        "Id": 636,
+        "ActionId": 636,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 637,
+        "ActionId": 637,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "你们呢，从今天起就是法奥斯的一期生了。一期生，第一届，意思就是——这个学校以前从来没有过学生，你们是头一批。",
+            1
+        ]
+    },
+    {
+        "Id": 638,
+        "ActionId": 638,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "没有学长学姐可以问，没有往年的考题可以抄，食堂好不好吃也没人能告诉你们，因为食堂上周才装好——我催了三次，承包商跟我说赤道附近运输困难，你看看这借口编的。",
+            1
+        ]
+    },
+    {
+        "Id": 639,
+        "ActionId": 639,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "你们在报考的时候就已经知道了，法奥斯是为人类的“远航”计划培育人才而存在。而至于你们每个人“远航”去哪里，究竟是冥王星还是我庄园的保安亭，全要靠你们自己的造化。",
+            1
+        ]
+    },
+    {
+        "Id": 640,
+        "ActionId": 640,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 641,
+        "ActionId": 641,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她甩了甩头发，挑起了一个无所谓的笑容。"
+        ]
+    },
+    {
+        "Id": 642,
+        "ActionId": 642,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "反正呢，这个学校已经盖好了，钱已经花了，你们人也已经来了。退学是不能退学的，学费我不退。",
+            1
+        ]
+    },
+    {
+        "Id": 643,
+        "ActionId": 643,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 644,
+        "ActionId": 644,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "卡桑德拉",
+            "所以你们只有一条路可走。",
+            1
+        ]
+    },
+    {
+        "Id": 645,
+        "ActionId": 645,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 646,
+        "ActionId": 646,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 647,
+        "ActionId": 647,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 648,
+        "ActionId": 648,
+        "Type": 401,
+        "Params": [
+            2,
+            4553
+        ]
+    },
+    {
+        "Id": 649,
+        "ActionId": 649,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 650,
+        "ActionId": 650,
+        "Type": 104,
+        "EndDelay": 550.0,
+        "Params": [
+            "0|50|-200",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 651,
+        "ActionId": 651,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg"
+        ]
+    },
+    {
+        "Id": 652,
+        "ActionId": 652,
+        "Type": 104,
+        "Params": [
+            "0|50|-200",
+            0
+        ]
+    },
+    {
+        "Id": 653,
+        "ActionId": 653,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 654,
+        "ActionId": 654,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 655,
+        "ActionId": 655,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "她用话筒指向身后那枚矗立在天堂桥上的庞然大物，曙光III号安静地立在发射架中，尾部的喷口在阳光下泛着冷蓝的光。"
+        ]
+    },
+    {
+        "Id": 656,
+        "ActionId": 656,
+        "Type": 401,
+        "Params": [
+            2,
+            4553
+        ]
+    },
+    {
+        "Id": 657,
+        "ActionId": 657,
+        "Type": 201,
+        "Params": [
+            18,
+            501660
+        ]
+    },
+    {
+        "Id": 658,
+        "ActionId": 658,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡桑德拉",
+            "——往上。",
+            18
+        ]
+    },
+    {
+        "Id": 659,
+        "ActionId": 659,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 660,
+        "ActionId": 660,
+        "Type": 401,
+        "Params": [
+            1,
+            187
+        ]
+    },
+    {
+        "Id": 661,
+        "ActionId": 661,
+        "Type": 401,
+        "Params": [
+            2,
+            4332
+        ]
+    },
+    {
+        "Id": 662,
+        "ActionId": 662,
+        "Type": 104,
+        "Params": [
+            "0|-50|-200",
+            1
+        ]
+    },
+    {
+        "Id": 663,
+        "ActionId": 663,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "风恰好在这时候变大了一些，吹得台上的横幅猎猎作响。"
+        ]
+    },
+    {
+        "Id": 664,
+        "ActionId": 664,
+        "Type": 402,
+        "Params": [
+            4332
+        ]
+    },
+    {
+        "Id": 665,
+        "ActionId": 665,
+        "Type": 205,
+        "EndDelay": 1050.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory528.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 666,
+        "ActionId": 666,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory528.jpg"
+        ]
+    },
+    {
+        "Id": 667,
+        "ActionId": 667,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 668,
+        "ActionId": 668,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 669,
+        "ActionId": 669,
+        "Type": 306
+    },
+    {
+        "Id": 670,
+        "ActionId": 670,
+        "Type": 201,
+        "Params": [
+            1,
+            501629
+        ]
+    },
+    {
+        "Id": 671,
+        "ActionId": 671,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "卡桑德拉",
+            "在开学的第一天，各位，本董事决定再给予你们一个特权。",
+            1
+        ]
+    },
+    {
+        "Id": 672,
+        "ActionId": 672,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她指了指身后的“天堂桥”，金属指尖在阳光下一闪。"
+        ]
+    },
+    {
+        "Id": 673,
+        "ActionId": 673,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "你们将是曙光III号首次全推力试车的第一批现场见证人。场面很大，很帅，很酷炫，很烧钱！",
+            1
+        ]
+    },
+    {
+        "Id": 674,
+        "ActionId": 674,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 675,
+        "ActionId": 675,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "这个面子——你们去别的学校！找！不！到！",
+            1
+        ]
+    },
+    {
+        "Id": 676,
+        "ActionId": 676,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 677,
+        "ActionId": 677,
+        "Type": 401,
+        "Params": [
+            2,
+            2915
+        ]
+    },
+    {
+        "Id": 678,
+        "ActionId": 678,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这一次，台下真正骚动起来了。"
+        ]
+    },
+    {
+        "Id": 679,
+        "ActionId": 679,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            3,
+            400
+        ]
+    },
+    {
+        "Id": 680,
+        "ActionId": 680,
+        "Type": 201,
+        "Params": [
+            2,
+            501609,
+            2,
+            -400
+        ]
+    },
+    {
+        "Id": 681,
+        "ActionId": 681,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "有人倒吸一口气，有人兴奋地拍了一下同伴的肩膀。乔安在人群中仰起头，镜片后的眼睛亮得像点了灯，连奥菲莉娅都张大了嘴。"
+        ]
+    },
+    {
+        "Id": 682,
+        "ActionId": 682,
+        "Type": 402,
+        "Params": [
+            2915
+        ]
+    },
+    {
+        "Id": 683,
+        "ActionId": 683,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 684,
+        "ActionId": 684,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            4
+        ]
+    },
+    {
+        "Id": 685,
+        "ActionId": 685,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡桑德拉",
+            "未来，等曙光III号真正起飞后，它会在国际空间站完成最后的组装，在月球附近以光速的万分之一，向着半人马座α加速前进。",
+            1
+        ]
+    },
+    {
+        "Id": 686,
+        "ActionId": 686,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "三年后，它会越过柯伊伯带，并在穿越奥尔特云之前，逐步加速到光速的百分之一。顺带一提，烧的都是我的钱。",
+            1
+        ]
+    },
+    {
+        "Id": 687,
+        "ActionId": 687,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 688,
+        "ActionId": 688,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "这是一个很宏大，很遥远的故事，对不对？",
+            1
+        ]
+    },
+    {
+        "Id": 689,
+        "ActionId": 689,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 690,
+        "ActionId": 690,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "但从今天开始，你们每个人都是主角了。不论你喜欢与否，它都已经找上了你——全人类都在期盼着你们的成长。",
+            1
+        ]
+    },
+    {
+        "Id": 691,
+        "ActionId": 691,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "属于你们的“远航”开始了，小朋友们。",
+            1
+        ]
+    },
+    {
+        "Id": 692,
+        "ActionId": 692,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 693,
+        "ActionId": 693,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡桑德拉",
+            "好了，校董致辞到此结束！撒花！！",
+            1
+        ]
+    },
+    {
+        "Id": 694,
+        "ActionId": 694,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 695,
+        "ActionId": 695,
+        "Type": 401,
+        "Params": [
+            2,
+            5533
+        ]
+    },
+    {
+        "Id": 696,
+        "ActionId": 696,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她退到台侧，靠在栏杆上，从兜里摸出打火机，把那根一直没点的烟终于点了。"
+        ]
+    },
+    {
+        "Id": 697,
+        "ActionId": 697,
+        "Type": 201,
+        "Params": [
+            1,
+            500311
+        ]
+    },
+    {
+        "Id": 698,
+        "ActionId": 698,
+        "Type": 301,
+        "Params": [
+            1,
+            "工作人员",
+            "校董，这里禁烟……",
+            1
+        ]
+    },
+    {
+        "Id": 699,
+        "ActionId": 699,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 700,
+        "ActionId": 700,
+        "Type": 201,
+        "Params": [
+            1,
+            501629
+        ]
+    },
+    {
+        "Id": 701,
+        "ActionId": 701,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡桑德拉",
+            "我知道~",
+            1
+        ]
+    },
+    {
+        "Id": 702,
+        "ActionId": 702,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 703,
+        "ActionId": 703,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她和学生们一齐抬起头，手里的火星没有灭。"
+        ]
+    },
+    {
+        "Id": 704,
+        "ActionId": 704,
+        "Type": 509,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg",
+            1
+        ]
+    },
+    {
+        "Id": 705,
+        "ActionId": 705,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "发射场的广播系统切入了标准的任务频道，机械的倒计时报读声在每个人的头顶响起来——"
+        ]
+    },
+    {
+        "Id": 706,
+        "ActionId": 706,
+        "Type": 401,
+        "Params": [
+            2,
+            2814
+        ]
+    },
+    {
+        "Id": 707,
+        "ActionId": 707,
+        "Type": 301,
+        "Params": [
+            "",
+            "广播",
+            "曙光III号全推力试车程序启动。各观测点确认安全距离。"
+        ]
+    },
+    {
+        "Id": 708,
+        "ActionId": 708,
+        "Type": 301,
+        "Params": [
+            "",
+            "广播",
+            "T-120秒。推进剂加注完成，所有阀门进入预备状态。"
+        ]
+    },
+    {
+        "Id": 709,
+        "ActionId": 709,
+        "Type": 401,
+        "Params": [
+            2,
+            5365
+        ]
+    },
+    {
+        "Id": 710,
+        "ActionId": 710,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "天堂桥的发射架底部开始泄出大量白色的蒸汽，液氧在输送管路中迅速气化，巨大的水幕冷却系统已经预注完毕，那柄银白色的巨剑仿佛在深呼吸。"
+        ]
+    },
+    {
+        "Id": 711,
+        "ActionId": 711,
+        "Type": 201,
+        "Params": [
+            1,
+            501610,
+            "",
+            500
+        ]
+    },
+    {
+        "Id": 712,
+        "ActionId": 712,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "露西亚不自觉地向前一步，仰头望着。"
+        ]
+    },
+    {
+        "Id": 713,
+        "ActionId": 713,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 714,
+        "ActionId": 714,
+        "Type": 401,
+        "Params": [
+            2,
+            2814
+        ]
+    },
+    {
+        "Id": 715,
+        "ActionId": 715,
+        "Type": 301,
+        "Params": [
+            "",
+            "广播",
+            "T-60秒。主控确认引擎预冷完成。各系统进入倒计时自动程序。"
+        ]
+    },
+    {
+        "Id": 716,
+        "ActionId": 716,
+        "Type": 201,
+        "Params": [
+            1,
+            501666,
+            2,
+            600
+        ]
+    },
+    {
+        "Id": 717,
+        "ActionId": 717,
+        "Type": 201,
+        "Params": [
+            2,
+            501643,
+            "",
+            300
+        ]
+    },
+    {
+        "Id": 718,
+        "ActionId": 718,
+        "Type": 201,
+        "Params": [
+            3,
+            501672,
+            "",
+            885
+        ]
+    },
+    {
+        "Id": 719,
+        "ActionId": 719,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "人群自然地安静下来了。四百多名年轻人站在观礼台上，第一次以如此近的距离面对着这个人类有史以来最强大的造物之一。"
+        ]
+    },
+    {
+        "Id": 720,
+        "ActionId": 720,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "不同肤色的面孔、不同语言的呼吸，在这一刻全都朝着同一个方向仰起。"
+        ]
+    },
+    {
+        "Id": 721,
+        "ActionId": 721,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 722,
+        "ActionId": 722,
+        "Type": 401,
+        "Params": [
+            2,
+            2814
+        ]
+    },
+    {
+        "Id": 723,
+        "ActionId": 723,
+        "Type": 301,
+        "Params": [
+            "",
+            "广播",
+            "T-30秒。点火程序装订。"
+        ]
+    },
+    {
+        "Id": 724,
+        "ActionId": 724,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 725,
+        "ActionId": 725,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "阿德莱德笔直地站着，目不转睛。奥菲莉娅不知什么时候已经忘记了抱怨，嘴巴微微张着。乔安紧紧攥着自己的衣角，镜片上映出发射架的倒影。"
+        ]
+    },
+    {
+        "Id": 726,
+        "ActionId": 726,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚站在队伍的最末尾，风拂过她的发梢。她的前方，隔着一排又一排同龄人的后脑勺，她看到了曙光III号。"
+        ]
+    },
+    {
+        "Id": 727,
+        "ActionId": 727,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "然后——不知为什么——她的视线往下移了一点，落在了前排某个人的后脑勺上。"
+        ]
+    },
+    {
+        "Id": 728,
+        "ActionId": 728,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "就是刚才捡到她耳机的那个人，正安静地仰着头。"
+        ]
+    },
+    {
+        "Id": 729,
+        "ActionId": 729,
+        "Type": 306
+    },
+    {
+        "Id": 730,
+        "ActionId": 730,
+        "Type": 401,
+        "Params": [
+            2,
+            2814
+        ]
+    },
+    {
+        "Id": 731,
+        "ActionId": 731,
+        "Type": 301,
+        "Params": [
+            "",
+            "广播",
+            "T-10。"
+        ]
+    },
+    {
+        "Id": 732,
+        "ActionId": 732,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "人群中有人开始跟着念了。声音很轻，像是不敢打扰什么。"
+        ]
+    },
+    {
+        "Id": 733,
+        "ActionId": 733,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "然后更多的声音加入了，参差不齐，却自然地汇到了一起。"
+        ]
+    },
+    {
+        "Id": 734,
+        "ActionId": 734,
+        "Type": 401,
+        "Params": [
+            2,
+            2814
+        ]
+    },
+    {
+        "Id": 735,
+        "ActionId": 735,
+        "Type": 307,
+        "Params": [
+            3,
+            "",
+            60,
+            "ff4e4eff"
+        ]
+    },
+    {
+        "Id": 736,
+        "ActionId": 736,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "广播",
+            "3。"
+        ]
+    },
+    {
+        "Id": 737,
+        "ActionId": 737,
+        "Type": 401,
+        "Params": [
+            2,
+            2814
+        ]
+    },
+    {
+        "Id": 738,
+        "ActionId": 738,
+        "Type": 307,
+        "Params": [
+            2,
+            "",
+            60,
+            "ff4e4eff"
+        ]
+    },
+    {
+        "Id": 739,
+        "ActionId": 739,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "广播",
+            "2。"
+        ]
+    },
+    {
+        "Id": 740,
+        "ActionId": 740,
+        "Type": 401,
+        "Params": [
+            2,
+            2814,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 741,
+        "ActionId": 741,
+        "Type": 307,
+        "Params": [
+            1,
+            "",
+            60,
+            "ff4e4eff"
+        ]
+    },
+    {
+        "Id": 742,
+        "ActionId": 742,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "广播",
+            "1。"
+        ]
+    },
+    {
+        "Id": 743,
+        "ActionId": 743,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 744,
+        "ActionId": 744,
+        "Type": 401,
+        "Params": [
+            2,
+            2814
+        ]
+    },
+    {
+        "Id": 745,
+        "ActionId": 745,
+        "Type": 307,
+        "Params": [
+            "点火",
+            "",
+            60,
+            "ff4e4eff"
+        ]
+    },
+    {
+        "Id": 746,
+        "ActionId": 746,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "广播",
+            "点火。"
+        ]
+    },
+    {
+        "Id": 747,
+        "ActionId": 747,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 748,
+        "ActionId": 748,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "世界先是沉默了一瞬，然后——"
+        ]
+    },
+    {
+        "Id": 749,
+        "ActionId": 749,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 750,
+        "ActionId": 750,
+        "Type": 510,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 751,
+        "ActionId": 751,
+        "Type": 205,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 752,
+        "ActionId": 752,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "光。"
+        ]
+    },
+    {
+        "Id": 753,
+        "ActionId": 753,
+        "Type": 401,
+        "Params": [
+            2,
+            555
+        ]
+    },
+    {
+        "Id": 754,
+        "ActionId": 754,
+        "Type": 501,
+        "EndDelay": 1200.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 755,
+        "ActionId": 755,
+        "Type": 205,
+        "Params": [
+            1007
+        ]
+    },
+    {
+        "Id": 756,
+        "ActionId": 756,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_30.jpg"
+        ]
+    },
+    {
+        "Id": 757,
+        "ActionId": 757,
+        "Type": 501,
+        "EndDelay": 100.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 758,
+        "ActionId": 758,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab"
+        ]
+    },
+    {
+        "Id": 759,
+        "ActionId": 759,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "比闪电更亮的光从曙光III号的尾部炸裂开来，紧接着是声音——冲击波穿过水幕、穿过混凝土、穿过每一个人的胸腔，震得骨头都在嗡鸣。"
+        ]
+    },
+    {
+        "Id": 760,
+        "ActionId": 760,
+        "Type": 401,
+        "Params": [
+            1,
+            5060
+        ]
+    },
+    {
+        "Id": 761,
+        "ActionId": 761,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "整个天堂桥都在颤抖。水幕瞬间气化成滚滚白雾，数千吨的推力将火焰柱压向导流槽，熔化了的空气裹着橘红色的尾流，像一条被点燃的河。"
+        ]
+    },
+    {
+        "Id": 762,
+        "ActionId": 762,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "曙光III号没有升空，这只是一次地面试车，但它发出的声响足以让方圆几十公里的飞鸟全部惊起，足以让每一个十六七岁的孩子感受到：人类已经是可以涉足群星的文明。"
+        ]
+    },
+    {
+        "Id": 763,
+        "ActionId": 763,
+        "Type": 104,
+        "EndDelay": 800.0,
+        "Params": [
+            "0|0|80",
+            1
+        ]
+    },
+    {
+        "Id": 764,
+        "ActionId": 764,
+        "Type": 401,
+        "Params": [
+            2,
+            2581
+        ]
+    },
+    {
+        "Id": 765,
+        "ActionId": 765,
+        "Type": 205,
+        "EndDelay": 1050.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory528.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 766,
+        "ActionId": 766,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory528.jpg"
+        ]
+    },
+    {
+        "Id": 767,
+        "ActionId": 767,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 768,
+        "ActionId": 768,
+        "Type": 201,
+        "Params": [
+            1,
+            501610
+        ]
+    },
+    {
+        "Id": 769,
+        "ActionId": 769,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "露西亚站在队伍的最后方，掌声从她面前一直蔓延到视野的尽头。她没有鼓掌，双手垂在身侧，脸上也没什么特别的表情。"
+        ]
+    },
+    {
+        "Id": 770,
+        "ActionId": 770,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "但她一直没有挪开视线。天堂桥的尖端穿过云层，直指天穹，灰白色的尾烟还挂在半空中，像一条被遗忘在蓝色画布上的笔触。"
+        ]
+    },
+    {
+        "Id": 771,
+        "ActionId": 771,
+        "Type": 310,
+        "Params": [
+            "她忽然有一种很奇怪的感觉——好像从今天开始，有什么不一样了。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 772,
+        "ActionId": 772,
+        "Type": 310,
+        "Params": [
+            "和四百多名素不相识的人，站在同一片发射场的热风中，耳朵还在嗡嗡作响，心脏还在比平时跳得快一点点。"
+        ]
+    },
+    {
+        "Id": 773,
+        "ActionId": 773,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 774,
+        "ActionId": 774,
+        "Type": 310,
+        "Params": [
+            "她低下头，看了一眼胸前的铭牌，上面的字很小，在阳光下几乎看不清。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 775,
+        "ActionId": 775,
+        "Type": 310,
+        "Params": [
+            "法奥斯军事学院，一期生。"
+        ]
+    },
+    {
+        "Id": 776,
+        "ActionId": 776,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 777,
+        "ActionId": 777,
+        "Type": 310,
+        "Params": [
+            "露西亚轻轻弯了一下嘴角。",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 778,
+        "ActionId": 778,
+        "Type": 310,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "她相信，从这里出发的路，会一直一直通往很远的地方。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
         ]
     }
 ]
