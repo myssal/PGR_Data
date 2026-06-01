@@ -3,56 +3,62 @@
         "Id": 1,
         "StageId": 100,
         "Name": "Difficulty 1",
-        "Des": "placeholder_初始5点生机",
+        "Des": "- Starts with 5 <Icon=IconHp|30|30|0.5/>Vitality.",
         "HardNum": 1
     },
     {
         "Id": 2,
         "StageId": 101,
         "Name": "Difficulty 2",
-        "Des": "placeholder_初始3点生机；\\n材料获取量提升20%\\n迷境之间中每次左滑<Icon=IconSan|45|45|0.5/>理智-5",
+        "Des": "- Starts with 4 <Icon=IconHp|30|30|0.5/>Vitality.\\n- Loses an additional 2 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Increases material gained.",
+        "ConditionId": 1021014,
         "HardNum": 2
     },
     {
         "Id": 3,
         "StageId": 102,
         "Name": "Difficulty 3",
-        "Des": "placeholder_这里是难度3",
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality.\\n- Loses an additional 2 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances <Icon=IconDeSan|30|30|0.5/>Negative Reverbs effects.\\n- Randomly drops Material Growth Echo Resonance I on each floor.",
+        "ConditionId": 1021015,
         "HardNum": 3
     },
     {
         "Id": 4,
         "StageId": 103,
         "Name": "Difficulty 4",
-        "Des": "placeholder_这里是难度4",
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality\\n- Loses an additional 4 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances <Icon=IconDeSan|30|30|0.5/>Negative Reverbs effects.\\n- Randomly drops Material Growth Echo Resonance II on each floor.\\n- Increases number of Abyssal Spaces on the last floor.",
+        "ConditionId": 1021016,
         "HardNum": 4
     },
     {
         "Id": 6,
         "StageId": 105,
         "Name": "Difficulty 1",
-        "Des": "placeholder_初始5点生机",
+        "Des": "- Starts with 5 <Icon=IconHp|30|30|0.5/>Vitality.",
         "HardNum": 1
     },
     {
         "Id": 7,
         "StageId": 106,
         "Name": "Difficulty 2",
-        "Des": "placeholder_初始3点生机；\\n材料获取量提升20%\\n迷境之间中每次左滑<Icon=IconSan|45|45|0.5/>理智-5",
+        "Des": "- Starts with 4 <Icon=IconHp|30|30|0.5/>Vitality.\\n- Loses an additional 2 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Increases material gained.",
+        "ConditionId": 1021014,
         "HardNum": 2
     },
     {
         "Id": 8,
         "StageId": 107,
         "Name": "Difficulty 3",
-        "Des": "placeholder_这里是难度3",
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality.\\n- Loses an additional 2 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances <Icon=IconDeSan|30|30|0.5/>Negative Reverbs effects.\\n- Randomly drops Material Growth Echo Resonance I on each floor.",
+        "ConditionId": 1021015,
         "HardNum": 3
     },
     {
         "Id": 9,
         "StageId": 108,
         "Name": "Difficulty 4",
-        "Des": "placeholder_这里是难度4",
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality\\n- Loses an additional 4 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances <Icon=IconDeSan|30|30|0.5/>Negative Reverbs effects.\\n- Randomly drops Material Growth Echo Resonance II on each floor.\\n- Increases number of Abyssal Spaces on the last floor.",
+        "ConditionId": 1021016,
         "HardNum": 4
     }
 ]

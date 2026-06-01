@@ -813,8 +813,8 @@
     },
     {
         "Id": 20003086,
-        "Key": "FubenBossSingleChallengePreBuffNotActive",
-        "Text": "20003086囚笼鏖战点前置buff未激活"
+        "Key": "FubenBossSingleChallengeBuffIdNotExist",
+        "Text": "20003086 This buff does not exist in the current Phantom Pain Cage: Intensive Battle Buff Group"
     },
     {
         "Id": 20003087,
@@ -1289,72 +1289,132 @@
     {
         "Id": 20004005,
         "Key": "TeamManagerCanNotFindThePrefabTeam",
-        "Text": "20004005 Preset team not found"
+        "Text": "Preset team not found"
     },
     {
         "Id": 20004006,
-        "Key": "TeamManagerCharacterIsEmptyCanNotCarryPartner",
-        "Text": "20004006站位没有角色不能携带辅助机"
+        "Key": "TeamManagerPosDataNotFound",
+        "Text": "No character position data"
     },
     {
         "Id": 20004007,
-        "Key": "TeamManagerThisTeamPosIsNotExist",
-        "Text": "20004006 Cannot equip CUB without character in position"
+        "Key": "TeamManagerCharacterIsEmptyCanNotCarryPartner",
+        "Text": "No character in position. Cannot carry CUB"
     },
     {
         "Id": 20004008,
-        "Key": "TeamManagerPrefabPartnerSkillIsEmpty",
-        "Text": "20004007 Position does not exist"
+        "Key": "TeamManagerThisTeamPosIsNotExist",
+        "Text": "Position does not exist"
     },
     {
         "Id": 20004009,
-        "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
-        "Text": "20004008辅助机预设为空不能设置技能"
+        "Key": "TeamManagerPrefabTeamPartnerDataEmpty",
+        "Text": "Preset team CUB data is empty"
     },
     {
         "Id": 20004010,
-        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
-        "Text": "20004006 CUB preset skills cannot be empty"
+        "Key": "TeamManagerPrefabPartnerSkillIsEmpty",
+        "Text": "CUB preset skill cannot be empty"
     },
     {
         "Id": 20004011,
-        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
-        "Text": "\"20004008 CUB preset empty, cannot set skills\""
+        "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
+        "Text": "CUB preset is empty. Cannot set skill"
     },
     {
         "Id": 20004012,
-        "Key": "TeamManagerPrefabTeamEquipRepeat",
-        "Text": "20004010 No character in position. Cannot equip equipment"
+        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
+        "Text": "No character in position. Cannot equip equipment"
     },
     {
         "Id": 20004013,
-        "Key": "TeamManagerPrefabTeamResonanceRepeat",
-        "Text": "20004011 Formation is already at the top"
+        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
+        "Text": "Formation is already at the top"
     },
     {
         "Id": 20004014,
-        "Key": "TeamManagerPrefabCharacterEquipEmpty",
-        "Text": "20004012 Preset formation contains duplicate equipped equipment"
+        "Key": "TeamManagerPrefabTeamEquipRepeat",
+        "Text": "Preset formation contains duplicate equipment"
     },
     {
         "Id": 20004015,
-        "Key": "TeamManagerPrefabTeamNameEmpty",
-        "Text": "20004015编队名不能为空"
+        "Key": "TeamManagerPrefabTeamEquipDataEmpty",
+        "Text": "Preset team gear data is empty"
     },
     {
         "Id": 20004016,
-        "Key": "TeamManagerPrefabTeamPartnerRepeat",
-        "Text": "20004013 Preset formation contains duplicate equipped resonance"
+        "Key": "TeamManagerPrefabTeamResonanceRepeat",
+        "Text": "Preset formation contains duplicate equipped resonance"
     },
     {
         "Id": 20004017,
-        "Key": "TeamManagerPrefabTeamSameCharacter",
-        "Text": "20004014 Position character equipment data is empty"
+        "Key": "TeamManagerPrefabCharacterEquipEmpty",
+        "Text": "Position character equipment data is empty"
     },
     {
         "Id": 20004018,
+        "Key": "TeamManagerPrefabTeamNameEmpty",
+        "Text": "Team name cannot be empty"
+    },
+    {
+        "Id": 20004019,
+        "Key": "TeamManagerPrefabTeamNameIllegal",
+        "Text": "Team name contains illegal characters"
+    },
+    {
+        "Id": 20004020,
+        "Key": "TeamManagerPrefabTeamPartnerRepeat",
+        "Text": "Preset formation contains duplicate equipped CUBs"
+    },
+    {
+        "Id": 20004021,
+        "Key": "TeamManagerPrefabTeamSameCharacter",
+        "Text": "Preset formation contains duplicate characters"
+    },
+    {
+        "Id": 20004022,
         "Key": "TeamManagerPrefabTeamEquipDataIsNull",
-        "Text": "20004015 Team name cannot be empty"
+        "Text": "Preset team gear data cannot be empty"
+    },
+    {
+        "Id": 20004023,
+        "Key": "TeamManagerPrefabTagConfigNotFound",
+        "Text": "Preset team tag is illegal"
+    },
+    {
+        "Id": 20004024,
+        "Key": "TeamManagerPrefabTagDataError",
+        "Text": "Preset team tag parameter error"
+    },
+    {
+        "Id": 20004025,
+        "Key": "TeamManagerPrefabTagRepeat",
+        "Text": "Preset teams have the same tag"
+    },
+    {
+        "Id": 20004026,
+        "Key": "TeamManagerPrefabTagTypeError",
+        "Text": "Preset team has multiple tags of the same type"
+    },
+    {
+        "Id": 20004027,
+        "Key": "TeamManagerPrefabSkillCanNotSwitch",
+        "Text": "Preset teams cannot select deployment form"
+    },
+    {
+        "Id": 20004028,
+        "Key": "TeamManagerPrefabSkillSwitchError",
+        "Text": "Preset team deployment form skill is illegal"
+    },
+    {
+        "Id": 20004029,
+        "Key": "TeamManagerPrefabSkillSwitchParamError",
+        "Text": "Preset team deployment form parameter error"
+    },
+    {
+        "Id": 20004030,
+        "Key": "TeamManagerPrefabSkillSwitchInEmptyPos",
+        "Text": "No character in position. Cannot set battle form"
     },
     {
         "Id": 20007001,
@@ -4326,12 +4386,12 @@
     {
         "Id": 20034138,
         "Key": "ConditionManagerTheatre6StageCountNotEnough",
-        "Text": "通过关卡次数不足"
+        "Text": "Insufficient stage completions"
     },
     {
         "Id": 20034139,
         "Key": "ConditionManagerTheatre6DiffCountNotEnough",
-        "Text": "通过难度次数不足"
+        "Text": "Insufficient difficulty completions"
     },
     {
         "Id": 20034140,
@@ -5521,22 +5581,22 @@
     {
         "Id": 20053040,
         "Key": "PurchaseNotSupportSupplementGet",
-        "Text": "无法进行补签"
+        "Text": "Missed sign-ins cannot be made up"
     },
     {
         "Id": 20053041,
         "Key": "PurchaseNotSupplementGetCount",
-        "Text": "无需补签领取"
+        "Text": "No makeup sign-in needed to claim"
     },
     {
         "Id": 20053042,
         "Key": "PurchaseBuyRemainDayLimit",
-        "Text": "当前无法购买"
+        "Text": "Currently unavailable for purchase"
     },
     {
         "Id": 20053043,
         "Key": "PurchaseNotSupportSupplementGetReward",
-        "Text": "无法进行补签"
+        "Text": "Missed sign-ins cannot be made up"
     },
     {
         "Id": 20053101,
@@ -27225,6 +27285,11 @@
         "Text": "20290019 World Mode scene module not found"
     },
     {
+        "Id": 20290020,
+        "Key": "BigWorldCourseExploreNoAvailableReward",
+        "Text": "20290020 No claimable rewards in Journey exploration"
+    },
+    {
         "Id": 20291001,
         "Key": "BigWorldModuleNotFind",
         "Text": "20291001 World Mode module not found"
@@ -28372,52 +28437,52 @@
     {
         "Id": 20423002,
         "Key": "Theatre6CharacterIdError",
-        "Text": "角色错误"
+        "Text": "Character error"
     },
     {
         "Id": 20423003,
         "Key": "Theatre6FashionIdError",
-        "Text": "涂装错误"
+        "Text": "Coating error"
     },
     {
         "Id": 20423004,
         "Key": "Theatre6BuffIdError",
-        "Text": "回声残响错误"
+        "Text": "Echo Resonance error"
     },
     {
         "Id": 20423005,
         "Key": "Theatre6BuffUnlockError",
-        "Text": "回声残响未解锁"
+        "Text": "Echo Resonance locked"
     },
     {
         "Id": 20423006,
         "Key": "Theatre6DifficultyIdError",
-        "Text": "难度错误"
+        "Text": "Difficulty error"
     },
     {
         "Id": 20423007,
         "Key": "Theatre6FloorCfgNotFoundError",
-        "Text": "调查层级不存在"
+        "Text": "Investigation tier not found"
     },
     {
         "Id": 20423008,
         "Key": "Theatre6RoomCfgNotFoundError",
-        "Text": "雾途隅间不存在"
+        "Text": "Fogbound Nook does not exist"
     },
     {
         "Id": 20423009,
         "Key": "Theatre6RoomCfgParamError",
-        "Text": "雾途隅间参数错误"
+        "Text": "Fogbound Nook parameter error"
     },
     {
         "Id": 20423010,
         "Key": "Theatre6DifficultyGroupError",
-        "Text": "难度组错误"
+        "Text": "Difficulty group error"
     },
     {
         "Id": 20423011,
         "Key": "Theatre6DifficultyUnlockError",
-        "Text": "难度未解锁"
+        "Text": "Difficulty locked"
     },
     {
         "Id": 20423012,
@@ -28427,17 +28492,17 @@
     {
         "Id": 20423013,
         "Key": "Theatre6NoCurrentModeDbError",
-        "Text": "当前模式数据不存在"
+        "Text": "Current mode data not found"
     },
     {
         "Id": 20423014,
         "Key": "Theatre6NoCurrentRoomDbError",
-        "Text": "当前雾途隅间数据不存在"
+        "Text": "Current Fogbound Nook data not found"
     },
     {
         "Id": 20423015,
         "Key": "Theatre6RoomTypeError",
-        "Text": "当前雾途隅间类型错误"
+        "Text": "Current Fogbound Nook type error"
     },
     {
         "Id": 20423016,
@@ -28447,7 +28512,7 @@
     {
         "Id": 20423017,
         "Key": "Theatre6TaskRoomMaxRefreshCountError",
-        "Text": "超出刷新次数上限"
+        "Text": "Refresh limit exceeded"
     },
     {
         "Id": 20423018,
@@ -28457,87 +28522,87 @@
     {
         "Id": 20423019,
         "Key": "Theatre6NoTaskToRandomError",
-        "Text": "没有新的任务"
+        "Text": "No new missions"
     },
     {
         "Id": 20423020,
         "Key": "Theatre6TaskIdError",
-        "Text": "任务错误"
+        "Text": "Mission error"
     },
     {
         "Id": 20423021,
         "Key": "Theatre6NoFloorDataError",
-        "Text": "没有调查层级数据"
+        "Text": "No investigation tier data"
     },
     {
         "Id": 20423022,
         "Key": "Theatre6NoRoomDataError",
-        "Text": "没有雾途隅间数据"
+        "Text": "No Fogbound Nook data"
     },
     {
         "Id": 20423023,
         "Key": "Theatre6RoomIdxNotFoundError",
-        "Text": "无法找到当前的雾途隅间索引"
+        "Text": "Current Fogbound Nook index not found"
     },
     {
         "Id": 20423024,
         "Key": "Theatre6NoNextRoomError",
-        "Text": "缺少下一个雾途隅间的配置"
+        "Text": "Next Fogbound Nook configuration not found"
     },
     {
         "Id": 20423025,
         "Key": "Theatre6ChooseTaskOutOfLimitError",
-        "Text": "选择的任务数量超过上限"
+        "Text": "Mission selection limit exceeded"
     },
     {
         "Id": 20423026,
         "Key": "Theatre6ChoosePoolEmptyError",
-        "Text": "迷局抉择为空"
+        "Text": "Enigma Choice is empty"
     },
     {
         "Id": 20423027,
         "Key": "Theatre6ChoosePoolIdNotFoundError",
-        "Text": "迷局抉择池不存在"
+        "Text": "Enigma Choice Pool does not exist"
     },
     {
         "Id": 20423028,
         "Key": "Theatre6ChooseIdNotFoundError",
-        "Text": "迷局抉择不存在"
+        "Text": "Enigma Choice not found"
     },
     {
         "Id": 20423029,
         "Key": "Theatre6ChoosePoolCfgError",
-        "Text": "迷局抉择池配置错误"
+        "Text": "Enigma Choice Pool configuration error"
     },
     {
         "Id": 20423030,
         "Key": "Theatre6ChoosePoolChooseLineNotFoundError",
-        "Text": "迷局抉择池事件链不存在"
+        "Text": "Enigma Choice Pool event chain not found"
     },
     {
         "Id": 20423031,
         "Key": "Theatre6ChooseCfgError",
-        "Text": "迷局抉择错误"
+        "Text": "Enigma Choice error"
     },
     {
         "Id": 20423032,
         "Key": "Theatre6ChooseCfgRewardTypeError",
-        "Text": "迷局抉择奖励类型错误"
+        "Text": "Enigma Choice reward type error"
     },
     {
         "Id": 20423033,
         "Key": "Theatre6ChooseIndexNotFoundError",
-        "Text": "迷局抉择池中不存在该迷局抉择"
+        "Text": "Enigma Choice not found in Enigma Choice Pool"
     },
     {
         "Id": 20423034,
         "Key": "Theatre6ChooseRoomStatusError",
-        "Text": "当前的雾途隅间状态错误"
+        "Text": "Current Fogbound Nook status error"
     },
     {
         "Id": 20423035,
         "Key": "Theatre6FightIdNotFoundError",
-        "Text": "战斗不存在"
+        "Text": "Battle not found"
     },
     {
         "Id": 20423036,
@@ -28547,62 +28612,62 @@
     {
         "Id": 20423037,
         "Key": "Theatre6MonsterIdAlreadySetError",
-        "Text": "已经选择了难度"
+        "Text": "Difficulty already selected"
     },
     {
         "Id": 20423038,
         "Key": "Theatre6MonsterIdNotSetError",
-        "Text": "未选择怪物难度"
+        "Text": "Enemy difficulty not selected"
     },
     {
         "Id": 20423039,
         "Key": "Theatre6FightCfgParamError",
-        "Text": "战斗配置错误"
+        "Text": "Battle configuration error"
     },
     {
         "Id": 20423040,
         "Key": "Theatre6MonsterIdError",
-        "Text": "怪物错误"
+        "Text": "Enemy error"
     },
     {
         "Id": 20423041,
         "Key": "Theatre6ModeDataIsNull",
-        "Text": "数据不存在"
+        "Text": "Data not found"
     },
     {
         "Id": 20423042,
         "Key": "Theatre6SanCfgError",
-        "Text": "理智配置不存在"
+        "Text": "Sanity settings not found"
     },
     {
         "Id": 20423043,
         "Key": "Theatre6FileDataIsNull",
-        "Text": "归档数据不存在"
+        "Text": "Archive data not found"
     },
     {
         "Id": 20423044,
         "Key": "Theatre6SlotIdError",
-        "Text": "归档编号错误"
+        "Text": "Archive ID error"
     },
     {
         "Id": 20423045,
         "Key": "Theatre6UnlockStoryIdError",
-        "Text": "解锁图鉴ID错误"
+        "Text": "Unlock Codex ID error"
     },
     {
         "Id": 20423046,
         "Key": "Theatre6FileDataNotFound",
-        "Text": "找不到归档文件数据"
+        "Text": "Archive file data not found"
     },
     {
         "Id": 20423047,
         "Key": "Theatre6ChooseGroupNotFoundError",
-        "Text": "迷境之间不存在"
+        "Text": "Lost Space does not exist"
     },
     {
         "Id": 20423048,
         "Key": "Theatre6FightGroupNotFoundError",
-        "Text": "梦魇之间不存在"
+        "Text": "Nightmare Space does not exist"
     },
     {
         "Id": 20423049,
@@ -28612,212 +28677,267 @@
     {
         "Id": 20423050,
         "Key": "Theatre6PlayModeNotUnlockedError",
-        "Text": "当前玩法未解锁"
+        "Text": "Gameplay mode locked"
     },
     {
         "Id": 20423051,
         "Key": "Theatre6FightRewardTypeError",
-        "Text": "战斗奖励类型错误"
+        "Text": "Battle reward type error"
     },
     {
         "Id": 20423052,
         "Key": "Theatre6StoryModeAvgIdError",
-        "Text": "剧情模式AVGId错误"
+        "Text": "Story mode AVGId error"
     },
     {
         "Id": 20423053,
         "Key": "Theatre6WorldIdError",
-        "Text": "世界ID不存在"
+        "Text": "World ID not found"
     },
     {
         "Id": 20423054,
         "Key": "Theatre6SkillCfgNoFound",
-        "Text": "技能配置不存在"
+        "Text": "Skill configuration not found"
     },
     {
         "Id": 20423055,
         "Key": "Theatre6SkillPoolCfgNoFound",
-        "Text": "技能池配置不存在"
+        "Text": "Skill pool configuration not found"
     },
     {
         "Id": 20423056,
         "Key": "Theatre6AttrPackCfgNoFound",
-        "Text": "旧物配置不存在"
+        "Text": "Relic configuration not found"
     },
     {
         "Id": 20423057,
         "Key": "Theatre6SkillTypeError",
-        "Text": "技能类型错误"
+        "Text": "Skill type error"
     },
     {
         "Id": 20423058,
         "Key": "Theatre6SkillAddError",
-        "Text": "技能添加错误"
+        "Text": "Skill addition error"
     },
     {
         "Id": 20423059,
         "Key": "Theatre6ModeIdNotFound",
-        "Text": "当前模式ID错误"
+        "Text": "Current mode ID error"
     },
     {
         "Id": 20423060,
         "Key": "Theatre6RandomTotalWeightError",
-        "Text": "随机总权重错误"
+        "Text": "Random total weight error"
     },
     {
         "Id": 20423061,
         "Key": "Theatre6RandomError",
-        "Text": "随机未知错误"
+        "Text": "Random unknown error"
     },
     {
         "Id": 20423062,
         "Key": "Theatre6AttrPackNotExist",
-        "Text": "旧物配置不存在"
+        "Text": "Relic configuration not found"
     },
     {
         "Id": 20423063,
         "Key": "Theatre6AttrPackCharacterNotMatch",
-        "Text": "旧物角色不匹配"
+        "Text": "Relic character mismatched"
     },
     {
         "Id": 20423064,
         "Key": "Theatre6ModeError",
-        "Text": "迷局突围错误"
+        "Text": "Labyrinth Breakout error"
     },
     {
         "Id": 20423065,
         "Key": "Theatre6TalentLevelError",
-        "Text": "全知视界等级错误"
+        "Text": "Omniscient Vision level error"
     },
     {
         "Id": 20423066,
         "Key": "Theatre6TalentCfgError",
-        "Text": "全知视界配置错误"
+        "Text": "Omniscient Vision configuration error"
     },
     {
         "Id": 20423067,
         "Key": "Theatre6TalentCoinLimit",
-        "Text": "明察心证数量不足"
+        "Text": "Insufficient Discernment"
     },
     {
         "Id": 20423068,
         "Key": "Theatre6NotPlayMode",
-        "Text": "当前模式不是迷局突围"
+        "Text": "Current mode is not Labyrinth Breakout"
     },
     {
         "Id": 20423069,
         "Key": "Theatre6CurrentModeDbNotFound",
-        "Text": "当前模式数据不存在"
+        "Text": "Current mode data not found"
     },
     {
         "Id": 20423070,
         "Key": "Theatre6SkillNotExist",
-        "Text": "技能数据不存在"
+        "Text": "Skill data not found"
     },
     {
         "Id": 20423071,
         "Key": "Theatre6MoveSkillError",
-        "Text": "技能移动错误"
+        "Text": "Skill move error"
     },
     {
         "Id": 20423072,
         "Key": "Theatre6SwapSkillError",
-        "Text": "技能交换错误"
+        "Text": "Skill swap error"
     },
     {
         "Id": 20423073,
         "Key": "Theatre6NoinShopRoomError",
-        "Text": "不在情报之间"
+        "Text": "Not in Intel Space"
     },
     {
         "Id": 20423074,
         "Key": "Theatre6ShopFreshCountError",
-        "Text": "情报之间刷新次数错误"
+        "Text": "Intel Space refresh count error"
     },
     {
         "Id": 20423075,
         "Key": "Theatre6GoldLimit",
-        "Text": "古旧金币限制"
+        "Text": "Ancient Coin limit"
     },
     {
         "Id": 20423076,
         "Key": "Theatre6ShopGoodNoFund",
-        "Text": "情报之间不存在"
+        "Text": "Intel Space does not exist"
     },
     {
         "Id": 20423077,
         "Key": "Theatre6ShopGoodLockError",
-        "Text": "情报之间已被锁定"
+        "Text": "Intel Space locked"
     },
     {
         "Id": 20423078,
         "Key": "Theatre6ShopGoodTypeError",
-        "Text": "情报之间商品类型错误"
+        "Text": "Intel Space item type error"
     },
     {
         "Id": 20423079,
         "Key": "Theatre6ShopGoodHasSell",
-        "Text": "情报之间商品已出售"
+        "Text": "Intel Space item already sold"
     },
     {
         "Id": 20423080,
         "Key": "Theatre6ShopGoodSkillTemplateNotFound",
-        "Text": "技能配置不存在"
+        "Text": "Skill configuration not found"
     },
     {
         "Id": 20423081,
         "Key": "Theatre6NoSkillEmptyPos",
-        "Text": "没有技能空位置"
+        "Text": "No available skill slots"
     },
     {
         "Id": 20423082,
         "Key": "Theatre6ShopGoodAttrPackTemplateNotFound",
-        "Text": "旧物配置不存在"
+        "Text": "Relic configuration not found"
     },
     {
         "Id": 20423083,
         "Key": "Theatre6SkillSlotFull",
-        "Text": "技能槽位已满"
+        "Text": "Skill slots are full"
     },
     {
         "Id": 20423084,
         "Key": "Theatre6SkillOverQueueEmpty",
-        "Text": "技能溢出队列为空"
+        "Text": "Skill overflow queue is empty"
     },
     {
         "Id": 20423085,
         "Key": "Theatre6SkillOverQueueError",
-        "Text": "技能溢出取出次数错误"
+        "Text": "Skill overflow retrieval count error"
     },
     {
         "Id": 20423086,
         "Key": "Theatre6StoryLineNotUnlockError",
-        "Text": "当前故事未解锁"
+        "Text": "Current story locked"
     },
     {
         "Id": 20423087,
         "Key": "Theatre6StoryLineIdError",
-        "Text": "故事错误"
+        "Text": "Story error"
     },
     {
         "Id": 20423088,
         "Key": "Theatre6StoryLineNotCompletedError",
-        "Text": "当前故事未完成"
+        "Text": "Current story not completed"
     },
     {
         "Id": 20423089,
         "Key": "Theatre6SkillMaxLevel",
-        "Text": "技能已达到最大等级"
+        "Text": "Skill already at max level"
     },
     {
         "Id": 20423090,
         "Key": "Theatre6BuffLvUpLimit",
-        "Text": "回声残响升级限制"
+        "Text": "Echo Resonance upgrade limit"
     },
     {
         "Id": 20423091,
         "Key": "Theatre6SkillLvUpFailed",
-        "Text": "指定技能升级失败"
+        "Text": "Designated skill upgrade failed"
+    },
+    {
+        "Id": 20423092,
+        "Key": "Theatre6CharacterUnlockError",
+        "Text": "20423092角色未解锁"
+    },
+    {
+        "Id": 20423093,
+        "Key": "Theatre6StoryLineCompletedError",
+        "Text": "20423093当前故事线已经完成"
+    },
+    {
+        "Id": 20423094,
+        "Key": "TableTypeInvalid",
+        "Text": "20423094 Current type has been deprecated"
+    },
+    {
+        "Id": 20423095,
+        "Key": "TableTypeParamLenError",
+        "Text": "20423095 Invalid number of parameters"
+    },
+    {
+        "Id": 20423096,
+        "Key": "TableTypeParamLenMultipleError",
+        "Text": "20423096 Parameter count must be a multiple of the required value"
+    },
+    {
+        "Id": 20423097,
+        "Key": "TableTypeParamMinLenError",
+        "Text": "20423097 Parameter count is below the minimum requirement"
+    },
+    {
+        "Id": 20423098,
+        "Key": "Theatre6AlreadySettleError",
+        "Text": "20423098 Current mode has already been settled"
+    },
+    {
+        "Id": 20424001,
+        "Key": "GameCollectionFunctionNotOpen",
+        "Text": "20424001 Game Collection event has not started yet"
+    },
+    {
+        "Id": 20424002,
+        "Key": "GameCollectionHasOtherGameInSuspend",
+        "Text": "20424002 Another game is currently in a suspended state"
+    },
+    {
+        "Id": 20424003,
+        "Key": "GameCollectionNoSuchGameType",
+        "Text": "20424003 Game type does not exist"
+    },
+    {
+        "Id": 20424004,
+        "Key": "GameCollectionEnterGameStageIdNotMatchConfig",
+        "Text": "20424004 Game entry Stage ID does not match configuration"
     },
     {
         "Id": 25000001,
@@ -29575,6 +29695,11 @@
         "Text": "25100046 Corresponding environment mission configuration not found"
     },
     {
+        "Id": 25100047,
+        "Key": "DlcQuestStateIsNotReady",
+        "Text": "25100047 Mission status is not Ready"
+    },
+    {
         "Id": 25200001,
         "Key": "DlcFashionTypeNotFound",
         "Text": "25200001 Outfit part does not exist"
@@ -30172,17 +30297,17 @@
     {
         "Id": 25201001,
         "Key": "BigWorldDIYOutfitTypeNotFound",
-        "Text": "25201001 Outfit preset ID not found"
+        "Text": "25201001 Costume preset ID not found"
     },
     {
         "Id": 25201002,
         "Key": "BigWorldDIYOutfitCannotEquip",
-        "Text": "25201002 Found outfits that cannot be equipped in this preset"
+        "Text": "25201002 Found costumes that cannot be equipped in this preset"
     },
     {
         "Id": 25201003,
         "Key": "BigWorldDIYFashionPartIdIncompatible",
-        "Text": "25201003 Incompatible outfit detected"
+        "Text": "25201003 Incompatible costume detected"
     },
     {
         "Id": 25202001,
@@ -30658,6 +30783,16 @@
         "Id": 25300092,
         "Key": "RelinkPlayerIsMatching",
         "Text": "Cannot do this while matchmaking"
+    },
+    {
+        "Id": 25300093,
+        "Key": "RelinkCharacterNpcAttribDataNotFound",
+        "Text": "25300093 Attribute data for this character style not found"
+    },
+    {
+        "Id": 25300094,
+        "Key": "RelinkFactorDescNotFound",
+        "Text": "25300094 Detailed information for this entry not found"
     },
     {
         "Id": 30002001,

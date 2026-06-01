@@ -1,23 +1,9 @@
 [
     {
-        "Id": 1,
-        "Name": "placeholder_标签1",
-        "Pirority": 1,
-        "Desc": "placeholder_这是标签1",
-        "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueGymCabinet001Sp.png"
-    },
-    {
-        "Id": 2,
-        "Name": "placeholder_标签2",
-        "Pirority": 2,
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueBazhisushe001Sp.png"
-    },
-    {
         "Id": 11,
-        "Name": "晕眩",
+        "Name": "Stun",
         "Pirority": 11,
-        "Desc": "晕眩期间，无法获取<color=#516797><Icon=IconOverClock|45|45|0.5/>超序值</color>",
+        "Desc": "Cannot gain <Icon=IconOverClock|30|30|0.5/><color=#516797>Hypersequence</color> while being inflicted by Stun.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36.png"
     },
@@ -25,31 +11,31 @@
         "Id": 12,
         "Name": "Ignite",
         "Pirority": 2,
-        "Desc": "每有一层，对手技能命中时额外附加10%攻击的伤害，持续时间无限，可无限叠加。",
+        "Desc": "When hit by enemy Skills, deals DMG equal to 10% Attack for every stack. Lasts indefinitely. Stacks infinitely.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon38.png"
     },
     {
         "Id": 13,
-        "Name": "击飞",
+        "Name": "Knockback",
         "Pirority": 2,
-        "Desc": "敌人被<color=#487F3B><Icon=IconHitFlyBlack|45|45|0.5/>击飞</color>期间，无法触发<color=#516797><Icon=IconBlock|45|45|0.5/>格挡</color>。",
+        "Desc": "Enemies cannot trigger <Icon=IconBlock|30|30|0.5/><color=#516797>Block</color> while being inflicted with <Icon=IconHitFlyBlack|30|30|0.5/><color=#487F3B>Knockback</color>.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon39.png"
     },
     {
         "Id": 14,
-        "Name": "击倒",
+        "Name": "Knockdown",
         "Pirority": 2,
-        "Desc": "敌人被<color=#487F3B><Icon=IconHitDown|45|45|0.5/>击倒</color>期间，无法触发<color=#516797><Icon=IconBlock|45|45|0.5/>格挡</color>。",
+        "Desc": "Enemies cannot trigger <Icon=IconBlock|30|30|0.5/><color=#516797>Block</color> while being inflicted with <Icon=IconHitDown|30|30|0.5/><color=#487F3B>Knockdown</color>.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon41.png"
     },
     {
         "Id": 15,
-        "Name": "<暴击>",
+        "Name": "<CRIT>",
         "Pirority": 1,
-        "Desc": "下次使用技能时，消耗1层<color=#B96716><<Icon=IconCritBlack|45|45|0.5/>暴击></color>，使该次技能造成的伤害提升50%。持续时间无限，可无限叠加。",
+        "Desc": "Consumes 1 stack of <color=#B96716><</color><Icon=IconCritBlack|30|30|0.5/><color=#B96716>CRIT></color> when using the next skill, and DMG dealt by that skill increases by 50%. Lasts indefinitely. Stacks infinitely.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
     },
@@ -57,15 +43,15 @@
         "Id": 16,
         "Name": "CRIT",
         "Pirority": 2,
-        "Desc": "此次技能造成的伤害提升50%。",
+        "Desc": "DMG dealt by this Skill increases by 50%.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
     },
     {
         "Id": 17,
-        "Name": "<格挡>",
+        "Name": "<Block>",
         "Pirority": 1,
-        "Desc": "下次对手技能命中时，消耗1层<color=#516797><<Icon=IconBlock|45|45|0.5/>格挡></color>，使自身受到该次技能的伤害降低50%。持续时间无限，可无限叠加。",
+        "Desc": "Consumes 1 stack of <color=#516797><</color><Icon=IconBlock|30|30|0.5/><color=#516797>Block></color> when hit by the next enemy skill, and DMG taken from that skill is reduced by 50%. Lasts indefinitely. Stacks infinitely. Cannot Block while inflicted with Knockback or Knockdown.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
     },
@@ -73,7 +59,7 @@
         "Id": 18,
         "Name": "Block",
         "Pirority": 2,
-        "Desc": "受到此次技能的伤害降低50%。",
+        "Desc": "DMG taken from this skill is reduced by 50%. Cannot Block while inflicted with Knockback or Knockdown.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
     },
@@ -81,7 +67,7 @@
         "Id": 19,
         "Name": "Rage",
         "Pirority": 1,
-        "Desc": "通过使用技能，可以获得一定点数的<color=#9F3232><Icon=IconAnger|45|45|0.5/>怒火</color>，持续时间无限。\\n<color=#9F3232><Icon=IconAnger|45|45|0.5/>怒火</color>上限为100点，达到上限时，进入<color=#9F3232><Icon=IconAngry|45|45|0.5/>狂暴</color>。",
+        "Desc": "Using skills grants <color=#9F3232><Icon=IconAnger|30|30|0.5/>Rage</color>. Lasts indefinitely.\\nMax <color=#9F3232><Icon=IconAnger|30|30|0.5/>Rage</color>: 100. Triggers <color=#9F3232><Icon=IconAngry|30|30|0.5/>Berserk</color> at max Rage.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43.png"
     },
@@ -89,7 +75,7 @@
         "Id": 20,
         "Name": "Berserk",
         "Pirority": 2,
-        "Desc": "<color=#9F3232><Icon=IconAngry|45|45|0.5/>狂暴</color>状态下，造成伤害提高10%，使用任意技能均将消耗10点<color=#9F3232><Icon=IconAnger|45|45|0.5/>怒火</color>，部分技能将触发额外效果。\\n在<color=#9F3232><Icon=IconAnger|45|45|0.5/>怒火</color>消耗至0时，<color=#9F3232><Icon=IconAngry|45|45|0.5/>狂暴</color>状态结束。<color=#9F3232><Icon=IconAngry|45|45|0.5/>狂暴</color>无法叠加。",
+        "Desc": "While <Icon=IconAngry|30|30|0.5/><color=#9F3232>Berserk</color> is active, increases DMG by 10%. Using any skill consumes 10 <Icon=IconAnger|30|30|0.5/><color=#9F3232>Rage</color>, and certain skills trigger additional effects.\\nWhen <Icon=IconAnger|30|30|0.5/><color=#9F3232>Rage</color> reaches 0, <Icon=IconAngry|30|30|0.5/><color=#9F3232>Berserk</color> ends. <Icon=IconAngry|30|30|0.5/><color=#9F3232>Berserk</color> does not stack.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png"
     },
@@ -97,7 +83,7 @@
         "Id": 21,
         "Name": "Parry",
         "Pirority": 1,
-        "Desc": "战斗开始时以及双方<color=#6F4877><Icon=IconStamina|45|45|0.5/>战意值</color>均耗尽时，将触发一次<color=#B96716><Icon=IconWrestle|45|45|0.5/>拼刀</color>。在<color=#B96716><Icon=IconWrestle|45|45|0.5/>拼刀</color>中获胜的一方，将获得出手权。",
+        "Desc": "Triggers a <Icon=IconWrestle|30|30|0.5/><color=#B96716>Parry</color> at the start of battle and when both sides' <Icon=IconStamina|30|30|0.5/><color=#6F4877>Fighting Will</color> is depleted. The winner of the <Icon=IconWrestle|30|30|0.5/><color=#B96716>Parry</color> gains First Strike.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
     },
@@ -105,7 +91,7 @@
         "Id": 22,
         "Name": "Counter",
         "Pirority": 1,
-        "Desc": "战斗中一方<color=#516797><Icon=IconOverClock|45|45|0.5/>超序值</color>达到100点时，将触发一次<color=#516797><Icon=IconOverClock|45|45|0.5/>反制</color>。在<color=#516797><Icon=IconOverClock|45|45|0.5/>反制</color>中获胜的一方，将获得出手权",
+        "Desc": "Triggers a <Icon=IconOverClock|30|30|0.5/><color=#516797>Counter</color> when either side's <Icon=IconOverClock|30|30|0.5/><color=#516797>Hypersequence</color> reaches 100 during a battle. The winner of the <Icon=IconOverClock|30|30|0.5/><color=#516797>Counter</color> gains First Strike.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
     },
@@ -113,7 +99,7 @@
         "Id": 23,
         "Name": "Initiative",
         "Pirority": 3,
-        "Desc": "部分技能在<color=#B96716><Icon=IconWrestle|45|45|0.5/>先机</color>属性高时可以造成额外效果。",
+        "Desc": "Certain skills can trigger additional effects when <Icon=IconWrestle|30|30|0.5/><color=#B96716>Initiative</color> is high.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
     },
@@ -121,7 +107,7 @@
         "Id": 24,
         "Name": "Hypersequence",
         "Pirority": 3,
-        "Desc": "部分技能在<color=#516797><Icon=IconOverClock|45|45|0.5/>超序</color>属性高时可以造成额外效果。",
+        "Desc": "Certain skills can trigger additional effects when <Icon=IconOverClock|30|30|0.5/><color=#516797>Hypersequence</color> is high.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
     },
@@ -129,8 +115,16 @@
         "Id": 25,
         "Name": "Fighting Will",
         "Pirority": 3,
-        "Desc": "部分技能在<color=#6F4877><Icon=IconStamina|45|45|0.5/>战意</color>属性高时可以造成额外效果。",
+        "Desc": "Certain skills can trigger additional effects when <Icon=IconStamina|30|30|0.5/><color=#6F4877>Fighting Will</color> is high.",
         "SaveWeight": 10,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon03.png"
+    },
+    {
+        "Id": 99,
+        "Name": "Ignite",
+        "Pirority": 11,
+        "Desc": "When hit by enemy Skills, deal DMG equal to 10% Attack for every stack. Lasts indefinitely. Stacks infinitely.",
+        "SaveWeight": 10,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6IconSkill38.png"
     }
 ]

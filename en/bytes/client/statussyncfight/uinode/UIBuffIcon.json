@@ -62,52 +62,141 @@
         "Id": 1025101,
         "Name": "Ignite",
         "Priority": 1,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo2.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon3802.png",
         "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgRed.png",
         "BorderColor": "#B47E7E",
         "ShowCount": 1,
-        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridDeBuff.prefab",
         "DetailDesc": [
-            "每有一层，对手技能命中时额外附加10%攻击的伤害，持续时间无限，可无限叠加"
+            "When hit by enemy skills, deals DMG equal to 10% Attack for every stack."
         ]
     },
     {
         "Id": 1025104,
-        "Name": "<暴击>",
+        "Name": "CRIT",
         "Priority": 1,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong2.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon3702.png",
         "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
         "BorderColor": "#7E9EB4",
         "ShowCount": 1,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
-            "下次使用技能时，消耗1层<暴击>，使该次技能造成的伤害提升50%。持续时间无限，可无限叠加"
+            "Consumes 1 stack of CRIT when using the next skill, and DMG dealt by that skill increases by 50%."
         ]
     },
     {
         "Id": 1025105,
-        "Name": "<格挡>",
+        "Name": "Block",
         "Priority": 1,
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei2.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon4002.png",
         "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
         "BorderColor": "#7E9EB4",
         "ShowCount": 1,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
-            "下次对手技能命中时，消耗1层<格挡>，使自身受到该次技能的伤害降低50%。持续时间无限，可无限叠加"
+            "Consumes 1 stack of Block when hit by the next enemy skill, and DMG taken from that skill is reduced by 50%. Cannot Block while inflicted with Knockback or Knockdown."
+        ]
+    },
+    {
+        "Id": 1025107,
+        "Name": "Rage",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon4302.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "Max Rage: 100. When Rage reaches maximum, Berserk activates after the current skill finishes."
+        ]
+    },
+    {
+        "Id": 1025108,
+        "Name": "Berserk",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon4202.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "DMG dealt increases by 10%. Using any skill consumes 10 Rage. When Rage reaches 0, Berserk ends after the current skill finishes."
         ]
     },
     {
         "Id": 1025111,
-        "Name": "疲劳",
+        "Name": "Fatigue",
         "Priority": 1,
-        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon007.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon3602.png",
         "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgRed.png",
         "BorderColor": "#B47E7E",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridDeBuff.prefab",
+        "DetailDesc": [
+            "Both sides lose HP continuously."
+        ]
+    },
+    {
+        "Id": 1025901,
+        "Name": "Initiative Up",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0502.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
         "ShowCount": 1,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
-            "双方持续失去生命值"
+            "Character Initiative increases by 1."
+        ]
+    },
+    {
+        "Id": 1025902,
+        "Name": "Hypersequence Up",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0402.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "Character Hypersequence increases by 1."
+        ]
+    },
+    {
+        "Id": 1025903,
+        "Name": "Fighting Will Up",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0302.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "Character Fighting Will increases by 1."
+        ]
+    },
+    {
+        "Id": 1025904,
+        "Name": "ATK Up",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0202.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "Character ATK increases by 1."
+        ]
+    },
+    {
+        "Id": 1025905,
+        "Name": "HP Up",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0102.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "Character Max HP increases by 1."
         ]
     },
     {
@@ -178,5 +267,29 @@
         "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
         "BorderColor": "#7E9EB4",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkAffixTemplate.prefab"
+    },
+    {
+        "Id": 10255071,
+        "Name": "DMG Up",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0202.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "The next skill's DMG increases by 25%."
+        ]
+    },
+    {
+        "Id": 10255091,
+        "Name": "Stamina Refund",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0302.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "Gains 20% of the Fighting Will cost when using the next skill."
+        ]
     }
 ]

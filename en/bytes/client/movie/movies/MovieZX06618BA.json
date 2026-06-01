@@ -2,19 +2,19 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "Type": 101,
-        "BeginAnim": "AniZhuanchangEnd",
+        "Type": 401,
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            1,
+            7154
         ]
     },
     {
         "Id": 2,
         "ActionId": 2,
-        "Type": 401,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
-            1,
-            36
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg"
         ]
     },
     {
@@ -22,22 +22,7771 @@
         "ActionId": 3,
         "Type": 301,
         "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
-            "测试1"
+            "On the day of departure, Bifrost's launch site thrums even louder than it did on their first day in the academy."
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
+        "Type": 306,
+        "EndDelay": 250.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 104,
+        "Params": [
+            "-100|50|-250",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 205,
+        "EndDelay": 550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 104,
+        "Params": [
+            "-100|50|-250",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg"
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            1,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 511,
+        "Params": [
+            1,
+            0,
+            "0|-200|0"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
         "Type": 301,
-        "IsEnd": 1,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "The rocket's fueling system cycles through its final checks, liquid oxygen lines hissing plumes of white vapor. The viewing stands overflow with second- and third-class F.O.S. students, their voices buzzing with excitement as they gather to send off the first of their upperclassmen bound for space."
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lucia and 【kuroname】, clad in standard flight suits, stand on the gangway leading to Voyager-I's hatch."
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Steel grating stretches beneath their feet, gaps revealing the ground dozens of meters below. Wind surges up from the base, whipping the ceremonial banners into a sharp, crackling frenzy."
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 205,
+        "EndDelay": 550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory3.jpg"
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 306,
+        "EndDelay": 150.0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Joanne stands at the far end of the gangway. Beyond lies the security zone. This is as far as she can go."
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            2
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 301,
+        "Params": [
+            1,
+            "Joanne",
+            "Lucia! 【kuroname】! The second you land on the moon, message me! Promise!",
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her eyes have already reddened, but she fights desperately to keep the tears in, hands clamped around the railing, knuckles drained white."
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 201,
+        "Params": [
+            2,
+            501642,
+            1
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "You know there's a 1.3-second delay on moon comms, right?",
+            2
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            2
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "Params": [
+            1,
+            "Joanne",
+            "I mean it! 1.3 seconds, 13 seconds, I don't care! Just send it! And stay in touch!",
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 201,
+        "Params": [
+            2,
+            501642,
+            2
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "I will.",
+            2
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Joanne",
+            "Oh! Wait, your suit pockets, look inside. I put a little snack box in each one. The rations on the ship are awful, I looked it up... Just please don't tell anyone. Ms. Cassandra helped!",
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 302,
+        "Params": [
+            "",
+            "Thanks, Joanne.",
+            40
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 302,
+        "Params": [
+            "",
+            "Next time we meet, I'll bring you back some \"local specialty.\"",
+            41
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Joanne",
+            "Don't thank me... This is literally all I could do...",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "As she speaks, the tears finally spill over."
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 201,
+        "Params": [
+            1,
+            501642,
+            1,
+            400
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 201,
+        "Params": [
+            2,
+            501609,
+            8,
+            -300
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 401,
+        "Params": [
+            2,
+            4044
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5,
+            100
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Lucia watches her, falls silent for a moment, then walks back a few steps. She reaches out and gives Joanne a gentle pat on the head."
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "Just stay focused on your research. Keep an eye on F.O.S. for us.",
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 204,
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Joanne chokes back a sob, then nods with everything she has."
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "Params": [
+            "",
+            "Joanne",
+            "You too, both of you!",
+            2
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Joanne",
+            "Go see what the far side of the moon looks like for us!",
+            2
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory519.png"
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 401,
+        "Params": [
+            1,
+            5060
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 107,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Voyager-I",
+            "Launch Countdown",
+            "",
+            "T-Minus 4 Minutes"
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "Voyager-I, Launch Countdown, T-Minus 4 Minutes"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 108,
+        "EndDelay": 200.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 201,
+        "Params": [
+            1,
+            501642
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "Lucia's back presses hard against the acceleration seat, the five-point harness digging into her chest. With every breath, she feels the buckle pressing against the outline of her ribs."
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Inside her helmet, launch control's callouts pulse through the comms channel, steady as a metronome."
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 301,
+        "Params": [
+            "",
+            "Broadcast",
+            "Voyager-I lunar transfer vehicle, propellant loading complete. Launch sequence entering automated mode."
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 301,
+        "Params": [
+            "",
+            "Broadcast",
+            "All crew, confirm life support system status."
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lucia glances down at the instrument panel on her chest. Heart rate, blood oxygen, cabin pressure—every reading holds steady within normal range."
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Only her heart rate runs a little high."
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "She turns her head. 【kuroname】 is strapped into the acceleration seat half a meter to her right, clad in the same cream flight suit. Behind the faceplate, the expression is unreadable."
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 302,
+        "Params": [
+            "",
+            "Nervous?",
+            78
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Lucia",
+            "No.",
+            1
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 302,
+        "Params": [
+            "",
+            "Your hands are shaking.",
+            80
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lucia looks down at her hands. They are shaking, she can see it now. She balls them into fists and shoves them under the restraint straps along her thighs."
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Lucia",
+            "...Didn't need to point that out.",
+            1
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Broadcast",
+            "T-minus 2 minutes. Main engine pre-ignition sequence initiating."
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 401,
+        "Params": [
+            2,
+            2914
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 401,
+        "Params": [
+            2,
+            5812
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 201,
+        "Params": [
+            1,
+            501642
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "A low, guttural hum rises from beneath the seat, like some ancient behemoth just now opening its eyes. The whole skeleton of the ship resonates, vibrations threading from the tail nozzles all the way up her spine."
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 402,
+        "Params": [
+            2914
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_30.jpg"
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 505,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Disable"
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She remembers the sound of Dawn-III during ground testing. She'd stood on the observation deck back then, a safe distance away, kilometers between her and the roar."
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory519.png"
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Now she sits directly on top of it."
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 306
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Broadcast",
+            "T-minus 60 seconds. Launch tower arms retracting."
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 509,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory334.png",
+            1
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Outside the window, the gantry's support arms pull back in slow motion, their metal framework unfolding like opening fingers. Beyond them, the sky is an impossible, endless blue."
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She has never looked at the sky like this on her back, through a pane of heat-resistant glass, watching that small patch of azure framed above her."
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "That is what she's about to fly through."
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 510,
+        "EndDelay": 300.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 301,
+        "Params": [
+            "",
+            "Broadcast",
+            "T-minus 30 seconds. Automatic flight control system engaged. All manual commands locked."
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The hum shifts into a tremor. Bulkhead. Instrument panel. Harness buckle. Even her own breath hissing inside the mask. All of it hums now, vibrating at a single shared frequency."
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lucia draws a deep breath and pushes her skull back into the headrest."
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 301,
+        "Params": [
+            "",
+            "Broadcast",
+            "T-minus 10 seconds."
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her hand works its way out of the restraint strap and settles on the right armrest."
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "【kuroname】's hand rests just beside hers."
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 301,
+        "Params": [
+            "",
+            "Broadcast",
+            "Five."
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 201,
+        "Params": [
+            1,
+            501642
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 301,
+        "Params": [
+            "",
+            "Broadcast",
+            "Four."
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 301,
+        "Params": [
+            "",
+            "Broadcast",
+            "Three."
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lucia breathes in deep, her hand drifting to the side almost without thought."
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "测试2"
+            "And then, fingertip meets fingertip..."
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 505,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Disable"
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1198.jpg"
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "On the elevated highway ringing the launch site, a black-and-gold limousine waits in silence."
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Cassandra is alone against the window, with no entourage, no cigarette dangling from her lips."
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She does nothing but watch: the Voyager-I rocket perched on the pad, carrying 【kuroname】, Lucia, and ten other F.O.S. cadets into the sky."
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Between her fingers, the old pocket watch turns—open, closed, open, closed. The faded photograph on its back flashes in the sun, one flicker of light after another."
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 201,
+        "Params": [
+            1,
+            501629
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cassandra",
+            "Would you look at that, Nithart.",
+            1
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her lips move, the words barely a whisper."
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cassandra",
+            "Humanity's children are setting out.",
+            1
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The last countdown rings out across the heavens. Cassandra closes the watch with a quiet snap and slips it into her breast pocket."
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cassandra",
+            "They will find it. The \"answer\" you chased your whole life.",
+            1
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 401,
+        "Params": [
+            2,
+            6730
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "Amid the deafening roar, flames erupt skyward."
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 401,
+        "EndDelay": 1000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 401,
+        "Params": [
+            2,
+            569
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 401,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 3000.0,
+        "Params": [
+            2,
+            2866
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 402,
+        "Params": [
+            569
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1505.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1505.jpg"
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 401,
+        "EndDelay": 500.0,
+        "Params": [
+            2,
+            9326032
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 401,
+        "Params": [
+            1,
+            7154
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "When the airlock on the base's south side opens, Lucia's first step onto the lunar surface feels far softer than she imagined."
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "It's like stepping onto untouched gray flour. Each footfall sinks deep, leaving treads sharper and clearer than any print she's ever left on Earth."
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 201,
+        "Params": [
+            1,
+            501642
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 203,
+        "Params": [
+            1,
+            0.4,
+            "",
+            -80
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Lucia crouches down, pinches a bit of lunar soil between her gloved fingers, and holds it up to her visor for a closer look."
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "...Gray.",
+            1
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 302,
+        "Params": [
+            "",
+            "What color did you think it would be?",
+            172
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Lucia",
+            "Not sure. Luna thinks it might be silver.",
+            1
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 104,
+        "EndDelay": 250.0,
+        "Params": [
+            "0|-30|0",
+            0.2
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0.3
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "She carefully tucks the lunar soil into her sample bag and seals it shut."
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 201,
+        "Params": [
+            1,
+            501642
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "Lucia",
+            "First sample down.",
+            1
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "The first two days on the lunar surface follow the routine: check the comms relay stations ringing the base perimeter, swap out aging solar panels, and pull soil samples from Science Council-designated sectors."
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "It's tedious, repetitive work, but every single task demands obsessive precision. Their instructor puts it bluntly: \"Good enough\" doesn't exist in space. One loose bolt becomes a lethal leak the next time the temperature swings."
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "Lucia takes it to heart. She works meticulously."
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1505.jpg"
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "But on the third afternoon, after six standard hours patrolling the perimeter, she does something every instructor would shake their head at."
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 201,
+        "Params": [
+            1,
+            501642,
+            1
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "Hop on.",
+            1
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 302,
+        "Params": [
+            "",
+            "...What?",
+            189
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The lunar rover sits on the gentle slope of a crater, all four wheels sunk into the regolith, the old solar panels from the earlier repairs still hanging off its antenna."
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 302,
+        "Params": [
+            "",
+            "...",
+            192,
+            "Just... drive safe. Please.",
+            192
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 401,
+        "Params": [
+            2,
+            13081709
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory821.png",
+            0,
+            1,
+            0.2
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1505.jpg",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "【kuroname】 sighs, circles around to the passenger side, and climbs in."
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 401,
+        "Params": [
+            2,
+            5962
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 104,
+        "Params": [
+            "0|50|-100",
+            0.25,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 502,
+        "Params": [
+            "RImgBg3Shake2Loop"
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The seatbelt hasn't even clicked before the rover surges forward."
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lunar gravity is only one-sixth of Earth's, but the rover's motors were built for terrestrial loads. Here, that means acceleration hits hard."
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The wheels tear into the soil, kicking up a gray plume of dust. In the vacuum, every particle traces a perfect, silent arc—rising, falling, trailing behind them in slow motion."
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 201,
+        "Params": [
+            1,
+            501642,
+            1
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "Haha!",
+            1
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 401,
+        "Params": [
+            2,
+            5706
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 104,
+        "Params": [
+            "-135|23|-200",
+            0.25,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 113,
+        "Params": [
+            "0.5|0.5",
+            0.25,
+            "0|0|5",
+            3
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Lucia throws the wheel right, full lock. The rover tilts into the crater wall, carving the slope at an angle no Earth vehicle could survive—"
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 113,
+        "Params": [
+            "0.5|0.5",
+            0.4,
+            "0|0|0",
+            3
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 104,
+        "EndDelay": 300.0,
+        "Params": [
+            "-135|15|-200",
+            0.4,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 104,
+        "EndDelay": 300.0,
+        "Params": [
+            "-135|120|-200",
+            0.4,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "But the moon catches it gently. One soft bounce, and the wheels find the dust again."
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 302,
+        "Params": [
+            "",
+            "S-slow down!",
+            215
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 302,
+        "Params": [
+            "",
+            "Lucia—!",
+            216
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 201,
+        "Params": [
+            1,
+            501642,
+            1
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Lucia",
+            "Relax, I've got it. Just sit tight.",
+            1
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 302,
+        "Params": [
+            "",
+            "You've got it?! There's a crater right in front of us!",
+            219
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 104,
+        "Params": [
+            "-135|120|-250",
+            0.25,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Lucia stomps the accelerator flat."
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 104,
+        "EndDelay": 1050.0,
+        "Params": [
+            "-135|-115|-250",
+            1,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "The rover lifts off, all four wheels leaving the surface as it sails over the crater rim. For one breathless moment, it hangs in the void, arcing through space, then lands clean on the opposite slope."
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 104,
+        "EndDelay": 1050.0,
+        "Params": [
+            "-135|115|-280",
+            1,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 401,
+        "Params": [
+            2,
+            5710
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 505,
+        "Params": [
+            "RImgBg3Shake2Loop"
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 502,
+        "Params": [
+            "RImgBg3Shake2Disable"
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 205,
+        "Params": [
+            1004,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 402,
+        "Params": [
+            5962
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The impact ripples through the frame in total silence."
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 201,
+        "Params": [
+            18,
+            501642,
+            1
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "~!",
+            18
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A burst of laughter crackles through the comms. It takes Lucia back to that day she stole her father's motorcycle for a joyride."
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "Except this time, there's someone beside her."
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1507.jpg"
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "After the wild ride, the rover comes to rest on a high ridge, its tire tracks tracing an irregular path behind it."
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "They climb out, one after the other, boots sinking into the lunar surface with every slow, deliberate step."
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "They take their time, because a moment like this is worth slowing down for."
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "There's no wind or sound, not even a trace of life. The gray horizon stretches endlessly in every direction, meeting a dome of absolute black above—the universe laying bare its stark beauty for all to witness."
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 201,
+        "Params": [
+            1,
+            501642
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Lucia",
+            "The stars...",
+            1
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 104,
+        "Params": [
+            "0|-50|-230",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 205,
+        "EndDelay": 550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1505.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 104,
+        "Params": [
+            "0|-50|-230",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1505.jpg"
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "They stud the black velvet of space like countless points of light, dense and unbroken, filling the entire dome of the sky."
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Only out here, beyond the atmosphere, does the truth become undeniable: Earth's night sky reveals barely a fraction of what the universe holds."
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 302,
+        "Params": [
+            "",
+            "Lucia.",
+            256
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 205,
+        "EndDelay": 450.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1507.jpg",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1507.jpg"
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 201,
+        "Params": [
+            1,
+            501642
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Lucia",
+            "Yeah.",
+            1
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 401,
+        "Params": [
+            2,
+            4100
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "【kuroname】's voice comes through the comms, underlaid with a faint crackle of static."
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 302,
+        "Params": [
+            "",
+            "The military's probably opening applications for Mars and the surface after graduation.",
+            266
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "...Yeah.",
+            1
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Lucia, walking behind, answers softly."
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 302,
+        "Params": [
+            "",
+            "They need people. And you said you wanted to go where you're needed.",
+            269
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 302,
+        "Params": [
+            "",
+            "So if I put my name in...",
+            270
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 302,
+        "Params": [
+            "",
+            "Do you want to go with me?",
+            271
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Lucia does not answer."
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 302,
+        "Params": [
+            "",
+            "Lucia?",
+            274
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 201,
+        "Params": [
+            1,
+            501642
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "【kuroname】 turns and finds Lucia motionless, no longer walking."
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She stands facing away, frozen in place. Something catches the light in her eyes behind the visor. The look on her face is caught somewhere between awe and perfect stillness, the way a child looks upon the sea for the very first time."
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 302,
+        "Params": [
+            "",
+            "...Lucia?",
+            278
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "【kuroname】.",
+            1
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 203,
+        "Params": [
+            1,
+            0.35,
+            "",
+            -50,
+            -50
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Without thinking, she reaches out and takes 【kuroname】's hand, pointing toward the lunar horizon—"
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 205,
+        "EndDelay": 2300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1506.jpg",
+            0,
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1506.jpg"
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Earth is rising over the curve of the moon."
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The whole planet looms up from the far side of the lunar surface, immense and slow, like a towering reflection rippling forth from still water."
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "It hangs in the pitch-black void, the only splash of color for hundreds of thousands of kilometers in any direction. Even the stars dim before it."
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A vast blue arc begins to spread, wider and wider, white clouds drifting across its face in slow, rolling motion."
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Then the continents. The oceans. The maps humanity spent millennia charting—all of it now unfolds across the face of a planet, half-lit by the solar system's lone star."
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "Type": 201,
+        "Params": [
+            1,
+            501642,
+            1,
+            "",
+            -50,
+            -50
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Lucia stands on the gray wasteland, her suit catching Earth's blue light, casting a pale shadow across the lunar soil."
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "Earth... is rising for us.",
+            1
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "Type": 502,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her voice, when she speaks, is barely a whisper."
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The two of them stand there, facing Earth as if facing something far greater than their own fates."
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "On that blue planet, billions are drawing breath. People are being born, people are dying, people are growing, working, looking up at the sky—"
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "And right now, two tiny figures in that sky are looking back at them."
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "Type": 505,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "Type": 302,
+        "Params": [
+            "",
+            "Lucia.",
+            303
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "Type": 302,
+        "Params": [
+            "",
+            "About what I asked earlier...",
+            304
+        ]
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "Type": 201,
+        "Params": [
+            1,
+            501642,
+            8
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Lucia",
+            "【kuroname】, I don't know.",
+            1
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her voice finds its normal register again, though something lingers beneath it."
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "Mars, the Moon, back to Earth... I don't have an answer for you.",
+            1
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "I can't tell you what comes next. No one can.",
+            1
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She turns around to face 【kuroname】."
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 312,
+        "ActionId": 312,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Lucia",
+            "But...",
+            1
+        ]
+    },
+    {
+        "Id": 313,
+        "ActionId": 313,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 314,
+        "ActionId": 314,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 315,
+        "ActionId": 315,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 316,
+        "ActionId": 316,
+        "Type": 105,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovieCG_ShengHongQiuYing/V45UiMovieCG_ShengHongQiuYing.prefab"
+        ]
+    },
+    {
+        "Id": 317,
+        "ActionId": 317,
+        "Type": 306,
+        "EndDelay": 300.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 318,
+        "ActionId": 318,
+        "Type": 502,
+        "Params": [
+            "AniZhuanchangEnd"
+        ]
+    },
+    {
+        "Id": 319,
+        "ActionId": 319,
+        "Type": 401,
+        "Params": [
+            1,
+            6225
+        ]
+    },
+    {
+        "Id": 320,
+        "ActionId": 320,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "She reaches out."
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 322,
+        "ActionId": 322,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The suit gloves are thick and unyielding, her fingers buried under layers of airtight fabric and radiation shielding—clumsy, rod-like things—but she pushes through it and reaches for 【kuroname】's hand anyway."
+        ]
+    },
+    {
+        "Id": 323,
+        "ActionId": 323,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Two gloves meet. The hold is clumsy, barely a grip at all. But she holds on tight."
+        ]
+    },
+    {
+        "Id": 324,
+        "ActionId": 324,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "At least right now, there's something I want to tell you. Only you."
+        ]
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her gaze travels through both visors and finds the eyes waiting within."
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "Only this once."
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She lifts her other hand and presses a button on the comms panel at the side of her helmet."
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "Type": 401,
+        "Params": [
+            2,
+            2814
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A soft beep, then the comms channel goes dead."
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Absolute silence settles back over the lunar surface."
+        ]
+    },
+    {
+        "Id": 331,
+        "ActionId": 331,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "......"
+        ]
+    },
+    {
+        "Id": 332,
+        "ActionId": 332,
+        "Type": 106,
+        "Params": [
+            "idle_eyesOpen",
+            1,
+            "Root/Role"
+        ]
+    },
+    {
+        "Id": 333,
+        "ActionId": 333,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lucia's lips are moving."
+        ]
+    },
+    {
+        "Id": 334,
+        "ActionId": 334,
+        "Type": 302,
+        "Params": [
+            "",
+            "(\"I... you.\")",
+            335
+        ]
+    },
+    {
+        "Id": 335,
+        "ActionId": 335,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A soft smile flickers across the face of the one who reads her lips."
+        ]
+    },
+    {
+        "Id": 336,
+        "ActionId": 336,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "But Lucia isn't finished. There's one more thing."
+        ]
+    },
+    {
+        "Id": 337,
+        "ActionId": 337,
+        "Type": 302,
+        "Params": [
+            "",
+            "(\"You... are...\")",
+            338
+        ]
+    },
+    {
+        "Id": 338,
+        "ActionId": 338,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She speaks slowly, each word measured and solemn, like someone afraid that one wrong syllable means never getting another try. Behind the visor, her face is open and serious, carrying the faintest trace of nerves, the kind she hides from absolutely everyone."
+        ]
+    },
+    {
+        "Id": 339,
+        "ActionId": 339,
+        "Type": 302,
+        "Params": [
+            "",
+            "(\"...where I belong.\")",
+            340
+        ]
+    },
+    {
+        "Id": 340,
+        "ActionId": 340,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lucia's words come to an end."
+        ]
+    },
+    {
+        "Id": 341,
+        "ActionId": 341,
+        "Type": 302,
+        "Params": [
+            "",
+            "...",
+            342
+        ]
+    },
+    {
+        "Id": 342,
+        "ActionId": 342,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Through the visor, 【kuroname】 stares at her. Suspended between their helmets, the Earth's reflection glides past in silence, its glow spilling from left to right, lighting up both their faces in soft blue."
+        ]
+    },
+    {
+        "Id": 343,
+        "ActionId": 343,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "And then—"
+        ]
+    },
+    {
+        "Id": 344,
+        "ActionId": 344,
+        "Type": 302,
+        "Params": [
+            "",
+            "(Turn off comms)",
+            345
+        ]
+    },
+    {
+        "Id": 345,
+        "ActionId": 345,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "In the silence of the moon, 【kuroname】's lips start to move, too."
+        ]
+    },
+    {
+        "Id": 346,
+        "ActionId": 346,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The same rhythm. The same words."
+        ]
+    },
+    {
+        "Id": 347,
+        "ActionId": 347,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "..."
+        ]
+    },
+    {
+        "Id": 348,
+        "ActionId": 348,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "A smile breaks across her face, her eyes glinting tender in the light of the Earth."
+        ]
+    },
+    {
+        "Id": 349,
+        "ActionId": 349,
+        "Type": 106,
+        "EndDelay": 1000.0,
+        "Params": [
+            "idle_eyesClosed",
+            1,
+            "Root/Role"
+        ]
+    },
+    {
+        "Id": 350,
+        "ActionId": 350,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Their hands clasp tighter. They step closer and press their visors together."
+        ]
+    },
+    {
+        "Id": 351,
+        "ActionId": 351,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Overhead, the Earth watches, its blue light tumbling gently down across their shoulders."
+        ]
+    },
+    {
+        "Id": 352,
+        "ActionId": 352,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Lucia",
+            "You said it yourself. The whole Earth just heard you."
+        ]
+    },
+    {
+        "Id": 353,
+        "ActionId": 353,
+        "Type": 302,
+        "Params": [
+            "",
+            "Same goes for you. No take-backs.",
+            354
+        ]
+    },
+    {
+        "Id": 354,
+        "ActionId": 354,
+        "Type": 302,
+        "Params": [
+            "",
+            "You've got the whole universe as a witness.",
+            355
+        ]
+    },
+    {
+        "Id": 355,
+        "ActionId": 355,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Lucia",
+            "...Heh, you fool."
+        ]
+    },
+    {
+        "Id": 356,
+        "ActionId": 356,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Around them stretches an endless gray wasteland, an endless black cosmos, an endless silence."
+        ]
+    },
+    {
+        "Id": 357,
+        "ActionId": 357,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "Yet in those few centimeters between their visors, nothing feels missing at all."
+        ]
+    },
+    {
+        "Id": 358,
+        "ActionId": 358,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 359,
+        "ActionId": 359,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 360,
+        "ActionId": 360,
+        "Type": 105
+    },
+    {
+        "Id": 361,
+        "ActionId": 361,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory146.png"
+        ]
+    },
+    {
+        "Id": 362,
+        "ActionId": 362,
+        "Type": 401,
+        "Params": [
+            1,
+            7154
+        ]
+    },
+    {
+        "Id": 363,
+        "ActionId": 363,
+        "Type": 205,
+        "EndAnim": "AniZhuanchangEnd",
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            0.6,
+            0.6,
+            0
+        ]
+    },
+    {
+        "Id": 364,
+        "ActionId": 364,
+        "Type": 310,
+        "Params": [
+            "After the placement exam, the four hundred twenty cadets of F.O.S.'s first class scattered toward their chosen futures.",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 365,
+        "ActionId": 365,
+        "Type": 205,
+        "EndDelay": 2300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory318.png",
+            0,
+            1,
+            1.8
+        ]
+    },
+    {
+        "Id": 366,
+        "ActionId": 366,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory318.png"
+        ]
+    },
+    {
+        "Id": 367,
+        "ActionId": 367,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 368,
+        "ActionId": 368,
+        "Type": 310,
+        "Params": [
+            "Six months later, Lucia and 【kuroname】 returned planetside and were formally commissioned into the World Government's tactical command ranks.",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 369,
+        "ActionId": 369,
+        "Type": 310,
+        "Params": [
+            "Their evaluations carried the highest marks possible. Across two years, they saw frontline action three times in the Unification War and twice returned to space on deployment."
+        ]
+    },
+    {
+        "Id": 370,
+        "ActionId": 370,
+        "Type": 205,
+        "EndDelay": 2300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory232.png",
+            0,
+            1,
+            1.8
+        ]
+    },
+    {
+        "Id": 371,
+        "ActionId": 371,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory232.png"
+        ]
+    },
+    {
+        "Id": 372,
+        "ActionId": 372,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 373,
+        "ActionId": 373,
+        "Type": 310,
+        "Params": [
+            "Joanne stayed behind at F.O.S. She declined the military commission, accepting instead an assistant role with the Science Council, and devoted herself fully to a project she could fully grasp.",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 374,
+        "ActionId": 374,
+        "Type": 310,
+        "Params": [
+            "Code Name: [Crown].",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 375,
+        "ActionId": 375,
+        "Type": 205,
+        "EndDelay": 2300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg",
+            0,
+            1,
+            1.8
+        ]
+    },
+    {
+        "Id": 376,
+        "ActionId": 376,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory857.jpg"
+        ]
+    },
+    {
+        "Id": 377,
+        "ActionId": 377,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 378,
+        "ActionId": 378,
+        "Type": 310,
+        "Params": [
+            "It was the final piece of the puzzle Dominik had derived from the cosmic signal received eighteen years ago, and the most complex by far.",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 379,
+        "ActionId": 379,
+        "Type": 310,
+        "Params": [
+            "A year earlier, the Construct and M.I.N.D. technologies Dominik had championed finally secured World Government approval, and small-scale applications and modifications began rolling out across various fields."
+        ]
+    },
+    {
+        "Id": 380,
+        "ActionId": 380,
+        "Type": 310,
+        "Params": [
+            "Six months later, Dominik folded a project code-named \"Project String\" into the M.I.N.D. Research Institute, apparently aiming to merge gravitational field research with Construct Tech."
+        ]
+    },
+    {
+        "Id": 381,
+        "ActionId": 381,
+        "Type": 310,
+        "Params": [
+            "Around the same time, using \"Elysium's\" brain-computer interface as a technical prototype, Dominik began developing the component blueprint designated [Crown]. It was during this period that Joanne was recruited to the research team."
+        ]
+    },
+    {
+        "Id": 382,
+        "ActionId": 382,
+        "Type": 310,
+        "Params": [
+            "In Dominik's original vision, both humans and Constructs would be able to use the [Crown] to manipulate the gravitational fields of the universe."
+        ]
+    },
+    {
+        "Id": 383,
+        "ActionId": 383,
+        "Type": 310,
+        "Params": [
+            "From what Joanne could gather, the [Crown's] intricate design demanded exceptionally high compatibility with either a M.I.N.D. or a human brain, and Gestalt had yet to find a suitable match. They had to iterate around the clock to lower the threshold.",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 384,
+        "ActionId": 384,
+        "Type": 205,
+        "EndDelay": 2300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory767.png",
+            0,
+            1,
+            1.8
+        ]
+    },
+    {
+        "Id": 385,
+        "ActionId": 385,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory767.png"
+        ]
+    },
+    {
+        "Id": 386,
+        "ActionId": 386,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 387,
+        "ActionId": 387,
+        "Type": 310,
+        "Params": [
+            "To that end, Dominik even diverted the computing power of the entire Atlantic undersea cable network to support the development. Separatist forces responded with multiple large-scale attacks, and the ensuing clashes left roughly two thousand casualties.",
+            "",
+            "",
+            "",
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 388,
+        "ActionId": 388,
+        "Type": 205,
+        "EndDelay": 2300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory974.jpg",
+            0,
+            1,
+            1.8
+        ]
+    },
+    {
+        "Id": 389,
+        "ActionId": 389,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory974.jpg"
+        ]
+    },
+    {
+        "Id": 390,
+        "ActionId": 390,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 391,
+        "ActionId": 391,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            14,
+            550
+        ]
+    },
+    {
+        "Id": 392,
+        "ActionId": 392,
+        "Type": 203,
+        "Params": [
+            1,
+            1,
+            550
+        ]
+    },
+    {
+        "Id": 393,
+        "ActionId": 393,
+        "Type": 310,
+        "Params": [
+            "Joanne felt sick over it. She couldn't shake the feeling that her research was stained with blood. She would often call Lucia and 【kuroname】 in tears, but the moment she heard their voices, she would quietly swallow her anguish and say nothing.",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 394,
+        "ActionId": 394,
+        "Type": 310,
+        "Params": [
+            "She believed that if Dominik valued it so deeply, then [Crown] had to be vital to humanity's future, which meant she had to push forward, no matter what.",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 395,
+        "ActionId": 395,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 396,
+        "ActionId": 396,
+        "Type": 205,
+        "EndDelay": 2300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory696.jpg",
+            0,
+            1,
+            1.8
+        ]
+    },
+    {
+        "Id": 397,
+        "ActionId": 397,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory696.jpg"
+        ]
+    },
+    {
+        "Id": 398,
+        "ActionId": 398,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 399,
+        "ActionId": 399,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            "",
+            350
+        ]
+    },
+    {
+        "Id": 400,
+        "ActionId": 400,
+        "Type": 203,
+        "Params": [
+            1,
+            1,
+            550
+        ]
+    },
+    {
+        "Id": 401,
+        "ActionId": 401,
+        "Type": 310,
+        "Params": [
+            "Like Joanne, Ophelia stayed behind. Her field was different but neatly complementary: materials science and energy engineering, a choice reportedly inspired by her sister Helentine's peculiar obsession with chainsaws.",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 402,
+        "ActionId": 402,
+        "Type": 310,
+        "Params": [
+            "The two of them worked at opposite ends of the same floor, sharing one supercomputer and a single break room. By all accounts, they bickered over equipment schedules at least twice a day, yet their names kept appearing together on more and more joint publications.",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 403,
+        "ActionId": 403,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 404,
+        "ActionId": 404,
+        "Type": 205,
+        "EndDelay": 2300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory543.jpg",
+            0,
+            1,
+            1.8
+        ]
+    },
+    {
+        "Id": 405,
+        "ActionId": 405,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory543.jpg"
+        ]
+    },
+    {
+        "Id": 406,
+        "ActionId": 406,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 407,
+        "ActionId": 407,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 408,
+        "ActionId": 408,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            "",
+            350
+        ]
+    },
+    {
+        "Id": 409,
+        "ActionId": 409,
+        "Type": 203,
+        "Params": [
+            1,
+            1,
+            550
+        ]
+    },
+    {
+        "Id": 410,
+        "ActionId": 410,
+        "Type": 310,
+        "Params": [
+            "Adelyde chose a road nobody expected. Not the regular forces. Not the academy. Not any of the international bodies that courted her. She signed with a private military contractor and became a mercenary instructor.",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 411,
+        "ActionId": 411,
+        "Type": 310,
+        "Params": [
+            "She plunged into the ugliest, most volatile corners of the Unification War—the lawless edges where official forces feared to tread. The magazines loved her: Adelyde alone behind enemy lines, Adelyde dragging hostages free, Adelyde carrying refugee children through the smoke."
+        ]
+    },
+    {
+        "Id": 412,
+        "ActionId": 412,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 413,
+        "ActionId": 413,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab"
+        ]
+    },
+    {
+        "Id": 414,
+        "ActionId": 414,
+        "Type": 205,
+        "EndDelay": 2300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1492.jpg",
+            0,
+            1,
+            1.8
+        ]
+    },
+    {
+        "Id": 415,
+        "ActionId": 415,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1492.jpg"
+        ]
+    },
+    {
+        "Id": 416,
+        "ActionId": 416,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 417,
+        "ActionId": 417,
+        "Type": 310,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "The day Ophelia learned where her friend had gone, she said nothing for a long time. Then she walked to the range and put rounds through targets for a whole long hour.",
+            "",
+            "",
+            "",
+            2,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 418,
+        "ActionId": 418,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 419,
+        "ActionId": 419,
+        "Type": 205,
+        "Params": [
+            1005
+        ]
+    },
+    {
+        "Id": 420,
+        "ActionId": 420,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1489.jpg"
+        ]
+    },
+    {
+        "Id": 421,
+        "ActionId": 421,
+        "Type": 401,
+        "Params": [
+            1,
+            6224
+        ]
+    },
+    {
+        "Id": 422,
+        "ActionId": 422,
+        "Type": 502,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 423,
+        "ActionId": 423,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Three more years pass in what feels like a breath, and F.O.S. prepares for its very first graduation."
+        ]
+    },
+    {
+        "Id": 424,
+        "ActionId": 424,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Every member of F.O.S.'s inaugural graduating class receives a summons back to campus, wherever they happen to be."
+        ]
+    },
+    {
+        "Id": 425,
+        "ActionId": 425,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lucia and 【kuroname】 depart from their respective field stations. Joanne and Ophelia simply walk out of their labs, not much of a journey for those two."
+        ]
+    },
+    {
+        "Id": 426,
+        "ActionId": 426,
+        "Type": 505,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 427,
+        "ActionId": 427,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 428,
+        "ActionId": 428,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Adelyde shows up last. Her uniform bears no country's colors and no institution's seal, only a small, understated company code on her left arm. She is thinner now, sharper at the edges, and her gaze has settled into something still and deep."
+        ]
+    },
+    {
+        "Id": 429,
+        "ActionId": 429,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 430,
+        "ActionId": 430,
+        "Type": 201,
+        "Params": [
+            5,
+            501596,
+            3
+        ]
+    },
+    {
+        "Id": 431,
+        "ActionId": 431,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "When Ophelia sees her again, her mouth opens in surprise, then closes. In the end, all she says, softly, is—"
+        ]
+    },
+    {
+        "Id": 432,
+        "ActionId": 432,
+        "Type": 202,
+        "Params": [
+            5,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 433,
+        "ActionId": 433,
+        "Type": 201,
+        "Params": [
+            2,
+            501596,
+            "",
+            300
+        ]
+    },
+    {
+        "Id": 434,
+        "ActionId": 434,
+        "Type": 201,
+        "Params": [
+            3,
+            501627,
+            "",
+            -300
+        ]
+    },
+    {
+        "Id": 435,
+        "ActionId": 435,
+        "Type": 301,
+        "Params": [
+            1,
+            "Ophelia",
+            "...Let's go find something nice to eat.",
+            2
+        ]
+    },
+    {
+        "Id": 436,
+        "ActionId": 436,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Adelyde",
+            "All right.",
+            3
+        ]
+    },
+    {
+        "Id": 437,
+        "ActionId": 437,
+        "Type": 202,
+        "Params": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 438,
+        "ActionId": 438,
+        "Type": 205,
+        "EndDelay": 1600.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 439,
+        "ActionId": 439,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 440,
+        "ActionId": 440,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 441,
+        "ActionId": 441,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "On graduation day, the F.O.S. auditorium swells to full capacity."
+        ]
+    },
+    {
+        "Id": 442,
+        "ActionId": 442,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Outside in the square, a massive screen rises above the assembly. Four hundred twenty first-class graduates stand gathered—uniforms, lab coats, medals glinting in the light—prodded by their instructors into something that vaguely resembles orderly rows."
+        ]
+    },
+    {
+        "Id": 443,
+        "ActionId": 443,
+        "Type": 104,
+        "Params": [
+            "-120|-50|-300",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 444,
+        "ActionId": 444,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 445,
+        "ActionId": 445,
+        "Type": 104,
+        "Params": [
+            "-120|-50|-300",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 446,
+        "ActionId": 446,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 447,
+        "ActionId": 447,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 448,
+        "ActionId": 448,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 449,
+        "ActionId": 449,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Lucia, one of the honor graduates, stands at the very center of the front row. 【kuroname】 is right beside her."
+        ]
+    },
+    {
+        "Id": 450,
+        "ActionId": 450,
+        "Type": 401,
+        "Params": [
+            2,
+            2811
+        ]
+    },
+    {
+        "Id": 451,
+        "ActionId": 451,
+        "Type": 501,
+        "EndDelay": 50.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 452,
+        "ActionId": 452,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The shutter clicks, and at that exact moment, the wind sweeps in, catching hair and sleeves, lifting the edges of everything."
+        ]
+    },
+    {
+        "Id": 453,
+        "ActionId": 453,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 454,
+        "ActionId": 454,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg"
+        ]
+    },
+    {
+        "Id": 455,
+        "ActionId": 455,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 456,
+        "ActionId": 456,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Cassandra",
+            "Alright, darlings, time for the grand finale!",
+            1
+        ]
+    },
+    {
+        "Id": 457,
+        "ActionId": 457,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 458,
+        "ActionId": 458,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cassandra",
+            "As your beloved trustee, writer, talk show host, angel investor, and certified nutritionist, I, Madam Cassandra, have prepared a magnificent gift for your graduation—",
+            1
+        ]
+    },
+    {
+        "Id": 459,
+        "ActionId": 459,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cassandra",
+            "The F.O.S. anthem!",
+            1
+        ]
+    },
+    {
+        "Id": 460,
+        "ActionId": 460,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 461,
+        "ActionId": 461,
+        "Type": 401,
+        "Params": [
+            2,
+            4095
+        ]
+    },
+    {
+        "Id": 462,
+        "ActionId": 462,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "From the podium at her back, she snatches up a stack of papers and brandishes them at the crowd."
+        ]
+    },
+    {
+        "Id": 463,
+        "ActionId": 463,
+        "Type": 401,
+        "Params": [
+            2,
+            4095
+        ]
+    },
+    {
+        "Id": 464,
+        "ActionId": 464,
+        "Type": 201,
+        "Params": [
+            1,
+            501629
+        ]
+    },
+    {
+        "Id": 465,
+        "ActionId": 465,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cassandra",
+            "Top-shelf composers, custom lyrics. Do you have any idea what the composing fee alone—",
+            1
+        ]
+    },
+    {
+        "Id": 466,
+        "ActionId": 466,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 467,
+        "ActionId": 467,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She pauses for a moment, then waves it off with a flick of her hand."
+        ]
+    },
+    {
+        "Id": 468,
+        "ActionId": 468,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 469,
+        "ActionId": 469,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cassandra",
+            "Anyway, just know it was obscene, so you'd better appreciate it!",
+            1
+        ]
+    },
+    {
+        "Id": 470,
+        "ActionId": 470,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 471,
+        "ActionId": 471,
+        "Type": 401,
+        "Params": [
+            2,
+            4922
+        ]
+    },
+    {
+        "Id": 472,
+        "ActionId": 472,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She presses play. A melody trickles out of the auditorium speakers."
+        ]
+    },
+    {
+        "Id": 473,
+        "ActionId": 473,
+        "Type": 401,
+        "Params": [
+            2,
+            5860
+        ]
+    },
+    {
+        "Id": 474,
+        "ActionId": 474,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "It's a simple tune, so simple it barely counts as songwriting. More like someone wandered over to a piano, pressed a few chords without much thought, and hit record. The arrangement is sparse. The melody goes nowhere."
+        ]
+    },
+    {
+        "Id": 475,
+        "ActionId": 475,
+        "Type": 402,
+        "Params": [
+            5860
+        ]
+    },
+    {
+        "Id": 476,
+        "ActionId": 476,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The lyrics are graduation boilerplate: \"youth,\" \"dreams,\" \"take flight.\" Every cliche possible in the book, rearranged into combinations no one will remember."
+        ]
+    },
+    {
+        "Id": 477,
+        "ActionId": 477,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 478,
+        "ActionId": 478,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg",
+            0,
+            1,
+            0.35
+        ]
+    },
+    {
+        "Id": 479,
+        "ActionId": 479,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 480,
+        "ActionId": 480,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 481,
+        "ActionId": 481,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Students",
+            "......"
+        ]
+    },
+    {
+        "Id": 482,
+        "ActionId": 482,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            17,
+            250
+        ]
+    },
+    {
+        "Id": 483,
+        "ActionId": 483,
+        "Type": 201,
+        "Params": [
+            2,
+            501627,
+            "",
+            -250
+        ]
+    },
+    {
+        "Id": 484,
+        "ActionId": 484,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "Joanne drops her gaze to the lyric sheet, feigning deep concentration, her mouth clamped shut. Adelyde's face gives nothing away, but her fingers keep pressing at her knuckles, a little habit she can't hide when she's biting something down."
+        ]
+    },
+    {
+        "Id": 485,
+        "ActionId": 485,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 486,
+        "ActionId": 486,
+        "Type": 201,
+        "Params": [
+            18,
+            501660
+        ]
+    },
+    {
+        "Id": 487,
+        "ActionId": 487,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Cassandra",
+            "Ah... just listen to that craftsmanship. That's what real music sounds like...",
+            18
+        ]
+    },
+    {
+        "Id": 488,
+        "ActionId": 488,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 489,
+        "ActionId": 489,
+        "Type": 306,
+        "EndDelay": 200.0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 490,
+        "ActionId": 490,
+        "Type": 201,
+        "Params": [
+            1,
+            501610
+        ]
+    },
+    {
+        "Id": 491,
+        "ActionId": 491,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "Lucia's face betrays nothing, but somewhere along the way, she has crushed her earphones into her fist."
+        ]
+    },
+    {
+        "Id": 492,
+        "ActionId": 492,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "【kuroname】 glances over at her and gives a light tug at her sleeve."
+        ]
+    },
+    {
+        "Id": 493,
+        "ActionId": 493,
+        "Type": 302,
+        "Params": [
+            "",
+            "It'll be over soon...",
+            494
+        ]
+    },
+    {
+        "Id": 494,
+        "ActionId": 494,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 495,
+        "ActionId": 495,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Lucia",
+            "I'm fine.",
+            1
+        ]
+    },
+    {
+        "Id": 496,
+        "ActionId": 496,
+        "Type": 302,
+        "Params": [
+            "",
+            "You're crushing your earphones...",
+            497
+        ]
+    },
+    {
+        "Id": 497,
+        "ActionId": 497,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 498,
+        "ActionId": 498,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg"
+        ]
+    },
+    {
+        "Id": 499,
+        "ActionId": 499,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 500,
+        "ActionId": 500,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            2
+        ]
+    },
+    {
+        "Id": 501,
+        "ActionId": 501,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "At last, the song ends. Cassandra turns to face the audience, her expression brimming with anticipation."
+        ]
+    },
+    {
+        "Id": 502,
+        "ActionId": 502,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cassandra",
+            "Well? What do we think, darlings? Tasteful, no? Absolutely fire, as the kids would say?",
+            1
+        ]
+    },
+    {
+        "Id": 503,
+        "ActionId": 503,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The students fall silent, exchanging glances."
+        ]
+    },
+    {
+        "Id": 504,
+        "ActionId": 504,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 505,
+        "ActionId": 505,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Cassandra",
+            "Oh, don't be shy now. Let me hear it!",
+            1
+        ]
+    },
+    {
+        "Id": 506,
+        "ActionId": 506,
+        "Type": 401,
+        "Params": [
+            2,
+            4902
+        ]
+    },
+    {
+        "Id": 507,
+        "ActionId": 507,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 508,
+        "ActionId": 508,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Suddenly, a chair scrapes harshly against the floor from the back of the room. Ophelia has risen to her feet."
+        ]
+    },
+    {
+        "Id": 509,
+        "ActionId": 509,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 510,
+        "ActionId": 510,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 511,
+        "ActionId": 511,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 512,
+        "ActionId": 512,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 513,
+        "ActionId": 513,
+        "Type": 201,
+        "Params": [
+            1,
+            501596
+        ]
+    },
+    {
+        "Id": 514,
+        "ActionId": 514,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Ophelia",
+            "...Ms. Cassandra.",
+            1
+        ]
+    },
+    {
+        "Id": 515,
+        "ActionId": 515,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 516,
+        "ActionId": 516,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 517,
+        "ActionId": 517,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ophelia",
+            "I have spent five years at F.O.S. I have been forced to run punishment laps until my legs gave out. I've been blown up, hunted by live-fire drones, and nearly frozen solid on polar deployment. I endured all of it without complaint.",
+            1
+        ]
+    },
+    {
+        "Id": 518,
+        "ActionId": 518,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 519,
+        "ActionId": 519,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ophelia",
+            "But this is my final day at this academy. And I refuse to let my last memory of F.O.S. be singing something this utterly, irredeemably tasteless.",
+            1
+        ]
+    },
+    {
+        "Id": 520,
+        "ActionId": 520,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 521,
+        "ActionId": 521,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A sharp intake of breath echoes from somewhere in the auditorium."
+        ]
+    },
+    {
+        "Id": 522,
+        "ActionId": 522,
+        "Type": 201,
+        "Params": [
+            18,
+            501660,
+            3
+        ]
+    },
+    {
+        "Id": 523,
+        "ActionId": 523,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cassandra",
+            "What? Tasteless?",
+            18
+        ]
+    },
+    {
+        "Id": 524,
+        "ActionId": 524,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 525,
+        "ActionId": 525,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            6
+        ]
+    },
+    {
+        "Id": 526,
+        "ActionId": 526,
+        "Type": 301,
+        "Params": [
+            1,
+            "Ophelia",
+            "I apologize for my bluntness, Ms. Cassandra, but it is tasteless.",
+            1
+        ]
+    },
+    {
+        "Id": 527,
+        "ActionId": 527,
+        "Type": 201,
+        "Params": [
+            18,
+            501660,
+            3
+        ]
+    },
+    {
+        "Id": 528,
+        "ActionId": 528,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cassandra",
+            "But the commission—",
+            18
+        ]
+    },
+    {
+        "Id": 529,
+        "ActionId": 529,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 530,
+        "ActionId": 530,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            5
+        ]
+    },
+    {
+        "Id": 531,
+        "ActionId": 531,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "Ophelia",
+            "It is tasteless, no matter how much you spent!",
+            1
+        ]
+    },
+    {
+        "Id": 532,
+        "ActionId": 532,
+        "Type": 401,
+        "EndDelay": 350.0,
+        "Params": [
+            2,
+            5483
+        ]
+    },
+    {
+        "Id": 533,
+        "ActionId": 533,
+        "Type": 402,
+        "Params": [
+            5483
+        ]
+    },
+    {
+        "Id": 534,
+        "ActionId": 534,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Cassandra's lips part, then press shut again. Her metal fingers tap twice on the table, making sharp, hollow clicks."
+        ]
+    },
+    {
+        "Id": 535,
+        "ActionId": 535,
+        "Type": 205,
+        "EndDelay": 250.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg",
+            0,
+            1,
+            0.2
+        ]
+    },
+    {
+        "Id": 536,
+        "ActionId": 536,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg"
+        ]
+    },
+    {
+        "Id": 537,
+        "ActionId": 537,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 538,
+        "ActionId": 538,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 539,
+        "ActionId": 539,
+        "Type": 201,
+        "Params": [
+            1,
+            501596
+        ]
+    },
+    {
+        "Id": 540,
+        "ActionId": 540,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "Without waiting for a response, Ophelia is already out of her seat, striding up onto the stage."
+        ]
+    },
+    {
+        "Id": 541,
+        "ActionId": 541,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ophelia",
+            "Allow me.",
+            1
+        ]
+    },
+    {
+        "Id": 542,
+        "ActionId": 542,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She turns to face the crowd. Countless faces tilt up toward her, waiting."
+        ]
+    },
+    {
+        "Id": 543,
+        "ActionId": 543,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 544,
+        "ActionId": 544,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ophelia",
+            "We are writing our own!",
+            1
+        ]
+    },
+    {
+        "Id": 545,
+        "ActionId": 545,
+        "Type": 201,
+        "Params": [
+            18,
+            501609,
+            7,
+            30,
+            80,
+            -50
+        ]
+    },
+    {
+        "Id": 546,
+        "ActionId": 546,
+        "Type": 301,
+        "Params": [
+            1,
+            "Joanne",
+            "W-wait... we're what?",
+            18
+        ]
+    },
+    {
+        "Id": 547,
+        "ActionId": 547,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 548,
+        "ActionId": 548,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ophelia",
+            "An anthem for F.O.S. should be written by the people who actually lived it. We have voices. We have brains. We have five years of blood, sweat, and absolutely absurd experiences. That is worth infinitely more than some generic, off-the-shelf \"take flight\" drivel!",
+            1
+        ]
+    },
+    {
+        "Id": 549,
+        "ActionId": 549,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 550,
+        "ActionId": 550,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ophelia",
+            "I'll compose the music. You, all of you, give me the words.",
+            1
+        ]
+    },
+    {
+        "Id": 551,
+        "ActionId": 551,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 552,
+        "ActionId": 552,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 553,
+        "ActionId": 553,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She sweeps her gaze across the audience, then makes her way toward the piano set up for the ceremony."
+        ]
+    },
+    {
+        "Id": 554,
+        "ActionId": 554,
+        "Type": 201,
+        "Params": [
+            1,
+            501596
+        ]
+    },
+    {
+        "Id": 555,
+        "ActionId": 555,
+        "Type": 301,
+        "Params": [
+            1,
+            "Ophelia",
+            "Say whatever comes to mind. One line, three words, I don't care how rough it is. If it needs smoothing over, that's my job.",
+            1
+        ]
+    },
+    {
+        "Id": 556,
+        "ActionId": 556,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 557,
+        "ActionId": 557,
+        "Type": 401,
+        "Params": [
+            2,
+            4484
+        ]
+    },
+    {
+        "Id": 558,
+        "ActionId": 558,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "She draws a deep breath and rests her fingertips on the black and white keys."
+        ]
+    },
+    {
+        "Id": 559,
+        "ActionId": 559,
+        "Type": 502,
+        "EndDelay": 300.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 560,
+        "ActionId": 560,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 561,
+        "ActionId": 561,
+        "Type": 104,
+        "Params": [
+            "-150|0|-250",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 562,
+        "ActionId": 562,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 563,
+        "ActionId": 563,
+        "Type": 401,
+        "EndDelay": 4000.0,
+        "Params": [
+            1,
+            7156
+        ]
+    },
+    {
+        "Id": 564,
+        "ActionId": 564,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "For the next dozen seconds, the crowd sits frozen in stunned silence. When the stillness breaks, nothing fills the golden hall but repeating chords."
+        ]
+    },
+    {
+        "Id": 565,
+        "ActionId": 565,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "And then—"
+        ]
+    },
+    {
+        "Id": 566,
+        "ActionId": 566,
+        "Type": 201,
+        "Params": [
+            1,
+            501610,
+            8
+        ]
+    },
+    {
+        "Id": 567,
+        "ActionId": 567,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "Beware...",
+            1
+        ]
+    },
+    {
+        "Id": 568,
+        "ActionId": 568,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 569,
+        "ActionId": 569,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Suddenly, a voice everyone knows rises up, singing softly along with the piano."
+        ]
+    },
+    {
+        "Id": 570,
+        "ActionId": 570,
+        "Type": 204,
+        "Params": [
+            1,
+            12
+        ]
+    },
+    {
+        "Id": 571,
+        "ActionId": 571,
+        "Type": 401,
+        "Params": [
+            1,
+            7157
+        ]
+    },
+    {
+        "Id": 572,
+        "ActionId": 572,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "Beware, the stars above are fading.",
+            1
+        ]
+    },
+    {
+        "Id": 573,
+        "ActionId": 573,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lucia remains seated, eyes leveled forward. She doesn't raise her voice, but in that still, silent hall, every word cuts through impossibly clear."
+        ]
+    },
+    {
+        "Id": 574,
+        "ActionId": 574,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "The robes of forerunners stained with blood.",
+            1
+        ]
+    },
+    {
+        "Id": 575,
+        "ActionId": 575,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 576,
+        "ActionId": 576,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She pauses. The auditorium falls silent for a beat."
+        ]
+    },
+    {
+        "Id": 577,
+        "ActionId": 577,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 578,
+        "ActionId": 578,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Then 【kuroname】's voice picks up where she left off."
+        ]
+    },
+    {
+        "Id": 579,
+        "ActionId": 579,
+        "Type": 302,
+        "Params": [
+            "",
+            "Goodbye dear mother say a prayer to the stars. The time to sail away is here.",
+            580
+        ]
+    },
+    {
+        "Id": 580,
+        "ActionId": 580,
+        "Type": 201,
+        "Params": [
+            18,
+            501596,
+            1
+        ]
+    },
+    {
+        "Id": 581,
+        "ActionId": 581,
+        "Type": 301,
+        "Params": [
+            1,
+            "Ophelia",
+            "Very good! Keep going!",
+            18
+        ]
+    },
+    {
+        "Id": 582,
+        "ActionId": 582,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 583,
+        "ActionId": 583,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Ophelia plays on as though caught by sudden inspiration, the piano flowing beneath 【kuroname】's voice."
+        ]
+    },
+    {
+        "Id": 584,
+        "ActionId": 584,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            30
+        ]
+    },
+    {
+        "Id": 585,
+        "ActionId": 585,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "【kuroname】 reflects for a beat. Five years of campus life gather like tributaries merging, every small memory dissolving into words that rise unbidden."
+        ]
+    },
+    {
+        "Id": 586,
+        "ActionId": 586,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "For reasons unknown, the moment 【kuroname】 starts to sing, strange and distant voices seem to echo through, as if reaching across from another world."
+        ]
+    },
+    {
+        "Id": 587,
+        "ActionId": 587,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 588,
+        "ActionId": 588,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 589,
+        "ActionId": 589,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 590,
+        "ActionId": 590,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 591,
+        "ActionId": 591,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 592,
+        "ActionId": 592,
+        "Type": 302,
+        "Params": [
+            "",
+            "Visions... shared from golden days.",
+            593
+        ]
+    },
+    {
+        "Id": 593,
+        "ActionId": 593,
+        "Type": 302,
+        "Params": [
+            "",
+            "Onward to a glorious tomorrow.",
+            594
+        ]
+    },
+    {
+        "Id": 594,
+        "ActionId": 594,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Those voices seem to be right here, hidden within the tender melody, guiding 【kuroname】 to sing their names."
+        ]
+    },
+    {
+        "Id": 595,
+        "ActionId": 595,
+        "Type": 302,
+        "Params": [
+            "",
+            "A new path rising from the ashes of old—",
+            596
+        ]
+    },
+    {
+        "Id": 596,
+        "ActionId": 596,
+        "Type": 201,
+        "Params": [
+            1,
+            501610
+        ]
+    },
+    {
+        "Id": 597,
+        "ActionId": 597,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "【kuroname】 glances at Lucia."
+        ]
+    },
+    {
+        "Id": 598,
+        "ActionId": 598,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "They're... footprints of our countless forerunners.",
+            1
+        ]
+    },
+    {
+        "Id": 599,
+        "ActionId": 599,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 600,
+        "ActionId": 600,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Ophelia nods, shifts to a new key, and brings her left hand in. A few chords unfurl softly across the keys, the framework of a melody slowly taking shape beneath her fingers."
+        ]
+    },
+    {
+        "Id": 601,
+        "ActionId": 601,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "It's not complex, even a little rough around the edges. But she can feel something weighty inside it, something real."
+        ]
+    },
+    {
+        "Id": 602,
+        "ActionId": 602,
+        "Type": 201,
+        "Params": [
+            18,
+            501596,
+            9
+        ]
+    },
+    {
+        "Id": 603,
+        "ActionId": 603,
+        "Type": 301,
+        "Params": [
+            1,
+            "Ophelia",
+            "Yes... This is it.",
+            18
+        ]
+    },
+    {
+        "Id": 604,
+        "ActionId": 604,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 605,
+        "ActionId": 605,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            3
+        ]
+    },
+    {
+        "Id": 606,
+        "ActionId": 606,
+        "Type": 301,
+        "Params": [
+            1,
+            "Joanne",
+            "Oh! I... I thought of something too.",
+            1
+        ]
+    },
+    {
+        "Id": 607,
+        "ActionId": 607,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 608,
+        "ActionId": 608,
+        "Type": 301,
+        "Params": [
+            "",
+            "Joanne",
+            "It's just... sometimes when I'm alone in the lab past midnight, stuck on a problem I can't solve no matter what I try... I think about all of you. Everyone at F.O.S. And all those soldiers on the front lines, fighting for us, for Earth.",
+            1
+        ]
+    },
+    {
+        "Id": 609,
+        "ActionId": 609,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 610,
+        "ActionId": 610,
+        "Type": 301,
+        "Params": [
+            "",
+            "Joanne",
+            "\"For mercy we will cry and hold strong our faith—\"",
+            1
+        ]
+    },
+    {
+        "Id": 611,
+        "ActionId": 611,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 612,
+        "ActionId": 612,
+        "Type": 301,
+        "Params": [
+            "",
+            "Joanne",
+            "\"Those steady shadows from a distant land.\"",
+            1
+        ]
+    },
+    {
+        "Id": 613,
+        "ActionId": 613,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 614,
+        "ActionId": 614,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 615,
+        "ActionId": 615,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her voice fades to a whisper, but Ophelia's fingers are already chasing the words, tucking them into the music."
+        ]
+    },
+    {
+        "Id": 616,
+        "ActionId": 616,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Voices start surfacing everywhere now, scattered through the crowd."
+        ]
+    },
+    {
+        "Id": 617,
+        "ActionId": 617,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Someone offers, \"The stars gaze upon the sea.\" Another picks it up: \"In its embrace lie the sails.\""
+        ]
+    },
+    {
+        "Id": 618,
+        "ActionId": 618,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Someone shouts, \"Engage with the sharp sword, cut through the night!\" They're immediately mocked for being melodramatic, but after the laughter fades, the line stays."
+        ]
+    },
+    {
+        "Id": 619,
+        "ActionId": 619,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Ophelia plays a phrase, pauses, fits the new lyrics into the melody. When something doesn't land, she switches up the rhythm and tries again. The melody stutters forward in fragments, like a house being built one brick at a time."
+        ]
+    },
+    {
+        "Id": 620,
+        "ActionId": 620,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 621,
+        "ActionId": 621,
+        "Type": 201,
+        "Params": [
+            1,
+            501643
+        ]
+    },
+    {
+        "Id": 622,
+        "ActionId": 622,
+        "Type": 301,
+        "Params": [
+            1,
+            "Nia",
+            "Should we take it up a key here?",
+            1
+        ]
+    },
+    {
+        "Id": 623,
+        "ActionId": 623,
+        "Type": 201,
+        "Params": [
+            18,
+            501596
+        ]
+    },
+    {
+        "Id": 624,
+        "ActionId": 624,
+        "Type": 301,
+        "Params": [
+            1,
+            "Ophelia",
+            "No. It doesn't need to go that high.",
+            18
+        ]
+    },
+    {
+        "Id": 625,
+        "ActionId": 625,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ophelia",
+            "It should grow the way we did. Keep moving forward, then break into a run when the moment's right.",
+            18
+        ]
+    },
+    {
+        "Id": 626,
+        "ActionId": 626,
+        "Type": 202,
+        "Params": [
+            1,
+            18
+        ]
+    },
+    {
+        "Id": 627,
+        "ActionId": 627,
+        "Type": 401,
+        "Params": [
+            2,
+            4902
+        ]
+    },
+    {
+        "Id": 628,
+        "ActionId": 628,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Just then, a student who knows their way around music leans forward from the crowd."
+        ]
+    },
+    {
+        "Id": 629,
+        "ActionId": 629,
+        "Type": 201,
+        "Params": [
+            1,
+            501674
+        ]
+    },
+    {
+        "Id": 630,
+        "ActionId": 630,
+        "Type": 301,
+        "Params": [
+            1,
+            "Female Student",
+            "...What if we used a suspended chord there? For the transition? It'll give this nostalgic feel to it, like... everyone coming together while we're lost in the long voyage.",
+            1
+        ]
+    },
+    {
+        "Id": 631,
+        "ActionId": 631,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 632,
+        "ActionId": 632,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Ophelia's fingers freeze above the keys, just for a moment. She tests the change—a suspended note drifting, weightless, holding for one breath before sinking back to the tonic."
+        ]
+    },
+    {
+        "Id": 633,
+        "ActionId": 633,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A quiet exclamation escapes from somewhere in the crowd."
+        ]
+    },
+    {
+        "Id": 634,
+        "ActionId": 634,
+        "Type": 201,
+        "Params": [
+            18,
+            501596,
+            1
+        ]
+    },
+    {
+        "Id": 635,
+        "ActionId": 635,
+        "Type": 301,
+        "Params": [
+            1,
+            "Ophelia",
+            "...Alright. We're using that.",
+            18
+        ]
+    },
+    {
+        "Id": 636,
+        "ActionId": 636,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 637,
+        "ActionId": 637,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The song takes shape through a clamor of voices. Someone suggests leaving a stretch of silence in the interlude. Another insists the line \"for tomorrow\" should repeat three times. Someone else argues the ending shouldn't land on a high note but sink lower instead."
+        ]
+    },
+    {
+        "Id": 638,
+        "ActionId": 638,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 639,
+        "ActionId": 639,
+        "Type": 301,
+        "Params": [
+            1,
+            "Adelyde",
+            "...Though covered in wounds falling down in the deep.",
+            1
+        ]
+    },
+    {
+        "Id": 640,
+        "ActionId": 640,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Adelyde",
+            "I will grit my teeth... and rise again.",
+            1
+        ]
+    },
+    {
+        "Id": 641,
+        "ActionId": 641,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 642,
+        "ActionId": 642,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 643,
+        "ActionId": 643,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg",
+            0,
+            1,
+            0.35
+        ]
+    },
+    {
+        "Id": 644,
+        "ActionId": 644,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg"
+        ]
+    },
+    {
+        "Id": 645,
+        "ActionId": 645,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 646,
+        "ActionId": 646,
+        "Type": 201,
+        "Params": [
+            1,
+            501596
+        ]
+    },
+    {
+        "Id": 647,
+        "ActionId": 647,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "Ophelia picks out that familiar voice from the noise. She stops for a beat, lets the suggestion settle, and plays the lines through."
+        ]
+    },
+    {
+        "Id": 648,
+        "ActionId": 648,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 649,
+        "ActionId": 649,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She plays them a second time. A smile breaks across her face; she's pleased with what they've made."
+        ]
+    },
+    {
+        "Id": 650,
+        "ActionId": 650,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 651,
+        "ActionId": 651,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "She nods and places the passage at the song's climax."
+        ]
+    },
+    {
+        "Id": 652,
+        "ActionId": 652,
+        "Type": 306
+    },
+    {
+        "Id": 653,
+        "ActionId": 653,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg"
+        ]
+    },
+    {
+        "Id": 654,
+        "ActionId": 654,
+        "Type": 202,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 655,
+        "ActionId": 655,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "The arrangement of the \"school anthem\" takes an entire afternoon."
+        ]
+    },
+    {
+        "Id": 656,
+        "ActionId": 656,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            "",
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 657,
+        "ActionId": 657,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "",
+            "Cassandra sits off to the side, legs crossed. At first, there's the irritation of having her song rejected, then silence, then dedicated listening. At some point, without realizing it, her chin comes to rest on the back of her hand, and she simply watches these kids bicker and laugh around a battered old piano."
+        ]
+    },
+    {
+        "Id": 658,
+        "ActionId": 658,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 659,
+        "ActionId": 659,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 660,
+        "ActionId": 660,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 661,
+        "ActionId": 661,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "By evening, the final version is settled. Ophelia steps down from the stage and hands the handwritten score to Joanne, telling her to find a copier and print several hundred copies."
+        ]
+    },
+    {
+        "Id": 662,
+        "ActionId": 662,
+        "Type": 201,
+        "Params": [
+            1,
+            501609,
+            3,
+            280
+        ]
+    },
+    {
+        "Id": 663,
+        "ActionId": 663,
+        "Type": 201,
+        "Params": [
+            2,
+            501596,
+            "",
+            -280
+        ]
+    },
+    {
+        "Id": 664,
+        "ActionId": 664,
+        "Type": 301,
+        "Params": [
+            1,
+            "Joanne",
+            "Why am I the one running errands?!",
+            1
+        ]
+    },
+    {
+        "Id": 665,
+        "ActionId": 665,
+        "Type": 204,
+        "Params": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 666,
+        "ActionId": 666,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ophelia",
+            "Because you're the slowest runner. That way everyone else has more time to practice.",
+            2
+        ]
+    },
+    {
+        "Id": 667,
+        "ActionId": 667,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Joanne",
+            "Wait, what kind of logic is that?!",
+            1
+        ]
+    },
+    {
+        "Id": 668,
+        "ActionId": 668,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 669,
+        "ActionId": 669,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 670,
+        "ActionId": 670,
+        "Type": 306,
+        "EndDelay": 250.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 671,
+        "ActionId": 671,
+        "Type": 101,
+        "EndAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 672,
+        "ActionId": 672,
+        "Type": 502,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 673,
+        "ActionId": 673,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "The first rehearsal is pandemonium. Rhythms trip over each other, keys clash, half the room barrels ahead while the rest still squint at the lyric sheets."
+        ]
+    },
+    {
+        "Id": 674,
+        "ActionId": 674,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The second attempt finds its footing. The melody's bones stand bare and steady. The tune isn't flashy but simple and solid, like a wall of bricks stacked in a hurry. No grace to it, but it won't fall."
+        ]
+    },
+    {
+        "Id": 675,
+        "ActionId": 675,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The third time, the four hundred twenty voices finally merge into one."
+        ]
+    },
+    {
+        "Id": 676,
+        "ActionId": 676,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "<i>Today you are held tight in my hand</i>"
+        ]
+    },
+    {
+        "Id": 677,
+        "ActionId": 677,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "<i>And with today's will time remains unchanged</i>"
+        ]
+    },
+    {
+        "Id": 678,
+        "ActionId": 678,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "<i>We thrive daily, holding our heads high</i>"
+        ]
+    },
+    {
+        "Id": 679,
+        "ActionId": 679,
+        "Type": 505,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 680,
+        "ActionId": 680,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 681,
+        "ActionId": 681,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.8,
+            0.2
+        ]
+    },
+    {
+        "Id": 682,
+        "ActionId": 682,
+        "Type": 109,
+        "EndDelay": 1200.0,
+        "Params": [
+            13,
+            "<size=85><i>For tomorrow</i></size>",
+            50,
+            200,
+            "",
+            "",
+            "",
+            "",
+            3,
+            "",
+            1,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 683,
+        "ActionId": 683,
+        "Type": 109,
+        "EndDelay": 1200.0,
+        "Params": [
+            14,
+            "<size=85><i>Tomorrow</i></size>",
+            50,
+            50,
+            "",
+            "",
+            "",
+            "",
+            3,
+            "",
+            1,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 684,
+        "ActionId": 684,
+        "Type": 109,
+        "EndDelay": 1200.0,
+        "Params": [
+            15,
+            "<size=85><i>Tomorrow</i></size>",
+            50,
+            -100,
+            "",
+            "",
+            "",
+            "",
+            3,
+            "",
+            1,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 685,
+        "ActionId": 685,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "For tomorrow\\nTomorrow\\nTomorrow"
+        ]
+    },
+    {
+        "Id": 686,
+        "ActionId": 686,
+        "Type": 110,
+        "EndDelay": 100.0,
+        "Params": [
+            "13|1",
+            "14|1",
+            "15|1"
+        ]
+    },
+    {
+        "Id": 687,
+        "ActionId": 687,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 688,
+        "ActionId": 688,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 689,
+        "ActionId": 689,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg"
+        ]
+    },
+    {
+        "Id": 690,
+        "ActionId": 690,
+        "Type": 401,
+        "Params": [
+            1,
+            6187
+        ]
+    },
+    {
+        "Id": 691,
+        "ActionId": 691,
+        "Type": 502,
+        "EndDelay": 300.0,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 692,
+        "ActionId": 692,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            11,
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 693,
+        "ActionId": 693,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "Cassandra",
+            "Sob... That was beautiful!",
+            1
+        ]
+    },
+    {
+        "Id": 694,
+        "ActionId": 694,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 695,
+        "ActionId": 695,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "As the final note fades, Cassandra suddenly bursts into tears at the side of the stage."
+        ]
+    },
+    {
+        "Id": 696,
+        "ActionId": 696,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 697,
+        "ActionId": 697,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She pulls out an expensive handkerchief and dabs at her cheeks with theatrical flair. Many in the hall realize for the first time that Constructs, too, can cry."
+        ]
+    },
+    {
+        "Id": 698,
+        "ActionId": 698,
+        "Type": 201,
+        "Params": [
+            1,
+            501629,
+            11,
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 699,
+        "ActionId": 699,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Cassandra",
+            "Sniffle... It's really quite beautiful... So much better than the one I paid for...",
+            1
+        ]
+    },
+    {
+        "Id": 700,
+        "ActionId": 700,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 701,
+        "ActionId": 701,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 702,
+        "ActionId": 702,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 703,
+        "ActionId": 703,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Someone in the crowd lets out a laugh. Cassandra sniffles, collects herself, and rises back to her feet."
+        ]
+    },
+    {
+        "Id": 704,
+        "ActionId": 704,
+        "Type": 204,
+        "Params": [
+            1,
+            11
+        ]
+    },
+    {
+        "Id": 705,
+        "ActionId": 705,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cassandra",
+            "Right, then, this is our anthem now! Mine's going straight into the incinerator!",
+            1
+        ]
+    },
+    {
+        "Id": 706,
+        "ActionId": 706,
+        "Type": 302,
+        "Params": [
+            "",
+            "Ms. Cassandra, what's the name of the song?",
+            707
+        ]
+    },
+    {
+        "Id": 707,
+        "ActionId": 707,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 708,
+        "ActionId": 708,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cassandra",
+            "Name?",
+            1
+        ]
+    },
+    {
+        "Id": 709,
+        "ActionId": 709,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 710,
+        "ActionId": 710,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A sudden stillness takes her. She looks toward the back corner of the auditorium."
+        ]
+    },
+    {
+        "Id": 711,
+        "ActionId": 711,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 712,
+        "ActionId": 712,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The corner is empty. <b>No one stands there.</b> And yet Cassandra stares at it for a long, long moment."
+        ]
+    },
+    {
+        "Id": 713,
+        "ActionId": 713,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 714,
+        "ActionId": 714,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The sensor on her arm flickers faintly, as though registering some impossibly weak signal. It's like a gaze, cast from somewhere far away, resting quietly upon the hall."
+        ]
+    },
+    {
+        "Id": 715,
+        "ActionId": 715,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 716,
+        "ActionId": 716,
+        "Type": 306,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 717,
+        "ActionId": 717,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "But she blinks once, and the strange sensation is gone."
+        ]
+    },
+    {
+        "Id": 718,
+        "ActionId": 718,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cassandra",
+            "...I haven't the faintest idea.",
+            1
+        ]
+    },
+    {
+        "Id": 719,
+        "ActionId": 719,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 720,
+        "ActionId": 720,
+        "Type": 201,
+        "Params": [
+            18,
+            501609,
+            7
+        ]
+    },
+    {
+        "Id": 721,
+        "ActionId": 721,
+        "Type": 301,
+        "Params": [
+            1,
+            "Joanne",
+            "Huh?",
+            18
+        ]
+    },
+    {
+        "Id": 722,
+        "ActionId": 722,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 723,
+        "ActionId": 723,
+        "Type": 201,
+        "Params": [
+            1,
+            501629
+        ]
+    },
+    {
+        "Id": 724,
+        "ActionId": 724,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Cassandra",
+            "It's your song, darlings. You should be the ones to name it.",
+            1
+        ]
+    },
+    {
+        "Id": 725,
+        "ActionId": 725,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 726,
+        "ActionId": 726,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 727,
+        "ActionId": 727,
+        "Type": 205,
+        "EndDelay": 450.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 728,
+        "ActionId": 728,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 729,
+        "ActionId": 729,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 730,
+        "ActionId": 730,
+        "Type": 401,
+        "Params": [
+            2,
+            4982
+        ]
+    },
+    {
+        "Id": 731,
+        "ActionId": 731,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "At Cassandra's words, the hall erupts."
+        ]
+    },
+    {
+        "Id": 732,
+        "ActionId": 732,
+        "Type": 306
+    },
+    {
+        "Id": 733,
+        "ActionId": 733,
+        "Type": 402,
+        "Params": [
+            4982
+        ]
+    },
+    {
+        "Id": 734,
+        "ActionId": 734,
+        "Type": 201,
+        "Params": [
+            1,
+            501662
+        ]
+    },
+    {
+        "Id": 735,
+        "ActionId": 735,
+        "Type": 301,
+        "Params": [
+            1,
+            "Student A",
+            "How about \"F.O.S. Battle Song\"?",
+            1
+        ]
+    },
+    {
+        "Id": 736,
+        "ActionId": 736,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 737,
+        "ActionId": 737,
+        "Type": 201,
+        "Params": [
+            2,
+            501668,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 738,
+        "ActionId": 738,
+        "Type": 301,
+        "Params": [
+            1,
+            "Student B",
+            "That's way too corny! Let's call it \"Song of Humanity\"!",
+            2
+        ]
+    },
+    {
+        "Id": 739,
+        "ActionId": 739,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 740,
+        "ActionId": 740,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            6
+        ]
+    },
+    {
+        "Id": 741,
+        "ActionId": 741,
+        "Type": 301,
+        "Params": [
+            1,
+            "Ophelia",
+            "That's even worse!!",
+            1
+        ]
+    },
+    {
+        "Id": 742,
+        "ActionId": 742,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 743,
+        "ActionId": 743,
+        "Type": 201,
+        "Params": [
+            2,
+            501610
+        ]
+    },
+    {
+        "Id": 744,
+        "ActionId": 744,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Amid the clamor, 【kuroname】 turns to look at Lucia."
+        ]
+    },
+    {
+        "Id": 745,
+        "ActionId": 745,
+        "Type": 302,
+        "Params": [
+            "",
+            "You want to give it a try?",
+            746
+        ]
+    },
+    {
+        "Id": 746,
+        "ActionId": 746,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 747,
+        "ActionId": 747,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "You've heard my playlist... This isn't really my style.",
+            2
+        ]
+    },
+    {
+        "Id": 748,
+        "ActionId": 748,
+        "Type": 302,
+        "Params": [
+            "",
+            "Trying wouldn't hurt.",
+            749
+        ]
+    },
+    {
+        "Id": 749,
+        "ActionId": 749,
+        "Type": 204,
+        "Params": [
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 750,
+        "ActionId": 750,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "...Resounding Storm.",
+            2
+        ]
+    },
+    {
+        "Id": 751,
+        "ActionId": 751,
+        "Type": 302,
+        "Params": [
+            "",
+            "...That's... definitely a different direction.",
+            752
+        ]
+    },
+    {
+        "Id": 752,
+        "ActionId": 752,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 753,
+        "ActionId": 753,
+        "Type": 401,
+        "Params": [
+            2,
+            4982
+        ]
+    },
+    {
+        "Id": 754,
+        "ActionId": 754,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Chaos takes over. Students shout over each other from the floor and the stage, each new proposal more absurd than the last, and each shouted down with even greater volume. Cassandra props her chin on her hand and watches the pandemonium unfold, thoroughly entertained."
+        ]
+    },
+    {
+        "Id": 755,
+        "ActionId": 755,
+        "Type": 402,
+        "Params": [
+            4982
+        ]
+    },
+    {
+        "Id": 756,
+        "ActionId": 756,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "In the end, the matter of naming the anthem simply fizzles out. No one calls for a vote. No one makes an executive decision. They just keep arguing until everyone is hungry and hoarse, then give up and disband."
+        ]
+    },
+    {
+        "Id": 757,
+        "ActionId": 757,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "And so, the name of the F.O.S. anthem remains an unsolved puzzle among the first graduating class."
+        ]
+    },
+    {
+        "Id": 758,
+        "ActionId": 758,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "But every student who walks out of F.O.S. remembers the melody."
+        ]
+    },
+    {
+        "Id": 759,
+        "ActionId": 759,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1518.jpg"
+        ]
+    },
+    {
+        "Id": 760,
+        "ActionId": 760,
+        "Type": 104,
+        "Params": [
+            "200|0|-200",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 761,
+        "ActionId": 761,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            50,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 762,
+        "ActionId": 762,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "By the time they leave, night has already fallen. Students trickle out of the auditorium in small groups, some still humming the tune they just learned, some smiling. Others have fallen quiet."
+        ]
+    },
+    {
+        "Id": 763,
+        "ActionId": 763,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.7,
+            3
+        ]
+    },
+    {
+        "Id": 764,
+        "ActionId": 764,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The lights at the far end of the corridor go out one by one. Tomorrow, this place will be silent, ready to become the next class's hallways, the next class's classrooms, the next class's training grounds."
+        ]
+    },
+    {
+        "Id": 765,
+        "ActionId": 765,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "And they will carry this nameless song with them as they set off toward their separate horizons."
+        ]
+    },
+    {
+        "Id": 766,
+        "ActionId": 766,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1518.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 767,
+        "ActionId": 767,
+        "Type": 109,
+        "Params": [
+            10,
+            "<size=50>\"Either way, we'll all see each other again one day.\"</size>",
+            "",
+            80,
+            "",
+            "",
+            "",
+            "",
+            3,
+            "",
+            1,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 768,
+        "ActionId": 768,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "\"Either way, we'll all see each other again one day.\""
+        ]
+    },
+    {
+        "Id": 769,
+        "ActionId": 769,
+        "Type": 109,
+        "Params": [
+            11,
+            "<size=50>Back then, they had yet to set sail. Their joy knew no end in sight.</size>",
+            "",
+            0,
+            "",
+            "",
+            "",
+            "",
+            3,
+            "",
+            1,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 770,
+        "ActionId": 770,
+        "Type": 309,
+        "IsBlock": 1,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Back then, they had yet to set sail. Their joy knew no end in sight."
         ]
     }
 ]

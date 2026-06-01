@@ -42,7 +42,7 @@ function XUiPanelTheatre6SkillDetail:OnGetLuaEvents()
 end
 
 function XUiPanelTheatre6SkillDetail:OnNotify(evt, ...)
-    if evt == XEventId.EVENT_THEATRE6_GOLD_CHANGE then
+    if evt == XEventId.EVENT_THEATRE6_GOLD_CHANGE and not self._ReadOnly then
         self:RefreshBuyBtnStatus()
     end
 end
@@ -69,6 +69,9 @@ function XUiPanelTheatre6SkillDetail:InitComponents()
         self.GridTagSc:AddEventListener(handler(self, self.OnBtnGridTagClick))
     end
 
+    if self.BtnDescList then
+        self.BtnDescList:AddEventListener(handler(self, self.OnBtnGridTagClick))
+    end
 end
 
 function XUiPanelTheatre6SkillDetail:Refresh(skillId, params)
@@ -92,14 +95,17 @@ function XUiPanelTheatre6SkillDetail:Refresh(skillId, params)
     self.TxtType.text = self._Control:GetClientConfigValue("SkillType", skillConfig.Type) --技能类型
     self.TxtDesc.text = self._Control:GetSkillDesc(self._SkillId, false)
     if self.UiRImgIcon then
-        self.UiRImgIcon:SetSprite(skillConfig.Icon) --技能图标
+        self.UiRImgIcon:SetRawImage(skillConfig.Icon) --技能图标
     end
 
     self.BtnSell:SetNameByGroup(0, skillConfig.SellPrice)
     if self.IsLock then
-        self.BtnFreeze:SetButtonState(CS.UiButtonState.Select)
-    else
         self.BtnFreeze:SetButtonState(CS.UiButtonState.Normal)
+        self.BtnFreeze:SetNameByGroup(0, XUiHelper.GetText("Theatre6UnLock"))
+    else
+        self.BtnFreeze:SetButtonState(CS.UiButtonState.Select)
+
+        self.BtnFreeze:SetNameByGroup(0, XUiHelper.GetText("Theatre6Lock"))
     end
 
     local spriteName = ""
@@ -123,8 +129,12 @@ function XUiPanelTheatre6SkillDetail:Refresh(skillId, params)
 
     self:UpdateStarGrid(skillConfig.Level) --星级
     self:UpdateSkillBuildTagsGrid(skillConfig.BuildTags, skillConfig.KeyWordIds)
-    self:RefreshBtnStatus(readOnly or self.IsBaseSkill)
-    self:RefreshBuyBtnStatus()
+    local effectiveReadOnly = readOnly or self.IsBaseSkill or self._Control:IsCurModeSettle()
+    self._ReadOnly = effectiveReadOnly
+    self:RefreshBtnStatus(effectiveReadOnly)
+    if not effectiveReadOnly then
+        self:RefreshBuyBtnStatus()
+    end
 end
 
 function XUiPanelTheatre6SkillDetail:RefreshBuyBtnStatus()
@@ -137,6 +147,8 @@ function XUiPanelTheatre6SkillDetail:RefreshBuyBtnStatus()
     end
     self.BtnBuy:SetNameByGroup(0, showPrice) --价格
     self.BtnBuy:SetDisable(not coinEnough)
+    self.BtnRemove:SetDisable(self._Control:IsSkillBagFull())
+
 end
 
 function XUiPanelTheatre6SkillDetail:RefreshBtnStatus(readOnly)

@@ -7,9 +7,22 @@ local ReqMethodName = {
     BuffLevelUpSkill = "Theatre6BuffLevelUpSkillRequest"
 }
 local MoveSkillMaskKey = "XTheatre6Control:SkillMoveOrSwapRequest"
+XTheatre6Control.ImgHighlightKey = 2
+
+local SkillTypeBgConfigName = {
+    [XEnumConst.Theatre6.SlotType.Special] = "SkillType4Bg",
+    [XEnumConst.Theatre6.SlotType.Insert] = "SkillType2a3Bg",
+    [XEnumConst.Theatre6.SlotType.Active] = "SkillType1Bg"
+}
 
 function XTheatre6Control:OnInitCharacter()
 
+end
+
+---当前模式是否已收到后端结算下发(只读态)
+function XTheatre6Control:IsCurModeSettle()
+    local modelData = self._Model:GetCurPlayModeData()
+    return modelData ~= nil and modelData.IsSettle == true
 end
 
 ---是否使用肉鸽涂装
@@ -229,6 +242,26 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
         end
         return
     end
+    --槽位类型校验:1.拖入技能能否装到目标槽 2.替换时被挤走的技能能否装回源装备槽
+    if dstSlotType ~= SlotType.Bag then
+        local srcSlots = self:GetSkillInstallSlots(skillId)
+        if not srcSlots or not table.contains(srcSlots, dstSlotType) then
+            XUiManager.TipText("Theatre6SkillMoveError")
+            if cb then cb() end
+            return
+        end
+    end
+    if dstSkillData and XTool.IsNumberValid(dstSkillData.SkillId) and dstSkillData.SkillId ~= skillId then
+        local srcSlotType = skillModel:GetSkillEquippedPosition(skillId)
+        if srcSlotType and srcSlotType ~= SlotType.Bag then
+            local dstSlots = self:GetSkillInstallSlots(dstSkillData.SkillId)
+            if not dstSlots or not table.contains(dstSlots, srcSlotType) then
+                XUiManager.TipText("Theatre6SkillMoveError")
+                if cb then cb() end
+                return
+            end
+        end
+    end
     --装入装备槽时校验:1.目标位置低不能换高;2.其他装备位不允许出现同名技能
     if dstSlotType ~= SlotType.Bag then
         local skillKey = skillModel:GetSkillKey(skillId)
@@ -274,7 +307,7 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
         if response.Code ~= XCode.Success then
             XUiManager.TipCode(response.Code)
         end
-        self._Model.Skill:UpdateSkills(response.SkillUpdate)
+        self._Model.Skill:UpdateSkills(response.SkillUpdate, true)
         if cb then
             cb()
         end
@@ -283,7 +316,7 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
         if XLuaUiManager.IsMaskShow(MoveSkillMaskKey) then
             XLuaUiManager.SetMask(false, MoveSkillMaskKey)
         end
-    end, 500)
+    end, 200)
 end
 
 ---溢出技能出售请求
@@ -300,8 +333,9 @@ function XTheatre6Control:OverQueueSellRequest(cb)
     end)
 end
 
-function XTheatre6Control:BuffLevelUpSkillRequest(skillId, cb)
+function XTheatre6Control:BuffLevelUpSkillRequest(buffId,skillId, cb)
     local req = {
+        BuffId = buffId,
         SkillId = skillId
     }
     XNetwork.Call(ReqMethodName.BuffLevelUpSkill, req, function(response)
@@ -309,13 +343,19 @@ function XTheatre6Control:BuffLevelUpSkillRequest(skillId, cb)
             XUiManager.TipCode(response.Code)
             return
         end
+        if XTool.IsNumberValid(skillId) and skillId ~= 0 then
+            local nextSkillId = self:GetNextLevelSkillId(skillId)
+            if XTool.IsNumberValid(nextSkillId) then
+                XLuaUiManager.Open("UiTheatre6GainTips", 1, nextSkillId, true)
+            end
+        end
         if response.SkillUpdates then
             self._Model.Skill:UpdateSkillListWithOverQueue(response.SkillUpdates)
         end
         if cb then
             cb()
         end
-        XLuaUiManager.Open("UiTheatre6GainTips", 1, skillId, true)
+ 
     end)
 end
 
@@ -333,7 +373,9 @@ function XTheatre6Control:CheckForceSellSkillBlock()
     if not self._Model.Skill:IsForceSellSkillBlock() then
         return false
     end
-
+    if self:IsCurModeSettle() then
+        return false
+    end
     self._Model.Skill:OpenSellSkillPanel(self._Model.Skill:GetForceSellSkillOverQueue())
     return true
 end
@@ -445,9 +487,25 @@ function XTheatre6Control:BagHasNewSkill()
     return false
 end
 
+function XTheatre6Control:GetSkillTypeBgConfigName(skillId)
+    local slotTypes = self:GetSkillInstallSlots(skillId)
+    local skillConfig = self:GetSkillCfgById(skillId)
+    if not slotTypes or #slotTypes < 1 then
+        return self:GetQualityIcon(skillConfig.Quality)
+    end
+    return self:GetClientConfigValue(SkillTypeBgConfigName[slotTypes[1]], skillConfig.Quality)
+end
+
 function XTheatre6Control:SetNewSkillViewed(skillId)
     self._Model.Skill:SetNewSkillViewed(skillId)
     XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_SKILL_NOT_NEW)
+end
+
+---清空当前背包的新技能标记并刷新红点
+function XTheatre6Control:ClearBagNewSkillViewed()
+    if self._Model.Skill:ClearBagNewSkillFlags() then
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_SKILL_NOT_NEW)
+    end
 end
 
 --region 遗物
@@ -487,6 +545,22 @@ function XTheatre6Control:GetModeSelectRoleIndex(mode, roleConfigs)
         end
     end
     return 1
+end
+
+function XTheatre6Control:SaveBuffChooseIndex(mode, characterId, index)
+    self._Model:SaveBuffChooseIndex(mode, characterId, index)
+end
+
+function XTheatre6Control:GetBuffChooseIndex(mode, characterId)
+    return self._Model:GetBuffChooseIndex(mode, characterId)
+end
+
+function XTheatre6Control:SaveDifficultyChooseIndex(characterId, index)
+    self._Model:SaveDifficultyChooseIndex(characterId, index)
+end
+
+function XTheatre6Control:GetDifficultyChooseIndex(characterId)
+    return self._Model:GetDifficultyChooseIndex(characterId)
 end
 
 --#endregion

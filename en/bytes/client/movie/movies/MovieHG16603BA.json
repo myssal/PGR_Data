@@ -1532,7 +1532,7 @@
         "Params": [
             "",
             "Hiro",
-            "Some people say Shadow's looking for a way to leave this place...",
+            "Some people say Shadow has been looking for a way to leave this place...",
             1,
             "",
             "",
@@ -3040,7 +3040,7 @@
         "Params": [
             1,
             "",
-            "The mechanical spider—or rather, Xun's head—shakes its head violently. Its mouth stretches into an exaggerated grin. The voice is shrill and manic."
+            "The mechanical spider shakes its head—or rather, Xun's head—violently. Its mouth stretches into an exaggerated grin. The voice is shrill and manic."
         ]
     },
     {
@@ -4040,7 +4040,7 @@
         "Type": 302,
         "Params": [
             "",
-            "(Fire)"
+            "(Open fire)"
         ]
     },
     {
@@ -5698,6 +5698,7 @@
         "Id": 453,
         "ActionId": 453,
         "Type": 301,
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "Xun",
@@ -5723,6 +5724,7 @@
         "Id": 454,
         "ActionId": 454,
         "Type": 202,
+        "EndDelay": 500.0,
         "Params": [
             1
         ]
@@ -5737,8 +5739,32 @@
     },
     {
         "Id": 456,
+        "ActionId": 2001,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiChuanSongMengOpen.prefab",
+            1,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 457,
+        "ActionId": 2002,
+        "Type": 511,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            0,
+            "0|0|1500"
+        ]
+    },
+    {
+        "Id": 458,
         "ActionId": 456,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -5746,7 +5772,7 @@
         ]
     },
     {
-        "Id": 457,
+        "Id": 459,
         "ActionId": 457,
         "Type": 201,
         "Params": [
@@ -5755,7 +5781,7 @@
         ]
     },
     {
-        "Id": 458,
+        "Id": 460,
         "ActionId": 458,
         "Type": 401,
         "Params": [
@@ -5764,7 +5790,7 @@
         ]
     },
     {
-        "Id": 459,
+        "Id": 461,
         "ActionId": 459,
         "Type": 301,
         "Params": [
@@ -5774,7 +5800,7 @@
         ]
     },
     {
-        "Id": 460,
+        "Id": 462,
         "ActionId": 460,
         "Type": 401,
         "Params": [
@@ -5783,7 +5809,7 @@
         ]
     },
     {
-        "Id": 461,
+        "Id": 463,
         "ActionId": 461,
         "Type": 301,
         "BeginAnim": "RImgBg1Shake",
@@ -5794,12 +5820,12 @@
         ]
     },
     {
-        "Id": 462,
+        "Id": 464,
         "ActionId": 462,
         "Type": 306
     },
     {
-        "Id": 463,
+        "Id": 465,
         "ActionId": 463,
         "Type": 301,
         "Params": [
@@ -5824,7 +5850,7 @@
         ]
     },
     {
-        "Id": 464,
+        "Id": 466,
         "ActionId": 464,
         "Type": 401,
         "Params": [
@@ -5833,7 +5859,7 @@
         ]
     },
     {
-        "Id": 465,
+        "Id": 467,
         "ActionId": 465,
         "Type": 203,
         "Params": [
@@ -5845,7 +5871,7 @@
         ]
     },
     {
-        "Id": 466,
+        "Id": 468,
         "ActionId": 466,
         "Type": 202,
         "Params": [
@@ -5853,7 +5879,7 @@
         ]
     },
     {
-        "Id": 467,
+        "Id": 469,
         "ActionId": 467,
         "Type": 301,
         "Params": [
@@ -5863,7 +5889,7 @@
         ]
     },
     {
-        "Id": 468,
+        "Id": 470,
         "ActionId": 468,
         "Type": 201,
         "Params": [
@@ -5872,7 +5898,7 @@
         ]
     },
     {
-        "Id": 469,
+        "Id": 471,
         "ActionId": 469,
         "Type": 301,
         "Params": [
@@ -5897,7 +5923,7 @@
         ]
     },
     {
-        "Id": 470,
+        "Id": 472,
         "ActionId": 470,
         "Type": 202,
         "Params": [
@@ -5910,7 +5936,7 @@
         ]
     },
     {
-        "Id": 471,
+        "Id": 473,
         "ActionId": 471,
         "Type": 301,
         "EndAnim": "DialogDisable",
@@ -5921,7 +5947,7 @@
         ]
     },
     {
-        "Id": 472,
+        "Id": 474,
         "ActionId": 472,
         "Type": 104,
         "Params": [
@@ -5930,7 +5956,17 @@
         ]
     },
     {
-        "Id": 473,
+        "Id": 475,
+        "ActionId": 2003,
+        "Type": 511,
+        "Params": [
+            1,
+            0.3,
+            "0|0|-1000"
+        ]
+    },
+    {
+        "Id": 476,
         "ActionId": 473,
         "Type": 205,
         "Params": [
@@ -5942,7 +5978,7 @@
         ]
     },
     {
-        "Id": 474,
+        "Id": 477,
         "ActionId": 474,
         "Type": 401,
         "EndDelay": 550.0,
@@ -5952,7 +5988,19 @@
         ]
     },
     {
-        "Id": 475,
+        "Id": 478,
+        "ActionId": 2004,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiChuanSongMengOpen.prefab",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 479,
         "ActionId": 475,
         "Type": 501,
         "Params": [
@@ -5961,7 +6009,7 @@
         ]
     },
     {
-        "Id": 476,
+        "Id": 480,
         "ActionId": 476,
         "Type": 205,
         "Params": [
@@ -5969,7 +6017,7 @@
         ]
     },
     {
-        "Id": 477,
+        "Id": 481,
         "ActionId": 477,
         "Type": 101,
         "Params": [
@@ -5977,7 +6025,7 @@
         ]
     },
     {
-        "Id": 478,
+        "Id": 482,
         "ActionId": 478,
         "Type": 301,
         "IsEnd": 1,

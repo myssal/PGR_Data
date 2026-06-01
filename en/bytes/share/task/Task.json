@@ -14246,7 +14246,7 @@
         "Type": 91,
         "Priority": 1000,
         "Title": "BP Mission",
-        "Desc": "Complete Crimson Weave equipment goal - Signature Acceleration Advanced",
+        "Desc": "Complete Crimson Weave equipment goal: Signature Booster – Advanced",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
         "Condition": [
             8017
@@ -37147,7 +37147,7 @@
             12139
         ],
         "Result": 1,
-        "RewardId": 66494,
+        "RewardId": 69084,
         "Suffix": "Event"
     },
     {
@@ -37162,7 +37162,7 @@
             12140
         ],
         "Result": 200,
-        "RewardId": 66495,
+        "RewardId": 69085,
         "SkipId": 2016,
         "Suffix": "Event"
     },
@@ -37178,7 +37178,7 @@
             12141
         ],
         "Result": 100,
-        "RewardId": 66496,
+        "RewardId": 69086,
         "SkipId": 20038,
         "Suffix": "Event"
     },
@@ -62665,7 +62665,7 @@
         "Id": 80227,
         "Type": 51,
         "Priority": 19800,
-        "Title": "Beginner Mission: Serum Consumption I",
+        "Title": "Beginner Mission: Simulated Battlefield I",
         "Desc": "Use a total of 1000 Serum",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
@@ -62680,7 +62680,7 @@
         "Id": 80228,
         "Type": 51,
         "Priority": 19700,
-        "Title": "Beginner Mission: Serum Consumption II",
+        "Title": "Beginner Mission: Simulated Battlefield II",
         "Desc": "Use a total of 3000 Serum",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
@@ -62695,7 +62695,7 @@
         "Id": 80229,
         "Type": 51,
         "Priority": 19600,
-        "Title": "Beginner Mission: Level Upgrade I",
+        "Title": "Beginner Mission: Level Up I",
         "Desc": "Commandant reaches Lv.40",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
@@ -62710,7 +62710,7 @@
         "Id": 80230,
         "Type": 51,
         "Priority": 19500,
-        "Title": "Beginner Mission: Level Upgrade II",
+        "Title": "Beginner Mission: Level Up II",
         "Desc": "Commandant reaches Lv.60",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
@@ -62798,7 +62798,7 @@
         "Id": 80236,
         "Type": 51,
         "Priority": 18900,
-        "Title": "Return Mission: Serum Consumption I",
+        "Title": "Return Mission: Simulated Battlefield I",
         "Desc": "Use a total of 1500 Serum",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
@@ -62813,7 +62813,7 @@
         "Id": 80237,
         "Type": 51,
         "Priority": 18800,
-        "Title": "Return Mission: Serum Consumption II",
+        "Title": "Return Mission: Simulated Battlefield II",
         "Desc": "Use a total of 3000 Serum",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
@@ -88060,8 +88060,8 @@
         "Id": 21078101,
         "Type": 4,
         "Priority": 25419,
-        "Title": "逆冕·终阶解放",
-        "Desc": "逆冕达成终阶解放",
+        "Title": "Inverse Crown: Ultima Awaken",
+        "Desc": "Awaken Inverse Crown's Ultima Rank",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR7Luxiya.png",
         "Condition": [
             21078101
@@ -119442,6 +119442,118 @@
         ],
         "Result": 1,
         "RewardId": 61165
+    },
+    {
+        "Id": 86509,
+        "SourceGroupId": 1004,
+        "Type": 79,
+        "Priority": 10016,
+        "Title": "Basic Addition",
+        "Desc": "Achieve the time limit goal in one round",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            86509
+        ],
+        "Result": 1,
+        "RewardId": 69123
+    },
+    {
+        "Id": 86510,
+        "SourceGroupId": 1004,
+        "Type": 79,
+        "Priority": 10017,
+        "Title": "Deep Addition",
+        "Desc": "Achieve the time limit goal in one round twice",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            86510
+        ],
+        "Result": 2,
+        "RewardId": 69124
+    },
+    {
+        "Id": 86511,
+        "SourceGroupId": 1004,
+        "Type": 79,
+        "Priority": 10018,
+        "Title": "Superb Addition",
+        "Desc": "Achieve the time limit goal in one round 3 times",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            86511
+        ],
+        "Result": 3,
+        "RewardId": 69125
+    },
+    {
+        "Id": 86512,
+        "SourceGroupId": 1004,
+        "Type": 79,
+        "Priority": 10019,
+        "Title": "Eternal Observation",
+        "Desc": "Score a 14-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            86512
+        ],
+        "Result": 14,
+        "RewardId": 69126
+    },
+    {
+        "Id": 86513,
+        "SourceGroupId": 1004,
+        "Type": 79,
+        "Priority": 10116,
+        "Title": "Basic Addition",
+        "Desc": "Achieve the time limit goal in one round",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            86513
+        ],
+        "Result": 1,
+        "RewardId": 69127
+    },
+    {
+        "Id": 86514,
+        "SourceGroupId": 1004,
+        "Type": 79,
+        "Priority": 10117,
+        "Title": "Deep Addition",
+        "Desc": "Achieve the time limit goal in one round twice",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            86514
+        ],
+        "Result": 2,
+        "RewardId": 69128
+    },
+    {
+        "Id": 86515,
+        "SourceGroupId": 1004,
+        "Type": 79,
+        "Priority": 10118,
+        "Title": "Superb Addition",
+        "Desc": "Achieve the time limit goal in one round 3 times",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            86515
+        ],
+        "Result": 3,
+        "RewardId": 69129
+    },
+    {
+        "Id": 86516,
+        "SourceGroupId": 1004,
+        "Type": 79,
+        "Priority": 10119,
+        "Title": "Eternal Observation",
+        "Desc": "Score a 14-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            86516
+        ],
+        "Result": 14,
+        "RewardId": 69130
     },
     {
         "Id": 2120040,
@@ -153037,7 +153149,7 @@
     },
     {
         "Id": 131001,
-        "Type": 105,
+        "Type": 111,
         "Priority": 10000,
         "Title": "Phylotree Dossier",
         "Desc": "Unlock Dossier - Liv: Limpidity",
@@ -153047,11 +153159,12 @@
         ],
         "Result": 1,
         "RewardId": 69081,
+        "SkipId": 20369,
         "Suffix": "Phylotree"
     },
     {
         "Id": 131002,
-        "Type": 105,
+        "Type": 111,
         "Priority": 9999,
         "Title": "Phylotree Dossier",
         "Desc": "Unlock Dossier - Teddy: Spectre",
@@ -153061,11 +153174,12 @@
         ],
         "Result": 1,
         "RewardId": 69080,
+        "SkipId": 20370,
         "Suffix": "Phylotree"
     },
     {
         "Id": 131003,
-        "Type": 105,
+        "Type": 111,
         "Priority": 9998,
         "Title": "Phylotree Dossier",
         "Desc": "Unlock Dossier - Rosetta: Arete",
@@ -153075,11 +153189,12 @@
         ],
         "Result": 1,
         "RewardId": 69080,
+        "SkipId": 20371,
         "Suffix": "Phylotree"
     },
     {
         "Id": 131004,
-        "Type": 105,
+        "Type": 111,
         "Priority": 9997,
         "Title": "Phylotree Dossier",
         "Desc": "Unlock Dossier - Nirvatia: Dirge",
@@ -153089,11 +153204,12 @@
         ],
         "Result": 1,
         "RewardId": 69080,
+        "SkipId": 20372,
         "Suffix": "Phylotree"
     },
     {
         "Id": 131005,
-        "Type": 105,
+        "Type": 111,
         "Priority": 9996,
         "Title": "Phylotree Dossier",
         "Desc": "Unlock Dossier - Kamui: Aeternion",
@@ -153103,11 +153219,12 @@
         ],
         "Result": 1,
         "RewardId": 69080,
+        "SkipId": 20373,
         "Suffix": "Phylotree"
     },
     {
         "Id": 131006,
-        "Type": 105,
+        "Type": 111,
         "Priority": 9995,
         "Title": "Phylotree Dossier",
         "Desc": "Unlock Dossier - Lucia: Inverse Crown [1]",
@@ -153117,11 +153234,12 @@
         ],
         "Result": 1,
         "RewardId": 69082,
+        "SkipId": 20374,
         "Suffix": "Phylotree"
     },
     {
         "Id": 131007,
-        "Type": 105,
+        "Type": 111,
         "Priority": 9994,
         "Title": "Phylotree Dossier",
         "Desc": "Unlock Dossier - Lucia: Inverse Crown [2]",
@@ -153131,6 +153249,7 @@
         ],
         "Result": 1,
         "RewardId": 69083,
+        "SkipId": 20374,
         "Suffix": "Phylotree"
     },
     {
@@ -158694,7 +158813,7 @@
         "Type": 11,
         "Priority": 9400,
         "Title": "Nebulous Vigil",
-        "Desc": "Clear [Banished]",
+        "Desc": "Clear [Solitude]",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
         "Condition": [
             99798
@@ -159113,7 +159232,7 @@
     },
     {
         "Id": 150029,
-        "SourceGroupId": 40006,
+        "SourceGroupId": 45008,
         "Type": 11,
         "Priority": 10000,
         "Title": "Wanted: Mother",
@@ -159127,7 +159246,7 @@
     },
     {
         "Id": 150030,
-        "SourceGroupId": 40006,
+        "SourceGroupId": 45008,
         "Type": 11,
         "Priority": 9900,
         "Title": "Wanted: Mother",
@@ -159141,7 +159260,7 @@
     },
     {
         "Id": 150031,
-        "SourceGroupId": 40006,
+        "SourceGroupId": 45008,
         "Type": 11,
         "Priority": 9800,
         "Title": "Wanted: Mother",
@@ -159155,7 +159274,7 @@
     },
     {
         "Id": 150032,
-        "SourceGroupId": 40006,
+        "SourceGroupId": 45008,
         "Type": 11,
         "Priority": 9700,
         "Title": "Wanted: Mother",
@@ -159169,7 +159288,7 @@
     },
     {
         "Id": 150033,
-        "SourceGroupId": 40006,
+        "SourceGroupId": 45008,
         "Type": 11,
         "Priority": 9600,
         "Title": "Wanted: Mother",
@@ -159183,7 +159302,7 @@
     },
     {
         "Id": 150034,
-        "SourceGroupId": 40006,
+        "SourceGroupId": 45008,
         "Type": 11,
         "Priority": 9500,
         "Title": "Wanted: Mother",
@@ -159197,7 +159316,7 @@
     },
     {
         "Id": 150035,
-        "SourceGroupId": 40006,
+        "SourceGroupId": 45008,
         "Type": 11,
         "Priority": 9400,
         "Title": "Wanted: Mother",
@@ -159495,7 +159614,7 @@
         "Type": 11,
         "Priority": 8600,
         "Title": "Wanted: Zack the Frostheart Emperor",
-        "Desc": "On <color=#009fe1>Inferno</color> difficulty, reduce Phase 2 Zack's HP below 20% within 3 minutes and see through [Sea of Frostheart].",
+        "Desc": "On <color=#009fe1>Inferno</color> difficulty, reduce Phase 2 Zack's HP to below 20% within 3 minutes and see through [Sea of Frostheart].",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
         "Condition": [
             150056
@@ -162077,7 +162196,7 @@
         "Id": 120662,
         "Type": 11,
         "Priority": 10000,
-        "Title": "无归的航道Ⅰ",
+        "Title": "Lost Voyage I",
         "Desc": "Log in to the game for the 1st time today",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanv404.png",
         "Condition": [
@@ -162091,7 +162210,7 @@
         "Id": 120663,
         "Type": 11,
         "Priority": 9900,
-        "Title": "无归的航道Ⅱ",
+        "Title": "Lost Voyage II",
         "Desc": "Total Activity has reached 100 points today",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanv404.png",
         "Condition": [
@@ -162106,7 +162225,7 @@
         "Id": 120664,
         "Type": 11,
         "Priority": 9800,
-        "Title": "无归的航道Ⅲ",
+        "Title": "Lost Voyage III",
         "Desc": "Use a total of 200 Serum today",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanv404.png",
         "Condition": [
@@ -162152,7 +162271,7 @@
         "Type": 11,
         "Priority": 9800,
         "Title": "Shrouded Requiem",
-        "Desc": "参与【雾夜异闻】1次",
+        "Desc": "Clear [Nightshroud Tales] stage once.",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev405.png",
         "Condition": [
             120667
@@ -162167,7 +162286,7 @@
         "Type": 11,
         "Priority": 9700,
         "Title": "Rapid Pursuit",
-        "Desc": "通关简单及以上难度的【母体】",
+        "Desc": "Clear [Mother] on Easy or above difficulty",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev405.png",
         "Condition": [
             120668
@@ -162256,8 +162375,8 @@
         "Id": 120674,
         "Type": 11,
         "Priority": 9100,
-        "Title": "Adaptation Fitting - Ignis",
-        "Desc": "Complete [Adaptation Fitting: Ignis]",
+        "Title": "Adaptation Fitting: Allos",
+        "Desc": "Complete [Adaptation Fitting: Allos]",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActivePartnerTryv405.png",
         "Condition": [
             120674
@@ -162304,7 +162423,7 @@
         "SourceGroupId": 45004,
         "Type": 11,
         "Priority": 8800,
-        "Title": "Fluttering Ballet",
+        "Title": "Path of Unclouded Hearts",
         "Desc": "Clear [In the Name of Home]",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveLivEffectCoatingV405.png",
         "Condition": [
@@ -195952,198 +196071,254 @@
     },
     {
         "Id": 140106,
-        "Type": 11,
-        "Priority": 8000,
-        "Title": "雾夜镇魂曲（1）",
-        "Desc": "通关【迷局突围】难度1",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 10000,
+        "Title": "Shrouded Requiem [1]",
+        "Desc": "Clear [Labyrinth Breakout] on Difficulty 1",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140119
         ],
         "Result": 1,
-        "RewardId": 67961,
+        "RewardId": 69105,
         "Suffix": "Event"
     },
     {
         "Id": 140107,
-        "Type": 11,
-        "Priority": 8100,
-        "Title": "雾夜镇魂曲（2）",
-        "Desc": "通关【迷局突围】难度2",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 9900,
+        "Title": "Shrouded Requiem [2]",
+        "Desc": "Clear [Labyrinth Breakout] on Difficulty 2",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140120
         ],
         "Result": 1,
-        "RewardId": 67962,
+        "RewardId": 69106,
         "Suffix": "Event"
     },
     {
         "Id": 140108,
-        "Type": 11,
-        "Priority": 8200,
-        "Title": "雾夜镇魂曲（3）",
-        "Desc": "通关【迷局突围】难度3",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 9800,
+        "Title": "Shrouded Requiem [3]",
+        "Desc": "Clear [Labyrinth Breakout] on Difficulty 3",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140121
         ],
         "Result": 1,
-        "RewardId": 67963,
+        "RewardId": 69107,
         "Suffix": "Event"
     },
     {
         "Id": 140109,
-        "Type": 11,
-        "Priority": 8300,
-        "Title": "雾夜镇魂曲（4）",
-        "Desc": "通关【迷局突围】难度4",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 9700,
+        "Title": "Shrouded Requiem [4]",
+        "Desc": "Clear [Labyrinth Breakout] on Difficulty 4",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140122
         ],
         "Result": 1,
-        "RewardId": 67964,
+        "RewardId": 69108,
         "Suffix": "Event"
     },
     {
         "Id": 140110,
-        "Type": 11,
-        "Priority": 8400,
-        "Title": "雾夜镇魂曲（5）",
-        "Desc": "维罗妮卡存档分达到45000",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 9600,
+        "Title": "Shrouded Requiem [5]",
+        "Desc": "Veronica Archive score reaches 45,000",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140123
         ],
-        "Result": 45000,
-        "RewardId": 67965,
+        "Result": 1,
+        "RewardId": 69109,
         "Suffix": "Event"
     },
     {
         "Id": 140111,
-        "Type": 11,
-        "Priority": 8500,
-        "Title": "雾夜镇魂曲（6）",
-        "Desc": "阿尔法存档达到45000",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 9500,
+        "Title": "Shrouded Requiem [6]",
+        "Desc": "Alpha Archive score reaches 45,000",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140124
         ],
-        "Result": 45000,
-        "RewardId": 67966,
+        "Result": 1,
+        "RewardId": 69110,
         "Suffix": "Event"
     },
     {
         "Id": 140112,
-        "Type": 11,
-        "Priority": 8600,
-        "Title": "雾夜镇魂曲（7）",
-        "Desc": "【抉择】累计达70次",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 9400,
+        "Title": "Shrouded Requiem [7]",
+        "Desc": "Make [Choices] 70 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140125
         ],
         "Result": 70,
-        "RewardId": 67967,
+        "RewardId": 69111,
         "Suffix": "Event"
     },
     {
         "Id": 140113,
-        "Type": 11,
-        "Priority": 8700,
-        "Title": "雾夜镇魂曲（8）",
-        "Desc": "【抉择】累计达140次",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 9300,
+        "Title": "Shrouded Requiem [8]",
+        "Desc": "Make [Choices] 140 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140126
         ],
         "Result": 140,
-        "RewardId": 67968,
+        "RewardId": 69112,
         "Suffix": "Event"
     },
     {
         "Id": 140114,
-        "Type": 11,
-        "Priority": 8800,
-        "Title": "雾夜镇魂曲（9）",
-        "Desc": "【抉择】累计达210次",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 9200,
+        "Title": "Shrouded Requiem [9]",
+        "Desc": "Make [Choices] 210 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140127
         ],
         "Result": 210,
-        "RewardId": 68074,
+        "RewardId": 69113,
         "Suffix": "Event"
     },
     {
         "Id": 140115,
-        "Type": 11,
-        "Priority": 8900,
-        "Title": "雾夜镇魂曲（10）",
-        "Desc": "【任务完成】累计达6次",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 9100,
+        "Title": "Shrouded Requiem [10]",
+        "Desc": "Complete [Missions] 6 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140128
         ],
         "Result": 6,
-        "RewardId": 68075,
+        "RewardId": 69114,
         "Suffix": "Event"
     },
     {
         "Id": 140116,
-        "Type": 11,
+        "Type": 108,
         "Priority": 9000,
-        "Title": "雾夜镇魂曲（11）",
-        "Desc": "【任务完成】累计达15次",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Title": "Shrouded Requiem [11]",
+        "Desc": "Complete [Missions] 15 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140129
         ],
         "Result": 15,
-        "RewardId": 68076,
+        "RewardId": 69115,
         "Suffix": "Event"
     },
     {
         "Id": 140117,
-        "Type": 11,
-        "Priority": 9100,
-        "Title": "雾夜镇魂曲（12）",
-        "Desc": "【任务完成】累计达30次",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Type": 108,
+        "Priority": 8900,
+        "Title": "Shrouded Requiem [12]",
+        "Desc": "Complete [Missions] 30 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140130
         ],
         "Result": 30,
-        "RewardId": 67961,
+        "RewardId": 69116,
         "Suffix": "Event"
     },
     {
         "Id": 140118,
         "Type": 11,
-        "Priority": 9200,
-        "Title": "雾夜镇魂曲（13）",
-        "Desc": "维罗妮卡存档分达到45000",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Priority": 8800,
+        "Title": "Shrouded Requiem I",
+        "Desc": "Make [Choices] 70 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
-            140131
+            140125
         ],
-        "Result": 45000,
-        "RewardId": 67962,
+        "Result": 70,
+        "RewardId": 69117,
         "Suffix": "Event"
     },
     {
         "Id": 140119,
         "Type": 11,
-        "Priority": 9300,
-        "Title": "雾夜镇魂曲（14）",
-        "Desc": "阿尔法存档达到45000",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Priority": 8700,
+        "Title": "Shrouded Requiem II",
+        "Desc": "Make [Choices] 140 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
-            140132
+            140126
         ],
-        "Result": 45000,
-        "RewardId": 67963,
+        "Result": 140,
+        "RewardId": 69118,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140120,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "Shrouded Requiem III",
+        "Desc": "Make [Choices] 210 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140127
+        ],
+        "Result": 210,
+        "RewardId": 69119,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140121,
+        "Type": 11,
+        "Priority": 8500,
+        "Title": "Shrouded Requiem IV",
+        "Desc": "Complete [Missions] 6 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140128
+        ],
+        "Result": 6,
+        "RewardId": 69120,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140122,
+        "Type": 11,
+        "Priority": 8400,
+        "Title": "Shrouded Requiem V",
+        "Desc": "Complete [Missions] 15 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140129
+        ],
+        "Result": 15,
+        "RewardId": 69121,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140123,
+        "Type": 11,
+        "Priority": 8300,
+        "Title": "Shrouded Requiem VI",
+        "Desc": "Complete [Missions] 30 times in total in the stage",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140130
+        ],
+        "Result": 30,
+        "RewardId": 69122,
         "Suffix": "Event"
     }
 ]

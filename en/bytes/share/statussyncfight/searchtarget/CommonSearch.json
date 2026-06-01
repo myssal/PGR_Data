@@ -43,12 +43,11 @@
     },
     {
         "Id": 1060,
-        "SearchFaceType": 1,
-        "SearchFaceApplyJoystick": 1,
-        "SearchConePoint": 30000,
-        "SearchConeCutDistance": 20000,
-        "SearchConeAngle": 1200000,
-        "SearchCircleRadius": 100000,
-        "PriorityDistanceWeight": 1000000
+        "SearchFaceType": 2,
+        "SearchConePoint": 80000,
+        "SearchConeCutDistance": 30000,
+        "SearchCircleRadius": 200000,
+        "PriorityDistanceWeight": 1000000,
+        "PriorityAngleWeight": 500000
     }
 ]

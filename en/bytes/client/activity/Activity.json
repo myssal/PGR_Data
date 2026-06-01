@@ -8,7 +8,7 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6InviteFriend.png",
         "ActivityTitle": "Invite Friend",
-        "ActivityDes": "You can share your invite code to Lv.≥20 commandants. If they use your code, you will have invited them successfully.",
+        "ActivityDes": "You can share your invite code to Lv.≥40 commandants. If they use your code, you will have invited them successfully.",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelSendInvitation.prefab",
         "Params": [
             2,
@@ -60,7 +60,7 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
         "ActivityTitle": "Return Support",
-        "ActivityDes": "During the event, commandants in the \"Return\" state can complete the missions and get the rewards (the event ends when the Return state expires).",
+        "ActivityDes": "During the event, Commandants in the \"Return\" state can complete the missions and get the rewards (the event ends when the Return state expires).",
         "Params": [
             0,
             31
@@ -194,40 +194,40 @@
     },
     {
         "Id": 400,
-        "Name": "Passion Call",
+        "Name": "Homecoming Voyage",
         "GroupId": 245,
         "SortId": 1,
         "TimeId": 47920,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMainLinev405.png",
-        "ActivityTitle": "Passion Call",
+        "ActivityTitle": "Homecoming Voyage",
         "ActivityDes": "Event Info: Play through the new story [Homecoming Voyage] and complete missions.",
         "Params": [
             0,
             710
         ],
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 401,
         "Name": "Simulated Battlefield",
         "GroupId": 245,
         "SortId": 2,
-        "TimeId": 47920,
+        "TimeId": 47704,
         "ActivityType": 12,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRepeatChallengeV213.png",
         "ActivityTitle": "Simulated Battlefield",
-        "ActivityDes": "「参与条件」：\\n指挥官等级达到16级后开启。\\n「副本说明」：\\n1.通关关卡可获得拟战绩分\\n2.消耗拟战绩分可在拟战商店购买物品\\n3.版本限定商店兑换结束：2026-07-16 05:00\\n4.版本时间内通关拟战场域关卡，累计消耗一定血清可领取奖励。",
+        "ActivityDes": "Requirements:\\nCommandant Lv.16.\\nMission Info:\\n1. Earn Simulation Scores upon clearing a stage.\\n2. Spend Simulation Scores to purchase items at the Simulation Shop.\\n3. The limited-time shop exchange ends on July 16, 2026, at 23:00 (UTC).\\n4. During the event period, clear Simulated Battlefield stages and consume a certain amount of serum to claim rewards.",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelRepeatActivity.prefab",
         "Params": [
             20017,
             709
         ],
         "ConditionId": 770422,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 402,
@@ -239,7 +239,7 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseGameCollectionv405.png",
         "ActivityTitle": "Retro Arcade",
-        "ActivityDes": "「参与条件」：\\n指挥官等级达到40级后开启。\\n「活动说明」：\\n1.活动期间将会同时开放绵绵眠梦、鲨鲨破坏王和喵星淘金三个玩法。\\n2.绵绵眠梦需要玩家尽快合成目标方块，使清除范围内数字方块消灭。\\n3.鲨鲨破坏王需要玩家尽可能消除下方的方块，不让方块触顶。\\n4.喵星淘金需要玩家在时间逐渐缩短的关卡中，搭配改造和升级，获取更多的资源点数。\\n5.参与活动，完成任务可获得【旧梦模元】，【旧梦模元】可以在兑换商店内兑换道具。",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40.\\nEvent Info:\\n1. During the event, three game modes will be available simultaneously: Fluffy Snooze, Wreck-It Shark-speare, and Cat Grab.\\n2. In Fluffy Snooze, you need to merge target blocks as quickly as possible to eliminate numbered blocks in the clearing area.\\n3. In Wreck-It Shark-speare, you need to clear blocks from below as much as possible to prevent them from reaching the top.\\n4. In Cat Grab, you need to obtain more Resource Points in stages with progressively shorter time limits by using modifications and upgrades.\\n5. Participate in the event and complete missions to obtain [Retro Modules], which can be exchanged for items in the Exchange Shop.",
         "Params": [
             1300640
         ],
@@ -271,7 +271,7 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDifficultv405.png",
         "ActivityTitle": "Nebulous Vigil",
-        "ActivityDes": "「参与条件」：\\n指挥官等级达到40级后开启。\\n「活动说明」：\\n1.挑战关卡共分为6个难度，均为高难度挑战，将与【“先遣队”】进行对战。\\n2.在挑战过程中，指挥官的角色在死亡时会重启，帮助指挥官完成挑战。\\n3.各关卡有3星条件，所有关卡中累计获得3星即可获得收藏品奖励。继续挑战获得更高星级可提升收藏品的品质。",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. There are a total of 6 difficulty levels, all of which are highly challenging with [\"Vanguard\"] being your formidable enemy.\\n2. All members will be reset once knocked out during the challenge, making the challenge easier to complete.\\n3. Each stage has its own 3-star clearance conditions. Collectibles will be rewarded once you have earned a total of 3 stars. The more stars you earn, the higher the quality of the collectibles will be.",
         "Params": [
             11724
         ],
@@ -287,12 +287,12 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRogue6v405.png",
         "ActivityTitle": "Shrouded Requiem",
-        "ActivityDes": "「参与条件」：\\n指挥官等级达到40级后开启。\\n「活动说明」：\\n1.【雾夜镇魂曲】为常驻玩法，分为【迷局突围】和【雾夜异闻】两个模式。\\n2.在【迷局突围】中为角色搭配技能与旧物，挑战强敌，可获得故事解锁代币-缄封文书。\\n3.在【雾夜异闻】中，消耗缄封文书可解锁角色的个人剧情和挑战关卡。\\n4.本次【雾夜镇魂曲】设有限时任务和常驻任务，参与【迷局突围】和【雾夜异闻】均可完成任务，获得常驻代币和限时代币奖励。\\n5.消耗常驻代币和限时代币可在对应的商店中兑换[表情包][研发券]等奖励。",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40.\\nEvent Info:\\n1. [Shrouded Requiem] is a permanent mode with two parts: [Labyrinth Breakout] and [Nightshroud Tales].\\n2. In [Labyrinth Breakout], equip characters with skills and relics, then challenge powerful enemies to earn Sealed Writs, the currency used to unlock stories.\\n3. In [Nightshroud Tales], spend Sealed Writs to unlock character stories and challenge stages.\\n4. [Shrouded Requiem] includes both limited-time missions and permanent missions. Play [Labyrinth Breakout] or [Nightshroud Tales] to complete missions and earn permanent currency and limited-time currency rewards.\\n5. Spend permanent currency and limited-time currency in the corresponding shops to exchange for rewards such as [Stamps] and [R&D Tickets].",
         "Params": [
             89102
         ],
         "ConditionId": 774800,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 406,
@@ -304,12 +304,12 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterv405.png",
         "ActivityTitle": "Omniframe Target",
-        "ActivityDes": "New Character:\\n※S-Rank Ice Attacker [Lucia: Inverse Crown]\\nNew Weapon:\\n※6★ [Lightless Dusk] (Cylinder Katana)\\n\\nInfo:\\n1. Construct Research:\\n※[Lucia: Inverse Crown] will be available in the [Phylotree Nexus] Research Pool. There is a 100% chance to get [Lucia: Inverse Crown] upon getting an S-Rank Construct.\\n2. Weapon Research:\\n※[Lightless Dusk] will be available in the [Weapon Research] Research Pool with the same rules and rates as other weapons.",
+        "ActivityDes": "New Character:\\n※S-Rank Ice Attacker [Lucia: Inverse Crown]\\nNew Weapon:\\n※6★ [Lightless Dusk] (Cylinder Katana)\\n\\nInfo:\\n1. Construct Research:\\n※[Lucia: Inverse Crown] will be available in the [Phylotree Nexus] Research Pool. There is a 100% chance to get [Lucia: Inverse Crown] upon getting an S-Rank Construct.\\n2. Weapon Research:\\n※[Lightless Dusk] will be available in the [Phylotree Nexus Weapon Research] Research Pool with the same rules and rates as other weapons.",
         "Params": [
-            7209
+            20365
         ],
         "ConditionId": 770402,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 407,
@@ -321,12 +321,12 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerv405.png",
         "ActivityTitle": "CUB Target",
-        "ActivityDes": "New CUB:\\n※S-Rank CUB: [Allos]\\n※Recommended for the character [Lucia: Inverse Crown]\\n※[Allos] will be added to the [CUB Research] Pool.\\nWhen conducting CUB Research, it is allowed to choose any S-Rank CUB for target research.\\nDuring the event, if [Allos] is selected for target research, it will have a 100% drop rate among S-Rank CUBs.",
+        "ActivityDes": "New CUB:\\n※S-Rank CUB: [Allos]\\n※Recommended for the character [Lucia: Inverse Crown]\\n※[Allos] will be added to the [Phylotree Nexus CUB Research] Pool.\\nWhen conducting CUB Research, it is allowed to choose any S-Rank CUB for target research.\\nDuring the event, if [Allos] is selected for target research, it will have a 100% drop rate among S-Rank CUBs.",
         "Params": [
-            7212
+            7219
         ],
         "ConditionId": 770402,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 408,
@@ -343,7 +343,7 @@
             20020
         ],
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 409,
@@ -360,7 +360,7 @@
             20020
         ],
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 410,
@@ -376,7 +376,7 @@
         "Params": [
             20363
         ],
-        "ConditionId": 770402
+        "ConditionId": 770410
     },
     {
         "Id": 411,
@@ -393,7 +393,7 @@
             20171
         ],
         "ConditionId": 775500,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 412,
@@ -411,7 +411,7 @@
             711
         ],
         "ConditionId": 774501,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 413,
@@ -429,7 +429,7 @@
             712
         ],
         "ConditionId": 8006,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 414,
@@ -447,7 +447,7 @@
             713
         ],
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 415,
@@ -465,7 +465,7 @@
             714
         ],
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ShowBeginTime": "After the update on 2026-06-02"
     },
     {
         "Id": 416,
@@ -482,7 +482,7 @@
             20363,
             715
         ],
-        "ConditionId": 770400
+        "ConditionId": 770410
     },
     {
         "Id": 417,
@@ -502,15 +502,15 @@
     },
     {
         "Id": 418,
-        "Name": "倒映浸景",
+        "Name": "Emerging Reflections",
         "GroupId": 253,
         "SortId": 1,
         "TimeId": 47702,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanv403.png",
-        "ActivityTitle": "倒映浸景",
-        "ActivityDes": "「活动说明」：完成活动任务，获取【片面自我】",
+        "ActivityTitle": "Emerging Reflections",
+        "ActivityDes": "Event Info: Complete event missions to obtain [Fractured Self].",
         "Params": [
             89077,
             716
@@ -521,16 +521,15 @@
         "Name": "Signal Calibration",
         "GroupId": 245,
         "SortId": 3,
-        "TimeId": 47002,
+        "TimeId": 46501,
         "ActivityType": 3,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseskygardenv400.png",
         "ActivityTitle": "Signal Calibration",
-        "ActivityDes": "「参与条件」：\\n40级及以上的指挥官\\n「活动说明」：\\n1.调频接收信号可查看神秘通讯信息。\\n2.完成讯息接收后可领取对应奖励。",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40 or above\\nEvent Details:\\n1. Tune to frequencies to access mysterious messages.\\n2. Claim rewards after receiving the message.",
         "Params": [
-            89076
+            90058
         ],
-        "ConditionId": 30406,
-        "ShowBeginTime": "After the update on Jun 02, 2026"
+        "ConditionId": 30406
     }
 ]

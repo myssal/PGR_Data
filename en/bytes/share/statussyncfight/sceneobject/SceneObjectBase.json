@@ -2547,13 +2547,13 @@
     },
     {
         "Id": 406,
-        "Name": "法奥斯教室课桌",
+        "Name": "F.O.S. Classroom Table",
         "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/Scene_Faos01/SG_TR_WG_Zhuozi02.prefab",
         "UseDistanceDither": true
     },
     {
         "Id": 407,
-        "Name": "法奥斯教室椅子",
+        "Name": "F.O.S. Classroom Chair",
         "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/Scene_Faos01/SG_TR_WG_Yizi01.prefab",
         "UseDistanceDither": true
     },
@@ -2817,7 +2817,7 @@
     },
     {
         "Id": 700314,
-        "Name": "法奥斯礼堂幕布门-开",
+        "Name": "F.O.S. Auditorium Curtain Door - Open",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_GH_JH_Menlian02.prefab",
         "UseDistanceDither": true
     },
@@ -2870,6 +2870,18 @@
         "Id": 201502,
         "Name": "花B",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_MS_JH_FlowerB.prefab",
+        "UseDistanceDither": true
+    },
+    {
+        "Id": 201503,
+        "Name": "墙角花盆",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/Scene_Faos01/SG_TR_BD_Zhuzi.prefab",
+        "UseDistanceDither": true
+    },
+    {
+        "Id": 201504,
+        "Name": "红色障碍物",
+        "Model": "Assets/Product/Effect/DlcPrefab/BigWorld/SkyGarden/Prefab/FxSceneEffect/FxSkyGardenScene/FxSkyGardenAirWall02.prefab",
         "UseDistanceDither": true
     },
     {
@@ -2991,8 +3003,9 @@
     {
         "Id": 457,
         "Name": "神威邀约-椅子（绑定）",
-        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Yizi01.prefab",
-        "UseDistanceDither": true
+        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/SG_TR_JH_Yizi01_LOD0.prefab",
+        "UseDistanceDither": true,
+        "AnimationControllerName": "SG_TR_JH_Yizi01_LOD0"
     },
     {
         "Id": 458,
@@ -3025,9 +3038,9 @@
     {
         "Id": 462,
         "Name": "神威邀约-桌子2（绑定）",
-        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/Scene_Faos01/SG_TR_JH_Zhuozi02.prefab",
+        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/SG_TR_JH_Zhuozi02_LOD0.prefab",
         "UseDistanceDither": true,
-        "AnimationControllerName": "SG_TR_JH_Zhuozi02"
+        "AnimationControllerName": "SG_TR_JH_Zhuozi02_LOD0"
     },
     {
         "Id": 463,
@@ -3040,6 +3053,42 @@
         "Id": 464,
         "Name": "神威邀约-窗02",
         "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/Scene_Faos01/SG_TR_WG_Chuangzha02.prefab",
+        "UseDistanceDither": true
+    },
+    {
+        "Id": 465,
+        "Name": "特效切换门常驻",
+        "Model": "Assets/Product/Effect/DlcPrefab/BigWorld/SkyGarden/Prefab/FxSceneEffect/FxSkyGardenScene/FxSkyGardenTRdoorLight01.prefab",
+        "UseDistanceDither": true
+    },
+    {
+        "Id": 466,
+        "Name": "特效切换门关闭",
+        "Model": "Assets/Product/Effect/DlcPrefab/BigWorld/SkyGarden/Prefab/FxSceneEffect/FxSkyGardenScene/FxSkyGardenTRdoorLight02.prefab",
+        "UseDistanceDither": true
+    },
+    {
+        "Id": 467,
+        "Name": "特效切换门开启",
+        "Model": "Assets/Product/Effect/DlcPrefab/BigWorld/SkyGarden/Prefab/FxSceneEffect/FxSkyGardenScene/FxSkyGardenTRdoorLight03.prefab",
+        "UseDistanceDither": true
+    },
+    {
+        "Id": 201505,
+        "Name": "法奥斯长椅",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/Scene_Faos01/SG_TH_WG_Zuoyi01.prefab",
+        "UseDistanceDither": true
+    },
+    {
+        "Id": 201506,
+        "Name": "阿尔法小刀",
+        "Model": "Assets/Product/Role/DlcEquipPrefab/E3KodachiMd010011RM.prefab",
+        "UseDistanceDither": true
+    },
+    {
+        "Id": 201507,
+        "Name": "阿尔法大刀",
+        "Model": "Assets/Product/Role/DlcEquipPrefab/E3DachiMd010011RM.prefab",
         "UseDistanceDither": true
     }
 ]

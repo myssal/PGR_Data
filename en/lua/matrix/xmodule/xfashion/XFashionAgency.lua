@@ -74,6 +74,11 @@ function XFashionAgency:GetFashionColorName(colorId)
     return colorConfig.FashionName or ""
 end
 
+function XFashionAgency:GetFashionColorNameVertical(colorId)
+    local colorConfig = self._Model:GetFashionColorById(colorId)
+    return colorConfig.FashionNameVertical or ""
+end
+
 function XFashionAgency:GetFashionColorIcon(colorId)
     local colorConfig = self._Model:GetFashionColorById(colorId)
     return colorConfig.FashionIcon or ""
@@ -82,6 +87,36 @@ end
 function XFashionAgency:GetFashionColorOriginalFashionId(colorId)
     local colorConfig = self._Model:GetFashionColorById(colorId)
     return colorConfig.OriginalFashionId
+end
+
+function XFashionAgency:GetFashionColorQuality(colorId)
+    local colorConf = self._Model:GetFashionColorById(colorId)
+    return colorConf.Quality
+end
+
+function XFashionAgency:GetFashionColorDescription(colorId)
+    local colorConf = self._Model:GetFashionColorById(colorId)
+    local desc = colorConf.Description
+    if not desc or desc == "" then
+        desc = XDataCenter.FashionManager.GetFashionDesc(
+            colorConf.OriginalFashionId)
+    end
+    return desc
+end
+
+function XFashionAgency:GetFashionColorWorldDescription(colorId)
+    local colorConf = self._Model:GetFashionColorById(colorId)
+    local desc = colorConf.WorldDescription
+    if not desc or desc == "" then
+        desc = XDataCenter.FashionManager.GetFashionWorldDescription(
+            colorConf.OriginalFashionId)
+    end
+    return desc
+end
+
+function XFashionAgency:GetFashionColorSkipIdParams(colorId)
+    local colorConf = self._Model:GetFashionColorById(colorId)
+    return colorConf.SkipIdParams
 end
 
 function XFashionAgency:IsFashionColorHas(fashionId, colorId)

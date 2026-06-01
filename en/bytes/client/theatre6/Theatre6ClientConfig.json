@@ -15,7 +15,7 @@
     {
         "Id": "StoryUpdateTime",
         "Values": [
-            "2026/1/1"
+            "2099/1/1"
         ]
     },
     {
@@ -57,7 +57,7 @@
     {
         "Id": "MaxBuffCount",
         "Values": [
-            6
+            5
         ]
     },
     {
@@ -85,12 +85,12 @@
     {
         "Id": "EventBackgroup",
         "Values": [
-            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror01.png",
-            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror01.png",
-            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror01.png",
-            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror01.png",
-            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror11.png",
-            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror01.png"
+            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror04.png",
+            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror04.png",
+            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror04.png",
+            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror04.png",
+            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror05.png",
+            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror04.png"
         ]
     },
     {
@@ -120,7 +120,7 @@
     {
         "Id": "DescGold",
         "Values": [
-            "游离于清醒和疯狂的边界，却始终以理智对抗着深渊。"
+            "A hefty sum of Coins, earned through courage and wisdom."
         ]
     },
     {
@@ -132,7 +132,7 @@
     {
         "Id": "PvId",
         "Values": [
-            20004
+            20011
         ]
     },
     {
@@ -210,22 +210,22 @@
     {
         "Id": "StoryFirstGuideId",
         "Values": [
-            64703
+            64701
         ]
     },
     {
         "Id": "StoryRepeatGuideId",
         "Values": [
-            64704
+            64791
         ]
     },
     {
         "Id": "SanTypeDesc",
         "Values": [
             "Sanity Normal",
-            "Sanity below %s",
-            "Sanity above %s",
-            "Sanity reaches %s"
+            "Sanity ≤ %s",
+            "Sanity ≥ %s",
+            "Sanity = %s"
         ]
     },
     {
@@ -345,7 +345,7 @@
         "Id": "ShopRefreshColor",
         "Values": [
             "56A788",
-            "DD9E55",
+            "ccc6bd",
             952535
         ]
     },
@@ -366,7 +366,7 @@
     {
         "Id": "RewardDuration",
         "Values": [
-            3000
+            6000
         ]
     },
     {
@@ -461,7 +461,7 @@
     {
         "Id": "IconCrit",
         "Values": [
-            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36.png"
+            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
         ]
     },
     {
@@ -531,6 +531,24 @@
         ]
     },
     {
+        "Id": "IconGood03",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiTheatre6Icon08.png"
+        ]
+    },
+    {
+        "Id": "IconGood04",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiTheatre6Icon04.png"
+        ]
+    },
+    {
+        "Id": "IconDeSan",
+        "Values": [
+            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon26.png"
+        ]
+    },
+    {
         "Id": "IconAttr01",
         "Values": [
             "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon02.png"
@@ -557,7 +575,7 @@
     {
         "Id": "IconCritBlack",
         "Values": [
-            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36Black.png"
+            "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37Black.png"
         ]
     },
     {
@@ -630,6 +648,48 @@
         "Id": "IconAngry",
         "Values": [
             "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png"
+        ]
+    },
+    {
+        "Id": "EitherorGuideId",
+        "Values": [
+            64755
+        ]
+    },
+    {
+        "Id": "MainUiEnterCamAnimTime",
+        "Values": [
+            2330
+        ]
+    },
+    {
+        "Id": "NewCharacterTagShowTime",
+        "Values": [
+            46203
+        ]
+    },
+    {
+        "Id": "EitherorGuide2",
+        "Values": [
+            2,
+            5,
+            64765
+        ]
+    },
+    {
+        "Id": "EitherorGuide3",
+        "Values": [
+            863157,
+            64769,
+            2,
+            64770,
+            3
+        ]
+    },
+    {
+        "Id": "FirstEnterGuideId",
+        "Values": [
+            64751
         ]
     }
 ]

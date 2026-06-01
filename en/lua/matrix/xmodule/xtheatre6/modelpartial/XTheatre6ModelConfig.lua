@@ -15,6 +15,7 @@ local TableKey = {
     Theatre6ClientConfig = { CacheType = XConfigUtil.CacheType.Normal, DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String },
     Theatre6Monster = {},
     Theatre6Skill = {},
+    Theatre6SkillExtend = {},
     Theatre6SkillPool = {},
     Theatre6Stage = {},
     Theatre6StageBuff = { CacheType = XConfigUtil.CacheType.Normal },
@@ -297,6 +298,11 @@ end
 ---@return XTableTheatre6Skill 获取技能配置
 function XTheatre6Model:GetSkillCfgById(skillId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.Theatre6Skill, skillId)
+end
+
+---@return XTableTheatre6Skill 获取技能配置
+function XTheatre6Model:GetSkillExtendCfgById(skillId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.Theatre6SkillExtend, skillId)
 end
 
 ---@return XTableTheatre6AttrPackPool 获取属性包（遗物）池配置

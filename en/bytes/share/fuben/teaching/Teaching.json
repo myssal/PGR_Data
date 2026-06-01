@@ -46225,7 +46225,7 @@
     {
         "Id": 4356,
         "Group": 112310,
-        "Name": "破雾",
+        "Name": "Mistbreak",
         "Describe": "鬼白毛-辅助机技能",
         "IconType": 1,
         "Icon": 8,
@@ -46285,7 +46285,7 @@
     {
         "Id": 4359,
         "Group": 112311,
-        "Name": "坠渊",
+        "Name": "Abyssal Plunge",
         "Describe": "鬼白毛-辅助机技能",
         "IconType": 1,
         "Icon": 8,
@@ -46324,7 +46324,7 @@
     {
         "Id": 4361,
         "Group": 112312,
-        "Name": "点按换小太刀",
+        "Name": "Tap to switch to Kodachi.",
         "Describe": "鬼白毛-点按换成小刀",
         "IconType": 1,
         "Icon": 102,
@@ -46390,7 +46390,7 @@
     {
         "Id": 4364,
         "Group": 9999999,
-        "Name": "Continuously Press and Hold",
+        "Name": "Keep Holding",
         "Describe": "鬼白毛-长按红球",
         "IconType": 4,
         "Icon": 103,
@@ -46569,14 +46569,18 @@
             2
         ],
         "SkillId": [
-            107221,
-            107208
+            107206,
+            107207,
+            107208,
+            107219,
+            107220,
+            107221
         ]
     },
     {
         "Id": 4373,
         "Group": 112321,
-        "Name": "长按固定球位",
+        "Name": "Press and hold fixed orb slot",
         "Describe": "冰毛教学-变鬼接强化消球",
         "IconType": 1,
         "Icon": 102,
@@ -46606,7 +46610,6 @@
         "Icon": 102,
         "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR7Luxiya21.png",
         "TimeOut": 5000,
-        "MoveType": 10720913,
         "EffectType": [
             2
         ],
@@ -46619,16 +46622,18 @@
         "MissileId": [
             10727015,
             10720524,
-            10721816
+            10721816,
+            10720913
         ]
     },
     {
         "Id": 4375,
         "Group": 112321,
-        "Name": "Tap Yellow Orb",
+        "Name": "Silent Night",
         "Describe": "冰毛教学-变鬼接强化消球",
         "IconType": 1,
         "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR7Luxiya32.png",
         "TimeOut": 2000,
         "IsMySelf": true,
         "EffectType": [
@@ -46645,10 +46650,11 @@
     {
         "Id": 4376,
         "Group": 112322,
-        "Name": "Tap Yellow Orb",
+        "Name": "Silent Night",
         "Describe": "冰毛教学-强消接强变",
         "IconType": 1,
         "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR7Luxiya32.png",
         "TimeOut": -1,
         "OnlyTrue": true,
         "IsMySelf": true,
@@ -46666,7 +46672,7 @@
     {
         "Id": 4377,
         "Group": 112322,
-        "Name": "点击固定球位",
+        "Name": "Catalyze/Wither",
         "Describe": "冰毛教学-强消接强变",
         "IconType": 1,
         "Icon": 102,
@@ -46690,7 +46696,7 @@
     {
         "Id": 4378,
         "Group": 112323,
-        "Name": "点击固定球位",
+        "Name": "Catalyze/Wither",
         "Describe": "冰毛教学-强变接强消",
         "IconType": 1,
         "Icon": 102,
@@ -46714,10 +46720,11 @@
     {
         "Id": 4379,
         "Group": 112323,
-        "Name": "Tap Yellow Orb",
+        "Name": "Silent Night",
         "Describe": "冰毛教学-强变接强消",
         "IconType": 1,
         "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR7Luxiya32.png",
         "TimeOut": 2000,
         "IsMySelf": true,
         "EffectType": [
@@ -46872,7 +46879,7 @@
     {
         "Id": 4387,
         "Group": 112327,
-        "Name": "终结必杀",
+        "Name": "Finishing Signature",
         "Describe": "冰毛教学-大太必杀",
         "IconType": 1,
         "Icon": 3,
@@ -46892,7 +46899,7 @@
     {
         "Id": 4388,
         "Group": 112328,
-        "Name": "长按固定球位",
+        "Name": "Press and hold fixed orb slot",
         "Describe": "冰毛教学-纯变",
         "IconType": 1,
         "Icon": 102,
@@ -46920,8 +46927,8 @@
         "Describe": "冰毛教学-纯变",
         "IconType": 4,
         "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR7Luxiya21.png",
         "TimeOut": -1,
-        "MoveType": 10720913,
         "EffectType": [
             2
         ],
@@ -46934,16 +46941,18 @@
         "MissileId": [
             10727015,
             10720524,
-            10721816
+            10721816,
+            10720913
         ]
     },
     {
         "Id": 4390,
         "Group": 112329,
-        "Name": "Tap Yellow Orb",
+        "Name": "Silent Night",
         "Describe": "冰毛教学-消变3次",
         "IconType": 1,
         "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR7Luxiya32.png",
         "TimeOut": -1,
         "OnlyTrue": true,
         "IsMySelf": true,
@@ -46961,7 +46970,7 @@
     {
         "Id": 4391,
         "Group": 112329,
-        "Name": "点击固定球位",
+        "Name": "Catalyze/Wither",
         "Describe": "冰毛教学-消变3次",
         "IconType": 1,
         "Icon": 102,
@@ -46985,10 +46994,11 @@
     {
         "Id": 4392,
         "Group": 112329,
-        "Name": "Tap Yellow Orb",
+        "Name": "Silent Night",
         "Describe": "冰毛教学-消变3次",
         "IconType": 1,
         "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR7Luxiya32.png",
         "TimeOut": 2000,
         "IsMySelf": true,
         "EffectType": [
@@ -47005,7 +47015,7 @@
     {
         "Id": 4393,
         "Group": 112329,
-        "Name": "点击固定球位",
+        "Name": "Catalyze/Wither",
         "Describe": "冰毛教学-消变3次",
         "IconType": 1,
         "Icon": 102,
@@ -47029,10 +47039,11 @@
     {
         "Id": 4394,
         "Group": 112329,
-        "Name": "Tap Yellow Orb",
+        "Name": "Silent Night",
         "Describe": "冰毛教学-消变3次",
         "IconType": 1,
         "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR7Luxiya32.png",
         "TimeOut": 2000,
         "IsMySelf": true,
         "EffectType": [
@@ -47049,7 +47060,7 @@
     {
         "Id": 4395,
         "Group": 112329,
-        "Name": "点击固定球位",
+        "Name": "Catalyze/Wither",
         "Describe": "冰毛教学-消变3次",
         "IconType": 1,
         "Icon": 102,
@@ -47152,6 +47163,31 @@
         "SkillId": [
             107204,
             107217
+        ]
+    },
+    {
+        "Id": 4400,
+        "Group": 112330,
+        "Name": "Tap Yellow Orb",
+        "Describe": "冰毛教学-黄三消也有焚烧了",
+        "IconType": 1,
+        "Icon": 103,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            107206,
+            107207,
+            107208,
+            107219,
+            107220,
+            107221
         ]
     }
 ]

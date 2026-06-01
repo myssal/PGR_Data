@@ -666,6 +666,7 @@ local SortRewardTypePrioriy = {
     [XRewardType.Character] = 4,
     [XRewardType.Equip] = 2,
     [XRewardType.Fashion] = 3,
+    [XRewardType.FashionColor] = 3,
     [XRewardType.BaseEquip] = 5,
     [XRewardType.Medal] = 7,
     [XRewardType.Furniture] = 9,

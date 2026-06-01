@@ -39,14 +39,14 @@
         "Type": 2,
         "Name": "Homecoming and A New Journey",
         "Title": "Homecoming and A New Journey",
-        "Content": "After overcoming the catastrophe, the Military Command is preparing to award medals to all who fought valiantly. Prepare your formal attire and step into F.O.S. once again as a graduate representative.",
+        "Content": "After overcoming the catastrophe, the military is preparing to award medals to all who fought valiantly. Prepare your formal attire and step into F.O.S. once again as a graduate representative.",
         "Priority": 3,
         "ShowReward": 2003,
         "ShowTimeId": 47001,
-        "ShowCountDown": 3542400,
-        "ShowTimeRewardTitle": "Complete time-limited missions",
-        "ShowTimeRewardContent": "to claim Commandant Coating",
-        "ShowTimeRewardTip": "限时领取将于2026/07/15 05:00截止",
+        "ShowCountDown": 3801600,
+        "ShowTimeRewardTitle": "Limited time: complete mission",
+        "ShowTimeRewardContent": "to claim Commandant Costume",
+        "ShowTimeRewardTip": "Limited-time claim expires on 2026/07/16 05:00 (UTC)",
         "TagHideCondition": 50003202,
         "EarlyAccessCondition": 50003203,
         "BgPic": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldNews/UiBigWorldPopupNewsBg109.png",
@@ -54,6 +54,34 @@
         "RewardShowSkipId": 1204,
         "TaskGroupId": 701,
         "IsSpecial": true,
+        "CustomParamId": 2001,
+        "EarlyAccessTextDialogId": 1002,
+        "EarlyAccessSkipIds": [
+            200121
+        ],
+        "Params": [
+            7003
+        ],
+        "PreConditions": [
+            50003206
+        ],
+        "PreSkipIds": [
+            200121
+        ]
+    },
+    {
+        "Id": 4,
+        "Type": 2,
+        "Name": "Homecoming and A New Journey",
+        "Title": "Homecoming and A New Journey",
+        "Content": "After overcoming the catastrophe, the military is preparing to award medals to all who fought valiantly. Prepare your formal attire and step into F.O.S. once again as a graduate representative.",
+        "Priority": 4,
+        "ShowReward": 2003,
+        "ShowTimeId": 47003,
+        "EarlyAccessCondition": 50003203,
+        "BgPic": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldNews/UiBigWorldPopupNewsBg109.png",
+        "SkipId": 200122,
+        "RewardShowSkipId": 1204,
         "CustomParamId": 2001,
         "EarlyAccessTextDialogId": 1002,
         "EarlyAccessSkipIds": [

@@ -959,7 +959,9 @@
         "RemindPriority": 10,
         "RedConditions": [
             "CONDITION_BIG_WORLD_SKY_GARDEN_ENTRANCE"
-        ]
+        ],
+        "ConstShowRewardId": 7000235,
+        "ConstShowRewardClaimCondition": 866477
     },
     {
         "Id": 136,
@@ -1047,6 +1049,9 @@
         "SkipId": 89102,
         "TimeId": 47121,
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 11
+        "RemindPriority": 11,
+        "RedConditions": [
+            "CONDITION_THEATRE6_MAIN"
+        ]
     }
 ]

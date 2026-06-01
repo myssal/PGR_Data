@@ -41,12 +41,21 @@ end
 function XNPC_AlphaChoice:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcInteractComplete and eventArgs.TargetPlaceId == self._placeId then
         if eventArgs.OptionId == 1 then
-            self._proxy:SetNpcInteractOptionActive(self._placeId,2,true)
+            self._proxy:PlayDramaCaption("Caption201508",true)
+            self._proxy:AddTimerTask(8,function()  self._proxy:SetNpcInteractOptionActive(self._placeId,2,true) end )
         end
 
         if eventArgs.OptionId == 2 then
-            self._proxy:SetNpcInteractOptionActive(self._placeId,4,true)
+            self._proxy:PlayDramaCaption("Caption201510",true)
+            self._proxy:AddTimerTask(10,function()  self._proxy:SetNpcInteractOptionActive(self._placeId,4,true) end )
         end
+
+
+        if eventArgs.OptionId == 4 then
+            self._proxy:PlayDramaCaption("Caption201513",true)
+            --------播放字幕Caption201513
+        end
+
     end
 end
 

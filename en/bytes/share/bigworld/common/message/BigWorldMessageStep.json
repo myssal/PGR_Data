@@ -147,7 +147,7 @@
         "Type": 1,
         "SpeakerId": 103,
         "Text": [
-            "！"
+            "!"
         ],
         "NextStep": [
             34
@@ -3388,7 +3388,7 @@
         "Type": 1,
         "SpeakerId": 103,
         "Text": [
-            "？"
+            "?"
         ],
         "NextStep": [
             20130203
@@ -3401,7 +3401,7 @@
         "Type": 1,
         "SpeakerId": 104,
         "Text": [
-            "？"
+            "?"
         ],
         "NextStep": [
             20130204
@@ -4130,7 +4130,7 @@
         "Duration": 0.5,
         "Type": 3,
         "Text": [
-            "Already?",
+            "Oh, is it today?",
             "Award ceremony?"
         ],
         "NextStep": [
@@ -4144,7 +4144,7 @@
         "IsCanSkip": true,
         "Type": 2,
         "Text": [
-            "Already?"
+            "Oh, is it today?"
         ],
         "NextStep": [
             70030105
@@ -4247,7 +4247,7 @@
         "Type": 1,
         "SpeakerId": 102,
         "Text": [
-            "When you're ready, please head to the Military Security Area.We're to meet Vanessa there first; she'll be escorting us to the venue."
+            "When you're ready, please head to the Military Security  Area. We're to meet Vanessa there first; she'll be escorting us to the venue."
         ],
         "NextStep": [
             70030112
@@ -4258,7 +4258,7 @@
         "Duration": 0.5,
         "Type": 3,
         "Text": [
-            "I understand."
+            "I see."
         ],
         "NextStep": [
             70030113
@@ -4270,7 +4270,7 @@
         "IsCanSkip": true,
         "Type": 2,
         "Text": [
-            "I understand."
+            "I see."
         ]
     },
     {
@@ -4280,7 +4280,7 @@
         "Type": 1,
         "SpeakerId": 132,
         "Text": [
-            "！！！"
+            "!!!"
         ],
         "NextStep": [
             20160102
@@ -4288,7 +4288,7 @@
     },
     {
         "Id": 20160102,
-        "Duration": 3.0,
+        "Duration": 2.0,
         "IsCanSkip": true,
         "Type": 1,
         "SpeakerId": 132,
@@ -4301,7 +4301,7 @@
     },
     {
         "Id": 20160103,
-        "Duration": 5.0,
+        "Duration": 3.0,
         "IsCanSkip": true,
         "Type": 1,
         "SpeakerId": 132,
@@ -4510,7 +4510,7 @@
         "Type": 1,
         "SpeakerId": 134,
         "Text": [
-            "Oh, n-no! Code red! Something terrible has happened!"
+            "Oh, n-no! Code red! This is bad, this is really bad!"
         ],
         "NextStep": [
             20150102
@@ -4692,7 +4692,7 @@
         "Duration": 0.5,
         "Type": 3,
         "Text": [
-            "Thank you. I had a feeling you might make it."
+            "Thank you. I had a feeling you might show up."
         ],
         "NextStep": [
             70030203
@@ -4704,7 +4704,7 @@
         "IsCanSkip": true,
         "Type": 2,
         "Text": [
-            "Thank you. I had a feeling you might make it."
+            "Thank you. I had a feeling you might show up."
         ],
         "NextStep": [
             70030205
@@ -4767,7 +4767,7 @@
         "Type": 1,
         "SpeakerId": 135,
         "Text": [
-            "Yeah, Strike Hawk's still got a lot going on the surface. I only managed to get away because Kamui and the others offered to cover my shift."
+            "I did. Strike Hawk's still has a lot of work on the surface. I only managed to come because Kamui and the others offered to cover my duty."
         ],
         "NextStep": [
             70030210
@@ -4780,7 +4780,7 @@
         "Type": 1,
         "SpeakerId": 135,
         "Text": [
-            "To be honest... there are a few things only I can handle right now. I'm about to head back out. Just caught a second before launch to radio in and say congrats."
+            "The truth is... there are a few missions only I can handle, so I need to head back now. I can only take a moment here to congratulate you over comms before launch."
         ],
         "NextStep": [
             70030211
@@ -4791,28 +4791,14 @@
         "Duration": 0.5,
         "Type": 3,
         "Text": [
-            "Just seeing you is more than enough for me.",
             "Good luck with the mission, Chrome."
         ],
         "NextStep": [
-            70030212,
-            70030213
+            70030212
         ]
     },
     {
         "Id": 70030212,
-        "Duration": 0.5,
-        "IsCanSkip": true,
-        "Type": 2,
-        "Text": [
-            "Just seeing you is more than enough for me."
-        ],
-        "NextStep": [
-            70030214
-        ]
-    },
-    {
-        "Id": 70030213,
         "Duration": 0.5,
         "IsCanSkip": true,
         "Type": 2,

@@ -2,15 +2,1919 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "Type": 101,
-        "BeginAnim": "AniZhuanchangEnd",
+        "Type": 205,
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            1,
+            0,
+            5
         ]
     },
     {
         "Id": 2,
         "ActionId": 2,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_44.jpg"
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 104,
+        "Params": [
+            "0|-40|-300",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 401,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            7152
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Two years have passed since the outbreak of the Punishing Virus."
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 401,
+        "Params": [
+            2,
+            4382
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Shrubs sprawl freely along the riverbank, geese claim the dead reeds for their nests, and a cold wind cuts through the withering landscape. Ripples carve their patient scars into the surface of the water."
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_44.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_44.jpg"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Beneath their feet, the shore drifts slowly away."
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 402,
+        "Params": [
+            4382
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 306
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 201,
+        "Params": [
+            1,
+            500031,
+            "",
+            -300
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 201,
+        "Params": [
+            2,
+            500032,
+            "",
+            300
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "Params": [
+            1,
+            "Luna",
+            "Lucia...",
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Lucia",
+            "Shh...",
+            2
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 203,
+        "EndDelay": 800.0,
+        "Params": [
+            2,
+            0.7,
+            300,
+            -230
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 401,
+        "EndDelay": 200.0,
+        "Params": [
+            2,
+            5705
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Lucia signals for Luna to stay silent, then drops into a crouch and slides a rusted hunting rifle from beneath the boat."
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_37.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_37.jpg"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 205,
+        "Params": [
+            1005,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "This is her last weapon. She still remembers watching her father use this same rifle to pick off rabbits nibbling at the garden vegetables. If he could do it, then she should be able to..."
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her gaze shifts toward the geese sheltering in the reeds. A hollow ache sounds in her stomach. She hasn't eaten all day."
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 201,
+        "Params": [
+            18,
+            500031,
+            "",
+            220,
+            -50,
+            -300
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 301,
+        "Params": [
+            1,
+            "Luna",
+            "Lucia... what are they doing?",
+            18
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Luna echoes Lucia's movements, crouching beside her. She follows her sister's gaze out to the birds, who preen their feathers in the cold light, utterly without care."
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "Migrating."
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 401,
+        "Params": [
+            2,
+            1511
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Lucia's fingers find two bullets in her pocket. She holds them gingerly, as if they might shatter, before turning the rifle over and easing them into the magazine port with a soft, metallic click."
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "The geese would go back to their warm homes every year around this time.",
+            1
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 401,
+        "Params": [
+            2,
+            6341
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront147.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_45.jpg"
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 104,
+        "Params": [
+            "0|140|-200",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 104,
+        "Params": [
+            "0|140|-300",
+            0
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "Lucia works the pump, hears the shell seat home, then reaches for Luna's hand. She guides it to the grip, wrapping her sister's fingers around the worn stock."
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 201,
+        "Params": [
+            18,
+            500032,
+            5,
+            220,
+            -50,
+            -300
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "Are you ready?",
+            18
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 201,
+        "Params": [
+            18,
+            500031,
+            "",
+            220,
+            -50,
+            -300
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 301,
+        "Params": [
+            1,
+            "Luna",
+            "R-ready for what?",
+            18
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 401,
+        "Params": [
+            2,
+            5705
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Luna copies her sister's hold, fingers clenching around the shotgun's stock until her knuckles pale."
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 104,
+        "EndDelay": 850.0,
+        "Params": [
+            "0|140|-400",
+            0.8
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 201,
+        "Params": [
+            18,
+            500032,
+            5,
+            220,
+            -50,
+            -300
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Lucia",
+            "Hold tight. Finger right here... on the trigger. Then...",
+            18
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Once she's sure Luna has the shotgun braced right, Lucia turns away and reaches for one of the stones she'd gathered earlier and left resting in the boat."
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 401,
+        "Params": [
+            2,
+            4159
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 205,
+        "Params": [
+            1004,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Splash!"
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 401,
+        "Params": [
+            2,
+            759,
+            1
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_43.jpg"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "The stone strikes the water with a sharp splash. Ripples shatter outward. In the next breath, the geese explode from the reeds, wings thrashing, a frantic tide of feathers rising to choke the sky."
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 201,
+        "Params": [
+            1,
+            500031,
+            14,
+            -250
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 201,
+        "Params": [
+            2,
+            500032,
+            4,
+            250
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "Now! Shoot!",
+            2
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 301,
+        "Params": [
+            "",
+            "Luna",
+            "Don't they need to go home?!",
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 204,
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "Yes, but we need to survive.",
+            2
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 401,
+        "Params": [
+            2,
+            5705
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25,
+            150
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Lucia's hand closes over Luna's, steadying the shotgun's weight."
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 401,
+        "Params": [
+            2,
+            4702
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 109,
+        "Params": [
+            1,
+            "<color=#ffffffff><size=65><i>Such has always been the law of the universe.</i></size></color>",
+            0,
+            80
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "<i>Such has always been the law of the universe.</i>"
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 110
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront147.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_43.jpg"
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 104,
+        "Params": [
+            "0|-180|-300",
+            0
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Together, they lift the barrel and draw a bead on the panicked flock wheeling against the cold sky."
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 401,
+        "Params": [
+            2,
+            4702
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 205,
+        "Params": [
+            1004,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 109,
+        "Params": [
+            1,
+            "<color=#ffffffff><size=70><i>\"Conservation.\"</i></size></color>",
+            0,
+            80
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "<i>\"Conservation.\"</i>"
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 110
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront147.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_43.jpg"
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 104,
+        "Params": [
+            "0|-180|-300",
+            0
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 104,
+        "EndDelay": 1500.0,
+        "Params": [
+            "0|-200|-450",
+            1
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Lucia narrows her eyes, sighting down the barrel's spine."
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 401,
+        "Params": [
+            2,
+            4702
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 205,
+        "Params": [
+            1004,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 109,
+        "Params": [
+            1,
+            "<color=#ffffffff><size=55><i>For one to live, another must die. For one to survive, another must be eaten.</i></size></color>",
+            0,
+            80
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "<i>For one to live, another must die. For one to survive, another must be eaten.</i>"
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 110
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 401,
+        "Params": [
+            2,
+            4278
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 501,
+        "EndDelay": 250.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab"
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory292.png"
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 201,
+        "Params": [
+            1,
+            501615,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 205,
+        "Params": [
+            1,
+            "",
+            0,
+            0.5,
+            0
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "███",
+            "<i><b>Eat the sin. Eat it all and let the weight be yours alone.</b></i>",
+            1
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 205,
+        "Params": [
+            1,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab"
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront147.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_43.jpg"
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 104,
+        "Params": [
+            "0|-200|-400",
+            0
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Somewhere deep in the folds of her mind, an adult woman's voice loops endlessly."
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Above, the geese scatter and bank. Lucia pushes the voice aside."
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 401,
+        "Params": [
+            2,
+            4278
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 501,
+        "EndDelay": 250.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab"
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory292.png"
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 205,
+        "Params": [
+            1004,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 201,
+        "Params": [
+            1,
+            501615,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 205,
+        "Params": [
+            1,
+            "",
+            0,
+            0.5,
+            0
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
+        "Params": [
+            1,
+            "███",
+            "<i><b>Just as one day, you will have to kill me to survive...</b></i>",
+            1
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 205,
+        "Params": [
+            1,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab"
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 401,
+        "Params": [
+            2,
+            5151
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "",
+            "BANG!"
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The shot erupts in a thunderous spray, countless pellets tearing outward into a shrieking wall of steel. It engulfs the panicked flock mid-flight."
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 401,
+        "EndDelay": 400.0,
+        "Params": [
+            2,
+            4156
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 401,
+        "EndDelay": 100.0,
+        "Params": [
+            2,
+            4156
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 401,
+        "EndDelay": 200.0,
+        "Params": [
+            2,
+            4156
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 401,
+        "EndDelay": 1000.0,
+        "Params": [
+            2,
+            4156
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 205,
+        "EndDelay": 1800.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_43.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_43.jpg"
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_46.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_46.jpg"
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Several geese, still clawing for altitude, are caught in the spread. There is nowhere to run. Dull splashes follow—one, then another—as lifeless bodies strike the water, sending up splashes of white."
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 201,
+        "Params": [
+            1,
+            500031,
+            14
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 301,
+        "Params": [
+            1,
+            "Luna",
+            "Sob...",
+            1
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 401,
+        "Params": [
+            2,
+            9339045
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 104,
+        "Params": [
+            "0|0|-100",
+            0.8
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The recoil's heavy punch draws a quiet whimper from Luna. Lucia sets her jaw and pulls at the oars. Comfort will have to wait. The boat glides forward, narrowing the distance to what they have done."
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "One. Two. Three..."
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 401,
+        "Params": [
+            2,
+            2533
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Crimson tendrils unfurl across the water. Lucia leans low and gathers the bodies, one by one. Their portion for the coming days. No more, no less. Exactly eleven."
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 306
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 201,
+        "Params": [
+            1,
+            500032
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 401,
+        "Params": [
+            2,
+            4158
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Her fingers tighten around the geese. Blood seeps warm between her knuckles as she lifts them clear of the water."
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 401,
+        "Params": [
+            2,
+            5790
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_36.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 104,
+        "EndDelay": 700.0,
+        "Params": [
+            "0|0|-300",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_36.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 104,
+        "EndDelay": 700.0,
+        "Params": [
+            "0|0|-200",
+            0,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 205,
+        "Params": [
+            1006,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_36.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 104,
+        "EndDelay": 700.0,
+        "Params": [
+            "0|0|-100",
+            0,
+            "",
+            6
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgCg/Cg6501_36.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 104,
+        "EndDelay": 1000.0,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_36.jpg"
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 205,
+        "Params": [
+            999,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 205,
+        "Params": [
+            1004,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 205,
+        "Params": [
+            1006,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 205,
+        "Params": [
+            1005,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            6
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "The moment she pulls, her viewpoint climbs. Her finger bones elongate, stretching unnaturally. Below, the shadow on the water's surface fractures, tearing apart in violent ribbons."
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She stares at the figure in the crimson waves. Familiar, and yet not. Decades carved out of her life float there, adrift in red."
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
         "Type": 401,
         "Params": [
             1,
@@ -18,26 +1922,980 @@
         ]
     },
     {
-        "Id": 3,
-        "ActionId": 3,
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 401,
+        "Params": [
+            2,
+            6569
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Then her palm registers the change. The wet down against her skin vanishes. What remains is smooth and strange—the soft, giving resistance of synthetic flesh."
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 401,
+        "Params": [
+            1,
+            7151
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 201,
+        "Params": [
+            18,
+            500032,
+            7,
+            220,
+            -50,
+            -300
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "...!",
+            18
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 306,
+        "EndDelay": 300.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "She jerks her arm up. The geese in her grasp have become familiar faces. Her hands are clamped tight around their throats."
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 201,
+        "Params": [
+            15,
+            501385,
+            "",
+            150,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 205,
+        "EndDelay": 50.0,
+        "Params": [
+            15,
+            "",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            15,
+            "",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 201,
+        "Params": [
+            16,
+            500568,
+            "",
+            -250,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 205,
+        "EndDelay": 50.0,
+        "Params": [
+            16,
+            "",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            16,
+            "",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 201,
+        "Params": [
+            3,
+            501239,
+            "",
+            580,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 205,
+        "EndDelay": 50.0,
+        "Params": [
+            3,
+            "",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            3,
+            "",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 201,
+        "Params": [
+            4,
+            501298,
+            "",
+            -550,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 205,
+        "EndDelay": 50.0,
+        "Params": [
+            4,
+            "",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            4,
+            "",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 201,
+        "Params": [
+            5,
+            500934,
+            "",
+            850,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 205,
+        "EndDelay": 50.0,
+        "Params": [
+            5,
+            "",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            5,
+            "",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 201,
+        "Params": [
+            1,
+            500019,
+            "",
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 205,
+        "EndDelay": 50.0,
+        "Params": [
+            1,
+            "",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            1,
+            "",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 201,
+        "Params": [
+            2,
+            500019,
+            "",
+            -800,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 205,
+        "EndDelay": 50.0,
+        "Params": [
+            2,
+            "",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            2,
+            "",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "Liv, Lee, Vera, Bianca, Wanshi... Xun, Murol..."
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 401,
+        "Params": [
+            2,
+            2924
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 501,
+        "EndDelay": 150.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBianHong.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 306
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 205,
+        "Params": [
+            999,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 201,
+        "Params": [
+            15,
+            501402,
+            "",
+            150,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 201,
+        "Params": [
+            16,
+            500756,
+            "",
+            -250,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 201,
+        "Params": [
+            3,
+            501242,
+            "",
+            580,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 201,
+        "Params": [
+            4,
+            501300,
+            "",
+            -550,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 201,
+        "Params": [
+            5,
+            500953,
+            "",
+            850,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 201,
+        "Params": [
+            1,
+            500296,
+            "",
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 201,
+        "EndDelay": 150.0,
+        "Params": [
+            2,
+            500296,
+            "",
+            -800,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 402,
+        "Params": [
+            2924
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 101,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory844.jpg"
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 401,
+        "EndDelay": 500.0,
+        "Params": [
+            2,
+            772
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 111,
+        "EndDelay": 250.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab"
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 202,
+        "Params": [
+            15,
+            16,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg"
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 501,
+        "EndDelay": 50.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_41.jpg"
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
-            "测试1"
+            "The river cracks apart. The boat dissolves at the shadow's edge. White light swallows everything, then her vision punches through. Blood drips. Below her, a landscape of corpses rises in heaps and ridges, an ocean of slaughter. She stands at the seam where shadow tears away from light."
         ]
     },
     {
-        "Id": 4,
-        "ActionId": 4,
+        "Id": 244,
+        "ActionId": 244,
         "Type": 301,
-        "IsEnd": 1,
+        "Params": [
+            "",
+            "Lucia",
+            "..."
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "......"
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "............"
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory955.png"
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            2,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 511,
+        "Params": [
+            1,
+            0,
+            "0|400|0"
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She sees a rugged path winding into gray fog, the way forward uncertain and veiled."
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg5701_11.jpg"
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She sees a blood-red sun bleeding into dusk. Figures locked in combat side by side, carrying the fragile weight of what hope remains."
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1513.jpg"
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She sees an academy bathed in radiant light. Jagged crimson crystals and bones bleached white, drifting through the infinite expanse of the universe."
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1307.jpg"
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The magnificent and the shattered blur together, folding into a distant, silent void."
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 104,
+        "EndDelay": 200.0,
+        "Params": [
+            "0|-50|-450",
+            0.8
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 401,
+        "Params": [
+            2,
+            4276
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 501,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping01New.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg"
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 501,
+        "EndDelay": 100.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping01New.prefab"
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6501_42.jpg"
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "At the farthest edge of the vision, she looks down upon herself, standing before the mirror."
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 301,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "测试2"
+            "Light and shadow tear through her spine. She stands where the Ascension-Network ends. She becomes <Alpha>."
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 102,
+        "Params": [
+            "The Fog",
+            "Chapter1",
+            "Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png"
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 502,
+        "EndDelay": 5000.0,
+        "Params": [
+            "ThemeEnable"
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 101,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "EndDelay": 5000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
     }
 ]

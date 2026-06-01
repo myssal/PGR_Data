@@ -523,6 +523,31 @@
         "GroupId": 53402
     },
     {
+        "Id": 64731,
+        "Priority": 64731,
+        "Desc": "完成1-12 Lv15 引导进入生命树系统",
+        "GuideType": 1,
+        "ConditionId": [
+            200000
+        ],
+        "CompleteId": 64731,
+        "ActiveUi": "UiMain",
+        "GroupId": 64731
+    },
+    {
+        "Id": 64732,
+        "Priority": 64732,
+        "Desc": "完成1-12 Lv15 引导生命树系统",
+        "GuideType": 1,
+        "ConditionId": [
+            770431,
+            863156
+        ],
+        "CompleteId": 64732,
+        "ActiveUi": "UiLifeTreeMain",
+        "GroupId": 64732
+    },
+    {
         "Id": 80901,
         "Priority": 80901,
         "Desc": "Complete 1-12 Guide: New Story Interface",
@@ -10873,7 +10898,7 @@
     {
         "Id": 64701,
         "Priority": 64701,
-        "Desc": "v4.5 肉鸽6占位引导1",
+        "Desc": "v4.5 肉鸽6主界面空引导1",
         "GuideType": 1,
         "ConditionId": [
             862112,
@@ -10887,7 +10912,7 @@
     {
         "Id": 64702,
         "Priority": 64702,
-        "Desc": "v4.5 肉鸽6占位引导2",
+        "Desc": "v4.5 肉鸽6主界面空引导2",
         "GuideType": 1,
         "ConditionId": [
             862112,
@@ -10966,14 +10991,26 @@
         "GroupId": 64713
     },
     {
+        "Id": 64721,
+        "Priority": 64721,
+        "Desc": "v4.5 月卡补卡引导",
+        "GuideType": 1,
+        "ConditionId": [
+            70103,
+            200000
+        ],
+        "CompleteId": 64721,
+        "ActiveUi": "UiWelfare",
+        "GroupId": 64721
+    },
+    {
         "Id": 64751,
         "Priority": 64751,
         "Desc": "v4.5 肉鸽6主界面1",
         "GuideType": 1,
         "ConditionId": [
             862112,
-            774800,
-            200000
+            774800
         ],
         "CompleteId": 64751,
         "ActiveUi": "UiTheatre6Main",
@@ -10987,10 +11024,303 @@
         "ConditionId": [
             862112,
             774800,
-            200000
+            863158
         ],
         "CompleteId": 64752,
         "ActiveUi": "UiTheatre6Main",
         "GroupId": 64752
+    },
+    {
+        "Id": 64753,
+        "Priority": 64753,
+        "Desc": "v4.5 肉鸽6接取调查任务",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64753,
+        "ActiveUi": "UiTheatre6RoomChooseTask",
+        "GroupId": 64753
+    },
+    {
+        "Id": 64754,
+        "Priority": 64754,
+        "Desc": "v4.5 肉鸽6二择环节",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64754,
+        "ActiveUi": "UiTheatre6RoomEitheror",
+        "GroupId": 64754
+    },
+    {
+        "Id": 64755,
+        "Priority": 64755,
+        "Desc": "v4.5 肉鸽6二择环节一滑",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            200000
+        ],
+        "CompleteId": 64755,
+        "ActiveUi": "UiTheatre6RoomEitheror",
+        "GroupId": 64755
+    },
+    {
+        "Id": 64756,
+        "Priority": 64756,
+        "Desc": "v4.5 肉鸽6任务结算界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64756,
+        "ActiveUi": "UiTheatre6RoomTaskSettlement",
+        "GroupId": 64756
+    },
+    {
+        "Id": 64757,
+        "Priority": 64757,
+        "Desc": "v4.5 肉鸽6首次进入商店",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64757,
+        "ActiveUi": "UiTheatre6BattleShop",
+        "GroupId": 64757
+    },
+    {
+        "Id": 64758,
+        "Priority": 64758,
+        "Desc": "v4.5 肉鸽6商店技能升阶",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64758,
+        "ActiveUi": "UiTheatre6BattleShop",
+        "CheckNodeActive": "ImgUpArrow",
+        "GroupId": 64758
+    },
+    {
+        "Id": 64759,
+        "Priority": 64759,
+        "Desc": "v4.5 肉鸽6首次进入战斗房",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64759,
+        "ActiveUi": "UiTheatre6RoomBoss",
+        "GroupId": 64759
+    },
+    {
+        "Id": 64760,
+        "Priority": 64760,
+        "Desc": "v4.5 肉鸽6首次进入战斗结算",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64760,
+        "ActiveUi": "UiTheatre6RoundSettlement",
+        "GroupId": 64760
+    },
+    {
+        "Id": 64761,
+        "Priority": 64761,
+        "Desc": "v4.5 肉鸽6首次进入存档环节",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64761,
+        "ActiveUi": "UiTheatre6Settlement",
+        "GroupId": 64761
+    },
+    {
+        "Id": 64762,
+        "Priority": 64762,
+        "Desc": "v4.5 肉鸽6教学后回主界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64762,
+        "ActiveUi": "UiTheatre6Main",
+        "CheckNodeActive": "BtnPlay",
+        "GroupId": 64762
+    },
+    {
+        "Id": 64763,
+        "Priority": 64763,
+        "Desc": "v4.5 肉鸽6教学后剧情模式",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64763,
+        "ActiveUi": "UiTheatre6ChooseCharacter",
+        "CheckNodeActive": "PanelStory",
+        "GroupId": 64763
+    },
+    {
+        "Id": 64764,
+        "Priority": 64764,
+        "Desc": "v4.5 肉鸽6教学后复刷模式",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64764,
+        "ActiveUi": "UiTheatre6ChooseCharacter",
+        "CheckNodeActive": "PanelGamePlay",
+        "GroupId": 64764
+    },
+    {
+        "Id": 64791,
+        "Priority": 64791,
+        "Desc": "v4.5 肉鸽6主界面1（不带完成）",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            200000
+        ],
+        "CompleteId": 64791,
+        "ActiveUi": "UiTheatre6Main",
+        "GroupId": 64791
+    },
+    {
+        "Id": 64792,
+        "Priority": 64792,
+        "Desc": "v4.5 肉鸽6主界面2（不带完成）",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            200000
+        ],
+        "CompleteId": 64792,
+        "ActiveUi": "UiTheatre6Main",
+        "GroupId": 64792
+    },
+    {
+        "Id": 64765,
+        "Priority": 64765,
+        "Desc": "v4.5 肉鸽6二择环节第5步",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            200000
+        ],
+        "CompleteId": 64765,
+        "ActiveUi": "UiTheatre6RoomEitheror",
+        "GroupId": 64765
+    },
+    {
+        "Id": 64766,
+        "Priority": 64766,
+        "Desc": "v4.5 肉鸽6教学后任务选择",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863157
+        ],
+        "CompleteId": 64766,
+        "ActiveUi": "UiTheatre6RoomChooseTask",
+        "CheckNodeActive": "BtnRefresh",
+        "GroupId": 64766
+    },
+    {
+        "Id": 64767,
+        "Priority": 64767,
+        "Desc": "v4.5 肉鸽6教学后选项详情",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863157
+        ],
+        "CompleteId": 64767,
+        "ActiveUi": "UiTheatre6RoomEitheror",
+        "GroupId": 64767
+    },
+    {
+        "Id": 64769,
+        "Priority": 64769,
+        "Desc": "v4.5 肉鸽6教学后san值黄",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863157,
+            200000
+        ],
+        "CompleteId": 64769,
+        "ActiveUi": "UiTheatre6RoomEitheror",
+        "CheckNodeActive": "FxUiTheatre6RoomEitherorYellowBg(Clone)",
+        "GroupId": 64769
+    },
+    {
+        "Id": 64770,
+        "Priority": 64770,
+        "Desc": "v4.5 肉鸽6教学后san值红",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863157,
+            200000
+        ],
+        "CompleteId": 64770,
+        "ActiveUi": "UiTheatre6RoomEitheror",
+        "CheckNodeActive": "FxUiTheatre6RoomEitherorRedBg(Clone)",
+        "GroupId": 64770
+    },
+    {
+        "Id": 64771,
+        "Priority": 64771,
+        "Desc": "v4.5 肉鸽6教学后战斗结算",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863157
+        ],
+        "CompleteId": 64771,
+        "ActiveUi": "UiTheatre6RoundSettlement",
+        "GroupId": 64771
+    },
+    {
+        "Id": 64772,
+        "Priority": 64772,
+        "Desc": "v4.5 肉鸽6教学后商店技能强化",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863157
+        ],
+        "CompleteId": 64772,
+        "ActiveUi": "UiTheatre6BattleShop",
+        "CheckNodeActive": "HighLight",
+        "GroupId": 64772
     }
 ]

@@ -45919,6 +45919,7 @@
             2,
             3
         ],
+        "IsBanGeneralSkill": true,
         "NextStageId": [
             10400102
         ]
@@ -45926,7 +45927,7 @@
     {
         "StageId": 10400102,
         "Type": 87,
-        "Name": "Prism Plaza",
+        "Name": "Prism Square",
         "Description": "Only the fragments of prisms strewn about and the tower still standing tall bear witness to the glory that once defined this place.",
         "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
@@ -46166,6 +46167,7 @@
             2,
             3
         ],
+        "IsBanGeneralSkill": true,
         "NextStageId": [
             10400108
         ]
@@ -46770,6 +46772,7 @@
             2,
             3
         ],
+        "IsBanGeneralSkill": true,
         "NextStageId": [
             10400123
         ]
@@ -46897,7 +46900,7 @@
     {
         "StageId": 10400126,
         "Type": 87,
-        "Name": "Passion Call",
+        "Name": "Homecoming Voyage",
         "Description": "This path we set out on was always meant to be a long journey home.",
         "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabN4126.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenImgN4126.png",
@@ -46933,6 +46936,7 @@
             2,
             3
         ],
+        "IsBanGeneralSkill": true,
         "NextStageId": [
             10400127
         ]
@@ -65595,7 +65599,20 @@
         "NormalEventIdOnPassed": 1,
         "OrderId": 3,
         "LimitBuffId": 1,
-        "PassTimeLimit": 300
+        "PassTimeLimit": 300,
+        "OnlinePlayerLimit": 3,
+        "ForceConditionId": [
+            30000101
+        ],
+        "FunctionLeftBtn": 3,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
     },
     {
         "StageId": 30060101,
@@ -163101,9 +163118,6 @@
             2,
             3
         ],
-        "GeneralSkillIds": [
-            2
-        ],
         "NextStageId": [
             15021709
         ]
@@ -163270,9 +163284,6 @@
             2,
             3
         ],
-        "GeneralSkillIds": [
-            2
-        ],
         "NextStageId": [
             15021713
         ]
@@ -163358,9 +163369,6 @@
             1,
             2,
             3
-        ],
-        "GeneralSkillIds": [
-            2
         ],
         "NextStageId": [
             15021715
@@ -163687,9 +163695,6 @@
             1,
             2,
             3
-        ],
-        "GeneralSkillIds": [
-            2
         ],
         "NextStageId": [
             15021723
@@ -171646,7 +171651,7 @@
         "StarDesc": [
             "Defeat \"Ezette\".",
             "Get taken down no more than 3 times.",
-            "Die no more than once."
+            "Get taken down no more than once."
         ],
         "FunctionLeftBtn": 2,
         "FunctionRightBtn": 1,
@@ -171671,7 +171676,7 @@
         "LimitBuffId": 1,
         "StarDesc": [
             "Defeat \"Ezette\".",
-            "Die no more than once.",
+            "Get taken down no more than once.",
             "Have all members survive."
         ],
         "FunctionLeftBtn": 2,
@@ -171697,7 +171702,7 @@
         "LimitBuffId": 1,
         "StarDesc": [
             "Defeat \"Ezette\".",
-            "Die no more than once.",
+            "Get taken down no more than once.",
             "Have all members survive."
         ],
         "FunctionLeftBtn": 2,
@@ -171722,7 +171727,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "Defeat \"Vanguard\"",
+            "Defeat \"Vanguard\".",
             "Get taken down no more than 5 times.",
             "Get taken down no more than 3 times."
         ],
@@ -171748,7 +171753,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "Defeat \"Vanguard\"",
+            "Defeat \"Vanguard\".",
             "Get taken down no more than 5 times.",
             "Get taken down no more than 3 times."
         ],
@@ -171774,7 +171779,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "Defeat \"Vanguard\"",
+            "Defeat \"Vanguard\".",
             "Get taken down no more than 5 times.",
             "Get taken down no more than 3 times."
         ],
@@ -171800,9 +171805,9 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "Defeat \"Vanguard\"",
+            "Defeat \"Vanguard\".",
             "Get taken down no more than 3 times.",
-            "Die no more than once."
+            "Get taken down no more than once."
         ],
         "FunctionLeftBtn": 2,
         "FunctionRightBtn": 1,
@@ -171826,8 +171831,8 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "Defeat \"Vanguard\"",
-            "Die no more than once.",
+            "Defeat \"Vanguard\".",
+            "Get taken down no more than once.",
             "Have all members survive."
         ],
         "FunctionLeftBtn": 2,
@@ -171852,8 +171857,8 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "Defeat \"Vanguard\"",
-            "Die no more than once.",
+            "Defeat \"Vanguard\".",
+            "Get taken down no more than once.",
             "Have all members survive."
         ],
         "FunctionLeftBtn": 2,
@@ -177045,8 +177050,8 @@
         "Type": 18,
         "Name": "Journey of Devotion Begins",
         "Description": "Following the woven light of dawn, I come to meet you.",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu08.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaStory05.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian01.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -177077,8 +177082,8 @@
         "Type": 18,
         "Name": "In the Name of Progress",
         "Description": "No matter how rough the road gets, I'll keep going with you.",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu08.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaStory05.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg02.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian02.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -177112,8 +177117,8 @@
         "Type": 18,
         "Name": "In the Name of Home",
         "Description": "Light the way home, and build a life of peace with you.",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu07.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaFight03.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg03.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian03.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -177159,8 +177164,8 @@
         "Type": 18,
         "Name": "In the Name of Devotion",
         "Description": "Hand in hand with you, toward the tomorrow we long for.",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu08.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaStory05.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg04.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian04.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -177194,8 +177199,8 @@
         "Type": 18,
         "Name": "Aspire, Achieve",
         "Description": "In this little world, you and I build a life full of joy together.",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu08.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaStory05.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg05.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian05.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -177227,10 +177232,10 @@
     {
         "StageId": 30130547,
         "Type": 18,
-        "Name": "Eternal Heart",
+        "Name": "This Heart Eternal",
         "Description": "Love and hope dance together. This heart endures forever.",
-        "Icon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaTu08.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiLottoLamiya/UiLottoLamiyaStory05.png",
+        "Icon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachalifu405StoryBg06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaLifu405/UiGachaLifu405StoryJiedian06.png",
         "BgmId": 230,
         "LoadingType": 20016,
         "NormalEventIdOnPassed": 1,
@@ -204221,7 +204226,7 @@
         "StageId": 30101119,
         "Type": 43,
         "Name": "Allos",
-        "Description": "异身描述",
+        "Description": "Allos Description",
         "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYiShenStage01.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
         "BgmId": 101,
@@ -204235,7 +204240,7 @@
         "OnlinePlayerLimit": 3,
         "StarDesc": [
             "Pay attention to CUB tutorial tips.",
-            "理解辅助机·异身的实战技巧"
+            "Learn practical skills of CUB Allos."
         ],
         "HaveFirstPass": true,
         "FunctionLeftBtn": 2,
@@ -204253,8 +204258,8 @@
     {
         "StageId": 30101120,
         "Type": 43,
-        "Name": "Stygian Pinion",
-        "Description": "Bound by a covenant with fate, her wings rend the abyss of night before dawn's first light can pierce the veil. She hunts the monsters that prowl within the fog, and hers alone is the power to decree life or death. A faint glow shall one day sunder the unending dark, and the sins shrouded in fog will lie entombed forever beneath the long-awaited dawn.",
+        "Name": "Nightshroud Coronet",
+        "Description": "The past lies steeped in crimson, and the reins of judgment are now in her grasp. In the name of the Countess, she takes her leave of the old epoch, slumbering deep in the fog. When the blood-red moon climbs full again, she tightens her grip on the blade in hand and steps into the winding, fog-veiled streets. Before the final curtain falls, she cleaves through the specters of the silence, her will unbroken.",
         "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
         "BgmId": 101,
@@ -204282,8 +204287,8 @@
     {
         "StageId": 30101122,
         "Type": 43,
-        "Name": "Nightshroud Coronet",
-        "Description": "The past lies steeped in crimson, and the reins of judgment are now in her grasp. In the name of the Countess, she takes her leave of the old epoch, slumbering deep in the fog. When the blood-red moon climbs full again, she tightens her grip on the blade in hand and steps into the winding, fog-veiled streets. Before the final curtain falls, she cleaves through the specters of the silence, her will unbroken.",
+        "Name": "Stygian Pinion",
+        "Description": "Bound by a covenant with fate, her wings rend the abyss of night before dawn's first light can pierce the veil. She hunts the monsters that prowl within the fog, and hers alone is the power to decree life or death. A faint glow shall one day sunder the unending dark, and the sins shrouded in fog will lie entombed forever beneath the long-awaited dawn.",
         "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
         "BgmId": 101,
@@ -230709,33 +230714,15 @@
     },
     {
         "StageId": 30061697,
-        "Type": 13,
-        "Name": "Stygian Pinion",
-        "Description": "Bound by a covenant with fate, her wings rend the abyss of night before dawn's first light can pierce the veil. She hunts the monsters that prowl within the fog, and hers alone is the power to decree life or death. A faint glow shall one day sunder the unending dark, and the sins shrouded in fog will lie entombed forever beneath the long-awaited dawn.",
-        "Icon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
-        "BgmId": 16,
-        "NormalEventIdOnPassed": 1,
+        "Type": 100,
+        "Name": "Stage 3",
+        "Description": "miniRPG",
         "OrderId": 1,
-        "RecommandLevel": 1,
-        "LimitBuffId": 2,
-        "FirstRewardShow": 12051,
-        "FirstRewardId": 12051,
-        "KeepPlayingStory": 1,
-        "OnlinePlayerLimit": 3,
-        "HaveFirstPass": true,
-        "FunctionLeftBtn": 2,
-        "FunctionRightBtn": 1,
         "RobotId": [
-            1196
+            172358
         ],
-        "StageType": 1,
-        "StageGridStyle": "GridStageMainLineBattleSpecial",
-        "NeedJobType": [
-            1,
-            2,
-            3
-        ]
+        "FightControlId": 1,
+        "Restartable": true
     },
     {
         "StageId": 30061698,
@@ -299163,7 +299150,7 @@
         "StageId": 13021201,
         "Type": 95,
         "Name": "Familiar Ground",
-        "Description": "I am the path you never chose, the possibility you abandoned. I am...",
+        "Description": "I am the path you never took, the probability you forsook. I am...",
         "OrderId": 1,
         "KeepPlayingStory": 1,
         "BeginStoryIds": [
@@ -299260,7 +299247,7 @@
         "StageId": 13021206,
         "Type": 95,
         "Name": "Blessing",
-        "Description": "Memories are cruel waves.",
+        "Description": "Memories hit Alpha like a wave.",
         "OrderId": 1,
         "PreStageId": [
             13021205
@@ -299294,7 +299281,7 @@
         ],
         "FunctionRightBtn": 1,
         "RobotId": [
-            172387
+            172410
         ],
         "StageType": 1,
         "FightControlId": 1,

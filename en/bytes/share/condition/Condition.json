@@ -12201,7 +12201,7 @@
         "Params": [
             10400128
         ],
-        "Desc": "空花任务-未通关主线41-28"
+        "Desc": "Babylonia Mission: Main Story 41-28 not cleared"
     },
     {
         "Id": 770430,
@@ -12209,12 +12209,12 @@
         "Params": [
             15
         ],
-        "Desc": "指挥官等级达到15级"
+        "Desc": "Reach Commandant Lv.15"
     },
     {
         "Id": 770431,
         "Formula": "770430&770400",
-        "Desc": "指挥官等级达到15级且通关1-12开启"
+        "Desc": "Unlocks at Commandant Lv.15 and after clearing Main Story 1-12"
     },
     {
         "Id": 770500,
@@ -12832,7 +12832,7 @@
         "Params": [
             14000016
         ],
-        "Desc": "需要解锁场景【澄愿眷旅】"
+        "Desc": "Requires unlocking the scene [Path of Unclouded Hearts]"
     },
     {
         "Id": 14000001,
@@ -23056,10 +23056,26 @@
         "Desc": "Coating owned"
     },
     {
+        "Id": 6005505,
+        "Type": 11105,
+        "Params": [
+            6005505
+        ],
+        "Desc": "Coating owned"
+    },
+    {
         "Id": 6005604,
         "Type": 11105,
         "Params": [
             6005604
+        ],
+        "Desc": "Coating owned"
+    },
+    {
+        "Id": 6005605,
+        "Type": 11105,
+        "Params": [
+            6005605
         ],
         "Desc": "Coating owned"
     },
@@ -23163,6 +23179,14 @@
         "Desc": "Coating owned"
     },
     {
+        "Id": 6006104,
+        "Type": 11105,
+        "Params": [
+            6006104
+        ],
+        "Desc": "Coating owned"
+    },
+    {
         "Id": 7005804,
         "Formula": "770400&6005804",
         "Desc": "You do not own this Coating and have cleared 1-12."
@@ -23175,6 +23199,11 @@
     {
         "Id": 7005305,
         "Formula": "770401&770402&6005305",
+        "Desc": "You do not own this Coating, have reached Lv.40, and have cleared 1-8."
+    },
+    {
+        "Id": 7005306,
+        "Formula": "770401&770402&6005605",
         "Desc": "You do not own this Coating, have reached Lv.40, and have cleared 1-8."
     },
     {
@@ -38446,7 +38475,7 @@
         "Params": [
             30130542
         ],
-        "Desc": "通关【澄愿眷旅-丽芙500皮占位01】后解锁"
+        "Desc": "Unlocks after clearing [Path of Unclouded Hearts - Journey of Devotion Begins]"
     },
     {
         "Id": 84103419,
@@ -38454,7 +38483,7 @@
         "Params": [
             30130543
         ],
-        "Desc": "通关【澄愿眷旅-丽芙500皮占位02】后解锁"
+        "Desc": "Unlocks after clearing [Path of Unclouded Hearts - In the Name of Progress]"
     },
     {
         "Id": 84103420,
@@ -38462,7 +38491,7 @@
         "Params": [
             30130544
         ],
-        "Desc": "通关【澄愿眷旅-丽芙500皮占位03】后解锁"
+        "Desc": "Unlocks after clearing [Path of Unclouded Hearts - In the Name of Home]"
     },
     {
         "Id": 84103421,
@@ -38470,7 +38499,7 @@
         "Params": [
             30130545
         ],
-        "Desc": "通关【澄愿眷旅-丽芙500皮占位04】后解锁"
+        "Desc": "Unlocks after clearing [Path of Unclouded Hearts - In the Name of Devotion]"
     },
     {
         "Id": 84103422,
@@ -38478,7 +38507,7 @@
         "Params": [
             30130546
         ],
-        "Desc": "通关【澄愿眷旅-丽芙500皮占位05】后解锁"
+        "Desc": "Unlocks after clearing [Path of Unclouded Hearts - Aspire, Achieve]"
     },
     {
         "Id": 84103423,
@@ -38486,7 +38515,7 @@
         "Params": [
             30130547
         ],
-        "Desc": "通关【澄愿眷旅-丽芙500皮占位06】后解锁"
+        "Desc": "Unlocks after clearing [Path of Unclouded Hearts - This Heart Eternal]"
     },
     {
         "Id": 84200101,
@@ -51564,6 +51593,14 @@
         "Desc": "Coating owned"
     },
     {
+        "Id": 12650001,
+        "Type": 11113,
+        "Params": [
+            12650001
+        ],
+        "Desc": "Coating owned"
+    },
+    {
         "Id": 84700201,
         "Type": 10101,
         "Params": [
@@ -56020,9 +56057,9 @@
         "Id": 1002148,
         "Type": 10142,
         "Params": [
-            16380000
+            16390000
         ],
-        "Desc": "Placeholder_4.5辅助机"
+        "Desc": "Combine CUB \"Allos\" to unlock"
     },
     {
         "Id": 94031,
@@ -62979,7 +63016,7 @@
         "Id": 1007151,
         "Type": 10105,
         "Params": [
-            15021725
+            15021724
         ],
         "Desc": "Clear prerequisite Floating Record [Normal Story ER15-25]"
     },
@@ -62987,9 +63024,9 @@
         "Id": 1007152,
         "Type": 10105,
         "Params": [
-            10400127
+            10400128
         ],
-        "Desc": "Clear prerequisite Main Story [Normal Story 41-27]"
+        "Desc": "通关前置主线关卡【普通剧情41-28】"
     },
     {
         "Id": 1007200,
@@ -63459,6 +63496,14 @@
             10400124
         ],
         "Desc": "Clear Main Stage 41-24"
+    },
+    {
+        "Id": 1007257,
+        "Type": 10105,
+        "Params": [
+            10400101
+        ],
+        "Desc": "Clear Main Stage 41-1"
     },
     {
         "Id": 1008102,
@@ -74290,39 +74335,23 @@
     },
     {
         "Id": 1021002,
-        "Type": 23201,
-        "Params": [
-            100,
-            1
-        ],
-        "Desc": "【使用维罗妮卡通过难度1后解锁】"
+        "Formula": "1021017|1021018|1021019|1021020",
+        "Desc": "[Unlocks after clearing Difficulty 1 with Veronica]"
     },
     {
         "Id": 1021003,
-        "Type": 23201,
-        "Params": [
-            102,
-            1
-        ],
-        "Desc": "【使用维罗妮卡通过难度3后解锁】"
+        "Formula": "1021019|1021020",
+        "Desc": "[Unlocks after clearing Difficulty 3 with Veronica]"
     },
     {
         "Id": 1021004,
-        "Type": 23201,
-        "Params": [
-            105,
-            1
-        ],
-        "Desc": "【使用阿尔法通过难度1后解锁】"
+        "Formula": "1021021|1021022|1021023|1021024",
+        "Desc": "[Unlocks after clearing Difficulty 1 with Alpha]"
     },
     {
         "Id": 1021005,
-        "Type": 23201,
-        "Params": [
-            107,
-            1
-        ],
-        "Desc": "【使用阿尔法通过难度3后解锁】"
+        "Formula": "1021023|1021024",
+        "Desc": "[Unlocks after clearing Difficulty 3 with Alpha]"
     },
     {
         "Id": 1021001,
@@ -74412,7 +74441,7 @@
             1,
             1
         ],
-        "Desc": "【使用任意角色通过难度1后解锁】"
+        "Desc": "[Unlocks after clearing Difficulty 1 with any character]"
     },
     {
         "Id": 1021015,
@@ -74421,7 +74450,7 @@
             2,
             1
         ],
-        "Desc": "【使用任意角色通过难度1后解锁】"
+        "Desc": "[Unlocks after clearing Difficulty 2 with any character]"
     },
     {
         "Id": 1021016,
@@ -74430,7 +74459,71 @@
             3,
             1
         ],
-        "Desc": "【使用任意角色通过难度1后解锁】"
+        "Desc": "[Unlocks after clearing Difficulty 3 with any character]"
+    },
+    {
+        "Id": 1021017,
+        "Type": 23201,
+        "Params": [
+            100,
+            1
+        ]
+    },
+    {
+        "Id": 1021018,
+        "Type": 23201,
+        "Params": [
+            101,
+            1
+        ]
+    },
+    {
+        "Id": 1021019,
+        "Type": 23201,
+        "Params": [
+            102,
+            1
+        ]
+    },
+    {
+        "Id": 1021020,
+        "Type": 23201,
+        "Params": [
+            103,
+            1
+        ]
+    },
+    {
+        "Id": 1021021,
+        "Type": 23201,
+        "Params": [
+            105,
+            1
+        ]
+    },
+    {
+        "Id": 1021022,
+        "Type": 23201,
+        "Params": [
+            106,
+            1
+        ]
+    },
+    {
+        "Id": 1021023,
+        "Type": 23201,
+        "Params": [
+            107,
+            1
+        ]
+    },
+    {
+        "Id": 1021024,
+        "Type": 23201,
+        "Params": [
+            108,
+            1
+        ]
     },
     {
         "Id": 1030001,
@@ -78996,6 +79089,33 @@
         "Desc": "引导-肉鸽5-完成剧情节点203或303或403或503（即完成任一角色的首次推演）"
     },
     {
+        "Id": 863156,
+        "Type": 10187,
+        "Params": [
+            1,
+            64731
+        ],
+        "Desc": "引导-生命树系统-已完成引导64731"
+    },
+    {
+        "Id": 863157,
+        "Type": 23201,
+        "Params": [
+            2,
+            1
+        ],
+        "Desc": "引导-肉鸽6-已通关教学关"
+    },
+    {
+        "Id": 863158,
+        "Type": 10187,
+        "Params": [
+            1,
+            64701
+        ],
+        "Desc": "引导-肉鸽6-已完成空引导64701"
+    },
+    {
         "Id": 863200,
         "Type": 10101,
         "Params": [
@@ -80199,8 +80319,66 @@
         "Desc": "HP below requirement"
     },
     {
+        "Id": 866477,
+        "Type": 23102,
+        "Params": [
+            1,
+            29990002
+        ],
+        "Desc": "【对玩家不可见】4.5活动面板，领取指挥官涂装后，气泡消失"
+    },
+    {
+        "Id": 866478,
+        "Type": 10111,
+        "Params": [
+            990099
+        ],
+        "Desc": "Complete Pilotage mission [Homecoming and A New Journey]"
+    },
+    {
+        "Id": 866479,
+        "Formula": "!866477",
+        "Desc": "【对玩家不可见】4.5活动面板，领取指挥官涂装后，气泡消失"
+    },
+    {
         "Id": 866500,
         "Type": 20113,
         "Desc": "80294全包拦截"
+    },
+    {
+        "Id": 866600,
+        "Type": 23202,
+        "Params": [
+            1,
+            1
+        ],
+        "Desc": "Clear [Difficulty 1] to unlock"
+    },
+    {
+        "Id": 866601,
+        "Type": 23202,
+        "Params": [
+            2,
+            1
+        ],
+        "Desc": "Clear [Difficulty 2] to unlock"
+    },
+    {
+        "Id": 866602,
+        "Type": 23202,
+        "Params": [
+            3,
+            1
+        ],
+        "Desc": "Clear [Difficulty 3] to unlock"
+    },
+    {
+        "Id": 866603,
+        "Type": 23202,
+        "Params": [
+            4,
+            1
+        ],
+        "Desc": "Clear [Difficulty 4] to unlock"
     }
 ]

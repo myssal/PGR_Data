@@ -3,14 +3,1939 @@
         "Id": 1,
         "ActionId": 1,
         "Type": 101,
-        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Texture/Image/BgStory/BgStory1516.jpg"
         ]
     },
     {
         "Id": 2,
         "ActionId": 2,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 401,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            2,
+            797
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 502,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 310,
+        "Params": [
+            "She trudges through the endless fog.",
+            "",
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 310,
+        "Params": [
+            "The fog is cold, like the day... they left... for the 21st time..."
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 310,
+        "Params": [
+            "No. This is \"her\" memory. Whose memory is this...?"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 310,
+        "Params": [
+            "The fog has dissolved time, dissolved space, and dissolved her along with them."
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 310,
+        "Params": [
+            "Who is... crying? Who is asking to go home? But... where is \"home\"?",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 310,
+        "Params": [
+            "She no longer remembers how long she has walked, nor how long she has been trapped in this nowhere."
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 310,
+        "Params": [
+            "She only remembers... that she must find those two. Until she does, she can only carry all this burden and slowly push forward.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 505,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 111,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab"
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 109,
+        "Params": [
+            1,
+            "<color=#ffffffff><size=90>Slowly... push forward?</size></color>",
+            "",
+            50,
+            "",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab"
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 115,
+        "EndDelay": 100.0,
+        "Params": [
+            "10|10|0",
+            "",
+            0.1,
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 115,
+        "EndDelay": 100.0,
+        "Params": [
+            "-10|10|0",
+            "",
+            0.1,
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 115,
+        "EndDelay": 100.0,
+        "Params": [
+            "-10|-10|0",
+            "",
+            0.1,
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 115,
+        "EndDelay": 100.0,
+        "Params": [
+            "-10|10|0",
+            "",
+            0.1,
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 115,
+        "EndDelay": 100.0,
+        "Params": [
+            "10|-10|0",
+            "",
+            0.1,
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 115,
+        "EndDelay": 100.0,
+        "Params": [
+            "10|10|0",
+            "",
+            0.1,
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 115,
+        "EndDelay": 100.0,
+        "Params": [
+            "-10|-10|0",
+            "",
+            0.1,
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 115,
+        "EndDelay": 100.0,
+        "Params": [
+            "10|-10|0",
+            "",
+            0.1,
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "Slowly... push forward?"
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 110
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 111,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab"
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "No. She can't keep searching like this. She still hasn't found anything. She still hasn't found them..."
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her thoughts flicker in and out of existence. Only the pain stays constant, rooted deep within her mind. The [Crown] is still feeding on her flesh. She can feel it. But even now, she cannot control it."
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "That \"power\" bleeds outward, uncontrollable, shredding the fog. Rifts open in its wake, and \"monsters\" pour through."
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Stop. It has to stop. She has to stop. Keep using the [Crown's] power like this, and F.O.S. will..."
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 401,
+        "Params": [
+            2,
+            4674
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 401,
+        "Params": [
+            2,
+            5918
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.8,
+            0.3
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 109,
+        "EndDelay": 80.0,
+        "Params": [
+            1,
+            "<size=70>There's no time... There's no time...</size>",
+            355,
+            330,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 109,
+        "EndDelay": 80.0,
+        "Params": [
+            2,
+            "<size=120>There's no time... </size><size=60>There's no time...</size>",
+            -111,
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 109,
+        "EndDelay": 80.0,
+        "Params": [
+            3,
+            "<size=70>There's no time... </size><size=120>There's no time...</size>",
+            233,
+            -150,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 109,
+        "EndDelay": 80.0,
+        "Params": [
+            4,
+            "<size=110>There's no time...</size>",
+            -546,
+            -230,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 109,
+        "EndDelay": 80.0,
+        "Params": [
+            5,
+            "<size=120>There's no time... There's no time...</size>",
+            -50,
+            210,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 109,
+        "EndDelay": 80.0,
+        "Params": [
+            6,
+            "<size=90>There's no time...</size>",
+            488,
+            -333,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 109,
+        "EndDelay": 100.0,
+        "Params": [
+            7,
+            "<size=60>There's no time...</size>",
+            -500,
+            400,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 401,
+        "Params": [
+            2,
+            2604
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 109,
+        "Params": [
+            8,
+            "<color=#ff4e4eff><size=220>THERE'S NO TIME!</size></color>",
+            80,
+            75,
+            "",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "There's no time... There's no time... THERE'S NO TIME!"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "A multitude of voices erupt inside her skull, all at once."
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 402,
+        "Params": [
+            4674
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 306
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 401,
+        "Params": [
+            2,
+            4675
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 109,
+        "Params": [
+            1,
+            "<size=70>She is dying.</size>",
+            355,
+            330,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 109,
+        "Params": [
+            2,
+            "<size=120>She is dying.</size>       <size=60>They are dying.</size>",
+            -111,
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 109,
+        "EndDelay": 150.0,
+        "Params": [
+            3,
+            "<size=70>       She is dying.       </size><size=120>They are dying.</size>",
+            233,
+            -150,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 109,
+        "Params": [
+            4,
+            "<size=110>They are dying.</size>",
+            -546,
+            -230,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 109,
+        "Params": [
+            5,
+            "<size=120>They are dying.       She is dying.</size>",
+            -50,
+            210,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 109,
+        "Params": [
+            6,
+            "<size=90>She is dying.</size>",
+            488,
+            -333,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 109,
+        "EndDelay": 150.0,
+        "Params": [
+            7,
+            "<size=60>They are dying.</size>",
+            -500,
+            400,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 401,
+        "Params": [
+            2,
+            2604
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 109,
+        "Params": [
+            8,
+            "<color=#ff4e4eff><size=80>She is dying. They are dying. SHE IS DYING!</size></color>",
+            80,
+            75,
+            "",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "She is dying. They are dying. SHE IS DYING!"
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 109,
+        "Params": [
+            1,
+            "<size=70>Find that person.       Find them.</size>",
+            355,
+            330,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 109,
+        "Params": [
+            2,
+            "<size=120>       Find her.       </size><size=60>Find them.</size>",
+            -111,
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 109,
+        "EndDelay": 150.0,
+        "Params": [
+            3,
+            "<size=70>Find that person.       </size><size=120>Find her.</size>",
+            233,
+            -150,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 109,
+        "Params": [
+            4,
+            "<size=110>Find them.</size>",
+            -546,
+            -230,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 109,
+        "Params": [
+            5,
+            "<size=120>Find that person.       Find her.</size>",
+            -50,
+            210,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 109,
+        "Params": [
+            6,
+            "<size=90>Find them.</size>",
+            488,
+            -333,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 109,
+        "EndDelay": 150.0,
+        "Params": [
+            7,
+            "<size=60>Find her.</size>",
+            -500,
+            400,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 401,
+        "Params": [
+            2,
+            2604
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 109,
+        "Params": [
+            8,
+            "<color=#ff4e4eff><size=80>Find that person. Find her. FIND... THEM...</size></color>",
+            "",
+            75,
+            "",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "Find that person. Find her. FIND... THEM..."
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.8,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 110
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 505,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Disable"
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 401,
+        "Params": [
+            2,
+            6734
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 201,
+        "Params": [
+            1,
+            501588
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 402,
+        "Params": [
+            4675
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            1,
+            "Chimera",
+            "■▃▂■■▇▃█▂▄▇■▃█—",
+            1
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Another shriek rips from her throat, and the [Crown's] power surges through the Fog once more."
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 104,
+        "Params": [
+            "0|50|-100",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 111,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 401,
+        "Params": [
+            1,
+            33
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 205,
+        "EndDelay": 1550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1497.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 104,
+        "Params": [
+            "0|50|-100",
+            0
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1497.jpg"
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Then she stops. The great head turns, slow and deliberate, toward the space above the starship's deck."
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.5,
+            0.3
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab",
+            2,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 511,
+        "Params": [
+            1,
+            0,
+            "500|0|100"
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab",
+            2,
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 511,
+        "Params": [
+            2,
+            0,
+            "-500|0|100"
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab",
+            2,
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 511,
+        "Params": [
+            3,
+            0,
+            "0|0|0"
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "She sees three specks of light. Each burning at a different intensity."
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 307,
+        "Params": [
+            "Is that... you?",
+            "",
+            60
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "Is that... you?"
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 104,
+        "Params": [
+            "0|50|-150",
+            0.6
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 511,
+        "Params": [
+            1,
+            0.6,
+            "500|0|0"
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 511,
+        "Params": [
+            2,
+            0.6,
+            "-500|0|0"
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 511,
+        "EndDelay": 650.0,
+        "Params": [
+            3,
+            0.6,
+            "0|0|-100"
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 402,
+        "Params": [
+            6708
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "She moves closer toward the deck, desperate to discern their faces..."
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 307,
+        "Params": [
+            "It is... you.",
+            "",
+            60
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "It is... you."
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "She thinks she recognizes them... Her old friends."
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab"
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 402,
+        "Params": [
+            797
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.3,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 511,
+        "Params": [
+            1,
+            0,
+            "0|0|0"
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 511,
+        "Params": [
+            2,
+            0,
+            "0|0|0"
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 511,
+        "Params": [
+            3,
+            0,
+            "0|0|0"
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab",
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 101,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1499.jpg"
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 107,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "F.O.S. Starship",
+            "The Fog"
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "The Fog, F.O.S. Starship."
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 108,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "With each second, the zone of safety draws tighter. The wounded huddle in makeshift trenches pieced together from supply crates."
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 401,
+        "Params": [
+            2,
+            844090
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "Just beyond the crude barricade, monsters pound the splintering defenses, wave after relentless wave."
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 302,
+        "Params": [
+            "",
+            "What's the status of the CPF?",
+            135
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 201,
+        "Params": [
+            1,
+            500994
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lucia",
+            "The filter's holding steady. As long as those monsters are still made of Punishing Virus, the safe zone will hold. But...",
+            1
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Lucia",
+            "The problem is the mass of their bodies. They're piling up fast.",
+            1
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 104,
+        "Params": [
+            "0|0|-300",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 205,
+        "EndDelay": 450.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 104,
+        "EndDelay": 350.0,
+        "Params": [
+            "0|0|0",
+            0.3,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Severed limbs and seeping blood inch into the cramped sanctuary, stealing what little ground remains."
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 302,
+        "Params": [
+            "",
+            "...",
+            147
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "The air reeks of burning, sharp and suffocating. Back to back, the wounded students hold their silent vigil, eyes sweeping the fog, bracing."
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Despair tightens its grip. The cold settles into their bones. Their breath, pale ghosts in the frigid air, is the only warmth they have left. Someone finally breaks the silence."
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 201,
+        "Params": [
+            1,
+            501663,
+            "",
+            400,
+            -30
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 201,
+        "Params": [
+            2,
+            501662,
+            "",
+            -400,
+            -30
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 301,
+        "Params": [
+            1,
+            "Injured Student B",
+            "It's... so cold...",
+            1
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Injured Student A",
+            "...That's the blood loss talking.",
+            2
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 401,
+        "Params": [
+            2,
+            4044
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 203,
+        "EndDelay": 650.0,
+        "Params": [
+            2,
+            0.6,
+            -400
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "He struggles upright and gropes blindly through a corner of a supply crate, his fingers closing around a roll of stained bandages."
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Injured Student A",
+            "Last bandage Instructor Elianna left us. Before she gets back...",
+            2
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 203,
+        "EndDelay": 650.0,
+        "Params": [
+            2,
+            0.6,
+            -350
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 401,
+        "Params": [
+            2,
+            2987
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Working with his good hand and his teeth, he helps cinch the girl's bandages tight to hold back the bleeding."
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 301,
+        "Params": [
+            "",
+            "Injured Student A",
+            "Before she gets back, we'll have to make it last.",
+            2
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 301,
+        "Params": [
+            "",
+            "Injured Student B",
+            "The rations in that crate... almost gone too, aren't they?",
+            1
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 301,
+        "Params": [
+            "",
+            "Injured Student A",
+            "We can stretch them a bit longer. As for the rest...",
+            2
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 301,
+        "Params": [
+            "",
+            "Injured Student A",
+            "It all comes down to who gets there first. Us getting out, or them getting in.",
+            2
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 301,
+        "Params": [
+            "",
+            "Injured Student A",
+            "We make it back, we get to eat. They break through first, we're the meal.",
+            2
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 301,
+        "Params": [
+            "",
+            "Injured Student A",
+            "Either way, someone's belly gets filled.",
+            2
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 301,
+        "Params": [
+            "",
+            "Injured Student B",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The hushed whispers fade in the flickering light. The student, blood loss taking its toll, slips into unconsciousness."
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 201,
+        "Params": [
+            1,
+            500994,
+            5
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 203,
+        "Params": [
+            1,
+            0.3,
+            "",
+            -20,
+            -50
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Lucia",
+            "Commandant!",
+            1
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
         "Type": 401,
         "Params": [
             1,
@@ -18,26 +1943,3713 @@
         ]
     },
     {
-        "Id": 3,
-        "ActionId": 3,
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 401,
+        "Params": [
+            2,
+            10022001
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 201,
+        "Params": [
+            15,
+            500992,
+            "",
+            900
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 201,
+        "Params": [
+            2,
+            501656,
+            "",
+            -700
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 203,
+        "Params": [
+            15,
+            0.2,
+            400
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 203,
+        "EndDelay": 250.0,
+        "Params": [
+            2,
+            0.2,
+            -200
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 401,
+        "Params": [
+            2,
+            11106007
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 203,
+        "Params": [
+            15,
+            0.5,
+            600
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 203,
+        "EndDelay": 550.0,
+        "Params": [
+            2,
+            0.5,
+            -400
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 401,
+        "Params": [
+            2,
+            4807
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 505,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Disable"
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 401,
+        "Params": [
+            1,
+            7127
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "A blade arcs through the air. A grotesque monster slams against the supply crate behind you, pinned clean through. It had clambered over the corpses of its own kind to breach the safe zone."
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 202,
+        "Params": [
+            15,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 201,
+        "Params": [
+            3,
+            501662
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Injured Student A",
+            "Argh! They're breaking through!",
+            3
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 202,
+        "Params": [
+            3,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 401,
+        "Params": [
+            2,
+            6720
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 201,
+        "Params": [
+            5,
+            501657
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab",
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "Warped mechanical limbs screech and scrape like rusted iron. The Central Purification Filter hums at full capacity, its safe zone slowing the advance."
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 401,
+        "Params": [
+            2,
+            1508
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 201,
+        "EndDelay": 400.0,
+        "Params": [
+            15,
+            501656,
+            "",
+            -300
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 401,
+        "Params": [
+            2,
+            4660
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 203,
+        "Params": [
+            5,
+            0.15,
+            100,
+            "",
+            -15
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 203,
+        "EndDelay": 300.0,
+        "Params": [
+            15,
+            0.15,
+            -260,
+            -15
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 401,
+        "Params": [
+            2,
+            6310
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            15,
+            0.2,
+            -400,
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "But it's not enough to stop another creature from springboarding off the first one's arm to lunge straight at the wounded.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 202,
+        "Params": [
+            15,
+            5,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 306
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 201,
+        "Params": [
+            1,
+            500992,
+            4,
+            230
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Lucia",
+            "They're using the corpses as stepping stones!",
+            1
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 203,
+        "Params": [
+            1,
+            0.16,
+            230,
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 202,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 401,
+        "Params": [
+            2,
+            819043
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 501,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 401,
+        "Params": [
+            2,
+            819043
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 401,
+        "Params": [
+            2,
+            5321
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
-            "测试1"
+            "A flash of steel splits the air. The blade arcs, near-perfect, as Lucia grips it level and severs the enemy's joints with one clean strike."
         ]
     },
     {
-        "Id": 4,
-        "ActionId": 4,
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 302,
+        "Params": [
+            "",
+            "Let's keep moving!",
+            222
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
         "Type": 301,
-        "IsEnd": 1,
+        "Params": [
+            "",
+            "",
+            "Until a real solution presents itself, your only option is to keep shrinking the perimeter. At least the purification filter still holds."
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 201,
+        "Params": [
+            1,
+            500994,
+            5,
+            "",
+            -30
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Lucia",
+            "I'll clear the perimeter first. There are too many closing in!",
+            1
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 401,
+        "Params": [
+            2,
+            9342045
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 203,
+        "EndDelay": 350.0,
+        "Params": [
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Lucia vaults the trench. Her voice is swallowed whole by the grinding cacophony of the mechanical monsters."
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 302,
+        "Params": [
+            "",
+            "If you can move, help those who can't!",
+            230
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 302,
+        "Params": [
+            "",
+            "Head straight for the filter and don't look back!",
+            231
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 201,
+        "Params": [
+            1,
+            501663,
+            "",
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 201,
+        "Params": [
+            2,
+            501662,
+            "",
+            -400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 203,
+        "Params": [
+            1,
+            0.8,
+            300
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 203,
+        "Params": [
+            2,
+            0.8,
+            -300
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "Leaning on one another, the students drag themselves toward the distant Central Purification Filter."
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 401,
+        "Params": [
+            2,
+            3079
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 203,
+        "Params": [
+            1,
+            0.3,
+            300,
+            -15
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 301,
+        "Params": [
+            "",
+            "Injured Student B",
+            "...Ah!",
+            1
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The student's knees buckle. For a heartbeat, she hovers on the edge of collapse."
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 401,
+        "Params": [
+            2,
+            4044
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25,
+            -280,
+            -15
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Injured Student A",
+            "Hold onto me!",
+            2
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The boy endures the searing pain of his severed arm and hooks his good arm around her shoulder in an unyielding grip."
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 301,
+        "Params": [
+            "",
+            "Injured Student B",
+            "Don't... Just go! I can't move anymore. They're right behind us!",
+            1
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 401,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 203,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            0.3,
+            280,
+            -15
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            2,
+            0.2,
+            -350
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The swelling in her ankle has turned vicious. She shoves her companion away; when she speaks, despair clings to every word."
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 401,
+        "Params": [
+            2,
+            2974
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 201,
+        "Params": [
+            3,
+            501656,
+            "",
+            -700
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 203,
+        "Params": [
+            3,
+            0.3,
+            -450
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            1,
+            "Monster",
+            "RAAARGH!!!",
+            3
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Claws rip through the air, bearing down on them—"
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 302,
+        "Params": [
+            "",
+            "Watch out!",
+            256,
+            "(Open fire)",
+            256
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 401,
+        "Params": [
+            2,
+            4044
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 104,
+        "Params": [
+            "0|0|-100",
+            0.25
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            500,
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 203,
+        "EndDelay": 300.0,
+        "Params": [
+            3,
+            0.25,
+            -200,
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 401,
+        "Params": [
+            2,
+            1510
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 501,
+        "EndDelay": 350.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 401,
+        "Params": [
+            2,
+            1510
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 501,
+        "EndDelay": 350.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "You drag the student down, tumble together with her across the ground. The instant you rise, you squeeze the trigger."
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 401,
+        "Params": [
+            2,
+            2974
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            3,
+            0.15,
+            -100,
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The claws slice past inches from your faces."
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 302,
+        "Params": [
+            "",
+            "!!!",
+            269,
+            "(Fire again)",
+            269
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 401,
+        "Params": [
+            2,
+            1510
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 501,
+        "EndDelay": 350.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "BANG!"
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 401,
+        "Params": [
+            2,
+            6310
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            3,
+            0.15,
+            "",
+            30,
+            -150
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 401,
+        "Params": [
+            2,
+            1508
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The shot staggers it back, barely. It recoils, shrieking in pain, then surges forward again—"
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 202,
+        "Params": [
+            1,
+            3,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 401,
+        "Params": [
+            2,
+            819016
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 501,
+        "EndDelay": 700.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 201,
+        "Params": [
+            1,
+            501611
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Alpha",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "A blade cuts through the air. The enemy's charge halts, dead in its tracks."
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 401,
+        "Params": [
+            1,
+            161
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 302,
+        "Params": [
+            "",
+            "...Thanks.",
+            286
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 401,
+        "Params": [
+            2,
+            4044
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 104,
+        "EndDelay": 550.0,
+        "Params": [
+            "0|20|-100",
+            0.5
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 104,
+        "EndDelay": 350.0,
+        "Params": [
+            "0|-15|-100",
+            0.3
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "You heave the now-unconscious student upright, mutter a quick thanks to Alpha, and hand her off to another instructor still on his feet."
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 302,
+        "Params": [
+            "",
+            "I thought you weren't coming back.",
+            292
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "Type": 201,
+        "Params": [
+            1,
+            501611
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "Type": 301,
+        "Params": [
+            1,
+            "Alpha",
+            "I said I'd help.",
+            1
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "Type": 301,
+        "Params": [
+            "",
+            "Alpha",
+            "My prey hasn't shown up yet. That's all.",
+            1
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "Type": 302,
+        "Params": [
+            "",
+            "The Chimera?",
+            296
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "Type": 301,
+        "Params": [
+            "",
+            "Alpha",
+            "Yeah. It's closing in on the starship—",
+            1
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "Type": 401,
+        "Params": [
+            2,
+            5790
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "Type": 111,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab"
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab"
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Bzzz—"
+        ]
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Another tremor slams through the deck. Alpha steadies herself, pressing a hand to her forehead."
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 111,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab"
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab"
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 302,
+        "Params": [
+            "",
+            "Your M.I.N.D...",
+            309,
+            "Need my help?",
+            309
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "Type": 301,
+        "Params": [
+            "",
+            "Alpha",
+            "...It's fine.",
+            1
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Pain throbs behind her eyes. Alpha furrows her brow, willing it away by sheer force."
+        ]
+    },
+    {
+        "Id": 312,
+        "ActionId": 312,
+        "Type": 302,
+        "Params": [
+            "",
+            "So, why did you go to the old F.O.S. site?",
+            313
+        ]
+    },
+    {
+        "Id": 313,
+        "ActionId": 313,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The evacuation quiets for a moment. You seize the pause and finally ask Alpha that question."
+        ]
+    },
+    {
+        "Id": 314,
+        "ActionId": 314,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 315,
+        "ActionId": 315,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Alpha",
+            "Why did you?",
+            1
+        ]
+    },
+    {
+        "Id": 316,
+        "ActionId": 316,
+        "Type": 302,
+        "Params": [
+            "",
+            "To find the F.O.S. starship.",
+            317
+        ]
+    },
+    {
+        "Id": 317,
+        "ActionId": 317,
+        "Type": 302,
+        "Params": [
+            "",
+            "We picked up an unknown signal at that location.",
+            318
+        ]
+    },
+    {
+        "Id": 318,
+        "ActionId": 318,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 319,
+        "ActionId": 319,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Alpha",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 320,
+        "ActionId": 320,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Alpha freezes for a moment, seemingly surprised by your frankness."
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 322,
+        "ActionId": 322,
+        "Type": 302,
+        "Params": [
+            "",
+            "Consider it an exchange of intel.",
+            323
+        ]
+    },
+    {
+        "Id": 323,
+        "ActionId": 323,
+        "Type": 302,
+        "Params": [
+            "",
+            "Even if we're not on the same side, getting out of here comes first.",
+            324
+        ]
+    },
+    {
+        "Id": 324,
+        "ActionId": 324,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Alpha",
+            "...I was following some \"phantoms,\" and they led me there.",
+            1
+        ]
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "Type": 302,
+        "Params": [
+            "",
+            "Phantoms...",
+            326
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
+        "Type": 301,
+        "Params": [
+            "",
+            "Alpha",
+            "We saw it all. How the rift opened and swallowed the F.O.S. starship whole.",
+            1
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "Type": 301,
+        "Params": [
+            "",
+            "Alpha",
+            "We meant to warn you. But the \"power\" pouring out from this place... it started affecting Luna.",
+            1
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "Type": 301,
+        "Params": [
+            "",
+            "Alpha",
+            "That \"power\" spawned all these strange phantoms. Some I recognized. Others... I've never experienced.",
+            1
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
+        "Type": 401,
+        "Params": [
+            2,
+            4278
+        ]
+    },
+    {
+        "Id": 331,
+        "ActionId": 331,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 332,
+        "ActionId": 332,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1496.jpg"
+        ]
+    },
+    {
+        "Id": 333,
+        "ActionId": 333,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 334,
+        "ActionId": 334,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 335,
+        "ActionId": 335,
+        "Type": 201,
+        "Params": [
+            1,
+            501611,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 336,
+        "ActionId": 336,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "The image surfaces again: herself, standing beneath the F.O.S. Monument and talking."
+        ]
+    },
+    {
+        "Id": 337,
+        "ActionId": 337,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 338,
+        "ActionId": 338,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 339,
+        "ActionId": 339,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1499.jpg"
+        ]
+    },
+    {
+        "Id": 340,
+        "ActionId": 340,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 341,
+        "ActionId": 341,
+        "Type": 201,
+        "Params": [
+            1,
+            501611,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 342,
+        "ActionId": 342,
+        "Type": 301,
+        "Params": [
+            1,
+            "Alpha",
+            "Then... I ran into you.",
+            1
+        ]
+    },
+    {
+        "Id": 343,
+        "ActionId": 343,
+        "Type": 302,
+        "Params": [
+            "",
+            "...",
+            344,
+            "It started affecting Luna...",
+            344
+        ]
+    },
+    {
+        "Id": 344,
+        "ActionId": 344,
+        "Type": 401,
+        "Params": [
+            2,
+            4278
+        ]
+    },
+    {
+        "Id": 345,
+        "ActionId": 345,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 346,
+        "ActionId": 346,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgCg/Cg4401_11.jpg",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 347,
+        "ActionId": 347,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 348,
+        "ActionId": 348,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 349,
+        "ActionId": 349,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "With her frame upgraded, Luna should command most of the Ascension-Network. So for something to affect her like that..."
+        ]
+    },
+    {
+        "Id": 350,
+        "ActionId": 350,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 351,
+        "ActionId": 351,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgCg/Cg4401_11.jpg",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 352,
+        "ActionId": 352,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 353,
+        "ActionId": 353,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 354,
+        "ActionId": 354,
+        "Type": 302,
+        "Params": [
+            "",
+            "Something might be hidden in the Fog...",
+            355
+        ]
+    },
+    {
+        "Id": 355,
+        "ActionId": 355,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 356,
+        "ActionId": 356,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Alpha",
+            "I'm not sure, but whatever it is, I'll hunt it down—",
+            1
+        ]
+    },
+    {
+        "Id": 357,
+        "ActionId": 357,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 358,
+        "ActionId": 358,
+        "Type": 401,
+        "Params": [
+            2,
+            6734
+        ]
+    },
+    {
+        "Id": 359,
+        "ActionId": 359,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "Chimera",
+            "■▃▂■■▇▃█▂▄▇■▃█—"
+        ]
+    },
+    {
+        "Id": 360,
+        "ActionId": 360,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The Chimera's shriek splits the air, cutting your conversation short."
+        ]
+    },
+    {
+        "Id": 361,
+        "ActionId": 361,
+        "Type": 201,
+        "Params": [
+            1,
+            501611
+        ]
+    },
+    {
+        "Id": 362,
+        "ActionId": 362,
+        "Type": 301,
+        "Params": [
+            1,
+            "Alpha",
+            "...It's here.",
+            1
+        ]
+    },
+    {
+        "Id": 363,
+        "ActionId": 363,
+        "Type": 401,
+        "EndDelay": 200.0,
+        "Params": [
+            2,
+            10022001
+        ]
+    },
+    {
+        "Id": 364,
+        "ActionId": 364,
+        "Type": 203,
+        "Params": [
+            1,
+            0.2,
+            -200
+        ]
+    },
+    {
+        "Id": 365,
+        "ActionId": 365,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 366,
+        "ActionId": 366,
+        "Type": 301,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "测试2"
+            "Alpha grips her blade. Without another word, she charges into the fog."
+        ]
+    },
+    {
+        "Id": 367,
+        "ActionId": 367,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 368,
+        "ActionId": 368,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 369,
+        "ActionId": 369,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1500.jpg"
+        ]
+    },
+    {
+        "Id": 370,
+        "ActionId": 370,
+        "Type": 401,
+        "Params": [
+            1,
+            7153
+        ]
+    },
+    {
+        "Id": 371,
+        "ActionId": 371,
+        "Type": 201,
+        "Params": [
+            2,
+            501588
+        ]
+    },
+    {
+        "Id": 372,
+        "ActionId": 372,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "She gropes through the fog, searching.",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 373,
+        "ActionId": 373,
+        "Type": 307,
+        "Params": [
+            "She knows they are on the deck.",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 374,
+        "ActionId": 374,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "She knows they are on the deck."
+        ]
+    },
+    {
+        "Id": 375,
+        "ActionId": 375,
+        "Type": 307,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 376,
+        "ActionId": 376,
+        "Type": 307,
+        "EndDelay": 600.0,
+        "Params": [
+            "Could it be you?",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 377,
+        "ActionId": 377,
+        "Type": 307,
+        "EndDelay": 500.0,
+        "Params": [
+            "Could it be you? Or...",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 378,
+        "ActionId": 378,
+        "Type": 307,
+        "EndDelay": 500.0,
+        "Params": [
+            "Could it be you? Or... you?",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 379,
+        "ActionId": 379,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "Could it be you? Or... you?",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 380,
+        "ActionId": 380,
+        "Type": 205,
+        "Params": [
+            2,
+            "",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 381,
+        "ActionId": 381,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 382,
+        "ActionId": 382,
+        "Type": 306
+    },
+    {
+        "Id": 383,
+        "ActionId": 383,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 384,
+        "ActionId": 384,
+        "Type": 201,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            501667,
+            5
+        ]
+    },
+    {
+        "Id": 385,
+        "ActionId": 385,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Vanessa",
+            "Open fire!",
+            1
+        ]
+    },
+    {
+        "Id": 386,
+        "ActionId": 386,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 387,
+        "ActionId": 387,
+        "Type": 205,
+        "Params": [
+            2,
+            "",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 388,
+        "ActionId": 388,
+        "Type": 205,
+        "EndDelay": 300.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront147.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 389,
+        "ActionId": 389,
+        "Type": 401,
+        "Params": [
+            2,
+            13015319
+        ]
+    },
+    {
+        "Id": 390,
+        "ActionId": 390,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 391,
+        "ActionId": 391,
+        "Type": 205,
+        "Params": [
+            1005,
+            "",
+            1,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 392,
+        "ActionId": 392,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "Vanessa gives the order, her face grim as the Chimera materializes from the fog. The cannons roar. Deadly fire erupts, and the massive beast barely flinches, turning its head just slightly."
+        ]
+    },
+    {
+        "Id": 393,
+        "ActionId": 393,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 394,
+        "ActionId": 394,
+        "Type": 201,
+        "Params": [
+            1,
+            501645
+        ]
+    },
+    {
+        "Id": 395,
+        "ActionId": 395,
+        "Type": 301,
+        "Params": [
+            1,
+            "Raynor",
+            "...Damn it! Why is it charging straight at us now—",
+            1
+        ]
+    },
+    {
+        "Id": 396,
+        "ActionId": 396,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Raynor",
+            "What is it doing?!",
+            1
+        ]
+    },
+    {
+        "Id": 397,
+        "ActionId": 397,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 398,
+        "ActionId": 398,
+        "Type": 201,
+        "Params": [
+            1,
+            501588,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 399,
+        "ActionId": 399,
+        "Type": 203,
+        "Params": [
+            1,
+            0.3,
+            "",
+            -30
+        ]
+    },
+    {
+        "Id": 400,
+        "ActionId": 400,
+        "Type": 401,
+        "Params": [
+            2,
+            4044
+        ]
+    },
+    {
+        "Id": 401,
+        "ActionId": 401,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 402,
+        "ActionId": 402,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "Horror seizes Raynor's face. He can only watch as the Chimera plucks a struggling student from the deck."
+        ]
+    },
+    {
+        "Id": 403,
+        "ActionId": 403,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 404,
+        "ActionId": 404,
+        "Type": 401,
+        "Params": [
+            2,
+            4408
+        ]
+    },
+    {
+        "Id": 405,
+        "ActionId": 405,
+        "Type": 101,
+        "EndDelay": 50.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory843.jpg",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 406,
+        "ActionId": 406,
+        "Type": 101,
+        "EndDelay": 450.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1500.jpg",
+            "",
+            "",
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 407,
+        "ActionId": 407,
+        "Type": 401,
+        "Params": [
+            2,
+            4408
+        ]
+    },
+    {
+        "Id": 408,
+        "ActionId": 408,
+        "Type": 101,
+        "EndDelay": 50.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory843.jpg",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 409,
+        "ActionId": 409,
+        "Type": 101,
+        "EndDelay": 350.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1500.jpg",
+            "",
+            "",
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 410,
+        "ActionId": 410,
+        "Type": 203,
+        "Params": [
+            1,
+            0.2
+        ]
+    },
+    {
+        "Id": 411,
+        "ActionId": 411,
+        "Type": 401,
+        "Params": [
+            2,
+            4006
+        ]
+    },
+    {
+        "Id": 412,
+        "ActionId": 412,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The dense Punishing Virus devours the protective suit in seconds. Three minutes are all it takes. The student melts into a shapeless, bloody ruin before the beast flings his body aside."
+        ]
+    },
+    {
+        "Id": 413,
+        "ActionId": 413,
+        "Type": 307,
+        "Params": [
+            "Not... you.",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 414,
+        "ActionId": 414,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "Not... you."
+        ]
+    },
+    {
+        "Id": 415,
+        "ActionId": 415,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 416,
+        "ActionId": 416,
+        "Type": 201,
+        "Params": [
+            18,
+            501645
+        ]
+    },
+    {
+        "Id": 417,
+        "ActionId": 417,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 418,
+        "ActionId": 418,
+        "Type": 301,
+        "Params": [
+            1,
+            "Raynor",
+            "STOP!",
+            18
+        ]
+    },
+    {
+        "Id": 419,
+        "ActionId": 419,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 420,
+        "ActionId": 420,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 421,
+        "ActionId": 421,
+        "Type": 501,
+        "EndDelay": 700.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiReturnActivity/FxUiBlindBox.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 422,
+        "ActionId": 422,
+        "Type": 401,
+        "EndDelay": 300.0,
+        "Params": [
+            2,
+            13015319
+        ]
+    },
+    {
+        "Id": 423,
+        "ActionId": 423,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png",
+            0,
+            1,
+            0.1
+        ]
+    },
+    {
+        "Id": 424,
+        "ActionId": 424,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 425,
+        "ActionId": 425,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "A storm of gunfire rakes the Chimera's body. Its blood showers the deck, metal dissolving into pitted ruin wherever it lands."
+        ]
+    },
+    {
+        "Id": 426,
+        "ActionId": 426,
+        "Type": 203,
+        "EndDelay": 350.0,
+        "Params": [
+            1,
+            0.3,
+            "",
+            -30
+        ]
+    },
+    {
+        "Id": 427,
+        "ActionId": 427,
+        "Type": 401,
+        "Params": [
+            2,
+            4044
+        ]
+    },
+    {
+        "Id": 428,
+        "ActionId": 428,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The beast doesn't even flinch. Unhurried, unfeeling, it stoops and seizes another human."
+        ]
+    },
+    {
+        "Id": 429,
+        "ActionId": 429,
+        "Type": 307,
+        "Params": [
+            "Not you... either.",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 430,
+        "ActionId": 430,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "Not you... either."
+        ]
+    },
+    {
+        "Id": 431,
+        "ActionId": 431,
+        "Type": 307,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 432,
+        "ActionId": 432,
+        "Type": 307,
+        "Params": [
+            "Then... all of you...",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 433,
+        "ActionId": 433,
+        "Type": 309,
+        "IsBlock": 1,
+        "EndDelay": 200.0,
+        "Params": [
+            "",
+            "Then... all of you..."
+        ]
+    },
+    {
+        "Id": 434,
+        "ActionId": 434,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 435,
+        "ActionId": 435,
+        "Type": 306
+    },
+    {
+        "Id": 436,
+        "ActionId": 436,
+        "Type": 401,
+        "Params": [
+            2,
+            6734
+        ]
+    },
+    {
+        "Id": 437,
+        "ActionId": 437,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 438,
+        "ActionId": 438,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "Chimera",
+            "■▃▂■■▇▃█▂▄▇■▃█—",
+            1
+        ]
+    },
+    {
+        "Id": 439,
+        "ActionId": 439,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 440,
+        "ActionId": 440,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 441,
+        "ActionId": 441,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 442,
+        "ActionId": 442,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Power erupts from her, uncontrolled. With it, the starship groans and shudders."
+        ]
+    },
+    {
+        "Id": 443,
+        "ActionId": 443,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "And she sees. She sees—"
+        ]
+    },
+    {
+        "Id": 444,
+        "ActionId": 444,
+        "Type": 201,
+        "Params": [
+            1,
+            501611,
+            "",
+            "",
+            -50,
+            -100
+        ]
+    },
+    {
+        "Id": 445,
+        "ActionId": 445,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Alpha stands on the deck, her gaze cold as she looks over."
+        ]
+    },
+    {
+        "Id": 446,
+        "ActionId": 446,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Alpha",
+            "Guard the comms tower. I'll handle this.",
+            1
+        ]
+    },
+    {
+        "Id": 447,
+        "ActionId": 447,
+        "Type": 401,
+        "Params": [
+            2,
+            4812
+        ]
+    },
+    {
+        "Id": 448,
+        "ActionId": 448,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            1,
+            0.2,
+            "",
+            50,
+            -100
+        ]
+    },
+    {
+        "Id": 449,
+        "ActionId": 449,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            1,
+            0.3,
+            -300,
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 450,
+        "ActionId": 450,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 451,
+        "ActionId": 451,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "She leaps down from the deck, chasing the Chimera as it retreats into the fog."
+        ]
+    },
+    {
+        "Id": 452,
+        "ActionId": 452,
+        "Type": 201,
+        "Params": [
+            1,
+            501645
+        ]
+    },
+    {
+        "Id": 453,
+        "ActionId": 453,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "Raynor",
+            "...Dammit, a rift!",
+            1
+        ]
+    },
+    {
+        "Id": 454,
+        "ActionId": 454,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 455,
+        "ActionId": 455,
+        "Type": 401,
+        "Params": [
+            2,
+            6734
+        ]
+    },
+    {
+        "Id": 456,
+        "ActionId": 456,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Every alarm is swallowed by the Chimera's shriek. Alongside the comms tower, a colossal rift splits the air, slowly yawning open."
+        ]
+    },
+    {
+        "Id": 457,
+        "ActionId": 457,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "It gapes like the maw of some ravenous beast, waiting to feast on its next meal."
+        ]
+    },
+    {
+        "Id": 458,
+        "ActionId": 458,
+        "Type": 201,
+        "Params": [
+            1,
+            501667,
+            4
+        ]
+    },
+    {
+        "Id": 459,
+        "ActionId": 459,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Vanessa",
+            "Valen! Do you copy?!",
+            1
+        ]
+    },
+    {
+        "Id": 460,
+        "ActionId": 460,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 461,
+        "ActionId": 461,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 462,
+        "ActionId": 462,
+        "Type": 401,
+        "Params": [
+            2,
+            4331,
+            1
+        ]
+    },
+    {
+        "Id": 463,
+        "ActionId": 463,
+        "Type": 104,
+        "EndDelay": 550.0,
+        "Params": [
+            "0|0|-100",
+            0.5
+        ]
+    },
+    {
+        "Id": 464,
+        "ActionId": 464,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Vanessa doesn't hesitate. Heavy weapon in hand, she sprints for the base of the comms tower—"
+        ]
+    },
+    {
+        "Id": 465,
+        "ActionId": 465,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab"
+        ]
+    },
+    {
+        "Id": 466,
+        "ActionId": 466,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 467,
+        "ActionId": 467,
+        "Type": 401,
+        "EndDelay": 600.0,
+        "Params": [
+            2,
+            1099
+        ]
+    },
+    {
+        "Id": 468,
+        "ActionId": 468,
+        "Type": 509,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1503.jpg",
+            1
+        ]
+    },
+    {
+        "Id": 469,
+        "ActionId": 469,
+        "Type": 201,
+        "Params": [
+            11,
+            501646,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 470,
+        "ActionId": 470,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            2,
+            11
+        ]
+    },
+    {
+        "Id": 471,
+        "ActionId": 471,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "The terminal coughs back harsh static."
+        ]
+    },
+    {
+        "Id": 472,
+        "ActionId": 472,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "Well, well... They really don't want us making it back, do they... Haha...",
+            11
+        ]
+    },
+    {
+        "Id": 473,
+        "ActionId": 473,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Vanessa pours every ounce of strength into her sprint. Above her, at the top of the comms tower, a small figure leans perilously over the edge."
+        ]
+    },
+    {
+        "Id": 474,
+        "ActionId": 474,
+        "Type": 201,
+        "Params": [
+            1,
+            501667,
+            5,
+            500
+        ]
+    },
+    {
+        "Id": 475,
+        "ActionId": 475,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "Vanessa",
+            "...Valen! What are you doing up there?!",
+            1
+        ]
+    },
+    {
+        "Id": 476,
+        "ActionId": 476,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "Sharing the good news, of course.",
+            11
+        ]
+    },
+    {
+        "Id": 477,
+        "ActionId": 477,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 478,
+        "ActionId": 478,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A low chuckle escapes Valen. He's slumped against the window frame, unable to stand, one finger still holding down the comm terminal's button."
+        ]
+    },
+    {
+        "Id": 479,
+        "ActionId": 479,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The scout team's two other members are here with him as well, or what remains of them."
+        ]
+    },
+    {
+        "Id": 480,
+        "ActionId": 480,
+        "Type": 306
+    },
+    {
+        "Id": 481,
+        "ActionId": 481,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "Our distress signal got a response.",
+            11
+        ]
+    },
+    {
+        "Id": 482,
+        "ActionId": 482,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "Vanessa",
+            "!!!",
+            1
+        ]
+    },
+    {
+        "Id": 483,
+        "ActionId": 483,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "Toby went out to install the signal booster... He fell. All I could grab was his left arm.",
+            11
+        ]
+    },
+    {
+        "Id": 484,
+        "ActionId": 484,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "El and I stayed to hold the tower. Enemies broke through... we were out of ammo.",
+            11
+        ]
+    },
+    {
+        "Id": 485,
+        "ActionId": 485,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "To keep the equipment safe, El took a micro explosive and sealed herself outside the hatch with them.",
+            11
+        ]
+    },
+    {
+        "Id": 486,
+        "ActionId": 486,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "All I have left of her... is her terminal.",
+            11
+        ]
+    },
+    {
+        "Id": 487,
+        "ActionId": 487,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "But... we pulled it off. Scout Team 5... mission accomplished.",
+            11
+        ]
+    },
+    {
+        "Id": 488,
+        "ActionId": 488,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "He drags a hand across his bloodied mask. The smear clears, revealing a satisfied smile."
+        ]
+    },
+    {
+        "Id": 489,
+        "ActionId": 489,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "We've got a signal from Babylonia.",
+            11
+        ]
+    },
+    {
+        "Id": 490,
+        "ActionId": 490,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Vanessa",
+            "Valen!!",
+            1
+        ]
+    },
+    {
+        "Id": 491,
+        "ActionId": 491,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 492,
+        "ActionId": 492,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
+            11
+        ]
+    },
+    {
+        "Id": 493,
+        "ActionId": 493,
+        "Type": 202,
+        "Params": [
+            11,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 494,
+        "ActionId": 494,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1503.jpg"
+        ]
+    },
+    {
+        "Id": 495,
+        "ActionId": 495,
+        "Type": 510,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 496,
+        "ActionId": 496,
+        "Type": 502,
+        "EndDelay": 300.0,
+        "Params": [
+            "AniZhuanchangEnd"
+        ]
+    },
+    {
+        "Id": 497,
+        "ActionId": 497,
+        "Type": 401,
+        "Params": [
+            2,
+            2560
+        ]
+    },
+    {
+        "Id": 498,
+        "ActionId": 498,
+        "Type": 205,
+        "EndDelay": 450.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1380.jpg",
+            0,
+            0.8,
+            0.4
+        ]
+    },
+    {
+        "Id": 499,
+        "ActionId": 499,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1380.jpg",
+            0.8,
+            0,
+            0.4
+        ]
+    },
+    {
+        "Id": 500,
+        "ActionId": 500,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "With Valen's movement, the tower's long-dark signal light flickers awake. That thin blue glow burns impossibly bright against the ravenous dark rift—"
+        ]
+    },
+    {
+        "Id": 501,
+        "ActionId": 501,
+        "Type": 201,
+        "Params": [
+            1,
+            501646,
+            4
+        ]
+    },
+    {
+        "Id": 502,
+        "ActionId": 502,
+        "Type": 301,
+        "Params": [
+            1,
+            "Valen",
+            "Vanessa. Listen.",
+            1
+        ]
+    },
+    {
+        "Id": 503,
+        "ActionId": 503,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "I'm routing Babylonia's channel straight to your terminal.",
+            1
+        ]
+    },
+    {
+        "Id": 504,
+        "ActionId": 504,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Valen",
+            "The tower has to hold until we get the full transmission from Babylonia, and it will hold.",
+            1
+        ]
+    },
+    {
+        "Id": 505,
+        "ActionId": 505,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 506,
+        "ActionId": 506,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 507,
+        "ActionId": 507,
+        "Type": 205,
+        "EndDelay": 550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1500.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 508,
+        "ActionId": 508,
+        "Type": 401,
+        "Params": [
+            2,
+            844090
+        ]
+    },
+    {
+        "Id": 509,
+        "ActionId": 509,
+        "Type": 201,
+        "Params": [
+            1,
+            500928
+        ]
+    },
+    {
+        "Id": 510,
+        "ActionId": 510,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "Beneath the tower, the first enemy claws its way out of the rift, limbs twisted and grotesque."
+        ]
+    },
+    {
+        "Id": 511,
+        "ActionId": 511,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 512,
+        "ActionId": 512,
+        "Type": 306
+    },
+    {
+        "Id": 513,
+        "ActionId": 513,
+        "Type": 205,
+        "EndDelay": 500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1500.jpg",
+            1,
+            0,
+            0.5
+        ]
+    },
+    {
+        "Id": 514,
+        "ActionId": 514,
+        "Type": 201,
+        "Params": [
+            1,
+            501646,
+            4,
+            "",
+            -50,
+            -100
+        ]
+    },
+    {
+        "Id": 515,
+        "ActionId": 515,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Valen",
+            "Vanessa.",
+            1
+        ]
+    },
+    {
+        "Id": 516,
+        "ActionId": 516,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "Do me a favor... Tell Elianna I said hi.",
+            1
+        ]
+    },
+    {
+        "Id": 517,
+        "ActionId": 517,
+        "Type": 401,
+        "Params": [
+            2,
+            4803
+        ]
+    },
+    {
+        "Id": 518,
+        "ActionId": 518,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "He hits the detonator."
+        ]
+    },
+    {
+        "Id": 519,
+        "ActionId": 519,
+        "Type": 301,
+        "Params": [
+            "",
+            "Valen",
+            "Tell her... I'll be waiting at the end of the stars.",
+            1
+        ]
+    },
+    {
+        "Id": 520,
+        "ActionId": 520,
+        "Type": 203,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            0.16,
+            "",
+            10,
+            -100
+        ]
+    },
+    {
+        "Id": 521,
+        "ActionId": 521,
+        "Type": 401,
+        "Params": [
+            2,
+            6310
+        ]
+    },
+    {
+        "Id": 522,
+        "ActionId": 522,
+        "Type": 203,
+        "Params": [
+            1,
+            0.2,
+            "",
+            -150,
+            -150
+        ]
+    },
+    {
+        "Id": 523,
+        "ActionId": 523,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 524,
+        "ActionId": 524,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiSuperTowerShopRain/FxUiSuperTowerShopRain.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 525,
+        "ActionId": 525,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "He leaps into the open air."
+        ]
+    },
+    {
+        "Id": 526,
+        "ActionId": 526,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 527,
+        "ActionId": 527,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiSuperTowerShopRain/FxUiSuperTowerShopRain.prefab"
+        ]
+    },
+    {
+        "Id": 528,
+        "ActionId": 528,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory295.png"
+        ]
+    },
+    {
+        "Id": 529,
+        "ActionId": 529,
+        "Type": 401,
+        "Params": [
+            2,
+            4304
+        ]
+    },
+    {
+        "Id": 530,
+        "ActionId": 530,
+        "Type": 301,
+        "IsEnd": 1,
+        "BeginAnim": "RImgBg1Shake",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "BOOM!"
         ]
     }
 ]

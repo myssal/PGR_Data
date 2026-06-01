@@ -1090,11 +1090,6 @@
         "Value": "share"
     },
     {
-        "Key": "DrawCompleteCueId",
-        "Type": "int",
-        "Value": 1
-    },
-    {
         "Key": "DrawDefaultUpImg",
         "Type": "string",
         "Value": "Assets/Product/Texture/Image/IconTools/leijichongzhi05.png"
@@ -2763,6 +2758,11 @@
         "Key": "PurchaseCardId",
         "Type": "int",
         "Value": 10000
+    },
+    {
+        "Key": "PurchaseYKFirstGetRetroactiveCardGuide",
+        "Type": "int",
+        "Value": 64721
     },
     {
         "Key": "PurChaseGiftTips",
@@ -4847,7 +4847,7 @@
     {
         "Key": "ActivityLinkButtonName",
         "Type": "string",
-        "Value": "External Link"
+        "Value": "Links"
     },
     {
         "Key": "BfrtShowHelpTip01",
@@ -5403,5 +5403,20 @@
         "Key": "PurchaseYKPopupWhenRemainDays",
         "Type": "int",
         "Value": 3
+    },
+    {
+        "Key": "PassportModelAdapt",
+        "Type": "string",
+        "Value": "1.44|1.8|2.3"
+    },
+    {
+        "Key": "BossSingleChallengeFirstOpenUnlockAnimationDelay",
+        "Type": "int",
+        "Value": 1600
+    },
+    {
+        "Key": "PassportPointItemId",
+        "Type": "int",
+        "Value": 60
     }
 ]

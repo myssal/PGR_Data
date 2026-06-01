@@ -47,8 +47,8 @@
             "Guaranteed 6★ Weapon every 30 attempts"
         ],
         "BaseRuleTitles": [
-            "10 Attempts 5★ Guaranteed",
-            "30 Attempts 6★ Guaranteed"
+            "Guaranteed 5★ in 10 Attempts",
+            "Guaranteed 6★ in 30 Attempts"
         ],
         "BaseRules": [
             "Guaranteed to receive 5★ or above Weapon for every 10 research attempts.",
@@ -68,12 +68,14 @@
         "BaseRuleTitles": [
             "Custom Set",
             "Target Mode Rules",
+            "Calibration",
             "Phylotree Nexus Weapon Acquisition Rules"
         ],
         "BaseRules": [
             "Choose a Weapon Set for your research. The chosen set will get an increased chance to receive.",
             "In Target Mode, the chance of chosen Weapon set will increase greatly.",
-            "限定武器仅在源树脉络研发开启期间开放获取，指挥官无法从其他途径获取相关限定内容。【无光暮途】以及【空境悬海的涟漪】卡池将视为源树脉络卡池。"
+            "The next 6★ Weapon pulled is guaranteed to be your target. (The Calibration Guarantee will be inherited by a card pool with the same name.)",
+            "The limited weapon is only available during the Phylotree Nexus Research period. Commandants will not be able to obtain related limited content through other means. The [Lightless Dusk] and [Ripples of the Aloft Sea] pools will be considered Phylotree Nexus pools."
         ],
         "BottomText": "Guaranteed 6★",
         "IsShowFilter": 1,
@@ -162,7 +164,10 @@
         "DrawRules": [
             "<color=#ff5f2d>S-Rank Character</color>",
             "Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>"
-        ]
+        ],
+        "IsCharacterImage": 1,
+        "DrawName": "Phylotree Nexus",
+        "DrawGroupName": "NORMAL"
     },
     {
         "Id": 12,
@@ -198,7 +203,8 @@
             "Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>"
         ],
         "IsCharacterImage": 1,
-        "DrawName": "Target Arrival"
+        "DrawName": "Arrival Target",
+        "DrawGroupName": "NORMAL"
     },
     {
         "Id": 13,
@@ -242,7 +248,8 @@
             "Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>"
         ],
         "IsCharacterImage": 1,
-        "DrawName": "Fate Arrival Target"
+        "DrawName": "Fate Arrival Target",
+        "DrawGroupName": "FATE"
     },
     {
         "Id": 14,
@@ -314,7 +321,10 @@
         "DrawRules": [
             "<color=#ff5f2d>S-Rank Character</color>",
             "Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>"
-        ]
+        ],
+        "IsCharacterImage": 1,
+        "DrawName": "Destiny Phylotree Nexus",
+        "DrawGroupName": "FATE"
     },
     {
         "Id": 16,
@@ -536,7 +546,7 @@
             "Select 1 CUB to pull. Selected target gains increased chances.",
             "Select a CUB in Target Mode for greatly increased chances.",
             "In the CUB Target Pool, the guaranteed attempt of pulling A-Rank and S-Rank CUBs will not be affected when you change your targeted CUB, which means the guarantee progress is inherited.",
-            "The limited CUB is only available during the Phylotree Nexus banner period. Commandants will not be able to obtain related limited content through other means. The [Allos] and [Levvi] banners will be considered Phylotree Nexus banners."
+            "The limited CUB is only available during the Phylotree Nexus pool period. Commandants will not be able to obtain related limited content through other means. The [Allos] and [Levvi] pools will be considered Phylotree Nexus pools."
         ],
         "EventRuleTitles": [
             "Rate in S-Rank pool:"
@@ -675,8 +685,8 @@
             "Guaranteed to receive 6★ Weapon for every 30 research attempts. [★Rock Cannon] has a 80% rate in 6★ pool."
         ],
         "BaseRuleTitles": [
-            "10 Attempts 5★ Guaranteed",
-            "30 Attempts 6★ Guaranteed",
+            "Guaranteed 5★ in 10 Attempts",
+            "Guaranteed 6★ in 30 Attempts",
             "Research Independently Guaranteed"
         ],
         "BaseRules": [
