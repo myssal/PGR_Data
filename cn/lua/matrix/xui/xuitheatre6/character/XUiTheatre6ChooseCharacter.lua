@@ -103,6 +103,7 @@ end
 function XUiTheatre6ChooseCharacter:OnDestroy()
     self._Scene:DestroyHuanRenFx()
     self._Scene:BackToMain()
+    self._Scene.CurSelectIndex = self._CurRoleIndex --为了回到主界面时NoChoose动画
     --从剧情回顾出去看pv再回来 这时UiTheatre6Main已经没了 再次从剧情回顾出去看pv时 就没法通过 UiTheatre6Main的OnDestroy来销毁场景了
     --PS：另一个方法是XLuaScene里不要引用Control，在Control的OnRelease里自动销毁XLuaScene
     if self._JumpToArchiveStory then
@@ -186,6 +187,7 @@ end
 
 function XUiTheatre6ChooseCharacter:UpdateFashionId()
     self._CurFashionId = self:ApplyStatus(FuncName.GetFashionId, self._CurRole)
+    self:UpdateBuyFashion()
 end
 
 function XUiTheatre6ChooseCharacter:UpdateBuyFashion()

@@ -57,16 +57,20 @@ function XUiPassport:OnStart(params)
         end
 
         if params.OpenPassportCard then
-            XLuaUiManager.Open("UiPassportCard", handler(self, self.Refresh), self)
+            self:OnBtnBuyPassportClick()
         end
     end
 
     self:CheckAndGetSupplyReward()
     self:RefreshCoating()
 
+    XLuaUiManager.SetMask(true)
+
     self.AnimationSchedule = XScheduleManager.ScheduleNextFrame(function()
         XScheduleManager.UnSchedule(self.AnimationSchedule)
         self.AnimationSchedule = nil
+
+        XLuaUiManager.SetMask(false)
 
         if not params or not params.WithStartEnableAnimation then
             self:PlayAnimationWithMask("NoAnimationEnable")
@@ -182,7 +186,11 @@ end
 
 function XUiPassport:InitPanel()
     ---@type XUiPassportPanel
-    self.PassportPanel = XUiPassportPanel.New(self.PanelPassport, self)
+    self.PassportPanel = XUiPassportPanel.New(
+        self.PanelPassport,
+        self,
+        handler(self, self.UpdateBtnTongBlack))
+
     ---@type XUiPassportPanelTask
     self.TaskPanel = XUiPassportPanelTask.New(self.PanelTaskMain, self, self.Model3D)
 
@@ -345,7 +353,7 @@ function XUiPassport:OnBtnBuyLevelClick()
         XUiManager.TipText("PassportBuyLevelMaxDesc")
         return
     end
-    XLuaUiManager.Open("UiPassportUpLevel")
+    XLuaUiManager.Open("UiPassportUpLevel", handler(self, self.UpdateBtnTongBlack))
 end
 
 --一键领取/完成，根据当前页签切换行为
@@ -359,7 +367,10 @@ end
 
 --购买通行证（统一入口）
 function XUiPassport:OnBtnBuyPassportClick()
-    XLuaUiManager.Open("UiPassportCard", handler(self, self.Refresh), self)
+    XLuaUiManager.Open(
+        "UiPassportCard",
+        handler(self, self.Refresh),
+        self)
 end
 
 --打开兑换商店

@@ -26,21 +26,23 @@ end
 function XUiBigWorldHud:OnStart()
     self:InitView()
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_UI_HUD_ACTIVE, self.OnSetActive, self)
+    self:AddEventHandler()
 end
 
 function XUiBigWorldHud:OnEnable()
+    self._IsShowUi = true
     self:RefreshBtnQuit()
     self:RefreshRedPoint()
     self:RefreshShield()
-    self:AddEventHandler()
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_UI_HUD_ENABLE)
 end
 
 function XUiBigWorldHud:OnDisable()
-    self:RemoveEventHandler()
+    self._IsShowUi = false
 end
 
 function XUiBigWorldHud:OnDestroy()
+    self:RemoveEventHandler()
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_UI_HUD_ACTIVE, self.OnSetActive, self)
 end
 
@@ -445,14 +447,22 @@ end
 function XUiBigWorldHud:OnShieldChange()
     self:RefreshFunction()
     if XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Task) then
-        self.PanelQuest:Close()
+        if self._IsShowUi then
+            self.PanelQuest:Close()
+        end
     else
-        self.PanelQuest:Open()
+        if self._IsShowUi then
+            self.PanelQuest:Open()
+        end
     end
     if XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Map) then
-        self.LittleMap:Close()
+        if self._IsShowUi then
+            self.LittleMap:Close()
+        end
     else
-        self.LittleMap:Open()
+        if self._IsShowUi then
+            self.LittleMap:Open()
+        end
     end
     if XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Team) then
         self.BtnTeam.gameObject:SetActiveEx(false)

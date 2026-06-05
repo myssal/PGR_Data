@@ -5,8 +5,10 @@ local XUiTheatre6RoomEitheror = XLuaUiManager.Register(XLuaUi, "UiTheatre6RoomEi
 local DragAction = XEnumConst.Theatre6.DragAction
 local Direction = XEnumConst.Theatre6.Direction
 local EventRewardType = XEnumConst.Theatre6.EventRewardType
+local CsLog = CS.XLog
 
 function XUiTheatre6RoomEitheror:OnAwake()
+    self._HideMask = handler(self, self.HideMask)
     ---@type table<number, XUiGridTheatre6TaskDemand[]>
     self._TaskDemandGrids = {}
     ---@type table<number,XUiGridTheatre6TaskDetail>
@@ -26,6 +28,7 @@ function XUiTheatre6RoomEitheror:OnStart()
     self._ModelData = self._Control:GetCurPlayModeData()
     self._RoomData = self._Control:GetCurRoomData()
 
+    self:HideMask()
     self:CheckFightReconnect()
     self:InitBackgroup()
     self:InitDrag()
@@ -56,7 +59,9 @@ end
 
 function XUiTheatre6RoomEitheror:OnDisable()
     self:StopMoveBackTimer()
+    self:StopAutoCloseMaskTimer()
     self:StopDragGuideAnim()
+    self:HideRewardSkillGrid()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.ShowRoleInfo, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SAN_CHANGE, self.OnSanChange, self)
 end
@@ -268,10 +273,9 @@ function XUiTheatre6RoomEitheror:ShowEvent()
 end
 
 function XUiTheatre6RoomEitheror:HideEventReward(direction)
-    if not self._IsShowEventReward then
+    if self._IsShowEventReward then
         return
     end
-    self._IsShowEventReward = false
     if direction == Direction.Left then
         self.PanelRewardL.gameObject:SetActiveEx(false)
     elseif direction == Direction.Right then
@@ -305,6 +309,7 @@ function XUiTheatre6RoomEitheror:ShowEventReward(direction)
     self:ShowTaskRewardChange(direction)
     
     local node = isLeft and self.GridRewardL or self.GridRewardR
+    ---@type XUiGridTheatre6Eitheror[]
     self.RewardGrids = self.RewardGrids or {}
     XUiHelper.RefreshCustomizedList(node.parent, node, count, function(i, go)
         local grid = self.RewardGrids[go]
@@ -334,22 +339,22 @@ function XUiTheatre6RoomEitheror:ShowTaskRewardChange(direction)
         for j, grid in pairs(grids) do
             local taskConfig = self._Control:GetTaskConfig(taskData.TaskId)
             local conditionId = taskConfig.ConditionId
+            local isShowHighLight = false
             if XTool.IsNumberValid(conditionId) then
                 --条件任务
                 local condConfig = self._Control:GetConditionConfig(conditionId)
                 if condConfig.Type == XEnumConst.Theatre6.TaskConditionType.Goods then
                     local needGoodsId = condConfig.Params[1]
-                    if needGoodsId and not XTool.IsTableEmpty(goodsIds) and (needGoodsId == 0 or goodsIds[needGoodsId]) then
-                        grid:ShowHighLight(true)
-                    end
+                    isShowHighLight = needGoodsId and not XTool.IsTableEmpty(goodsIds) and (needGoodsId == 0 or goodsIds[needGoodsId])
                 end
             else
                 --材料任务
                 local goodsSlots = taskData and taskData.GoodsSlots
                 local goodsSlot = goodsSlots and goodsSlots[j]
                 local goodsId = goodsSlot and goodsSlot.GoodsId
-                grid:ShowHighLight(goodsId and goodsIds[goodsId])
+                isShowHighLight = goodsId and goodsIds[goodsId]
             end
+            grid:ShowHighLight(isShowHighLight)
         end
     end
 end
@@ -405,6 +410,7 @@ function XUiTheatre6RoomEitheror:OnCardDragging(posX, _)
 
     self.UiPanelCardPos:SetAnchoredPositionX(distance)
     self._DragDistance = distance
+    self._IsShowEventReward = false
 
     self._DragRotation = -self._MaxDragRotation * distance / self._MaxDragDistance
     self.UiPanelCardPos:SetEulerRotation(0, self._DragRotation, 0)
@@ -594,13 +600,13 @@ end
 
 ---@param animTran UnityEngine.RectTransform
 function XUiTheatre6RoomEitheror:PlayTimelineAnimation(animTran)
-    XLuaUiManager.SetMask(true)
+    CsLog.Debug(string.format("Theatre6 Mask Anim Play:%s", animTran.name))
+    self:ShowMask()
     animTran.gameObject:SetActiveEx(true)
     animTran:PlayTimelineAnimation(function()
         animTran.gameObject:SetActiveEx(false)
-        XLuaUiManager.SetMask(false)
+        self:HideMask()
         self:TryOpenSellSkillPanel()
-
     end)
 end
 
@@ -612,25 +618,25 @@ end
 
 function XUiTheatre6RoomEitheror:PlayLeftCardEnable()
     self:StopAnimation("PanelLeftDisable")
-    self:PlayAnimation("PanelLeftEnable")
+    self:PlayAnimationWithMaskAuto("PanelLeftEnable")
     self:ShowEventReward(Direction.Left)
 end
 
 function XUiTheatre6RoomEitheror:PlayLeftCardDisable()
     self:StopAnimation("PanelLeftEnable")
-    self:PlayAnimationWithMask("PanelLeftDisable")
+    self:PlayAnimationWithMaskAuto("PanelLeftDisable")
     self:HideEventReward(Direction.Left)
 end
 
 function XUiTheatre6RoomEitheror:PlayRightCardEnable()
     self:StopAnimation("PanelRightDisable")
-    self:PlayAnimation("PanelRightEnable")
+    self:PlayAnimationWithMaskAuto("PanelRightEnable")
     self:ShowEventReward(Direction.Right)
 end
 
 function XUiTheatre6RoomEitheror:PlayRightCardDisable()
     self:StopAnimation("PanelRightEnable")
-    self:PlayAnimationWithMask("PanelRightDisable")
+    self:PlayAnimationWithMaskAuto("PanelRightDisable")
     self:HideEventReward(Direction.Right)
 end
 
@@ -651,9 +657,9 @@ end
 ---san值变化时播放对应动画
 function XUiTheatre6RoomEitheror:OnSanChange(sanChange)
     if sanChange > 0 then
-        self:PlayAnimation("HpUpEnable")
+        self:PlayAnimation("HpUpEnable", nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
     elseif sanChange < 0 then
-        self:PlayAnimation("HpDownEnable")
+        self:PlayAnimation("HpDownEnable", nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
     end
 end
 
@@ -730,5 +736,56 @@ function XUiTheatre6RoomEitheror:CheckSanGuide(guideId, effectId)
     XDataCenter.GuideManager.PlayGuide(guideId)
     return true
 end
+
+function XUiTheatre6RoomEitheror:HideRewardSkillGrid()
+    if XTool.IsTableEmpty(self.RewardGrids) then
+        return
+    end
+    for _, grid in ipairs(self.RewardGrids) do
+        grid:Close()
+    end
+end
+
+--region Mask
+
+--先锋出现偶现无法点击问题/卡死，暂时定位不到问题（日志无相关报错信息）
+--增加保底逻辑：二择不使用通用的Mask功能，改为在界面上放一个Mask对象，在需要的时候显示，并在3秒后自动隐藏
+--此Mask对象不会挡住返回按钮，玩家可以通过返回按钮退出界面，避免卡死
+function XUiTheatre6RoomEitheror:ShowMask()
+    if not self.Mask then
+        return
+    end
+    self:StopAutoCloseMaskTimer()
+    self.Mask.gameObject:SetActiveEx(true)
+    self._AutoCloseMaskTimerId = XScheduleManager.ScheduleOnce(self._HideMask, 3000)
+    CsLog.Debug(string.format("Theatre6 Mask Active True"))
+end
+
+function XUiTheatre6RoomEitheror:PlayAnimationWithMaskAuto(animName)
+    self:PlayAnimation(animName, function()
+        self:HideMask()
+    end, function()
+        CsLog.Debug(string.format("Theatre6 Mask Anim Play:%s", animName))
+        self:ShowMask()
+    end)
+end
+
+function XUiTheatre6RoomEitheror:HideMask()
+    if not self.Mask then
+        return
+    end
+    self:StopAutoCloseMaskTimer()
+    self.Mask.gameObject:SetActiveEx(false)
+    CsLog.Debug(string.format("Theatre6 Mask Active False"))
+end
+
+function XUiTheatre6RoomEitheror:StopAutoCloseMaskTimer()
+    if self._AutoCloseMaskTimerId then
+        XScheduleManager.UnSchedule(self._AutoCloseMaskTimerId)
+        self._AutoCloseMaskTimerId = nil
+    end
+end
+
+--endregion
 
 return XUiTheatre6RoomEitheror

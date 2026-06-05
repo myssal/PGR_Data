@@ -216,6 +216,7 @@ function XUiGachaLiv4P5Main:OnNotify(evt, ...)
 
         if not self._CG:IsLanguagePreparing() then
             self._CG:OnCGPlay()
+            self._Volume:PlayStart()
         end
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING then
         local argUguiVideo = arg[1]
@@ -335,7 +336,6 @@ function XUiGachaLiv4P5Main:PlayVideoEnableAnim(videoId)
         self._CG:Open()
         self.SafeAreaContentPane.blocksRaycasts = false
         self._SwitchableScene:OnVideoStart()
-        self._Volume:PlayStart()
 
         self._CG:PlayCG(videoId)
 

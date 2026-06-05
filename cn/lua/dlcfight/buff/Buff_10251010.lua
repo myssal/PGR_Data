@@ -7,7 +7,7 @@ local XBuffScript10251010 = XDlcScriptManager.RegBuffScript(10251010, "XBuffScri
 function XBuffScript10251010:ScriptInit(isGainControl) --初始化
     self._currentSkillHasHitFly = false --注册主动技能击飞检查开关标记
     self._canBurnSainBuffid = 10251104 --注册引燃标记buff
-    self:LogError("....【主动技能1】初始化完成")
+    -- self:LogError("....【主动技能1】初始化完成")
     self._HitFlyController = self:GetNpc():GetHitFlyController()
     self._stackbuff = 1025104
     if self._lv == 1 then

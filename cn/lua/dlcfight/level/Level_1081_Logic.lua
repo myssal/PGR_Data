@@ -95,6 +95,7 @@ do
     function Settle:Start()
         local levelId = self._owner._levelId
         self._proxy:Theatre6CountDownMessageTip(3) --倒计时3秒
+        XLog.Debug("成功开启倒计时")
         self._proxy:Theatre6UIShowAnimation(true)  --开启角色战斗UI
         self._proxy:SetCameraOpEnable(false)       --禁止移动镜头
         if levelId == 1082 then
@@ -106,7 +107,7 @@ do
         end
     end
 
-    Settle.EndTime = 5       --Settle阶段结束时间点
+    Settle.EndTime = 4.75       --Settle阶段结束时间点
     Settle._settleTime = 1   --倒计时阶段开始时间
     Settle._settleCamera = 1 --倒计时阶段镜头序号
     function Settle:Update(dt)
@@ -139,7 +140,7 @@ do
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
-            elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
+            elseif levelTime >= self._settleTime + 3.75 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
                 self._settleCamera = 4
             end
@@ -171,7 +172,7 @@ do
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
-            elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
+            elseif levelTime >= self._settleTime + 3.75 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
                 self._settleCamera = 4
             end
@@ -198,7 +199,7 @@ do
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
-            elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
+            elseif levelTime >= self._settleTime + 3.75 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
                 self._settleCamera = 4
             end
@@ -287,11 +288,11 @@ do
         self._owner:SendWrestleStartEvent()
         self:RefreshForceContinueTime()
         if self._owner._levelId == 1084 or self._owner._levelId == 1087 then
-            XLog.Debug("临时条件正确")
+            -- XLog.Debug("临时条件正确")
             for i = 2, 9 do
                 self._proxy:SetObstacleActive(i, false) --关闭zone障碍
             end
-            XLog.Debug("空气墙隐藏")
+            -- XLog.Debug("空气墙隐藏")
         end
         --进入拼刀时屏蔽空气墙，防止镜头碰撞，临时DEBUG办法
     end
@@ -322,7 +323,7 @@ do
                 local positon2 = self._spawnPoint[3]
                 self._fighter1:OnSecondWrestleReset(fighter1, fighter2, positon1, positon2)
                 self._fighter2:OnSecondWrestleReset(fighter1, fighter2, positon1, positon2)
-                XLog.Warning("二次拼刀退出动作完成")
+                -- XLog.Warning("二次拼刀退出动作完成")
                 -----------------上述动作无法退会到拼刀起始点，有bug，临时处理如下----------------------
                 -- self._proxy:AddTimerTask(0.3, function()
                 --     self._proxy:SetNpcPosition(fighter1, positon1)
@@ -370,13 +371,13 @@ do
         local PindaoShake = 10250205
 
         proxy:ApplyMagic(robotUUID, robotUUID, Pindao_Start_camera) --目前有bug，用不了
-        XLog.Warning("开始拼刀镜头1" .. Pindao_Start_camera)
+        -- XLog.Warning("开始拼刀镜头1" .. Pindao_Start_camera)
 
         if fighter1 and fighter1._Pindao_Start_2L_camera then
             local Pindao_Start_2L_camera = fighter1._Pindao_Start_2L_camera
             proxy:AddTimerTask(0.53, function()
                 proxy:ApplyMagic(robotUUID, robotUUID, Pindao_Start_2L_camera)
-                XLog.Warning("开始拼刀镜头2" .. Pindao_Start_2L_camera)
+                -- XLog.Warning("开始拼刀镜头2" .. Pindao_Start_2L_camera)
             end)
         end
 
@@ -384,14 +385,14 @@ do
             local Pindao_Start_2R_camera = fighter2._Pindao_Start_2R_camera
             proxy:AddTimerTask(1.35, function()
                 proxy:ApplyMagic(robotUUID, robotUUID, Pindao_Start_2R_camera)
-                XLog.Warning("开始拼刀镜头3" .. Pindao_Start_2R_camera)
+                -- XLog.Warning("开始拼刀镜头3" .. Pindao_Start_2R_camera)
             end)
         end
 
         --拼刀僵持镜头
         proxy:AddTimerTask(2.18, function()
             proxy:ApplyMagic(robotUUID, robotUUID, Pindao_Start_3_camera) --目前有bug，用不了
-            XLog.Warning("开始拼刀镜头1" .. Pindao_Start_3_camera)
+            -- XLog.Warning("开始拼刀镜头1" .. Pindao_Start_3_camera)
             proxy:SetNpcPosition(uuid1, spawnPoint[4])                    --传送玩家1位置
             proxy:SetNpcFaceToPosition(uuid1, spawnPoint[3])
             proxy:SetNpcPosition(uuid2, spawnPoint[5])                    --传送玩家2位置
@@ -433,7 +434,7 @@ do
     ---@param winnerUUID integer 拼点获胜的NpcUUID
     ---@param diff integer 差值
     function XLevelScript1081:OnCSWrestleRollDiceEndEvent(winnerUUID, diff)
-        XLog.Warning("拼刀拼点结束事件" .. winnerUUID .. "获得了拼刀胜利, 点数差为" .. diff)
+        -- XLog.Warning("拼刀拼点结束事件" .. winnerUUID .. "获得了拼刀胜利, 点数差为" .. diff)
         if not self:CheckNpcUUID(winnerUUID) then return self:LogError("有意外的角色获得了拼刀胜利" .. winnerUUID) end
         if not self._stateMachine:CheckStateById(StateEnum.Wrestle) then
             local curState = self._stateMachine._curState
@@ -447,7 +448,7 @@ do
         self._proxy:RemoveBuff(self._robotUUID, FxPindaoStart)
         self:SetActionNpc(winnerUUID) --这里的UI表现时间点需要细化
         self:SetTempActionNpc(winnerUUID)
-        self._proxy:SetCameraFocusTarget(winnerUUID, self:GetTempDefender():GetUUID())
+        -- self._proxy:SetCameraFocusTarget(winnerUUID, self:GetTempDefender():GetUUID())
 
 
         return self:SendWrestleRollDiceEndEvent(winnerUUID, diff)
@@ -482,7 +483,7 @@ do
             for i = 2, 9 do
                 self._proxy:SetObstacleActive(i, true) --关闭zone障碍
             end
-            XLog.Debug("空气墙开启")
+            -- XLog.Debug("空气墙开启")
         end
         --拼刀结束重新加上空气墙，防止镜头碰撞，临时DEBUG办法
     end
@@ -523,18 +524,18 @@ do
         self:RefreshForceContinueTime()
 
         --当敌方角色发起超算时，给敌方角色增加红色特效
-        self._owner._effect = 1025017
-        if self._launcher:GetUUID() == self._owner._fighter2UUID then
-            local effectBuffId = 1025013
-            self._proxy:ApplyMagic(self._owner._fighter2UUID, self._owner._fighter2UUID, self._owner._effect, 1, 1)
-            self._proxy:ApplyMagic(self._owner._fighter2UUID, self._owner._fighter2UUID, effectBuffId, 1, 1)
-            self._appliedDodgeEffect1 = true  -- 记录已施加BUFF
-        elseif self._launcher:GetUUID() == self._owner._fighter1UUID then
-            local effectBuffId = 1025015
-            self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, self._owner._effect, 1, 1)
-            self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, effectBuffId, 1, 1)
-            self._appliedDodgeEffect2 = true  -- 记录已施加BUFF
-        end
+        -- self._owner._effect = 1025017
+        -- if self._launcher:GetUUID() == self._owner._fighter2UUID then
+        --     local effectBuffId = 1025013
+        --     self._proxy:ApplyMagic(self._owner._fighter2UUID, self._owner._fighter2UUID, self._owner._effect, 1, 1)
+        --     self._proxy:ApplyMagic(self._owner._fighter2UUID, self._owner._fighter2UUID, effectBuffId, 1, 1)
+        --     self._appliedDodgeEffect1 = true  -- 记录已施加BUFF
+        -- elseif self._launcher:GetUUID() == self._owner._fighter1UUID then
+        --     local effectBuffId = 1025015
+        --     self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, self._owner._effect, 1, 1)
+        --     self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, effectBuffId, 1, 1)
+        --     self._appliedDodgeEffect2 = true  -- 记录已施加BUFF
+        -- end
     end
 
     ---发送控制中心进入超算状态的通知
@@ -572,6 +573,24 @@ do
         self._owner:SendDodgeBeginEvent(launcherUUID)
         --ToDo处理出手方UI
         --level:SetActionNpc(0);
+
+        -- 当敌方角色发起超算时，给敌方角色增加红色特效
+        self._effect = 1025017
+        if self._launcher:GetUUID() == self._owner._fighter2UUID then
+            local effectBuffId = 1025013
+            self._proxy:ApplyMagic(self._owner._fighter2UUID, self._owner._fighter2UUID, self._effect, 1, 1)
+            self._proxy:ApplyMagic(self._owner._fighter2UUID, self._owner._fighter2UUID, effectBuffId, 1, 1)
+            self._appliedDodgeEffect1 = true  -- 记录已施加BUFF
+        elseif self._launcher:GetUUID() == self._owner._fighter1UUID then
+            local effectBuff1Id = 1025014
+            local effectBuff2Id = 1025015
+            self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, self._effect, 1, 1)
+            self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, effectBuff1Id, 1, 1)
+            self._proxy:AddTimerTask(0.25, function()
+                self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, effectBuff2Id)
+            end)    
+            self._appliedDodgeEffect2 = true  -- 记录已施加BUFF
+        end
     end
 
     ---发送双方完成前置状态清理的通知
@@ -584,7 +603,7 @@ do
     ---@param launcherUUID number @ 超算发起方的NpcUUID
     ---@param winnerUUID number @ 拼点获胜方的NpcUUID
     function XLevelScript1081:OnCSDodgeRollDiceEndEvent(launcherUUID, winnerUUID)
-        XLog.Warning("超算拼点结束事件" .. winnerUUID .. "获得了超算胜利, 发起方为" .. launcherUUID)
+        -- XLog.Warning("超算拼点结束事件" .. winnerUUID .. "获得了超算胜利, 发起方为" .. launcherUUID)
 
         if not self:CheckNpcUUID(winnerUUID) then return self:LogError("有意外的角色获得了超算胜利" .. winnerUUID) end
         if not self._stateMachine:CheckStateById(StateEnum.Dodge) then
@@ -592,11 +611,14 @@ do
             self:LogError(" XLevelScript1081:OnCSDodgeRollDiceEndEvent Error: Called Outside Dodge State, curState is " ..
                 tostring(curState and curState.Name))
         end
-        local FxPindaoStart = 1025009
 
-        self._proxy:RemoveBuff(self._robotUUID, FxPindaoStart)
         self:SetActionNpc(winnerUUID) --这里的UI表现时间点需要细化
         self:SetTempActionNpc(winnerUUID)
+
+        if launcherUUID ~= winnerUUID then 
+            local effectBuffId = 1025019
+            self._proxy:ApplyMagic(self._fighter1UUID, self._fighter1UUID, effectBuffId)
+        end
 
         return self:SendDodgeRollDiceEndEvent(launcherUUID, winnerUUID)
     end
@@ -622,19 +644,19 @@ do
     end
 
     function Dodge:End()
-        XLog.Debug("Dodge:End at time " .. self._owner._levelTime)
+        -- XLog.Debug("Dodge:End at time " .. self._owner._levelTime)
         self._proxy:Theatre6UIShowAnimation(true)
         self._launcher = nil
-        self._owner._effect = 1025017
+        self._effect = 1025017
         if self._appliedDodgeEffect1 then
             local effectBuffId = 1025013
-            self._proxy:RemoveBuff(self._owner._fighter2UUID, self._owner._effect)
+            self._proxy:RemoveBuff(self._owner._fighter2UUID, self._effect)
             self._proxy:RemoveBuff(self._owner._fighter2UUID, effectBuffId)
             self._appliedDodgeEffect1 = false
         elseif self._appliedDodgeEffect2 then
-            local effectBuffId = 1025015
-            self._proxy:RemoveBuff(self._owner._fighter1UUID, self._owner._effect)
-            self._proxy:RemoveBuff(self._owner._fighter1UUID, effectBuffId)
+            local effectBuffId3 = 1025016
+            self._proxy:RemoveBuff(self._owner._fighter1UUID, self._effect)
+            self._proxy:ApplyMagic(self._owner._fighter1UUID, self._owner._fighter1UUID, effectBuffId3)
             self._appliedDodgeEffect2 = false
         end
     end
@@ -651,7 +673,7 @@ do
     end
 
     function WrestleSucSkill:DebugInfo()
-        XLog.Warning("WrestleSucSkill DebugInfo called!")   -- 临时调试
+        -- XLog.Warning("WrestleSucSkill DebugInfo called!")   -- 临时调试
         return string.format("launcher: %s, skillId: %s",
                 tostring(self._launcher and self._launcher._name),
                 tostring(self._skillId))
@@ -1603,7 +1625,7 @@ function XLevelScript1081:Init()
 
     -----------------创建空NPC-------------------------------------------------------------------------------------------
     self._robotUUID = self._proxy:GenerateNpc(commonNpcId, commonNpcCamp, self._spawnPoint[1], commonNpcBornRota) --空NPCUUID赋值，生成机器人
-    XLog.Warning("生成了空NPC" .. self._robotUUID)
+    -- XLog.Warning("生成了空NPC" .. self._robotUUID)
     -- self._proxy:SetNpcActive(self._robotUUID, false)                                           --设置隐藏空NPC
     -- self._proxy:ApplyMagic(self._robotUUID, self._robotUUID, 1010028, 1)                                 --关闭AI
 
@@ -1631,9 +1653,9 @@ function XLevelScript1081:Init()
         --self._proxy:PlayMusicInOut(7172, -1, -1, -1, -1, 0, 0) --战斗BGM
     end
     self._proxy:ResetCamera(false, -80, false) --重置相机方向
-    XLog.Debug("开场镜头被激活")
+    -- XLog.Debug("开场镜头被激活")
     self._proxy:SetCameraOpEnable(false)       --禁止移动镜头
-    XLog.Debug("开局禁止滑动镜头")
+    -- XLog.Debug("开局禁止滑动镜头")
     ------开局UI管理--------------------------------------------------------------------------------------------------
 
     ------BGM管理放入关卡判断中--------------------------------------------------------------------------------------------------
@@ -1665,11 +1687,11 @@ function XLevelScript1081:Update(dt)
     self._stateMachine:Update()
     if self._levelTime >= self._tiredTime and self._levelTime <= self._tiredTime + 1 and self._tiredState == false then
         if not self._stateMachine:CheckStateById(StateEnum.Die) and not self._stateMachine:CheckStateById(StateEnum.End) then
-            XLog.Debug("疲劳时间到")
+            -- XLog.Debug("疲劳时间到")
             self._tiredState = true                    --进入疲劳阶段
             self._proxy:ApplyMagic(self._fighter1UUID, self._fighter1UUID, 1025111, 1, 1)
             self._proxy:ApplyMagic(self._fighter2UUID, self._fighter2UUID, 1025111, 1, 1)
-            XLog.Debug("给双方加上了疲劳BUFF")
+            -- XLog.Debug("给双方加上了疲劳BUFF")
             self._proxy:ShowTip(108101)
             self._proxy:PlayStayScreenEffectById(1071001) --屏幕特效
         end

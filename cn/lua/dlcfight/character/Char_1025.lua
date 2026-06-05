@@ -31,7 +31,7 @@ function XChar1025:_BaseInit()
     XTheatre6CharBase._BaseInit(self)
     -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1025003)
     -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1025004)
-    XLog.Warning("维罗妮卡初始化完成")
+    -- XLog.Warning("维罗妮卡初始化完成")
 end
 
 function XChar1025:InitEventCallBackRegister()
@@ -54,7 +54,7 @@ function XChar1025:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
     end
     --动作属于BaseLayer
     if buffId == 1025001 then
-        XLog.Warning("切换状态机为0")
+        -- XLog.Warning("切换状态机为0")
         self._proxy:SetNpcAnimationLayer(self._uuid, 0)
         self._proxy:AddTimerTask(0.5, function()
             self._proxy:ApplyMagic(self._uuid, self._uuid, 1025003)
@@ -63,7 +63,7 @@ function XChar1025:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
     end
     --动作属于Layer1
     if buffId == 1025002 then
-        XLog.Warning("切换状态机为1")
+        -- XLog.Warning("切换状态机为1")
         self._proxy:SetNpcAnimationLayer(self._uuid, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1025007)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1025008)

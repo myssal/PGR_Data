@@ -138,8 +138,8 @@ function XTheatre6BlockController:Block(missileUUID, launcherNpcUUID, targetNpcU
     npc:OnBlock()
 
     -- Todo: 飘字 + 伤害修正 + 超算获取率修正
-    local hasPopText = isActivate and hitCount == 1
-    if hasPopText then self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 6, 0) end
+    --local hasPopText = isActivate and hitCount == 1
+    if hitCount == 1 then self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 6, 0) end
 
     --准备在接下来的伤害事件中执行伤害修正
     self._needDmgFix = true

@@ -726,7 +726,7 @@ function XFubenBossSingleControl:GetBossCurSettleScore(settleStageId, settleScor
         local data = self:GetBossSingleData()
 
         for _, stageId in pairs(sectionConf.StageId) do
-            if stageId ~= settleScore then
+            if stageId ~= settleStageId then
                 local stageData = data:GetBossSingleBestiraryStageInfoByStageId(stageId)
                 totalScore = totalScore + (stageData and stageData:GetScore() or 0)
             end

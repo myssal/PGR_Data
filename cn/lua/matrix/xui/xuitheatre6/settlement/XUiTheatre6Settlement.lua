@@ -26,6 +26,7 @@ function XUiTheatre6Settlement:OnEnable()
 
     self:ShowPanelResult()
     XLuaUiManager.SafeClose("UiTheatre6RoomEitheror")
+    XLuaUiManager.SafeClose("UiBiancaTheatreBlack")
 end
 
 function XUiTheatre6Settlement:OnDisable()

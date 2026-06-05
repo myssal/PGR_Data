@@ -107,28 +107,29 @@ function XLevel6001Present:HandleEvent(eventType, eventArgs)
             self.RobotUUid = self._proxy:GetNpcUUID(4000047)
             self._proxy:SetNpcAnimationLayer(self.RobotUUid, 1)
         elseif eventArgs.DramaName == "Drama60010109" then --抓到的Drama是外卖柜任务，标志外卖柜任务结束，加载外卖柜相关的后续逻辑
-            if self._proxy:IsQuestObjectiveFinished(60020201) then  --玩家选择了选项1
+            -- 读取分期选项数据
+            local selectOptionIdList = eventArgs.HistoryDecisionDict[2]
+            if not selectOptionIdList then -- 剧情跳过走默认
                 self._proxy:UnloadLevelNpc(self._InformationParam.WaitressStartID) --卸载初始的NPC
                 self._proxy:LoadLevelNpc(self._InformationParam.Waitress01Underway) --加载选项1NPC
                 self._proxy:LoadLevelNpc(self._InformationParam.Student01After) --加载选项1的学生
-            elseif self._proxy:IsQuestObjectiveFinished(60020301) then --检测到玩家选了选项2
+            elseif table.contains(selectOptionIdList, 1) then -- 分支1
+                self._proxy:UnloadLevelNpc(self._InformationParam.WaitressStartID) --卸载初始的NPC
+                self._proxy:LoadLevelNpc(self._InformationParam.Waitress01Underway) --加载选项1NPC
+                self._proxy:LoadLevelNpc(self._InformationParam.Student01After) --加载选项1的学生
+            elseif table.contains(selectOptionIdList, 2) then -- 分支2
                 self._proxy:LoadLevelNpc(self._InformationParam.Waitress02After) --加载后续2的服务生
                 self._proxy:LoadLevelNpc(self._InformationParam.Student02After)--加载后续2的学生
-            elseif self._proxy:IsQuestObjectiveFinished(60020102) and (not self._proxy:IsQuestObjectiveFinished(60020201)) and (not self._proxy:IsQuestObjectiveFinished(60020301)) then--如果玩家直接跳过了，那就按照选项1来
-                self._proxy:UnloadLevelNpc(self._InformationParam.WaitressStartID) --卸载初始的NPC
-                self._proxy:LoadLevelNpc(self._InformationParam.Waitress01Underway) --加载选项1NPC
-                self._proxy:LoadLevelNpc(self._InformationParam.Student01After) --加载选项1的学生
             end
-
         elseif self:IsInclude(eventArgs.DramaName, self._WishPondTimelinePool) then
             --许愿池 随机对话，执行随机对话的逻辑
             self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._WishPondPlaceID, true)
+        elseif eventArgs.DramaName == "Drama60010111" then
+            self._proxy:UnloadLevelNpc(4000059)--卸载饮料机NPC
         elseif eventArgs.DramaName == "Drama60010112" then
-            if self._proxy:IsQuestObjectiveFinished(60030103) then
-                self._proxy:LoadLevelNpc(4000001) --完成饮料机任务，获得小卡片
-            end
+            self._proxy:LoadSceneObject(4000001) --完成饮料机任务，获得小卡片
+            self._proxy:LoadLevelNpc(4000059)--加载饮料机NPC
         end
-
     end
     ---Trigger事件
     if eventType == EWorldEvent.ActorTrigger then
@@ -235,9 +236,6 @@ function XLevel6001Present:InitWishingPond()
         local j = math.random(i)
         self._WishPondTimelinePool[i], self._WishPondTimelinePool[j] = self._WishPondTimelinePool[j], self._WishPondTimelinePool[i]
     end
-    ---DS写的 #应该是代表元素数量。这一整段是通过洗牌算法预先随机好，打乱原pool的排序（因此没有创建一个新的数组来存新顺序）。
-
-    XLog.Debug(self._WishPondTimelinePool[1], self._WishPondTimelinePool[2], self._WishPondTimelinePool[3], self._WishPondTimelinePool[4], self._WishPondTimelinePool[5], self._WishPondTimelinePool[6])
 
 end
     --许愿池随机台词
@@ -245,13 +243,11 @@ function XLevel6001Present:OnWishingPondNpcInteractStart(eventType, eventArgs)
     if eventArgs.TargetPlaceId == self._WishPondPlaceID then
         if #self._WishPondPlayedCaptions >= #self._WishPondTimelinePool then--如果播完了，就播最后一句，最后一句是caption
             self._proxy:PlayDramaCaption(self._WishPondFinalCaption)
-            XLog.Debug("许愿池-播放最后一句对话" .. "已播对话" .. #self._WishPondPlayedCaptions .. "总对话数" .. #self._WishPondTimelinePool)
         else
             local dialog = self._WishPondTimelinePool[self._WishPondCurrentCaptionIndex]
             self._proxy:PlayDrama(dialog)
             table.insert(self._WishPondPlayedCaptions, dialog)
             self._WishPondCurrentCaptionIndex = self._WishPondCurrentCaptionIndex + 1
-            XLog.Debug("许愿池-播放已随机好的对话" .. dialog)
         end
 
         ---暂时关闭交互
@@ -469,17 +465,17 @@ function XLevel6001Present:InitInformation()
 
     }
     if self._proxy:IsQuestObjectiveFinished(60020201) then --检测到玩家选完了选项1
-        self._proxy:LoadLevelNpc(4000057) --加载后续1的服务生
-        self._proxy:LoadLevelNpc(4000001) --加载后续1的学生
+        self._proxy:LoadLevelNpc(self._InformationParam.Waitress01After) --加载后续1的服务生
+        self._proxy:LoadLevelNpc(self._InformationParam.Student01After) --加载后续1的学生
     elseif self._proxy:IsQuestObjectiveFinished(60020301) then --检测到玩家选了选项2
-        self._proxy:LoadLevelNpc(4000058) --加载后续2的服务生
-        self._proxy:LoadLevelNpc(4000002)--加载后续2的学生
+        self._proxy:LoadLevelNpc(self._InformationParam.Waitress02After) --加载后续2的服务生
+        self._proxy:LoadLevelNpc(self._InformationParam.Student02After)--加载后续2的学生
     elseif self._proxy:IsQuestObjectiveFinished(60020102) and (not self._proxy:IsQuestObjectiveFinished(60020201)) and (not self._proxy:IsQuestObjectiveFinished(60020301)) then--如果玩家直接跳过了，那就按照选项1来
         self._proxy:UnloadLevelNpc(self._InformationParam.WaitressStartID) --卸载初始的NPC
         self._proxy:LoadLevelNpc(self._InformationParam.Waitress01Underway) --加载选项1NPC
         self._proxy:LoadLevelNpc(self._InformationParam.Student01After) --加载选项1的学生
     elseif (not self._proxy:IsQuestObjectiveFinished(60020201)) and (not self._proxy:IsQuestObjectiveFinished(60020301)) and (not self._proxy:IsQuestObjectiveFinished(60020102)) then--如果什么都没做，那就直接加载初始的
-        self._proxy:LoadLevelNpc(4000003) --加载初始服务生
+        self._proxy:LoadLevelNpc(self._InformationParam.WaitressStartID) --加载初始服务生
     end
 end
 
@@ -508,7 +504,6 @@ function XLevel6001Present:InitSqureRunner()
     self.Runner02UUID = self._proxy:GetNpcUUID(self._RunnerParam.Runner02PlaceID)
     self._proxy:NpcMoveByRoute(self.Runner01UUID, self._RunnerParam.Line1ID, ENpcMoveType.Run)
     self._proxy:NpcMoveByRoute(self.Runner02UUID, self._RunnerParam.Line2ID, ENpcMoveType.Run)
-    XLog.Debug("成功加载完毕" .. "NPC1UUID" .. self.Runner01UUID, "NPC02UUID" .. self.Runner02UUID)
 end
 --进入触发器时随机播放气泡对话
 function XLevel6001Present:OnRunnerBubbleTrigger(eventType, eventArgs)
@@ -603,7 +598,6 @@ local EWeaponState = {
 function XLevel6001Present:IsInclude(value, tab)
     for k, v in ipairs(tab) do
         if v == value then
-            XLog.Debug("该表中包含对应元素")
             return true
         end
     end

@@ -96,6 +96,7 @@ function XBigWorldGamePlayAgency:SetCurrentGameAgency(worldId)
     end
 
     self._CurrentModuleId = moduleId
+    XEventManager.DispatchEvent(XEventId.EVENT_BIG_WORLD_GAME_PLAY_CHANGED, moduleId)
 end
 
 ---@return XBigWorldAgency
@@ -799,6 +800,7 @@ function XBigWorldGamePlayAgency:EnterDebugGame(worldId, levelId)
     self._DebugWorldId = worldId
     self._DebugLevelId = levelId
     self._CurrentModuleId = ModuleId.XBigWorld
+    XEventManager.DispatchEvent(XEventId.EVENT_BIG_WORLD_GAME_PLAY_CHANGED, ModuleId.XBigWorld)
     self:_InitMVCA()
     self:_LoadGuide()
 

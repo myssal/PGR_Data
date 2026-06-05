@@ -303,9 +303,6 @@ function XUiPanelTheatre6SkilBagDetail:OnEndDrag(grid, targetAreaId)
                 if not self:IsSwapBlocked(srcSlotType, areaData.slotType, dstSkillId, curSkillId) then
                     self._Control:SkillMoveOrSwapRequest(grid:GetSkillId(), areaData.slotType, areaData.position,
                         function()
-                            if XLuaUiManager.IsUiShow("UiTheatre6BubbleSkillDetail") then
-                                XLuaUiManager.Close("UiTheatre6BubbleSkillDetail")
-                            end
                         end)
                 else
                     XUiManager.TipText("Theatre6SkillMoveError")

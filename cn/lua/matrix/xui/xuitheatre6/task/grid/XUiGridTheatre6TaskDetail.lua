@@ -37,6 +37,10 @@ function XUiGridTheatre6TaskDetail:SetSlotData(slotData, taskGroupId)
     self._SlotData = slotData
     self._TaskId = slotData.TaskId
     self._TaskData = modelData.StageTasks[self._TaskId]
+    if not self._TaskData then
+        XLog.Error(string.format("任务选择房间不存在任务：%s", self._TaskId))
+        return
+    end
     self._Mode = Choose
     self._TaskGroupConfig = self._Control:GetStageTaskGroupConfig(taskGroupId)
     self:ShowTaskInfo()

@@ -506,9 +506,12 @@ function XTheatre6Agency:CheckTaskRedPoint()
         if XTool.IsNumberValid(config.TaskTimeLimitId) then
             local taskTimeLimitCfg = XTaskConfig.GetTimeLimitTaskCfg(config.TaskTimeLimitId)
             if taskTimeLimitCfg and taskTimeLimitCfg.TaskId then
-                for _, taskId in pairs(taskTimeLimitCfg.TaskId) do
-                    if XDataCenter.TaskManager.CheckTaskAchieved(taskId) then
-                        return true
+                local timeId = taskTimeLimitCfg.TimeId
+                if not XTool.IsNumberValid(timeId) or XFunctionManager.CheckInTimeByTimeId(timeId) then
+                    for _, taskId in pairs(taskTimeLimitCfg.TaskId) do
+                        if XDataCenter.TaskManager.CheckTaskAchieved(taskId) then
+                            return true
+                        end
                     end
                 end
             end

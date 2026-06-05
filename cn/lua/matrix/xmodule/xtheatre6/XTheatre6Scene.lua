@@ -34,6 +34,7 @@ end
 
 function XTheatre6Scene:UpdateRogueModel(isHideLockRole)
     self:_UpdateRoleModel(AllRogue, isHideLockRole)
+    self:ClearSelectIndex()
 end
 
 function XTheatre6Scene:UpdateNormalModel(isHideLockRole)
@@ -77,7 +78,8 @@ function XTheatre6Scene:_UpdateRoleModel(mode, isHideLockRole)
             end
         end
         local fashionConfig = self._Control:GetFashionConfig(fashionId)
-        self:_LoadRoleModel(index, fashionId, false, fashionConfig.ChooseAnim)
+        local playAnimName = mode == AllRogue and fashionConfig.NoChooseAnim or fashionConfig.ChooseAnim
+        self:_LoadRoleModel(index, fashionId, false, playAnimName)
     end
 end
 
@@ -147,16 +149,8 @@ end
 
 -- 返回主页
 function XTheatre6Scene:BackToMain()
-    -- 当前选中的角色播放NoChooseAnim
-    if self.CurSelectIndex then
-        local prevConfig = self._FashionConfigDict[self.CurSelectIndex]
-        if prevConfig then
-            self:_PlayAnimOnIndex(self.CurSelectIndex, prevConfig.NoChooseAnim)
-        end
-    end
     self:SetAllModelCamFalse()
     self:SetMainCamera(true)
-    self:ClearSelectIndex()
 end
 
 -- 控制主相机

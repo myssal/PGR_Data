@@ -45,7 +45,7 @@ function XUiGridTheatre6BossSkill:Update(skillConfig, index)
     
     self._SkillId = skillConfig.Id
     self:RefreshTags(skillConfig.BuildTags)
-    self:RefreshStars(skillConfig.Quality)
+    self:RefreshStars(skillConfig.Level)
     -- 新标记（Boss预览场景下默认隐藏）
     self.PanelNew.gameObject:SetActiveEx(false)
     -- 禁用遮罩（Boss预览场景下默认隐藏）
@@ -54,6 +54,12 @@ function XUiGridTheatre6BossSkill:Update(skillConfig, index)
     self.RawImgSelect.gameObject:SetActiveEx(false)
     -- 升级箭头（Boss预览场景下默认隐藏）
     self.ImgUpArrow.gameObject:SetActiveEx(false)
+
+    local spriteName = self._Control:GetSkillTypeBgConfigName(skillConfig.Id)
+    if spriteName then
+        self.ImgBgActive:SetRawImage(spriteName)
+    end
+   
 
     self:Open()
 end
@@ -72,9 +78,9 @@ function XUiGridTheatre6BossSkill:RefreshTags(buildTags)
 end
 
 ---刷新品质星级
----@param quality number
-function XUiGridTheatre6BossSkill:RefreshStars(quality)
-    local starCount = quality or 0
+---@param level number
+function XUiGridTheatre6BossSkill:RefreshStars(level)
+    local starCount = level or 0
     local starData = {}
     for i = 1, starCount do
         starData[i] = true

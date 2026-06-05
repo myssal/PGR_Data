@@ -42,7 +42,7 @@ function XEcologyConstructAIBase:Update(dt)
     end
     if self._tempStateEnum then
         self._proxy:SetNpcPosition(self._uuid, self._proxy:GetEcologyConstructStateInitPos(self._uuid, self._tempStateEnum), false)
-        if self.NextStateRotDict then
+        if self.NextStateRotDict and self.NextStateRotDict[self._tempStateEnum] then
             self._proxy:SetNpcRotation(self._uuid, self.NextStateRotDict[self._tempStateEnum])
         end
         self._stateMachine:SwitchState(self._tempStateEnum)

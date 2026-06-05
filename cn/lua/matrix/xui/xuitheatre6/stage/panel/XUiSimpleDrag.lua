@@ -118,6 +118,9 @@ end
 ---短按点击回调
 function XUiSimpleDrag:_OnClick()
     self:_RestoreScrollRect()
+    if self._Status == Status.Dragging then
+        return
+    end
     self:_ApplyAction(XEnumConst.Theatre6.DragAction.Click)
 end
 

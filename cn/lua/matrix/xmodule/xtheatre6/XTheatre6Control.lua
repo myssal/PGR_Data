@@ -35,6 +35,13 @@ function XTheatre6Control:OnInit()
         [RoomType.ChapterPreview] = true,
     }
 
+    ---不播放San音频的房间类型
+    self._IgnoreSanAudioRooms = {
+        [RoomType.BattleShop] = true,
+        [RoomType.Monster] = true,
+        [RoomType.Boss] = true,
+    }
+
     self._GetRewardIconHandlers = {
         [EventRewardType.Goods] = handler(self, self.GetGoodsIcon),
         [EventRewardType.San] = handler(self, self.GetSanIcon),
@@ -168,11 +175,13 @@ function XTheatre6Control:GetShowBuildTagWithSort(buildTags)
     return tagConfigs
 end
 
----返回所有已装备技能(不区分槽位)BuildTag 的计数表
+---返回所有已装备技能(不区分槽位)BuildTag 中数量最多的 tagId,数量相同时取 Pirority 最大者,两者都并列时取更早出现的
+---更早顺序:槽位顺序 Active→Insert→Special;同槽位按 pos 升序;同技能按 BuildTags 配表顺序
 ---@param skillIdsBySlot table<number, table>|nil 可选,按槽位类型的已装备技能id表;不传则查询当前玩法数据
----@return table<number, number> tagId -> 出现的已装备技能数量
-function XTheatre6Control:GetEquippedBuildTagCounts(skillIdsBySlot)
+---@return number[]|{} 最优 tagIds,无任何已装备 BuildTag 时返回 {}
+function XTheatre6Control:GetTopEquippedBuildTagIds(skillIdsBySlot)
     local counts = {}
+    local orderedTagIds = {}
     local slotTypes = {
         XEnumConst.Theatre6.SlotType.Active,
         XEnumConst.Theatre6.SlotType.Insert,
@@ -182,11 +191,20 @@ function XTheatre6Control:GetEquippedBuildTagCounts(skillIdsBySlot)
         local ownedIds = (skillIdsBySlot and skillIdsBySlot[slotType])
             or self:GetCharacterDressSkillIds(slotType)
         if ownedIds then
-            for _, ownedSkillId in pairs(ownedIds) do
+            local positions = {}
+            for pos in pairs(ownedIds) do
+                table.insert(positions, pos)
+            end
+            table.sort(positions)
+            for _, pos in ipairs(positions) do
+                local ownedSkillId = ownedIds[pos]
                 if XTool.IsNumberValid(ownedSkillId) then
                     local cfg = self:GetSkillCfgById(ownedSkillId)
                     if cfg and cfg.BuildTags then
                         for _, tagId in ipairs(cfg.BuildTags) do
+                            if counts[tagId] == nil then
+                                table.insert(orderedTagIds, tagId)
+                            end
                             counts[tagId] = (counts[tagId] or 0) + 1
                         end
                     end
@@ -194,7 +212,26 @@ function XTheatre6Control:GetEquippedBuildTagCounts(skillIdsBySlot)
             end
         end
     end
-    return counts
+    local result = {}
+    local bestCount, bestPriority = -1, 999
+
+    for _, tagId in ipairs(orderedTagIds) do
+        local count = counts[tagId] or 0
+        local cfg = self:GetBuildTagConfig(tagId)
+        local priority = (cfg and cfg.Pirority) or 0
+
+        if count > bestCount or (count == bestCount and priority < bestPriority) then
+            -- 找到新的最优，清空旧结果
+            result = { tagId }
+            bestCount = count
+            bestPriority = priority
+
+        elseif count == bestCount and priority == bestPriority then
+            -- 和当前最优一样，收集起来
+            table.insert(result, tagId)
+        end
+    end
+    return result
 end
 
 ---返回所有已装备技能中 IsShowTags 为 true 的 BuildTag 集合
@@ -214,8 +251,9 @@ function XTheatre6Control:GetEquippedForceShowBuildTagSet(skillIdsBySlot)
             for _, ownedSkillId in pairs(ownedIds) do
                 if XTool.IsNumberValid(ownedSkillId) then
                     local cfg = self:GetSkillCfgById(ownedSkillId)
+                    local extendcfg = self:GetSkillExtendCfgById(ownedSkillId)
                     local buildTags = cfg and cfg.BuildTags
-                    local isShowTags = cfg and cfg.IsShowTags
+                    local isShowTags = extendcfg and extendcfg.IsShowTags
                     if buildTags and isShowTags then
                         for i, tagId in ipairs(buildTags) do
                             if isShowTags[i] then
@@ -231,7 +269,7 @@ function XTheatre6Control:GetEquippedForceShowBuildTagSet(skillIdsBySlot)
 end
 
 ---商店/任务最终高亮源:
----A. 候选 = sourceTagIds ∩ 装备 BuildTags 出现集合,按出现次数降序/Pirority 降序/sourceTagIds 原顺序排序后取第一个
+---A. 候选 = 装备 BuildTags 中数量最多(并列时 Pirority 最大)的 tag,若该 tag 在 sourceTagIds 中则纳入
 ---B. 装备技能 IsShowTags=true 的 tag 与 sourceTagIds 取交集,无视 A 的 count/Pirority 规则直接保留
 ---最终 = A ∪ B
 ---@param sourceTagIds number[]|nil 商店/任务页收集到的可参照 tag 集合
@@ -239,43 +277,20 @@ end
 ---@return number[]|nil
 function XTheatre6Control:GetEffectiveTagHighlightSourceTagIds(sourceTagIds, skillIdsBySlot)
     if not sourceTagIds then return nil end
-    local equippedCounts = self:GetEquippedBuildTagCounts(skillIdsBySlot)
+    local topTagIds = self:GetTopEquippedBuildTagIds(skillIdsBySlot)
     local forceShowSet = self:GetEquippedForceShowBuildTagSet(skillIdsBySlot)
-    local candidates = {}
-    local sourceOrder = {}
-    local addedSet = {}
-    for i, tagId in ipairs(sourceTagIds) do
-        sourceOrder[tagId] = sourceOrder[tagId] or i
-        if not addedSet[tagId] and (equippedCounts[tagId] or 0) > 0 then
-            addedSet[tagId] = true
-            table.insert(candidates, tagId)
+    local result = {}
+    if #topTagIds >= 1 then
+        for _,topTagId in ipairs(topTagIds) do
+            if table.contains(sourceTagIds,topTagId) then
+                table.insert(result, topTagId)
+                break
+            end
         end
     end
-    local result = {}
-    local resultSet = {}
-    if #candidates > 0 then
-        table.sort(candidates, function(a, b)
-            local countA = equippedCounts[a] or 0
-            local countB = equippedCounts[b] or 0
-            if countA ~= countB then
-                return countA > countB
-            end
-            local cfgA = self:GetBuildTagConfig(a)
-            local cfgB = self:GetBuildTagConfig(b)
-            local priorityA = (cfgA and cfgA.Pirority) or 0
-            local priorityB = (cfgB and cfgB.Pirority) or 0
-            if priorityA ~= priorityB then
-                return priorityA > priorityB
-            end
-            return (sourceOrder[a] or 0) < (sourceOrder[b] or 0)
-        end)
-        local tagId = candidates[1]
-        resultSet[tagId] = true
-        table.insert(result, tagId)
-    end
+
     for _, tagId in ipairs(sourceTagIds) do
-        if forceShowSet[tagId] and not resultSet[tagId] then
-            resultSet[tagId] = true
+        if forceShowSet[tagId] and not result[tagId] then
             table.insert(result, tagId)
         end
     end
@@ -414,7 +429,8 @@ function XTheatre6Control:OpenRoomBoss(isPopOpen)
 end
 
 ---播放剧情
-function XTheatre6Control:OpenAvg()
+function XTheatre6Control:OpenAvg(isPopOpen)
+    self:OpenUi("UiBiancaTheatreBlack", isPopOpen) --UiBlackScreen层级是Top，UiBiancaTheatreBlack才是Normal
     local node = self._Model.StageChain.Curr
     local storyDetail = self:GetStoryDetailConfig(node.RoomValues[1])
     XDataCenter.MovieManager.PlayMovie(storyDetail.StoryId, function()
@@ -423,12 +439,13 @@ function XTheatre6Control:OpenAvg()
 end
 
 ---播放楼层初始剧情
-function XTheatre6Control:OpenNewFloorAvg()
+function XTheatre6Control:OpenNewFloorAvg(isPopOpen)
+    self:OpenUi("UiBiancaTheatreBlack", isPopOpen)
     local node = self._Model.StageChain.Curr
     local storyDetailId = self:GetStageFloorConfig(node.FloorId).StartAVG
     local storyDetailConfig = self:GetStoryDetailConfig(storyDetailId)
     XDataCenter.MovieManager.PlayMovie(storyDetailConfig.StoryId, function()
-        self:MoveNext(false)
+        self:MoveNext()
     end, nil, nil, false)
     self._Model:SetAvgFinish()
 end
@@ -515,7 +532,7 @@ end
 
 function XTheatre6Control:PlayAudio()
     local node = self._Model.StageChain.Curr
-    if node.RoomType == RoomType.BattleShop then
+    if self._IgnoreSanAudioRooms[node.RoomType] then
         return
     end
     XMVCA.XTheatre6:PlayAudio()
@@ -674,6 +691,12 @@ end
 function XTheatre6Control:GetSkillCfgById(skillId)
     return self._Model:GetSkillCfgById(skillId)
 end
+
+---@return XTableTheatre6SkillExtend
+function XTheatre6Control:GetSkillExtendCfgById(skillId)
+    return self._Model:GetSkillExtendCfgById(skillId)
+end
+
 
 function XTheatre6Control:GetBossSkillIds(fightId, isHard)
     local monsterConfig = self:GetBossConfigByRoom(fightId, isHard)

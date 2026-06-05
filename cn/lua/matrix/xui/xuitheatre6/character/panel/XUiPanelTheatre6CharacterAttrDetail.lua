@@ -59,12 +59,8 @@ function XUiPanelTheatre6CharacterAttrDetail:OnEnable()
         self._IsDirty = false
     end
     self:UpdateReddot()
-    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.RefreshRoleDetail, self)
 end
 
-function XUiPanelTheatre6CharacterAttrDetail:OnDisable()
-    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.RefreshRoleDetail, self)
-end
 
 function XUiPanelTheatre6CharacterAttrDetail:CacheSkillData()
     if self._IsUseParamData then
@@ -153,13 +149,18 @@ function XUiPanelTheatre6CharacterAttrDetail:OnNotify(evt, ...)
     elseif evt == XEventId.EVENT_THEATRE6_SCORE_CHANGE then
         local oldScore, newScore = ...
         self.IsUp = newScore > oldScore
-        self.RollingNumber = XUiCommonRollingNumber.New(
-            handler(self, self.RollingStart),
-            handler(self, self.RollingRefresh),
-            handler(self, self.RollingEnd)
-        )
-
-        self.RollingNumber:Play(oldScore, newScore, 1)
+        if not self.RollingNumber then
+            self.RollingNumber = XUiCommonRollingNumber.New(
+                handler(self, self.RollingStart),
+                handler(self, self.RollingRefresh),
+                handler(self, self.RollingEnd)
+            )
+        end
+        if self.ImgBgScoreTop.gameObject.activeInHierarchy then
+            self.RollingNumber:Play(oldScore, newScore, 1)
+        else
+            self:RefreshRoleDetail()
+        end
 
     elseif evt == XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE then
         self:RefreshAllTagHighLight()
@@ -703,7 +704,7 @@ function XUiPanelTheatre6CharacterAttrDetail:ShowBuff()
             grid:Update(self._BuffDatas[i].BuffId)
             grid:SetFileSaveBuffs(self._ModelData.Buffs)
         else
-            grid:UpdateByUid(self._BuffDatas[i].Uid)
+            grid:UpdateByInfo(self._BuffDatas[i])
             grid:ShowRemainingTimes()
             grid:CheckShowBuffDisable()
         end

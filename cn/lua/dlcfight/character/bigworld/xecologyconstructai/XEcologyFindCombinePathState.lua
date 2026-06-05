@@ -290,6 +290,7 @@ end
 
 function XEcologyFindCombinePathState:StopMove()
     self._isMove = false
+    self._recheckFindPathTime = self.RecheckFindPathTime
     self._proxy:NpcStopMove(self._uuid)
 end
 
@@ -432,7 +433,8 @@ function XEcologyFindCombinePathState:OnUpdateInPath(dt)
         return
     end
 
-    if self._isMove then
+    -- 移动过程中被交互暂停此时需要
+    if self._isMove or (not self._isMove and not self._proxy:HasRunningDrama()) then
         self._recheckFindPathTime = self._recheckFindPathTime - dt
         if self._recheckFindPathTime <= 0 then
             self:StartMove()

@@ -122,12 +122,25 @@ function XUiPassportAutoWindow:UpdateEndTime()
 end
 
 function XUiPassportAutoWindow:OnBtnBigSkinClick()
+    if self.FullScreenBackground then
+        self.FullScreenBackground.gameObject:SetActiveEx(false)
+    end
+
+    if self.SafeAreaContentPane then
+        self.SafeAreaContentPane.gameObject:SetActiveEx(false)
+    end
+
     XLuaUiManager.Open(
         "UiPassport",
         {
             OpenPassportCard = true,
             OnClose = function()
-                self:Close()
+                XLuaUiManager.SetMask(true)
+                self._CloseSchedule = XScheduleManager.ScheduleOnce(function()
+                    XScheduleManager.UnSchedule(self._CloseSchedule)
+                    XLuaUiManager.SetMask(false)
+                    self:Close()
+                end, 500)
             end
         })
 end

@@ -24567,7 +24567,6 @@ XTable = {
         Icon = ValueTypestring,
         ComboList = Type1ValueTypeint,
         BuildTags = Type1ValueTypeint,
-        IsShowTags = Type1ValueTypebool,
         Level = ValueTypeint,
         Magics = Type1ValueTypeint,
         Type = ValueTypeint,
@@ -24583,6 +24582,10 @@ XTable = {
         TLDam = ValueTypeint,
         Quality = ValueTypeint,
         KeyWordIds = Type1ValueTypeint,
+    },
+    XTableTheatre6SkillExtend = {
+        Id = ValueTypeintPrimaryKey,
+        IsShowTags = Type1ValueTypebool,
     },
     XTableTheatre6SkillPool = {
         Id = ValueTypeintPrimaryKey,

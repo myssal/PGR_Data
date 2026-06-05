@@ -312,7 +312,7 @@ function XUiFashionDetail:ShowBuyButton()
     end
     
     if isHave then
-        local isWear, isMulti
+        local isWear
         if self.IsEnableGroupSales then
             local fashionId, weaponFashionId = self:GetGroupFashionId()
             isWear = XMVCA.XFashionSuit:IsDressed(fashionId, weaponFashionId, self.CharacterId)
@@ -320,8 +320,11 @@ function XUiFashionDetail:ShowBuyButton()
             if self.IsWeaponFashion then
                 isWear = XMVCA.XFashionSuit:IsDressed(nil, self.FashionId, self.CharacterId)
             elseif self.FashionType == FashionType.Color then
-                -- FashionColor 无穿戴概念，隐藏穿戴按钮直接显示购买
-                self.BtnBuy.gameObject:SetActiveEx(true)
+                local hasThisFashionColor = XMVCA.XFashion:IsFashionColorHas(
+                    XMVCA.XFashion:GetFashionColorOriginalFashionId(self.FashionId),
+                    self.FashionId)
+
+                self.BtnBuy.gameObject:SetActiveEx(not hasThisFashionColor)
                 return
             else
                 isWear = XMVCA.XFashionSuit:IsDressed(self.FashionId, nil, self.CharacterId)

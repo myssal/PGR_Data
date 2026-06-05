@@ -18,6 +18,7 @@ end
 function XUiTheatre6Main:OnStart()
     self.RewardRedPoint = self:AddRedPointEvent(self.BtnStory, self.NewStoryRedPoint, self, { XRedPointConditions.Types.CONDITION_THEATRE6_NEW_STORY }, nil, true)
     self.TaskRewardRedPoint = self:AddRedPointEvent(self.BtnReward, self.OnTaskRewardRedPoint, self, { XRedPointConditions.Types.CONDITION_THEATRE6_REWARD }, nil, true)
+    self:CheckTaskLimitTimeEnd()
 end
 
 function XUiTheatre6Main:OnEnable()
@@ -34,7 +35,7 @@ function XUiTheatre6Main:OnEnable()
     if not self._PvTried then
         self._PvTried = true
         self:TryPlayPv(function()
-            self:PlayAnimation("AnimStart1")
+            self:PlayAnimation("AnimStart1", nil, nil, nil, true)
             self:Refresh()
             self:TryShowUpdatePopup()
             self:CheckPlayGuide()
@@ -51,6 +52,7 @@ function XUiTheatre6Main:OnDisable()
 end
 
 function XUiTheatre6Main:OnDestroy()
+    self:StopTaskLimitTimer()
     XMVCA.XScene:ExitScene(SceneIds.XTheatre6Scene)
 end
 
@@ -445,7 +447,10 @@ function XUiTheatre6Main:OnStoryGuideEnd()
     local storyId = self._Control:GetStoryDetailConfig(avgId).StoryId
 
     self._Control:RequestStoryModeGuideFinished(avgId, function()
-        XDataCenter.MovieManager.PlayMovie(storyId, nil, nil, nil, false)
+        self._Scene:HideScene()
+        XDataCenter.MovieManager.PlayMovie(storyId, function()
+            self._Scene:ShowScene()
+        end, nil, nil, false)
     end)
 end
 
@@ -475,6 +480,57 @@ function XUiTheatre6Main:CheckPlayGuide()
         return
     end
     XDataCenter.GuideManager.PlayGuide(self._FirstEnterGuideId)
+end
+
+function XUiTheatre6Main:CheckTaskLimitTimeEnd()
+    if not self.TaskRewardRedPoint then
+        return
+    end
+
+    local configs = XMVCA.XTheatre6:GetValidShopOrTaskList(XEnumConst.Theatre6.TaskShopType.Task)
+    if XTool.IsTableEmpty(configs) then
+        return
+    end
+
+    if not self._TaskLimitEndTimes then
+        self._TaskLimitEndTimes = {}
+        for _, config in ipairs(configs) do
+            if not XTool.IsNumberValid(config.TaskTimeLimitId) then
+                goto continue
+            end
+            local taskTimeLimitCfg = XTaskConfig.GetTimeLimitTaskCfg(config.TaskTimeLimitId)
+            local timeId = taskTimeLimitCfg.TimeId
+            if not XTool.IsNumberValid(timeId) or not XFunctionManager.CheckInTimeByTimeId(timeId) then
+                goto continue
+            end
+            local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+            if not table.contains(self._TaskLimitEndTimes, endTime) then
+                table.insert(self._TaskLimitEndTimes, endTime)
+            end
+            :: continue ::
+        end
+        table.sort(self._TaskLimitEndTimes)
+    end
+
+    self:StopTaskLimitTimer()
+
+    if XTool.IsTableEmpty(self._TaskLimitEndTimes) then
+        return
+    end
+
+    local endTime = table.remove(self._TaskLimitEndTimes, 1)
+    local leftTime = math.max(0, endTime - XTime.GetServerNowTimestamp()) * 1000
+    self._TaskLimitTimerId = XScheduleManager.ScheduleOnce(function()
+        XRedPointManager.Check(self.TaskRewardRedPoint)
+        self:CheckTaskLimitTimeEnd()
+    end, leftTime)
+end
+
+function XUiTheatre6Main:StopTaskLimitTimer()
+    if self._TaskLimitTimerId then
+        XScheduleManager.UnSchedule(self._TaskLimitTimerId)
+        self._TaskLimitTimerId = nil
+    end
 end
 
 return XUiTheatre6Main

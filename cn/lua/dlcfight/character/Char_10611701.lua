@@ -304,6 +304,7 @@ function XCharNirvatiaEcology:Update(dt)
     if not self._stateMachine:CheckDataBoard(DataBoardKey.SecondFloor, 1) 
             and not self.IsFirstMeet
             and self._stateMachine.CurStateEnum ~= StateEnum.SecondFloor
+            and not self._proxy:IsQuestObjectiveFinished(30180104)
             and self._proxy:CheckNpcDistanceWithPos(self._proxy:GetLocalPlayerNpcId(), 349.50, 211.48, 173.91, 2.5)
     then
         self.IsFirstMeet = true

@@ -133,7 +133,6 @@ function XUiTheatre6FightReward:OnBtnExitClick()
     --如果对局已经全部结束，显示结算界面
     if not XMVCA.XTheatre6:CheckOpenSettle() then
         self._Control:TryOpenStageViewAfterFight()
-    else
         XMVCA.XTheatre6:PlayAudio()
     end
     

@@ -54,17 +54,17 @@ function XChar1026:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
     end
     --动作属于BaseLayer
     if buffId == 1026001 then
-        XLog.Warning("切换状态机为0")
+        -- XLog.Warning("切换状态机为0")
         self._proxy:SetNpcAnimationLayer(self._uuid, 0)
     end
     --动作属于Layer1
     if buffId == 1026002 then
-        XLog.Warning("切换状态机为1")
+        -- XLog.Warning("切换状态机为1")
         self._proxy:SetNpcAnimationLayer(self._uuid, 1)
     end
 
     if buffId == 1026003 then
-        XLog.Warning("切换状态机为2")
+        -- XLog.Warning("切换状态机为2")
         self._proxy:SetNpcAnimationLayer(self._uuid, 2)
     end
 end

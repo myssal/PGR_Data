@@ -8,7 +8,13 @@ local ReqMethodName = {
 }
 local MoveSkillMaskKey = "XTheatre6Control:SkillMoveOrSwapRequest"
 XTheatre6Control.ImgHighlightKey = 2
--- XTheatre6Control.ImgLevelUpKey = 1
+
+local SkillTypeBgConfigName = {
+    [XEnumConst.Theatre6.SlotType.Special] = "SkillType4Bg",
+    [XEnumConst.Theatre6.SlotType.Insert] = "SkillType2a3Bg",
+    [XEnumConst.Theatre6.SlotType.Active] = "SkillType1Bg"
+}
+
 function XTheatre6Control:OnInitCharacter()
 
 end
@@ -479,6 +485,15 @@ function XTheatre6Control:BagHasNewSkill()
         end
     end
     return false
+end
+
+function XTheatre6Control:GetSkillTypeBgConfigName(skillId)
+    local slotTypes = self:GetSkillInstallSlots(skillId)
+    local skillConfig = self:GetSkillCfgById(skillId)
+    if not slotTypes or #slotTypes < 1 then
+        return self:GetQualityIcon(skillConfig.Quality)
+    end
+    return self:GetClientConfigValue(SkillTypeBgConfigName[slotTypes[1]], skillConfig.Quality)
 end
 
 function XTheatre6Control:SetNewSkillViewed(skillId)

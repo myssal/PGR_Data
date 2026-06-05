@@ -294,7 +294,12 @@ do
 
     --释放拼刀成功的终结动作
     function XTheatre6CharBase:CastWrestleEndSucced()
+        local MonsterTag = 8025000
         self._proxy:AbortAction(self._uuid, true)
+        if self._proxy:CheckBuffByKind(self._uuid, MonsterTag) then 
+            self:CastAction(self._states.Wrestle.SucceedActionId);
+            return
+        end
         self._proxy:SetCameraFocusTarget(self._uuid, self._enemyUUID)
         self:CastAction(self._states.Wrestle.SucceedActionId);
     end
@@ -1104,7 +1109,7 @@ do
     function Delay:Start()
         local oldState, newState = self:GetOldStateName(), self.NeedDelayStates[self._newStateId]
         if (not (oldState and newState)) or (oldState == "WaitHit") then
-            self:LogError("Delay:Start Error: Illegal Old State or New State, Record is:\n" .. self:DebugInfo())
+            -- self:LogError("Delay:Start Error: Illegal Old State or New State, Record is:\n" .. self:DebugInfo())
             return self._stateMachine:SetStateById(self._newStateId)
         end
 
