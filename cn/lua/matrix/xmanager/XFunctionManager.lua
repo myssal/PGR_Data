@@ -443,6 +443,8 @@ function XFunctionManager.SkipInterface(id, fromMsg, ...)
             XLuaUiManager.Open(list.UiName, list.ParamId, nil, nil, nil, true)
         elseif list.UiName == "UiActivityBase" then
             XLuaUiManager.Open(list.UiName, list.ParamId, list.CustomParams[1], list.CustomParams[2])
+        elseif list.UiName == "UiSet" and XOverseaManager.IsOverSeaRegion() then
+            XLuaUiManager.Open(list.UiName, false, list.ParamId)
         else
             XLuaUiManager.Open(list.UiName, list.ParamId)
         end

@@ -819,9 +819,9 @@ function XUiLogin:DoLogin()
 
             -- 设置月卡信息本地缓存
             -- XDataCenter.PurchaseManager.SetYKLocalCache()
-            -- if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
-            --     self:OnCheckBindTask() -- 检查绑定任务，可以触发完成任务
-            -- end
+            if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+                 self:OnCheckBindTask() -- 检查绑定任务，可以触发完成任务
+            end
         -- end)
 
         XDataCenter.SetManager.SetOwnFontSizeByCache()
@@ -997,7 +997,7 @@ function XUiLogin:OnBtnLoginNoticeClickPC()
 end
 
 function XUiLogin:OnCheckBindTask()
-    if XUserManager.UserType ~= XHeroSdkManager.UserType.Vistor then
+    if not XHeroSdkManager.IsGuestUserType(XUserManager.UserType) then
         XHeroSdkManager.OnBindTaskFinished()
     elseif XDataCenter.UiPcManager.IsPc() then
         XHeroSdkManager.OnBindTaskFinished()

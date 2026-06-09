@@ -289,12 +289,14 @@ function XCharKamuiEcology:RegisterMachineStateTransition()
     -- 设置寻路状态枚举值
     self.FindPathStateEnum = StateEnum.FindPath
     self.NextStateList = {
-        StateEnum.TeachingBuilding, StateEnum.Tombstone, StateEnum.Stall
+        StateEnum.TeachingBuilding, StateEnum.Tombstone, StateEnum.Stall, StateEnum.TrainingRoom, StateEnum.InClass
     }
     self.NextStateRotDict ={
         [StateEnum.TeachingBuilding] = {x=0, y=-114.512, z=0},
         [StateEnum.Tombstone] = {x=0, y=-106.342, z=0},
         [StateEnum.Stall] = {x=0, y=144.786, z=0},
+        [StateEnum.TrainingRoom] = {x=0, y=-104.532, z=0},
+        [StateEnum.InClass] = {x=0, y=-72.046, z=0},
     }
     -- 其他状态到寻路状态
     self:RegisterInFindPathStateTransition(StateEnum.TeachingBuilding, function()

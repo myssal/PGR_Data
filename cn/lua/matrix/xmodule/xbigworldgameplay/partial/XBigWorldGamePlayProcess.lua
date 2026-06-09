@@ -279,6 +279,7 @@ function XBigWorldGamePlayAgency:OnEventExitFight()
     --战斗事件通知的退出战斗，如果此时已经登出了，则不通过事件去清除数据
     --会在登出时调用 OnExitFight
     --否则会出现，界面还引用control,但是已经去释放Agency了
+    CS.XUiManager.Instance:EnableClearScreenCamera(true)
     if not XLoginManager.IsLogin() then
         return
     end

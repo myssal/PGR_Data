@@ -61,23 +61,27 @@ function XUiPassport:OnStart(params)
         end
     end
 
-    self:CheckAndGetSupplyReward()
     self:RefreshCoating()
 
     XLuaUiManager.SetMask(true)
 
     self.AnimationSchedule = XScheduleManager.ScheduleNextFrame(function()
+        local function afterAnimation()
+            self:CheckOpenAutoGetTaskRewardListView(
+                handler(self, self.CheckAndGetSupplyReward))
+        end
+
         XScheduleManager.UnSchedule(self.AnimationSchedule)
         self.AnimationSchedule = nil
 
         XLuaUiManager.SetMask(false)
 
         if not params or not params.WithStartEnableAnimation then
-            self:PlayAnimationWithMask("NoAnimationEnable")
+            self:PlayAnimationWithMask("NoAnimationEnable", afterAnimation)
         elseif isFirstOpenInThisActivity then
-            self:PlayAnimationWithMask("Start")
+            self:PlayAnimationWithMask("Start", afterAnimation)
         else
-            self:PlayAnimationWithMask("Enable")
+            self:PlayAnimationWithMask("Enable", afterAnimation)
         end
     end)
 end
@@ -110,15 +114,13 @@ function XUiPassport:RefreshCoating()
 end
 
 function XUiPassport:CheckAndGetSupplyReward()
-    if not self._Control:GetIsGetSupplyReward() then
+    if not self._Control:GetIsGetSupplyReward() and self._Control:GetPassportActivityHasSupplyReward() then
         self._Control:RequestPassportGetSupplyReward()
     end
 end
 
 function XUiPassport:OnEnable()
     CS.XGraphicManager.UseUiLightDir = true
-
-    self:CheckOpenAutoGetTaskRewardListView()
 
     if not self._Control:CheckActivityIsOpen() then
         self:StartTimer()
@@ -154,14 +156,16 @@ function XUiPassport:OnDisable()
 end
 
 --未按时领取的任务奖励，等打开该界面再弹出提示
-function XUiPassport:CheckOpenAutoGetTaskRewardListView()
+function XUiPassport:CheckOpenAutoGetTaskRewardListView(cb)
     local rewardList = self._Control:GetCookieAutoGetTaskRewardList()
     if not XTool.IsTableEmpty(rewardList) then
         local title = CS.XTextManager.GetText("PassportAutoGetTipsTitle")
         local desc = CS.XTextManager.GetText("PassportAutoGetTipsDesc")
-        XLuaUiManager.Open("UiPassportTips", rewardList, title, desc)
+        XLuaUiManager.Open("UiPassportTips", rewardList, title, desc, cb)
 
         self._Control:ClearCookieAutoGetTaskRewardList()
+    else
+        cb()
     end
 end
 

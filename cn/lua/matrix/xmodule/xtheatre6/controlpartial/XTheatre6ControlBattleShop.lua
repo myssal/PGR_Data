@@ -156,7 +156,7 @@ function XTheatre6Control:BuySkillGood(skillId, pos, cb)
                         local replaceCfg = self:GetSkillCfgById(skillData.SkillId)
                         local buyCfg = self:GetSkillCfgById(skillId)
                         if replaceCfg and buyCfg
-                            and replaceCfg.SkillKey == buyCfg.SkillKey and replaceCfg.Level == buyCfg.Level + 1 then
+                            and replaceCfg.SkillKey == buyCfg.SkillKey and replaceCfg.Level > buyCfg.Level then
                             isUpGrade = true
                             skillId = skillData.SkillId
                             break

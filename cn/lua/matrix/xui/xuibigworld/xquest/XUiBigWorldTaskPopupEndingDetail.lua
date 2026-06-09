@@ -120,6 +120,7 @@ function XUiBigWorldTaskPopupEndingDetail:OnBtnViewClick()
     if not CS.System.IO.Directory.Exists(path) then
         CS.System.IO.Directory.CreateDirectory(path)
     end
+    path = string.format("file:///%s", path)
     CS.UnityEngine.Application.OpenURL(path)
 end
 
