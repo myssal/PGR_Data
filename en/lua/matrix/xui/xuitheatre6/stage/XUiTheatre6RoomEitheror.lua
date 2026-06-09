@@ -537,6 +537,9 @@ function XUiTheatre6RoomEitheror:OnEndChoose(direction)
         --进入战斗
         if isFight then
             XLuaUiManager.Open("UiTheatre6Loading")
+            if isEnd then
+                self:Close()
+            end
             return
         end
 

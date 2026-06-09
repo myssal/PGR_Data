@@ -474,10 +474,11 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
         local isFirst = xTeamPrefab:GetFirstFightPos() == pos
         self.BtnFirst:SetButtonState(isFirst and CS.UiButtonState.Disable or CS.UiButtonState.Normal)
 
-        -- 形态切换按钮（仅支持 CharacterSkillExchangeDes 配置的角色，如比安卡）
+        -- 战前切换按钮（对齐战斗房间 PanelChangeMode，仅显示 Skill 类型）
         local switchSkillId, skillExchangeConfig = XMVCA.XCharacter:GetSkillExchangeDesSkillIdAndConfigByCharacterId(characterId)
-        self.BtnMode.gameObject:SetActiveEx(switchSkillId ~= nil)
-        if switchSkillId then
+        local isShowSwitchSkill = switchSkillId ~= nil and skillExchangeConfig ~= nil and skillExchangeConfig.UiType ~= XEnumConst.CHARACTER.SKILL_EXCHANGE_UI_TYPE.FORM
+        self.BtnMode.gameObject:SetActiveEx(isShowSwitchSkill)
+        if isShowSwitchSkill then
             -- 确定当前选中的变体：读预设存储，nil 时 fallback 到 group 第一个（不读全局态，保持数据独立）
             local currentSkillId = xTeamPrefab:GetSwitchSkillByPos(pos)
             local groupSkillIds = XMVCA.XCharacter:GetGroupSkillIds(switchSkillId)

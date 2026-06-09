@@ -344,10 +344,25 @@ function XTheatre6Control:BuffLevelUpSkillRequest(buffId,skillId, cb)
             return
         end
         if XTool.IsNumberValid(skillId) and skillId ~= 0 then
-            local nextSkillId = self:GetNextLevelSkillId(skillId)
-            if XTool.IsNumberValid(nextSkillId) then
-                XLuaUiManager.Open("UiTheatre6GainTips", 1, nextSkillId, true)
+            for i,skillUpdateData in ipairs(response.SkillUpdates) do
+            local targetSkillId = nil
+                
+            if skillUpdateData and skillUpdateData.ReplaceSkills then 
+                for index, skillData in pairs(skillUpdateData.ReplaceSkills) do
+                    local replaceCfg = self:GetSkillCfgById(skillData.SkillId)
+                    local skillCfg = self:GetSkillCfgById(skillId)
+                    if replaceCfg and skillCfg
+                        and replaceCfg.SkillKey == skillCfg.SkillKey and replaceCfg.Level > skillCfg.Level then
+                        targetSkillId = skillData.SkillId
+                        break
+                    end
+                end
             end
+            if targetSkillId then
+                XLuaUiManager.Open("UiTheatre6GainTips", 1, targetSkillId, true)
+            end
+        end 
+        
         end
         if response.SkillUpdates then
             self._Model.Skill:UpdateSkillListWithOverQueue(response.SkillUpdates)

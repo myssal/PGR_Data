@@ -14,9 +14,7 @@ function XNPC_AlphaChoice:CommonInit()
     self._placeId = self._proxy:GetNpcPlaceId()
     self._proxy:RegisterEvent(EWorldEvent.NpcInteractCountDownFinish)
     self._proxy:RegisterEvent(EWorldEvent.NpcInteractComplete)
-    self._proxy:SetNpcInteractOptionActive(self._placeId,1,false)
-    self._proxy:SetNpcInteractOptionActive(self._placeId,2,false)
-    self._proxy:SetNpcInteractOptionActive(self._placeId,4,false)
+    self._proxy:RegisterEvent(EWorldEvent.NpcLoadComplete)
 
     -- 保存slash和showOption记录状态
     self._proxy:RegisterBBSync(XVarDomain.Npc, self._uuid, EAlphaInviteSaveKey.Slash)
@@ -39,7 +37,12 @@ function XNPC_AlphaChoice:Update(dt)
 end
 
 function XNPC_AlphaChoice:HandleEvent(eventType, eventArgs)
-    if eventType == EWorldEvent.NpcInteractComplete and eventArgs.TargetPlaceId == self._placeId then
+    if eventType == EWorldEvent.NpcLoadComplete and eventArgs.NpcPlaceId == self._placeId then
+        -- 初始化隐藏所有的选项，不放CommonInit是因为此时创建actor还没加入actor中会有根据placeId获取报错
+        self._proxy:SetNpcInteractOptionActive(self._placeId,1,false)
+        self._proxy:SetNpcInteractOptionActive(self._placeId,2,false)
+        self._proxy:SetNpcInteractOptionActive(self._placeId,4,false)
+    elseif eventType == EWorldEvent.NpcInteractComplete and eventArgs.TargetPlaceId == self._placeId then
         if eventArgs.OptionId == 1 then
             self._proxy:PlayDramaCaption("Caption201508",true)
             self._proxy:AddTimerTask(8,function()  self._proxy:SetNpcInteractOptionActive(self._placeId,2,true) end )
@@ -55,7 +58,6 @@ function XNPC_AlphaChoice:HandleEvent(eventType, eventArgs)
             self._proxy:PlayDramaCaption("Caption201513",true)
             --------播放字幕Caption201513
         end
-
     end
 end
 

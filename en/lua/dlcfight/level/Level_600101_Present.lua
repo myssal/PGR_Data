@@ -41,6 +41,7 @@ function XLevel6001Present:Init()
     self:InitDanceRobot()--跳舞机器人
     self:InitSqureRunner()--纪念广场跑步的人
     self:Weapon()--武器架
+    self:InitCoinMachine()--饮料机初始化
 
     --endregion
 
@@ -207,6 +208,16 @@ function XLevel6001Present:HandleEvent(eventType, eventArgs)
 end
 
 --------------事件本体---------------
+--region 饮料机初始化
+function XLevel6001Present:InitCoinMachine()
+    if self._proxy:IsQuestObjectiveFinished(60030103) then --如果自动贩卖机的任务全部完成了的话
+        self._proxy:LoadSceneObject(4000001) --完成饮料机任务，获得小卡片
+        self._proxy:LoadLevelNpc(4000059)--加载饮料机NPC
+    end
+end
+
+
+--endregion
 
 --region 许愿池打捞
 --初始化参数
