@@ -8676,6 +8676,7 @@ XTable = {
         FashionName = ValueTypestring,
         FashionNameVertical = ValueTypestring,
         OriginalFashionId = ValueTypeint,
+        TargetFashionId = ValueTypeint,
         PreviewAnimation = ValueTypestring,
         Quality = ValueTypeint,
         Description = ValueTypestring,
