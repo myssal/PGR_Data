@@ -42,47 +42,47 @@ function XUiBtnTab:InitAutoScript()
 end
 
 function XUiBtnTab:AutoInitUi()
-    self.Btn = self.Transform:GetComponent("Button")
-    self.Image = self.Transform:GetComponent("Image")
+    self.Btn = self.Transform:GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.Image = self.Transform:GetComponent(typeof(CS.UnityEngine.UI.Image))
 
     local lock = self.Transform:Find("ImgLock")
     if (lock) then
-        self.ImgLock = lock:GetComponent("Image")
+        self.ImgLock = lock:GetComponent(typeof(CS.UnityEngine.UI.Image))
     end
 
     local normal = self.Transform:Find("TxtNormal")
     if (normal) then
-        self.TxtNormal = normal:GetComponent("Text")
+        self.TxtNormal = normal:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local normalEn = self.Transform:Find("TxtNormal/TxtNormalEn")
     if (normalEn) then
-        self.TxtNormalEn = normalEn:GetComponent("Text")
+        self.TxtNormalEn = normalEn:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local locktxt = self.Transform:Find("TxtLock")
     if (locktxt) then
-        self.TxtLock = locktxt:GetComponent("Text")
+        self.TxtLock = locktxt:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local lockEn = self.Transform:Find("TxtLock/TxtLockEn")
     if (lockEn) then
-        self.TxtLockEn = lockEn:GetComponent("Text")
+        self.TxtLockEn = lockEn:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local selected = self.Transform:Find("TxtSelected")
     if (selected) then
-        self.TxtSelected = selected:GetComponent("Text")
+        self.TxtSelected = selected:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local selectedEn = self.Transform:Find("TxtSelected/TxtSelectedEn")
     if (selectedEn) then
-        self.TxtSelectedEn = selectedEn:GetComponent("Text")
+        self.TxtSelectedEn = selectedEn:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     self.tag = self.Transform:Find("PanelTag")
     if (self.tag) then
-        self.TxtTag = self.Transform:Find("PanelTag/TxtTag"):GetComponent("Text")
+        self.TxtTag = self.Transform:Find("PanelTag/TxtTag"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 end
 

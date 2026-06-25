@@ -393,11 +393,11 @@ function XUiBattleRoomRoleDetail:OnBtnFashionClicked()
 end
 
 function XUiBattleRoomRoleDetail:OnBtnConsciousnessClicked()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwareness(self.CurrentEntityId)
+    XMVCA.XEquip:OpenUiEquipAwareness(self.CurrentEntityId)
 end
 
 function XUiBattleRoomRoleDetail:OnBtnWeaponClicked()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CurrentEntityId, nil, true)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CurrentEntityId, nil, true)
 end
 
 function XUiBattleRoomRoleDetail:SetJoinBtnIsActive(value)

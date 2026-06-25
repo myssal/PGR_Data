@@ -39,7 +39,7 @@ function XUiPanelAreaWarQuestDetail:DoAwake()
 
     self.GridCommon.gameObject:SetActiveEx(false)
     if not self.TxtTypeTitle then
-        self.TxtTypeTitle = self.TxtDispatch.transform.parent:GetComponent("Text")
+        self.TxtTypeTitle = self.TxtDispatch.transform.parent:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 end
 

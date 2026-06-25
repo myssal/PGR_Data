@@ -9,7 +9,7 @@ function XUiGridStoryChapterDP:Ctor(rootUi, ui, autoChangeBgArgs, isOnZhouMu)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.IsOnZhouMu = isOnZhouMu
-    self.RectTransform = self.Transform:GetComponent("RectTransform")
+    self.RectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.GridStageList = {}
     self.GridEggStageList = {}
     self.LineList = {}
@@ -93,7 +93,7 @@ function XUiGridStoryChapterDP:RefreshAutoChangeBgStageIndex()
         return
     end
 
-    local stageParent = stageTransform:GetComponent("RectTransform")
+    local stageParent = stageTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     if XTool.UObjIsNil(stageParent) then
         XLog.Error("XUiGridStoryChapterDP:RefreshAutoChangeBgStageIndex error:stage parent not exist,stageIndex is:" .. stageIndex)
         return
@@ -259,7 +259,7 @@ function XUiGridStoryChapterDP:GoToStage(stageId)
     if not grid then
         return
     end
-    local gridTf = grid.Parent.gameObject:GetComponent("RectTransform")
+    local gridTf = grid.Parent.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     --local posX = self.PanelStageContent.localPosition.x
     local posX = gridTf.localPosition.x - self.RectTransform.rect.width / 2
     self.ScrollRect.horizontalNormalizedPosition = 0
@@ -490,7 +490,7 @@ end
 
 function XUiGridStoryChapterDP:PlayScrollViewMove(grid)
     -- 动画
-    local gridTf = grid.Parent.gameObject:GetComponent("RectTransform")
+    local gridTf = grid.Parent.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridTf.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridTf.localPosition.x

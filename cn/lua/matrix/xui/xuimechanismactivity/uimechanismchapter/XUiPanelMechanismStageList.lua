@@ -73,7 +73,7 @@ end
 
 function XUiPanelMechanismStageList:PlayScrollViewMove(grid)
     -- 动画
-    local gridTf = grid.Parent.gameObject:GetComponent("RectTransform")
+    local gridTf = grid.Parent.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridTf.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridTf.localPosition.x

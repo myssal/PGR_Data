@@ -139,7 +139,7 @@ function XUiEquipResonanceQuick:OnBtnQuickResonanceClick()
         local skillId = self:GetSelectSkillId()
         local resonanceType = self.SkillInfo.EquipResonanceType
         local useItemId = XDataCenter.ItemManager.ItemId.QuickReasonanceCoin
-        local agency = XMVCA:GetAgency(ModuleId.XEquip)
+        local agency = XMVCA.XEquip
         agency:RequestEquipQuickResonance(equipIds, self.CharacterId, useItemId, self.TabIndex, skillId, resonanceType, function()
             self:Refresh()
         end)

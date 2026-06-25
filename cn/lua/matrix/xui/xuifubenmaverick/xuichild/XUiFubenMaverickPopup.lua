@@ -108,7 +108,7 @@ function XUiFubenMaverickPopup:InitEnemies()
                 XTool.InitUiObjectByUi(grid, ui)
                 self.EnemyGrids[i] = grid
             end
-            local icon = XMVCA.XArchive:GetArchiveMonsterConfigById(enemyId).Icon
+            local icon = XMVCA.XArchive.MonsterArchiveAgency:GetArchiveMonsterInnerConfigById(enemyId).Icon
             grid.Icon:SetRawImage(icon)
             grid.GameObject:SetActiveEx(true)
         end

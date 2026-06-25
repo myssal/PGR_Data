@@ -76,9 +76,9 @@ function XUiPanelRestModel:InitRes(tScreenPos)
 
     local renderTextureDrag = CS.UnityEngine.RenderTexture(512, 512, 0)
     self.RawImgDrag.texture = renderTextureDrag
-    local cameraDrag = self.UiCameraRestDrag:GetComponent("Camera")
+    local cameraDrag = self.UiCameraRestDrag:GetComponent(typeof(CS.UnityEngine.Camera))
     cameraDrag.targetTexture = renderTextureDrag
-    local rtf = self.RawImgDrag:GetComponent("RectTransform")
+    local rtf = self.RawImgDrag:GetComponent(typeof(CS.UnityEngine.RectTransform))
     rtf.sizeDelta = CS.UnityEngine.Vector2(512, 512)
 
 

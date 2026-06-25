@@ -853,7 +853,7 @@ function XModelManager.PlayWeaponShowing(target, modelId, uiName, go, param)
     local animator
 
     if animController and uiName then
-        animator = target:GetComponent("Animator")
+        animator = target:GetComponent(typeof(CS.UnityEngine.Animator))
         animator.runtimeAnimatorController = CS.LoadHelper.LoadUiController(animController, animator.gameObject)
 
         if animator.runtimeAnimatorController and roleModelId then
@@ -885,7 +885,7 @@ function XModelManager.PlayWeaponShowing(target, modelId, uiName, go, param)
     -- 武器动画逻辑：静止 - 展开 - 待机循环（默认）
     local animStateName = XMVCA.XEquip:GetEquipUiAnimStateName(modelId, usage)
     if animStateName then
-        animator = animator or target:GetComponent("Animator")
+        animator = animator or target:GetComponent(typeof(CS.UnityEngine.Animator))
         if animator and XModelManager.CheckAnimatorAction(animator, animStateName) then
             animator:Update(0)
             -- 静止

@@ -26,7 +26,7 @@ function XUiRadioSignRMSStrip:OnStart()
         local stripName = "ImgStrip" .. i
         local stripTransform = self.Transform:FindTransform(stripName)
         if stripTransform then
-            self._ImgStrips[i] = stripTransform:GetComponent("Image")
+            self._ImgStrips[i] = stripTransform:GetComponent(typeof(CS.UnityEngine.UI.Image))
         end
     end
     

@@ -31,12 +31,12 @@ end
 function XUiDrawActivityControl:InitButton(btn, index)
     --@DATA
     local gachaCount = self.GachaCfg.BtnGachaCount[index]
-    btn.transform:Find("TxtDrawDesc"):GetComponent("Text").text = CS.XTextManager.GetText("DrawCount", gachaCount)
-    local itemIcon = btn.transform:Find("ImgUseItemIcon"):GetComponent("RawImage")
+    btn.transform:Find("TxtDrawDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = CS.XTextManager.GetText("DrawCount", gachaCount)
+    local itemIcon = btn.transform:Find("ImgUseItemIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     itemIcon:SetRawImage(self.UseItemIcon)
-    btn.transform:Find("TxtUseItemCount"):GetComponent("Text").text = gachaCount * self.GachaCfg.ConsumeCount
+    btn.transform:Find("TxtUseItemCount"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = gachaCount * self.GachaCfg.ConsumeCount
 
-    self.RootUi:RegisterClickEvent(btn:GetComponent("Button"), function()
+    self.RootUi:RegisterClickEvent(btn:GetComponent(typeof(CS.UnityEngine.UI.Button)), function()
         self.UiGacha:UpdateItemCount()
         self:OnDraw(gachaCount)
     end)

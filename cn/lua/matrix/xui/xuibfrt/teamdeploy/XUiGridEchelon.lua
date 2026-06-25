@@ -45,19 +45,19 @@ end
 
 function XUiGridEchelon:AutoInitUi()
     self.PanelLeaderSkill = self.Transform:Find("PanelLeaderSkill")
-    self.TxtLeaderSkill = self.Transform:Find("PanelLeaderSkill/TxtLeaderSkill"):GetComponent("Text")
+    self.TxtLeaderSkill = self.Transform:Find("PanelLeaderSkill/TxtLeaderSkill"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelRequire = self.Transform:Find("PanelRequire")
-    self.TxtExtraCondition = self.Transform:Find("PanelRequire/TxtExtraCondition"):GetComponent("Text")
+    self.TxtExtraCondition = self.Transform:Find("PanelRequire/TxtExtraCondition"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelTitleBgLogistic = self.Transform:Find("PanelTitleBgLogistic")
-    self.TxtTitleA = self.Transform:Find("PanelTitleBgLogistic/TxtTitle"):GetComponent("Text")
+    self.TxtTitleA = self.Transform:Find("PanelTitleBgLogistic/TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelTitleBgFight = self.Transform:Find("PanelTitleBgFight")
-    self.TxtTitle = self.Transform:Find("PanelTitleBgFight/TxtTitle"):GetComponent("Text")
+    self.TxtTitle = self.Transform:Find("PanelTitleBgFight/TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelEchelonMembers = self.Transform:Find("PanelEchelonMembers")
     self.GridEchelonMember = self.Transform:Find("PanelEchelonMembers/GridEchelonMember")
-    self.TxtDoNotNeedFight = self.Transform:Find("TxtDoNotNeedFight"):GetComponent("Text")
+    self.TxtDoNotNeedFight = self.Transform:Find("TxtDoNotNeedFight"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelLogisticSkill = self.Transform:Find("PanelLogisticSkill")
-    self.TxtLogisticSkill = self.Transform:Find("PanelLogisticSkill/TxtLogisticSkill"):GetComponent("Text")
-    self.ImgNotPassCondition = self.Transform:Find("ImgNotPassCondition"):GetComponent("Image")
+    self.TxtLogisticSkill = self.Transform:Find("PanelLogisticSkill/TxtLogisticSkill"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgNotPassCondition = self.Transform:Find("ImgNotPassCondition"):GetComponent(typeof(CS.UnityEngine.UI.Image))
 end
 --endregion
 

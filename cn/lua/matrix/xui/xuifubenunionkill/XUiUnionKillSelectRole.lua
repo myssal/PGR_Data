@@ -212,13 +212,13 @@ end
 function XUiUnionKillSelectRole:OnBtnConsciousnessClick()
     -- 共享角色返回
     if not self.CurCharacter then return end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwareness(self.CurCharacter.Id)
+    XMVCA.XEquip:OpenUiEquipAwareness(self.CurCharacter.Id)
 end
 
 function XUiUnionKillSelectRole:OnBtnWeaponClick()
     -- 共享角色返回
     if not self.CurCharacter then return end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CurCharacter.Id, nil, true)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CurCharacter.Id, nil, true)
 end
 
 function XUiUnionKillSelectRole:OnBtnJoinTeamClick()

@@ -225,13 +225,13 @@ function XUiEquipResonanceSelectAfter:OnBtnBackClick()
 end
 
 function XUiEquipResonanceSelectAfter:OnBtnRemainClick()
-    XMVCA:GetAgency(ModuleId.XEquip):ResonanceConfirm(self.EquipId, self.Pos, false, function()
+    XMVCA.XEquip:ResonanceConfirm(self.EquipId, self.Pos, false, function()
         self:CloseUi()
     end)
 end
 
 function XUiEquipResonanceSelectAfter:OnBtnChangeClick()
-    XMVCA:GetAgency(ModuleId.XEquip):ResonanceConfirm(self.EquipId, self.Pos, true, function()
+    XMVCA.XEquip:ResonanceConfirm(self.EquipId, self.Pos, true, function()
         self:CloseUi()
     end)
 end
@@ -266,11 +266,11 @@ function XUiEquipResonanceSelectAfter:RequestResonance(selectEquipId, selectItem
 
     -- 保留旧共鸣结果
     if unconfirmInfo then
-        XMVCA:GetAgency(ModuleId.XEquip):ResonanceConfirm(self.EquipId, self.Pos, false)
+        XMVCA.XEquip:ResonanceConfirm(self.EquipId, self.Pos, false)
     end
 
     -- 请求共鸣
-    XMVCA:GetAgency(ModuleId.XEquip):RequestEquipResonance(self.EquipId, {self.Pos}, selectCharacterId, selectEquipId, selectItemId, {}, nil, true)
+    XMVCA.XEquip:RequestEquipResonance(self.EquipId, {self.Pos}, selectCharacterId, selectEquipId, selectItemId, {}, nil, true)
 end
 
 function XUiEquipResonanceSelectAfter:OnBtnSelectCostClick()

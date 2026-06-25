@@ -116,12 +116,7 @@ function XUiBigWorldTaskPopupEndingDetail:OnBtnViewClick()
         return
     end
     local path = CS.XTool.GetPhotoAlbumPath()
-    path = string.gsub(path, "/", "\\")
-    if not CS.System.IO.Directory.Exists(path) then
-        CS.System.IO.Directory.CreateDirectory(path)
-    end
-    path = string.format("file:///%s", path)
-    CS.UnityEngine.Application.OpenURL(path)
+    CS.XTool.OpenFile(path)
 end
 
 function XUiBigWorldTaskPopupEndingDetail:OnBtnAgainClick()

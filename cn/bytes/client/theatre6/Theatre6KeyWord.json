@@ -47,7 +47,7 @@
     {
         "Id": 20,
         "Name": "狂袭",
-        "Des": "<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态下，造成伤害提高10%，使用任意技能均将消耗10点<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>，部分技能将触发额外效果。\\n在<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>消耗至0时，<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态结束。<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>无法叠加。"
+        "Des": "<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态下，造成伤害提高20%，使用任意技能均将消耗10点<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>，部分技能将触发额外效果。\\n在<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>消耗至0时，<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态结束。<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>无法叠加。"
     },
     {
         "Id": 21,
@@ -57,7 +57,7 @@
     {
         "Id": 22,
         "Name": "反制",
-        "Des": "战斗中一方<Icon=IconOverClock|30|30|0.5/>超<color=#516797>序值</color>达到100点时，将触发一次<Icon=IconOverClock|30|30|0.5/><color=#516797>反制</color>。在<Icon=IconOverClock|30|30|0.5/><color=#516797>反制</color>中获胜的一方，将获得出手权"
+        "Des": "战斗中一方<Icon=IconOverClock|30|30|0.5/><color=#516797>超序值</color>达到100点时，将触发一次<Icon=IconOverClock|30|30|0.5/><color=#516797>反制</color>。在<Icon=IconOverClock|30|30|0.5/><color=#516797>反制</color>中获胜的一方，将获得出手权"
     },
     {
         "Id": 23,
@@ -78,6 +78,21 @@
         "Id": 26,
         "Name": "唯一",
         "Des": "相同效果仅生效一次，无法叠加。"
+    },
+    {
+        "Id": 27,
+        "Name": "护盾",
+        "Des": "受到伤害时，消耗<color=#516797><Icon=IconProtector|30|30|0.5/>护盾</color>以抵消等量伤害。在双方<Icon=IconStamina|30|30|0.5/><color=#6F4877>战意值</color>均耗尽时，清空双方的<color=#516797><Icon=IconProtector|30|30|0.5/>护盾</color>。护盾被<Icon=IconHitFlyBlack|30|30|0.5/><color=#487F3B>击飞</color>或<Icon=IconHitDown|30|30|0.5/><color=#487F3B>击倒</color>技能命中时，受到的伤害提升50%。"
+    },
+    {
+        "Id": 28,
+        "Name": "曦光",
+        "Des": "携带任意<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光</color>效果的技能时，将激活特殊效果：每次使用主动/触发/拼刀/反制技能时，将分别积累10/15/20/20点<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光值</color>。"
+    },
+    {
+        "Id": 29,
+        "Name": "曦光值",
+        "Des": "<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光值</color>上限为120点。每次<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光值</color>满时，耗尽<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光值</color>并释放<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光启明</color>：无视原有的技能条件，强制释放一号位的触发技能。"
     },
     {
         "Id": 99,

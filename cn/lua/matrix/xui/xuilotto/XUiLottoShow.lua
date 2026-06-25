@@ -3,7 +3,6 @@ local XUiLottoShow = XLuaUiManager.Register(XLuaUi, "UiLottoShow")
 local drawShowEffect = require("XUi/XUiDraw/XUiDrawTools/XUiDrawShowEffect")
 local drawScene = require("XUi/XUiDraw/XUiDrawTools/XUiDrawScene")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
-local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
 
 function XUiLottoShow:OnAwake()
     self:InitAutoScript()
@@ -417,7 +416,7 @@ function XUiLottoShow:InitDrawBackGround()
     self.TxtType.text = ""
     self.TxtName.text = ""
     self.TxtQuality.text = ""
-    self.PanelInfo.gameObject:GetComponent("CanvasGroup").alpha = 0
+    self.PanelInfo.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 0
 
     self:PlayBoxAnimStart()
 end
@@ -435,7 +434,7 @@ function XUiLottoShow:PlayBoxAnimStart()
     if self.Update then
         behaviour.LuaUpdate = function() self:Update() end
     end
-    self.PlayableDirector = self.BackGround:GetComponent("PlayableDirector")
+    self.PlayableDirector = self.BackGround:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     self.PlayableDirector:Play()
     self.PlayBoxAnim = true
     self.PanelBoxLight = self.BackGround.transform:Find("ModelRoot/UiNearRoot/PanelBox/PanelBoxLight")
@@ -546,7 +545,7 @@ function XUiLottoShow:ShowPartnerModel(templateId)
 
     local partnerCurShowNum = self.PartnerIndex
 
-    self.CvInfo = XUiModelUtility.LoadPartnerModelSToC(templateId, self.PartnerModelPanel, XModelManager.MODEL_UINAME.XUiDrawShow, function(SModel)
+    XDataCenter.PartnerManager.LoadPartnerStandbyModelWithSToCShow(templateId, self.PartnerModelPanel, XModelManager.MODEL_UINAME.XUiDrawShow, function(SModel)
         SModel.gameObject:SetActiveEx(true)
         self.LastPartnerModel = SModel
         self.BtnClick.gameObject:SetActiveEx(true)

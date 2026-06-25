@@ -51,7 +51,7 @@ function XUiEquipSuitSkillV2P6:OnBtnRightClick()
 end
 
 function XUiEquipSuitSkillV2P6:UpdateView()
-    self.SuitInfoList = XMVCA:GetAgency(ModuleId.XEquip):GetWearingSuitInfoList(self.CharacterId)
+    self.SuitInfoList = XMVCA.XEquip:GetWearingSuitInfoList(self.CharacterId)
     local canSwitch = #self.SuitInfoList > PAGE_SUIT_CONT
     self.BtnLeft.gameObject:SetActiveEx(false)
     self.BtnRight.gameObject:SetActiveEx(false)
@@ -105,12 +105,12 @@ function XUiGridSuitSkill:UpdateView(characterId, suitInfo)
     end
 
     local suitId = suitInfo.SuitId
-    local iconPath = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitIconPath(suitId)
+    local iconPath = XMVCA.XEquip:GetEquipSuitIconPath(suitId)
     self.RImgIcon:SetRawImage(iconPath)
 
     local activeCount, siteCheckDic = XMVCA.XEquip:GetActiveSuitEquipsCount(characterId, suitId)
-    local isOverrun = XMVCA:GetAgency(ModuleId.XEquip):IsCharacterOverrunSuit(characterId, suitId)
-    local skillDesList = XMVCA:GetAgency(ModuleId.XEquip):GetSuitActiveSkillDesList(suitId, activeCount, isOverrun, isOverrun)
+    local isOverrun = XMVCA.XEquip:IsCharacterOverrunSuit(characterId, suitId)
+    local skillDesList = XMVCA.XEquip:GetSuitActiveSkillDesList(suitId, activeCount, isOverrun, isOverrun)
 
     for _, desGo in ipairs(self.ActiveDesList) do
         desGo.gameObject:SetActiveEx(false)
@@ -139,7 +139,7 @@ function XUiGridSuitSkill:UpdateView(characterId, suitInfo)
         end
         desGo.gameObject:SetActiveEx(true)
         desGo.transform:SetAsLastSibling()
-        desGo:GetComponent("Text").text = skillInfo.SkillDes
+        desGo:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = skillInfo.SkillDes
         local txtTitle = XUiHelper.TryGetComponent(desGo.transform, "TxtTitle", "Text")
         txtTitle.text = skillInfo.PosDes
     end

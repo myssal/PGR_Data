@@ -62,7 +62,7 @@ function XUiPanelBossRankInfo:_Init()
         local type = self.BtnIndexDic[k]
         local text = XUiHelper.GetText("BossSingleRankDesc", Cfgs[type].MinPlayerLevel, Cfgs[type].MaxPlayerLevel)
         btn:SetName(Cfgs[type].LevelName, text)
-        local icon = btn.Transform:Find("RImgIcon"):GetComponent("RawImage")
+        local icon = btn.Transform:Find("RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
         icon:SetRawImage(Cfgs[type].Icon)
         self.TabBtnGroup:UnLockIndex(k)
     end

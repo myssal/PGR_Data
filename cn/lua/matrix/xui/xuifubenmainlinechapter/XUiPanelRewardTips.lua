@@ -32,8 +32,8 @@ function XUiPanelRewardTips:InitAutoScript()
 end
 
 function XUiPanelRewardTips:AutoInitUi()
-    self.RImgIcon = self.Transform:Find("RImgIcon"):GetComponent("RawImage")
-    self.ImgQuality = self.Transform:Find("ImgQuality"):GetComponent("Image")
+    self.RImgIcon = self.Transform:Find("RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.ImgQuality = self.Transform:Find("ImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.Image))
 end
 
 function XUiPanelRewardTips:RegisterClickEvent(uiNode, func)

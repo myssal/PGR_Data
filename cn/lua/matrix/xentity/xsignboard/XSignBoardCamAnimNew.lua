@@ -326,10 +326,10 @@ function XSignBoardCamAnimNew:_InitModelRoot(ui)
         self.ToFullTimeLine = sceneModel:Find("Animations/ToFullTimeLine")
         self.FullTimeLine = sceneModel:Find("Animations/FullTimeLine")
         self.ChargeTimeLine = sceneModel:Find("Animations/ChargeTimeLine")
-        self.AnimEnableLong = sceneModel:Find("Animations/AnimEnableLong"):GetComponent("PlayableDirector")
+        self.AnimEnableLong = sceneModel:Find("Animations/AnimEnableLong"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
         local animLoop = sceneModel:Find("Animations/AnimEnableLoop")
         if animLoop then
-            self.AnimEnableLoop = animLoop:GetComponent("PlayableDirector")
+            self.AnimEnableLoop = animLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
         end
     end
 end
@@ -337,7 +337,7 @@ end
 
 --region SceneAnim
 function XSignBoardCamAnimNew:_InitNode(animRootNode, animNode)
-    self.AnimPlayer = animNode.gameObject:GetComponent("PlayableDirector")
+    self.AnimPlayer = animNode.gameObject:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     self.DarkCanvasGroupList = animNode.transform:GetComponentsInChildren(typeof(CS.UnityEngine.CanvasGroup), true)
     self:_ResetSceneAnim()
 
@@ -405,7 +405,7 @@ end
 function XSignBoardCamAnimNew:_SetEffectAnim(speed)
     local animater
     for _, effect in pairs(self.EffectDic) do
-        animater = effect.childCount > 0 and effect:GetChild(0):GetComponent("Animator") or nil
+        animater = effect.childCount > 0 and effect:GetChild(0):GetComponent(typeof(CS.UnityEngine.Animator)) or nil
         if not XTool.UObjIsNil(animater) then
             animater.speed = speed
         end
@@ -425,7 +425,7 @@ function XSignBoardCamAnimNew:_InitUiAnim()
     end
     for i = 0, self.UiAnimNodeRoot.childCount - 1, 1 do
         local anim = self.UiAnimNodeRoot:GetChild(i)
-        local playableDirector = anim:GetComponent("PlayableDirector")
+        local playableDirector = anim:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
 
         if not playableDirector or not playableDirector.playableAsset then
             goto CONTINUE
@@ -435,9 +435,9 @@ function XSignBoardCamAnimNew:_InitUiAnim()
         for j = 0, tracks.Length - 1, 1 do
             if anim.name == UiModeAnim then
                 -- 特殊动画 用来控制场景角色
-                playableDirector:SetGenericBinding(tracks[j], self.SceneUiModelParent:GetComponent("Animator"))
+                playableDirector:SetGenericBinding(tracks[j], self.SceneUiModelParent:GetComponent(typeof(CS.UnityEngine.Animator)))
             else
-                playableDirector:SetGenericBinding(tracks[j], self.UiRoot.GameObject:GetComponent("Animator"))
+                playableDirector:SetGenericBinding(tracks[j], self.UiRoot.GameObject:GetComponent(typeof(CS.UnityEngine.Animator)))
             end
         end
         self.UiAnim[anim.name] = playableDirector
@@ -529,7 +529,7 @@ function XSignBoardCamAnimNew:_ReBindAnimRoleTrack()
         if not binding or (self._TrackBindMap[trackId] and self._TrackBindMap[trackId] ~= curRoleName) then
             self._TrackBindMap[trackId] = curRoleName
             self.AnimPlayer:ClearGenericBinding(tracks[i])
-            self.AnimPlayer:SetGenericBinding(tracks[i], self._ModelPanel:GetTransform().gameObject:GetComponent("Animator"))
+            self.AnimPlayer:SetGenericBinding(tracks[i], self._ModelPanel:GetTransform().gameObject:GetComponent(typeof(CS.UnityEngine.Animator)))
         end
     end
 end

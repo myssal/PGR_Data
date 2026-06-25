@@ -2,7 +2,6 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@class XUiGridDrawShowModel
 local XUiGridDrawShowModel = XClass(nil, "XUiGridDrawShowModel")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
-local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
 
 local LineEffect2d = "DrawShowLineCommunicationEffect2d"
 local LineEffect3d = "DrawShowLineCommunicationEffect3d"
@@ -20,13 +19,13 @@ end
 
 function XUiGridDrawShowModel:InitUiObject()
     ---@type UnityEngine.UI.Text
-    self.TxtName = self.UiPanel:FindTransform("TxtName"):GetComponent("Text")
+    self.TxtName = self.UiPanel:FindTransform("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     ---@type UnityEngine.UI.Image
-    self.ImgNameBg = self.UiPanel:FindTransform("ImgBg"):GetComponent("Image")
+    self.ImgNameBg = self.UiPanel:FindTransform("ImgBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
     ---@type UnityEngine.UI.Text
-    self.TxtType = self.UiPanel:FindTransform("TxtType"):GetComponent("Text")
+    self.TxtType = self.UiPanel:FindTransform("TxtType"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     ---@type UnityEngine.UI.Text
-    self.TxtQuality = self.UiPanel:FindTransform("TxtQuality"):GetComponent("Text")
+    self.TxtQuality = self.UiPanel:FindTransform("TxtQuality"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     ---@type UnityEngine.RectTransform
     self.PanelText = self.UiPanel:FindTransform("PanelText")
     ---@type UnityEngine.RectTransform
@@ -38,13 +37,13 @@ function XUiGridDrawShowModel:InitUiObject()
     ---@type UnityEngine.RectTransform
     self.ItemEffect = self.UiPanel:FindTransform("ItemEffect")
     ---@type UnityEngine.UI.RawImage
-    self.RImgChip = self.UiPanel:FindTransform("ImgChip"):GetComponent("RawImage")
+    self.RImgChip = self.UiPanel:FindTransform("ImgChip"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     ---@type UnityEngine.UI.RawImage
-    self.RImgItem = self.UiPanel:FindTransform("ImgItem"):GetComponent("RawImage")
+    self.RImgItem = self.UiPanel:FindTransform("ImgItem"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     ---@type UnityEngine.RectTransform
     self.PanelConvert = self.UiPanel:FindTransform("PanelConvert")
     ---@type UnityEngine.UI.Text
-    self.TxtNumber = self.UiPanel:FindTransform("TxtNumber"):GetComponent("Text")
+    self.TxtNumber = self.UiPanel:FindTransform("TxtNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     local gridConvert = self.UiPanel:FindTransform("GridCommonPopUp")
     self.GridConvert = XUiGridCommon.New(nil, gridConvert)
     ---@type UnityEngine.RectTransform
@@ -315,7 +314,7 @@ function XUiGridDrawShowModel:CreatePartnerModel(templateId)
         self.PartnerModelPanel = XUiPanelRoleModel.New(self.GridModel, self.RootUi.Name, nil, true, nil, true)
     end
 
-    self.CvInfo = XUiModelUtility.LoadPartnerModelSToC(templateId, self.PartnerModelPanel, self.RootUi.Name, function(SModel)
+    XDataCenter.PartnerManager.LoadPartnerStandbyModelWithSToCShow(templateId, self.PartnerModelPanel, self.RootUi.Name, function(SModel)
         SModel.gameObject:SetActiveEx(true)
     end, function()
         local modelConfig = XDataCenter.PartnerManager.GetPartnerModelConfigById(templateId)

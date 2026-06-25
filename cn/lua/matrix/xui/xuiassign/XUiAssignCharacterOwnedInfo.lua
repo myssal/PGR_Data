@@ -162,7 +162,7 @@ function XUiAssignCharacterOwnedInfo:OnAwarenessClick(site)
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Equip) then
         return
     end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwarenessReplace(self.CharacterId, site)
+    XMVCA.XEquip:OpenUiEquipAwarenessReplace(self.CharacterId, site)
 end
 
 function XUiAssignCharacterOwnedInfo:OnBtnCareerTipsClick()
@@ -174,7 +174,7 @@ function XUiAssignCharacterOwnedInfo:OnBtnWeaponReplaceClick()
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Equip) then
         return
     end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CharacterId)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CharacterId)
 end
 
 function XUiAssignCharacterOwnedInfo:OnBtnLevelUpClick()

@@ -110,7 +110,7 @@ function XUiBlackRockChessRank:PlayGridTween(index, grid)
     local timerId = XScheduleManager.ScheduleOnce(function()
         grid:PlayAnimationWithMask("PlayerRankEnable")
     end, (index - 1) * 50)
-    grid.Transform:GetComponent("CanvasGroup").alpha = 0
+    grid.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 0
     self._RankTimerIds[grid] = timerId
 end
 

@@ -101,7 +101,7 @@ function XUiReplicatedGift:OpenDetailUi(data)
     if data.RewardType == XRewardManager.XRewardType.Character then
         XLuaUiManager.Open("UiCharacterDetail", data.TemplateId)
     elseif data.RewardType == XRewardManager.XRewardType.Equip then
-        XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipPreview(data.TemplateId)
+        XMVCA.XEquip:OpenUiEquipPreview(data.TemplateId)
     elseif data.RewardType == XRewardManager.XRewardType.Fashion then
         XLuaUiManager.Open("UiFashionDetail", data.TemplateId, false, nil)
     elseif data.RewardType == XRewardManager.XRewardType.Partner then

@@ -64,13 +64,13 @@ function XUiSimulatedCombatStageDetail:SetNormalStage()
     for i = 1, #target do
         if target[i] then
             gridStage[i].gameObject:SetActiveEx(true)
-            gridStage[i]:Find("TxtTip"):GetComponent("Text").text = string.gsub(target[i], "【Consume%d】", "       ")
+            gridStage[i]:Find("TxtTip"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = string.gsub(target[i], "【Consume%d】", "       ")
             local currencyNo = string.match(string.match(target[i], "【Consume%d】") or "", "%d")
             local currencyIcon = XDataCenter.FubenSimulatedCombatManager.GetCurrencyIcon(currencyNo)
             local rImgCurrencyIcon = gridStage[i]:Find("RImgCurrencyIcon")
             if currencyIcon then
                 rImgCurrencyIcon.gameObject:SetActiveEx(true)
-                rImgCurrencyIcon:GetComponent("RawImage"):SetRawImage(currencyIcon)
+                rImgCurrencyIcon:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(currencyIcon)
             else
                 rImgCurrencyIcon.gameObject:SetActiveEx(false)
             end

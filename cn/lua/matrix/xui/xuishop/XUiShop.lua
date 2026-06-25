@@ -411,7 +411,7 @@ function XUiShop:UpdateTog()
                 local tagObj = uiButton.TagObj
                 if not XTool.UObjIsNil(tagObj) then
                     local txObjg = tagObj:FindTransform("TxtTag")
-                    txObjg:GetComponent("Text").text = XUiHelper.GetText("UiShopBtnActivityTagName")
+                    txObjg:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XUiHelper.GetText("UiShopBtnActivityTagName")
                 end
             end
         end

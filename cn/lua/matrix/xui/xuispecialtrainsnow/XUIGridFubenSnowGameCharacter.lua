@@ -10,11 +10,11 @@ function XUIGridFubenSnowGameCharacter:Ctor(ui, rootUi)
 end
 
 function XUIGridFubenSnowGameCharacter:InitUi()
-    self.RImgHeadIcon = self.Transform:Find("PanelHead/RImgHeadIcon"):GetComponent("RawImage")
-    self.ImgSelected = self.Transform:Find("PanelSelected/ImgSelected"):GetComponent("Image")
-    self.TxtCur = self.Transform:Find("TxtCur"):GetComponent("Text")
-    self.Txt1 = self.Transform:Find("Txt1"):GetComponent("Text")
-    self.Txt2 = self.Transform:Find("Txt2"):GetComponent("Text")
+    self.RImgHeadIcon = self.Transform:Find("PanelHead/RImgHeadIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.ImgSelected = self.Transform:Find("PanelSelected/ImgSelected"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.TxtCur = self.Transform:Find("TxtCur"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.Txt1 = self.Transform:Find("Txt1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.Txt2 = self.Transform:Find("Txt2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 

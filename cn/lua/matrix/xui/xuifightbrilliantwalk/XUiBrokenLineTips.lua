@@ -92,8 +92,8 @@ function XUiBrokenLineTips:UpdateDescPos()
     if self.EndPos.x <= 0 then
         position = Vector3(self.AimTipsOriginPosX, self.FightBrilliantwalkAimTips.transform.localPosition.y, 0)
     else
-        local endPanelWidth = self.LineEndPanel.transform:GetComponent("RectTransform").rect.width
-        local tipsWidth = self.FightBrilliantwalkAimTips.transform:GetComponent("RectTransform").rect.width
+        local endPanelWidth = self.LineEndPanel.transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.width
+        local tipsWidth = self.FightBrilliantwalkAimTips.transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.width
         local posX = self.AimTipsOriginPosX + tipsWidth - endPanelWidth
         position = Vector3(posX, self.FightBrilliantwalkAimTips.transform.localPosition.y, 0)
     end

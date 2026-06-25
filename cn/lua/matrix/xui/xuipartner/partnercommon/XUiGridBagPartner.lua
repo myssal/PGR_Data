@@ -15,11 +15,11 @@ function XUiGridBagPartner:Ctor(ui, clickCb)
 end
 
 function XUiGridBagPartner:InitUi()
-    self.TextUsing = self.PanelUsing:Find("TextUsing"):GetComponent("Text")
+    self.TextUsing = self.PanelUsing:Find("TextUsing"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     --v1.28 装备头像
-    self.RImgRole = self.PanelUsing.transform:Find("RImgRole"):GetComponent("RawImage")
+    self.RImgRole = self.PanelUsing.transform:Find("RImgRole"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.PanelDefault = self.GameObject.transform:Find("PanelDefault")
-    self.TextInPrefab = self.PanelDefault.transform:Find("TextUsing"):GetComponent("Text")
+    self.TextInPrefab = self.PanelDefault.transform:Find("TextUsing"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiGridBagPartner:SetButtonCallBack()

@@ -36,7 +36,7 @@ function XUiPanelFrame:Refresh()
     end
 
     self.AreaSize = Vector2(XCustomUi.SafeScreenArea.width, XCustomUi.SafeScreenArea.height)
-    self.Transform:GetComponent("RectTransform").sizeDelta = self.AreaSize
+    self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta = self.AreaSize
     
     for _, objRectTra in pairs(self.FrameDict) do
         objRectTra.gameObject:SetActiveEx(false)
@@ -59,7 +59,7 @@ function XUiPanelFrame:Refresh()
             graphicsContainer:SetAlpha(customComponentData.Alpha)
         end
         -- 设置锚点坐标
-        local sizeDelta = objRectTra:GetComponent("RectTransform").sizeDelta
+        local sizeDelta = objRectTra:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta
         local anchorPos = Vector2(customComponentData.PositionX, customComponentData.PositionY)
         -- 超出边界检查
         local halfSize = sizeDelta / 2 * localScale.x
@@ -75,8 +75,8 @@ function XUiPanelFrame:Refresh()
             objRectTra.localScale = localScale
 
             localScale = Vector3(ballDirectionScale, 1, 1)
-            objRectTra:Find("Balls"):GetComponent("RectTransform").localScale = localScale
-            objRectTra:Find("PanelBallCount"):GetComponent("RectTransform").localScale = localScale
+            objRectTra:Find("Balls"):GetComponent(typeof(CS.UnityEngine.RectTransform)).localScale = localScale
+            objRectTra:Find("PanelBallCount"):GetComponent(typeof(CS.UnityEngine.RectTransform)).localScale = localScale
         end
         :: CONTINUE ::
     end

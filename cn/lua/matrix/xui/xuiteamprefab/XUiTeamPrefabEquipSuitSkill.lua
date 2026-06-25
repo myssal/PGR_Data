@@ -130,14 +130,14 @@ function XUiGridSuitSkill:UpdateView(characterId, suitInfo)
     end
 
     -- 套装图标
-    local iconPath = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitIconPath(suitInfo.SuitId)
+    local iconPath = XMVCA.XEquip:GetEquipSuitIconPath(suitInfo.SuitId)
     self.RImgIcon:SetRawImage(iconPath)
 
     -- XUiGridSuitSkill:UpdateView（关键替换）
     local activeCount = suitInfo.WearCnt or 0          -- ✅ 只用预设穿戴数量
     local isOverrun   = suitInfo.IsOverrun == true     -- 仍可用来显示“可由超限激活”的提示
 
-    local skillDesList = XMVCA:GetAgency(ModuleId.XEquip):GetSuitActiveSkillDesList(
+    local skillDesList = XMVCA.XEquip:GetSuitActiveSkillDesList(
         suitInfo.SuitId,
         activeCount,
         isOverrun,
@@ -175,7 +175,7 @@ function XUiGridSuitSkill:UpdateView(characterId, suitInfo)
         end
         desGo.gameObject:SetActiveEx(true)
         desGo.transform:SetAsLastSibling()
-        desGo:GetComponent("Text").text = skillInfo.SkillDes
+        desGo:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = skillInfo.SkillDes
         local txtTitle = XUiHelper.TryGetComponent(desGo.transform, "TxtTitle", "Text")
         txtTitle.text = skillInfo.PosDes
     end

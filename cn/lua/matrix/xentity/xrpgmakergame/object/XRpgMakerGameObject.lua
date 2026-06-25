@@ -836,7 +836,7 @@ function XRpgMakerGameObject:GetGameObjSize()
         return {}
     end
 
-    local meshFilter = gameObject:GetComponent("MeshFilter")
+    local meshFilter = gameObject:GetComponent(typeof(CS.UnityEngine.MeshFilter))
     if not XTool.UObjIsNil(meshFilter) then
         return meshFilter.mesh.bounds.size
     end

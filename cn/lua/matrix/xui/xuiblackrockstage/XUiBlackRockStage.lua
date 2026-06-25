@@ -200,7 +200,7 @@ end
 
 function XUiBlackRockStage:PlayScrollViewMove(gridTransform)
     self:SetPanelStageListMovementType(CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted)
-    local gridRect = gridTransform:GetComponent("RectTransform")
+    local gridRect = gridTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridRect.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local left = self:GetScrollOffsetX()

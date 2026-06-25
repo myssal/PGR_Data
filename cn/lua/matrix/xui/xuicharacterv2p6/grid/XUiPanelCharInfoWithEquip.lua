@@ -311,7 +311,7 @@ function XUiPanelCharInfoWithEquip:OnBtnWeaponReplaceClick()
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Equip) then
         return
     end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CharacterId)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CharacterId)
 end
 
 function XUiPanelCharInfoWithEquip:OnCarryPartnerClick()
@@ -328,7 +328,7 @@ function XUiPanelCharInfoWithEquip:OnAwarenessClick(site)
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Equip) then
         return
     end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwarenessReplace(self.CharacterId, site)
+    XMVCA.XEquip:OpenUiEquipAwarenessReplace(self.CharacterId, site)
 end
 
 function XUiPanelCharInfoWithEquip:OnBtnAutoTakeOffClick()
@@ -337,7 +337,7 @@ function XUiPanelCharInfoWithEquip:OnBtnAutoTakeOffClick()
         XUiManager.TipText("EquipAutoTakeOffNotWearingEquip")
         return
     end
-    XMVCA:GetAgency(ModuleId.XEquip):TakeOff(wearingEquipIds)
+    XMVCA.XEquip:TakeOff(wearingEquipIds)
 end
 
 function XUiPanelCharInfoWithEquip:OnBtnAwarenessSuitClick()

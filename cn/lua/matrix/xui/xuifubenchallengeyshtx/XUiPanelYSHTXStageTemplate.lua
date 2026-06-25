@@ -20,13 +20,13 @@ end
 
 function XUiPanelYSHTXStageTemplate:AutoInitUi()
     self.PanelRight = self.Transform:Find("PanelRight")
-    self.RImgIcon = self.Transform:Find("PanelRight/RImgIcon"):GetComponent("RawImage")
-    self.TxtName = self.Transform:Find("PanelRight/TxtName"):GetComponent("Text")
-    self.TxtDesc = self.Transform:Find("PanelRight/TxtDesc"):GetComponent("Text")
-    self.ImgLock = self.Transform:Find("ImgLock"):GetComponent("Image")
-    self.TxtLockDesc = self.Transform:Find("ImgLock/TxtLockDesc"):GetComponent("Text")
-    self.TxtLockName = self.Transform:Find("ImgLock/TxtLockName"):GetComponent("Text")
-    self.BtnEnter = self.Transform:Find("BtnEnter"):GetComponent("Button")
+    self.RImgIcon = self.Transform:Find("PanelRight/RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtName = self.Transform:Find("PanelRight/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtDesc = self.Transform:Find("PanelRight/TxtDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgLock = self.Transform:Find("ImgLock"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.TxtLockDesc = self.Transform:Find("ImgLock/TxtLockDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtLockName = self.Transform:Find("ImgLock/TxtLockName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnEnter = self.Transform:Find("BtnEnter"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiPanelYSHTXStageTemplate:RegisterClickEvent(uiNode, func)

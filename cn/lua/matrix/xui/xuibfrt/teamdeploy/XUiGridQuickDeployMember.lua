@@ -24,8 +24,8 @@ function XUiGridQuickDeployMember:InitComponent()
     self.ImgLeftSkill.color = color
     self.ImgRightSkill.color = color
 
-    self.PanelEffectRT = self.PanelEffect:GetComponent("RectTransform")
-    self.PanelViewRT = self.Transform.parent.parent.parent.parent:GetComponent("RectTransform")
+    self.PanelEffectRT = self.PanelEffect:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.PanelViewRT = self.Transform.parent.parent.parent.parent:GetComponent(typeof(CS.UnityEngine.RectTransform))
 end
 
 function XUiGridQuickDeployMember:Refresh(characterId, team, characterLimitType)

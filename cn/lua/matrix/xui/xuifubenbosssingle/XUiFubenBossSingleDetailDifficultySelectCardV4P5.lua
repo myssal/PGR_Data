@@ -54,7 +54,7 @@ function XUiFubenBossSingleDetailDifficultySelectCardV4P5:OnStart(
 
                 go.transform
                     :FindTransform("UiRImgRole")
-                    :GetComponent("RawImage")
+                    :GetComponent(typeof(CS.UnityEngine.UI.RawImage))
                     :SetRawImage(characterAgency
                         :GetCharSmallHeadIcon(charId))
             end
@@ -87,10 +87,10 @@ function XUiFubenBossSingleDetailDifficultySelectCardV4P5:_RefreshBuffs(bossConf
             local feature = XMVCA.XFuben:GetFeaturesById(featureId)
 
             table.insert(gridBuffsArgs, {
-                feature.Name,
-                feature.Icon,
-                feature.Desc,
-                feature.TriangleBg
+                BuffName = feature.Name,
+                Icon = feature.Icon,
+                Desc = feature.Desc,
+                TriangleBg = feature.TriangleBg
             })
         end
     end
@@ -100,10 +100,10 @@ function XUiFubenBossSingleDetailDifficultySelectCardV4P5:_RefreshBuffs(bossConf
             local buff = XFubenBabelTowerConfigs.GetBabelBuffConfigs(buffId)
 
             table.insert(gridBuffsArgs, {
-                buff.Name,
-                buff.BuffBg,
-                buff.Desc,
-                buff.BuffTriangleBg
+                BuffName = buff.Name,
+                Icon = buff.BuffBg,
+                Desc = buff.Desc,
+                TriangleBg = buff.BuffTriangleBg
             })
         end
     end

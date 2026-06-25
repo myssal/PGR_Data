@@ -395,11 +395,11 @@ function XUiAssignRoomCharacter:OnBtnTeachingClicked()
 end
 
 function XUiAssignRoomCharacter:OnBtnWeaponClick()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CurCharacter.Id, nil, true)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CurCharacter.Id, nil, true)
 end
 
 function XUiAssignRoomCharacter:OnBtnConsciousnessClick()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwareness(self.CurCharacter.Id)
+    XMVCA.XEquip:OpenUiEquipAwareness(self.CurCharacter.Id)
 end
 
 function XUiAssignRoomCharacter:OnBtnMainUiClick()

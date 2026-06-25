@@ -297,7 +297,7 @@ end
 --region Anim
 function XUiLottoLuna:InitUiAnim()
     ---@type UnityEngine.Playables.PlayableDirector
-    self._UiAnimEnableLong = self.GameObject:FindTransform("AnimEnableLong"):GetComponent("PlayableDirector")
+    self._UiAnimEnableLong = self.GameObject:FindTransform("AnimEnableLong"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
 end
 
 function XUiLottoLuna:PlayEnableAnim()
@@ -552,15 +552,15 @@ function XUiLottoLuna:InitCameraAnim()
     ---@type UnityEngine.Transform
     local root = self.UiModelGo.transform
     ---@type UnityEngine.Playables.PlayableDirector
-    self._CamAnimStart1 = root:FindTransform("AnimStart1"):GetComponent("PlayableDirector")
+    self._CamAnimStart1 = root:FindTransform("AnimStart1"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     ---@type UnityEngine.Playables.PlayableDirector
-    self._CamAnimEnableLong = root:FindTransform("AnimEnableLong"):GetComponent("PlayableDirector")
+    self._CamAnimEnableLong = root:FindTransform("AnimEnableLong"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     ---@type UnityEngine.Playables.PlayableDirector
-    self._CamAnimEnableShort = root:FindTransform("AnimEnableShort"):GetComponent("PlayableDirector")
+    self._CamAnimEnableShort = root:FindTransform("AnimEnableShort"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     ---@type UnityEngine.Playables.PlayableDirector
-    self._CamAnimEnableStory = root:FindTransform("AnimEnableStory"):GetComponent("PlayableDirector")
+    self._CamAnimEnableStory = root:FindTransform("AnimEnableStory"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     ---@type UnityEngine.Playables.PlayableDirector
-    self._CamAnimDisableStory = root:FindTransform("AnimDisableStory"):GetComponent("PlayableDirector")
+    self._CamAnimDisableStory = root:FindTransform("AnimDisableStory"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     ---@type UnityEngine.Playables.PlayableDirector
 
     ---@type UnityEngine.Transform[]
@@ -589,7 +589,7 @@ function XUiLottoLuna:InitSceneModel()
         self._Model = modelParent:GetChild(0)
     end
     ---@type UnityEngine.Animator
-    self._ModelAnimator = self._Model.gameObject:GetComponent("Animator")
+    self._ModelAnimator = self._Model.gameObject:GetComponent(typeof(CS.UnityEngine.Animator))
 end
 
 function XUiLottoLuna:AddModelShadow()

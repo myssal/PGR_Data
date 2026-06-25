@@ -21,6 +21,9 @@
         "Id": 3,
         "Name": "充值",
         "Priority": 3,
+        "Condition": [
+            200000
+        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -52,6 +55,9 @@
         "Id": 7,
         "Name": "福利",
         "Priority": 5,
+        "Condition": [
+            200000
+        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -349,6 +355,9 @@
         "Id": 603,
         "Name": "战队-成就",
         "Priority": 25,
+        "Condition": [
+            200000
+        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -412,7 +421,7 @@
         "Priority": 31,
         "Hint": 1,
         "Condition": [
-            862838
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -422,7 +431,7 @@
         "Name": "宿舍委托",
         "Priority": 32,
         "Condition": [
-            862838
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -582,7 +591,7 @@
         "Name": "信赖度",
         "Priority": 48,
         "Condition": [
-            773500
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -592,7 +601,7 @@
         "Name": "信赖度-档案",
         "Priority": 49,
         "Condition": [
-            773600
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -602,7 +611,7 @@
         "Name": "信赖度-剧情",
         "Priority": 50,
         "Condition": [
-            773700
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -612,7 +621,7 @@
         "Name": "信赖度-礼物",
         "Priority": 51,
         "Condition": [
-            773800
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -622,7 +631,7 @@
         "Name": "信赖度-偶遇",
         "Priority": 52,
         "Condition": [
-            773900
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -784,7 +793,7 @@
         "Priority": 101,
         "Hint": 1,
         "Condition": [
-            774700
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -793,6 +802,9 @@
         "Id": 2300,
         "Name": "2级菜单",
         "Priority": 113,
+        "Condition": [
+            200000
+        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -800,6 +812,9 @@
         "Id": 2400,
         "Name": "拍照系统",
         "Priority": 114,
+        "Condition": [
+            200000
+        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -814,6 +829,9 @@
         "Id": 3000,
         "Name": "累计充值",
         "Priority": 102,
+        "Condition": [
+            200000
+        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -860,6 +878,9 @@
         "Id": 8001,
         "Name": "邀请码分享",
         "Priority": 105,
+        "Condition": [
+            200000
+        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -2013,7 +2034,7 @@
         "Name": "新手入门",
         "Priority": 1,
         "Condition": [
-            770417
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -2176,7 +2197,7 @@
         "Priority": 123,
         "Hint": 1,
         "Condition": [
-            30402
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -2615,7 +2636,7 @@
         "Name": "涂装套装",
         "Priority": 55,
         "Condition": [
-            863122
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -2784,6 +2805,33 @@
         "Condition": [
             774800
         ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10504,
+        "Name": "大染色玩法",
+        "Priority": 70,
+        "Condition": [
+            774800
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10505,
+        "Name": "音乐会预热活动",
+        "Priority": 70,
+        "Condition": [
+            774800
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10506,
+        "Name": "雾夜镇魂曲-诡城交锋",
+        "Priority": 70,
         "Type": 1,
         "FunctionType": 1
     }

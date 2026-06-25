@@ -2,8 +2,12 @@ local XUiGridWinRole = require("XUi/XUiSettleWin/XUiGridWinRole")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPanelExpBar = require("XUi/XUiSettleWinMainLine/XUiPanelExpBar")
 local XUiStageSettleSound = require("XUi/XUiSettleWin/XUiStageSettleSound")
+local XLuaUiSettle = require("XUi/XUiBase/XLuaUiSettle")
 
-local XUiSettleWin = XLuaUiManager.Register(XLuaUi, "UiSettleWin")
+--- 通用胜利结算界面
+--- 必须继承 XLuaUiSettle，基类会在 OnDestroyUi 时自动 Dispatch EVENT_FIGHT_FINISH_SETTLE
+--- 用于通知空花等模块"结算已关闭，可以恢复回流"，请勿改为 XLuaUi
+local XUiSettleWin = XLuaUiManager.Register(XLuaUiSettle, "UiSettleWin")
 local CSTextManagerGetText = CS.XTextManager.GetText
 
 function XUiSettleWin:OnAwake()
@@ -49,7 +53,6 @@ end
 function XUiSettleWin:OnDestroy()
     XDataCenter.AntiAddictionManager.EndFightAction()
     self.UiStageSettleSound:StopSettleSound()
-    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_FINISH_SETTLE)
 end
 
 -- 奖励动画
@@ -130,32 +133,32 @@ function XUiSettleWin:AutoInitUi()
     self.PanelNor = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor")
     self.PanelBtn = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn")
     self.PanelBtns = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns")
-    self.BtnLeft = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnLeft"):GetComponent("Button")
-    self.TxtLeft = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnLeft/TxtLeft"):GetComponent("Text")
-    self.BtnRight = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnRight"):GetComponent("Button")
-    self.TxtRight = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnRight/TxtRight"):GetComponent("Text")
+    self.BtnLeft = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnLeft"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtLeft = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnLeft/TxtLeft"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnRight = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnRight"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtRight = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnRight/TxtRight"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelTouch = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelTouch")
-    self.BtnBlock = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelTouch/BtnBlock"):GetComponent("Button")
-    self.TxtLeftA = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelTouch/BtnBlock/TxtLeft"):GetComponent("Text")
+    self.BtnBlock = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelTouch/BtnBlock"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtLeftA = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelTouch/BtnBlock/TxtLeft"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelLeft = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelLeft")
     self.PanelRoleContent = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelLeft/Team/PanelRoleContent")
     self.GridWinRole = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelLeft/Team/PanelRoleContent/GridWinRole")
     self.PanelRight = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelRight")
-    self.TxtChapterName = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelRight/StageInfo/TxtChapterName"):GetComponent("Text")
-    self.TxtStageName = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelRight/StageInfo/TxtStageName"):GetComponent("Text")
+    self.TxtChapterName = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelRight/StageInfo/TxtChapterName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtStageName = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelRight/StageInfo/TxtStageName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelRewardContent = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelRight/RewardList/Viewport/PanelRewardContent")
     self.GridReward = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelRight/RewardList/Viewport/PanelRewardContent/GridReward")
     self.PanelFriend = self.Transform:Find("SafeAreaContentPane/PanelFriend")
     self.PanelInf = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf")
-    self.TxtName = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/TxtName"):GetComponent("Text")
-    self.TxtLv = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/TxtLv"):GetComponent("Text")
-    self.BtnFriClose = self.Transform:Find("SafeAreaContentPane/PanelFriend/BtnFriClose"):GetComponent("Button")
-    self.BtnFriAdd = self.Transform:Find("SafeAreaContentPane/PanelFriend/BtnFriAdd"):GetComponent("Button")
+    self.TxtName = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtLv = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/TxtLv"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnFriClose = self.Transform:Find("SafeAreaContentPane/PanelFriend/BtnFriClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnFriAdd = self.Transform:Find("SafeAreaContentPane/PanelFriend/BtnFriAdd"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelPlayerExpBar = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelLeft/PlayerExp/PanelPlayerExpBar")
-    self.TxtDamage = self.PanelLivRealistic:Find("Text/RImgDamage/Text"):GetComponent("Text")
-    self.TxtLife = self.PanelLivRealistic:Find("Text/RimgLife/Text"):GetComponent("Text")
-    self.TxtPassTime = self.PanelLivRealistic:Find("TxtTime"):GetComponent("Text")
-    self.TxtBossInfo = self.PanelLivRealistic:Find("Text"):GetComponent("Text")
+    self.TxtDamage = self.PanelLivRealistic:Find("Text/RImgDamage/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtLife = self.PanelLivRealistic:Find("Text/RimgLife/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtPassTime = self.PanelLivRealistic:Find("TxtTime"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtBossInfo = self.PanelLivRealistic:Find("Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiSettleWin:AutoAddListener()
@@ -241,7 +244,7 @@ function XUiSettleWin:SetStageInfo(data)
         local npcIdList = XPracticeConfigs.GetSimulateTrainNpcIdIdByStageId(stageId)
         local npcId = npcIdList[difficulty]
         if XTool.IsNumberValid(npcId) then
-            local bossData = XMVCA.XArchive:GetArchiveMonsterEntityByNpcId(npcId)
+            local bossData = XMVCA.XArchive.MonsterArchiveAgency:GetArchiveMonsterEntityByNpcId(npcId)
             local name = bossData and bossData:GetName() or ""
             self.TxtBossInfo.text = CSTextManagerGetText("PracticeBossSettle", XPracticeConfigs.GetSimulateTrainMonsterStageNameByStageId(stageId, difficulty), name)
         else

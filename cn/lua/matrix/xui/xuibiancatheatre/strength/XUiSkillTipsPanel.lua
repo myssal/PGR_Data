@@ -17,12 +17,12 @@ function XUiSkillTipsPanel:Ctor(ui, rootUi)
     self.RootUi = rootUi
     XUiHelper.InitUiClass(self, ui)
 
-    self.ImgIcon = self.ImgIcon or self.Transform:Find("ImgIcon"):GetComponent("RawImage")
-    self.TxtDesc = self.TxtDesc or self.Transform:Find("TxtAttrInfo"):GetComponent("Text")
+    self.ImgIcon = self.ImgIcon or self.Transform:Find("ImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtDesc = self.TxtDesc or self.Transform:Find("TxtAttrInfo"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.BtnActive = self.BtnActive or self.Transform:Find("BtnActive"):GetComponent("XUiButton")
-    self.TxtCount = self.TxtCount or self.Transform:Find("TxtCount"):GetComponent("Text")
-    self.ItemIcon = self.ItemIcon or self.Transform:Find("ItemIcon"):GetComponent("RawImage")
-    self.RImgDisable = self.BtnActive.transform:Find("Disable/RawImage"):GetComponent("RawImage")
+    self.TxtCount = self.TxtCount or self.Transform:Find("TxtCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ItemIcon = self.ItemIcon or self.Transform:Find("ItemIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.RImgDisable = self.BtnActive.transform:Find("Disable/RawImage"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     
     self.StrengthenCoinId = XBiancaTheatreConfigs.GetStrengthenCoinId()
     self.ItemIcon:SetRawImage(XItemConfigs.GetItemIconById(self.StrengthenCoinId))

@@ -245,7 +245,7 @@ function XUiPanelCombination:OnBtnHelp()
         XDataCenter.AutoWindowManager.StopAutoWindow()
         XLuaUiManager.Open("UiCharacterDetail", self.CharId)
     elseif self.GoodsType == XArrangeConfigs.Types.Weapon then
-        XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipPreview(self.EquipTemplateId)
+        XMVCA.XEquip:OpenUiEquipPreview(self.EquipTemplateId)
     elseif self.GoodsType == XArrangeConfigs.Types.Partner then
         local partnerData = { Id = 0, TemplateId = self.PartnerTemplateId }
         local partner = XDataCenter.PartnerManager.CreatePartnerEntityByPartnerData(partnerData, true)
@@ -255,7 +255,7 @@ end
 
 -- 检测图标的位置和大小是否需要变化
 function XUiPanelCombination:CheckIconPosAndSizeChange(weaponIcon)
-    local rectTrans = weaponIcon:GetComponent("RectTransform")
+    local rectTrans = weaponIcon:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local drawAimProbability = XDrawConfigs.GetDrawAimProbability()
     local pbCfg = drawAimProbability[self.DrawId]
 

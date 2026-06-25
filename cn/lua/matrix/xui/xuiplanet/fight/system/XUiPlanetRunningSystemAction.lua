@@ -40,10 +40,10 @@ function XUiPlanetRunningSystemAction:UpdateAttack(deltaTime, action, fight)
             return
         end
 
-        local holderLauncher = launcher.Transform.parent:GetComponent("Animator")
+        local holderLauncher = launcher.Transform.parent:GetComponent(typeof(CS.UnityEngine.Animator))
         fight.TimelineHelper:SetBindingTarget(TRACK.LAUNCHER, holderLauncher)
         fight.TimelineHelper:SetBindingTarget(TRACK.LAUNCHER_MOVE, holderLauncher)
-        local holderTarget = target.Transform.parent:GetComponent("Animator")
+        local holderTarget = target.Transform.parent:GetComponent(typeof(CS.UnityEngine.Animator))
         fight.TimelineHelper:SetBindingTarget(TRACK.TARGET, holderTarget)
 
         --action.IsPlayingTimeline = true

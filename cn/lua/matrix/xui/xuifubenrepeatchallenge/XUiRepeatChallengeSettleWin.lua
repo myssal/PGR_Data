@@ -3,9 +3,14 @@ local XUiGridWinRole = require("XUi/XUiSettleWin/XUiGridWinRole")
 local XUiPanelExpBar = require("XUi/XUiSettleWinMainLine/XUiPanelExpBar")
 local XUiGridRewardLine = require("XUi/XUiFubenRepeatchallenge/XUiGridRewardLine")
 
+local XLuaUiSettle = require("XUi/XUiBase/XLuaUiSettle")
+
 local CsXTextManagerGetText = CS.XTextManager.GetText
 
-local XUiRepeatChallengeSettleWin = XLuaUiManager.Register(XLuaUi, "UiRepeatChallengeSettleWin")
+--- 多重挑战胜利结算界面
+--- 必须继承 XLuaUiSettle，基类会在 OnDestroyUi 时自动 Dispatch EVENT_FIGHT_FINISH_SETTLE
+--- 用于通知空花等模块"结算已关闭，可以恢复回流"，请勿改为 XLuaUi
+local XUiRepeatChallengeSettleWin = XLuaUiManager.Register(XLuaUiSettle, "UiRepeatChallengeSettleWin")
 
 function XUiRepeatChallengeSettleWin:OnAwake()
     self:InitAutoScript()
@@ -50,21 +55,21 @@ end
 
 function XUiRepeatChallengeSettleWin:AutoInitUi()
     self.PanelBtns = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns")
-    self.BtnLeft = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnLeft"):GetComponent("Button")
-    self.TxtLeft = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnLeft/TxtLeft"):GetComponent("Text")
-    self.BtnRight = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnRight"):GetComponent("Button")
-    self.TxtRight = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnRight/TxtRight"):GetComponent("Text")
+    self.BtnLeft = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnLeft"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtLeft = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnLeft/TxtLeft"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnRight = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnRight"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtRight = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelBtns/BtnRight/TxtRight"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelTouch = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelTouch")
-    self.BtnBlock = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelTouch/BtnBlock"):GetComponent("Button")
+    self.BtnBlock = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelBtn/PanelTouch/BtnBlock"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelRight = self.Transform:Find("SafeAreaContentPane/PanelNorWinInfo/PanelNor/PanelRight")
     self.PanelFriend = self.Transform:Find("SafeAreaContentPane/PanelFriend")
     self.PanelInf = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf")
     self.PanelHead = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/PanelHead")
-    self.ImgHead = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/PanelHead/ImgHead"):GetComponent("Image")
-    self.TxtName = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/TxtName"):GetComponent("Text")
-    self.TxtLv = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/TxtLv"):GetComponent("Text")
-    self.BtnFriClose = self.Transform:Find("SafeAreaContentPane/PanelFriend/BtnFriClose"):GetComponent("Button")
-    self.BtnFriAdd = self.Transform:Find("SafeAreaContentPane/PanelFriend/BtnFriAdd"):GetComponent("Button")
+    self.ImgHead = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/PanelHead/ImgHead"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.TxtName = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtLv = self.Transform:Find("SafeAreaContentPane/PanelFriend/PanelInf/TxtLv"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnFriClose = self.Transform:Find("SafeAreaContentPane/PanelFriend/BtnFriClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnFriAdd = self.Transform:Find("SafeAreaContentPane/PanelFriend/BtnFriAdd"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiRepeatChallengeSettleWin:AutoAddListener()

@@ -44,11 +44,11 @@ function XUiPanelProbability:InitAutoScript()
 end
 
 function XUiPanelProbability:AutoInitUi()
-    self.TxtType = self.Transform:Find("TxtType"):GetComponent("Text")
-    self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
-    self.TxtUpProb = self.Transform:Find("TxtUpProb"):GetComponent("Text")
-    self.TxtNorProb = self.Transform:Find("TxtNorProb"):GetComponent("Text")
-    self.TxtUp = self.Transform:Find("TxtUp"):GetComponent("Text")
+    self.TxtType = self.Transform:Find("TxtType"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtUpProb = self.Transform:Find("TxtUpProb"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtNorProb = self.Transform:Find("TxtNorProb"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtUp = self.Transform:Find("TxtUp"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiPanelProbability:GetAutoKey(uiNode, eventName)

@@ -64,7 +64,7 @@ function XUiRuleDropItemPanel:RefreshGoods()
         groupData = goodGroupDatas[i]
         -- 创建组标题
         go = XUiHelper.Instantiate(self.TxtItemTitlePrefab.gameObject, self.PanelItemContent)
-        go:GetComponent("Text").text = groupData.Title
+        go:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = groupData.Title
         go.gameObject:SetActiveEx(true)
         -- 创建商品数据
         local itemContentGo = XUiHelper.Instantiate(self.PanelItemContentPrefab.gameObject, self.PanelItemContent)
@@ -90,7 +90,7 @@ function XUiRuleDropItemPanel:RefreshProbabilities()
         groupData = probabilityGroupDatas[i]
         -- 创建组标题
         go = XUiHelper.Instantiate(self.TxtProbabilityTitlePrefab.gameObject, self.PanelProbabilityContent)
-        go:GetComponent("Text").text = groupData.Title
+        go:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = groupData.Title
         go.gameObject:SetActiveEx(true)
         -- 创建概率数据
         local probabilityContentGo = XUiHelper.Instantiate(self.PanelProbabilityConentPrefab.gameObject, self.PanelProbabilityContent)

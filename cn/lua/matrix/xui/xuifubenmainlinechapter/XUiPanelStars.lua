@@ -31,12 +31,12 @@ function XUiPanelStars:InitAutoScript()
 end
 
 function XUiPanelStars:AutoInitUi()
-    self.ImgDis2 = self.Transform:Find("Star2/ImgDis2"):GetComponent("Image")
-    self.Img1 = self.Transform:Find("Star1/Img1"):GetComponent("Image")
-    self.ImgDis1 = self.Transform:Find("Star1/ImgDis1"):GetComponent("Image")
-    self.Img2 = self.Transform:Find("Star2/Img2"):GetComponent("Image")
-    self.ImgDis3 = self.Transform:Find("Star3/ImgDis3"):GetComponent("Image")
-    self.Img3 = self.Transform:Find("Star3/Img3"):GetComponent("Image")
+    self.ImgDis2 = self.Transform:Find("Star2/ImgDis2"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.Img1 = self.Transform:Find("Star1/Img1"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgDis1 = self.Transform:Find("Star1/ImgDis1"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.Img2 = self.Transform:Find("Star2/Img2"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgDis3 = self.Transform:Find("Star3/ImgDis3"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.Img3 = self.Transform:Find("Star3/Img3"):GetComponent(typeof(CS.UnityEngine.UI.Image))
 end
 
 function XUiPanelStars:RegisterClickEvent(uiNode, func)

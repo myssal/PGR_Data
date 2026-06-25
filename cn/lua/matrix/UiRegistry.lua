@@ -1,5 +1,5 @@
 local UiRegistry = {
-    UiBaseEquip = "XUi/XUiBaseEquip/XUiBaseEquip",
+    --UiBaseEquip = "XUi/XUiBaseEquip/XUiBaseEquip",
     UiAreaWarStageDetail = "XUi/XUiAreaWar/XUiAreaWarStageDetail",
     UiAreaWarSpecialRolePopUp = "XUi/XUiAreaWar/XUiAreaWarSpecialRolePopUp",
     UiRpgMakerGameMain = "XUi/XUiRpgMakerGame/Main/XUiRpgMakerGameMain",
@@ -1205,7 +1205,7 @@ local UiRegistry = {
     UiFightBangbiPaper = "XUi/XUiFightBangbiSkill/XUiFightBangbiPaper",
     UiDlcHuntMatching = "XUi/XUiDlcHunt/Room/XUiDlcHuntMatching",
     UiDlcHuntPlayerRoom = "XUi/XUiDlcHunt/XUiDlcHuntPlayerRoom",
-    --region dlc new 
+    --region dlc new
     UiDlcHuntMain = "XUi/XUiDlcHunt/XUiDlcHuntMain",
     UiDlcHuntBag = "XUi/XUiDlcHunt/Bag/XUiDlcHuntBag",
     UiDlcHuntChipDetails = "XUi/XUiDlcHunt/Chip/XUiDlcHuntChipDetail",
@@ -1463,6 +1463,7 @@ local UiRegistry = {
     UiCharacterCareerTipsV2P6 = "XUi/XUiCharacterV2P6/XUiCharacterCareerTipsV2P6",
     UiCharacterUniframeBubbleV2P6 = "XUi/XUiCharacterV2P6/XUiCharacterUniframeBubbleV2P6",
     UiSkillDetailsForEnhanceV2P6 = "XUi/XUiCharacterV2P6/XUiSkillDetailsForEnhanceV2P6",
+    UiWeaponOverrunSkillDetails = "XUi/XUiCharacterV2P6/XUiWeaponOverrunSkillDetails",
     UiSkillDetailsParentV2P6 = "XUi/XUiCharacterV2P6/XUiSkillDetailsParentV2P6",
     UiCharacterQualitySystemV2P6 = "XUi/XUiCharacterV2P6/XUiCharacterQualitySystemV2P6",
     UiCharacterQualityOverviewV2P6 = "XUi/XUiCharacterV2P6/XUiCharacterQualityOverviewV2P6",
@@ -1471,6 +1472,7 @@ local UiRegistry = {
     UiEquipDetailChildV2P6 = "XUi/XUiEquip/XUiEquipDetailChildV2P6",
     UiEquipDetailV2P6 = "XUi/XUiEquip/XUiEquipDetailV2P6",
     UiEquipOverrunV2P6 = "XUi/XUiEquip/XUiEquipOverrunV2P6",
+    UiEquipOverrunV4P6 = "XUi/XUiEquip/XUiEquipOverrunV4P6/XUiEquipOverrunV4P6",
     UiEquipStrengthenV2P6 = "XUi/XUiEquip/XUiEquipStrengthenV2P6",
     UiEquipStrengthenConsumptionV2P6 = "XUi/XUiEquip/XUiEquipStrengthenConsumptionV2P6",
     UiEquipResonanceSkillV2P6 = "XUi/XUiEquip/XUiEquipResonanceSkillV2P6",
@@ -1739,11 +1741,13 @@ local UiRegistry = {
     UiDlcMultiPlayerData = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerData",
     UiBossInshotMain = "XUi/XUiBossInshot/XUiBossInshotMain",
     UiBossInshotSettlement = "XUi/XUiBossInshot/XUiBossInshotSettlement",
+    UiBossInshotToastTower = "XUi/XUiBossInshot/XUiBossInshotToastTower",
     UiBossInshotTask = "XUi/XUiBossInshot/XUiBossInshotTask",
     UiBossInshotTip = "XUi/XUiBossInshot/XUiBossInshotTip",
     UiBossInshotPlayback = "XUi/XUiBossInshot/XUiBossInshotPlayback",
     UiBossInshotUnlockTalent = "XUi/XUiBossInshot/XUiBossInshotUnlockTalent",
     UiBossInshotRank = "XUi/XUiBossInshot/XUiBossInshotRank",
+    UiBossInshotPopupChangeBoss = "XUi/XUiBossInshot/XUiBossInshotPopupChangeBoss",
     UiDunhuangMain = "XUi/XUiDunhuang/XUiDunhuangMain",
     UiDunhuangTask = "XUi/XUiDunhuang/XUiDunhuangTask",
     UiDunhuangHandbook = "XUi/XUiDunhuang/XUiDunhuangHandbook",
@@ -1915,7 +1919,7 @@ local UiRegistry = {
     UiGame2048Game = "XUi/XUiGame2048/UiGame2048Game/XUiGame2048Game",
     UiGame2048PopupSettlement = "XUi/XUiGame2048/UiGame2048PopupSettlement/XUiGame2048PopupSettlement",
     UiGame2048ToastLvUp = "XUi/XUiGame2048/UiGame2048Game/UiGame2048ToastLvUp/XUiGame2048ToastLvUp",
-  
+
     UiPlayerPopupSetGender = "XUi/XUiPlayerPopupSetGender/XUiPlayerPopupSetGender",
     UiBigWorldPopupConfirm = "XUi/XUiBigWorld/XCommon/XUiBigWorldPopupConfirm",
     UiNonogramMain = "XUi/XUiNonogram/XUiNonogramMain",
@@ -2108,7 +2112,7 @@ local UiRegistry = {
     UiBagOrganizePopupRankDetails = "XUi/XUiBagOrganizeActivity/UiBagOrganizePopupRankDetails/XUiBagOrganizePopupRankDetails",
     UiBagOrganizePopupEventDetails = "XUi/XUiBagOrganizeActivity/UiBagOrganizePopupEventDetails/XUiBagOrganizePopupEventDetails",
     UiMainLineExhibitionPopupComic = "XUi/XUiFubenMainLineChapter/XUiMainLineExhibitionPopupComic",
-    
+
     --region 新矿区
     UiScoreTowerMain = "XUi/XUiScoreTower/XUiScoreTowerMain",
     UiScoreTowerChapterDetail = "XUi/XUiScoreTower/Chapter/XUiScoreTowerChapterDetail",
@@ -2183,7 +2187,7 @@ local UiRegistry = {
     UiTheatre5ChooseTask = "XUi/XUiTheatre5/XUiTheatre5ChooseTask/XUiTheatre5ChooseTask",
     UiTheatre5PopupTaskSettlement = "XUi/XUiTheatre5/XUiTheatre5PopupTaskSettlement/XUiTheatre5PopupTaskSettlement",
     --endregion
-    
+
     --region 悬赏任务
     UiBountyChallengeMain = "XUi/XUiBountyChallenge/XUiBountyChallengeMain",
     UiBountyChallengeChapterDetail = "XUi/XUiBountyChallenge/XUiBountyChallengeChapterDetail",
@@ -2253,7 +2257,7 @@ local UiRegistry = {
     UiPurchaseTips = "XUi/Oversea/XUiPurchaseTips",
     UiMonthlyCardEn = "XUi/Oversea/XUiMonthlyCardEn",
     --endregion
-    
+
     --region 赛马
     UiRaceMain = "XUi/XUiRace/XUiRaceMain",
     UiRacePredict = "XUi/XUiRace/XUiRacePredict",
@@ -2293,7 +2297,7 @@ local UiRegistry = {
     UiTeamPrefabPopupTagSelector = "XUi/XUiTeamPrefab/XUiTeamPrefabPopupTagSelector",
     UiTeamPrefabSkillSwitch = "XUi/XUiTeamPrefab/XUiTeamPrefabSkillSwitch",
     --endregion
-    
+
     --region 军团系统/PlotExhibition
     UiPlotExhibitionMain = "XUi/XUiPlotExhibition/XUiPlotExhibitionMain",
     UiPlotExhibitionDetail = "XUi/XUiPlotExhibition/XUiPlotExhibitionDetail",
@@ -2316,14 +2320,14 @@ local UiRegistry = {
     --陀螺仪测试
     UiHyxGyroTest = "XUi/XUiHyxGyroTest/XUiHyxGyroTest",
     UiAreaWarObtain = "XUi/XUiAreaWar/XUiAreaWarObtain",
-    
+
     --region 罗塞塔主线
     UiMainLineLuosaitaPopupSkyGardenDetail = "XUi/XUiMainLine2/XUiMainLineLuosaita/XUiMainLineLuosaitaPopupSkyGardenDetail",
     UiMainLineLuosaitaMain = "XUi/XUiMainLine2/XUiMainLineLuosaita/XUiMainLineLuosaitaMain",
     UiMainLineLuosaitaPopupFileDetail = "XUi/XUiMainLine2/XUiMainLineLuosaita/XUiMainLineLuosaitaPopupFileDetail",
     UiMainLineLuosaitaPopupReview = "XUi/XUiMainLine2/XUiMainLineLuosaita/XUiMainLineLuosaitaPopupReview",
-    --endregion 
-    
+    --endregion
+
     --region 空花签到
     UiRadioSignMain = "XUi/XUiRadioSign/XUiRadioSignMain",
     UiRadioSignPopupHall = "XUi/XUiRadioSign/XUiRadioSignPopupHall",
@@ -2340,7 +2344,7 @@ local UiRegistry = {
     UiSkyGardenSGDroneShop = "XUi/XUiSkyGarden/XDroneGame/Shop/XUiSkyGardenSGDroneShop",
     UiSkyGardenSGDroneLoading = "XUi/XUiSkyGarden/XDroneGame/XUiSkyGardenSGDroneLoading",
     UiBigWorldVideoPreview = "XUi/XUiBigWorld/XCommon/XPreview/XUiBigWorldVideoPreview",
-    
+
     UiGuildWarStayChoose = "XUi/XUiGuildWar/RoleStationChoose/XUiGuildWarStayChoose",
     UiGuildWarUpTeam = "XUi/XUiGuildWar/UiGuildWarUpTeam/XUiGuildWarUpTeam",
     UiBigWorldMapOverview = "XUi/XUiBigWorld/XMap/XOverview/XUiBigWorldMapOverview",
@@ -2420,6 +2424,7 @@ local UiRegistry = {
     UiLifeTreeTask = "XUi/XUiLifeTree/XUiLifeTreeTask/XUiLifeTreeTask",
     UiLifeTreeGuide = "XUi/XUiLifeTree/XUiLifeTreeGuide/XUiLifeTreeGuide",
     UiLifeTreeUnlockType = "XUi/XUiLifeTree/XUiLifeTreeUnlockType/XUiLifeTreeUnlockType",
+    UiLifeTreeConstellationDetail = "XUi/XUiLifeTree/XUiLifeTreeConstellationDetail/XUiLifeTreeConstellationDetail",
     --endregion
 
     --region 肉鸽6
@@ -2431,6 +2436,7 @@ local UiRegistry = {
     UiTheatre6Main = "XUi/XUiTheatre6/OutSider/XUiTheatre6Main",
     UiTheatre6RewardShop = "XUi/XUiTheatre6/OutSider/XUiTheatre6RewardShop",
     UiTheatre6PopupUpgradePreview = "XUi/XUiTheatre6/Popup/XUiTheatre6PopupUpgradePreview",
+    UiTheatre6PopupNewContent = "XUi/XUiTheatre6/Popup/XUiTheatre6PopupNewContent",
     UiTheatre6ChooseDifficulty = "XUi/XUiTheatre6/Stage/XUiTheatre6ChooseDifficulty",
     UiTheatre6ChapterPreview = "XUi/XUiTheatre6/Boss/XUiTheatre6ChapterPreview",
     UiTheatre6PopupBossCompare = "XUi/XUiTheatre6/Popup/XUiTheatre6PopupBossCompare",
@@ -2461,6 +2467,17 @@ local UiRegistry = {
     UiTheatre6BubbleAttackDetail = "XUi/XUiTheatre6/Bubble/XUiTheatre6BubbleAttackDetail",
     UiTheatre6BubbleAttributeDetail = "XUi/XUiTheatre6/Bubble/XUiTheatre6BubbleAttributeDetail",
     UiTheatre6GainTips = "XUi/XUiTheatre6/XUiTheatre6GainTips/XUiTheatre6GainTips",
+    UiTheatre6PopupPVPFilterCharacter = "XUi/XUiTheatre6/PVP/XUiTheatre6PopupPVPFilterCharacter",
+    UiTheatre6PopupChooseEnvironment = "XUi/XUiTheatre6/PVP/XUiTheatre6PopupChooseEnvironment",
+    UiTheatre6PVPSettlement = "XUi/XUiTheatre6/PVP/XUiTheatre6PVPSettlement",
+    UiTheatre6PVPMain = "XUi/XUiTheatre6/PVP/XUiTheatre6PVPMain",
+    UiTheatre6PVPAttackDefend = "XUi/XUiTheatre6/PVP/XUiTheatre6PVPAttackDefend",
+    UiTheatre6PopupPVPInfo = "XUi/XUiTheatre6/PVP/Popup/XUiTheatre6PopupPVPInfo",
+    UiTheatre6PopupPVPCompare = "XUi/XUiTheatre6/PVP/Popup/XUiTheatre6PopupPVPCompare",
+    UiTheatre6PVPLoading = "XUi/XUiTheatre6/PVP/XUiTheatre6PVPLoading",
+    UiTheatre6PVPRank = "XUi/XUiTheatre6/PVP/Rank/XUiTheatre6PVPRank",
+    UiTheatre6PVPRankDetail = "XUi/XUiTheatre6/PVP/Rank/XUiTheatre6PVPRankDetail",
+    UiTheatre6PopupPVPRecord = "XUi/XUiTheatre6/PVP/XUiTheatre6PopupPVPRecord",
     --endregion
     --region XShop
     UiShopFashionObtain = "XUi/XUiShop/XUiShopFashionObtain/XUiShopFashionObtain",
@@ -2489,6 +2506,25 @@ local UiRegistry = {
     UiGachaLifu405Show = "XUi/XUiGachaLiv4P5/XUiGachaLiv4P5Show",
     UiGachaLifu405Result = "XUi/XUiGachaLiv4P5/XUiGachaLiv4P5Result",
     --endregion
+    
+    --region 大染色玩法
+    
+    UiDyeMergeMain = "XUi/XUiDyeMergeGame/UiDyeMergeMain/XUiDyeMergeMain",
+    UiDyeMergeGame = "XUi/XUiDyeMergeGame/UiDyeMergeGame/XUiDyeMergeGame",
+    UiDyeMergePopupTips = "XUi/XUiDyeMergeGame/UiDyeMergeGame/XUiDyeMergePopupTips",
+    UiDyeMergeTask = "XUi/XUiDyeMergeGame/UiDyeMergeTask/XUiDyeMergeTask",
+    --endregion
+
+    UiConcertPreHeatingMain = "XUi/XUiConcertPreHeating/XUiConcertPreHeatingMain",
+    UiConcertPreHeatingTuningStageCorrectTips = "XUi/XUiConcertPreHeating/XUiConcertPreHeatingTuningStageCorrectTips",
+    UiConcertPreHeatingTuningStage = "XUi/XUiConcertPreHeating/XUiConcertPreHeatingTuningStage",
+    UiConcertPreHeatingTask = "XUi/XUiConcertPreHeating/XUiConcertPreHeatingTask",
+
+
+    UiActivityBossSingleSettlement = "XUi/XUiActivityBossSingle/battlewin/XUiActivityBossSingleSettlement",
+    UiMainActivityToastHall = "XUi/XUiActivityToastHall/XUiMainActivityToastHall",
+
+    UiPurchaseBuyCoatingTips = "XUi/XUiPurchase/XUiPurchaseBuyCoatingTips/XUiPurchaseBuyCoatingTips",
 }
 
 return UiRegistry

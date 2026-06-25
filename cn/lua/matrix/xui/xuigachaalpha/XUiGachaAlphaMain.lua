@@ -181,7 +181,7 @@ function XUiGachaAlphaMain:Init3DSceneInfo()
 
     --- 卡池场景为白昼 不受电量和实际时间的影响
     local animationRoot = self.UiSceneInfo.Transform:Find("Animations")
-    local fullTimeLine = animationRoot:Find("FullTimeLine"):GetComponent("PlayableDirector")
+    local fullTimeLine = animationRoot:Find("FullTimeLine"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     if fullTimeLine then
         fullTimeLine.gameObject:SetActiveEx(true)
     end
@@ -432,7 +432,7 @@ function XUiGachaAlphaMain:RefreshUiShow()
 
     self.BtnGacha:SetDisable(not self.IsCanGacha1)
     self.BtnGacha2:SetDisable(not self.IsCanGacha10)
-    self.BtnGacha.transform:GetComponent("RawImage").enabled = self.IsCanGacha1
+    self.BtnGacha.transform:GetComponent(typeof(CS.UnityEngine.UI.RawImage)).enabled = self.IsCanGacha1
     GridBtnGachas[2].BtnGacha2.enabled = self.IsCanGacha10
     GridBtnGachas[2].RImg1.gameObject:SetActiveEx(leftCanGachaCount >= 1 and leftCanGachaCount < 10)
     GridBtnGachas[2].RImg2.gameObject:SetActiveEx(self.IsGachaTimesEnd)

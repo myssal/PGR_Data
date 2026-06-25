@@ -1,3 +1,4 @@
+--[[
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPanelBaseEquipRecycle = XClass(nil, "XUiPanelBaseEquipRecycle")
@@ -26,10 +27,10 @@ end
 
 function XUiPanelBaseEquipRecycle:AutoInitUi()
     self.PanelRewardView = self.Transform:Find("PanelRewardView")
-    self.BtnCloseRecycle = self.Transform:Find("BtnCloseRecycle"):GetComponent("Button")
-    self.BtnReset = self.Transform:Find("BtnReset"):GetComponent("Button")
-    self.BtnDoRecycle = self.Transform:Find("BtnDoRecycle"):GetComponent("Button")
-    self.TxtSelectedNum = self.Transform:Find("TxtSelectedNum"):GetComponent("Text")
+    self.BtnCloseRecycle = self.Transform:Find("BtnCloseRecycle"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnReset = self.Transform:Find("BtnReset"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnDoRecycle = self.Transform:Find("BtnDoRecycle"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtSelectedNum = self.Transform:Find("TxtSelectedNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.TogTwoStar = self.Transform:Find("TogTwoStar"):GetComponent("Toggle")
     self.TogThreeStar = self.Transform:Find("TogThreeStar"):GetComponent("Toggle")
     self.TogFourStar = self.Transform:Find("TogFourStar"):GetComponent("Toggle")
@@ -128,3 +129,4 @@ function XUiPanelBaseEquipRecycle:OnBtnResetClick()
 end
 
 return XUiPanelBaseEquipRecycle
+]]

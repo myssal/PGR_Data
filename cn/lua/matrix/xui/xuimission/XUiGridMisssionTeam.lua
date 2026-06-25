@@ -37,14 +37,14 @@ end
 
 function XUiGridMisssionTeam:AutoInitUi()
     self.PanelHead = self.Transform:Find("PanelHead")
-    self.ImgHeadIconBg = self.Transform:Find("PanelHead/ImgHeadIconBg"):GetComponent("Image")
-    self.ImgHeadIcon = self.Transform:Find("PanelHead/ImgHeadIcon"):GetComponent("Image")
+    self.ImgHeadIconBg = self.Transform:Find("PanelHead/ImgHeadIconBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgHeadIcon = self.Transform:Find("PanelHead/ImgHeadIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
     self.PanelLevel = self.Transform:Find("PanelLevel")
-    self.TxtLevel = self.Transform:Find("PanelLevel/TxtLevel"):GetComponent("Text")
-    self.ImgQuality = self.Transform:Find("ImgQuality"):GetComponent("Image")
-    self.ImgInTeam = self.Transform:Find("ImgInTeam"):GetComponent("Image")
+    self.TxtLevel = self.Transform:Find("PanelLevel/TxtLevel"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgQuality = self.Transform:Find("ImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgInTeam = self.Transform:Find("ImgInTeam"):GetComponent(typeof(CS.UnityEngine.UI.Image))
     self.PanelSelected = self.Transform:Find("PanelSelected")
-    self.ImgSelected = self.Transform:Find("PanelSelected/ImgSelected"):GetComponent("Image")
+    self.ImgSelected = self.Transform:Find("PanelSelected/ImgSelected"):GetComponent(typeof(CS.UnityEngine.UI.Image))
 end
 
 function XUiGridMisssionTeam:GetAutoKey(uiNode,eventName)

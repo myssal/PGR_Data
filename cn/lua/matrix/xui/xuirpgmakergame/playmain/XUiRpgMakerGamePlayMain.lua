@@ -114,7 +114,7 @@ function XUiRpgMakerGamePlayMain:InitPanelRoleMoveUI()
     local beginDragCb = function(touchPosition) self:OnPointerDown(touchPosition) end
     local onDragCb = function(touchPosition) self:OnDrag(touchPosition) end
     local endDragCb = function(touchPosition) self:OnPointerUp(touchPosition) end
-    self.PanelRoleMoveUI = XUiRpgMakerGameRoleMove.New(self, self.GameObject:GetComponent("RectTransform"), beginDragCb, onDragCb, endDragCb)
+    self.PanelRoleMoveUI = XUiRpgMakerGameRoleMove.New(self, self.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)), beginDragCb, onDragCb, endDragCb)
 end
 
 function XUiRpgMakerGamePlayMain:InitUiCameraEffect()

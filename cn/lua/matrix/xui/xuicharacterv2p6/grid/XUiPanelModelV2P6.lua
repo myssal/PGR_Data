@@ -189,7 +189,7 @@ function XUiPanelModelV2P6:RefreshBubbleInfo(index)
         local infoRootTrans = tags[j]
         -- 阶段x 文本
         local isActive = character.Star >= seleStar
-        infoRootTrans:FindTransform("TxtTitle"):GetComponent("Text").text = XUiHelper.GetText("CharacterQualityStar", seleStar)
+        infoRootTrans:FindTransform("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XUiHelper.GetText("CharacterQualityStar", seleStar)
         infoRootTrans:FindTransform("TxtStateOn").gameObject:SetActiveEx(isActive)
         infoRootTrans:FindTransform("TxtStateOff").gameObject:SetActiveEx(not isActive)
     
@@ -198,7 +198,7 @@ function XUiPanelModelV2P6:RefreshBubbleInfo(index)
         for k, v in pairs(attribs or {}) do
             local value = FixToDouble(v)
             if value > 0 then
-                infoRootTrans:FindTransform("TxtAttribute"):GetComponent("Text").text = XAttribManager.GetAttribNameByIndex(k) .. "+" .. string.format("%.2f", value)
+                infoRootTrans:FindTransform("TxtAttribute"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XAttribManager.GetAttribNameByIndex(k) .. "+" .. string.format("%.2f", value)
                 break
             end
         end
@@ -322,15 +322,15 @@ function XUiPanelModelV2P6:RefreshSingleBigBall(isActiveNode, isEvo)
                 isActiveSkill = not XTool.IsTableEmpty(curApartIds)
             end
             if isActiveSkill then
-                skillTipsShadow:Find("Image1"):GetComponent("Image"):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgNormal1"))
-                skillTipsShadow:Find("Image2"):GetComponent("Image"):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgNormal2"))
-                skillTips:Find("Image1"):GetComponent("Image"):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgNormal1"))
-                skillTips:Find("Image2"):GetComponent("Image"):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgNormal2"))
+                skillTipsShadow:Find("Image1"):GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgNormal1"))
+                skillTipsShadow:Find("Image2"):GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgNormal2"))
+                skillTips:Find("Image1"):GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgNormal1"))
+                skillTips:Find("Image2"):GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgNormal2"))
             else
-                skillTipsShadow:Find("Image1"):GetComponent("Image"):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgSpecial1"))
-                skillTipsShadow:Find("Image2"):GetComponent("Image"):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgSpecial2"))
-                skillTips:Find("Image1"):GetComponent("Image"):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgSpecial1"))
-                skillTips:Find("Image2"):GetComponent("Image"):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgSpecial2"))
+                skillTipsShadow:Find("Image1"):GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgSpecial1"))
+                skillTipsShadow:Find("Image2"):GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgSpecial2"))
+                skillTips:Find("Image1"):GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgSpecial1"))
+                skillTips:Find("Image2"):GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(CS.XGame.ClientConfig:GetString("PanelCharBigBallBgSpecial2"))
             end
             if allBgSkill then
                 for j = 0, allBgSkill.Count - 1 do

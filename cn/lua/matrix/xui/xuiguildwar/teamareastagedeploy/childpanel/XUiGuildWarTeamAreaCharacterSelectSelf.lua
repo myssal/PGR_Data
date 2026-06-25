@@ -225,7 +225,7 @@ function XUiGuildWarTeamAreaCharacterSelectSelf:UpdateCharacterData()
     XUiHelper.RefreshCustomizedList(self.BtnElementDetail.transform, self.RImgCharElement1, count, function(index, grid)
         local elementConfig = XMVCA.XCharacter:GetCharElement(elementList[index])
         local icon = elementConfig.Icon
-        grid:GetComponent("RawImage"):SetRawImage(icon)
+        grid:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
     end)
 end
 
@@ -265,11 +265,11 @@ function XUiGuildWarTeamAreaCharacterSelectSelf:OnBtnFashionClicked()
 end
 
 function XUiGuildWarTeamAreaCharacterSelectSelf:OnBtnConsciousnessClicked()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwareness(self:GetCharacterId())
+    XMVCA.XEquip:OpenUiEquipAwareness(self:GetCharacterId())
 end
 
 function XUiGuildWarTeamAreaCharacterSelectSelf:OnBtnWeaponClicked()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self:GetCharacterId(), nil, true)
+    XMVCA.XEquip:OpenUiEquipReplace(self:GetCharacterId(), nil, true)
 end
 
 function XUiGuildWarTeamAreaCharacterSelectSelf:OnBtnJoinTeamClicked()

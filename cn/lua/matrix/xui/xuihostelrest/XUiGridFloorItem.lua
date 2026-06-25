@@ -18,10 +18,10 @@ function XUiGridFloorItem:InitAutoScript()
 end
 
 function XUiGridFloorItem:AutoInitUi()
-    self.BtnFloor = self.Transform:Find("BtnFloor"):GetComponent("Button")
-    self.TxtFloor = self.Transform:Find("BtnFloor/TxtFloor"):GetComponent("Text")
+    self.BtnFloor = self.Transform:Find("BtnFloor"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtFloor = self.Transform:Find("BtnFloor/TxtFloor"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelLock = self.Transform:Find("PanelLock")
-    self.BtnLock = self.Transform:Find("PanelLock/BtnLock"):GetComponent("Button")
+    self.BtnLock = self.Transform:Find("PanelLock/BtnLock"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiGridFloorItem:GetAutoKey(uiNode,eventName)

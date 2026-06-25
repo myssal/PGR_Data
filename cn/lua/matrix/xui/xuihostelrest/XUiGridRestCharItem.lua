@@ -17,7 +17,7 @@ function XUiGridRestCharItem:InitAutoScript()
 end
 
 function XUiGridRestCharItem:AutoInitUi()
-    self.BtnItem = self.Transform:Find("BtnItem"):GetComponent("Button")
+    self.BtnItem = self.Transform:Find("BtnItem"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelInfo = self.Transform:Find("PanelInfo")
     self.PanelWorking = self.Transform:Find("PanelInfo/PanelWorking")
 end
@@ -81,7 +81,7 @@ function XUiGridRestCharItem:GetCharId()
 end
 
 function XUiGridRestCharItem:GetRectTransform()
-    return self.GameObject:GetComponent("RectTransform")
+    return self.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
 end
 
 

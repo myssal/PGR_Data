@@ -97,7 +97,7 @@ function XUiGridFangKuaiBlock:UpdateBlock()
                 body:SetSiblingIndex(3)
                 table.insert(self._Bodys, body)
             end
-            body:GetComponent("RawImage"):SetRawImage(textureConfig.BodyImage)
+            body:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(textureConfig.BodyImage)
             body.transform.gameObject:SetActiveEx(true)
         end
     elseif len == 1 then

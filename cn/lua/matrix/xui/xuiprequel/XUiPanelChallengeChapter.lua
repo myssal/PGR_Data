@@ -21,7 +21,7 @@ end
 
 function XUiPanelChallengeChapter:AutoInitUi()
     self.GridChallengeItem = self.Transform:Find("GridChallengeItem")
-    self.SViewChallenge = self.Transform:Find("SViewChallange"):GetComponent("ScrollRect")
+    self.SViewChallenge = self.Transform:Find("SViewChallange"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self.UiContent = self.Transform:Find("SViewChallange/Viewport/UiContent")
     local dragProxy = self.SViewChallenge:GetComponent(typeof(XUguiDragProxy))
     if not dragProxy then
@@ -102,7 +102,7 @@ end
 function XUiPanelChallengeChapter:PlayScrollViewMove(grid)
     -- 跟主线一样的动画
     self.SViewChallenge.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
-    local gridRect = grid.GameObject:GetComponent("RectTransform")
+    local gridRect = grid.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridRect.localPosition.x + self.UiContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridRect.localPosition.x

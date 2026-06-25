@@ -158,7 +158,7 @@ function XTheatre6BlockController:Block(missileUUID, launcherNpcUUID, targetNpcU
     eventArgs._actionId = actionId
     eventArgs._skillId = skillId
     eventArgs._missileHitCount = hitCount
-    eventArgs._hasPopText = hasPopText and true or false
+    --eventArgs._hasPopText = hasPopText and true or false -- 现在没有这个判断了，这个eventArg也可以一并删了。
     self:DispatchLuaEvent(eventType, eventArgs)
 end
 

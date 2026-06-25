@@ -59,7 +59,7 @@ function XUiRestaurantMain:OnDisable()
     if not self.CanvasGroup then
         local panel = self.Transform:Find("SafeAreaContentPane")
         if panel then
-            self.CanvasGroup = panel.transform:GetComponent("CanvasGroup")
+            self.CanvasGroup = panel.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
         end
     end
 

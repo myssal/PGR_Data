@@ -81,7 +81,7 @@ function XUiLoginVerification:ShowOption(panel, gridList)
             item = CS.UnityEngine.GameObject.Instantiate(gridOption, panel)
             gridList[i] = item
         end
-        item:Find("TxtOption"):GetComponent("Text").text = SelectionSerial[i] .. SplitChar .. v.Content
+        item:Find("TxtOption"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = SelectionSerial[i] .. SplitChar .. v.Content
         btnList[i] = item:Find("BtnOption"):GetComponent("XUiButton")
         btnList[i]:SetButtonState(XUiButtonState.Normal)
         item.gameObject:SetActiveEx(true)

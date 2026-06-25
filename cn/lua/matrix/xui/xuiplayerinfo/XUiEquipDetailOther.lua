@@ -202,7 +202,7 @@ function XUiEquipDetailOther:UpdateEquipInfo()
 
     self.TxtWeaponType.gameObject:SetActiveEx(self.IsWeapon)
     if self.IsWeapon then 
-        local equipType = XMVCA:GetAgency(ModuleId.XEquip):GetEquipType(self.TemplateId)
+        local equipType = XMVCA.XEquip:GetEquipType(self.TemplateId)
         local weaponGroupCfg = XMVCA.XArchive:GetWeaponGroupByType(equipType)
         self.TxtWeaponType.text = weaponGroupCfg and weaponGroupCfg.GroupName or ""
     end
@@ -351,7 +351,7 @@ function XUiEquipDetailOther:UpdateOverrun()
     self.BtnOverrunBlind.gameObject:SetActiveEx(true)
     self.BtnOverrunBlind:SetDisable(false)
     local stateList = { "Normal", "Press"}
-    local iconPath = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitIconPath(choseSuitId)
+    local iconPath = XMVCA.XEquip:GetEquipSuitIconPath(choseSuitId)
     local isMatch = equip:IsOverrunBlindMatch()
     local uiObj = self.BtnOverrunBlind:GetComponent("UiObject")
     for _, stateName in ipairs(stateList) do

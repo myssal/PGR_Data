@@ -122,8 +122,8 @@ function XUiBag:OnAwake()
     self.DynamicTable:SetDelegate(self)
 
     self.PanelBagItem.gameObject:SetActiveEx(false)
-    self.GridBagItemRect = self.PanelBagItem.transform:Find("GridEquip"):GetComponent("RectTransform").rect
-    self.GridSuitSimpleRect = self.PanelBagItem.transform:Find("GridSuitSimple"):GetComponent("RectTransform").rect
+    self.GridBagItemRect = self.PanelBagItem.transform:Find("GridEquip"):GetComponent(typeof(CS.UnityEngine.RectTransform)).rect
+    self.GridSuitSimpleRect = self.PanelBagItem.transform:Find("GridSuitSimple"):GetComponent(typeof(CS.UnityEngine.RectTransform)).rect
 
     self:AddRedPointEvent(self.BtnTog2, self.OnCheckBtnItemRed, self, {
         XRedPointConditions.Types.CONDITION_ITEM_COLLECTION_ENTRANCE,
@@ -538,7 +538,7 @@ function XUiBag:OpenDetailUi(data, grid)
     if self.PageRecord == XItemConfigs.PageType.Equip or self.PageRecord == XItemConfigs.PageType.Awareness then
         local equipId = data
         local forceShowBindCharacter = true
-        XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipDetail(equipId, nil, nil, forceShowBindCharacter)
+        XMVCA.XEquip:OpenUiEquipDetail(equipId, nil, nil, forceShowBindCharacter)
     elseif self.PageRecord == XItemConfigs.PageType.SuitCover then
         self.SelectSuitId = data
         self:PageTurn(XItemConfigs.PageType.Awareness)

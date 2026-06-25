@@ -147,19 +147,19 @@ function XUiGridBWGoodsBase:_RefreshNameplate()
     if not self.PanelNamePlate then
         local prefab = self.GameObject:LoadPrefab(XMedalConfigs.XNameplatePanelPath)
         prefab.transform:SetSiblingIndex(btnSiblingIndex)
-        local rectTransform = prefab.transform:GetComponent("RectTransform")
+        local rectTransform = prefab.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
         if rectTransform then
             local vX = 0
             local vY = 15
             local scale = CS.UnityEngine.Vector3(0.6, 0.6, 0.6)
             if self.RImgIcon then
-                local tmpTrans = self.RImgIcon:GetComponent("RectTransform")
+                local tmpTrans = self.RImgIcon:GetComponent(typeof(CS.UnityEngine.RectTransform))
                 local vect = tmpTrans.anchoredPosition
                 rectTransform.anchorMin = tmpTrans.anchorMin
                 rectTransform.anchorMax = tmpTrans.anchorMax
                 vX = vect.x
                 vY = vect.y
-                local bgX= self.RImgIcon:GetComponent("RectTransform").sizeDelta.x
+                local bgX= self.RImgIcon:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta.x
                 local bgScale = self.RImgIcon.transform.localScale.x
                 local realBgWidth = bgX * bgScale
                 local tempX = rectTransform.sizeDelta.x

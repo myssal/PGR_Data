@@ -402,7 +402,7 @@ end
 
 function XUiDMCFestivalActivityMain:PlayScrollViewMove(gridTransform)
     self:SetPanelStageListMovementType(CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted)
-    local gridRect = gridTransform:GetComponent("RectTransform")
+    local gridRect = gridTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridRect.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < UiGridDMCFestivalChapterMoveMinX or diffX > UiGridDMCFestivalChapterMoveMaxX then
         local left =  self._Proxy:GetScrollOffsetX(self)

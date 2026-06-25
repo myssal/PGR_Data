@@ -4,13 +4,13 @@ local XUiObtain = require("XUi/XUiObtain/XUiObtain")
 local XUiDlcRwlTip = XLuaUiManager.Register(XUiObtain, "UiDlcRwlTip")
 
 function XUiDlcRwlTip:AutoInitUi()
-    self.ScrView = self.Transform:Find("SafeAreaContentPane/ScrView"):GetComponent("ScrollRect")
+    self.ScrView = self.Transform:Find("SafeAreaContentPane/ScrView"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self.PanelContent = self.Transform:Find("SafeAreaContentPane/ScrView/Viewport/PanelContent")
     self.GridCommon = self.Transform:Find("SafeAreaContentPane/ScrView/Viewport/PanelContent/GridCommon")
-    self.BtnBack = self.Transform:Find("SafeAreaContentPane/BtnBack"):GetComponent("Button")
-    --self.TxtTitle = self.Transform:Find("SafeAreaContentPane/GameObject/TxtTitle1"):GetComponent("Text")
-    --self.BtnCancel = self.Transform:Find("SafeAreaContentPane/BtnCancel"):GetComponent("Button")
-    --self.BtnSure = self.Transform:Find("SafeAreaContentPane/BtnSure"):GetComponent("Button")
+    self.BtnBack = self.Transform:Find("SafeAreaContentPane/BtnBack"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    --self.TxtTitle = self.Transform:Find("SafeAreaContentPane/GameObject/TxtTitle1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    --self.BtnCancel = self.Transform:Find("SafeAreaContentPane/BtnCancel"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    --self.BtnSure = self.Transform:Find("SafeAreaContentPane/BtnSure"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiDlcRwlTip:PlayAnimationAniObtain()

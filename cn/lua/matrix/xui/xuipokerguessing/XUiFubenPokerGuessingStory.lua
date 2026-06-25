@@ -4,7 +4,7 @@ local XUiGridPokerGuessingStory = XClass(nil, "XUiGridPokerGuessingStory")
 function XUiGridPokerGuessingStory:Ctor(ui)
     XTool.InitUiObjectByUi(self, ui)
     self.AnimEnable = self.Transform:Find("Animation/AnimEnable")
-    self.CanvasGroup = self.Transform:GetComponent("CanvasGroup")
+    self.CanvasGroup = self.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
     self.IsPlay = false
     self:AddListener()
 end

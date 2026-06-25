@@ -164,7 +164,7 @@ function XUiGameNotice:UpdateLeftTabBtns(selectIdx, selectId, type)
         if not data.Tag or data.Tag == 0 then
             btn:ShowTag(false)
         else
-            local txtTag = btn.transform:Find("Tag/ImgTag/Text"):GetComponent("Text")
+            local txtTag = btn.transform:Find("Tag/ImgTag/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
             txtTag.text = CS.XTextManager.GetText(TagTextPrefix .. data.Tag)
             btn:ShowTag(true)
         end

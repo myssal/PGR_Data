@@ -8,27 +8,27 @@ local ATTR_COLOR = {
     BELOW = XUiHelper.Hexcolor2Color("d11e38"), -- 属性低于当前装备
 }
 
+local BUTTON_STATE_LIST = { "Normal",  "Press"}
+
+---@class XUiEquipReplaceV2P6
+---@field _Control XEquipControl
 local XUiEquipReplaceV2P6 = XLuaUiManager.Register(XLuaUi, "UiEquipReplaceV2P6")
 
 function XUiEquipReplaceV2P6:OnAwake()
     self.IsAscendOrder = false --初始降序
     self.PriorSortType = XEnumConst.EQUIP.PRIOR_SORT_TYPE.STAR
     self.ChangeEquipSuccess = false
-    self.IsShowExtend = false -- 当前是否显示扩展面板
 
     self.ImgAscend.gameObject:SetActive(self.IsAscendOrder)
     self.ImgDescend.gameObject:SetActive(not self.IsAscendOrder)
     self.GridEquip.gameObject:SetActive(false)
-    self.PanelExtend.gameObject:SetActiveEx(false)
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     self:SetButtonCallBack()
     self:InitDynamicTable()
 
-    self.PanelAddEffect = self.PanelAdd.transform:Find("Effect")
-    self.PanelAdd2Effect = self.PanelAdd2.transform:Find("Effect")
-    self.GridEquipResonanceEffect1 = self.GridEquipResonance1.transform:Find("Effect")
-    self.GridEquipResonanceEffect2 = self.GridEquipResonance2.transform:Find("Effect")
-    self.GridEquipResonanceEffect3 = self.GridEquipResonance3.transform:Find("Effect")
+    self.GridEquipResonanceEffect1 = self.GridEquipResonance1:GetObject("Effect")
+    self.GridEquipResonanceEffect2 = self.GridEquipResonance2:GetObject("Effect")
+    self.GridEquipResonanceEffect3 = self.GridEquipResonance3:GetObject("Effect")
     self.GridEquipResonanceEffect1.gameObject:SetActiveEx(false)
     self.GridEquipResonanceEffect2.gameObject:SetActiveEx(false)
     self.GridEquipResonanceEffect3.gameObject:SetActiveEx(false)
@@ -50,15 +50,6 @@ function XUiEquipReplaceV2P6:OnEnable()
     local equipId = XMVCA.XEquip:GetCharacterWeaponId(self.CharacterId)
     self.UsingEquipId = equipId
 
-    -- 播放扩展面板动画，动画切到最后一帧
-    local anim = self.IsShowExtend and self.AnimFold or self.AnimUnFold
-    anim:Play()
-    anim.time = anim.duration
-    anim:Evaluate()
-    anim:Stop()
-    
-    self.PanelAddEffect.gameObject:SetActiveEx(false)
-    self.PanelAdd2Effect.gameObject:SetActiveEx(false)
     self:UpdateView()
 end
 
@@ -90,7 +81,7 @@ function XUiEquipReplaceV2P6:OnNotify(evt, ...)
         effect.gameObject:SetActive(false)
         effect.gameObject:SetActive(true)
     elseif evt == XEventId.EVENT_EQUIP_RESONANCE_NOTYFY then
-        XMVCA:GetAgency(ModuleId.XEquip):TipEquipOperation(nil, XUiHelper.GetText("DormTemplateSelectSuccess"))
+        XMVCA.XEquip:TipEquipOperation(nil, XUiHelper.GetText("DormTemplateSelectSuccess"))
         self:UpdateEquipResonance()
 
         local slots = args[2]
@@ -117,9 +108,6 @@ function XUiEquipReplaceV2P6:SetButtonCallBack()
         self:OnSortTypeChange()
     end)
 
-    self:RegisterClickEvent(self.PanelAdd, self.ShowPanelSkill)
-    self:RegisterClickEvent(self.PanelAdd2, self.ShowPanelExtend)
-
     -- 武器共鸣
     self:RegisterClickEvent(self.GridEquipResonance1, function() self:OnBtnResonanceSkill(1) end)
     self:RegisterClickEvent(self.GridEquipResonance2, function() self:OnBtnResonanceSkill(2) end)
@@ -127,9 +115,10 @@ function XUiEquipReplaceV2P6:SetButtonCallBack()
     self:RegisterClickEvent(self.BtnResonance, function() self:OnBtnResonanceSkill() end)
 
     -- 武器超限
-    self:RegisterClickEvent(self.BtnOverrun, self.OnBtnOverrun)
-    self:RegisterClickEvent(self.BtnOverrunBlind, self.OnBtnOverrunClick)
-    self:RegisterClickEvent(self.BtnOverrunEmpty, self.OnBtnOverrunClick)
+    self:RegisterClickEvent(self.BtnOverrunNoLevel, self.OnBtnSkipOverrunClick)
+    self:RegisterClickEvent(self.BtnOverrunLevel, self.OnBtnSkipOverrunClick)
+    self:RegisterClickEvent(self.BtnOverrunBlind, self.OnBtnChangeOverrunSuitClick)
+    self:RegisterClickEvent(self.BtnOverrunEmpty, self.OnBtnChangeOverrunSuitClick)
 end
 
 function XUiEquipReplaceV2P6:OnBtnBackClick()
@@ -141,7 +130,7 @@ function XUiEquipReplaceV2P6:OnBtnMainUiClick()
 end
 
 function XUiEquipReplaceV2P6:OnBtnStrengthenClick()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipDetail(self.SelectEquipId, nil, self.CharacterId, nil, nil, nil, true)
+    XMVCA.XEquip:OpenUiEquipDetail(self.SelectEquipId, nil, self.CharacterId, nil, nil, nil, true)
 end
 
 function XUiEquipReplaceV2P6:OnBtnTakeOnClick()
@@ -164,7 +153,7 @@ function XUiEquipReplaceV2P6:OnBtnTakeOnClick()
             content = string.gsub(CS.XTextManager.GetText("EquipReplaceTip", fullName), " ", "")
         end
         XUiManager.DialogTip(CS.XTextManager.GetText("TipTitle"), content, XUiManager.DialogType.Normal, function() end, function()
-            XMVCA:GetAgency(ModuleId.XEquip):PutOn(self.CharacterId, self.SelectEquipId)
+            XMVCA.XEquip:PutOn(self.CharacterId, self.SelectEquipId)
             self.ChangeEquipSuccess = true
         end)
     
@@ -172,11 +161,11 @@ function XUiEquipReplaceV2P6:OnBtnTakeOnClick()
     elseif not equip:IsOverrunBlindMatch(self.CharacterId) then
         local content = CS.XTextManager.GetText("EquipOverrunBlindNotMatchTips")
         XUiManager.DialogTip(CS.XTextManager.GetText("TipTitle"), content, XUiManager.DialogType.Normal, function() end, function()
-            XMVCA:GetAgency(ModuleId.XEquip):PutOn(self.CharacterId, self.SelectEquipId)
+            XMVCA.XEquip:PutOn(self.CharacterId, self.SelectEquipId)
             self.ChangeEquipSuccess = true
         end)
     else
-        XMVCA:GetAgency(ModuleId.XEquip):PutOn(self.CharacterId, self.SelectEquipId)
+        XMVCA.XEquip:PutOn(self.CharacterId, self.SelectEquipId)
         self.ChangeEquipSuccess = true
     end
 end
@@ -191,8 +180,8 @@ function XUiEquipReplaceV2P6:OnBtnOrderClick()
 end
 
 function XUiEquipReplaceV2P6:OnBtnResonanceSkill(pos)
-    local equip = XMVCA:GetAgency(ModuleId.XEquip):GetEquip(self.SelectEquipId)
-    local star = XMVCA:GetAgency(ModuleId.XEquip):GetEquipQuality(equip.TemplateId)
+    local equip = XMVCA.XEquip:GetEquip(self.SelectEquipId)
+    local star = XMVCA.XEquip:GetEquipQuality(equip.TemplateId)
 
     -- 共鸣技能替换界面，武器且选中位置与当前角色是共鸣
     if equip:IsWeapon() and pos and equip:GetResonanceBindCharacterId(pos) == self.CharacterId then
@@ -206,7 +195,8 @@ function XUiEquipReplaceV2P6:OnBtnResonanceSkill(pos)
     end
 end
 
-function XUiEquipReplaceV2P6:OnBtnOverrun()
+-- 跳转谐振
+function XUiEquipReplaceV2P6:OnBtnSkipOverrunClick()
     if not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipOverrun) then 
         local tips = XFunctionManager.GetFunctionOpenCondition(XFunctionManager.FunctionName.EquipOverrun)
         XUiManager.TipError(tips)
@@ -216,7 +206,8 @@ function XUiEquipReplaceV2P6:OnBtnOverrun()
     XLuaUiManager.Open("UiEquipDetailV2P6", self.SelectEquipId, nil, self.CharacterId, nil, XEnumConst.EQUIP.UI_EQUIP_DETAIL_BTN_INDEX.OVERRUN)
 end
 
-function XUiEquipReplaceV2P6:OnBtnOverrunClick()
+-- 切换谐振技能
+function XUiEquipReplaceV2P6:OnBtnChangeOverrunSuitClick()
     if self.OverrunIconTips then
         XUiManager.TipError(self.OverrunIconTips)
         return
@@ -326,33 +317,23 @@ end
 
 -- 刷新装备详情
 function XUiEquipReplaceV2P6:UpdateEquipDetail()
-    local templateId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipTemplateId(self.SelectEquipId)
-    self.TxtEquipName.text = XMVCA:GetAgency(ModuleId.XEquip):GetEquipName(templateId)
+    local templateId = XMVCA.XEquip:GetEquipTemplateId(self.SelectEquipId)
+    self.TxtEquipName.text = XMVCA.XEquip:GetEquipName(templateId)
     self:UpdateEquipAttr()
     self:UpdateEquipSkillDesc()
     self:UpdateEquipResonance()
     self:UpdateOverrun()
     self:UpdateBtnState()
-
-    -- 刷新技能和能力扩展栏状态
-    local isShow = self.PaneEquipResonance.gameObject.activeSelf or self.PaneOverrun.gameObject.activeSelf
-    self.PanelExtendTitle.gameObject:SetActiveEx(isShow)
-    if isShow then
-        self:UpdateExtendName()
-    end
-    if not isShow and self.IsShowExtend then
-        self:ShowPanelSkill()
-    end
 end
 
 -- 刷新装备属性
 function XUiEquipReplaceV2P6:UpdateEquipAttr()
     -- 当前穿戴装备属性
     local showCurAttr = self.UsingEquipId ~= self.SelectEquipId
-    local curAttrMap = showCurAttr and XMVCA:GetAgency(ModuleId.XEquip):GetEquipAttrMap(self.UsingEquipId) or {}
+    local curAttrMap = showCurAttr and XMVCA.XEquip:GetEquipAttrMap(self.UsingEquipId) or {}
 
     -- 选择装备属性
-    local attrMap = XMVCA:GetAgency(ModuleId.XEquip):GetEquipAttrMap(self.SelectEquipId)
+    local attrMap = XMVCA.XEquip:GetEquipAttrMap(self.SelectEquipId)
     for i = 1, XEnumConst.EQUIP.MAX_ATTR_COUNT do
         local curAttrInfo = curAttrMap[i]
         local attrInfo = attrMap[i]
@@ -379,21 +360,19 @@ end
 
 -- 刷新技能详情
 function XUiEquipReplaceV2P6:UpdateEquipSkillDesc()
-    local templateId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipTemplateId(self.SelectEquipId)
+    local templateId = XMVCA.XEquip:GetEquipTemplateId(self.SelectEquipId)
     local weaponSkillInfo = XMVCA.XEquip:GetEquipWeaponSkillInfo(templateId)
     self.TxtSkillName.text = weaponSkillInfo.Name
     self.TxtSkillDes.text = weaponSkillInfo.Description
 
     local noWeaponSkill = not weaponSkillInfo.Name and not weaponSkillInfo.Description
-    self.PanelAwarenessSkillDes.gameObject:SetActiveEx(false)
-    self.PanelNoAwarenessSkill.gameObject:SetActiveEx(false)
     self.PanelWeaponSkillDes.gameObject:SetActiveEx(not noWeaponSkill)
     self.PanelNoWeaponSkill.gameObject:SetActiveEx(noWeaponSkill)
 end
 
 -- 刷新装备共鸣
 function XUiEquipReplaceV2P6:UpdateEquipResonance()
-    local templateId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipTemplateId(self.SelectEquipId)
+    local templateId = XMVCA.XEquip:GetEquipTemplateId(self.SelectEquipId)
     local canResonance = XMVCA.XEquip:CanResonanceByTemplateId(templateId)
     self.PaneEquipResonance.gameObject:SetActive(canResonance)
     if not canResonance then
@@ -417,19 +396,18 @@ function XUiEquipReplaceV2P6:UpdateEquipResonanceSkill(pos)
         end
 
         -- 按钮每个状态对应创建一个XUiGridResonanceSkill
-        local stateNameList = {"Normal", "Press"}
-        if not self.ResonanceSkillDic[pos] then 
+        if not self.ResonanceSkillDic[pos] then
             self.ResonanceSkillDic[pos] = {}
-            for _, stateName in ipairs(stateNameList) do
+            for _, stateName in ipairs(BUTTON_STATE_LIST) do
                 local stateGo = uiObj:GetObject(stateName)
                 self.ResonanceSkillDic[pos][stateName] = XUiGridResonanceSkill.New(stateGo, self.SelectEquipId, pos, self.CharacterId, function()
                     self:OnBtnResonanceSkill(pos)
                 end, nil, self.ForceShowBindCharacter)
             end
         end
-        
+
         -- 刷新所有状态的XUiGridResonanceSkill
-        for _, stateName in ipairs(stateNameList) do
+        for _, stateName in ipairs(BUTTON_STATE_LIST) do
             local grid = self.ResonanceSkillDic[pos][stateName]
             grid:SetEquipIdAndPos(self.SelectEquipId, pos)
             grid:Refresh()
@@ -440,56 +418,120 @@ end
 -- 刷新武器超限
 function XUiEquipReplaceV2P6:UpdateOverrun()
     self.OverrunIconTips = nil
-    local templateId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipTemplateId(self.SelectEquipId)
-    self.CanOverrun = self._Control:CanOverrunByTemplateId(templateId)
+    local equip = XMVCA.XEquip:GetEquip(self.SelectEquipId)
+
+    -- 不可谐振，直接隐藏
+    self.CanOverrun = equip:CanOverrun()
     self.PaneOverrun.gameObject:SetActiveEx(self.CanOverrun)
-    if not self.CanOverrun then 
+    if not self.CanOverrun then
         return
     end
 
-    local equip = XMVCA.XEquip:GetEquip(self.SelectEquipId)
-    local lv = equip:GetOverrunLevel()
-    local btnName = XUiHelper.GetText("EquipOverrun")
-    if lv > 0 then
-        btnName = self._Control:GetWeaponDeregulateUIName(lv)
-    elseif not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipOverrun) then
-        btnName = XUiHelper.GetText("EquipOverrunUnlockTips")
-    end
-    self.BtnOverrun:SetName(btnName)
+    self:_RefreshOverrunLevelBtn(equip)
+    self:_RefreshOverrunSuitBtn(equip)
+    self:_RefreshOverrunSkillBtn(equip)
+end
 
+-- 刷新谐振等级按钮
+---@param equip XEquip
+function XUiEquipReplaceV2P6:_RefreshOverrunLevelBtn(equip)
+    local lv = equip:GetOverrunLevel()
+    local isLevel = lv > 0
+    self.BtnOverrunNoLevel.gameObject:SetActiveEx(not isLevel)
+    self.BtnOverrunNoLevel:ShowReddot(equip:IsShowOverrunRed())
+    self.BtnOverrunLevel.gameObject:SetActiveEx(isLevel)
+    self.BtnOverrunLevel:ShowReddot(equip:IsShowOverrunRed())
+    if not isLevel then
+        return
+    end
+
+    local levelName, showDot, reachedDot, totalDot = equip:GetOverrunLevelInfo(self.CharacterId)
+    local isLv1 = lv == XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL1
+    local isLvGe2 = lv >= XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL2
+    for _, stateName in ipairs(BUTTON_STATE_LIST) do
+        local stateObj = self.BtnOverrunLevelUiObj:GetObject(stateName)
+        stateObj:GetObject("UiTxtLevelImg1").gameObject:SetActiveEx(isLv1)
+        stateObj:GetObject("UiTxtLevelImg2").gameObject:SetActiveEx(isLvGe2)
+        stateObj:GetObject("PanelDotGroup").gameObject:SetActiveEx(showDot)
+        if showDot then
+            for i = 1, totalDot - 1 do
+                local dotGo = stateObj:GetObject("PanelDot" .. i)
+                local isOn = reachedDot - 1 >= i
+                dotGo.transform:Find("ImgBgLevelOn").gameObject:SetActiveEx(isOn)
+                dotGo.transform:Find("ImgBgLevelOff").gameObject:SetActiveEx(not isOn)
+            end
+        end
+    end
+end
+
+-- 刷新意识套装按钮
+function XUiEquipReplaceV2P6:_RefreshOverrunSuitBtn(equip)
     self.BtnOverrunBlind.gameObject:SetActiveEx(false)
     self.BtnOverrunEmpty.gameObject:SetActiveEx(false)
 
+    local progress = equip:GetOverrunLevel() > 0 and "1/1" or "0/1"
+
     -- 未解锁
-    local canBind = equip:IsOverrunCanBlindSuit()
-    if not canBind then
+    if not equip:IsOverrunCanBlindSuit() then
         self.BtnOverrunBlind.gameObject:SetActiveEx(true)
         self.BtnOverrunBlind:SetDisable(true)
+        self.BtnOverrunBlind:SetName(progress)
         self.OverrunIconTips = XUiHelper.GetText("EquipOverrunClickTips")
-        return 
+        return
     end
 
     -- 解锁未绑定
     local choseSuitId = equip:GetOverrunChoseSuit()
-    local isChoose = choseSuitId ~= 0
-    if not isChoose then 
+    if choseSuitId == 0 then
         self.BtnOverrunEmpty.gameObject:SetActiveEx(true)
+        self.BtnOverrunEmpty:SetName(progress)
         return
     end
 
     -- 解锁并且有绑定
     self.BtnOverrunBlind.gameObject:SetActiveEx(true)
     self.BtnOverrunBlind:SetDisable(false)
-    local stateList = { "Normal", "Press"}
-    local iconPath = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitIconPath(choseSuitId)
+    self.BtnOverrunBlind:SetName(progress)
+    local iconPath = XMVCA.XEquip:GetEquipSuitIconPath(choseSuitId)
     local isMatch = equip:IsOverrunBlindMatch(self.CharacterId)
     local uiObj = self.BtnOverrunBlind:GetComponent("UiObject")
-    for _, stateName in ipairs(stateList) do
+    for _, stateName in ipairs(BUTTON_STATE_LIST) do
         local stateObj = uiObj:GetObject(stateName)
         stateObj:GetObject("RImgSuit"):SetRawImage(iconPath)
         stateObj:GetObject("ImgNotMatching").gameObject:SetActiveEx(not isMatch)
     end
     self.OverrunBlindEffect.gameObject:SetActiveEx(false)
+end
+
+-- 刷新谐振被动技能按钮
+---@param equip XEquip
+function XUiEquipReplaceV2P6:_RefreshOverrunSkillBtn(equip)
+    -- 1. 取 ATTR 类型对应的展示技能 Id
+    local showSkillId = equip:GetOverrunShowSkillId(self.CharacterId)
+    self.BtnOverrunSkill.gameObject:SetActiveEx(showSkillId ~= nil)
+    if not showSkillId then
+        return
+    end
+
+    -- 2. 技能图标
+    local skillCfg = XMVCA.XEquip:GetWeaponOverrunSkillConfigById(showSkillId)
+    local iconPath = skillCfg.Icon
+
+    -- 3. 进度
+    local _, _, reachedDot, totalDot = equip:GetOverrunLevelInfo(self.CharacterId)
+    local isFull = reachedDot >= totalDot
+    self.BtnOverrunSkill:SetDisable(reachedDot == 0)
+
+    -- 4. 遍历 Normal/Press 子节点
+    for _, stateName in ipairs(BUTTON_STATE_LIST) do
+        local stateObj = self.BtnOverrunSkillUiObj:GetObject(stateName)
+        stateObj:GetObject("RImgSuit"):SetRawImage(iconPath)
+        stateObj:GetObject("PanelFull").gameObject:SetActiveEx(isFull)
+        stateObj:GetObject("PanelNotFull").gameObject:SetActiveEx(not isFull)
+    end
+
+    -- 5. 进度文本
+    self.BtnOverrunSkill:SetName(reachedDot .. "/" .. totalDot)
 end
 
 -- 刷新按钮状态
@@ -501,34 +543,6 @@ function XUiEquipReplaceV2P6:UpdateBtnState()
     local isEquip = self.UsingEquipId == self.SelectEquipId
     self.BtnTakeOn.gameObject:SetActive(not isEquip)
     self.ImgEquipOn.gameObject:SetActive(isEquip)
-end
-
--- 刷新扩展按钮名称
-function XUiEquipReplaceV2P6:UpdateExtendName()
-    local nameKey = self.CanOverrun and "EquipWeaponBtnName" or "EquipResonanceName"
-    local btnName = XUiHelper.GetText(nameKey)
-    self.PanelAdd2:SetName(btnName)
-    self.TxtExtendTitleNormal.text = btnName
-end
-
--- 显示技能面板
-function XUiEquipReplaceV2P6:ShowPanelSkill()
-    self.IsShowExtend = false
-    self:PlayAnimation("AnimUnFold")
-    self.PanelAddEffect.gameObject:SetActiveEx(false)
-    self.PanelAdd2Effect.gameObject:SetActiveEx(true)
-    self.GridEquipResonanceEffect1.gameObject:SetActiveEx(false)
-    self.GridEquipResonanceEffect2.gameObject:SetActiveEx(false)
-    self.GridEquipResonanceEffect3.gameObject:SetActiveEx(false)
-    self.OverrunBlindEffect.gameObject:SetActiveEx(false)
-end
-
--- 显示扩展面板
-function XUiEquipReplaceV2P6:ShowPanelExtend()
-    self.IsShowExtend = true
-    self:PlayAnimation("AnimFold")
-    self.PanelAddEffect.gameObject:SetActiveEx(true)
-    self.PanelAdd2Effect.gameObject:SetActiveEx(false)
 end
 
 return XUiEquipReplaceV2P6

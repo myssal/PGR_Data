@@ -5,7 +5,7 @@ function XUiGridBuff:Ctor(ui)
     self.Transform = ui.transform
 
     XTool.InitUiObject(self)
-    XUiHelper.RegisterClickEvent(self, self.RImgIcon:GetComponent("RawImage"), self.ShowInfo)
+    XUiHelper.RegisterClickEvent(self, self.RImgIcon:GetComponent(typeof(CS.UnityEngine.UI.RawImage)), self.ShowInfo)
 end
 
 function XUiGridBuff:Refresh(showFightEventId)

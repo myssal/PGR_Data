@@ -1,3 +1,4 @@
+--[[
 local XUiPanelBaseEquipInfo = XClass(nil, "XUiPanelBaseEquipInfo")
 
 function XUiPanelBaseEquipInfo:Ctor(ui, rootUI)
@@ -15,22 +16,22 @@ function XUiPanelBaseEquipInfo:InitAutoScript()
 end
 
 function XUiPanelBaseEquipInfo:AutoInitUi()
-    self.BtnOk = self.Transform:Find("BtnOk"):GetComponent("Button")
-    self.BtnGet = self.Transform:Find("BtnGet"):GetComponent("Button")
-    self.ImgQuality = self.Transform:Find("ImgQuality"):GetComponent("Image")
-    self.RImgIcon = self.Transform:Find("RImgIcon"):GetComponent("RawImage")
-    self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
+    self.BtnOk = self.Transform:Find("BtnOk"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnGet = self.Transform:Find("BtnGet"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.ImgQuality = self.Transform:Find("ImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.RImgIcon = self.Transform:Find("RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelShowAttr1 = self.Transform:Find("PanelShowAttr1")
-    self.TxtAttrTitle1 = self.Transform:Find("PanelShowAttr1/TxtAttrTitle1"):GetComponent("Text")
-    self.TxtAttr1 = self.Transform:Find("PanelShowAttr1/TxtAttr1"):GetComponent("Text")
+    self.TxtAttrTitle1 = self.Transform:Find("PanelShowAttr1/TxtAttrTitle1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtAttr1 = self.Transform:Find("PanelShowAttr1/TxtAttr1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelShowAttr2 = self.Transform:Find("PanelShowAttr2")
-    self.TxtAttrTitle2 = self.Transform:Find("PanelShowAttr2/TxtAttrTitle2"):GetComponent("Text")
-    self.TxtAttr2 = self.Transform:Find("PanelShowAttr2/TxtAttr2"):GetComponent("Text")
-    self.TxtStar = self.Transform:Find("TxtStar"):GetComponent("Text")
-    self.TxtLevelLimit = self.Transform:Find("TxtLevelLimit"):GetComponent("Text")
-    self.TxtPartB = self.Transform:Find("TxtPart"):GetComponent("Text")
-    self.TxtDescB = self.Transform:Find("TxtDesc"):GetComponent("Text")
-    self.TxtType = self.Transform:Find("TxtType"):GetComponent("Text")
+    self.TxtAttrTitle2 = self.Transform:Find("PanelShowAttr2/TxtAttrTitle2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtAttr2 = self.Transform:Find("PanelShowAttr2/TxtAttr2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtStar = self.Transform:Find("TxtStar"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtLevelLimit = self.Transform:Find("TxtLevelLimit"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtPartB = self.Transform:Find("TxtPart"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtDescB = self.Transform:Find("TxtDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtType = self.Transform:Find("TxtType"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiPanelBaseEquipInfo:RegisterClickEvent(uiNode, func)
@@ -122,3 +123,4 @@ function XUiPanelBaseEquipInfo:OnBtnGetClick()
 end
 
 return XUiPanelBaseEquipInfo
+]]

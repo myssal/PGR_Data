@@ -305,7 +305,7 @@ end
 function XUiPivotCombatMain:InitUI()
     self.CenterEffectShine = self.BtnCenter.transform:Find("EffectShine")
     
-    self.UiMove = self.Transform:Find("Animation/UiMove"):GetComponent("PlayableDirector")
+    self.UiMove = self.Transform:Find("Animation/UiMove"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     
     
 end

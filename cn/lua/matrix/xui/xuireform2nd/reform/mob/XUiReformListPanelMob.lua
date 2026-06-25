@@ -31,7 +31,7 @@ function XUiReformListPanelMob:OnStart()
     --    self.PanelReformEffect.gameObject:SetActive(true)
     --end
     self._Content = XUiHelper.TryGetComponent(self.PanelReformList.transform, "Viewport/Content", "RectTransform")
-    self._AffixList = self.PanelAffixList:GetComponent("ScrollRect")
+    self._AffixList = self.PanelAffixList:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
 
     self._Timer = false
     self._Status = STATUS_SCROLL.NONE
@@ -207,7 +207,7 @@ end
 --        return false
 --    end
 --    self._GridFocus = gridFocus
---    self._TransformGridFocus = gridFocus.GameObject:GetComponent("RectTransform")
+--    self._TransformGridFocus = gridFocus.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
 --    self._Status = STATUS_SCROLL.AFFIX_START
 --    self._ViewModel:SetPlayingAnimationScroll(true)
 --    return true

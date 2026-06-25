@@ -67,7 +67,7 @@ function XUiGridRpgMakerGameCardMini:Refresh(row, colIndex, colDataList, mapId, 
             end
 
             --设置线段的起点坐标
-            local size = self.Transform:GetComponent("RectTransform").rect.size
+            local size = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.size
             local startPosX = size.x * widthPercent
             local startPoxY = size.y * heightPercent
 

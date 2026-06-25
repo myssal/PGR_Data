@@ -28,7 +28,7 @@ function XUiEquipGridSuit:Refresh(suitInfo, isSelect)
             showObj:GetObject("TxtNumber").text = suitCnt
         end
     else
-        local agency = XMVCA:GetAgency(ModuleId.XEquip)
+        local agency = XMVCA.XEquip
         local suitName = agency:GetSuitName(suitInfo.SuitId)
         local suitCnt = "x" .. suitInfo.Count
         local iconPath = agency:GetEquipSuitIconPath(suitInfo.SuitId)

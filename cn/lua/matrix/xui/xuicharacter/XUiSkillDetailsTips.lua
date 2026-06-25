@@ -83,7 +83,7 @@ end
 function XUiSkillDetailsTips:SetTextInfo(target, parent, info)
     local go = XUiHelper.Instantiate(target, parent)
     go:SetActiveEx(true)
-    local goTxt = go:GetComponent("Text")
+    local goTxt = go:GetComponent(typeof(CS.UnityEngine.UI.Text))
     goTxt.text = XUiHelper.ConvertLineBreakSymbol(info)
 end
 

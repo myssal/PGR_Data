@@ -13,7 +13,7 @@ function XUiEquipResonanceSkillChangeV2P6:OnStart(characterId, equipId)
     self.EquipId = equipId
 
     -- 共鸣数量、当前位置对应技能
-    local equip = XMVCA:GetAgency(ModuleId.XEquip):GetEquip(self.EquipId)
+    local equip = XMVCA.XEquip:GetEquip(self.EquipId)
     local resonanceInfoDic = equip:GetResonanceInfoDic()
     self.ResonanceCount = 0
     self.ResonancePosSkillDic = {}
@@ -41,7 +41,7 @@ function XUiEquipResonanceSkillChangeV2P6:OnBtnEnterClick()
     end
 
     -- 只筛选变化的技能
-    local equip = XMVCA:GetAgency(ModuleId.XEquip):GetEquip(self.EquipId)
+    local equip = XMVCA.XEquip:GetEquip(self.EquipId)
     local slots = {}
     local selectSkillIds = {}
     for pos, skillId in pairs(self.ResonancePosSkillDic) do
@@ -56,7 +56,7 @@ function XUiEquipResonanceSkillChangeV2P6:OnBtnEnterClick()
         return
     end
 
-    XMVCA:GetAgency(ModuleId.XEquip):RequestEquipResonance(self.EquipId, slots, self.CharacterId, nil, nil, selectSkillIds, XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL)
+    XMVCA.XEquip:RequestEquipResonance(self.EquipId, slots, self.CharacterId, nil, nil, selectSkillIds, XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL)
     self:Close()
 end
 

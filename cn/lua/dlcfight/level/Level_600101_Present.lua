@@ -173,6 +173,7 @@ function XLevel6001Present:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.SceneObjectMoveStop then
         if eventArgs.SceneObjectId == self._TrafficHubElevator.PlaceId then--如果物件是电梯，则根据目标点设置状态
             self:SetTrafficHubElevatorState(eventArgs.ToNodeId)
+            self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject,self._TrafficHubElevator.PlaceId,true)
             self._proxy:PlaySound(5500139,ETargetActorType.Npc,self.TrafficHubElevatorUUid,-1,-1,-1,-1,-1,-1,-1)--播放电梯停止音效
             if self._TrafficHubElevator.ADstate == 1 then--如果有广告，那就停止播放广告特效
                 self._proxy:UnBindSceneObjectEffect(self._TrafficHubElevator.PlaceId, "FxSkyGardenDtilang")
@@ -189,15 +190,19 @@ function XLevel6001Present:HandleEvent(eventType, eventArgs)
             self._TrafficHubElevator.State = ETrafficHubElevatorState.Up --把电梯状态设置为在上层
             self._proxy:UnBindSceneObjectEffect(self._TrafficHubElevator.PlaceId, "FxSkyGardenDtihuangLoop") --删除掉电梯原有的特效
             self._proxy:BindSceneObjectEffect(self._TrafficHubElevator.PlaceId, "FxSkyGardenDtihuangBianse", { x = 1, y = 0, z = 0 }, { x = 0, y = 0, z = 0 }, { x = 0.9, y = 1, z = 1 })
+            self._proxy:LoadLevelNpc(self._TrafficHubElevator.NPC02)--加载NPC02
+            self._proxy:SetNpcInteractOneOptionActive(self._TrafficHubElevator.NPC02, 1)--设置NPC02只显示选项1
+
             self._proxy:AddTimerTask(1.5,function()
                 self._proxy:BindSceneObjectEffect(self._TrafficHubElevator.PlaceId, "FxSkyGardenDtiTouping", { x = 1, y = 0, z = 0 }, { x = 0, y = 0, z = 0 }, { x = 0.9, y = 1, z = 1 })--延迟1.5s播放投屏特效
                 self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._TrafficHubElevator.PlaceId, true) --设置电梯为可交互状态
             end)
-        elseif self._proxy:IsQuestObjectiveFinished(60040101) and eventArgs.TargetPlaceId == self._TrafficHubElevator.NPC01 then
-            self._proxy:LoadLevelNpc(self._TrafficHubElevator.NPC02)--加载NPC02
+        --elseif self._proxy:IsQuestObjectiveFinished(60040101) and eventArgs.TargetPlaceId == self._TrafficHubElevator.NPC01 then --如果交互结束的是修理工，且成功完成了Drama
+
         elseif eventArgs.TargetPlaceId == self._TrafficHubElevator.PlaceId then --如果交互结束的NPC是电梯本身（使用电梯点击完后）
             self._proxy:PlaySound(5500140,ETargetActorType.Npc,self.TrafficHubElevatorUUid,-1,-1,-1,-1,-1,-1,-1)--播放电梯开闸音效
             self._proxy:UnBindSceneObjectEffect(self._TrafficHubElevator.PlaceId, "FxSkyGardenDtiTouping")--暂时删除投屏特效
+            self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._TrafficHubElevator.PlaceId, false) --设置电梯为不可交互状态
             if self._TrafficHubElevator.ADstate == 1 then--如果有广告，那就播放广告特效
                 self._proxy:BindSceneObjectEffect(self._TrafficHubElevator.PlaceId, "FxSkyGardenDtilang", { x = 1, y = 0, z = 0 }, { x = 0, y = 0, z = 0 }, { x = 0.9, y = 1, z = 1 })
             elseif self._TrafficHubElevator.ADstate == 0 then--如果没有广告那就播放无广告特效
@@ -311,6 +316,7 @@ function XLevel6001Present:InitTrafficHubElevator()
         --如果剧情播放完了，就隐藏NPC1显示NPC2并设置对应的状态
         self._TrafficHubElevator.State = ETrafficHubElevatorState.Up --把电梯状态设置为在上层
         self._proxy:LoadLevelNpc(self._TrafficHubElevator.NPC02) --加载好哥们
+        self._proxy:SetNpcInteractOneOptionActive(self._TrafficHubElevator.NPC02, 1)--设置NPC02只显示选项2
         self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._TrafficHubElevator.PlaceId, true) --设置电梯为可交互状态
         self._proxy:BindSceneObjectEffect(self._TrafficHubElevator.PlaceId, "FxSkyGardenDtiTouping", { x = 1, y = 0, z = 0 }, { x = 0, y = 0, z = 0 }, { x = 1, y = 1, z = 1 })
 
@@ -353,7 +359,11 @@ end
 --玩家交互电梯
 function XLevel6001Present:OnTrafficHubElevatorInteractStart()
     ---根据所在层移动到另一层
-
+    if self._TrafficHubElevator.ADstate == 1 then
+        self._proxy:PlayDramaCaption("Caption600145")
+    elseif self._TrafficHubElevator.ADstate == 0 then
+        self._proxy:PlayDramaCaption("Caption600146")
+    end
     self._proxy:AddTimerTask(1,function() --延迟1s之后播放后续
         self._proxy:PlaySound(5500141,ETargetActorType.Npc,self.TrafficHubElevatorUUid,-1,-1,-1,-1,-1,-1,-1)--播放电梯运行音效
         if self._TrafficHubElevator.State == ETrafficHubElevatorState.Up then --电梯在上层时，往下走
@@ -364,11 +374,7 @@ function XLevel6001Present:OnTrafficHubElevatorInteractStart()
             self._TrafficHubElevator.State = ETrafficHubElevatorState.Moving --变成moving 以免移动期间误触
         end
         ---根据广告状态播广告
-        if self._TrafficHubElevator.ADstate == 1 then
-            self._proxy:PlayDramaCaption("Caption600145")
-        elseif self._TrafficHubElevator.ADstate == 0 then
-            self._proxy:PlayDramaCaption("Caption600146")
-        end
+
     end)
 
 end

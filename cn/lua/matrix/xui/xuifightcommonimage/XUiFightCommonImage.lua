@@ -15,7 +15,7 @@ function XUiFightCommonImage:OnEnable(configId)
     self.RawImage:SetRawImage(XFightCommonImageConfigs.GetRawImagePath(configId))
 
     --设置位置
-    local rectTransform = self.RawImage.gameObject:GetComponent("RectTransform")
+    local rectTransform = self.RawImage.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local posConfigX = XFightCommonImageConfigs.GetImageX(configId)
     local posConfigY = XFightCommonImageConfigs.GetImageY(configId)
     rectTransform.anchoredPosition = Vector2(posConfigX, posConfigY)

@@ -56,10 +56,10 @@ function XUiDrawRule:InitAutoScript()
 end
 
 function XUiDrawRule:AutoInitUi()
-    -- self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent("Button")
+    -- self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     -- self.PanelRule = self.Transform:Find("SafeAreaContentPane/PanelRule")
     -- self.PanelDetailContent = self.Transform:Find("SafeAreaContentPane/PanelRule/PnlScrollView/PnlViewport/PanelDetailContent")
-    -- self.TxtRule = self.Transform:Find("SafeAreaContentPane/PanelRule/PnlScrollView/PnlViewport/PanelDetailContent/TxtRule"):GetComponent("Text")
+    -- self.TxtRule = self.Transform:Find("SafeAreaContentPane/PanelRule/PnlScrollView/PnlViewport/PanelDetailContent/TxtRule"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     -- self.PanelProbability = self.Transform:Find("SafeAreaContentPane/PanelRule/PnlScrollView/PnlViewport/PanelDetailContent/PanelProbability")
 end
 

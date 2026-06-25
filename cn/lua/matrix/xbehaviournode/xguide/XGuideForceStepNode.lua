@@ -94,7 +94,7 @@ function GuideForceStepNode:OnEnter()
 
     elseif type == GuideForceStepType.SetUpEquip then
 
-        XMVCA:GetAgency(ModuleId.XEquip):PutOn(self.Agent:GetVarDicByKey("UiEquipCharacterId"), self.Agent:GetVarDicByKey("UiEquipSelectEquipId"))
+        XMVCA.XEquip:PutOn(self.Agent:GetVarDicByKey("UiEquipCharacterId"), self.Agent:GetVarDicByKey("UiEquipSelectEquipId"))
 
     elseif type == GuideForceStepType.OpenAwarenessReplace then
 

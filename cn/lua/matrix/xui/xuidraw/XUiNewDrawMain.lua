@@ -717,7 +717,7 @@ end
 
 --region Ui - Welfare
 function XUiNewDrawMain:InitWelfare()
-    self.TextWelfare = self.LabelWelfare:FindTransform("TextWelfare"):GetComponent("Text")
+    self.TextWelfare = self.LabelWelfare:FindTransform("TextWelfare"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiNewDrawMain:RefreshWelfare()
@@ -834,7 +834,7 @@ function XUiNewDrawMain:_RefreshCharacterDrawTarget()
         end
         --endregion 品阶图标开关
 
-        local txtRandomA = self._TargetA.TxtRandom or self._TargetA.ImgLevel.transform:Find("TxtRandom"):GetComponent("Text")
+        local txtRandomA = self._TargetA.TxtRandom or self._TargetA.ImgLevel.transform:Find("TxtRandom"):GetComponent(typeof(CS.UnityEngine.UI.Text))
         txtRandomA.gameObject:SetActiveEx(false)
     else
         characterIcon = XDrawConfigs.GetDrawClientConfig("DrawTargetDefaultRoleImg")
@@ -846,7 +846,7 @@ function XUiNewDrawMain:_RefreshCharacterDrawTarget()
         end
         --endregion 品阶图标开关
         
-        local txtRandomA = self._TargetA.TxtRandom or self._TargetA.ImgLevel.transform:Find("TxtRandom"):GetComponent("Text")
+        local txtRandomA = self._TargetA.TxtRandom or self._TargetA.ImgLevel.transform:Find("TxtRandom"):GetComponent(typeof(CS.UnityEngine.UI.Text))
         txtRandomA.gameObject:SetActiveEx(true)
     end
     if not string.IsNilOrEmpty(characterIcon) and self._TargetA.ImgRole then
@@ -875,7 +875,7 @@ function XUiNewDrawMain:_RefreshCharacterDrawTarget()
     local txtPercentA = self._TargetA.TxtPercent or self._TargetA.ImgLevel.transform:Find("TxtPercent")
     if txtPercentA then
         --txtPercentA.gameObject:SetActiveEx(true)
-        local txtPercent2A = self._TargetA.TxtPercent2 or self._TargetA.ImgLevel.transform:Find("TxtPercent/TxtPercent2"):GetComponent("Text")
+        local txtPercent2A = self._TargetA.TxtPercent2 or self._TargetA.ImgLevel.transform:Find("TxtPercent/TxtPercent2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
         txtPercent2A.text = XUiHelper.GetText("DrawPercentA")
         txtPercent2A.gameObject:SetActiveEx(true)
     end
@@ -885,9 +885,9 @@ function XUiNewDrawMain:_RefreshCharacterDrawTarget()
         txtPercentS.gameObject:SetActiveEx(true)
 
         -- 抽卡概率 根本就没读配置，s级的卡池，全都是100%，之前一直是写在ui上的
-        txtPercentS:GetComponent("Text").text = XUiHelper.GetText("DrawPercentSUp")
+        txtPercentS:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XUiHelper.GetText("DrawPercentSUp")
         
-        local txtPercent2S = self._TargetS.TxtPercent2 or self._TargetS.ImgLevel.transform:Find("TxtPercentS/TxtPercentS2"):GetComponent("Text")
+        local txtPercent2S = self._TargetS.TxtPercent2 or self._TargetS.ImgLevel.transform:Find("TxtPercentS/TxtPercentS2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
         txtPercent2S.text = XUiHelper.GetText("DrawPercentS")
         txtPercent2S.gameObject:SetActiveEx(true)
     end

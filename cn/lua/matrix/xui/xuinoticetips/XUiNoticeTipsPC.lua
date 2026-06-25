@@ -25,7 +25,7 @@ function UiNoticeTipsPC:OnStart()
     self:RefreshNoticeContent()
 
     self.TxtNoticeWidth = XUiHelper.CalcTextWidth(self.TxtNotice)
-    self.PanelNoticeRect = self.PanelNotice.gameObject:GetComponent("RectTransform")
+    self.PanelNoticeRect = self.PanelNotice.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.PauseTime = 0
 end
 
@@ -154,8 +154,8 @@ end
 
 function UiNoticeTipsPC:AutoInitUi()
     self.PanelNotice = self.Transform:Find("SafeAreaContentPane/PanelNotice")
-    self.TxtNotice = self.Transform:Find("SafeAreaContentPane/PanelNotice/TxtNotice"):GetComponent("Text")
-    self.ImgBg = self.Transform:Find("SafeAreaContentPane/ImgBg"):GetComponent("Image")
+    self.TxtNotice = self.Transform:Find("SafeAreaContentPane/PanelNotice/TxtNotice"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgBg = self.Transform:Find("SafeAreaContentPane/ImgBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
     self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent("XUiButton")
 end
 

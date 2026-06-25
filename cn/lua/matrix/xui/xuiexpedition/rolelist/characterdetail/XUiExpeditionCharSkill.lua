@@ -33,7 +33,7 @@ function XUiExpeditionCharSkill:AutoInitUi()
     self.GridSkillItem3 = self.Transform:Find("PanelSkillItems/GridSkillItem3")
     self.GridSkillItem2 = self.Transform:Find("PanelSkillItems/GridSkillItem2")
     self.GridSkillItem1 = self.Transform:Find("PanelSkillItems/GridSkillItem1")
-    self.BtnSkillTeach = self.Transform:Find("PanelSkillItems/SkillTeach/BtnSkillTeach"):GetComponent("Button")
+    self.BtnSkillTeach = self.Transform:Find("PanelSkillItems/SkillTeach/BtnSkillTeach"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelSkillInfo = self.Transform:Find("PanelSkillInfo")
 end
 

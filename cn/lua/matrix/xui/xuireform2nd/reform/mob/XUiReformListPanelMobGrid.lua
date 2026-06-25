@@ -73,7 +73,7 @@ function XUiReformListPanelMobGrid:PlayAnimationEnable()
         return
     end
     self.Transform:Find("Animation/GridEnable"):PlayTimelineAnimation(function()
-        local canvasGroup = self.Grid.transform:GetComponent("CanvasGroup")
+        local canvasGroup = self.Grid.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
         canvasGroup.alpha = 1
     end)
 end
@@ -83,7 +83,7 @@ function XUiReformListPanelMobGrid:PlayAnimationEnableDown()
         return
     end
     self.Transform:Find("Animation/GridEnableDown"):PlayTimelineAnimation(function()
-        local canvasGroup = self.Grid.transform:GetComponent("CanvasGroup")
+        local canvasGroup = self.Grid.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
         canvasGroup.alpha = 1
     end)
 end

@@ -9,12 +9,12 @@ function XUiScheduleGridPlayer:Ctor(ui)
 end
 
 function XUiScheduleGridPlayer:AutoRegister()
-    self.RImgHeadIcon = self.Transform:Find("Head/StandIcon"):GetComponent("RawImage")
+    self.RImgHeadIcon = self.Transform:Find("Head/StandIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.PanelLose = self.Transform:Find("Head/PanelLose")
     self.PanelUnknown = self.Transform:Find("Head/PanelWenhao")
-    self.TxtName = self.Transform:Find("TextName"):GetComponent("Text")
-    self.RImgItemIcon = self.Transform:Find("PanelRoleNum/RawImage"):GetComponent("RawImage")
-    self.TxtItemCount = self.Transform:Find("PanelRoleNum/TextName"):GetComponent("Text")
+    self.TxtName = self.Transform:Find("TextName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.RImgItemIcon = self.Transform:Find("PanelRoleNum/RawImage"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtItemCount = self.Transform:Find("PanelRoleNum/TextName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiScheduleGridPlayer:Refresh(player, match)
@@ -51,7 +51,7 @@ end
 
 function XUiScheduleGridPlayer:SetFinalRank(rank)
     if not self.RImgRankIcon then
-        self.RImgRankIcon = self.Transform:Find("RawImage"):GetComponent("RawImage")
+        self.RImgRankIcon = self.Transform:Find("RawImage"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
 
     if rank > 0 then

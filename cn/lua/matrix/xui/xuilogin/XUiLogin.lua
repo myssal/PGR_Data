@@ -518,13 +518,13 @@ function XUiLogin:InitAutoScript()
 end
 
 function XUiLogin:AutoInitUi()
-    self.BtnStart = self.Transform:Find("SafeAreaContentPane/PanelLogin/BtnStart"):GetComponent("Button")
+    self.BtnStart = self.Transform:Find("SafeAreaContentPane/PanelLogin/BtnStart"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelLoginServer = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelLoginServer")
     self.PanelUser = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelUser")
-    self.BtnUser = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelUser/BtnUser"):GetComponent("Button")
-    self.TxtUser = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelUser/BtnUser/TxtUser"):GetComponent("Text")
-    self.ImgLogo = self.Transform:Find("SafeAreaContentPane/ImgLogo"):GetComponent("RawImage")
-    self.BackGround = self.Transform:Find("FullScreenBackground/BackGround"):GetComponent("RawImage")
+    self.BtnUser = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelUser/BtnUser"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtUser = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelUser/BtnUser/TxtUser"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgLogo = self.Transform:Find("SafeAreaContentPane/ImgLogo"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.BackGround = self.Transform:Find("FullScreenBackground/BackGround"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.TextStart = XUiHelper.TryGetComponent(self.BtnStart.transform, "Text")
 
     self:LoadNetworkPanel()

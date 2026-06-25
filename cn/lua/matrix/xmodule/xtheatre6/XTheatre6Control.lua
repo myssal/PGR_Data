@@ -15,6 +15,8 @@ XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlNetwork",
 XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlCharacter", "XTheatre6Control")
 XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlStage", "XTheatre6Control")
 XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlBattleShop", "XTheatre6Control")
+XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlPvp", "XTheatre6Control")
+XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlPvpNetwork", "XTheatre6Control")
 --endregion
 
 function XTheatre6Control:OnInit()
@@ -68,6 +70,7 @@ function XTheatre6Control:OnInit()
     }
 
     self:OnInitCharacter()
+    self:OnInitPvp()
 end
 
 function XTheatre6Control:AddAgencyEvent()
@@ -79,6 +82,7 @@ function XTheatre6Control:RemoveAgencyEvent()
 end
 
 function XTheatre6Control:OnRelease()
+    self:OnReleasePvp()
     XMVCA.XTheatre6:StopAudio()
 end
 
@@ -494,7 +498,7 @@ function XTheatre6Control:StartGame(modelId, stageId, floorIndex, roomIndex)
 end
 
 ---进入下一关
-function XTheatre6Control:MoveNext(isPopOpen)
+function XTheatre6Control:MoveNext()
     self._Model.StageChain:MoveNext()
 
     if XFightUtil.IsFighting() then
@@ -502,10 +506,7 @@ function XTheatre6Control:MoveNext(isPopOpen)
         return
     end
 
-    if isPopOpen == nil then
-        isPopOpen = true
-    end
-    self:OpenStageView(isPopOpen)
+    self:OpenStageView(true)
 end
 
 function XTheatre6Control:InitClientStageStatus()
@@ -516,6 +517,10 @@ end
 function XTheatre6Control:OpenStageView(isPopOpen)
     self._Model.StageChain.IsWaitOpenNext = false
 
+    if self:CheckEnterExFloorConfirm(isPopOpen) then
+        return
+    end
+    
     local node = self._Model.StageChain.Curr
     local openUiFunc = self._RoomUiFuncDict[node.RoomType]
 
@@ -528,6 +533,30 @@ function XTheatre6Control:OpenStageView(isPopOpen)
     self:TryOpenGetBuffPopup(node.RoomType)
     self:PlayAudio()
     XMVCA.XTheatre6:OpenSanDeathBuffPopup()
+end
+
+---有额外楼层可以进入，打开确认弹窗
+function XTheatre6Control:CheckEnterExFloorConfirm(isPopOpen)
+    local modelData = self:GetCurPlayModeData()
+    if not modelData.WaitingExFloorConfirm or not modelData.HasClearedBeforeExFloor then
+        return false
+    end
+
+    local stageConfig = self:GetStageConfig(modelData.StageId)
+    local floorConfig = self:GetStageFloorConfig(stageConfig.FloorIds[modelData.CurFloorIdx + 2]) --下一层 服务器索引从0开始
+    if not floorConfig or floorConfig.ExFloor ~= 1 then
+        return false
+    end
+
+    self:OpenUi("UiBiancaTheatreBlack", isPopOpen)
+    local content = self:GetClientConfigValue("EnterExFloorTitle")
+    XLuaUiManager.Open("UiTheatre6PopupCommon", "", content, nil, function()
+        self:RequestExFloorConfirm(true)
+    end, function()
+        self:RequestExFloorConfirm(false)
+    end, nil, true)
+
+    return true
 end
 
 function XTheatre6Control:PlayAudio()
@@ -763,18 +792,40 @@ end
 
 --region 主页
 
-function XTheatre6Control:CheckShowUpdatePopup()
-    local lastViewTime = self._Model:GetLastViewStoryTime()
+function XTheatre6Control:GetLatetStoryUpdateTime()
     local values = self._Model:GetClientConfigValues("StoryUpdateTime")
     local latestUpdateTime = 0
+
     if #values ~= 0 then
         latestUpdateTime = XTime.ParseToTimestamp(values[#values])
     end
+
+    return latestUpdateTime
+end
+
+function XTheatre6Control:CheckHasNewContent()
+    local lastViewTime = self._Model:GetLastViewStoryTime()
+    local latestUpdateTime = self:GetLatetStoryUpdateTime()
+
     return lastViewTime < latestUpdateTime
 end
 
+function XTheatre6Control:CheckShowUpdatePopup()
+    local lastViewTime = self._Model:GetLastViewStoryTime()
+    local latestUpdateTime = self:GetLatetStoryUpdateTime()
+    local localTime = self._Model:GetNewContentShowed()
+
+    return lastViewTime < latestUpdateTime and localTime ~= latestUpdateTime
+end
+
 function XTheatre6Control:ShowUpdatePopup()
-    -- TODO: 实现打开更新内容弹窗
+    local latestUpdateTime = self:GetLatetStoryUpdateTime()
+
+    if XTool.IsNumberValid(latestUpdateTime) then
+        self._Model:SetNewContentShowed(latestUpdateTime)
+    end
+
+    XLuaUiManager.Open("UiTheatre6PopupNewContent")
 end
 
 ---显示放弃进度确认弹窗
@@ -912,7 +963,7 @@ function XTheatre6Control:GetSettlementArchiveList(roleId)
         if fileData then
             archiveData.characterId = fileData.CharacterId
             archiveData.score = fileData.Score or 0
-            archiveData.tags = fileData.BuildTags or table.empty
+            archiveData.tags = self:GetSortFileDataBuildTags(fileData)
             local characterCfg = self:GetCharacterConfig(fileData.CharacterId)
             local defaultFashion = self:GetFashionConfig(characterCfg.FashionIds[1]).Portrait
             archiveData.roleIcon = defaultFashion or ""

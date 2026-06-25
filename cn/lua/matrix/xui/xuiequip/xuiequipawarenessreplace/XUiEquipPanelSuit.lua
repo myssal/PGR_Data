@@ -125,8 +125,8 @@ function XUiEquipPanelSuit:UpdateSuitTitle(suitId)
     if isAll then
         suitName = XUiHelper.GetText("ScreenAll")
     else
-        suitName = XMVCA:GetAgency(ModuleId.XEquip):GetSuitName(suitId)
-        local iconPath = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitIconPath(suitId)
+        suitName = XMVCA.XEquip:GetSuitName(suitId)
+        local iconPath = XMVCA.XEquip:GetEquipSuitIconPath(suitId)
         self.ImgSuitIcon:SetSprite(iconPath)
         self.ImgSuitIconSelect:SetSprite(iconPath)
     end
@@ -184,7 +184,7 @@ function XUiEquipPanelSuit:SortSuggest(a, b)
     end
 
     -- 根据优先级排序
-    local agency = XMVCA:GetAgency(ModuleId.XEquip)
+    local agency = XMVCA.XEquip
     local suitTypeA = agency:GetEquipSuitSuitType(a.SuitId)
     local suitTypeB = agency:GetEquipSuitSuitType(b.SuitId)
     local priorityA = self.PriorityDic[suitTypeA] or 100000

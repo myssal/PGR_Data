@@ -53,7 +53,7 @@ function XUiMemorySaveStageLine:ScrollLastPos(chapterId)
         end)
         ]]--
 
-        local rt = self.PanelStageContent:GetComponent("RectTransform")
+        local rt = self.PanelStageContent:GetComponent(typeof(CS.UnityEngine.RectTransform))
         rt:DOAnchorPosX(posX, 0)
     end
 end
@@ -100,7 +100,7 @@ end
 -- 缓动动画
 function XUiMemorySaveStageLine:PlayScrollViewMove(girdTransform)
     self:SetPanelStageListMovementType(MovementType.Unrestricted)
-    local gridRect = girdTransform:GetComponent("RectTransform")
+    local gridRect = girdTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridRect.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local targetPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridRect.localPosition.x

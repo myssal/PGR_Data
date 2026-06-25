@@ -248,11 +248,11 @@ function XUiGuildWarCharacterSelectSelf:OnBtnFashionClicked()
 end
 
 function XUiGuildWarCharacterSelectSelf:OnBtnConsciousnessClicked()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwareness(self:GetCharacterId())
+    XMVCA.XEquip:OpenUiEquipAwareness(self:GetCharacterId())
 end
 
 function XUiGuildWarCharacterSelectSelf:OnBtnWeaponClicked()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self:GetCharacterId(), nil, true)
+    XMVCA.XEquip:OpenUiEquipReplace(self:GetCharacterId(), nil, true)
 end
 
 function XUiGuildWarCharacterSelectSelf:OnBtnJoinTeamClicked()

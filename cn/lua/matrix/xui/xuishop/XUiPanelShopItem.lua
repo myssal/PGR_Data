@@ -35,29 +35,29 @@ function XUiPanelShopItem:InitAutoScript()
 end
 
 function XUiPanelShopItem:AutoInitUi()
---[[self.BtnBlock = self.Transform:Find("BtnBlock"):GetComponent("Button")
+--[[self.BtnBlock = self.Transform:Find("BtnBlock"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.GridBuyCommon = self.Transform:Find("GameObject/GridBuyCommon")
-    self.ImgQuality = self.Transform:Find("GameObject/GridBuyCommon/ImgQuality"):GetComponent("Image")
-    self.RImgIcon = self.Transform:Find("GameObject/GridBuyCommon/RImgIcon"):GetComponent("RawImage")
-    self.RImgType = self.Transform:Find("GameObject/GridBuyCommon/RImgType"):GetComponent("RawImage")
-    self.TxtCount = self.Transform:Find("GameObject/GridBuyCommon/TxtCount"):GetComponent("Text")
-    self.TxtOwnCount = self.Transform:Find("GameObject/GridBuyCommon/TxtOwnCount"):GetComponent("Text")
+    self.ImgQuality = self.Transform:Find("GameObject/GridBuyCommon/ImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.RImgIcon = self.Transform:Find("GameObject/GridBuyCommon/RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.RImgType = self.Transform:Find("GameObject/GridBuyCommon/RImgType"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtCount = self.Transform:Find("GameObject/GridBuyCommon/TxtCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtOwnCount = self.Transform:Find("GameObject/GridBuyCommon/TxtOwnCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelPrice = self.Transform:Find("GameObject/Count/PanelPrice")
     self.PanelCostItem1 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem1")
-    self.RImgCostIcon1 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem1/RImgCostIcon1"):GetComponent("RawImage")
-    self.TxtCostCount1 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem1/TxtCostCount1"):GetComponent("Text")
+    self.RImgCostIcon1 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem1/RImgCostIcon1"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtCostCount1 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem1/TxtCostCount1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelCostItem2 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem2")
-    self.RImgCostIcon2 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem2/RImgCostIcon2"):GetComponent("RawImage")
-    self.TxtCostCount2 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem2/TxtCostCount2"):GetComponent("Text")
+    self.RImgCostIcon2 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem2/RImgCostIcon2"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtCostCount2 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem2/TxtCostCount2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelCostItem3 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem3")
-    self.RImgCostIcon3 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem3/RImgCostIcon3"):GetComponent("RawImage")
-    self.TxtCostCount3 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem3/TxtCostCount3"):GetComponent("Text")
-    self.BtnAddSelect = self.Transform:Find("GameObject/BtnAddSelect"):GetComponent("Button")
-    self.BtnMinusSelect = self.Transform:Find("GameObject/BtnMinusSelect"):GetComponent("Button")
-    self.BtnMax = self.Transform:Find("GameObject/BtnMax"):GetComponent("Button")
-    self.TxtCanBuy = self.Transform:Find("GameObject/TxtCanBuy"):GetComponent("Text")
+    self.RImgCostIcon3 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem3/RImgCostIcon3"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtCostCount3 = self.Transform:Find("GameObject/Count/PanelPrice/PanelCostItem3/TxtCostCount3"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnAddSelect = self.Transform:Find("GameObject/BtnAddSelect"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnMinusSelect = self.Transform:Find("GameObject/BtnMinusSelect"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnMax = self.Transform:Find("GameObject/BtnMax"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtCanBuy = self.Transform:Find("GameObject/TxtCanBuy"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.TxtSelect = self.Transform:Find("GameObject/TxtSelect"):GetComponent("InputField")
-    self.BtnUse = self.Transform:Find("GameObject/BtnUse"):GetComponent("Button")]]
+    self.BtnUse = self.Transform:Find("GameObject/BtnUse"):GetComponent(typeof(CS.UnityEngine.UI.Button))]]
 end
 
 function XUiPanelShopItem:GetAutoKey(uiNode, eventName)
@@ -247,7 +247,7 @@ function XUiPanelShopItem:SetCanAddOrMinusBtn()
     self.BtnAddSelect.interactable = self.MaxCount > self.Count
 
     if self.BtnMax then
-        self.BtnMax.gameObject:GetComponent("Image").color = self.MaxCount > 1 and CS.UnityEngine.Color(1, 1, 1, 1) or CS.UnityEngine.Color(1, 1, 1, 0.8)
+        self.BtnMax.gameObject:GetComponent(typeof(CS.UnityEngine.UI.Image)).color = self.MaxCount > 1 and CS.UnityEngine.Color(1, 1, 1, 1) or CS.UnityEngine.Color(1, 1, 1, 0.8)
         self.BtnMax.interactable = self.MaxCount > 1
     end
 

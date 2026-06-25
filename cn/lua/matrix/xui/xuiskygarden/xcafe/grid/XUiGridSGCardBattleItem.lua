@@ -24,7 +24,7 @@ function XUiGridSGCardBattleItem:Ctor(card, control, parent)
     self._PanelCoffee = XUiPanelSGValueChange.New(self.PanelCoffee)
     self._PanelReview = XUiPanelSGValueChange.New(self.PanelReview)
     if not self.RImgBg then
-        self.RImgBg = self.Transform:FindTransform("RImgBg"):GetComponent("RawImage")
+        self.RImgBg = self.Transform:FindTransform("RImgBg"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
 
     if self.TxtDetail then

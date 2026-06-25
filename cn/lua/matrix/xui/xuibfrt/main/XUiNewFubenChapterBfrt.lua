@@ -88,7 +88,7 @@ function XUiNewFubenChapterBfrt:RefreshImportantReward()
 
                 if not self.PanelNamePlate then
                     local prefab = self.RewardsBubble.transform:LoadPrefab(XMedalConfigs.XNameplatePanelPath)
-                    local rectTransform = prefab.transform:GetComponent("RectTransform")
+                    local rectTransform = prefab.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
                     if rectTransform then
                         local scale = CS.UnityEngine.Vector3(0.45, 0.5, 0.5)
                         rectTransform.position = self.RImgBubbleIcon.transform.position

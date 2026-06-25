@@ -11,7 +11,7 @@ function XUiPanelFavorabilityAudio:OnStart(uiRoot)
 
     self.GridLikeAudioItem.gameObject:SetActiveEx(false)
     self.PanelEmpty.gameObject:SetActiveEx(false)
-    self.Content=self.SViewAudioList.transform:Find('Viewport/Content'):GetComponent('RectTransform')
+    self.Content=self.SViewAudioList.transform:Find('Viewport/Content'):GetComponent(typeof(CS.UnityEngine.RectTransform))
 end
 
 function XUiPanelFavorabilityAudio:OnEnable()

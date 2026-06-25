@@ -119,7 +119,7 @@
         "BorderColor": "#7E9EB4",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
-            "造成伤害提高10%，使用任意技能均将消耗10点怒火，怒火消耗至0时，在技能结束后狂暴状态结束"
+            "造成伤害提高20%，使用任意技能均将消耗10点怒火，怒火消耗至0时，在技能结束后狂暴状态结束"
         ]
     },
     {
@@ -197,6 +197,19 @@
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
             "角色生命属性提升1点"
+        ]
+    },
+    {
+        "Id": 1027101,
+        "Name": "曦光值",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon5702.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#B47E7E",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "达到120点时，释放曦光启明，无视原有的触发条件，强制触发自身一号位的触发技能。"
         ]
     },
     {
@@ -290,6 +303,19 @@
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
             "下次使用技能时，返还其消耗战意值的20%"
+        ]
+    },
+    {
+        "Id": 10273011,
+        "Name": "吸取攻击",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0202.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "吸取对手10点攻击属性"
         ]
     }
 ]

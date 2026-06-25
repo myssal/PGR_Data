@@ -61,7 +61,7 @@ function XUiLivWarmActivityRewardGrid:OnBtnReceiveClick()
 end
 
 function XUiLivWarmActivityRewardGrid:SetRewardGridRectAnchoredPosition3D(adjustPosition)
-    local rectTransform = self.Transform:GetComponent("RectTransform")
+    local rectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     rectTransform.anchoredPosition3D = adjustPosition
 end
 

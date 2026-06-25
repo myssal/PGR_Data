@@ -76,7 +76,7 @@ function XUiSignCardPopup:RefreshInfo(data)
         return
     end
     if not self.CardBg then
-        self.CardBg = self.Transform:Find("SafeAreaContentPane/SignCard/Bg/Bg"):GetComponent("RawImage")
+        self.CardBg = self.Transform:Find("SafeAreaContentPane/SignCard/Bg/Bg"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
     if not self.CardABgPath then
         self.CardABgPath = CS.XGame.ClientConfig:GetString("MonthlyCardABg")

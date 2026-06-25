@@ -990,10 +990,23 @@
         "Priority": 3
     },
     {
+        "Id": 100,
+        "Name": "残煌断裁",
+        "Desc": "获得后可选1个技能进行升星",
+        "ShortDesc": "获得后可选1个技能进行升星",
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon09.png",
+        "BuffIds": [
+            53
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "Priority": 4
+    },
+    {
         "Id": 1025201,
         "Name": "缚魂银带",
         "Desc": "【拼刀技能】造成的伤害提升{0}，且被<color=#516797><Icon=IconBlock|30|30|0.5/>格挡</color>时造成的伤害额外提升{1}，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "【拼刀技能】造成伤害提升，被<color=#516797><Icon=IconBlock|30|30|0.5/>格挡</color>时额外获得提升",
+        "ShortDesc": "【拼刀技能】造成伤害提升，被<color=#516797><Icon=IconBlockBlack|30|30|0.5/>格挡</color>时额外获得提升",
         "DescParams": [
             "20%",
             "100%"
@@ -1016,6 +1029,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1048,6 +1062,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1057,7 +1072,7 @@
         "Id": 1025205,
         "Name": "哀泣日记",
         "Desc": "使用任意技能时，每拥有{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性，返还{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，至多{2}点。一场战斗至多触发{3}次，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "使用技能后，根据<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性，返还<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "使用技能后，根据<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性，返还<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
         "DescParams": [
             40,
             1,
@@ -1082,6 +1097,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1111,6 +1127,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1120,7 +1137,7 @@
         "Id": 1025209,
         "Name": "沸血红晶",
         "Desc": "进入战斗时，获得{0}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "进入战斗时，获得<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "进入战斗时，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
         "DescParams": [
             1
         ],
@@ -1142,6 +1159,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1151,7 +1169,7 @@
         "Id": 1025211,
         "Name": "苍白银晶",
         "Desc": "进入战斗时，获得{0}层<color=#516797><<Icon=IconBlock|30|30|0.5/>格挡></color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "进入战斗时，获得<color=#516797><<Icon=IconBlock|30|30|0.5/>格挡></color>",
+        "ShortDesc": "进入战斗时，获得<color=#516797><<Icon=IconBlockBlack|30|30|0.5/>格挡></color>",
         "DescParams": [
             1
         ],
@@ -1173,6 +1191,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1182,7 +1201,7 @@
         "Id": 1025213,
         "Name": "禁锢狂思",
         "Desc": "使用【拼刀技能】或【反制技能】后，{0}秒内造成伤害提升{1}，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "使用【拼刀技能】或【超算技能】后，短时间内造成伤害提升",
+        "ShortDesc": "使用【拼刀技能】或【反制技能】后，短时间内造成伤害提升",
         "DescParams": [
             3,
             "15%"
@@ -1202,6 +1221,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1211,7 +1231,7 @@
         "Id": 1025215,
         "Name": "镇魂提琴",
         "Desc": "使用【触发技能】后，返还{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "使用【触发技能】后，返还<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "使用【触发技能】后，返还<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
         "DescParams": [
             4
         ],
@@ -1230,6 +1250,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1239,7 +1260,7 @@
         "Id": 1025217,
         "Name": "未知秘录",
         "Desc": "进入战斗时，自身每有{0}点<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>或<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性，<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性提升{1}点，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "根据<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>和<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性，提升<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性",
+        "ShortDesc": "根据<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序</color>和<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，提升<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性",
         "DescParams": [
             30,
             1
@@ -1263,6 +1284,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1272,7 +1294,7 @@
         "Id": 1025219,
         "Name": "怪诞残谱",
         "Desc": "自身每损失{0}<color=#487F3B><Icon=IconLife|30|30|0.5/>生命值</color>，受到伤害降低{1}，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "根据自身损失的<color=#487F3B><Icon=IconLife|30|30|0.5/>生命值</color>，降低受到的伤害",
+        "ShortDesc": "根据自身损失的<color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>生命值</color>，降低受到的伤害",
         "DescParams": [
             "10%",
             "1%"
@@ -1292,6 +1314,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1301,7 +1324,7 @@
         "Id": 1025221,
         "Name": "探员手记",
         "Desc": "双方每次造成<color=#516797><Icon=IconBlock|30|30|0.5/>格挡</color><color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>时，自身<color=#487F3B><Icon=IconLife|30|30|0.5/>生命</color>属性提升{0}点，并恢复等量<color=#487F3B><Icon=IconLife|30|30|0.5/>生命值</color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "双方造成<color=#516797><Icon=IconBlock|30|30|0.5/>格挡</color><color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>时，提升自身<color=#487F3B><Icon=IconLife|30|30|0.5/>生命</color>",
+        "ShortDesc": "双方造成<color=#516797><Icon=IconBlockBlack|30|30|0.5/>格挡</color><color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>时，提升自身<color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>生命</color>",
         "DescParams": [
             100
         ],
@@ -1324,6 +1347,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1353,6 +1377,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1362,7 +1387,7 @@
         "Id": 1025225,
         "Name": "僭主桂冠",
         "Desc": "每次释放技能时，自身<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性提升{0}点，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "每次释放技能时，提升<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性",
+        "ShortDesc": "每次释放技能时，提升<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性",
         "DescParams": [
             2
         ],
@@ -1384,6 +1409,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1393,7 +1419,7 @@
         "Id": 1025227,
         "Name": "咒缚金戒",
         "Desc": "进入战斗时，自身每有{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性，<color=#487F3B><Icon=IconLife|30|30|0.5/>生命</color>属性提升{1}点，并恢复等量<color=#487F3B><Icon=IconLife|30|30|0.5/>生命值</color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "进入战斗时，根据<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性，提升<color=#487F3B><Icon=IconLife|30|30|0.5/>生命</color>属性",
+        "ShortDesc": "进入战斗时，根据<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性，提升<color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>生命</color>属性",
         "DescParams": [
             1,
             4
@@ -1416,6 +1442,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Priority": 4,
         "KeyWordIds": [
             26
@@ -1425,7 +1452,7 @@
         "Id": 1025301,
         "Name": "古旧残柱",
         "Desc": "造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>时，自身<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性提升{0}点，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>时，<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性提升",
+        "ShortDesc": "造成<color=#487F3B><Icon=IconHitFlyBlack|30|30|0.5/>击飞</color>时，<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性提升",
         "DescParams": [
             3
         ],
@@ -1447,6 +1474,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 3,
         "Priority": 4,
         "KeyWordIds": [
@@ -1457,7 +1485,7 @@
         "Id": 1025303,
         "Name": "幻梦蝶匣",
         "Desc": "对手被<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>后，{0}秒内受到伤害提升{1}，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "对手被<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>后，短时间内受到伤害提升",
+        "ShortDesc": "对手被<color=#487F3B><Icon=IconHitFlyBlack|30|30|0.5/>击飞</color>后，短时间内受到伤害提升",
         "DescParams": [
             3,
             "15%"
@@ -1480,6 +1508,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 3,
         "Priority": 4,
         "KeyWordIds": [
@@ -1490,7 +1519,7 @@
         "Id": 1025305,
         "Name": "囚魂舞匣",
         "Desc": "每释放{0}次未<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>的技能，获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "多次释放未<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>的技能时，获得<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "多次释放未<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>的技能时，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
         "DescParams": [
             3,
             1
@@ -1513,6 +1542,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 3,
         "Priority": 4,
         "KeyWordIds": [
@@ -1523,7 +1553,7 @@
         "Id": 1025307,
         "Name": "泣告银盘",
         "Desc": "技能<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>时，造成的伤害提升{0}，且额外恢复自身{1}点<color=#516797><Icon=IconOverClock|30|30|0.5/>超序值</color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "技能<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>时，造成的伤害提升并恢复自身<color=#516797><Icon=IconOverClock|30|30|0.5/>超序值</color>",
+        "ShortDesc": "技能<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>时，造成的伤害提升并恢复自身<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序值</color>",
         "DescParams": [
             "20%",
             5
@@ -1546,6 +1576,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 3,
         "Priority": 4,
         "KeyWordIds": [
@@ -1556,7 +1587,7 @@
         "Id": 1025309,
         "Name": "诡木假手",
         "Desc": "自身每释放{0}次【主动技能】，造成{1}层<color=#B96716><Icon=IconBurning|30|30|0.5/>点燃</color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "释放多次【主动技能】时，造成<color=#B96716><Icon=IconBurning|30|30|0.5/>点燃</color>",
+        "ShortDesc": "释放多次【主动技能】时，造成<color=#B96716><Icon=IconBurningBlack|30|30|0.5/>点燃</color>",
         "DescParams": [
             2,
             1
@@ -1579,6 +1610,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 3,
         "Priority": 4,
         "KeyWordIds": [
@@ -1589,7 +1621,7 @@
         "Id": 1025311,
         "Name": "异端刑具",
         "Desc": "处于<color=#B96716><Icon=IconBurning|30|30|0.5/>点燃</color>状态的对手，每有{0}层<color=#B96716><Icon=IconBurning|30|30|0.5/>点燃</color>则造成的伤害降低{1}，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "根据对手的<color=#B96716><Icon=IconBurning|30|30|0.5/>点燃</color>层数，降低其造成的伤害",
+        "ShortDesc": "根据对手的<color=#B96716><Icon=IconBurningBlack|30|30|0.5/>点燃</color>层数，降低其造成的伤害",
         "DescParams": [
             1,
             "1%"
@@ -1612,6 +1644,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 3,
         "Priority": 4,
         "KeyWordIds": [
@@ -1622,7 +1655,7 @@
         "Id": 1025313,
         "Name": "荒石聚骸",
         "Desc": "自身<color=#487F3B><Icon=IconLife|30|30|0.5/>生命值</color>首次降低至<color=#487F3B><Icon=IconLife|30|30|0.5/>生命</color>属性的{0}时，恢复{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，自身在本场战斗中每造成过{2}次<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>，额外恢复{3}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "自身<color=#487F3B><Icon=IconLife|30|30|0.5/>生命值</color>首次降低至<color=#487F3B><Icon=IconLife|30|30|0.5/>生命</color>属性的一半时，恢复<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "自身<color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>生命值</color>首次降低至<color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>生命</color>属性的一半时，恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
         "DescParams": [
             "50%",
             10,
@@ -1647,6 +1680,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 3,
         "Priority": 4,
         "KeyWordIds": [
@@ -1657,7 +1691,7 @@
         "Id": 1025401,
         "Name": "素幽残华",
         "Desc": "自身每次造成<color=#487F3B><Icon=IconHitDown|30|30|0.5/>击倒</color>时，<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性提升{0}点，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "造成<color=#487F3B><Icon=IconHitDown|30|30|0.5/>击倒</color>时，本场战斗中自身<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性提升",
+        "ShortDesc": "造成<color=#487F3B><Icon=IconHitDownBlack|30|30|0.5/>击倒</color>时，本场战斗中自身<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性提升",
         "DescParams": [
             6
         ],
@@ -1679,6 +1713,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 2,
         "Priority": 4,
         "KeyWordIds": [
@@ -1689,7 +1724,7 @@
         "Id": 1025403,
         "Name": "夜魔羽珀",
         "Desc": "敌人被<color=#487F3B><Icon=IconHitDown|30|30|0.5/>击倒</color>时，本场战斗中自身每造成过{0}次<color=#487F3B><Icon=IconHitDown|30|30|0.5/>击倒</color>，扣除其{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>与<color=#516797><Icon=IconOverClock|30|30|0.5/>超序值</color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "敌人被<color=#487F3B><Icon=IconHitDown|30|30|0.5/>击倒</color>时，扣除其1点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>与<color=#516797><Icon=IconOverClock|30|30|0.5/>超序值</color>",
+        "ShortDesc": "敌人被<color=#487F3B><Icon=IconHitDownBlack|30|30|0.5/>击倒</color>时，扣除其1点<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>与<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序值</color>",
         "DescParams": [
             1,
             1
@@ -1712,6 +1747,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 2,
         "Priority": 4,
         "KeyWordIds": [
@@ -1722,7 +1758,7 @@
         "Id": 1025405,
         "Name": "深潜之贝",
         "Desc": "每成功<color=#516797><Icon=IconBlock|30|30|0.5/>格挡</color>{0}次技能，<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>属性提升{1}点，<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性提升{2}点，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "多次<color=#516797><Icon=IconBlock|30|30|0.5/>格挡</color>技能时，<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>属性与<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性提升",
+        "ShortDesc": "多次<color=#516797><Icon=IconBlockBlack|30|30|0.5/>格挡</color>技能时，<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序</color>属性与<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性提升",
         "DescParams": [
             2,
             10,
@@ -1747,6 +1783,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 2,
         "Priority": 4,
         "KeyWordIds": [
@@ -1757,7 +1794,7 @@
         "Id": 1025407,
         "Name": "癫狂绷带",
         "Desc": "<color=#516797><Icon=IconBlock|30|30|0.5/>格挡</color>技能时，吸取对手{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "<color=#516797><Icon=IconBlock|30|30|0.5/>格挡</color>技能时，吸取对手5点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "<color=#516797><Icon=IconBlockBlack|30|30|0.5/>格挡</color>技能时，吸取对手5点<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
         "DescParams": [
             5
         ],
@@ -1780,6 +1817,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 2,
         "Priority": 4,
         "KeyWordIds": [
@@ -1790,7 +1828,7 @@
         "Id": 1025409,
         "Name": "异兆铁徽",
         "Desc": "每次使用【触发技能】时，获得{0}点<color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "每次使用【触发技能】时，获得<color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color>",
+        "ShortDesc": "每次使用【触发技能】时，获得<color=#9F3232><Icon=IconAngerBlack|30|30|0.5/>怒火</color>",
         "DescParams": [
             10
         ],
@@ -1812,6 +1850,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 2,
         "Priority": 4,
         "KeyWordIds": [
@@ -1822,7 +1861,7 @@
         "Id": 1025411,
         "Name": "原禁之果",
         "Desc": "<color=#9F3232><Icon=IconAngry|30|30|0.5/>狂暴</color>状态下使用技能时，额外获得{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "<color=#9F3232><Icon=IconAngry|30|30|0.5/>狂暴</color>状态下使用技能时，获得<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "<color=#9F3232><Icon=IconAngryBlack|30|30|0.5/>狂暴</color>状态下使用技能时，获得<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
         "DescParams": [
             3
         ],
@@ -1844,6 +1883,7 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 2,
         "Priority": 4,
         "KeyWordIds": [
@@ -1854,7 +1894,7 @@
         "Id": 1025413,
         "Name": "混沌星象",
         "Desc": "获得<color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color>时，使自身<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性提升{0}点，<color=#E7D09A>唯一</color>。",
-        "ShortDesc": "获得<color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color>时，提升自身<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性",
+        "ShortDesc": "获得<color=#9F3232><Icon=IconAngerBlack|30|30|0.5/>怒火</color>时，提升自身<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性",
         "DescParams": [
             2
         ],
@@ -1876,10 +1916,247 @@
         "Quality": 4,
         "BuyPrice": 50,
         "SaveScore": 1500,
+        "LimitCount": 1,
         "Character": 2,
         "Priority": 4,
         "KeyWordIds": [
             26
+        ]
+    },
+    {
+        "Id": 1025501,
+        "Name": "猩红泪晶",
+        "Desc": "自身每次<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>归零时，获得{0}层<color=#516797><<Icon=IconBlock|30|30|0.5/>格挡></color> ，一场战斗至多触发{1}次，<color=#E7D09A>唯一</color>。",
+        "ShortDesc": "每次<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>归零时，获得<color=#516797><<Icon=IconBlockBlack|30|30|0.5/>格挡></color>",
+        "DescParams": [
+            1,
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem06.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            18
+        ],
+        "BuffIds": [
+            1025501
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 4,
+        "Priority": 4,
+        "KeyWordIds": [
+            26
+        ]
+    },
+    {
+        "Id": 1025503,
+        "Name": "冥红垂蕴",
+        "Desc": "在持有<color=#516797><<Icon=IconBlock|30|30|0.5/>格挡></color>时使用【触发技能】，使自身<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性提升{0}点，<color=#E7D09A>唯一</color>。",
+        "ShortDesc": "持有<color=#516797><<Icon=IconBlockBlack|30|30|0.5/>格挡></color>时使用【触发技能】，使自身<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性提升",
+        "DescParams": [
+            5
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem09.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            18
+        ],
+        "BuffIds": [
+            1025503
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 4,
+        "Priority": 4,
+        "KeyWordIds": [
+            26
+        ]
+    },
+    {
+        "Id": 1025505,
+        "Name": "幽绯浮瞳",
+        "Desc": "进入战斗时，获得<color=#487F3B><Icon=IconLife|30|30|0.5/>生命值</color>属性{0}的<color=#137D90><Icon=IconProtector|30|30|0.5/>护盾</color>，<color=#E7D09A>唯一</color>。",
+        "ShortDesc": "进入战斗时，基于<color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>生命值</color>属性获得<color=#137D90><Icon=IconProtectorBlack|30|30|0.5/>护盾</color>",
+        "DescParams": [
+            "10%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem12.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            27
+        ],
+        "BuffIds": [
+            1025505
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 4,
+        "Priority": 4,
+        "KeyWordIds": [
+            26
+        ]
+    },
+    {
+        "Id": 1025507,
+        "Name": "空金幽醴",
+        "Desc": "持有<color=#137D90><Icon=IconProtector|30|30|0.5/>护盾</color>期间，造成伤害提升{0}，<color=#E7D09A>唯一</color>。",
+        "ShortDesc": "持有<color=#137D90><Icon=IconProtectorBlack|30|30|0.5/>护盾</color>时，造成伤害提升",
+        "DescParams": [
+            "10%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiScoreTowerIcon01.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            27
+        ],
+        "BuffIds": [
+            1025507
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 4,
+        "Priority": 4,
+        "KeyWordIds": [
+            26
+        ]
+    },
+    {
+        "Id": 1025509,
+        "Name": "旧墟碎核",
+        "Desc": "每次<color=#CB4B12><Icon=IconSun|30|30|0.5/>曦光值</color>满时，恢复{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，<color=#E7D09A>唯一</color>。",
+        "ShortDesc": "每次<color=#CB4B12><Icon=IconSunBlack|30|30|0.5/>曦光值</color>满时，恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            10
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiTheatre4Item32.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            28
+        ],
+        "BuffIds": [
+            1025509
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 4,
+        "Priority": 4,
+        "KeyWordIds": [
+            26,
+            29
+        ]
+    },
+    {
+        "Id": 1025511,
+        "Name": "沉荒远瞻",
+        "Desc": "首次使用【触发技能】时，额外积累{0}点<color=#CB4B12><Icon=IconSun|30|30|0.5/>曦光值</color>，<color=#E7D09A>唯一</color>。",
+        "ShortDesc": "首次使用【触发技能】时额外积累<color=#CB4B12><Icon=IconSunBlack|30|30|0.5/>曦光值</color>",
+        "DescParams": [
+            20
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiTheatre4Item42.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            28
+        ],
+        "BuffIds": [
+            1025511
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 4,
+        "Priority": 4,
+        "KeyWordIds": [
+            26,
+            29
+        ]
+    },
+    {
+        "Id": 1025513,
+        "Name": "沉星旧徽",
+        "Desc": "每次使用【主动技能】时，每有{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性，获得{1}点<color=#137D90><Icon=IconProtector|30|30|0.5/>护盾</color>，<color=#E7D09A>唯一</color>。",
+        "ShortDesc": "每次使用【主动技能】时，根据<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性，获得{1}点<color=#137D90><Icon=IconProtectorBlack|30|30|0.5/>护盾</color>",
+        "DescParams": [
+            20,
+            25
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiTheatre4Item43.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            27
+        ],
+        "BuffIds": [
+            1025513
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 4,
+        "Priority": 4,
+        "KeyWordIds": [
+            26,
+            29
         ]
     }
 ]

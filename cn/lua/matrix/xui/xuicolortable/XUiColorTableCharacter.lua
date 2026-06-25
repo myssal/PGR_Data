@@ -371,12 +371,12 @@ end
 
 function XUiColorTableCharacter:OnBtnConsciousnessClick()
     if self.CurTabIndex == TabBtnIndex.Robot then return end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwareness(self.CurSelectRole:GetId())
+    XMVCA.XEquip:OpenUiEquipAwareness(self.CurSelectRole:GetId())
 end
 
 function XUiColorTableCharacter:OnBtnWeaponClick()
     if self.CurTabIndex == TabBtnIndex.Robot then return end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CurSelectRole:GetId(), nil, true)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CurSelectRole:GetId(), nil, true)
 end
 
 function XUiColorTableCharacter:OnBtnFashionClick()

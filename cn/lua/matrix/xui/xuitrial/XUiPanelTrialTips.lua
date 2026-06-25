@@ -31,12 +31,12 @@ function XUiPanelTrialTips:InitAutoScript()
 end
 
 function XUiPanelTrialTips:AutoInitUi()
-    -- self.ImgFor = self.Transform:Find("ImgFor"):GetComponent("Image")
-    -- self.ImgForIcon = self.Transform:Find("ImgFor/ImgForIcon"):GetComponent("Image")
-    -- self.ImgBackEnd = self.Transform:Find("ImgBackEnd"):GetComponent("Image")
-    -- self.ImgBackEndIcon = self.Transform:Find("ImgBackEnd/ImgBackEndIcon"):GetComponent("Image")
-    -- self.ImgBackEnd2 = self.Transform:Find("ImgBackEnd2"):GetComponent("Image")
-    -- self.ImgForIconA = self.Transform:Find("ImgBackEnd2/ImgForIcon"):GetComponent("Image")
+    -- self.ImgFor = self.Transform:Find("ImgFor"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    -- self.ImgForIcon = self.Transform:Find("ImgFor/ImgForIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    -- self.ImgBackEnd = self.Transform:Find("ImgBackEnd"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    -- self.ImgBackEndIcon = self.Transform:Find("ImgBackEnd/ImgBackEndIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    -- self.ImgBackEnd2 = self.Transform:Find("ImgBackEnd2"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    -- self.ImgForIconA = self.Transform:Find("ImgBackEnd2/ImgForIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
 end
 
 function XUiPanelTrialTips:RegisterClickEvent(uiNode, func)

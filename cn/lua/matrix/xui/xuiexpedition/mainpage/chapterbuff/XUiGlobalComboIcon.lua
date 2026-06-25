@@ -5,7 +5,7 @@ function XUiGlobalComboIcon:Ctor(ui, rootUi)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.RootUi = rootUi
-    self.RawBuffIcon = self.Transform:Find("RawBuffIcon"):GetComponent("RawImage")
+    self.RawBuffIcon = self.Transform:Find("RawBuffIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
 end
 
 function XUiGlobalComboIcon:RefreshData(comboConfig)

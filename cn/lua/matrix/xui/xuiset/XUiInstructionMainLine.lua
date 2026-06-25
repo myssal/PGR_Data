@@ -235,7 +235,7 @@ function XUiInstructionMainLine:RefreshPanelAffix()
         end
         grid:Refresh(data)
         -- 自适应刷新
-        CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(grid.GameObject:GetComponent("RectTransform"))
+        CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(grid.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)))
     end
 
     local uiFightCom = fight.UiManager:GetUi(typeof(CS.XUiFightComponent))
@@ -300,7 +300,7 @@ function XUiInstructionMainLine:SetTextInfo(targetGo, txtGo, i, info)
     end
     go.gameObject:SetActiveEx(true)
     go.transform:SetAsLastSibling()
-    local goTxt = go:GetComponent("Text")
+    local goTxt = go:GetComponent(typeof(CS.UnityEngine.UI.Text))
     goTxt.text = XUiHelper.ConvertLineBreakSymbol(info)
 end
 

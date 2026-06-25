@@ -138,7 +138,7 @@ local DesignGridCount = 5
 function XUiPanelGuildActivity:Ctor(ui, parentUi)
     XTool.InitUiObjectByUi(self, ui)
     self.ParentUi = parentUi
-    self.ScrollRect = self.Transform:GetComponent("ScrollRect")
+    self.ScrollRect = self.Transform:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self:InitCb()
     self:InitDynamicTable()
 end
@@ -258,7 +258,7 @@ function XUiGuildTaskGroup:InitView()
     
     self.GiftGrids = {}
     
-    self.TxtEmptyTask = self.PanelNoneDailyTask.transform:Find("ImgEmpty/TxtNone"):GetComponent("Text")
+    self.TxtEmptyTask = self.PanelNoneDailyTask.transform:Find("ImgEmpty/TxtNone"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 
     self.GridTask.gameObject:SetActiveEx(false)
     

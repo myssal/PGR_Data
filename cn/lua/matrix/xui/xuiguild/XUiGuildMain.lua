@@ -167,7 +167,7 @@ function XUiGuildMain:InitChildView()
     
     self.SettingBtnWidth = self.BtnGuildTuchu.transform.sizeDelta.x
     
-    self.TxtMemberNum = self.TxtLeader.transform.parent.parent.transform:Find("TxtMember/TxtLeader"):GetComponent("Text")
+    self.TxtMemberNum = self.TxtLeader.transform.parent.parent.transform:Find("TxtMember/TxtLeader"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 
     -- 设置面板 ---
     self.BtnAdministration.CallBack = function()

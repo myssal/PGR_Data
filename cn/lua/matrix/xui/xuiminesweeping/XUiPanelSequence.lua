@@ -26,8 +26,8 @@ function XUiPanelSequence:UpdateReward(chapterEntity)
     local stageCount = chapterEntity:GetStageCount()
     stageCount = math.max(stageCount, 1)
     
-    local width = self.MineSweepingRawImage.transform:GetComponent("RectTransform").sizeDelta.x / stageCount
-    local high = self.MineSweepingRawImage.transform:GetComponent("RectTransform").sizeDelta.y
+    local width = self.MineSweepingRawImage.transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta.x / stageCount
+    local high = self.MineSweepingRawImage.transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta.y
     for index = 1, stageCount do
         if not self.RewardList[index] then
             local obj = CS.UnityEngine.Object.Instantiate(self.GridStageReward, self.PanelAward)
@@ -36,7 +36,7 @@ function XUiPanelSequence:UpdateReward(chapterEntity)
         local id = chapterEntity:GetShowActivityStageIdByIndex(index)
         local entity = stageList[id]
         self.RewardList[index].GameObject:SetActiveEx(true)
-        self.RewardList[index].Transform:GetComponent("RectTransform").sizeDelta = Vector2(width, high)
+        self.RewardList[index].Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta = Vector2(width, high)
         self.RewardList[index].Transform.localPosition = Vector3(width * index - width / 2, 0, 0)
         self.RewardList[index]:UpdateGrid(entity)
     end

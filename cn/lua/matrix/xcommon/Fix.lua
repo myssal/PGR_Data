@@ -16,3 +16,4 @@ AddFixEx = CS.XTool.AddFixEx
 MultFixEx = CS.XTool.MultFixEx
 DivisionFixEx = CS.XTool.DivisionFixEx
 FixToIntEx = CS.XTool.FixToIntEx
+FixExZero = FixParseEx(0, 0)

@@ -284,7 +284,7 @@ end
 
 function XUiDormTerminalSystem:PlayScrollViewMove(grid)
     -- 动画
-    local gridTf = grid.Parent.gameObject:GetComponent("RectTransform")
+    local gridTf = grid.Parent.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridTf.localPosition.x + self.PanelQuestContent.localPosition.x
     if diffX < XDormQuestConfigs.UiGridQuestMoveMinX or diffX > XDormQuestConfigs.UiGridQuestMoveMaxX then
         local tarPosX = XDormQuestConfigs.UiGridQuestMoveTargetX - gridTf.localPosition.x

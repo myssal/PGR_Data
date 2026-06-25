@@ -85,7 +85,7 @@ function XUiMoeWarMain:InitUi()
 	self.BtnShop:SetNameByGroup(1,CS.XTextManager.GetText("MoeWarGachaNameEng"))
 	self.BtnTask:SetNameByGroup(0,CS.XTextManager.GetText("MoeWarTaskName"))
 	self.BtnTask:SetNameByGroup(1,CS.XTextManager.GetText("MoeWarTaskNameEng"))
-    self.TxtRewardMain = self.Transform:Find("SafeAreaContentPane/PanelAll/PanelReward/Text"):GetComponent("Text")
+    self.TxtRewardMain = self.Transform:Find("SafeAreaContentPane/PanelAll/PanelReward/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     if self.TxtRewardMain then
         local text = CS.XTextManager.GetText("MoeWarMainText")
         self.TxtRewardMain.text = string.gsub(text, "\\n", "\n")

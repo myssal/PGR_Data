@@ -15,7 +15,7 @@ function XUiFubenChapterDynamicTable:Ctor(rootUi, ui, proxy, ...)
     self.GridDic = {}
     -- 当前选中的格子下标
     self.CurrentSelectedIndex = 0
-    self.CanvasGroup = self.Transform:GetComponent("CanvasGroup")
+    self.CanvasGroup = self.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
     self.IsDraging = false
     self.Callback = nil
     self.WaitTime = -1

@@ -26,10 +26,10 @@ function XUiPanelAddContactView:InitAutoScript()
 end
 
 function XUiPanelAddContactView:AutoInitUi()
-    -- self.TxtMyId = self.Transform:Find("AddPanelOther/TxtMyId"):GetComponent("Text")
-    -- self.BtnRefresh = self.Transform:Find("AddPanelOther/BtnRefresh"):GetComponent("Button")
-    -- self.BtnCopy = self.Transform:Find("AddPanelOther/BtnCopy"):GetComponent("Button")
-    -- self.BtnSerach = self.Transform:Find("AddPanelOther/BtnSerach"):GetComponent("Button")
+    -- self.TxtMyId = self.Transform:Find("AddPanelOther/TxtMyId"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    -- self.BtnRefresh = self.Transform:Find("AddPanelOther/BtnRefresh"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.BtnCopy = self.Transform:Find("AddPanelOther/BtnCopy"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.BtnSerach = self.Transform:Find("AddPanelOther/BtnSerach"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     -- self.InFSerach = self.Transform:Find("AddPanelOther/InFSerach"):GetComponent("InputField")
     -- self.PanelAddContactViewPools = self.Transform:Find("PanelAddContactViewPools")
 end

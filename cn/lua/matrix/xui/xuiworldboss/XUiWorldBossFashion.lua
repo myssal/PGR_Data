@@ -53,7 +53,7 @@ function XUiWorldBossFashion:InitDiscountGrid()
             local obj = CS.UnityEngine.Object.Instantiate(self.SaleItem,self.PanelReward)
             obj.gameObject:SetActiveEx(true)
             self.DiscountGrids[i] = obj.transform:GetComponent("UiObject")
-            self.DiscountGridRects[i] = obj.transform:GetComponent("RectTransform")
+            self.DiscountGridRects[i] = obj.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
         end
     end
 end

@@ -19,7 +19,7 @@ function XUiBiancaTheatreSkill:OnAwake()
     self.PanelTips = self.PanelTips or self.Transform:Find("SafeAreaContentPane/PanelTips")
     self.SkillTipsPanel = XUiSkillTipsPanel.New(self.PanelTips)
     self.DotList = { self.Dot }
-    self.HelpAlphaGroup = self.Unlocked:GetComponent("CanvasGroup")
+    self.HelpAlphaGroup = self.Unlocked:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
     self:HideTips()
     
     self:InitDynamicFirstIndex()

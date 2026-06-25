@@ -39,7 +39,7 @@ function XUiFubenPokerGuessingCardRecorder:RefreshPanelGrid(type)
             ---@type UnityEngine.GameObject
             local obj = CS.UnityEngine.GameObject.Instantiate(self.GridCard,self.PanelCardParent)
             obj.gameObject:SetActiveEx(true)
-            grid = obj.gameObject:GetComponent("RawImage")
+            grid = obj.gameObject:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
             table.insert(self.GridList, grid)
         end
         grid.gameObject:SetActiveEx(true)

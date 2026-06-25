@@ -92,8 +92,8 @@ function XUiReformList:OnStart(baseStage)
             tabBtn:SetNameByGroup(2, "0" .. i)
             tabBtn:SetButtonState(isOpen and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
             if not isOpen then
-                tabBtn.transform:Find("Disable/TextCost"):GetComponent("Text").text = baseStage:GetEvolvableStageByDiffIndex(i):GetName()
-                tabBtn.transform:Find("Disable/TextCost/TxtCost"):GetComponent("Text").text = baseStage:GetEvolvableStageByDiffIndex(i + 1):GetUnlockScore()
+                tabBtn.transform:Find("Disable/TextCost"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = baseStage:GetEvolvableStageByDiffIndex(i):GetName()
+                tabBtn.transform:Find("Disable/TextCost/TxtCost"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = baseStage:GetEvolvableStageByDiffIndex(i + 1):GetUnlockScore()
             end
         end
     end
@@ -140,10 +140,10 @@ function XUiReformList:RefreshEvolvableLevelScores()
     local tabBtn = nil
     for index, evolvableStage in ipairs(evolvableStages) do
         tabBtn = self["Tab" .. index]
-        tabBtn.transform:Find("Normal/TextCost/TxtCost"):GetComponent("Text").text = evolvableStage:GetMaxScore()
-        tabBtn.transform:Find("Press/TextCost/TxtCost"):GetComponent("Text").text = evolvableStage:GetMaxScore()
-        tabBtn.transform:Find("Select/TextCost/TxtCost"):GetComponent("Text").text = evolvableStage:GetMaxScore()
-        -- tabBtn.transform:Find("Disable/TextCost/TxtCost"):GetComponent("Text").text = evolvableStage:GetMaxScore()
+        tabBtn.transform:Find("Normal/TextCost/TxtCost"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = evolvableStage:GetMaxScore()
+        tabBtn.transform:Find("Press/TextCost/TxtCost"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = evolvableStage:GetMaxScore()
+        tabBtn.transform:Find("Select/TextCost/TxtCost"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = evolvableStage:GetMaxScore()
+        -- tabBtn.transform:Find("Disable/TextCost/TxtCost"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = evolvableStage:GetMaxScore()
     end
 end
 

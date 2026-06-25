@@ -32,7 +32,7 @@ function XUiPanelOperation:Ctor(ui, root)
     XTool.InitUiObject(self)
 
     self.DicePanel = XUiPanelDice.New(self.PanelDice, self.Root)
-    self.TxtThrowResultTitle = self.Transform:Find("TitleText1"):GetComponent("Text")
+    self.TxtThrowResultTitle = self.Transform:Find("TitleText1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.ThrowResultTitle = self.TxtThrowResultTitle.text
 
     self.OperationBtnGroup = self.PanelOption ---@type XUiButtonGroup
@@ -78,7 +78,7 @@ function XUiPanelOperation:InitOperationButton(button, operation)
         local iconRoot = layerObjects[i].transform:Find("PanelOptionTextInfo/PanelIcon")
         local iconPrefab = iconRoot:Find("RImgIcon").gameObject
         for _, v in ipairs(operation:GetPointIconPaths()) do
-            CSObjectInstantiate(iconPrefab, iconRoot):GetComponent("RawImage"):SetRawImage(v)
+            CSObjectInstantiate(iconPrefab, iconRoot):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(v)
         end
         iconPrefab:SetActiveEx(false)
     end
@@ -91,7 +91,7 @@ function XUiPanelOperation:InitBottomView()
     self.TxtCountNum.gameObject:SetActiveEx(false)
     local operationA = XDataCenter.DiceGameManager.GetOperationBySelection(XDiceGameConfigs.OperationType.A)
     for _, v in ipairs(operationA:GetPointIconPaths()) do
-        CSObjectInstantiate(self.PointIcon.gameObject, self.PointIconRoot):GetComponent("RawImage"):SetRawImage(v)
+        CSObjectInstantiate(self.PointIcon.gameObject, self.PointIconRoot):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(v)
     end
     self.PointIcon.gameObject:SetActiveEx(false)
     self.PointIconRoot.gameObject:SetActiveEx(false)

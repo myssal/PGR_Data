@@ -5,7 +5,9 @@
         "Pirority": 11,
         "Desc": "晕眩期间，无法获取<Icon=IconOverClock|30|30|0.5/><color=#516797>超序值</color>",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36.png",
+        "FilterSort": 1,
+        "GroupId": 2
     },
     {
         "Id": 12,
@@ -13,7 +15,9 @@
         "Pirority": 2,
         "Desc": "每有一层，对手技能命中时额外附加10%攻击的伤害，持续时间无限，可无限叠加。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon38.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon38.png",
+        "FilterSort": 2,
+        "GroupId": 2
     },
     {
         "Id": 13,
@@ -21,7 +25,9 @@
         "Pirority": 2,
         "Desc": "敌人被<Icon=IconHitFlyBlack|30|30|0.5/><color=#487F3B>击飞</color>期间，无法触发<Icon=IconBlock|30|30|0.5/><color=#516797>格挡</color>。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon39.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon39.png",
+        "FilterSort": 3,
+        "GroupId": 2
     },
     {
         "Id": 14,
@@ -29,7 +35,9 @@
         "Pirority": 2,
         "Desc": "敌人被<Icon=IconHitDown|30|30|0.5/><color=#487F3B>击倒</color>期间，无法触发<Icon=IconBlock|30|30|0.5/><color=#516797>格挡</color>。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon41.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon41.png",
+        "FilterSort": 4,
+        "GroupId": 2
     },
     {
         "Id": 15,
@@ -37,7 +45,8 @@
         "Pirority": 1,
         "Desc": "下次使用技能时，消耗1层<color=#B96716><</color><Icon=IconCritBlack|30|30|0.5/><color=#B96716>暴击></color>，使该次技能造成的伤害提升50%。持续时间无限，可无限叠加。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png",
+        "GroupId": 2
     },
     {
         "Id": 16,
@@ -45,7 +54,9 @@
         "Pirority": 2,
         "Desc": "此次技能造成的伤害提升50%。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png",
+        "FilterSort": 6,
+        "GroupId": 2
     },
     {
         "Id": 17,
@@ -53,7 +64,8 @@
         "Pirority": 1,
         "Desc": "下次对手技能命中时，消耗1层<color=#516797><</color><Icon=IconBlock|30|30|0.5/><color=#516797>格挡></color>，使自身受到该次技能的伤害降低50%。持续时间无限，可无限叠加，击飞与击倒状态下无法格挡。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png",
+        "GroupId": 2
     },
     {
         "Id": 18,
@@ -61,7 +73,9 @@
         "Pirority": 2,
         "Desc": "受到此次技能的伤害降低50%，击飞与击倒状态下无法格挡。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png",
+        "FilterSort": 8,
+        "GroupId": 2
     },
     {
         "Id": 19,
@@ -69,15 +83,19 @@
         "Pirority": 1,
         "Desc": "通过使用技能，可以获得一定点数的<color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color>，持续时间无限。\\n<color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color>上限为100点，达到上限时，进入<color=#9F3232><Icon=IconAngry|30|30|0.5/>狂暴</color>。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43.png",
+        "FilterSort": 9,
+        "GroupId": 2
     },
     {
         "Id": 20,
         "Name": "狂暴",
         "Pirority": 2,
-        "Desc": "<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态下，造成伤害提高10%，使用任意技能均将消耗10点<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>，部分技能将触发额外效果。\\n在<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>消耗至0时，<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态结束。<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>无法叠加。",
+        "Desc": "<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态下，造成伤害提高20%，使用任意技能均将消耗10点<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>，部分技能将触发额外效果。\\n在<Icon=IconAnger|30|30|0.5/><color=#9F3232>怒火</color>消耗至0时，<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>状态结束。<Icon=IconAngry|30|30|0.5/><color=#9F3232>狂暴</color>无法叠加。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png",
+        "FilterSort": 10,
+        "GroupId": 2
     },
     {
         "Id": 21,
@@ -85,7 +103,8 @@
         "Pirority": 1,
         "Desc": "战斗开始时以及双方<Icon=IconStamina|30|30|0.5/><color=#6F4877>战意值</color>均耗尽时，将触发一次<Icon=IconWrestle|30|30|0.5/><color=#B96716>拼刀</color>。在<Icon=IconWrestle|30|30|0.5/><color=#B96716>拼刀</color>中获胜的一方，将获得出手权。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png",
+        "GroupId": 2
     },
     {
         "Id": 22,
@@ -93,7 +112,8 @@
         "Pirority": 1,
         "Desc": "战斗中一方<Icon=IconOverClock|30|30|0.5/><color=#516797>超序值</color>达到100点时，将触发一次<Icon=IconOverClock|30|30|0.5/><color=#516797>反制</color>。在<Icon=IconOverClock|30|30|0.5/><color=#516797>反制</color>中获胜的一方，将获得出手权",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png",
+        "GroupId": 2
     },
     {
         "Id": 23,
@@ -101,7 +121,9 @@
         "Pirority": 3,
         "Desc": "部分技能在<Icon=IconWrestle|30|30|0.5/><color=#B96716>先机</color>属性高时可以造成额外效果。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png",
+        "FilterSort": 13,
+        "GroupId": 1
     },
     {
         "Id": 24,
@@ -109,7 +131,9 @@
         "Pirority": 3,
         "Desc": "部分技能在<Icon=IconOverClock|30|30|0.5/><color=#516797>超序</color>属性高时可以造成额外效果。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png",
+        "FilterSort": 14,
+        "GroupId": 1
     },
     {
         "Id": 25,
@@ -117,7 +141,45 @@
         "Pirority": 3,
         "Desc": "部分技能在<Icon=IconStamina|30|30|0.5/><color=#6F4877>战意</color>属性高时可以造成额外效果。",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon03.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon03.png",
+        "FilterSort": 15,
+        "GroupId": 1
+    },
+    {
+        "Id": 26,
+        "Name": "唯一",
+        "Pirority": 11,
+        "Desc": "相同效果仅生效一次，无法叠加。"
+    },
+    {
+        "Id": 27,
+        "Name": "护盾",
+        "Pirority": 2,
+        "Desc": "受到伤害时，消耗<color=#516797><Icon=IconProtector|30|30|0.5/>护盾</color>以抵消等量伤害。\\n在双方<Icon=IconStamina|30|30|0.5/><color=#6F4877>战意值</color>均耗尽时，清空双方的<color=#516797><Icon=IconProtector|30|30|0.5/>护盾</color>。\\n造成<Icon=IconHitFlyBlack|30|30|0.5/><color=#487F3B>击飞</color>或<Icon=IconHitDown|30|30|0.5/><color=#487F3B>击倒</color>的技能对护盾造成的伤害提升50%。",
+        "SaveWeight": 10,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon56.png",
+        "FilterSort": 9,
+        "GroupId": 2
+    },
+    {
+        "Id": 28,
+        "Name": "曦光",
+        "Pirority": 2,
+        "Desc": "携带任意<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光</color>效果的技能时，将激活特殊效果：每次使用主动/触发/拼刀/反制技能时，将分别积累10/15/20/20点<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光值</color>。",
+        "SaveWeight": 10,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon57.png",
+        "FilterSort": 10,
+        "GroupId": 2
+    },
+    {
+        "Id": 29,
+        "Name": "曦光值",
+        "Pirority": 2,
+        "Desc": "<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光值</color>上限为120点。每次<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光值</color>满时，耗尽<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光值</color>并释放<color=#9B8015><Icon=IconSun|30|30|0.5/>曦光启明</color>：无视原有的技能条件，强制释放一号位的触发技能。",
+        "SaveWeight": 10,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon57.png",
+        "FilterSort": 10,
+        "GroupId": 2
     },
     {
         "Id": 99,

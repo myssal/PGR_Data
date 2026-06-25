@@ -22,11 +22,11 @@ function XUiGridNewbieActive:InitAutoScript()
 end
 
 function XUiGridNewbieActive:AutoInitUi()
-    self.BtnActive = self.Transform:Find("BtnActive"):GetComponent("Button")
-    self.TxtValue = self.Transform:Find("TxtValue"):GetComponent("Text")
+    self.BtnActive = self.Transform:Find("BtnActive"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtValue = self.Transform:Find("TxtValue"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelEffect = self.Transform:Find("PanelEffect")
     self.BigEffect = self.Transform:Find("BigEffect")
-    self.ImgRe = self.Transform:Find("ImgRe"):GetComponent("Image")
+    self.ImgRe = self.Transform:Find("ImgRe"):GetComponent(typeof(CS.UnityEngine.UI.Image))
     self.GridCommon = self.Transform:Find("Grid128")
 end
 
@@ -102,7 +102,7 @@ function XUiGridNewbieActive:ShowTips(rewardList)
             if self.RootUi.Ui.UiData.UiType == CsXUiType.Tips then
                 self.RootUi:Close()
             end
-            XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipPreview(templateId)
+            XMVCA.XEquip:OpenUiEquipPreview(templateId)
         else
             XLuaUiManager.Open("UiTip", templateId)
         end

@@ -54,7 +54,7 @@ function XUiGridSwitchEnhanceSkill:SetTextInfo(txtType, index, info)
         txtSkillGo[index] = txtGo
     end
     txtGo:SetActiveEx(true)
-    local goTxt = txtGo:GetComponent("Text")
+    local goTxt = txtGo:GetComponent(typeof(CS.UnityEngine.UI.Text))
     goTxt.text = XUiHelper.ConvertLineBreakSymbol(info)
     txtGo.transform:SetAsLastSibling()
 end
