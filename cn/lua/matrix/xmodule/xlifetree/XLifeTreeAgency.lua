@@ -260,6 +260,9 @@ end
 ---@param characterId number
 ---@return boolean 是否显示蓝点
 function XLifeTreeAgency:IsRedCharacter(characterId)
+    -- 生命树系统未开放
+    if not self:IsOpen() then return false end
+
     -- 未播放生命树Pv
     if not self._Model:IsFinishPv() then return end
 
@@ -313,6 +316,9 @@ end
 
 -- 活动是否显示蓝点
 function XLifeTreeAgency:IsRed()
+    -- 生命树系统未开放
+    if not self:IsOpen() then return false end
+
     local constellationConfigs = self._Model:GetLifeTreeConstellationConfigs()
     for _, constellationConfig in pairs(constellationConfigs) do
         if self:IsRedConstellation(constellationConfig.Id) then

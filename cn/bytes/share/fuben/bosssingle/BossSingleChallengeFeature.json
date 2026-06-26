@@ -256,7 +256,7 @@
     {
         "Id": 23,
         "Name": "噬殄消弭Ⅰ",
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingBuffIconNew1021.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "释放真意斩时，使自身物理伤害和Boss受到真意斩伤害显著提升，最多可叠加5层。",
         "FightEventIds": [
@@ -353,7 +353,7 @@
     {
         "Id": 31,
         "Name": "噬殄消弭Ⅱ",
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingBuffIconNew1021.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "释放真意斩时，使自身物理伤害和Boss受到真意斩伤害显著提升，最多可叠加5层。全员切换入场时，造成伤害提升，持续10秒。",
         "FightEventIds": [
@@ -575,7 +575,7 @@
     {
         "Id": 49,
         "Name": "噬殄消弭Ⅲ",
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingBuffIconNew1021.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "释放真意斩时，使自身物理伤害和Boss受到真意斩伤害显著提升，最多可叠加5层。",
         "FightEventIds": [
@@ -697,7 +697,7 @@
     {
         "Id": 59,
         "Name": "明刃破妄Ⅰ",
-        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingBuffIconNew1021.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
         "Desc": "每次释放真意斩，使Boss受到真意斩效应伤害显著提升、自身物理伤害显著提升，最多可叠加5层，持续10秒，重复触发刷新持续时间。",
         "FightEventIds": [
@@ -769,6 +769,31 @@
         ],
         "ShowRecommendIds": [
             2
+        ],
+        "Type": 1
+    },
+    {
+        "Id": 65,
+        "Name": "阗雷烨电IV",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "造成雷伤害时可获得雷盾，雷盾叠满时将自动引爆，使Boss受到雷属性伤害显著提升，最多可叠加4层，持续10秒，重复触发刷新持续时间。",
+        "FightEventIds": [
+            2300065
+        ],
+        "Type": 1
+    },
+    {
+        "Id": 66,
+        "Name": "欲壑凌霜Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingBuffIconNew1014.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "覆冰效应造成伤害时，Boss受到覆冰伤害显著提升，最多可叠加5层，持续10秒，重复触发刷新持续时间。",
+        "FightEventIds": [
+            2300066
+        ],
+        "ShowRecommendIds": [
+            5
         ],
         "Type": 1
     },
