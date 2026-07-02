@@ -20,7 +20,7 @@ function XUiTheatre6PVPAttackDefend:OnStart(mode, enemyData)
     -- 设置自动关闭
     self:SetAutoCloseInfo(self._Control:GetPvpActivityEndTime(), function(isClose)
         if isClose then
-            self._Control:HandlePvpActivityEnd()
+            XMVCA.XTheatre6:HandlePvpActivityEnd()
         end
     end)
 

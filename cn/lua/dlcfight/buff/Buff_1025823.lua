@@ -51,7 +51,7 @@ function XBuffScript1025823:OnEnterLevel(levelId)
     elseif self._npcId == self._SWId then     --神威判断
         if _enemyId == self._WLNKId then
             self._proxy:AddBuff(self._npcUUID,self._SToWBuff)
-        elseif _enemyId == self._AEFIdId then
+        elseif _enemyId == self._AEFId then
             self._proxy:AddBuff(self._npcUUID,self._SToABuff)
         end
     end

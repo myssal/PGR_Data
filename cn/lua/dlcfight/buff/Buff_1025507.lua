@@ -25,13 +25,13 @@ function XBuffScript1025507:AfterDamageCalc(eventArgs) -- 受到或造成伤害�
     if self._proxy:GetNpcProtector(self._npcUUID) > 0 then
         if self.IfProtector == 0 then
             self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.DmgBuff, 1, 0, self.Count)
-            self:LogError("......触发伤害，触发护盾加伤")
+            --self:LogError("......触发伤害，触发护盾加伤")
             self.IfProtector = 1
         end
     else
         if self.IfProtector == 1 then
             self._proxy:RemoveBuffByKindAndCount(self._npcUUID,self.DmgBuff,self.Count)
-            self:LogError("......触发伤害，删除护盾加伤")
+            --self:LogError("......触发伤害，删除护盾加伤")
             self.IfProtector = 0
         end
     end
