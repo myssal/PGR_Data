@@ -17,11 +17,9 @@ function XUiGridFubenBossSingleModeBuffBig:Ctor(_0, _1)
         self)
 end
 
-function XUiGridFubenBossSingleModeBuffBig:SetData(
-    feature,
-    buffGroups)
-
-    XUiGridFubenBossSingleModeBuffBig.Super.SetData(self, feature, buffGroups, 0)
+function XUiGridFubenBossSingleModeBuffBig:SetData(args)
+    local feature = args.Feature
+    XUiGridFubenBossSingleModeBuffBig.Super.SetData(self, args)
     self.UiTxtBuffDetail.text = feature:GetDesc()
     self:_SetHistoryTeam(feature)
     self._BuffPreview:SetData(feature:GetHistoryBuffGroup())

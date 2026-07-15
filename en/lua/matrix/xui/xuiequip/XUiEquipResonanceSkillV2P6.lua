@@ -64,8 +64,8 @@ end
 
 function XUiEquipResonanceSkillV2P6:OnBtnSkillItemClick(pos)
     -- 5星武器只能共鸣一次
-    local equip = XMVCA:GetAgency(ModuleId.XEquip):GetEquip(self.EquipId)
-    local star = XMVCA:GetAgency(ModuleId.XEquip):GetEquipQuality(equip.TemplateId)
+    local equip = XMVCA.XEquip:GetEquip(self.EquipId)
+    local star = XMVCA.XEquip:GetEquipQuality(equip.TemplateId)
     if equip:IsWeapon() and equip:GetResonanceInfo(pos) and star == XEnumConst.EQUIP.FIVE_STAR then
         XUiManager.TipText("EquipResonance5StarWeaponRepeatTip")
         return

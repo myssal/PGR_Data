@@ -1,3 +1,4 @@
+--[[
 XBaseEquipManagerCreator = function()
 
     local pairs = pairs
@@ -700,3 +701,4 @@ end
 XRpc.NotifyBaseEquipDataList = function(data)
     XDataCenter.BaseEquipManager.NotifyBaseEquipDataList(data)
 end
+]]

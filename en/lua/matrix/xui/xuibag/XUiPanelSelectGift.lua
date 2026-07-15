@@ -112,8 +112,9 @@ function XUiPanelSelectGift:OpenDetailUi(data)
     if data.RewardType == XRewardManager.XRewardType.Character then
         XLuaUiManager.Open("UiCharacterDetail", data.TemplateId)
     elseif data.RewardType == XRewardManager.XRewardType.Equip then
-        XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipPreview(data.TemplateId)
+        XMVCA.XEquip:OpenUiEquipPreview(data.TemplateId)
     elseif data.RewardType == XRewardManager.XRewardType.Fashion then
+        XMVCA.XFashionSuit:SetFromSelfChoicePack(true) --来自自选礼包，涂装详情隐藏成套购买
         XLuaUiManager.Open("UiFashionDetail", data.TemplateId, false, nil)
     elseif data.RewardType == XRewardManager.XRewardType.Partner then
         local partnerData = {Id = 0,TemplateId = data.TemplateId}
@@ -122,6 +123,7 @@ function XUiPanelSelectGift:OpenDetailUi(data)
     else
         if XDataCenter.ItemManager.IsWeaponFashion(data.TemplateId) then
             local weaponFashionId = XDataCenter.ItemManager.GetWeaponFashionId(data.TemplateId)
+            XMVCA.XFashionSuit:SetFromSelfChoicePack(true) --来自自选礼包，涂装详情隐藏成套购买
             XLuaUiManager.Open("UiFashionDetail", weaponFashionId, true, nil)
         else
             XLuaUiManager.Open("UiTip", data, true)

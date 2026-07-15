@@ -1,0 +1,768 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg3801_05.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Spine立绘测试剧情"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 302,
+        "Params": [
+            "",
+            "常规测试（透明度、立绘动画、灰度等）",
+            5,
+            "关于演员出现和亮暗动画的测试",
+            18,
+            "表情和身体动画拆分",
+            40
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 211,
+        "Params": [
+            1,
+            1021039,
+            "",
+            -500,
+            -200,
+            -200
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员出现时会有很明显的全黑剪影效果，不够自然"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lucia",
+            "With you next to me, anywhere feels like home.",
+            101
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Lucia",
+            "But here... we finished something special. Had a holiday I'll never forget.",
+            101
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 215,
+        "EndDelay": 1000.0,
+        "Params": [
+            1,
+            "PanelActorShake"
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "spine立绘-抖动动画播放",
+            101
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 504,
+        "Params": [
+            0.7,
+            101
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "spine立绘-灰度测试（已解决）",
+            101
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 504,
+        "Params": [
+            0,
+            101
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "spine立绘-灰度测试（已解决）",
+            101
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 212,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员消失时会有动画卡顿"
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "IsEnd": 1,
+        "Params": [
+            "",
+            "",
+            "Test Complete"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "关于演员出现和亮暗动画的测试"
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 211,
+        "Params": [
+            1,
+            1021039
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员出现，不说话，不配亮暗动画"
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员出现，说话，不配亮暗动画",
+            101
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 212,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员消失，不说话，不配亮暗动画"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 211,
+        "Params": [
+            1,
+            1021039
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "演员出现，不说话，配亮暗动画"
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员出现，说话，不配亮暗动画\\n（按照静态立绘的配置习惯，一般只有演员出现紧接的第一个台词会配上跳过亮暗动画，后面的都不配，直到消失）",
+            101
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 212,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员消失，不说话，不配亮暗动画"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 211,
+        "Params": [
+            1,
+            1021039
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "演员出现，说话，配亮暗动画",
+            101
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员出现，说话，不配亮暗动画\\n（按照静态立绘的配置习惯，一般只有演员出现紧接的第一个台词会配上跳过亮暗动画，后面的都不配，直到消失）",
+            101
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 212,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员消失，不说话，不配亮暗动画"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 211,
+        "Params": [
+            1,
+            1021039
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员出现，说话，不配亮暗动画",
+            101
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员出现，说话，不配亮暗动画\\n（按照静态立绘的配置习惯，一般只有演员出现紧接的第一个台词会配上跳过亮暗动画，后面的都不配，直到消失）",
+            101
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 212,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员消失，不说话，不配亮暗动画"
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "IsEnd": 1,
+        "Params": [
+            "",
+            "",
+            "Test Complete"
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "关于演员表情和身体动画拆分"
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 211,
+        "Params": [
+            1,
+            1021012
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "演员出现",
+            101
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "表情切换",
+            101
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 216,
+        "Params": [
+            1,
+            "zhandou",
+            "idle_zhandou"
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "动作切换",
+            101
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1469.jpg"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 211,
+        "Params": [
+            1,
+            1021064,
+            8
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 216,
+        "Params": [
+            1,
+            "idle"
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 301,
+        "Params": [
+            1,
+            "Liv",
+            "The instruments have been tuned, and all the refreshments are ready... I wonder if we hung the ballroom chandelier a bit too low? I should check it again...",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100016936,
+            1,
+            "",
+            "v450liv"
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "As you push open the balcony door, you see Liv lost in thought as she mentally checks off tasks while her fingertips absently brush against the railing.",
+            101
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 217,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 302,
+        "Params": [
+            "",
+            "Final task complete. Othilde will hide from the sorcerer until it's safe.",
+            54
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 217,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 301,
+        "Params": [
+            "",
+            "Liv",
+            "That's good. She listens to you more than me these days, Commandant.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100016937,
+            1,
+            "",
+            "v450liv"
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 217,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 301,
+        "Params": [
+            "",
+            "Liv",
+            "That's exactly why this ball... must be a success.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100016938,
+            1,
+            "",
+            "v450liv"
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Liv lowers her gaze with slight embarrassment, quietly whispering her thoughts to herself.",
+            101
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 217,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 301,
+        "Params": [
+            "",
+            "Liv",
+            "我相信我们可以的。就是……我第一次做女主人，第一次出席自己举办的盛会，甚至是第一次换上这套小时候在心底描绘的礼服。",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100016939,
+            1,
+            "",
+            "v450liv"
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 301,
+        "Params": [
+            "",
+            "Liv",
+            "When I first woke up in the Snow Globe, you were coming down the silken path for me. My heart suddenly fluttered like a flock of birds beating their wings as I turned and saw my reflection in the mirror.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100016940,
+            1,
+            "",
+            "v450liv"
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 217,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She gently smooths her dress and ribbons as memories flit briefly across her eyes like skimming dragonflies. She lifts her gaze to meet yours.",
+            101
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 301,
+        "IsEnd": 1,
+        "Params": [
+            "",
+            "Liv",
+            "【kuroname】, will you be my dance partner?",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100016944,
+            1,
+            "",
+            "v450liv"
+        ]
+    }
+]

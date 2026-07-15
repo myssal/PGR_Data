@@ -147,7 +147,7 @@ function XUiEquipAwarenessReplaceV2P6:OnSelectSuit(suitId)
 end
 
 function XUiEquipAwarenessReplaceV2P6:OnBtnStrengthenClick(equipId)
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipDetail(equipId, nil, self.CharacterId, nil, nil, nil, true)
+    XMVCA.XEquip:OpenUiEquipDetail(equipId, nil, self.CharacterId, nil, nil, nil, true)
 end
 
 function XUiEquipAwarenessReplaceV2P6:OnBtnPutOnClick(equipId)
@@ -164,16 +164,16 @@ function XUiEquipAwarenessReplaceV2P6:OnBtnPutOnClick(equipId)
             function()
             end,
             function()
-                XMVCA:GetAgency(ModuleId.XEquip):PutOn(characterId, equipId)
+                XMVCA.XEquip:PutOn(characterId, equipId)
             end
         )
     else
-        XMVCA:GetAgency(ModuleId.XEquip):PutOn(characterId, equipId)
+        XMVCA.XEquip:PutOn(characterId, equipId)
     end
 end
 
 function XUiEquipAwarenessReplaceV2P6:OnBtnTakeOffClick(equipId)
-    XMVCA:GetAgency(ModuleId.XEquip):TakeOff({equipId})
+    XMVCA.XEquip:TakeOff({equipId})
 end
 
 -- 刷新界面
@@ -294,16 +294,16 @@ function XUiEquipAwarenessReplaceV2P6:UpdateOneEquipDetail(equipIndex, equipId, 
     end
 
     -- 刷新面板
-    local equip = XMVCA:GetAgency(ModuleId.XEquip):GetEquip(equipId)
+    local equip = XMVCA.XEquip:GetEquip(equipId)
     local isWear = equipId == wearEquipId
     local icon = XMVCA.XEquip:GetEquipIconPath(equip.TemplateId, equip.Breakthrough)
     uiObj:GetObject("RImgIcon"):SetRawImage(icon)
-    local name = XMVCA:GetAgency(ModuleId.XEquip):GetEquipName(equip.TemplateId)
+    local name = XMVCA.XEquip:GetEquipName(equip.TemplateId)
     uiObj:GetObject("TxtName").text = name
     uiObj:GetObject("TxtLv").text = equip.Level
 
     -- 意识属性
-    local attrMap = XMVCA:GetAgency(ModuleId.XEquip):GetEquipAttrMap(equipId)
+    local attrMap = XMVCA.XEquip:GetEquipAttrMap(equipId)
     for i = 1, XEnumConst.EQUIP.MAX_ATTR_COUNT do
         local attrInfo = attrMap[i]
         local isShow = attrInfo ~= nil
@@ -315,20 +315,20 @@ function XUiEquipAwarenessReplaceV2P6:UpdateOneEquipDetail(equipIndex, equipId, 
     end
 
     -- 套装技能
-    local suitId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitId(equip.TemplateId)
+    local suitId = XMVCA.XEquip:GetEquipSuitId(equip.TemplateId)
     local activeCount, siteCheckDic = XMVCA.XEquip:GetActiveSuitEquipsCount(self.CharacterId, suitId)
     if not isWear then
         local wearSuitId
         if wearEquipId then
-            local wearEquip = XMVCA:GetAgency(ModuleId.XEquip):GetEquip(wearEquipId)
-            wearSuitId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitId(wearEquip.TemplateId)
+            local wearEquip = XMVCA.XEquip:GetEquip(wearEquipId)
+            wearSuitId = XMVCA.XEquip:GetEquipSuitId(wearEquip.TemplateId)
         end
         if wearSuitId ~= suitId then
             activeCount = activeCount + 1 -- 预览穿上的激活效果
         end
     end
-    local isOverrun = XMVCA:GetAgency(ModuleId.XEquip):IsCharacterOverrunSuit(self.CharacterId, suitId)
-    local skillDesList = XMVCA:GetAgency(ModuleId.XEquip):GetSuitActiveSkillDesList(suitId, activeCount, isOverrun, isOverrun)
+    local isOverrun = XMVCA.XEquip:IsCharacterOverrunSuit(self.CharacterId, suitId)
+    local skillDesList = XMVCA.XEquip:GetSuitActiveSkillDesList(suitId, activeCount, isOverrun, isOverrun)
     for i = 1, XEnumConst.EQUIP.MAX_SUIT_SKILL_COUNT do
         local skillInfo = skillDesList[i]
         local isShow = skillInfo ~= nil
@@ -407,7 +407,7 @@ function XUiEquipAwarenessReplaceV2P6:UpdateModel(modelEquipId)
     end
 
     self:ReleaseModel()
-    local equip = XMVCA:GetAgency(ModuleId.XEquip):GetEquip(modelEquipId)
+    local equip = XMVCA.XEquip:GetEquip(modelEquipId)
     local resPath = XMVCA.XEquip:GetEquipLiHuiPath(equip.TemplateId, equip.Breakthrough)
     self.Loader = self.Loader or self.Transform:GetLoader()
     local texture = self.Loader:Load(resPath)

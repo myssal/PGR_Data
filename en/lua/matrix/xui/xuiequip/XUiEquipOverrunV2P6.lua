@@ -1,7 +1,10 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
-local XUiEquipOverrunV2P6 = XLuaUiManager.Register(XLuaUi, "UiEquipOverrunV2P6")
-local XUiEquipOverrunDetailV2P6 = require("XUi/XUiEquip/XUiEquipOverrunDetailV2P6")
 local CSInstantiate = CS.UnityEngine.Object.Instantiate
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiEquipOverrunDetailV2P6 = require("XUi/XUiEquip/XUiEquipOverrunDetailV2P6")
+
+---@class XUiEquipOverrunV2P6 : XLuaUi
+---@field _Control XEquipControl
+local XUiEquipOverrunV2P6 = XLuaUiManager.Register(XLuaUi, "UiEquipOverrunV2P6")
 
 function XUiEquipOverrunV2P6:OnAwake()
     self.CostGridList = {}
@@ -41,10 +44,10 @@ function XUiEquipOverrunV2P6:OnClickBtnOverrun()
     end
 
     -- 二次确认
-    local equipName = XMVCA:GetAgency(ModuleId.XEquip):GetEquipName(self.Equip.TemplateId)
+    local equipName = XMVCA.XEquip:GetEquipName(self.Equip.TemplateId)
     local content = XUiHelper.GetText("EquipOverrunLevelUpTips", equipName)
     XUiManager.DialogTip(nil, content, XUiManager.DialogType.Normal, nil, function()
-        XMVCA:GetAgency(ModuleId.XEquip):EquipWeaponOverrunLevelUpRequest(self.EquipId, function()
+        XMVCA.XEquip:EquipWeaponOverrunLevelUpRequest(self.EquipId, function()
             self:OnLevelUp()
         end)
     end)

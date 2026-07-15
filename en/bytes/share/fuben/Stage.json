@@ -51132,6 +51132,64 @@
         ]
     },
     {
+        "StageId": 17014201,
+        "Type": 87,
+        "Name": "Passion Call",
+        "BgmId": 101,
+        "LoadingType": 10101,
+        "EventId": 2410015,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 1,
+        "StageType": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 17014202,
+        "Type": 87,
+        "Name": "Passion Call",
+        "BgmId": 101,
+        "LoadingType": 10101,
+        "EventId": 2410015,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 1,
+        "StageType": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
         "StageId": 11010101,
         "Type": 1,
         "Name": "Patched Memories",
@@ -65604,7 +65662,7 @@
         "ForceConditionId": [
             30000101
         ],
-        "FunctionLeftBtn": 3,
+        "FunctionLeftBtn": 2,
         "FunctionRightBtn": 1,
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -104691,6 +104749,45 @@
             1,
             2,
             3
+        ],
+        "NextStageId": [
+            30100229
+        ]
+    },
+    {
+        "StageId": 30100229,
+        "Type": 17,
+        "Name": "A-4",
+        "Description": "Leap Trial",
+        "Icon": "Assets/Product/Texture/Image/UiFubenPracticeCharacter/UiFubenPracticeCharacterGuanqia2.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100112
+        ],
+        "FirstRewardShow": 30100801,
+        "FirstRewardId": 30100801,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to the tutorial tips.",
+            "Learn the Construct's combat techniques.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172431
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
         ]
     },
     {
@@ -106599,6 +106696,116 @@
         ],
         "GeneralSkillIds": [
             2
+        ]
+    },
+    {
+        "StageId": 30100223,
+        "Type": 36,
+        "Name": "A1",
+        "Description": "Core Skill",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40515.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to the tutorial tips.",
+            "Learn the Construct's combat techniques.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2331
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30100224
+        ]
+    },
+    {
+        "StageId": 30100224,
+        "Type": 36,
+        "Name": "A2",
+        "Description": "Combat Practice",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40515.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100223
+        ],
+        "FirstRewardShow": 30100801,
+        "FirstRewardId": 30100801,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to the tutorial tips.",
+            "Learn the Construct's combat techniques.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2331
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30100225
+        ]
+    },
+    {
+        "StageId": 30100225,
+        "Type": 36,
+        "Name": "A3",
+        "Description": "Effect Process",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40515.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100224
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to the tutorial tips.",
+            "Learn the Construct's combat techniques.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172427
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "GeneralSkillIds": [
+            5
         ]
     },
     {
@@ -113389,6 +113596,111 @@
         "Restartable": true,
         "GeneralSkillIds": [
             2
+        ]
+    },
+    {
+        "StageId": 30100226,
+        "Type": 36,
+        "Name": 1,
+        "Description": "Character Challenge",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40516.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Successfully clear stages.",
+            "Clear within 180s.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160537,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ],
+        "NextStageId": [
+            30100227
+        ]
+    },
+    {
+        "StageId": 30100227,
+        "Type": 36,
+        "Name": 2,
+        "Description": "Character Challenge",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40516.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100226
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Successfully clear stages.",
+            "Clear within 180s.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160538,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ],
+        "NextStageId": [
+            30100228
+        ]
+    },
+    {
+        "StageId": 30100228,
+        "Type": 36,
+        "Name": 3,
+        "Description": "Character Challenge",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40516.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100227
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Successfully clear stages.",
+            "Clear within 180s.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160539,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            5
         ]
     },
     {
@@ -163880,6 +164192,804 @@
         ]
     },
     {
+        "StageId": 15021801,
+        "Type": 87,
+        "Name": "Trading Death",
+        "Description": "At first, it was widely believed that this bizarre catastrophe sweeping across the Transatlantic would profoundly alter the course of history, leaving a permanent scar upon the zenith of the Golden Age.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06701BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021802
+        ]
+    },
+    {
+        "StageId": 15021802,
+        "Type": 87,
+        "Name": "The Returning Diplomatic Mission",
+        "Description": "It is where all memories are preserved, where all pain and perception originate. It is the old web Helentine left behind in the past.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 2,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021801
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06702BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021803
+        ]
+    },
+    {
+        "StageId": 15021803,
+        "Type": 87,
+        "Name": "Welcome to Porrima",
+        "Description": "This is Porrima, a city built upon decay and mourning.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 3,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021802
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06703BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021804
+        ]
+    },
+    {
+        "StageId": 15021804,
+        "Type": 87,
+        "Name": "The Mediocre Choice",
+        "Description": "You don't trust me. You are merely placing your faith in mediocrity...",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 4,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021803
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06704BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021805
+        ]
+    },
+    {
+        "StageId": 15021805,
+        "Type": 87,
+        "Name": "Downpour Alert",
+        "Description": "\"Transcending death\"... what a nostalgic phrase.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 5,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021804
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06705BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021806
+        ]
+    },
+    {
+        "StageId": 15021806,
+        "Type": 87,
+        "Name": "Self-Reflection",
+        "Description": "If I truly remember nothing, how am I supposed to become who I once was?",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 6,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021805
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06706BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021807
+        ]
+    },
+    {
+        "StageId": 15021807,
+        "Type": 87,
+        "Name": "Dual Conclaves",
+        "Description": "Is this the Golden Age you were hoping for?",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 7,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021806
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06707BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021808
+        ]
+    },
+    {
+        "StageId": 15021808,
+        "Type": 87,
+        "Name": "Feast of Falsehood",
+        "Description": "Let me give you a straight answer, no turning corners!",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 8,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021807
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06708BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021809
+        ]
+    },
+    {
+        "StageId": 15021809,
+        "Type": 87,
+        "Name": "The Returned",
+        "Description": "All my pieces are now in play. Lithos, it's your turn.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 9,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021808
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06709BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021810
+        ]
+    },
+    {
+        "StageId": 15021810,
+        "Type": 87,
+        "Name": "Miracle",
+        "Description": "How can we ever grant these martyrs the ultimate recompense?",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 10,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021809
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06710BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021811
+        ]
+    },
+    {
+        "StageId": 15021811,
+        "Type": 87,
+        "Name": "Against the Current",
+        "Description": "The long-absent toll of bells echoed across Porrima.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabERN1611.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 11,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021810
+        ],
+        "KeepPlayingStory": 1,
+        "EndStoryIds": [
+            "ZX06711EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172423
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleSpecial",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "GeneralSkillIds": [
+            2
+        ],
+        "NextStageId": [
+            15021812
+        ]
+    },
+    {
+        "StageId": 15021812,
+        "Type": 87,
+        "Name": "Trading Death Ⅱ",
+        "Description": "The blade parts skin, and radiance bursts forth from self-inflicted wounds.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 12,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021811
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06712BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021813
+        ]
+    },
+    {
+        "StageId": 15021813,
+        "Type": 87,
+        "Name": "The Puppeteer",
+        "Description": "Flooded with the Red Tide, Porrima presses onward toward the mainland, like a catastrophe invoked by the collective prayers of countless souls.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 13,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021812
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06713BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021814
+        ]
+    },
+    {
+        "StageId": 15021814,
+        "Type": 87,
+        "Name": "Days of Yore",
+        "Description": "You see, everyone finds reality too eyesore to look at. But the moment you slap the words \"Golden Age\" onto it, people scramble to buy it.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 14,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021813
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06714BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021815
+        ]
+    },
+    {
+        "StageId": 15021815,
+        "Type": 87,
+        "Name": "Reunion Upon Departure",
+        "Description": "By the way... have you been happy with your life so far, Sister?",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 15,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021814
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06715BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021816
+        ]
+    },
+    {
+        "StageId": 15021816,
+        "Type": 87,
+        "Name": "Rebellion of the Bananafish",
+        "Description": "This sweet dream can go to hell!",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabERN1616.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 16,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021815
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06716BA"
+        ],
+        "EndStoryIds": [
+            "ZX06716EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172423
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleSpecial",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "GeneralSkillIds": [
+            2
+        ],
+        "NextStageId": [
+            15021817
+        ]
+    },
+    {
+        "StageId": 15021817,
+        "Type": 87,
+        "Name": "Transgression",
+        "Description": "\"If only miracles... truly existed.\"",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 17,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021816
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06717BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021818
+        ]
+    },
+    {
+        "StageId": 15021818,
+        "Type": 87,
+        "Name": "Her \"Understanding\"",
+        "Description": "The years severed by death, prolonged by regret, and forcibly stitched together by obsession finally came face to face in this moment.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabERN1618.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 18,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021817
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06718BA"
+        ],
+        "EndStoryIds": [
+            "ZX06718EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172423
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleBoss",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "GeneralSkillIds": [
+            2
+        ],
+        "NextStageId": [
+            15021819
+        ]
+    },
+    {
+        "StageId": 15021819,
+        "Type": 87,
+        "Name": "Baptism for the Dead",
+        "Description": "The brief, fleeting dream of the Golden Age drew hastily to a close.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 19,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021818
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06719BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021820
+        ]
+    },
+    {
+        "StageId": 15021820,
+        "Type": 87,
+        "Name": "The Sabbath",
+        "Description": "\"And the stars of heaven fell unto the earth, even as a fig tree casteth her untimely figs, when she is shaken of a mighty wind.\"",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 20,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021819
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06720BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
         "StageId": 30140101,
         "Type": 26,
         "Name": "[Battle] Machine Wreckers",
@@ -171872,6 +172982,136 @@
         "Restartable": true
     },
     {
+        "StageId": 30006888,
+        "Type": 16,
+        "Name": "葬途残声-1",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt1.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "击败塔维斯·斯贝尔穆",
+            "Get taken down no more than 5 times.",
+            "Get taken down no more than 3 times."
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006889,
+        "Type": 16,
+        "Name": "葬途残声-2",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt2.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 2,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "击败塔维斯·斯贝尔穆",
+            "Get taken down no more than 5 times.",
+            "Get taken down no more than 3 times."
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006890,
+        "Type": 16,
+        "Name": "葬途残声-3",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt3.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 3,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "击败塔维斯·斯贝尔穆",
+            "Get taken down no more than 5 times.",
+            "Get taken down no more than 3 times."
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006891,
+        "Type": 16,
+        "Name": "葬途残声-4",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt4.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 4,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "击败塔维斯·斯贝尔穆",
+            "Get taken down no more than 3 times.",
+            "Die no more than once."
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006892,
+        "Type": 16,
+        "Name": "葬途残声-5",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt5.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 5,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "击败塔维斯·斯贝尔穆",
+            "Die no more than once.",
+            "Have all members survive."
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
         "StageId": 30010007,
         "Name": "Comicon Team",
         "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt5.png",
@@ -175678,6 +176918,309 @@
         "KeepPlayingStory": 1,
         "BeginStoryIds": [
             "HD05006BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30130488,
+        "Type": 18,
+        "Name": "Coral Dreams",
+        "Description": "As the relocation mission nears its end, the farewell celebration begins to unfold.",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05400BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30130489,
+            30130491,
+            30130493,
+            30130495
+        ]
+    },
+    {
+        "StageId": 30130489,
+        "Type": 18,
+        "Name": "Strings at the Shore",
+        "Description": "Accepting everyone's kind wishes, you and Selena pick up an old guitar and let improvised strings catch the last warmth of the island's fireworks.",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130488
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05401BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30130490
+        ]
+    },
+    {
+        "StageId": 30130490,
+        "Type": 18,
+        "Name": "Moonlit Whale Ballad",
+        "Description": "The evening breeze draws the day's melodies to a close. You and Selena entrust your wishes to the waves and a drifting bottle. As whale song greets the breaking dawn, the words left unspoken quietly await the days ahead to be finished.",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130489
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05402BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30130491,
+        "Type": 18,
+        "Name": "Seaside Encounter",
+        "Description": "A mission to preserve the island's culture brings you and Helentine into the forest, where you slowly uncover the hidden past this island conceals beneath its everyday warmth.",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130488
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05403BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30130492
+        ]
+    },
+    {
+        "StageId": 30130492,
+        "Type": 18,
+        "Name": "Shadow Trace",
+        "Description": "The truth behind the legend of the Great Shell God draws you both into reflection on time and change. Beneath the night sky, Helentine makes a tender yet sincere confession.",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130491
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05404BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30130493,
+        "Type": 18,
+        "Name": "Placeholder_未定4.7上",
+        "Description": "Placeholder_未定",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130488
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05401BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30130494
+        ]
+    },
+    {
+        "StageId": 30130494,
+        "Type": 18,
+        "Name": "Placeholder_未定4.7上",
+        "Description": "Placeholder_未定",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130493
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05402BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30130495,
+        "Type": 18,
+        "Name": "Placeholder_未定4.7上",
+        "Description": "Placeholder_未定",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130488
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05403BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30130496
+        ]
+    },
+    {
+        "StageId": 30130496,
+        "Type": 18,
+        "Name": "Placeholder_未定4.7上",
+        "Description": "Placeholder_未定",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130495
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05404BA"
         ],
         "OnlinePlayerLimit": 3,
         "HaveFirstPass": true,
@@ -204257,7 +205800,7 @@
     },
     {
         "StageId": 30101120,
-        "Type": 43,
+        "Type": 13,
         "Name": "Nightshroud Coronet",
         "Description": "The past lies steeped in crimson, and the reins of judgment are now in her grasp. In the name of the Countess, she takes her leave of the old epoch, slumbering deep in the fog. When the blood-red moon climbs full again, she tightens her grip on the blade in hand and steps into the winding, fog-veiled streets. Before the final curtain falls, she cleaves through the specters of the silence, her will unbroken.",
         "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
@@ -204286,7 +205829,7 @@
     },
     {
         "StageId": 30101122,
-        "Type": 43,
+        "Type": 13,
         "Name": "Stygian Pinion",
         "Description": "Bound by a covenant with fate, her wings rend the abyss of night before dawn's first light can pierce the veil. She hunts the monsters that prowl within the fog, and hers alone is the power to decree life or death. A faint glow shall one day sunder the unending dark, and the sins shrouded in fog will lie entombed forever beneath the long-awaited dawn.",
         "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
@@ -204305,6 +205848,97 @@
         "FunctionRightBtn": 1,
         "RobotId": [
             172415
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101129,
+        "Type": 13,
+        "Name": "Shimmering Tide",
+        "Description": "Twilight washes the sea in gentle hues. The heat of the day has faded, leaving behind a cool breeze that settles deep within. Hand in hand, we share the quiet of this stretch of shore. Here, where all the noise has drifted away, only the symphony of the ebbing tides and her soft whispers remain, weaving a memory of this summer that one wishes to cherish for an eternity.",
+        "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172424
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101130,
+        "Type": 13,
+        "Name": "Nightshroud Coronet",
+        "Description": "Sunlight dances on evening waves, much like the shifting tides of the heart. The breeze whispers of the sea. In silence, the setting sun draws out our shadows on the shore. If only this breath of time could be frozen forever.",
+        "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172425
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101131,
+        "Type": 43,
+        "Name": "Grand Duke",
+        "Description": "Grand Duke Description",
+        "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterDaGongStage01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to CUB tutorial tips.",
+            "Learn practical skills of CUB Grand Duke."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2333
         ],
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -271383,7 +273017,7 @@
         "SettleLoseTipId": 22,
         "FunctionRightBtn": 1,
         "RobotId": [
-            170010
+            170000
         ],
         "StageGridStyle": "Square",
         "NeedJobType": [
@@ -271791,6 +273425,190 @@
             3
         ],
         "Restartable": true
+    },
+    {
+        "StageId": 30163264,
+        "Type": 89,
+        "Name": "Ezette Normal",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163265,
+        "Type": 89,
+        "Name": "Ezette Hard",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163266,
+        "Type": 89,
+        "Name": "Ezette Hell",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163267,
+        "Type": 89,
+        "Name": "Ezette Skill Training Stage",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163268,
+        "Type": 102,
+        "Name": "The Merciful One - Gauntlet",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30163269,
+        "Type": 102,
+        "Name": "Echo - Gauntlet",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30163270,
+        "Type": 102,
+        "Name": "Powered - Gauntlet",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30163271,
+        "Type": 102,
+        "Name": "Enora Lueya - Gauntlet",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30163272,
+        "Type": 102,
+        "Name": "Ezette - Gauntlet",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
     },
     {
         "StageId": 30165150,
@@ -277396,6 +279214,566 @@
         "StageId": 30165430,
         "Type": 83,
         "Name": "High Power Zone 17-14",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165431,
+        "Type": 83,
+        "Name": "Low Power Zone 18-1",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165432,
+        "Type": 83,
+        "Name": "Low Power Zone 18-2",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165433,
+        "Type": 83,
+        "Name": "Low Power Zone 18-3",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165434,
+        "Type": 83,
+        "Name": "Low Power Zone 18-4",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165435,
+        "Type": 83,
+        "Name": "Low Power Zone 18-5",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165436,
+        "Type": 83,
+        "Name": "Low Power Zone 18-6",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165437,
+        "Type": 83,
+        "Name": "Low Power Zone 18-7",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165438,
+        "Type": 83,
+        "Name": "Low Power Zone 18-8",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165439,
+        "Type": 83,
+        "Name": "Low Power Zone 18-9",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165440,
+        "Type": 83,
+        "Name": "Low Power Zone 18-10",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165441,
+        "Type": 83,
+        "Name": "Low Power Zone 18-11",
+        "BgmId": 247,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165442,
+        "Type": 83,
+        "Name": "Low Power Zone 18-12",
+        "BgmId": 247,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165443,
+        "Type": 83,
+        "Name": "Low Power Zone 18-13",
+        "BgmId": 141,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165444,
+        "Type": 83,
+        "Name": "Low Power Zone 18-14",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165445,
+        "Type": 83,
+        "Name": "High Power Zone 18-1",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165446,
+        "Type": 83,
+        "Name": "High Power Zone 18-2",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165447,
+        "Type": 83,
+        "Name": "High Power Zone 18-3",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165448,
+        "Type": 83,
+        "Name": "High Power Zone 18-4",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165449,
+        "Type": 83,
+        "Name": "High Power Zone 18-5",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165450,
+        "Type": 83,
+        "Name": "High Power Zone 18-6",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165451,
+        "Type": 83,
+        "Name": "High Power Zone 18-7",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165452,
+        "Type": 83,
+        "Name": "High Power Zone 18-8",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165453,
+        "Type": 83,
+        "Name": "High Power Zone 18-9",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165454,
+        "Type": 83,
+        "Name": "High Power Zone 18-10",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165455,
+        "Type": 83,
+        "Name": "High Power Zone 18-11",
+        "BgmId": 247,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165456,
+        "Type": 83,
+        "Name": "High Power Zone 18-12",
+        "BgmId": 247,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165457,
+        "Type": 83,
+        "Name": "High Power Zone 18-13",
+        "BgmId": 141,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165458,
+        "Type": 83,
+        "Name": "High Power Zone 18-14",
         "BgmId": 173,
         "LoadingType": 20014,
         "NormalEventIdOnPassed": 1,
@@ -299288,6 +301666,127 @@
         "Restartable": true
     },
     {
+        "StageId": 13021301,
+        "Type": 95,
+        "Name": "Fade In",
+        "Description": "Please enter in an orderly fashion.",
+        "OrderId": 1,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16701BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021302
+        ]
+    },
+    {
+        "StageId": 13021302,
+        "Type": 95,
+        "Name": "Day",
+        "Description": "Beneath the phoenix tree lies an important reminder.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021301
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16702BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021303
+        ]
+    },
+    {
+        "StageId": 13021303,
+        "Type": 95,
+        "Name": "Exterior",
+        "Description": "Welcome to Hailaywood, the dream factory on the shoreline.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021302
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16703BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021304
+        ]
+    },
+    {
+        "StageId": 13021304,
+        "Type": 95,
+        "Name": "Interior",
+        "Description": "I am losing my mind with anxiety here.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021303
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16704BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021305
+        ]
+    },
+    {
+        "StageId": 13021305,
+        "Type": 95,
+        "Name": "Night",
+        "Description": "Flowers and popcorn, you can't have one without the other.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021304
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16705BA"
+        ],
+        "EndStoryIds": [
+            "HG16705EA"
+        ],
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172423
+        ],
+        "StageType": 1,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021306
+        ]
+    },
+    {
+        "StageId": 13021306,
+        "Type": 95,
+        "Name": "Fade Out",
+        "Description": "A happy ending.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021305
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16706BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
         "StageId": 30063100,
         "Type": 97,
         "Name": "Corrupted Battlefront: Pioneers of Peril",
@@ -300395,7 +302894,7 @@
         "Description": "miniRPG",
         "OrderId": 1,
         "RobotId": [
-            172361
+            172418
         ],
         "FightControlId": 1,
         "Restartable": true
@@ -300425,7 +302924,9 @@
         "Description": "miniRPG",
         "OrderId": 1,
         "RobotId": [
-            172360
+            172419,
+            172420,
+            172421
         ],
         "FightControlId": 1,
         "Restartable": true
@@ -300436,6 +302937,11 @@
         "Name": "Stage 2",
         "Description": "miniRPG",
         "OrderId": 1,
+        "RobotId": [
+            172419,
+            172420,
+            172421
+        ],
         "FightControlId": 1,
         "Restartable": true
     },
@@ -300445,6 +302951,11 @@
         "Name": "Stage 3",
         "Description": "miniRPG",
         "OrderId": 1,
+        "RobotId": [
+            172419,
+            172420,
+            172421
+        ],
         "FightControlId": 1,
         "Restartable": true
     },
@@ -300455,7 +302966,7 @@
         "Description": "miniRPG",
         "OrderId": 1,
         "RobotId": [
-            172368
+            172417
         ],
         "FightControlId": 1,
         "Restartable": true
@@ -300503,13 +303014,132 @@
         "Restartable": true
     },
     {
+        "StageId": 30163361,
+        "Type": 100,
+        "Name": "Stage 1",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "RobotId": [
+            172422
+        ],
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163362,
+        "Type": 100,
+        "Name": "Stage 2",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163363,
+        "Type": 100,
+        "Name": "Stage 3",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163364,
+        "Type": 100,
+        "Name": "Stage 1",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "RobotId": [
+            172417
+        ],
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163365,
+        "Type": 100,
+        "Name": "Stage 2",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163366,
+        "Type": 100,
+        "Name": "Stage 3",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163367,
+        "Type": 100,
+        "Name": "Stage 1",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "RobotId": [
+            172418
+        ],
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163368,
+        "Type": 100,
+        "Name": "Stage 2",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163369,
+        "Type": 100,
+        "Name": "Stage 3",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163370,
+        "Type": 100,
+        "Name": "Stage 1",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "RobotId": [
+            172419,
+            172420,
+            172421
+        ],
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163371,
+        "Type": 100,
+        "Name": "Stage 2",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163372,
+        "Type": 100,
+        "Name": "Stage 3",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
         "StageId": 30163347,
         "Type": 100,
         "Name": "Solitary Ordeal - Easy",
         "OrderId": 1,
-        "RobotId": [
-            172358
-        ],
         "FightControlId": 1,
         "Restartable": true
     },
@@ -300518,9 +303148,6 @@
         "Type": 100,
         "Name": "Solitary Ordeal - Normal",
         "OrderId": 1,
-        "RobotId": [
-            172358
-        ],
         "FightControlId": 1,
         "Restartable": true
     },
@@ -300530,9 +303157,6 @@
         "Name": "Stage 5",
         "Description": "miniRPG",
         "OrderId": 1,
-        "RobotId": [
-            172358
-        ],
         "FightControlId": 1,
         "Restartable": true
     },

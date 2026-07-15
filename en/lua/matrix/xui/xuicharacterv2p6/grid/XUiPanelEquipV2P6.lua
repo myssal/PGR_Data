@@ -11,7 +11,7 @@ function XUiPanelEquipV2P6:Ctor(ui, parent, rootUi)
     ---@type XCharacterAgency
     self.CharacterAgency = ag
 
-    ag = XMVCA:GetAgency(ModuleId.XEquip)
+    ag = XMVCA.XEquip
     ---@type XEquipAgency
     self.EquipAgency = ag
     self:InitButton()
@@ -113,9 +113,12 @@ function XUiPanelEquipV2P6:UpdateRoleView()
         self.WeaponGrid = XUiGridEquip.New(self.GridWeapon, self.RootUi)
     end
     
+    local usingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
+    local equip = XTool.IsNumberValidEx(usingWeaponId) and XMVCA.XEquip:GetEquip(usingWeaponId)
+    self.BtnWeaponReplace:ShowReddot(equip ~= nil and equip:IsShowOverrunRed())
+
     if self.GridWeapon.transform.parent.gameObject.activeSelf then
         self.WeaponGrid:Open()
-        local usingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
         self.WeaponGrid:Refresh(usingWeaponId)
     else
         self.WeaponGrid:Close()
@@ -272,7 +275,7 @@ function XUiPanelEquipV2P6:OnBtnWeaponReplaceClick()
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Equip) then
         return
     end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CharacterId)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CharacterId)
     XMVCA.XCharacter:BuryingUiCharacterAction(self.RootUi.Name, XGlobalVar.BtnUiCharacterSystemV2P6.BtnWeaponReplace, self.CharacterId)
 end
 
@@ -292,7 +295,7 @@ function XUiPanelEquipV2P6:OnAwarenessClick(site)
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Equip) then
         return
     end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwarenessReplace(self.CharacterId, site)
+    XMVCA.XEquip:OpenUiEquipAwarenessReplace(self.CharacterId, site)
     XMVCA.XCharacter:BuryingUiCharacterAction(self.RootUi.Name, XGlobalVar.BtnUiCharacterSystemV2P6.BtnAwarenessReplace, self.CharacterId)
 end
 
@@ -358,7 +361,7 @@ function XUiPanelEquipV2P6:OnBtnAutoTakeOffClick()
         XUiManager.TipText("EquipAutoTakeOffNotWearingEquip")
         return
     end
-    XMVCA:GetAgency(ModuleId.XEquip):TakeOff(wearingEquipIds)
+    XMVCA.XEquip:TakeOff(wearingEquipIds)
     XMVCA.XCharacter:BuryingUiCharacterAction(self.RootUi.Name, XGlobalVar.BtnUiCharacterSystemV2P6.BtnAutoTakeOff, self.CharacterId)
 end
 

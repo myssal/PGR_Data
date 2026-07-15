@@ -361,6 +361,7 @@ function XPassportControl:GetPassportFashionBuyData(typeInfoId, buyCallBack)
             { XGoodsCommonManager.GetGoodsShowParamsByTemplateId(fashionId) }
         )
     end
+    ---@type XPurchaseBuyData
     local buyData = {}
     buyData.IsHave = isHave
     buyData.ItemCount = CS.XTextManager.GetText("PassportFashionBuyBtnText")

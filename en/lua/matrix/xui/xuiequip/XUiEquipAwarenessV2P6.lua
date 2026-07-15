@@ -12,7 +12,7 @@ function XUiEquipAwarenessV2P6:OnAwake()
     self.UiPanelRoleModel = XUiPanelRoleModel.New(self.PanelRoleModelGo, self.Name, nil, true)
 
     -- 装备面板初始化
-    self.PanelEquip = XMVCA:GetAgency(ModuleId.XEquip):InitPanelEquipV2P6(self.PanelEquip, self, self)
+    self.PanelEquip = XMVCA.XEquip:InitPanelEquipV2P6(self.PanelEquip, self, self)
     self.PanelEquip:InitData()
 
     self:SetButtonCallBack()

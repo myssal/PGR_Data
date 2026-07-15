@@ -122,7 +122,7 @@ function XUiArchiveWeaponDetail:UpdateResume()
     local weaponName = XMVCA.XEquip:GetEquipName(templateId)
     self.TxtWeaponNameHorizontal.text = weaponName
     self.TxtWeaponNameVertical.text = weaponName
-    local maxBreakthrough, maxLevel = XMVCA:GetAgency(ModuleId.XEquip):GetEquipMaxBreakthrough(templateId)
+    local maxBreakthrough, maxLevel = XMVCA.XEquip:GetEquipMaxBreakthrough(templateId)
     self.TxtWeaponMaxLv.text = tostring(maxLevel)
     self.TxtWeaponMaxBreakthrough.text = tostring(maxBreakthrough)
 end

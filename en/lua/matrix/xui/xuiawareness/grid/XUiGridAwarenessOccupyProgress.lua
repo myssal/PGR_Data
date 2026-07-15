@@ -35,7 +35,7 @@ function XUiGridAwarenessOccupyProgress:Refresh(chapterId)
     local curr = 0
     local desc = ""
     if XTool.IsNumberValid(equipId) and isOccupy then
-        local equip = XMVCA:GetAgency(ModuleId.XEquip):GetEquip(equipId)
+        local equip = XMVCA.XEquip:GetEquip(equipId)
         for pos = 1, XEnumConst.EQUIP.MAX_RESONANCE_SKILL_COUNT do
             local bindCharId = equip:GetResonanceBindCharacterId(pos)
             local awaken = equip:IsEquipPosAwaken(pos)

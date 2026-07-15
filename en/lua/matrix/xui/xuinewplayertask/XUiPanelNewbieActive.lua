@@ -126,7 +126,7 @@ function XUiPanelNewbieActive:ShowTipsByType(rewardList)
             if self.RootUi.Ui.UiData.UiType == CsXUiType.Tips then
                 self.RootUi:Close()
             end
-            XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipPreview(templateId)
+            XMVCA.XEquip:OpenUiEquipPreview(templateId)
         else
             XLuaUiManager.Open("UiTip", templateId)
         end

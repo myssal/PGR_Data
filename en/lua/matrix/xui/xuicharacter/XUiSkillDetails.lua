@@ -264,8 +264,8 @@ function XUiSkillDetails:OnBtnNext()
     if self.Pos then
         local nextPos = self.Pos + 1
         if nextPos > XEnumConst.CHARACTER.MAX_SHOW_SKILL_POS then
-            self.ParentUi:SetSkillPos(nextPos)
-            nextPos = 1
+            self.ParentUi:SwitchToNextSkillDetails()
+            return
         else
             self.ParentUi:SetSkillPos(nextPos)
         end
@@ -277,8 +277,8 @@ function XUiSkillDetails:OnBtnLast()
     if self.Pos then
         local lastPos = self.Pos - 1
         if lastPos < 1 then
-            self.ParentUi:SetSkillPos(XEnumConst.CHARACTER.MAX_SHOW_SKILL_POS + 1)
-            lastPos = XEnumConst.CHARACTER.MAX_SHOW_SKILL_POS
+            self.ParentUi:SwitchToLastSkillDetails()
+            return
         else
             self.ParentUi:SetSkillPos(lastPos)
         end

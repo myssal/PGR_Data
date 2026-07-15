@@ -9,7 +9,7 @@ end
 
 function XUiEquipCultureConfirm:OnStart(equipId, originLevelUnit, targetLevelUnit, realTargetLevel, operations)
     self.EquipId = equipId
-    self.TemplateId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipTemplateId(self.EquipId)
+    self.TemplateId = XMVCA.XEquip:GetEquipTemplateId(self.EquipId)
     self.OriginLevelUnit = originLevelUnit
     self.TargetLevelUnit = targetLevelUnit
     self.RealTargetLevel = realTargetLevel
@@ -97,6 +97,6 @@ end
 
 function XUiEquipCultureConfirm:OnClickBtnConfirm()
     local targetBreakthrough, targetLevelUnit = self._Control:ConvertToBreakThroughAndLevel(self.TemplateId, self.TargetLevelUnit)
-    XMVCA:GetAgency(ModuleId.XEquip):EquipOneKeyFeedRequest(self.EquipId, targetBreakthrough, targetLevelUnit, self.Operations)
+    XMVCA.XEquip:EquipOneKeyFeedRequest(self.EquipId, targetBreakthrough, targetLevelUnit, self.Operations)
     self:Close()
 end

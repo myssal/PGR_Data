@@ -27,7 +27,8 @@ function XUiTheatre6Loading:OnStart()
     XUiHelper.RefreshCustomizedList(self.ImgStat.parent, self.ImgStat, starCount, nil, true)
 
     --LevelId暂时没用到
-    XMVCA.XTheatre6.Battle:RequestDlcSingleEnterFight(0, nil, function()
+    local worldId = self._Control:GetWorldId()
+    XMVCA.XTheatre6.Battle:RequestDlcSingleEnterFight(worldId, 0, false, false, function()
         self:Close()
     end)
 

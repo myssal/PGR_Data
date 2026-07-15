@@ -71,7 +71,7 @@ end
 
 -- 装备是否适配角色类型
 function XEquipControl:IsFitCharacterType(equipTemplateId, charType)
-    local fitCharType = XMVCA:GetAgency(ModuleId.XEquip):GetEquipCharacterType(equipTemplateId)
+    local fitCharType = XMVCA.XEquip:GetEquipCharacterType(equipTemplateId)
     return fitCharType == XEnumConst.EQUIP.USER_TYPE.ALL or fitCharType == charType
 end
 
@@ -175,8 +175,8 @@ function XEquipControl:GetCanResonanceCharacterList(equipId)
     local canResonanceCharacterList = {}
 
     local equip = self._Model:GetEquip(equipId)
-    local equipType = XMVCA:GetAgency(ModuleId.XEquip):GetEquipType(equip.TemplateId)
-    local characterType = XMVCA:GetAgency(ModuleId.XEquip):GetEquipCharacterType(equip.TemplateId)
+    local equipType = XMVCA.XEquip:GetEquipType(equip.TemplateId)
+    local characterType = XMVCA.XEquip:GetEquipCharacterType(equip.TemplateId)
     local ownCharacterList = XMVCA:GetAgency(ModuleId.XCharacter):GetOwnCharacterList(characterType)
     for _, character in pairs(ownCharacterList) do
         if character.Id == equip.CharacterId then
@@ -338,14 +338,34 @@ end
 --------------------endregion 超频 --------------------
 
 --------------------region 超限 --------------------
+
+function XEquipControl:GetWeaponOverrunConfigById(id)
+    return self._Model:GetWeaponOverrunConfigById(id)
+end
+
 -- 获取武器对应所有超限配置
-function XEquipControl:GetWeaponOverrunCfgsByTemplateId(templateId)
-    return self._Model:GetWeaponOverrunCfgsByTemplateId(templateId)
+---@return table<number, number> 超限配置列表
+function XEquipControl:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
+    return self._Model:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
+end
+
+-- 获取武器对应首个角色专属超限角色Id
+function XEquipControl:GetWeaponOverrunCharacterId(weaponTemplateId)
+    return self._Model:GetWeaponOverrunCharacterId(weaponTemplateId)
+end
+
+-- 获取武器对应所有超限配置
+function XEquipControl:GetWeaponOverrunCfgsByTemplateId(weaponTemplateId, characterId)
+    return self._Model:GetWeaponOverrunCfgsByTemplateId(weaponTemplateId, characterId)
 end
 
 -- 通过配置表Id判断能否超限
-function XEquipControl:CanOverrunByTemplateId(templateId)
-    return self._Model:CanOverrunByTemplateId(templateId)
+function XEquipControl:CanOverrunByTemplateId(weaponTemplateId)
+    return self._Model:CanOverrunByTemplateId(weaponTemplateId)
+end
+
+function XEquipControl:GetWeaponOverrunAttrCfgByTemplateId(weaponTemplateId, characterId)
+    return self._Model:GetWeaponOverrunAttrCfgByTemplateId(weaponTemplateId, characterId)
 end
 
 --- 获取武器等级对应的UI显示
@@ -360,7 +380,7 @@ end
 ---@param suitId number 指定套装Id
 function XEquipControl:GetAwarenessList(characterId, site, suitId)
     local awarenessList = {}
-    local agency = XMVCA:GetAgency(ModuleId.XEquip)
+    local agency = XMVCA.XEquip
     local charType = XMVCA.XCharacter:GetCharacterType(characterId)
     local equipDic = self._Model:GetEquipDic()
     for _, equip in pairs(equipDic) do
@@ -461,7 +481,7 @@ end
 function XEquipControl:GetSuitInfoList(characterId, site)
     local suitInfoDic = {}
     local suitInfoList = {}
-    local agency = XMVCA:GetAgency(ModuleId.XEquip)
+    local agency = XMVCA.XEquip
     local charType = XMVCA.XCharacter:GetCharacterType(characterId)
     local equipDic = self._Model:GetEquipDic()
     for _, equip in pairs(equipDic) do
@@ -629,6 +649,11 @@ end
 --- 获取意识套装的品质
 function XEquipControl:GetSuitQuality(suitId)
     return self._Model:GetSuitQuality(suitId)
+end
+
+--- 获取意识套装的名称
+function XEquipControl:GetSuitName(suitId)
+    return self._Model:GetSuitName(suitId)
 end
 ---------------------------------------- #endregion Equip ----------------------------------------
 

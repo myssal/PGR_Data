@@ -168,7 +168,7 @@ function XUiArchiveAwarenessDetail:UpdateResume()
     local site = XMVCA.XEquip:GetEquipSite(templateId)
     self.TxtAwarenessSite.text = tostring(site)
     self.TxtAwarenessPainter.text = XMVCA.XEquip:GetEquipPainterName(templateId)
-    local maxBreakthrough, maxLevel = XMVCA:GetAgency(ModuleId.XEquip):GetEquipMaxBreakthrough(templateId)
+    local maxBreakthrough, maxLevel = XMVCA.XEquip:GetEquipMaxBreakthrough(templateId)
     self.TxtAwarenessMaxLv.text = tostring(maxLevel)
     self.TxtAwarenessMaxBreakthrough.text = tostring(maxBreakthrough)
 end

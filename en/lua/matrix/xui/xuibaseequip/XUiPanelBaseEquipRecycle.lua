@@ -1,3 +1,4 @@
+--[[
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPanelBaseEquipRecycle = XClass(nil, "XUiPanelBaseEquipRecycle")
@@ -128,3 +129,4 @@ function XUiPanelBaseEquipRecycle:OnBtnResetClick()
 end
 
 return XUiPanelBaseEquipRecycle
+]]

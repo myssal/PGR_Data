@@ -181,7 +181,7 @@ function XUiEquipAwarenessSuitPrefab:OnBtnEquip()
     end)
 
     local equipFunc = function()
-        XMVCA:GetAgency(ModuleId.XEquip):EquipSuitPrefabEquip(self.CurPrefabIndex, self.CharacterId, function()
+        XMVCA.XEquip:EquipSuitPrefabEquip(self.CurPrefabIndex, self.CharacterId, function()
             self.CurPrefabIndex = CUR_SUIT_PREFAB_INDEX
         end)
     end

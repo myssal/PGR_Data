@@ -283,6 +283,9 @@ XFunctionManager.FunctionName = {
     Theatre6 = 10501, -- 肉鸽6.0
     LifeTree = 10502, -- 生命树图鉴
     GameCollection = 10503, -- 小游戏合集
+    DyeMergeGame = 10504, -- 大染色玩法
+    ConcertPreHeating = 10505, -- 音乐会预热活动
+    Theatre6Pvp = 10506, -- 肉鸽6PVP
 }   
 
 XFunctionManager.FunctionType = {

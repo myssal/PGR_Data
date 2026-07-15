@@ -401,12 +401,12 @@ end
 
 function XUiBabelTowerRoomCharacter:OnBtnConsciousnessClick()
     if not self.CurCharacter then return end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwareness(self.CurCharacter.Id)
+    XMVCA.XEquip:OpenUiEquipAwareness(self.CurCharacter.Id)
 end
 
 function XUiBabelTowerRoomCharacter:OnBtnWeaponClick()
     if not self.CurCharacter then return end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CurCharacter.Id, nil, true)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CurCharacter.Id, nil, true)
 end
 
 function XUiBabelTowerRoomCharacter:OnBtnPartnerClick()

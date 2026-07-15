@@ -133,7 +133,7 @@ function XUiGridCommon:OnBtnClickClick()
         XDataCenter.AutoWindowManager.StopAutoWindow()
         XLuaUiManager.Open("UiCharacterDetail", self.TemplateId)
     elseif self.GoodsShowParams.RewardType == XRewardManager.XRewardType.Equip then
-        XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipPreview(self.TemplateId)
+        XMVCA.XEquip:OpenUiEquipPreview(self.TemplateId)
         --从Tips的ui跳转需要关闭Tips的UI
         if self.RootUi and self.RootUi.Ui.UiData.UiType == CsXUiType.Tips then
             self.RootUi:Close()
@@ -702,6 +702,7 @@ function XUiGridCommon:RefreshLabel()
 end
 
 function XUiGridCommon:GetBuyData()
+    ---@type XPurchaseBuyData
     local buyData
     if self.Data and self.Data.ItemCount and self.Data.ItemIcon and self.Data.BuyCallBack then
         buyData = {}

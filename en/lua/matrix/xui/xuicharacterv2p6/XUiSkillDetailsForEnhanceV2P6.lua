@@ -168,12 +168,12 @@ end
 
 -- 下一个
 function XUiSkillDetailsForEnhanceV2P6:OnBtnNext()
-    self.ParentUi:SetSkillPos(1)
+    self.ParentUi:SwitchToNextSkillDetails()
 end
 
 -- 上一个
 function XUiSkillDetailsForEnhanceV2P6:OnBtnLast()
-    self.ParentUi:SetSkillPos(XEnumConst.CHARACTER.MAX_SHOW_SKILL_POS)
+    self.ParentUi:SwitchToLastSkillDetails()
 end
 
 function XUiSkillDetailsForEnhanceV2P6:OnDisable()

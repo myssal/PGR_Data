@@ -72,7 +72,7 @@ function XUiGridEquipChip:OnBtnWearClick()
         self:OnBtnObtainClick()
         return
     end
-    XMVCA:GetAgency(ModuleId.XEquip):PutOn(self.CharacterId, equip.Id)
+    XMVCA.XEquip:PutOn(self.CharacterId, equip.Id)
 end
 
 function XUiGridEquipChip:OnBtnCultureClick()
@@ -84,7 +84,7 @@ function XUiGridEquipChip:OnBtnCultureClick()
     local isWeapon = equip:IsWeapon()
     local skipScene = isWeapon and XEquipGuideConfigs.SkipScene.WeaponCultureScene or XEquipGuideConfigs.SkipScene.ChipCultureScene
     XDataCenter.EquipGuideManager.RecordSkipEvent(self.CharacterId, targetId, equip.TemplateId, XEquipGuideConfigs.SkipType.Culture, skipScene)
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipDetail(equip.Id, nil, self.CharacterId)
+    XMVCA.XEquip:OpenUiEquipDetail(equip.Id, nil, self.CharacterId)
 end
 
 

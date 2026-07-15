@@ -115,7 +115,7 @@ end
 
 function XUiPassport:CheckAndGetSupplyReward()
     if not self._Control:GetIsGetSupplyReward() and self._Control:GetPassportActivityHasSupplyReward() then
-        self._Control:RequestPassportGetSupplyReward()
+        self._Control:RequestPassportGetSupplyReward(handler(self, self.Refresh))
     end
 end
 
@@ -165,7 +165,7 @@ function XUiPassport:CheckOpenAutoGetTaskRewardListView(cb)
 
         self._Control:ClearCookieAutoGetTaskRewardList()
     else
-        cb()
+        if cb then cb() end
     end
 end
 

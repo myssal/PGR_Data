@@ -235,11 +235,11 @@ function XUiRoomCharacter:AutoAddListener()
 end
 -- auto
 function XUiRoomCharacter:OnBtnWeaponClick()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CurCharacter.Id, nil, true)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CurCharacter.Id, nil, true)
 end
 
 function XUiRoomCharacter:OnBtnConsciousnessClick()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwareness(self.CurCharacter.Id)
+    XMVCA.XEquip:OpenUiEquipAwareness(self.CurCharacter.Id)
 end
 
 function XUiRoomCharacter:OnBtnMainUiClick()

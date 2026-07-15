@@ -1,4 +1,5 @@
 local SceneIds = require("XModule/XScene/XScene/XLuaSceneDefine").SceneIds
+local XUiPanelTheatre6PvpEnergy = require("XUi/XUiTheatre6/PVP/Panel/XUiPanelTheatre6PvpEnergy")
 
 --- 肉鸽6玩法主界面
 ---@class XUiTheatre6Main : XLuaUi
@@ -11,6 +12,14 @@ local MaskKey = "UiTheatre6MainMask"
 function XUiTheatre6Main:OnAwake()
     self:InitButtonEvents()
     self:Init3DPanel()
+
+    if self:IsPvpOpen() then
+        self._PvpEnergy = XUiPanelTheatre6PvpEnergy.New(self.PanelPVPEnergy, self)
+        self._Control:RequestPvpGetActionPoint()
+    else
+        self.PanelPVPEnergy.gameObject:SetActiveEx(false)
+    end
+
     self._RewardDuration = self._Control:GetIntClientConfigValue("RewardDuration")
     self._FirstEnterGuideId = self._Control:GetIntClientConfigValue("FirstEnterGuideId")
 end
@@ -35,11 +44,14 @@ function XUiTheatre6Main:OnEnable()
     if not self._PvTried then
         self._PvTried = true
         self:TryPlayPv(function()
-            self:PlayAnimation("AnimStart1", nil, nil, nil, true)
+            self:PlayAnimation("AnimStart1", function()
+                self:TryShowUpdatePopup()
+            end, nil, nil, true)
             self:Refresh()
-            self:TryShowUpdatePopup()
             self:CheckPlayGuide()
         end)
+    else
+        self:TryShowUpdatePopup()
     end
 end
 
@@ -99,6 +111,7 @@ function XUiTheatre6Main:Refresh()
     self:RefreshBtnStory()
     self:RefreshBtnPlay()
     self:RefreshBtnPvp()
+    self:RefreshPvpEnergy()
 end
 
 function XUiTheatre6Main:RefreshShowItems()
@@ -130,6 +143,7 @@ function XUiTheatre6Main:RefreshFirstPlayState()
     local isOpen = self._Control:CheckOpenGamePlayModeCond()
     self.BtnPlay.gameObject:SetActiveEx(isOpen)
     self.BtnPvp.gameObject:SetActiveEx(isOpen)
+    self.BtnNew.gameObject:SetActiveEx(isOpen and self._Control:CheckHasNewContent())
     --动效（只在从局内直接回到玩法主界面时播放）
     if self._IsPlayModeOpen == false and isOpen then
         local anim = self.BtnPlay.transform:FindTransform("UnLockEnable")
@@ -143,6 +157,27 @@ function XUiTheatre6Main:RefreshFirstPlayState()
     self._IsPlayModeOpen = isOpen
 end
 
+function XUiTheatre6Main:RefreshPvpEnergy()
+    if not self._PvpEnergy then
+        --- 要请求下模块开启 服务端才会推体力数据
+        if self:IsPvpOpen() then
+            self._PvpEnergy = XUiPanelTheatre6PvpEnergy.New(self.PanelPVPEnergy, self)
+        else
+            return
+        end
+    end
+
+    local isOpen = self._Control:CheckOpenGamePlayModeCond()
+    local isLocked = self._Control:CheckPvpModeUnlock()
+
+    if isOpen and isLocked then
+        self._PvpEnergy:Open()
+        self._PvpEnergy:Refresh()
+    else
+        self._PvpEnergy:Close()
+    end
+end
+
 function XUiTheatre6Main:RefreshBtnStory()
     local hasStoryProgress = self._Control:CheckHasStoryProgress()
     self.BtnStoryAbandon.gameObject:SetActiveEx(hasStoryProgress)
@@ -151,10 +186,12 @@ end
 function XUiTheatre6Main:RefreshBtnPlay()
     local hasPlayProgress = self._Control:CheckHasPlayProgress()
     self.BtnPlayAbandon.gameObject:SetActiveEx(hasPlayProgress)
+    self.BtnPlay:ShowReddot(self._Control:CheckHasNewCharacter())
 end
 
 function XUiTheatre6Main:RefreshBtnPvp()
-    self.BtnPvp:SetButtonState(XUiButtonState.Disable)
+    local isLocked = self._Control:CheckPvpModeUnlock()
+    self.BtnPvp:SetDisable(not isLocked)
 end
 
 function XUiTheatre6Main:NewStoryRedPoint(result)
@@ -177,6 +214,7 @@ function XUiTheatre6Main:InitButtonEvents()
     self.BtnPvp:AddEventListener(handler(self, self.OnBtnPvpClick))
     self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainClick))
+    self.BtnNew:AddEventListener(handler(self, self.OnBtnNewClick))
     self:BindHelpBtn(self.BtnHelp, "Theatre6MainHelp")
 end
 
@@ -190,9 +228,13 @@ function XUiTheatre6Main:OnBtnMainClick()
     XLuaUiManager.RunMain()
 end
 
+function XUiTheatre6Main:OnBtnNewClick()
+    self._Control:ShowUpdatePopup()
+end
+
 function XUiTheatre6Main:OnBtnReplayClick()
     local videoId = self._Control:GetPvVideoId()
-    XLuaVideoManager.PlayUiVideo(videoId,nil,true,true)
+    XLuaVideoManager.PlayUiVideo(videoId, nil, true, true)
 end
 
 function XUiTheatre6Main:OnBtnRewardClick()
@@ -242,7 +284,7 @@ function XUiTheatre6Main:OnBtnStoryClick()
     if self:EnterCommonStage() then
         return
     end
-    
+
     self:EnterStoryMode()
 end
 
@@ -344,10 +386,10 @@ function XUiTheatre6Main:OnBtnStoryAbandonClick()
 end
 
 function XUiTheatre6Main:AbandonStoryProgress()
-     self._Control:RequestEndGame(XEnumConst.Theatre6.PlayMode.Story, function(res)
-         self:Refresh()
-         XLuaUiManager.Open("UiTheatre6Settlement", res.SettleData, XEnumConst.Theatre6.PlayMode.Story)
-     end)
+    self._Control:RequestEndGame(XEnumConst.Theatre6.PlayMode.Story, function(res)
+        self:Refresh()
+        XLuaUiManager.Open("UiTheatre6Settlement", res.SettleData, XEnumConst.Theatre6.PlayMode.Story)
+    end)
 end
 
 function XUiTheatre6Main:OnBtnPlayClick()
@@ -399,10 +441,51 @@ function XUiTheatre6Main:AbandonPlayProgress()
     end)
 end
 
+function XUiTheatre6Main:IsPvpOpen(isShowTip)
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Theatre6Pvp, true, not isShowTip) then
+        return false
+    end
+
+    local isUnlock, desc = self._Control:CheckPvpModeUnlock()
+
+    if not isUnlock then
+        if isShowTip then
+            self._Control:ShowTip(desc)
+        end
+
+        return false
+    end
+
+    return true
+end
+
 function XUiTheatre6Main:OnBtnPvpClick()
-    local title = XUiHelper.GetText("BtnPvpTipTitle")
-    local content = XUiHelper.ReplaceTextNewLine(XUiHelper.GetText("BtnPvpTip"))
-    self._Control:OpenPopupCommonWithoutButton(title, content)
+    if not self:IsPvpOpen(true) then
+        return
+    end
+
+    self._Control:RequestPvpStart(function()
+        if self._Control:IsPvpInTinyBattle() then
+            self._Control:RequestPvpRestartFight(function(fightResult)
+                if fightResult then
+                    XMVCA.XTheatre6.Battle:OpenPvpSettlement(fightResult)
+                else
+                    XLuaUiManager.Open("UiTheatre6PVPLoading", XEnumConst.Theatre6.Pvp.LineupMode.Attack, true)
+                end
+            end)
+        else
+            local remainCd = self._Control:GetPvpRefreshMatchRemainCd()
+            if remainCd < 0 then
+                self._Control:RequestPvpRefreshMatch(handler(self, self.OpenPvpMain))
+            else
+                self:OpenPvpMain()
+            end
+        end
+    end)
+end
+
+function XUiTheatre6Main:OpenPvpMain()
+    XLuaUiManager.Open("UiTheatre6PVPMain")
 end
 --endregion
 
@@ -459,11 +542,11 @@ function XUiTheatre6Main:OnCommonGuidePlayEnd()
     local timerId = self._Scene:PlayCommonCamAnim(self._CommonIdx, function()
         self:ReqEnterCommon()
     end)
-    
+
     if timerId then
         self:_AddTimerId(timerId)
     end
-    
+
     self._CurCommonGuideId = nil
     self._CommonIdx = nil
 end

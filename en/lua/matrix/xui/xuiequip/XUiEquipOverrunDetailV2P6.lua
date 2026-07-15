@@ -1,3 +1,5 @@
+---@class XUiEquipOverrunDetailV2P6 : XUiNode
+---@field Parent XUiEquipOverrunV2P6
 local XUiEquipOverrunDetailV2P6 = XClass(XUiNode, "XUiEquipOverrunDetailV2P6")
 
 function XUiEquipOverrunDetailV2P6:OnStart()
@@ -84,8 +86,8 @@ function XUiEquipOverrunDetailV2P6:RefreshBlindSuit()
     else
         self.BtnChoice.gameObject:SetActiveEx(true)
         self:RefreshLevel(self.BtnChoice, lv)
-        local suitName = XMVCA:GetAgency(ModuleId.XEquip):GetSuitName(choseSuit)
-        local bigIconPath = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitWaferBagPath(choseSuit)
+        local suitName = XMVCA.XEquip:GetSuitName(choseSuit)
+        local bigIconPath = XMVCA.XEquip:GetEquipSuitWaferBagPath(choseSuit)
         self.BtnChoice:GetObject("TxtAwarenessName").text = suitName
         self.BtnChoice:GetObject("RImgAwareness"):SetRawImage(bigIconPath)
 
@@ -96,11 +98,9 @@ end
 
 -- 刷新等级
 function XUiEquipOverrunDetailV2P6:RefreshLevel(uiObj, curLv)
-    for i = 1, #self.OverrunCfgs do
-        uiObj:GetObject("IconActiveLevel" .. i).gameObject:SetActiveEx(curLv >= i)
-    end
-
-    uiObj:GetObject("TxtLevel").text = self.Parent._Control:GetWeaponDeregulateUIName(curLv)
+    uiObj:GetObject("ImgBgLevelOn").gameObject:SetActiveEx(curLv > 0)
+    uiObj:GetObject("ImgBgLevelOff").gameObject:SetActiveEx(curLv == 0)
+    uiObj:GetObject("UiTxtLevelImg1").gameObject:SetActiveEx(curLv > 0)
 end
 
 -- 刷新描述

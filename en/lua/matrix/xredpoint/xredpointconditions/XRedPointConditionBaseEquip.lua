@@ -1,3 +1,4 @@
+--[[
 ----------------------------------------------------------------
 local XRedPointConditionBaseEquip = {}
 local Events = nil
@@ -22,3 +23,4 @@ function XRedPointConditionBaseEquip.Check()
 end
 
 return XRedPointConditionBaseEquip
+]]

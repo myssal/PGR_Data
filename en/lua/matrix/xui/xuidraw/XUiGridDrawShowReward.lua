@@ -2,7 +2,6 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@class XUiGridDrawShowModel
 local XUiGridDrawShowModel = XClass(nil, "XUiGridDrawShowModel")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
-local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
 
 local LineEffect2d = "DrawShowLineCommunicationEffect2d"
 local LineEffect3d = "DrawShowLineCommunicationEffect3d"
@@ -315,7 +314,7 @@ function XUiGridDrawShowModel:CreatePartnerModel(templateId)
         self.PartnerModelPanel = XUiPanelRoleModel.New(self.GridModel, self.RootUi.Name, nil, true, nil, true)
     end
 
-    self.CvInfo = XUiModelUtility.LoadPartnerModelSToC(templateId, self.PartnerModelPanel, self.RootUi.Name, function(SModel)
+    XDataCenter.PartnerManager.LoadPartnerStandbyModelWithSToCShow(templateId, self.PartnerModelPanel, self.RootUi.Name, function(SModel)
         SModel.gameObject:SetActiveEx(true)
     end, function()
         local modelConfig = XDataCenter.PartnerManager.GetPartnerModelConfigById(templateId)

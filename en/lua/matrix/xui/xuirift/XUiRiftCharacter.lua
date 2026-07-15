@@ -358,12 +358,12 @@ end
 
 function XUiRiftCharacter:OnBtnConsciousnessClick()
     if self.CurrSelectRole:GetIsRobot() then return end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwareness(self.CurrSelectRole:GetCharacterId())
+    XMVCA.XEquip:OpenUiEquipAwareness(self.CurrSelectRole:GetCharacterId())
 end
 
 function XUiRiftCharacter:OnBtnWeaponClick()
     if self.CurrSelectRole:GetIsRobot() then return end
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CurrSelectRole:GetCharacterId(), nil, true)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CurrSelectRole:GetCharacterId(), nil, true)
 end
 
 function XUiRiftCharacter:OnBtnFashionClick()

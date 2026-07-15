@@ -351,7 +351,7 @@ function XUiEquipAwarenessPopup:OnBtnUnlockUsingClick()
 end
 
 function XUiEquipAwarenessPopup:OnBtnStrengthenClick()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipDetail(self.EquipId, nil, self.CharacterId)
+    XMVCA.XEquip:OpenUiEquipDetail(self.EquipId, nil, self.CharacterId)
     self:Close()
 end
 
@@ -370,16 +370,16 @@ function XUiEquipAwarenessPopup:OnBtnPutOnClick()
             function()
             end,
             function()
-                XMVCA:GetAgency(ModuleId.XEquip):PutOn(characterId, equipId)
+                XMVCA.XEquip:PutOn(characterId, equipId)
             end
         )
     else
-        XMVCA:GetAgency(ModuleId.XEquip):PutOn(characterId, equipId)
+        XMVCA.XEquip:PutOn(characterId, equipId)
     end
 end
 
 function XUiEquipAwarenessPopup:OnBtnTakeOffClick()
-    XMVCA:GetAgency(ModuleId.XEquip):TakeOff({self.EquipId})
+    XMVCA.XEquip:TakeOff({self.EquipId})
 end
 
 function XUiEquipAwarenessPopup:IsOverrun(suitId, characterId)

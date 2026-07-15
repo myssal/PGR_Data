@@ -12,12 +12,22 @@ function XUiTeamPrefabMain:OnAwake()
     self.FilterTags = {}
     self.IsFiltering = false
     self.DisplayList = {}
+    self.RepairingNotExistWeaponTeamId = nil
 
     self:InitDyanamicTable()
     self:InitCharacterCard()
     self:InitButton()
     self:InitTagDetailPool()
+    XEventManager.AddEventListener(XEventId.EVENT_TEAM_PREFAB_CHANGE, self.OnTeamPrefabChange, self)
     XSaveTool.SaveData("HasNeverOpenTeamPrefabV4P0"..XPlayer.Id, 1)
+end
+
+function XUiTeamPrefabMain:OnDestroy()
+    XEventManager.RemoveEventListener(XEventId.EVENT_TEAM_PREFAB_CHANGE, self.OnTeamPrefabChange, self)
+    if self.RepairingNotExistWeaponTeamId then
+        self.RepairingNotExistWeaponTeamId = nil
+        XLuaUiManager.SetMask(false, self.Name)
+    end
 end
 
 function XUiTeamPrefabMain:InitDyanamicTable()
@@ -614,9 +624,65 @@ function XUiTeamPrefabMain:GetCurTeamPrefabEntity()
     return self.DisplayList and self.DisplayList[self.CurSelectIndex]
 end
 
-function XUiTeamPrefabMain:OnSelectCallBack()
+function XUiTeamPrefabMain:OnTeamPrefabChange(teamId)
+    if self.RepairingNotExistWeaponTeamId == teamId then
+        self.RepairingNotExistWeaponTeamId = nil
+        XLuaUiManager.SetMask(false, self.Name)
+    end
+
+    self:OnlyRefreshDynamicGridData()
     self:RefreshRightInfo()
     self:RefreshPanelTag()
+end
+
+function XUiTeamPrefabMain:OnSelectCallBack()
+    self:TryRepairNotExistWeapon()
+    self:RefreshRightInfo()
+    self:RefreshPanelTag()
+end
+
+function XUiTeamPrefabMain:TryRepairNotExistWeapon()
+    local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
+    if not curTeamPrefabEntity then return false end
+
+    local teamId = curTeamPrefabEntity:GetId()
+    if self.RepairingNotExistWeaponTeamId == teamId then
+        return false
+    end
+
+    local repairList = {}
+    local entityIds = curTeamPrefabEntity:GetEntityIds()
+    for pos, entityId in ipairs(entityIds) do
+        if XTool.IsNumberValid(entityId) then
+            local weaponData = curTeamPrefabEntity:GetWeaponData(pos)
+            local weaponId = weaponData and weaponData.EquipId
+            if weaponData and (not XTool.IsNumberValid(weaponId) or not XMVCA.XEquip:IsEquipExit(weaponId)) then
+                table.insert(repairList, pos)
+            end
+        end
+    end
+
+    if XTool.IsTableEmpty(repairList) then
+        return false
+    end
+
+    self.RepairingNotExistWeaponTeamId = teamId
+    XLuaUiManager.SetMask(true, self.Name)
+
+    for i, pos in ipairs(repairList) do
+        local characterId = curTeamPrefabEntity:GetEntityIdByTeamPos(pos)
+        local weaponData = curTeamPrefabEntity:GetWeaponData(pos)
+        local weaponId = weaponData and weaponData.EquipId
+        local charWearingRealWeaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
+        XLog.Warning("XUiTeamPrefabMain:TryRepairNotExistWeapon", "TeamPrefabId:", teamId, "Pos:", pos, "CharacterId:", characterId, "OldWeaponId:", weaponId, "RealWeaponId:", charWearingRealWeaponId)
+        curTeamPrefabEntity:CopyRealWeaponData(charWearingRealWeaponId, pos, false, function()
+            if i ~= #repairList then return end
+
+            self:OnTeamPrefabChange(teamId)
+        end)
+    end
+
+    return true
 end
 
 function XUiTeamPrefabMain:RefreshRightInfo()

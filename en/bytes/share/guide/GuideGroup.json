@@ -237,7 +237,6 @@
         "Desc": "Lv11 从任务界面 领取21号",
         "GuideType": 1,
         "ConditionId": [
-            84100904,
             770417,
             863106
         ],
@@ -251,7 +250,6 @@
         "Desc": "Lv11 疾雷手册 21号进教学",
         "GuideType": 1,
         "ConditionId": [
-            84100904,
             863090,
             863093
         ],
@@ -265,7 +263,6 @@
         "Desc": "Lv11 疾雷手册 关注后续",
         "GuideType": 1,
         "ConditionId": [
-            84100904,
             863091
         ],
         "CompleteId": 50618,
@@ -4113,6 +4110,7 @@
     {
         "Id": 61210,
         "Priority": 61210,
+        "Ignore": 1,
         "Desc": "Lv.80 Guide - Weapon Ultralimit",
         "GuideType": 1,
         "ConditionId": [
@@ -4122,6 +4120,53 @@
         "CompleteId": 61210,
         "ActiveUi": "UiCharacterSystemV2P6",
         "GroupId": 61210
+    },
+    {
+        "Id": 61211,
+        "Priority": 61211,
+        "Ignore": 1,
+        "Desc": "Lv80 引导武器超限2",
+        "GuideType": 1,
+        "ConditionId": [
+            860722,
+            863161,
+            863165
+        ],
+        "CompleteId": 61211,
+        "ActiveUi": "UiCharacterSystemV2P6",
+        "GroupId": 61211
+    },
+    {
+        "Id": 61212,
+        "Priority": 61212,
+        "Ignore": 1,
+        "Desc": "Lv80 新玩家引导武器超限1",
+        "GuideType": 1,
+        "ConditionId": [
+            860722,
+            863039,
+            863166,
+            863167
+        ],
+        "CompleteId": 61212,
+        "ActiveUi": "UiCharacterSystemV2P6",
+        "GroupId": 61212
+    },
+    {
+        "Id": 61213,
+        "Priority": 61213,
+        "Ignore": 1,
+        "Desc": "Lv80 新玩家引导武器超限1+2",
+        "GuideType": 1,
+        "ConditionId": [
+            860722,
+            863164,
+            863162,
+            863165
+        ],
+        "CompleteId": 61213,
+        "ActiveUi": "UiCharacterSystemV2P6",
+        "GroupId": 61213
     },
     {
         "Id": 61220,
@@ -8080,6 +8125,7 @@
     {
         "Id": 63511,
         "Priority": 63511,
+        "Ignore": 1,
         "Desc": "v3.2 Guide Battle Rating 2.0 First Entry",
         "GuideType": 1,
         "ConditionId": [
@@ -8093,6 +8139,7 @@
     {
         "Id": 63512,
         "Priority": 63512,
+        "Ignore": 1,
         "Desc": "v3.2 Guide Battle Rating 2.0 Character Interface",
         "GuideType": 1,
         "ConditionId": [
@@ -11322,5 +11369,185 @@
         "ActiveUi": "UiTheatre6BattleShop",
         "CheckNodeActive": "HighLight",
         "GroupId": 64772
+    },
+    {
+        "Id": 64773,
+        "Priority": 64773,
+        "Desc": "v4.6 肉鸽6PVP介绍",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            1021100
+        ],
+        "CompleteId": 64773,
+        "ActiveUi": "UiTheatre6Main",
+        "GroupId": 64773
+    },
+    {
+        "Id": 64774,
+        "Priority": 64774,
+        "Desc": "v4.6 肉鸽6PVP分数",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64774,
+        "ActiveUi": "UiTheatre6PVPSettlement",
+        "GroupId": 64774
+    },
+    {
+        "Id": 64775,
+        "Priority": 64775,
+        "Desc": "v4.6 肉鸽6PVP防守",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64775,
+        "ActiveUi": "UiTheatre6PVPMain",
+        "GroupId": 64775
+    },
+    {
+        "Id": 64776,
+        "Priority": 64776,
+        "Desc": "v4.6 肉鸽6PVP升阶",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64776,
+        "ActiveUi": "UiTheatre6PVPSettlement",
+        "CheckNodeActive": "PanelScoreMax",
+        "GroupId": 64776
+    },
+    {
+        "Id": 64777,
+        "Priority": 64777,
+        "Desc": "v4.6 肉鸽6PVP进阶战斗",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64777,
+        "ActiveUi": "UiTheatre6PVPMain",
+        "CheckNodeActive": "PanelTitleChallenge",
+        "GroupId": 64777
+    },
+    {
+        "Id": 64778,
+        "Priority": 64778,
+        "Desc": "v4.6 肉鸽6PVP敌方防守隐匿",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64778,
+        "ActiveUi": "UiTheatre6PVPAttackDefend",
+        "CheckNodeActive": "GridEnvironmentEnemy",
+        "GroupId": 64778
+    },
+    {
+        "Id": 64779,
+        "Priority": 64779,
+        "Desc": "v4.6 肉鸽6PVP我方防守隐匿",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            1021103
+        ],
+        "CompleteId": 64779,
+        "ActiveUi": "UiTheatre6PVPMain",
+        "GroupId": 64779
+    },
+    {
+        "Id": 64780,
+        "Priority": 64780,
+        "Desc": "v4.6 肉鸽6PVP我方进攻隐匿",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64780,
+        "ActiveUi": "UiTheatre6PVPAttackDefend",
+        "CheckNodeActive": "GridEnvironmentMe",
+        "GroupId": 64780
+    },
+    {
+        "Id": 64781,
+        "Priority": 64781,
+        "Ignore": 1,
+        "Desc": "v4.6 肉鸽6神威机制讲解",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64781,
+        "ActiveUi": "UiTheatre6RoomEitheror",
+        "GroupId": 64781
+    },
+    {
+        "Id": 64811,
+        "Priority": 64811,
+        "Desc": "v4.6 评分3.0主界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64811,
+        "ActiveUi": "UiBossInshotMain",
+        "GroupId": 64811
+    },
+    {
+        "Id": 64812,
+        "Priority": 64812,
+        "Desc": "v4.6 评分3.0角色界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64812,
+        "ActiveUi": "UiBattleRoomRoleDetail",
+        "CheckNodeActive": "PanelBossInshotCharacterDetail(Clone)",
+        "GroupId": 64812
+    },
+    {
+        "Id": 64813,
+        "Priority": 64813,
+        "Desc": "v4.6 评分3.0爬塔",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            862893
+        ],
+        "CompleteId": 64813,
+        "ActiveUi": "UiBossInshotMain",
+        "GroupId": 64813
+    },
+    {
+        "Id": 64814,
+        "Priority": 64814,
+        "Desc": "v4.6 评分3.0爬塔进阶",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            862893
+        ],
+        "CompleteId": 64814,
+        "ActiveUi": "UiBossInshotMain",
+        "CheckNodeActive": "PanelChooseBoss",
+        "GroupId": 64814
     }
 ]

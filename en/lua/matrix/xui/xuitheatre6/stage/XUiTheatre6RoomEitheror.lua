@@ -5,7 +5,6 @@ local XUiTheatre6RoomEitheror = XLuaUiManager.Register(XLuaUi, "UiTheatre6RoomEi
 local DragAction = XEnumConst.Theatre6.DragAction
 local Direction = XEnumConst.Theatre6.Direction
 local EventRewardType = XEnumConst.Theatre6.EventRewardType
-local CsLog = CS.XLog
 
 function XUiTheatre6RoomEitheror:OnAwake()
     self._HideMask = handler(self, self.HideMask)
@@ -64,6 +63,10 @@ function XUiTheatre6RoomEitheror:OnDisable()
     self:HideRewardSkillGrid()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.ShowRoleInfo, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SAN_CHANGE, self.OnSanChange, self)
+end
+
+function XUiTheatre6RoomEitheror:OnDestroy()
+    self._Control:ClearTagHighlightSourceTagIds()
 end
 
 function XUiTheatre6RoomEitheror:InitComponent()
@@ -265,11 +268,28 @@ function XUiTheatre6RoomEitheror:ShowEvent()
     self._ShowRewardDict[Direction.Left] = self:InitShowRewards(Direction.Left, self._RoomData.LeftRewards)
     self._ShowRewardDict[Direction.Right] = self:InitShowRewards(Direction.Right, self._RoomData.RightRewards)
 
+    self:RefreshTagHighlightSource()
     self:ShowBossInfo(self._FightDict[Direction.Left], self.PanelBossTipL, self.TxtBossNameL)
     self:ShowBossInfo(self._FightDict[Direction.Right], self.PanelBossTipR, self.TxtBossNameR)
 
     self:CheckPlayGuide2()
     self:CheckPlayGuide3()
+end
+
+function XUiTheatre6RoomEitheror:RefreshTagHighlightSource()
+    local skillIds = {}
+    local attrPackIds = {}
+    for _, rewardDatas in pairs(self._ShowRewardDict) do
+        for _, rewardGood in ipairs(rewardDatas) do
+            if XTool.IsNumberValid(rewardGood.SkillId) then
+                table.insert(skillIds, rewardGood.SkillId)
+            elseif XTool.IsNumberValid(rewardGood.AttrPack) then
+                table.insert(attrPackIds, rewardGood.AttrPack)
+            end
+        end
+    end
+    local tagIds = self._Control:CollectShopOrTaskHighlightSourceTags(skillIds, attrPackIds)
+    self._Control:SetTagHighlightSourceTagIds(tagIds)
 end
 
 function XUiTheatre6RoomEitheror:HideEventReward(direction)
@@ -603,8 +623,8 @@ end
 
 ---@param animTran UnityEngine.RectTransform
 function XUiTheatre6RoomEitheror:PlayTimelineAnimation(animTran)
-    CsLog.Debug(string.format("Theatre6 Mask Anim Play:%s", animTran.name))
     self:ShowMask()
+    self:StopTimelineAnimation(animTran)
     animTran.gameObject:SetActiveEx(true)
     animTran:PlayTimelineAnimation(function()
         animTran.gameObject:SetActiveEx(false)
@@ -616,7 +636,6 @@ end
 ---@param animTran UnityEngine.RectTransform
 function XUiTheatre6RoomEitheror:StopTimelineAnimation(animTran)
     animTran:StopTimelineAnimation()
-    animTran.gameObject:SetActiveEx(false)
 end
 
 function XUiTheatre6RoomEitheror:PlayLeftCardEnable()
@@ -761,14 +780,12 @@ function XUiTheatre6RoomEitheror:ShowMask()
     self:StopAutoCloseMaskTimer()
     self.Mask.gameObject:SetActiveEx(true)
     self._AutoCloseMaskTimerId = XScheduleManager.ScheduleOnce(self._HideMask, 3000)
-    CsLog.Debug(string.format("Theatre6 Mask Active True"))
 end
 
 function XUiTheatre6RoomEitheror:PlayAnimationWithMaskAuto(animName)
     self:PlayAnimation(animName, function()
         self:HideMask()
     end, function()
-        CsLog.Debug(string.format("Theatre6 Mask Anim Play:%s", animName))
         self:ShowMask()
     end)
 end
@@ -779,7 +796,6 @@ function XUiTheatre6RoomEitheror:HideMask()
     end
     self:StopAutoCloseMaskTimer()
     self.Mask.gameObject:SetActiveEx(false)
-    CsLog.Debug(string.format("Theatre6 Mask Active False"))
 end
 
 function XUiTheatre6RoomEitheror:StopAutoCloseMaskTimer()

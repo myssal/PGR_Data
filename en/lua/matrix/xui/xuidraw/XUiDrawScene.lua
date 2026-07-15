@@ -1,7 +1,6 @@
 ---@class XUiDrawScene
 local XUiDrawScene = XClass(nil,"XUiDrawScene")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
-local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
 
 ---@param ui XUiNewDrawMain
 function XUiDrawScene:Ctor(ui)
@@ -97,7 +96,7 @@ function XUiDrawScene:LoadPartnerModel(templateId,cb)
     --self.PanelRoleModel:UpdatePartnerModel(modelId, self.Ui.Name,nil,nil,true,true,true)
     -- 待机模型
     
-    self.CvInfo = XUiModelUtility.LoadPartnerModelSToC(templateId, self.PanelRoleModel, XModelManager.MODEL_UINAME.XUiDrawShow, function(SModel)
+    XDataCenter.PartnerManager.LoadPartnerStandbyModelWithSToCShow(templateId, self.PanelRoleModel, XModelManager.MODEL_UINAME.XUiDrawShow, function(SModel)
         SModel.gameObject:SetActiveEx(true)
         self:SetModelTransform(SModel)
         if cb then

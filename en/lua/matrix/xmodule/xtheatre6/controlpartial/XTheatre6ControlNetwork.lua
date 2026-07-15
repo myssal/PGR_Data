@@ -208,4 +208,32 @@ function XTheatre6Control:RequestStoryModeGuideFinished(storyId, cb)
     end)
 end
 
+---购买San值
+function XTheatre6Control:RequestShopBuySan(cb)
+    local req = {}
+    req.BuySanTimes = self:GetPurchaseSanTimes()
+    XNetwork.CallWithAutoHandleErrorCode("Theatre6ShopBuySanRequest", req, function(res)
+        self._Model:UpdateShopBuySan(res)
+        if cb then
+            cb()
+        end
+    end)
+end
+
+---是否进入额外楼层
+function XTheatre6Control:RequestExFloorConfirm(isEnter, cb)
+    local req = {}
+    req.IsEnter = isEnter
+    XNetwork.CallWithAutoHandleErrorCode("Theatre6ExFloorConfirmRequest", req, function(res)
+        if isEnter then
+            self._Model:UpdateNewFloorData(res.ModeDataDb) --后续还会收到NotifyTheatre6NewFloorData
+        else
+            XMVCA.XTheatre6:EnterSettleProcess(res.SettleData, res.StoryModeSaveDb)
+        end
+        if cb then
+            cb()
+        end
+    end)
+end
+
 return XTheatre6Control

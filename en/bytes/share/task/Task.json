@@ -37183,6 +37183,50 @@
         "Suffix": "Event"
     },
     {
+        "Id": 12552,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Summer's Rhythm (1)",
+        "Desc": "Log in to the game for the 1st time today",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconAcitive56.png",
+        "Condition": [
+            12139
+        ],
+        "Result": 1,
+        "RewardId": 69229,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 12553,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "Summer's Rhythm (2)",
+        "Desc": "Use a total of 200 Serum today",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconAcitive56.png",
+        "Condition": [
+            12140
+        ],
+        "Result": 200,
+        "RewardId": 69230,
+        "SkipId": 2016,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 12554,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "Summer's Rhythm (3)",
+        "Desc": "Total Activity has reached 100 points today",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconAcitive56.png",
+        "Condition": [
+            12141
+        ],
+        "Result": 100,
+        "RewardId": 69231,
+        "SkipId": 20038,
+        "Suffix": "Event"
+    },
+    {
         "Id": 120001,
         "Type": 11,
         "Priority": 9700,
@@ -62449,7 +62493,7 @@
         "Type": 51,
         "Priority": 9700,
         "Title": "Special Supply - Total Logins",
-        "Desc": "Login for a total of 3 days",
+        "Desc": "Log in for a total of 3 days",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
             80185
@@ -62566,7 +62610,7 @@
         "Type": 51,
         "Priority": 9500,
         "Title": "Special Supply - Total Logins",
-        "Desc": "Login for a total of 7 days",
+        "Desc": "Log in for a total of 7 days",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
             80214
@@ -62638,7 +62682,7 @@
         "Type": 51,
         "Priority": 20000,
         "Title": "Beginner Mission: Log-in I",
-        "Desc": "Login for a total of 3 days",
+        "Desc": "Log in for a total of 3 days",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
             80225
@@ -62652,7 +62696,7 @@
         "Type": 51,
         "Priority": 19900,
         "Title": "Beginner Mission: Log-in II",
-        "Desc": "Login for a total of 7 days",
+        "Desc": "Log in for a total of 7 days",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
             80226
@@ -62927,6 +62971,51 @@
         "Result": 1,
         "RewardId": 800039,
         "SkipId": 11724,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80245,
+        "Type": 51,
+        "Priority": 10000,
+        "Title": "Shattered Mirage",
+        "Desc": "累计获得9星",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80245
+        ],
+        "Result": 9,
+        "RewardId": 800037,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80246,
+        "Type": 51,
+        "Priority": 9900,
+        "Title": "The Colorful Fantastic",
+        "Desc": "通关【关卡2-1】",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80246
+        ],
+        "Result": 1,
+        "RewardId": 800038,
+        "SkipId": 89105,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 80247,
+        "Type": 51,
+        "Priority": 9800,
+        "Title": "Shrouded Requiem",
+        "Desc": "本期【抉择】累计达70次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80247
+        ],
+        "Result": 70,
+        "RewardId": 800039,
+        "SkipId": 89102,
         "Suffix": "Event"
     },
     {
@@ -83543,6 +83632,141 @@
         "AchvType": 3
     },
     {
+        "Id": 4504,
+        "Type": 4,
+        "Priority": 25131,
+        "Title": "Blessing Lacrimosa (1)",
+        "Desc": "Upgrade Lacrimosa to Lv.10",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4504
+        ],
+        "Result": 1,
+        "RewardId": 34300,
+        "SkipId": 3438,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 4505,
+        "Type": 4,
+        "Priority": 25130,
+        "Title": "Blessing Lacrimosa (2)",
+        "Desc": "Upgrade Lacrimosa to Lv.20",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4505
+        ],
+        "Result": 1,
+        "RewardId": 34310,
+        "SkipId": 3439,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4504,
+        "AchvType": 3
+    },
+    {
+        "Id": 4506,
+        "Type": 4,
+        "Priority": 25129,
+        "Title": "Blessing Lacrimosa (3)",
+        "Desc": "Upgrade Lacrimosa to Lv.30",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4506
+        ],
+        "Result": 1,
+        "RewardId": 34320,
+        "SkipId": 3440,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4505,
+        "AchvType": 3
+    },
+    {
+        "Id": 4507,
+        "Type": 4,
+        "Priority": 25128,
+        "Title": "Blessing Lacrimosa (4)",
+        "Desc": "Upgrade Lacrimosa to Lv.40",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4507
+        ],
+        "Result": 1,
+        "RewardId": 34330,
+        "SkipId": 3441,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4506,
+        "AchvType": 3
+    },
+    {
+        "Id": 4508,
+        "Type": 4,
+        "Priority": 25127,
+        "Title": "Blessing Lacrimosa (5)",
+        "Desc": "Upgrade Lacrimosa to Lv.50",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4508
+        ],
+        "Result": 1,
+        "RewardId": 34340,
+        "SkipId": 3442,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4507,
+        "AchvType": 3
+    },
+    {
+        "Id": 4509,
+        "Type": 4,
+        "Priority": 25126,
+        "Title": "Blessing Lacrimosa (6)",
+        "Desc": "Upgrade Lacrimosa to Lv.60",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4509
+        ],
+        "Result": 1,
+        "RewardId": 34350,
+        "SkipId": 3443,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4508,
+        "AchvType": 3
+    },
+    {
+        "Id": 4510,
+        "Type": 4,
+        "Priority": 25125,
+        "Title": "Blessing Lacrimosa (7)",
+        "Desc": "Upgrade Lacrimosa to Lv.70",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4510
+        ],
+        "Result": 1,
+        "RewardId": 34360,
+        "SkipId": 3444,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4509,
+        "AchvType": 3
+    },
+    {
+        "Id": 4511,
+        "Type": 4,
+        "Priority": 25124,
+        "Title": "Blessing Lacrimosa (8)",
+        "Desc": "Upgrade Lacrimosa to Lv.80",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4511
+        ],
+        "Result": 1,
+        "RewardId": 34370,
+        "SkipId": 3445,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 4510,
+        "AchvType": 3
+    },
+    {
         "Id": 3130,
         "Type": 4,
         "Priority": 26099,
@@ -86608,6 +86832,38 @@
         "AchvType": 3
     },
     {
+        "Id": 21058211,
+        "Type": 4,
+        "Priority": 25661,
+        "Title": "The True Power of Lacrimosa I",
+        "Desc": "Evolve Lacrimosa to SS-Rank",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            21058211
+        ],
+        "Result": 1,
+        "RewardId": 37082,
+        "SkipId": 3300,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 21058212,
+        "Type": 4,
+        "Priority": 25660,
+        "Title": "The True Power of Lacrimosa II",
+        "Desc": "Evolve Lacrimosa to SSS",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            21058211
+        ],
+        "Result": 1,
+        "RewardId": 37182,
+        "SkipId": 3300,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
         "Id": 3500,
         "Type": 4,
         "Priority": 25599,
@@ -88073,6 +88329,22 @@
         "AchvType": 3
     },
     {
+        "Id": 21078201,
+        "Type": 4,
+        "Priority": 25418,
+        "Title": "Lacrimosa: Ultima Awaken",
+        "Desc": "Awaken Lacrimosa's Ultima Rank",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            21078201
+        ],
+        "Result": 1,
+        "RewardId": 37282,
+        "SkipId": 19081,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
         "Id": 21080101,
         "Type": 4,
         "Priority": 25000,
@@ -89365,6 +89637,22 @@
         "Result": 1,
         "RewardId": 37500,
         "SkipId": 19080,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 21088201,
+        "Type": 4,
+        "Priority": 24920,
+        "Title": "Lacrimosa: Infinitas Awaken",
+        "Desc": "Awaken Lacrimosa's Infinitas Rank",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            21088201
+        ],
+        "Result": 1,
+        "RewardId": 37500,
+        "SkipId": 19081,
         "Suffix": "Train",
         "AchvType": 3
     },
@@ -93113,6 +93401,73 @@
         "AchvType": 3
     },
     {
+        "Id": 23014001,
+        "Type": 4,
+        "Priority": 24727,
+        "Title": "Grand Duke Deployed I",
+        "Desc": "Upgrade Grand Duke to Lv.10",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23014001
+        ],
+        "Result": 1,
+        "RewardId": 374211,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 23014002,
+        "Type": 4,
+        "Priority": 24726,
+        "Title": "Grand Duke Deployed II",
+        "Desc": "Upgrade Grand Duke to Lv.15",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23014002
+        ],
+        "Result": 1,
+        "RewardId": 374212,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 23014001,
+        "AchvType": 3
+    },
+    {
+        "Id": 23014003,
+        "Type": 4,
+        "Priority": 24725,
+        "Title": "Grand Duke Deployed III",
+        "Desc": "Upgrade Grand Duke to Lv.25",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23014003
+        ],
+        "Result": 1,
+        "RewardId": 374213,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 23014002,
+        "AchvType": 3
+    },
+    {
+        "Id": 23014004,
+        "Type": 4,
+        "Priority": 24724,
+        "Title": "Grand Duke Deployed IV",
+        "Desc": "Upgrade Grand Duke to Lv.30",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23014004
+        ],
+        "Result": 1,
+        "RewardId": 374214,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "ShowAfterTaskId": 23014003,
+        "AchvType": 3
+    },
+    {
         "Id": 23020001,
         "Type": 4,
         "Priority": 24599,
@@ -94660,6 +95015,38 @@
         ],
         "Result": 1,
         "RewardId": 37539,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 23044001,
+        "Type": 4,
+        "Priority": 24421,
+        "Title": "Leave That Grand Duke to Me I",
+        "Desc": "Evolve Grand Duke to SS-Rank",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23044001
+        ],
+        "Result": 1,
+        "RewardId": 37419,
+        "SkipId": 20110,
+        "Suffix": "Train",
+        "AchvType": 3
+    },
+    {
+        "Id": 23044002,
+        "Type": 4,
+        "Priority": 24420,
+        "Title": "Leave That Grand Duke to Me II",
+        "Desc": "Evolve Grand Duke to SSS",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23044002
+        ],
+        "Result": 1,
+        "RewardId": 37540,
         "SkipId": 20110,
         "Suffix": "Train",
         "AchvType": 3
@@ -96899,6 +97286,22 @@
         ],
         "Result": 1,
         "RewardId": 37381,
+        "SkipId": 3653,
+        "Suffix": "Challenge",
+        "AchvType": 2
+    },
+    {
+        "Id": 31098201,
+        "Type": 4,
+        "Priority": 19520,
+        "Title": "Lacrimosa's Gift",
+        "Desc": "Lacrimosa reaches Affection 8",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            31098201
+        ],
+        "Result": 1,
+        "RewardId": 37382,
         "SkipId": 3653,
         "Suffix": "Challenge",
         "AchvType": 2
@@ -141180,6 +141583,45 @@
         "Suffix": "Event"
     },
     {
+        "Id": 99042,
+        "Type": 94,
+        "Priority": 10000,
+        "Title": "Helentine Affection Story 1",
+        "Desc": "Clear Story 3",
+        "Condition": [
+            99067
+        ],
+        "Result": 1,
+        "RewardId": 64880,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99043,
+        "Type": 94,
+        "Priority": 9900,
+        "Title": "Helentine Affection Story 2",
+        "Desc": "Clear Story 6",
+        "Condition": [
+            99068
+        ],
+        "Result": 1,
+        "RewardId": 64881,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 99044,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Helentine Affection Story 3",
+        "Desc": "Complete Story 6 during the event",
+        "Condition": [
+            99068
+        ],
+        "Result": 1,
+        "RewardId": 703152,
+        "Suffix": "Limited Event"
+    },
+    {
         "Id": 100100,
         "SourceGroupId": 44005,
         "Type": 86,
@@ -141432,6 +141874,162 @@
         ],
         "Result": 1,
         "RewardId": 68021,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100150,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Sprouting Memories (1)",
+        "Desc": "Complete Sprouting Memories - Stage 1",
+        "Condition": [
+            140150
+        ],
+        "Result": 1,
+        "RewardId": 69141,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100151,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "Sprouting Memories (2)",
+        "Desc": "Complete Sprouting Memories - Stage 4",
+        "Condition": [
+            140151
+        ],
+        "Result": 1,
+        "RewardId": 69142,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100152,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "Sprouting Memories (3)",
+        "Desc": "Complete Sprouting Memories - Stage 7",
+        "Condition": [
+            140152
+        ],
+        "Result": 1,
+        "RewardId": 69143,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100153,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "Budding Whispers (1)",
+        "Desc": "Complete Budding Whispers - Stage 1",
+        "Condition": [
+            140153
+        ],
+        "Result": 1,
+        "RewardId": 69144,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100154,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "Budding Whispers (2)",
+        "Desc": "Complete Budding Whispers - Stage 4",
+        "Condition": [
+            140154
+        ],
+        "Result": 1,
+        "RewardId": 69145,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100155,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "Budding Whispers (1)",
+        "Desc": "Complete Budding Whispers - Stage 7",
+        "Condition": [
+            140155
+        ],
+        "Result": 1,
+        "RewardId": 69146,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100156,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "Dewy Garden (1)",
+        "Desc": "Complete Dewy Garden - Stage 1",
+        "Condition": [
+            140156
+        ],
+        "Result": 1,
+        "RewardId": 69147,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100157,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "Dewy Garden (2)",
+        "Desc": "Complete Dewy Garden - Stage 4",
+        "Condition": [
+            140157
+        ],
+        "Result": 1,
+        "RewardId": 69148,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100158,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "Dewy Garden (3)",
+        "Desc": "Complete Dewy Garden - Stage 7",
+        "Condition": [
+            140158
+        ],
+        "Result": 1,
+        "RewardId": 69149,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100159,
+        "Type": 11,
+        "Priority": 9100,
+        "Title": "Distant Offerings (1)",
+        "Desc": "Complete Distant Offerings - Stage 1",
+        "Condition": [
+            140159
+        ],
+        "Result": 1,
+        "RewardId": 69150,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100160,
+        "Type": 11,
+        "Priority": 9000,
+        "Title": "Distant Offerings (2)",
+        "Desc": "Complete Distant Offerings - Stage 4",
+        "Condition": [
+            140160
+        ],
+        "Result": 1,
+        "RewardId": 69151,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 100161,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "Distant Offerings (3)",
+        "Desc": "Complete Distant Offerings - Stage 7",
+        "Condition": [
+            140161
+        ],
+        "Result": 1,
+        "RewardId": 69152,
         "Suffix": "Event"
     },
     {
@@ -143648,6 +144246,486 @@
         ],
         "Result": 1,
         "RewardId": 64101,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240801,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 1000,
+        "Title": "Trial",
+        "Desc": "Clear 1 Trial floor",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240801
+        ],
+        "Result": 1,
+        "RewardId": 69153,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240802,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 1100,
+        "Title": "Trial",
+        "Desc": "Clear 2 Trial floors",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240802
+        ],
+        "Result": 1,
+        "RewardId": 69154,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240803,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 1200,
+        "Title": "Trial",
+        "Desc": "Clear 3 Trial floors",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240803
+        ],
+        "Result": 1,
+        "RewardId": 69155,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240804,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 1300,
+        "Title": "Trial",
+        "Desc": "Clear 4 Trial floors",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240804
+        ],
+        "Result": 1,
+        "RewardId": 69156,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240805,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 1400,
+        "Title": "Trial",
+        "Desc": "Clear 5 Trial floors",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240805
+        ],
+        "Result": 1,
+        "RewardId": 69157,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240806,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 1500,
+        "Title": "Trial",
+        "Desc": "Clear 6 Trial floors",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240806
+        ],
+        "Result": 1,
+        "RewardId": 69158,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240807,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 1600,
+        "Title": "Trial",
+        "Desc": "Achieve an A rank on any Trial floor",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240807
+        ],
+        "Result": 1,
+        "RewardId": 69159,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240808,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 1700,
+        "Title": "Trial",
+        "Desc": "Achieve an S rating on any Trial floor",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240808
+        ],
+        "Result": 1,
+        "RewardId": 69160,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240809,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 1800,
+        "Title": "Trial",
+        "Desc": "Achieve an SS rating on any Trial floor",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240809
+        ],
+        "Result": 1,
+        "RewardId": 69161,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240810,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 1900,
+        "Title": "Ezette",
+        "Desc": "Clear on any difficulty",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240810
+        ],
+        "Result": 1,
+        "RewardId": 69162,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240811,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 2000,
+        "Title": "Ezette",
+        "Desc": "Clear Normal with SS rating",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240811
+        ],
+        "Result": 1,
+        "RewardId": 69163,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240812,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 2100,
+        "Title": "Ezette",
+        "Desc": "Clear Hard with S rating",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240812
+        ],
+        "Result": 1,
+        "RewardId": 69164,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240813,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 2200,
+        "Title": "Ezette",
+        "Desc": "Clear Hell with A rating",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240813
+        ],
+        "Result": 1,
+        "RewardId": 69165,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240814,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 2300,
+        "Title": "Ezette",
+        "Desc": "Clear all Ezette stages except for Hell difficulty",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240814
+        ],
+        "Result": 1,
+        "RewardId": 69166,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240815,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 2400,
+        "Title": "Ezette",
+        "Desc": "Successfully parry once in a battle.",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240815
+        ],
+        "Result": 1,
+        "RewardId": 69167,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240816,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 2600,
+        "Title": "Ezette",
+        "Desc": "Trigger Flash Counter once in a battle.",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240816
+        ],
+        "Result": 1,
+        "RewardId": 69168,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240817,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 2700,
+        "Title": "Ezette",
+        "Desc": "Trigger Flash Counter 3 times in a battle.",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240817
+        ],
+        "Result": 1,
+        "RewardId": 69169,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240818,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 2800,
+        "Title": "Ezette",
+        "Desc": "Reach 100 Combo in a battle.",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240818
+        ],
+        "Result": 1,
+        "RewardId": 69170,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240819,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 2900,
+        "Title": "Ezette",
+        "Desc": "Reach 300 Combo in a battle.",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240819
+        ],
+        "Result": 1,
+        "RewardId": 69171,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240820,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 3000,
+        "Title": "Standard",
+        "Desc": "Parry 5 times",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240820
+        ],
+        "Result": 5,
+        "RewardId": 69172,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240821,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 3100,
+        "Title": "Standard",
+        "Desc": "Parry a total of 10 times.",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240821
+        ],
+        "Result": 10,
+        "RewardId": 69173,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240822,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 3200,
+        "Title": "Standard",
+        "Desc": "Parry 15 times",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240822
+        ],
+        "Result": 15,
+        "RewardId": 69174,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240823,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 3300,
+        "Title": "Standard",
+        "Desc": "Trigger Flash Counter 5 times",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240823
+        ],
+        "Result": 5,
+        "RewardId": 69175,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240824,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 3400,
+        "Title": "Standard",
+        "Desc": "Trigger Flash Counter 10 times",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240824
+        ],
+        "Result": 10,
+        "RewardId": 69176,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240825,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 3500,
+        "Title": "Standard",
+        "Desc": "Trigger Flash Counter 15 times",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240825
+        ],
+        "Result": 15,
+        "RewardId": 69177,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240826,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 3600,
+        "Title": "Trial",
+        "Desc": "Obtain 2 A Ratings in Trials",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240826
+        ],
+        "Result": 2,
+        "RewardId": 69178,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240827,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 3700,
+        "Title": "Trial",
+        "Desc": "Obtain 4 A Ratings in Trials",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240827
+        ],
+        "Result": 4,
+        "RewardId": 69179,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240828,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 3800,
+        "Title": "Trial",
+        "Desc": "Obtain 6 A Ratings in Trials",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240828
+        ],
+        "Result": 6,
+        "RewardId": 69180,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240829,
+        "SourceGroupId": 46005,
+        "Type": 11,
+        "Priority": 3900,
+        "Title": "Trial",
+        "Desc": "Obtain 2 SS Ratings in Trials",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240829
+        ],
+        "Result": 2,
+        "RewardId": 69181,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240830,
+        "SourceGroupId": 46005,
+        "Type": 85,
+        "Priority": 4000,
+        "Title": "Advanced",
+        "Desc": "Clear Ezette on Hell difficulty with S rating using Crimson Weave.",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240830
+        ],
+        "Result": 1,
+        "RewardId": 69182,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240831,
+        "SourceGroupId": 46005,
+        "Type": 85,
+        "Priority": 4100,
+        "Title": "Advanced",
+        "Desc": "Clear Ezette on Hell difficulty with S rating using Inverse Crown.",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240831
+        ],
+        "Result": 1,
+        "RewardId": 69183,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240832,
+        "SourceGroupId": 46005,
+        "Type": 85,
+        "Priority": 4200,
+        "Title": "Advanced",
+        "Desc": "Clear Ezette on Hell difficulty with S rating using Crimson Abyss.",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            240832
+        ],
+        "Result": 1,
+        "RewardId": 69184,
         "Suffix": "Event"
     },
     {
@@ -153253,6 +154331,21 @@
         "Suffix": "Phylotree"
     },
     {
+        "Id": 131008,
+        "Type": 111,
+        "Priority": 9993,
+        "Title": "Phylotree Dossier",
+        "Desc": "Unlock Dossier — Helentine: Lacrimosa",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            131008
+        ],
+        "Result": 1,
+        "RewardId": 69080,
+        "SkipId": 20376,
+        "Suffix": "Phylotree"
+    },
+    {
         "Id": 91127,
         "Type": 11,
         "Priority": 9000,
@@ -157595,6 +158688,86 @@
         "SkipId": 89097
     },
     {
+        "Id": 240763,
+        "SourceGroupId": 46004,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Tidal Wishes",
+        "Desc": "Complete [Coral Dreams]",
+        "Icon": "Assets/Product/Texture/Image/UiSummerFashionNew/UiFubenFashionStoryNewV406/UiFubenFashionStoryNewV406TaskBg.png",
+        "Condition": [
+            240763
+        ],
+        "Result": 1,
+        "RewardId": 69224,
+        "SkipId": 89107,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240764,
+        "SourceGroupId": 46004,
+        "Type": 11,
+        "Priority": 9999,
+        "Title": "Tidal Wishes",
+        "Desc": "Complete [Moonlit Whale Ballad]",
+        "Icon": "Assets/Product/Texture/Image/UiSummerFashionNew/UiFubenFashionStoryNewV406/UiFubenFashionStoryNewV406TaskBg.png",
+        "Condition": [
+            240764
+        ],
+        "Result": 1,
+        "RewardId": 69225,
+        "SkipId": 89108,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240765,
+        "SourceGroupId": 46004,
+        "Type": 11,
+        "Priority": 9998,
+        "Title": "Tidal Wishes",
+        "Desc": "Complete [Shadow Trace]",
+        "Icon": "Assets/Product/Texture/Image/UiSummerFashionNew/UiFubenFashionStoryNewV406/UiFubenFashionStoryNewV406TaskBg.png",
+        "Condition": [
+            240765
+        ],
+        "Result": 1,
+        "RewardId": 69226,
+        "SkipId": 89109,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240766,
+        "SourceGroupId": 46004,
+        "Type": 11,
+        "Priority": 9996,
+        "Title": "Tidal Wishes",
+        "Desc": "Placeholder_通过【未定】",
+        "Icon": "Assets/Product/Texture/Image/UiSummerFashionNew/UiFubenFashionStoryNewV406/UiFubenFashionStoryNewV406TaskBg.png",
+        "Condition": [
+            240766
+        ],
+        "Result": 1,
+        "RewardId": 69227,
+        "SkipId": 89110,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 240767,
+        "SourceGroupId": 46004,
+        "Type": 11,
+        "Priority": 9994,
+        "Title": "Tidal Wishes",
+        "Desc": "Placeholder_通过【未定】",
+        "Icon": "Assets/Product/Texture/Image/UiSummerFashionNew/UiFubenFashionStoryNewV406/UiFubenFashionStoryNewV406TaskBg.png",
+        "Condition": [
+            240767
+        ],
+        "Result": 1,
+        "RewardId": 69228,
+        "SkipId": 89111,
+        "Suffix": "Event"
+    },
+    {
         "Id": 99624,
         "Type": 84,
         "Priority": 10000,
@@ -160223,6 +161396,81 @@
         "Suffix": "Event"
     },
     {
+        "Id": 91177,
+        "Type": 11,
+        "Priority": 9000,
+        "Title": "Permanent Material",
+        "Desc": "Use a total of 240 Serum in material stages",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91177
+        ],
+        "Result": 240,
+        "RewardId": 67001,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 91178,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "Permanent Material",
+        "Desc": "Use a total of 840 Serum in material stages",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91178
+        ],
+        "Result": 840,
+        "RewardId": 67002,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 91179,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "Permanent Material",
+        "Desc": "Use a total of 1710 Serum in material stages",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91179
+        ],
+        "Result": 1710,
+        "RewardId": 67003,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 91180,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "Permanent Material",
+        "Desc": "Use a total of 2820 Serum in material stages",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91180
+        ],
+        "Result": 2820,
+        "RewardId": 67004,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 91181,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "Permanent Material",
+        "Desc": "Use a total of 4050 Serum in material stages",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91181
+        ],
+        "Result": 4050,
+        "RewardId": 67005,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
         "Id": 120531,
         "Type": 11,
         "Priority": 10000,
@@ -162432,6 +163680,218 @@
         "Result": 1,
         "RewardId": 15215,
         "SkipId": 20364,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120678,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Simulated Battlefield",
+        "Desc": "Clear [Simulated Battlefield] 1 time",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120678
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120679,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "Simulated Battlefield",
+        "Desc": "Clear [Simulated Battlefield] 5 times",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120679
+        ],
+        "Result": 5,
+        "RewardId": 15215,
+        "SkipId": 20017,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120680,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "Trial of Simulacrums",
+        "Desc": "通关任意难度【埃则忒】",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120680
+        ],
+        "Result": 1,
+        "RewardId": 15216,
+        "SkipId": 89061,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120681,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "Shattered Mirage",
+        "Desc": "Obtain 3 stars in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120681
+        ],
+        "Result": 3,
+        "RewardId": 15215,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120682,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "Shrouded Requiem",
+        "Desc": "完成5局【诡城交锋】",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120682
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 89102,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120683,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "The Colorful Fantastic",
+        "Desc": "通关【关卡1-1】",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120683
+        ],
+        "Result": 1,
+        "RewardId": 15216,
+        "SkipId": 89105,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120684,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "Bier's Echoes",
+        "Desc": "Clear [Plummet]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120684
+        ],
+        "Result": 1,
+        "RewardId": 15219,
+        "SkipId": 11724,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120685,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "Leap Class",
+        "Desc": "Complete [Celica's Class] Nanami-A-4",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveNanamiV406.png",
+        "Condition": [
+            120685
+        ],
+        "Result": 1,
+        "RewardId": 15217,
+        "SkipId": 20293,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120686,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "The Knower's Dilemma Ⅰ",
+        "Desc": "Complete Character Challenge Stage [Silent Recollection] Stage 1",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveCharacterTryv406.png",
+        "Condition": [
+            120686
+        ],
+        "Result": 1,
+        "RewardId": 15217,
+        "SkipId": 20235,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120687,
+        "Type": 11,
+        "Priority": 9100,
+        "Title": "The Knower's Dilemma Ⅱ",
+        "Desc": "Complete Character Challenge Stage [Silent Recollection] Stage 2",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveCharacterTryv406.png",
+        "Condition": [
+            120687
+        ],
+        "Result": 1,
+        "RewardId": 15217,
+        "SkipId": 20235,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120688,
+        "Type": 11,
+        "Priority": 9000,
+        "Title": "The Knower's Dilemma Ⅲ",
+        "Desc": "Complete Character Challenge Stage [Silent Recollection] Stage 3",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveCharacterTryv406.png",
+        "Condition": [
+            120688
+        ],
+        "Result": 1,
+        "RewardId": 15218,
+        "SkipId": 20235,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120689,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "Adaptation Fitting: Grand Duke",
+        "Desc": "Complete [Adaptation Fitting: Grand Duke]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActivePartnerTryv406.png",
+        "Condition": [
+            120689
+        ],
+        "Result": 1,
+        "RewardId": 15216,
+        "SkipId": 7107,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120690,
+        "SourceGroupId": 46002,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "Azure Embrace",
+        "Desc": "Clear the trial stage of Coating: [Azure Embrace]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveHelentineEffectCoatingv406.png",
+        "Condition": [
+            120690
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 10035,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 120691,
+        "SourceGroupId": 46003,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "Shimmering Tide",
+        "Desc": "Clear the trial stage of Coating: [Shimmering Tide]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveSelenaEffectCoatingv406.png",
+        "Condition": [
+            120691
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 10035,
         "Suffix": "Event"
     },
     {
@@ -165627,7 +167087,7 @@
         "Type": 7,
         "Priority": 9645,
         "Title": "Liv's Trial VIII",
-        "Desc": "Link your account to Facebook/Google/Apple ID/Email",
+        "Desc": "Bind the account with Facebook/Google/Apple id",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
         "Condition": [
             2120001
@@ -196320,5 +197780,980 @@
         "Result": 30,
         "RewardId": 69122,
         "Suffix": "Event"
+    },
+    {
+        "Id": 140162,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10801,
+        "Title": "Easy Achievement 1-1",
+        "Desc": "1-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140162
+        ],
+        "Result": 1,
+        "RewardId": 61138
+    },
+    {
+        "Id": 140163,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10802,
+        "Title": "Easy Achievement 1-2",
+        "Desc": "2-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140163
+        ],
+        "Result": 1,
+        "RewardId": 61139
+    },
+    {
+        "Id": 140164,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10803,
+        "Title": "Easy Achievement 1-3",
+        "Desc": "3-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140164
+        ],
+        "Result": 1,
+        "RewardId": 61140
+    },
+    {
+        "Id": 140165,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10804,
+        "Title": "Easy Achievement 1-4",
+        "Desc": "4-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140165
+        ],
+        "Result": 1,
+        "RewardId": 61141
+    },
+    {
+        "Id": 140166,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10805,
+        "Title": "Easy Achievement 1-5",
+        "Desc": "5-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140166
+        ],
+        "Result": 1,
+        "RewardId": 61142
+    },
+    {
+        "Id": 140167,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10806,
+        "Title": "Easy Achievement 1-6",
+        "Desc": "6-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140167
+        ],
+        "Result": 1,
+        "RewardId": 61143
+    },
+    {
+        "Id": 140168,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10807,
+        "Title": "Easy Achievement 1-7",
+        "Desc": "7-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140168
+        ],
+        "Result": 1,
+        "RewardId": 61144
+    },
+    {
+        "Id": 140169,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10808,
+        "Title": "Easy Achievement 1-8",
+        "Desc": "8-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140169
+        ],
+        "Result": 1,
+        "RewardId": 61145
+    },
+    {
+        "Id": 140170,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10809,
+        "Title": "Easy Achievement 1-9",
+        "Desc": "9-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140170
+        ],
+        "Result": 1,
+        "RewardId": 61146
+    },
+    {
+        "Id": 140171,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10810,
+        "Title": "Easy Achievement 1-10",
+        "Desc": "10-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140171
+        ],
+        "Result": 1,
+        "RewardId": 61147
+    },
+    {
+        "Id": 140172,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10811,
+        "Title": "Easy Achievement 1-11",
+        "Desc": "11-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140172
+        ],
+        "Result": 1,
+        "RewardId": 61148
+    },
+    {
+        "Id": 140173,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10812,
+        "Title": "Easy Achievement 1-12",
+        "Desc": "12-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140173
+        ],
+        "Result": 1,
+        "RewardId": 61149
+    },
+    {
+        "Id": 140174,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10813,
+        "Title": "Easy Achievement 1-13",
+        "Desc": "13-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140174
+        ],
+        "Result": 1,
+        "RewardId": 61150
+    },
+    {
+        "Id": 140175,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10814,
+        "Title": "Easy Achievement 1-14",
+        "Desc": "14-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140175
+        ],
+        "Result": 1,
+        "RewardId": 61151
+    },
+    {
+        "Id": 140176,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10901,
+        "Title": "Hard Achievement 1-1",
+        "Desc": "1-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140176
+        ],
+        "Result": 1,
+        "RewardId": 61152
+    },
+    {
+        "Id": 140177,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10902,
+        "Title": "Hard Achievement 1-2",
+        "Desc": "2-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140177
+        ],
+        "Result": 1,
+        "RewardId": 61153
+    },
+    {
+        "Id": 140178,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10903,
+        "Title": "Hard Achievement 1-3",
+        "Desc": "3-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140178
+        ],
+        "Result": 1,
+        "RewardId": 61154
+    },
+    {
+        "Id": 140179,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10904,
+        "Title": "Hard Achievement 1-4",
+        "Desc": "4-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140179
+        ],
+        "Result": 1,
+        "RewardId": 61155
+    },
+    {
+        "Id": 140180,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10905,
+        "Title": "Hard Achievement 1-5",
+        "Desc": "5-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140180
+        ],
+        "Result": 1,
+        "RewardId": 61156
+    },
+    {
+        "Id": 140181,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10906,
+        "Title": "Hard Achievement 1-6",
+        "Desc": "6-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140181
+        ],
+        "Result": 1,
+        "RewardId": 61157
+    },
+    {
+        "Id": 140182,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10907,
+        "Title": "Hard Achievement 1-7",
+        "Desc": "7-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140182
+        ],
+        "Result": 1,
+        "RewardId": 61158
+    },
+    {
+        "Id": 140183,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10908,
+        "Title": "Hard Achievement 1-8",
+        "Desc": "8-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140183
+        ],
+        "Result": 1,
+        "RewardId": 61159
+    },
+    {
+        "Id": 140184,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10909,
+        "Title": "Hard Achievement 1-9",
+        "Desc": "9-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140184
+        ],
+        "Result": 1,
+        "RewardId": 61160
+    },
+    {
+        "Id": 140185,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10910,
+        "Title": "Hard Achievement 1-10",
+        "Desc": "10-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140185
+        ],
+        "Result": 1,
+        "RewardId": 61161
+    },
+    {
+        "Id": 140186,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10911,
+        "Title": "Hard Achievement 1-11",
+        "Desc": "11-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140186
+        ],
+        "Result": 1,
+        "RewardId": 61162
+    },
+    {
+        "Id": 140187,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10912,
+        "Title": "Hard Achievement 1-12",
+        "Desc": "12-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140187
+        ],
+        "Result": 1,
+        "RewardId": 61163
+    },
+    {
+        "Id": 140188,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10913,
+        "Title": "Hard Achievement 1-13",
+        "Desc": "13-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140188
+        ],
+        "Result": 1,
+        "RewardId": 61164
+    },
+    {
+        "Id": 140189,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10914,
+        "Title": "Hard Achievement 1-14",
+        "Desc": "14-Win Streak",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140189
+        ],
+        "Result": 1,
+        "RewardId": 61165
+    },
+    {
+        "Id": 140190,
+        "SourceGroupId": 46007,
+        "Type": 104,
+        "Priority": 10000,
+        "Title": "Shattered Mirage [1]",
+        "Desc": "Obtain 3 stars",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140190
+        ],
+        "Result": 3,
+        "RewardId": 69131,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140191,
+        "SourceGroupId": 46007,
+        "Type": 104,
+        "Priority": 9900,
+        "Title": "Shattered Mirage [2]",
+        "Desc": "Obtain 6 stars",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140191
+        ],
+        "Result": 6,
+        "RewardId": 69132,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140192,
+        "SourceGroupId": 46007,
+        "Type": 104,
+        "Priority": 9800,
+        "Title": "Shattered Mirage [3]",
+        "Desc": "Obtain 9 stars",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140192
+        ],
+        "Result": 9,
+        "RewardId": 69133,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140193,
+        "SourceGroupId": 46007,
+        "Type": 104,
+        "Priority": 9700,
+        "Title": "Shattered Mirage [4]",
+        "Desc": "Obtain 12 stars",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140193
+        ],
+        "Result": 12,
+        "RewardId": 69134,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140194,
+        "SourceGroupId": 46007,
+        "Type": 104,
+        "Priority": 9600,
+        "Title": "Shattered Mirage [5]",
+        "Desc": "Obtain 15 stars",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140194
+        ],
+        "Result": 15,
+        "RewardId": 69135,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140195,
+        "SourceGroupId": 46007,
+        "Type": 104,
+        "Priority": 9500,
+        "Title": "Shattered Mirage [6]",
+        "Desc": "Obtain 20 Stars",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140195
+        ],
+        "Result": 20,
+        "RewardId": 69136,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140196,
+        "SourceGroupId": 46007,
+        "Type": 104,
+        "Priority": 9400,
+        "Title": "Shattered Mirage [7]",
+        "Desc": "Obtain 24 stars",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140196
+        ],
+        "Result": 24,
+        "RewardId": 69137,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140197,
+        "SourceGroupId": 46007,
+        "Type": 104,
+        "Priority": 9300,
+        "Title": "Shattered Mirage [8]",
+        "Desc": "Obtain 28 Stars",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140197
+        ],
+        "Result": 28,
+        "RewardId": 69138,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140198,
+        "SourceGroupId": 46007,
+        "Type": 104,
+        "Priority": 9200,
+        "Title": "Shattered Mirage [9]",
+        "Desc": "Obtain 32 stars",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140198
+        ],
+        "Result": 32,
+        "RewardId": 69139,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140199,
+        "SourceGroupId": 46007,
+        "Type": 104,
+        "Priority": 9100,
+        "Title": "Shattered Mirage [10]",
+        "Desc": "Obtain 36 Stars",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140199
+        ],
+        "Result": 36,
+        "RewardId": 69140,
+        "SkipId": 89094,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140200,
+        "SourceGroupId": 46010,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "First Tuning",
+        "Desc": "Clear any stage once",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140200
+        ],
+        "Result": 1,
+        "RewardId": 69246,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140201,
+        "SourceGroupId": 46010,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "Groove Wizard",
+        "Desc": "Level up members 1 time",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140201
+        ],
+        "Result": 2,
+        "RewardId": 69247,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140202,
+        "SourceGroupId": 46010,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "Pro Technician",
+        "Desc": "Clear any stage 3 times",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140202
+        ],
+        "Result": 3,
+        "RewardId": 69248,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140203,
+        "SourceGroupId": 46010,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "Crowd Igniter",
+        "Desc": "Enhance 1 piece of equipment",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140203
+        ],
+        "Result": 4,
+        "RewardId": 69249,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140204,
+        "SourceGroupId": 46010,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "Master of the House",
+        "Desc": "Clear [Perfect Tuning]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140204
+        ],
+        "Result": 1,
+        "RewardId": 69250,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140207,
+        "Type": 108,
+        "Priority": 8800,
+        "Title": "Shrouded Requiem【1】",
+        "Desc": "通关【迷局突围】难度5",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140207
+        ],
+        "Result": 1,
+        "RewardId": 69257,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140208,
+        "Type": 108,
+        "Priority": 8700,
+        "Title": "Shrouded Requiem 【2】",
+        "Desc": "神威存档分达到45000",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140208
+        ],
+        "Result": 1,
+        "RewardId": 69258,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140209,
+        "Type": 108,
+        "Priority": 8600,
+        "Title": "Shrouded Requiem 【3】",
+        "Desc": "【迷局突围】中累计战斗10次",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140209
+        ],
+        "Result": 10,
+        "RewardId": 69259,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140210,
+        "Type": 108,
+        "Priority": 8500,
+        "Title": "Shrouded Requiem【4】",
+        "Desc": "【迷局突围】中累计战斗20次",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140210
+        ],
+        "Result": 20,
+        "RewardId": 69260,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140211,
+        "Type": 108,
+        "Priority": 8400,
+        "Title": "Shrouded Requiem 【5】",
+        "Desc": "【迷局突围】中累计战斗30次",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140211
+        ],
+        "Result": 30,
+        "RewardId": 69261,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140212,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Shrouded Requiem I",
+        "Desc": "累计完成5局【诡城交锋】",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140212
+        ],
+        "Result": 5,
+        "RewardId": 69262,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140213,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "Shrouded Requiem II",
+        "Desc": "累计完成15局【诡城交锋】",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140213
+        ],
+        "Result": 15,
+        "RewardId": 69263,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140214,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "Shrouded Requiem III",
+        "Desc": "累计完成25局【诡城交锋】",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140214
+        ],
+        "Result": 25,
+        "RewardId": 69264,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140215,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "Shrouded Requiem IV",
+        "Desc": "本期【抉择】累计达70次",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140215
+        ],
+        "Result": 70,
+        "RewardId": 69265,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140216,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "Shrouded Requiem V",
+        "Desc": "本期【抉择】累计达140次",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140216
+        ],
+        "Result": 140,
+        "RewardId": 69266,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140217,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "Shrouded Requiem VI",
+        "Desc": "本期【抉择】累计达210次",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140217
+        ],
+        "Result": 210,
+        "RewardId": 69267,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140218,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "雾夜镇魂曲Ⅶ",
+        "Desc": "本期【任务完成】累计达6次",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140218
+        ],
+        "Result": 6,
+        "RewardId": 69268,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140219,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "雾夜镇魂曲Ⅷ",
+        "Desc": "本期【任务完成】累计达15次",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140219
+        ],
+        "Result": 15,
+        "RewardId": 69269,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140220,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "雾夜镇魂曲Ⅸ",
+        "Desc": "本期【任务完成】累计达30次",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
+        "Condition": [
+            140220
+        ],
+        "Result": 30,
+        "RewardId": 69270,
+        "Suffix": "Event"
+    },
+    {
+        "Id": 140229,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "活动-汐海寄愿",
+        "Desc": "Complete [Coral Dreams]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
+        "Condition": [
+            140229
+        ],
+        "Result": 1,
+        "RewardId": 67450,
+        "SkipId": 89107,
+        "StartTime": "2026/7/17 5:00",
+        "EndTime": "2026/8/19 5:00",
+        "Suffix": "Event",
+        "GroupId": 602,
+        "ShowCondition": 1060038
+    },
+    {
+        "Id": 140230,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "Event - Trial of Simulacrums",
+        "Desc": "通关任意难度【埃则忒】",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
+        "Condition": [
+            140230
+        ],
+        "Result": 1,
+        "RewardId": 67451,
+        "SkipId": 89061,
+        "StartTime": "2026/7/17 5:00",
+        "EndTime": "2026/8/18 5:00",
+        "Suffix": "Event",
+        "GroupId": 602,
+        "ShowCondition": 1060038
+    },
+    {
+        "Id": 140231,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "活动-虚像破执",
+        "Desc": "Obtain 3 stars in total",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
+        "Condition": [
+            140231
+        ],
+        "Result": 3,
+        "RewardId": 67452,
+        "SkipId": 89094,
+        "StartTime": "2026/7/17 5:00",
+        "EndTime": "2026/8/18 5:00",
+        "Suffix": "Event",
+        "GroupId": 602,
+        "ShowCondition": 1060038
+    },
+    {
+        "Id": 140232,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "活动-雾夜镇魂曲",
+        "Desc": "完成5局【诡城交锋】",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
+        "Condition": [
+            140232
+        ],
+        "Result": 5,
+        "RewardId": 67453,
+        "SkipId": 89102,
+        "StartTime": "2026/7/17 5:00",
+        "EndTime": "2026/8/19 5:00",
+        "Suffix": "Event",
+        "GroupId": 602,
+        "ShowCondition": 1060038
+    },
+    {
+        "Id": 140233,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "活动-忽忽的奇幻花园",
+        "Desc": "通关【关卡1-1】",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
+        "Condition": [
+            140233
+        ],
+        "Result": 1,
+        "RewardId": 67454,
+        "SkipId": 89105,
+        "StartTime": "2026/7/17 5:00",
+        "EndTime": "2026/8/18 5:00",
+        "Suffix": "Event",
+        "GroupId": 602,
+        "ShowCondition": 1060038
+    },
+    {
+        "Id": 140234,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "活动-葬途残声",
+        "Desc": "Clear [Plummet]",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
+        "Condition": [
+            140234
+        ],
+        "Result": 1,
+        "RewardId": 67455,
+        "SkipId": 11724,
+        "StartTime": "2026/7/17 5:00",
+        "EndTime": "2026/8/10 5:00",
+        "Suffix": "Event",
+        "GroupId": 602,
+        "ShowCondition": 1060038
+    },
+    {
+        "Id": 140235,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "Event - Research Protocol: Part I",
+        "Desc": "Use a total of 10000 Event Construct R&D Tickets",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
+        "Condition": [
+            140235
+        ],
+        "Result": 10000,
+        "RewardId": 67456,
+        "SkipId": 20131,
+        "StartTime": "2026/7/17 5:00",
+        "EndTime": "2026/8/19 5:00",
+        "Suffix": "Event",
+        "GroupId": 602,
+        "ShowCondition": 1060038
+    },
+    {
+        "Id": 140236,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "Event - Research Protocol: Part II",
+        "Desc": "Use a total of 25000 Event Construct R&D Tickets",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
+        "Condition": [
+            140236
+        ],
+        "Result": 25000,
+        "RewardId": 67457,
+        "SkipId": 20131,
+        "StartTime": "2026/7/17 5:00",
+        "EndTime": "2026/8/19 5:00",
+        "Suffix": "Event",
+        "GroupId": 602,
+        "ShowCondition": 1060038
     }
 ]

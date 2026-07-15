@@ -70,7 +70,7 @@ function XUiEquipResonanceSelectV2P6:OnNotify(evt, ...)
                     self.Parent:OnResonanceSuccess(self.Pos, true)
                 end)
             else
-                XMVCA:GetAgency(ModuleId.XEquip):TipEquipOperation(nil, XUiHelper.GetText("DormTemplateSelectSuccess"))
+                XMVCA.XEquip:TipEquipOperation(nil, XUiHelper.GetText("DormTemplateSelectSuccess"))
                 self.Parent:OnResonanceSuccess(self.Pos)
             end
         else
@@ -197,7 +197,7 @@ function XUiEquipResonanceSelectV2P6:OnBtnResonanceClick()
     end
 
     -- 请求共鸣
-    XMVCA:GetAgency(ModuleId.XEquip):RequestEquipResonance(self.EquipId, {self.Pos}, self.SelectCharacterId, useEquipId, useItemId, {selectSkillId}, equipResonanceType)
+    XMVCA.XEquip:RequestEquipResonance(self.EquipId, {self.Pos}, self.SelectCharacterId, useEquipId, useItemId, {selectSkillId}, equipResonanceType)
 end
 
 -- 初始化绑定角色
@@ -449,7 +449,7 @@ function XUiEquipResonanceSelectV2P6:CheckOpenSelectUi()
         return
     end
 
-    local equip = XMVCA:GetAgency(ModuleId.XEquip):GetEquip(self.EquipId)
+    local equip = XMVCA.XEquip:GetEquip(self.EquipId)
     if self.CanBlindCharacter and not self.SelectCharacterId then
         self:OnCharacterSelectClick()
         return

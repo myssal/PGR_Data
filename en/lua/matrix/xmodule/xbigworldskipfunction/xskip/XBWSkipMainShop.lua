@@ -50,6 +50,12 @@ function XBWSkipMainShop:_CheckParamsValid()
 end
 
 function XBWSkipMainShop:_DoExitAndSkip()
+    -- 开场引导（首次进入空花的 OpenDIY 流程）期间，战斗框架还未把 UiFightDLC 推入 Normal 栈，
+    -- 此时调用 ExitWorld 会触发 CloseAllUpperUi("UiFightDLC") 的"栈内找不到"错误。
+    if XMVCA.XBigWorldCommanderDIY:IsFromOpenGuide() then
+        XMVCA.XBigWorldUI:TipMsg(XMVCA.XBigWorldService:GetText("DIYDoNotSupportSkipTips"))
+        return
+    end
     if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon) then
         XMVCA.XBigWorldGamePlay:ExitWorld()
         XLuaUiManager.Open("UiShop", self._ShopType, nil, self._ShopId)

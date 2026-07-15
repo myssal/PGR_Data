@@ -348,6 +348,31 @@ function XUiManager.OpenUiObtain(data, title, closeCallback, sureCallback, horiz
     end
 end
 
+-- 打开获得物品弹窗（带DIY物品检查）：
+--   按 data[1].RewardType 路由：BWDIYPart（指挥官DIY部件）走 UiShopFashionObtain，否则走通用 UiObtain。
+-- 注意：
+--   [1] 仅依据 data[1] 路由，多物品列表中其余项不参与判断（UiShopFashionObtain 本身也只展示 [1]）。
+--   [2] DIY路径只桥接 closeCallback/sureCallback，title/horizontalNormalizedPosition/customParams 对 UiShopFashionObtain 无效。
+function XUiManager.OpenUiObtainWithDIYCheck(data, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+    if not CS.XFightInterface.IsOutFight then
+        return -- 战斗不弹
+    end
+
+    local first = data and data[1]
+    local isDIY = first and first.RewardType == XRewardManager.XRewardType.BWDIYPart
+    if isDIY then
+        if XUiManager.IsTableAsyncLoading() then
+            XUiManager.WaitTableLoadComplete(function()
+                XLuaUiManager.Open("UiShopFashionObtain", data, closeCallback, sureCallback)
+            end)
+        else
+            XLuaUiManager.Open("UiShopFashionObtain", data, closeCallback, sureCallback)
+        end
+    else
+        XUiManager.OpenUiObtain(data, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+    end
+end
+
 function XUiManager.OpenUiAreaWarObtain(data,areaWarItems, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
     if not CS.XFightInterface.IsOutFight then
         return -- 战斗不弹
@@ -474,7 +499,7 @@ function XUiManager.OpenGoodDetailUi(goodId, fromUiName, customData, hideSkipBtn
         XDataCenter.AutoWindowManager.StopAutoWindow()
         XLuaUiManager.Open("UiCharacterDetail", goodId)
     elseif goodsShowParams.RewardType == XRewardManager.XRewardType.Equip then
-        XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipPreview(goodId)
+        XMVCA.XEquip:OpenUiEquipPreview(goodId)
         --从Tips的ui跳转需要关闭Tips的UI
         if uiType == CsXUiType.Tips then
             XLuaUiManager.Close(fromUiName)
@@ -487,6 +512,7 @@ function XUiManager.OpenGoodDetailUi(goodId, fromUiName, customData, hideSkipBtn
         local configId = cfg.FurnitureId
         XLuaUiManager.Open("UiFurnitureDetail", customData.InstanceId, configId, furnitureRewardId, nil, true)
     elseif goodsShowParams.RewardType == XRewardManager.XRewardType.Fashion then
+        ---@type XPurchaseBuyData
         local buyData
         if customData and customData.ItemCount and customData.ItemIcon and customData.BuyCallBack then
             buyData = {}

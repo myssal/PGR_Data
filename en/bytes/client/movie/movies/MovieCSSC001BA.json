@@ -26,7 +26,7 @@
         "Params": [
             "",
             "",
-            "V4.3"
+            "V4.5"
         ]
     },
     {
@@ -35,7 +35,7 @@
         "Type": 105,
         "IsBlock": 1,
         "Params": [
-            "Assets/Product/Ui/Spine/4_3Spine/V43UiMovieCG_NietiyaBin/V43UiMovieCG_NietiyaBin.prefab"
+            "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovieCG_Lifu_Sjqqmzy/V45UiMovieCG_Lifu_Sjqqmzy.prefab"
         ]
     },
     {
@@ -43,26 +43,32 @@
         "ActionId": 5,
         "Type": 301,
         "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
-            "涅缇娅 病"
+            "丽芙卡池-水晶球奇妙夜"
         ]
     },
     {
         "Id": 6,
         "ActionId": 6,
-        "Type": 105
+        "Type": 105,
+        "IsBlock": 1,
+        "Params": [
+            "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovieCG_Lifu_Xsgw/V45UiMovieCG_Lifu_Xsgw.prefab"
+        ]
     },
     {
         "Id": 7,
         "ActionId": 7,
         "Type": 301,
+        "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
         "Params": [
             "",
             "",
-            "V4.2"
+            "丽芙卡池-携手共舞"
         ]
     },
     {
@@ -71,7 +77,7 @@
         "Type": 105,
         "IsBlock": 1,
         "Params": [
-            "Assets/Product/Ui/Spine/4_2Spine/UiMovieLuoSaiTaHuiShouV42/UiMovieLuoSaiTaHuiShouV42Normal.prefab"
+            "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovieCG_ShengHongQiuYing/V45UiMovieCG_ShengHongQiuYing.prefab"
         ]
     },
     {
@@ -83,7 +89,7 @@
         "Params": [
             "",
             "",
-            "罗塞塔 回首（正常）"
+            "主线剧情（乔安线）-看看地球（睁闭眼循环）"
         ]
     },
     {
@@ -92,7 +98,7 @@
         "Type": 106,
         "IsBlock": 1,
         "Params": [
-            "idle_closeeyes",
+            "idle_eyesOpen",
             1,
             "Root/Role",
             1
@@ -107,7 +113,7 @@
         "Params": [
             "",
             "",
-            "罗塞塔 回首（闭眼）"
+            "主线剧情（乔安线）-看看地球（睁眼循环）"
         ]
     },
     {
@@ -116,7 +122,7 @@
         "Type": 106,
         "IsBlock": 1,
         "Params": [
-            "idle_smile",
+            "idle_eyesClosed",
             1,
             "Root/Role",
             1
@@ -131,20 +137,13 @@
         "Params": [
             "",
             "",
-            "罗塞塔 回首（笑）"
+            "主线剧情（乔安线）-看看地球（闭眼循环）"
         ]
     },
     {
         "Id": 14,
         "ActionId": 14,
-        "Type": 106,
-        "IsBlock": 1,
-        "Params": [
-            "idle_think",
-            1,
-            "Root/Role",
-            1
-        ]
+        "Type": 105
     },
     {
         "Id": 15,
@@ -155,7 +154,7 @@
         "Params": [
             "",
             "",
-            "罗塞塔 回首（思索）"
+            "V4.3"
         ]
     },
     {
@@ -164,12 +163,141 @@
         "Type": 105,
         "IsBlock": 1,
         "Params": [
-            "Assets/Product/Ui/Spine/4_2Spine/V42UiMovieCG_BiAnKaJX/V42UiMovieCG_BiAnKaJX.prefab"
+            "Assets/Product/Ui/Spine/4_3Spine/V43UiMovieCG_NietiyaBin/V43UiMovieCG_NietiyaBin.prefab"
         ]
     },
     {
         "Id": 17,
         "ActionId": 17,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "涅缇娅 病"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 105
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "V4.2"
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 105,
+        "IsBlock": 1,
+        "Params": [
+            "Assets/Product/Ui/Spine/4_2Spine/UiMovieLuoSaiTaHuiShouV42/UiMovieLuoSaiTaHuiShouV42Normal.prefab"
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "罗塞塔 回首（正常）"
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 106,
+        "IsBlock": 1,
+        "Params": [
+            "idle_closeeyes",
+            1,
+            "Root/Role",
+            1
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "罗塞塔 回首（闭眼）"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 106,
+        "IsBlock": 1,
+        "Params": [
+            "idle_smile",
+            1,
+            "Root/Role",
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "罗塞塔 回首（笑）"
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 106,
+        "IsBlock": 1,
+        "Params": [
+            "idle_think",
+            1,
+            "Root/Role",
+            1
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "罗塞塔 回首（思索）"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 105,
+        "IsBlock": 1,
+        "Params": [
+            "Assets/Product/Ui/Spine/4_2Spine/V42UiMovieCG_BiAnKaJX/V42UiMovieCG_BiAnKaJX.prefab"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
@@ -180,8 +308,8 @@
         ]
     },
     {
-        "Id": 18,
-        "ActionId": 18,
+        "Id": 30,
+        "ActionId": 30,
         "Type": 105,
         "IsBlock": 1,
         "Params": [
@@ -189,8 +317,8 @@
         ]
     },
     {
-        "Id": 19,
-        "ActionId": 19,
+        "Id": 31,
+        "ActionId": 31,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -200,13 +328,13 @@
         ]
     },
     {
-        "Id": 20,
-        "ActionId": 20,
+        "Id": 32,
+        "ActionId": 32,
         "Type": 105
     },
     {
-        "Id": 21,
-        "ActionId": 21,
+        "Id": 33,
+        "ActionId": 33,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -216,8 +344,8 @@
         ]
     },
     {
-        "Id": 22,
-        "ActionId": 22,
+        "Id": 34,
+        "ActionId": 34,
         "Type": 105,
         "IsBlock": 1,
         "Params": [
@@ -225,8 +353,8 @@
         ]
     },
     {
-        "Id": 23,
-        "ActionId": 23,
+        "Id": 35,
+        "ActionId": 35,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -236,21 +364,21 @@
         ]
     },
     {
-        "Id": 24,
-        "ActionId": 24,
+        "Id": 36,
+        "ActionId": 36,
         "Type": 105
     },
     {
-        "Id": 25,
-        "ActionId": 25,
+        "Id": 37,
+        "ActionId": 37,
         "Type": 101,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
     },
     {
-        "Id": 26,
-        "ActionId": 26,
+        "Id": 38,
+        "ActionId": 38,
         "Type": 301,
         "EndAnim": "DialogDisable",
         "Params": [
@@ -260,8 +388,8 @@
         ]
     },
     {
-        "Id": 27,
-        "ActionId": 27,
+        "Id": 39,
+        "ActionId": 39,
         "Type": 105,
         "IsBlock": 1,
         "Params": [
@@ -269,8 +397,8 @@
         ]
     },
     {
-        "Id": 28,
-        "ActionId": 28,
+        "Id": 40,
+        "ActionId": 40,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
@@ -281,8 +409,8 @@
         ]
     },
     {
-        "Id": 29,
-        "ActionId": 29,
+        "Id": 41,
+        "ActionId": 41,
         "Type": 105,
         "IsBlock": 1,
         "Params": [
@@ -290,8 +418,8 @@
         ]
     },
     {
-        "Id": 30,
-        "ActionId": 30,
+        "Id": 42,
+        "ActionId": 42,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
@@ -301,8 +429,8 @@
         ]
     },
     {
-        "Id": 31,
-        "ActionId": 31,
+        "Id": 43,
+        "ActionId": 43,
         "Type": 301,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",

@@ -163,6 +163,18 @@ function XFashionSuitAgency:IsAllowGroupSales(fashionId)
     return self._Model:IsAllowGroupSales(fashionId)
 end
 
+---自选礼包点涂装详情前置位，XUiFashionDetail 打开时消费
+function XFashionSuitAgency:SetFromSelfChoicePack(value)
+    self._FromSelfChoicePack = value
+end
+
+---读取并消费"是否来自自选礼包"标记
+function XFashionSuitAgency:ConsumeFromSelfChoicePack()
+    local value = self._FromSelfChoicePack
+    self._FromSelfChoicePack = false
+    return value
+end
+
 function XFashionSuitAgency:GetGroupIdByFashion(fashionId)
     return self._Model:GetGroupIdByFashion(fashionId)
 end

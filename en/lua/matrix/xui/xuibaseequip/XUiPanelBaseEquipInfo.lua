@@ -1,3 +1,4 @@
+--[[
 local XUiPanelBaseEquipInfo = XClass(nil, "XUiPanelBaseEquipInfo")
 
 function XUiPanelBaseEquipInfo:Ctor(ui, rootUI)
@@ -122,3 +123,4 @@ function XUiPanelBaseEquipInfo:OnBtnGetClick()
 end
 
 return XUiPanelBaseEquipInfo
+]]

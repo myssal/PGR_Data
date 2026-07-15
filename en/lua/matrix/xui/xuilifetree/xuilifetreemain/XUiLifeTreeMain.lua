@@ -227,6 +227,7 @@ function XUiLifeTreeMain:OnBtnPositioningLifeTreeClick()
     self.BtnPositioningLifeTree.gameObject:SetActiveEx(false)
     self:SetCameraValueWithAnim(0, CAMERA_Y_VALUE_LIFE_TREE)
     self:PlayLifeTreeAnimations()
+    self:PlayRegularCardsQiehuan()
 end
 
 function XUiLifeTreeMain:OnBtnPositioningSeaClick()
@@ -238,6 +239,15 @@ function XUiLifeTreeMain:OnBtnPositioningSeaClick()
     self.BtnPositioningSea.gameObject:SetActiveEx(false)
     self:SetCameraValueWithAnim(0, CAMERA_Y_VALUE_SEA)
     self:PlaySeaAnimations()
+    self:PlayRegularCardsQiehuan()
+end
+
+function XUiLifeTreeMain:PlayRegularCardsQiehuan()
+    for _, card in pairs(self.GridCards) do
+        if card.PlayQiehuanAnimation then
+            card:PlayQiehuanAnimation()
+        end
+    end
 end
 
 function XUiLifeTreeMain:RefreshBtnPositioningSea()

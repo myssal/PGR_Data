@@ -291,7 +291,11 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
         end
         -- 预设武器与实穿武器是否一致，①②③④冲突检测的前置条件
         local isWeaponSameAsReal = (usingWeaponId == realWeaponId)
-        local xWeaponEquip = XMVCA.XEquip:GetEquip(usingWeaponId)
+        -- 预设武器被删除时，自动修复回包前先避免GetEquip打印不存在装备错误
+        local xWeaponEquip = nil
+        if XTool.IsNumberValid(usingWeaponId) and XMVCA.XEquip:IsEquipExit(usingWeaponId) then
+            xWeaponEquip = XMVCA.XEquip:GetEquip(usingWeaponId)
+        end
         if xWeaponEquip then
             self.WeaponGrid:Refresh(usingWeaponId)
             -- 武器共鸣
@@ -327,6 +331,13 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
                 local icon = XMVCA.XEquip:GetEquipSuitIconPath(weaponData.WeaponOverrunSuitId)
                 self.BtnOverrunBlind:SetRawImage(icon)
                 self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Normal)
+            end
+            local overrunLevel = xWeaponEquip:GetOverrunLevel()
+            local isShowPanelLevel = overrunLevel > 0
+            self.PanelLevelIcon.gameObject:SetActiveEx(isShowPanelLevel)
+            if isShowPanelLevel then
+                self.UiTxtLevelImg1.gameObject:SetActiveEx(overrunLevel == XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL1)
+                self.UiTxtLevelImg2.gameObject:SetActiveEx(overrunLevel >= XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL2)
             end
             -- 武器共鸣黄标:
             -- 1.共鸣绑定角色冲突：equip实际共鸣绑定的角色与当前预设里的角色不一致则显示

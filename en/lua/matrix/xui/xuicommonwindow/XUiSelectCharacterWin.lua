@@ -382,11 +382,11 @@ function XUiSelectCharacterWin:OnBtnFashionClick()
 end
 
 function XUiSelectCharacterWin:OnBtnConsciousnessClick()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipAwareness(self.CurSelectData.Id)
+    XMVCA.XEquip:OpenUiEquipAwareness(self.CurSelectData.Id)
 end
 
 function XUiSelectCharacterWin:OnBtnWeaponClick()
-    XMVCA:GetAgency(ModuleId.XEquip):OpenUiEquipReplace(self.CurSelectData.Id, nil, true)
+    XMVCA.XEquip:OpenUiEquipReplace(self.CurSelectData.Id, nil, true)
 end
 
 function XUiSelectCharacterWin:OnBtnTeachingClick()

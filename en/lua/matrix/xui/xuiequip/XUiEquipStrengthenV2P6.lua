@@ -35,7 +35,7 @@ end
 
 function XUiEquipStrengthenV2P6:OnEnable()
     self.EquipId = self.Parent.EquipId
-    self.TemplateId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipTemplateId(self.EquipId)
+    self.TemplateId = XMVCA.XEquip:GetEquipTemplateId(self.EquipId)
     self.MaxLevelUnit = self._Control:GetEquipMaxLevelUnit(self.TemplateId)
     self.MaxBreakthrough = self._Control:GetEquipMaxBreakthrough(self.TemplateId)
 
@@ -153,8 +153,8 @@ function XUiEquipStrengthenV2P6:OpenConsumeStarConfirm()
     local needComfirm = false
     for _, operation in ipairs(self.Operations) do
         for equipId in pairs(operation.UseEquipIdDic) do
-            local equipTemplateId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipTemplateId(equipId)
-            local star = XMVCA:GetAgency(ModuleId.XEquip):GetEquipStar(equipTemplateId)
+            local equipTemplateId = XMVCA.XEquip:GetEquipTemplateId(equipId)
+            local star = XMVCA.XEquip:GetEquipStar(equipTemplateId)
             if star >= XEnumConst.EQUIP.CAN_NOT_AUTO_EAT_STAR then
                 needComfirm = true
                 break
@@ -211,7 +211,7 @@ function XUiEquipStrengthenV2P6:OnClickTag(btnName)
 end
 
 function XUiEquipStrengthenV2P6:InitSliderBg()
-    local star = XMVCA:GetAgency(ModuleId.XEquip):GetEquipQuality(self.TemplateId)
+    local star = XMVCA.XEquip:GetEquipQuality(self.TemplateId)
     local sliderPath = CS.XGame.ClientConfig:GetString("EquipStrengthenProgressStar" .. star)
     self.SliderBackground:SetSprite(sliderPath)
     self.ImgSliderFil:SetSprite(sliderPath)
@@ -324,7 +324,7 @@ function XUiEquipStrengthenV2P6:TryMultiLevelUp(equipId, targetBreakthrough, tar
         consume:Reset()
     end
 
-    local templateId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipTemplateId(equipId)
+    local templateId = XMVCA.XEquip:GetEquipTemplateId(equipId)
     local equip = XMVCA.XEquip:GetEquip(equipId)
     local curLevel = equip.Level
     local curExp = equip.Exp
@@ -660,7 +660,7 @@ function XUiEquipStrengthenV2P6:GetAllConsumeItems(isConsumeItem, consumeStarDic
     end
 
     local CheckStar = function(equipId)
-        local templateId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipTemplateId(equipId)
+        local templateId = XMVCA.XEquip:GetEquipTemplateId(equipId)
         local star = XMVCA.XEquip:GetEquipStar(templateId)
         return consumeStarDic[star] == true
     end
@@ -714,9 +714,9 @@ end
 
 -- 刷新属性
 function XUiEquipStrengthenV2P6:UpdateEquipAttr()
-    local curAttrMap = XMVCA:GetAgency(ModuleId.XEquip):GetEquipAttrMap(self.EquipId)
+    local curAttrMap = XMVCA.XEquip:GetEquipAttrMap(self.EquipId)
     local targetBreakthrough, targetLevel = self._Control:ConvertToBreakThroughAndLevel(self.TemplateId, self.TargetLevelUnit)
-    local preAttrMap = XMVCA:GetAgency(ModuleId.XEquip):GetEquipAttrMap(self.EquipId, targetBreakthrough, targetLevel)
+    local preAttrMap = XMVCA.XEquip:GetEquipAttrMap(self.EquipId, targetBreakthrough, targetLevel)
 
     for attrIndex, attrInfo in pairs(curAttrMap) do
         local uiObj = self["PanelAttr" .. attrIndex]

@@ -1,3 +1,4 @@
+--[[
 local pairs = pairs
 
 local XUiGridBaseEquip = XClass(nil, "XUiGridBaseEquip")
@@ -216,3 +217,4 @@ function XUiGridBaseEquip:SetPutOn(isPutOn)
 end
 
 return XUiGridBaseEquip
+]]

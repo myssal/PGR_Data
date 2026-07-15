@@ -49,10 +49,10 @@ function XUiEquipOverrunSelect:OnBtnActive()
             activePos = skillInfo.Pos
         end
     end
-    local suitName = XMVCA:GetAgency(ModuleId.XEquip):GetSuitName(self.CurSelectSuitId)
+    local suitName = XMVCA.XEquip:GetSuitName(self.CurSelectSuitId)
     local content = activePos and XUiHelper.GetText("EquipOverrunActiveEffectTips1", activePos, suitName) or XUiHelper.GetText("EquipOverrunActiveEffectTips2", suitName)
     XUiManager.DialogTip(nil, content, XUiManager.DialogType.Normal, nil, function()
-        XMVCA:GetAgency(ModuleId.XEquip):EquipWeaponActiveOverrunSuitRequest(self.EquipId, self.CurSelectSuitId, function()
+        XMVCA.XEquip:EquipWeaponActiveOverrunSuitRequest(self.EquipId, self.CurSelectSuitId, function()
             self:OnBtnChange()
         end)
     end)
@@ -63,9 +63,9 @@ function XUiEquipOverrunSelect:OnBtnChange()
         return
     end
 
-    XMVCA:GetAgency(ModuleId.XEquip):EquipWeaponChoseOverrunSuitRequest(self.EquipId, self.CurSelectSuitId, function()
+    XMVCA.XEquip:EquipWeaponChoseOverrunSuitRequest(self.EquipId, self.CurSelectSuitId, function()
         local tips = XUiHelper.GetText("DormTemplateSelectSuccess")
-        XMVCA:GetAgency(ModuleId.XEquip):TipEquipOperation(nil, tips)
+        XMVCA.XEquip:TipEquipOperation(nil, tips)
         self.SelectCallBack()
         self:Close()
     end)
@@ -121,7 +121,7 @@ function XUiEquipOverrunSelect:GetSuitDataList()
         suitData.IsCharWear = false
         suitData.CharWearCnt = 0 -- 角色装备该套装意识数量
         suitData.SuitMaxCnt = self._Control:GetSuitMaxCnt(suitId) -- 套装效果最大数量
-        suitData.SuitType = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitSuitType(suitId)
+        suitData.SuitType = XMVCA.XEquip:GetEquipSuitSuitType(suitId)
         suitData.IsActive = false
         suitData.CharacterSuitPriority = 0 -- 角色意识推荐优先级
         suitDataDic[suitId] = suitData
@@ -151,7 +151,7 @@ function XUiEquipOverrunSelect:GetSuitDataList()
     end
 
     -- 套装推荐选用的角色
-    local equipRecommendCharacterId = XMVCA:GetAgency(ModuleId.XEquip):GetEquipRecommendCharacterId(self.Equip.TemplateId)
+    local equipRecommendCharacterId = XMVCA.XEquip:GetEquipRecommendCharacterId(self.Equip.TemplateId)
     local characterSuitPriorityId = self.Equip:IsWearing() and self.Equip.CharacterId or equipRecommendCharacterId
     if characterSuitPriorityId ~= 0 then
         local suitPriorityCfg = self._Control:GetConfigCharacterSuitPriority(characterSuitPriorityId)
@@ -245,8 +245,8 @@ end
 function XUiEquipOverrunSelect:RefreshSuitDetail(suitData)
     self:PlayAnimation("QieHuan")
     self.SelectSuitData = suitData
-    self.TxtName.text = XMVCA:GetAgency(ModuleId.XEquip):GetSuitName(suitData.Id)
-    local iconPath = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitIconPath(suitData.Id)
+    self.TxtName.text = XMVCA.XEquip:GetSuitName(suitData.Id)
+    local iconPath = XMVCA.XEquip:GetEquipSuitIconPath(suitData.Id)
     self.RImgIcon:SetRawImage(iconPath)
 
     -- 刷新意识
@@ -257,7 +257,7 @@ function XUiEquipOverrunSelect:RefreshSuitDetail(suitData)
         notActiveGo.gameObject:SetActiveEx(false)
     end
 
-    self.SkillInfoList = XMVCA:GetAgency(ModuleId.XEquip):GetSuitActiveSkillDesList(suitData.Id, suitData.CharWearCnt, true)
+    self.SkillInfoList = XMVCA.XEquip:GetSuitActiveSkillDesList(suitData.Id, suitData.CharWearCnt, true)
     local activeIndex = 1
     local notActiveIndex = 1
     for i, info in ipairs(self.SkillInfoList) do
