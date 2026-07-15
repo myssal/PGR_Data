@@ -110,7 +110,7 @@ function XUiEquipOverrunV4P6:RefreshGridOverrunPositions(isImmediate)
     for level, overrunCfgId in pairs(self.OverrunCfgIds) do
         local overrunCfg = self._Control:GetWeaponOverrunConfigById(overrunCfgId)
         local go = self["PanelLevel" .. level]
-        local rectTransform = go:GetComponent(typeof(CS.UnityEngine.RectTransform))
+        local rectTransform = go:GetComponent("RectTransform")
         local x = isShowDetail and overrunCfg.PanelPosXDetail or overrunCfg.PanelPosX
         local y = isShowDetail and overrunCfg.PanelPosYDetail or overrunCfg.PanelPosY
         local targetPos = CS.UnityEngine.Vector2(x, y)

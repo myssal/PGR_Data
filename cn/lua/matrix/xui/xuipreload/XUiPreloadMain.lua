@@ -33,7 +33,7 @@ function XUiPreloadMain:OnEffectLoaded()
     self.DownloadProgressEffectTrans = self.DownloadProgressEffect.transform
     local originPos = self.DownloadProgressEffectTrans.localPosition
     self.DownloadEffectPos = CS.UnityEngine.Vector3(0, originPos.y, originPos.z)
-    self.DownloadMaxWidth = self.DownloadProgressEffectTrans.parent:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.width
+    self.DownloadMaxWidth = self.DownloadProgressEffectTrans.parent:GetComponent("RectTransform").rect.width
     self.DownloadProgressEffectTrans.localPosition = self.DownloadEffectPos
 end
 

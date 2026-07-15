@@ -46,7 +46,7 @@ function XUiTRPGTestDetailsTips:InitUi()
 
     local title = XTRPGConfigs.GetExamineTitle(examineId)
     if not string.IsNilOrEmpty(title) then
-        self.TxtTitle = self.Transform:FindTransformWithSplit("Tanchuang01/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        self.TxtTitle = self.Transform:FindTransformWithSplit("Tanchuang01/Text"):GetComponent("Text")
         self.TxtTitle.text = title
     end
 

@@ -205,9 +205,9 @@ function XUiPanelMain:RefreshCurrentChapter()
     
     self.RImgChapterIcon:SetRawImage(currentChapter:GetIcon())
     if currentChapterManager == self.FubenManagerEx.GetMainLineManager() then   -- 主线
-        self.RImgChapterIcon.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta = Vector2(460, 228) --ui规定的主线、支线尺寸
+        self.RImgChapterIcon.gameObject:GetComponent("RectTransform").sizeDelta = Vector2(460, 228) --ui规定的主线、支线尺寸
     else    -- 支线
-        self.RImgChapterIcon.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta = Vector2(511, 224)
+        self.RImgChapterIcon.gameObject:GetComponent("RectTransform").sizeDelta = Vector2(511, 224)
     end
     self:RefreshLock(currentChapter:GetIsLocked())
     self.TxtChapterName.text = currentChapter:GetName()

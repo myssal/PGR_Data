@@ -5,7 +5,7 @@
         "Type": 101,
         "BeginAnim": "AniZhuanchangEnd",
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
         ]
     },
     {
@@ -14,30 +14,4774 @@
         "Type": 401,
         "Params": [
             1,
-            36
+            161
         ]
     },
     {
         "Id": 3,
         "ActionId": 3,
-        "Type": 301,
-        "BeginAnim": "DialogEnable",
+        "Type": 107,
         "Params": [
-            "",
-            "",
-            "Placeholder_占位"
+            "地下古堡",
+            "深夜"
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "深夜-地下古堡"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 108,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "马莉丝",
+            "——如何？【kuroname】，这可是我们精心为你准备的惊喜。",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "过来吧，我们崭新而完美的……新一代【SU-0】。",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            1,
+            -400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 201,
+        "Params": [
+            2,
+            501541,
+            3,
+            700,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "马莉丝高昂着头浅笑，朝仍在僵持中的二人方向挥了挥手。神威显然还并未脱离幻觉的桎梏，而“神威”则立即响应，面无表情地走向了她所指引的位置。"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 302,
+        "Params": [
+            "",
+            "这也是你们阴谋的一部分？",
+            16,
+            "你们对神威做了什么？",
+            17
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "NextActionId": 18,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "先别急着用这种敌视的态度定义我们，【kuroname】。这一切的一切……可都是为了你啊。",
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "他已经不重要了，【kuroname】。一个注定成为耗材的废弃品，不值得你上心。",
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "马莉丝",
+            "或许我应该先为你好好介绍一番？关于我们更为得意的造物。",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront88.png",
+            0,
+            0.5,
+            0.3
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 104,
+        "EndDelay": 400.0,
+        "Params": [
+            "-150|-100|-200",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 104,
+        "Params": [
+            "-150|-100|-200",
+            0
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 201,
+        "Params": [
+            1,
+            501541,
+            3,
+            "",
+            -150,
+            -150
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 201,
+        "Params": [
+            18,
+            501551,
+            8
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "马莉丝",
+            "你大可将他与那无用的耗材仔细对比——更为坚韧的躯体，绝对的忠诚与服从，不为任何杂念所侵扰的绝对理性。",
+            18
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 204,
+        "Params": [
+            18,
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "马莉丝",
+            "显而易见，他才是你更为趁手的“兵器”，能为你带来更大的用处。",
+            18
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 202,
+        "Params": [
+            1,
+            18,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 306
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront88.png",
+            0.5,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 104,
+        "EndDelay": 400.0,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "马莉丝",
+            "所以——走过来吧，【kuroname】，欣然接受我们为你呈上的橄榄枝，还有这份诚意满满的欢迎礼。",
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "马莉丝",
+            "成为我们忠实的同盟，你便可摆脱低贱的人类身份，跻身跃入更为尊贵的神种。",
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            8,
+            "",
+            -150,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 203,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            0.5,
+            -50,
+            -100
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 203,
+        "EndDelay": 400.0,
+        "Params": [
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 204,
+        "Params": [
+            1,
+            14
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "神威",
+            "不……【kuroname】，别相信……他们的诡计！",
+            1
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "神威强撑着意念努力维持清醒，劝说着人类侦探免遭蛊惑。但他只是时刻警惕着马莉丝一行的动向，并不敢主动靠近灰鸦——只因这无法由他自持的时空。"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 302,
+        "Params": [
+            "",
+            "放心，神威。",
+            55
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 302,
+        "Params": [
+            "",
+            "我不会相信她的挑唆。",
+            56
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 302,
+        "Params": [
+            "",
+            "你们的背后，一定又是邪神的阴谋。",
+            57
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 302,
+        "Params": [
+            "",
+            "我不会与罪恶同伍，收起你的自以为是。",
+            58
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            1
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "马莉丝",
+            "“不会与罪恶同伍”——真是有趣啊，【kuroname】。若非对一切尽在掌控，我都差点以为，你已经恢复了那些记忆。",
+            1
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉斯",
+            "居然会说出与七年前一模一样的话语。",
+            1
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "那就由我替你追忆一番往昔吧，就当是让你看透如今局势的利弊。",
+            1
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "既然你有幸得到我主的青睐——希望你识相。",
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "马莉丝",
+            "——滚过来，劣种们。",
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 201,
+        "Params": [
+            1,
+            500454,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 201,
+        "Params": [
+            2,
+            500969,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 306,
+        "EndDelay": 400.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 502,
+        "Params": [
+            "PanelActor1Shake"
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 502,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "“壁虎之尾”们",
+            "反抗……？不……必须……服从……",
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 505,
+        "Params": [
+            "PanelActor1Shake"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 505,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 306
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "马莉丝朝着陆续赶来此处的所有“尾巴”呼喊，他们对这一命令本想反抗，但几度挣扎后仍无法成功摆脱束缚。"
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 201,
+        "Params": [
+            15,
+            501551
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 203,
+        "EndDelay": 1000.0,
+        "Params": [
+            15,
+            0.8,
+            500,
+            200,
+            -350
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 201,
+        "Params": [
+            1,
+            500454,
+            "",
+            -900,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 201,
+        "Params": [
+            2,
+            500969,
+            "",
+            -1500,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 401,
+        "Params": [
+            2,
+            1516
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 203,
+        "Params": [
+            1,
+            0.8,
+            -100
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 203,
+        "EndDelay": 1000.0,
+        "Params": [
+            2,
+            0.8,
+            -700
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 203,
+        "Params": [
+            1,
+            0.8,
+            -1100
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 203,
+        "Params": [
+            2,
+            0.8,
+            -1700
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 203,
+        "EndDelay": 1000.0,
+        "Params": [
+            15,
+            0.8,
+            -500,
+            200,
+            -350
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 201,
+        "Params": [
+            3,
+            501541,
+            3,
+            900,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 201,
+        "Params": [
+            4,
+            500164,
+            "",
+            1500,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 401,
+        "Params": [
+            2,
+            1516
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 203,
+        "Params": [
+            3,
+            0.8,
+            100
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 203,
+        "EndDelay": 1000.0,
+        "Params": [
+            4,
+            0.8,
+            700
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "眼中的光闪烁几下后终被掐灭，他们皆回归麻木而空洞的神色，齐齐列队走近马莉丝的身侧。"
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 306
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 202,
+        "Params": [
+            15,
+            1,
+            2,
+            3,
+            4,
+            1
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 201,
+        "Params": [
+            15,
+            501551,
+            13
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 201,
+        "Params": [
+            1,
+            500454,
+            "",
+            -300,
+            -100
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 201,
+        "Params": [
+            2,
+            500969,
+            "",
+            -600,
+            -100
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 201,
+        "Params": [
+            3,
+            501541,
+            3,
+            300,
+            -100
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 201,
+        "Params": [
+            4,
+            500164,
+            "",
+            600,
+            -100
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 301,
+        "Params": [
+            1,
+            "马莉丝",
+            "【kuroname】，若你识趣就该倍感庆幸——虽生为低贱的人族，却拥有改写命运的机遇。",
+            15
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "这些劣种早在七年前你便见过。低贱蝼蚁，这些年他们再如何反抗，也只能被我控制。",
+            15
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 202,
+        "Params": [
+            15,
+            1,
+            2,
+            3,
+            4,
+            1
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 504,
+        "Params": [
+            0.7,
+            1,
+            2,
+            999
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1268.jpg"
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 201,
+        "Params": [
+            1,
+            500454,
+            "",
+            -400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 201,
+        "Params": [
+            2,
+            500969,
+            "",
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 201,
+        "Params": [
+            18,
+            501551,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 301,
+        "Params": [
+            1,
+            "马莉丝",
+            "人类本就是丑恶而低劣的种群——我四处寻觅“壁虎之尾”的备材，最初抓获的尽是平民，你们便竟无人在意。",
+            18
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 202,
+        "Params": [
+            15,
+            1,
+            2,
+            3,
+            4,
+            1
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1473.jpg"
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 201,
+        "Params": [
+            1,
+            501383,
+            "",
+            -400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 201,
+        "Params": [
+            2,
+            501384,
+            "",
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 204,
+        "Params": [
+            18,
+            13
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "Params": [
+            1,
+            "马莉丝",
+            "若非之后猎取了几个所谓的贵族……数百人遇害的“人口失踪案”，恐怕他们至死也不会有人记得吧？",
+            18
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            18,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            8,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 301,
+        "Params": [
+            1,
+            "马莉丝",
+            "哦不，要说毫无人在意也并不准确——这不，还有你，平易近人的侦探【kuroname】。",
+            1
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "居然真的会有人愿意接受贫苦平民的乞求，耗尽心力替他们寻找失踪的家人。",
+            1
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "不枉我主为你量身定造出“壁虎之尾”这一伟大计划，你的确与那些庸俗的人类不同。",
+            1
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "马莉丝",
+            "但既然要归顺我主的神意，你就应该抛掉从前那些毫无意义的心软——比如现在。那个已经被判为“断尾”的【SU-0】已经无关紧要了，你不必对他有任何留恋，而是……",
+            1
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 302,
+        "Params": [
+            "",
+            "【SU-0】是什么？",
+            139
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 302,
+        "Params": [
+            "",
+            "他有自己的名字，“神威”。",
+            140
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 302,
+        "Params": [
+            "",
+            "别一直用那种不明所以的称呼指代他。",
+            141
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "马莉丝",
+            "嗯？你居然不知道自己专属的“壁虎之尾”所对应的编号么？就算如今的你失去了这段记忆，但我记得，你不是还有那本隐秘的笔记……",
+            1
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "马莉丝飞速地思考了一番，很快便想通了缘由，她带有嘲讽地轻笑了一声。"
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "也对，毕竟以你一贯自诩的“人道主义”，自从你将他带走后，便一直在用这个可笑的名字来称呼他。",
+            1
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "“他不是只有编号的兵器物件，而是独立、理应拥有自我的人。”",
+            1
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "你如此鄙夷这一编号，选择不予使用也正常，是我疏忽了这一点。",
+            1
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "但我也不得不评价一句，此举太过愚蠢。这些“兵器”不是人类，自诞生起，他们就连自我的思考和你们人类引以为傲的情感都没有——你对他们心慈手软，不过是浪费时间。",
+            1
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 302,
+        "Params": [
+            "",
+            "你们想从我这里谋取什么利益？",
+            150
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "只是想让你归顺我们罢了。我伟大的主察觉到你的特殊，愿将“壁虎之尾”作为奖赏赐予你。",
+            1
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "总要让你知道，忠服于伟大的主将拥有何等荣耀，比如……",
+            1
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 201,
+        "Params": [
+            2,
+            500454,
+            "",
+            -500,
+            -100
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 201,
+        "Params": [
+            3,
+            500969,
+            "",
+            500,
+            -100
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 401,
+        "Params": [
+            2,
+            2689
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "马莉丝朝“尾巴”们中瞟了一眼，便有两人站了出来，呆滞地等待下一步指令。"
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "马莉丝",
+            "先让你试试这些原本属于你的“工具”吧，来，选一个？你想对他们下达任何命令都可以。",
+            1
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 302,
+        "Params": [
+            "",
+            "我拒绝。",
+            160
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 302,
+        "Params": [
+            "",
+            "他们都是受害者，是我即将解救的对象。",
+            161
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 302,
+        "Params": [
+            "",
+            "而不是被你轻视的物件。",
+            162
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "马莉丝",
+            "哦？都不选啊，那我来帮你抉择吧。",
+            1
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "“摧毁对方”，劣种们。",
+            1
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 201,
+        "Params": [
+            1,
+            500454,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 201,
+        "Params": [
+            2,
+            500969,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 502,
+        "Params": [
+            "PanelActor1Shake"
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 502,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "两位“壁虎之尾”",
+            "“摧毁”……对方？不，同胞……不想……残杀……",
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront88.png",
+            0,
+            0.5,
+            0.3
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 104,
+        "EndDelay": 400.0,
+        "Params": [
+            "0|-100|-200",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 104,
+        "Params": [
+            "0|-100|-200",
+            0
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            "",
+            "",
+            -150,
+            -150,
+            1
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 401,
+        "Params": [
+            2,
+            4276
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBianHong.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "马莉丝见状冷哼一声，随后她眼瞳中闪烁了一下暗红色的光，原本仍在挣扎的“壁虎之尾”便再次静止。"
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "这是她口中那伟大的主赐予的权力，即使承载禁链的仪器已经报废，她仍能操控这些低劣的工具。"
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 306
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront88.png",
+            0.5,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 104,
+        "EndDelay": 400.0,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 201,
+        "Params": [
+            1,
+            500454,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 201,
+        "Params": [
+            2,
+            500969,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "两位“壁虎之尾”",
+            "删除……错误内容……强制执行修正流程，服从……",
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 301,
+        "Params": [
+            "",
+            "两位“壁虎之尾”",
+            "——服从命令，摧毁对方，现在开始执行。",
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 401,
+        "Params": [
+            2,
+            9342058
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBianHong.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 401,
+        "Params": [
+            2,
+            771
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "砰——！！"
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab"
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 401,
+        "Params": [
+            2,
+            9342060
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 401,
+        "Params": [
+            2,
+            11106007
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab",
+            2,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 511,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            0,
+            "0|-120|-150"
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 401,
+        "Params": [
+            2,
+            10042002
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 401,
+        "Params": [
+            2,
+            18511011
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab",
+            2,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 511,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            0,
+            "-400|150|-50"
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 401,
+        "Params": [
+            2,
+            10042005
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 401,
+        "Params": [
+            2,
+            844007
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "接着，这两位“壁虎之尾”立即开始了相互的攻击。毫不留情，每一击都是致死性的杀招，他们俨然已经被强制改回了冰冷的兵器。"
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab"
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            5
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "神威",
+            "——！！",
+            1
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab"
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 401,
+        "Params": [
+            2,
+            4339
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            4,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 201,
+        "Params": [
+            4,
+            500454,
+            "",
+            -500,
+            "",
+            "",
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 201,
+        "Params": [
+            2,
+            500969,
+            "",
+            500,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 401,
+        "Params": [
+            2,
+            8220087
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 501,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 401,
+        "Params": [
+            2,
+            10007001
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 501,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 401,
+        "Params": [
+            2,
+            4339
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 203,
+        "Params": [
+            4,
+            0.15,
+            -600
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 203,
+        "EndDelay": 600.0,
+        "Params": [
+            2,
+            0.15,
+            600
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 401,
+        "Params": [
+            2,
+            4306
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 203,
+        "Params": [
+            4,
+            0.5,
+            -600,
+            -500
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 203,
+        "Params": [
+            2,
+            0.5,
+            600,
+            -500
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 202,
+        "EndDelay": 600.0,
+        "Params": [
+            4,
+            2
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "还好这样残忍的自相残杀并未持续太久，神威察觉到了这一边正发生着什么，于是快速移动到“尾巴”正在激斗的位置，果断将他们击晕，阻止了这场自相残杀。"
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 401,
+        "Params": [
+            2,
+            4562
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 509,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1446.jpg",
+            1
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 501,
+        "EndDelay": 250.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab"
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront88.png",
+            0,
+            0.5,
+            0
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 205,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon22.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 401,
+        "Params": [
+            2,
+            4276
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 104,
+        "Params": [
+            "150|-100|-200",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 104,
+        "Params": [
+            "150|-100|-200",
+            0
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 201,
+        "Params": [
+            11,
+            501551,
+            "",
+            -500
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            17,
+            500
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "见状，马莉丝却只是冷哼一声。她的眼中此时闪过一瞬异样的暗光，与之同时神威的左耳前端突现一道电流。他脑中剧痛更烈。他立即将巨剑插垂入地面，倚靠在剑身上痛苦地蜷缩着身体。"
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon22.png",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 204,
+        "Params": [
+            1,
+            17
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            "",
+            "神威",
+            "——唔？！！视线……理智，都……",
+            1
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "伴随着剧痛的还有视线的彻底被迫剥夺，神威的眼中从此刻开始，已经由时而的模糊沦为了彻底虚弥的幻境，他彻底无法认清真实的情况。"
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 302,
+        "Params": [
+            "",
+            "——神威？！",
+            269,
+            "——你对他做了什么？！",
+            269
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 202,
+        "Params": [
+            11,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 510,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront88.png",
+            0.5,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 104,
+        "EndDelay": 400.0,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 111,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            8
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "马莉丝",
+            "别错怪到我的头上，我可什么伤害他的事都没做——只不过是，动用“创造者”的权限，彻底解开了他身上所有的防护机制而已。",
+            1
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "对于“壁虎之尾”这种东西，总要设置多道防线以免失控——利刃挥舞太快，尝多了血的味道，便不能保证是否会贪得无厌，反过来伤到他们的主人。",
+            1
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "【SU-0】身上有两道防线的禁锢，第一道在你们刚才自己破坏的装置上，至于第二道……控制权当然在我这里。",
+            1
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "失去这两道防线的控制，他将不会再拥有任何我们恩赐的保护——自己赤裸地承受崩坏，任由这伤害逐渐撕碎他的理智。",
+            1
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "你以为自己还能和七年前一样？煽动这群杂碎，带领他们叛逆应有的使命……",
+            1
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "当年的你不过也是靠【kuroname】施舍才有这般侥幸罢了。而现在，你以为<M>他</M><W>她</W>还肯收留你这只败犬么？",
+            1
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "我好心奉劝你一句，【kuroname】，离【SU-0】远点，他很快就会彻底丧失理智，最后大开杀戒。",
+            1
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 302,
+        "Params": [
+            "",
+            "闭嘴。",
+            290,
+            "别擅自替我做决定。",
+            290,
+            "我和他之间不需要你多嘴。",
+            290
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 201,
+        "Params": [
+            1,
+            501692
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "神威",
+            "——【kuroname】？",
+            1
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "Type": 302,
+        "Params": [
+            "",
+            "神威，你先过来。",
+            294
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "Type": 302,
+        "Params": [
+            "",
+            "回到我身边，我知道你能靠我们的联系辨认方向。",
+            295
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            "",
+            "神威",
+            "……不，如果我再次失控，会伤到你。",
+            1
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "Type": 302,
+        "Params": [
+            "",
+            "不会的，相信我，也相信你自己。",
+            298
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "Type": 203,
+        "EndDelay": 600.0,
+        "Params": [
+            1,
+            0.5,
+            "",
+            -100,
+            -50
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "神威低垂着头犹豫片刻，最终还是决定听从人类侦探的劝告。他借助敏锐的听力大致判断出了人类侦探所在的方位，谨慎地走了过去。"
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "Type": 502,
+        "Params": [
+            "PanelActor1Shake"
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "Type": 203,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            0.25,
+            "",
+            -150,
+            -100
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            "",
+            -100,
+            -150
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            14,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "但他的视线依旧并不清晰，所以在靠近后不知所措。人类侦探主动伸出手握住他，然后将他拉近至自己的身侧。"
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 302,
+        "Params": [
+            "",
+            "当年的真相到底是什么？",
+            309
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "Type": 302,
+        "Params": [
+            "",
+            "由你来告诉我，神威。",
+            310
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
+        "Type": 201,
+        "Params": [
+            1,
+            501551
+        ]
+    },
+    {
+        "Id": 312,
+        "ActionId": 312,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "马莉丝",
+            "……哼，也罢，就让你自己听完彻底死心吧。",
+            1
+        ]
+    },
+    {
+        "Id": 313,
+        "ActionId": 313,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "马莉丝有些不满，但并未阻拦。祂下达的神旨本就只是招安，并非斩草除根。她坚信等灰鸦判清局势后，自会遵循他们的规划，届时只靠灰鸦的控制，就能清理好这群残尾。"
+        ]
+    },
+    {
+        "Id": 314,
+        "ActionId": 314,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 315,
+        "ActionId": 315,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            14
+        ]
+    },
+    {
+        "Id": 316,
+        "ActionId": 316,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "神威",
+            "……好，我会把全部都告诉你，【kuroname】。",
+            1
+        ]
+    },
+    {
+        "Id": 317,
+        "ActionId": 317,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 318,
+        "ActionId": 318,
+        "Type": 401,
+        "Params": [
+            1,
+            280
+        ]
+    },
+    {
+        "Id": 319,
+        "ActionId": 319,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 320,
+        "ActionId": 320,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory366.png"
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
+        "Type": 504,
+        "Params": [
+            0.7,
+            1001,
+            1,
+            2,
+            3,
+            4,
+            15
+        ]
+    },
+    {
+        "Id": 322,
+        "ActionId": 322,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 323,
+        "ActionId": 323,
+        "Type": 201,
+        "Params": [
+            18,
+            501599,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 324,
+        "ActionId": 324,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "神威",
+            "八年前，马莉丝就开始了“壁虎之尾”的筹划。以所有被她掳走的人为基石，进行人形兵器的改造。",
+            18
+        ]
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1147.jpg"
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "Type": 204,
+        "Params": [
+            18,
+            8
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
+        "Type": 201,
+        "Params": [
+            15,
+            500678,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 331,
+        "ActionId": 331,
+        "Type": 301,
+        "Params": [
+            1,
+            "神威",
+            "有一件事，我之前没有对你坦诚——“壁虎之尾”所围绕的核心对象，从始至终都只有你一个人。",
+            18
+        ]
+    },
+    {
+        "Id": 332,
+        "ActionId": 332,
+        "Type": 201,
+        "Params": [
+            1,
+            500454,
+            "",
+            -300,
+            -70
+        ]
+    },
+    {
+        "Id": 333,
+        "ActionId": 333,
+        "Type": 201,
+        "Params": [
+            2,
+            500969,
+            "",
+            -600,
+            -70
+        ]
+    },
+    {
+        "Id": 334,
+        "ActionId": 334,
+        "Type": 201,
+        "Params": [
+            3,
+            501549,
+            "",
+            300,
+            -70
+        ]
+    },
+    {
+        "Id": 335,
+        "ActionId": 335,
+        "Type": 201,
+        "Params": [
+            4,
+            500164,
+            "",
+            600,
+            -70
+        ]
+    },
+    {
+        "Id": 336,
+        "ActionId": 336,
+        "Type": 204,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 337,
+        "ActionId": 337,
+        "Type": 301,
+        "Params": [
+            1,
+            "神威",
+            "所有“壁虎之尾”都将听你号令，如若成功，这便是一个专属于你的“灰鸦军团”。",
+            18
+        ]
+    },
+    {
+        "Id": 338,
+        "ActionId": 338,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            4,
+            15,
+            1
+        ]
+    },
+    {
+        "Id": 339,
+        "ActionId": 339,
+        "Type": 201,
+        "Params": [
+            1,
+            501543,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 340,
+        "ActionId": 340,
+        "Type": 201,
+        "Params": [
+            2,
+            501544,
+            "",
+            -600,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 341,
+        "ActionId": 341,
+        "Type": 201,
+        "Params": [
+            3,
+            501599,
+            "",
+            600,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 342,
+        "ActionId": 342,
+        "Type": 504,
+        "Params": [
+            0.7,
+            1001,
+            1,
+            2,
+            3,
+            4,
+            15
+        ]
+    },
+    {
+        "Id": 343,
+        "ActionId": 343,
+        "Type": 204,
+        "Params": [
+            18,
+            14
+        ]
+    },
+    {
+        "Id": 344,
+        "ActionId": 344,
+        "Type": 301,
+        "Params": [
+            1,
+            "神威",
+            "而我是作为你最核心、也是杀伤力最强劲的武器而诞生的存在，编号为【SU-0】。",
+            18
+        ]
+    },
+    {
+        "Id": 345,
+        "ActionId": 345,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 346,
+        "ActionId": 346,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 347,
+        "ActionId": 347,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 348,
+        "ActionId": 348,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory366.png"
+        ]
+    },
+    {
+        "Id": 349,
+        "ActionId": 349,
+        "Type": 204,
+        "Params": [
+            18,
+            4
+        ]
+    },
+    {
+        "Id": 350,
+        "ActionId": 350,
+        "Type": 201,
+        "Params": [
+            1,
+            500681,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 351,
+        "ActionId": 351,
+        "Type": 201,
+        "Params": [
+            2,
+            500953,
+            "",
+            -600,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 352,
+        "ActionId": 352,
+        "Type": 201,
+        "Params": [
+            3,
+            501585,
+            "",
+            600,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 353,
+        "ActionId": 353,
+        "Type": 301,
+        "Params": [
+            1,
+            "神威",
+            "人口失踪案频发，你受民众所托深入调查，当时就已经搜集到了这些信息和旧据点的地址，并联合了愿施以援手的贵族、警队和义士围击。",
+            18
+        ]
+    },
+    {
+        "Id": 354,
+        "ActionId": 354,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 355,
+        "ActionId": 355,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 356,
+        "ActionId": 356,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 357,
+        "ActionId": 357,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory352.jpg"
+        ]
+    },
+    {
+        "Id": 358,
+        "ActionId": 358,
+        "Type": 204,
+        "Params": [
+            18,
+            8
+        ]
+    },
+    {
+        "Id": 359,
+        "ActionId": 359,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "神威",
+            "马莉丝带着部分“尾巴”逃走，你便以为案件已经结束，暂时放松了警惕。",
+            18
+        ]
+    },
+    {
+        "Id": 360,
+        "ActionId": 360,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 361,
+        "ActionId": 361,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 362,
+        "ActionId": 362,
+        "Type": 502,
+        "EndDelay": 300.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 363,
+        "ActionId": 363,
+        "Type": 504,
+        "Params": [
+            0,
+            1001,
+            1,
+            2,
+            3,
+            4,
+            15
+        ]
+    },
+    {
+        "Id": 364,
+        "ActionId": 364,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
+        ]
+    },
+    {
+        "Id": 365,
+        "ActionId": 365,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            14,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 366,
+        "ActionId": 366,
+        "Type": 302,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "我们就是在这个时候相识的，对吗。",
+            367
+        ]
+    },
+    {
+        "Id": 367,
+        "ActionId": 367,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 368,
+        "ActionId": 368,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "神威",
+            "——没错。是你先发现了我觉醒自主意志的征兆，为我以及受到影响的其他“尾巴”据理力争，才让我们没有被视为工具直接销毁。",
+            1
+        ]
+    },
+    {
+        "Id": 369,
+        "ActionId": 369,
+        "Type": 204,
+        "Params": [
+            1,
+            14
+        ]
+    },
+    {
+        "Id": 370,
+        "ActionId": 370,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "也是你将我带回了委托你的那户农家，他们因失踪的幼子与我长相一模一样，便动了恻隐之心，收养了我。",
+            1
+        ]
+    },
+    {
+        "Id": 371,
+        "ActionId": 371,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "……因此，我才能以人类的身份平安成长。",
+            1
+        ]
+    },
+    {
+        "Id": 372,
+        "ActionId": 372,
+        "Type": 302,
+        "Params": [
+            "",
+            "那郊外的那场大火又是……？",
+            373
+        ]
+    },
+    {
+        "Id": 373,
+        "ActionId": 373,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 374,
+        "ActionId": 374,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "马莉丝只是暂避你的锋芒，却并未彻底放弃。曾援助过你的大家陆续遭受了来自她的袭击，你意识到她的反扑已经逼近。",
+            1
+        ]
+    },
+    {
+        "Id": 375,
+        "ActionId": 375,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 376,
+        "ActionId": 376,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "你将我托付给了农家，之后便独自前往了“壁虎之尾”的旧据点。之后我们就都听说了那场惊动一时的大火，却彻底失去了你的联系。",
+            1
+        ]
+    },
+    {
+        "Id": 377,
+        "ActionId": 377,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 378,
+        "ActionId": 378,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            3
+        ]
+    },
+    {
+        "Id": 379,
+        "ActionId": 379,
+        "Type": 301,
+        "Params": [
+            1,
+            "马莉丝",
+            "——打扰一下，各位，之后的戏份总可以交给我了吧？毕竟，那些可都归功于我哦？",
+            1
+        ]
+    },
+    {
+        "Id": 380,
+        "ActionId": 380,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "马莉丝出声打断，她可不想将主导权全部交给这个残废品。她可时刻谨记主的命令，要将灰鸦拉拢过来。"
+        ]
+    },
+    {
+        "Id": 381,
+        "ActionId": 381,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 382,
+        "ActionId": 382,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "能凭一己之力阻拦我们的计划，你确实有几分意思，【kuroname】，但还是保留了人类那愚蠢的天真……",
+            1
+        ]
+    },
+    {
+        "Id": 383,
+        "ActionId": 383,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 384,
+        "ActionId": 384,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "低贱的人类又怎么可能真正击败高贵的神祇呢？",
+            1
+        ]
+    },
+    {
+        "Id": 385,
+        "ActionId": 385,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "我对你那些同盟稍微动点手脚，你便自乱阵脚，回到旧址居然想用一场火灾与我同归于尽。",
+            1
+        ]
+    },
+    {
+        "Id": 386,
+        "ActionId": 386,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "我主宽仁，可不想让你就这么死了，你才有资格还站在这里，继续顽固抵抗。",
+            1
+        ]
+    },
+    {
+        "Id": 387,
+        "ActionId": 387,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 388,
+        "ActionId": 388,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "而你……【SU-0】，可惜当时以为你还有用，就没有清理掉。",
+            1
+        ]
+    },
+    {
+        "Id": 389,
+        "ActionId": 389,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "原本待迷雾浸透人类世界后，你回归兵器的本性只是时间问题——可你竟去做什么猎魔巡狩，破坏我主计划。",
+            1
+        ]
+    },
+    {
+        "Id": 390,
+        "ActionId": 390,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "马莉丝",
+            "——不知死活的低贱物种。",
+            1
+        ]
+    },
+    {
+        "Id": 391,
+        "ActionId": 391,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 392,
+        "ActionId": 392,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 393,
+        "ActionId": 393,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 394,
+        "ActionId": 394,
+        "Type": 104,
+        "EndDelay": 400.0,
+        "Params": [
+            "0|-100|-200",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 395,
+        "ActionId": 395,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
+        ]
+    },
+    {
+        "Id": 396,
+        "ActionId": 396,
+        "Type": 104,
+        "Params": [
+            "0|-100|-200",
+            0
+        ]
+    },
+    {
+        "Id": 397,
+        "ActionId": 397,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 398,
+        "ActionId": 398,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 399,
+        "ActionId": 399,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            "",
+            "",
+            -150,
+            -150,
+            1
+        ]
+    },
+    {
+        "Id": 400,
+        "ActionId": 400,
+        "Type": 401,
+        "Params": [
+            2,
+            4276
+        ]
+    },
+    {
+        "Id": 401,
+        "ActionId": 401,
+        "Type": 401,
+        "Params": [
+            2,
+            4562
+        ]
+    },
+    {
+        "Id": 402,
+        "ActionId": 402,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBianHong.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 403,
+        "ActionId": 403,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "马莉丝的眼瞳再次闪烁，守在她身侧的“神威”眼中跟随同步。而与此同时，神威体内的混乱与压力骤然加剧。"
+        ]
+    },
+    {
+        "Id": 404,
+        "ActionId": 404,
+        "Type": 306
+    },
+    {
+        "Id": 405,
+        "ActionId": 405,
+        "Type": 201,
+        "Params": [
+            18,
+            501599,
+            17,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 406,
+        "ActionId": 406,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "神威",
+            "——唔，我才不可能，让你们这些怪物肆意残害人类！",
+            18
+        ]
+    },
+    {
+        "Id": 407,
+        "ActionId": 407,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 408,
+        "ActionId": 408,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 409,
+        "ActionId": 409,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "……呵，你又有什么资格与身份，去守护你那所谓的人类呢？",
+            1
+        ]
+    },
+    {
+        "Id": 410,
+        "ActionId": 410,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "对他们而言你也是异族，被圈起来养了几年，就真当自己是温顺的绵羊了么？",
+            1
+        ]
+    },
+    {
+        "Id": 411,
+        "ActionId": 411,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "离开【kuroname】的禁链，你也不过是逐渐丧失理性的疯兽——一把沾着血，只会胡乱挥舞的兵器。",
+            1
+        ]
+    },
+    {
+        "Id": 412,
+        "ActionId": 412,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "你的力量既不再稳定，也不再忠诚，早就被我们视作失败品了。",
+            1
+        ]
+    },
+    {
+        "Id": 413,
+        "ActionId": 413,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 414,
+        "ActionId": 414,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "哦，当然，也即将是被【kuroname】所抛弃的“残尾”。",
+            1
+        ]
+    },
+    {
+        "Id": 415,
+        "ActionId": 415,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 416,
+        "ActionId": 416,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "给你一句善意的忠告——在你彻底变成一个敌我不分的怪物前，还是趁早自我了结为妙，省得连累你最最在意的【kuroname】。",
+            1
+        ]
+    },
+    {
+        "Id": 417,
+        "ActionId": 417,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "马莉丝",
+            "别总想着靠失控后飙升的战力与我同归于尽。有崭新的【SU-0】在手，你就永远不可能击败我，愚蠢的同归于尽不是牺牲，而是毫无意义的自毁。",
+            1
+        ]
+    },
+    {
+        "Id": 418,
+        "ActionId": 418,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 419,
+        "ActionId": 419,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 420,
+        "ActionId": 420,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 421,
+        "ActionId": 421,
+        "Type": 104,
+        "EndDelay": 400.0,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 422,
+        "ActionId": 422,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory60.jpg"
+        ]
+    },
+    {
+        "Id": 423,
+        "ActionId": 423,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 424,
+        "ActionId": 424,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 425,
+        "ActionId": 425,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            1,
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 426,
+        "ActionId": 426,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "马莉丝向【kuroname】伸出手，为<M>他</M><W>她</W>展示掌心那一颗耀眼的红宝石。"
+        ]
+    },
+    {
+        "Id": 427,
+        "ActionId": 427,
+        "Type": 306
+    },
+    {
+        "Id": 428,
+        "ActionId": 428,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "你要的真相已经明了，【kuroname】，如今局势你应该清楚。",
+            1
+        ]
+    },
+    {
+        "Id": 429,
+        "ActionId": 429,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "走过来，加入我们的阵营，这颗宝石将再次给予你操控“壁虎之尾”的力量。",
+            1
+        ]
+    },
+    {
+        "Id": 430,
+        "ActionId": 430,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 431,
+        "ActionId": 431,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "你将成为他们的“主人”，包括我们为你倾力打造的、崭新的【SU-0】，他将取代你身边那个已被污染的废品。",
+            1
+        ]
+    },
+    {
+        "Id": 432,
+        "ActionId": 432,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 433,
+        "ActionId": 433,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "又或者你还是喜欢他那副模样？都无所谓，缰绳在你手上，想乘哪一匹烈马都随你乐意。",
+            1
+        ]
+    },
+    {
+        "Id": 434,
+        "ActionId": 434,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 435,
+        "ActionId": 435,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "无论你奢想何种恩赐，我伟大的主都能实现你的美梦。",
+            1
+        ]
+    },
+    {
+        "Id": 436,
+        "ActionId": 436,
+        "Type": 302,
+        "Params": [
+            "",
+            "（开枪）",
+            437
+        ]
+    },
+    {
+        "Id": 437,
+        "ActionId": 437,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 438,
+        "ActionId": 438,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 439,
+        "ActionId": 439,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 440,
+        "ActionId": 440,
+        "Type": 401,
+        "Params": [
+            2,
+            1510
+        ]
+    },
+    {
+        "Id": 441,
+        "ActionId": 441,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "砰——！！"
+        ]
+    },
+    {
+        "Id": 442,
+        "ActionId": 442,
+        "Type": 401,
+        "Params": [
+            2,
+            5535
+        ]
+    },
+    {
+        "Id": 443,
+        "ActionId": 443,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "不等马莉丝反应，空荡的房间内就响起一声枪响。人类侦探毫不犹豫地朝她抛出的橄榄枝开了枪，宝石被击飞落到地上，彻底报废。"
+        ]
+    },
+    {
+        "Id": 444,
+        "ActionId": 444,
+        "Type": 401,
+        "Params": [
+            1,
+            5071
+        ]
+    },
+    {
+        "Id": 445,
+        "ActionId": 445,
+        "Type": 302,
+        "Params": [
+            "",
+            "你的废话说完了吗。",
+            446
+        ]
+    },
+    {
+        "Id": 446,
+        "ActionId": 446,
+        "Type": 302,
+        "Params": [
+            "",
+            "看来，案件的凶手已经能确定是你了。",
+            447
+        ]
+    },
+    {
+        "Id": 447,
+        "ActionId": 447,
+        "Type": 302,
+        "Params": [
+            "",
+            "速战速决吧，我会将你的名字记入我的笔记中。",
+            448
+        ]
+    },
+    {
+        "Id": 448,
+        "ActionId": 448,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            "",
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 449,
+        "ActionId": 449,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "马莉丝",
+            "……看来你依旧不识好歹，【kuroname】。",
+            1
+        ]
+    },
+    {
+        "Id": 450,
+        "ActionId": 450,
+        "Type": 306,
+        "EndDelay": 400.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 451,
+        "ActionId": 451,
+        "Type": 401,
+        "Params": [
+            2,
+            2924
+        ]
+    },
+    {
+        "Id": 452,
+        "ActionId": 452,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon22.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 453,
+        "ActionId": 453,
         "Type": 301,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
-            "",
-            "Placeholder_占位"
+            "马莉丝",
+            "既如此，我就替我主执行神罚，让你认清究竟该站在哪一方。",
+            1
         ]
     }
 ]

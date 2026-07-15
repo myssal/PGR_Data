@@ -142,7 +142,7 @@ end
 -- 建造弹框
 function XUiTheatre4PopupChooseProp:OnBtnBuildClick()
     ---@type UnityEngine.RectTransform
-    local rectTransform = self.BtnBuild:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local rectTransform = self.BtnBuild:GetComponent("RectTransform")
     XLuaUiManager.Open("UiTheatre4BubbleBuild", rectTransform.position, rectTransform.sizeDelta, false)
 end
 

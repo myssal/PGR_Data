@@ -52,7 +52,7 @@ function XUiMissionTeamLimit:InitAutoScript()
 end
 
 function XUiMissionTeamLimit:AutoInitUi()
-    -- self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent("Button")
     -- self.UiMissionTeamLimitA = self.Transform:Find("SafeAreaContentPane/UiMissionTeamLimit")
     -- self.PanelScrollView = self.Transform:Find("SafeAreaContentPane/UiMissionTeamLimit/PanelScrollView")
     -- self.GridLimit = self.Transform:Find("SafeAreaContentPane/UiMissionTeamLimit/PanelScrollView/Viewport/GridLimit")

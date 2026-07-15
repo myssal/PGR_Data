@@ -16,11 +16,11 @@ function XUiPanelSetBirthday:InitAutoScript()
 end
 
 function XUiPanelSetBirthday:AutoInitUi()
-    self.BtnBirSure = self.Transform:Find("BtnBirSure"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.BtnBirCancel = self.Transform:Find("BtnBirCancel"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.TxtB = self.Transform:Find("Txt"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtMon = self.Transform:Find("InMon/TxtMon"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtDay = self.Transform:Find("InDay/TxtDay"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnBirSure = self.Transform:Find("BtnBirSure"):GetComponent("Button")
+    self.BtnBirCancel = self.Transform:Find("BtnBirCancel"):GetComponent("Button")
+    self.TxtB = self.Transform:Find("Txt"):GetComponent("Text")
+    self.TxtMon = self.Transform:Find("InMon/TxtMon"):GetComponent("Text")
+    self.TxtDay = self.Transform:Find("InDay/TxtDay"):GetComponent("Text")
 end
 
 function XUiPanelSetBirthday:RegisterClickEvent(uiNode, func)

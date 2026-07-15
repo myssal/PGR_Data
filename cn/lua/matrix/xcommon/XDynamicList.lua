@@ -53,7 +53,7 @@ function XDynamicList:InitView()
         XLog.Error("Not Find XVerticalDynamicList Component!")
         return
     end
-    self.DynamicList:SetViewSize(self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.size)
+    self.DynamicList:SetViewSize(self.Transform:GetComponent("RectTransform").rect.size)
 end
 
 function XDynamicList:SetData(data, cb, scrollCb)--设置数据
@@ -210,7 +210,7 @@ function XDynamicList:GenerateItem(evt, dir, index)
             local item = self.DynamicList:PreDequeueGrid(poolName, index)
             local xlayoutNode = item:GetComponent("XLayoutNode")
             if self.DynamicList and xlayoutNode then
-                xlayoutNode.minSize = CS.UnityEngine.Vector2(self.DynamicList.transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.width, 0)
+                xlayoutNode.minSize = CS.UnityEngine.Vector2(self.DynamicList.transform:GetComponent("RectTransform").rect.width, 0)
             end
             if item == nil then
                 XLog.Error("GenerateItem is Fail......index = ", index)

@@ -23,7 +23,7 @@ function XUiPanelAssignStage:OnEnable()
 end
 
 function XUiPanelAssignStage:InitComponent()
-    self.RectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.RectTransform = self.Transform:GetComponent("RectTransform")
     self.PanelAsset = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
 
     self.TxtLock.gameObject:SetActiveEx(false)
@@ -138,9 +138,9 @@ function XUiPanelAssignStage:RefreshOccupy()
         local ret, desc = XConditionManager.CheckCondition(conditionId)
         if not (ret) then
             isMatch = false
-            txt.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 0.3
+            txt.gameObject:GetComponent("CanvasGroup").alpha = 0.3
         else
-            txt.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 1
+            txt.gameObject:GetComponent("CanvasGroup").alpha = 1
         end
         txt.text = desc
     end
@@ -198,7 +198,7 @@ function XUiPanelAssignStage:OnDetailShow(grid)
 
     -- 动画 居中当前grid
     self.ScrollRect.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
-    local gridTf = grid.Parent.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local gridTf = grid.Parent.gameObject:GetComponent("RectTransform")
     local diffX = gridTf.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridTf.localPosition.x

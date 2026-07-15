@@ -23,7 +23,7 @@ function XScrollView:Ctor(rootUi, ui, scrollItems, paramsObj)
     self.SelectItemCb = function() end
     self.Direction = XScrollConfig.HORIZONTAL
 
-    self.Rect = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.Rect = self.Transform:GetComponent("RectTransform")
     self.ContentSize = self.Rect.sizeDelta
 
     self.StartValue = DEFAULT_START_VALUE

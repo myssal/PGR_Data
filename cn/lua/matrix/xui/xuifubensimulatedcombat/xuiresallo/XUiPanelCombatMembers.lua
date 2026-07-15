@@ -21,8 +21,8 @@ function XUiPanelCombatMembers:InitView()
     for i = 1, MAX_CHAR_COUNT do
         self.MemberNoneList[i] = self.Transform:Find("Member"..i.."/None")
         self.MemberGridList[i] = self.Transform:Find("Member"..i.."/Member")
-        self.IconList[i] = self.MemberGridList[i]:Find("RImg"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-        self.TxtStarList[i] = self.MemberGridList[i]:Find("StarInformation"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        self.IconList[i] = self.MemberGridList[i]:Find("RImg"):GetComponent("RawImage")
+        self.TxtStarList[i] = self.MemberGridList[i]:Find("StarInformation"):GetComponent("Text")
     end
     
 end

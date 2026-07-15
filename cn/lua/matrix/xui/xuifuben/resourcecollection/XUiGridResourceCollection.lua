@@ -22,9 +22,9 @@ function XUiGridResourceCollection:PlayEnableAnime(index)
         return
     end
 
-    local rect = self.UseGrid:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local rect = self.UseGrid:GetComponent("RectTransform")
     local beforePlayPosY = rect.anchoredPosition.y
-    local canvasGroup = self.UseGrid:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    local canvasGroup = self.UseGrid:GetComponent("CanvasGroup")
     canvasGroup.alpha = 0
     XScheduleManager.ScheduleOnce(function()
         if not XTool.UObjIsNil(self.Transform) and self.GameObject.activeInHierarchy then
@@ -38,7 +38,7 @@ function XUiGridResourceCollection:PlayEnableAnime(index)
 end
 
 function XUiGridResourceCollection:SetAlphaOne()
-    local canvasGroup = self.Transform:Find("Grid"):GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    local canvasGroup = self.Transform:Find("Grid"):GetComponent("CanvasGroup")
     canvasGroup.alpha = 1
     self.GameObject:SetActiveEx(false)
 end

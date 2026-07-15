@@ -19,7 +19,7 @@ function XUiGridCalendar:OnStart()
         [1001] = 2,
     }
 
-    self.ImgTimeCanvas = self.ImgTime.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    self.ImgTimeCanvas = self.ImgTime.gameObject:GetComponent("CanvasGroup")
     self.GridCalendarEnable = XUiHelper.TryGetComponent(self.Transform, "Animation/GridCalendarEnable")
 end
 

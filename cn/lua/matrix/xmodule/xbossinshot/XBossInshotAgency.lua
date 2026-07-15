@@ -135,7 +135,7 @@ function XBossInshotAgency:BossInshotQueryRankRequest(characterCfgId, bossId, is
     
     local req = { CharacterCfgId = characterCfgId, BossId = bossId, IsTotalRank = isTotalRank }
     XNetwork.Call("BossInshotQueryRankRequest", req, function(res)
-        self._Model:SaveRankData(characterCfgId, bossId, isTotalRank, false, nowTime, res)
+        self._Model:SaveRankData(characterCfgId, bossId, isTotalRank, nowTime, res)
         if cb then cb(res) end
     end)
 end
@@ -155,7 +155,7 @@ function XBossInshotAgency:BossInshotQueryTowerRankRequest(characterCfgId, bossI
 
     local req = { CharacterCfgId = characterCfgId, BossId = bossId }
     XNetwork.Call("BossInshotTowerQueryRankRequest", req, function(res)
-        self._Model:SaveRankData(characterCfgId, bossId, false, true, nowTime, res)
+        self._Model:SaveRankData(characterCfgId, bossId, false, nowTime, res)
         if cb then cb(res) end
     end)
 end

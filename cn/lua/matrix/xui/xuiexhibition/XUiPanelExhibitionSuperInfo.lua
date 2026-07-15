@@ -217,7 +217,7 @@ function XUiPanelExhibitionSuperInfo:Refresh(characterId, exhibitionRewardConfig
                         uiAuroProxy.TextTitleDic[index] = titleText
                     end
                     titleStr = XUiHelper.ConvertLineBreakSymbol(titleStr)
-                    titleText:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = titleStr
+                    titleText:GetComponent("Text").text = titleStr
                     titleText.gameObject:SetActiveEx(true)
 
                     local descText = uiAuroProxy.TextDescDic[index]
@@ -226,7 +226,7 @@ function XUiPanelExhibitionSuperInfo:Refresh(characterId, exhibitionRewardConfig
                         uiAuroProxy.TextDescDic[index] = descText
                     end
                     descStr = XUiHelper.ConvertLineBreakSymbol(descStr)
-                    descText:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = descStr
+                    descText:GetComponent("Text").text = descStr
                     descText.gameObject:SetActiveEx(true)
                 end
             end

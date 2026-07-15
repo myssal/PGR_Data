@@ -65,7 +65,7 @@ function XUiPcgPopupLog:MoveToLast()
     self:ClearMoveTimer()
     self.MoveTimer = XScheduleManager.ScheduleOnce(function()
         local contentHeight = self.Content.rect.height
-        local viewportHeight = self.Content.transform.parent:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.height
+        local viewportHeight = self.Content.transform.parent:GetComponent("RectTransform").rect.height
         local posY = contentHeight - viewportHeight
         self.Content.anchoredPosition = CS.UnityEngine.Vector2(self.Content.anchoredPosition.x, posY)
     end, 50)

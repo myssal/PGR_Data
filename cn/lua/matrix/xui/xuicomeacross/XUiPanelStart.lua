@@ -51,15 +51,15 @@ function XUiPanelStart:InitAutoScript()
 end
 
 function XUiPanelStart:AutoInitUi()
-    self.ImgRole = self.Transform:Find("ImgRole"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgRole = self.Transform:Find("ImgRole"):GetComponent("Image")
     self.Panelselectoption = self.Transform:Find("Panelselectoption")
-    self.BtnSelect = self.Transform:Find("Panelselectoption/GameObject/BtnSelect"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.TxtSelect = self.Transform:Find("Panelselectoption/GameObject/BtnSelect/TxtSelect"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnSelect = self.Transform:Find("Panelselectoption/GameObject/BtnSelect"):GetComponent("Button")
+    self.TxtSelect = self.Transform:Find("Panelselectoption/GameObject/BtnSelect/TxtSelect"):GetComponent("Text")
     self.PanelDialog = self.Transform:Find("PanelDialog")
     self.PanelText = self.Transform:Find("PanelDialog/PanelText")
-    self.ImgTxtWordBg = self.Transform:Find("PanelDialog/PanelText/ImgTxtWordBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.TxtName = self.Transform:Find("PanelDialog/PanelText/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtWords = self.Transform:Find("PanelDialog/PanelText/TxtWords"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgTxtWordBg = self.Transform:Find("PanelDialog/PanelText/ImgTxtWordBg"):GetComponent("Image")
+    self.TxtName = self.Transform:Find("PanelDialog/PanelText/TxtName"):GetComponent("Text")
+    self.TxtWords = self.Transform:Find("PanelDialog/PanelText/TxtWords"):GetComponent("Text")
 end
 
 function XUiPanelStart:RegisterClickEvent(uiNode, func)

@@ -51,7 +51,7 @@ end
 function XUiTierStage:OnShow()
     if self.StageEnable then
         self.StageEnable:Stop()
-        local stageBg = self.Transform:Find("StageBg"):GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+        local stageBg = self.Transform:Find("StageBg"):GetComponent("CanvasGroup")
         if stageBg then
             stageBg.alpha = 0
         end

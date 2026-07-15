@@ -62,7 +62,7 @@ function XUiDrawScene:LoadRoleModel(modelId,isHideWeapon,cb)
     --XModelManager.LoadRoleModel(modelId, self.ModelRoot, function(model)
     --    --self.Ui.DragPanel.Target = model.transform
     --    ---@type UnityEngine.Animator
-    --    self.Animator = model:GetComponent(typeof(CS.UnityEngine.Animator))
+    --    self.Animator = model:GetComponent("Animator")
     --    if not Animator then
     --        self.Animator = model:AddComponent("Animator")
     --    end

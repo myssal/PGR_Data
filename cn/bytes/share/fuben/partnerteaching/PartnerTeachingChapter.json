@@ -752,7 +752,6 @@
     {
         "Id": 31,
         "Name": "适配拟合·波灵",
-        "ActivityTimeId": 44702,
         "ActivityCondition": [
             8006
         ],
@@ -778,7 +777,6 @@
     {
         "Id": 32,
         "Name": "适配拟合·摩利甘",
-        "ActivityTimeId": 45802,
         "ActivityCondition": [
             8006
         ],
@@ -852,5 +850,31 @@
         "Order": 34,
         "NewTag": "新辅助机",
         "PartnerId": 16390000
+    },
+    {
+        "Id": 35,
+        "Name": "适配拟合·大公",
+        "ActivityTimeId": 48704,
+        "ActivityCondition": [
+            8006
+        ],
+        "StagePrefix": "DG-",
+        "OpenCondition": [
+            1002149
+        ],
+        "BannerIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBannerChapter35.png",
+        "Background": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterBg35.png",
+        "ChapterIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBigBanner29.png",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/PartnerTeaching/TuTeachingChapter.prefab",
+        "FightStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingFight.prefab",
+        "StoryStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingStory.prefab",
+        "StoryStageDetailBg": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterDaGongStage01.png",
+        "StoryStageDetailIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingImgBgMa02.png",
+        "StageIds": [
+            30101131
+        ],
+        "Order": 35,
+        "NewTag": "新辅助机",
+        "PartnerId": 16400000
     }
 ]

@@ -515,6 +515,9 @@ local module_creator = function()
                     removeResIdsRecord = {}
                 end
 
+                -- 4.6兜底：本次强制下载sub=4000并补写Launch下载记录
+                local needForceSub4000Download46 = XLaunchDlcManager.CheckNeedForceSub4000Download46()
+
                 -- 分包补丁
                 ResSizeDic = {}
                 local subHasUninstalledCache = {} -- 缓存Sub级卸载意图检查结果，避免同Sub下多个res重复查询
@@ -552,12 +555,18 @@ local module_creator = function()
                             and (not removeResIdsRecord[resId])
                             and (not isUninstalled)
                             and not XLaunchDlcManager.CheckResIsIgnoreDownload(resId, NeedShowSelect, isSubpackOpen)
-                    -- AutoDownload涂装资源：仅首次弹窗时（NeedShowSelect）强制加入下载队列
-                    -- [修复#244203] 玩家选过一次后不再触发，后续由游戏内分包系统处理
-                    if not needDownloadDlc and not isHotUpdateRes
-                            and XLaunchDlcManager.IsAutoDownloadRes(resId) and not isUninstalled then
+                    -- AutoDownload涂装资源：Launch长期维护，覆盖安装热更也需要补入下载队列
+                    if XLaunchDlcManager.IsAutoDownloadRes(resId) and not isUninstalled then
+                        XLaunchDlcManager.SetLaunchDownloadRecord(resId) -- 补写记录，确保后续热更能下载补丁
+                        if not needDownloadDlc then
+                            needDownloadDlc = true
+                        end
+                    end
+                    if not needDownloadDlc and needForceSub4000Download46
+                            and ResId2SubIdMap and tostring(ResId2SubIdMap[resId]) == "4000"
+                            and not isUninstalled then
                         needDownloadDlc = true
-                        XLaunchDlcManager.SetLaunchDownloadRecord(resId) -- 补写记录，确保热更时能下载补丁
+                        XLaunchDlcManager.SetLaunchDownloadRecord(resId) -- 补写记录，确保后续热更能下载补丁
                     end
                     if IsDebugBuild then
                         needDownloadMap[resId] = needDownloadDlc
@@ -590,6 +599,10 @@ local module_creator = function()
                 end
 
                 SetDlcTable(dlcTableMap)
+                -- 4.6兜底：标记已触发，下次启动不再重复
+                if needForceSub4000Download46 then
+                    XLaunchDlcManager.MarkForceSub4000Downloaded46()
+                end
                 if IsDebugBuild then
                     local logTab = {}
                     for dlcId, need in pairs(needDownloadMap) do

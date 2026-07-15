@@ -14,12 +14,12 @@ function XUiPanelPlayerGloryExp:InitAutoScript()
 end
 
 function XUiPanelPlayerGloryExp:AutoInitUi()
-    self.ImgExpCircle = self.Transform:Find("ImgExpCircle"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgExpCircleFill1 = self.Transform:Find("ImgExpCircle/ImgExpCircleFill1"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgExpCircleFill2 = self.Transform:Find("ImgExpCircle/ImgExpCircleFill2"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgExpCircleFill3 = self.Transform:Find("ImgExpCircle/ImgExpCircleFill3"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.TxtLevelNum = self.Transform:Find("TxtLevelNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtExpNum = self.Transform:Find("PanelExp/TxtExpNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgExpCircle = self.Transform:Find("ImgExpCircle"):GetComponent("Image")
+    self.ImgExpCircleFill1 = self.Transform:Find("ImgExpCircle/ImgExpCircleFill1"):GetComponent("Image")
+    self.ImgExpCircleFill2 = self.Transform:Find("ImgExpCircle/ImgExpCircleFill2"):GetComponent("Image")
+    self.ImgExpCircleFill3 = self.Transform:Find("ImgExpCircle/ImgExpCircleFill3"):GetComponent("Image")
+    self.TxtLevelNum = self.Transform:Find("TxtLevelNum"):GetComponent("Text")
+    self.TxtExpNum = self.Transform:Find("PanelExp/TxtExpNum"):GetComponent("Text")
 end
 
 function XUiPanelPlayerGloryExp:RegisterClickEvent(uiNode, func)

@@ -47,7 +47,7 @@ function XUiGridReviewItem:AutoSetTextWidth()
             return
         end
         --MASK的宽度应大于TxtName加TxtWords宽度值,否则会爆框
-        local maskWidth = self.Transform.parent.parent:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.width - 150
+        local maskWidth = self.Transform.parent.parent:GetComponent("RectTransform").rect.width - 150
         if self.TxtName.rectTransform.rect.width + self.TxtWords.rectTransform.rect.width > maskWidth then
         local width = maskWidth - self.TxtName.rectTransform.rect.width
         self.contentSizeFitter:SetWrapWidth(width)

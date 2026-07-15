@@ -1592,7 +1592,6 @@
     },
     {
         "Id": 111,
-        "TimeId": 47110,
         "Name": "长路归航-签到",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV405.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV405.prefab",
@@ -1608,7 +1607,6 @@
     },
     {
         "Id": 112,
-        "TimeId": 47111,
         "Name": "艾束芳兰-签到",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgDragonBoatFestivalV405.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainDragonBoatFestivalV405.prefab",
@@ -1636,5 +1634,21 @@
             201
         ],
         "IsShowWhenSignOver": true
+    },
+    {
+        "Id": 114,
+        "TimeId": 48110,
+        "Name": "孑念空行-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV406.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV406.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelV406.png",
+        "Type": 2,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1109
+        ],
+        "OpenLevel": 20
     }
 ]

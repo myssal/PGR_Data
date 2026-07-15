@@ -27,13 +27,13 @@ function XUiTeamPrefabEquipAwareness:OnStart(teamPrefab, pos, closeCallback)
     self.CharacterId = self.TeamPrefab:GetEntityIdByTeamPos(pos)
 
     -- 由动画展开意识面板（完全复用原版）
-    local anim = self.PanelEquip.PanelEquipEnable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    local anim = self.PanelEquip.PanelEquipEnable:GetComponent("PlayableDirector")
     anim.time = anim.duration
     anim:Play()
     self.PanelEquip.PanelAwareness.gameObject:SetActiveEx(true)
 
     -- 切换按钮不显示，不可点击（保持原版）
-    local canvasGroup = self.PanelEquip.BtnFold:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    local canvasGroup = self.PanelEquip.BtnFold:GetComponent("CanvasGroup")
     canvasGroup.alpha = 0
     canvasGroup.blocksRaycasts = false
 

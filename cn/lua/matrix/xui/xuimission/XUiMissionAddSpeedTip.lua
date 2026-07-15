@@ -40,15 +40,15 @@ end
 
 function XUiMissionAddSpeedTip:AutoInitUi()
     self.PanelContent = self.Transform:Find("SafeAreaContentPane/PanelContent")
-    self.TxtTitle = self.Transform:Find("SafeAreaContentPane/PanelContent/TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtCount = self.Transform:Find("SafeAreaContentPane/PanelContent/TxtCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.BtnSure = self.Transform:Find("SafeAreaContentPane/PanelContent/BtnSure"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtTitle = self.Transform:Find("SafeAreaContentPane/PanelContent/TxtTitle"):GetComponent("Text")
+    self.TxtCount = self.Transform:Find("SafeAreaContentPane/PanelContent/TxtCount"):GetComponent("Text")
+    self.BtnSure = self.Transform:Find("SafeAreaContentPane/PanelContent/BtnSure"):GetComponent("Button")
     self.PanelCost = self.Transform:Find("SafeAreaContentPane/PanelContent/PanelCost")
-    self.ImgIcon = self.Transform:Find("SafeAreaContentPane/PanelContent/PanelCost/ImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.Txt = self.Transform:Find("SafeAreaContentPane/PanelContent/PanelCost/Txt"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtCostCount = self.Transform:Find("SafeAreaContentPane/PanelContent/PanelCost/TxtCostCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.BtnCancel = self.Transform:Find("SafeAreaContentPane/PanelContent/BtnCancel"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.ImgIcon = self.Transform:Find("SafeAreaContentPane/PanelContent/PanelCost/ImgIcon"):GetComponent("Image")
+    self.Txt = self.Transform:Find("SafeAreaContentPane/PanelContent/PanelCost/Txt"):GetComponent("Text")
+    self.TxtCostCount = self.Transform:Find("SafeAreaContentPane/PanelContent/PanelCost/TxtCostCount"):GetComponent("Text")
+    self.BtnCancel = self.Transform:Find("SafeAreaContentPane/PanelContent/BtnCancel"):GetComponent("Button")
+    self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent("Button")
 end
 
 function XUiMissionAddSpeedTip:GetAutoKey(uiNode, eventName)

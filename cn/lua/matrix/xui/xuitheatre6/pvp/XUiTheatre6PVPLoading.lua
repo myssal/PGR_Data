@@ -1,6 +1,6 @@
 local XUiPanelTheatre6PvpLoadingDetail = require("XUi/XUiTheatre6/PVP/Panel/XUiPanelTheatre6PvpLoadingDetail")
 
----@class XUiTheatre6PVPLoading : XLuaUi
+---@class XUiTheatre6PVPLoading : XLuaUi pvploading
 ---@field _Control XTheatre6Control
 local XUiTheatre6PVPLoading = XLuaUiManager.Register(XLuaUi, "UiTheatre6PVPLoading")
 
@@ -15,13 +15,10 @@ function XUiTheatre6PVPLoading:OnStart(lineupMode, isContinue)
     local rightDetail = XUiPanelTheatre6PvpLoadingDetail.New(self.PanelRight, self)
     rightDetail:SetEnemyData(battleData.EnemyData)
 
-    -- LevelId暂时没用到
+    --LevelId暂时没用到
     local worldId = self._Control:GetIntPvpConfigValue("DlcFightWorldId")
-    -- 延后一帧执行战斗加载重任务，确保本界面富文本字体重建稳定显示
-    XScheduleManager.ScheduleNextFrame(function()
-        XMVCA.XTheatre6.Battle:RequestDlcSingleEnterFight(worldId, 0, true, isContinue, function()
-            self:Close()
-        end)
+    XMVCA.XTheatre6.Battle:RequestDlcSingleEnterFight(worldId, 0, true, isContinue, function()
+        self:Close()
     end)
 end
 

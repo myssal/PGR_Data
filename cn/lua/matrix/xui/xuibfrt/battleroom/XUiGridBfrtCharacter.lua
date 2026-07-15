@@ -82,15 +82,15 @@ end
 
 function XUiGridBfrtCharacter:AutoInitUi()
     self.PanelSelected = self.Transform:Find("PanelSelected")
-    self.TxtFight = self.Transform:Find("PaneFight/TxtFight"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtLevel = self.Transform:Find("PaneLevel/TxtLevel"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.RImgQuality = self.Transform:Find("RImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    self.RImgHeadIcon = self.Transform:Find("PaneHead/RImgHeadIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    self.BtnCharacter = self.Transform:Find("BtnCharacter"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtFight = self.Transform:Find("PaneFight/TxtFight"):GetComponent("Text")
+    self.TxtLevel = self.Transform:Find("PaneLevel/TxtLevel"):GetComponent("Text")
+    self.RImgQuality = self.Transform:Find("RImgQuality"):GetComponent("RawImage")
+    self.RImgHeadIcon = self.Transform:Find("PaneHead/RImgHeadIcon"):GetComponent("RawImage")
+    self.BtnCharacter = self.Transform:Find("BtnCharacter"):GetComponent("Button")
     self.PanelTeam = self.Transform:Find("PanelTeam")
-    self.TxtEchelonIndex = self.Transform:Find("PanelTeam/TxtEchelonIndex"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtEchelonIndex = self.Transform:Find("PanelTeam/TxtEchelonIndex"):GetComponent("Text")
     self.PanelTeamSupport = self.Transform:Find("PanelTeamSupport")
-    self.TxtEchelonIndexA = self.Transform:Find("PanelTeamSupport/TxtEchelonIndex"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtEchelonIndexA = self.Transform:Find("PanelTeamSupport/TxtEchelonIndex"):GetComponent("Text")
 end
 
 function XUiGridBfrtCharacter:RegisterClickEvent(uiNode, func)

@@ -111,7 +111,7 @@ end
 function XUiPanelPracticeMainline:MoveToLastStage()
     if self.LastOpenStage then
         local grid = self.GridStageList[self.LastOpenStage]
-        local gridTf = grid.Parent.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
+        local gridTf = grid.Parent.gameObject:GetComponent("RectTransform")
         local diffX = gridTf.localPosition.x + self.PanelStageContent.localPosition.x
         
         local viewPortRectTransform = XUiHelper.TryGetComponent(self.PanelStageContent.parent,"","RectTransform")
@@ -186,7 +186,7 @@ end
 
 function XUiPanelPracticeMainline:PlayScrollViewMove(grid)
     -- 动画
-    local gridTf = grid.Parent.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local gridTf = grid.Parent.gameObject:GetComponent("RectTransform")
     local diffX = gridTf.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridTf.localPosition.x

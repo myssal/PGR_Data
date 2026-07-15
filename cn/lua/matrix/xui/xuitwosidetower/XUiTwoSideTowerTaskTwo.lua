@@ -13,7 +13,7 @@ function XUiTwoSideTowerTaskTwo:OnAwake()
 end
 
 function XUiTwoSideTowerTaskTwo:OnStart(data)
-    self.PanelTaskTransform = self.PanelTaskStoryList:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.PanelTaskTransform = self.PanelTaskStoryList:GetComponent("RectTransform")
     self:InitDynamicTable()
     self:InitButtonGroup(data)
     self:RefreshTaskRedPoint()

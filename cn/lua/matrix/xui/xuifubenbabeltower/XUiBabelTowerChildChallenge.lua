@@ -23,7 +23,7 @@ function XUiBabelTowerChildChallenge:OnAwake()
 
     self.ChooseChallengeList = {}
     self.ChallengeBuffSelectGroup = {}
-    self.RightRectTransform = self.PanelRight:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.RightRectTransform = self.PanelRight:GetComponent("RectTransform")
     self.GridChoice.gameObject:SetActiveEx(false)
 end
 

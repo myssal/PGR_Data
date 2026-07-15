@@ -140,7 +140,7 @@ function XUiCourseMain:AddButtonListenr()
     self:BindExitBtns()
     self:RegisterClickEvent(self.BtnEnterExam, self.OnBtnEnterExamClick)
     
-    self.PanelStageListScrollRect = self.PanelChapterList:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
+    self.PanelStageListScrollRect = self.PanelChapterList:GetComponent("ScrollRect")
     self.PanelStageListScrollRect.onValueChanged:AddListener(function(vec2Data)
         self:UpdateImgBgPos()
     end)

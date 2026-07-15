@@ -33,7 +33,7 @@ function XUiGridDyeMergeStage:Refresh(stageId, ownChapterId)
 end
 
 function XUiGridDyeMergeStage:SetTransformParent(parent, keepPos)
-    self.Transform:SetParent(parent)
+    self.Transform.parent = parent
 
     if not keepPos then
         self.Transform:SetLocalPosition(0, 0, 0)

@@ -2147,6 +2147,76 @@
         "Description": "战区阿尔法"
     },
     {
+        "Id": 4193,
+        "BornMagic": [
+            784476
+        ],
+        "Description": "战区新焚烧"
+    },
+    {
+        "Id": 4194,
+        "BornMagic": [
+            764325,
+            756345
+        ],
+        "EnemyBornMagic": [
+            764367
+        ],
+        "Description": 1
+    },
+    {
+        "Id": 4195,
+        "BornMagic": [
+            764325,
+            756348
+        ],
+        "EnemyBornMagic": [
+            764367
+        ],
+        "Description": 11
+    },
+    {
+        "Id": 4196,
+        "BornMagic": [
+            764325,
+            756352
+        ],
+        "EnemyBornMagic": [
+            764367
+        ],
+        "Description": 14
+    },
+    {
+        "Id": 4197,
+        "BornMagic": [
+            764325
+        ],
+        "EnemyBornMagic": [
+            764367,
+            756354
+        ],
+        "Description": "boss定制"
+    },
+    {
+        "Id": 4198,
+        "BornMagic": [
+            764325,
+            199974,
+            756341
+        ],
+        "EnemyBornMagic": [
+            764367
+        ],
+        "Description": "新环境4.6"
+    },
+    {
+        "Id": 4199,
+        "BornMagic": [
+            784489
+        ],
+        "Description": "战区阿尔法"
+    },
+    {
         "Id": 4201,
         "BornMagic": [
             764151,
@@ -2559,6 +2629,34 @@
             783525
         ],
         "Description": "评分薇拉普攻"
+    },
+    {
+        "Id": 4544,
+        "BornMagic": [
+            782666
+        ],
+        "Description": "评分深红之渊天赋1"
+    },
+    {
+        "Id": 4545,
+        "BornMagic": [
+            809550
+        ],
+        "Description": "评分深红之渊天赋2"
+    },
+    {
+        "Id": 4546,
+        "BornMagic": [
+            782667
+        ],
+        "Description": "评分逆冕天赋1"
+    },
+    {
+        "Id": 4547,
+        "BornMagic": [
+            782668
+        ],
+        "Description": "评分逆冕天赋2"
     },
     {
         "Id": 4601,
@@ -2988,6 +3086,77 @@
             753449
         ],
         "Description": "吉他技能教学关"
+    },
+    {
+        "Id": 4670,
+        "BornMagic": [
+            764137,
+            782646
+        ],
+        "EnemyBornMagic": [
+            764152
+        ],
+        "Description": "战斗评分玩法4.4BOSS"
+    },
+    {
+        "Id": 4671,
+        "BornMagic": [
+            782661,
+            764151,
+            764136
+        ],
+        "Description": "评分-物理白毛注入"
+    },
+    {
+        "Id": 4672,
+        "BornMagic": [
+            782663,
+            764151,
+            764136
+        ],
+        "Description": "评分-冰白毛注入"
+    },
+    {
+        "Id": 4673,
+        "BornMagic": [
+            737024
+        ],
+        "Description": "评分4.4BOSS教学关"
+    },
+    {
+        "Id": 4674,
+        "BornMagic": [
+            737025
+        ],
+        "Description": "评分4.4BOSS教学关"
+    },
+    {
+        "Id": 4675,
+        "BornMagic": [
+            737026
+        ],
+        "Description": "评分4.4BOSS教学关"
+    },
+    {
+        "Id": 4676,
+        "BornMagic": [
+            737027
+        ],
+        "Description": "评分4.4BOSS教学关"
+    },
+    {
+        "Id": 4677,
+        "BornMagic": [
+            737028
+        ],
+        "Description": "评分4.4BOSS教学关"
+    },
+    {
+        "Id": 4678,
+        "BornMagic": [
+            737029
+        ],
+        "Description": "评分4.4BOSS教学关"
     },
     {
         "Id": 5001,
@@ -47216,6 +47385,20 @@
         "Description": "每次造成焚烧伤害（伤害类型是焚烧）时，Boss受到焚烧伤害显著提升（焚烧弱点），初始17%，后续每层提升9%，共8层，最高提升至80%，持续10秒，重复触发刷新持续时间。"
     },
     {
+        "Id": 2300065,
+        "EnemyBornMagic": [
+            785352
+        ],
+        "Description": "造成雷伤害时，获得2000点雷盾，持续5秒，最多叠加到10000。叠加至上限时，护盾将自动引爆，为周围单位（全场范围 怪物）施加20%雷弱点，持续10秒，弱点可叠加4层。后续每层使Boss雷弱点提升10%。重复施加时刷新持续时间，时间耗尽清空全部层数。"
+    },
+    {
+        "Id": 2300066,
+        "EnemyBornMagic": [
+            785370
+        ],
+        "Description": "每次造成覆冰伤害时，Boss受到覆冰伤害显著提升，初始提升3%，后续每层提升1.5%，最多可叠加5层（覆冰弱点），持续10秒，重复触发刷新持续时间。"
+    },
+    {
         "Id": 2301001,
         "EnemyBornMagic": [
             786015
@@ -48752,35 +48935,129 @@
     },
     {
         "Id": 2340113,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784722,
+            784732,
+            784733
+        ],
+        "Description": "miniRPG-丽芙buff1"
     },
     {
         "Id": 2340114,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784724
+        ],
+        "Description": "miniRPG-丽芙buff2"
     },
     {
         "Id": 2340115,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784729
+        ],
+        "Description": "miniRPG-丽芙buff3"
     },
     {
         "Id": 2340116,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784742,
+            784750,
+            784757,
+            784759,
+            784478,
+            784733
+        ],
+        "Description": "miniRPG-三小只buff1"
     },
     {
         "Id": 2340117,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784740,
+            784749,
+            784756,
+            784732
+        ],
+        "Description": "miniRPG-三小只buff2"
     },
     {
         "Id": 2340118,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784738,
+            784744,
+            784752
+        ],
+        "Description": "miniRPG-三小只buff3"
     },
     {
         "Id": 2340119,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784767,
+            784732,
+            784733
+        ],
+        "Description": "miniRPG-七实buff1"
     },
     {
         "Id": 2340120,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784775
+        ],
+        "Description": "miniRPG-七实buff2"
+    },
+    {
+        "Id": 2340121,
+        "BornMagic": [
+            784784
+        ],
+        "Description": "miniRPG-七实buff3"
+    },
+    {
+        "Id": 2340122,
+        "BornMagic": [
+            784794
+        ],
+        "Description": "miniRPG-海伦汀buff1"
+    },
+    {
+        "Id": 2340123,
+        "BornMagic": [
+            785751
+        ],
+        "Description": "miniRPG-海伦汀buff2"
+    },
+    {
+        "Id": 2340124,
+        "BornMagic": [
+            785756
+        ],
+        "Description": "miniRPG-海伦汀buff3"
+    },
+    {
+        "Id": 2340125,
+        "BornMagic": [
+            784474
+        ],
+        "Description": "miniRPG-海伦汀任务计数"
+    },
+    {
+        "Id": 2340126,
+        "BornMagic": [
+            784475
+        ],
+        "Description": "miniRPG-七实任务计数"
+    },
+    {
+        "Id": 2340127,
+        "BornMagic": [
+            784476
+        ],
+        "Description": "miniRPG-丽芙任务计数"
+    },
+    {
+        "Id": 2340128,
+        "BornMagic": [
+            784477
+        ],
+        "Description": "miniRPG-灰鸦小队任务计数"
     },
     {
         "Id": 2410001,

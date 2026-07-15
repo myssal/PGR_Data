@@ -15,7 +15,7 @@ function XUiHostelDeviceUpgradeResult:AutoInitUi()
     self.PanelInfo = self.Transform:Find("SafeAreaContentPane/PanelFuncUpgradeResult/PanelInfo")
     self.PanelContent = self.Transform:Find("SafeAreaContentPane/PanelFuncUpgradeResult/PanelInfo/PanelContent")
     self.GridFuncUpgradeResItem = self.Transform:Find("SafeAreaContentPane/PanelFuncUpgradeResult/PanelInfo/PanelContent/GridFuncUpgradeResItem")
-    self.BtnClick = self.Transform:Find("SafeAreaContentPane/PanelFuncUpgradeResult/BtnClick"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnClick = self.Transform:Find("SafeAreaContentPane/PanelFuncUpgradeResult/BtnClick"):GetComponent("Button")
 end
 
 function XUiHostelDeviceUpgradeResult:GetAutoKey(uiNode,eventName)

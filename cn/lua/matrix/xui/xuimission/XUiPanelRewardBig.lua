@@ -108,8 +108,8 @@ function XUiPanelRewardBig:AutoInitUi()
     -- self.PanelRewardBigA = self.Transform:Find("GameObject/PanelRewardInfo/ScrollView/Viewport/PanelRewardBig")
     -- self.GridMissionCommon = self.Transform:Find("GameObject/PanelRewardInfo/ScrollView/Viewport/PanelRewardBig/GridMissionCommon")
     -- self.PanelRole = self.Transform:Find("GameObject/PanelRewardInfo/PanelRole")
-    -- self.RImgRole = self.Transform:Find("GameObject/PanelRewardInfo/PanelRole/RImgRole"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    -- self.TxtDesc = self.Transform:Find("GameObject/PanelRewardInfo/Image/TxtDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    -- self.RImgRole = self.Transform:Find("GameObject/PanelRewardInfo/PanelRole/RImgRole"):GetComponent("RawImage")
+    -- self.TxtDesc = self.Transform:Find("GameObject/PanelRewardInfo/Image/TxtDesc"):GetComponent("Text")
 end
 
 function XUiPanelRewardBig:GetAutoKey(uiNode, eventName)

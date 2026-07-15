@@ -210,7 +210,7 @@ function XUiTheatre5PVEReasoning:PlayBulletAnim()
         --     return
         -- end 
         -- local offset = 80
-        -- local buttetTrans = self.ImgComplete:GetComponent(typeof(CS.UnityEngine.RectTransform))
+        -- local buttetTrans = self.ImgComplete:GetComponent("RectTransform")
         -- -- 获取父容器尺寸
         -- local parentSize = self.PanelQuestion.rect.size
         -- local maxX = parentSize.x * 0.5 - offset

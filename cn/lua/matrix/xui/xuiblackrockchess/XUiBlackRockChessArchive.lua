@@ -82,7 +82,7 @@ function XUiBlackRockChessArchive:PlayGridTween(index, grid)
     local timerId = XScheduleManager.ScheduleOnce(function()
         grid:PlayAnimationWithMask("GridStoryItemEnable")
     end, (index - 1) * 50)
-    grid.Transform:FindTransform("GridStory"):GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 0
+    grid.Transform:FindTransform("GridStory"):GetComponent("CanvasGroup").alpha = 0
     self._StoryTimerIds[grid] = timerId
 end
 

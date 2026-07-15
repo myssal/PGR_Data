@@ -41,7 +41,7 @@ function XUiEpicFashionGachaResult:OnStart(gachaId, rewardList, backCb, backgrou
     if not string.IsNilOrEmpty(background) then
         local bg = self.GameObject:FindTransform("Bg1")
         if bg then
-            bg.transform:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(background)
+            bg.transform:GetComponent("RawImage"):SetRawImage(background)
         end
     end
 end

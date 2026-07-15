@@ -113,7 +113,7 @@ end
 
 function XUiLessonChapter:ScrollRectRollBack()
     -- 滚动容器回弹
-    local width = self.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.width
+    local width = self.GameObject:GetComponent("RectTransform").rect.width
     local innerWidth = self.PanelStageContent.rect.width
     innerWidth = innerWidth < width and width or innerWidth
     local diff = innerWidth - width

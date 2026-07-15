@@ -20,7 +20,7 @@ function XUiBigWorldGridCollegeStudy:PlayEnableAnime(index)
 
     local rect = self.UseGrid
     local beforePlayPosY = rect.anchoredPosition.y
-    local canvasGroup = self.UseGrid:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    local canvasGroup = self.UseGrid:GetComponent("CanvasGroup")
     canvasGroup.alpha = 0
     XScheduleManager.ScheduleOnce(function()
         if not XTool.UObjIsNil(self.Transform) and self.GameObject.activeInHierarchy then

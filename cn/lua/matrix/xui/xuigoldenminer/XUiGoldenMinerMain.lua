@@ -66,7 +66,7 @@ end
 
 function XUiGoldenMinerMain:_SetRectSize()
     local areaPanel = XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPanel")
-    self._Control:SetRectSize(areaPanel:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.size)
+    self._Control:SetRectSize(areaPanel:GetComponent("RectTransform").rect.size)
 end
 --endregion
 

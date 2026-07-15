@@ -68,12 +68,12 @@ function XUiFubenBossSingleHide:InitInfoPage()
 
         go.transform
             :FindTransform("UiTxtName")
-            :GetComponent(typeof(CS.UnityEngine.UI.Text))
+            :GetComponent("Text")
             .text = skillTitle
 
         go.transform
             :FindTransform("UiTxtDesc")
-            :GetComponent(typeof(CS.UnityEngine.UI.Text))
+            :GetComponent("Text")
             .text = self.BossStageConf.SkillDesc[i]
     end
 end

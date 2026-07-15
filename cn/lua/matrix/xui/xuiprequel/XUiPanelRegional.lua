@@ -24,23 +24,23 @@ end
 function XUiPanelRegional:AutoInitUi()
     self.PanelRegional = self.Transform:Find("PanelRegional")
     self.PanelPrequelStages = self.Transform:Find("PanelRegional/PanelPrequelStages")
-    self.TxtMode = self.Transform:Find("PanelRegional/PanelBt/TxtMode"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtProgress = self.Transform:Find("PanelRegional/PanelBt/TxtProgress"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtMode = self.Transform:Find("PanelRegional/PanelBt/TxtMode"):GetComponent("Text")
+    self.TxtProgress = self.Transform:Find("PanelRegional/PanelBt/TxtProgress"):GetComponent("Text")
     self.PanelLeft = self.Transform:Find("PanelRegional/PanelLeft")
     self.PanelPlotTab = self.Transform:Find("PanelRegional/PanelLeft/PanelPlotTab")
-    self.BtnSwitch2Fight = self.Transform:Find("PanelRegional/PanelBt/BtnSwitch2Fight"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.ImgLock = self.Transform:Find("PanelRegional/PanelBt/BtnSwitch2Fight/ImgLock/Image"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.BtnSwitch2Fight = self.Transform:Find("PanelRegional/PanelBt/BtnSwitch2Fight"):GetComponent("Button")
+    self.ImgLock = self.Transform:Find("PanelRegional/PanelBt/BtnSwitch2Fight/ImgLock/Image"):GetComponent("Image")
     self.PanelBottom = self.Transform:Find("PanelRegional/PanelBottom")
     self.PanelJundu = self.Transform:Find("PanelRegional/PanelBottom/PanelJundu")
-    self.ImgJindu = self.Transform:Find("PanelRegional/PanelBottom/PanelJundu/ImgJindu"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgLingqu = self.Transform:Find("PanelRegional/PanelBottom/PanelJundu/ImgLingqu"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.BtnTreasure = self.Transform:Find("PanelRegional/PanelBottom/PanelJundu/BtnTreasure"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.ImgJindu = self.Transform:Find("PanelRegional/PanelBottom/PanelJundu/ImgJindu"):GetComponent("Image")
+    self.ImgLingqu = self.Transform:Find("PanelRegional/PanelBottom/PanelJundu/ImgLingqu"):GetComponent("Image")
+    self.BtnTreasure = self.Transform:Find("PanelRegional/PanelBottom/PanelJundu/BtnTreasure"):GetComponent("Button")
     self.PanelNum = self.Transform:Find("PanelRegional/PanelBottom/PanelNum")
-    self.TxtBfrtTaskTotalNum = self.Transform:Find("PanelRegional/PanelBottom/PanelNum/TxtBfrtTaskTotalNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtBfrtTaskFinishNum = self.Transform:Find("PanelRegional/PanelBottom/PanelNum/TxtBfrtTaskFinishNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtBfrtTaskTotalNum = self.Transform:Find("PanelRegional/PanelBottom/PanelNum/TxtBfrtTaskTotalNum"):GetComponent("Text")
+    self.TxtBfrtTaskFinishNum = self.Transform:Find("PanelRegional/PanelBottom/PanelNum/TxtBfrtTaskFinishNum"):GetComponent("Text")
     self.ImgRedProgress = self.Transform:Find("PanelRegional/PanelBottom/PanelNum/ImgRedProgress")
-    self.BtnActDesc = self.Transform:Find("PanelRegional/BtnActDesc"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.RImgChapterName = self.Transform:Find("PanelRegional/PanelBt/RImgChapterName"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.BtnActDesc = self.Transform:Find("PanelRegional/BtnActDesc"):GetComponent("Button")
+    self.RImgChapterName = self.Transform:Find("PanelRegional/PanelBt/RImgChapterName"):GetComponent("RawImage")
 end
 
 function XUiPanelRegional:RegisterClickEvent(uiNode, func)
@@ -183,7 +183,7 @@ function XUiPanelRegional:OnChapterSelected(index, chapterId)
         if not string.IsNilOrEmpty(self.ChapterDatas.UiBgPath) then
             local bg = asset.transform:Find("RImgChapterBg")
             if bg then
-                bg:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(self.ChapterDatas.UiBgPath)
+                bg:GetComponent("RawImage"):SetRawImage(self.ChapterDatas.UiBgPath)
             end
         end
     end

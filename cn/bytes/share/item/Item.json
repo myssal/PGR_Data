@@ -1899,6 +1899,23 @@
         ]
     },
     {
+        "Id": 240,
+        "Name": "支援架构零件-大公",
+        "Description": "支援单位大公的架构零件，收集一定数量后可组合支援单位。",
+        "WorldDesc": "支援单位的核心技术都浓缩在架构上。只要收集足够的架构零件，就能组合出支援单位来。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconPet3Chandelier1.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconPet3Chandelier1Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 29600,
+        "MaxCount": 9999,
+        "GridCount": 9999,
+        "SkipIdParams": [
+            15006,
+            7212
+        ]
+    },
+    {
         "Id": 300,
         "Name": "基地残片",
         "Description": "废弃金属制作的代币，能和支援部队换些道具。",
@@ -3953,6 +3970,21 @@
         "SellForCount": 10
     },
     {
+        "Id": 483,
+        "Name": "终解·安魂",
+        "Description": "构造体终阶解放后，将会在每一场战斗中，首次登场时获取3个同色信号球。",
+        "WorldDesc": "科学理事会研发，根据机体单独配备的光环型装置，内含动能驱动的纳米机器人，可以辅助构造体进行高频计算，立刻产生信号球。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconSkillRelease61.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconSkillRelease61Sp.png",
+        "ItemType": 1,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10
+    },
+    {
         "Id": 501,
         "Name": "逆元碎片-异火",
         "Description": "里的逆元碎片，收集一定数量后可连接构造体。",
@@ -5459,6 +5491,25 @@
         ]
     },
     {
+        "Id": 593,
+        "Name": "逆元碎片-安魂",
+        "Description": "安魂的逆元碎片，收集一定数量后可连接构造体。",
+        "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1401003.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1401003Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 35,
+        "SellForCount": 5,
+        "SkipIdParams": [
+            10012,
+            10048
+        ]
+    },
+    {
         "Id": 1000,
         "Name": "圣诞礼品券",
         "Description": "可以用来和构造体交换圣诞礼物。",
@@ -6265,8 +6316,8 @@
         "Name": "片面自我",
         "Description": "可在【倒映浸景】玩法中用于开启游戏。",
         "WorldDesc": "记录着“海伦汀”的胶卷。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem12.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem12Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem18.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem18Sp.png",
         "ItemType": 262148,
         "Quality": 4,
         "Priority": 10,
@@ -6698,8 +6749,8 @@
         "Name": "“凝固记忆”Ⅰ",
         "Description": "可在【倒映浸景】玩法中用于解锁剧情CG。",
         "WorldDesc": "清晰的声音在你耳畔响起，它来自过去，熟悉而陌生，你知道这是自己的声音。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem07.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem07Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem13.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem13Sp.png",
         "ItemType": 262148,
         "Quality": 4,
         "Priority": 10,
@@ -6717,8 +6768,8 @@
         "Name": "“凝固记忆”Ⅱ",
         "Description": "可在【倒映浸景】玩法中用于解锁剧情CG。",
         "WorldDesc": "清晰的声音在你耳畔响起，它来自过去，熟悉而陌生，你知道这是自己的声音。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem08.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem08Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem14.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem14Sp.png",
         "ItemType": 262148,
         "Quality": 4,
         "Priority": 10,
@@ -6736,8 +6787,8 @@
         "Name": "“凝固记忆”Ⅲ",
         "Description": "可在【倒映浸景】玩法中用于解锁剧情CG。",
         "WorldDesc": "清晰的声音在你耳畔响起，它来自过去，熟悉而陌生，你知道这是自己的声音。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem09.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem09Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem15.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem15Sp.png",
         "ItemType": 262148,
         "Quality": 4,
         "Priority": 10,
@@ -6755,8 +6806,8 @@
         "Name": "“凝固记忆”Ⅳ",
         "Description": "可在【倒映浸景】玩法中用于解锁剧情CG。",
         "WorldDesc": "清晰的声音在你耳畔响起，它来自过去，熟悉而陌生，你知道这是自己的声音。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem10.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem10Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem16.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem16Sp.png",
         "ItemType": 262148,
         "Quality": 4,
         "Priority": 10,
@@ -6774,8 +6825,8 @@
         "Name": "“凝固记忆”Ⅴ",
         "Description": "可在【倒映浸景】玩法中用于解锁剧情CG。",
         "WorldDesc": "清晰的声音在你耳畔响起，它来自过去，熟悉而陌生，你知道这是自己的声音。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem11.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem11Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem17.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem17Sp.png",
         "ItemType": 262148,
         "Quality": 4,
         "Priority": 10,
@@ -6786,6 +6837,23 @@
         "Duration": 604800,
         "SkipIdParams": [
             20375
+        ]
+    },
+    {
+        "Id": 1087,
+        "Name": "拓扑拨片",
+        "Description": "可在【暄夏节拍】玩法中用于开启游戏。",
+        "WorldDesc": "舞台终会落幕，但至少还有一枚曾炙热跃动过的碎片，铭记着那个群星璀璨的夜晚。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem05.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLivWarmItem05Sp.png",
+        "ItemType": 262148,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "StartTime": "2026/8/10 5:00",
+        "SkipIdParams": [
+            20378
         ]
     },
     {
@@ -25857,6 +25925,234 @@
         ]
     },
     {
+        "Id": 2981,
+        "Name": "照影蛛灯图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【照影蛛灯】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesushePendant001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesushePendant001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 18,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2982,
+        "Name": "游鳞穹幕图纸",
+        "Description": "类型：天花板。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【游鳞穹幕】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheFlooring001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheFlooring001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2983,
+        "Name": "晴屿长空图纸",
+        "Description": "类型：墙。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【晴屿长空】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheWindow001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheWindow001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2984,
+        "Name": "澄湾水纹图纸",
+        "Description": "类型：地板。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【澄湾水纹】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheSofa001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheSofa001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2985,
+        "Name": "锦潮巡游图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【锦潮巡游】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheDesk001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheDesk001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2986,
+        "Name": "白岸闲椅图纸",
+        "Description": "类型：沙发。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【白岸闲椅】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheYunshi001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheYunshi001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2987,
+        "Name": "潮鲜面屋图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【潮鲜面屋】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheOrnament001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheOrnament001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2988,
+        "Name": "浮暑饮站图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【浮暑饮站】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheWindow001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheWindow001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2989,
+        "Name": "烧丸食堂图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【烧丸食堂】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheSofa001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheSofa001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2990,
+        "Name": "阳伞冰铺图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【阳伞冰铺】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheDesk001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheDesk001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2991,
+        "Name": "夏汐车站图纸",
+        "Description": "类型：床。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【夏汐车站】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheYunshi001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheYunshi001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2992,
+        "Name": "晴湾绿意图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【晴湾绿意】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueSpacesusheOrnament001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueSpacesusheOrnament001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
         "Id": 3001,
         "Name": "5星武器共鸣材料",
         "Description": "可以替代其他5星武器在共鸣时作为消耗使用",
@@ -27894,6 +28190,25 @@
         ]
     },
     {
+        "Id": 32020,
+        "Name": "跃升晶片·芒星之迹",
+        "Description": "在【芒星之迹】的机能跃升中作为材料使用",
+        "WorldDesc": "记录有大量战斗数据的数据晶片，能够让机体的战斗性能显著提高。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItCharEx125.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItCharEx125Sp.png",
+        "ItemType": 4,
+        "Quality": 5,
+        "Priority": 86902,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "SellForId": 32000,
+        "SellForCount": 5,
+        "FastTrading": 1,
+        "SkipIdParams": [
+            10036
+        ]
+    },
+    {
         "Id": 33000,
         "Name": "独域单晶",
         "Description": "可以用于兑换独域机体的独域晶体",
@@ -28075,6 +28390,22 @@
             89023,
             10044,
             89005
+        ]
+    },
+    {
+        "Id": 34001,
+        "Name": "谐振增幅器",
+        "Description": "用于武器二阶段谐振的专用辅助装置",
+        "WorldDesc": "科由科学理事会二部在既有谐振技术基础上改良开发，可对已完成一次谐振的武器进行深层参数定标，稳定其高频共振状态",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconWeaponOverrunItem02.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconWeaponOverrunItem02Sp.png",
+        "ItemType": 4,
+        "Quality": 6,
+        "Priority": 86900,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "SkipIdParams": [
+            89023
         ]
     },
     {
@@ -29074,6 +29405,24 @@
         ]
     },
     {
+        "Id": 40643,
+        "Name": "复古笔记本",
+        "Description": "赠送给成员能增加信赖度，海伦汀喜爱的珍贵礼物。",
+        "WorldDesc": "海伦汀最早的一本笔记，记录着她从病床上醒来后的感受，以及奥菲莉娅曾希望她回想起来的一切。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItGift0342.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItGift0342Sp.png",
+        "ItemType": 524292,
+        "Quality": 5,
+        "Priority": 69901,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 20,
+        "SkipIdParams": [
+            10007
+        ]
+    },
+    {
         "Id": 40681,
         "Name": "畅销小说",
         "Description": "赠送给成员能增加信赖度，大家都喜爱的普通礼物。",
@@ -29856,6 +30205,26 @@
         "SubTypeParams": [
             3,
             1435,
+            1
+        ]
+    },
+    {
+        "Id": 40924,
+        "Name": "评定手册碎片自选",
+        "Description": "在仓库-道具界面使用该道具。",
+        "WorldDesc": "使用后可以从丽芙·仰光、罗塞塔·凛冽、里·乱数、卡列尼娜·烬燃、七实·脉冲、神威·暗能、露西亚·深红之渊、比安卡·真理、薇拉·绯耀、丽芙·极昼、卡列尼娜·辉晓、比安卡·深痕、露西亚·深红囚影、亚里莎·回音、渡边·尘铭、露娜·终焉、含英·檀心、七实·芒星之迹的逆元碎片中任选一个。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconAlterRole13.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconAlterRole13.png",
+        "ItemType": 16,
+        "Quality": 5,
+        "Priority": 100004,
+        "MaxCount": 9999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 100,
+        "SubTypeParams": [
+            3,
+            1470,
             1
         ]
     },
@@ -40872,7 +41241,7 @@
         "MaxCount": 1,
         "GridCount": 1,
         "SkipIdParams": [
-            80295,
+            80309,
             80296
         ],
         "SubTypeParams": [
@@ -40954,6 +41323,45 @@
         ],
         "SubTypeParams": [
             12650001
+        ]
+    },
+    {
+        "Id": 80139,
+        "Name": "夏恋弦舞",
+        "Description": "汐落浮光系列——弦剑",
+        "WorldDesc": "阳光为弦，汐风为曲，心绪随夏风悠然起舞，世间最美的合奏，是源于阳光、海浪与翩跹身影的相逢。",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3SsalphaMd020011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3SsalphaMd020011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80309
+        ],
+        "SubTypeParams": [
+            12520003
+        ]
+    },
+    {
+        "Id": 80140,
+        "Name": "柔浪环歌",
+        "Description": "汐落浮光系列——折叠圆锯",
+        "WorldDesc": "在往昔的计划中，在海滩上度过一整个夏天的必要内容包括：防晒喷雾，柠檬味的冰饮，还有双人共享的浮床……但这个夏季最动人心弦的一切，却并未写在这个计划中，而是悄然埋藏在了二人的心底：那是共处的默契，彼此之间漫步在海滩上的回忆，还有少女眼中的笑意。",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3SsalphaMd020011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3SsalphaMd020011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80309,
+            80310
+        ],
+        "SubTypeParams": [
+            12660001
         ]
     },
     {
@@ -44726,6 +45134,64 @@
         ]
     },
     {
+        "Id": 95200,
+        "Name": "[浮屿潮夏]图纸合集",
+        "Description": "使用后可获得全套【浮屿潮夏】家具图纸。",
+        "WorldDesc": "在仓库-道具界面使用该道具。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/It402FurSuit003.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/It402FurSuit003Sp.png",
+        "ItemType": 16,
+        "Quality": 5,
+        "Priority": 97001,
+        "MaxCount": 9,
+        "GridCount": 1,
+        "SellForId": 1,
+        "SellForCount": 100,
+        "SubTypeParams": [
+            1,
+            1480
+        ]
+    },
+    {
+        "Id": 95201,
+        "Name": "[浮屿潮夏]套装",
+        "Description": "使用后可获得全套【浮屿潮夏】家具。",
+        "WorldDesc": "在仓库-道具界面使用该道具。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/It402FurSuit002.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/It402FurSuit002Sp.png",
+        "ItemType": 16,
+        "Quality": 5,
+        "Priority": 97001,
+        "MaxCount": 9,
+        "GridCount": 1,
+        "SellForId": 1,
+        "SellForCount": 100,
+        "SubTypeParams": [
+            1,
+            1482
+        ]
+    },
+    {
+        "Id": 95202,
+        "Name": "[浮屿潮夏]自选图纸",
+        "Description": "使用后可在【浮屿潮夏】家具图纸中任选一件获得。",
+        "WorldDesc": "在仓库-道具界面使用该道具。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/It402FurSuit001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/It402FurSuit001Sp.png",
+        "ItemType": 16,
+        "Quality": 4,
+        "Priority": 97001,
+        "MaxCount": 99,
+        "GridCount": 99,
+        "SellForId": 1,
+        "SellForCount": 100,
+        "SubTypeParams": [
+            3,
+            1484,
+            1
+        ]
+    },
+    {
         "Id": 96000,
         "Name": "年禧红封",
         "Description": "价值180000螺母的红封，和成员们一起分享吧。  分享螺母可解锁【新岁淘金】中对应成员",
@@ -47422,7 +47888,7 @@
         "Id": 97082,
         "Name": "S级泛用机体自选礼包",
         "Description": "使用后可在31个S级泛用机体中，任选获得其中1个。",
-        "WorldDesc": "可选S级泛用机体：仰光、乱数、烬燃、暗能、脉冲、深红之渊、真理、鸦羽、凛冽、银冕、荣光、绯耀、极昼、幻奏、遥星之座、辉晓、深痕、超刻、万华、深红囚影、森息、回音、深谣、尘铭、启明、终焉、檀心、明晰梦、誓焰、芒星之迹、幻日。   <color=#CA1F31> 礼包将于2026年7月16日 5:00过期</color>",
+        "WorldDesc": "可选S级泛用机体：仰光、乱数、烬燃、暗能、脉冲、深红之渊、真理、鸦羽、凛冽、银冕、荣光、绯耀、极昼、幻奏、遥星之座、辉晓、深痕、超刻、万华、深红囚影、森息、回音、深谣、尘铭、启明、终焉、檀心、明晰梦、誓焰、芒星之迹、幻日。   <color=#CA1F31> 礼包将于2026年8月6日 5:00过期</color>",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/ItZixuanS017.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItZixuanS017Sp.png",
         "ItemType": 16,
@@ -47432,7 +47898,7 @@
         "GridCount": 1,
         "TimelinessType": 1,
         "StartTime": "2026/6/2 5:00",
-        "Duration": 3801600,
+        "Duration": 5616000,
         "SubTypeParams": [
             3,
             1437,
@@ -47544,5 +48010,20 @@
             1458,
             1
         ]
+    },
+    {
+        "Id": 97090,
+        "Name": "迷匣银章",
+        "Description": "可以在【雾夜镇魂曲】限时商店内兑换奖励。",
+        "WorldDesc": "精巧的银质匣子，其中藏匿着不该被揭开的记忆与低语。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconNewbieZixuan15.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconNewbieZixuan15Sp.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "StartTime": "2026/6/2 5:00",
+        "Duration": 6739200
     }
 ]

@@ -25,7 +25,7 @@ function XUiGridWeaponFashion:CheckAnimationFinish()
         return
     end
 
-    local canvasGroup = self.ImgSelected:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    local canvasGroup = self.ImgSelected:GetComponent("CanvasGroup")
     if canvasGroup and canvasGroup.alpha ~= 1 then
         self:PlayAnimation()
     end

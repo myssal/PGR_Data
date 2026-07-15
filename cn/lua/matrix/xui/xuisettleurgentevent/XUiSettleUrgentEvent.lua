@@ -20,9 +20,9 @@ function XUiSettleUrgentEvent:AutoInitUi()
     self.PanelUrgentInfo = self.Transform:Find("Animator/SafeAreaContentPane/PanelUrgentInfo")
     self.Panel = self.Transform:Find("Animator/SafeAreaContentPane/PanelUrgentInfo/Panel")
     self.PanelEffect = self.Transform:Find("Animator/SafeAreaContentPane/PanelUrgentInfo/Panel/PanelEffect")
-    self.TxtUrgentDesc = self.Transform:Find("Animator/SafeAreaContentPane/PanelUrgentInfo/Panel/TxtUrgentDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.BtnClose = self.Transform:Find("Animator/SafeAreaContentPane/PanelUrgentInfo/BtnClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.BtnGo = self.Transform:Find("Animator/SafeAreaContentPane/PanelUrgentInfo/BtnGo"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtUrgentDesc = self.Transform:Find("Animator/SafeAreaContentPane/PanelUrgentInfo/Panel/TxtUrgentDesc"):GetComponent("Text")
+    self.BtnClose = self.Transform:Find("Animator/SafeAreaContentPane/PanelUrgentInfo/BtnClose"):GetComponent("Button")
+    self.BtnGo = self.Transform:Find("Animator/SafeAreaContentPane/PanelUrgentInfo/BtnGo"):GetComponent("Button")
 end
 
 function XUiSettleUrgentEvent:AutoAddListener()

@@ -14,7 +14,7 @@ end
 function XUiEscapeLayerTacticsGrid:InitUi()
     self.Clear = XUiHelper.TryGetComponent(self.Transform, "Clear")
     self.Btn = self.Transform:GetComponent("XUiButton")
-    self.CanvasGroup = self.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    self.CanvasGroup = self.Transform:GetComponent("CanvasGroup")
     self.Lock = XUiHelper.TryGetComponent(self.Transform, "Lock")
     self.GameObject:AddComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
 end

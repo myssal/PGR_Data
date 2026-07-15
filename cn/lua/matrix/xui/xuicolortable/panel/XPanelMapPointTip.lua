@@ -173,12 +173,12 @@ function XPanelMapPointTip:_RefreshInfo()
     if self.PointObj:GetType() == XColorTableConfigs.PointType.Lab then
         self.TxtLv.text = XUiHelper.GetText("ColorTableLvTxt", self._GameData:GetStudyLevels(self.PointObj:GetColorType()))
     elseif self.PointObj:GetType() == XColorTableConfigs.PointType.Boss then
-        self.TxtLv = self.Transform:Find("TxtTitle/TxtLv"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        self.TxtLv = self.Transform:Find("TxtTitle/TxtLv"):GetComponent("Text")
         self.TxtLv.text = XUiHelper.GetText("ColorTableLvTxt", self._GameData:GetBossLevels(self.PointObj:GetColorType()))
     elseif self.PointObj:GetType() == XColorTableConfigs.PointType.Tower then
         self.TxtLv.gameObject:SetActiveEx(false)
     elseif self.PointObj:GetType() == XColorTableConfigs.PointType.HideBoss then
-        self.TxtLv = self.Transform:Find("TxtTitle/TxtLv"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        self.TxtLv = self.Transform:Find("TxtTitle/TxtLv"):GetComponent("Text")
         if self.TxtLv then self.TxtLv.gameObject:SetActiveEx(false) end
     end
 end

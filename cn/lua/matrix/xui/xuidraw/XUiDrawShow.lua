@@ -96,22 +96,22 @@ function XUiDrawShow:AutoInitUi()
     self.CharacterRoot = self.UiModelGo.transform:Find("ModelRoot/UiNearRoot/CharacterRoot")
     self.PartnerRoot = self.UiModelGo.transform:Find("ModelRoot/UiNearRoot/PartnerRoot")
     self.Plane = self.UiModelGo.transform:Find("ModelRoot/UiFarRoot/Plane")
-    self.AnimEnable = self.UiModelGo.transform:Find("Animation/AnimEnable"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    self.AnimEnable = self.UiModelGo.transform:Find("Animation/AnimEnable"):GetComponent("PlayableDirector")
     -- self.PanelDrawBackGround = self.Transform:Find("FullScreenBackground/PanelDrawBackGround")
     -- self.PanelResult = self.Transform:Find("SafeAreaContentPane/PanelResult")
-    -- self.ImgItem = self.Transform:Find("SafeAreaContentPane/PanelResult/ImgItem"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    -- self.ImgCharacter = self.Transform:Find("SafeAreaContentPane/PanelResult/ImgCharacter"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    -- self.ImgWafer = self.Transform:Find("SafeAreaContentPane/PanelResult/ImgWafer"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    -- self.RImgDrawCardShow = self.Transform:Find("SafeAreaContentPane/RImgDrawCardShow"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    -- self.ImgItem = self.Transform:Find("SafeAreaContentPane/PanelResult/ImgItem"):GetComponent("RawImage")
+    -- self.ImgCharacter = self.Transform:Find("SafeAreaContentPane/PanelResult/ImgCharacter"):GetComponent("RawImage")
+    -- self.ImgWafer = self.Transform:Find("SafeAreaContentPane/PanelResult/ImgWafer"):GetComponent("RawImage")
+    -- self.RImgDrawCardShow = self.Transform:Find("SafeAreaContentPane/RImgDrawCardShow"):GetComponent("RawImage")
     -- self.PanelEffect = self.Transform:Find("SafeAreaContentPane/PanelEffect")
-    -- self.BtnClick = self.Transform:Find("SafeAreaContentPane/BtnClick"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.BtnClick = self.Transform:Find("SafeAreaContentPane/BtnClick"):GetComponent("Button")
     -- self.PanelAnim = self.Transform:Find("SafeAreaContentPane/ModelRoot/NearRoot/PanelAnim")
     -- self.PanelInfo = self.Transform:Find("SafeAreaContentPane/PanelInfo")
-    -- self.TxtType = self.Transform:Find("SafeAreaContentPane/PanelInfo/TxtType"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    -- self.TxtName = self.Transform:Find("SafeAreaContentPane/PanelInfo/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    -- self.TxtQuality = self.Transform:Find("SafeAreaContentPane/PanelInfo/TxtQuality"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    -- self.ImgEquip = self.Transform:Find("SafeAreaContentPane/PanelResult/ImgEquip"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    -- self.BtnSkip = self.Transform:Find("SafeAreaContentPane/BtnSkip"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.TxtType = self.Transform:Find("SafeAreaContentPane/PanelInfo/TxtType"):GetComponent("Text")
+    -- self.TxtName = self.Transform:Find("SafeAreaContentPane/PanelInfo/TxtName"):GetComponent("Text")
+    -- self.TxtQuality = self.Transform:Find("SafeAreaContentPane/PanelInfo/TxtQuality"):GetComponent("Text")
+    -- self.ImgEquip = self.Transform:Find("SafeAreaContentPane/PanelResult/ImgEquip"):GetComponent("RawImage")
+    -- self.BtnSkip = self.Transform:Find("SafeAreaContentPane/BtnSkip"):GetComponent("Button")
 end
 
 function XUiDrawShow:AutoAddListener()
@@ -525,7 +525,7 @@ function XUiDrawShow:InitDrawBackGround()
     self.TxtType.text = ""
     self.TxtName.text = ""
     self.TxtQuality.text = ""
-    self.PanelInfo.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 0
+    self.PanelInfo.gameObject:GetComponent("CanvasGroup").alpha = 0
 
     self:PlayBoxAnimStart()
 end
@@ -547,7 +547,7 @@ function XUiDrawShow:PlayBoxAnimStart()
     if self.Update then
         behaviour.LuaUpdate = function() self:Update() end
     end
-    self.PlayableDirector = self.BackGround:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    self.PlayableDirector = self.BackGround:GetComponent("PlayableDirector")
     self.PlayableDirector:Play()
     self.PlayBoxAnim = true
     self.PanelBoxLight = self.BackGround.transform:Find("ModelRoot/UiNearRoot/PanelBox/PanelBoxLight")

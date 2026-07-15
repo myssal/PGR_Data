@@ -515,15 +515,15 @@ function XUiFubenExtraChapter:UpdateCurChapter(chapter)
             local autoChangeBgArgs
             if self.AnimBeijingEnable and self.AnimBeijingDisable then
 
-                self.RImgBg1 = gameObject:FindTransform("RImgChapterBg1"):GetComponent(typeof(CS.UnityEngine.CanvasGroup))
-                self.RImgBg2 = gameObject:FindTransform("RImgChapterBg2"):GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+                self.RImgBg1 = gameObject:FindTransform("RImgChapterBg1"):GetComponent("CanvasGroup")
+                self.RImgBg2 = gameObject:FindTransform("RImgChapterBg2"):GetComponent("CanvasGroup")
 
                 autoChangeBgArgs = {
                     AutoChangeBgCb = function(seletBgIndex, isPlayAnim)
                         
                         local selectOrder = math.abs(seletBgIndex)
                         for i = 1, #autoChangeBgArgs.StageIndexList + 1 do
-                            local tempCanvasGroup = gameObject:FindTransform("RImgChapterBg"..i):GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+                            local tempCanvasGroup = gameObject:FindTransform("RImgChapterBg"..i):GetComponent("CanvasGroup")
                             if i ~= selectOrder then
                                 tempCanvasGroup.alpha = 0
                             else

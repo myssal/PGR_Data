@@ -24,7 +24,7 @@ function XUiRestaurantIndent:InitUi()
     
     local component = self.Transform:Find("SafeAreaContentPane/PanelTitle/Img2/TxtTittle")
     if component then
-        self.TxtTitle = component:GetComponent(typeof(CS.UnityEngine.UI.Text))
+        self.TxtTitle = component:GetComponent("Text")
     end
 end
 

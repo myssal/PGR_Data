@@ -16,7 +16,7 @@ local LOAD_TIME = 10
 
 function XUiInfestorExploreTeamEdit:OnAwake()
     self:AutoAddListener()
-    self.RectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.RectTransform = self.Transform:GetComponent("RectTransform")
     self.PanelTip.gameObject:SetActiveEx(false)
     self.ImgRoleRepace.gameObject:SetActiveEx(false)
     self.BtnTeamPrefab.gameObject:SetActiveEx(false)

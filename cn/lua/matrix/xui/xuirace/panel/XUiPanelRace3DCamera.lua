@@ -130,7 +130,7 @@ function XUiPanelRace3DCamera:LoadRole(node, roleId, isHideSelfCollider)
     model:SetLayerRecursively(NameToLayer("UiNear"))
     CS.XShadowHelper.AddShadow(model.gameObject, true)
     ---@type UnityEngine.Animator
-    local anim = model:GetComponent(typeof(CS.UnityEngine.Animator))
+    local anim = model:GetComponent("Animator")
     anim.applyRootMotion = false
     if self._SceneType == SceneType.Predict then
         anim:Play("Greet01", 0, 0)
@@ -179,7 +179,7 @@ function XUiPanelRace3DCamera:LoadCar(node, roleId)
     carGo:SetLayerRecursively(NameToLayer("UiNear"))
     CS.XShadowHelper.AddShadow(carGo.gameObject, true)
     ---@type UnityEngine.Animator
-    local carAnim = carGo:GetComponent(typeof(CS.UnityEngine.Animator))
+    local carAnim = carGo:GetComponent("Animator")
     carAnim.applyRootMotion = false
     local charRoot = carGo.transform:Find("Root")
     local charGo = charRoot:LoadPrefab(characterCfg.CharacterModel)
@@ -187,7 +187,7 @@ function XUiPanelRace3DCamera:LoadCar(node, roleId)
     CS.XShadowHelper.AddShadow(charGo.gameObject, true)
     charGo.transform.localEulerAngles = Vector3(90, 0, 0)
     ---@type UnityEngine.Animator
-    local charAnim = charGo:GetComponent(typeof(CS.UnityEngine.Animator))
+    local charAnim = charGo:GetComponent("Animator")
     local charControllerAsset = CS.LoadHelper.LoadUiController(characterCfg.AnimPath, charAnim.gameObject)
     charAnim.runtimeAnimatorController = charControllerAsset
     charAnim.applyRootMotion = false
@@ -198,7 +198,7 @@ function XUiPanelRace3DCamera:LoadOption()
     local model = self.Option:LoadPrefab(path)
     model:SetLayerRecursively(NameToLayer("UiNear"))
     ---@type UnityEngine.Animator
-    local anim = model:GetComponent(typeof(CS.UnityEngine.Animator))
+    local anim = model:GetComponent("Animator")
     anim:Play("RaceCarIdle", 0, 0)
 end
 

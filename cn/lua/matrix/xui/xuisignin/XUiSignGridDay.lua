@@ -95,7 +95,7 @@ function XUiSignGridDay:Refresh(config, isShow, forceSetTomorrow)
     if not self.TxtCardNum then
         local node = self.PanelEnable:Find("TxtCardNum")
         if node then
-            self.TxtCardNum = node:GetComponent(typeof(CS.UnityEngine.UI.Text))
+            self.TxtCardNum = node:GetComponent("Text")
         end
     end
     local data = XDataCenter.PurchaseManager.GetYKInfoData()

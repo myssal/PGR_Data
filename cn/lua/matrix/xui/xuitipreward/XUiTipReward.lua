@@ -42,12 +42,12 @@ function XUiTipReward:InitAutoScript()
 end
 
 function XUiTipReward:AutoInitUi()
-    self.BtnBg = self.Transform:Find("SafeAreaContentPane/BtnBg"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.BtnDetermine = self.Transform:Find("SafeAreaContentPane/BtnDetermine"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnBg = self.Transform:Find("SafeAreaContentPane/BtnBg"):GetComponent("Button")
+    self.BtnDetermine = self.Transform:Find("SafeAreaContentPane/BtnDetermine"):GetComponent("Button")
     self.PanelRecycle = self.Transform:Find("SafeAreaContentPane/ViewRecycle/Viewport/PanelRecycle")
     self.GridBagItemRecycle = self.Transform:Find("SafeAreaContentPane/ViewRecycle/Viewport/PanelRecycle/GridBagItemRecycle")
-    self.PreRecycleTitle = self.Transform:Find("SafeAreaContentPane/RecycleTitle/RecycleTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.RecycleTitle = self.Transform:Find("SafeAreaContentPane/RecycleTitle/RecycleTitle1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.PreRecycleTitle = self.Transform:Find("SafeAreaContentPane/RecycleTitle/RecycleTitle"):GetComponent("Text")
+    self.RecycleTitle = self.Transform:Find("SafeAreaContentPane/RecycleTitle/RecycleTitle1"):GetComponent("Text")
 end
 
 function XUiTipReward:GetAutoKey(uiNode, eventName)

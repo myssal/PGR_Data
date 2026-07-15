@@ -11,16 +11,6 @@ function XTheatre6Control:OnReleasePvp()
     self._RobotFileDataCache = nil
 end
 
-function XTheatre6Control:GetPvpActivityEndTime()
-    local timeId = self:GetPvpActivityTimeId()
-    return XFunctionManager.GetEndTimeByTimeId(timeId)
-end
-
-function XTheatre6Control:IsPvpInActivityTime()
-    local timeId = self:GetPvpActivityTimeId()
-    return XFunctionManager.CheckInTimeByTimeId(timeId)
-end
-
 ---@return Theatre6FileData[]
 function XTheatre6Control:GetAllFileData()
     return self._Model:GetAllFileData()
@@ -82,11 +72,7 @@ function XTheatre6Control:IsPVPChallengeState()
         return false
     end
 
-    local nextConfig = self:GetNextRankConfig()
-    if not nextConfig then
-        return false
-    end
-    local timeId = nextConfig.TimeId
+    local timeId = rankConfig.TimeId
     if not XTool.IsNumberValid(timeId) then
         return true
     end
@@ -285,10 +271,6 @@ end
 
 --- 倒计时结束后请求服务端恢复体力（延后1秒避免误差）
 function XTheatre6Control:CheckPvpActionPointRecover()
-    -- 活动不在开启时间内则不请求体力
-    if not self:IsPvpInActivityTime() then
-        return
-    end
     if not self._Model.Pvp:HasActivityPvpActionPoin() then
         return
     end
@@ -863,15 +845,5 @@ function XTheatre6Control:GetPvpBuffDesc(buffId)
 end
 
 --endregion
-
----防守阵容的环境设置按钮是否显示红点
-function XTheatre6Control:IsChooseEnvRedPoint()
-    return self._Model:IsChooseEnvRedPoint()
-end
-
----关闭防守阵容的环境设置按钮红点
-function XTheatre6Control:CloseChooseEnvRedPoint()
-    self._Model:CloseChooseEnvRedPoint()
-end
 
 return XTheatre6Control

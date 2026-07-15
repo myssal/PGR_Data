@@ -21,7 +21,7 @@ function XPanelNieREasterEggChat:Ctor(ui, rootUi)
     for i = 1, 6 do
         local tmpI = {}
         tmpI.Text = self["Text"..i]
-        tmpI.CanvasGroup = self["Text"..i].gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+        tmpI.CanvasGroup = self["Text"..i].gameObject:GetComponent("CanvasGroup")
         tmpI.CanvasGroup.alpha = 0
         tmpI.Name = self["Name"..i]
         self.TextObjList[i] = tmpI
@@ -121,7 +121,7 @@ end
 --     else
 --         local txtObj = CS.UnityEngine.Object.Instantiate(self.Text1)
 --         txtObj.transform:SetParent(self.CenterPoint, false)
---         txtShow = txtObj.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+--         txtShow = txtObj.transform:GetComponent("Text")
 --         self.TextPer = txtShow
 --     end
 --     txtShow.text = strShow
@@ -136,7 +136,7 @@ end
 --     else
 --         local txtObj = CS.UnityEngine.Object.Instantiate(self.Text1)
 --         txtObj.transform:SetParent(self.CenterPoint, false)
---         txtShow = txtObj.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+--         txtShow = txtObj.transform:GetComponent("Text")
 --         self.TextPer = txtShow
 --     end
 --     txtShow.text = strShow
@@ -168,9 +168,9 @@ end
 --         else
 --             local txtObj = CS.UnityEngine.Object.Instantiate(self.Text2)
 --             txtObj.transform:SetParent(self.CenterPoint, false)
---             txtShow = txtObj.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
---             txtRect = txtObj.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
---             txtCanvasGroup = txtObj.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+--             txtShow = txtObj.transform:GetComponent("Text")
+--             txtRect = txtObj.transform:GetComponent("RectTransform")
+--             txtCanvasGroup = txtObj.transform:GetComponent("CanvasGroup")
 --             txtObj.gameObject:SetActiveEx(true)
 --             tmpObj = {}
 --             tmpObj.txtShow = txtShow

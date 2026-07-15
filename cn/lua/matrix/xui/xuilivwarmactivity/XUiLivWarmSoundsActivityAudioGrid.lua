@@ -7,9 +7,9 @@ function XUiLivWarmSoundsActivityAudioGrid:Ctor(ui, parent)
     self.Parent = parent
     XTool.InitUiObject(self)
 
-    self.RawImgShadeNormal = self.Transform:Find("Normal/ImgShade"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    self.RawImgShadePress = self.Transform:Find("Press/ImgShade"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    self.RawImgShadeSelect = self.Transform:Find("Select/ImgShade"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.RawImgShadeNormal = self.Transform:Find("Normal/ImgShade"):GetComponent("RawImage")
+    self.RawImgShadePress = self.Transform:Find("Press/ImgShade"):GetComponent("RawImage")
+    self.RawImgShadeSelect = self.Transform:Find("Select/ImgShade"):GetComponent("RawImage")
 end
 
 function XUiLivWarmSoundsActivityAudioGrid:RefreshData(soundIndex, singlePanelPop, playCallBack)

@@ -54,7 +54,7 @@ function XUiFubenBossSingleDetailDifficultySelectCardV4P5:OnStart(
 
                 go.transform
                     :FindTransform("UiRImgRole")
-                    :GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+                    :GetComponent("RawImage")
                     :SetRawImage(characterAgency
                         :GetCharSmallHeadIcon(charId))
             end

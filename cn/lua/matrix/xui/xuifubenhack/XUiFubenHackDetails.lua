@@ -33,9 +33,9 @@ function XUiFubenHackDetails:InitUi()
             item = CS.UnityEngine.Object.Instantiate(self.GridDetail, self.Content)  -- 复制一个item
             self.GridSkillList[i] = item
         end
-        item:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = stageInterInfo.FeatureTitle[i]
-        item:Find("TxtDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XUiHelper.ConvertLineBreakSymbol(stageInterInfo.FeatureDesc[i])
-        item:Find("TxtNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = string.format("%02d", i)
+        item:Find("TxtTitle"):GetComponent("Text").text = stageInterInfo.FeatureTitle[i]
+        item:Find("TxtDesc"):GetComponent("Text").text = XUiHelper.ConvertLineBreakSymbol(stageInterInfo.FeatureDesc[i])
+        item:Find("TxtNumber"):GetComponent("Text").text = string.format("%02d", i)
     end
     self.GridDetail.gameObject:SetActiveEx(false)
 end

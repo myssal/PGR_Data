@@ -1,15 +1,24 @@
 local Creator = function()
     local XUiLaunchUi = {}
 
-    local XDynamicTableCurveLaunch = require("XLaunchUi/XDynamicTableCurveLaunch")
+    -- local XDynamicTableCurveLaunch = require("XLaunchUi/XDynamicTableCurveLaunch")
     local XUiPanelDownloadTips = require("XLaunchUi/XUiPanelDownloadTips")
-    local DYNAMIC_DELEGATE_EVENT = XDynamicTableCurveLaunch.DYNAMIC_DELEGATE_EVENT
+    -- local DYNAMIC_DELEGATE_EVENT = XDynamicTableCurveLaunch.DYNAMIC_DELEGATE_EVENT
     local XLaunchDlcManager = require("XLaunchDlcManager")
     local Vector3 = CS.UnityEngine.Vector3
     local MathFloor = math.floor
     local StringFormat = string.format
     local IsHideFunc = CS.XRemoteConfig.IsHideFunc
     local IsHideFuncAndroid = CS.XRemoteConfig.IsHideFuncAndroid -- 安卓的提审模式
+    
+    local InitUiObject = function(targetObj)
+        targetObj.Obj = targetObj.Transform:GetComponent("UiObject")
+        if targetObj.Obj ~= nil and targetObj.Obj:Exist() then
+            for i = 0, targetObj.Obj.NameList.Count - 1 do
+                targetObj[targetObj.Obj.NameList[i]] = targetObj.Obj.ObjList[i]
+            end
+        end
+    end
 
     local XUiLaunchSwitchBackgournd = {}
 
@@ -19,27 +28,19 @@ local Creator = function()
         self.GameObject = self.ui.gameObject
         self.ResIndex = 0
 
-        local loginDownloadTr = self.Transform:Find("PanelBanner/LoginDownload")
-        print("loginDownloadTr", loginDownloadTr)
-        if loginDownloadTr then
-            local rawImageTr = loginDownloadTr:Find("ImgDownloadB")
-            print("rawImageTr", rawImageTr)
-            if rawImageTr then
-                self.RawImageB = rawImageTr:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-                print("RawImageB", self.RawImageB)
-            end
-            self.effectTr = loginDownloadTr:Find("Effect")
-            self.animationTr = loginDownloadTr:Find("Animation")
+        InitUiObject(self)
 
-            local rawImageFTr = loginDownloadTr:Find("Mask/ImgDownloadF")
-            if rawImageFTr then
-                self.RawImageF = rawImageFTr:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-            end
+        if self.ImgDownloadB then
+            self.RawImageB = self.ImgDownloadB
+            print("RawImageB", self.RawImageB)
+        end
+        if self.ImgDownloadF then
+            self.RawImageF = self.ImgDownloadF
+            print("RawImageF", self.RawImageF)
+        end
 
-            local animEnableBTr = loginDownloadTr:Find("Animation/AnimEnable")
-            if animEnableBTr then
-                self.AnimEnableGo = animEnableBTr.gameObject
-            end
+        if self.AnimEnable then
+            self.AnimEnableGo = self.AnimEnable.gameObject
         end
         return self
     end
@@ -273,16 +274,23 @@ local Creator = function()
             self.NeedAutoScrollNext = (#self.DataList > 1)
             self.AutoScrollTime = CS.XLaunchManager.LaunchConfig:GetInt("UiLaunchAutoScrollTime")
             -- print("[LaunchTest] UiLaunchShowList:" .. tostring(showPaths) .. ",NeedAutoScrollNext:" .. tostring(self.NeedAutoScrollNext) .. ", AutoScrollTime:" .. self.AutoScrollTime)
-            if self.AutoScrollTime == 0 then
+            if not self.AutoScrollTime then
                 self.AutoScrollTime = 6000
             end
             self.HasScrolled = false
 
-            self.CurrentIndex = 1
-            self.UiLaunchSwitchBackgournd = XUiLaunchSwitchBackgournd.Ctor(XUiLaunchSwitchBackgournd, self.GridPanel)
+            local prefabKey = "UiLaunchShowPrefab"
+            if not self.UiLaunchSwitchBackgournd and CS.XLaunchManager.LaunchConfig:TryGetString(prefabKey) then
+                local prefabPath = CS.XLaunchManager.LaunchConfig:GetString(prefabKey)
+                self._PrefabResource = CS.XResourceManager.Load(prefabPath)
+                self._PrefabGo = CS.UnityEngine.Object.Instantiate(self._PrefabResource.Asset, self.GridPanel)
+                -- local prefab = CS.LoadHelper.InstantiateGameObject(prefabPath, self.GridPanel)
+                self.UiLaunchSwitchBackgournd = XUiLaunchSwitchBackgournd.Ctor(XUiLaunchSwitchBackgournd, self._PrefabGo)
+            end
+            -- self.CurrentIndex = 1
             print(string.format("paths:%s,NeedAutoScrollNext:%s", 
                 #paths, tostring(self.NeedAutoScrollNext)))
-            if not self.UiLaunchSwitchBackgournd:IsNewRes() then
+            if not self.UiLaunchSwitchBackgournd or not self.UiLaunchSwitchBackgournd:IsNewRes() then
                 self.DefaultDownloadBG.gameObject:SetActive(true)
                 self.PanelList.gameObject:SetActive(false)
                 self.BtnLast.gameObject:SetActive(false)
@@ -298,7 +306,11 @@ local Creator = function()
             -- self.DynamicTable:SetDelegate(self)
             -- self.GridPanel.gameObject:SetActiveEx(false)
 
-            self.UiLaunchClickGapTime = (CS.XLaunchManager.LaunchConfig:TryGetInt("UiLaunchClickGapTime", false) or 1500) / 1000
+            local uiLaunchClickGapTime = 1500
+            if CS.XLaunchManager.LaunchConfig:TryGetInt("UiLaunchClickGapTime", false) then
+                uiLaunchClickGapTime = CS.XLaunchManager.LaunchConfig:GetInt("UiLaunchClickGapTime")
+            end
+            self.UiLaunchClickGapTime = uiLaunchClickGapTime / 1000
             self.BtnLast.CallBack = function()
                 local currentTime = CS.UnityEngine.Time.realtimeSinceStartup
                 if currentTime - self.LastClickTime < self.UiLaunchClickGapTime then
@@ -338,6 +350,7 @@ local Creator = function()
 
         if self._IsShowDownloadDefault then
             self.UiDownload:SetActiveEx(true)
+            self:CheckAutoScrollTimer()
         end
     end
     
@@ -441,6 +454,16 @@ local Creator = function()
     end
     
     function XUiLaunchUi:OnDestroy()
+        if self._PrefabGo then
+            CS.UnityEngine.Object.Destroy(self._PrefabGo)
+            self._PrefabGo = nil
+        end
+
+        if self._PrefabResource then
+            CS.XResourceManager.Unload(self._PrefabResource)
+            self._PrefabResource = nil
+        end
+
         self.BtnBasic.CallBack = nil
         self.BtnAll.CallBack = nil
         self.BtnConfirmSelect.CallBack = nil
@@ -852,7 +875,7 @@ local Creator = function()
         self.Transform = self.Ui.Transform
         self.GameObject = self.Ui.GameObject
         self.UiAnimation = self.Ui.UiAnimation
-        self:InitUiObjects()
+        InitUiObject(self)
     end
 
     --用于释放lua的内存
@@ -998,15 +1021,6 @@ local Creator = function()
                 XLog.Error(StringFormat("%s该名字已被占用", childUiName))
             else
                 self[childUiName] = v.UiProxy.UiLuaTable
-            end
-        end
-    end
-
-    function XUiLaunchUi:InitUiObjects()
-        self.Obj = self.Transform:GetComponent("UiObject")
-        if self.Obj ~= nil and self.Obj:Exist() then
-            for i = 0, self.Obj.NameList.Count - 1 do
-                self[self.Obj.NameList[i]] = self.Obj.ObjList[i]
             end
         end
     end

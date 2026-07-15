@@ -12,7 +12,7 @@ function XUiFpsGameChooseWeapon:OnAwake()
     ---@type UnityEngine.Vector3
     self._TempVec3 = Vector3(0, 0, 0)
     ---@type UnityEngine.RectTransform
-    self._RectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self._RectTransform = self.Transform:GetComponent("RectTransform")
     self.BtnClose.CallBack = handler(self, self.OnBtnTipCloseClick)
     self.BtnEnter.CallBack = handler(self, self.OnBtnEnterClick)
     self.BtnSet.CallBack = handler(self, self.OnBtnSetClick)

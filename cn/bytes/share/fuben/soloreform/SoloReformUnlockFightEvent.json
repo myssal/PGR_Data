@@ -1,127 +1,94 @@
 [
     {
-        "FightEventId": 2340040,
+        "FightEventId": 2340122,
         "ChapterId": 1,
-        "StageType": 1,
-        "Desc": "关卡内的所有怪物血量都不会降低到70%以下，需要玩家角色使用特定技能将其击杀",
-        "VideoId": 31029,
-        "Name": "待执行状态"
-    },
-    {
-        "FightEventId": 2340041,
-        "ChapterId": 1,
-        "StageType": 1,
-        "Desc": "渡边处于强袭模式状态下，释放出的逆势掣肘能将锁血的怪物处决，进而获得评分奖励。",
-        "VideoId": 31030,
-        "Name": "裁断"
-    },
-    {
-        "FightEventId": 2340042,
-        "ChapterId": 1,
-        "StageType": 1,
-        "Desc": "评分等级锁定时,可直接使用逆势掣肘处决怪物，无须怪物处于锁血状态，达成操作后评分等级提升",
-        "VideoId": 31031,
-        "Name": "链路裁断"
-    },
-    {
-        "FightEventId": 2340043,
-        "ChapterId": 1,
-        "StageType": 1,
-        "Desc": "SSS满评分后,在短时间内可无限处决敌人",
-        "VideoId": 31032,
-        "Name": "超阈状态"
-    },
-    {
-        "FightEventId": 2340047,
-        "ChapterId": 1,
-        "StageType": 2,
-        "Desc": "在BOSS关卡中，玩家触发的处决效果可以重创BOSS并造成大量伤害。",
+        "Desc": "释放<color=#057055>异见信号球</color>技能后立即返回一组随机三消。",
         "VideoId": 31033,
-        "Name": "独身困斗"
+        "Name": "溯影不绝"
     },
     {
-        "FightEventId": 2340048,
+        "FightEventId": 2340123,
         "ChapterId": 1,
-        "StageType": 2,
-        "Desc": "玩家造成的伤害均能获得评分，评分等级提升后能更频繁地触发处决效果",
+        "UnlockDiff": 1,
+        "Desc": "每次使用<color=#057055>异见信号球</color>技能命中敌人，敌人获得一层<color=#057055>裂锋</color>，三次裂锋触发大量伤害，并立即刷新<color=#057055>指向激活</color>（长闪技能）。",
         "VideoId": 31034,
-        "Name": "评分机制"
+        "Name": "裂锋叠斩"
     },
     {
-        "FightEventId": 2340049,
+        "FightEventId": 2340124,
         "ChapterId": 1,
-        "StageType": 2,
-        "Desc": "BOSS处于锁血状态期间，使用渡边的二段必杀才能将BOSS处决",
+        "UnlockDiff": 2,
+        "Desc": "每次释放<color=#057055>异见信号球</color>技能获得1层<color=#057055>诛刃</color>，每层<color=#057055>诛刃</color>增加下一次必杀20%伤害，最多叠加6层。",
         "VideoId": 31035,
-        "Name": "超阈裁断"
+        "Name": "诛刃蓄势"
     },
     {
-        "FightEventId": 2340031,
+        "FightEventId": 2340119,
         "ChapterId": 2,
-        "Desc": "消除黄色信号球后获得3颗信号球，且使鸦影状态的斩击充能速度提升，该效果至多叠加3层。",
+        "Desc": "在<color=#057055>剑盾状态</color>下释放必杀后切盾斧技能伤害大幅度提升，必杀与盾斧状态普攻伤害提升50%持续12秒。在<color=#057055>盾斧状态</color>释放必杀会直接进入剑盾状态，必杀与剑盾状态消球伤害提升50%，持续12秒。",
         "VideoId": 31026,
-        "Name": "羽喙拾光"
+        "Name": "双锋逆刃"
     },
     {
-        "FightEventId": 2340032,
+        "FightEventId": 2340120,
         "ChapterId": 2,
         "UnlockDiff": 1,
-        "Desc": "释放鸦影形态的斩击时，获得随机1颗信号球，并获得50%伤害提升，该效果至多叠加3层。",
+        "Desc": "<color=#057055>剑盾状态</color>每次消球增加角色10%必杀伤害，可叠加5层，持续12秒，释放二段球角色变为无敌状态。",
         "VideoId": 31027,
-        "Name": "枕镰啸月"
+        "Name": "叠刃破阵"
     },
     {
-        "FightEventId": 2340033,
+        "FightEventId": 2340121,
         "ChapterId": 2,
         "UnlockDiff": 2,
-        "Desc": "释放死与吻后，获得满额兆丧值，并获得随机3颗信号球。",
+        "Desc": "在释放<color=#057055>盾斧状态</color>的必杀后切换回<color=#057055>剑盾状态</color>时，充满一次必杀能量。",
         "VideoId": 31028,
-        "Name": "鸦魇刑终"
+        "Name": "斩终归流"
     },
     {
-        "FightEventId": 2340025,
+        "FightEventId": 2340113,
         "ChapterId": 3,
-        "Desc": "获得满额浮影值时，将直接消耗并获得满额的坍缩值和60%必杀能量，漫游形态下进行二段闪避将获得满额坍缩值、坍缩刻印、大量信号球与必杀能量。",
+        "Desc": "释放<color=#057055>千芒一刹</color>（潜梦状态长闪）后立即充满流影值，并使<color=#057055>晓梦寻光</color>（潜梦状态长普）伤害额外增加100%，额外获得4层玲珑心。",
         "VideoId": 31020,
-        "Name": "辰澜权次"
+        "Name": "千芒破梦"
     },
     {
-        "FightEventId": 2340026,
+        "FightEventId": 2340114,
         "ChapterId": 3,
         "UnlockDiff": 1,
-        "Desc": "使用黄色信号球时，获得330点坍缩值，且降维坍坠伤害提升500%，至多叠加5层，持续时间无限。",
+        "Desc": "释放二段必杀后立即获得2枚<color=#057055>飞刃</color>。",
         "VideoId": 31021,
-        "Name": "态矢坍塌"
+        "Name": "流影飞梭"
     },
     {
-        "FightEventId": 2340027,
+        "FightEventId": 2340115,
         "ChapterId": 3,
         "UnlockDiff": 2,
-        "Desc": "使用降维坍坠时，有40%概率刷新黄色信号球；未成功刷新时，下一次使用降维坍坠时刷新黄色信号球的几率翻倍，并获得6颗红色信号球。",
+        "Desc": "进入<color=#057055>潜梦</color>状态，立即获得12枚信号球。<color=#057055>千芒一刹</color>伤害提升100%，千芒一刹不再获得玲珑心和必杀能量。",
         "VideoId": 31022,
-        "Name": "未定观测"
+        "Name": "潜梦破局"
     },
     {
-        "FightEventId": 2340028,
+        "FightEventId": 2340116,
         "ChapterId": 4,
-        "Desc": "短按必杀的主序期间，始序惩斥释放后获得残月值，并且获得随机3颗信号球。",
+        "Desc": "<color=#057055>闪避</color>成功后，点击普攻可释放<color=#057055>追击</color>技能。\\n切换角色后1秒内受击，可触发1秒无敌和无冷却的超算空间。\\n释放必杀或切换角色时，可召唤后台角色入场<color=#057055>合击</color>，但无法再触发QTE。",
         "VideoId": 31023,
-        "Name": "启示惩斥"
+        "Name": "鸦影斩突"
     },
     {
-        "FightEventId": 2340029,
+        "FightEventId": 2340117,
         "ChapterId": 4,
         "UnlockDiff": 1,
-        "Desc": "长按必杀的终临期间，每消除1颗终临球，伤害提升50%，至多叠加100层，持续时间无限；退出终临后，获得6颗信号球。",
+        "Desc": "红莲：入场后立即进入12秒<color=#057055>爆发状态</color>，爆发状态下所有红球都会替换为黄球。\\n暗蚀：红色信号球默认获得<color=#057055>强化</color>，不再需要前置三消。\\n异火：三消红球移动射击时召唤<color=#057055>轰炸</color>，冷却1秒。",
         "VideoId": 31024,
-        "Name": "簇月赤辉"
+        "Name": "灰羽连携"
     },
     {
-        "FightEventId": 2340030,
+        "FightEventId": 2340118,
         "ChapterId": 4,
         "UnlockDiff": 2,
-        "Desc": "每次释放必杀时获得大量残月值；每次释放普通攻击时，获得随机1颗信号球。",
+        "Desc": "红莲：爆发状态下释放三消黄，可额外释放<color=#057055>箭矢</color>攻击，冷却1秒。\\n暗蚀：连续两次三消可<color=#057055>召唤浮游炮</color>持续射击，浮游炮存在12s。\\n异火：红球子弹获得<color=#057055>爆炎</color>效果。",
         "VideoId": 31025,
-        "Name": "虚光解缚"
+        "Name": "赤心狂潮"
     }
 ]

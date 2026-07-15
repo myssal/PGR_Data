@@ -26,12 +26,12 @@ function XPageView:SetPageWidth(pageValue)
 end
 
 function XPageView:RefreshSizeData()
-    local rect = self.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect
+    local rect = self.GameObject:GetComponent("RectTransform").rect
     self.Width = rect.width
     self.Height = rect.height
     self.PageWidth = self.SettedPageWidth or rect.width
     self.PageHeight = self.SettedPageHeight or rect.height
-    local innerRectTrans = self.InnerGameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local innerRectTrans = self.InnerGameObject:GetComponent("RectTransform")
     rect = innerRectTrans.rect
     self.InnerWidth = rect.width
     self.InnerHeight = rect.height

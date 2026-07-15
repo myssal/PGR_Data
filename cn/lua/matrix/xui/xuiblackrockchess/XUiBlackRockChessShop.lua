@@ -154,7 +154,7 @@ function XUiBlackRockChessShop:PlayGridTween(index, grid)
     local timerId = XScheduleManager.ScheduleOnce(function()
         grid.Transform:FindTransform("GridShopEnable"):PlayTimelineAnimation()
     end, (index - 1) * 50)
-    grid.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 0
+    grid.Transform:GetComponent("CanvasGroup").alpha = 0
     self._ShopTimerIds[grid] = timerId
 end
 

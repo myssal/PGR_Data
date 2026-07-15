@@ -7,7 +7,7 @@ function XUiPhotographActionPanel:Ctor(ui)
     
     local txt = self.Transform:Find("Text")
     if txt then
-        self.TxtTitle = txt:GetComponent(typeof(CS.UnityEngine.UI.Text))
+        self.TxtTitle = txt:GetComponent("Text")
     end
     self:SetTxtTitle()
     self:AddListener()

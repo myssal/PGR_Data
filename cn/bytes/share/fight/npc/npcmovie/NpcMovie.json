@@ -2064,9 +2064,9 @@
             -1.7539
         ],
         "NpcEndZ": [
-            96.8075,
-            99.0915,
-            107.2939
+            96.8071,
+            99.0911,
+            107.2935
         ],
         "NpcEndRadian": [
             3.1415,
@@ -2935,7 +2935,7 @@
         "LauncherStartZ": 0,
         "LauncherStartAngle": 0,
         "LauncherEndX": 0,
-        "LauncherEndZ": 94.3075,
+        "LauncherEndZ": 94.3071,
         "LauncherEndRadian": 0,
         "TargetEndX": 0,
         "TargetEndZ": 0,
@@ -5582,7 +5582,16 @@
         "LauncherEndRadian": 0,
         "TargetEndX": 0,
         "TargetEndZ": 0,
-        "TargetEndRadian": 0,
+        "TargetEndRadian": 3.1415,
+        "NpcEndX": [
+            0
+        ],
+        "NpcEndZ": [
+            0
+        ],
+        "NpcEndRadian": [
+            3.1415
+        ],
         "FixHeightOffSet": 0
     },
     {
@@ -5598,6 +5607,23 @@
         "TargetEndX": 0,
         "TargetEndZ": 0,
         "TargetEndRadian": 3.1415,
+        "FixHeightOffSet": 0
+    },
+    {
+        "Id": "CTHelentine03LevelAttack12",
+        "OffsetType": 1,
+        "TotalFrame": 630,
+        "SyncTimelineSpeed": true,
+        "LauncherStartX": 0,
+        "LauncherStartZ": 0,
+        "LauncherStartAngle": 0,
+        "LauncherEndX": 0,
+        "LauncherEndZ": 0,
+        "LauncherEndRadian": 0,
+        "TargetEndX": 0,
+        "TargetEndZ": 1.111,
+        "TargetEndRadian": 3.1415,
+        "FollowLauncherHeight": true,
         "FixHeightOffSet": 0
     }
 ]

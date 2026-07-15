@@ -39,12 +39,10 @@ end
 
 function XUiPanelDyeMergeBoard:OnEnable()
     self._Control.GamingControl:AddEventListener(XMVCA.XDyeMergeGame.EventIds.EVENT_DYEMERGE_INNER_BLOCK_DEPTH_DIRTY, self._OnBlockDepthDirty, self)
-    XEventManager.AddEventListener(XEventId.EVENT_DYEMERGE_GAME_CLICK_POS, self._OnEventClickPos, self)
 end
 
 function XUiPanelDyeMergeBoard:OnDisable()
     self._Control.GamingControl:RemoveEventListener(XMVCA.XDyeMergeGame.EventIds.EVENT_DYEMERGE_INNER_BLOCK_DEPTH_DIRTY, self._OnBlockDepthDirty, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_DYEMERGE_GAME_CLICK_POS, self._OnEventClickPos, self)
 end
 
 function XUiPanelDyeMergeBoard:OnDestroy()
@@ -269,25 +267,6 @@ end
 --- 获取节点被使用展示时所属的父节点
 function XUiPanelDyeMergeBoard:_GetGoShowRoot()
     return self.PanelBoard.transform
-end
-
-function XUiPanelDyeMergeBoard:_OnEventClickPos(x, y)
-    if XMain.IsEditorDebug then
-        XLog.Debug("[DyeMerge]点击事件：（x，y）= " .. x .. ", " .. y)
-    end
-    
-    x = tonumber(x)
-    y = tonumber(y)
-    
-    local gc = self._Control.GamingControl
-    local posIndex = gc:Vec2ToIndex(x, y)
-    local mapList = gc.MapControl:GetMapList()
-    local occupyUid = mapList[posIndex]
-    if XTool.IsNumberValidEx(occupyUid) then
-        self._BlockClickSender(occupyUid)
-    elseif self.Pos2FloorDict[posIndex] then
-        self._FloorClickSender(x, y)
-    end
 end
 
 --region 重置

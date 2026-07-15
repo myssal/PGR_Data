@@ -12,8 +12,8 @@ function XUiKillZonePluginPopup:OnAwake()
 
     self.BtnActive.gameObject:SetActiveEx(false)
     self.GridDesc.gameObject:SetActiveEx(false)
-    self.PanelSelect = self:FindTransform("PanelSelect"):GetComponent(typeof(CS.UnityEngine.RectTransform))
-    self.Bg = self:FindTransform("Bg"):GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.PanelSelect = self:FindTransform("PanelSelect"):GetComponent("RectTransform")
+    self.Bg = self:FindTransform("Bg"):GetComponent("RectTransform")
 end
 
 function XUiKillZonePluginPopup:OnStart(slot, pluginId, isPreview, closeCb, specialPosition, hideAllBtns)

@@ -5,7 +5,7 @@ local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTable
 function XUiActivityBaseLink:OnStart()
     self:InitDynamicTable()
     self:UpdateList()
-    --local bg = self.BtnFirst.transform:Find("RImgBg"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    --local bg = self.BtnFirst.transform:Find("RImgBg"):GetComponent("RawImage")
     --bg:SetRawImage(CS.XGame.ClientConfig:GetString("ActivityLinkButtonBg"))
     self.BtnFirst:SetName(CS.XGame.ClientConfig:GetString("ActivityLinkButtonName"))
     self.BtnFirst.CallBack = function() 

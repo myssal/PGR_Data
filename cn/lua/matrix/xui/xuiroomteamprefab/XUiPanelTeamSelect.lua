@@ -20,8 +20,8 @@ end
 function XUiPanelTeamSelect:AutoInitUi()
     self.GridTeamCharacter = self.Transform:Find("CharacterList/Viewport/GridTeamCharacter")
     self.PanelCharacterContent = self.Transform:Find("CharacterList/Viewport/PanelCharacterContent")
-    self.BtnCharDelete = self.Transform:Find("BtnCharDelete"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.BtnCharSelect = self.Transform:Find("BtnCharSelect"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnCharDelete = self.Transform:Find("BtnCharDelete"):GetComponent("Button")
+    self.BtnCharSelect = self.Transform:Find("BtnCharSelect"):GetComponent("Button")
 end
 
 function XUiPanelTeamSelect:RegisterClickEvent(uiNode, func)

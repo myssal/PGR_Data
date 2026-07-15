@@ -9970,7 +9970,7 @@ XTable = {
         InitBuffCharge = Type1ValueTypeint,
     },
     XTableGameCollection = {
-        Id = ValueTypeintPrimaryKey,
+        GameType = ValueTypeintPrimaryKey,
         Name = ValueTypestring,
         StageId = ValueTypeint,
         TimeId = ValueTypeint,
@@ -12734,8 +12734,8 @@ XTable = {
         BgmCueId = ValueTypeint,
         ChapterIds = Type1ValueTypeint,
         Condition = Type1ValueTypeint,
-        SpineCondition = Type1ValueTypestring,
-        BgCondition = Type1ValueTypestring,
+        SpineCondition = Type1ValueTypeint,
+        BgCondition = Type1ValueTypeint,
     },
     XTableMainLine2Main = {
         Id = ValueTypeintPrimaryKey,

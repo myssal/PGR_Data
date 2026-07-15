@@ -17,13 +17,6 @@ end
 ---@param mode number LineupMode
 ---@param enemyData XTheatre6PvpMatchEnemy|nil 敌方玩家数据（仅进攻态）
 function XUiTheatre6PVPAttackDefend:OnStart(mode, enemyData)
-    -- 设置自动关闭
-    self:SetAutoCloseInfo(self._Control:GetPvpActivityEndTime(), function(isClose)
-        if isClose then
-            XMVCA.XTheatre6:HandlePvpActivityEnd()
-        end
-    end)
-
     self._Mode = mode or XEnumConst.Theatre6.Pvp.LineupMode.Attack
     self._EnemyData = enemyData
     self._IsChallenge = self._Control:IsPVPChallengeState()
@@ -72,7 +65,10 @@ end
 ---@return Theatre6FileData[]
 function XUiTheatre6PVPAttackDefend:GetFileDataList()
     local battleData = self._EnemyData and self._EnemyData.BattleData
-    local fileDataList = self._Control:GetEnemySaveFiles(battleData)
+    local fileDataList = battleData.SaveFiles or {}
+    if XTool.IsTableEmpty(fileDataList) and XTool.IsNumberValid(battleData.RobotId) then
+        fileDataList = self._Control:BuiltRobotSaveFiles(battleData.RobotId)
+    end
     return fileDataList
 end
 

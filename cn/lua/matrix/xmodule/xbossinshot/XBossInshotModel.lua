@@ -512,10 +512,9 @@ function XBossInshotModel:GetIsShowPlayback(stageId)
 end
 
 -- 保存排行榜数据
-function XBossInshotModel:SaveRankData(characterCfgId, bossId, isTotalRank, tower, nowTime, res)
+function XBossInshotModel:SaveRankData(characterCfgId, bossId, isTotalRank, nowTime, res)
     self.RankData = self.RankData or {}
-    local towerKey = tower and "_tower" or "_non_tower"
-    local key = string.format("%s_%s_%s_%s", characterCfgId, bossId, isTotalRank, towerKey)
+    local key = string.format("%s_%s_%s", characterCfgId, bossId, isTotalRank)
     self.RankData[key] = {
         Time = nowTime,
         Data = res

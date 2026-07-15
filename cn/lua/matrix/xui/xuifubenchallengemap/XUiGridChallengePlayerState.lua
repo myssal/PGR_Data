@@ -4,7 +4,7 @@ function XUiGridChallengePlayerState:Ctor(rootUi, ui)
     self.RootUi = rootUi
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
-    self.RectTransform = ui:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.RectTransform = ui:GetComponent("RectTransform")
     self:InitAutoScript()
 end
 
@@ -17,14 +17,14 @@ function XUiGridChallengePlayerState:InitAutoScript()
 end
 
 function XUiGridChallengePlayerState:AutoInitUi()
-    self.ImgRoleLoading = self.Transform:Find("ImgRoleLoading"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgRoleBg = self.Transform:Find("ImgRoleBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgRole = self.Transform:Find("ImgRole"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgRoleLoading = self.Transform:Find("ImgRoleLoading"):GetComponent("Image")
+    self.ImgRoleBg = self.Transform:Find("ImgRoleBg"):GetComponent("Image")
+    self.ImgRole = self.Transform:Find("ImgRole"):GetComponent("Image")
     self.PanelTxtName = self.Transform:Find("PanelTxtName")
-    self.TxtName = self.Transform:Find("PanelTxtName/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtName = self.Transform:Find("PanelTxtName/TxtName"):GetComponent("Text")
     self.PanelPlayer = self.Transform:Find("PanelPlayer")
-    self.TxtLevel = self.Transform:Find("PanelPlayer/TxtLevel"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtLevelNum = self.Transform:Find("PanelPlayer/TxtLevelNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtLevel = self.Transform:Find("PanelPlayer/TxtLevel"):GetComponent("Text")
+    self.TxtLevelNum = self.Transform:Find("PanelPlayer/TxtLevelNum"):GetComponent("Text")
 end
 
 function XUiGridChallengePlayerState:GetAutoKey(uiNode,eventName)

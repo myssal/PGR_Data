@@ -42,12 +42,12 @@ end
 
 function XUiPanelArea:AutoInitUi()
     -- self.PanelLock = self.Transform:Find("PanelLock")
-    -- self.TxtAreaLock = self.Transform:Find("PanelLock/TxtAreaLock"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    -- self.TxtAreaLock = self.Transform:Find("PanelLock/TxtAreaLock"):GetComponent("Text")
     -- self.PanelNow = self.Transform:Find("PanelNow")
-    -- self.RImgChapter = self.Transform:Find("PanelNow/RImgChapter"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    -- self.TxtAreaNow = self.Transform:Find("PanelNow/TxtAreaNow"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    -- self.RImgChapter = self.Transform:Find("PanelNow/RImgChapter"):GetComponent("RawImage")
+    -- self.TxtAreaNow = self.Transform:Find("PanelNow/TxtAreaNow"):GetComponent("Text")
     -- self.PanelNor = self.Transform:Find("PanelNor")
-    -- self.TxtAreaNor = self.Transform:Find("PanelNor/TxtAreaNor"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    -- self.TxtAreaNor = self.Transform:Find("PanelNor/TxtAreaNor"):GetComponent("Text")
 end
 
 function XUiPanelArea:GetAutoKey(uiNode,eventName)

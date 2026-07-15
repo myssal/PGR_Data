@@ -6,7 +6,7 @@ function XUiTheatre5StoryGrid:OnStart()
     XUiHelper.RegisterClickEvent(self, self.StoryBtn, self.OnClick)
     self.GridLock = self.GridLock or XUiHelper.TryGetComponent(self.Transform, "GridStory/GridLock", "RectTransform")
     ---@type UnityEngine.UI.RawImage
-    local rawImage = self.GridLock:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    local rawImage = self.GridLock:GetComponent("RawImage")
     if rawImage then
         rawImage.raycastTarget = false
     end

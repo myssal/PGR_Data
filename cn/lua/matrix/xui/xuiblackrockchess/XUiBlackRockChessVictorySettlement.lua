@@ -86,7 +86,7 @@ function XUiBlackRockChessVictorySettlement:RefreshView()
             XUiHelper.InitUiClass(uiObject, go)
             uiObject.ImgStarOn.gameObject:SetActiveEx(i <= star)
             uiObject.ImgStarOff.gameObject:SetActiveEx(i > star)
-            local canvasGroup = uiObject.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+            local canvasGroup = uiObject.Transform:GetComponent("CanvasGroup")
             self:PlayStarTween(i, canvasGroup)
         end
     end
@@ -121,7 +121,7 @@ function XUiBlackRockChessVictorySettlement:PlayRewardTween(index, grid)
     local timerId = XScheduleManager.ScheduleOnce(function()
         grid.Transform:FindTransform("Enable"):PlayTimelineAnimation()
     end, (index - 1) * 150)
-    grid.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 0
+    grid.Transform:GetComponent("CanvasGroup").alpha = 0
     self:_AddTimerId(timerId)
 end
 

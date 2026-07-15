@@ -18,9 +18,9 @@ end
 
 function XUiTogDrawGroupTab:AutoInitUi()
     self.TogDrawGroupTab = self.Transform:GetComponent("Toggle")
-    self.TxtTabName = self.Transform:Find("TxtTabName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtTabName = self.Transform:Find("TxtTabName"):GetComponent("Text")
     self.PanelTag = self.Transform:Find("PanelTag")
-    self.TxtTagName = self.Transform:Find("PanelTag/TxtTagName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtTagName = self.Transform:Find("PanelTag/TxtTagName"):GetComponent("Text")
 end
 
 function XUiTogDrawGroupTab:RegisterClickEvent(uiNode, func)

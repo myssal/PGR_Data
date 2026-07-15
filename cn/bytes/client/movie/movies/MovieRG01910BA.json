@@ -5,7 +5,7 @@
         "Type": 101,
         "BeginAnim": "AniZhuanchangEnd",
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Texture/Image/BgStory/Bgstory352.jpg"
         ]
     },
     {
@@ -14,30 +14,2460 @@
         "Type": 401,
         "Params": [
             1,
-            36
+            6186
         ]
     },
     {
         "Id": 3,
         "ActionId": 3,
-        "Type": 301,
-        "BeginAnim": "DialogEnable",
+        "Type": 502,
         "Params": [
-            "",
-            "",
-            "Placeholder_占位"
+            "DialogDisable"
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
+        "Type": 107,
+        "Params": [
+            "灰鸦侦探事务所",
+            "五天后"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "五天后-灰鸦侦探事务所"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 108,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 201,
+        "Params": [
+            1,
+            501599
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "神威",
+            "好无聊啊……那个矮个子助手怎么还没来啊？",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 401,
+        "Params": [
+            2,
+            6570
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "神威现在已经彻底被准入为侦探所的安全来客，更彻底放开了自我。他霸占着原属于人类侦探的座椅，将脑袋趴在桌子上用手指画圈。"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 302,
+        "Params": [
+            "",
+            "可能是资料太多，整理需要时间。",
+            12
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 204,
+        "Params": [
+            1,
+            14
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "神威",
+            "这样啊，那她忙她的，我可不着急。反而是你欸，【kuroname】，我记得大部分事都已经处理好了，不要再一头扎进这堆资料了啊！倒是理一理我啊……",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 302,
+        "Params": [
+            "",
+            "那可不行，“壁虎之尾”还是有不少信息需要辨别真伪和归纳。",
+            15
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 302,
+        "Params": [
+            "",
+            "毕竟你之前说的信息已经有了“前科”，不一定是真相。",
+            16
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 302,
+        "Params": [
+            "",
+            "我需要花一定的时间仔细整理。",
+            17
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 204,
+        "Params": [
+            1,
+            15
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "神威",
+            "……之前怎么没看出来你这么记仇！好啦好啦之前是我不对，故意说了一些虚假的信息迷惑你。",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 204,
+        "Params": [
+            1,
+            14
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "神威",
+            "毕竟要是一开始就说明我就是你的“尾巴”，你肯定一开始就会阻止我深入调查，也不会给我任何涉险的机会……",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 302,
+        "Params": [
+            "",
+            "是啊，也不知道是谁——",
+            22
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 302,
+        "Params": [
+            "",
+            "一会假装自己也是受害的原主，一会说“尾巴”和原主全都长得一样。",
+            23
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 302,
+        "Params": [
+            "",
+            "我得仔细回想一下还有哪些……",
+            24
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 502,
+        "Params": [
+            "PanelActor1Shake"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "神威",
+            "——打住打住！！不准你再回忆下去了，当时是想伪装好我的身份进而保护你欸。",
+            1
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 204,
+        "Params": [
+            1,
+            14
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "神威",
+            "当然了，我有错就认，也一定保证以后绝对不会再对你说谎了！所以现在，你不可以再用这个当借口不理我！",
+            1
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 302,
+        "Params": [
+            "",
+            "好了，不逗你了。埃琳娜可能还有一段时间才过来。",
+            30
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 302,
+        "Params": [
+            "",
+            "再等等吧，我们正好也把搜集到的资料整理一下。",
+            31
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "听到这句话，神威也开始思考些什么，表情难得变得严肃起来。不过这样的沉稳没有持续太久，他很快就换回了平时的表情。"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "【kuroname】，你说得有道理！那就让我来做资料的分类吧，从马莉丝那边搜集的和你几年前在旧址留下的都分开来放。",
+            1
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "前者的话可以一会讨论的时候直接用，至于后者——按我的想法，还是建议你直接归纳进侦探笔记哦？",
+            1
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 302,
+        "Params": [
+            "",
+            "你不想让埃琳娜知道它们的内容？",
+            38
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "……什么啊，还是被你看出来了。这种话我可没有说过！虽然差不多是类似的想法，但也不完全是这个意思。",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "我并非想针对那个助手小姐，但——只是我自己的一些猜测和感觉，【kuroname】，和邪神有关的信息，我建议你暂时先别全部都告诉她。",
+            1
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "我之后会再继续调查和求证，或许这也不是她本人的意愿，但其中涉及的因素很复杂——这可能会是我们都无法控制的变量。",
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 302,
+        "Params": [
+            "",
+            "我会认真考虑你的建议，谢谢你，神威。",
+            43,
+            "这件事我们之后再一起谨慎求证吧。",
+            43
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "谈话间神威已经将手伸到了堆放资料的桌子上，但考虑到他的收纳能力以及这些资料的状态，人类侦探还是及时拉住了他准备开始的手进行“劝阻”。"
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 302,
+        "Params": [
+            "",
+            "我知道你很体贴，不过资料我已经分类好了。",
+            47
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 302,
+        "Params": [
+            "",
+            "不如你再休息休息？",
+            48
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            1
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "神威",
+            "欸，真的吗——我还担心因为你缺失的那部分记忆，会进而分不太清这两种时间线资料的区别。",
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 302,
+        "Params": [
+            "",
+            "有明显的特征可以辨认。",
+            51
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 302,
+        "Params": [
+            "",
+            "马莉丝的资料中对你们的指代都是编号。",
+            52
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 302,
+        "Params": [
+            "",
+            "而我留下的资料从未出现过【SU-0】这个称呼。",
+            53
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 302,
+        "Params": [
+            "",
+            "一直都只有“神威”这个名字。",
+            54
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "神威",
+            "欸……？",
+            1
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "听到对方这么说，神威微微愣了一下。之前他从不会主动去看那些资料，所以这点他也是现在才知道。"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 203,
+        "EndDelay": 400.0,
+        "Params": [
+            1,
+            0.3,
+            "",
+            -50,
+            -100
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "对此神威没有继续执着要整理资料，他的注意力成功被转移了过来。神威在桌角蹲下，将手臂放在桌面，又将脑袋垂靠在手臂之上。大概是有些腼腆，但又忍不住还是直勾勾地盯着【kuroname】看。"
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "虽然这种事我大概能猜到一点……但等到真的确认的时候，原来我还是会控制不住自己，就好像收到了一个超棒的惊喜一样！",
+            1
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "果然这种事无论过去了多久，又或者是我们数不清是第几次在做——我都还是会和第一次听到那样高兴。",
+            1
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "“神威……神威……”每一次，当我听到你呼唤这个名字，就是我不断收获这个惊喜的时刻。",
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 302,
+        "Params": [
+            "",
+            "这个名字背后的深刻含义，现在可以告诉我真相了吧？",
+            66
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "神威",
+            "当然！这一切都是因为——“神威”这个名字，就是你当初亲自为我取的，最最最有意义的名字！",
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 302,
+        "Params": [
+            "",
+            "……我取的名字？",
+            68
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 302,
+        "Params": [
+            "",
+            "可以帮我回忆一下吗。",
+            69
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory941.jpg"
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            "",
+            -400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 201,
+        "Params": [
+            15,
+            501543,
+            14,
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 504,
+        "Params": [
+            0.7,
+            1001,
+            15,
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 201,
+        "Params": [
+            18,
+            501599,
+            8,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "神威",
+            "你现在也知道了吧，在被你救出来之前，我都是没有名字的，只是被马莉丝用【SU-0】的编号称呼。",
+            18
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory757.jpg"
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 201,
+        "Params": [
+            1,
+            501533,
+            1,
+            -300,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 201,
+        "Params": [
+            2,
+            501539,
+            "",
+            300,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 201,
+        "Params": [
+            15,
+            501543,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 204,
+        "Params": [
+            18,
+            1
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 301,
+        "Params": [
+            1,
+            "神威",
+            "后来被家里收养，妈妈和爸爸不想让我觉得自己只是前一个孩子的替代品，也不想让我沿用他的名字，就找你一起想给我取个新名字。",
+            18
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 204,
+        "Params": [
+            18,
+            8
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "嗯——其实当时因为我也还小，加上状态有些混乱，具体细节记不太清了，是妈妈和爸爸告诉我的。",
+            18
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            15,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory754.jpg"
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 201,
+        "Params": [
+            1,
+            501533,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 204,
+        "Params": [
+            18,
+            1
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 301,
+        "Params": [
+            1,
+            "神威",
+            "“当时我们各自取了一个名字，让你自己选，谁知道你抓着【kuroname】的衣服就攥住不放了，一定要用【kuroname】取的名字。”",
+            18
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            15,
+            18,
+            1
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 504,
+        "Params": [
+            0,
+            1001,
+            15,
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory352.jpg"
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            2,
+            "",
+            -50,
+            -100,
+            1
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 301,
+        "Params": [
+            1,
+            "神威",
+            "最后！我就正式拥有了“神威”这个名字啦。",
+            1
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "“以后，你的名字就叫神威。你依旧拥有足够强大到保护自己和他人的力量，但你是有温度，值得被爱护的。”",
+            1
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "神威",
+            "“我想让你明白，你的存在本身，就是一场神奇而伟大的奇迹。”",
+            1
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 302,
+        "Params": [
+            "",
+            "是个寓意很美好的名字。",
+            109
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 302,
+        "Params": [
+            "",
+            "我也很高兴，你能喜欢这个名字。",
+            110
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "神威",
+            "应该说是超超超——超级喜欢！这个世界上不会有比这个更棒的名字了！",
+            1
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "只要是你给我的……不管是什么，都是这个世界上最好的东西。",
+            1
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            1,
+            "",
+            -150,
+            -150
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "神威灿烂地笑着，一边言语中满溢着快乐，一边不断向【kuroname】的位置靠近。他的脚尖与<M>他</M><W>她</W>紧紧贴住，手臂已经从桌面转而轻倚在对方的膝上。"
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 306,
+        "EndDelay": 400.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "他亮晶晶而闪烁的眼睛与【kuroname】对视，从他们的初见一直到现在，那眼中的熠熠火光都未曾熄灭过，一如既往地想要去靠近与温暖眼前的人。"
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 306
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "那……既然我们现在都没事做，我提一点小小的请求，也不算过分吧？",
+            1
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "其实也没什么很复杂的事，就是——【kuroname】，你可以多叫几声我的名字吗？",
+            1
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "用什么语气叫都可以！当然啦，越多越好！我要把它们全都刻在脑子里，想你的时候就自己放给自己听！",
+            1
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 302,
+        "Params": [
+            "",
+            "你的爱好挺独特的。",
+            127,
+            "就这么简单吗？",
+            129
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "NextActionId": 131,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "神威",
+            "独特一点也没什么不好的啊，就当作是只有我们才拥有的，独一无二的秘密吧？",
+            1
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "神威",
+            "这可一点都不“简单”哦，是对我来说特别重要，谁也无法替代的独特意义。",
+            1
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 302,
+        "Params": [
+            "",
+            "那就满足你的愿望吧——",
+            132
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 302,
+        "Params": [
+            "",
+            "神威，神威。",
+            133
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "神威",
+            "——欸嘿，神威在！",
+            1
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 401,
+        "Params": [
+            2,
+            6569
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "人类侦探膝上那毛茸茸的金发脑袋继续贴近，距离逐渐缩短。趁现在事务所没有别人打扰，神威想好好珍惜难得的独处时光……"
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            1,
+            1.2
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 401,
+        "Params": [
+            2,
+            4636
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 201,
+        "Params": [
+            18,
+            501602,
+            4
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "埃琳娜",
+            "——离远点！你靠得太近了，奇怪先生！",
+            18
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 201,
+        "Params": [
+            1,
+            501602,
+            4,
+            -800,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 201,
+        "Params": [
+            2,
+            501599,
+            15,
+            0,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 203,
+        "Params": [
+            1,
+            0.8,
+            -400
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 203,
+        "EndDelay": 1000.0,
+        "Params": [
+            2,
+            0.8,
+            400
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "一本厚重的书挡在了神威与人类侦探之间，神威有些不满地看向这位自己希望再晚一点、最好不要来的助手小姐。"
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 401,
+        "Params": [
+            1,
+            210
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "瞪我也没用，别浪费我们“灰鸦”事务所珍贵的营业时间——现在，开始办正事！",
+            1
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 401,
+        "Params": [
+            2,
+            5735
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "埃琳娜将所有资料都摊开放在桌上，这是她这段时间在解决寻常委托之余追查的，与“迷雾”相关的资料。"
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 302,
+        "Params": [
+            "",
+            "我们从“壁虎之尾”的据点也找到了不少。",
+            160
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 302,
+        "Params": [
+            "",
+            "拿出来整合吧，神威。",
+            161
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            1
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "神威",
+            "好。",
+            1
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 401,
+        "Params": [
+            2,
+            2768
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "神威将所有资料档案也一起归入，其中还有一部分是他成为猎魔人后四处搜集的线索。"
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 201,
+        "Params": [
+            1,
+            501602,
+            4
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 301,
+        "Params": [
+            1,
+            "埃琳娜",
+            "我那边搜集到的比较琐碎，估计还需要时间整理。先从你们才解决的案件开始吧。",
+            1
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "埃琳娜",
+            "能确定“壁虎之尾”和迷雾以及……那个祂有关么？",
+            1
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 302,
+        "Params": [
+            "",
+            "基本可以确认，祂就是真正的背后主谋。",
+            171
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 302,
+        "Params": [
+            "",
+            "案件的前因后果都已经明确，但……",
+            172
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 302,
+        "Params": [
+            "",
+            "改造“壁虎之尾”的手段，存在很大疑点。",
+            173
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "埃琳娜",
+            "这些“尾巴”……和人口失踪案的受害者都能对上，但居然全部都失去了从前的记忆，而且……",
+            1
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 201,
+        "Params": [
+            2,
+            501599,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 301,
+        "Params": [
+            1,
+            "神威",
+            "——而且我们的身体构造，从很多地方来说，也和人类不同。",
+            2
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 401,
+        "Params": [
+            2,
+            2768
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "神威拿出一部分从地下古堡搜集到的图纸，摊开在桌上给其他两人看。埃琳娜仔细观察着上面画着的古怪内容，忍不住发问。"
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "你确定你们身体里面都是这种奇怪的东西？我只在那些什么钟表机械上面见过……",
+            1
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "埃琳娜",
+            "而且居然能做到看起来和人的身体没什么区别，真的有人能做到这种程度吗？",
+            1
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 302,
+        "Params": [
+            "",
+            "或许只是某种“伪装”。",
+            184
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 302,
+        "Params": [
+            "",
+            "也可能，是某种我们尚未了解的手段。",
+            185
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "神威",
+            "从我们有意识开始，躯体就已经是这副样子，所以我也不能确定这是什么方式。",
+            2
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 204,
+        "Params": [
+            1,
+            14
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 301,
+        "Params": [
+            "",
+            "埃琳娜",
+            "我见过有些机械师以人为参考去造机械，但肯定都做不出和人一模一样的外壳。",
+            1
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "埃琳娜",
+            "……邪术？黑魔法？这在侦探的理论中可不太科学。",
+            1
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 302,
+        "Params": [
+            "",
+            "——这个谜团，应该只有在“祂”的身上能解开。",
+            192
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 302,
+        "Params": [
+            "",
+            "一定是与祂同源的什么力量。",
+            193
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 201,
+        "Params": [
+            1,
+            501599,
+            8
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "神威",
+            "你这么一说……我有一段比较模糊的记忆，说不定能提供些什么线索。",
+            1
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "作为最先被制造出来的“壁虎之尾”，我的意识觉醒也比其他人更早。当时我无法睁开眼睛，所以看上去还是沉睡的状态。",
+            1
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "神威",
+            "但我听到了……马莉丝和另一个人的对话。",
+            1
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory941.jpg"
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 201,
+        "Params": [
+            1,
+            501551,
+            "",
+            -400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 201,
+        "Params": [
+            2,
+            500305,
+            "",
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 401,
+        "Params": [
+            1,
+            160
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "马莉丝",
+            "恕我愚钝，为何要猎取人类充作“壁虎之尾”的原材料？",
+            1
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "他们尽是低贱、卑鄙的存在，以他们为基石，岂不是污染了整个计划的伟大？",
+            1
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 301,
+        "Params": [
+            "",
+            "“邪神眷属”",
+            "……“壁虎之尾”的实验仍需试错，准备大量实验品作为耗材只是常理。",
+            2
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 301,
+        "Params": [
+            "",
+            "“邪神眷属”",
+            "既然有绝大部分需要被损耗，那……",
+            2
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "我理解您，那自然是用最低贱的人类来充当实验品，这再合适不过了。",
+            1
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "果然睿智如您，才会有如此周全的考虑，您果真是伟大的主与父——",
+            1
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 301,
+        "Params": [
+            "",
+            "“邪神眷属”",
+            "——住嘴。",
+            2
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 301,
+        "Params": [
+            "",
+            "“邪神眷属”",
+            "这种事需要我再次提醒你么？马莉丝，不可僭越。在我之上的那位祂……才是我们最为尊贵的神祇。",
+            2
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 401,
+        "Params": [
+            2,
+            839
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "",
+            "——砰！！"
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 201,
+        "Params": [
+            1,
+            501551
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 301,
+        "Params": [
+            1,
+            "马莉丝",
+            "……那些抓来的劣种又在顽固抵抗了，还不死心想逃出去。",
+            1
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "我这就去清理他们，别扰了您的兴致。",
+            1
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 301,
+        "Params": [
+            "",
+            "马莉丝",
+            "我将为您与祂献上至高无上的虔诚——只为了，您赐我真相，让我看清自己尊贵的种族。不再受低贱的人类蒙蔽。",
+            1
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "……哒，哒，哒。"
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 401,
+        "EndDelay": 200.0,
+        "Params": [
+            2,
+            6736
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 401,
+        "Params": [
+            2,
+            4806
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "",
+            "——刺啦！！"
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 201,
+        "Params": [
+            1,
+            500305
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 301,
+        "Params": [
+            1,
+            "“邪神眷属”",
+            "……呵，还真是一条忠诚的猎犬。不过可惜……",
+            1
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 301,
+        "Params": [
+            "",
+            "“邪神眷属”",
+            "也是一条瞎了双眼的猎犬。",
+            1
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 301,
+        "Params": [
+            "",
+            "“邪神眷属”",
+            "居然真的相信了自己并非人类的谎言，亲手杀死了双亲，现在又在残害着她口中的劣种——",
+            1
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 301,
+        "Params": [
+            "",
+            "“邪神眷属”",
+            "而实际上，他们亦是她真切的同胞，与她身体内流淌着相同的血脉。",
+            1
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 301,
+        "Params": [
+            "",
+            "“邪神眷属”",
+            "人类果然残忍而愚蠢……无可救药的种族。",
+            1
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 301,
+        "Params": [
+            "",
+            "“邪神眷属”",
+            "这个世界终将被祂所统领。将污染尘世的人类灭绝，启封早已蒙尘的力量……",
+            1
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
         "Type": 301,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
-            "",
-            "Placeholder_占位"
+            "“邪神眷属”",
+            "我主宏伟，愿您早日为世界带来新生。",
+            1
         ]
     }
 ]

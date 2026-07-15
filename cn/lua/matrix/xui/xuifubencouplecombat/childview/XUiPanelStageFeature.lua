@@ -27,10 +27,10 @@ function XUiPanelStageFeature:Refresh(stageId)
         if not item then
             item = CS.UnityEngine.Object.Instantiate(self.GridBuff, self.PanelContent)
             self.GridFeatureList[i] = item
-            CsXUiHelper.RegisterClickEvent(item:Find("RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)), function() self:ShowInfo(showFightEventId) end)
+            CsXUiHelper.RegisterClickEvent(item:Find("RImgIcon"):GetComponent("RawImage"), function() self:ShowInfo(showFightEventId) end)
         end
 
-        item:Find("RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(fightEventDetailConfig.Icon)
+        item:Find("RImgIcon"):GetComponent("RawImage"):SetRawImage(fightEventDetailConfig.Icon)
         item.gameObject:SetActiveEx(true)
     end
 

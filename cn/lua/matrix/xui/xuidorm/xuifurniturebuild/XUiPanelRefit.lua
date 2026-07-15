@@ -274,7 +274,7 @@ function XUiPanelRefit:CheckPreview()
 end
 
 function XUiPanelRefit:ResizeRandomGroupContent()
-    local rectTransform = self.TxtPreviewSpecial.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local rectTransform = self.TxtPreviewSpecial.transform:GetComponent("RectTransform")
     local adjustHeight = self.TxtPreviewSpecial.preferredHeight
     local sizeDelta = rectTransform.sizeDelta
     rectTransform.sizeDelta = CS.UnityEngine.Vector2(sizeDelta.x, adjustHeight)

@@ -47189,5 +47189,1165 @@
             107220,
             107221
         ]
+    },
+    {
+        "Id": 4401,
+        "Group": 112331,
+        "Name": "闪避",
+        "Describe": "mini改造闪避教学",
+        "IconType": 1,
+        "Icon": 2,
+        "TimeOut": -1,
+        "SkillId": [
+            100227
+        ]
+    },
+    {
+        "Id": 4402,
+        "Group": 112331,
+        "Name": "点击普攻",
+        "Describe": "mini改造闪避追击",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": 1000,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            100234
+        ]
+    },
+    {
+        "Id": 4403,
+        "Group": 112333,
+        "Name": "点击必杀",
+        "Describe": "mini改造必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            100207
+        ]
+    },
+    {
+        "Id": 4404,
+        "Group": 112334,
+        "Name": "长按闪避",
+        "Describe": "mini改造丽芙特供长闪",
+        "IconType": 4,
+        "Icon": 2,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            105334
+        ]
+    },
+    {
+        "Id": 4405,
+        "Group": 112335,
+        "Name": "长按闪避",
+        "Describe": "海伦汀教学-长闪",
+        "IconType": 4,
+        "Icon": 2,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            106841,
+            106842
+        ]
+    },
+    {
+        "Id": 4406,
+        "Group": 112336,
+        "Name": "点击黄球",
+        "Describe": "海伦汀-黄三消",
+        "IconType": 1,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine31.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106819,
+            106818,
+            106817
+        ]
+    },
+    {
+        "Id": 4407,
+        "Group": 112336,
+        "Name": "点击异见球",
+        "Describe": "海伦汀-派生",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine41.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106827,
+            106823,
+            106821
+        ]
+    },
+    {
+        "Id": 4408,
+        "Group": 112337,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106813
+        ]
+    },
+    {
+        "Id": 4409,
+        "Group": 112337,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106833
+        ]
+    },
+    {
+        "Id": 4410,
+        "Group": 112337,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106848
+        ]
+    },
+    {
+        "Id": 4411,
+        "Group": 112337,
+        "Name": "点击异见球",
+        "Describe": "海伦汀-派生",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine42.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106854
+        ]
+    },
+    {
+        "Id": 4412,
+        "Group": 112338,
+        "Name": "点按必杀",
+        "Describe": "海伦汀-一段大",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106834
+        ]
+    },
+    {
+        "Id": 4413,
+        "Group": 112339,
+        "Name": "点按必杀",
+        "Describe": "海伦汀-二段大",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106835
+        ]
+    },
+    {
+        "Id": 4414,
+        "Group": 112340,
+        "Name": "长按闪避",
+        "Describe": "海伦汀教学-长闪",
+        "IconType": 4,
+        "Icon": 2,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            106841,
+            106842
+        ]
+    },
+    {
+        "Id": 4415,
+        "Group": 112341,
+        "Name": "点击蓝球",
+        "Describe": "海伦汀-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine21.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816,
+            106815,
+            106814
+        ]
+    },
+    {
+        "Id": 4416,
+        "Group": 112341,
+        "Name": "点击异见球",
+        "Describe": "海伦汀-派生",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine41.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106826,
+            106822,
+            106820
+        ]
+    },
+    {
+        "Id": 4417,
+        "Group": 112342,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106813
+        ]
+    },
+    {
+        "Id": 4418,
+        "Group": 112342,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106833
+        ]
+    },
+    {
+        "Id": 4419,
+        "Group": 112342,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106848
+        ]
+    },
+    {
+        "Id": 4420,
+        "Group": 112342,
+        "Name": "点击异见球",
+        "Describe": "海伦汀-派生",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine42.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106854
+        ]
+    },
+    {
+        "Id": 4421,
+        "Group": 112343,
+        "Name": "点按必杀",
+        "Describe": "海伦汀-一段大",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106834
+        ]
+    },
+    {
+        "Id": 4422,
+        "Group": 112344,
+        "Name": "点按必杀",
+        "Describe": "海伦汀-二段大",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106835
+        ]
+    },
+    {
+        "Id": 4423,
+        "Group": 112345,
+        "Name": "长按闪避",
+        "Describe": "海伦汀教学-长闪",
+        "IconType": 4,
+        "Icon": 2,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            106841,
+            106842
+        ]
+    },
+    {
+        "Id": 4424,
+        "Group": 112346,
+        "Name": "点击蓝球",
+        "Describe": "海伦汀-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine21.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816
+        ]
+    },
+    {
+        "Id": 4425,
+        "Group": 112346,
+        "Name": "长按异见球",
+        "Describe": "海伦汀-派生",
+        "IconType": 4,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine41.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106826,
+            106822,
+            106820
+        ]
+    },
+    {
+        "Id": 4426,
+        "Group": 112347,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106813
+        ]
+    },
+    {
+        "Id": 4427,
+        "Group": 112347,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106833
+        ]
+    },
+    {
+        "Id": 4428,
+        "Group": 112347,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106848
+        ]
+    },
+    {
+        "Id": 4429,
+        "Group": 112347,
+        "Name": "点击异见球",
+        "Describe": "海伦汀-派生",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine42.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106854
+        ]
+    },
+    {
+        "Id": 4430,
+        "Group": 112348,
+        "Name": "点按必杀",
+        "Describe": "海伦汀-一段大",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106834
+        ]
+    },
+    {
+        "Id": 4431,
+        "Group": 112349,
+        "Name": "点按必杀",
+        "Describe": "海伦汀-二段大",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106835
+        ]
+    },
+    {
+        "Id": 4432,
+        "Group": 112350,
+        "Name": "点击蓝球",
+        "Describe": "赛琳娜-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            112509
+        ]
+    },
+    {
+        "Id": 4433,
+        "Group": 112351,
+        "Name": "QTE",
+        "Describe": "海伦汀-QTE",
+        "IconType": 1,
+        "Icon": 92,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            20
+        ],
+        "SkillId": [
+            106810
+        ]
+    },
+    {
+        "Id": 4434,
+        "Group": 112352,
+        "Name": "点击蓝球",
+        "Describe": "海伦汀-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine21.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816,
+            106815,
+            106814
+        ]
+    },
+    {
+        "Id": 4435,
+        "Group": 112353,
+        "Name": "点击必杀",
+        "Describe": "七实-点击必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            130836,
+            130839,
+            130837
+        ]
+    },
+    {
+        "Id": 4436,
+        "Group": 112354,
+        "Name": "点击必杀",
+        "Describe": "七实-点击必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            130836
+        ]
+    },
+    {
+        "Id": 4437,
+        "Group": 112355,
+        "Name": "点击红球",
+        "Describe": "七实-点击红球",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "SkillId": [
+            130811
+        ]
+    },
+    {
+        "Id": 4438,
+        "Group": 112355,
+        "Name": "红球连段",
+        "Describe": "七实-红球连段",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR5Yongyechao12.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "SkillId": [
+            130807,
+            130808,
+            130809
+        ]
+    },
+    {
+        "Id": 4439,
+        "Group": 112356,
+        "Name": "点击黄球",
+        "Describe": "七实-黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR5Yongyechao32.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "SkillId": [
+            130816
+        ]
+    },
+    {
+        "Id": 4440,
+        "Group": 112357,
+        "Name": "点击普攻",
+        "Describe": "七实-点击普攻",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            130853,
+            130858
+        ]
+    },
+    {
+        "Id": 4441,
+        "Group": 112357,
+        "Name": "点击普攻",
+        "Describe": "七实-点击普攻",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            130854
+        ]
+    },
+    {
+        "Id": 4442,
+        "Group": 112357,
+        "Name": "点击普攻",
+        "Describe": "七实-点击普攻",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            130855
+        ]
+    },
+    {
+        "Id": 4443,
+        "Group": 112357,
+        "Name": "点击普攻",
+        "Describe": "七实-点击普攻",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            130856
+        ]
+    },
+    {
+        "Id": 4444,
+        "Group": 112358,
+        "Name": "长按普攻",
+        "Describe": "七实-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": -1,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            130846
+        ]
+    },
+    {
+        "Id": 4445,
+        "Group": 112359,
+        "Name": "点击必杀",
+        "Describe": "七实-点击必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            130836
+        ]
+    },
+    {
+        "Id": 4446,
+        "Group": 112360,
+        "Name": "点击红球",
+        "Describe": "七实-点击红球",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "SkillId": [
+            130811
+        ]
+    },
+    {
+        "Id": 4447,
+        "Group": 112360,
+        "Name": "红球连段",
+        "Describe": "七实-红球连段",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR5Yongyechao12.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "SkillId": [
+            130807,
+            130808,
+            130809
+        ]
+    },
+    {
+        "Id": 4448,
+        "Group": 112361,
+        "Name": "长按黄球",
+        "Describe": "七实-黄球",
+        "IconType": 4,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR5Yongyechao32.png",
+        "TimeOut": 8000,
+        "EffectType": [
+            2
+        ],
+        "SkillId": [
+            130832
+        ]
+    },
+    {
+        "Id": 4449,
+        "Group": 112362,
+        "Name": "点击必杀",
+        "Describe": "七实-点击必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": 8000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            130839,
+            130837
+        ]
+    },
+    {
+        "Id": 4450,
+        "Group": 112365,
+        "Name": "三消信号球",
+        "Describe": "海伦汀-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine21.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816,
+            106819,
+            106813,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4451,
+        "Group": 112365,
+        "Name": "三消信号球",
+        "Describe": "海伦汀-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine21.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816,
+            106819,
+            106813,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4452,
+        "Group": 112365,
+        "Name": "赫尔曼光栅",
+        "Describe": "海伦汀-辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424003
+        ]
+    },
+    {
+        "Id": 4453,
+        "Group": 112366,
+        "Name": "三消信号球",
+        "Describe": "海伦汀-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816,
+            106819,
+            106813,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4454,
+        "Group": 112366,
+        "Name": "三消信号球",
+        "Describe": "海伦汀-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816,
+            106819,
+            106813,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4455,
+        "Group": 112366,
+        "Name": "格里德火花",
+        "Describe": "海伦汀-辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424009
+        ]
+    },
+    {
+        "Id": 4456,
+        "Group": 112367,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106813
+        ]
+    },
+    {
+        "Id": 4457,
+        "Group": 112367,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106833
+        ]
+    },
+    {
+        "Id": 4458,
+        "Group": 112367,
+        "Name": "点击红球",
+        "Describe": "海伦汀-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine11.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106848
+        ]
+    },
+    {
+        "Id": 4459,
+        "Group": 112367,
+        "Name": "点击异见球",
+        "Describe": "海伦汀-派生",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine42.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106854
+        ]
+    },
+    {
+        "Id": 4460,
+        "Group": 112368,
+        "Name": "点击蓝\\黄球",
+        "Describe": "海伦汀-黄三消",
+        "IconType": 1,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine31.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106819,
+            106818,
+            106817,
+            106816,
+            106815,
+            106814
+        ]
+    },
+    {
+        "Id": 4461,
+        "Group": 112368,
+        "Name": "点击异见球",
+        "Describe": "海伦汀-派生",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine41.png",
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106827,
+            106823,
+            106821,
+            106826,
+            106822,
+            106820
+        ]
     }
 ]

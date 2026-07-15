@@ -93,7 +93,7 @@ function XUiRoleGrid:RefreshDatas(adventureRole, playEffect)
     if self.OverRecruit then
         self.OverRecruit.gameObject:SetActiveEx(isCurStepRecruit)
         if self.IsDecay then
-            self.OverRecruit.transform:Find("Text"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XBiancaTheatreConfigs.GetClientConfig("RecruitOverDecayTxt")
+            self.OverRecruit.transform:Find("Text"):GetComponent("Text").text = XBiancaTheatreConfigs.GetClientConfig("RecruitOverDecayTxt")
         end
     end
 

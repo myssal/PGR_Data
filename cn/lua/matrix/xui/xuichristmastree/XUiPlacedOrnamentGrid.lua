@@ -56,7 +56,7 @@ function XUiPlacedOrnamentGrid:AutoRegister()
     
     self.IsPointChange = self.LastPoint ~= point
     if self.IsPointChange then
-        self.RImgIcon = point:Find("RawImage"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+        self.RImgIcon = point:Find("RawImage"):GetComponent("RawImage")
         self.RedNormal = point:Find("Red").gameObject
         self.RedSelect = point:Find("RedSelect").gameObject
         XUiHelper.RegisterClickEvent(self, self.RImgIcon, self.OnBtnClick)

@@ -439,7 +439,7 @@ function XUiBigWorldSetPanelFightPC:InitControllerPanel(resetTextOnly)
                 grid:Refresh(v, handler(self, self.EditKey), resetTextOnly, v.InputMapId, defaultKeyMapTable.OperationType)
             elseif v.Type == XSetConfigs.ControllerSetItemType.Section then
                 grid = grid or CSUnityEngineObjectInstantiate(self.TxtSection, self.ControllerSetContent)
-                local txtTitle = grid:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+                local txtTitle = grid:Find("TxtTitle"):GetComponent("Text")
                 txtTitle.text = v.Title
             elseif v.Type == XSetConfigs.ControllerSetItemType.Slider then
                 if not grid then
@@ -468,10 +468,10 @@ function XUiBigWorldSetPanelFightPC:InitControllerPanel(resetTextOnly)
                 self:_UpdatePanelBtnGroup(lastJoystickType)
                 local isDefaultUi = self._SelectIndex == 1
 
-                local image1a = gridTypeTr:Find("PanelBtn1/TogType1/ImgA"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-                local image1b = gridTypeTr:Find("PanelBtn1/TogType1/ImgB"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-                local image2a = gridTypeTr:Find("PanelBtn2/TogType2/ImgA"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-                local image2b = gridTypeTr:Find("PanelBtn2/TogType2/ImgB"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+                local image1a = gridTypeTr:Find("PanelBtn1/TogType1/ImgA"):GetComponent("Image")
+                local image1b = gridTypeTr:Find("PanelBtn1/TogType1/ImgB"):GetComponent("Image")
+                local image2a = gridTypeTr:Find("PanelBtn2/TogType2/ImgA"):GetComponent("Image")
+                local image2b = gridTypeTr:Find("PanelBtn2/TogType2/ImgB"):GetComponent("Image")
                 
                 local defaultKeyMapTable1 = XSetConfigs.GetDefaultKeyMapTable(v.DefaultKeyMapIds[isDefaultUi and 1 or 2])
                 local defaultKeyMapTable2 = XSetConfigs.GetDefaultKeyMapTable(v.DefaultKeyMapIds[isDefaultUi and 2 or 1])
@@ -527,7 +527,7 @@ function XUiBigWorldSetPanelFightPC:InitKeyboardPanel(resetTextOnly)
                 grid:Refresh(item, handler(self, self.EditKey), resetTextOnly, item.InputMapId, defaultKeyMapTable.OperationType)
             elseif item.Type == XSetConfigs.ControllerSetItemType.Section then
                 grid = grid or CSUnityEngineObjectInstantiate(self.TxtSection, self.KeyboardSetContent)
-                local txtTitle = grid:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+                local txtTitle = grid:Find("TxtTitle"):GetComponent("Text")
                 txtTitle.text = item.Title
             elseif item.Type == XSetConfigs.ControllerSetItemType.Slider then
                 if not grid then

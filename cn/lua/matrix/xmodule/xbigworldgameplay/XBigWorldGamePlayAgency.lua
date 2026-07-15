@@ -468,7 +468,7 @@ function XBigWorldGamePlayAgency:GetCamera()
         XLog.Error("获取相机时机错误，请在关卡初始化完成后再获取！")
         return
     end
-    self._Camera = transform:GetComponent(typeof(CS.UnityEngine.Camera))
+    self._Camera = transform:GetComponent("Camera")
     if not self._Camera then
         XLog.Error("节点不存在相机组件! " .. transform.gameObject.name)
         return

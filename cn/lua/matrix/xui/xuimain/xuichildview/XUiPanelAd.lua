@@ -204,7 +204,7 @@ function XUiPanelAd:Addadvertising(index)
     if index > 1 and index < #self.AdList then
         local pageNum = CS.UnityEngine.Object.Instantiate(smallSp, self.PanelSwitchover)
         pageNum.gameObject:SetActiveEx(true)
-        self.PageNum[index] = pageNum:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+        self.PageNum[index] = pageNum:GetComponent("RawImage")
     end
 
     self.ChildPosXs[index] = (index - 1) * self.Panelpicture:GetComponent("GridLayoutGroup").cellSize.x
@@ -224,7 +224,7 @@ function XUiPanelAd:LoadWebTexture(index, isBackUp)
             return
         end
 
-        self.AdPrefab[index]:GetComponent(typeof(CS.UnityEngine.UI.RawImage)).texture = texture
+        self.AdPrefab[index]:GetComponent("RawImage").texture = texture
     end)
 end
 

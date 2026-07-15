@@ -24,9 +24,9 @@ function XUiPanelJieduan:InitAutoScript()
 end
 
 function XUiPanelJieduan:AutoInitUi()
-    self.ImgJieduanOn = self.Transform:Find("ImgJieduanOn"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgJieduanOff = self.Transform:Find("ImgJieduanOff"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.BtnJieduanGift = self.Transform:Find("BtnJieduanGift"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.ImgJieduanOn = self.Transform:Find("ImgJieduanOn"):GetComponent("Image")
+    self.ImgJieduanOff = self.Transform:Find("ImgJieduanOff"):GetComponent("Image")
+    self.BtnJieduanGift = self.Transform:Find("BtnJieduanGift"):GetComponent("Button")
 end
 
 function XUiPanelJieduan:GetAutoKey(uiNode,eventName)

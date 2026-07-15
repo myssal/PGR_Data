@@ -8,7 +8,7 @@ function XScrollGrid:Ctor(rootUi, ui)
     self.Transform = ui.transform
     self.GameObject = ui.gameObject
 
-    self.Rect = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.Rect = self.Transform:GetComponent("RectTransform")
     self.GameObject:SetActive(true)
     self.CurveValue = 0
 end

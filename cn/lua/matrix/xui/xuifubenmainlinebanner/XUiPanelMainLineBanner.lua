@@ -74,7 +74,7 @@ end
 
 --优先选择上一次操作的界面，否则选择最新的章节
 function XUiPanelMainLineBanner:AutoScroll()
-    local rt = self.PanelChapterContent:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local rt = self.PanelChapterContent:GetComponent("RectTransform")
     local posX = self.PlayerPrefsPosX[self.CurDiff]
 
     if not posX then

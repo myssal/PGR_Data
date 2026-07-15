@@ -149,7 +149,7 @@ function XUiCharacterDetail:OnStart(CharacterId)
     self.CharacterId = CharacterId
 
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
-    self.PanelContentRtf = self.PanelContent:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.PanelContentRtf = self.PanelContent:GetComponent("RectTransform")
     -- self.BtnArchive.gameObject:SetActiveEx(true)
     self.BtnDetial.gameObject:SetActiveEx(false)
     self.AssetPanel:Close()

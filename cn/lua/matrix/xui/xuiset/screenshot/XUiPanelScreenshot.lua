@@ -24,7 +24,7 @@ function XUiPanelScreenshot:Refresh()
     local curScheme = XUiFightButtonDefaultStyleConfig.GetCurSchemeStyle()
     local curUiVersion = CS.XCustomUi.SchemeIndex.__CastFrom(curScheme) == CS.XCustomUi.SchemeIndex.OldNoUiMode and XCustomUi.UiVersion.V30 or XCustomUi.Instance:GetCurUseUiVersion()
     self.Bg:SetRawImage(self.BgPathDic[curUiVersion])
-    self.Bg.transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta = Vector2(CS.XUiManager.RealScreenWidth, CS.XUiManager.RealScreenHeight)
+    self.Bg.transform:GetComponent("RectTransform").sizeDelta = Vector2(CS.XUiManager.RealScreenWidth, CS.XUiManager.RealScreenHeight)
     -- 刷新组件面板
     for uiVersion, panel in pairs(self.PanelFrameDic) do
         if curUiVersion == uiVersion then

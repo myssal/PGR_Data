@@ -322,7 +322,7 @@ function XUiPhotographPortrait:InitUi()
     
     self.PanelAutoLayout = self.PanelName:GetComponent("XAutoLayoutGroup")
 
-    self.TxtRank = self.TxtLevel.transform.parent:Find("TxtLv"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtRank = self.TxtLevel.transform.parent:Find("TxtLv"):GetComponent("Text")
     self.ImgGlory = self.TxtLevel.transform.parent:Find("Icon")
 
     self.StartWidth = CS.UnityEngine.Screen.width
@@ -583,8 +583,8 @@ function XUiPhotographPortrait:OnUiSceneLoaded()
     local root = self.UiModelGo.transform
     self.CameraFar = self:FindVirtualCamera("CamFarMain")
     self.CameraNear = self:FindVirtualCamera("CamNearMain")
-    self.CameraComponentFar = root:FindTransform("UiFarCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
-    self.CameraComponentNear = root:FindTransform("UiNearCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
+    self.CameraComponentFar = root:FindTransform("UiFarCamera"):GetComponent("Camera")
+    self.CameraComponentNear = root:FindTransform("UiNearCamera"):GetComponent("Camera")
     self.UiModelParent = root:FindTransform("UiModelParent")
     self.ChangeActionEffect = root:FindTransform("ChangeActionEffect")
     ---@type XUiPanelRoleModel
@@ -1121,7 +1121,7 @@ function XUiPhotographPortrait:UpdateBatteryMode()
     if not string.IsNilOrEmpty(particleGroupName) then
         local chargeAnimatorTrans = self.UiSceneInfo.Transform:FindTransform(particleGroupName)
         if chargeAnimatorTrans then
-            chargeAnimator = chargeAnimatorTrans:GetComponent(typeof(CS.UnityEngine.Animator))
+            chargeAnimator = chargeAnimatorTrans:GetComponent("Animator")
         else
             XLog.Error("Can't Find \"" .. particleGroupName .. "\", Please Check \"ParticleGroupName\" In Share/PhotoMode/Background.tab")
         end

@@ -164,7 +164,7 @@ function XUiActivityBossSingleSettlement:_RefreshCharacterList()
             local gridObj = XUiHelper.Instantiate(self.GridCharacter1, self.ListCharacter)
             local imgHead = gridObj.transform:Find("RImgHead")
             if imgHead then
-                local rawImage = imgHead:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+                local rawImage = imgHead:GetComponent("RawImage")
                 if rawImage then
                     rawImage:SetRawImage(XMVCA.XCharacter:GetCharBigHeadIcon(characterId))
                 end

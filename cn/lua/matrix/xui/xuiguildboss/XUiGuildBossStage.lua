@@ -519,7 +519,7 @@ function XUiGuildBossStage:ChangeMode(mode, cb, ...)
             self.Levels[i]:HideOrder()
             self.Levels[i].MaskPos.gameObject:SetActiveEx(false)
         end
-        self.MainView:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).blocksRaycasts = true
+        self.MainView:GetComponent("CanvasGroup").blocksRaycasts = true
         self:UpdateAllOrderMark()
     --进入布局的时候
     elseif self.CurWindowMode == self.WindowMode.Normal and mode == self.WindowMode.Order then
@@ -536,7 +536,7 @@ function XUiGuildBossStage:ChangeMode(mode, cb, ...)
                 levelComponent:SetOrderOutSide(false)
             end
         end
-        self.MainView:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).blocksRaycasts = false
+        self.MainView:GetComponent("CanvasGroup").blocksRaycasts = false
         self.ToSetLowNum = 1
         self.ToSetHighNum = 1
     --从普通状态进入关卡详情

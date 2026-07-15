@@ -30,7 +30,7 @@ function XUiSummerMatch:OnStart(gameId)
         go.transform:SetParent(self.PanelPos, false)
         go.transform.position = self.Point[i].position
         self.PointIcons[i] = XUiGridEliminateIcon.New(go)
-        --self.PointIcons[i] = go:GetComponent(typeof(CS.UnityEngine.UI.Image))
+        --self.PointIcons[i] = go:GetComponent("Image")
     end
 
     self.GameId = gameId

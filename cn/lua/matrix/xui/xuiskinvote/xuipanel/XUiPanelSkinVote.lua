@@ -113,7 +113,7 @@ function XUiPanelSkinVote:InitUi()
     self.GirdVote = {}
     self.SwitchAnim = self.Transform:Find("Animation/QieHuan")
     if not self.TxtDesc then
-        self.TxtDesc = self.Transform:Find("RImg03/PanelRight/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        self.TxtDesc = self.Transform:Find("RImg03/PanelRight/Text"):GetComponent("Text")
     end
     self.ConfirmAnim = self.BtnConfirm.transform:Find("Animation/Enable")
 end

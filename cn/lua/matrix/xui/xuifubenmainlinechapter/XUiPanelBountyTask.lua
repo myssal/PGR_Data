@@ -89,10 +89,10 @@ end
 
 function XUiPanelBountyTask:AutoInitUi()
     self.PanelStart = self.Transform:Find("PanelStart")
-    self.BtnSkip = self.Transform:Find("PanelStart/BtnSkip"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.TxtLevel = self.Transform:Find("PanelStart/TxtLevel"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnSkip = self.Transform:Find("PanelStart/BtnSkip"):GetComponent("Button")
+    self.TxtLevel = self.Transform:Find("PanelStart/TxtLevel"):GetComponent("Text")
     self.PanelComplete = self.Transform:Find("PanelComplete")
-    self.BtnBountyTask = self.Transform:Find("PanelComplete/BtnBountyTask"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnBountyTask = self.Transform:Find("PanelComplete/BtnBountyTask"):GetComponent("Button")
 end
 
 function XUiPanelBountyTask:GetAutoKey(uiNode, eventName)

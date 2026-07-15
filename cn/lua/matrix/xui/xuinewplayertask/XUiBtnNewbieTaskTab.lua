@@ -17,13 +17,13 @@ function XUiBtnNewbieTaskTab:InitAutoScript()
 end
 
 function XUiBtnNewbieTaskTab:AutoInitUi()
-    self.BtnNewbieTaskTab = self.Transform:GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.ImgDefault = self.Transform:Find("ImgDefault"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.TxtDayDefault = self.Transform:Find("TxtDayDefault"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.ImgSelected = self.Transform:Find("ImgSelected"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.TxtDaySelected = self.Transform:Find("ImgSelected/TxtDaySelected"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.ImgReddot = self.Transform:Find("ImgReddot"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgLock = self.Transform:Find("ImgLock"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.BtnNewbieTaskTab = self.Transform:GetComponent("Button")
+    self.ImgDefault = self.Transform:Find("ImgDefault"):GetComponent("Image")
+    self.TxtDayDefault = self.Transform:Find("TxtDayDefault"):GetComponent("Text")
+    self.ImgSelected = self.Transform:Find("ImgSelected"):GetComponent("Image")
+    self.TxtDaySelected = self.Transform:Find("ImgSelected/TxtDaySelected"):GetComponent("Text")
+    self.ImgReddot = self.Transform:Find("ImgReddot"):GetComponent("Image")
+    self.ImgLock = self.Transform:Find("ImgLock"):GetComponent("Image")
 end
 
 function XUiBtnNewbieTaskTab:RegisterClickEvent(uiNode, func)

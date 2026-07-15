@@ -38,7 +38,7 @@ function XUiPanelTeacherPhasesReward:InitPhasesRewardGrid()
             obj.transform:SetParent(self.PanelContent, false)
             grid = XUiGridPhasesReward.New(obj, self, self.Root)
             self.PhasesRewardGrids[i] = grid
-            self.PhasesRewardGridRects[i] = grid.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+            self.PhasesRewardGridRects[i] = grid.Transform:GetComponent("RectTransform")
         end
     end
 end

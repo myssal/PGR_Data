@@ -4,7 +4,7 @@ local XScrollFlowGrid = XClass(XScrollGrid, "XScrollFlowGrid")
 
 function XScrollFlowGrid:Ctor()
     self.CurveValue = 0
-    self.Img = self.Transform:GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.Img = self.Transform:GetComponent("Image")
 end
 
 function XScrollFlowGrid:OnDrag(addValue)

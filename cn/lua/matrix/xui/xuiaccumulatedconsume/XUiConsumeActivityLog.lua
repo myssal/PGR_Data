@@ -69,7 +69,7 @@ function XUiConsumeActivityLog:InitDrawPreview()
         local rewardTypeConfig = self.ConsumeDrawRule:GetRewardTypeConfig(rewardType)
         -- 标题
         local titleGo = CS.UnityEngine.Object.Instantiate(PanelObj.Txtl01, PanelObj.PanelDisView)
-        local titleTxt = titleGo:GetComponent(typeof(CS.UnityEngine.UI.Text))
+        local titleTxt = titleGo:GetComponent("Text")
         if titleTxt then
             titleTxt.text = rewardTypeConfig.RewardName
         end

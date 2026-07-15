@@ -108,7 +108,7 @@ function XUiBigWorldTaskMainInvitation:InitDisplay()
     self._DisplayController = XUiModelDisplayController.New(uiModelRoot, true)
     
     self.PanelRoleModel = panelRoleModel
-    self.NearCamera = uiModelRoot:FindTransform("UiNearCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
+    self.NearCamera = uiModelRoot:FindTransform("UiNearCamera"):GetComponent("Camera")
     self.EffectChangeRole = uiModelRoot and uiModelRoot:FindTransform("FxUiBigWorldRoleRoom3DShenqi")
 end
 

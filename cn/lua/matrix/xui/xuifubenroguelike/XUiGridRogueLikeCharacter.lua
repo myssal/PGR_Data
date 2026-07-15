@@ -5,7 +5,7 @@ function XUiGridRogueLikeCharacter:Ctor(rootUi, ui, clickCallback, templateId, t
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.ClickCallback = clickCallback
-    self.RectTransform = ui:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.RectTransform = ui:GetComponent("RectTransform")
     self.TemplateId = templateId
     self.TemplateType = templateType
     self.IsCharacterType = self.TemplateType == XFubenRogueLikeConfig.SelectCharacterType.Character

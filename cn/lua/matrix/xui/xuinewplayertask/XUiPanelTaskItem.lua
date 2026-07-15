@@ -20,11 +20,11 @@ function XUiPanelTaskItem:InitAutoScript()
 end
 
 function XUiPanelTaskItem:AutoInitUi()
-    self.BtnClick = self.Transform:Find("BtnClick"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnClick = self.Transform:Find("BtnClick"):GetComponent("Button")
     self.ImgNormal = self.Transform:Find("ImgNormal").gameObject
     self.ImgCompleted = self.Transform:Find("ImgCompleted").gameObject
     self.ImgSelected = self.Transform:Find("ImgSelected").gameObject
-    self.TxtTitle = self.Transform:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtTitle = self.Transform:Find("TxtTitle"):GetComponent("Text")
     self.ImgRedPoint = self.Transform:Find("ImgRedPoint").gameObject
 end
 

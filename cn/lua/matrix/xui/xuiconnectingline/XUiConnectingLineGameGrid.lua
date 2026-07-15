@@ -25,7 +25,7 @@ end
 
 function XUiConnectingLineGameGrid:GetPosUi()
     ---@type UnityEngine.RectTransform
-    local rectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local rectTransform = self.Transform:GetComponent("RectTransform")
     local anchoredPosition = rectTransform.anchoredPosition
     return anchoredPosition.x, anchoredPosition.y
 end
@@ -47,7 +47,7 @@ end
 function XUiConnectingLineGameGrid:ResetAnimation()
     if self._IsConnected then
         ---@type UnityEngine.Playables.PlayableDirector
-        local playableDirector = self.TipsLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+        local playableDirector = self.TipsLoop:GetComponent("PlayableDirector")
         playableDirector.time = 0
     end
 end

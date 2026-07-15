@@ -538,6 +538,66 @@
         "UiResId": 7
     },
     {
+        "Id": 1085,
+        "Name": "肉鸽6PVP关卡1",
+        "Prefab": "Assets/Product/Scene/DlcScenePrefab/DlcSystem_RogueBattle07.prefab",
+        "LevelType": 1,
+        "LevelSubType": 1,
+        "ScriptId": 1081,
+        "PositionY": 0.6999,
+        "PositionX": 41.4599,
+        "PositionZ": 48.5699,
+        "RotationY": 180.0,
+        "VictoryShowPosX": 41.4599,
+        "VictoryShowPosY": 1.0,
+        "VictoryShowPosZ": 48.5699,
+        "DefaultCameraId": 810107,
+        "ConfigGroups": [
+            1082
+        ],
+        "UiResId": 7
+    },
+    {
+        "Id": 1086,
+        "Name": "肉鸽6PVP关卡2",
+        "Prefab": "Assets/Product/Scene/DlcScenePrefab/DlcSystem_RogueBattle08.prefab",
+        "LevelType": 1,
+        "LevelSubType": 1,
+        "ScriptId": 1081,
+        "PositionY": 0.6999,
+        "PositionX": 41.4599,
+        "PositionZ": 48.5699,
+        "RotationY": 180.0,
+        "VictoryShowPosX": 41.4599,
+        "VictoryShowPosY": 1.0,
+        "VictoryShowPosZ": 48.5699,
+        "DefaultCameraId": 810107,
+        "ConfigGroups": [
+            1083
+        ],
+        "UiResId": 7
+    },
+    {
+        "Id": 1087,
+        "Name": "肉鸽6PVP关卡3",
+        "Prefab": "Assets/Product/Scene/DlcScenePrefab/DlcSystem_RogueBattle09.prefab",
+        "LevelType": 1,
+        "LevelSubType": 1,
+        "ScriptId": 1081,
+        "PositionY": 0.6999,
+        "PositionX": 41.4599,
+        "PositionZ": 48.5699,
+        "RotationY": 180.0,
+        "VictoryShowPosX": 41.4599,
+        "VictoryShowPosY": 1.0,
+        "VictoryShowPosZ": 48.5699,
+        "DefaultCameraId": 810107,
+        "ConfigGroups": [
+            1084
+        ],
+        "UiResId": 7
+    },
+    {
         "Id": 9999,
         "Name": "箱庭玩法-3C标准测试关卡",
         "Prefab": "Assets/Product/BigWorld/Standard3C/StaticPrefabs/Scene_Main/Scene_Main.prefab",
@@ -1099,6 +1159,30 @@
     {
         "Id": 9017,
         "Name": "Relink千子-难度5",
+        "Prefab": "Assets/Product/BigWorld/Relink02/StaticPrefabs/Relink02_Qizi/Relink02_Qizi.prefab",
+        "SectorName": "Relink02",
+        "LevelType": 1,
+        "LevelSubType": 1,
+        "FightTimeLimit": 900.0,
+        "ScriptId": 90009,
+        "BgmId": 196,
+        "ResSolution": 1,
+        "PositionY": 2.0,
+        "PositionX": 86.0,
+        "PositionZ": 40.0,
+        "VictoryShowPosX": 86.0,
+        "VictoryShowPosY": 2.0,
+        "VictoryShowPosZ": 40.0,
+        "DefaultCameraId": 90009,
+        "ConfigGroups": [
+            90009
+        ],
+        "UiResId": 6,
+        "SkipBornState": true
+    },
+    {
+        "Id": 9018,
+        "Name": "Relink千子-木桩关",
         "Prefab": "Assets/Product/BigWorld/Relink02/StaticPrefabs/Relink02_Qizi/Relink02_Qizi.prefab",
         "SectorName": "Relink02",
         "LevelType": 1,
@@ -2006,7 +2090,8 @@
         "LoadingGroupId": 12,
         "DisableSystemFuncEnumStr": "5|6|7|8|9|11|12|15|4",
         "ForceUsePlayerSelfNpc": true,
-        "UiResId": 4
+        "UiResId": 4,
+        "IgnoreSceneRegionTip": true
     },
     {
         "Id": 4039,
@@ -2029,7 +2114,8 @@
         "LoadingGroupId": 13,
         "DisableSystemFuncEnumStr": "5|6|7|8|9|11|12|15|4",
         "ForceUsePlayerSelfNpc": true,
-        "UiResId": 4
+        "UiResId": 4,
+        "IgnoreSceneRegionTip": true
     },
     {
         "Id": 4040,
@@ -2050,7 +2136,8 @@
         "NavMeshDataName": "SkyGarden_Faos01",
         "LoadingGroupId": 21,
         "DisableSystemFuncEnumStr": "5|6|7|8|9|11|12|15|14",
-        "UiResId": 4
+        "UiResId": 4,
+        "IgnoreSceneRegionTip": true
     },
     {
         "Id": 4041,
@@ -2071,7 +2158,8 @@
         "NavMeshDataName": "SkyGarden_Faos01",
         "LoadingGroupId": 21,
         "DisableSystemFuncEnumStr": "5|6|7|8|9|11|12|15|14",
-        "UiResId": 4
+        "UiResId": 4,
+        "IgnoreSceneRegionTip": true
     },
     {
         "Id": 4042,
@@ -2189,7 +2277,8 @@
         "LoadingGroupId": 13,
         "DisableSystemFuncEnumStr": "5|6|7|8|9|11|12|15|14",
         "ForceUsePlayerSelfNpc": true,
-        "UiResId": 4
+        "UiResId": 4,
+        "IgnoreSceneRegionTip": true
     },
     {
         "Id": 6003,

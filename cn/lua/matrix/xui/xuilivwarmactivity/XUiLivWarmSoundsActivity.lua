@@ -23,7 +23,7 @@ end
 
 function XUiLivWarmSoundsActivity:OnStart()
     self.PanelAllCd = self.Transform:FindTransform("PanelAllCd")
-    self.AudioAreaRectTransform = self.PanelAllCd:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.AudioAreaRectTransform = self.PanelAllCd:GetComponent("RectTransform")
     self.ProgressBar = self.Transform:FindTransform("PanelMode"):FindTransform("ProgressBar")
     self.ImgLan = self.Transform:FindTransform("PanelMode"):FindTransform("Lan")
     self.Bar = self.Transform:FindTransform("PanelMode"):FindTransform("Bar")
@@ -115,7 +115,7 @@ function XUiLivWarmSoundsActivity:InitTimer()
         if not XDataCenter.LivWarmActivityManager.CheckActivityIsOpen() then
             return
         end
-        textTime:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XUiHelper.GetTime(v, XUiHelper.TimeFormatType.ACTIVITY)
+        textTime:GetComponent("Text").text = XUiHelper.GetTime(v, XUiHelper.TimeFormatType.ACTIVITY)
     end)
 end
 
@@ -223,7 +223,7 @@ function XUiLivWarmSoundsActivity:CheckHitFaceHelp()
 end
 
 function XUiLivWarmSoundsActivity:RefreshTitle()
-    self.PanelTitle.transform:Find("RawImage"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(XLivWarmSoundsActivityConfig.GetActivityName(self.ActivityId))
+    self.PanelTitle.transform:Find("RawImage"):GetComponent("RawImage"):SetRawImage(XLivWarmSoundsActivityConfig.GetActivityName(self.ActivityId))
 end
 
 function XUiLivWarmSoundsActivity:OnButtonHint()
@@ -238,13 +238,13 @@ function XUiLivWarmSoundsActivity:RefreshTips(count)
         if count then
             self["PanelHint" .. count].gameObject:SetActiveEx(true)
             self:PlayAnimation("PanelHint" .. count .. "Enable")
-            self["PanelHint" .. count].transform:Find("Text"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = hints[count]
+            self["PanelHint" .. count].transform:Find("Text"):GetComponent("Text").text = hints[count]
         else
             for i = 1, MAX_TIP_COUNT do
                 if i <= tipCount then
                     self["PanelHint" .. i].gameObject:SetActiveEx(true)
                     self:PlayAnimation("PanelHint" .. i .. "Enable")
-                    self["PanelHint" .. i].transform:Find("Text"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = hints[i]
+                    self["PanelHint" .. i].transform:Find("Text"):GetComponent("Text").text = hints[i]
                 else
                     self["PanelHint" .. i].gameObject:SetActiveEx(false)
                 end
@@ -515,20 +515,20 @@ function XUiLivWarmSoundsActivity:RefreshProgress(count)
     local BroadTestTime = XLivWarmSoundsActivityConfig.GetStageBroadTestTime(self.StageId)
     local maxCount = (XScheduleManager.SECOND/PROGRESS_SPEED)*BroadTestTime --需要动画的总次数
     if XDataCenter.LivWarmSoundsActivityManager.IsStageFinished(self.StageId) then
-        self.ImgBlue:GetComponent(typeof(CS.UnityEngine.UI.Image)).fillAmount = count / maxCount
+        self.ImgBlue:GetComponent("Image").fillAmount = count / maxCount
     else
         local deltaWidth = (self.Bar.rect.width - self.ProgressBar.rect.width) / ((XScheduleManager.SECOND/PROGRESS_SPEED)*BroadTestTime) --进度条本身有宽度需要处理
         self.ProgressBar.anchoredPosition = CS.UnityEngine.Vector2((self.ProgressBar.rect.width / 2 + deltaWidth * count), self.ProgressBar.anchoredPosition.y)
-        self.ImgLan:GetComponent(typeof(CS.UnityEngine.UI.Image)).fillAmount = count / maxCount
+        self.ImgLan:GetComponent("Image").fillAmount = count / maxCount
     end
 end
 
 function XUiLivWarmSoundsActivity:ResetProgress()
     if XDataCenter.LivWarmSoundsActivityManager.IsStageFinished(self.StageId) then
-        self.ImgBlue:GetComponent(typeof(CS.UnityEngine.UI.Image)).fillAmount = 0
+        self.ImgBlue:GetComponent("Image").fillAmount = 0
     else
         self.ProgressBar.anchoredPosition = CS.UnityEngine.Vector2((self.ProgressBar.rect.width / 2), self.ProgressBar.anchoredPosition.y)
-        self.ImgLan:GetComponent(typeof(CS.UnityEngine.UI.Image)).fillAmount = 0
+        self.ImgLan:GetComponent("Image").fillAmount = 0
     end
 end
 

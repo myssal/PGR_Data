@@ -229,7 +229,7 @@ function XUiAreaWarBoss:UpdateView()
             self.TxtPercent.text = math.floor(progress * 100) .. "%"
 
             --这个小戳戳要跟着百分比进度条移动
-            local width = self.ImgFillAmount.transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.width
+            local width = self.ImgFillAmount.transform:GetComponent("RectTransform").rect.width
             local tf = self.Hint.transform
             tf.anchoredPosition = CS.UnityEngine.Vector2(width * progress, tf.anchoredPosition.y)
 

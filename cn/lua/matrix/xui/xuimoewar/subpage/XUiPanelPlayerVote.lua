@@ -23,21 +23,21 @@ function XUiPanelPlayerVote:Ctor(ui)
 end
 
 function XUiPanelPlayerVote:AutoInitUiObject()
-	self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-	self.TxtAllNumber = self.Transform:Find("PanelRolePoll/TxtNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-	self.TxtDis = self.Transform:Find("PanelRolePoll/TxtDis"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-	self.TxtDis2 = self.Transform:Find("PanelRolePoll/TxtDis2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-	self.TxtMyNumber = self.Transform:Find("PanelPoll/GridPollMy/TxtNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-	self.TxtMyTitle = self.Transform:Find("PanelPoll/GridPollMy/TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+	self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
+	self.TxtAllNumber = self.Transform:Find("PanelRolePoll/TxtNumber"):GetComponent("Text")
+	self.TxtDis = self.Transform:Find("PanelRolePoll/TxtDis"):GetComponent("Text")
+	self.TxtDis2 = self.Transform:Find("PanelRolePoll/TxtDis2"):GetComponent("Text")
+	self.TxtMyNumber = self.Transform:Find("PanelPoll/GridPollMy/TxtNumber"):GetComponent("Text")
+	self.TxtMyTitle = self.Transform:Find("PanelPoll/GridPollMy/TxtTitle"):GetComponent("Text")
 	self.MyPollPanel = self.Transform:Find("PanelPoll/GridPollMy")
 	self.PanelOther = self.Transform:Find("PanelPoll/PanelPollOther")
-	self.PlayableDirector = self.Transform:Find("PanelPoll/PanelPollOther/GridPollOther"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
-	self.TxtOtherName = self.Transform:Find("PanelPoll/PanelPollOther/GridPollOther/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-	self.ImgOtherIcon = self.Transform:Find("PanelPoll/PanelPollOther/GridPollOther/TxtNumber/RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-	self.TxtOtherNumber = self.Transform:Find("PanelPoll/PanelPollOther/GridPollOther/TxtNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+	self.PlayableDirector = self.Transform:Find("PanelPoll/PanelPollOther/GridPollOther"):GetComponent("PlayableDirector")
+	self.TxtOtherName = self.Transform:Find("PanelPoll/PanelPollOther/GridPollOther/TxtName"):GetComponent("Text")
+	self.ImgOtherIcon = self.Transform:Find("PanelPoll/PanelPollOther/GridPollOther/TxtNumber/RImgIcon"):GetComponent("RawImage")
+	self.TxtOtherNumber = self.Transform:Find("PanelPoll/PanelPollOther/GridPollOther/TxtNumber"):GetComponent("Text")
 	self.BtnPoll = self.Transform:Find("BtnPoll"):GetComponent("XUiButton")
-	self.ImgAllIcon = self.Transform:Find("PanelRolePoll/RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-	self.ImgMyIcon = self.Transform:Find("PanelPoll/GridPollMy/RawImage"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+	self.ImgAllIcon = self.Transform:Find("PanelRolePoll/RImgIcon"):GetComponent("RawImage")
+	self.ImgMyIcon = self.Transform:Find("PanelPoll/GridPollMy/RawImage"):GetComponent("RawImage")
 	self.GridPollOther = self.Transform:Find("PanelPoll/PanelPollOther/GridPollOther")
 	self.MyVoteChangeEffect = self.Transform:Find("PanelPoll/GridPollMy/TxtNumber/Effect") 
 end
@@ -112,9 +112,9 @@ function XUiPanelPlayerVote:PlayAnimation()
 		grid = {}
 		grid.Transform = obj
 		grid.GameObject = obj.gameObject
-		grid.TxtName = obj.transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-		grid.TxtNumber = obj.transform:Find("TxtNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-		grid.PlayableDirector = obj:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+		grid.TxtName = obj.transform:Find("TxtName"):GetComponent("Text")
+		grid.TxtNumber = obj.transform:Find("TxtNumber"):GetComponent("Text")
+		grid.PlayableDirector = obj:GetComponent("PlayableDirector")
 		self.AnimationGridList[self.AnimationIndex % MAX_ANIMATION_NUMBER] = grid
 	end
 	self.AnimationIndex = self.AnimationIndex % MAX_ANIMATION_NUMBER

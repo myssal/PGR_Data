@@ -57,7 +57,7 @@ function XUiPanelDice:SetAnimSubNodeActive(animationNode, active)
     for i = 1, #tailDiceFrameNames do
 		animationNode:GetObject(tailDiceFrameNames[i]).gameObject:SetActiveEx(active)
     end
-    animationNode:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = active and 0 or 1.0
+    animationNode:GetComponent("CanvasGroup").alpha = active and 0 or 1.0
 end
 
 function XUiPanelDice:SetThrowAnimTailFrames(animationNode, point)

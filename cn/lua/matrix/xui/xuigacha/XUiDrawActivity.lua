@@ -50,7 +50,7 @@ function XUiDrawActivity:UIReset()
     XUiHelper.SetDelayPopupFirstGet(true)
     self.ImgMask.gameObject:SetActiveEx(true)
     self:PlayAnimation("DrawBegan", function() self.ImgMask.gameObject:SetActiveEx(false) end)
-    --self.PlayableDirector = self.BackGround:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    --self.PlayableDirector = self.BackGround:GetComponent("PlayableDirector")
     self.GachaShowLoop = self.BackGround.transform:Find("BoxEffect/Loop")
     if self.GachaShowLoop then
         self.CurLoop = self.GachaShowLoop:LoadPrefab(XUiConfigs.GetComponentUrl("UiGachaLoop"))

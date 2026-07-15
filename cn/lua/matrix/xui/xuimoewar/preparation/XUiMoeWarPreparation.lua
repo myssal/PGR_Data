@@ -118,7 +118,7 @@ function XUiMoeWarPreparation:InitCourseHeadPositionX()
 end
 
 function XUiMoeWarPreparation:InitPercentRewardGrid()
-    self.ActiveProgressRect = self.PanelPassedLine:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.ActiveProgressRect = self.PanelPassedLine:GetComponent("RectTransform")
     if not self.PreparationActivityId then return end
 
     self.PercentRewardGrids = {}
@@ -132,7 +132,7 @@ function XUiMoeWarPreparation:InitPercentRewardGrid()
         local obj = i == 1 and self.GridCourse or CSUnityEngineObjectInstantiate(self.GridCourse, self.PanelGridCourse)
         local grid = XUiMoeWarPreparationRewardGrid.New(obj, UpdatePanelPhasesRewardCb, gearId, self)
         self.PercentRewardGrids[i] = grid
-        self.PercentRewardGridRects[i] = grid.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+        self.PercentRewardGridRects[i] = grid.Transform:GetComponent("RectTransform")
     end
 
     -- 自适应调整

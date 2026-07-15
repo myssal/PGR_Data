@@ -17,7 +17,7 @@ function XUiPanelPutOnShowTip:InitAutoScript()
 end
 
 function XUiPanelPutOnShowTip:AutoInitUi()
-    self.BtnClick = self.Transform:Find("BtnClick"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnClick = self.Transform:Find("BtnClick"):GetComponent("Button")
     self.PanelDetails = self.Transform:Find("PanelDetails")
     self.PanelAttrib1 = self.Transform:Find("PanelDetails/PanelAttrib1")
     self.PanelAttrib2 = self.Transform:Find("PanelDetails/PanelAttrib2")

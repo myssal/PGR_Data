@@ -24,7 +24,7 @@ function XUiTheatre6RoomTaskSettlement:OnStart()
         grid:SetData(datas[i], true)
     end)
 
-    self._Control:CheckFightReconnect()
+    -- self:TryOpenSellSkillPanel()
 end
 
 function XUiTheatre6RoomTaskSettlement:OnEnable()

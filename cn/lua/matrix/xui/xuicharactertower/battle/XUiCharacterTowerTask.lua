@@ -150,9 +150,9 @@ function XUiCharacterTowerTask:InitProgress()
             self.GridProgressList[i] = progress
         end
     end
-    self.ImgProgressRect = self.ImgProgress:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.ImgProgressRect = self.ImgProgress:GetComponent("RectTransform")
     self.TemplatePosition = self.PanelStarsActive.transform.localPosition
-    self.TemplateRect = self.PanelStarsActive:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.TemplateRect = self.PanelStarsActive:GetComponent("RectTransform")
     
     local stars, totalStars = self.ChapterViewModel:GetChapterStars()
     self.TxtCurProgress.text = stars
@@ -196,7 +196,7 @@ function XUiCharacterTowerTask:RefreshProgressTransform()
             local currentProgress = requireStar * 1.0 / totalStars * FULL_PROGRESS
             local progress = self.GridProgressList[i]
             if progress then
-                progress.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition3D = CS.UnityEngine.Vector3(currentProgress * totalWidth - activeWidthOffset, self.TemplatePosition.y, self.TemplatePosition.z)
+                progress.Transform:GetComponent("RectTransform").anchoredPosition3D = CS.UnityEngine.Vector3(currentProgress * totalWidth - activeWidthOffset, self.TemplatePosition.y, self.TemplatePosition.z)
             end
         end
     end, 1)

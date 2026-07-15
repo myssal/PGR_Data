@@ -6,7 +6,7 @@ local XUiGridMainLineExhibitionModule = XClass(nil, "XUiGridMainLineExhibitionMo
 function XUiGridMainLineExhibitionModule:Ctor(uiPanelExhibition, ui, moduleId, index)
     self.UiPanelExhibition = uiPanelExhibition
     XUiHelper.InitUiClass(self, ui)
-    self.RectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.RectTransform = self.Transform:GetComponent("RectTransform")
     self.ModuleId = moduleId
     self.Index = index
 

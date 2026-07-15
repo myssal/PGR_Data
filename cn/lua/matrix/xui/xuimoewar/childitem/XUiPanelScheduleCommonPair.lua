@@ -54,7 +54,7 @@ function XUiPanelScheduleCommonPair:Refresh(pairInfo, match)
         local rankIcon = self["PanelRole" .. i]:Find("RawImage")
         if rankIcon then
             rankIcon.gameObject:SetActiveEx(match:GetType() == XMoeWarConfig.MatchType.Publicity)
-            local rImgIcon = rankIcon:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+            local rImgIcon = rankIcon:GetComponent("RawImage")
             if pairInfo.WinnerId == playerId then
                 rImgIcon:SetRawImage(XMoeWarConfig.ScheduleIcon[1])
             elseif pairInfo.SecondId == playerId then
@@ -117,12 +117,12 @@ end
 ---@param transform UnityEngine.RectTransform
 function XUiPanelScheduleCommonPair:InitRoleUi(transform)
     local obj = {
-        HeadIcon = transform:Find("Head/StandIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)),
+        HeadIcon = transform:Find("Head/StandIcon"):GetComponent("RawImage"),
         PanelLose = transform:Find("Head/PanelLose"),
         PanelWenhao = transform:Find("Head/PanelWenhao"),
-        TxtName = transform:Find("TextName"):GetComponent(typeof(CS.UnityEngine.UI.Text)),
-        TxtNum = transform:Find("PanelRoleNum/TextName"):GetComponent(typeof(CS.UnityEngine.UI.Text)),
-        RImgIcon = transform:Find("PanelRoleNum/RawImage"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)),
+        TxtName = transform:Find("TextName"):GetComponent("Text"),
+        TxtNum = transform:Find("PanelRoleNum/TextName"):GetComponent("Text"),
+        RImgIcon = transform:Find("PanelRoleNum/RawImage"):GetComponent("RawImage"),
         RankIcon = transform:Find("RawImage")
     }
     return obj

@@ -41,7 +41,7 @@ function XUiColorTableStageMainInfo:_Init()
     }
 
     self.PanelEventNew = self.Transform:Find("SafeAreaContentPane/PanelCardBg/PanelEvent/PanelTitle/PanelNew")
-    self.RImgMovie = self.Transform:Find("SafeAreaContentPane/PanelCardBg/PanelEvent/RImgMovie"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.RImgMovie = self.Transform:Find("SafeAreaContentPane/PanelCardBg/PanelEvent/RImgMovie"):GetComponent("RawImage")
     self.TxtActionPoint.text = XUiHelper.GetText("ColorTableTipActionPoint")
     self.TxtStudyData.text = XUiHelper.ReadTextWithNewLine("ColorTableTipStudyData")
     self.TxtAuto1.text = XUiHelper.GetText("ColorTableTipEsayModeTitle")

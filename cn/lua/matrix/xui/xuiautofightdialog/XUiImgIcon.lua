@@ -14,7 +14,7 @@ function XUiImgIcon:InitAutoScript()
 end
 
 function XUiImgIcon:AutoInitUi()
-    self.ImgIcon = self.Transform:GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgIcon = self.Transform:GetComponent("Image")
 end
 
 function XUiImgIcon:RegisterClickEvent(uiNode, func)

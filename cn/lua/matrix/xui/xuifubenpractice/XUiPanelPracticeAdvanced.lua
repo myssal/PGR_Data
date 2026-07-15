@@ -97,7 +97,7 @@ end
 
 function XUiPanelPracticeAdvanced:PlayScrollViewMove(gridTransform)
     self.AdvancedScrollRect.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
-    local gridRect = gridTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local gridRect = gridTransform:GetComponent("RectTransform")
     self.AdvancedViewport.raycastTarget = false
     local diffX = gridRect.localPosition.x + self.AdvancedContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then

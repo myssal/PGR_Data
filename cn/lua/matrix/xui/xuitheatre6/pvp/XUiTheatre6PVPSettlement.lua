@@ -120,15 +120,6 @@ function XUiTheatre6PVPSettlement:RefreshTips()
         end
     end
     self.PanelScoreMax.gameObject:SetActiveEx(isNextAdvanced)
-
-    --动效
-    if isAdvancedSucc then
-        local rankId = self._Control:GetPvpCurRankId()
-        local anim = string.format("Rank%sTo%s", rankId - 1, rankId)
-        self:PlayAnimationWithMask(anim)
-    else
-        self:PlayAnimationWithMask("Enable")
-    end
 end
 
 function XUiTheatre6PVPSettlement:ShowNormalBattleTip()

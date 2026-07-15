@@ -128,7 +128,7 @@ function XMoeWarAnimationRole:ChangeModel(modelName)
 
     --加载controller
     local controllerPath = XModelManager.GetUiControllerPath(modelName)
-    self.Animator = model.transform:GetComponent(typeof(CS.UnityEngine.Animator))
+    self.Animator = model.transform:GetComponent("Animator")
     local runtimeController = CS.LoadHelper.LoadUiController(controllerPath, self.Animator.gameObject)
     self.Animator.runtimeAnimatorController = runtimeController
 

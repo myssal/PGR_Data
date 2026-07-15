@@ -15,15 +15,15 @@ end
 
 function XUiGridTeamCharacter:AutoInitUi()
     self.PanelSelected = self.Transform:Find("PanelSelected")
-    self.ImgSelected = self.Transform:Find("PanelSelected/ImgSelected"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgSelected = self.Transform:Find("PanelSelected/ImgSelected"):GetComponent("Image")
     self.PanelHead = self.Transform:Find("PanelHead")
-    self.ImgeHeadIconBg = self.Transform:Find("PanelHead/ImgeHeadIconBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgHeadIcon = self.Transform:Find("PanelHead/ImgHeadIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgeHeadIconBg = self.Transform:Find("PanelHead/ImgeHeadIconBg"):GetComponent("Image")
+    self.ImgHeadIcon = self.Transform:Find("PanelHead/ImgHeadIcon"):GetComponent("Image")
     self.PanelLevel = self.Transform:Find("PanelLevel")
-    self.TxtLevelA = self.Transform:Find("PanelLevel/TxtLevel"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.ImgInTeam = self.Transform:Find("ImgInTeam"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgQualityA = self.Transform:Find("ImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.BtnCharacter = self.Transform:Find("BtnCharacter"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtLevelA = self.Transform:Find("PanelLevel/TxtLevel"):GetComponent("Text")
+    self.ImgInTeam = self.Transform:Find("ImgInTeam"):GetComponent("Image")
+    self.ImgQualityA = self.Transform:Find("ImgQuality"):GetComponent("Image")
+    self.BtnCharacter = self.Transform:Find("BtnCharacter"):GetComponent("Button")
 end
 
 function XUiGridTeamCharacter:RegisterClickEvent(uiNode, func)

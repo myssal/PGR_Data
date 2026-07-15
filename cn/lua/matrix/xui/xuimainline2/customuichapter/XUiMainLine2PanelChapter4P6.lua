@@ -6,10 +6,6 @@ local XUiMainLine2PanelChapter4P6 = XClass(XUiMainLine2PanelEntranceList, "XUiMa
 
 function XUiMainLine2PanelChapter4P6:OnStart(...)
     XUiMainLine2PanelEntranceList.OnStart(self, ...)
-    -- 4P6 自驱 Spine（SetAnimation），不参与基类按进度刷新
-    self.SpineTrackEntries = {}
-    self.SpineTrackEntryBgs = {}
-    self.SpineTrackEntryDrags = {}
     self:_InitFlipBookAnim()
 end
 
@@ -31,36 +27,44 @@ function XUiMainLine2PanelChapter4P6:_InitFlipBookAnim()
     self._SwitchStageIndex = self._Control:GetChapterSwitchSpineStageIndex(chapterId) or {}
     self._SwitchAheadPaths = self._Control:GetChapterSwitchAheadSpineName(chapterId) or {}
     self._SwitchBackwardPaths = self._Control:GetChapterSwitchBackwardSpineName(chapterId) or {}
-    self:_CollectSpineComponents()
+    self._AnimTransCache = {}
 end
 
-function XUiMainLine2PanelChapter4P6:_CollectSpineComponents()
-    self._SpineComponents = {}
-    local spineLink = self.Transform:Find("Spine")
-    if not spineLink then return end
-
-    local skeletonGraphics = spineLink.transform:GetComponentsInChildren(typeof(CS.Spine.Unity.SkeletonGraphic))
-    for i = 0, skeletonGraphics.Length - 1 do
-        table.insert(self._SpineComponents, skeletonGraphics[i])
+-- 递归按 GameObject 名查找
+function XUiMainLine2PanelChapter4P6:_FindChildByName(parent, name)
+    if not parent then return nil end
+    if parent.name == name then return parent end
+    local count = parent.childCount
+    for i = 0, count - 1 do
+        local child = parent:GetChild(i)
+        local found = self:_FindChildByName(child, name)
+        if found then return found end
     end
-    local skeletonAnimations = spineLink.transform:GetComponentsInChildren(typeof(CS.Spine.Unity.SkeletonAnimation))
-    for i = 0, skeletonAnimations.Length - 1 do
-        table.insert(self._SpineComponents, skeletonAnimations[i])
-    end
+    return nil
 end
 
-function XUiMainLine2PanelChapter4P6:_PlayAnimByPath(animName)
-    if not animName or animName == "" then return end
-    if not self._SpineComponents or #self._SpineComponents == 0 then return end
-    for _, skeleton in ipairs(self._SpineComponents) do
-        local animationState = skeleton.AnimationState
-        if animationState then
-            local trackEntry = animationState:SetAnimation(0, animName, false)
-            if trackEntry then
-                trackEntry.TimeScale = 1
-            end
-        end
+function XUiMainLine2PanelChapter4P6:_GetAnimTrans(name)
+    if not name or name == "" then return nil end
+    local cached = self._AnimTransCache[name]
+    if cached ~= nil then
+        return cached or nil
     end
+    local trans = self:_FindChildByName(self.Transform, name)
+    if not trans then
+        XLog.Debug(string.format("[Chapter4P6] 未找到动画节点 name=%s", name))
+        self._AnimTransCache[name] = false
+        return nil
+    end
+    self._AnimTransCache[name] = trans
+    return trans
+end
+
+function XUiMainLine2PanelChapter4P6:_PlayAnimByPath(name)
+    if not name or name == "" then return end
+    local trans = self:_GetAnimTrans(name)
+    if not trans then return end
+    XLog.Debug(string.format("[Chapter4P6] 播放动画 name=%s", name))
+    trans:PlayTimelineAnimation()
 end
 
 -- 取大于等于 curIndex 的最小一项作为该段的入场动画

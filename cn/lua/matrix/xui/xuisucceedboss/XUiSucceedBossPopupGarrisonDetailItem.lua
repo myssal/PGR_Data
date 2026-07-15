@@ -11,7 +11,7 @@ function XUiSucceedBossPopupGarrisonDetailItem:Refresh(headIconList, icon, desc)
     self.TxtDetail.text = string.gsub(desc, "\\n", "\n")
 
     XUiHelper.RefreshCustomizedList(self.HeadList, self.RImgHeadIcon, #headIconList, function(index, go)
-        go:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(headIconList[index])
+        go:GetComponent("RawImage"):SetRawImage(headIconList[index])
     end)
 end
 

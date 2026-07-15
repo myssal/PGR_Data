@@ -191,7 +191,7 @@ end
 function XUiRiftShop:PlayGridTween(index, grid)
     self:RemoveGridTween(grid)
     local timerId = XScheduleManager.ScheduleOnce(function()
-        grid.Transform:FindTransform("GridShopEnable"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+        grid.Transform:FindTransform("GridShopEnable"):GetComponent("PlayableDirector"):Play()
     end, (index - 1) * 80)
     self._ShopTimerIds[grid] = timerId
 end

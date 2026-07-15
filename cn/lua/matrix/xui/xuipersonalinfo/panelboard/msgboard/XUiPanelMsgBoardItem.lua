@@ -24,33 +24,33 @@ end
 
 function XUiPanelMsgBoardItem:AutoInitUi()
     self.PanelTxt = self.Transform:Find("PanelTxt")
-    self.TxtContent = self.Transform:Find("PanelTxt/TxtContent"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.BtnContent = self.Transform:Find("PanelTxt/BtnContent"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.TxtLeaveMsg = self.Transform:Find("PanelTxt/BtnContent/BtnLeaveMsg/TxtLeaveMsg"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtContent = self.Transform:Find("PanelTxt/TxtContent"):GetComponent("Text")
+    self.BtnContent = self.Transform:Find("PanelTxt/BtnContent"):GetComponent("Button")
+    self.TxtLeaveMsg = self.Transform:Find("PanelTxt/BtnContent/BtnLeaveMsg/TxtLeaveMsg"):GetComponent("Text")
     if not XTool.UObjIsNil(self.Transform:Find("PanelTxt/BtnContent/BtnLeaveMsg")) then
-        self.BtnLeaveMsg = self.Transform:Find("PanelTxt/BtnContent/BtnLeaveMsg"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+        self.BtnLeaveMsg = self.Transform:Find("PanelTxt/BtnContent/BtnLeaveMsg"):GetComponent("Button")
     end
     if not XTool.UObjIsNil(self.Transform:Find("PanelTxt/BtnContent/BtnComment")) then
-        self.BtnComment = self.Transform:Find("PanelTxt/BtnContent/BtnComment"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+        self.BtnComment = self.Transform:Find("PanelTxt/BtnContent/BtnComment"):GetComponent("Button")
     end
     if not XTool.UObjIsNil(self.Transform:Find("PanelTop/BtnEditor")) then
         self.BtnBan = self.Transform:Find("PanelTop/BtnEditor"):GetComponent("Toggle")
         self.BtnBan.isOn = false
     end
     if not XTool.UObjIsNil(self.Transform:Find("PanelTxt/BtnContent/BtnDelete")) then
-        self.BtnDelete = self.Transform:Find("PanelTxt/BtnContent/BtnDelete"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+        self.BtnDelete = self.Transform:Find("PanelTxt/BtnContent/BtnDelete"):GetComponent("Button")
     end
-    self.BtnPraise = self.Transform:Find("PanelTxt/BtnContent/BtnPraise"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.TxtLeaveMsgA = self.Transform:Find("PanelTxt/BtnContent/BtnPraise/TxtLeaveMsg"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnPraise = self.Transform:Find("PanelTxt/BtnContent/BtnPraise"):GetComponent("Button")
+    self.TxtLeaveMsgA = self.Transform:Find("PanelTxt/BtnContent/BtnPraise/TxtLeaveMsg"):GetComponent("Text")
     self.PanelLeaveMsg = self.Transform:Find("PanelTxt/PanelLeaveMsg")
-    self.BtnBackBrief = self.Transform:Find("PanelTxt/PanelBtnBrief/BtnBackBrief"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnBackBrief = self.Transform:Find("PanelTxt/PanelBtnBrief/BtnBackBrief"):GetComponent("Button")
     self.PanelTop = self.Transform:Find("PanelTop")
-    self.ImgIcon = self.Transform:Find("PanelTop/ImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.TxtName = self.Transform:Find("PanelTop/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgIcon = self.Transform:Find("PanelTop/ImgIcon"):GetComponent("Image")
+    self.TxtName = self.Transform:Find("PanelTop/TxtName"):GetComponent("Text")
     if not XTool.UObjIsNil(self.Transform:Find("PanelTxt/BtnContent/Image/TxtTime")) then
-        self.TxtTime = self.Transform:Find("PanelTxt/BtnContent/Image/TxtTime"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        self.TxtTime = self.Transform:Find("PanelTxt/BtnContent/Image/TxtTime"):GetComponent("Text")
     else
-        self.TxtTime = self.Transform:Find("PanelTop/TxtTime"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        self.TxtTime = self.Transform:Find("PanelTop/TxtTime"):GetComponent("Text")
     end
 end
 

@@ -106,11 +106,11 @@ function XUiMissionTeamSelect:InitAutoScript()
 end
 
 function XUiMissionTeamSelect:AutoInitUi()
-    -- self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent("Button")
     -- self.PanelMissionTeamSelect = self.Transform:Find("SafeAreaContentPane/PanelMissionTeamSelect")
     -- self.PanelScrollView = self.Transform:Find("SafeAreaContentPane/PanelMissionTeamSelect/PanelScrollView")
     -- self.GridMisssionTeam = self.Transform:Find("SafeAreaContentPane/PanelMissionTeamSelect/PanelScrollView/Viewport/GridMisssionTeam")
-    -- self.BtnSure = self.Transform:Find("SafeAreaContentPane/PanelMissionTeamSelect/BtnSure"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.BtnSure = self.Transform:Find("SafeAreaContentPane/PanelMissionTeamSelect/BtnSure"):GetComponent("Button")
 end
 
 function XUiMissionTeamSelect:GetAutoKey(uiNode, eventName)

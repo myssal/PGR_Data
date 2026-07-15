@@ -68,7 +68,7 @@ function XUiArchiveStory:InitTypeButton(selectPage)
     self.BtnTabShortNew.gameObject:SetActiveEx(false)
     self.TabBtnContent:SelectIndex(self.CurType)
     if self.CurType > 1 then
-       local contentTrans = self.TabBtnContent:GetComponent(typeof(CS.UnityEngine.RectTransform))
+       local contentTrans = self.TabBtnContent:GetComponent("RectTransform")
        local currentPos = contentTrans.anchoredPosition
        currentPos.y = currentPos.y + PageGridHeigh * (self.CurType - 1)
        contentTrans.anchoredPosition = currentPos

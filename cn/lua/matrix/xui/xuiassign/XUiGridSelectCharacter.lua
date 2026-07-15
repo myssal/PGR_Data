@@ -20,8 +20,8 @@ function XUiGridSelectCharacter:Refresh(character, chapterData)
     local chapterId = XDataCenter.FubenAssignManager.GetCharacterOccupyChapterId(characterId)
     self.PanelOtherOccupy.gameObject:SetActiveEx(XTool.IsNumberValid(chapterId) and chapterId ~= chapterData:GetId())
     self.PanelLock.gameObject:SetActiveEx(not chapterData:IsCharConditionMatch(characterId))
-    self.PanelCurrOccupy:Find("Text"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = CS.XTextManager.GetText("AssignOccupyThisMember")
-    self.PanelOtherOccupy:Find("Text"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = CS.XTextManager.GetText("AssignOccupyOtherMember")
+    self.PanelCurrOccupy:Find("Text"):GetComponent("Text").text = CS.XTextManager.GetText("AssignOccupyThisMember")
+    self.PanelOtherOccupy:Find("Text"):GetComponent("Text").text = CS.XTextManager.GetText("AssignOccupyOtherMember")
     -- 独域图标
     if self.PanelUniframe then
         local isUniframe = XMVCA.XCharacter:GetIsIsomer(characterId)

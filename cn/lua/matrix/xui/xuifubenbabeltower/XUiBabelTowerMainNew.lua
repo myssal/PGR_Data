@@ -317,7 +317,7 @@ end
 
 function XUiBabelTowerMainNew:PlayScrollViewMove(gridTransform)
     self.PanelTaskListScrollRect.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
-    local gridRect = gridTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local gridRect = gridTransform:GetComponent("RectTransform")
     self.ViewPort.raycastTarget = false
     local diffX = gridRect.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then

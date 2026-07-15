@@ -96,7 +96,7 @@ function XUiMonthlyCardEn:SetMonthlyCardContent(entity, dirGainData, dayGainData
     if Next(dirGainData) ~= nil then
         local obj = self:GetTitleGo(entity, titlePool, self.TitleIndex)
         self.TitleIndex = self.TitleIndex + 1
-        obj.transform:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = TextManager.GetText("PurchaseDirGet")
+        obj.transform:Find("TxtTitle"):GetComponent("Text").text = TextManager.GetText("PurchaseDirGet")
         for _, v in pairs(dirGainData) do
             local item = self:GetItemObj(entity, itemPool, self.ItemIndex)
             item:OnRefresh(v)
@@ -107,7 +107,7 @@ function XUiMonthlyCardEn:SetMonthlyCardContent(entity, dirGainData, dayGainData
     if Next(dayGainData) ~= nil then
         local obj = self:GetTitleGo(entity, titlePool, self.TitleIndex)
         self.TitleIndex = self.TitleIndex + 1
-        obj.transform:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = item.Data.Desc or " "
+        obj.transform:Find("TxtTitle"):GetComponent("Text").text = item.Data.Desc or " "
         for _, v in pairs(dayGainData) do
             local item = self:GetItemObj(entity, itemPool, self.ItemIndex)
             item:OnRefresh(v)
@@ -167,7 +167,7 @@ function XUiMonthlyCardEn:ShowSelected(entity, titlePool, selected)
     entity.TxtName.color = selected and ColorTextSelected or ColorTextNormal
     entity.Price.color = selected and ColorTextSelected or ColorTextNormal
     for _, title in pairs(titlePool) do
-        local img = title.transform:Find("Image"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+        local img = title.transform:Find("Image"):GetComponent("Image")
         img.color = selected and ColorImgSelected or ColorImgNormal
     end
 end

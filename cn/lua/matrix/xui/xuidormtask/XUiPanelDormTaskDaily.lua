@@ -13,7 +13,7 @@ function XUiPanelDormTaskDaily:OnStart()
 
     -- 自适应调整
     self.OriginPosition = self.PanelActiveGrids[1].Transform.localPosition
-    self.ActiveProgressRect = self.ImgDaylyActiveProgress:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.ActiveProgressRect = self.ImgDaylyActiveProgress:GetComponent("RectTransform")
     self.ActiveProgressPosition = self.ImgDaylyActiveProgress.transform.localPosition
     self.OffsetPanelPosition = self.PanelContent.localPosition
     self.PanelDailyListRect = self.PanelTaskDailyList
@@ -61,7 +61,7 @@ function XUiPanelDormTaskDaily:InitPanelActiveGrid()
                 grid = XUiPanelActive.New(activeGO, self.Parent, i, self)
             end
             self.PanelActiveGrids[i] = grid
-            self.PanelActiveGridRects[i] = grid.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+            self.PanelActiveGridRects[i] = grid.Transform:GetComponent("RectTransform")
         end
     end
 end

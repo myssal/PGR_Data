@@ -35,7 +35,7 @@ function XUiBabelTowerWinPanel:SetData(stageId, teamId, challengeBuffs, supportB
                 headContentChild = self.HeadContent:GetChild(i - 1)
             end
             headContentChild.gameObject:SetActiveEx(true)
-            rImgHeadIcon = headContentChild:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+            rImgHeadIcon = headContentChild:GetComponent("RawImage")
             rImgHeadIcon:SetRawImage(characterViewModel:GetSmallHeadIcon())
         end
     end

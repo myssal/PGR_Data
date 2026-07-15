@@ -63,11 +63,11 @@ function XUiPanelSkillDetailsInfoV2P6:Refresh(skillGroupIndex)
         --     local itemId = itemData.Id
         --     isEnoughtCount1 = self.CharacterAgency:IsUseItemEnough({ itemId }, { itemData.Count })
         --     local icon = XDataCenter.ItemManager.GetItemIcon(itemId)
-        --     self.PanelSkillPointOk:Find("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
-        --     self.PanelSkillPointOk:Find("TxtCosumeNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = itemData.Count
+        --     self.PanelSkillPointOk:Find("Icon"):GetComponent("RawImage"):SetRawImage(icon)
+        --     self.PanelSkillPointOk:Find("TxtCosumeNumber"):GetComponent("Text").text = itemData.Count
 
-        --     self.PanelSkillPointBad:Find("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
-        --     self.PanelSkillPointBad:Find("TxtCosumeNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = itemData.Count
+        --     self.PanelSkillPointBad:Find("Icon"):GetComponent("RawImage"):SetRawImage(icon)
+        --     self.PanelSkillPointBad:Find("TxtCosumeNumber"):GetComponent("Text").text = itemData.Count
         -- end
         -- self.PanelSkillPointOk.gameObject:SetActiveEx(isEnoughtCount1)
         -- self.PanelSkillPointBad.gameObject:SetActiveEx(not isEnoughtCount1)
@@ -81,11 +81,11 @@ function XUiPanelSkillDetailsInfoV2P6:Refresh(skillGroupIndex)
             local itemId = itemData.Id
             local icon = XDataCenter.ItemManager.GetItemIcon(itemId)
             isEnoughtCount2 = self.CharacterAgency:IsUseItemEnough({ itemId }, { itemData.Count })
-            self.PanelCoinOk:Find("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
-            self.PanelCoinOk:Find("TxtCosumeNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = itemData.Count
+            self.PanelCoinOk:Find("Icon"):GetComponent("RawImage"):SetRawImage(icon)
+            self.PanelCoinOk:Find("TxtCosumeNumber"):GetComponent("Text").text = itemData.Count
 
-            self.PanelCoinBad:Find("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
-            self.PanelCoinBad:Find("TxtCosumeNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = itemData.Count
+            self.PanelCoinBad:Find("Icon"):GetComponent("RawImage"):SetRawImage(icon)
+            self.PanelCoinBad:Find("TxtCosumeNumber"):GetComponent("Text").text = itemData.Count
 
             self.CurCoinCostId = itemId
         end

@@ -51132,6 +51132,64 @@
         ]
     },
     {
+        "StageId": 17014201,
+        "Type": 87,
+        "Name": "长路归航",
+        "BgmId": 101,
+        "LoadingType": 10101,
+        "EventId": 2410015,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 1,
+        "StageType": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 17014202,
+        "Type": 87,
+        "Name": "长路归航",
+        "BgmId": 101,
+        "LoadingType": 10101,
+        "EventId": 2410015,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "击破所有敌人"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 1,
+        "StageType": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
         "StageId": 11010101,
         "Type": 1,
         "Name": "拼凑记忆",
@@ -65604,7 +65662,7 @@
         "ForceConditionId": [
             30000101
         ],
-        "FunctionLeftBtn": 3,
+        "FunctionLeftBtn": 2,
         "FunctionRightBtn": 1,
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -104691,6 +104749,45 @@
             1,
             2,
             3
+        ],
+        "NextStageId": [
+            30100229
+        ]
+    },
+    {
+        "StageId": 30100229,
+        "Type": 17,
+        "Name": "A-4",
+        "Description": "跃升试玩",
+        "Icon": "Assets/Product/Texture/Image/UiFubenPracticeCharacter/UiFubenPracticeCharacterGuanqia2.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100112
+        ],
+        "FirstRewardShow": 30100801,
+        "FirstRewardId": 30100801,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "注意教学提示",
+            "理解构造体实战技巧",
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172431
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
         ]
     },
     {
@@ -106599,6 +106696,116 @@
         ],
         "GeneralSkillIds": [
             2
+        ]
+    },
+    {
+        "StageId": 30100223,
+        "Type": 36,
+        "Name": "A1",
+        "Description": "核心技能",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40515.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "注意教学提示",
+            "理解构造体实战技巧",
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2331
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30100224
+        ]
+    },
+    {
+        "StageId": 30100224,
+        "Type": 36,
+        "Name": "A2",
+        "Description": "实战流程",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40515.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100223
+        ],
+        "FirstRewardShow": 30100801,
+        "FirstRewardId": 30100801,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "注意教学提示",
+            "理解构造体实战技巧",
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2331
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30100225
+        ]
+    },
+    {
+        "StageId": 30100225,
+        "Type": 36,
+        "Name": "A3",
+        "Description": "效应流程",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40515.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100224
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "注意教学提示",
+            "理解构造体实战技巧",
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172427
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "GeneralSkillIds": [
+            5
         ]
     },
     {
@@ -113389,6 +113596,111 @@
         "Restartable": true,
         "GeneralSkillIds": [
             2
+        ]
+    },
+    {
+        "StageId": 30100226,
+        "Type": 36,
+        "Name": 1,
+        "Description": "角色挑战",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40516.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "顺利通关关卡",
+            "通关时间不超过180秒",
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160537,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ],
+        "NextStageId": [
+            30100227
+        ]
+    },
+    {
+        "StageId": 30100227,
+        "Type": 36,
+        "Name": 2,
+        "Description": "角色挑战",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40516.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100226
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "顺利通关关卡",
+            "通关时间不超过180秒",
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160538,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ],
+        "NextStageId": [
+            30100228
+        ]
+    },
+    {
+        "StageId": 30100228,
+        "Type": 36,
+        "Name": 3,
+        "Description": "角色挑战",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR7LuxiyaActivityV405/UiCharacterFileR7LuxiyaMainV40516.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100227
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "顺利通关关卡",
+            "通关时间不超过180秒",
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160539,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            5
         ]
     },
     {
@@ -163118,9 +163430,6 @@
             2,
             3
         ],
-        "GeneralSkillIds": [
-            2
-        ],
         "NextStageId": [
             15021709
         ]
@@ -163287,9 +163596,6 @@
             2,
             3
         ],
-        "GeneralSkillIds": [
-            2
-        ],
         "NextStageId": [
             15021713
         ]
@@ -163375,9 +163681,6 @@
             1,
             2,
             3
-        ],
-        "GeneralSkillIds": [
-            2
         ],
         "NextStageId": [
             15021715
@@ -163705,9 +164008,6 @@
             2,
             3
         ],
-        "GeneralSkillIds": [
-            2
-        ],
         "NextStageId": [
             15021723
         ]
@@ -163885,6 +164185,804 @@
         "RebootId": 12,
         "StageType": 2,
         "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 15021801,
+        "Type": 87,
+        "Name": "交换死亡",
+        "Description": "起初，人们普遍认为这场波及整个环大西洋的奇异灾难将会深刻影响到历史进程，成为黄金时代盛期的一抹伤疤。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06701BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021802
+        ]
+    },
+    {
+        "StageId": 15021802,
+        "Type": 87,
+        "Name": "返乡的外交使团",
+        "Description": "所有记忆存放在那里，所有的苦痛和感触来源于那里，那里是被海伦汀遗落在过去的旧网。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 2,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021801
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06702BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021803
+        ]
+    },
+    {
+        "StageId": 15021803,
+        "Type": 87,
+        "Name": "欢迎来到珀港",
+        "Description": "这就是珀港，一座建筑在衰落与哀悼上的城市。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 3,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021802
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06703BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021804
+        ]
+    },
+    {
+        "StageId": 15021804,
+        "Type": 87,
+        "Name": "凡庸的抉择",
+        "Description": "你并不是信任我，你只是在信任平庸……",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 4,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021803
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06704BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021805
+        ]
+    },
+    {
+        "StageId": 15021805,
+        "Type": 87,
+        "Name": "降雨预警",
+        "Description": "跨越死亡……真是让人怀念的字眼。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 5,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021804
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06705BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021806
+        ]
+    },
+    {
+        "StageId": 15021806,
+        "Type": 87,
+        "Name": "自我反涉",
+        "Description": "如果我真的什么都不记得了，那到底该怎么样才能成为过去的自己呢？",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 6,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021805
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06706BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021807
+        ]
+    },
+    {
+        "StageId": 15021807,
+        "Type": 87,
+        "Name": "两场密会",
+        "Description": "这是你想要的黄金时代吗？",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 7,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021806
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06707BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021808
+        ]
+    },
+    {
+        "StageId": 15021808,
+        "Type": 87,
+        "Name": "虚伪礼宴",
+        "Description": "给你一个最直接，最不绕弯子的回答！",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 8,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021807
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06708BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021809
+        ]
+    },
+    {
+        "StageId": 15021809,
+        "Type": 87,
+        "Name": "复归者们",
+        "Description": "我的棋子已经悉数入局了，惑砂，轮到你的回合了。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 9,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021808
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06709BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021810
+        ]
+    },
+    {
+        "StageId": 15021810,
+        "Type": 87,
+        "Name": "奇迹",
+        "Description": "我们该如何给予这些牺牲者，最大的报偿？",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 10,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021809
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06710BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021811
+        ]
+    },
+    {
+        "StageId": 15021811,
+        "Type": 87,
+        "Name": "溯洄",
+        "Description": "久未归家的铃声响彻了整个珀港。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabERN1611.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 11,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021810
+        ],
+        "KeepPlayingStory": 1,
+        "EndStoryIds": [
+            "ZX06711EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172423
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleSpecial",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "GeneralSkillIds": [
+            2
+        ],
+        "NextStageId": [
+            15021812
+        ]
+    },
+    {
+        "StageId": 15021812,
+        "Type": 87,
+        "Name": "交换死亡Ⅱ",
+        "Description": "刀刃割开肌肤，流彩从自我剪裁的伤痕中迸出。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 12,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021811
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06712BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021813
+        ]
+    },
+    {
+        "StageId": 15021813,
+        "Type": 87,
+        "Name": "幕后棋手",
+        "Description": "满载着红潮的珀港正在向陆地前进，像一场由无数人共同祈求出来的灾难。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 13,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021812
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06713BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021814
+        ]
+    },
+    {
+        "StageId": 15021814,
+        "Type": 87,
+        "Name": "昨日良辰",
+        "Description": "你看，现实大家都嫌扎眼，可“黄金时代”这几个字一放上去，就会有人抢着买。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 14,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021813
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06714BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021815
+        ]
+    },
+    {
+        "StageId": 15021815,
+        "Type": 87,
+        "Name": "重逢在别离时分",
+        "Description": "对啦……至今为止的人生，你过得开心吗？姐姐？",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 15,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021814
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06715BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021816
+        ]
+    },
+    {
+        "StageId": 15021816,
+        "Type": 87,
+        "Name": "香蕉鱼的反叛",
+        "Description": "让这场美梦——见鬼去吧！",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabERN1616.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 16,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021815
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06716BA"
+        ],
+        "EndStoryIds": [
+            "ZX06716EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172423
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleSpecial",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "GeneralSkillIds": [
+            2
+        ],
+        "NextStageId": [
+            15021817
+        ]
+    },
+    {
+        "StageId": 15021817,
+        "Type": 87,
+        "Name": "罪愆",
+        "Description": "“如果奇迹真的存在……就好了。”",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 17,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021816
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06717BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021818
+        ]
+    },
+    {
+        "StageId": 15021818,
+        "Type": 87,
+        "Name": "她的“理解”",
+        "Description": "那些被死亡切断，被悔恨延长，又被执念强行缝合的岁月，终于在这一刻彼此对峙。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabERN1618.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 18,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021817
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06718BA"
+        ],
+        "EndStoryIds": [
+            "ZX06718EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172423
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleBoss",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "GeneralSkillIds": [
+            2
+        ],
+        "NextStageId": [
+            15021819
+        ]
+    },
+    {
+        "StageId": 15021819,
+        "Type": 87,
+        "Name": "为死者受洗",
+        "Description": "黄金时代那场短暂的幻梦，仓促地落下了帷幕。",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 19,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021818
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06719BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15021820
+        ]
+    },
+    {
+        "StageId": 15021820,
+        "Type": 87,
+        "Name": "安息日",
+        "Description": "“天上的星辰坠落于地，如同无花果树被大风摇动，落下未熟的果子一样。”",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 20,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            15021819
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06720BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "全员存活通过关卡"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
         "NeedJobType": [
             1,
             2,
@@ -171884,6 +172982,136 @@
         "Restartable": true
     },
     {
+        "StageId": 30006888,
+        "Type": 16,
+        "Name": "葬途残声-1",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt1.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "击败塔维斯·斯贝尔穆",
+            "死亡次数不超过5次",
+            "死亡次数不超过3次"
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006889,
+        "Type": 16,
+        "Name": "葬途残声-2",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt2.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 2,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "击败塔维斯·斯贝尔穆",
+            "死亡次数不超过5次",
+            "死亡次数不超过3次"
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006890,
+        "Type": 16,
+        "Name": "葬途残声-3",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt3.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 3,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "击败塔维斯·斯贝尔穆",
+            "死亡次数不超过5次",
+            "死亡次数不超过3次"
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006891,
+        "Type": 16,
+        "Name": "葬途残声-4",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt4.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 4,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "击败塔维斯·斯贝尔穆",
+            "死亡次数不超过3次",
+            "死亡次数不超过1次"
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006892,
+        "Type": 16,
+        "Name": "葬途残声-5",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt5.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 5,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "击败塔维斯·斯贝尔穆",
+            "死亡次数不超过1次",
+            "不死亡任何成员"
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
         "StageId": 30010007,
         "Name": "漫展包队伍",
         "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt5.png",
@@ -175690,6 +176918,309 @@
         "KeepPlayingStory": 1,
         "BeginStoryIds": [
             "HD05006BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30130488,
+        "Type": 18,
+        "Name": "绯海屿梦",
+        "Description": "迁离任务渐近收尾，离岛的庆典正缓缓拉开序幕。",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05400BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30130489,
+            30130491,
+            30130493,
+            30130495
+        ]
+    },
+    {
+        "StageId": 30130489,
+        "Type": 18,
+        "Name": "海隅弦声",
+        "Description": "接下众人的好意，你与赛琳娜拾起旧吉他，以即兴的弦音，接住这座海岛最后的烟火温柔。",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130488
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05401BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30130490
+        ]
+    },
+    {
+        "StageId": 30130490,
+        "Type": 18,
+        "Name": "月下鲸谣",
+        "Description": "晚风收束昼夜乐章，你与赛琳娜将心愿寄于海浪与漂流瓶，鲸鸣破晓夜色，未说完的期许，正静待来日续写。",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130489
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05402BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30130491,
+        "Type": 18,
+        "Name": "海序初逢",
+        "Description": "一个保护岛屿文化的任务将你和海伦汀带到了林中，慢慢触碰到这座岛屿藏于烟火下的隐秘过往。",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130488
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05403BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30130492
+        ]
+    },
+    {
+        "StageId": 30130492,
+        "Type": 18,
+        "Name": "时影寻踪",
+        "Description": "大螺神传说的真相，让你们陷入了时间与改变的思索里，夜色之下，海伦汀作出了温柔又郑重的告白。",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130491
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05404BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30130493,
+        "Type": 18,
+        "Name": "Placeholder_未定4.7上",
+        "Description": "Placeholder_未定",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130488
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05401BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30130494
+        ]
+    },
+    {
+        "StageId": 30130494,
+        "Type": 18,
+        "Name": "Placeholder_未定4.7上",
+        "Description": "Placeholder_未定",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130493
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05402BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30130495,
+        "Type": 18,
+        "Name": "Placeholder_未定4.7上",
+        "Description": "Placeholder_未定",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130488
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05403BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30130496
+        ]
+    },
+    {
+        "StageId": 30130496,
+        "Type": 18,
+        "Name": "Placeholder_未定4.7上",
+        "Description": "Placeholder_未定",
+        "Icon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402Story06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiGachaBianka402/UiGachaBianka402StoryEnter06.png",
+        "BgmId": 230,
+        "LoadingType": 20016,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            30130495
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HD05404BA"
         ],
         "OnlinePlayerLimit": 3,
         "HaveFirstPass": true,
@@ -204269,7 +205800,7 @@
     },
     {
         "StageId": 30101120,
-        "Type": 43,
+        "Type": 13,
         "Name": "雾夜赤冕",
         "Description": "往事已被鲜红浸染，而裁决的权柄已牢牢握于掌中。她以女爵之名，向沉睡于雾中的旧时代道别。血色的满月再度升起之际，她重新握紧手中锋刃，步入雾霭流转的长街。在一切落下终幕之前，以绝不畏惧的意志，斩开死寂中的虚妄。",
         "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
@@ -204298,7 +205829,7 @@
     },
     {
         "StageId": 30101122,
-        "Type": 43,
+        "Type": 13,
         "Name": "冥契妖翎",
         "Description": "遵从与宿命结下的契约，在夜幕被最初一缕晨光撕裂之前，她背后双翼先行划破深浓的夜色。她巡猎着藏匿于雾中的怪物，关于生死的规则，由她全权书写。微光终将照彻长夜，而雾中的罪恶，也会在久违的光明下永恒沉睡。",
         "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
@@ -204317,6 +205848,97 @@
         "FunctionRightBtn": 1,
         "RobotId": [
             172415
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101129,
+        "Type": 13,
+        "Name": "汐光曳影",
+        "Description": "暮色将海面染成温柔的颜色，白日的暑热已然消散，唯余沁入心脾的凉意，静静地彼此携手，共享这片沙滩上的宁静。在这片喧嚣已退的海域，唯有海潮的声音，和她的低语，共同编织成这个夏天令人想要永远珍藏的回忆。",
+        "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172424
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101130,
+        "Type": 13,
+        "Name": "雾夜赤冕",
+        "Description": "夕阳西下，流光于浪涛之上轻灵跳跃，如同此刻的心绪。微风轻送来海潮的气息，无需过多言语，只是任由落日将二人在沙滩上的投影渐渐拉长。此刻最大的心愿，是这一刻永不结束。",
+        "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterYansuiStage01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172425
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101131,
+        "Type": 43,
+        "Name": "大公",
+        "Description": "大公描述",
+        "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterDaGongStage01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "注意辅助机教学提示",
+            "理解辅助机·大公的实战技巧"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2333
         ],
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -230726,33 +232348,15 @@
     },
     {
         "StageId": 30061697,
-        "Type": 13,
-        "Name": "冥契妖翎",
-        "Description": "遵从与宿命结下的契约，在夜幕被最初一缕晨光撕裂之前，她背后双翼先行划破深浓的夜色。她巡猎着藏匿于雾中的怪物，关于生死的规则，由她全权书写。微光终将照彻长夜，而雾中的罪恶，也会在久违的光明下永恒沉睡。",
-        "Icon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
-        "StoryIcon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
-        "BgmId": 16,
-        "NormalEventIdOnPassed": 1,
+        "Type": 100,
+        "Name": "第3关",
+        "Description": "miniRPG",
         "OrderId": 1,
-        "RecommandLevel": 1,
-        "LimitBuffId": 2,
-        "FirstRewardShow": 12051,
-        "FirstRewardId": 12051,
-        "KeepPlayingStory": 1,
-        "OnlinePlayerLimit": 3,
-        "HaveFirstPass": true,
-        "FunctionLeftBtn": 2,
-        "FunctionRightBtn": 1,
         "RobotId": [
-            1196
+            172358
         ],
-        "StageType": 1,
-        "StageGridStyle": "GridStageMainLineBattleSpecial",
-        "NeedJobType": [
-            1,
-            2,
-            3
-        ]
+        "FightControlId": 1,
+        "Restartable": true
     },
     {
         "StageId": 30061698,
@@ -271403,7 +273007,7 @@
         "SettleLoseTipId": 22,
         "FunctionRightBtn": 1,
         "RobotId": [
-            170010
+            170000
         ],
         "StageGridStyle": "Square",
         "NeedJobType": [
@@ -271811,6 +273415,190 @@
             3
         ],
         "Restartable": true
+    },
+    {
+        "StageId": 30163264,
+        "Type": 89,
+        "Name": "埃则忒普通",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163265,
+        "Type": 89,
+        "Name": "埃则忒困难",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163266,
+        "Type": 89,
+        "Name": "埃则忒地狱",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163267,
+        "Type": 89,
+        "Name": "埃则忒技能练习关",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163268,
+        "Type": 102,
+        "Name": "慈悲者-连战",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30163269,
+        "Type": 102,
+        "Name": "回音-连战",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30163270,
+        "Type": 102,
+        "Name": "帕瓦特-连战",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30163271,
+        "Type": 102,
+        "Name": "依诺·卢娅-连战",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30163272,
+        "Type": 102,
+        "Name": "埃则忒-连战",
+        "BgmId": 5033,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 22,
+        "FunctionRightBtn": 1,
+        "RebootId": 18,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
     },
     {
         "StageId": 30165150,
@@ -277416,6 +279204,566 @@
         "StageId": 30165430,
         "Type": 83,
         "Name": "高算力区17-14",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165431,
+        "Type": 83,
+        "Name": "低算力区18-1",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165432,
+        "Type": 83,
+        "Name": "低算力区18-2",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165433,
+        "Type": 83,
+        "Name": "低算力区18-3",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165434,
+        "Type": 83,
+        "Name": "低算力区18-4",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165435,
+        "Type": 83,
+        "Name": "低算力区18-5",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165436,
+        "Type": 83,
+        "Name": "低算力区18-6",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165437,
+        "Type": 83,
+        "Name": "低算力区18-7",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165438,
+        "Type": 83,
+        "Name": "低算力区18-8",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165439,
+        "Type": 83,
+        "Name": "低算力区18-9",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165440,
+        "Type": 83,
+        "Name": "低算力区18-10",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165441,
+        "Type": 83,
+        "Name": "低算力区18-11",
+        "BgmId": 247,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165442,
+        "Type": 83,
+        "Name": "低算力区18-12",
+        "BgmId": 247,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165443,
+        "Type": 83,
+        "Name": "低算力区18-13",
+        "BgmId": 141,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165444,
+        "Type": 83,
+        "Name": "低算力区18-14",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165445,
+        "Type": 83,
+        "Name": "高算力区18-1",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165446,
+        "Type": 83,
+        "Name": "高算力区18-2",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165447,
+        "Type": 83,
+        "Name": "高算力区18-3",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165448,
+        "Type": 83,
+        "Name": "高算力区18-4",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165449,
+        "Type": 83,
+        "Name": "高算力区18-5",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165450,
+        "Type": 83,
+        "Name": "高算力区18-6",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165451,
+        "Type": 83,
+        "Name": "高算力区18-7",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165452,
+        "Type": 83,
+        "Name": "高算力区18-8",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165453,
+        "Type": 83,
+        "Name": "高算力区18-9",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165454,
+        "Type": 83,
+        "Name": "高算力区18-10",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165455,
+        "Type": 83,
+        "Name": "高算力区18-11",
+        "BgmId": 247,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165456,
+        "Type": 83,
+        "Name": "高算力区18-12",
+        "BgmId": 247,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165457,
+        "Type": 83,
+        "Name": "高算力区18-13",
+        "BgmId": 141,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165458,
+        "Type": 83,
+        "Name": "高算力区18-14",
         "BgmId": 173,
         "LoadingType": 20014,
         "NormalEventIdOnPassed": 1,
@@ -299308,6 +301656,127 @@
         "Restartable": true
     },
     {
+        "StageId": 13021301,
+        "Type": 95,
+        "Name": "淡入",
+        "Description": "有序进场。",
+        "OrderId": 1,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16701BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021302
+        ]
+    },
+    {
+        "StageId": 13021302,
+        "Type": 95,
+        "Name": "日景",
+        "Description": "梧桐树下，埋藏着重要的叮嘱。",
+        "OrderId": 1,
+        "PreStageId": [
+            13021301
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16702BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021303
+        ]
+    },
+    {
+        "StageId": 13021303,
+        "Type": 95,
+        "Name": "外景",
+        "Description": "欢迎来到海莱坞，海岸线上的造梦工厂。",
+        "OrderId": 1,
+        "PreStageId": [
+            13021302
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16703BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021304
+        ]
+    },
+    {
+        "StageId": 13021304,
+        "Type": 95,
+        "Name": "内景",
+        "Description": "我比我本人还着急。",
+        "OrderId": 1,
+        "PreStageId": [
+            13021303
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16704BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021305
+        ]
+    },
+    {
+        "StageId": 13021305,
+        "Type": 95,
+        "Name": "夜景",
+        "Description": "鲜花与爆米花，二者不可缺一。",
+        "OrderId": 1,
+        "PreStageId": [
+            13021304
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16705BA"
+        ],
+        "EndStoryIds": [
+            "HG16705EA"
+        ],
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172423
+        ],
+        "StageType": 1,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021306
+        ]
+    },
+    {
+        "StageId": 13021306,
+        "Type": 95,
+        "Name": "淡出",
+        "Description": "好结局。",
+        "OrderId": 1,
+        "PreStageId": [
+            13021305
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16706BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
         "StageId": 30063100,
         "Type": 97,
         "Name": "异构阵线·绝域前锋",
@@ -300415,7 +302884,7 @@
         "Description": "miniRPG",
         "OrderId": 1,
         "RobotId": [
-            172361
+            172418
         ],
         "FightControlId": 1,
         "Restartable": true
@@ -300445,7 +302914,9 @@
         "Description": "miniRPG",
         "OrderId": 1,
         "RobotId": [
-            172360
+            172419,
+            172420,
+            172421
         ],
         "FightControlId": 1,
         "Restartable": true
@@ -300456,6 +302927,11 @@
         "Name": "第2关",
         "Description": "miniRPG",
         "OrderId": 1,
+        "RobotId": [
+            172419,
+            172420,
+            172421
+        ],
         "FightControlId": 1,
         "Restartable": true
     },
@@ -300465,6 +302941,11 @@
         "Name": "第3关",
         "Description": "miniRPG",
         "OrderId": 1,
+        "RobotId": [
+            172419,
+            172420,
+            172421
+        ],
         "FightControlId": 1,
         "Restartable": true
     },
@@ -300475,7 +302956,7 @@
         "Description": "miniRPG",
         "OrderId": 1,
         "RobotId": [
-            172368
+            172417
         ],
         "FightControlId": 1,
         "Restartable": true
@@ -300523,13 +303004,132 @@
         "Restartable": true
     },
     {
+        "StageId": 30163361,
+        "Type": 100,
+        "Name": "第1关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "RobotId": [
+            172422
+        ],
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163362,
+        "Type": 100,
+        "Name": "第2关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163363,
+        "Type": 100,
+        "Name": "第3关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163364,
+        "Type": 100,
+        "Name": "第1关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "RobotId": [
+            172417
+        ],
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163365,
+        "Type": 100,
+        "Name": "第2关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163366,
+        "Type": 100,
+        "Name": "第3关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163367,
+        "Type": 100,
+        "Name": "第1关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "RobotId": [
+            172418
+        ],
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163368,
+        "Type": 100,
+        "Name": "第2关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163369,
+        "Type": 100,
+        "Name": "第3关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163370,
+        "Type": 100,
+        "Name": "第1关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "RobotId": [
+            172419,
+            172420,
+            172421
+        ],
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163371,
+        "Type": 100,
+        "Name": "第2关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 30163372,
+        "Type": 100,
+        "Name": "第3关",
+        "Description": "miniRPG4.0",
+        "OrderId": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
         "StageId": 30163347,
         "Type": 100,
         "Name": "独身困斗 - 简单",
         "OrderId": 1,
-        "RobotId": [
-            172358
-        ],
         "FightControlId": 1,
         "Restartable": true
     },
@@ -300538,9 +303138,6 @@
         "Type": 100,
         "Name": "独身困斗 - 普通",
         "OrderId": 1,
-        "RobotId": [
-            172358
-        ],
         "FightControlId": 1,
         "Restartable": true
     },
@@ -300550,9 +303147,6 @@
         "Name": "第5关",
         "Description": "miniRPG",
         "OrderId": 1,
-        "RobotId": [
-            172358
-        ],
         "FightControlId": 1,
         "Restartable": true
     },

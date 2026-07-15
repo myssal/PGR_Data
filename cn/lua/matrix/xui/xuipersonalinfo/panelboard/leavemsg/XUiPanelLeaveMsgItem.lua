@@ -17,14 +17,14 @@ function XUiPanelLeaveMsgItem:InitAutoScript()
 end
 
 function XUiPanelLeaveMsgItem:AutoInitUi()
-    self.ImgIcon = self.Transform:Find("ImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgIcon = self.Transform:Find("ImgIcon"):GetComponent("Image")
     self.PanelTop = self.Transform:Find("PanelTop")
-    self.TxtName = self.Transform:Find("PanelTop/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtTime = self.Transform:Find("PanelTop/TxtTime"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtName = self.Transform:Find("PanelTop/TxtName"):GetComponent("Text")
+    self.TxtTime = self.Transform:Find("PanelTop/TxtTime"):GetComponent("Text")
     self.PanelTxtContent = self.Transform:Find("PanelTxtContent")
-    self.TxtContent = self.Transform:Find("PanelTxtContent/TxtContent"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtContent = self.Transform:Find("PanelTxtContent/TxtContent"):GetComponent("Text")
     if not XTool.UObjIsNil(self.Transform:Find("BtnDelete")) then
-        self.BtnDelete = self.Transform:Find("BtnDelete"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+        self.BtnDelete = self.Transform:Find("BtnDelete"):GetComponent("Button")
     end
 end
 

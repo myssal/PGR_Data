@@ -128,7 +128,7 @@ end
 
 function XUiChapterPanel:ScrollRectRollBack()
     -- 滚动容器回弹
-    local height = self.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.height
+    local height = self.GameObject:GetComponent("RectTransform").rect.height
     local innerHeight = self.PanelStageContent.rect.height
     innerHeight = innerHeight < height and height or innerHeight
     local diff = innerHeight - height

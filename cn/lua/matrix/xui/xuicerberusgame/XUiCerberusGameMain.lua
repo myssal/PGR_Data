@@ -53,7 +53,7 @@ end
 
 function XUiCerberusGameMain:OnEnable()
     self:PlayAnimation("Enable", function ()
-        self.Transform:FindTransform("Loop"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+        self.Transform:FindTransform("Loop"):GetComponent("PlayableDirector"):Play()
     end)
     
     self:RefreshUi()

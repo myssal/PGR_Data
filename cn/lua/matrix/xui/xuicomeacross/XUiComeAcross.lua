@@ -73,16 +73,16 @@ function XUiComeAcross:InitAutoScript()
 end
 
 function XUiComeAcross:AutoInitUi()
-    self.TxtTime = self.Transform:Find("Animator/SafeAreaContentPane/Text/TxtTime"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.BtnHelp = self.Transform:Find("Animator/SafeAreaContentPane/BtnHelp"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtTime = self.Transform:Find("Animator/SafeAreaContentPane/Text/TxtTime"):GetComponent("Text")
+    self.BtnHelp = self.Transform:Find("Animator/SafeAreaContentPane/BtnHelp"):GetComponent("Button")
     self.PanelLevel = self.Transform:Find("Animator/SafeAreaContentPane/PanelLevel")
     self.GridLevel_1 = self.Transform:Find("Animator/SafeAreaContentPane/PanelLevel/GridLevel_1")
     self.GridLevel_2 = self.Transform:Find("Animator/SafeAreaContentPane/PanelLevel/GridLevel_2")
     self.GridLevel_3 = self.Transform:Find("Animator/SafeAreaContentPane/PanelLevel/GridLevel_3")
     self.GridLevel_4 = self.Transform:Find("Animator/SafeAreaContentPane/PanelLevel/GridLevel_4")
     self.GridLevel_5 = self.Transform:Find("Animator/SafeAreaContentPane/PanelLevel/GridLevel_5")
-    self.BtnMainUi = self.Transform:Find("Animator/SafeAreaContentPane/Top/BtnMainUi"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.BtnBack = self.Transform:Find("Animator/SafeAreaContentPane/Top/BtnBack"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnMainUi = self.Transform:Find("Animator/SafeAreaContentPane/Top/BtnMainUi"):GetComponent("Button")
+    self.BtnBack = self.Transform:Find("Animator/SafeAreaContentPane/Top/BtnBack"):GetComponent("Button")
 end
 
 function XUiComeAcross:AutoAddListener()

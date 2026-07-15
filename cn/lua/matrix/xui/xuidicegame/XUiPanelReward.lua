@@ -10,12 +10,12 @@ function XUiPanelReward:Ctor(ui, root)
     self.Root = root
     XTool.InitUiObject(self)
 
-    self.ImgProgressBgRect = self.ImgProgressBg:GetComponent(typeof(CS.UnityEngine.RectTransform)) ---@type UnityEngine.RectTransform
-    self.ImgProgressFilledRect = self.ImgProgressFilled:GetComponent(typeof(CS.UnityEngine.RectTransform)) ---@type UnityEngine.RectTransform
+    self.ImgProgressBgRect = self.ImgProgressBg:GetComponent("RectTransform") ---@type UnityEngine.RectTransform
+    self.ImgProgressFilledRect = self.ImgProgressFilled:GetComponent("RectTransform") ---@type UnityEngine.RectTransform
     self.GridReward = self.GridReward.gameObject
     self.GridReward:SetActiveEx(false)
     self.GridRewardOriPos = self.GridReward.transform.localPosition
-    self.Transform:Find("SViewCourse"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect)).enabled = false
+    self.Transform:Find("SViewCourse"):GetComponent("ScrollRect").enabled = false
 
     self.Progress = 0
     self.RewardGrids = {}

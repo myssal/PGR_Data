@@ -200,7 +200,7 @@ function XUiGridStage:Refresh()
     local stageCfg = XDataCenter.FubenManager.GetStageCfg(stageId)
     local txtName = self.Transform.parent:Find("TxtName")
     if txtName then
-        txtName:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = stageCfg.Name
+        txtName:GetComponent("Text").text = stageCfg.Name
     end
     if stageCfg.StageType == XFubenConfigs.STAGETYPE_COMMON then
         self:SetNormalStage(stageInfo, nextStageInfo, stageCfg, stageId, stageCfg.StageType)

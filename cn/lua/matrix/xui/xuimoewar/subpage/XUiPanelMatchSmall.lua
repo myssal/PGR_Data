@@ -22,7 +22,7 @@ end
 function XUiPanelMatchSmall:InitGroup()
     for i in ipairs(XMoeWarConfig.GetGroups()) do
         local grpName = XDataCenter.MoeWarManager.GetActivityInfo().GroupName[i]
-        local txtName = self["PanelTeam"..i]:Find("TextTeam"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        local txtName = self["PanelTeam"..i]:Find("TextTeam"):GetComponent("Text")
         txtName.text = grpName
     end
 end

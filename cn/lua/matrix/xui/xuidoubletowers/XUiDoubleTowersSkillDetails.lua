@@ -58,7 +58,7 @@ function XUiDoubleTowersSkillDetails:InitTxtSkillDes()
     local pluginLevelIdList = XDoubleTowersConfigs.GetPluginLevelIdList(self.PluginId)
     for i, pluginLevelId in ipairs(pluginLevelIdList) do
         local txtSkillDes = i == 1 and self.TxtSkillDes or XUiHelper.Instantiate(self.TxtSkillDes, self.PanelContent)
-        local txtSkillPos = i == 1 and self.TxtSkillPos or txtSkillDes.transform:Find("TxtSkillPos"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        local txtSkillPos = i == 1 and self.TxtSkillPos or txtSkillDes.transform:Find("TxtSkillPos"):GetComponent("Text")
         txtSkillDes.gameObject:SetActiveEx(true)
         txtSkillPos.gameObject:SetActiveEx(true)
         self.TxtSkillDesList[i] = txtSkillDes

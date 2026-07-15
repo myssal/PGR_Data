@@ -232,7 +232,7 @@ function XUiTheatre4Difficulty:InitButtonGroupClick()
                     return
                 end
                 self._BtnIndex = button.GroupIndex
-                local scrollView = self._TableCurve.gameObject:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
+                local scrollView = self._TableCurve.gameObject:GetComponent("ScrollRect")
                 local position = scrollView.content.anchoredPosition
                 local viewportHeight = scrollView.viewport.rect.height
                 local contentBox = self._TableCurve.ContentBox

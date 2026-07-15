@@ -44,9 +44,9 @@ function XUiGridAttribute:InitAutoScript()
 end
 
 function XUiGridAttribute:AutoInitUi()
-    self.ImgAttributeIcon = self.Transform:Find("ImgAttributeIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.TxtAttributeName = self.Transform:Find("TxtAttributeName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtAttributeScore = self.Transform:Find("TxtAttributeScore"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgAttributeIcon = self.Transform:Find("ImgAttributeIcon"):GetComponent("Image")
+    self.TxtAttributeName = self.Transform:Find("TxtAttributeName"):GetComponent("Text")
+    self.TxtAttributeScore = self.Transform:Find("TxtAttributeScore"):GetComponent("Text")
 end
 
 function XUiGridAttribute:GetAutoKey(uiNode, eventName)

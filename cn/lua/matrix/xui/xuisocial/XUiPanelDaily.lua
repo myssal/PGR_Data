@@ -19,10 +19,10 @@ function XUiPanelDaily:InitAutoScript()
 end
 
 function XUiPanelDaily:AutoInitUi()
-    -- self.BtnBack = self.Transform:Find("BtnBack"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.BtnBack = self.Transform:Find("BtnBack"):GetComponent("Button")
     -- self.PanelMsgBoard = self.Transform:Find("PanelMsgBoard")
     -- self.PanelWrite = self.Transform:Find("PanelWrite")
-    -- self.BtnWriteMsg = self.Transform:Find("BtnWriteMsg"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.BtnWriteMsg = self.Transform:Find("BtnWriteMsg"):GetComponent("Button")
 end
 
 function XUiPanelDaily:GetAutoKey(uiNode,eventName)

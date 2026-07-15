@@ -18,7 +18,7 @@ function XUiGridNewYearLuckTicket:Ctor(transform,type,index,parent)
 end
 
 function XUiGridNewYearLuckTicket:Init()
-    self.TxtNum = self.GameObject:FindTransform("NumText"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtNum = self.GameObject:FindTransform("NumText"):GetComponent("Text")
     ---@type XUiComponent.XUiButton
     self.BtnLottery = self.GameObject:FindTransform("BtnLottery"):GetComponent("XUiButton")
     self.LockNor = self.GameObject:FindTransform("LockNor")
@@ -27,7 +27,7 @@ function XUiGridNewYearLuckTicket:Init()
     self.OpenAnimation = self.Open:FindTransform("TimeLine")
     self.TagOpen = self.GameObject:FindTransform("TagOpen")
     self.TagLv = self.GameObject:FindTransform("TagLv")
-    self.TxtLv = self.TagLv:FindTransform("Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtLv = self.TagLv:FindTransform("Text"):GetComponent("Text")
     self.GridItem = self.GameObject:FindTransform("Grid256New")
     self.Expire = self.GameObject:FindTransform("Expire")
     self.Effect = self.GameObject:FindTransform("Effect")

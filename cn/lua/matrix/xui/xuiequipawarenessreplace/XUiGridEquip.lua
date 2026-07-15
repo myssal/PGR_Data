@@ -233,11 +233,11 @@ function XUiGridEquip:InitAutoScript()
     XTool.InitUiObject(self)
     if not XTool.UObjIsNil(self.PanelUsing) then
         local textGo = self.PanelUsing:Find("TextUsing")
-        self.TxtUsingOrInSuitPrefab = textGo and textGo:GetComponent(typeof(CS.UnityEngine.UI.Text))
+        self.TxtUsingOrInSuitPrefab = textGo and textGo:GetComponent("Text")
         --v1.28 装备头像
-        self.RImgRole = self.PanelUsing.transform:Find("RImgRole"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+        self.RImgRole = self.PanelUsing.transform:Find("RImgRole"):GetComponent("RawImage")
         self.PanelDefault = self.GameObject.transform:Find("GridEquipRectangle/PanelDefault") or nil
-        self.TextInPrefab = not XTool.UObjIsNil(self.PanelDefault) and self.PanelDefault.transform:Find("TextUsing"):GetComponent(typeof(CS.UnityEngine.UI.Text)) or nil
+        self.TextInPrefab = not XTool.UObjIsNil(self.PanelDefault) and self.PanelDefault.transform:Find("TextUsing"):GetComponent("Text") or nil
     end
     if self.BtnClick and self.ClickCb then
         CsXUiHelper.RegisterClickEvent(self.BtnClick, function() self:OnBtnClickClick() end)

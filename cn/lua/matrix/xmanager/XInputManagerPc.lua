@@ -189,7 +189,7 @@ XInputManagerPcCreator = function ()
         if type ~= nil then
             return ui.CallBack
         else
-            type = ui.gameObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+            type = ui.gameObject:GetComponent("Button")
             if type ~= nil then
                 return ui.onClick
             end

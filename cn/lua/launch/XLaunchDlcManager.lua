@@ -12,6 +12,7 @@ local KEY_UNINSTALLED_RESID_LIST = "KEY_UNINSTALLED_RESID_LIST" -- 新增Key
 local KEY_SUBPACKAGE_FINISHED = "KEY_SUBPACKAGE_FINISHED_" -- 分包下载完成状态
 local KEY_SUBPACKAGE_ACTIVE = "KEY_SUBPACKAGE_ACTIVE_" -- 分包激活状态（用户意图）
 local KEY_SUBPACKAGE_SKIP_AUTO_COMPLETE = "KEY_SUBPACKAGE_SKIP_AUTO_COMPLETE_" -- 分包跳过热更自动补全标记
+local KEY_FASHION_SUB4000_FORCE_DOWNLOADED_46 = "FASHION_SUB4000_FORCE_DOWNLOADED_46" -- 4.6强制下载标记
 local CsLog = CS.XLog
 
 ---@class XLaunchDlcManager 分包资源-启动管理类
@@ -612,11 +613,13 @@ end
 
 --====AutoDownload涂装资源 begin=====
 local AutoDownloadResIds = nil
+local NeedForceSub4000Download46 = nil
 
 --- 清理在热更阶段产生的local变量
 M.ClearLaunchCache = function()
     DlcIgnoreDownloadIfNotDownload = nil
     AutoDownloadResIds = nil
+    NeedForceSub4000Download46 = nil
 end
 
 --- 初始化AutoDownload涂装ResId列表（从LaunchConfig读取）
@@ -651,6 +654,34 @@ M.IsAutoDownloadRes = function(resId)
     return AutoDownloadResIds[resId] == true
 end
 --====AutoDownload涂装资源 end=====
+
+--====4.6 Sub4000强制下载 begin=====
+--- 检查是否需要为4.6用户强制下载sub=4000的资源
+---@return boolean
+M.CheckNeedForceSub4000Download46 = function()
+    if NeedForceSub4000Download46 ~= nil then
+        return NeedForceSub4000Download46
+    end
+
+    if UnityPlayerPrefs.GetInt(KEY_FASHION_SUB4000_FORCE_DOWNLOADED_46, 0) == 1 then
+        NeedForceSub4000Download46 = false
+        CsLog.Debug("[DLC] ForceSub4000_46: already triggered, skip")
+        return NeedForceSub4000Download46
+    end
+
+    NeedForceSub4000Download46 = true
+    CsLog.Debug("[DLC] ForceSub4000_46: need trigger")
+    return NeedForceSub4000Download46
+end
+
+--- 标记4.6 sub=4000强制下载已触发
+M.MarkForceSub4000Downloaded46 = function()
+    UnityPlayerPrefs.SetInt(KEY_FASHION_SUB4000_FORCE_DOWNLOADED_46, 1)
+    UnityPlayerPrefs.Save()
+    NeedForceSub4000Download46 = false
+    CsLog.Debug("[DLC] ForceSub4000_46: marked as triggered")
+end
+--====4.6 Sub4000强制下载 end=====
 
 --====Sub级auto-complete冲突检测 begin=====
 --- 检查某个 SubPackage 下是否有任何 ResId 存在 RES级卸载意图

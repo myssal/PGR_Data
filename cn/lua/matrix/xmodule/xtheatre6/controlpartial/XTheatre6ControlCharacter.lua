@@ -360,10 +360,12 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
             XUiManager.TipCode(response.Code)
         end
         if response.SkillUpdates then
-            self._Model.Skill:UpdateSkillListWithOverQueue(response.SkillUpdates, nil, true)
+            for index, SkillUpdate in pairs(response.SkillUpdates) do
+                self._Model.Skill:UpdateSkills(SkillUpdate, true)
+            end
         end
-        if cb then
-            cb()
+            if cb then
+                cb()
         end
     end)
     XScheduleManager.ScheduleOnce(function()
@@ -627,10 +629,10 @@ function XTheatre6Control:GetNewCharacterShowTimeId()
     return timeId
 end
 
-function XTheatre6Control:GetNewCharacterShowTagMap(tagType)
+function XTheatre6Control:GetNewCharacterShowTagMap()
     local result = {}
     local timeId = self:GetNewCharacterShowTimeId()
-    local tags = self._Model:GetNewCharacterShowTags(tagType)
+    local tags = self._Model:GetNewCharacterShowTags()
 
     if XFunctionManager.CheckInTimeByTimeId(timeId, false) then
         local values = self._Model:GetClientConfigValues("NewCharacterTagShowId")
@@ -647,12 +649,12 @@ function XTheatre6Control:GetNewCharacterShowTagMap(tagType)
     return result
 end
 
-function XTheatre6Control:CheckHasNewCharacter(tagType)
-    return not XTool.IsTableEmpty(self:GetNewCharacterShowTagMap(tagType))
+function XTheatre6Control:CheckHasNewCharacter()
+    return not XTool.IsTableEmpty(self:GetNewCharacterShowTagMap())
 end
 
-function XTheatre6Control:AddNewCharacterShowTag(id, tagType)
-    self._Model:AddNewCharacterShowTag(id, tagType)
+function XTheatre6Control:AddNewCharacterShowTag(id)
+    self._Model:AddNewCharacterShowTag(id)
 end
 
 function XTheatre6Control:SaveBuffChooseIndex(mode, characterId, index)

@@ -16,10 +16,10 @@ function XUiGridItem:InitAutoScript()
 end
 
 function XUiGridItem:AutoInitUi()
-    self.ImgItemCountBg = self.Transform:Find("ImgItemCountBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgItemIcon = self.Transform:Find("ImgItemIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgItemBg = self.Transform:Find("ImgItemBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.TxtItemCount = self.Transform:Find("TxtItemCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgItemCountBg = self.Transform:Find("ImgItemCountBg"):GetComponent("Image")
+    self.ImgItemIcon = self.Transform:Find("ImgItemIcon"):GetComponent("Image")
+    self.ImgItemBg = self.Transform:Find("ImgItemBg"):GetComponent("Image")
+    self.TxtItemCount = self.Transform:Find("TxtItemCount"):GetComponent("Text")
 end
 
 function XUiGridItem:GetAutoKey(uiNode,eventName)

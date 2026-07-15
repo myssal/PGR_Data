@@ -104,7 +104,7 @@ function XUiSucceedBossMain:RefreshChapters()
         local chapterItem = self.ChapterItems[i]
         if not chapterItem then
             local tempGameObject = XUiHelper.Instantiate(self.GridChapter, itemRootTransform)
-            tempGameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition = VECTOR2_ZERO
+            tempGameObject:GetComponent("RectTransform").anchoredPosition = VECTOR2_ZERO
             tempGameObject.gameObject:SetActiveEx(true)
             chapterItem = XUiSucceedBossMainChapterItem.New(tempGameObject, self)
             self.ChapterItems[i] = chapterItem

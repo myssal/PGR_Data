@@ -42,8 +42,8 @@ function XUiPanelSelfWinInfo:Ctor(ui, clickLeftCb)
     if self.Title then
         self.Title.text = XUiHelper.GetText("EscapeWinSettleDesc")
     end
-    self.TxtAddCanvasGroup = self.TxtAdd:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
-    self.TxtBtAddCanvasGroup = self.TxtBtAdd:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    self.TxtAddCanvasGroup = self.TxtAdd:GetComponent("CanvasGroup")
+    self.TxtBtAddCanvasGroup = self.TxtBtAdd:GetComponent("CanvasGroup")
     self:AddEventListener()
     self:SetImgTimeEffectActive(false)
 end

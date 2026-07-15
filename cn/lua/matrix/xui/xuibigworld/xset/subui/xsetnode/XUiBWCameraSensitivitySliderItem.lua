@@ -31,9 +31,9 @@ end
 function XUiBWCameraSensitivitySliderItem:InitUi(config)
     local viewType = config.DefaultKeyMapIds[1] or XMVCA.XBigWorldGamePlay.PerspectiveType.ThirdPerson
     self._ViewType = CS.CameraViewType.__CastFrom(viewType)
-    self.Slider = XUiHelper.TryGetComponent(self.Transform, "SliderCameraMoveSensitivityPc", typeof(CS.UnityEngine.UI.Slider))
+    self.Slider = XUiHelper.TryGetComponent(self.Transform, "SliderCameraMoveSensitivityPc", "Slider")
     if not self.Slider then
-        self.Slider = XUiHelper.TryGetComponent(self.Transform, "SliderCameraMoveSensitivity", typeof(CS.UnityEngine.UI.Slider))
+        self.Slider = XUiHelper.TryGetComponent(self.Transform, "SliderCameraMoveSensitivity", "Slider")
     end
     self.TxtTitle = XUiHelper.TryGetComponent(self.Transform, "TxtMusic", "Text")
     if self.Slider then

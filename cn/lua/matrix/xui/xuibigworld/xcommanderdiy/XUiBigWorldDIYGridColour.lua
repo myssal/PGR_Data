@@ -14,7 +14,7 @@ function XUiBigWorldDIYGridColour:OnStart()
     ---@type XBWCommanderDIYColorEntity
     self._Entity = false
     self.GridEnable = self.Transform:FindTransform("GridEnable")
-    self.CanvasGroup = self.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    self.CanvasGroup = self.Transform:GetComponent("CanvasGroup")
     self:_RegisterButtonClicks()
 end
 

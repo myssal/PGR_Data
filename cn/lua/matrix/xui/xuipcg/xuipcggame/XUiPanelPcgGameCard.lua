@@ -544,7 +544,7 @@ function XUiPanelPcgGameCard:OnEndDrag(idx, eventData)
             self:RefreshCards()
         end
     else
-        local rect = self.UseCardArea:GetComponent(typeof(CS.UnityEngine.RectTransform))
+        local rect = self.UseCardArea:GetComponent("RectTransform")
         local isInRest = CS.UnityEngine.RectTransformUtility.RectangleContainsScreenPoint(rect, eventData.position, eventData.pressEventCamera)
         if isInRest then
             -- 在出牌区域松手，视为出牌

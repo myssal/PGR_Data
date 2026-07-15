@@ -217,12 +217,4 @@ end
 
 --endregion
 
---region 新手引导
-
-function XDyeMergeGameAgency:GetCurGamingStageId()
-    return self._Model:GetCurGamingStageId()
-end
-
---endregion
-
 return XDyeMergeGameAgency

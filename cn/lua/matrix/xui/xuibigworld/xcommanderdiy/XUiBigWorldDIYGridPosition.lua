@@ -18,7 +18,7 @@ function XUiBigWorldDIYGridPosition:OnStart()
     ---@type XBWCommanderDIYPartEntity
     self._Entity = false
     self._Index = 0
-    self.CanvasGroup = self.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    self.CanvasGroup = self.Transform:GetComponent("CanvasGroup")
     self.GridEnable = self.Transform:FindTransform("GridEnable")
     self:_RegisterButtonClicks()
 end

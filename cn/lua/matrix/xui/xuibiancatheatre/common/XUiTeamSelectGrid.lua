@@ -9,7 +9,7 @@ function XUiTeamSelectGrid:Ctor(ui, clickCb)
     self.ClickCb = clickCb
     XUiHelper.InitUiClass(self, ui)
 
-    self.TapImage = self.Tap:GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.TapImage = self.Tap:GetComponent("Image")
     self.ImgQuality.gameObject:SetActiveEx(false)
     self:InitBtn()
     self:InitTap()

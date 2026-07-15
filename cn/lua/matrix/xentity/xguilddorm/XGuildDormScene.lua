@@ -263,7 +263,7 @@ end
 
 --=======================照相机操作 Start========================
 function XGuildDormScene:InitCamera()
-    self.Camera = self.GameObject.transform:Find("Camera"):GetComponent(typeof(CS.UnityEngine.Camera))
+    self.Camera = self.GameObject.transform:Find("Camera"):GetComponent("Camera")
     -- 公告宿舍暂时没有拖拽物体功能，由于影响到相机的拖拽功能先注释掉 后续有需求在处理
     --self.PhysicsRaycaster = self.Camera.gameObject:AddComponent(typeof(CS.UnityEngine.EventSystems.PhysicsRaycaster))
 

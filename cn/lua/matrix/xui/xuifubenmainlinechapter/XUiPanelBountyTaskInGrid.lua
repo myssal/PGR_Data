@@ -25,7 +25,7 @@ end
 
 function XUiPanelBountyTaskInGrid:AutoInitUi()
     self.PanelKill = self.Transform:Find("PanelKill")
-    self.RImgRole = self.Transform:Find("ImageMask/RImgRole"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.RImgRole = self.Transform:Find("ImageMask/RImgRole"):GetComponent("RawImage")
 end
 
 function XUiPanelBountyTaskInGrid:RegisterClickEvent(uiNode, func)

@@ -81,7 +81,7 @@ end
 function XUiTip:InitAutoScript()
     self.SpecialSoundMap = {}
     self:AutoAddListener()
-    self.Txtcall = self.Transform:Find("SafeAreaContentPane/Txtcall"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.Txtcall = self.Transform:Find("SafeAreaContentPane/Txtcall"):GetComponent("Text")
     self.Txtcall.gameObject:SetActiveEx(false)
 end
 

@@ -32,7 +32,7 @@ function XUiDrawControl:InitButtons()
     self:RefreshTenDrawDiscount()
     ---@type UnityEngine.RectTransform
     self.FreeBtn = XUiHelper.TryGetComponent(self.RootUi.PanelDrawButtons, "BtnDraw3")
-    self.FreeTimeTip = self.FreeBtn:Find("Time/ImgBg/Txt"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.FreeTimeTip = self.FreeBtn:Find("Time/ImgBg/Txt"):GetComponent("Text")
     self.FreeBtn:GetComponent("XUiButton").CallBack = function()
         self:OnDraw(1)
     end
@@ -95,7 +95,7 @@ function XUiDrawControl:InitButton(btn, index)
     local itemCount = XDataCenter.DrawManager.GetDiscountDrawPrice(self.DrawInfo.GroupId, self.DrawInfo.UseItemCount, drawCount)
     btnComponent:SetNameByGroup(1, itemCount)
 
-    self.RootUi:RegisterClickEvent(btn:GetComponent(typeof(CS.UnityEngine.UI.Button)), function()
+    self.RootUi:RegisterClickEvent(btn:GetComponent("Button"), function()
         self:OnDraw(drawCount)
     end)
 end

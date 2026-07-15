@@ -23,7 +23,7 @@ function XUiActivityBriefShop:OnAwake()
     self.ImgEmpty.gameObject:SetActiveEx(true)
     self.BtnTong1.gameObject:SetActiveEx(false)
     self.GridLine.gameObject:SetActiveEx(false)
-    self.SortGroupContent = self.SortGroup.transform.parent:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.SortGroupContent = self.SortGroup.transform.parent:GetComponent("RectTransform")
 
     self.ShopLockDecs = {}
     self.SortGroupList = {}

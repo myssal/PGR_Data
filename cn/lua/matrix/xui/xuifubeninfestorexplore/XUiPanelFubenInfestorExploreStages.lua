@@ -16,8 +16,8 @@ function XUiPanelFubenInfestorExploreStages:Ctor(ui, rootUi, chapterId, clickSta
     self.RootUi = rootUi
 
     XTool.InitUiObject(self)
-    self.ScrollRect = self.Transform:Find("PaneStageList"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
-    self.MarkX = self.Transform:Find("PaneStageList/ViewPort"):GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.width * 0.3
+    self.ScrollRect = self.Transform:Find("PaneStageList"):GetComponent("ScrollRect")
+    self.MarkX = self.Transform:Find("PaneStageList/ViewPort"):GetComponent("RectTransform").rect.width * 0.3
     self.InitPosX = self.PanelStageContent.localPosition.x
 
     self:InitStagesMap()
@@ -110,7 +110,7 @@ function XUiPanelFubenInfestorExploreStages:CreatePlayerGo(parent)
 end
 
 function XUiPanelFubenInfestorExploreStages:PlayScrollViewMove(grid, ignoreAnim)
-    local gridX = grid.Transform.parent:GetComponent(typeof(CS.UnityEngine.RectTransform)).localPosition.x
+    local gridX = grid.Transform.parent:GetComponent("RectTransform").localPosition.x
     local contentPos = self.PanelStageContent.localPosition
     local markX = self.MarkX
     local diffX = gridX - markX

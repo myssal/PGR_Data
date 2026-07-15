@@ -33,9 +33,9 @@ end
 
 function XUiFubenDialog:AutoInitUi()
     self.PanelDialog = self.Transform:Find("SafeAreaContentPane/PanelDialog")
-    self.BtnConfirm = self.Transform:Find("SafeAreaContentPane/PanelDialog/BtnConfirm"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.BtnClose = self.Transform:Find("SafeAreaContentPane/PanelDialog/BtnClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.Txt = self.Transform:Find("SafeAreaContentPane/PanelDialog/Txt"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnConfirm = self.Transform:Find("SafeAreaContentPane/PanelDialog/BtnConfirm"):GetComponent("Button")
+    self.BtnClose = self.Transform:Find("SafeAreaContentPane/PanelDialog/BtnClose"):GetComponent("Button")
+    self.Txt = self.Transform:Find("SafeAreaContentPane/PanelDialog/Txt"):GetComponent("Text")
     self.PanelTextList = self.Transform:Find("SafeAreaContentPane/PanelTextList")
 end
 

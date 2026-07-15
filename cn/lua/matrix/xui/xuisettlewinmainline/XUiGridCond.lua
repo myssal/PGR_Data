@@ -14,9 +14,9 @@ function XUiGridCond:InitAutoScript()
 end
 
 function XUiGridCond:AutoInitUi()
-    self.TxtFail = self.Transform:Find("TxtFail"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtSuccess = self.Transform:Find("TxtSuccess"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtDesc = self.Transform:Find("TxtDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtFail = self.Transform:Find("TxtFail"):GetComponent("Text")
+    self.TxtSuccess = self.Transform:Find("TxtSuccess"):GetComponent("Text")
+    self.TxtDesc = self.Transform:Find("TxtDesc"):GetComponent("Text")
 end
 
 function XUiGridCond:RegisterClickEvent(uiNode, func)

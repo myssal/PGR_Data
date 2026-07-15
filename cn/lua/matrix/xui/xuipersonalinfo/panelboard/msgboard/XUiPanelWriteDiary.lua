@@ -11,7 +11,7 @@ function XUiPanelWriteDiary:Ctor(ui,rootUi)
             self:Update()
          end
     end
-    self.inputText = self.Transform:Find("PanelInput/BtnInputField/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.inputText = self.Transform:Find("PanelInput/BtnInputField/Text"):GetComponent("Text")
 end
 
 function XUiPanelWriteDiary:Update()
@@ -27,12 +27,12 @@ function XUiPanelWriteDiary:InitAutoScript()
 end
 
 function XUiPanelWriteDiary:AutoInitUi()
-    self.BtnBack = self.Transform:Find("BtnBack"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnBack = self.Transform:Find("BtnBack"):GetComponent("Button")
+    self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
     self.PanelInput = self.Transform:Find("PanelInput")
-    self.TxtNum = self.Transform:Find("PanelInput/TxtNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtNum = self.Transform:Find("PanelInput/TxtNum"):GetComponent("Text")
     self.BtnInputField = self.Transform:Find("PanelInput/BtnInputField"):GetComponent("InputField")
-    self.BtnConfirm = self.Transform:Find("BtnConfirm"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnConfirm = self.Transform:Find("BtnConfirm"):GetComponent("Button")
 end
 
 function XUiPanelWriteDiary:GetAutoKey(uiNode,eventName)

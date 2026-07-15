@@ -123,7 +123,7 @@ function XUiCommonCharacterFilterTipsOptimization:RefreshSelectSortTag()
             groupName = self.GroupNameList[groupId]
         end
         gridGroupGo:SetActiveEx(true)
-        gridGroupGo.transform:Find("TxtFilterTitle/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = groupName
+        gridGroupGo.transform:Find("TxtFilterTitle/Text"):GetComponent("Text").text = groupName
         -- 在该筛选组生成筛选项标签
         local currTags = groupTagDic[groupId]
         for i, v in ipairs(currTags) do

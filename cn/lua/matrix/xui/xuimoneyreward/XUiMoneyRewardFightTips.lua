@@ -31,7 +31,7 @@ function XUiMoneyRewardFightTips:InitAutoScript()
 end
 
 function XUiMoneyRewardFightTips:AutoInitUi()
-    self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent("Button")
 end
 
 function XUiMoneyRewardFightTips:GetAutoKey(uiNode, eventName)

@@ -3,7 +3,6 @@
         "LevelId": 9002,
         "Name": "普通",
         "ChapterId": 1,
-        "Type": 1,
         "Difficulty": 1,
         "FirstDropIds": [
             1012
@@ -36,7 +35,6 @@
         "Name": "进阶",
         "PreLevelId": 9002,
         "ChapterId": 1,
-        "Type": 2,
         "Difficulty": 2,
         "FirstDropIds": [
             1013
@@ -70,7 +68,6 @@
         "Name": "挑战",
         "PreLevelId": 9003,
         "ChapterId": 1,
-        "Type": 3,
         "Difficulty": 3,
         "FirstDropIds": [
             1014,
@@ -105,7 +102,6 @@
         "Name": "困难",
         "PreLevelId": 9004,
         "ChapterId": 1,
-        "Type": 4,
         "Difficulty": 4,
         "FirstDropIds": [
             1014,
@@ -140,7 +136,6 @@
         "Name": "噩梦",
         "PreLevelId": 9005,
         "ChapterId": 1,
-        "Type": 5,
         "Difficulty": 5,
         "IsRank": true,
         "FirstDropIds": [
@@ -175,7 +170,6 @@
         "LevelId": 9008,
         "Name": "进阶",
         "ChapterId": 2,
-        "Type": 2,
         "Difficulty": 2,
         "FirstDropIds": [
             1013
@@ -209,7 +203,6 @@
         "Name": "挑战",
         "PreLevelId": 9008,
         "ChapterId": 2,
-        "Type": 3,
         "Difficulty": 3,
         "FirstDropIds": [
             1014,
@@ -244,7 +237,6 @@
         "Name": "困难",
         "PreLevelId": 9009,
         "ChapterId": 2,
-        "Type": 4,
         "Difficulty": 4,
         "FirstDropIds": [
             1014,
@@ -279,7 +271,6 @@
         "Name": "噩梦",
         "PreLevelId": 9010,
         "ChapterId": 2,
-        "Type": 5,
         "Difficulty": 5,
         "IsRank": true,
         "FirstDropIds": [
@@ -311,11 +302,144 @@
         "ShowGroupId": 8
     },
     {
-        "LevelId": 90009,
+        "LevelId": 9013,
         "Name": "普通",
         "ChapterId": 4,
-        "Type": 1,
         "Difficulty": 1,
+        "FirstDropIds": [
+            1012
+        ],
+        "DropIds": [
+            1001,
+            1002
+        ],
+        "FirstExp": 125,
+        "Exp": 25,
+        "FirstCoin": 80,
+        "Coin": 10,
+        "FirstGold": 50,
+        "Gold": 10,
+        "LoadingTips": [
+            "合理搭配队伍职业能有效降低作战难度。",
+            "遇到困难时不妨尝试下“强化装备”。",
+            "头像高亮时点击可释放扭转战机的“极限技”。",
+            "与队友连续发动必杀技可触发“合击”。",
+            "在特殊模块槽上的装备与职业装备的职业相同时“特性等级”会获得加成。",
+            "技能打出的伤害数字都相同？那可能是达到“伤害上限”了。",
+            "冗余装备可尝试进行分解。",
+            "角色在局外可切换第二形态来获得不同的作战体验。"
+        ],
+        "FirstShowGroupId": 1,
+        "ShowGroupId": 2
+    },
+    {
+        "LevelId": 9014,
+        "Name": "进阶",
+        "PreLevelId": 9013,
+        "ChapterId": 4,
+        "Difficulty": 2,
+        "FirstDropIds": [
+            1013
+        ],
+        "DropIds": [
+            1003,
+            1004
+        ],
+        "FirstExp": 420,
+        "Exp": 140,
+        "FirstCoin": 200,
+        "Coin": 40,
+        "FirstGold": 150,
+        "Gold": 30,
+        "AbilityLimit": 60,
+        "LoadingTips": [
+            "合理搭配队伍职业能有效降低作战难度。",
+            "遇到困难时不妨尝试下“强化装备”。",
+            "头像高亮时点击可释放扭转战机的“极限技”。",
+            "与队友连续发动必杀技可触发“合击”。",
+            "在特殊模块槽上的装备与职业装备的职业相同时“特性等级”会获得加成。",
+            "技能打出的伤害数字都相同？那可能是达到“伤害上限”了。",
+            "冗余装备可尝试进行分解。",
+            "角色在局外可切换第二形态来获得不同的作战体验。"
+        ],
+        "FirstShowGroupId": 3,
+        "ShowGroupId": 4
+    },
+    {
+        "LevelId": 9015,
+        "Name": "挑战",
+        "PreLevelId": 9014,
+        "ChapterId": 4,
+        "Difficulty": 3,
+        "FirstDropIds": [
+            1014,
+            1015
+        ],
+        "DropIds": [
+            1006,
+            1007
+        ],
+        "FirstExp": 750,
+        "Exp": 200,
+        "FirstCoin": 500,
+        "Coin": 80,
+        "FirstGold": 300,
+        "Gold": 60,
+        "AbilityLimit": 300,
+        "LoadingTips": [
+            "合理搭配队伍职业能有效降低作战难度。",
+            "遇到困难时不妨尝试下“强化装备”。",
+            "头像高亮时点击可释放扭转战机的“极限技”。",
+            "与队友连续发动必杀技可触发“合击”。",
+            "在特殊模块槽上的装备与职业装备的职业相同时“特性等级”会获得加成。",
+            "技能打出的伤害数字都相同？那可能是达到“伤害上限”了。",
+            "冗余装备可尝试进行分解。",
+            "角色在局外可切换第二形态来获得不同的作战体验。"
+        ],
+        "FirstShowGroupId": 5,
+        "ShowGroupId": 6
+    },
+    {
+        "LevelId": 9016,
+        "Name": "困难",
+        "PreLevelId": 9015,
+        "ChapterId": 4,
+        "Difficulty": 4,
+        "FirstDropIds": [
+            1014,
+            1015
+        ],
+        "DropIds": [
+            1006,
+            1007
+        ],
+        "FirstExp": 1800,
+        "Exp": 400,
+        "FirstCoin": 250,
+        "Coin": 100,
+        "FirstGold": 400,
+        "Gold": 80,
+        "AbilityLimit": 600,
+        "LoadingTips": [
+            "合理搭配队伍职业能有效降低作战难度。",
+            "遇到困难时不妨尝试下“强化装备”。",
+            "头像高亮时点击可释放扭转战机的“极限技”。",
+            "与队友连续发动必杀技可触发“合击”。",
+            "在特殊模块槽上的装备与职业装备的职业相同时“特性等级”会获得加成。",
+            "技能打出的伤害数字都相同？那可能是达到“伤害上限”了。",
+            "冗余装备可尝试进行分解。",
+            "角色在局外可切换第二形态来获得不同的作战体验。"
+        ],
+        "FirstShowGroupId": 5,
+        "ShowGroupId": 6
+    },
+    {
+        "LevelId": 9017,
+        "Name": "噩梦",
+        "PreLevelId": 9016,
+        "ChapterId": 4,
+        "Difficulty": 5,
+        "IsRank": true,
         "FirstDropIds": [
             1008,
             1009
@@ -348,7 +472,6 @@
         "LevelId": 9001,
         "Name": "教学",
         "ChapterId": 3,
-        "Type": 1,
         "Difficulty": 1,
         "FirstDropIds": [
             1001
@@ -372,7 +495,6 @@
         "LevelId": 9012,
         "Name": "训练",
         "ChapterId": 3,
-        "Type": 1,
         "Difficulty": 1,
         "LoadingTips": [
             "合理搭配队伍职业能有效降低作战难度。",

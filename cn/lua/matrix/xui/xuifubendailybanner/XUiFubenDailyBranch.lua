@@ -116,7 +116,7 @@ end
 function XUiFubenDailyBranch:PlayScrollViewMove(grid)
     self.PaneStageScrollRect.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
 
-    local gridTf = grid.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local gridTf = grid.gameObject:GetComponent("RectTransform")
     self.LastContentPosX = self.PanelStageContent.localPosition.x
 
     local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridTf.localPosition.x

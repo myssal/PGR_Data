@@ -13,14 +13,14 @@ function XUiGridClickClearGameHead:Ctor(ui)
     XTool.InitUiObject(self)
 
     self.Head = self.Transform:Find("Head")
-    self.CanvasGroup = self.Head.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    self.CanvasGroup = self.Head.transform:GetComponent("CanvasGroup")
     self.Image = self.Transform:Find("Head/Image")
 
     self.ImageGO = self.Image.gameObject
-    self.ImageRT = self.Image:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.ImageRT = self.Image:GetComponent("RectTransform")
     self.ImageSizeDelta = self.ImageRT.sizeDelta
 
-    self.AvatarRT = self.Transform:Find("Head/Avatar"):GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.AvatarRT = self.Transform:Find("Head/Avatar"):GetComponent("RectTransform")
     self.AvatarY = self.AvatarRT.localPosition.y
     self.AvatarSizeDelta = self.AvatarRT.sizeDelta
 
@@ -67,7 +67,7 @@ function XUiGridClickClearGameHead:OnClick(index)
 end
 
 function XUiGridClickClearGameHead:InitY(path)
-    local rt = self.Transform:Find(path):GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local rt = self.Transform:Find(path):GetComponent("RectTransform")
     self.RectTransformDict[path] = rt
     self.OriginYDict[path] = rt.localPosition.y
     -- self.SizeDeltaDict[path] =  rt.sizeDelta

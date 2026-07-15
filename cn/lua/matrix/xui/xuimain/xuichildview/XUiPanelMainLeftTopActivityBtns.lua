@@ -55,8 +55,8 @@ function XUiPanelMainLeftTopActivityBtns:InitActivityBtns()
             end
         end
 
-        local targetItem = transform:Find("Red/Image1"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-        local targetItem2 = transform:Find("Red/Image2"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+        local targetItem = transform:Find("Red/Image1"):GetComponent("Image")
+        local targetItem2 = transform:Find("Red/Image2"):GetComponent("Image")
         if not targetItem or not targetItem2 then
             return
         end

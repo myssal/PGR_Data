@@ -21,7 +21,7 @@ end
 
 function XUiPanelPrequelChapter:AutoInitUi()
     self.GridPrequelStage = self.Transform:Find("GridPrequelStage")
-    self.SViewlStageList = self.Transform:Find("SViewlStageList"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
+    self.SViewlStageList = self.Transform:Find("SViewlStageList"):GetComponent("ScrollRect")
     self.PanelStageContent = self.Transform:Find("SViewlStageList/ViewPort/PanelStageContent")
 end
 

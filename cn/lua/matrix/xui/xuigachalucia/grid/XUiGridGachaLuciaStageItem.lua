@@ -79,7 +79,7 @@ end
 
 function XUiGridGachaLuciaStageItem:ResetItemPosition(pos)
     if self.ImgHideLine then
-        local rect = self.ImgHideLine:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect
+        local rect = self.ImgHideLine:GetComponent("RectTransform").rect
         self.Transform.localPosition = CS.UnityEngine.Vector3(pos.x, pos.y - rect.height, pos.z)
     end
 end

@@ -1365,7 +1365,7 @@ function XHomeDormManager.Test()
     root:Find("@Room/@Room_21003/@Surface/Teahousewall001(Clone)/0").gameObject:SetActiveEx(false)
     root:Find("@Room/@Room_21003/@Surface/Teahousewall001(Clone)/2").gameObject:SetActiveEx(false)
     root:Find("@Room/@Room_21005/@Surface/Teahousewall001(Clone)/2").gameObject:SetActiveEx(false)
-    root:Find("Camera"):GetComponent(typeof(CS.UnityEngine.Camera)).farClipPlane = 50
+    root:Find("Camera"):GetComponent("Camera").farClipPlane = 50
     for _, room in pairs(RoomDic) do
         room:ResetCharacterList()
     end

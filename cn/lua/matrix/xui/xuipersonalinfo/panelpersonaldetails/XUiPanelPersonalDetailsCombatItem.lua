@@ -17,9 +17,9 @@ end
 
 function XUiPanelPersonalDetailsCombatItem:AutoInitUi()
     self.PanelHaveData = self.Transform:Find("PanelHaveData")
-    self.ImgIcon = self.Transform:Find("PanelHaveData/ImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgRoleQulity = self.Transform:Find("PanelHaveData/ImgRoleQulity"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.TxtLevel = self.Transform:Find("PanelHaveData/TxtLevel"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgIcon = self.Transform:Find("PanelHaveData/ImgIcon"):GetComponent("Image")
+    self.ImgRoleQulity = self.Transform:Find("PanelHaveData/ImgRoleQulity"):GetComponent("Image")
+    self.TxtLevel = self.Transform:Find("PanelHaveData/TxtLevel"):GetComponent("Text")
     self.PanelNoData = self.Transform:Find("PanelNoData")
 end
 

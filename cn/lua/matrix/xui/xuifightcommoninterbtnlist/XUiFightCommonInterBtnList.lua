@@ -32,7 +32,7 @@ function XUiFightCommonInterBtnList:OnStart()
     self.IconRoller.gameObject:SetActiveEx(false)
     self.BtnOptionPC.gameObject:SetActiveEx(false)
     self.BtnOptionPC.transform:SetParent(self.Options.transform)
-    self.IconRollerImg = self.IconRoller:GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.IconRollerImg = self.IconRoller:GetComponent("Image")
 end
 
 function XUiFightCommonInterBtnList:OnDestroy()

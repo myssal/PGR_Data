@@ -133,7 +133,7 @@ function XRestaurantCamera:SetGameObject(obj)
     end
     self.GameObject = obj.gameObject
     self.Transform = obj.transform
-    self.Camera = self.Transform:GetComponent(typeof(CS.UnityEngine.Camera))
+    self.Camera = self.Transform:GetComponent("Camera")
     
     self.Camera.depth = 5
     self.Bound = self.GameObject:GetComponent(typeof(CS.XCameraBound))

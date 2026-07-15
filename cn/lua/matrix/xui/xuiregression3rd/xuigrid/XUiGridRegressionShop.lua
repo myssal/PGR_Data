@@ -22,7 +22,7 @@ function XUiGridRegressionShop:Ctor(ui, parent, rootUi)
     self.GridCommon = XUiGridCommon.New(rootUi, self.Grid256New)
     self.GridCommon:SetClickCallback(handler(self, self.OnBtnInfoClick))
     self.BtnBuy.CallBack = handler(self, self.OnBtnClick)
-    self.TxtSaleRate = self.TxtSaleRate or self.Transform:Find("PanelLabel/TxtSaleRate"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtSaleRate = self.TxtSaleRate or self.Transform:Find("PanelLabel/TxtSaleRate"):GetComponent("Text")
 end
 
 function XUiGridRegressionShop:Refresh(data)

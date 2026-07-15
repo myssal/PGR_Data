@@ -44,7 +44,7 @@ function XUiPanelStorage:InitDynamicTable()
     if self:CheckNeedExpand() then
         ---@type UnityEngine.RectTransform
         self.Content = self.PanelList.transform:Find("Viewport/PanelContent")
-        self.ScrollRect = self.PanelList:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
+        self.ScrollRect = self.PanelList:GetComponent("ScrollRect")
         self.IsExpand = true
     end
     

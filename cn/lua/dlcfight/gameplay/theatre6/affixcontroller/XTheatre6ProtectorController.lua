@@ -12,15 +12,12 @@ XTheatre6ProtectorController.HitAffixTag = XGameplayTag.Missile_Theatre6_HitAffi
 XTheatre6ProtectorController.StackBuff = 1027107
 -- XTheatre6AffixControllerBase:RegisterControllerClass(XTheatre6ProtectorController, "Protector")
 
-function XTheatre6ProtectorController:InitEventCallBackRegister()
-    self._proxy:RegisterEvent(EWorldEvent.NpcAddProtector)
-end
 
 function XTheatre6ProtectorController:Ctor(proxy, npc)
     --self._time = 0
     self.ProtectorDmgAdd = 0
     self._dmgAddValue = 0 --存在标记时增伤0%
-    --self:LogError(".....护盾控制器注册")
+    self:LogError(".....护盾控制器注册")
 end
 
 function XTheatre6ProtectorController:OnLuaAffixHitFly(eventArgs )
@@ -33,15 +30,14 @@ function XTheatre6ProtectorController:OnLuaAffixHitDown(eventArgs )
     self.ProtectorDmgAdd = 1 --击倒时，获得加伤标记
 end
 
-function XTheatre6ProtectorController:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
-    if buffId ~= 1027501 then return end --拼刀标记
-    if npcUUID ~= self._npcUUID then self.ProtectorDmgAdd = 0 end --技能结束时，清除加伤标记
+function XTheatre6ProtectorController:OnLuaSkillEnd(eventArgs)
+    if eventArgs._launcherUUID ~= self._npcUUID then self.ProtectorDmgAdd = 0 end --技能结束时，清除加伤标记
     self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.Stamina)
     self.originAttrib2 = self._proxy:GetNpcGameplayAttribValue(self._enemyUUID,ETheatre6AttribType.Stamina)
     if self.originAttrib1 <= 0 and self.originAttrib2 <= 0 then
         self._proxy:RemoveBuff(self._npcUUID, 111)
         --self._proxy:RemoveProtector()
-        self:LogError(".....清除全部护盾")
+        --self:LogError(".....清除全部护盾")
     end
 end
 
@@ -50,12 +46,6 @@ function XTheatre6ProtectorController:BeforeDamageCalc(eventArgs)
     if eventArgs.SkillActionId == self._dmgFixActId then return end
     if eventArgs.Target == self._npcUUID then return end
     self._proxy:AddDamageMagicContextValue(eventArgs.ContextId, ENpcAttrib.Attack2AmpP, self._dmgAddValue, 0) --有加伤标记时，受到伤害提升0%
-end
-
-function XTheatre6ProtectorController:XNpcAddProtectorArgs(launcherId, targetId, value, totalValue, magicId)
-    if targetId ~= self._npcUUID then return end
-    self._proxy:Theatre6PopDamage(self._npcUUID, self._npcUUID, 22, 0)
-    --self:LogError(".....加盾通知")
 end
 
 

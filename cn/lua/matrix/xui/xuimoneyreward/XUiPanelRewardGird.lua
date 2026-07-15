@@ -62,15 +62,15 @@ function XUiPanelRewardGird:InitAutoScript()
 end
 
 function XUiPanelRewardGird:AutoInitUi()
-    -- self.TxtValue = self.Transform:Find("TxtValue"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    -- self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    -- self.TxtValue = self.Transform:Find("TxtValue"):GetComponent("Text")
+    -- self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
     -- self.PanelRewards = self.Transform:Find("PanelRewards")
     -- self.GridCommon = self.Transform:Find("PanelRewards/GridCommon")
     -- self.PanelSite = self.Transform:Find("PanelRewards/GridCommon/PanelSite")
-    -- self.TxtSite = self.Transform:Find("PanelRewards/GridCommon/PanelSite/TxtSite"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    -- self.ImgCur = self.Transform:Find("ImgCur"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    -- self.ImgQuality = self.Transform:Find("ImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    -- self.RImgIcon = self.Transform:Find("RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    -- self.TxtSite = self.Transform:Find("PanelRewards/GridCommon/PanelSite/TxtSite"):GetComponent("Text")
+    -- self.ImgCur = self.Transform:Find("ImgCur"):GetComponent("Image")
+    -- self.ImgQuality = self.Transform:Find("ImgQuality"):GetComponent("Image")
+    -- self.RImgIcon = self.Transform:Find("RImgIcon"):GetComponent("RawImage")
 end
 
 function XUiPanelRewardGird:RegisterClickEvent(uiNode, func)

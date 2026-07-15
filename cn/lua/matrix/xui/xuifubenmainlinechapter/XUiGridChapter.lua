@@ -11,7 +11,7 @@ function XUiGridChapter:Ctor(rootUi, ui, autoChangeBgArgs, isOnZhouMu)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.IsOnZhouMu = isOnZhouMu
-    self.RectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.RectTransform = self.Transform:GetComponent("RectTransform")
     self.GridStageList = {}
     self.GridEggStageList = {}
     self.LineList = {}
@@ -100,7 +100,7 @@ end
 --         return
 --     end
 
---     local stageParent = stageTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+--     local stageParent = stageTransform:GetComponent("RectTransform")
 --     if XTool.UObjIsNil(stageParent) then
 --         XLog.Error("XUiGridChapter:RefreshAutoChangeBgStageIndex error:stage parent not exist,stageIndex is:" .. stageIndex)
 --         return
@@ -147,7 +147,7 @@ function XUiGridChapter:InitChangeBgPos(autoChangeBgArgs)
         -- local stage = self.GridStageList[stageIndex]
         local stageTrans = self.PanelStageContent.transform:Find("Stage" .. stageIndex)
         if not XTool.UObjIsNil(stageTrans) then
-            local stageParent = stageTrans:GetComponent(typeof(CS.UnityEngine.RectTransform))
+            local stageParent = stageTrans:GetComponent("RectTransform")
             local stagePosX = stageParent.anchoredPosition.x
             table.insert(self.ChangeBgPosList, {stageIndex = stageIndex,  stagePosX = stagePosX })
         end
@@ -355,7 +355,7 @@ function XUiGridChapter:GoToStage(stageId)
     if not grid then
         return
     end
-    local gridTf = grid.Parent.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local gridTf = grid.Parent.gameObject:GetComponent("RectTransform")
     --local posX = self.PanelStageContent.localPosition.x
     local trueStage = XDataCenter.FubenMainLineManager.CheckTrueStageByStageId(stageId)
     local value = trueStage and 12 or 2
@@ -768,7 +768,7 @@ end
 
 function XUiGridChapter:PlayScrollViewMove(grid)
     -- 动画
-    local gridTf = grid.Parent.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local gridTf = grid.Parent.gameObject:GetComponent("RectTransform")
     local diffX = gridTf.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridTf.localPosition.x

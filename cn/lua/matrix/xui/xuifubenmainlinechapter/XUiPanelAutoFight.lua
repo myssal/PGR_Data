@@ -15,7 +15,7 @@ function XUiPanelAutoFight:InitAutoScript()
 end
 
 function XUiPanelAutoFight:AutoInitUi()
-    self.TxtCountdown = self.Transform:Find("TxtCountdown"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtCountdown = self.Transform:Find("TxtCountdown"):GetComponent("Text")
 end
 
 function XUiPanelAutoFight:RegisterClickEvent(uiNode, func)

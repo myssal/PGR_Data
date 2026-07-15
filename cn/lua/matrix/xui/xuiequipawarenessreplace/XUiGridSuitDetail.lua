@@ -108,7 +108,7 @@ function XUiGridSuitDetail:Refresh(suitId, defaultSuitIds, isBigIcon, desPrefix,
                 textObj.text = skillDes
                 if desPrefix then
                     XScheduleManager.ScheduleOnce(function()
-                        local rect = textObj.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
+                        local rect = textObj.gameObject:GetComponent("RectTransform")
                         local desWidth = XUiHelper.CalcTextWidth(textObj)
                         local txtWidth = rect.sizeDelta.x
 

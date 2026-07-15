@@ -179,7 +179,7 @@ function XUiGachaLamiyaMain:Init3DSceneInfo()
     end
 
     local animationRoot = self.UiSceneInfo.Transform:Find("Animations")
-    self.LightControlTimeline = animationRoot:Find("LightControlTimeline"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    self.LightControlTimeline = animationRoot:Find("LightControlTimeline"):GetComponent("PlayableDirector")
 end
 
 function XUiGachaLamiyaMain:OnChildClose()
@@ -421,7 +421,7 @@ function XUiGachaLamiyaMain:RefreshUiShow()
 
     self.BtnGacha:SetDisable(not self.IsCanGacha1)
     self.BtnGacha2:SetDisable(not self.IsCanGacha10)
-    self.BtnGacha.transform:GetComponent(typeof(CS.UnityEngine.UI.RawImage)).enabled = self.IsCanGacha1
+    self.BtnGacha.transform:GetComponent("RawImage").enabled = self.IsCanGacha1
     GridBtnGachas[2].BtnGacha2.enabled = self.IsCanGacha10
     GridBtnGachas[2].RImg1.gameObject:SetActiveEx(leftCanGachaCount >= 1 and leftCanGachaCount < 10)
     GridBtnGachas[2].RImg2.gameObject:SetActiveEx(self.IsGachaTimesEnd)

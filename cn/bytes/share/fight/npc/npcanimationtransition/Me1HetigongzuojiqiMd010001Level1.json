@@ -15,17 +15,7 @@
     },
     {
         "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Stand3",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
         "Target": "Death",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Standchange",
         "TransitionDuration": 0.1
     },
     {
@@ -80,31 +70,6 @@
     },
     {
         "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Move1",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Move2",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Move3",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "RunStart",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "RunStartEnd01",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
         "Target": "Hit1",
         "TransitionDuration": 0.05
     },
@@ -155,65 +120,7 @@
     },
     {
         "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Straight",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
         "Target": "Stun",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "StraightBefore",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "StraightAfter",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Win"
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Win2",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Stop",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Fail",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Save",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "AttackQte"
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Caught",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "Squatdown",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "Target": "StopR",
         "TransitionDuration": 0.1
     },
     {
@@ -271,12 +178,6 @@
     {
         "Role": "Me1HetigongzuojiqiMd010001",
         "State": "Stand2",
-        "Target": "Standchange",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "Stand2",
         "Target": "Run",
         "TransitionDuration": 0.2
     },
@@ -303,36 +204,6 @@
         "State": "Stand2",
         "Target": "Walkr",
         "TransitionDuration": 0.3
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "Stand2",
-        "Target": "Stand2",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "Standchange",
-        "Target": "Stand1",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "Standchange",
-        "Target": "Run",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "Standchange",
-        "Target": "Walk",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "Run",
-        "Target": "Stop",
-        "TransitionDuration": 0.2
     },
     {
         "Role": "Me1HetigongzuojiqiMd010001",
@@ -522,35 +393,27 @@
     },
     {
         "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "RunStart",
-        "Target": "Run",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "RunStart",
-        "Target": "RunStartEnd01",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
         "State": "Hit1",
-        "Target": "Stand2"
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "Me1HetigongzuojiqiMd010001",
         "State": "Hit2",
-        "Target": "Stand2"
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "Me1HetigongzuojiqiMd010001",
         "State": "Hit3",
-        "Target": "Stand2"
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "Me1HetigongzuojiqiMd010001",
         "State": "Hit4",
-        "Target": "Stand2"
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "Me1HetigongzuojiqiMd010001",
@@ -590,31 +453,7 @@
     },
     {
         "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "Straight",
-        "Target": "Stand2",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
         "State": "Stun",
-        "Target": "Stand2",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "Win",
-        "Target": "Win2",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "Stop",
-        "Target": "Stand2",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Me1HetigongzuojiqiMd010001",
-        "State": "Caught",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     },
@@ -920,6 +759,30 @@
         "Role": "Me1HetigongzuojiqiMd010001",
         "Layer": 1,
         "Target": "Attack01",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Me1HetigongzuojiqiMd010001",
+        "Layer": 1,
+        "Target": "Attack02",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Me1HetigongzuojiqiMd010001",
+        "Layer": 1,
+        "Target": "Attack03",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Me1HetigongzuojiqiMd010001",
+        "Layer": 1,
+        "Target": "Attack04",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Me1HetigongzuojiqiMd010001",
+        "Layer": 1,
+        "Target": "Attack05",
         "TransitionDuration": 0.1
     },
     {

@@ -401,11 +401,11 @@
     },
     {
         "Key": "DailyActiveRewardTitle",
-        "Text": "奖励详情"
+        "Text": "详情"
     },
     {
         "Key": "WeeklyActiveRewardTitle",
-        "Text": "奖励详情"
+        "Text": "详情"
     },
     {
         "Key": "SettingCheckSave",
@@ -3032,7 +3032,7 @@
     },
     {
         "Key": "ExploreRewardTitle",
-        "Text": "奖励详情"
+        "Text": "详情"
     },
     {
         "Key": "ExploreExplain",
@@ -5239,6 +5239,10 @@
         "Text": "边界驻守"
     },
     {
+        "Key": "CharacterSkillLevelDetailWeaponOverrun",
+        "Text": "武器超限"
+    },
+    {
         "Key": "CharacterSkillLevelDetail",
         "Text": "（+{0}）"
     },
@@ -5992,7 +5996,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00EEEE><size=28>{1}</size></color>"
+        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -11288,6 +11292,26 @@
     {
         "Key": "FashionStoryProcess",
         "Text": "进度：{0}/{1}"
+    },
+    {
+        "Key": "FashionStoryRewardLock",
+        "Text": "{0}后活动领取"
+    },
+    {
+        "Key": "FashionStoryRewardGo",
+        "Text": "前往领取"
+    },
+    {
+        "Key": "FashionStoryRewardReceived",
+        "Text": "已领取"
+    },
+    {
+        "Key": "FashionStoryRewardActivityEnd",
+        "Text": "活动结束"
+    },
+    {
+        "Key": "FashionStoryUnlockAfterTime",
+        "Text": "{0}后开启"
     },
     {
         "Key": "SocialBlackTipsDesc",
@@ -16734,6 +16758,38 @@
         "Text": "无意识套装效果可额外激活，是否要激活并绑定<color=#0E70BD>【{0}】</color>?"
     },
     {
+        "Key": "EquipOverrunUnActive",
+        "Text": "未激活"
+    },
+    {
+        "Key": "EquipOverrunUnBindSuit",
+        "Text": "<color=#6F6F6F>未绑定意识</color>"
+    },
+    {
+        "Key": "EquipOverrunSkillTitleUnlock",
+        "Text": "技能强化"
+    },
+    {
+        "Key": "EquipOverrunSkillTitleStrength",
+        "Text": "技能解锁"
+    },
+    {
+        "Key": "EquipOverrunUnlockBeforeSkillTips",
+        "Text": "%s"
+    },
+    {
+        "Key": "EquipOverrunCharacterSkillTagName",
+        "Text": "谐振技能"
+    },
+    {
+        "Key": "EquipOverrunCharacterSkillTagIcon",
+        "Text": "Assets/Product/Texture/Image/IconSkill/lanse07.png"
+    },
+    {
+        "Key": "EquipOverrunCharacterWearTips",
+        "Text": "穿戴武器-%s"
+    },
+    {
         "Key": "TransfiniteRewardReceive",
         "Text": "已领取"
     },
@@ -18451,7 +18507,99 @@
     },
     {
         "Key": "BossInshotToastTowerDescDownProtected",
-        "Text": "首次未达{0}，不降层。"
+        "Text": "首次未达{0}分，不降层。"
+    },
+    {
+        "Key": "BossInshotTowerFloor",
+        "Text": "{0}F"
+    },
+    {
+        "Key": "BossInshotTowerLevelSelectorBtnNoScore",
+        "Text": "--"
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseNotInTime",
+        "Text": "关卡未到解锁时间。"
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseUnknown",
+        "Text": "因未知原因关卡没有解锁。"
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseNotReach",
+        "Text": "第{0}层分数到达{1}后解锁。"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNext",
+        "Text": "{0}分解锁下一层"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFail2",
+        "Text": "{0}分解锁下一层，两次未达成将降至{1}F。"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFail1",
+        "Text": "{0}分解锁下一层，本次未达成将降至{1}F。"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFailN",
+        "Text": "{0}分解锁下一层，{2}次未达成将降至{1}F。"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFail2",
+        "Text": "{0}分通关本层，两次未达成将降至{1}F。"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFail1",
+        "Text": "{0}分通关本层，本次未达成将降至{1}F。"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFailN",
+        "Text": "{0}分通关本层，{2}次未达成将降至{1}F。"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipStageClear",
+        "Text": "此层已通关"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipAllClear",
+        "Text": "已通关，不再触发降层"
+    },
+    {
+        "Key": "BossInshotTowerChangeBossRanking",
+        "Text": "NO. {0}"
+    },
+    {
+        "Key": "BossInshotTowerChangeBossNoRanking",
+        "Text": "未上榜"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipRetryWin",
+        "Text": "此层已通关"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipNextLevelUnlocked",
+        "Text": "已解锁下一层"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipNextLevelNotUnlocked",
+        "Text": "{0}分解锁下一层"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipFallProtected",
+        "Text": "首次未达{0}分，不降层"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipFall",
+        "Text": "未达{0}分，触发降层"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipAllCleared",
+        "Text": "已通关所有层"
+    },
+    {
+        "Key": "BossInshotSettlementTowerCheatCannotSaveReplay",
+        "Text": "作弊不许保存录像"
     },
     {
         "Key": "DlcRoomKickOutTip",
@@ -20531,7 +20679,7 @@
     },
     {
         "Key": "Theatre6BuffEffectTimes",
-        "Text": "生效：{0}"
+        "Text": "已生效次数：{0}"
     },
     {
         "Key": "Theatre6BuffRemainingTimes",
@@ -20826,6 +20974,54 @@
         "Text": "选择"
     },
     {
+        "Key": "Theatre6PvpEnvReplaceSuccess",
+        "Text": "隐匿暗障替换成功"
+    },
+    {
+        "Key": "Theatre6PvpEnvReplaceFail",
+        "Text": "尚未解锁该隐匿暗障"
+    },
+    {
+        "Key": "Theatre6PvpFightSuccsee",
+        "Text": "挑战成功"
+    },
+    {
+        "Key": "Theatre6PvpFightFail",
+        "Text": "挑战失败"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc1",
+        "Text": "挑战成功 +{0}"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc2",
+        "Text": "三场全胜 + {0}"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc3",
+        "Text": "<color=red>挑战失败 -{0}</color>"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc4",
+        "Text": "段位升阶成功"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc5",
+        "Text": "分数已锁定，失败不扣分"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc6",
+        "Text": "分数已锁定，胜利不加分"
+    },
+    {
+        "Key": "Theatre6PvpRankTime",
+        "Text": "{0}-{1}"
+    },
+    {
+        "Key": "Theatre6PvpRoundName",
+        "Text": "第{0}场"
+    },
+    {
         "Key": "BattleFashionUndownloadedTipTitle",
         "Text": "提示"
     },
@@ -20875,7 +21071,7 @@
     },
     {
         "Key": "PassportFashionBuyBtnText",
-        "Text": "付费情报获取"
+        "Text": "绝密情报获取"
     },
     {
         "Key": "FashionSuitProgressComplate",
@@ -20903,7 +21099,7 @@
     },
     {
         "Key": "PassportObtain",
-        "Text": "本期通行证轮次为 <color=#57f0fb>4</color> 轮，赠送您补偿奖励"
+        "Text": "本期通行证轮次为 <color=#0f70bc>6</color> 轮，赠送您补偿奖励"
     },
     {
         "Key": "ShopItemRoleTips",
@@ -21026,11 +21222,83 @@
         "Text": "商品均冻结，无法刷新"
     },
     {
+        "Key": "Theatre6SaveCoverDefenseContent",
+        "Text": "该归档正在防守，替换后新归档将进入防守队伍，是否继续"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveNotOpen",
+        "Text": "直播将于{0}开启"
+    },
+    {
+        "Key": "ConcertPreHeatingReplayNotOpen",
+        "Text": "回放暂未开放"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveUrlEmpty",
+        "Text": "直播链接待配置"
+    },
+    {
+        "Key": "ConcertPreHeatingStageLockTip",
+        "Text": "关卡将在{0}解锁"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveDayText",
+        "Text": "距音乐会还有{0}天"
+    },
+    {
+        "Key": "ConcertPreHeatingFinalStageName",
+        "Text": "揭幕"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalFar",
+        "Text": "参数偏离目标指数"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalNear",
+        "Text": "初步校正成功，已接近音律指数范围~"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalVeryNear",
+        "Text": "精细校正成功，即将抵达音律核心~"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalSyncing",
+        "Text": "已抵达音律核心，加载共鸣中……"
+    },
+    {
+        "Key": "ConcertPreHeatingChatBeforeLiveText",
+        "Text": "音乐会即将开启，倒计时{0}"
+    },
+    {
+        "Key": "ConcertPreHeatingChatLiveText",
+        "Text": "音乐会直播进行中，点击前往"
+    },
+    {
         "Key": "TurntableDrawTimes",
         "Text": "x{0}"
     },
     {
         "Key": "TurntableDrawTimesWithNotEnough",
         "Text": "<color=#FF6161>x{0}</color>"
+    },
+    {
+        "Key": "PassportTaskWeeklyChallengePoints",
+        "Text": "本轮挑战点数：{0}/{1}"
+    },
+    {
+        "Key": "PassportTaskWeeklyRemainTime",
+        "Text": "本轮剩余时间：{0}"
+    },
+    {
+        "Key": "PassportTaskActivityProgress",
+        "Text": "手册任务完成进度：{0}/{1}"
+    },
+    {
+        "Key": "PurchaseFashionDetailCoinNotEnough",
+        "Text": "<color=#FF0000>{0}</color>"
+    },
+    {
+        "Key": "PurchaseFashionSuitDetailCoinNotEnough",
+        "Text": "<color=#FF0000>{0}</color>"
     }
 ]

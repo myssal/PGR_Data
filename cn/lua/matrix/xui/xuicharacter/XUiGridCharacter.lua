@@ -6,7 +6,7 @@ function XUiGridCharacter:Ctor(ui, rootUi, character, clickCallback)
     self.Transform = ui.transform
     self.Character = character
     self.ClickCallback = clickCallback
-    self.RectTransform = ui:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.RectTransform = ui:GetComponent("RectTransform")
 
     ---@type XCharacterAgency
     local ag = XMVCA:GetAgency(ModuleId.XCharacter)

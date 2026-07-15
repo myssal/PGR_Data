@@ -1053,6 +1053,21 @@
         "ProgressTextColors": [
             "#ffffff"
         ],
+        "SkipIds": [
+            535
+        ],
+        "SkipConditions": [
+            1007151
+        ],
+        "SkipIcons": [
+            "Assets/Product/Texture/Image/StoryJump/StoryShortJump17.png"
+        ],
+        "SkipNames": [
+            "浮点纪实·第16章"
+        ],
+        "SkipChapterNames": [
+            "孑念空行"
+        ],
         "SpineStageIndexs": [
             2,
             3,
@@ -1087,7 +1102,6 @@
         "Difficult": 1,
         "DifficultName": "普通",
         "DifficultEnName": "难度",
-        "ActivityTimeId": 47205,
         "ActivityCondition": 770400,
         "OpenCondition": 770400,
         "StageGroupIds": [
@@ -1107,7 +1121,6 @@
             "#ffffff"
         ],
         "SpineStageIndexs": [
-            1,
             3,
             4,
             8,
@@ -1123,7 +1136,6 @@
             28
         ],
         "SpineProgressWans": [
-            183,
             1114,
             1375,
             2544,
@@ -1137,6 +1149,51 @@
             8757,
             8940,
             9582
+        ]
+    },
+    {
+        "ChapterId": 2016,
+        "Difficult": 1,
+        "DifficultName": "普通",
+        "DifficultEnName": "难度",
+        "ActivityTimeId": 48301,
+        "ActivityCondition": 770400,
+        "OpenCondition": 770400,
+        "StageGroupIds": [
+            62
+        ],
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor16DP.prefab",
+        "BgStageIndexs": [
+            1
+        ],
+        "TitleTextColors": [
+            "#ffffff"
+        ],
+        "LeftTimeTextColors": [
+            "#0f70BC"
+        ],
+        "ProgressTextColors": [
+            "#ffffff"
+        ],
+        "EnterSpineStageIndex": [
+            4,
+            8
+        ],
+        "EnterSpineName": [
+            "Enable1",
+            "Enable2"
+        ],
+        "SwitchSpineStageIndex": [
+            4,
+            8
+        ],
+        "SwitchAheadSpineName": [
+            "Enable1_2_page",
+            "Enable2_3_page"
+        ],
+        "SwitchBackwardSpineName": [
+            "Enable2_1_page",
+            "Enable3_2_page"
         ]
     }
 ]

@@ -130,7 +130,7 @@ function XUiSucceedBossMainChapterItem:RefreshNormal()
             end
             --if not monsterItem then
             --    local tempGameObject = XUiHelper.Instantiate(self.GridBoss, self["Grid" .. i])
-            --    tempGameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition = VECTOR2_ZERO
+            --    tempGameObject:GetComponent("RectTransform").anchoredPosition = VECTOR2_ZERO
             --    monsterItem = XUiSucceedBossMonsterItem.New(tempGameObject, self)
             --    self.MonsterItems[i] = monsterItem
             --end
@@ -168,7 +168,7 @@ function XUiSucceedBossMainChapterItem:RefreshOptionalByCurStageInfos()
         end
         --if not monsterItem then
         --    local tempGameObject = XUiHelper.Instantiate(self.GridBoss, self["Grid" .. i])
-        --    tempGameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition = VECTOR2_ZERO
+        --    tempGameObject:GetComponent("RectTransform").anchoredPosition = VECTOR2_ZERO
         --    monsterItem = XUiSucceedBossMonsterItem.New(tempGameObject, self)
         --    self.MonsterItems[i] = monsterItem
         --end
@@ -195,7 +195,7 @@ function XUiSucceedBossMainChapterItem:RefreshOptionalByRecordData()
             end
             --if not monsterItem then
             --    local tempGameObject = XUiHelper.Instantiate(self.GridBoss, self["Grid" .. i])
-            --    tempGameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition = VECTOR2_ZERO
+            --    tempGameObject:GetComponent("RectTransform").anchoredPosition = VECTOR2_ZERO
             --    monsterItem = XUiSucceedBossMonsterItem.New(tempGameObject, self)
             --    self.MonsterItems[i] = monsterItem
             --end
@@ -231,7 +231,7 @@ function XUiSucceedBossMainChapterItem:RefreshOptionalByPassChapterInfo(passChap
         end
         --if not monsterItem then
         --    local tempGameObject = XUiHelper.Instantiate(self.GridBoss, self["Grid" .. i])
-        --    tempGameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition = VECTOR2_ZERO
+        --    tempGameObject:GetComponent("RectTransform").anchoredPosition = VECTOR2_ZERO
         --    monsterItem = XUiSucceedBossMonsterItem.New(tempGameObject, self)
         --    self.MonsterItems[i] = monsterItem
         --end

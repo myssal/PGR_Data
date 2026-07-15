@@ -49,8 +49,8 @@ function XUiPanelTheatre4BaseGrid:Ctor()
     -- 层级动画
     ---@type table<number, UnityEngine.Playables.PlayableDirector>
     self.FloorAnim = {
-        [1] = self.MapGridDisable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)),
-        [2] = self.MapGridEnable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)),
+        [1] = self.MapGridDisable:GetComponent("PlayableDirector"),
+        [2] = self.MapGridEnable:GetComponent("PlayableDirector"),
     }
     -- 当前格子探索状态
     self.CurGridExploreState = -1

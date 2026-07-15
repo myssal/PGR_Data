@@ -15,7 +15,7 @@ function XUiGridTishi:InitAutoScript()
 end
 
 function XUiGridTishi:AutoInitUi()
-    self.TxtInfo = self.Transform:Find("ImageBg/TxtInfo"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtInfo = self.Transform:Find("ImageBg/TxtInfo"):GetComponent("Text")
     -- self.TxtTime = XUiHelper.TryGetComponent(self.Transform, "TxtTime", "Text")
 end
 

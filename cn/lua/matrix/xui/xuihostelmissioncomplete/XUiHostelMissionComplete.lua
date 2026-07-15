@@ -20,13 +20,13 @@ function XUiHostelMissionComplete:InitAutoScript()
 end
 
 function XUiHostelMissionComplete:AutoInitUi()
-    self.BtnOk = self.Transform:Find("FullScreenBackground/BtnOk"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.ImgHeadIcon = self.Transform:Find("SafeAreaContentPane/ImgHeadIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.TxtName = self.Transform:Find("SafeAreaContentPane/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtDesc = self.Transform:Find("SafeAreaContentPane/TxtDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.ImgRewardIcon = self.Transform:Find("SafeAreaContentPane/ImgRewardIcon"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.TxtRewardCount = self.Transform:Find("SafeAreaContentPane/TxtRewardCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtMsg = self.Transform:Find("SafeAreaContentPane/TxtMsg"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnOk = self.Transform:Find("FullScreenBackground/BtnOk"):GetComponent("Button")
+    self.ImgHeadIcon = self.Transform:Find("SafeAreaContentPane/ImgHeadIcon"):GetComponent("Image")
+    self.TxtName = self.Transform:Find("SafeAreaContentPane/TxtName"):GetComponent("Text")
+    self.TxtDesc = self.Transform:Find("SafeAreaContentPane/TxtDesc"):GetComponent("Text")
+    self.ImgRewardIcon = self.Transform:Find("SafeAreaContentPane/ImgRewardIcon"):GetComponent("Image")
+    self.TxtRewardCount = self.Transform:Find("SafeAreaContentPane/TxtRewardCount"):GetComponent("Text")
+    self.TxtMsg = self.Transform:Find("SafeAreaContentPane/TxtMsg"):GetComponent("Text")
 end
 
 function XUiHostelMissionComplete:GetAutoKey(uiNode, eventName)

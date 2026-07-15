@@ -115,7 +115,7 @@ function XUiPanelBlackScreen:SetScreenMask(skill)
     self.TextTipsCondition.gameObject:SetActiveEx(not self:IsNoneMask())
     
     self.PanelBuffSelect.transform.position = self.PanelBuffParent.transform.position
-    self.PanelBuffSelect:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta = self.PanelBuffParent.sizeDelta
+    self.PanelBuffSelect:GetComponent("RectTransform").sizeDelta = self.PanelBuffParent.sizeDelta
 
     if self:IsBuffMask() then
         self.Base:PlayAnimation("PanelBuffTipsLoop", nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Loop)

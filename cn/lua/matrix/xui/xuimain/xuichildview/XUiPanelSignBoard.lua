@@ -327,20 +327,20 @@ function XUiPanelSignBoard:InitAutoScript()
 end
 
 function XUiPanelSignBoard:AutoInitUi()
-    --self.BtnRole = self.Transform:Find("BtnRole"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    --self.BtnRole = self.Transform:Find("BtnRole"):GetComponent("Button")
     self.PanelLayout = self.Transform:Find("PanelLayout")
     self.PanelChat = self.Transform:Find("PanelLayout/PanelChat")
     local txtContent = self.Transform:Find("PanelLayout/PanelChat/TxtList/Viewport/Content/TxtContent")
-    self.TxtContent = txtContent:GetComponent(typeof(CS.UnityEngine.UI.Text)) or txtContent:GetComponent("XUiRichTextCustomRender")
+    self.TxtContent = txtContent:GetComponent("Text") or txtContent:GetComponent("XUiRichTextCustomRender")
     self.PanelOpration = self.Transform:Find("PanelLayout/PanelOpration")
-    self.BtnReplace = self.Transform:Find("PanelLayout/PanelOpration/BtnReplace"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnReplace = self.Transform:Find("PanelLayout/PanelOpration/BtnReplace"):GetComponent("Button")
     local btnSceneObj=self.Transform:Find('PanelLayout/PanelOpration/BtnSceneSetting')
     if btnSceneObj then
-        self.BtnSceneSetting=btnSceneObj:GetComponent(typeof(CS.UnityEngine.UI.Button))
+        self.BtnSceneSetting=btnSceneObj:GetComponent('Button')
     end
-    self.BtnCommunication = self.Transform:Find("PanelLayout/PanelOpration/BtnCommunication"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnCommunication = self.Transform:Find("PanelLayout/PanelOpration/BtnCommunication"):GetComponent("Button")
     
-    self.LayoutContent = self.PanelLayout:Find("PanelChat/TxtList/Viewport/Content"):GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.LayoutContent = self.PanelLayout:Find("PanelChat/TxtList/Viewport/Content"):GetComponent("RectTransform")
     self.LayoutContentOriginPos = XTool.Clone(self.LayoutContent.localPosition)
 
     if self.BtnSceneSetting then

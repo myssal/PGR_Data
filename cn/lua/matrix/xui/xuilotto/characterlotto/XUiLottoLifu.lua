@@ -181,17 +181,17 @@ end
 
 function XUiLottoLifu:_PlayLongEnableAnimation(time)
     ---@type UnityEngine.Playables.PlayableDirector
-    local uiDirector = self.GameObject:FindTransform("AnimEnableLong"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    local uiDirector = self.GameObject:FindTransform("AnimEnableLong"):GetComponent("PlayableDirector")
     uiDirector.initialTime = time or 0
     uiDirector.extrapolationMode = CS.UnityEngine.Playables.DirectorWrapMode.Hold
     uiDirector:Evaluate()
     uiDirector:Play()
-    local longDirector = self.AnimEnableLong:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    local longDirector = self.AnimEnableLong:GetComponent("PlayableDirector")
     longDirector.initialTime = time or 0
     longDirector:Evaluate()
     longDirector:Play()
     XLuaUiManager.SetMask(true)
-    self.AnimationStart1:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Stop()
+    self.AnimationStart1:GetComponent("PlayableDirector"):Stop()
     XScheduleManager.ScheduleOnce(function()
         XLuaUiManager.SetMask(false)
         self:ShowExtraReward()
@@ -267,8 +267,8 @@ function XUiLottoLifu:AddBtnListener()
     end
     self.BtnStart.CallBack = function()
         self.BtnStart.gameObject:SetActiveEx(false)
-        self:_PlayLongEnableAnimation(self.AnimationStart1:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)).time)
-        self.AnimationStart1:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Pause()
+        self:_PlayLongEnableAnimation(self.AnimationStart1:GetComponent("PlayableDirector").time)
+        self.AnimationStart1:GetComponent("PlayableDirector"):Pause()
     end
 
     self.BtnDraw.CallBack = function()

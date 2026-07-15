@@ -14,10 +14,10 @@ function XUiPanelBtn:InitAutoScript()
 end
 
 function XUiPanelBtn:AutoInitUi()
-    self.TxtFightTimes = self.Transform:Find("TxtFightTimes"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.BtnSub = self.Transform:Find("BtnSub"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.BtnAdd = self.Transform:Find("BtnAdd"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.BtnStart = self.Transform:Find("BtnStart"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtFightTimes = self.Transform:Find("TxtFightTimes"):GetComponent("Text")
+    self.BtnSub = self.Transform:Find("BtnSub"):GetComponent("Button")
+    self.BtnAdd = self.Transform:Find("BtnAdd"):GetComponent("Button")
+    self.BtnStart = self.Transform:Find("BtnStart"):GetComponent("Button")
 end
 
 function XUiPanelBtn:RegisterClickEvent(uiNode, func)

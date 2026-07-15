@@ -38,14 +38,12 @@ end
 function XDyeMergeGameControl:EnterGame(stageId)
     self:_InitGamingControl() 
     self.GamingControl:InitGame(stageId)
-    self._Model:CacheCurGamingStageId(stageId)
 end
 
 --- 切换关卡：已在游戏中时复用 GamingControl，否则走完整初始化
 function XDyeMergeGameControl:EnterStage(stageId)
     if self.GamingControl then
         self.GamingControl:ResetGame(stageId)
-        self._Model:CacheCurGamingStageId(stageId)
     else
         self:EnterGame(stageId)
     end
@@ -56,7 +54,6 @@ function XDyeMergeGameControl:ExitGame()
         self.GamingControl:RecordExitResult()
     end
     self:_ReleaseGamingControl()
-    self._Model:CacheCurGamingStageId(nil)
 end
 
 function XDyeMergeGameControl:_InitGamingControl()

@@ -12,7 +12,7 @@ function XUiExpeditionRoleListCharaInfo:OnStart(rootUi)
     self.RootUi = rootUi
     self.RootUi.CharaInfo = self
     self.WearingAwarenessGrids = {}
-    local BtnText = self.BtnLevelUp.transform:Find("Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    local BtnText = self.BtnLevelUp.transform:Find("Text"):GetComponent("Text")
     if BtnText then
         BtnText.text = CS.XTextManager.GetText("ExpeditionRoleListRoleButtonText")
     end

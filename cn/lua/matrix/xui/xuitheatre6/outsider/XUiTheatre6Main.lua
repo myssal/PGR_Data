@@ -13,6 +13,13 @@ function XUiTheatre6Main:OnAwake()
     self:InitButtonEvents()
     self:Init3DPanel()
 
+    if self:IsPvpOpen() then
+        self._PvpEnergy = XUiPanelTheatre6PvpEnergy.New(self.PanelPVPEnergy, self)
+        self._Control:RequestPvpGetActionPoint()
+    else
+        self.PanelPVPEnergy.gameObject:SetActiveEx(false)
+    end
+
     self._RewardDuration = self._Control:GetIntClientConfigValue("RewardDuration")
     self._FirstEnterGuideId = self._Control:GetIntClientConfigValue("FirstEnterGuideId")
 end
@@ -29,7 +36,6 @@ function XUiTheatre6Main:OnEnable()
     self:Refresh()
     self:RefreshCommon()
     self:RefreshShowItems()
-    self:CheckPvpTimeChange()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_MODE_END, self.Refresh, self)
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.Theatre6)
     self._Scene:UpdateRogueModel(true)
@@ -43,11 +49,9 @@ function XUiTheatre6Main:OnEnable()
             end, nil, nil, true)
             self:Refresh()
             self:CheckPlayGuide()
-            self:CheckMainUiPvpGuide()
         end)
     else
         self:TryShowUpdatePopup()
-        self:CheckMainUiPvpGuide()
     end
 end
 
@@ -56,7 +60,6 @@ function XUiTheatre6Main:OnDisable()
         XLuaUiManager.SetMask(false, MaskKey)
     end
     self:CheckSceneDisable()
-    self:StopPvpTimeChangeTimer()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_MODE_END, self.Refresh, self)
 end
 
@@ -155,20 +158,19 @@ function XUiTheatre6Main:RefreshFirstPlayState()
 end
 
 function XUiTheatre6Main:RefreshPvpEnergy()
-    local isPvpOpen = self:IsPvpOpen()
     if not self._PvpEnergy then
         --- 要请求下模块开启 服务端才会推体力数据
-        if isPvpOpen then
+        if self:IsPvpOpen() then
             self._PvpEnergy = XUiPanelTheatre6PvpEnergy.New(self.PanelPVPEnergy, self)
-            self._Control:RequestGetPvpPreviewInfo()
         else
-            self.PanelPVPEnergy.gameObject:SetActiveEx(false)
             return
         end
     end
 
     local isOpen = self._Control:CheckOpenGamePlayModeCond()
-    if isOpen and isPvpOpen then
+    local isLocked = self._Control:CheckPvpModeUnlock()
+
+    if isOpen and isLocked then
         self._PvpEnergy:Open()
         self._PvpEnergy:Refresh()
     else
@@ -179,22 +181,21 @@ end
 function XUiTheatre6Main:RefreshBtnStory()
     local hasStoryProgress = self._Control:CheckHasStoryProgress()
     self.BtnStoryAbandon.gameObject:SetActiveEx(hasStoryProgress)
-    self.BtnStory:ShowReddot(self._Control:CheckOpenGamePlayModeCond() and self._Control:CheckHasNewCharacter(XEnumConst.Theatre6.CharacterNewTagType.Story))
 end
 
 function XUiTheatre6Main:RefreshBtnPlay()
     local hasPlayProgress = self._Control:CheckHasPlayProgress()
     self.BtnPlayAbandon.gameObject:SetActiveEx(hasPlayProgress)
-    self.BtnPlay:ShowReddot(self._Control:CheckHasNewCharacter(XEnumConst.Theatre6.CharacterNewTagType.Game))
+    self.BtnPlay:ShowReddot(self._Control:CheckHasNewCharacter())
 end
 
 function XUiTheatre6Main:RefreshBtnPvp()
-    local isPvpOpen = self:IsPvpOpen()
-    self.BtnPvp:SetDisable(not isPvpOpen)
+    local isLocked = self._Control:CheckPvpModeUnlock()
+    self.BtnPvp:SetDisable(not isLocked)
 end
 
 function XUiTheatre6Main:NewStoryRedPoint(result)
-    self.BtnStory:ShowReddot(result >= 0 or (self._Control:CheckOpenGamePlayModeCond() and self._Control:CheckHasNewCharacter(XEnumConst.Theatre6.CharacterNewTagType.Story)))
+    self.BtnStory:ShowReddot(result >= 0)
 end
 
 function XUiTheatre6Main:OnTaskRewardRedPoint(result)
@@ -245,6 +246,7 @@ function XUiTheatre6Main:OnBtnStoryClick()
     self._CurCommonGuideId = nil
 
     self._Control:SaveLastViewStoryTime()
+    self.BtnStory:ShowReddot(false)
 
     if self:CheckReEnterSettlement(XEnumConst.Theatre6.PlayMode.Story) then
         return
@@ -361,7 +363,7 @@ function XUiTheatre6Main:ContinueStoryGame()
 end
 
 function XUiTheatre6Main:EnterStoryMode()
-    self:EnterChooseCharacter(XEnumConst.Theatre6.PlayMode.Story, XEnumConst.Theatre6.CharacterNewTagType.Story)
+    self:EnterChooseCharacter(XEnumConst.Theatre6.PlayMode.Story)
 end
 
 ---检查是否有未结算的存档，有则直接进入结算界面
@@ -406,10 +408,10 @@ function XUiTheatre6Main:ContinuePlayGame()
 end
 
 function XUiTheatre6Main:EnterPlayMode()
-    self:EnterChooseCharacter(XEnumConst.Theatre6.PlayMode.GamePlay, XEnumConst.Theatre6.CharacterNewTagType.Game)
+    self:EnterChooseCharacter(XEnumConst.Theatre6.PlayMode.GamePlay)
 end
 
-function XUiTheatre6Main:EnterChooseCharacter(mode, tagType)
+function XUiTheatre6Main:EnterChooseCharacter(mode)
     local index = self._Control:GetModeSelectRoleIndex(mode)
     self._Scene:SetModelSelect(index)
 
@@ -418,7 +420,7 @@ function XUiTheatre6Main:EnterChooseCharacter(mode, tagType)
     local timerId = XScheduleManager.ScheduleOnce(function()
         self._IsEnterChooseCharacter = true
         XLuaUiManager.SetMask(false, MaskKey)
-        XLuaUiManager.Open("UiTheatre6ChooseCharacter", mode, tagType)
+        XLuaUiManager.Open("UiTheatre6ChooseCharacter", mode)
     end, duration)
     self:_AddTimerId(timerId)
 end
@@ -441,14 +443,6 @@ end
 
 function XUiTheatre6Main:IsPvpOpen(isShowTip)
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Theatre6Pvp, true, not isShowTip) then
-        return false
-    end
-
-    -- 判断是否在活动时间内
-    if not self._Control:IsPvpInActivityTime() then
-        if isShowTip then
-            self._Control:ShowTip(self._Control:GetPvpClientConfigValue("NotInActivityTime"))
-        end
         return false
     end
 
@@ -620,66 +614,6 @@ function XUiTheatre6Main:StopTaskLimitTimer()
         XScheduleManager.UnSchedule(self._TaskLimitTimerId)
         self._TaskLimitTimerId = nil
     end
-end
-
-function XUiTheatre6Main:CheckPvpTimeChange()
-    self:StopPvpTimeChangeTimer()
-
-    local timeId = self._Control:GetPvpActivityTimeId()
-    if not XTool.IsNumberValid(timeId) then
-        return
-    end
-
-    local now = XTime.GetServerNowTimestamp()
-    local startTime = XFunctionManager.GetStartTimeByTimeId(timeId)
-    local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
-
-    --找下一个未到达的时间
-    local nextTime
-    if XTool.IsNumberValid(startTime) and now < startTime then
-        nextTime = startTime
-    elseif XTool.IsNumberValid(endTime) and now < endTime then
-        nextTime = endTime
-    end
-
-    if not nextTime then
-        return
-    end
-
-    --延后1秒触发
-    local leftTime = (math.max(0, nextTime - now) + 1) * XScheduleManager.SECOND
-    self._PvpTimeChangeTimerId = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        self._PvpTimeChangeTimerId = nil
-        self:RefreshBtnPvp()
-        self:RefreshPvpEnergy()
-        --继续监听下一个
-        self:CheckPvpTimeChange()
-    end, leftTime)
-end
-
-function XUiTheatre6Main:StopPvpTimeChangeTimer()
-    if self._PvpTimeChangeTimerId then
-        XScheduleManager.UnSchedule(self._PvpTimeChangeTimerId)
-        self._PvpTimeChangeTimerId = nil
-    end
-end
-
----Pvp引导
-function XUiTheatre6Main:CheckMainUiPvpGuide()
-    local guideId = self._Control:GetIntClientConfigValue("MainUiPvpGuideId")
-    if not XTool.IsNumberValid(guideId) then
-        return
-    end
-    if not self:IsPvpOpen() then
-        return
-    end
-    if XDataCenter.GuideManager.CheckIsGuide(guideId) then
-        return
-    end
-    XDataCenter.GuideManager.PlayGuide(guideId)
 end
 
 return XUiTheatre6Main

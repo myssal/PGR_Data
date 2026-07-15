@@ -24,8 +24,8 @@ function XUiGuildWarFormationMemberGrid:InitComponent()
     self.ImgSelect.gameObject:SetActiveEx(false)
     self.PanelEffect.gameObject:SetActiveEx(false)
     self.BtnMember.CallBack = function() self:OnMemberClick() end
-    self.PanelEffectRT = self.PanelEffect:GetComponent(typeof(CS.UnityEngine.RectTransform))
-    self.PanelViewRT = self.Transform.parent.parent.parent.parent:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.PanelEffectRT = self.PanelEffect:GetComponent("RectTransform")
+    self.PanelViewRT = self.Transform.parent.parent.parent.parent:GetComponent("RectTransform")
 end
 
 ---@param guildWarMember XGuildWarMember

@@ -1923,10 +1923,4 @@ XEventId = {
     EVENT_INIT_CONFIG_BY_ARGS = "EVENT_INIT_CONFIG_BY_ARGS", -- XTabConfig调用InitConfigByArgs
     EVENT_ADD_SIGLE_CONFIG = "EVENT_ADD_SIGLE_CONFIG", -- XTabConfig调用AddSingleConfig
     --endregion
-    
-    --region 大染色玩法
-    
-    EVENT_DYEMERGE_GAME_CLICK_POS = "EVENT_DYEMERGE_GAME_CLICK_POS", -- 通过事件指定点击离散坐标位置上的方块
-    
-    --endregion
 }

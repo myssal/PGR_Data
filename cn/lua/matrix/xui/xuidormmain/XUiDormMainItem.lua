@@ -141,7 +141,7 @@ function XUiDormMainItem:RefreshPet()
         local iconPath = template.HeadRoundIcon
         local icon = self.PetIcons[index]
         if not icon then
-            icon = panel:Find("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+            icon = panel:Find("Icon"):GetComponent("RawImage")
             self.PetIcons[index] = icon
         end
         icon:SetRawImage(iconPath)

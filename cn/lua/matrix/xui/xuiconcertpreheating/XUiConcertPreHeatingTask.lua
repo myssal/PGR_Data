@@ -5,13 +5,7 @@ local XDynamicGridTask = require("XUi/XUiTask/XDynamicGridTask")
 function XUiConcertPreHeatingTask:OnAwake()
     self:InitDynamicTable()
     self:InitButton()
-    self.AssetPanel = XUiHelper.XUiPanelAsset(
-        self,
-        self.PanelAsset,
-        XDataCenter.ItemManager.ItemId.FreeGem,
-        XDataCenter.ItemManager.ItemId.ActionPoint,
-        XDataCenter.ItemManager.ItemId.Coin
-    )
+    self.AssetPanel = XUiHelper.XUiPanelAsset(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
 end
 
 function XUiConcertPreHeatingTask:OnStart()
@@ -21,6 +15,16 @@ end
 
 function XUiConcertPreHeatingTask:OnEnable()
     self:RefreshDynamicTable()
+end
+
+function XUiConcertPreHeatingTask:OnGetEvents()
+    return { XEventId.EVENT_FINISH_TASK, XEventId.EVENT_TASK_SYNC }
+end
+
+function XUiConcertPreHeatingTask:OnNotify(evt, ...)
+    if evt == XEventId.EVENT_FINISH_TASK or evt == XEventId.EVENT_TASK_SYNC then
+        self:RefreshDynamicTable()
+    end
 end
 
 function XUiConcertPreHeatingTask:InitButton()

@@ -41,7 +41,7 @@ function XUiFightAchievementGrid:Ctor(parent, achievementId, config)
     end
 
     self.Prefab = prefabGameObj
-    local rectTransform = prefabGameObj:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local rectTransform = prefabGameObj:GetComponent("RectTransform")
     rectTransform.anchorMax = pivot
     rectTransform.anchorMin = pivot
     rectTransform.anchoredPosition = CS.UnityEngine.Vector2.zero

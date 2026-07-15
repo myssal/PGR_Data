@@ -20,7 +20,7 @@ function XUiLineArithmetic2GameGrid:OnDisable()
     self._IsSelected = nil
     -- 复用时,需要修改默认颜色
     if not self._IsRedCount then
-        local image = self.PanelCount:GetComponent(typeof(CS.UnityEngine.UI.Image))
+        local image = self.PanelCount:GetComponent("Image")
         if image then
             image.color = XUiHelper.Hexcolor2Color("5C658BFF")
         end
@@ -124,12 +124,12 @@ function XUiLineArithmetic2GameGrid:Update(data)
             if data.IsEatRed ~= self._IsRedCount then
                 self._IsRedCount = data.IsEatRed
                 if data.IsEatRed then
-                    local image = self.PanelCount:GetComponent(typeof(CS.UnityEngine.UI.Image))
+                    local image = self.PanelCount:GetComponent("Image")
                     if image then
                         image.color = XUiHelper.Hexcolor2Color("A64059FF")
                     end
                 else
-                    local image = self.PanelCount:GetComponent(typeof(CS.UnityEngine.UI.Image))
+                    local image = self.PanelCount:GetComponent("Image")
                     if image then
                         image.color = XUiHelper.Hexcolor2Color("5C658BFF")
                     end

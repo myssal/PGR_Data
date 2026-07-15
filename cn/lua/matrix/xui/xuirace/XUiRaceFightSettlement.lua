@@ -291,7 +291,7 @@ function XUiRaceFightSettlement:PlayPlatformUp()
     local platform = self.UiSceneInfo.Transform:FindTransform("Racing_BanjiangtaiAni")
     if not XTool.UObjIsNil(platform) then
         ---@type UnityEngine.Animator
-        local animator = platform:GetComponent(typeof(CS.UnityEngine.Animator))
+        local animator = platform:GetComponent("Animator")
         if not XTool.UObjIsNil(animator) then
             animator:Play("FloorUpLoop")
         end

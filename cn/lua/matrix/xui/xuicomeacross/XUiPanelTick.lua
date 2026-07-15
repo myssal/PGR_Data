@@ -26,8 +26,8 @@ function XUiPanelTick:InitAutoScript()
 end
 
 function XUiPanelTick:AutoInitUi()
-    self.ImgRight = self.Transform:Find("ImgRight"):GetComponent(typeof(CS.UnityEngine.UI.Image))
-    self.ImgWrong = self.Transform:Find("ImgWrong"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgRight = self.Transform:Find("ImgRight"):GetComponent("Image")
+    self.ImgWrong = self.Transform:Find("ImgWrong"):GetComponent("Image")
 end
 
 function XUiPanelTick:RegisterClickEvent(uiNode, func)

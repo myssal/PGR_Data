@@ -332,13 +332,13 @@ function XUiMoeWarVote:InitVotePanel()
         local panelObj = self.Panel01:FindTransform("PanelVote" .. i).gameObject
         local panel = XUiPanelPlayerVote.New(panelObj)
         tableInsert(self.ThreeVotePanel, panel)
-        local img = panelObj:FindTransform("ImgIconResult" .. i):GetComponent(typeof(CS.UnityEngine.UI.Image))
+        local img = panelObj:FindTransform("ImgIconResult" .. i):GetComponent("Image")
         tableInsert(self.ThreeVoteResultImgList, img)
 
         local finalObj = self.Panel02:FindTransform("PanelVote" .. i).gameObject
         local finalPanel = XUiPanelPlayerVote.New(finalObj)
         tableInsert(self.FinalVotePanel, finalPanel)
-        local finalImg = finalObj:FindTransform("ImgIconResult" .. i):GetComponent(typeof(CS.UnityEngine.UI.Image))
+        local finalImg = finalObj:FindTransform("ImgIconResult" .. i):GetComponent("Image")
         tableInsert(self.FinalVoteResultImgList, finalImg)
     end
 end
@@ -347,8 +347,8 @@ end
 function XUiMoeWarVote:InitNormalPair(obj, pair, match)
     local playerA = XDataCenter.MoeWarManager.GetPlayer(pair.Players[1])
     local playerB = XDataCenter.MoeWarManager.GetPlayer(pair.Players[2])
-    local imgLeftHead = obj.transform:Find("Head1/StandIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    local imgRightHead = obj.transform:Find("Head2/StandIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    local imgLeftHead = obj.transform:Find("Head1/StandIcon"):GetComponent("RawImage")
+    local imgRightHead = obj.transform:Find("Head2/StandIcon"):GetComponent("RawImage")
     local btn = obj:GetComponent("XUiButton")
     if pair.WarSituation == XMoeWarConfig.WarSituationType.WinGroup then
         btn:SetNameByGroup(1, CS.XTextManager.GetText("MoeWarWinnerGroup"))
@@ -370,9 +370,9 @@ function XUiMoeWarVote:InitThreePair(obj, pair, match)
     local playerA = XDataCenter.MoeWarManager.GetPlayer(pair.Players[1])
     local playerB = XDataCenter.MoeWarManager.GetPlayer(pair.Players[2])
     local playerC = XDataCenter.MoeWarManager.GetPlayer(pair.Players[3])
-    local imgLeftHead = obj.transform:Find("Head1/StandIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    local imgMidHead = obj.transform:Find("Head2/StandIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    local imgRightHead = obj.transform:Find("Head3/StandIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    local imgLeftHead = obj.transform:Find("Head1/StandIcon"):GetComponent("RawImage")
+    local imgMidHead = obj.transform:Find("Head2/StandIcon"):GetComponent("RawImage")
+    local imgRightHead = obj.transform:Find("Head3/StandIcon"):GetComponent("RawImage")
     local btn = obj:GetComponent("XUiButton")
     imgLeftHead:SetRawImage(playerA:GetCircleHead())
     imgMidHead:SetRawImage(playerB:GetCircleHead())
@@ -389,11 +389,11 @@ end
 
 ---@param obj UnityEngine.GameObject
 function XUiMoeWarVote:InitRankingPair(obj, pair, match, rank)
-    local txtRank = obj:FindTransform("TxtRankNormal"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    local txtVote = obj:FindTransform("TextCard"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    local rImgIcon = obj:FindTransform("IconCard"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    local txtRank = obj:FindTransform("TxtRankNormal"):GetComponent("Text")
+    local txtVote = obj:FindTransform("TextCard"):GetComponent("Text")
+    local rImgIcon = obj:FindTransform("IconCard"):GetComponent("RawImage")
     local playerA = XDataCenter.MoeWarManager.GetPlayer(pair.Players[1])
-    local imgLeftHead = obj.transform:Find("Head1/StandIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    local imgLeftHead = obj.transform:Find("Head1/StandIcon"):GetComponent("RawImage")
     imgLeftHead:SetRawImage(playerA:GetCircleHead())
     local totalCount = playerA:GetSupportCount(XDataCenter.MoeWarManager.GetCurMatchId())
     txtVote.text = totalCount
@@ -403,7 +403,7 @@ end
 
 ---@param obj UnityEngine.GameObject
 function XUiMoeWarVote:InitWeedOutPair(obj, pair, match)
-    local imgLeftHead = obj.transform:Find("Head1/StandIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    local imgLeftHead = obj.transform:Find("Head1/StandIcon"):GetComponent("RawImage")
     local playerA = XDataCenter.MoeWarManager.GetPlayer(pair.Players[1])
     imgLeftHead:SetRawImage(playerA:GetCircleHead())
 end
@@ -606,7 +606,7 @@ function XUiMoeWarVote:UpdateCurrModel(index)
                 local playerEntity = XDataCenter.MoeWarManager.GetPlayer(pairInfo.Players[i])
                 self.FinalCharacterModel[i]:UpdateRoleModel(playerEntity:GetModel(), self.FinalCharacterTransform[i], XModelManager.MODEL_UINAME.XUiMoeWarVote, function(model)
                     model.gameObject:SetActiveEx(true)
-                    local animator = model:GetComponent(typeof(CS.UnityEngine.Animator))
+                    local animator = model:GetComponent("Animator")
                     animator.applyRootMotion = false
                 end, nil, true, true)
             end
@@ -616,7 +616,7 @@ function XUiMoeWarVote:UpdateCurrModel(index)
         for i, playerId in ipairs(pairConfig.Players) do
             self.ThreeCharacterModel[i]:UpdateRoleModelWithAutoConfig(XDataCenter.MoeWarManager.GetPlayer(playerId):GetModel(), XModelManager.MODEL_UINAME.XUiMoeWarVote, function(model)
                 model.gameObject:SetActiveEx(true)
-                local animator = model:GetComponent(typeof(CS.UnityEngine.Animator))
+                local animator = model:GetComponent("Animator")
                 animator.applyRootMotion = false
             end)
         end
@@ -625,7 +625,7 @@ function XUiMoeWarVote:UpdateCurrModel(index)
         local player = XDataCenter.MoeWarManager.GetPlayer(pairConfig.Players[1])
         self.OneCharacterModel:UpdateRoleModelWithAutoConfig(player:GetModel(), XModelManager.MODEL_UINAME.XUiMoeWarVote, function(model)
             model.gameObject:SetActiveEx(true)
-            local animator = model:GetComponent(typeof(CS.UnityEngine.Animator))
+            local animator = model:GetComponent("Animator")
             animator.applyRootMotion = false
         end)
     else
@@ -633,7 +633,7 @@ function XUiMoeWarVote:UpdateCurrModel(index)
         for i, playerId in ipairs(pairConfig.Players) do
             self.TwoCharacterModel[i]:UpdateRoleModelWithAutoConfig(XDataCenter.MoeWarManager.GetPlayer(playerId):GetModel(), XModelManager.MODEL_UINAME.XUiMoeWarVote, function(model)
                 model.gameObject:SetActiveEx(true)
-                local animator = model:GetComponent(typeof(CS.UnityEngine.Animator))
+                local animator = model:GetComponent("Animator")
                 animator.applyRootMotion = false
             end)
         end

@@ -96,9 +96,9 @@ function XUiNewPlayerTask:InitBottomView()
         self.ProgressStage[i] = newbieActiveness.Activeness[i]
     end
 
-    self.ImgProgressRect = self.ImgProgress:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.ImgProgressRect = self.ImgProgress:GetComponent("RectTransform")
     self.TemplatePositon = self.PanelNewbieActive.transform.localPosition
-    self.TemplateRect = self.PanelNewbieActive:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.TemplateRect = self.PanelNewbieActive:GetComponent("RectTransform")
 
     self.TotalProgress[1] = XUiPanelNewbieActive.New(self.PanelNewbieActive.gameObject, self, 1, self.ProgressStage[1])
     for i = 2, #self.ProgressStage do
@@ -121,7 +121,7 @@ function XUiNewPlayerTask:UpdateNewbieActivePositions()
         local currProgress = self.ProgressStage[i] * 1.0 / self.MaxProgress * FULL_PROGRESS
         local progress = self.TotalProgress[i]
         if progress then
-            progress.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition3D = CS.UnityEngine.Vector3(currProgress * totalWdith - activeWidthOffset, self.TemplatePositon.y, self.TemplatePositon.z)
+            progress.Transform:GetComponent("RectTransform").anchoredPosition3D = CS.UnityEngine.Vector3(currProgress * totalWdith - activeWidthOffset, self.TemplatePositon.y, self.TemplatePositon.z)
         end
     end
 end

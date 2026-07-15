@@ -106,7 +106,7 @@ function XUiPanelBossInshotCharacterDetail:SwitchPanel(panelType)
     self.PanelSelectTalent.gameObject:SetActiveEx(self.CurPanelType == self.PANEL_TYPE.SELECT_TALENT)
 
     if self.CurPanelType == self.PANEL_TYPE.MAIN then
-        self.PanelMainEnable = self.PanelMainEnable or self.Transform:Find("PanelMain/Animation/PanelMainEnable"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+        self.PanelMainEnable = self.PanelMainEnable or self.Transform:Find("PanelMain/Animation/PanelMainEnable"):GetComponent("PlayableDirector")
         self.PanelMainEnable.gameObject:PlayTimelineAnimation()
         self:RefreshPanelMain()
     elseif self.CurPanelType == self.PANEL_TYPE.SELECT_TALENT then

@@ -36,7 +36,7 @@ function XUiPanelNameplate:UpdateDataById(id)
         imageWidth = originPicSize.x
         if imageWidth > 0 then
             self.GameObject:GetComponent("LayoutElement").preferredWidth = imageWidth + 7.5
-            self.ImgGold.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta = Vector2(imageWidth, originPicSize.y)
+            self.ImgGold.gameObject:GetComponent("RectTransform").sizeDelta = Vector2(imageWidth, originPicSize.y)
         end
     end
 

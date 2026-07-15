@@ -17,11 +17,11 @@ function XUiPanelSetName:InitAutoScript()
 end
 
 function XUiPanelSetName:AutoInitUi()
-    self.TxtA = self.Transform:Find("Txt"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.BtnNameSure = self.Transform:Find("BtnNameSure"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.BtnNameCancel = self.Transform:Find("BtnNameCancel"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtA = self.Transform:Find("Txt"):GetComponent("Text")
+    self.BtnNameSure = self.Transform:Find("BtnNameSure"):GetComponent("Button")
+    self.BtnNameCancel = self.Transform:Find("BtnNameCancel"):GetComponent("Button")
     self.InFSigmA = self.Transform:Find("InFSigm"):GetComponent("InputField")
-    self.TxtName = self.Transform:Find("InFSigm/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtName = self.Transform:Find("InFSigm/Text"):GetComponent("Text")
 end
 
 function XUiPanelSetName:RegisterClickEvent(uiNode, func)

@@ -26,7 +26,7 @@ function XUiTRPGMaze:OnAwake()
     self.TaskPanel = XUiTRPGPanelTask.New(self.PanelTask, self)
     self.LevelPanel = XUiTRPGPanelLevel.New(self.PanelLevel)
 
-    self.ImgJindu = self.Transform:FindTransform("ImgJindu"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgJindu = self.Transform:FindTransform("ImgJindu"):GetComponent("Image")
 end
 
 function XUiTRPGMaze:OnStart(mazeId)

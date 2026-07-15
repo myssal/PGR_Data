@@ -153,7 +153,7 @@ local XUiBiancaTheatreAchievement = XLuaUiManager.Register(XLuaUi, "UiBiancaThea
 local PerPageTackCount = 6
 
 function XUiBiancaTheatreAchievement:OnAwake()
-    self.ScrollRect = self.PanelAchievementTable:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
+    self.ScrollRect = self.PanelAchievementTable:GetComponent("ScrollRect")
     self.PanelReward = XPanelAchievementReward.New(self.PanelDetail, self)
 
     self:InitCurPageIndex()

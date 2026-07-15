@@ -136,7 +136,7 @@ function XAprilFoolDayControl:UpdateRoleModel(panelRoleModel, resId, cb)
     -- 更换模型
     local callback = function(model)
         state.Model = model
-        state.Animator = state.Model:GetComponent(typeof(CS.UnityEngine.Animator))
+        state.Animator = state.Model:GetComponent("Animator")
         XDataCenter.DisplayManager.OnAssetLoaded(state)
     end
     state.Callback = function()

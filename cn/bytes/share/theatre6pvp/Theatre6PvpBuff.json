@@ -7,7 +7,7 @@
             "15%",
             "15%"
         ],
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillHuanjingIcon01.png",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhuanyi2.png",
         "MagicId": 1025813,
         "Prompt": "<color=#B96716>尝试放弃第一场战斗，会取得更高的收益</color>"
     },
@@ -20,18 +20,18 @@
             "15%",
             30
         ],
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillHuanjingIcon02.png",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTime.png",
         "MagicId": 1025814,
         "Prompt": "<color=#B96716>适合防御力强的战斗方式</color>"
     },
     {
         "Id": 3,
         "Name": "撷取",
-        "Desc": "全局生效1次，当对方隐匿暗障触发时，我方获得对方{0}的效果",
+        "Desc": "全局生效1次，当对方环境效果触发时，我方获得对方{0}的效果",
         "DescParams": [
             "150%"
         ],
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillHuanjingIcon03.png",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconChange.png",
         "MagicId": 1025815,
         "Prompt": "<color=#B96716>不错的选择，说不定会对战局产生意料之外的效果</color>"
     },
@@ -43,7 +43,7 @@
             "10%",
             "10%"
         ],
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillHuanjingIcon04.png",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu2.png",
         "MagicId": 1025816,
         "Prompt": "<color=#B96716>对战局有通用性的增益</color>"
     },
@@ -55,33 +55,33 @@
             "20%",
             "20%"
         ],
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillHuanjingIcon05.png",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png",
         "MagicId": 1025817,
         "Prompt": "<color=#B96716>如果前期能拿下胜利，选择该效果可获得稳定提升胜率</color>"
     },
     {
         "Id": 6,
         "Name": "燃锋",
-        "Desc": "双方全局总共造成{2}层点燃后触发，我方角色造成伤害提升{0}，伤害减免提升{1}",
+        "Desc": "本场双方累计造成{2}次点燃后触发，我方角色造成伤害提升{0}，伤害减免提升{1}",
         "DescParams": [
             "15%",
             "15%",
-            30
+            12
         ],
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillHuanjingIcon06.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6IconSkill38.png",
         "MagicId": 1025818,
         "Prompt": "<color=#B96716>存在多个点燃角色时，能产生更好的效果</color>"
     },
     {
         "Id": 7,
         "Name": "怒啸",
-        "Desc": "双方全局总共进入{2}次狂暴后触发，我方角色造成伤害提升{0}，伤害减免提升{1}",
+        "Desc": "本场双方累计进入{2}次狂暴后触发，我方角色造成伤害提升{0}，伤害减免提升{1}",
         "DescParams": [
             "15%",
             "15%",
             3
         ],
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillHuanjingIcon07.png",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon4202.png",
         "MagicId": 1025819,
         "Prompt": "<color=#B96716>存在多个怒火角色时，能产生更好的效果</color>"
     },
@@ -93,33 +93,33 @@
             "5%",
             "5%"
         ],
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillHuanjingIcon08.png",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen2.png",
         "MagicId": 1025820,
         "Prompt": "<color=#B96716>上阵多个不同角色，有更多机会拿到收益</color>"
     },
     {
         "Id": 9,
         "Name": "折锋",
-        "Desc": "本场拼刀环节累计失败{2}次后，我方角色造成伤害提升{0}，伤害减免提升{1}",
+        "Desc": "本局拼刀环节累计失败{2}次后，我方角色造成伤害提升{0}，伤害减免提升{1}",
         "DescParams": [
             "15%",
             "15%",
             2
         ],
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillHuanjingIcon09.png",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
         "MagicId": 1025821,
         "Prompt": "<color=#B96716>非常适合高超序属性的战局效果</color>"
     },
     {
         "Id": 10,
         "Name": "逆时",
-        "Desc": "本场超序反击环节累计失败{2}次后，我方角色造成伤害提升{0}，伤害减免提升{1}",
+        "Desc": "本局超序反击环节累计失败{2}次后，我方角色造成伤害提升{0}，伤害减免提升{1}",
         "DescParams": [
             "15%",
             "15%",
             2
         ],
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillHuanjingIcon10.png",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangan2.png",
         "MagicId": 1025822,
         "Prompt": "<color=#B96716>非常适合高超反击属性的战局效果</color>"
     }

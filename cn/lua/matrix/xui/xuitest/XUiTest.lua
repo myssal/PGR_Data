@@ -33,7 +33,7 @@ end
 function XUiTest:AutoInitUi()
     self.PanelScorll = self.Transform:Find("PanelScorll")
     self.GridItem = self.Transform:Find("PanelScorll/GridItem")
-    self.TxtId = self.Transform:Find("PanelScorll/GridItem/TxtId"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtId = self.Transform:Find("PanelScorll/GridItem/TxtId"):GetComponent("Text")
 end
 
 function XUiTest:GetAutoKey(uiNode,eventName)

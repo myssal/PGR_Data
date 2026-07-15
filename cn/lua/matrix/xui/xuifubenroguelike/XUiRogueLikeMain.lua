@@ -357,7 +357,7 @@ function XUiRogueLikeMain:CheckAllLines()
             local hasLine = needLine ~= nil
             local hasCanvasGroup = false
             if needLine then
-                local lineCanvasGroup = needLine:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+                local lineCanvasGroup = needLine:GetComponent("CanvasGroup")
                 hasCanvasGroup = lineCanvasGroup ~= nil
             end
             if (not hasLine) or (not hasCanvasGroup) then

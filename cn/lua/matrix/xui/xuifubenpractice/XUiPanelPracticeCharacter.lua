@@ -122,7 +122,7 @@ end
 
 function XUiPanelPracticeCharacter:PlayScrollViewMove(gridTransform)
     self.CharacterScrollRect.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
-    local gridRect = gridTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local gridRect = gridTransform:GetComponent("RectTransform")
     self.CharacterViewport.raycastTarget = false
 
     -- 计算相对位移坐标

@@ -49,7 +49,7 @@ function XUiGridFubenBossSingleModeBuffBig:_SetHistoryTeam(feature)
 
         grid.transform
             :FindTransform("RImgHead")
-            :GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+            :GetComponent("RawImage")
             :SetRawImage(XMVCA.XCharacter:GetCharBigHeadIcon(charId))
 
         grid:SetActiveEx(true)

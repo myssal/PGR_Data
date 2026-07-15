@@ -53,7 +53,7 @@ function XUiMissionChapter:AutoInitUi()
     -- self.PanelContent = self.Transform:Find("SafeAreaContentPane/PanelChapter/PanelContent")
     -- self.PanelScroll = self.Transform:Find("SafeAreaContentPane/PanelChapter/PanelContent/PanelScroll")
     -- self.PanelMissionChapterGird = self.Transform:Find("SafeAreaContentPane/PanelChapter/PanelContent/PanelScroll/Viewport/PanelMissionChapterGird")
-    -- self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent("Button")
 end
 
 function XUiMissionChapter:GetAutoKey(uiNode, eventName)

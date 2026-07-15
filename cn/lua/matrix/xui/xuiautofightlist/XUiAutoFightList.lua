@@ -50,7 +50,7 @@ function XUiAutoFightList:InitAutoScript()
 end
 
 function XUiAutoFightList:AutoInitUi()
-    self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent("Button")
 end
 
 function XUiAutoFightList:AutoAddListener()

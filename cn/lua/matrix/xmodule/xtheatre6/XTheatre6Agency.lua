@@ -62,13 +62,10 @@ function XTheatre6Agency:InitEvent()
     XMVCA.XDlcHelper:AddDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.Theatre6, self)
 end
 
-function XTheatre6Agency:RemoveEvent()
-    XMVCA.XDlcHelper:RemoveDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.Theatre6, self)
-end
-
 function XTheatre6Agency:OnRelease()
     self:ClearPendingSettleData()
     self:ClearSkillUpEffectPopupQueue()
+    XMVCA.XDlcHelper:RemoveDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.Theatre6, self)
 end
 
 --region overrride
@@ -135,22 +132,6 @@ end
 --endregion
 
 ----------public start----------
-
-function XTheatre6Agency:IsPvpInActivityTime()
-    local config = self._Model.Pvp:GetActivityConfig()
-    local timeId = config and config.TimeId or 0
-    return XFunctionManager.CheckInTimeByTimeId(timeId)
-end
-
-function XTheatre6Agency:HandlePvpActivityEnd()
-    local uiName = "UiTheatre6Main"
-    if XLuaUiManager.IsStackUiOpen(uiName) then
-        XLuaUiManager.CloseAllUpperUi(uiName)
-    else
-        XLuaUiManager.RunMain(true)
-    end
-    XUiManager.TipText("CommonActivityEnd")
-end
 
 ---获取最新剧情更新时间
 ---@return number
@@ -300,7 +281,7 @@ function XTheatre6Agency:GetRankRecordCount(record, rankId)
     return record[rankId] or 0
 end
 
---- PVP段位是否达到
+--- PVP段位是否达到（仅支持当前期，历史期返回false）
 ---@param targetRankId number 目标段位Id
 ---@param activityId number 指定版本Id(0=当前期)
 ---@return boolean

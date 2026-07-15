@@ -106,7 +106,7 @@ function XPanelCharacterGradeV2P6:OnStart()
 	local XUiPanelGradeUpgrade = require("XUi/XUiCharacter/XUiPanelGradeUpgrade") --XUiPanelGradeUpgrade,
     self.CharGradeUpgradePanel = XUiPanelGradeUpgrade.New(self.PanelGradeUpgrade, self, self.Parent)
     self.CharGradeUpgradePanel.GameObject:SetActive(false)
-    self.CanvasGroup = self.PanelGrades:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    self.CanvasGroup = self.PanelGrades:GetComponent("CanvasGroup")
     self:InitTable()
 end
 
@@ -326,8 +326,8 @@ function XPanelCharacterGradeV2P6:UpdateUseItemView()
     if not XTool.IsNumberValid(itemCode) then return end
 
     local icon = XDataCenter.ItemManager.GetItemIcon(itemCode)
-    self.PanelCosume:FindTransform("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
-    self.PanelCosumeOn:FindTransform("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
+    self.PanelCosume:FindTransform("Icon"):GetComponent("RawImage"):SetRawImage(icon)
+    self.PanelCosumeOn:FindTransform("Icon"):GetComponent("RawImage"):SetRawImage(icon)
 
     local itemNum = gradeConfig.UseItemCount
     self.TxtCosume.text = itemNum

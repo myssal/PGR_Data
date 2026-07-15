@@ -193,12 +193,12 @@
     {
         "Id": 1034,
         "Key": "GameServerLoginQueueFull",
-        "Text": "当前登陆人数过多"
+        "Text": "当前登录人数过多"
     },
     {
         "Id": 1035,
         "Key": "GameServerAlreadyInLoginQueue",
-        "Text": "正在登陆中"
+        "Text": "正在登录中"
     },
     {
         "Id": 20000001,
@@ -2399,7 +2399,7 @@
     {
         "Id": 20021004,
         "Key": "EquipManagerGetEquipNotFound",
-        "Text": "请先添加消耗"
+        "Text": "装备不存在"
     },
     {
         "Id": 20021005,
@@ -4395,6 +4395,21 @@
     },
     {
         "Id": 20034140,
+        "Key": "ConditionManagerTheatre6FileCountNotEnough",
+        "Text": "20034140存档数量不足"
+    },
+    {
+        "Id": 20034141,
+        "Key": "ConditionManagerTheatre6PvpBattleCountNotEnough",
+        "Text": "20034141PVP战斗次数不足"
+    },
+    {
+        "Id": 20034142,
+        "Key": "ConditionManagerTheatre6PvpRankNotReached",
+        "Text": "20034142PVP段位未达到"
+    },
+    {
+        "Id": 20034143,
         "Key": "ConditionManagerPlayerGenderConditionNotFinish",
         "Text": "20034140性别未满足配置条件"
     },
@@ -5292,6 +5307,36 @@
         "Id": 20049012,
         "Key": "BossActivityInvalidStoryId",
         "Text": "20049012非法故事Id"
+    },
+    {
+        "Id": 20049013,
+        "Key": "BossActivityDifficultyScoreError",
+        "Text": "20049013当前难度评分异常"
+    },
+    {
+        "Id": 20049014,
+        "Key": "BossActivityDifficultyScoreOutOfRange",
+        "Text": "20049014当前评分找不到所属难度"
+    },
+    {
+        "Id": 20049015,
+        "Key": "BossActivityDifficultyCfgEmpty",
+        "Text": "20049015当前难度评分配置数据为空"
+    },
+    {
+        "Id": 20049016,
+        "Key": "BossActivityTimeCostError",
+        "Text": "20049016通关时间异常"
+    },
+    {
+        "Id": 20049017,
+        "Key": "BossActivityTimeCostRatioCfgEmpty",
+        "Text": "20049017通关时间配置数据为空"
+    },
+    {
+        "Id": 20049018,
+        "Key": "BossActivityTimeCostRatioError",
+        "Text": "20049018通关时间倍率异常"
     },
     {
         "Id": 20050001,
@@ -14590,6 +14635,11 @@
         "Text": "20135006涂装活动未开启"
     },
     {
+        "Id": 20135007,
+        "Key": "FashionStoryChapterIsNotCfg",
+        "Text": "20135007涂装活动所选试玩章节未配置"
+    },
+    {
         "Id": 20136001,
         "Key": "CoupleCombatNotOpen",
         "Text": "活动尚未开放"
@@ -23216,8 +23266,93 @@
     },
     {
         "Id": 20215018,
-        "Key": "BossInshoRankInvalidRankId",
+        "Key": "BossInshotRankInvalidRankId",
         "Text": "20215018排行榜标识错误"
+    },
+    {
+        "Id": 20215019,
+        "Key": "BossInshotTowerConditionNotMet",
+        "Text": "20215019条件未达成"
+    },
+    {
+        "Id": 20215020,
+        "Key": "BossInshotTowerIdError",
+        "Text": "20215020关卡不存在"
+    },
+    {
+        "Id": 20215021,
+        "Key": "BossInshotStageTypeError",
+        "Text": "20215021关卡类型错误"
+    },
+    {
+        "Id": 20215022,
+        "Key": "BossInshotTowerFightDataError",
+        "Text": "20215022战斗数据异常"
+    },
+    {
+        "Id": 20215023,
+        "Key": "BossInshotTowerPreFightDataError",
+        "Text": "20215023前置战斗数据异常"
+    },
+    {
+        "Id": 20215024,
+        "Key": "BossInshotTowerCfgError",
+        "Text": "20215024关卡配置不存在"
+    },
+    {
+        "Id": 20215025,
+        "Key": "BossInshotPlayerTowerDataError",
+        "Text": "20215025关卡数据异常"
+    },
+    {
+        "Id": 20215026,
+        "Key": "BossInshotTowerNotMatchStage",
+        "Text": "20215026关卡配置不匹配"
+    },
+    {
+        "Id": 20215027,
+        "Key": "BossInshotTowerNotSupportSelectBoss",
+        "Text": "20215027不支持选择Boss"
+    },
+    {
+        "Id": 20215028,
+        "Key": "BossInshotTowerPassSelectBossError",
+        "Text": "20215028已通关，不支持选择"
+    },
+    {
+        "Id": 20215029,
+        "Key": "BossInshotTowerRepeatSelectBossError",
+        "Text": "20215029不支持重复选择"
+    },
+    {
+        "Id": 20215030,
+        "Key": "BossInshotTowerSelectBossNotExistError",
+        "Text": "20215030选择Boss不存在"
+    },
+    {
+        "Id": 20215031,
+        "Key": "BossInshotTowerPreStageNotPass",
+        "Text": "20215031前置关卡未通关"
+    },
+    {
+        "Id": 20215032,
+        "Key": "BossInshotTowerLock",
+        "Text": "20215032关卡未解锁"
+    },
+    {
+        "Id": 20215033,
+        "Key": "BossInshotTowerNotAllPassSelectBossError",
+        "Text": "20215033未通关所有关卡，不支持选择"
+    },
+    {
+        "Id": 20215034,
+        "Key": "BossInshotTowerInitError",
+        "Text": "20215034关卡初始化异常"
+    },
+    {
+        "Id": 20215035,
+        "Key": "BossInshotFightNotCharacter",
+        "Text": "20215035未上阵角色"
     },
     {
         "Id": 20216001,
@@ -27471,8 +27606,8 @@
     },
     {
         "Id": 20311010,
-        "Key": "SoloReformCharacterChooseError",
-        "Text": "20311010角色选取数量异常"
+        "Key": "SoloReformCharacterCountExceeded",
+        "Text": "20311010上阵角色选取数量过多"
     },
     {
         "Id": 20311011,
@@ -27488,6 +27623,26 @@
         "Id": 20311013,
         "Key": "SoloReformStageStarNumError",
         "Text": "20311013关卡目标数量异常"
+    },
+    {
+        "Id": 20311014,
+        "Key": "SoloReformCharacterChooseEmpty",
+        "Text": "20311014上阵角色选取为空"
+    },
+    {
+        "Id": 20311015,
+        "Key": "SoloReformPosCharacterIllegal",
+        "Text": "20311015位置上阵角色数据异常"
+    },
+    {
+        "Id": 20311016,
+        "Key": "SoloReformDuplicateCharacter",
+        "Text": "20311016角色重复上阵"
+    },
+    {
+        "Id": 20311017,
+        "Key": "SoloReformDuplicateRobot",
+        "Text": "20311017试用角色重复上阵"
     },
     {
         "Id": 20312001,
@@ -28920,6 +29075,46 @@
         "Text": "20423098当前模式已结算"
     },
     {
+        "Id": 20423099,
+        "Key": "Theatre6BuffCfgNoFound",
+        "Text": "20423099Buff配置错误"
+    },
+    {
+        "Id": 20423100,
+        "Key": "Theatre6ShopAllGoodHasLock",
+        "Text": "20423100全部商品被冻结"
+    },
+    {
+        "Id": 20423101,
+        "Key": "Theatre6ShopBuySanTimesError",
+        "Text": "20423101商店购买San次数不一致"
+    },
+    {
+        "Id": 20423102,
+        "Key": "Theatre6ShopBuySanTimesLimit",
+        "Text": "20423102商店购买San次数达到上限"
+    },
+    {
+        "Id": 20423103,
+        "Key": "Theatre6ShopBuySanFull",
+        "Text": "20423103San值已满"
+    },
+    {
+        "Id": 20423104,
+        "Key": "Theatre6ShopBuySanCfgError",
+        "Text": "20423104商店购买San配置错误"
+    },
+    {
+        "Id": 20423105,
+        "Key": "Theatre6ExFloorConfirmStateError",
+        "Text": "20423105ExFloor确认状态错误"
+    },
+    {
+        "Id": 20423106,
+        "Key": "Theatre6ExFloorWaitingConfirmError",
+        "Text": "20423106正在等待ExFloor确认"
+    },
+    {
         "Id": 20424001,
         "Key": "GameCollectionFunctionNotOpen",
         "Text": "20424001游戏合集活动未开启"
@@ -28938,6 +29133,221 @@
         "Id": 20424004,
         "Key": "GameCollectionEnterGameStageIdNotMatchConfig",
         "Text": "20424004进入游戏的关卡Id不匹配配置表"
+    },
+    {
+        "Id": 20425001,
+        "Key": "DyeMergeFunctionNotOpen",
+        "Text": "活动尚未开启"
+    },
+    {
+        "Id": 20425002,
+        "Key": "DyeMergeChapterNotOpen",
+        "Text": "章节尚未解锁"
+    },
+    {
+        "Id": 20425003,
+        "Key": "DyeMergeChapterCfgNotFound",
+        "Text": "章节状态异常"
+    },
+    {
+        "Id": 20425004,
+        "Key": "DyeMergeStageCfgNotFound",
+        "Text": "关卡状态异常"
+    },
+    {
+        "Id": 20425005,
+        "Key": "DyeMergeStageNotInActivity",
+        "Text": "关卡状态异常"
+    },
+    {
+        "Id": 20425006,
+        "Key": "DyeMergeStagePreStageNotComplete",
+        "Text": "尚未完成前置关卡"
+    },
+    {
+        "Id": 20426001,
+        "Key": "ConcertPreHeatingFunctionNotOpen",
+        "Text": "20426001音乐会预热活动未开启"
+    },
+    {
+        "Id": 20426002,
+        "Key": "ConcertPreHeatingStageCfgNotExist",
+        "Text": "20426002音乐会预热关卡配置不存在"
+    },
+    {
+        "Id": 20426003,
+        "Key": "ConcertPreHeatingStageNotInActivity",
+        "Text": "20426003音乐会预热关卡不属于当前活动"
+    },
+    {
+        "Id": 20426004,
+        "Key": "ConcertPreHeatingStageNotOpen",
+        "Text": "20426004音乐会预热关卡未开放"
+    },
+    {
+        "Id": 20426005,
+        "Key": "ConcertPreHeatingActivityCfgNotExist",
+        "Text": "20426005音乐会预热活动配置不存在"
+    },
+    {
+        "Id": 20427001,
+        "Key": "Theatre6PvpNotOpen",
+        "Text": "20427001肉鸽6PVP未开启"
+    },
+    {
+        "Id": 20427002,
+        "Key": "Theatre6PvpNotInActivity",
+        "Text": "20427002不在活动期内"
+    },
+    {
+        "Id": 20427003,
+        "Key": "Theatre6PvpAlreadyInBattle",
+        "Text": "20427003已在对战中"
+    },
+    {
+        "Id": 20427004,
+        "Key": "Theatre6PvpDataError",
+        "Text": "20427004数据错误"
+    },
+    {
+        "Id": 20427005,
+        "Key": "Theatre6PvpRankNotFound",
+        "Text": "20427005段位数据未找到"
+    },
+    {
+        "Id": 20427006,
+        "Key": "Theatre6PvpScoreError",
+        "Text": "20427006段位分数错误"
+    },
+    {
+        "Id": 20427007,
+        "Key": "Theatre6PvpRefreshCd",
+        "Text": "20427007刷新匹配CD中"
+    },
+    {
+        "Id": 20427008,
+        "Key": "Theatre6PvpRefreshCountLimit",
+        "Text": "20427008刷新次数过多"
+    },
+    {
+        "Id": 20427009,
+        "Key": "Theatre6PvpInAdvanceBattle",
+        "Text": "20427008进阶战斗中"
+    },
+    {
+        "Id": 20427010,
+        "Key": "Theatre6PvpActionPointNotEnough",
+        "Text": "20427009体力不足"
+    },
+    {
+        "Id": 20427011,
+        "Key": "Theatre6PvpDefenseSlotCountError",
+        "Text": "20427010防守阵容槽位数量错误"
+    },
+    {
+        "Id": 20427012,
+        "Key": "Theatre6PvpLineupSlotRepeatLimit",
+        "Text": "20427011阵容同一存档超出使用次数"
+    },
+    {
+        "Id": 20427013,
+        "Key": "Theatre6PvpDefenseFileNotFound",
+        "Text": "20427012防守阵容存档数据不存在"
+    },
+    {
+        "Id": 20427014,
+        "Key": "Theatre6PvpNotInBattle",
+        "Text": "20427013不在对战中"
+    },
+    {
+        "Id": 20427015,
+        "Key": "Theatre6PvpFightRoundError",
+        "Text": "20427014对战局数错误"
+    },
+    {
+        "Id": 20427016,
+        "Key": "Theatre6PvpEnemyNotFound",
+        "Text": "20427015匹配对手未找到"
+    },
+    {
+        "Id": 20427017,
+        "Key": "Theatre6PvpFileSlotInvalid",
+        "Text": "20427016上阵存档参数非法"
+    },
+    {
+        "Id": 20427018,
+        "Key": "Theatre6PvpBattleAlreadyFinished",
+        "Text": "20427017对战已结束"
+    },
+    {
+        "Id": 20427019,
+        "Key": "Theatre6PvpEnemyIdInvalid",
+        "Text": "20427018匹配对手参数异常"
+    },
+    {
+        "Id": 20427020,
+        "Key": "Theatre6PvpRankConfigNotFound",
+        "Text": "20427019段位配置未找到"
+    },
+    {
+        "Id": 20427021,
+        "Key": "Theatre6PvpAttackLineupCountUnexpected",
+        "Text": "20427020进攻存档上阵数量不符合预期"
+    },
+    {
+        "Id": 20427022,
+        "Key": "Theatre6PvpDefenseLineupCountOverMax",
+        "Text": "20427021超出防守存档最大上阵数量"
+    },
+    {
+        "Id": 20427023,
+        "Key": "Theatre6PvpModeNotUnlocked",
+        "Text": "20427022PVP模式未解锁"
+    },
+    {
+        "Id": 20427024,
+        "Key": "Theatre6PvpRankRewardRepeat",
+        "Text": "20427023重复发送段位奖励"
+    },
+    {
+        "Id": 20427025,
+        "Key": "Theatre6PvpRankRewardInvalid",
+        "Text": "20427024段位奖励配置错误"
+    },
+    {
+        "Id": 20427026,
+        "Key": "Theatre6PvpBuffGroupNotOpen",
+        "Text": "20427025当前段位无环境效果功能"
+    },
+    {
+        "Id": 20427027,
+        "Key": "Theatre6PvpBuffMustSelect",
+        "Text": "20427026当前段位环境效果不能选择为空"
+    },
+    {
+        "Id": 20427028,
+        "Key": "Theatre6PvpBuffNotInGroup",
+        "Text": "20427027环境效果不在当前段位可选组中"
+    },
+    {
+        "Id": 20427029,
+        "Key": "Theatre6PvpBuffInvalid",
+        "Text": "20427028环境效果不合法"
+    },
+    {
+        "Id": 20427030,
+        "Key": "Theatre6PvpBuffNotUnlocked",
+        "Text": "20427029环境效果未解锁"
+    },
+    {
+        "Id": 20427031,
+        "Key": "Theatre6PvpBuffCfgNotFound",
+        "Text": "20427030环境效果配置不存在"
+    },
+    {
+        "Id": 20427032,
+        "Key": "Theatre6PvpBuffGroupCfgNotFound",
+        "Text": "20427031环境效果组配置不存在"
     },
     {
         "Id": 25000001,
@@ -30201,8 +30611,8 @@
     },
     {
         "Id": 25200101,
-        "Key": "DlcFashionSuitCheckError",
-        "Text": "25200088设置中有不符合套装要求的部位"
+        "Key": "DlcFashionFashionListParamError",
+        "Text": "25200101提交的时装参数异常"
     },
     {
         "Id": 25200102,

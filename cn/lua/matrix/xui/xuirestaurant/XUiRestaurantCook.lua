@@ -132,7 +132,7 @@ function XUiRestaurantCook:InitUi()
     self.PanelTabCharacter:Init(tabBtn, function(tabIndex) self:OnSelectTab(tabIndex) end)
     
     
-    self.PanelLbEx = self.Container.transform.parent.parent:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
+    self.PanelLbEx = self.Container.transform.parent.parent:GetComponent("ScrollRect")
 end 
 
 function XUiRestaurantCook:InitCb()

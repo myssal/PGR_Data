@@ -17,8 +17,8 @@ function XUiGridLogisticSkill:InitAutoScript()
 end
 
 function XUiGridLogisticSkill:AutoInitUi()
-    self.TxtEchelonIndex = self.Transform:Find("ImageBg/TxtEchelonIndex"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.TxtSkillDes = self.Transform:Find("TxtSkillDes"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtEchelonIndex = self.Transform:Find("ImageBg/TxtEchelonIndex"):GetComponent("Text")
+    self.TxtSkillDes = self.Transform:Find("TxtSkillDes"):GetComponent("Text")
 end
 
 function XUiGridLogisticSkill:GetAutoKey(uiNode, eventName)

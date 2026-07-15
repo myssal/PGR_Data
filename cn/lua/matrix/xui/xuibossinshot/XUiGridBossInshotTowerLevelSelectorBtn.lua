@@ -44,7 +44,7 @@ function XUiGridBossInshotTowerLevelSelectorBtn:SetData(levelConf, args)
 
         local record = nil
 
-        if displayStageId ~= 0 then
+        if displayStageId ~= 0 and levelData.IsPass then
             local bossId = self._Control:GetTowerBossIdByStageId(displayStageId)
             record = levelData.BossMaxScoreDict[bossId]
         end

@@ -53,10 +53,10 @@ function XUiPurchaseBuyCoatingTips:OnStart(viewModel, buyCb, closeDetailCb)
     
     -- 资源栏
     if not XTool.IsTableEmpty(viewModel.AssetsItemIds) then
-        self.PanelAssetPay.gameObject:SetActiveEx(true)
-        self.AssetPanel = XUiPanelAsset.New(self, self.PanelAssetPay, table.unpack(viewModel.AssetsItemIds))
+        self.PanelAsset.gameObject:SetActiveEx(true)
+        self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, table.unpack(viewModel.AssetsItemIds))
     else
-        self.PanelAssetPay.gameObject:SetActiveEx(false)
+        self.PanelAsset.gameObject:SetActiveEx(false)
     end
 end
 

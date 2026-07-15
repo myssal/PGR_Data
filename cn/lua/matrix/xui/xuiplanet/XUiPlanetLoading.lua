@@ -30,7 +30,7 @@ end
 
 function XUiPlanetLoading:InitObj()
     self.Timer = nil
-    self.LoadingAnim = self.Transform:Find("Animation/Loading"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    self.LoadingAnim = self.Transform:Find("Animation/Loading"):GetComponent("PlayableDirector")
 end
 
 function XUiPlanetLoading:StartWaitLoading()

@@ -199,7 +199,7 @@ function XUiSettleWinSingleBoss:RefreshButton(data)
 
     if isNormal then
         -- 体验版和凹分区隐藏体力文本提示
-        local textBtnSave = self.BtnSave.transform:Find("Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        local textBtnSave = self.BtnSave.transform:Find("Text"):GetComponent("Text")
         textBtnSave.gameObject:SetActiveEx(isNormal)
 
         if self._Control:IsResetOpen() then

@@ -37,8 +37,8 @@ end
 
 function XUiOnLineMatching:AutoInitUi()
     self.PanelMatchingNormal = self.Transform:Find("SafeAreaContentPane/PanelMatchingNormal")
-    self.BtnBack = self.Transform:Find("SafeAreaContentPane/PanelMatchingNormal/BtnBack"):GetComponent(typeof(CS.UnityEngine.UI.Button))
-    self.TxtTime = self.Transform:Find("SafeAreaContentPane/PanelMatchingNormal/TxtTime"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnBack = self.Transform:Find("SafeAreaContentPane/PanelMatchingNormal/BtnBack"):GetComponent("Button")
+    self.TxtTime = self.Transform:Find("SafeAreaContentPane/PanelMatchingNormal/TxtTime"):GetComponent("Text")
     self.PanelMatchingSimplified = self.Transform:Find("SafeAreaContentPane/PanelMatchingSimplified")
 end
 

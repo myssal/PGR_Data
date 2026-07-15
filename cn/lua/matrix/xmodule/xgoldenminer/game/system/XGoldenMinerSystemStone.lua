@@ -461,7 +461,7 @@ function XGoldenMinerSystemStone:_SetBoomBeDestroy(stoneEntity)
     if not stoneEntity.Data:CheckType(XEnumConst.GOLDEN_MINER.STONE_TYPE.BOOM) then
         return
     end
-    local RawImg = stoneEntity:GetTransform():GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    local RawImg = stoneEntity:GetTransform():GetComponent("RawImage")
     local stoneComponent = stoneEntity:GetComponentStone()
     if stoneComponent.BoomCollider then
         stoneComponent.BoomCollider.enabled = true

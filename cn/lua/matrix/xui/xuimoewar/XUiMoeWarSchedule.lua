@@ -93,15 +93,15 @@ function XUiMoeWarSchedule:InitLeftTab()
         end
         local lockTransform = obj.transform:Find("TagLock/Text")
         if lockTransform then
-            self.TxtBtnGrpMatchLock[i] = lockTransform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+            self.TxtBtnGrpMatchLock[i] = lockTransform:GetComponent("Text")
         end
         local nowTransform = obj.transform:Find("TagNow/Text")
         if nowTransform then
-            self.TxtBtnGrpMatchNow[i] = nowTransform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+            self.TxtBtnGrpMatchNow[i] = nowTransform:GetComponent("Text")
         end
         local endTransform = obj.transform:Find("TagEnd/Text")
         if endTransform then
-            self.TxtBtnGrpMatchEnd[i] = endTransform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+            self.TxtBtnGrpMatchEnd[i] = endTransform:GetComponent("Text")
         end
         obj:SetNameByGroup(0, cfg.Name)
         obj:SetNameByGroup(1, cfg.SecondName)

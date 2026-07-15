@@ -4,7 +4,7 @@
 -- }
 -- local Init = function(transform)
 --     --camTrf = transform.root:Find("UiModelCamera")
---     --camera = camTrf:GetComponent(typeof(CS.UnityEngine.Camera))
+--     --camera = camTrf:GetComponent("Camera")
 --     --local ppb = camTrf:GetComponent("PostProcessingBehaviour")
 --     --local profile = ppb.profile
 --     --bloom = profile.bloomModel

@@ -68,7 +68,7 @@ function XUiDormArchivesCenterDetails:SetTextInfo(prefab, info)
     -- 这部分逻辑，后续版本如果可以最好使用XUiNode，通过UiObject注册并访问
     local txtGo = XUiHelper.Instantiate(prefab, self.PanelContent)
     txtGo:SetActiveEx(true)
-    local goTxt = txtGo:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    local goTxt = txtGo:GetComponent("Text")
 
     if not goTxt then
         goTxt = txtGo:GetComponent("XUiComponent.XUiRichTextCustomRender")

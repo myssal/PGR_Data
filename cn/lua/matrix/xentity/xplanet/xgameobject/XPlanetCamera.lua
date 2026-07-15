@@ -1044,7 +1044,7 @@ function XPlanetCamera:InitCamera()
             go = CS.UnityEngine.GameObject("_PlanetCamera")
         end
         go.transform:SetParent(self._Transform)
-        self._Camera = go:GetComponent(typeof(CS.UnityEngine.Camera))
+        self._Camera = go:GetComponent("Camera")
         if XTool.UObjIsNil(self._Camera) then
             self._Camera = go:AddComponent(typeof(CS.UnityEngine.Camera))
             self._Camera.usePhysicalProperties = true

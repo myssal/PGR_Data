@@ -26,7 +26,7 @@ function XUiCoupleCombatNewRoomSingle.InitEditBattleUi(newRoomSingle)
 
     for _, v in ipairs(stageInterInfo.Intro) do
         local item = CS.UnityEngine.Object.Instantiate(newRoomSingle.GridIntroDesc, newRoomSingle.PanelIntroContent)  -- 复制一个item
-        item:Find("Text"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = v
+        item:Find("Text"):GetComponent("Text").text = v
     end
     newRoomSingle.GridIntroDesc.gameObject:SetActiveEx(false)
     UpdateAddIcon(newRoomSingle)

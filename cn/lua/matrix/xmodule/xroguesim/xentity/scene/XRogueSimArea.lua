@@ -91,7 +91,7 @@ function XRogueSimArea:RefreshName()
         go.gameObject:SetActiveEx(true)
         local worldPos = self._Scene:GetWorldPosByGridId(gridId)
         go.transform.localPosition = CS.UnityEngine.Vector3(worldPos.x, worldPos.z, 0)
-        local textComp = go:GetComponent(typeof(CS.UnityEngine.UI.Text))
+        local textComp = go:GetComponent("Text")
         textComp.text = self.Texts[i]
         table.insert(self.NameTexts, textComp)
     end

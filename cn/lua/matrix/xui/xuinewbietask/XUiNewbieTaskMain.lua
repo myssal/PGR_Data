@@ -115,9 +115,9 @@ function XUiNewbieTaskMain:InitProgress()
         end
     end
 
-    self.ImgProgressRect = self.ImgProgress:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.ImgProgressRect = self.ImgProgress:GetComponent("RectTransform")
     self.TemplatePosition = self.PanelNewbieActive.transform.localPosition
-    self.TemplateRect = self.PanelNewbieActive:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.TemplateRect = self.PanelNewbieActive:GetComponent("RectTransform")
 
     -- 设置总进度值 (读进度奖励配置表的最后的一个值)
     self.TxtTotalProgress.text = string.format("/%d", self.MaxProgress)
@@ -246,7 +246,7 @@ function XUiNewbieTaskMain:RefreshProgressTransform()
             local currentProgress = self.NewbieActiveness.Activeness[i] * 1.0 / self.MaxProgress * FULL_PROGRESS
             local progress = self.TotalProgress[i]
             if progress then
-                progress.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition3D = CS.UnityEngine.Vector3(currentProgress * totalWidth - activeWidthOffset, self.TemplatePosition.y, self.TemplatePosition.z)
+                progress.Transform:GetComponent("RectTransform").anchoredPosition3D = CS.UnityEngine.Vector3(currentProgress * totalWidth - activeWidthOffset, self.TemplatePosition.y, self.TemplatePosition.z)
             end
         end
     end, 1)

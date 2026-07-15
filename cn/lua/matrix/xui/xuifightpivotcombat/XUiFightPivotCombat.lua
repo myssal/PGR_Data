@@ -56,11 +56,11 @@ function XUiFightPivotCombat:SetFillAmount(fillAmount)
 end
 
 function XUiFightPivotCombat:SetTimeBarLength(length)
-    local barWidth = self.ImgTimeBar:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta.x
-    local bgWidth = self.ImgTimeBarBg:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta.x
+    local barWidth = self.ImgTimeBar:GetComponent("RectTransform").sizeDelta.x
+    local bgWidth = self.ImgTimeBarBg:GetComponent("RectTransform").sizeDelta.x
     local widthOffset = bgWidth - barWidth
-    self.ImgTimeBar:GetComponent(typeof(CS.UnityEngine.RectTransform)):SetSizeDeltaX(length)
-    self.ImgTimeBarBg:GetComponent(typeof(CS.UnityEngine.RectTransform)):SetSizeDeltaX(length + widthOffset)
+    self.ImgTimeBar:GetComponent("RectTransform"):SetSizeDeltaX(length)
+    self.ImgTimeBarBg:GetComponent("RectTransform"):SetSizeDeltaX(length + widthOffset)
 end
 
 function XUiFightPivotCombat:SetMultiSlashTimes(times)

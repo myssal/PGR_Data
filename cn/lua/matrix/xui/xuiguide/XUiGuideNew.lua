@@ -80,9 +80,9 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
             end
 
             if self.BtnPanelMaskGuide then
-                self.BtnPanelMaskGuide:GetComponent(typeof(CS.UnityEngine.UI.Image)).enabled = false
+                self.BtnPanelMaskGuide:GetComponent("Image").enabled = false
             else
-                self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide"):GetComponent(typeof(CS.UnityEngine.UI.Image)).enabled = false
+                self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide"):GetComponent("Image").enabled = false
             end
             
             local bgUi = self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide/BtnPass/BaseStyle/Bg")

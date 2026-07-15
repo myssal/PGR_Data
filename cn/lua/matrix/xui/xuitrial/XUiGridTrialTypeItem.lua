@@ -28,7 +28,7 @@ function XUiGridTrialTypeItem:InitAutoScript()
 end
 
 function XUiGridTrialTypeItem:AutoInitUi()
-    -- self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    -- self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
 end
 
 function XUiGridTrialTypeItem:RegisterClickEvent(uiNode, func)

@@ -153,7 +153,7 @@ function XUiRogueLikeNode:UpdateNodeLines()
         if not self.LineList[cur2ChildLine] then
             self.LineList[cur2ChildLine] = self.UiParent:Find(cur2ChildLine)
             if self.LineList[cur2ChildLine] then
-                self.LineCanvasGroupList[cur2ChildLine] = self.LineList[cur2ChildLine]:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+                self.LineCanvasGroupList[cur2ChildLine] = self.LineList[cur2ChildLine]:GetComponent("CanvasGroup")
                 if not self.LineCanvasGroupList[cur2ChildLine] then
                     XLog.Error(string.format("%s 不存在", cur2ChildLine))
                 end

@@ -10855,7 +10855,7 @@
         "Quality": 6,
         "Series": 1014,
         "Description": "霓裳系列——曲·启明",
-        "WorldDescription": "\"凤冠霞帔，罗袖翻飞。戏台之上，浮翠流丹，王侯将相轮番登场，绫罗曳影舞出一曲华章。台前满堂宾客屏息凝神，倾听乐调演绎众生百态；台后几度灯火彻夜，研磨唱腔锤炼丝毫。顷刻间千秋事业,方寸地万里江山，自此意把戏文里古今繁华唱进这盛景人间。\"",
+        "WorldDescription": "凤冠霞帔，罗袖翻飞。戏台之上，浮翠流丹，王侯将相轮番登场，绫罗曳影舞出一曲华章。台前满堂宾客屏息凝神，倾听乐调演绎众生百态；台后几度灯火彻夜，研磨唱腔锤炼丝毫。顷刻间千秋事业,方寸地万里江山，自此意把戏文里古今繁华唱进这盛景人间。",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/Clo15210049141Sp.png",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/Clo15210049141.png",
         "SkipIdParams": [
@@ -13082,11 +13082,11 @@
         "Id": 6004806,
         "CharacterId": 1531005,
         "ResourcesId": 1530506,
-        "Name": "泛用式·终",
+        "Name": "汐光曳影",
         "Quality": 6,
         "Series": 1043,
-        "Description": "初始系列——赛琳娜·希声",
-        "WorldDescription": "构造体[高阶]解放后，根据个人意愿修改的服装，完好的体现了本人意识海的特征。",
+        "Description": "汐落浮光系列——赛琳娜·希声",
+        "WorldDescription": "暮色将海面染成温柔的颜色，白日的暑热已然消散，唯余沁入心脾的凉意，静静地彼此携手，共享这片沙滩上的宁静。在这片喧嚣已退的海域，唯有海潮的声音，和她的低语，共同编织成这个夏天令人想要永远珍藏的回忆。",
         "FashionSuitRare": 3,
         "FashionSuitResourcePicPath": "Assets/Product/Texture/Image/UiFashionSuit/UiFashionSuitMain03Xiari/UiFashionSuitXiari01.png",
         "FashionSuitPic": "Assets/Product/Texture/Image/UiFashionSuit/UiFashionSuitMain03Xiari/UiFashionSuitXiari01.png",
@@ -13110,11 +13110,10 @@
         "HalfBodyImage": "Assets/Product/Texture/Image/RoleStory/V3200saiNormal01.png",
         "RoleCharacterBigImage": "Assets/Product/Texture/Image/RoleCharacterBig/RoleCharacterBigR5SailinnaNormal01.png",
         "BigHeadIconLiberation": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR5Sailinna3.png",
-        "CharacterIcon": "Assets/Product/Texture/Image/IconCoating/IconCoating6004305.png",
-        "ShowTimeStr": "2099/10/29 10:00",
+        "CharacterIcon": "Assets/Product/Texture/Image/IconCoating/IconCoating6004806.png",
         "EffectRootName": "Bip001RForearm",
-        "EffectPath": "Assets/Product/Effect/Prefab/FxR3CibeizhePrefab/Common/FxR3CibeizhePinzhiBip001RForearm.prefab",
-        "AureoleId": 143,
+        "EffectPath": "Assets/Product/Effect/Prefab/FxR5SailinnaPrefab/R5SailinnaMd019271/FxR5SailinnaBip001RForearm.prefab",
+        "AureoleId": 183,
         "GiftId": 9010307
     },
     {
@@ -14995,8 +14994,8 @@
         "BigHeadIconLiberation": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Helentine3.png",
         "CharacterIcon": "Assets/Product/Texture/Image/IconCoating/IconCoating6000704.png",
         "EffectRootName": "Bip001RForearm",
-        "EffectPath": "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaBip001RForearm.prefab",
-        "AureoleId": 182
+        "EffectPath": "Assets/Product/Effect/Prefab/FxR3HelentinePrefab/Common/FxR3HelentineBip001RForearm.prefab",
+        "AureoleId": 184
     },
     {
         "Id": 6006202,
@@ -15029,8 +15028,8 @@
         "BigHeadIconLiberation": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Helentine3.png",
         "CharacterIcon": "Assets/Product/Texture/Image/IconCoating/IconCoating6000704.png",
         "EffectRootName": "Bip001RForearm",
-        "EffectPath": "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaBip001RForearm.prefab",
-        "AureoleId": 182
+        "EffectPath": "Assets/Product/Effect/Prefab/FxR3HelentinePrefab/Common/FxR3HelentineBip001RForearm.prefab",
+        "AureoleId": 184
     },
     {
         "Id": 6006203,
@@ -15063,18 +15062,22 @@
         "BigHeadIconLiberation": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Helentine3.png",
         "CharacterIcon": "Assets/Product/Texture/Image/IconCoating/IconCoating6000704.png",
         "EffectRootName": "Bip001RForearm",
-        "EffectPath": "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaBip001RForearm.prefab",
-        "AureoleId": 182
+        "EffectPath": "Assets/Product/Effect/Prefab/FxR3HelentinePrefab/Common/FxR3HelentineBip001RForearm.prefab",
+        "AureoleId": 184,
+        "FashionColorIds": [
+            33000002
+        ],
+        "FashionColorHex": "#000000"
     },
     {
         "Id": 6006204,
         "CharacterId": 1401003,
         "ResourcesId": 1400304,
-        "Name": "泛用式·终",
+        "Name": "缱绻晴空",
         "Quality": 6,
         "Series": 1043,
-        "Description": "初始系列——海伦汀·安魂",
-        "WorldDescription": "构造体[高阶]解放后，根据个人意愿修改的服装，完好的体现了本人意识海的特征。",
+        "Description": "汐落浮光系列——海伦汀·安魂",
+        "WorldDescription": "夕阳西下，流光于浪涛之上轻灵跳跃，如同此刻的心绪。微风轻送来海潮的气息，无需过多言语，只是任由落日将二人在沙滩上的投影渐渐拉长。此刻最大的心愿，是这一刻永不结束。",
         "FashionSuitRare": 3,
         "FashionSuitResourcePicPath": "Assets/Product/Texture/Image/UiFashionSuit/UiFashionSuitMain03Xiari/UiFashionSuitXiari02.png",
         "FashionSuitPic": "Assets/Product/Texture/Image/UiFashionSuit/UiFashionSuitMain03Xiari/UiFashionSuitXiari02.png",
@@ -15099,18 +15102,17 @@
         "HalfBodyImage": "Assets/Product/Texture/Image/RoleStory/V4600hltNormal11.png",
         "RoleCharacterBigImage": "Assets/Product/Texture/Image/RoleCharacterBig/RoleCharacterBigR3HelentineNormal01.png",
         "BigHeadIconLiberation": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Helentine3.png",
-        "CharacterIcon": "Assets/Product/Texture/Image/IconCoating/IconCoating6000704.png",
-        "ShowTimeStr": "2099/10/29 10:00",
+        "CharacterIcon": "Assets/Product/Texture/Image/IconCoating/IconCoating6006204.png",
         "EffectRootName": "Bip001RForearm",
-        "EffectPath": "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/R7LuxiyaMd019421/FxR7LuxiyaBip001RForearm.prefab",
-        "AureoleId": 181,
+        "EffectPath": "Assets/Product/Effect/Prefab/FxR3HelentinePrefab/R3HelentineMd019271/FxR3HelentineBip001RForearm.prefab",
+        "AureoleId": 185,
         "GiftId": 9010308
     },
     {
         "Id": 6006205,
         "CharacterId": 1401003,
         "ResourcesId": 1400305,
-        "Name": "泛用式·终",
+        "Name": "泛用式·终 异色涂装",
         "Quality": 5,
         "Series": 9000,
         "Description": "初始系列——海伦汀·安魂",
@@ -15136,9 +15138,9 @@
         "RoleCharacterBigImage": "Assets/Product/Texture/Image/RoleCharacterBig/RoleCharacterBigR3HelentineNormal01.png",
         "BigHeadIconLiberation": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadR3Helentine3.png",
         "CharacterIcon": "Assets/Product/Texture/Image/IconCoating/IconCoating6000704.png",
-        "ShowTimeStr": "2099/10/29 10:00",
         "EffectRootName": "Bip001RForearm",
-        "EffectPath": "Assets/Product/Effect/Prefab/FxR7LuxiyaPrefab/Common/FxR7LuxiyaBip001RForearm.prefab",
-        "AureoleId": 182
+        "EffectPath": "Assets/Product/Effect/Prefab/FxR3HelentinePrefab/Common/FxR3HelentineBip001RForearm.prefab",
+        "AureoleId": 184,
+        "DefaultHide": true
     }
 ]

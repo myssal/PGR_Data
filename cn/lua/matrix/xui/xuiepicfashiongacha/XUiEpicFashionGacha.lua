@@ -212,7 +212,7 @@ function XUiEpicFashionGacha:PlayEnableAnim(cb)
     self.CanPlayEnableAnim = false
 
     -- 播放演出动画的时候必须关闭头部跟随 关闭待机loop动画
-    self.Panel3D.RoleLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Stop()
+    self.Panel3D.RoleLoop:GetComponent("PlayableDirector"):Stop()
     self:SetXPostFaicalControllerActive(false)
 
     local isSkip = XSaveTool.GetData(self.SkipBtnKey)
@@ -238,7 +238,7 @@ function XUiEpicFashionGacha:PlayLongEnableAnim1(cb)
     self.LongEnableCb = cb
     -- 播放循环动画
     self.AnimStart1:PlayTimelineAnimation()
-    self.Panel3D.AnimStart1Loop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+    self.Panel3D.AnimStart1Loop:GetComponent("PlayableDirector"):Play()
     -- 打开按钮 等待玩家点击开始下一阶段长动画
     self.BtnStartAnim.gameObject:SetActiveEx(true)
 end
@@ -248,16 +248,16 @@ function XUiEpicFashionGacha:PlayLongEnableAnim2()
     -- 点击后直接隐藏按钮
     self.BtnStartAnim.gameObject:SetActiveEx(false)
     -- 动画
-    local lastUiDirector = self.Panel3D.AnimStart1Loop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    local lastUiDirector = self.Panel3D.AnimStart1Loop:GetComponent("PlayableDirector")
     local currTime = lastUiDirector.time or 0
     lastUiDirector:Stop()
 
     self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(true)
-    local curUiDirector = self.Panel3D.AnimEnableLong:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    local curUiDirector = self.Panel3D.AnimEnableLong:GetComponent("PlayableDirector")
     curUiDirector.initialTime = currTime
     curUiDirector:Play()
     self.LongAnimTimer = XScheduleManager.ScheduleOnce(function()
-        self.Panel3D.RoleLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+        self.Panel3D.RoleLoop:GetComponent("PlayableDirector"):Play()
         -- 必须要在enable动画完成后打开视线跟随
         self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(false)
         self:SetXPostFaicalControllerActive(true)
@@ -267,15 +267,15 @@ function XUiEpicFashionGacha:PlayLongEnableAnim2()
         end
     end, math.round(curUiDirector.duration * XScheduleManager.SECOND))
 
-    self.AnimEnableLong:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)).initialTime = currTime
-    self.AnimEnableLong:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+    self.AnimEnableLong:GetComponent("PlayableDirector").initialTime = currTime
+    self.AnimEnableLong:GetComponent("PlayableDirector"):Play()
 
-    self.Panel3D.TimeDisable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)).initialTime = currTime
-    self.Panel3D.TimeDisable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+    self.Panel3D.TimeDisable:GetComponent("PlayableDirector").initialTime = currTime
+    self.Panel3D.TimeDisable:GetComponent("PlayableDirector"):Play()
 end
 
 function XUiEpicFashionGacha:PlayShortEnableAnim(cb)
-    self.Panel3D.RoleLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+    self.Panel3D.RoleLoop:GetComponent("PlayableDirector"):Play()
     self.AnimEnableShort:PlayTimelineAnimation()
     self.Panel3D.AnimEnableShort:PlayTimelineAnimation(function()
         self:SetXPostFaicalControllerActive(true)
@@ -426,7 +426,7 @@ function XUiEpicFashionGacha:RefreshUiShow()
         self.GachaAllFinishTrigger = nil
         self.AnimEnableShort:PlayTimelineAnimation(function()
             doRefreshFun()
-            self.Panel3D.RoleLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+            self.Panel3D.RoleLoop:GetComponent("PlayableDirector"):Play()
             self:ShowRewardAfterGacha()
         end)
     else
@@ -817,10 +817,10 @@ function XUiEpicFashionGacha:OnBtnStoryLineClick(isAutoOpen)
     -- 下楼梯动画
     self.Panel3D.StoryRoleEnbale.gameObject:SetActiveEx(true)
 
-    local storyRoleEnbaleDictor = self.Panel3D.StoryRoleEnbale:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    local storyRoleEnbaleDictor = self.Panel3D.StoryRoleEnbale:GetComponent("PlayableDirector")
     storyRoleEnbaleDictor:Play()
     self.TimerStoryRoleEnable = XScheduleManager.ScheduleOnce(function()
-        self.Panel3D.RoleLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+        self.Panel3D.RoleLoop:GetComponent("PlayableDirector"):Play()
         self.Panel3D.StoryRoleEnbale.gameObject:SetActiveEx(false)
     end, math.round(storyRoleEnbaleDictor.duration * XScheduleManager.SECOND))
 end

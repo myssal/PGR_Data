@@ -90,8 +90,8 @@ function XUiPanelSkillDetailsInfo:RefreshSubSkillInfoPanel(subSkill)
                 self.TxtSkillPointBad.text = subSkill.config.UseSkillPoint
             end
             local icon = XDataCenter.ItemManager.GetItemIcon(XDataCenter.ItemManager.ItemId.SkillPoint)
-            self.PanelSkillPointOk:Find("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
-            self.PanelSkillPointBad:Find("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
+            self.PanelSkillPointOk:Find("Icon"):GetComponent("RawImage"):SetRawImage(icon)
+            self.PanelSkillPointBad:Find("Icon"):GetComponent("RawImage"):SetRawImage(icon)
 
             self.PanelSkillPointBad.gameObject:SetActiveEx(not isSkillPointMeet)
             self.PanelSkillPointOk.gameObject:SetActiveEx(isSkillPointMeet)
@@ -109,8 +109,8 @@ function XUiPanelSkillDetailsInfo:RefreshSubSkillInfoPanel(subSkill)
             end
 
             local icon = XDataCenter.ItemManager.GetItemIcon(XDataCenter.ItemManager.ItemId.Coin)
-            self.PanelCoinOk:Find("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
-            self.PanelCoinBad:Find("Icon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
+            self.PanelCoinOk:Find("Icon"):GetComponent("RawImage"):SetRawImage(icon)
+            self.PanelCoinBad:Find("Icon"):GetComponent("RawImage"):SetRawImage(icon)
 
             self.PanelCoinBad.gameObject:SetActiveEx(not isUseCoinMeet)
             self.PanelCoinOk.gameObject:SetActiveEx(isUseCoinMeet)
@@ -228,7 +228,7 @@ function XUiPanelSkillDetailsInfo:SetTextInfo(txtType, index, info)
         txtSkillGo[index] = txtGo
     end
     txtGo:SetActiveEx(true)
-    local goTxt = txtGo:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    local goTxt = txtGo:GetComponent("Text")
     goTxt.text = XUiHelper.ConvertLineBreakSymbol(info)
     txtGo.transform:SetAsLastSibling()
 end

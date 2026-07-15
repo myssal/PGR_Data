@@ -22,9 +22,9 @@ function XUiPanelCheckReward:InitAutoScript()
 end
 
 function XUiPanelCheckReward:AutoInitUi()
-    self.BtnMask = self.Transform:Find("BtnMask"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnMask = self.Transform:Find("BtnMask"):GetComponent("Button")
     self.PanelReward = self.Transform:Find("PanelReward")
-    self.SViewRewardList = self.Transform:Find("PanelReward/SViewRewardList"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
+    self.SViewRewardList = self.Transform:Find("PanelReward/SViewRewardList"):GetComponent("ScrollRect")
     self.GridPrequelCheckPointReward = self.Transform:Find("PanelReward/SViewRewardList/Viewport/GridPrequelCheckPointReward")
     self.Scrollbar = self.Transform:Find("PanelReward/SViewRewardList/Scrollbar"):GetComponent("Scrollbar")
     self.PanelBg = self.Transform:Find("PanelReward/PanelBg")

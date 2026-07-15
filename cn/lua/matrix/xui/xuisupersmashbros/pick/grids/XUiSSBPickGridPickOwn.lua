@@ -98,7 +98,7 @@ function XUiSSBPickGridPickOwn:OnEndDrag(eventData)
 
     local targetIndex = 0
     for index, grid in pairs(self.Grids) do
-        local isInRest = CS.UnityEngine.RectTransformUtility.RectangleContainsScreenPoint(grid.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)), eventData.position, eventData.pressEventCamera)
+        local isInRest = CS.UnityEngine.RectTransformUtility.RectangleContainsScreenPoint(grid.Transform:GetComponent("RectTransform"), eventData.position, eventData.pressEventCamera)
         if isInRest then
             targetIndex = index
             break

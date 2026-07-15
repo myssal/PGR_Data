@@ -257,7 +257,7 @@ function XUiFightHackerGameV440:UpdateBackgroundSize()
     gridLayoutGroup.constraintCount = column
 
     ---@type UnityEngine.RectTransform
-    local rectTransform = gridLayoutGroup:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local rectTransform = gridLayoutGroup:GetComponent("RectTransform")
     CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform)
     local rect = rectTransform.rect
     local width, height = rect.width, rect.height
@@ -300,7 +300,7 @@ function XUiFightHackerGameV440:UpdatePainting()
     ---@type UnityEngine.RectTransform
     local panelGrid = self.GridHead
     local gridSize = panelGrid.rect.size
-    local boardHeight = self.BgGridLayout:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.height
+    local boardHeight = self.BgGridLayout:GetComponent("RectTransform").rect.height
     local offset = { X = -gridSize.x / 2, Y = boardHeight - gridSize.y / 2 }
 
     -- 绘制连线

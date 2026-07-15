@@ -12,7 +12,7 @@ local BtnGroupIndex = {
 
 function XUiPanelKotodamaMainContinue:OnStart()
     self.RImgPulao.gameObject:SetActiveEx(true)
-    self.RectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.RectTransform = self.Transform:GetComponent("RectTransform")
     self.BtnTask.CallBack = function()
         XLuaUiManager.Open('UiKotodamaTask')
     end
