@@ -204,7 +204,7 @@ function XSignBoardCamAnim:_ReBindAnimRoleTrack()
         if not binding or (self._TrackBindMap[trackId] and self._TrackBindMap[trackId] ~= curRoleName) then
             self._TrackBindMap[trackId] = curRoleName
             self.AnimPlayer:ClearGenericBinding(tracks[i])
-            self.AnimPlayer:SetGenericBinding(tracks[i], self._ModelPanel:GetTransform().gameObject:GetComponent("Animator"))
+            self.AnimPlayer:SetGenericBinding(tracks[i], self._ModelPanel:GetTransform().gameObject:GetComponent(typeof(CS.UnityEngine.Animator)))
         end
     end
 end
@@ -212,7 +212,7 @@ end
 
 --region SceneAnim
 function XSignBoardCamAnim:_InitNode(uiNode)
-    self.AnimPlayer = uiNode.gameObject:GetComponent("PlayableDirector")
+    self.AnimPlayer = uiNode.gameObject:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     self.DarkCanvasGroupList = uiNode.transform:GetComponentsInChildren(typeof(CS.UnityEngine.CanvasGroup), true)
     self:_ResetSceneAnim()
 
@@ -396,7 +396,7 @@ end
 function XSignBoardCamAnim:_SetEffectAnim(speed)
     local animater
     for _, effect in pairs(self.EffectDic) do
-        animater = effect.childCount > 0 and effect:GetChild(0):GetComponent("Animator") or nil
+        animater = effect.childCount > 0 and effect:GetChild(0):GetComponent(typeof(CS.UnityEngine.Animator)) or nil
         if not XTool.UObjIsNil(animater) then
             animater.speed = speed
         end
@@ -416,7 +416,7 @@ function XSignBoardCamAnim:_InitUiAnim()
     end
     for i = 0, self.UiAnimNodeRoot.childCount - 1, 1 do
         local anim = self.UiAnimNodeRoot:GetChild(i)
-        local playableDirector = anim:GetComponent("PlayableDirector")
+        local playableDirector = anim:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
 
         if not playableDirector then
             goto CONTINUE
@@ -424,7 +424,7 @@ function XSignBoardCamAnim:_InitUiAnim()
         local tracks = playableDirector.playableAsset:GetOutputTracks()
 
         for j = 0, tracks.Length - 1, 1 do
-            playableDirector:SetGenericBinding(tracks[j], self.UiRoot.GameObject:GetComponent("Animator"))
+            playableDirector:SetGenericBinding(tracks[j], self.UiRoot.GameObject:GetComponent(typeof(CS.UnityEngine.Animator)))
         end
         self.UiAnim[anim.name] = playableDirector
         self.UiAnim[anim.name].gameObject:SetActiveEx(false)

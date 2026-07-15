@@ -28,7 +28,7 @@
         "Id": "ActionPointContent",
         "Values": [
             "%s/%s",
-            "<color=#C4AA53>%s</color>/%s"
+            "<color=#FF0000>%s</color>/%s"
         ]
     },
     {
@@ -152,31 +152,31 @@
     {
         "Id": "BattleRecordAtkSuc",
         "Values": [
-            "进攻胜利 +%s"
+            "进攻胜利%s"
         ]
     },
     {
         "Id": "BattleRecordTotalAtkSuc",
         "Values": [
-            "进攻全胜 +%s"
+            "进攻全胜%s"
         ]
     },
     {
         "Id": "BattleRecordDefSuc",
         "Values": [
-            "防守成功 +%s"
+            "防守成功%s"
         ]
     },
     {
         "Id": "BattleRecordAtkFail",
         "Values": [
-            "进攻失败 -%s"
+            "进攻失败%s"
         ]
     },
     {
         "Id": "BattleRecordDefFailLoseScore",
         "Values": [
-            "防守失败 -%s"
+            "防守失败%s"
         ]
     },
     {
@@ -219,6 +219,12 @@
         "Id": "ArchiveReplaceConfirm",
         "Values": [
             "所选归档已上阵两次，是否全部替换"
+        ]
+    },
+    {
+        "Id": "NotInActivityTime",
+        "Values": [
+            "当前不在活动时间内"
         ]
     }
 ]

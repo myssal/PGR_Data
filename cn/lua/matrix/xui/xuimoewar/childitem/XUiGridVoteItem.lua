@@ -26,7 +26,7 @@ function XUiGridVoteItem:InitUiView()
     self.GridComponent:Refresh(itemTemplate)
     self.GridComponent:SetBtnNotClick(true)--临时屏蔽点击弹窗
     self.TxtNumber.text = XDataCenter.ItemManager.GetCount(itemId)
-    self.TxtEffectNumber = self.Transform:Find("PanelDetails/GridDetails/TxtDetails/TxtNumber"):GetComponent("Text")
+    self.TxtEffectNumber = self.Transform:Find("PanelDetails/GridDetails/TxtDetails/TxtNumber"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.GridReward.gameObject:SetActiveEx(self.VoteItem:IsLimitVote())
     XDataCenter.ItemManager.AddCountUpdateListener(itemId, function()
         self.TxtNumber.text = XDataCenter.ItemManager.GetCount(self.VoteItem:GetVoteItemId())

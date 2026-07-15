@@ -118,7 +118,7 @@ function XUiSettleLose:InitAutoScript()
 end
 
 function XUiSettleLose:AutoInitUi()
-    self.BtnLose = self.Transform:Find("SafeAreaContentPane/PanelLose/BtnLose"):GetComponent("Button")
+    self.BtnLose = self.Transform:Find("SafeAreaContentPane/PanelLose/BtnLose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiSettleLose:GetAutoKey(uiNode, eventName)

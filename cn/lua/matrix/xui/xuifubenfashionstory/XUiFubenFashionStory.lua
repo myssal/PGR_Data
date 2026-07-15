@@ -73,7 +73,7 @@ function XUiFubenFashionStory:InitComponent()
         if not btnSkip then
             break
         end
-        btnSkip = btnSkip.transform:GetComponent("Button")
+        btnSkip = btnSkip.transform:GetComponent(typeof(CS.UnityEngine.UI.Button))
         self.BtnSkipList[index] = btnSkip
         index = index + 1
     end

@@ -11,7 +11,7 @@ end
 function XGridFeature:InitUiObj(ui)
     XUiHelper.InitUiClass(self, ui)
     if self:IsInBattleRoom() then
-        self.RImgIcon = self.Transform:Find("RImgIcon"):GetComponent("RawImage")
+        self.RImgIcon = self.Transform:Find("RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
         self.BgNormal = self.Transform:Find("BgNormal")
         self.BgActive = self.Transform:Find("BgActive")
     end

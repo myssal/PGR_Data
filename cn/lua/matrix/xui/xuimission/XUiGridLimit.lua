@@ -31,11 +31,11 @@ end
 
 function XUiGridLimit:AutoInitUi()
     self.PanelOpen = self.Transform:Find("PanelOpen")
-    self.Txt1 = self.Transform:Find("PanelOpen/Txt1"):GetComponent("Text")
-    self.Txt2 = self.Transform:Find("PanelOpen/Txt2"):GetComponent("Text")
+    self.Txt1 = self.Transform:Find("PanelOpen/Txt1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.Txt2 = self.Transform:Find("PanelOpen/Txt2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelLock = self.Transform:Find("PanelLock")
-    self.Txt1A = self.Transform:Find("PanelLock/Txt1"):GetComponent("Text")
-    self.Txt2A = self.Transform:Find("PanelLock/Txt2"):GetComponent("Text")
+    self.Txt1A = self.Transform:Find("PanelLock/Txt1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.Txt2A = self.Transform:Find("PanelLock/Txt2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiGridLimit:GetAutoKey(uiNode,eventName)

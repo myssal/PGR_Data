@@ -45,7 +45,7 @@ function XUiFubenTip:RefreshStages()
             grid = i == 1 and self.GridStage or XUiHelper.Instantiate(self.GridStage, self.PanelStageContent)
             self.GridStageDic[i] = grid
         end
-        local txt = grid.transform:GetComponent("Text")
+        local txt = grid.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
         local stageCfg = XDataCenter.FubenManager.GetStageCfg(stageId)
         local chapterOrderId = XDataCenter.FubenMainLineManager.GetChapterOrderIdByStageId(stageId)
         txt.text = chapterOrderId .. "-" .. stageCfg.OrderId .. stageCfg.Name

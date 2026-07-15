@@ -47,7 +47,7 @@ function XUiCerberusGameChapterV2P9:RefreshStageLine()
     -- 路线图
     local linePrefab = self.PanelChapter:LoadPrefab(self.StoryLineCfg.FubenPrefab)
     self.PanelStageContent = linePrefab:FindTransform("PanelStageContent")
-    self.PanelStageList = linePrefab:FindTransform("PanelDrag"):GetComponent("ScrollRect")
+    self.PanelStageList = linePrefab:FindTransform("PanelDrag"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
   
     for k, storyPointId in pairs(self.StoryLineCfg.StoryPointIds) do
         local stageIndexParentTrans = linePrefab:FindTransform("Stage"..k)
@@ -94,7 +94,7 @@ end
 
 -- 自动定位
 function XUiCerberusGameChapterV2P9:AutoPos(targetTransform, scale, time, offsetV3, cb)
-    local gridRect = targetTransform:GetComponent("RectTransform")
+    local gridRect = targetTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridRect.localPosition.x + self.PanelStageContent.localPosition.x
     local left = 600
     

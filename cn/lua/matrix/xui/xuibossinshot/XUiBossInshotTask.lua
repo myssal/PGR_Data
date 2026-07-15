@@ -77,11 +77,15 @@ function XUiBossInshotTask:UpdateDynamicTable()
     self.ImgEmpty.gameObject:SetActiveEx(XTool.IsTableEmpty(self.TaskDataList))
 end
 
+local _GridParam = {
+    GridNameplateScaleFactor = 0.8
+}
+
 ---@param grid XDynamicGridTask
 function XUiBossInshotTask:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local taskData = self.TaskDataList[index]
-        grid:ResetData(taskData)
+        grid:ResetData(taskData, _GridParam)
         grid:SetReceiveAll()
         if self.IsPlayDynamicAnim then
             grid.PanelAnimation.gameObject:SetActive(false)
@@ -97,7 +101,7 @@ function XUiBossInshotTask:OnDynamicTableEvent(event, index, grid)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
         if self.IsPlayDynamicAnim then
             -- 动画完成前禁用拖拽
-            local scrollRect = self.SViewTask:GetComponent("ScrollRect")
+            local scrollRect = self.SViewTask:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
             scrollRect.vertical = false
             
             local grids = self.DynamicTable:GetGrids()

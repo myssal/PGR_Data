@@ -416,7 +416,7 @@ function XUiLottoShow:InitDrawBackGround()
     self.TxtType.text = ""
     self.TxtName.text = ""
     self.TxtQuality.text = ""
-    self.PanelInfo.gameObject:GetComponent("CanvasGroup").alpha = 0
+    self.PanelInfo.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 0
 
     self:PlayBoxAnimStart()
 end
@@ -434,7 +434,7 @@ function XUiLottoShow:PlayBoxAnimStart()
     if self.Update then
         behaviour.LuaUpdate = function() self:Update() end
     end
-    self.PlayableDirector = self.BackGround:GetComponent("PlayableDirector")
+    self.PlayableDirector = self.BackGround:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     self.PlayableDirector:Play()
     self.PlayBoxAnim = true
     self.PanelBoxLight = self.BackGround.transform:Find("ModelRoot/UiNearRoot/PanelBox/PanelBoxLight")

@@ -86734,7 +86734,7 @@
     {
         "Id": 21058011,
         "Type": 4,
-        "Priority": 25659,
+        "Priority": 25661,
         "Title": "这就是不落日的实力 (1)",
         "Desc": "不落日进化至SS品质",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR4Shenwei.png",
@@ -86750,7 +86750,7 @@
     {
         "Id": 21058012,
         "Type": 4,
-        "Priority": 25658,
+        "Priority": 25660,
         "Title": "这就是不落日的实力 (2)",
         "Desc": "不落日进化至SSS品质",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR4Shenwei.png",
@@ -141830,6 +141830,7 @@
     },
     {
         "Id": 100150,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 10000,
         "Title": "忆芽初萌（1）",
@@ -141843,6 +141844,7 @@
     },
     {
         "Id": 100151,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 9900,
         "Title": "忆芽初萌（2）",
@@ -141856,6 +141858,7 @@
     },
     {
         "Id": 100152,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 9800,
         "Title": "忆芽初萌（3）",
@@ -141869,6 +141872,7 @@
     },
     {
         "Id": 100153,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 9700,
         "Title": "育蕊噙言（1）",
@@ -141882,6 +141886,7 @@
     },
     {
         "Id": 100154,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 9600,
         "Title": "育蕊噙言（2）",
@@ -141895,6 +141900,7 @@
     },
     {
         "Id": 100155,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 9500,
         "Title": "育蕊噙言（3）",
@@ -141908,6 +141914,7 @@
     },
     {
         "Id": 100156,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 9400,
         "Title": "露溉芳圃（1）",
@@ -141921,6 +141928,7 @@
     },
     {
         "Id": 100157,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 9300,
         "Title": "露溉芳圃（2）",
@@ -141934,6 +141942,7 @@
     },
     {
         "Id": 100158,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 9200,
         "Title": "露溉芳圃（3）",
@@ -141947,6 +141956,7 @@
     },
     {
         "Id": 100159,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 9100,
         "Title": "撷英寄远（1）",
@@ -141960,6 +141970,7 @@
     },
     {
         "Id": 100160,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 9000,
         "Title": "撷英寄远（2）",
@@ -141973,6 +141984,7 @@
     },
     {
         "Id": 100161,
+        "SourceGroupId": 46008,
         "Type": 11,
         "Priority": 8900,
         "Title": "撷英寄远（3）",
@@ -158655,7 +158667,7 @@
         "Type": 11,
         "Priority": 9999,
         "Title": "汐海寄愿",
-        "Desc": "通过【月下鲸谣】",
+        "Desc": "通过赛琳娜——第2关【月下鲸谣】",
         "Icon": "Assets/Product/Texture/Image/UiSummerFashionNew/UiFubenFashionStoryNewV406/UiFubenFashionStoryNewV406TaskBg.png",
         "Condition": [
             240764
@@ -158671,7 +158683,7 @@
         "Type": 11,
         "Priority": 9998,
         "Title": "汐海寄愿",
-        "Desc": "通过【时影寻踪】",
+        "Desc": "通过海伦汀——第2关【时影寻踪】",
         "Icon": "Assets/Product/Texture/Image/UiSummerFashionNew/UiFubenFashionStoryNewV406/UiFubenFashionStoryNewV406TaskBg.png",
         "Condition": [
             240765
@@ -163693,12 +163705,12 @@
         "Type": 11,
         "Priority": 9600,
         "Title": "雾夜镇魂曲",
-        "Desc": "完成5局【诡城交锋】",
+        "Desc": "完成5局【诡城交锋】(不含进阶挑战)",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
         "Condition": [
             120682
         ],
-        "Result": 1,
+        "Result": 5,
         "RewardId": 15215,
         "SkipId": 89102,
         "Suffix": "活动"
@@ -163708,7 +163720,7 @@
         "Type": 11,
         "Priority": 9500,
         "Title": "忽忽的奇幻花园",
-        "Desc": "通关【关卡1-1】",
+        "Desc": "通关【忆芽初萌】关卡1",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
         "Condition": [
             120683
@@ -163744,8 +163756,8 @@
             120685
         ],
         "Result": 1,
-        "RewardId": 15217,
-        "SkipId": 20293,
+        "RewardId": 15215,
+        "SkipId": 20384,
         "Suffix": "活动"
     },
     {
@@ -163789,7 +163801,7 @@
             120688
         ],
         "Result": 1,
-        "RewardId": 15218,
+        "RewardId": 15217,
         "SkipId": 20235,
         "Suffix": "活动"
     },
@@ -163804,7 +163816,7 @@
             120689
         ],
         "Result": 1,
-        "RewardId": 15216,
+        "RewardId": 15218,
         "SkipId": 7107,
         "Suffix": "活动"
     },
@@ -174731,44 +174743,10 @@
         "Suffix": "活动"
     },
     {
-        "Id": 140205,
-        "Type": 112,
-        "Priority": 10000,
-        "Title": "每日登录",
-        "Desc": "每日首次登录",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
-        "Condition": [
-            2000
-        ],
-        "Result": 1,
-        "RewardId": 10001,
-        "StartTime": "2025/11/17 5:00",
-        "EndTime": "2027/3/23 5:00",
-        "Suffix": "登录",
-        "GroupId": 724
-    },
-    {
-        "Id": 140206,
-        "Type": 112,
-        "Priority": 10000,
-        "Title": "每日登录",
-        "Desc": "每日首次登录",
-        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
-        "Condition": [
-            2000
-        ],
-        "Result": 1,
-        "RewardId": 10001,
-        "StartTime": "2025/11/17 5:00",
-        "EndTime": "2027/3/23 5:00",
-        "Suffix": "登录",
-        "GroupId": 725
-    },
-    {
         "Id": 140207,
         "Type": 108,
         "Priority": 8800,
-        "Title": "雾夜镇魂曲【1】",
+        "Title": "雾夜镇魂曲【13】",
         "Desc": "通关【迷局突围】难度5",
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
@@ -174782,7 +174760,7 @@
         "Id": 140208,
         "Type": 108,
         "Priority": 8700,
-        "Title": "雾夜镇魂曲【2】",
+        "Title": "雾夜镇魂曲【14】",
         "Desc": "神威存档分达到45000",
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
@@ -174796,7 +174774,7 @@
         "Id": 140209,
         "Type": 108,
         "Priority": 8600,
-        "Title": "雾夜镇魂曲【3】",
+        "Title": "雾夜镇魂曲【15】",
         "Desc": "【迷局突围】中累计战斗10次",
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
@@ -174810,7 +174788,7 @@
         "Id": 140210,
         "Type": 108,
         "Priority": 8500,
-        "Title": "雾夜镇魂曲【4】",
+        "Title": "雾夜镇魂曲【16】",
         "Desc": "【迷局突围】中累计战斗20次",
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
@@ -174824,7 +174802,7 @@
         "Id": 140211,
         "Type": 108,
         "Priority": 8400,
-        "Title": "雾夜镇魂曲【5】",
+        "Title": "雾夜镇魂曲【17】",
         "Desc": "【迷局突围】中累计战斗30次",
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
@@ -174839,12 +174817,12 @@
         "Type": 11,
         "Priority": 10000,
         "Title": "雾夜镇魂曲Ⅰ",
-        "Desc": "累计完成5局【诡城交锋】",
+        "Desc": "完成6局【诡城交锋】(不含进阶挑战)",
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140212
         ],
-        "Result": 5,
+        "Result": 6,
         "RewardId": 69262,
         "Suffix": "活动"
     },
@@ -174853,12 +174831,12 @@
         "Type": 11,
         "Priority": 9900,
         "Title": "雾夜镇魂曲Ⅱ",
-        "Desc": "累计完成15局【诡城交锋】",
+        "Desc": "完成12局【诡城交锋】(不含进阶挑战)",
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140213
         ],
-        "Result": 15,
+        "Result": 12,
         "RewardId": 69263,
         "Suffix": "活动"
     },
@@ -174867,12 +174845,12 @@
         "Type": 11,
         "Priority": 9800,
         "Title": "雾夜镇魂曲Ⅲ",
-        "Desc": "累计完成25局【诡城交锋】",
+        "Desc": "完成18局【诡城交锋】(不含进阶挑战)",
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RewardGridTask02.png",
         "Condition": [
             140214
         ],
-        "Result": 25,
+        "Result": 18,
         "RewardId": 69264,
         "Suffix": "活动"
     },
@@ -175003,7 +174981,7 @@
         "Type": 11,
         "Priority": 9800,
         "Title": "活动-虚像破执",
-        "Desc": "完成三次焓变核验",
+        "Desc": "累计获得3星",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
         "Condition": [
             140231
@@ -175022,7 +175000,7 @@
         "Type": 11,
         "Priority": 9700,
         "Title": "活动-雾夜镇魂曲",
-        "Desc": "完成5局【诡城交锋】",
+        "Desc": "完成5局【诡城交锋】(不含进阶挑战)",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
         "Condition": [
             140232
@@ -175041,7 +175019,7 @@
         "Type": 11,
         "Priority": 9600,
         "Title": "活动-忽忽的奇幻花园",
-        "Desc": "通关【关卡1-1】",
+        "Desc": "通关【忆芽初萌】关卡1",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveV401.png",
         "Condition": [
             140233

@@ -204,11 +204,11 @@ function XUiActivityBaseChild:UpdateLeftTabBtns(selectIndex, selectId)
         btn:SetName(activityGroupCfg.Name)
 
         local bg1 = btn.transform:FindTransform("RImgBg1")
-        if bg1 then bg1:GetComponent("RawImage"):SetRawImage(activityGroupCfg.Bg) end
+        if bg1 then bg1:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(activityGroupCfg.Bg) end
         local bg2 = btn.transform:FindTransform("RImgBg2")
-        if bg2 then bg2:GetComponent("RawImage"):SetRawImage(activityGroupCfg.Bg) end
+        if bg2 then bg2:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(activityGroupCfg.Bg) end
         local bg3 = btn.transform:FindTransform("RImgBg3")
-        if bg3 then bg3:GetComponent("RawImage"):SetRawImage(activityGroupCfg.Bg) end
+        if bg3 then bg3:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(activityGroupCfg.Bg) end
 
         local uiButton = btn:GetComponent("XUiButton")
         tableInsert(self.TabBtns, uiButton)

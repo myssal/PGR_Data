@@ -21,9 +21,9 @@ function XUiLivWarmSoundsActivityTaskPanel:InitAutoScript()
 end
 
 function XUiLivWarmSoundsActivityTaskPanel:AutoInitUi()
-    self.BtnMask = self.Transform:Find("BtnMask"):GetComponent("Button")
+    self.BtnMask = self.Transform:Find("BtnMask"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelReward = self.Transform:Find("PanelReward")
-    self.SViewRewardList = self.Transform:Find("PanelReward/SViewRewardList"):GetComponent("ScrollRect")
+    self.SViewRewardList = self.Transform:Find("PanelReward/SViewRewardList"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self.GridCheckPointReward = self.Transform:Find("PanelReward/SViewRewardList/Viewport/GridCheckPointReward")
     self.PanelBg = self.Transform:Find("PanelReward/PanelBg")
 end

@@ -35,7 +35,7 @@ function XGridCharacterV2P6:UpdateSupportAbandoned(supportData)
         self.PanelHighPriority.gameObject:SetActiveEx(showHighPriority)
         if icon then
             local tran = self.PanelHighPriority.transform:Find("UpTag/RImgGuildWarUP")
-            local rawImage = tran:GetComponent("RawImage")
+            local rawImage = tran:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
             rawImage:SetRawImage(icon)
         end
     end
@@ -235,7 +235,7 @@ function XGridCharacterV2P6:PlayAnimation(animeName)
     -- if not animTrans.gameObject.activeInHierarchy then
     --     return
     -- end
-    -- animTrans:GetComponent("PlayableDirector"):Play()
+    -- animTrans:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
 end
 
 return XGridCharacterV2P6

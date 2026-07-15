@@ -240,7 +240,7 @@ end
 
 --region 列表刷新
 function XUiPlanetChapter:InitDynamicTable()
-    self.ScrollRect = self.PanelItemList:GetComponent("ScrollRect")
+    self.ScrollRect = self.PanelItemList:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self.ScrollRect.onValueChanged:AddListener(handler(self, self.ChangeCam))
     self.DynamicTable = XDynamicTableNormal.New(self.PanelItemList)
     self.DynamicTable:SetProxy(XUiPlanetChapterGrid, self)

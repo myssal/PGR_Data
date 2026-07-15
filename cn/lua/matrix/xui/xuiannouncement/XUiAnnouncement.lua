@@ -107,7 +107,7 @@ function XUiAnnouncement:InitUi()
     
     self.WebViewPosCache = {}
     ---@type UnityEngine.UI.ScrollRect
-    local panelWebView = self.ParagraphContent.parent.parent.transform:GetComponent("ScrollRect")
+    local panelWebView = self.ParagraphContent.parent.parent.transform:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     if not XTool.UObjIsNil(panelWebView) then
         panelWebView.onValueChanged:AddListener(handler(self, self.OnWebViewScroll))
     end
@@ -203,7 +203,7 @@ function XUiAnnouncement:CreateTable(parameters)
     -- 获取表格组件
     local tableHeader = self.TableHeader
     local tableRow = self.TableRow
-    local rootRectTransform = tableRoot:GetComponent("RectTransform")
+    local rootRectTransform = tableRoot:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local tableHorizontalPadding = 20
     local paddingX = 20
     local paddingY = 40
@@ -285,7 +285,7 @@ function XUiAnnouncement:CreateTable(parameters)
         else
             preferredWidth = tonumber(cellInfo.cellData.width)
         end
-        local cellRect = cell:GetComponent("RectTransform")
+        local cellRect = cell:GetComponent(typeof(CS.UnityEngine.RectTransform))
         cellRect:SetUISizeDelta(preferredWidth, 0)
         local preferredHeight = textComponent.preferredHeight
         maxWidths[colIndex] = math.ceil(math.max(maxWidths[colIndex] or 0, preferredWidth + paddingX))
@@ -296,7 +296,7 @@ function XUiAnnouncement:CreateTable(parameters)
         totalWidth = totalWidth + (maxWidths[i] or 0)
     end
     -- 表格宽度拉伸填满整个容器
-    local parentWidth = self.PanelWebView:GetComponent("RectTransform").rect.width - tableHorizontalPadding
+    local parentWidth = self.PanelWebView:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.width - tableHorizontalPadding
     if isTableExpend then
         -- 获取父容器可用宽度
         local extraSpace = math.ceil((parentWidth - totalWidth) / widthAutoCount)
@@ -325,7 +325,7 @@ function XUiAnnouncement:CreateTable(parameters)
     local yOffset = 0
     for rowIndex, rowInfo in ipairs(allRows) do
         local rowObj = rowInfo.rowObj
-        local rowRect = rowObj:GetComponent("RectTransform")
+        local rowRect = rowObj:GetComponent(typeof(CS.UnityEngine.RectTransform))
         local rowHeight = maxHeights[rowIndex] or rowRect.sizeDelta.y
 
         rowRect:SetAnchorMin(0, 1)
@@ -336,7 +336,7 @@ function XUiAnnouncement:CreateTable(parameters)
 
         local xOffset = 0
         for colIndex, cell in ipairs(rowInfo.cells) do
-            local cellRect = cell:GetComponent("RectTransform")
+            local cellRect = cell:GetComponent(typeof(CS.UnityEngine.RectTransform))
             local cellWidth = maxWidths[colIndex] or cellRect.sizeDelta.x
             cellRect:SetAnchorMin(0, 1)
             cellRect:SetAnchorMax(0, 1)
@@ -361,7 +361,7 @@ function XUiAnnouncement:DrawTableLines(tableRoot, colWidths, rowHeights, totalW
         return
     end
     thickness = thickness or 1
-    local rootRect = tableRoot:GetComponent("RectTransform")
+    local rootRect = tableRoot:GetComponent(typeof(CS.UnityEngine.RectTransform))
     if rootRect then
         rootRect:SetAnchorMin(0, 1)
         rootRect:SetAnchorMax(0, 1)
@@ -427,11 +427,11 @@ function XUiAnnouncement:CreateTableLine(tableRoot, name)
     local go = XUiHelper.Instantiate(self.TableLine, tableRoot)
     go.gameObject:SetActive(true)
     go.name = name
-    local img = go:GetComponent("Image")
+    local img = go:GetComponent(typeof(CS.UnityEngine.UI.Image))
     if img then
         img.raycastTarget = false
     end
-    local rt = go:GetComponent("RectTransform")
+    local rt = go:GetComponent(typeof(CS.UnityEngine.RectTransform))
     rt:SetAnchorMin(0, 1)
     rt:SetAnchorMax(0, 1)
     rt:SetPivot(0, 1)

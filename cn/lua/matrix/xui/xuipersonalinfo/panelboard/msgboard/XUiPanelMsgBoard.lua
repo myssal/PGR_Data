@@ -18,7 +18,7 @@ function XUiPanelMsgBoard:InitAutoScript()
 end
 
 function XUiPanelMsgBoard:AutoInitUi()
-    self.PanelScrollView = self.Transform:Find("PanelScrollView"):GetComponent("ScrollRect")
+    self.PanelScrollView = self.Transform:Find("PanelScrollView"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self.PanelMsgBoardItem = self.Transform:Find("PanelScrollView/Viewport/Content/PanelMsgBoardItem")
     self.PanelBtnBrief = self.Transform:Find("PanelScrollView/Viewport/Content/PanelInfoMsgItem/PanelTxt/PanelBtnBrief")
     self.PanelWriteDiary = self.Transform:Find("PanelWriteDiary")

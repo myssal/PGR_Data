@@ -25,7 +25,7 @@ function XUiPlanetPropertyShop:OnEnable()
 end
 
 function XUiPlanetPropertyShop:RefreshTime()
-    local timeText = self.Transform:Find("SafeAreaContentPane/PanelMainShop/PanelShop/PanelBt/Text2"):GetComponent("Text")
+    local timeText = self.Transform:Find("SafeAreaContentPane/PanelMainShop/PanelShop/PanelBt/Text2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     local endTime = XDataCenter.PlanetManager.GetViewModel():GetEndTime()
     if not XTool.IsNumberValid(endTime) then
         timeText.gameObject:SetActiveEx(false)

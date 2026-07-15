@@ -382,7 +382,7 @@ function XUiDormMain:InitBtnTabsGroup()
     self.BtnGroup:Init(tab, function(tabIndex) self:ChangeSceneOnBtnTabClick(tabIndex) end)
     self.TabList = tab
     ---@type UnityEngine.RectTransform
-    self.GroupRectTransform = self.BtnGroup:GetComponent("RectTransform")
+    self.GroupRectTransform = self.BtnGroup:GetComponent(typeof(CS.UnityEngine.RectTransform))
 end
 
 function XUiDormMain:InitPanelSceneGroup()

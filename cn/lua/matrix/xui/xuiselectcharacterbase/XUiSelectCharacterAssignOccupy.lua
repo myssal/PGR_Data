@@ -112,7 +112,7 @@ function XUiSelectCharacterAssignOccupy:RefreshMid()
     local isOccupyChar = self.Chapter:GetCharacterId() == self.CurCharacter.Id
     self.BtnJoin.gameObject:SetActiveEx(not isOccupyChar and self.Chapter:IsCharConditionMatch(self.CurCharacter.Id))
     self.BtnQuit.gameObject:SetActiveEx(isOccupyChar)
-    self.BtnJoin.gameObject:GetComponent("Image"):SetSprite(CS.XGame.ClientConfig:GetString("BtnOccupyJoinImg1"))
+    self.BtnJoin.gameObject:GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(CS.XGame.ClientConfig:GetString("BtnOccupyJoinImg1"))
     self.TxtConditionTitle.text = CS.XTextManager.GetText("AssignSendMemberCalled")
 end
 

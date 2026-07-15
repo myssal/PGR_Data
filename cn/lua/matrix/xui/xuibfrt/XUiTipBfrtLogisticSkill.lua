@@ -40,8 +40,8 @@ end
 
 function XUiTipBfrtLogisticSkill:AutoInitUi()
     self.PanelTipBfrtLogisticSkill = self.Transform:Find("SafeAreaContentPane/PanelTipBfrtLogisticSkill")
-    self.TxtEchelonIndex = self.Transform:Find("SafeAreaContentPane/PanelTipBfrtLogisticSkill/TxtEchelonIndex"):GetComponent("Text")
-    self.TxtSkillDes = self.Transform:Find("SafeAreaContentPane/PanelTipBfrtLogisticSkill/TxtSkillDes"):GetComponent("Text")
+    self.TxtEchelonIndex = self.Transform:Find("SafeAreaContentPane/PanelTipBfrtLogisticSkill/TxtEchelonIndex"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtSkillDes = self.Transform:Find("SafeAreaContentPane/PanelTipBfrtLogisticSkill/TxtSkillDes"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiTipBfrtLogisticSkill:GetAutoKey(uiNode, eventName)

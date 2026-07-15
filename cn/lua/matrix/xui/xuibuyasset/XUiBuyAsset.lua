@@ -103,7 +103,7 @@ function XUiBuyAsset:AutoAddListener()
 end
 
 function XUiBuyAsset:InitUi()
-    self.TargetImgQuality = self.TargetImg.transform.parent:Find("ImgQuality"):GetComponent("Image")
+    self.TargetImgQuality = self.TargetImg.transform.parent:Find("ImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.Image))
 end
 
 -- auto

@@ -132,7 +132,7 @@ function XUiDormCharacterDetail:InitModelInfo()
     self.PanelDrag.Target = self.Model.transform
     CS.XShadowHelper.AddShadow(self.Model, true)
 
-    local animator = self.Model:GetComponent("Animator")
+    local animator = self.Model:GetComponent(typeof(CS.UnityEngine.Animator))
     animator:SetInteger("State", 1)
 end
 

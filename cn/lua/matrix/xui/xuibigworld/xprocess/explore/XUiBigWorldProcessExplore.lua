@@ -122,7 +122,7 @@ end
 
 function XUiBigWorldProcessExplore:_InitUi()
     self.GridExplore.gameObject:SetActiveEx(false)
-    self.ImgBg = self.ImgBg or self.Transform:Find("PanelAccumulate/ImgBg"):GetComponent("RawImage")
+    self.ImgBg = self.ImgBg or self.Transform:Find("PanelAccumulate/ImgBg"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
 end
 
 ---@param contentEntity XBWCourseContentEntity

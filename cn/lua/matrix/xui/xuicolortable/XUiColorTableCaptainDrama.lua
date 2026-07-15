@@ -44,7 +44,7 @@ function XUiColorTableCaptainDrama:_UpdateTime()
 end
 
 function XUiColorTableCaptainDrama:_InitObj()
-    self.ImgBg = self.BtnPanelMaskGuide.gameObject:GetComponent("Image")
+    self.ImgBg = self.BtnPanelMaskGuide.gameObject:GetComponent(typeof(CS.UnityEngine.UI.Image))
     self.BtnPass.gameObject:SetActiveEx(false)
     self.PanelBtn.gameObject:SetActiveEx(false)
 end

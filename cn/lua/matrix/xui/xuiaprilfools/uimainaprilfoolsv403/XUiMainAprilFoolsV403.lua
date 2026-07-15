@@ -74,7 +74,7 @@ function XUiMainAprilFoolsV403:OnDisable()
     
     -- 防止ui动画被打断没人开启射线检测
     if not XTool.UObjIsNil(self.SafeAreaContentPane) then
-        local cvgp = self.SafeAreaContentPane.transform:GetComponent("CanvasGroup")
+        local cvgp = self.SafeAreaContentPane.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
         if not XTool.UObjIsNil(cvgp) then
             cvgp.blocksRaycasts = true
         end
@@ -171,7 +171,7 @@ function XUiMainAprilFoolsV403:InitSceneRoot(particleGroupName)
     if XTool.UObjIsNil(animationRoot) then return end
 
     if particleGroupName and particleGroupName ~= "" then
-        self.ChargeAnimator = sceneRoot:FindTransform(particleGroupName):GetComponent("Animator")
+        self.ChargeAnimator = sceneRoot:FindTransform(particleGroupName):GetComponent(typeof(CS.UnityEngine.Animator))
     else
         self.ChargeAnimator = nil
     end

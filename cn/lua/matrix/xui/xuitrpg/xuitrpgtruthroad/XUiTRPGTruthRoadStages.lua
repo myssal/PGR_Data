@@ -118,7 +118,7 @@ function XUiTRPGTruthRoadStages:SetLineActive(index, active)
 end
 
 function XUiTRPGTruthRoadStages:PlayScrollViewMove(grid, ignoreAnim)
-    local gridX = grid.Transform.parent:GetComponent("RectTransform").localPosition.x
+    local gridX = grid.Transform.parent:GetComponent(typeof(CS.UnityEngine.RectTransform)).localPosition.x
     local contentPos = self.PanelStageContent.localPosition
     local markX = self.MarkX
     local diffX = gridX - markX

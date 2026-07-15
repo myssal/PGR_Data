@@ -24,11 +24,11 @@ function XUiConnectingLineGameAvatar:SetPosition(x, y)
     local position = CS.UnityEngine.Vector2(x, y)
 
     ---@type UnityEngine.RectTransform
-    local rectTransform = self.Transform:GetComponent("RectTransform")
+    local rectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     rectTransform.anchoredPosition = position
 
     ---@type UnityEngine.RectTransform
-    local rectTransformBoard = self._GridBoardHead:GetComponent("RectTransform")
+    local rectTransformBoard = self._GridBoardHead:GetComponent(typeof(CS.UnityEngine.RectTransform))
     rectTransformBoard.anchoredPosition = position
 end
 

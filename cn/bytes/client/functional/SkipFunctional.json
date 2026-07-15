@@ -2105,6 +2105,7 @@
         "UiName": "UiAutoWindow",
         "ParamId": 186,
         "Explain": "4.6海伦汀特效皮",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2113,6 +2114,7 @@
         "UiName": "UiAutoWindow",
         "ParamId": 187,
         "Explain": "4.6The赛特效皮",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2121,6 +2123,7 @@
         "UiName": "UiAutoWindow",
         "ParamId": 188,
         "Explain": "4.6版本预热打脸图",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2128,6 +2131,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 189,
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2135,6 +2139,15 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 190,
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40190,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 191,
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -12798,6 +12811,7 @@
         "Origin": 7,
         "UiName": "SkipToPartnerTeachingChapter",
         "Explain": "前往辅助机教学试玩-第三十五章",
+        "ConditionId": 1050153,
         "FunctionalId": 1801,
         "CustomParams": [
             35
@@ -21657,6 +21671,7 @@
         "SkipId": 20379,
         "Origin": 7,
         "UiName": "SkipToCharacterStory",
+        "ConditionId": 1050153,
         "CustomParams": [
             1401003
         ],
@@ -21684,8 +21699,8 @@
         "CloseTime": "2026/8/19 5:00",
         "CustomParams": [
             1,
-            11,
-            1488
+            35,
+            1499
         ],
         "IsHideFunc": true
     },
@@ -21702,6 +21717,26 @@
             0,
             4
         ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20384,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeCharacterDetail",
+        "Explain": "跳转赛利卡教学（七实跃升）",
+        "FunctionalId": 1800,
+        "CustomParams": [
+            1051005,
+            30100229
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 11010101,
+        "Origin": 3,
+        "UiName": "UiNewFuben",
+        "ParamId": 11010101,
+        "Explain": "困难1-1",
         "IsHideFunc": true
     },
     {
@@ -29647,7 +29682,7 @@
         "Explain": "购买涂装补给包",
         "FunctionalId": 5,
         "StartTime": "2026/7/17 5:00",
-        "CloseTime": "2026/8/20 5:00",
+        "CloseTime": "2026/8/19 5:00",
         "CustomParams": [
             2,
             0,
@@ -29662,7 +29697,7 @@
         "ParamId": 3,
         "Explain": "涂装商店",
         "FunctionalId": 1001,
-        "StartTime": "2026/8/20 5:00",
+        "StartTime": "2026/8/19 5:00",
         "CustomParams": [
             1,
             0,
@@ -31205,6 +31240,7 @@
         "SkipId": 89106,
         "Origin": 7,
         "UiName": "SkipToFashionStory",
+        "ConditionId": 1050153,
         "FunctionalId": 10341,
         "CustomParams": [
             6
@@ -31216,6 +31252,7 @@
         "Origin": 7,
         "UiName": "SkipToFashionStoryChapter",
         "ParamId": 14,
+        "ConditionId": 1050153,
         "FunctionalId": 10341,
         "IsHideFunc": true
     },
@@ -31223,7 +31260,8 @@
         "SkipId": 89108,
         "Origin": 7,
         "UiName": "SkipToFashionStoryChapter",
-        "ParamId": 15,
+        "ParamId": 16,
+        "ConditionId": 1050153,
         "FunctionalId": 10341,
         "IsHideFunc": true
     },
@@ -31231,7 +31269,8 @@
         "SkipId": 89109,
         "Origin": 7,
         "UiName": "SkipToFashionStoryChapter",
-        "ParamId": 16,
+        "ParamId": 15,
+        "ConditionId": 1050153,
         "FunctionalId": 10341,
         "IsHideFunc": true
     },
@@ -31240,6 +31279,7 @@
         "Origin": 7,
         "UiName": "SkipToFashionStoryChapter",
         "ParamId": 17,
+        "ConditionId": 1050153,
         "FunctionalId": 10341,
         "IsHideFunc": true
     },
@@ -31248,6 +31288,7 @@
         "Origin": 7,
         "UiName": "SkipToFashionStoryChapter",
         "ParamId": 18,
+        "ConditionId": 1050153,
         "FunctionalId": 10341,
         "IsHideFunc": true
     },
@@ -31818,7 +31859,7 @@
         "SkipId": 90055,
         "Origin": 6,
         "UiName": "UiShop",
-        "Explain": "跳转到可肝商店",
+        "Explain": "勤务商店",
         "CustomParams": [
             1,
             0,
@@ -31889,7 +31930,7 @@
         "SkipId": 90061,
         "Origin": 6,
         "UiName": "UiShop",
-        "Explain": "跳转到可肝商店",
+        "Explain": "勤务商店",
         "CustomParams": [
             1,
             0,
@@ -31963,6 +32004,7 @@
         "Origin": 7,
         "UiName": "SkipToConcertPreHeatingMain",
         "Explain": "前往活动【次元调频】",
+        "ConditionId": 1050153,
         "FunctionalId": 10505,
         "TimeId": 48801
     },
@@ -32167,18 +32209,20 @@
         "SkipId": 1300645,
         "Origin": 7,
         "UiName": "OpenUiPaintingExperiencePass",
-        "Explain": "涂装试玩-4.5海伦汀",
+        "Explain": "涂装试玩-4.6海伦汀",
+        "ConditionId": 1050153,
         "CustomParams": [
-            1
+            124
         ]
     },
     {
         "SkipId": 1300646,
         "Origin": 7,
         "UiName": "OpenUiPaintingExperiencePass",
-        "Explain": "涂装试玩-4.5The赛",
+        "Explain": "涂装试玩-4.6The赛",
+        "ConditionId": 1050153,
         "CustomParams": [
-            2
+            123
         ]
     },
     {
@@ -32186,6 +32230,7 @@
         "Origin": 10,
         "UiName": "XPBRGame",
         "IsRecord": true,
+        "ConditionId": 1050153,
         "FunctionalId": 10500,
         "TimeId": 48821,
         "StartTime": "2026/8/28 10:00",

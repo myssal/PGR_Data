@@ -87,7 +87,7 @@ function XUiDrawPreview:AutoInitUi()
     -- self.PanelProCard = self.Transform:Find("SafeAreaContentPane/PanelPreview/PnlScrollView/PnlViewport/PnlDetailContent/PanelPro/PanelProCard")
     -- self.PanelStd = self.Transform:Find("SafeAreaContentPane/PanelPreview/PnlScrollView/PnlViewport/PnlDetailContent/PanelStd")
     -- self.PanelStdCard = self.Transform:Find("SafeAreaContentPane/PanelPreview/PnlScrollView/PnlViewport/PnlDetailContent/PanelStd/PanelStdCard")
-    -- self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent("Button")
+    -- self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     -- self.ProTitle = self.Transform:Find("SafeAreaContentPane/PanelPreview/PnlScrollView/PnlViewport/PnlDetailContent/ProTitle")
 end
 

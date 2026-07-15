@@ -575,6 +575,8 @@ function XUiTeamPrefabWeapon:_RefreshOverrunLevelBtn(equip)
 
     local characterId = self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos)
     local _, showDot, reachedDot, totalDot = equip:GetOverrunLevelInfo(characterId)
+    local overrunSuitReachedDot = equip:GetOverrunLevel() > 0 and 1 or 0
+    self.BtnOverrunLevel:SetName((reachedDot + overrunSuitReachedDot) .. "/" .. (totalDot + 1))
     local isLv1 = lv == XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL1
     local isLvGe2 = lv >= XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL2
     local uiObj = self.BtnOverrunLevel:GetComponent("UiObject")
@@ -601,11 +603,9 @@ function XUiTeamPrefabWeapon:_RefreshOverrunSuitBtn(equip)
     self.BtnOverrunEmpty.gameObject:SetActiveEx(false)
     self.OverrunBlindEffect.gameObject:SetActiveEx(false)
 
-    local progress = equip:GetOverrunLevel() > 0 and "1/1" or "0/1"
     if not equip:IsOverrunCanBlindSuit() then
         self.BtnOverrunBlind.gameObject:SetActiveEx(true)
         self.BtnOverrunBlind:SetDisable(true)
-        self.BtnOverrunBlind:SetName(progress)
         self.OverrunIconTips = XUiHelper.GetText("EquipOverrunClickTips")
         return
     end
@@ -613,13 +613,11 @@ function XUiTeamPrefabWeapon:_RefreshOverrunSuitBtn(equip)
     local choseSuitId = self:GetDisplayOverrunSuitId(equip)
     if not XTool.IsNumberValid(choseSuitId) then
         self.BtnOverrunEmpty.gameObject:SetActiveEx(true)
-        self.BtnOverrunEmpty:SetName(progress)
         return
     end
 
     self.BtnOverrunBlind.gameObject:SetActiveEx(true)
     self.BtnOverrunBlind:SetDisable(false)
-    self.BtnOverrunBlind:SetName(progress)
     local iconPath = XMVCA.XEquip:GetEquipSuitIconPath(choseSuitId)
     local characterId = self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos)
     local isMatch = self:IsOverrunSuitMatch(choseSuitId, characterId)
@@ -653,8 +651,6 @@ function XUiTeamPrefabWeapon:_RefreshOverrunSkillBtn(equip)
         stateObj:GetObject("PanelFull").gameObject:SetActiveEx(isFull)
         stateObj:GetObject("PanelNotFull").gameObject:SetActiveEx(not isFull)
     end
-
-    self.BtnOverrunSkill:SetName(reachedDot .. "/" .. totalDot)
 end
 
 function XUiTeamPrefabWeapon:GetDisplayOverrunSuitId(equip)

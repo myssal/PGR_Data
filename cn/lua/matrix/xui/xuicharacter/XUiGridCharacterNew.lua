@@ -7,7 +7,7 @@ function XUiGridCharacterNew:Ctor(ui)
 
     XTool.InitUiObject(self)
 
-    self.RectTransform = ui:GetComponent("RectTransform")
+    self.RectTransform = ui:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self:InitAutoScript()
 end
 
@@ -36,22 +36,22 @@ end
 
 function XUiGridCharacterNew:AutoInitUi()
     self.PanelHead = self.Transform:Find("PanelHead")
-    self.RImgHeadIcon = self.Transform:Find("PanelHead/RImgHeadIcon"):GetComponent("RawImage")
+    self.RImgHeadIcon = self.Transform:Find("PanelHead/RImgHeadIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.PanelLevel = self.Transform:Find("PanelLevel")
-    self.TxtLevel = self.Transform:Find("PanelLevel/TxtLevel"):GetComponent("Text")
+    self.TxtLevel = self.Transform:Find("PanelLevel/TxtLevel"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelGrade = self.Transform:Find("PanelGrade")
-    self.RImgGrade = self.Transform:Find("PanelGrade/RImgGrade"):GetComponent("RawImage")
-    self.RImgQuality = self.Transform:Find("RImgQuality"):GetComponent("RawImage")
+    self.RImgGrade = self.Transform:Find("PanelGrade/RImgGrade"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.RImgQuality = self.Transform:Find("RImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.PanelFragment = self.Transform:Find("PanelFragment")
-    self.TxtCurCount = self.Transform:Find("PanelFragment/TxtCurCount"):GetComponent("Text")
-    self.TxtNeedCount = self.Transform:Find("PanelFragment/TxtNeedCount"):GetComponent("Text")
-    self.ImgLock = self.Transform:Find("ImgLock"):GetComponent("Image")
-    self.BtnCharacter = self.Transform:Find("BtnCharacter"):GetComponent("Button")
-    self.ImgInTeam = self.Transform:Find("ImgInTeam"):GetComponent("Image")
+    self.TxtCurCount = self.Transform:Find("PanelFragment/TxtCurCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtNeedCount = self.Transform:Find("PanelFragment/TxtNeedCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgLock = self.Transform:Find("ImgLock"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.BtnCharacter = self.Transform:Find("BtnCharacter"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.ImgInTeam = self.Transform:Find("ImgInTeam"):GetComponent(typeof(CS.UnityEngine.UI.Image))
     self.PanelSelected = self.Transform:Find("PanelSelected")
-    self.ImgSelected = self.Transform:Find("PanelSelected/ImgSelected"):GetComponent("Image")
-    self.ImgRedPoint = self.Transform:Find("ImgRedPoint"):GetComponent("Image")
-    self.TxtCur = self.Transform:Find("TxtCur"):GetComponent("Text")
+    self.ImgSelected = self.Transform:Find("PanelSelected/ImgSelected"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgRedPoint = self.Transform:Find("ImgRedPoint"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.TxtCur = self.Transform:Find("TxtCur"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.IconEquipGuide = self.Transform:Find("IconEquipGuide")
 end
 
@@ -157,7 +157,7 @@ function XUiGridCharacterNew:UpdateSupport(supportData)
         self.PanelHighPriority.gameObject:SetActiveEx(showHighPriority)
         if icon then
             local tran = self.PanelHighPriority.transform:Find("UpTag/RImgGuildWarUP")
-            local rawImage = tran:GetComponent("RawImage")
+            local rawImage = tran:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
             rawImage:SetRawImage(icon)
         end
     end

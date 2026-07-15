@@ -41,9 +41,9 @@ function XUiGachaOrganize:InitComponent()
                 self.DrawButtonComponent[i] = {}
             end
             self.DrawButtonComponent[i].Btn = btn
-            self.DrawButtonComponent[i].TxtDrawDesc = btn.transform:Find("TxtDrawDesc"):GetComponent("Text")
-            self.DrawButtonComponent[i].TxtUseItemCount = btn.transform:Find("TxtUseItemCount"):GetComponent("Text")
-            self.DrawButtonComponent[i].ImgUseItemIcon = btn.transform:Find("ImgUseItemIcon"):GetComponent("RawImage")
+            self.DrawButtonComponent[i].TxtDrawDesc = btn.transform:Find("TxtDrawDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+            self.DrawButtonComponent[i].TxtUseItemCount = btn.transform:Find("TxtUseItemCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+            self.DrawButtonComponent[i].ImgUseItemIcon = btn.transform:Find("ImgUseItemIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
         end
     end
     self.TextTip.text = CS.XTextManager.GetText("GachaOrganizeRankTip")

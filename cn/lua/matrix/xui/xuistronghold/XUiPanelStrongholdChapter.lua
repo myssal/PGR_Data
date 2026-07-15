@@ -22,7 +22,7 @@ function XUiPanelStrongholdChapter:Ctor(ui, clickStageCb, skipCb)
 
     self.ViewPort = self.Transform:FindTransform("ViewPort")
     self.PanelStageContent = self.Transform:FindTransform("PanelStageContent")
-    self.ScrollRect = self.Transform:FindTransform("PaneStageList"):GetComponent("ScrollRect")
+    self.ScrollRect = self.Transform:FindTransform("PaneStageList"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
 end
 
 function XUiPanelStrongholdChapter:Refresh(chapterId)

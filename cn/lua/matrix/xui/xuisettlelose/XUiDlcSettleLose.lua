@@ -3,7 +3,7 @@ local XUiDlcSettleLose = XLuaUiManager.Register(XUiDlcSettlementBase, "UiDlcSett
 local GridLoseTip = require("XUi/XUiSettleLose/XUiGridLoseTip")
 
 function XUiDlcSettleLose:OnAwake()
-    self.BtnLose = self.Transform:Find("SafeAreaContentPane/PanelLose/BtnLose"):GetComponent("Button")
+    self.BtnLose = self.Transform:Find("SafeAreaContentPane/PanelLose/BtnLose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     
     if not self.BtnLose then
         self:Close()

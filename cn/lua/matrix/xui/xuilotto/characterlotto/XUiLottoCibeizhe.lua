@@ -241,7 +241,7 @@ end
 --region Anim
 function XUiLottoCibeizhe:InitUiAnim()
     ---@type UnityEngine.Playables.PlayableDirector
-    self._UiAnimEnableLong = self.GameObject:FindTransform("AnimEnableLong"):GetComponent("PlayableDirector")
+    self._UiAnimEnableLong = self.GameObject:FindTransform("AnimEnableLong"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
 end
 
 function XUiLottoCibeizhe:PlayEnableAnim()
@@ -281,7 +281,7 @@ function XUiLottoCibeizhe:_PlayLongStartAnim(time)
 
     self:_StopTimer()
     -- 因为要提前加影子保证最后效果一直，长动画需要检测卡列的动作加影子
-    local animEnableLong = self.Transform:FindTransform("AnimEnableLong"):GetComponent("PlayableDirector")
+    local animEnableLong = self.Transform:FindTransform("AnimEnableLong"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     local animEnableLongDuration = math.floor(animEnableLong.duration)
     local nowTimeStamp = XTime.GetServerNowTimestamp()
     self._LongAnimTimer = XScheduleManager.ScheduleForever(function()
@@ -299,7 +299,7 @@ function XUiLottoCibeizhe:_PlayLongStartAnim(time)
     XScheduleManager.ScheduleNextFrame(function()
         local sceneEnableLong = self._SceneAnimRoot:FindTransform("AnimEnableLong")
         sceneEnableLong.gameObject:SetActiveEx(true)
-        local sceneEnableLongDir = sceneEnableLong.gameObject:GetComponent("PlayableDirector")
+        local sceneEnableLongDir = sceneEnableLong.gameObject:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
         sceneEnableLongDir:Play()
         local sceneEnableLongDuration = math.floor(sceneEnableLongDir.duration)
         self._SceneLongAnimTimer = XScheduleManager.ScheduleOnce(function()
@@ -528,15 +528,15 @@ function XUiLottoCibeizhe:InitCameraAnim()
     ---@type UnityEngine.Transform
     local root = self.UiModelGo.transform
     ---@type UnityEngine.Playables.PlayableDirector
-    self._CamAnimStart1 = root:FindTransform("AnimStart1"):GetComponent("PlayableDirector")
+    self._CamAnimStart1 = root:FindTransform("AnimStart1"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     ---@type UnityEngine.Playables.PlayableDirector
-    self._CamAnimEnableLong = root:FindTransform("AnimEnableLong"):GetComponent("PlayableDirector")
+    self._CamAnimEnableLong = root:FindTransform("AnimEnableLong"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     ---@type UnityEngine.Playables.PlayableDirector
-    self._CamAnimEnableShort = root:FindTransform("AnimEnableShort"):GetComponent("PlayableDirector")
+    self._CamAnimEnableShort = root:FindTransform("AnimEnableShort"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     ---@type UnityEngine.Playables.PlayableDirector
-    self._CamAnimEnableStory = root:FindTransform("AnimEnableStory"):GetComponent("PlayableDirector")
+    self._CamAnimEnableStory = root:FindTransform("AnimEnableStory"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     ---@type UnityEngine.Playables.PlayableDirector
-    self._CamAnimDisableStory = root:FindTransform("AnimDisableStory"):GetComponent("PlayableDirector")
+    self._CamAnimDisableStory = root:FindTransform("AnimDisableStory"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
 
     ---@type UnityEngine.Transform[]
     self._CamAnimDrawDir = {}
@@ -564,7 +564,7 @@ function XUiLottoCibeizhe:InitSceneModel()
         self._Model = modelParent:GetChild(0)
     end
     ---@type UnityEngine.Animator
-    self._ModelAnimator = self._Model.gameObject:GetComponent("Animator")
+    self._ModelAnimator = self._Model.gameObject:GetComponent(typeof(CS.UnityEngine.Animator))
 end
 
 function XUiLottoCibeizhe:AddModelShadow()

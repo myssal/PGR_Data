@@ -28,7 +28,7 @@ function XUiSucceedBossSettlementTeamItem:RefreshTeam(entityIds)
     XUiHelper.RefreshCustomizedList(self.ListCharacter, self.GridHead, #entityIds, function(index, go)
         local entityId = entityIds[index]
         local icon = self._Control:GetSucceedBossCharacterBuffIconAndDesc(entityId)
-        go.transform:Find("RImgHead"):GetComponent("RawImage"):SetRawImage(icon)
+        go.transform:Find("RImgHead"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
     end)
 end
 

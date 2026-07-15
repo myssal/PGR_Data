@@ -347,7 +347,7 @@ function XGuideAgent:FindSceneCamera(root, camera)
         return
     end
     
-    local component = cam.gameObject:GetComponent("Camera")
+    local component = cam.gameObject:GetComponent(typeof(CS.UnityEngine.Camera))
     if XTool.UObjIsNil(component) then
         XLog.Error("错误，节点上未能找到相机组件:" .. camera)
         return

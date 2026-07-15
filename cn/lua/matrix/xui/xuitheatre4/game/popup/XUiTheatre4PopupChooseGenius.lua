@@ -144,7 +144,7 @@ end
 -- 建造
 function XUiTheatre4PopupChooseGenius:OnBtnBuildClick()
     ---@type UnityEngine.RectTransform
-    local rectTransform = self.BtnBuild:GetComponent("RectTransform")
+    local rectTransform = self.BtnBuild:GetComponent(typeof(CS.UnityEngine.RectTransform))
     XLuaUiManager.Open("UiTheatre4BubbleBuild", rectTransform.position, rectTransform.sizeDelta, false)
 end
 

@@ -771,7 +771,7 @@ function XUiPanelRoleModel:RoleModelLoaded(name, uiName, cb, runtimeControllerNa
     XModelManager.SetRoleCamera(name, model.transform.parent.parent.parent, uiName, self.CurCharacterId)
 
     if runtimeControllerName then
-        local animator = model:GetComponent("Animator")
+        local animator = model:GetComponent(typeof(CS.UnityEngine.Animator))
         animator.runtimeAnimatorController = CS.LoadHelper.LoadUiController(runtimeControllerName, animator.gameObject)
     end
 
@@ -1336,7 +1336,7 @@ colorId)
                     local equipUsage = XMVCA.XEquip:GetEquipAnimControllerBySignboard(characterId, self.NowFashionId)
                     local newCb = function(model)
                         self.StandAnimaShowWeaponList[#self.StandAnimaShowWeaponList + 1] = model
-                        local weaponAnimator = model:GetComponent("Animator")
+                        local weaponAnimator = model:GetComponent(typeof(CS.UnityEngine.Animator))
                         if weaponAnimator then
                             self.StandAnimaShowWeaponAnimatorList[#self.StandAnimaShowWeaponAnimatorList + 1] = weaponAnimator
                         end
@@ -2469,7 +2469,7 @@ function XUiPanelRoleModel:LoadWeaponModelWhenPlayAnima(actionId)
     local weaponAnimatorList = {}
     local weaponCb = function(model)
         weaponModelList[#weaponModelList + 1] = model
-        local weaponAnimator = model:GetComponent("Animator")
+        local weaponAnimator = model:GetComponent(typeof(CS.UnityEngine.Animator))
         if weaponAnimator then
             weaponAnimatorList[#weaponAnimatorList + 1] = weaponAnimator
         end
@@ -2520,7 +2520,7 @@ function XUiPanelRoleModel:CheckAnimaCanPlay(AnimaName)
     local IsCanPlay = false
     local animator
     if self.CurRoleName and self.RoleModelPool[self.CurRoleName] and self.RoleModelPool[self.CurRoleName].Model then
-        animator = self.RoleModelPool[self.CurRoleName].Model:GetComponent("Animator")
+        animator = self.RoleModelPool[self.CurRoleName].Model:GetComponent(typeof(CS.UnityEngine.Animator))
         if XModelManager.CheckAnimatorAction(animator, AnimaName) then
             IsCanPlay = true
         end
@@ -2548,7 +2548,7 @@ function XUiPanelRoleModel:StopAnima(oriAnima, force)
         return
     end
     ---@type UnityEngine.Animator
-    local animator = curEntry.Model:GetComponent("Animator")
+    local animator = curEntry.Model:GetComponent(typeof(CS.UnityEngine.Animator))
     local clips = animator:GetCurrentAnimatorClipInfo(0)
     local clip
     if clips and clips.Length > 0 then
@@ -2587,7 +2587,7 @@ function XUiPanelRoleModel:GetAnimator()
         return nil
     end
     if not XTool.UObjIsNil(model.Model) then
-        return model.Model:GetComponent("Animator")
+        return model.Model:GetComponent(typeof(CS.UnityEngine.Animator))
     else
         return nil
     end
@@ -3309,7 +3309,7 @@ end
 
 -- 禁止动画根节点移动
 function XUiPanelRoleModel:CloseRootMotion(model)
-    local animator = model:GetComponent("Animator")
+    local animator = model:GetComponent(typeof(CS.UnityEngine.Animator))
     animator.applyRootMotion = false                        
 end
 
@@ -3456,7 +3456,7 @@ function XUiPanelRoleModel:WeaponAnimationSync(weaponModelList, modelName)
                 goto CONTINUE
             end
             ---@type UnityEngine.Animator
-            local weaponAnim = weaponModel:GetComponent("Animator")
+            local weaponAnim = weaponModel:GetComponent(typeof(CS.UnityEngine.Animator))
             if XTool.UObjIsNil(weaponAnim) or XTool.UObjIsNil(weaponAnim.runtimeAnimatorController) then
                 goto CONTINUE
             end

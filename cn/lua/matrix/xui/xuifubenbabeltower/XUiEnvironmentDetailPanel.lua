@@ -77,10 +77,10 @@ function XUiEnvironmentDetailPanel:RefreshBuffDetail(index)
         end
         if contentType == "text" then
             go = CS.UnityEngine.Object.Instantiate(self.TxtBuffDetail, self.BuffDetailContent)
-            go:GetComponent("Text").text = value
+            go:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = value
         elseif contentType == "img" then
             go = CS.UnityEngine.Object.Instantiate(self.RImgBuffDetail, self.BuffDetailContent)
-            go:GetComponent("RawImage"):SetRawImage(value)
+            go:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(value)
         end
         go.gameObject:SetActiveEx(true)
     end

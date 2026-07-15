@@ -10,7 +10,7 @@ function XUiChapterBtnTab:Ctor(ui, index, callback, isLockClick)
     self.IsLockClick = isLockClick
     self.IsLock = false
     XTool.InitUiObject(self)
-    self.Btn = self.Transform:GetComponent("Button")
+    self.Btn = self.Transform:GetComponent(typeof(CS.UnityEngine.UI.Button))
     self:AutoAddListener()
     if self.Btn.gameObject:GetComponent(typeof(CS.XUiClickWidget)) == nil then
         self.WgtBtn = self.Btn.gameObject:AddComponent(typeof(CS.XUiClickWidget))

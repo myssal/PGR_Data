@@ -292,7 +292,7 @@ function XUiActivityChapter:OnDynamicTableEvent(event, index, grid)
             end
         end
 
-        local dircotr = self.Transform:Find("Animation/DarkDisable"):GetComponent("PlayableDirector")
+        local dircotr = self.Transform:Find("Animation/DarkDisable"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
         local id = 25 -- 2.1临时，由于这个界面打开太卡了，需要强制播放一段黑屏，后续考虑优化成字段
         if data.ExConfig and data.ExConfig.Id == id then
             local isLock = nil

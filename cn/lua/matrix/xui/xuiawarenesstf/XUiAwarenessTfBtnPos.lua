@@ -20,11 +20,11 @@ function XUiAwarenessTfBtnPos:InitAutoScript()
 end
 
 function XUiAwarenessTfBtnPos:AutoInitUi()
-    self.TxtPosNum = self.Transform:Find("TxtPosNum"):GetComponent("Text")
+    self.TxtPosNum = self.Transform:Find("TxtPosNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.UiBtnBackHas = self.Transform:Find("UiBtnBackHas")
     self.UiBtnBackNone = self.Transform:Find("UiBtnBackNone")
     self.UiSelectBG = self.Transform:Find("UiSelectBG")
-    self.BtnPos = self.Transform:Find("BtnPos"):GetComponent("Button")
+    self.BtnPos = self.Transform:Find("BtnPos"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiAwarenessTfBtnPos:AutoAddListener()

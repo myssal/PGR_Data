@@ -454,7 +454,7 @@ function XUiFavorabilityNew:UpdateBatteryMode() -- editor模式下 BatteryCompon
     if particleGroupName and particleGroupName ~= "" then
         local chargeAnimatorTrans = self.UiSceneInfo.Transform:FindTransform(particleGroupName)
         if chargeAnimatorTrans then
-            chargeAnimator = chargeAnimatorTrans:GetComponent("Animator")
+            chargeAnimator = chargeAnimatorTrans:GetComponent(typeof(CS.UnityEngine.Animator))
         else
             XLog.Error("Can't Find \"" .. particleGroupName .. "\", Plase Check \"ParticleGroupName\" In Share/PhotoMode/Background.tab")
         end

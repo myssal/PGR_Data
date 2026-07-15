@@ -1034,12 +1034,12 @@ function XRogueSimScene:OnLoadSceneComplete()
     virtuaUiCamera.transform.localEulerAngles = CS.UnityEngine.Vector3(cameraRotationX, 0, 0)
     camUiOverlook.transform.localEulerAngles = CS.UnityEngine.Vector3(cameraRotationX, 0, 0)
 
-    self.UiFarCamera = sceneRoot:Find("UiFarRoot/UiFarCamera"):GetComponent("Camera")
-    self.UiNearCamera = sceneRoot:Find("UiNearRoot/UiNearCamera"):GetComponent("Camera")
-    self.UiCamera = sceneRoot:Find("UiNearRoot/UiCamera"):GetComponent("Camera")
+    self.UiFarCamera = sceneRoot:Find("UiFarRoot/UiFarCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
+    self.UiNearCamera = sceneRoot:Find("UiNearRoot/UiNearCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
+    self.UiCamera = sceneRoot:Find("UiNearRoot/UiCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
     self.PanelDrag = sceneRoot:Find("UiNearRoot/UiCanvas/PanelDrag"):GetComponent("XDragMove")
-    self.CameraFollowPoint = self.PanelDrag.transform:Find("CameraFollowPoint"):GetComponent("RectTransform")
-    self.CameraFollowPointOverlook = self.PanelDrag.transform:Find("CameraFollowPointOverlook"):GetComponent("RectTransform")
+    self.CameraFollowPoint = self.PanelDrag.transform:Find("CameraFollowPoint"):GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.CameraFollowPointOverlook = self.PanelDrag.transform:Find("CameraFollowPointOverlook"):GetComponent(typeof(CS.UnityEngine.RectTransform))
 
     self.CamFarOverlook = sceneRoot:Find("UiFarRoot/CamFarOverlook")
     self.CamNearOverlook = sceneRoot:Find("UiNearRoot/CamNearOverlook")
@@ -1260,7 +1260,7 @@ function XRogueSimScene:InitPanelDrag()
     local height = maxWorldPos.z - minWorldPos.z + offsetY
     local startPosX = minWorldPos.x - offsetX / 2
     local startPosY = minWorldPos.z - offsetY / 2
-    local rect = self.PanelDrag.transform:GetComponent("RectTransform")
+    local rect = self.PanelDrag.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     rect.sizeDelta = CS.UnityEngine.Vector2(width, height)
     rect.localPosition = CS.UnityEngine.Vector3(startPosX, startPosY, 0)
     

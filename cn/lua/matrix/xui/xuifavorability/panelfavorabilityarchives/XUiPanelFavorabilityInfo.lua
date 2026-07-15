@@ -7,7 +7,7 @@ function XUiPanelFavorabilityInfo:OnStart(uiRoot)
     self.UiRoot = uiRoot
     self.GridLikeInfoItem.gameObject:SetActiveEx(false)
     self.PanelEmpty.gameObject:SetActiveEx(false)
-    self.Content=self.PanelInfoList.transform:Find('Viewport/Content'):GetComponent('RectTransform')
+    self.Content=self.PanelInfoList.transform:Find('Viewport/Content'):GetComponent(typeof(CS.UnityEngine.RectTransform))
 
 end
 

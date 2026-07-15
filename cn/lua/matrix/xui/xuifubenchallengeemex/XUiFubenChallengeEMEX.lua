@@ -38,19 +38,19 @@ end
 
 function XUiFubenChallengeEMEX:AutoInitUi()
     self.PanelMapContainer = self.Transform:Find("FullScreenBackground/PanelMapContainer")
-    self.SViewBg = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewBg"):GetComponent("ScrollRect")
+    self.SViewBg = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewBg"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self.PanelContentBg = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewBg/Viewport/PanelContentBg")
     self.PanelBg = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewBg/Viewport/PanelContentBg/PanelBg")
-    self.SViewStage = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage"):GetComponent("ScrollRect")
+    self.SViewStage = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self.PanelContent = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent")
     self.PanelStage = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage")
-    --self.ImgOpen = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage1/RImgOpen"):GetComponent("RawImage")
-    --self.ImgOpenA = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage2/RImgOpen"):GetComponent("RawImage")
-    --self.ImgOpenB = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage3/RImgOpen"):GetComponent("RawImage")
-    --self.ImgOpenC = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage4/RImgOpen"):GetComponent("RawImage")
-    --self.ImgOpenD = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage5/RImgOpen"):GetComponent("RawImage")
-    --self.ImgOpenE = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage6/RImgOpen"):GetComponent("RawImage")
-    --self.ImgOpenF = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage7/RImgOpen"):GetComponent("RawImage")
+    --self.ImgOpen = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage1/RImgOpen"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    --self.ImgOpenA = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage2/RImgOpen"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    --self.ImgOpenB = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage3/RImgOpen"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    --self.ImgOpenC = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage4/RImgOpen"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    --self.ImgOpenD = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage5/RImgOpen"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    --self.ImgOpenE = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage6/RImgOpen"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    --self.ImgOpenF = self.Transform:Find("FullScreenBackground/PanelMapContainer/SViewStage/Viewport/PanelContent/PanelStage/Stage7/RImgOpen"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.PanelTargetFlag = self.Transform:Find("FullScreenBackground/PanelTargetFlag")
     self.PanelHover = self.Transform:Find("FullScreenBackground/PanelHover")
 end
@@ -99,11 +99,11 @@ function XUiFubenChallengeEMEX:Init(chapter)
         local stageId = self.SectionCfg.StageId[i]
         local stageCfg = XDataCenter.FubenManager.GetStageCfg(stageId)
         local stageItem = self.PanelStage:Find("Stage" .. i)
-        local stageButton = stageItem:Find("Enter"):GetComponent("Button")
-        local stageLock = stageItem:Find("StageLock"):GetComponent("Button")
-        stageItem:Find("StageLock/Text"):GetComponent("Text").text = stageCfg.Name
-        stageItem:Find("StageOpen/Text"):GetComponent("Text").text = stageCfg.Name
-        local rImgOpen = stageItem:Find("RImgOpen"):GetComponent("RawImage")
+        local stageButton = stageItem:Find("Enter"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+        local stageLock = stageItem:Find("StageLock"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+        stageItem:Find("StageLock/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = stageCfg.Name
+        stageItem:Find("StageOpen/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = stageCfg.Name
+        local rImgOpen = stageItem:Find("RImgOpen"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
         --self:SetUiSprite(imgOpen, stageCfg.Icon)
         rImgOpen:SetRawImage(stageCfg.Icon)
         stageButton.interactable = true
@@ -116,7 +116,7 @@ function XUiFubenChallengeEMEX:Init(chapter)
             end)
     end
     local linePanel = self.PanelStage:Find("Line")
-    local rectTransform = self.PanelContent:GetComponent("RectTransform")
+    local rectTransform = self.PanelContent:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local minX = rectTransform.sizeDelta.x
     for i = maxStage + 1, MAX_DISPLAY_STAGE do
         local stageItem = self.PanelStage:Find("Stage" .. i)

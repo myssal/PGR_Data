@@ -42,8 +42,8 @@ function XUiGridEchelonExp:InitAutoScript()
 end
 
 function XUiGridEchelonExp:AutoInitUi()
-    self.TxtExp = self.Transform:Find("ImageExpTag/TxtExp"):GetComponent("Text")
-    self.TxtEchelonIndex = self.Transform:Find("TxtEchelonIndex"):GetComponent("Text")
+    self.TxtExp = self.Transform:Find("ImageExpTag/TxtExp"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtEchelonIndex = self.Transform:Find("TxtEchelonIndex"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelCharacters = self.Transform:Find("PanelCharacters")
     self.GridCharacter = self.Transform:Find("PanelCharacters/GridCharacter")
 end

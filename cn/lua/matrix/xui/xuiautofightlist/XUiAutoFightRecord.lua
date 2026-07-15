@@ -58,7 +58,7 @@ function XUiAutoFightRecord:InitCharacters()
                 transform = CS.UnityEngine.Object.Instantiate(self.CharacterTemplate, self.PanelCharacters)
             end
 
-            local img = transform:Find("RImgIcon"):GetComponent("RawImage")
+            local img = transform:Find("RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
             local icon = XMVCA.XCharacter:GetCharRoundnessHeadIcon(id)
             img:SetRawImage(icon)
         end
@@ -100,12 +100,12 @@ function XUiAutoFightRecord:InitAutoScript()
 end
 
 function XUiAutoFightRecord:AutoInitUi()
-    self.TxtIndex = self.Transform:Find("RecordTemplate/TxtIndex"):GetComponent("Text")
-    self.TxtStageType = self.Transform:Find("RecordTemplate/TxtStageType"):GetComponent("Text")
-    self.TxtStageName = self.Transform:Find("RecordTemplate/TxtStageName"):GetComponent("Text")
-    self.BtnObtain = self.Transform:Find("RecordTemplate/BtnObtain"):GetComponent("Button")
+    self.TxtIndex = self.Transform:Find("RecordTemplate/TxtIndex"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtStageType = self.Transform:Find("RecordTemplate/TxtStageType"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtStageName = self.Transform:Find("RecordTemplate/TxtStageName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnObtain = self.Transform:Find("RecordTemplate/BtnObtain"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelFighting = self.Transform:Find("RecordTemplate/PanelFighting")
-    self.TxtCountdown = self.Transform:Find("RecordTemplate/PanelFighting/TxtCountdown"):GetComponent("Text")
+    self.TxtCountdown = self.Transform:Find("RecordTemplate/PanelFighting/TxtCountdown"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelCharacters = self.Transform:Find("RecordTemplate/PanelCharacters")
     self.CharacterTemplate = self.Transform:Find("RecordTemplate/PanelCharacters/CharacterTemplate")
 end

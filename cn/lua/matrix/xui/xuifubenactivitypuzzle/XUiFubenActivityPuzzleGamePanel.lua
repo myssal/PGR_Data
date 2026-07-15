@@ -23,7 +23,7 @@ function XUiFubenActivityPuzzleGamePanel:Init()
     self:InitBlock()
     self.Camera = CS.XUiManager.Instance.UiCamera
     self.LongClicks[Empty_Index] = XUiButtonLongClick.New(self.PuzzleChipPointer, 5, self, nil, function () self:OnPuzzleChipDrag(Empty_Index) end, function () self:OnPuzzleChipUp() end, false)
-    local DragItemRectTransform = self.PuzzleChipDragItem.transform:GetComponent("RectTransform")
+    local DragItemRectTransform = self.PuzzleChipDragItem.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.PieceMoveLimitX = (self.RectTransform.rect.width - DragItemRectTransform.rect.width)/2
     self.PieceMoveLimitY = (self.RectTransform.rect.height - DragItemRectTransform.rect.height)/2 
 

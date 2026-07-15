@@ -73,7 +73,7 @@ function XUiPanelEnter:InitPhasesRewardGrid()
             obj.transform:SetParent(self.PanelReward, false)
             grid = XUiGridBossReward.New(obj, self, bossArea:GetId())
             self.PhasesRewardGrids[i] = grid
-            self.PhasesRewardGridRects[i] = grid.Transform:GetComponent("RectTransform")
+            self.PhasesRewardGridRects[i] = grid.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
         end
     end
 end

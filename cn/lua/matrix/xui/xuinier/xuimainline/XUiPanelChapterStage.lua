@@ -112,7 +112,7 @@ function XUiPanelChapterStage:CreatStageNode(index, prefab)
         local ui = CS.UnityEngine.Object.Instantiate(prefab)
         grid = XUiGridNierStage.New(ui, self.RootUi)
         grid.Transform:SetParent(self.StageNode[index], false)
-        grid.Transform:GetComponent("RectTransform").anchoredPosition = CS.UnityEngine.Vector2(0, 0)
+        grid.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition = CS.UnityEngine.Vector2(0, 0)
         self.GridList[index] = grid
     end 
 end

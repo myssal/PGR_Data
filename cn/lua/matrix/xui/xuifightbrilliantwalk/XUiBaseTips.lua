@@ -7,14 +7,14 @@ local V3 = CS.UnityEngine.Vector3.zero -- 临时变量
 function XUiBaseTips:Ctor(ui, prefabName)
     self.PrefabName = prefabName
     self.GameObject = ui.gameObject
-    self.RectTransform = self.GameObject:GetComponent("RectTransform")
+    self.RectTransform = self.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     XTool.InitUiObjectByUi(self, ui)
     self.Offset = Vector2(0, 0)     --骨骼点偏移
     self.RecodeTipTextIndex = 1     --有多个文本框时，缓存当前使用的文本框下标
     self.CSXRLManagerCamera = CS.XRLManager.Camera
     self.RectTransform.anchorMax = Vector2(0, 0)
     self.RectTransform.anchorMin = Vector2(0, 0)
-    self.ParentRectTransform = self.RectTransform.parent:GetComponent("RectTransform")
+    self.ParentRectTransform = self.RectTransform.parent:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self:InitVarDic()
     self.GameObject:SetActiveEx(true)
 end

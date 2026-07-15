@@ -31,7 +31,7 @@ end
 function XUiNewbieTaskAnim:LoadSpine()
     local panelSpine = self.RootUi.PanelSpine
     local spinePath = XUiHelper.GetClientConfig("UiNewbieTaskSailika01", XUiHelper.ClientConfigType.String)
-    self.Animator = panelSpine:LoadSpinePrefab(spinePath).transform:GetComponent("Animator")
+    self.Animator = panelSpine:LoadSpinePrefab(spinePath).transform:GetComponent(typeof(CS.UnityEngine.Animator))
 end
 
 function XUiNewbieTaskAnim:InitIdleTab()

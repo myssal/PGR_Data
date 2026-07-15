@@ -5,7 +5,7 @@ local XPanelPsionicVisionOff = XClass(nil, "XPanelPsionicVisionOff")
 function XPanelPsionicVisionOff:Ctor(ui, rootUi)
     XUiHelper.InitUiClass(self, ui)
 	self.RootUi = rootUi
-    self.IconBg = self.IconBg.gameObject:GetComponent("RawImage")
+    self.IconBg = self.IconBg.gameObject:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     XUiHelper.RegisterClickEvent(self, self.ImgProgress, self.OnOpenClick)
     XUiHelper.RegisterClickEvent(self, self.ImgJD, self.OnOpenClick)
     XUiHelper.RegisterClickEvent(self, self.ImgJiantou, self.OnOpenClick)
@@ -39,7 +39,7 @@ local XPanelPsionicVisionOn = XClass(nil, "XPanelPsionicVisionOn")
 function XPanelPsionicVisionOn:Ctor(ui, rootUi)
     XUiHelper.InitUiClass(self, ui)
 	self.RootUi = rootUi
-    self.IconBg = self.IconBg.gameObject:GetComponent("RawImage")
+    self.IconBg = self.IconBg.gameObject:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     XUiHelper.RegisterClickEvent(self, self.BtnCloseDetail, self.OnCloseClick)
     XUiHelper.RegisterClickEvent(self, self.ImgProgress, self.OnCloseClick)
 end

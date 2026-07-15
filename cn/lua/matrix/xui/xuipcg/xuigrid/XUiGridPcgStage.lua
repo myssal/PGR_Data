@@ -71,7 +71,7 @@ function XUiGridPcgStage:RefreshInfo()
     
     -- 背景
     self.ImgBg:SetRawImage(stageCfg.Icon)
-    self.RawImgLockBg = self.RawImgLockBg or self.Transform:Find("PanelLock/ImgMask"):GetComponent("RawImage")
+    self.RawImgLockBg = self.RawImgLockBg or self.Transform:Find("PanelLock/ImgMask"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.RawImgLockBg:SetRawImage(stageCfg.Icon)
 
     -- 怪物头像

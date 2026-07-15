@@ -74,18 +74,18 @@ function XUiTipLayer:InitAutoScript()
 end
 
 function XUiTipLayer:AutoInitUi()
-    self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent("Button")
+    self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelSuccess = self.Transform:Find("SafeAreaContentPane/PanelSuccess")
-    self.TxtInfoSuccess = self.Transform:Find("SafeAreaContentPane/PanelSuccess/TxtInfo"):GetComponent("Text")
+    self.TxtInfoSuccess = self.Transform:Find("SafeAreaContentPane/PanelSuccess/TxtInfo"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelError = self.Transform:Find("SafeAreaContentPane/PanelError")
-    self.TxtInfoError = self.Transform:Find("SafeAreaContentPane/PanelError/TxtInfo"):GetComponent("Text")
+    self.TxtInfoError = self.Transform:Find("SafeAreaContentPane/PanelError/TxtInfo"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelTip = self.Transform:Find("SafeAreaContentPane/PanelTip")
-    self.TxtInfo = self.Transform:Find("SafeAreaContentPane/PanelTip/TxtInfo"):GetComponent("Text")
+    self.TxtInfo = self.Transform:Find("SafeAreaContentPane/PanelTip/TxtInfo"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     
     
-    self.UnderlineTxtSuccess = self.Transform:Find("SafeAreaContentPane/PanelSuccess/Txt"):GetComponent("Text")
-    self.UnderlineTxtError = self.Transform:Find("SafeAreaContentPane/PanelError/Txt"):GetComponent("Text")
-    self.UnderlineTxtTip = self.Transform:Find("SafeAreaContentPane/PanelTip/Txt"):GetComponent("Text")
+    self.UnderlineTxtSuccess = self.Transform:Find("SafeAreaContentPane/PanelSuccess/Txt"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.UnderlineTxtError = self.Transform:Find("SafeAreaContentPane/PanelError/Txt"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.UnderlineTxtTip = self.Transform:Find("SafeAreaContentPane/PanelTip/Txt"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiTipLayer:GetAutoKey(uiNode, eventName)

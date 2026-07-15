@@ -57,13 +57,13 @@ function XUiFirstGetPopUp:InitAutoScript()
 end
 
 function XUiFirstGetPopUp:AutoInitUi()
-    self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent("Button")
+    self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelFirstGet = self.Transform:Find("SafeAreaContentPane/PanelFirstGet")
     self.PanelCharacter = self.Transform:Find("SafeAreaContentPane/PanelFirstGet/PaneContent/PanelCharacter")
-    self.RImgCharacterQualityIcon = self.Transform:Find("SafeAreaContentPane/PanelFirstGet/PaneContent/PanelCharacter/RImgCharacterQualityIcon"):GetComponent("RawImage")
-    self.RImgCharacter = self.Transform:Find("SafeAreaContentPane/PanelFirstGet/PaneContent/PanelCharacter/RImgCharacter"):GetComponent("RawImage")
+    self.RImgCharacterQualityIcon = self.Transform:Find("SafeAreaContentPane/PanelFirstGet/PaneContent/PanelCharacter/RImgCharacterQualityIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.RImgCharacter = self.Transform:Find("SafeAreaContentPane/PanelFirstGet/PaneContent/PanelCharacter/RImgCharacter"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.GridCommon = self.Transform:Find("SafeAreaContentPane/PanelFirstGet/PaneContent/GridCommon")
-    self.TxtName = self.Transform:Find("SafeAreaContentPane/PanelFirstGet/TxtName"):GetComponent("Text")
+    self.TxtName = self.Transform:Find("SafeAreaContentPane/PanelFirstGet/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiFirstGetPopUp:AutoAddListener()

@@ -30,9 +30,9 @@ end
 
 function XUiPanelWaitForPassView:AutoInitUi()
     -- self.GridWaitPassPlayer = self.Transform:Find("Viewport/WaitPassList/GridWaitPassPlayer")
-    -- self.TxtChargeDay = self.Transform:Find("WaitPassPanelOther/TxtChargeDay"):GetComponent("Text")
-    -- self.TxtFriendCountA = self.Transform:Find("WaitPassPanelOther/TxtFriendCount"):GetComponent("Text")
-    -- self.BtnAdd = self.Transform:Find("Tips/BtnAdd"):GetComponent("Button")
+    -- self.TxtChargeDay = self.Transform:Find("WaitPassPanelOther/TxtChargeDay"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    -- self.TxtFriendCountA = self.Transform:Find("WaitPassPanelOther/TxtFriendCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    -- self.BtnAdd = self.Transform:Find("Tips/BtnAdd"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     -- self.Tips = self.Transform:Find("Tips")
 end
 

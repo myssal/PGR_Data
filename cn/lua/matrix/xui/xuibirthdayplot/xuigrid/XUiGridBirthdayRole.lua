@@ -37,7 +37,7 @@ function XUiGridBirthdayRole:PlayTimelineAnimation(index)
     if self.Timer then
         return
     end
-    local canvasGroup = self.GridBirthdayEnable.parent.gameObject:GetComponent("CanvasGroup")
+    local canvasGroup = self.GridBirthdayEnable.parent.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
     canvasGroup.alpha = 0
     self.Timer = XScheduleManager.ScheduleOnce(function()
         if XTool.UObjIsNil(self.GridBirthdayEnable) then

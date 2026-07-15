@@ -383,7 +383,7 @@ function XUiDrawActivityShow:InitDrawBackGround()
     self.TxtType.text = ""
     self.TxtName.text = ""
     self.TxtQuality.text = ""
-    self.PanelInfo.gameObject:GetComponent("CanvasGroup").alpha = 0
+    self.PanelInfo.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 0
 
     self:PlayBoxAnimStart()
 end

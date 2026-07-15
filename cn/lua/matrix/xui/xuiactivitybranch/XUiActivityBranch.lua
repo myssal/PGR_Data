@@ -85,7 +85,7 @@ function XUiActivityBranch:RefreshChapterList()
                         -- end
                         local selectOrder = math.abs(seletBgIndex)
                         for i = 1, #autoChangeBgArgs.StageIndexList + 1 do
-                            local tempCanvasGroup = gameObject:FindTransform("RImgChapterBg"..i):GetComponent("CanvasGroup")
+                            local tempCanvasGroup = gameObject:FindTransform("RImgChapterBg"..i):GetComponent(typeof(CS.UnityEngine.CanvasGroup))
                             if i ~= selectOrder then
                                 tempCanvasGroup.alpha = 0
                             else

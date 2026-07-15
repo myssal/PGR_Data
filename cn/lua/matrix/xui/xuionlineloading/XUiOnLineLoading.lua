@@ -20,7 +20,7 @@ end
 
 function XUiOnLineLoading:AutoInitUi()
     self.PanelOnLineLoadingDetail = self.Transform:Find("SafeAreaContentPane/PanelOnLineLoadingDetail")
-    self.TxtTips = self.Transform:Find("SafeAreaContentPane/TxtTips"):GetComponent("Text")
+    self.TxtTips = self.Transform:Find("SafeAreaContentPane/TxtTips"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiOnLineLoading:GetAutoKey(uiNode, eventName)

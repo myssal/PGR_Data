@@ -39,9 +39,9 @@ function XUiPanelFightActive:InitAutoScript()
 end
 
 function XUiPanelFightActive:AutoInitUi()
-    self.RImgFightActiveNor = self.Transform:Find("RImgFightActiveNor"):GetComponent("RawImage")
-    self.TxtFightNameNor = self.Transform:Find("ImageFightTitleBgNor/TxtFightNameNor"):GetComponent("Text")
-    self.BtnStage = self.Transform:Find("BtnStage"):GetComponent("Button")
+    self.RImgFightActiveNor = self.Transform:Find("RImgFightActiveNor"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtFightNameNor = self.Transform:Find("ImageFightTitleBgNor/TxtFightNameNor"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnStage = self.Transform:Find("BtnStage"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.KillPos = self.Transform:Find("KillPos")
 end
 

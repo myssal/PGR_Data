@@ -102,7 +102,7 @@ function XUiFubenBossSingleSettlement:GetButtonTextComponent(button)
     if not textTransform then
         return nil
     end
-    return textTransform:GetComponent("Text")
+    return textTransform:GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 -- 设置按钮文本
@@ -271,7 +271,7 @@ function XUiFubenBossSingleSettlement:_RefreshCharacterList(settleData)
             local gridObj = XUiHelper.Instantiate(grid, self.ListCharacter)
             local imgHead = gridObj.transform:Find("RImgHead")
             if imgHead then
-                local rawImage = imgHead:GetComponent("RawImage")
+                local rawImage = imgHead:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
                 if rawImage then
                     rawImage:SetRawImage(XMVCA.XCharacter:GetCharBigHeadIcon(characterId))
                 end
@@ -732,9 +732,9 @@ function XUiFubenBossSingleSettlement:_RefreshSelectableFeatures()
                 grid = {
                     GameObject = gridObj.gameObject,
                     Transform = gridObj,
-                    TxtName = gridObj:Find("TxtName"):GetComponent("Text"),
-                    TxtDesc = gridObj:Find("TxtDesc"):GetComponent("Text"),
-                    TxtScoreRate = gridObj:Find("TxtScoreRate"):GetComponent("Text"),
+                    TxtName = gridObj:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text)),
+                    TxtDesc = gridObj:Find("TxtDesc"):GetComponent(typeof(CS.UnityEngine.UI.Text)),
+                    TxtScoreRate = gridObj:Find("TxtScoreRate"):GetComponent(typeof(CS.UnityEngine.UI.Text)),
                 }
                 self._SelectableFeatureGridList[count] = grid
             end

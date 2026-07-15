@@ -46,8 +46,8 @@ function XUiPanelStoryUnactive:InitAutoScript()
 end
 
 function XUiPanelStoryUnactive:AutoInitUi()
-    self.ImgStageOrder = self.Transform:Find("ImgStageOrder"):GetComponent("Image")
-    self.TxtStage = self.Transform:Find("ImgStageOrder/TxtStage"):GetComponent("Text")
+    self.ImgStageOrder = self.Transform:Find("ImgStageOrder"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.TxtStage = self.Transform:Find("ImgStageOrder/TxtStage"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiPanelStoryUnactive:RegisterClickEvent(uiNode, func)

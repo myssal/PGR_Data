@@ -197,7 +197,7 @@ function XUiGachaSelenaMain:Init3DSceneInfo()
     --- 卡池场景为白昼 不受电量和实际时间的影响
     local animationRoot = self.UiSceneInfo.Transform:Find("Animations")
     if not XTool.UObjIsNil(animationRoot) then
-        local fullTimeLine = animationRoot:Find("FullTimeLine"):GetComponent("PlayableDirector")
+        local fullTimeLine = animationRoot:Find("FullTimeLine"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
         if fullTimeLine then
             fullTimeLine.gameObject:SetActiveEx(true)
         end
@@ -292,7 +292,7 @@ end
 
 function XUiGachaSelenaMain:PlayLongEnableAnim()
     local timeEnableLong = self.UiSceneInfo.Transform:Find("Animations/AnimEnableLong")
-    local animEnableLong = self.Panel3D.AnimEnableLong:GetComponent("PlayableDirector")
+    local animEnableLong = self.Panel3D.AnimEnableLong:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     self._Volume:PlayStart()
     self.Panel3D.AnimStart1:StopTimelineAnimation()
     self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(true)
@@ -434,7 +434,7 @@ function XUiGachaSelenaMain:RefreshUiShow()
 
     self.BtnGacha:SetDisable(not self.IsCanGacha1)
     self.BtnGacha2:SetDisable(not self.IsCanGacha10)
-    self.BtnGacha.transform:GetComponent("RawImage").enabled = self.IsCanGacha1
+    self.BtnGacha.transform:GetComponent(typeof(CS.UnityEngine.UI.RawImage)).enabled = self.IsCanGacha1
     GridBtnGachas[2].BtnGacha2.enabled = self.IsCanGacha10
     --GridBtnGachas[2].RImg1.gameObject:SetActiveEx(leftCanGachaCount >= 1 and leftCanGachaCount < 10)
     --GridBtnGachas[2].RImg2.gameObject:SetActiveEx(self.IsGachaTimesEnd)
@@ -826,7 +826,7 @@ function XUiGachaSelenaMain:_PlayTimeLineAnim(tran, time, directorWrapMode, fini
         return
     end
     ---@type UnityEngine.Playables.PlayableDirector
-    local anim = tran:GetComponent("PlayableDirector")
+    local anim = tran:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     anim.initialTime = time or 0
     if directorWrapMode then
         anim.extrapolationMode = directorWrapMode

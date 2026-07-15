@@ -37,9 +37,9 @@ end
 
 function XUiGridStageStar:AutoInitUi()
     self.PanelUnActive = self.Transform:Find("PanelUnActive")
-    self.TxtUnActive = self.Transform:Find("PanelUnActive/TxtUnActive"):GetComponent("Text")
+    self.TxtUnActive = self.Transform:Find("PanelUnActive/TxtUnActive"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelActive = self.Transform:Find("PanelActive")
-    self.TxtActive = self.Transform:Find("PanelActive/TxtActive"):GetComponent("Text")
+    self.TxtActive = self.Transform:Find("PanelActive/TxtActive"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiGridStageStar:RegisterClickEvent(uiNode, func)

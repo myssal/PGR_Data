@@ -13,8 +13,8 @@ function XUiDrawOptional:OnAwake()
     self.BtnTab.gameObject:SetActiveEx(false)
     self.GridRole.gameObject:SetActiveEx(false)
     self.GridWeapon.gameObject:SetActiveEx(false)
-    self.RoleContent = self.GridRole.transform.parent:GetComponent("RectTransform")
-    self.WeaponContent = self.GridWeapon.transform.parent:GetComponent("RectTransform")
+    self.RoleContent = self.GridRole.transform.parent:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    self.WeaponContent = self.GridWeapon.transform.parent:GetComponent(typeof(CS.UnityEngine.RectTransform))
     ---@type XUiPanelCombination[]
     self.GridRoleList = {}
     self.GridWeaponList = {}

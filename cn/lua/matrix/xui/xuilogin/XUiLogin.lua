@@ -518,13 +518,13 @@ function XUiLogin:InitAutoScript()
 end
 
 function XUiLogin:AutoInitUi()
-    self.BtnStart = self.Transform:Find("SafeAreaContentPane/PanelLogin/BtnStart"):GetComponent("Button")
+    self.BtnStart = self.Transform:Find("SafeAreaContentPane/PanelLogin/BtnStart"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelLoginServer = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelLoginServer")
     self.PanelUser = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelUser")
-    self.BtnUser = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelUser/BtnUser"):GetComponent("Button")
-    self.TxtUser = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelUser/BtnUser/TxtUser"):GetComponent("Text")
-    self.ImgLogo = self.Transform:Find("SafeAreaContentPane/ImgLogo"):GetComponent("RawImage")
-    self.BackGround = self.Transform:Find("FullScreenBackground/BackGround"):GetComponent("RawImage")
+    self.BtnUser = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelUser/BtnUser"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtUser = self.Transform:Find("SafeAreaContentPane/PanelLogin/PanelUser/BtnUser/TxtUser"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgLogo = self.Transform:Find("SafeAreaContentPane/ImgLogo"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.BackGround = self.Transform:Find("FullScreenBackground/BackGround"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.TextStart = XUiHelper.TryGetComponent(self.BtnStart.transform, "Text")
 
     self:LoadNetworkPanel()
@@ -801,8 +801,10 @@ function XUiLogin:DoLogin()
                 else
                     local targetGotoConfig = XLoginManager.GetCurrentLoginPromoFeature()
                     local isOnceOpened = targetGotoConfig and (XSaveTool.GetData(targetGotoConfig.Id.."LoginPromoFeatureConfig"..XPlayer.Id) == 1)
+                    -- 提审包不触发登录推广视频，避免 SkipInterface 的提审兜底打开其它界面
+                    local isCanOpenLoginPromoFeature = targetGotoConfig and not XUiManager.IsHideFunc and not isOnceOpened and (not XLuaVideoManager.GetIsSkipAllCG())
 
-                    if targetGotoConfig and not isOnceOpened and (not XLuaVideoManager.GetIsSkipAllCG()) then
+                    if isCanOpenLoginPromoFeature then
                         XFunctionManager.SkipInterface(targetGotoConfig.EnterSkipId)
                     else
                         XLoginManager.SetFirstOpenMainUi(true)

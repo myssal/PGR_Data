@@ -341,7 +341,7 @@ function XUiRacePredict:PlayPlatformUp()
         return
     end
     ---@type UnityEngine.Animator
-    local animator = platform:GetComponent("Animator")
+    local animator = platform:GetComponent(typeof(CS.UnityEngine.Animator))
     if XTool.UObjIsNil(animator) then
         return
     end

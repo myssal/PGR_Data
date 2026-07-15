@@ -47,8 +47,8 @@ function XPanelQualityUpgradeDetailV2P6:Refresh(afterEvoQuality)
     
     for name, index in pairs(AttributeShow) do
         local panel = self["PanelChar".. index]
-        panel:FindTransform("TxtOld"):GetComponent("Text").text = string.format("%.2f", FixToDouble(oldAttribute[AttributeNpcAttribType[index]]))  
-        panel:FindTransform("TxtCur"):GetComponent("Text").text = string.format("%.2f", FixToDouble(newAttribute[AttributeNpcAttribType[index]]))  
+        panel:FindTransform("TxtOld"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = string.format("%.2f", FixToDouble(oldAttribute[AttributeNpcAttribType[index]]))  
+        panel:FindTransform("TxtCur"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = string.format("%.2f", FixToDouble(newAttribute[AttributeNpcAttribType[index]]))  
     end
 end
 

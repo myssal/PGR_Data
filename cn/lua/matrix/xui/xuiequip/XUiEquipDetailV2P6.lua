@@ -140,11 +140,42 @@ function XUiEquipDetailV2P6:OnBtnHelpClick()
     elseif self.TabIndex == XEnumConst.EQUIP.UI_EQUIP_DETAIL_BTN_INDEX.OVERCLOCKING then
         indexKey = "AwarenessHelpOverclocking"
     elseif self.TabIndex == XEnumConst.EQUIP.UI_EQUIP_DETAIL_BTN_INDEX.OVERRUN then
+        if self:HasWeaponOverrunLevel2() then
+            XUiManager.ShowHelpTip("WeaponOverrun2")
+            return
+        end
+
         indexKey = "WeaponHelpOverrun"
     end
     local index = CS.XGame.ClientConfig:GetInt(indexKey)
 
     XUiManager.ShowHelpTip(keyStr, nil, index)
+end
+
+function XUiEquipDetailV2P6:HasWeaponOverrunLevel2()
+    local characterId = XTool.IsNumberValidEx(self.CharacterId) and self.CharacterId or XMVCA.XEquip:GetWeaponOverrunCharacterId(self.TemplateId)
+    local overrunCfgIds = self._Control:GetWeaponOverrunCfgIds(self.TemplateId, characterId)
+    return XTool.IsNumberValidEx(overrunCfgIds[XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL2])
+end
+
+function XUiEquipDetailV2P6:IsShowOverrunSceneEffect(level)
+    local characterId = XTool.IsNumberValidEx(self.CharacterId) and self.CharacterId or XMVCA.XEquip:GetWeaponOverrunCharacterId(self.TemplateId)
+    local overrunCfgIds = self._Control:GetWeaponOverrunCfgIds(self.TemplateId, characterId)
+    if #overrunCfgIds <= 1 then
+        return true
+    end
+
+    if self.CurChildName == "UiEquipOverrunV4P6" then
+        ---@type XUiEquipOverrunV4P6
+        local child = self:FindChildUiObj("UiEquipOverrunV4P6")
+        level = child:GetUiLayoutKey()
+        if level == 0 then
+            return true
+        end
+    end
+
+    local overrunCfg = self._Control:GetWeaponOverrunConfigById(overrunCfgIds[level])
+    return overrunCfg and overrunCfg.ShowOverrunEffect
 end
 
 function XUiEquipDetailV2P6:InitPanelAsset()
@@ -296,9 +327,7 @@ function XUiEquipDetailV2P6:OnClickTabCallBack(tabIndex)
         self:UpdateBtnOverrunRed()
 
         -- 打开超限界面
-        local characterId = XTool.IsNumberValidEx(self.CharacterId) and self.CharacterId or XMVCA.XEquip:GetWeaponOverrunCharacterId(self.TemplateId)
-        local overrunCfgIds = self._Control:GetWeaponOverrunCfgIds(self.TemplateId, characterId)
-        local childUiName = #overrunCfgIds > 1 and "UiEquipOverrunV4P6" or "UiEquipOverrunV2P6"
+        local childUiName = self:HasWeaponOverrunLevel2() and "UiEquipOverrunV4P6" or "UiEquipOverrunV2P6"
         self:OpenChildUiByName(childUiName, self)
     end
 
@@ -469,6 +498,9 @@ function XUiEquipDetailV2P6:UpdateOverrunSceneEffect()
     if level < 1 then
         return
     end
+    if not self:IsShowOverrunSceneEffect(level) then
+        return
+    end
 
     self.ImgEffectOverrun.gameObject:SetActiveEx(true)
     local sceneLoopEffectPath = self._Control:GetWeaponDeregulateUISceneLoopEffectPath(level)
@@ -487,6 +519,9 @@ function XUiEquipDetailV2P6:PlayOverrunLevelUpEffect()
     local equip = XMVCA.XEquip:GetEquip(self.EquipId)
     local level = equip:GetOverrunLevel()
     if level < 1 then
+        return
+    end
+    if not self:IsShowOverrunSceneEffect(level) then
         return
     end
 

@@ -25,7 +25,7 @@ function XUiBigWorldTip:InitUi()
     local txt = self.Transform:Find("SafeAreaContentPane/PanelTitle/Image2/TxtTitle")
     if txt then
         --这个文本不会显示，仅用于动画控制蓝色底的长度
-        self._CopyTitle = txt:GetComponent("Text")
+        self._CopyTitle = txt:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 end
 
@@ -227,19 +227,19 @@ function XUiBigWorldTip:_UpdateNameplate(rewardType)
     if not self.PanelNamePlate then
         local prefab = self.InfoBg:LoadPrefab(XMedalConfigs.XNameplatePanelPath)
         
-        local rectTransform = prefab.transform:GetComponent("RectTransform")
+        local rectTransform = prefab.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
         if rectTransform then
             local vX = 0
             local vY = 0
             local scale = CS.UnityEngine.Vector3(1, 1, 1)
             if self.Bg then
-                local tmpTrans = self.Bg:GetComponent("RectTransform")
+                local tmpTrans = self.Bg:GetComponent(typeof(CS.UnityEngine.RectTransform))
                 local vect = tmpTrans.anchoredPosition
                 rectTransform.anchorMin = tmpTrans.anchorMin
                 rectTransform.anchorMax = tmpTrans.anchorMax
                 vX = vect.x
                 vY = vect.y
-                local bgX= self.Bg:GetComponent("RectTransform").sizeDelta.x
+                local bgX= self.Bg:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta.x
                 local bgScale = self.Bg.transform.localScale.x
                 local realBgWidth = bgX * bgScale
                 local tempX = rectTransform.sizeDelta.x

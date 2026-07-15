@@ -15,7 +15,7 @@ function XUiFightTutorialDynamicGrid:InitLoadVideoPrefab()
         return
     end
     self.Video = XLuaVideoManager.LoadVideoPlayerUguiWithPrefab(self.VideoRoot)
-    local rect = self.Video:GetComponent("RectTransform")
+    local rect = self.Video:GetComponent(typeof(CS.UnityEngine.RectTransform))
     
     -- …Ë÷√√™µ„Œ™ Center (0.5, 0.5)
     TempV2.x = 0.5

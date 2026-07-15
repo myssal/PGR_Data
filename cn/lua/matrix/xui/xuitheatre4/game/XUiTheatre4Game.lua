@@ -488,7 +488,7 @@ function XUiTheatre4Game:OnBtnBuildClick()
         self.PanelModel:PrintCameraFollowLastPos()
     end
     ---@type UnityEngine.RectTransform
-    local rectTransform = self.BtnBuild:GetComponent("RectTransform")
+    local rectTransform = self.BtnBuild:GetComponent(typeof(CS.UnityEngine.RectTransform))
     XLuaUiManager.Open("UiTheatre4BubbleBuild", rectTransform.position, rectTransform.sizeDelta, true)
 end
 
@@ -926,7 +926,7 @@ end
 
 function XUiTheatre4Game:OnBtnTimeBackClick()
     ---@type UnityEngine.RectTransform
-    local rectTransform = self.BtnBacktrack:GetComponent("RectTransform")
+    local rectTransform = self.BtnBacktrack:GetComponent(typeof(CS.UnityEngine.RectTransform))
     XLuaUiManager.Open("UiTheatre4BubbleBacktrack", rectTransform.position, rectTransform.sizeDelta, true)
 end
 --endregion

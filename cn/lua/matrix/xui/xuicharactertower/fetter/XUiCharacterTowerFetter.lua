@@ -138,7 +138,7 @@ function XUiCharacterTowerFetter:InitFetterListAndInformation()
         gridInformation:Refresh(self.RelationId, eventId, index)
     end
 
-    local layoutGroup = self.PanelFetterContent:GetComponent("HorizontalLayoutGroup")
+    local layoutGroup = self.PanelFetterContent:GetComponent(typeof(CS.UnityEngine.UI.HorizontalLayoutGroup))
     self.Right = layoutGroup.padding.right
     self.Left = layoutGroup.padding.left
     self.Spacing = layoutGroup.spacing

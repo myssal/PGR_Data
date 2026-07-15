@@ -36,7 +36,7 @@ function XMovieActionBgSwitch:OnUiRootInit()
     -- FullScreenBackground下的背景图，仍按照旧逻辑改动FullScreenBackground的透明度
     local isInFullScreenBackground = self.RImgBg.Link.transform.parent == self.UiRoot.FullScreenBackground.transform
     if isInFullScreenBackground then
-        self.CanvasGroupBg = self.UiRoot.FullScreenBackground:GetComponent("CanvasGroup")
+        self.CanvasGroupBg = self.UiRoot.FullScreenBackground:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
     else
         self.CanvasGroupBg = self.RImgBg:GetCanvasGroup()
     end

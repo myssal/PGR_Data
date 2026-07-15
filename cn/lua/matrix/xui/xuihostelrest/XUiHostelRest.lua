@@ -17,10 +17,10 @@ end
 function XUiHostelRest:AutoInitUi()
     self.PanelCharacterRest = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest")
     self.PanelLeftInfo = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo")
-    self.SViewFloor = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/SViewFloor"):GetComponent("ScrollRect")
+    self.SViewFloor = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/SViewFloor"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self.PanelFloorContent = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/SViewFloor/Viewport/PanelFloorContent")
     self.GridFloorItem = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/SViewFloor/Viewport/PanelFloorContent/GridFloorItem")
-    self.RImgCharRest = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/RImgCharRest"):GetComponent("RawImage")
+    self.RImgCharRest = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/RImgCharRest"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.GridRestCharItem = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/GridRestCharItem")
     self.PanelRestContent = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/PanelRestContent")
     self.UiSlot1 = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/PanelRestContent/UiSlot1")
@@ -35,23 +35,23 @@ function XUiHostelRest:AutoInitUi()
     self.UiRestModelPos5 = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/PanelRestContent/UiSlot5/UiRestModelPos5")
     self.UiSlot6 = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/PanelRestContent/UiSlot6")
     self.UiRestModelPos6 = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/PanelRestContent/UiSlot6/UiRestModelPos6")
-    self.TxtTitle = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/TxtTitle"):GetComponent("Text")
-    self.TxtTitleFloor = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/TxtTitleFloor"):GetComponent("Text")
+    self.TxtTitle = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtTitleFloor = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelLeftInfo/TxtTitleFloor"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelRightInfo = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelRightInfo")
-    self.SViewIdleCharList = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelRightInfo/SViewIdleCharList"):GetComponent("ScrollRect")
+    self.SViewIdleCharList = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelRightInfo/SViewIdleCharList"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self.PanelIdleCharContent = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelRightInfo/SViewIdleCharList/Viewport/PanelIdleCharContent")
     self.GridIdleCharacter = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/PanelRightInfo/SViewIdleCharList/Viewport/PanelIdleCharContent/GridIdleCharacter")
-    self.RImgCharDrag = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/RImgCharDrag"):GetComponent("RawImage")
+    self.RImgCharDrag = self.Transform:Find("SafeAreaContentPane/PanelCharacterRest/RImgCharDrag"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.PanelCharTopButton = self.Transform:Find("SafeAreaContentPane/PanelCharTopButton")
-    self.BtnBack = self.Transform:Find("SafeAreaContentPane/PanelCharTopButton/BtnBack"):GetComponent("Button")
-    self.BtnMainUi = self.Transform:Find("SafeAreaContentPane/PanelCharTopButton/BtnMainUi"):GetComponent("Button")
+    self.BtnBack = self.Transform:Find("SafeAreaContentPane/PanelCharTopButton/BtnBack"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnMainUi = self.Transform:Find("SafeAreaContentPane/PanelCharTopButton/BtnMainUi"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelAsset = self.Transform:Find("SafeAreaContentPane/PanelAsset")
     self.PanelTool1 = self.Transform:Find("SafeAreaContentPane/PanelAsset/PanelTool1")
-    self.ImgTool1 = self.Transform:Find("SafeAreaContentPane/PanelAsset/PanelTool1/ImgTool1"):GetComponent("Image")
-    self.TxtTool1 = self.Transform:Find("SafeAreaContentPane/PanelAsset/PanelTool1/TxtTool1"):GetComponent("Text")
+    self.ImgTool1 = self.Transform:Find("SafeAreaContentPane/PanelAsset/PanelTool1/ImgTool1"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.TxtTool1 = self.Transform:Find("SafeAreaContentPane/PanelAsset/PanelTool1/TxtTool1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelTool2 = self.Transform:Find("SafeAreaContentPane/PanelAsset/PanelTool2")
-    self.ImgTool2 = self.Transform:Find("SafeAreaContentPane/PanelAsset/PanelTool2/ImgTool2"):GetComponent("Image")
-    self.TxtTool2 = self.Transform:Find("SafeAreaContentPane/PanelAsset/PanelTool2/TxtTool2"):GetComponent("Text")
+    self.ImgTool2 = self.Transform:Find("SafeAreaContentPane/PanelAsset/PanelTool2/ImgTool2"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.TxtTool2 = self.Transform:Find("SafeAreaContentPane/PanelAsset/PanelTool2/TxtTool2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelRestModel = self.Transform:Find("FullScreenBackground/PanelRestModel")
     self.UiCharRestModel = self.Transform:Find("FullScreenBackground/PanelRestModel/UiCharRestModel")
     self.PanelModelRest1 = self.Transform:Find("FullScreenBackground/PanelRestModel/UiCharRestModel/PanelModelRest1")
@@ -120,7 +120,7 @@ function XUiHostelRest:OnStart()
 end
 
 function XUiHostelRest:Init()
-    self.RctF = self.GameObject:GetComponent("RectTransform")
+    self.RctF = self.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.GridFloorItem.gameObject:SetActive(false)
     self.GridRestCharItem.gameObject:SetActive(false)
     self.GridIdleCharacter.gameObject:SetActive(false)
@@ -246,7 +246,7 @@ function XUiHostelRest:OnRestItemDrag(eventData, slot)
     if not charId or charId == 0 then
         return
     end
-    -- local rectTransform = self.RImgCharDrag:GetComponent("RectTransform")
+    -- local rectTransform = self.RImgCharDrag:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local _, position = CS.UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.Transform, eventData.position, eventData.pressEventCamera)
     self.RImgCharDrag.transform.localPosition = CS.UnityEngine.Vector3(position.x, position.y, 0)
 end
@@ -277,7 +277,7 @@ function XUiHostelRest:OnRestItemEndDrag(eventData, slot)
         end
     end
 
-    local isInRest = CS.UnityEngine.RectTransformUtility.RectangleContainsScreenPoint(self.PanelRestContent:GetComponent("RectTransform"), eventData.position, eventData.pressEventCamera)
+    local isInRest = CS.UnityEngine.RectTransformUtility.RectangleContainsScreenPoint(self.PanelRestContent:GetComponent(typeof(CS.UnityEngine.RectTransform)), eventData.position, eventData.pressEventCamera)
     if isInRest then
         return
     end
@@ -348,7 +348,7 @@ function XUiHostelRest:OnIdleItemDrag(eventData, index)
     if not charId or charId == 0 then
         return
     end
-    -- local rectTransform = self.RImgCharDrag:GetComponent("RectTransform")
+    -- local rectTransform = self.RImgCharDrag:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local _, position = CS.UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.Transform, eventData.position, eventData.pressEventCamera)
     self.RImgCharDrag.transform.localPosition = CS.UnityEngine.Vector3(position.x, position.y, 0)
 end
@@ -359,7 +359,7 @@ function XUiHostelRest:OnIdleItemEndDrag(eventData, index)
         return
     end
     self.ShowModel:HideDragModel()
-    local isInRest = CS.UnityEngine.RectTransformUtility.RectangleContainsScreenPoint(self.PanelRestContent:GetComponent("RectTransform"), eventData.position, eventData.pressEventCamera)
+    local isInRest = CS.UnityEngine.RectTransformUtility.RectangleContainsScreenPoint(self.PanelRestContent:GetComponent(typeof(CS.UnityEngine.RectTransform)), eventData.position, eventData.pressEventCamera)
     if not isInRest then
         return
     end

@@ -188,7 +188,7 @@ function XUiInstruction:SetTextInfo(targetGo, txtGo, i, info)
         txtGo[i] = go
     end
     go:SetActiveEx(true)
-    local goTxt = go:GetComponent("Text")
+    local goTxt = go:GetComponent(typeof(CS.UnityEngine.UI.Text))
     goTxt.text = XUiHelper.ConvertLineBreakSymbol(info)
     go.transform:SetAsLastSibling()
 end

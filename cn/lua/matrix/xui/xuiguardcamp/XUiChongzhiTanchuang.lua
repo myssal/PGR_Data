@@ -267,7 +267,7 @@ function XUiChongzhiTanchuang:SetList()
     if Next(self.ListDirData) ~= nil then
         local obj = self:GetTitleGo(index1)
         index1 = index1 + 1
-        obj.transform:Find("TxtTitle"):GetComponent("Text").text = TextManager.GetText("PurchaseDirGet")
+        obj.transform:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = TextManager.GetText("PurchaseDirGet")
         for _, v in pairs(self.ListDirData) do
             local item = self:GetItemObj(index2)
             item:OnRefresh(v)
@@ -277,7 +277,7 @@ function XUiChongzhiTanchuang:SetList()
 
     if Next(self.ListDayData) ~= nil then
         local obj = self:GetTitleGo(index1)
-        obj.transform:Find("TxtTitle"):GetComponent("Text").text = self.Data.Desc or ""
+        obj.transform:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = self.Data.Desc or ""
         for _, v in pairs(self.ListDayData) do
             local item = self:GetItemObj(index2)
             item:OnRefresh(v)

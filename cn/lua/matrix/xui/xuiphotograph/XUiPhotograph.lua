@@ -41,7 +41,7 @@ function XUiPhotograph:OnAwake()
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
     self.PanelAutoLayout = self.PanelName:GetComponent("XAutoLayoutGroup")
-    self.TxtRank = self.TxtLevel.transform.parent:Find("TxtLv"):GetComponent("Text")
+    self.TxtRank = self.TxtLevel.transform.parent:Find("TxtLv"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.ImgGlory = self.TxtLevel.transform.parent:Find("Icon")
 
     local signBoardPlayer = require("XCommon/XSignBoardPlayer").New(self, CS.XGame.ClientConfig:GetInt("SignBoardPlayInterval"), CS.XGame.ClientConfig:GetFloat("SignBoardDelayInterval"))
@@ -334,7 +334,7 @@ function XUiPhotograph:OnUiSceneLoaded()
     self:PlayAnimation("Loading2")
     --self:SetGameObject()
     self:InitSceneRoot()
-    local colorId = XDataCenter.FashionManager.GetOwnFashionDataById(self.SelectFashionId).ColorId
+    local colorId =self.FashionColorPanel:GetSelectColorId() or XDataCenter.FashionManager.GetOwnFashionDataById(self.SelectFashionId).ColorId
     self:UpdateRoleModel(self.SelectCharacterId, self.SelectFashionId, colorId)
     self:UpdatePartner(self.PartnerTemplateId)
     self:UpdateCamera()
@@ -346,8 +346,8 @@ function XUiPhotograph:InitSceneRoot()
     local root = self.UiModelGo.transform
     self.CameraFar = self:FindVirtualCamera("CamFarMain")
     self.CameraNear = self:FindVirtualCamera("CamNearMain")
-    self.CameraComponentFar = root:FindTransform("UiFarCamera"):GetComponent("Camera")
-    self.CameraComponentNear = root:FindTransform("UiNearCamera"):GetComponent("Camera")
+    self.CameraComponentFar = root:FindTransform("UiFarCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
+    self.CameraComponentNear = root:FindTransform("UiNearCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
     self.UiModelParent = root:FindTransform("UiModelParent")
     self.ChangeActionEffect = root:FindTransform("ChangeActionEffect")
     ---@type XUiPanelRoleModel
@@ -753,7 +753,7 @@ function XUiPhotograph:UpdateBatteryMode() -- editor模式下 BatteryComponent.B
     if particleGroupName and particleGroupName ~= "" then
         local chargeAnimatorTrans = self.UiSceneInfo.Transform:FindTransform(particleGroupName)
         if chargeAnimatorTrans then
-            chargeAnimator = chargeAnimatorTrans:GetComponent("Animator")
+            chargeAnimator = chargeAnimatorTrans:GetComponent(typeof(CS.UnityEngine.Animator))
         else
             XLog.Error("Can't Find \"" .. particleGroupName .. "\", Plase Check \"ParticleGroupName\" In Share/PhotoMode/Background.tab")
         end

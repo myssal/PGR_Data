@@ -4,7 +4,7 @@ local XUiExpeditionPublicityTitle = XClass(nil, "XUiExpeditionPublicityTitle")
 function XUiExpeditionPublicityTitle:Ctor(ui)
     self.GameObject = ui
     self.Transform = ui.transform
-    self.TitleLabel = self.Transform:GetComponent("Text")
+    self.TitleLabel = self.Transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 --================
 --刷新星级文本

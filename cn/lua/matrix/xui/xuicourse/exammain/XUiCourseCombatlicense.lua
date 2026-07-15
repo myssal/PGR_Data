@@ -76,8 +76,8 @@ function XUiCourseCombatlicense:InitRewardList()
 end
 
 function XUiCourseCombatlicense:InitImgBgSize()
-    self.ImgBgRectSize = self.RImgBg:GetComponent("RectTransform").rect.size
-    self.RectSize = self.Ui.GameObject:GetComponent("RectTransform").rect.size
+    self.ImgBgRectSize = self.RImgBg:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.size
+    self.RectSize = self.Ui.GameObject:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.size
     self.ImgBgHeightLerp = (self.ImgBgRectSize.y - self.RectSize.y) / 2 --锚点在中心
 end
 

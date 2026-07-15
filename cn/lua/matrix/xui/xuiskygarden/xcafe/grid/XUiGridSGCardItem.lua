@@ -48,7 +48,7 @@ function XUiGridSGCardItem:InitView()
     end
 
     if not self.RImgBg then
-        self.RImgBg = self.Transform:FindTransform("RImgBg"):GetComponent("RawImage")
+        self.RImgBg = self.Transform:FindTransform("RImgBg"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
 end
 

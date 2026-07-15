@@ -10,7 +10,7 @@ XUiGridReward.ViewState = {
 function XUiGridReward:Ctor(ui, root, index)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
-    self.RectTransform = ui:GetComponent("RectTransform") ---@type UnityEngine.RectTransform
+    self.RectTransform = ui:GetComponent(typeof(CS.UnityEngine.RectTransform)) ---@type UnityEngine.RectTransform
     self.Root = root
     XTool.InitUiObject(self)
 

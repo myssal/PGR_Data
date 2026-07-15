@@ -50,38 +50,38 @@ function XUiPanelCharQualityOther:AutoInitUi()
     --星节点区域
     for i = 1, XEnumConst.CHARACTER.MAX_QUALITY_STAR do
         --Bg
-        self["ImgLine" .. i] = self.Bg.transform:Find("ImgLine"..i):GetComponent("Image")
+        self["ImgLine" .. i] = self.Bg.transform:Find("ImgLine"..i):GetComponent(typeof(CS.UnityEngine.UI.Image))
         --PanelWaferIcon-星节点
-        self["ImgWaferColour"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/ImgWaferColour"..i):GetComponent("Image")
-        self["ImgSelect"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/ImgSelect"..i):GetComponent("Image")
-        self["ImgWaferon"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/ImgWaferon"..i):GetComponent("Image")
-        self["TxtWaferName"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/TxtWaferName"..i):GetComponent("Text")
+        self["ImgWaferColour"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/ImgWaferColour"..i):GetComponent(typeof(CS.UnityEngine.UI.Image))
+        self["ImgSelect"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/ImgSelect"..i):GetComponent(typeof(CS.UnityEngine.UI.Image))
+        self["ImgWaferon"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/ImgWaferon"..i):GetComponent(typeof(CS.UnityEngine.UI.Image))
+        self["TxtWaferName"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/TxtWaferName"..i):GetComponent(typeof(CS.UnityEngine.UI.Text))
         self["ImgClick"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/ImgClick"..i)
         self["PanelHint"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/PanelHint"..i)
         self["PanelSkillHint"..i] = self.PanelWaferIcon.transform:Find("WaferIcon"..i.."/PanelSkillHint"..i)
     end
     --WaferCircuit-芯片中心区域
-    self.RImgQuality = self.PanelRImgQuality.transform:Find("Icon/RImgQuality"):GetComponent("RawImage")            --当前阶级图标
-    self.RImgQualityBg = self.PanelRImgQuality.transform:Find("Icon/RImgQuality (1)"):GetComponent("RawImage")      --当前阶级图标背景
-    self.RImgQualityPhaseText = self.PanelRImgQuality.transform:Find("Txt/Text"):GetComponent("Text")               --当前阶级数文本
+    self.RImgQuality = self.PanelRImgQuality.transform:Find("Icon/RImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))            --当前阶级图标
+    self.RImgQualityBg = self.PanelRImgQuality.transform:Find("Icon/RImgQuality (1)"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))      --当前阶级图标背景
+    self.RImgQualityPhaseText = self.PanelRImgQuality.transform:Find("Txt/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))               --当前阶级数文本
     self.RImgQualityTxtSkill = self.PanelRImgQuality.transform:Find("TxtSkill")
-    self.RImgQualitySkillText = self.PanelRImgQuality.transform:Find("TxtSkill/Text"):GetComponent("Text")          --当前阶级属性加成文本
+    self.RImgQualitySkillText = self.PanelRImgQuality.transform:Find("TxtSkill/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))          --当前阶级属性加成文本
     self.RImgQualityTxtAttri = self.PanelRImgQuality.transform:Find("TxtWaferName")
-    self.RImgQualityAttriText = self.PanelRImgQuality.transform:Find("TxtWaferName/Text"):GetComponent("Text")      --当前阶级技能加成文本
-    self.RImgQualityMax = self.WaferCircuit.transform:Find("RImgQualityMax"):GetComponent("RawImage")
+    self.RImgQualityAttriText = self.PanelRImgQuality.transform:Find("TxtWaferName/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))      --当前阶级技能加成文本
+    self.RImgQualityMax = self.WaferCircuit.transform:Find("RImgQualityMax"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     --BtnAdvanced-进化按钮区域
-    self.RImgQualityBefore = self.BtnAdvanced.transform:Find("RImgQualityBefore"):GetComponent("RawImage")
-    self.RImgQualityAfter = self.BtnAdvanced.transform:Find("RImgQualityAfter"):GetComponent("RawImage")
+    self.RImgQualityBefore = self.BtnAdvanced.transform:Find("RImgQualityBefore"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.RImgQualityAfter = self.BtnAdvanced.transform:Find("RImgQualityAfter"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.PanelCountMoney = self.BtnAdvanced.transform:Find("PanelCountMoney")
-    self.TxtConditionCountMoney = self.BtnAdvanced.transform:Find("PanelCountMoney/TxtConditionCountMoney"):GetComponent("Text")
-    self.BtnMoneyTip = self.BtnAdvanced.transform:Find("PanelCountMoney/BtnMoneyTip"):GetComponent("Button")
+    self.TxtConditionCountMoney = self.BtnAdvanced.transform:Find("PanelCountMoney/TxtConditionCountMoney"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnMoneyTip = self.BtnAdvanced.transform:Find("PanelCountMoney/BtnMoneyTip"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     --PanelCondition--激活按钮区域
-    self.ImgPromoteQulityMax = self.PanelCondition.transform:Find("ImgPromoteQulityMax"):GetComponent("Image")
-    self.TxtConditionCountMoneyA = self.PanelCondition.transform:Find("ImgPromoteQulityMax/TxtConditionCountMoney"):GetComponent("Text")
+    self.ImgPromoteQulityMax = self.PanelCondition.transform:Find("ImgPromoteQulityMax"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.TxtConditionCountMoneyA = self.PanelCondition.transform:Find("ImgPromoteQulityMax/TxtConditionCountMoney"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelCountIten = self.PanelCondition.transform:Find("PanelCountIten")
-    self.RImgIconSuipian = self.PanelCondition.transform:Find("PanelCountIten/RImgIconSuipian"):GetComponent("RawImage")
-    self.TxtConditionCountItem = self.PanelCondition.transform:Find("PanelCountIten/TxtConditionCountItem"):GetComponent("Text")
-    self.BtnItemTip = self.PanelCondition.transform:Find("PanelCountIten/BtnItemTip"):GetComponent("Button")
+    self.RImgIconSuipian = self.PanelCondition.transform:Find("PanelCountIten/RImgIconSuipian"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtConditionCountItem = self.PanelCondition.transform:Find("PanelCountIten/TxtConditionCountItem"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnItemTip = self.PanelCondition.transform:Find("PanelCountIten/BtnItemTip"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiPanelCharQualityOther:InitIcon()

@@ -16,7 +16,7 @@ function XUiPanelFavorabilityAction:OnStart(uiRoot)
     self.UiRoot = uiRoot
     self.GridLikeActionItem.gameObject:SetActiveEx(false)
     self.PanelEmpty.gameObject:SetActiveEx(false)
-    self.Content=self.SViewActionList.transform:Find('Viewport/Content'):GetComponent('RectTransform')
+    self.Content=self.SViewActionList.transform:Find('Viewport/Content'):GetComponent(typeof(CS.UnityEngine.RectTransform))
 end
 
 function XUiPanelFavorabilityAction:OnEnable()
