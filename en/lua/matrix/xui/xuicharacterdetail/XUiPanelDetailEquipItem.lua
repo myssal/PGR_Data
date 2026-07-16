@@ -28,17 +28,17 @@ function XUiPanelDetailEquipItem:InitAutoScript()
 end
 
 function XUiPanelDetailEquipItem:AutoInitUi()
-    self.TxtVoteNum = self.Transform:Find("TxtVoteNum"):GetComponent("Text")
+    self.TxtVoteNum = self.Transform:Find("TxtVoteNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.GridItem3 = self.Transform:Find("RootPanelLayout/GridItem3")
     self.GridItem2 = self.Transform:Find("RootPanelLayout/GridItem2")
     self.GridItem1 = self.Transform:Find("RootPanelLayout/GridItem1")
     self.Panel = self.Transform:Find("RootPanelWeapon/Panel")
     self.GridEquipItem = self.Transform:Find("RootPanelWeapon/Panel/GridEquipItem")
-    self.TxtRank = self.Transform:Find("RootPanelRank/TxtRank"):GetComponent("Text")
+    self.TxtRank = self.Transform:Find("RootPanelRank/TxtRank"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.GridItem4 = self.Transform:Find("RootPanelLayout/GridItem4")
     self.GridItem5 = self.Transform:Find("RootPanelLayout/GridItem5")
     self.GridItem6 = self.Transform:Find("RootPanelLayout/GridItem6")
-    self.BtnVote = self.Transform:Find("RootPanelBtn/BtnVote"):GetComponent("Button")
+    self.BtnVote = self.Transform:Find("RootPanelBtn/BtnVote"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelImgVoted = self.Transform:Find("RootPanelBtn/PanelImgVoted")
 end
 

@@ -409,13 +409,13 @@ function XRpgMakerGameScene:InitCamera()
         if not XTool.UObjIsNil(camera) then
             tableInsert(cameras, camera)
             if i == row then
-                self.Camera = camera:GetComponent("Camera")
+                self.Camera = camera:GetComponent(typeof(CS.UnityEngine.Camera))
             end
             camera.gameObject:SetActiveEx(false)
         end
     end
     if XTool.UObjIsNil(self.Camera) then
-        self.Camera = self.GameObject.transform:Find("Camera"):GetComponent("Camera")
+        self.Camera = self.GameObject.transform:Find("Camera"):GetComponent(typeof(CS.UnityEngine.Camera))
     end
     self.Camera.gameObject:SetActiveEx(true)
     self.PhysicsRaycaster = self.Camera.gameObject:AddComponent(typeof(CS.UnityEngine.EventSystems.PhysicsRaycaster))
@@ -679,7 +679,7 @@ function XRpgMakerGameScene:InitCube(mapId)
         return
     end
 
-    local cubeMeshFilter = cube:GetComponent("MeshFilter")
+    local cubeMeshFilter = cube:GetComponent(typeof(CS.UnityEngine.MeshFilter))
     local cubeSize = cubeMeshFilter.mesh.bounds.size
 
     local row = self:GetConfig():GetMapRow(mapId)

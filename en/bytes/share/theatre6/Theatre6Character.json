@@ -39,7 +39,8 @@
         ],
         "DlcAttrGroup": 1025,
         "TemplateId": 1026,
-        "ConditionId": 1021001
+        "ConditionId": 1021001,
+        "FilterSort": 1
     },
     {
         "Id": 3,
@@ -81,7 +82,51 @@
         ],
         "DlcAttrGroup": 1025,
         "TemplateId": 1025,
-        "ConditionId": 1021001
+        "ConditionId": 1021001,
+        "FilterSort": 2
+    },
+    {
+        "Id": 4,
+        "CharacterId": 6,
+        "Name": "Kamui",
+        "Info": "Behind the renown of the \"Revenant Hunter\" lies an old secret best left unspoken.",
+        "Priority": 2,
+        "FashionIds": [
+            6
+        ],
+        "TagBuffIds": [
+            7,
+            8,
+            9
+        ],
+        "BuffConditionIds": [
+            "",
+            1021029,
+            1021030
+        ],
+        "PlayDiffGroupIds": [
+            3
+        ],
+        "BaseSkill": [
+            10275121,
+            10275131,
+            10275141,
+            10275151
+        ],
+        "AttrValue": [
+            100,
+            1200,
+            100,
+            200,
+            200
+        ],
+        "BuildTags": [
+            28
+        ],
+        "DlcAttrGroup": 1025,
+        "TemplateId": 1027,
+        "ConditionId": 1021001,
+        "FilterSort": 3
     },
     {
         "Id": 10,

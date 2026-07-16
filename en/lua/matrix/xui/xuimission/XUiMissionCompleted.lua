@@ -71,7 +71,7 @@ end
 function XUiMissionCompleted:AutoInitUi()
     -- self.PanelRewardBig = self.Transform:Find("FullScreenBackground/PanelRewardBig")
     -- self.PanelRewardSmall = self.Transform:Find("FullScreenBackground/PanelRewardSmall")
-    -- self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent("Button")
+    -- self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiMissionCompleted:GetAutoKey(uiNode, eventName)

@@ -33,7 +33,7 @@ function XUiGridQualityAttributeV2P6:Refresh(attributeData, characterId)
     -- 普通属性文本
     for _, i in pairs(AttributeShow) do
         local panel = self["PanelGrowUp"..i]
-        local text = panel:FindTransform("TxtGrowUP"):GetComponent("Text")
+        local text = panel:FindTransform("TxtGrowUP"):GetComponent(typeof(CS.UnityEngine.UI.Text))
         text.text = attributeData[i]
 
         if charQuality == quality then
@@ -57,7 +57,7 @@ function XUiGridQualityAttributeV2P6:Refresh(attributeData, characterId)
     for panelIndex, npcAttrIndex in pairs(AttributeNpcAttribType) do
         local value = addAttrRes[npcAttrIndex]
         local panel = self["PanelGrowUp"..panelIndex]
-        local text = panel:FindTransform("TxtAdd"):GetComponent("Text")
+        local text = panel:FindTransform("TxtAdd"):GetComponent(typeof(CS.UnityEngine.UI.Text))
         local max = panel:FindTransform("TxtAddMax")
         
         if value then

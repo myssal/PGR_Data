@@ -25,7 +25,7 @@ function XUiPanelStudentPhasesTask:InitPhasesTaskGrid()
             obj.transform:SetParent(self.PanelContent, false)
             grid = XUiGridPhasesTask.New(obj, self)
             self.PhasesTaskGrids[i] = grid
-            self.PhasesTaskGridRects[i] = grid.Transform:GetComponent("RectTransform")
+            self.PhasesTaskGridRects[i] = grid.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
         end
     end
 end

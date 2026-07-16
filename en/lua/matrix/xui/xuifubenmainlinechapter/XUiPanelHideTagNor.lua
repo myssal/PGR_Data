@@ -29,7 +29,7 @@ function XUiPanelHideTagNor:InitAutoScript()
 end
 
 function XUiPanelHideTagNor:AutoInitUi()
-    self.BtnOnHideLock = self.Transform:Find("BtnOnHideLock"):GetComponent("Button")
+    self.BtnOnHideLock = self.Transform:Find("BtnOnHideLock"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelPass = self.Transform:Find("ImageHideTagNor/PanelPass")
 end
 

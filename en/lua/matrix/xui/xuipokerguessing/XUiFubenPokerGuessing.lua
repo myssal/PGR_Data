@@ -269,7 +269,7 @@ function XUiFubenPokerGuessing:PlaySuccessAnimation()
             return
         end
         self.RImgLeftCard:SetRawImage(XPokerGuessingConfig.GetCardFrontAssetPath(XDataCenter.PokerGuessingManager.GetDisplayCardId()))
-        self.RImgRightCard.transform:GetComponent("CanvasGroup").alpha = 0
+        self.RImgRightCard.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 0
         self.RImgRightCard.transform.position = originPosition
         self:PlayAnimation("RImgRightCard2Flip",function()
             XLuaUiManager.SetMask(false)

@@ -62,7 +62,7 @@ function XUiLuckyTenant2GameUiLuckyTenant2BondsDetail:Update(data, hideChessRequ
     -- 设置羁绊图标（兼容 Icon / BondIcon：游戏内列表用 Icon，关卡详情弹窗用 BondIcon）
     local icon = data.Icon or data.BondIcon or ""
     if self.BondsIcon then
-        local image = self.BondsIcon:GetComponent("RawImage")
+        local image = self.BondsIcon:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
         if image then
             image:SetImage(icon)
         end

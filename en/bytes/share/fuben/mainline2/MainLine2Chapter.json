@@ -1053,6 +1053,21 @@
         "ProgressTextColors": [
             "#ffffff"
         ],
+        "SkipIds": [
+            535
+        ],
+        "SkipConditions": [
+            1007151
+        ],
+        "SkipIcons": [
+            "Assets/Product/Texture/Image/StoryJump/StoryShortJump17.png"
+        ],
+        "SkipNames": [
+            "Floating Record: Chapter 16"
+        ],
+        "SkipChapterNames": [
+            "Of Solitude and Stillness"
+        ],
         "SpineStageIndexs": [
             2,
             3,
@@ -1087,7 +1102,6 @@
         "Difficult": 1,
         "DifficultName": "NORMAL",
         "DifficultEnName": "Difficulty",
-        "ActivityTimeId": 47205,
         "ActivityCondition": 770400,
         "OpenCondition": 770400,
         "StageGroupIds": [
@@ -1135,6 +1149,68 @@
             8757,
             8940,
             9582
+        ]
+    },
+    {
+        "ChapterId": 2016,
+        "Difficult": 1,
+        "DifficultName": "NORMAL",
+        "DifficultEnName": "Difficulty",
+        "ActivityTimeId": 48301,
+        "ActivityCondition": 770400,
+        "OpenCondition": 770400,
+        "StageGroupIds": [
+            62
+        ],
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor16DP.prefab",
+        "BgStageIndexs": [
+            1
+        ],
+        "TitleTextColors": [
+            "#ffffff"
+        ],
+        "LeftTimeTextColors": [
+            "#0f70BC"
+        ],
+        "ProgressTextColors": [
+            "#ffffff"
+        ],
+        "EnterSpineStageIndex": [
+            4,
+            8,
+            12,
+            16,
+            19,
+            20
+        ],
+        "EnterSpineName": [
+            "Enable1",
+            "Enable2",
+            "Enable3",
+            "Enable4",
+            "Enable5",
+            "Enable5_6_page"
+        ],
+        "SwitchSpineStageIndex": [
+            4,
+            8,
+            12,
+            16,
+            19
+        ],
+        "SwitchAheadSpineName": [
+            "Enable1_2_page",
+            "Enable2_3_page",
+            "Enable3_4_page",
+            "Enable4_5_page",
+            "Enable5_6_page"
+        ],
+        "SwitchBackwardSpineName": [
+            "Enable2_1_page2",
+            "Enable3_2_page2",
+            "Enable4_3_page2",
+            "Enable5_4_page2",
+            "Enable6_5_page2"
         ]
     }
 ]

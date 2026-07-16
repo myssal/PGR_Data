@@ -118,7 +118,7 @@ function XUiComeAcrossGame:AutoInitUi()
     self.PanelComeAcrossReward = self.Transform:Find("Animator/FullScreenBackground/PanelComeAcrossReward")
     self.PanelMask = self.Transform:Find("Animator/FullScreenBackground/PanelMask")
     self.PanelEliminateGame = self.Transform:Find("Animator/FullScreenBackground/PanelEliminateGame")
-    self.ImgBg = self.Transform:Find("Animator/FullScreenBackground/ImgBg"):GetComponent("Image")
+    self.ImgBg = self.Transform:Find("Animator/FullScreenBackground/ImgBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
 end
 
 function XUiComeAcrossGame:AutoAddListener()

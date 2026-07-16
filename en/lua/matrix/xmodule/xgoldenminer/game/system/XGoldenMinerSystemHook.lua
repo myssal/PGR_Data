@@ -900,7 +900,7 @@ function XGoldenMinerSystemHook:_SetStoneEntityOnHook(hook, stoneEntity)
     if not tempStoneEntity or XTool.UObjIsNil(tempStoneEntity:GetTransform()) then
         return
     end
-    local rectTransform = tempStoneEntity:GetTransform():GetComponent("RectTransform")
+    local rectTransform = tempStoneEntity:GetTransform():GetComponent(typeof(CS.UnityEngine.RectTransform))
 
     if tempStoneEntity:GetComponentAimDirection() then
         tempStoneEntity:GetTransform():SetParent(hook:GetGrabPoint(), true)
@@ -958,7 +958,7 @@ function XGoldenMinerSystemHook:SetStoneEntityOnHookOnly(hook, stoneEntity, fixP
     if not tempStoneEntity or XTool.UObjIsNil(tempStoneTrans) then
         return
     end
-    local rectTransform = tempStoneEntity:GetTransform():GetComponent("RectTransform")
+    local rectTransform = tempStoneEntity:GetTransform():GetComponent(typeof(CS.UnityEngine.RectTransform))
 
     if tempStoneEntity:GetComponentAimDirection() then
         tempStoneTrans:SetParent(hook:GetGrabPoint(), true)

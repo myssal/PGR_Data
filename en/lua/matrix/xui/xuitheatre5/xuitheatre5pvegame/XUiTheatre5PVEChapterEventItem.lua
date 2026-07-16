@@ -38,7 +38,7 @@ end
 
 function XUiTheatre5PVEChapterEventItem:ForceRebuildLayout()
     if self.Transform then
-        local rectTrans = self.Transform:GetComponent("RectTransform")
+        local rectTrans = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
         CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(rectTrans)
     end    
 end

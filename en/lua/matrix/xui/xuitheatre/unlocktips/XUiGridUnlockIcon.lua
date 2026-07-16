@@ -13,7 +13,7 @@ function XUiGridUnlockIcon:SetData(data)
         self.TxtName.text = name
     end
     if self.RImgIcon and icon then
-        if self.RImgIcon:GetComponent("Image") then
+        if self.RImgIcon:GetComponent(typeof(CS.UnityEngine.UI.Image)) then
             self.RImgIcon:SetSprite(icon)
         else
             self.RImgIcon:SetRawImage(icon)

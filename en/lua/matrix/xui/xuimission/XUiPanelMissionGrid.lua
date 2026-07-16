@@ -9,7 +9,7 @@ function XUiPanelMissionGrid:Ctor(ui)
     self:InitAutoScript()
     self.Timer = nil
     self.ShowCompletedAnimation = false
-    self.TxtTimeRect = self.TxtTime.gameObject:GetComponent("RectTransform")
+    self.TxtTimeRect = self.TxtTime.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.GridCommonA.gameObject:SetActive(false)
 end
 
@@ -170,7 +170,7 @@ end
 
 function XUiPanelMissionGrid:AutoInitUi()
     -- self.PanelTime = self.Transform:Find("PanelTime")
-    -- self.TxtTime = self.Transform:Find("PanelTime/TxtTime"):GetComponent("Text")
+    -- self.TxtTime = self.Transform:Find("PanelTime/TxtTime"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     -- self.PanelRaward = self.Transform:Find("PanelRaward")
     -- self.PanelScrollView = self.Transform:Find("PanelRaward/PanelScrollView")
     -- self.PanelLayoutReward = self.Transform:Find("PanelRaward/PanelScrollView/Viewport/PanelLayoutReward")
@@ -178,15 +178,15 @@ function XUiPanelMissionGrid:AutoInitUi()
     -- self.PanelMainReward = self.Transform:Find("PanelMainReward")
     -- self.GridCommon = self.Transform:Find("PanelMainReward/GridCommon")
     -- self.PanelBase = self.Transform:Find("PanelBase")
-    -- self.BtnFinish = self.Transform:Find("PanelBase/BtnFinish"):GetComponent("Button")
+    -- self.BtnFinish = self.Transform:Find("PanelBase/BtnFinish"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     -- self.PanelReceive = self.Transform:Find("PanelBase/BtnFinish/PanelReceive")
-    -- self.BtnSend = self.Transform:Find("PanelBase/BtnSend"):GetComponent("Button")
+    -- self.BtnSend = self.Transform:Find("PanelBase/BtnSend"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     -- self.PanelStop = self.Transform:Find("PanelBase/PanelStop")
-    -- self.BtnTimeGo = self.Transform:Find("PanelBase/PanelStop/BtnTimeGo"):GetComponent("Button")
-    -- self.BtnStop = self.Transform:Find("PanelBase/PanelStop/BtnStop"):GetComponent("Button")
+    -- self.BtnTimeGo = self.Transform:Find("PanelBase/PanelStop/BtnTimeGo"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    -- self.BtnStop = self.Transform:Find("PanelBase/PanelStop/BtnStop"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     -- self.PanelTitle = self.Transform:Find("PanelTitle")
-    -- self.ImgQuality = self.Transform:Find("PanelTitle/ImgQuality"):GetComponent("Image")
-    -- self.TxtName = self.Transform:Find("PanelTitle/TxtName"):GetComponent("Text")
+    -- self.ImgQuality = self.Transform:Find("PanelTitle/ImgQuality"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    -- self.TxtName = self.Transform:Find("PanelTitle/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiPanelMissionGrid:GetAutoKey(uiNode, eventName)

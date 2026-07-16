@@ -182,7 +182,7 @@ end
 
 function XUiPanelFubenChallengeStageList:PlayScrollViewMove(gridTransform)
     self.PaneStageList.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
-    local gridRect = gridTransform:GetComponent("RectTransform")
+    local gridRect = gridTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridRect.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridRect.localPosition.x
@@ -197,7 +197,7 @@ end
 
 --自动定位
 function XUiPanelFubenChallengeStageList:SetPanelInNewStage(gridTransform)
-    local gridRect = gridTransform:GetComponent("RectTransform")
+    local gridRect = gridTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridRect.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX - gridRect.localPosition.x

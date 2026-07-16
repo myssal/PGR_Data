@@ -6,7 +6,7 @@ function XUiGridPartnerCarry:Ctor(ui)
     
     XTool.InitUiObject(self)
     --v1.28 装备头像
-    self.RImgRole = self.ImgIsCarry.transform:Find("RImgRole"):GetComponent("RawImage")
+    self.RImgRole = self.ImgIsCarry.transform:Find("RImgRole"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self:SetButtonCallBack()
 end
 

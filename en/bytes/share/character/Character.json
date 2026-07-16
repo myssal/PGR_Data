@@ -1616,6 +1616,7 @@
         "Priority": 2450,
         "EquipType": 52,
         "EquipId": 2524001,
+        "ExclusiveEquipId": 2526001,
         "EmotionIcon": "Assets/Product/Texture/Image/IconType/IconCharacter1.png",
         "DefaultNpcFashtionId": 6004801,
         "CaptainSkillId": 153522,
@@ -1966,5 +1967,31 @@
             2
         ],
         "Career": 1
+    },
+    {
+        "Id": 1401003,
+        "Name": "Helentine",
+        "TradeName": "Lacrimosa",
+        "LogName": "Helentine: Lacrimosa",
+        "EnName": "Helentine",
+        "Type": 1,
+        "Sex": 1,
+        "StoryChapterId": 1,
+        "Intro": "The elder daughter of the Spelmin family from the TEC, she currently serves in the Military Strategic Diplomacy Division. Her frame, modified and maintained by the Science Council, is designed for intelligence-gathering missions across a variety of complex environments.",
+        "ItemId": 593,
+        "LevelUpTemplateId": 1,
+        "Priority": 2590,
+        "EquipType": 66,
+        "EquipId": 2664001,
+        "EmotionIcon": "Assets/Product/Texture/Image/IconType/IconCharacter3.png",
+        "DefaultNpcFashtionId": 6006201,
+        "CaptainSkillId": 140322,
+        "MissionInfo": "Unnamed",
+        "Code": "TBA-04",
+        "Element": 4,
+        "GeneralSkillIds": [
+            5
+        ],
+        "Career": 5
     }
 ]

@@ -2,6 +2,7 @@
     {
         "Id": 1,
         "Name": "Vortex",
+        "Type": 1,
         "BgImage": "Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineActiveBg01.png",
         "ChapterIds": [
             1,
@@ -21,6 +22,7 @@
     {
         "Id": 2,
         "Name": "Disaster",
+        "Type": 1,
         "BgImage": "Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineActiveBg02.png",
         "ChapterIds": [
             13,
@@ -35,6 +37,7 @@
     {
         "Id": 3,
         "Name": "Fate",
+        "Type": 1,
         "BgImage": "Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineActiveBg03.png",
         "ChapterIds": [
             20,
@@ -50,6 +53,7 @@
     {
         "Id": 4,
         "Name": "Renewal",
+        "Type": 1,
         "BgImage": "Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineActiveBg04.png",
         "ChapterIds": [
             28,
@@ -67,6 +71,7 @@
     {
         "Id": 5,
         "Name": "Infinite Loop",
+        "Type": 1,
         "BgImage": "Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineActiveBg05.png",
         "ChapterIds": [
             38,
@@ -85,6 +90,7 @@
     {
         "Id": 6,
         "Name": "Pilgrimage",
+        "Type": 1,
         "BgImage": "Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineActiveBg06.png",
         "ChapterIds": [
             49,
@@ -99,6 +105,7 @@
     {
         "Id": 7,
         "Name": "Homeward",
+        "Type": 1,
         "BgImage": "Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineActiveBg07.png",
         "ChapterIds": [
             56,
@@ -107,6 +114,21 @@
             59,
             60,
             61
+        ]
+    },
+    {
+        "Id": 8,
+        "Name": "Gyre",
+        "Type": 2,
+        "BgImage": "Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineActiveBg08.png",
+        "ChapterIds": [
+            62
+        ],
+        "Condition": [
+            1007266
+        ],
+        "BgCondition": [
+            "Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineActiveBg09.png"
         ]
     }
 ]

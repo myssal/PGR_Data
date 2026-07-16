@@ -156,7 +156,7 @@ end
 function XUiDoomsdayChapter:DoMoveCenter(gridTrans)
     if not gridTrans then return end
     self.PaneStageList.movementType = MovementType.Unrestricted
-    local gridTransform = gridTrans:GetComponent("RectTransform")
+    local gridTransform = gridTrans:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridTransform.localPosition.x + self.PanelStageContent.localPosition.x;
     if diffX < ChapterMoveX.MIN or diffX > ChapterMoveX.MAX then
         local targetPosX = ChapterMoveX.TARGET - gridTransform.localPosition.x

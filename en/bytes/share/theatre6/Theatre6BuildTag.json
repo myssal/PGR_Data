@@ -5,7 +5,9 @@
         "Pirority": 11,
         "Desc": "Cannot gain <Icon=IconOverClock|30|30|0.5/><color=#516797>Hypersequence</color> while being inflicted by Stun.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36.png",
+        "FilterSort": 1,
+        "GroupId": 2
     },
     {
         "Id": 12,
@@ -13,7 +15,9 @@
         "Pirority": 2,
         "Desc": "When hit by enemy Skills, deals DMG equal to 10% Attack for every stack. Lasts indefinitely. Stacks infinitely.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon38.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon38.png",
+        "FilterSort": 2,
+        "GroupId": 2
     },
     {
         "Id": 13,
@@ -21,7 +25,9 @@
         "Pirority": 2,
         "Desc": "Enemies cannot trigger <Icon=IconBlock|30|30|0.5/><color=#516797>Block</color> while being inflicted with <Icon=IconHitFlyBlack|30|30|0.5/><color=#487F3B>Knockback</color>.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon39.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon39.png",
+        "FilterSort": 3,
+        "GroupId": 2
     },
     {
         "Id": 14,
@@ -29,7 +35,9 @@
         "Pirority": 2,
         "Desc": "Enemies cannot trigger <Icon=IconBlock|30|30|0.5/><color=#516797>Block</color> while being inflicted with <Icon=IconHitDown|30|30|0.5/><color=#487F3B>Knockdown</color>.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon41.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon41.png",
+        "FilterSort": 4,
+        "GroupId": 2
     },
     {
         "Id": 15,
@@ -37,7 +45,8 @@
         "Pirority": 1,
         "Desc": "Consumes 1 stack of <color=#B96716><</color><Icon=IconCritBlack|30|30|0.5/><color=#B96716>CRIT></color> when using the next skill, and DMG dealt by that skill increases by 50%. Lasts indefinitely. Stacks infinitely.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png",
+        "GroupId": 2
     },
     {
         "Id": 16,
@@ -45,7 +54,9 @@
         "Pirority": 2,
         "Desc": "DMG dealt by this Skill increases by 50%.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png",
+        "FilterSort": 6,
+        "GroupId": 2
     },
     {
         "Id": 17,
@@ -53,7 +64,8 @@
         "Pirority": 1,
         "Desc": "Consumes 1 stack of <color=#516797><</color><Icon=IconBlock|30|30|0.5/><color=#516797>Block></color> when hit by the next enemy skill, and DMG taken from that skill is reduced by 50%. Lasts indefinitely. Stacks infinitely. Cannot Block while inflicted with Knockback or Knockdown.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png",
+        "GroupId": 2
     },
     {
         "Id": 18,
@@ -61,7 +73,9 @@
         "Pirority": 2,
         "Desc": "DMG taken from this skill is reduced by 50%. Cannot Block while inflicted with Knockback or Knockdown.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png",
+        "FilterSort": 8,
+        "GroupId": 2
     },
     {
         "Id": 19,
@@ -69,7 +83,9 @@
         "Pirority": 1,
         "Desc": "Using skills grants <color=#9F3232><Icon=IconAnger|30|30|0.5/>Rage</color>. Lasts indefinitely.\\nMax <color=#9F3232><Icon=IconAnger|30|30|0.5/>Rage</color>: 100. Triggers <color=#9F3232><Icon=IconAngry|30|30|0.5/>Berserk</color> at max Rage.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43.png",
+        "FilterSort": 9,
+        "GroupId": 2
     },
     {
         "Id": 20,
@@ -77,7 +93,9 @@
         "Pirority": 2,
         "Desc": "While <Icon=IconAngry|30|30|0.5/><color=#9F3232>Berserk</color> is active, increases DMG by 10%. Using any skill consumes 10 <Icon=IconAnger|30|30|0.5/><color=#9F3232>Rage</color>, and certain skills trigger additional effects.\\nWhen <Icon=IconAnger|30|30|0.5/><color=#9F3232>Rage</color> reaches 0, <Icon=IconAngry|30|30|0.5/><color=#9F3232>Berserk</color> ends. <Icon=IconAngry|30|30|0.5/><color=#9F3232>Berserk</color> does not stack.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png",
+        "FilterSort": 10,
+        "GroupId": 2
     },
     {
         "Id": 21,
@@ -85,7 +103,8 @@
         "Pirority": 1,
         "Desc": "Triggers a <Icon=IconWrestle|30|30|0.5/><color=#B96716>Parry</color> at the start of battle and when both sides' <Icon=IconStamina|30|30|0.5/><color=#6F4877>Fighting Will</color> is depleted. The winner of the <Icon=IconWrestle|30|30|0.5/><color=#B96716>Parry</color> gains First Strike.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png",
+        "GroupId": 2
     },
     {
         "Id": 22,
@@ -93,7 +112,8 @@
         "Pirority": 1,
         "Desc": "Triggers a <Icon=IconOverClock|30|30|0.5/><color=#516797>Counter</color> when either side's <Icon=IconOverClock|30|30|0.5/><color=#516797>Hypersequence</color> reaches 100 during a battle. The winner of the <Icon=IconOverClock|30|30|0.5/><color=#516797>Counter</color> gains First Strike.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png",
+        "GroupId": 2
     },
     {
         "Id": 23,
@@ -101,7 +121,9 @@
         "Pirority": 3,
         "Desc": "Certain skills can trigger additional effects when <Icon=IconWrestle|30|30|0.5/><color=#B96716>Initiative</color> is high.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png",
+        "FilterSort": 13,
+        "GroupId": 1
     },
     {
         "Id": 24,
@@ -109,7 +131,9 @@
         "Pirority": 3,
         "Desc": "Certain skills can trigger additional effects when <Icon=IconOverClock|30|30|0.5/><color=#516797>Hypersequence</color> is high.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png",
+        "FilterSort": 14,
+        "GroupId": 1
     },
     {
         "Id": 25,
@@ -117,7 +141,44 @@
         "Pirority": 3,
         "Desc": "Certain skills can trigger additional effects when <Icon=IconStamina|30|30|0.5/><color=#6F4877>Fighting Will</color> is high.",
         "SaveWeight": 10,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon03.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon03.png",
+        "FilterSort": 15,
+        "GroupId": 1
+    },
+    {
+        "Id": 26,
+        "Name": "Unique",
+        "Pirority": 11,
+        "Desc": "Identical effects only apply once and cannot stack."
+    },
+    {
+        "Id": 27,
+        "Name": "Shield",
+        "Pirority": 2,
+        "Desc": "When taking damage, consumes <color=#137D90><Icon=IconProtector|30|30|0.5/>Shield</color> to absorb an equal amount of damage. When both sides' <Icon=IconStamina|30|30|0.5/><color=#6F4877>Fighting Will</color> is depleted and a new Parry is about to begin, clears both sides' <color=#137D90><Icon=IconProtector|30|30|0.5/>Shield</color>.",
+        "SaveWeight": 10,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon56.png",
+        "FilterSort": 9,
+        "GroupId": 2
+    },
+    {
+        "Id": 28,
+        "Name": "Dawnlight",
+        "Pirority": 2,
+        "Desc": "When equipping any skill with <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> effect, activates special effect: each time an Active/Trigger/Parry/Counter skill is used, accumulates 10/15/20/20 <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> respectively.",
+        "SaveWeight": 10,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon57.png",
+        "FilterSort": 10,
+        "GroupId": 2
+    },
+    {
+        "Id": 29,
+        "Name": "Dawnlight",
+        "Pirority": 2,
+        "Desc": "<color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> caps at 120. Each time <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> is full, depletes all <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> and unleashes <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight Unbound</color>: forcibly triggers the Trigger Skill in slot 1, ignoring its original activation conditions.",
+        "SaveWeight": 10,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon57.png",
+        "GroupId": 2
     },
     {
         "Id": 99,

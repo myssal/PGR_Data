@@ -19,8 +19,8 @@ function XUiBiancaTheatreLvTips:OnStart(callback, beforeLevel, afterLevel)
 end
 
 function XUiBiancaTheatreLvTips:InitUiObject()
-    self.BeforeLevelTxt = self.Transform:Find("SafeAreaContentPane/PanelLv/Text"):GetComponent("Text")
-    self.AfterLevelTxt = self.Transform:Find("SafeAreaContentPane/PanelLv/Text2"):GetComponent("Text")
+    self.BeforeLevelTxt = self.Transform:Find("SafeAreaContentPane/PanelLv/Text"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.AfterLevelTxt = self.Transform:Find("SafeAreaContentPane/PanelLv/Text2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiBiancaTheatreLvTips:AddClickListener()

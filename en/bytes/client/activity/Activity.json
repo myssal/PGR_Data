@@ -172,6 +172,7 @@
         "ActivityType": 13,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityTitle": "woz",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualGuide.prefab",
         "Params": [
             7
@@ -194,196 +195,196 @@
     },
     {
         "Id": 400,
-        "Name": "Homecoming Voyage",
-        "GroupId": 245,
+        "Name": "Of Solitude and Stillness",
+        "GroupId": 255,
         "SortId": 1,
-        "TimeId": 47920,
+        "TimeId": 48121,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMainLinev405.png",
-        "ActivityTitle": "Homecoming Voyage",
-        "ActivityDes": "Event Info: Play through the new story [Homecoming Voyage] and complete missions.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMainLinev406.png",
+        "ActivityTitle": "Of Solitude and Stillness",
+        "ActivityDes": "Event Info: Play through the new story [Of Solitude and Stillness] and complete missions.",
         "Params": [
             0,
-            710
+            727
         ],
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 401,
         "Name": "Simulated Battlefield",
-        "GroupId": 245,
+        "GroupId": 255,
         "SortId": 2,
-        "TimeId": 47704,
+        "TimeId": 48112,
         "ActivityType": 12,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRepeatChallengeV213.png",
         "ActivityTitle": "Simulated Battlefield",
-        "ActivityDes": "Requirements:\\nCommandant Lv.16.\\nMission Info:\\n1. Earn Simulation Scores upon clearing a stage.\\n2. Spend Simulation Scores to purchase items at the Simulation Shop.\\n3. The limited-time shop exchange ends on July 16, 2026, at 23:00 (UTC).\\n4. During the event period, clear Simulated Battlefield stages and consume a certain amount of serum to claim rewards.",
+        "ActivityDes": "Requirements:\\nCommandant Lv.16.\\nMission Info:\\n1. Earn Simulation Scores upon clearing a stage.\\n2. Spend Simulation Scores to purchase items at the Simulation Shop.\\n3. The limited-time shop exchange ends on Aug 18, 2026, at 23:00 (UTC).\\n4. During the event period, clear Simulated Battlefield stages and consume a certain amount of serum to claim rewards.",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelRepeatActivity.prefab",
         "Params": [
             20017,
-            709
+            726
         ],
         "ConditionId": 770422,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 402,
-        "Name": "Retro Arcade",
-        "GroupId": 245,
+        "Name": "Trial of Simulacrums",
+        "GroupId": 255,
         "SortId": 4,
-        "TimeId": 47501,
+        "TimeId": 48501,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseGameCollectionv405.png",
-        "ActivityTitle": "Retro Arcade",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40.\\nEvent Info:\\n1. During the event, three game modes will be available simultaneously: Fluffy Snooze, Wreck-It Shark-speare, and Cat Grab.\\n2. In Fluffy Snooze, you need to merge target blocks as quickly as possible to eliminate numbered blocks in the clearing area.\\n3. In Wreck-It Shark-speare, you need to clear blocks from below as much as possible to prevent them from reaching the top.\\n4. In Cat Grab, you need to obtain more Resource Points in stages with progressively shorter time limits by using modifications and upgrades.\\n5. Participate in the event and complete missions to obtain [Retro Modules], which can be exchanged for items in the Exchange Shop.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePingfenV406.png",
+        "ActivityTitle": "Trial of Simulacrums",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. Control specific characters to initiate trials and counter challenges to complete the stages.\\n2. Challenges are divided into Standard and Trial modes. Standard mode unlocks across 3 difficulty levels, and Trial mode becomes available after completing Standard challenges.\\n3. In Trial challenges, reaching the designated score on each floor unlocks higher floors. Failing to meet the score requirement on certain floors will trigger a Floor Drop.\\n4. Within the event, you may only use trial characters within the designated roster.\\n5. Characters' damage within the event will be reduced to 1, and new multipliers will be assigned based on the risk and duration of each character's skills within the event.\\n6. After completing designated challenges, you can complete missions to receive [Nameplates], [Event Construct R&D Tickets], and more items.",
         "Params": [
-            1300640
+            89061
+        ],
+        "ConditionId": 774800,
+        "ShowBeginTime": "After the update on 2026-07-17"
+    },
+    {
+        "Id": 403,
+        "Name": "Shattered Mirage",
+        "GroupId": 255,
+        "SortId": 5,
+        "TimeId": 48201,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseminirpgV406.png",
+        "ActivityTitle": "Shattered Mirage",
+        "ActivityDes": "Requirements: Commandant Lv.40\\n\\nEvent Info:\\n1. The event consists of 4 chapters, each with 3 challenge difficulties.\\n2. Use characters required by the chapters and add overclock buffs to them.\\n3. Complete stage Enthalpy Verification to claim event rewards.",
+        "Params": [
+            89094
         ],
         "ConditionId": 774800
     },
     {
-        "Id": 403,
-        "Name": "Rapid Pursuit",
-        "GroupId": 245,
-        "SortId": 5,
-        "TimeId": 47401,
-        "ActivityType": 3,
-        "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuanxiv405.png",
-        "ActivityTitle": "Rapid Pursuit",
-        "ActivityDes": "Requirements: Commandant Lv.42\\n\\nEvent Info:\\n1. This event features 4 stages, each with 4 difficulty levels.\\n2. Defeat Bosses of different difficulties in bounties with the required characters.\\n3. Complete bounty missions to claim rewards.",
-        "Params": [
-            89093
-        ],
-        "ConditionId": 774700
-    },
-    {
         "Id": 404,
-        "Name": "Nebulous Vigil",
-        "GroupId": 245,
-        "SortId": 6,
-        "TimeId": 47901,
-        "ActivityType": 3,
-        "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDifficultv405.png",
-        "ActivityTitle": "Nebulous Vigil",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. There are a total of 6 difficulty levels, all of which are highly challenging with [\"Vanguard\"] being your formidable enemy.\\n2. All members will be reset once knocked out during the challenge, making the challenge easier to complete.\\n3. Each stage has its own 3-star clearance conditions. Collectibles will be rewarded once you have earned a total of 3 stars. The more stars you earn, the higher the quality of the collectibles will be.",
-        "Params": [
-            11724
-        ],
-        "ConditionId": 772200
-    },
-    {
-        "Id": 405,
         "Name": "Shrouded Requiem",
-        "GroupId": 245,
-        "SortId": 7,
-        "TimeId": 47121,
+        "GroupId": 255,
+        "SortId": 6,
+        "TimeId": 48601,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRogue6v405.png",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRogue6v406.png",
         "ActivityTitle": "Shrouded Requiem",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40.\\nEvent Info:\\n1. [Shrouded Requiem] is a permanent mode with two parts: [Labyrinth Breakout] and [Nightshroud Tales].\\n2. In [Labyrinth Breakout], equip characters with skills and relics, then challenge powerful enemies to earn Sealed Writs, the currency used to unlock stories.\\n3. In [Nightshroud Tales], spend Sealed Writs to unlock character stories and challenge stages.\\n4. [Shrouded Requiem] includes both limited-time missions and permanent missions. Play [Labyrinth Breakout] or [Nightshroud Tales] to complete missions and earn permanent currency and limited-time currency rewards.\\n5. Spend permanent currency and limited-time currency in the corresponding shops to exchange for rewards such as [Stamps] and [R&D Tickets].",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. The [Phantom Clash] mode is open for a limited time. Use existing archives to match and battle other Commandants in [Phantom Clash] mode.\\n2. [Nightshroud Tales] features new Kamui story. Enter the event interface and tap [Nightshroud Tales] to experience it.\\n3. Difficulty 5 has been added to [Labyrinth Breakout]. Unlock it by ranking up in [Phantom Clash].\\n4. [Omniscient Vision] gains additional levels and effects, providing extra bonuses obtainable in [Labyrinth Breakout] mode.\\n5. Permanent Shop has been updated. Spend permanent tokens to exchange for rewards such as [Stamp] and [R&D Tickets].\\n6. Limited-time Shop will also be open during the event period. Complete limited-time missions during the event to earn limited-time tokens, which can be exchanged for [R&D Tickets] and more rewards in the Limited-time Shop.\\n7. Rank up in [Phantom Clash] to earn [Collectibles] and other rewards.",
         "Params": [
             89102
         ],
-        "ConditionId": 774800,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ConditionId": 774800
+    },
+    {
+        "Id": 405,
+        "Name": "Huhu's Fantastic Garden",
+        "GroupId": 255,
+        "SortId": 7,
+        "TimeId": 48128,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRansev406.png",
+        "ActivityTitle": "Huhu's Fantastic Garden",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. Adjust positions, mix colors, and decorate the vibrant city garden.\\n2. The event features 4 chapters, each containing multiple stages that will gradually unlock over time and as previous stages are cleared.\\n3. Clear designated stages to complete missions and claim rewards.",
+        "Params": [
+            89105
+        ],
+        "ConditionId": 774800
     },
     {
         "Id": 406,
-        "Name": "Omniframe Target",
-        "GroupId": 245,
+        "Name": "Bier's Echoes",
+        "GroupId": 255,
         "SortId": 8,
-        "TimeId": 47921,
+        "TimeId": 48101,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterv405.png",
-        "ActivityTitle": "Omniframe Target",
-        "ActivityDes": "New Character:\\n※S-Rank Ice Attacker [Lucia: Inverse Crown]\\nNew Weapon:\\n※6★ [Lightless Dusk] (Cylinder Katana)\\n\\nInfo:\\n1. Construct Research:\\n※[Lucia: Inverse Crown] will be available in the [Phylotree Nexus] Research Pool. There is a 100% chance to get [Lucia: Inverse Crown] upon getting an S-Rank Construct.\\n2. Weapon Research:\\n※[Lightless Dusk] will be available in the [Phylotree Nexus Weapon Research] Research Pool with the same rules and rates as other weapons.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDifficultv406.png",
+        "ActivityTitle": "Bier's Echoes",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. There are a total of 5 difficulty levels, all of which are highly challenging with [Tavis Spelmin] being your formidable enemy.\\n2. All members will be reset once knocked out during the challenge, making the challenge easier to complete.\\n3. Each stage has its own 3-star clearance conditions. Earn stars across all stages to claim Collectible rewards. The more stars you collect, the higher the Collectible's quality.",
         "Params": [
-            20365
+            11724
         ],
-        "ConditionId": 770402,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ConditionId": 1050141
     },
     {
         "Id": 407,
-        "Name": "CUB Target",
-        "GroupId": 245,
+        "Name": "Omniframe Target",
+        "GroupId": 255,
         "SortId": 9,
-        "TimeId": 47921,
+        "TimeId": 48122,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerv405.png",
-        "ActivityTitle": "CUB Target",
-        "ActivityDes": "New CUB:\\n※S-Rank CUB: [Allos]\\n※Recommended for the character [Lucia: Inverse Crown]\\n※[Allos] will be added to the [Phylotree Nexus CUB Research] Pool.\\nWhen conducting CUB Research, it is allowed to choose any S-Rank CUB for target research.\\nDuring the event, if [Allos] is selected for target research, it will have a 100% drop rate among S-Rank CUBs.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterv406.png",
+        "ActivityTitle": "Omniframe Target",
+        "ActivityDes": "New Character:\\n※S-Rank Lightning Amplifier [Helentine: Lacrimosa]\\nNew Weapon:\\n※6★ [Hear the Bell] (Folding Buzzsaw)\\n\\nInfo:\\n1. Construct Research:\\n※[Helentine: Lacrimosa] will be available in the [Crucible Event Construct] Research Pool. There is a 100% chance to get [Helentine: Lacrimosa] upon getting an S-Rank Construct.\\n2. Weapon Research:\\n※[Hear the Bell] will be available in the [Weapon Research] Research Pool, with the same rules and rates as other weapons.",
         "Params": [
-            7219
+            7218
         ],
         "ConditionId": 770402,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 408,
-        "Name": "New Coating - Nightshroud Coronet",
-        "GroupId": 245,
+        "Name": "CUB Target",
+        "GroupId": 255,
         "SortId": 10,
-        "TimeId": 47923,
+        "TimeId": 48122,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLuciaEffectCoatingv405.png",
-        "ActivityTitle": "New Coating - Nightshroud Coronet",
-        "ActivityDes": "New Coating:\\nOmniframe [Lucia: Inverse Crown] Coating: [Nightshroud Coronet]\\nInfo:\\n[Nightshroud Coronet] will be on sale at \"30% off\" in \"Top-up - Coating Supply\" during the event.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerv406.png",
+        "ActivityTitle": "CUB Target",
+        "ActivityDes": "New CUB:\\n※S-Rank CUB: [Grand Duke]\\n※Recommended for the character [Helentine: Lacrimosa]\\n※[Grand Duke] will be added to the [CUB Research] Pool.\\nWhen conducting CUB Research, it is allowed to choose any S-Rank CUB for target research.\\nDuring the event, if [Grand Duke] is selected for target research, it will have a 100% drop rate among S-Rank CUB.",
         "Params": [
-            20020
+            7212
         ],
-        "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ConditionId": 770402,
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 409,
-        "Name": "New Coating - Stygian Pinion",
-        "GroupId": 245,
+        "Name": "New Coating - Azure Embrace",
+        "GroupId": 255,
         "SortId": 11,
-        "TimeId": 47923,
+        "TimeId": 48124,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseVeronicaEffectCoatingv405.png",
-        "ActivityTitle": "New Coating - Stygian Pinion",
-        "ActivityDes": "New Coating:\\nOmniframe [Veronica: Aegis] Coating: [Stygian Pinion]\\nInfo:\\n[Stygian Pinion] will be on sale at \"30% off\" in \"Top-up - Coating Supply\" during the event.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseHelentineEffectCoatingv406.png",
+        "ActivityTitle": "New Coating - Azure Embrace",
+        "ActivityDes": "New Coating:\\nOmniframe [Helentine: Lacrimosa] Coating: [Azure Embrace]\\nInfo:\\n[Azure Embrace] will be on sale at \"30% off\" in \"Top-up - Coating Supply\" during the event.",
         "Params": [
             20020
         ],
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 410,
-        "Name": "New Coating - Fluttering Ballet",
-        "GroupId": 245,
+        "Name": "New Coating - Shimmering Tide",
+        "GroupId": 255,
         "SortId": 12,
-        "TimeId": 47911,
+        "TimeId": 48124,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLivEffectCoatingV405.png",
-        "ActivityTitle": "New Coating - Fluttering Ballet",
-        "ActivityDes": "New Coating:\\nOmniframe [Liv: Limpidity] Coating: [Fluttering Ballet].\\nInfo:\\nDuring the event, it can be obtained through draws in [Fluttering Ballet].",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSelenaEffectCoatingv406.png",
+        "ActivityTitle": "New Coating - Shimmering Tide",
+        "ActivityDes": "New Coating:\\nOmniframe [Selena: Pianissimo] Coating: [Shimmering Tide]\\nInfo:\\n[Shimmering Tide] will be on sale at \"30% off\" in \"Top-up - Coating Supply” during the event.",
         "Params": [
-            20363
+            20020
         ],
-        "ConditionId": 770410
+        "ConditionId": 770400,
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 411,
         "Name": "Tactical Assessment Manual",
-        "GroupId": 245,
+        "GroupId": 255,
         "SortId": 13,
-        "TimeId": 47922,
+        "TimeId": 48123,
         "ActivityType": 3,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBPCommon.png",
@@ -393,143 +394,113 @@
             20171
         ],
         "ConditionId": 775500,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 412,
-        "Name": "Long Live the Crowned",
-        "GroupId": 246,
+        "Name": "The Knower's Dilemma",
+        "GroupId": 257,
         "SortId": 1,
-        "TimeId": 47101,
+        "TimeId": 48705,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterTryv405.png",
-        "ActivityTitle": "Long Live the Crowned",
-        "ActivityDes": "Requirements: Clear Normal Story 1-8.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterTryv406.png",
+        "ActivityTitle": "The Knower's Dilemma",
+        "ActivityDes": "Requirements: Clear Normal Story 1-8",
         "Params": [
             20235,
-            711
+            729
         ],
         "ConditionId": 774501,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 413,
-        "Name": "Adaptation Fitting - Allos",
-        "GroupId": 247,
+        "Name": "Adaptation Fitting - Grand Duke",
+        "GroupId": 258,
         "SortId": 1,
-        "TimeId": 47408,
+        "TimeId": 48704,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerTryv405.png",
-        "ActivityTitle": "Adaptation Fitting - Allos",
-        "ActivityDes": "Requirements: Commandant Lv.61.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerTryv406.png",
+        "ActivityTitle": "Adaptation Fitting - Grand Duke",
+        "ActivityDes": "Requirements: Commandant Lv.61",
         "Params": [
             7107,
-            712
+            730
         ],
         "ConditionId": 8006,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 414,
-        "Name": "Nightshroud Coronet",
-        "GroupId": 248,
+        "Name": "Azure Embrace",
+        "GroupId": 259,
         "SortId": 1,
-        "TimeId": 47406,
+        "TimeId": 48702,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLuciaEffectCoatingv405.png",
-        "ActivityTitle": "Nightshroud Coronet",
-        "ActivityDes": "New Coating:\\nOmniframe [Lucia: Inverse Crown] Coating: [Nightshroud Coronet]",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseHelentineEffectCoatingv406.png",
+        "ActivityTitle": "Azure Embrace",
+        "ActivityDes": "New Coating:\\nOmniframe [Helentine: Lacrimosa] Coating: [Azure Embrace]",
         "Params": [
             10035,
-            713
+            731
         ],
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 415,
-        "Name": "Stygian Pinion",
-        "GroupId": 249,
+        "Name": "Shimmering Tide",
+        "GroupId": 260,
         "SortId": 1,
-        "TimeId": 47407,
+        "TimeId": 48701,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseVeronicaEffectCoatingv405.png",
-        "ActivityTitle": "Stygian Pinion",
-        "ActivityDes": "New Coating:\\nOmniframe [Veronica: Aegis] Coating: [Stygian Pinion].",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSelenaEffectCoatingv406.png",
+        "ActivityTitle": "Shimmering Tide",
+        "ActivityDes": "New Coating:\\nOmniframe [Selena: Pianissimo] Coating: [Shimmering Tide]",
         "Params": [
             10035,
-            714
+            732
         ],
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2026-06-02"
+        "ShowBeginTime": "After the update on 2026-07-17"
     },
     {
         "Id": 416,
-        "Name": "Fluttering Ballet",
-        "GroupId": 250,
+        "Name": "Character Leap - Startrail",
+        "GroupId": 256,
         "SortId": 1,
-        "TimeId": 47911,
+        "TimeId": 48706,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLivEffectCoatingV405.png",
-        "ActivityTitle": "Fluttering Ballet",
-        "ActivityDes": "Info:\\nDuring the event, [Fluttering Ballet] can be obtained through \"main interface - Fluttering Ballet\" Coating Research Event for a limited time.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharaUp.png",
+        "ActivityTitle": "Character Leap - Startrail",
+        "ActivityDes": "Requirements: Commandant Lv.61\\n\\n\\n\\nEvent Info:\\n1. Complete the tutorial stage and experience the changes brought by the leap.",
         "Params": [
-            20363,
-            715
+            20384,
+            728
         ],
-        "ConditionId": 770410
+        "ConditionId": 8006,
+        "ShowBeginTime": "After the update on 2026-07-17",
+        "ShowEndTime": "Permanent"
     },
     {
         "Id": 417,
-        "Name": "Lost Voyage",
-        "GroupId": 252,
+        "Name": "Summer's Rhythm",
+        "GroupId": 254,
         "SortId": 1,
-        "TimeId": 46707,
+        "TimeId": 48119,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanv404.png",
-        "ActivityTitle": "Lost Voyage",
-        "ActivityDes": "Event Info: Complete event missions to obtain [Beacon].",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanV303.png",
+        "ActivityTitle": "Summer's Rhythm",
+        "ActivityDes": "Event Info: Complete event missions to obtain [Topology Pick].",
         "Params": [
-            20266,
-            652
+            20182,
+            721
         ]
-    },
-    {
-        "Id": 418,
-        "Name": "Emerging Reflections",
-        "GroupId": 253,
-        "SortId": 1,
-        "TimeId": 47702,
-        "ActivityType": 1,
-        "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanv405.png",
-        "ActivityTitle": "Emerging Reflections",
-        "ActivityDes": "Event Info: Complete event missions to obtain [Lopsided Self].",
-        "Params": [
-            89077,
-            716
-        ]
-    },
-    {
-        "Id": 419,
-        "Name": "Signal Calibration",
-        "GroupId": 245,
-        "SortId": 3,
-        "TimeId": 46501,
-        "ActivityType": 3,
-        "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseskygardenv400.png",
-        "ActivityTitle": "Signal Calibration",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40 or above\\nEvent Details:\\n1. Tune to frequencies to access mysterious messages.\\n2. Claim rewards after receiving the message.",
-        "Params": [
-            90058
-        ],
-        "ConditionId": 30406
     }
 ]

@@ -16,7 +16,7 @@ function XUiEscapeLayerGrid:InitUi()
     --self.Restart = XUiHelper.TryGetComponent(self.Transform, "Restart")
     self.Restart = XUiHelper.TryGetComponent(self.Transform, "BtnRestart")
     self.Btn = self.Transform:GetComponent("XUiButton")
-    self.CanvasGroup = self.Transform:GetComponent("CanvasGroup")
+    self.CanvasGroup = self.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
     self.Lock = XUiHelper.TryGetComponent(self.Transform, "Lock")
     self.GameObject:AddComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
 end

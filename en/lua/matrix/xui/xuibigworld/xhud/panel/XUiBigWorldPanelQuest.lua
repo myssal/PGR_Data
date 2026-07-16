@@ -48,7 +48,7 @@ function XUiBigWorldPanelQuest:InitUi()
         end
         self:Dequeue()
     end
-    self.CanvasGroup = self.Transform:GetComponent("CanvasGroup")
+    self.CanvasGroup = self.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
     self._StepChangeKey = nil
     self._StepChangeValue = {}
     self._ActionContainer = require("XUi/XUiBigWorld/XHud/Action/XQuestActionContainer").New(self._OnActionFinishListener)

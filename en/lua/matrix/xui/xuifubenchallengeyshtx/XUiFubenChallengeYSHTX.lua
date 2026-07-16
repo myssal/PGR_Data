@@ -20,8 +20,8 @@ function XUiFubenChallengeYSHTX:AutoInitUi()
     self.PanelPageView = self.Transform:Find("SafeAreaContentPane/PanelPageView")
     self.PanelContent = self.Transform:Find("SafeAreaContentPane/PanelPageView/Viewport/PanelContent")
     self.PanelYSHTXStageTemplate = self.Transform:Find("SafeAreaContentPane/PanelPageView/Viewport/PanelContent/PanelYSHTXStageTemplate")
-    self.ImgBg = self.Transform:Find("FullScreenBackground/ImgBg"):GetComponent("Image")
-    self.ImgHero = self.Transform:Find("SafeAreaContentPane/ImgHero"):GetComponent("Image")
+    self.ImgBg = self.Transform:Find("FullScreenBackground/ImgBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgHero = self.Transform:Find("SafeAreaContentPane/ImgHero"):GetComponent(typeof(CS.UnityEngine.UI.Image))
 end
 
 -- auto
@@ -33,7 +33,7 @@ function XUiFubenChallengeYSHTX:Init(config)
     self.PanelYSHTXStageTemplate.gameObject:SetActive(false)
 
     -- 自己的列表
-    --local rect = self.PanelYSHTXStageTemplate:GetComponent("RectTransform").rect
+    --local rect = self.PanelYSHTXStageTemplate:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect
     self.SectionCfg = XDataCenter.FubenDailyManager.GetDailySectionByChapterId(config.Id, self.Parent.CurDiff)
     -- local lastIndex = 0
     for index, stageId in ipairs(self.SectionCfg.StageId) do

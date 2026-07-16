@@ -20,8 +20,8 @@ function XUiPanelTheatre4Map:OnStart()
     -- 层级动画
     ---@type table<number, UnityEngine.Playables.PlayableDirector>
     self.FloorAnim = {
-        [1] = self.GridChapterEnable:GetComponent("PlayableDirector"),
-        [2] = self.GridChapterDisable:GetComponent("PlayableDirector"),
+        [1] = self.GridChapterEnable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)),
+        [2] = self.GridChapterDisable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)),
     }
 end
 

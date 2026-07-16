@@ -74,15 +74,15 @@ function XUiPanelNierCharacterTeaching:CreatStageNode(index, prefab)
         local ui = CS.UnityEngine.Object.Instantiate(prefab)
         grid = XUiGridNierStage.New(ui, self.RootUi)
         grid.Transform:SetParent(self.StageNode[index], false)
-        grid.Transform:GetComponent("RectTransform").anchoredPosition = CS.UnityEngine.Vector2(0, 0)
+        grid.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition = CS.UnityEngine.Vector2(0, 0)
         self.GridList[index] = grid
     end 
 end
 
 function XUiPanelNierCharacterTeaching:MoveIntoStage(stageIndex)
-    local gridRect = self.StageNode[stageIndex].transform:GetComponent("RectTransform")
+    local gridRect = self.StageNode[stageIndex].transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridRect.localPosition.x + self.PanelStageContent.localPosition.x
-    local viewRect = self.ViewPort.transform:GetComponent("RectTransform")
+    local viewRect = self.ViewPort.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     if diffX > viewRect.rect.width / 2 then
         local tarPosX = (viewRect.rect.width / 4) - gridRect.localPosition.x
         local tarPos = self.PanelStageContent.localPosition
@@ -99,7 +99,7 @@ end
 
 -- function XUiPanelNierCharacterTeaching:PlayScrollViewMove(gridTransform)
 --     self:SetPanelStageListMovementType(CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted)
---     local gridRect = gridTransform:GetComponent("RectTransform")
+--     local gridRect = gridTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
 --     local diffX = gridRect.localPosition.x + self.PanelStageContent.localPosition.x
 --     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
 --         local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridRect.localPosition.x

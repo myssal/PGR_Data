@@ -66,7 +66,7 @@ function XUiAwarenessMain:OnDetailShow(chapterId)
     self.DefaultContentPosX = self.PanelChapter.localPosition.x
     self.ScrollRect.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
     grid = grid.Transform
-    local gridTf = grid.parent.gameObject:GetComponent("RectTransform")
+    local gridTf = grid.parent.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridTf.localPosition.x + self.PanelChapter.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local tarPosX =  XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX - gridTf.localPosition.x

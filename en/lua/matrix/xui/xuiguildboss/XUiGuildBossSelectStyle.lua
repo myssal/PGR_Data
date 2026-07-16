@@ -11,7 +11,7 @@ function XUiGuildBossSelectStyle:OnAwake()
         Select = 1, -- 风格选择模式
         StyleDetail = 2, -- 风格详情模式
     }
-    self.ScrollRectSeletStyle = self.InfoSelectList.gameObject:GetComponent("ScrollRect")
+    self.ScrollRectSeletStyle = self.InfoSelectList.gameObject:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
 end
 
 function XUiGuildBossSelectStyle:AutoAddListener()
@@ -171,12 +171,12 @@ function XUiGuildBossSelectStyle:OpenWithWindowMode(windowMode)
 
     if windowMode == self.WindowMode.Select then
         self.Shelter.gameObject:SetActiveEx(false)
-        self.InfoSelect.gameObject:GetComponent("CanvasGroup").blocksRaycasts = true
-        self.InfoSkill.gameObject:GetComponent("CanvasGroup").blocksRaycasts = false
+        self.InfoSelect.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).blocksRaycasts = true
+        self.InfoSkill.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).blocksRaycasts = false
     elseif windowMode == self.WindowMode.StyleDetail then
         self.Shelter.gameObject:SetActiveEx(true)
-        self.InfoSelect.gameObject:GetComponent("CanvasGroup").blocksRaycasts = false
-        self.InfoSkill.gameObject:GetComponent("CanvasGroup").blocksRaycasts = true
+        self.InfoSelect.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).blocksRaycasts = false
+        self.InfoSkill.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).blocksRaycasts = true
     end
     self.CurWindowMode = windowMode
 end
@@ -185,7 +185,7 @@ end
 function XUiGuildBossSelectStyle:PlayScrollViewMove(grid, cb)
     -- 打开详情后不能滑动下层的列表
     self:SetSelectStyleMovementType(CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted)
-    local gridRect = grid:GetComponent("RectTransform")
+    local gridRect = grid:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridRect.localPosition.x + self.StyleSelectContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local tarPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX * 1.23 - gridRect.localPosition.x

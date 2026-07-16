@@ -45,32 +45,32 @@ function XUiNewGridDrawBanner:TryGetComponent()
     for i = 1, 13 do
        local obj = self.Transform:FindTransform("TxtTime" .. i)
         if obj then
-            self["TxtTime"..i] = obj:GetComponent("Text")
+            self["TxtTime"..i] = obj:GetComponent(typeof(CS.UnityEngine.UI.Text))
         end
     end
     if self.BtnGo then
         self.BtnGo = self.BtnGo.transform:GetComponent("XUiButton")
     end
     if self.MingyunSelectChoukacounts then
-        self.MingyunSelectChoukacounts = self.MingyunSelectChoukacounts.transform:GetComponent("Text")
+        self.MingyunSelectChoukacounts = self.MingyunSelectChoukacounts.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
     if self.MingyunNomalChoukacounts then
-        self.MingyunNomalChoukacounts = self.MingyunNomalChoukacounts.transform:GetComponent("Text")
+        self.MingyunNomalChoukacounts = self.MingyunNomalChoukacounts.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
     if self.PutongSelectChoukacounts then
-        self.PutongSelectChoukacounts = self.PutongSelectChoukacounts.transform:GetComponent("Text")
+        self.PutongSelectChoukacounts = self.PutongSelectChoukacounts.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
     if self.PutongNormalChoukacounts then
-        self.PutongNormalChoukacounts = self.PutongNormalChoukacounts.transform:GetComponent("Text")
+        self.PutongNormalChoukacounts = self.PutongNormalChoukacounts.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
     if self.PifuChoukaCounts then
-        self.PifuChoukaCounts = self.PifuChoukaCounts.transform:GetComponent("Text")
+        self.PifuChoukaCounts = self.PifuChoukaCounts.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
     if self.TimeTxt then
-        self.TimeTxt = self.TimeTxt.transform:GetComponent("Text")
+        self.TimeTxt = self.TimeTxt.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
     if self.TxtSwitch then
-        self.TxtSwitch = self.TxtSwitch.transform:GetComponent("Text")
+        self.TxtSwitch = self.TxtSwitch.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
     local btnDrawRule = self.Transform:FindTransform("BtnDrawRule")
     if btnDrawRule then
@@ -87,90 +87,90 @@ function XUiNewGridDrawBanner:TryGetComponent()
     local bg = self.Transform:FindTransform("Bg1")
     if bg then
         ---@type UnityEngine.UI.RawImage
-        self.RImgBg = bg:GetComponent("RawImage")
+        self.RImgBg = bg:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
     
     local animationEnable = self.Transform:FindTransform("AnimEnable")
     if animationEnable then
         ---@type UnityEngine.Playables.PlayableDirector
-        self.AnimEnable = animationEnable:GetComponent("PlayableDirector")
+        self.AnimEnable = animationEnable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     end
 
     local rImgRole = self.Transform:FindTransform("RImgRole")
     if rImgRole then
         ---@type UnityEngine.UI.RawImage
-        self.RImgRole = rImgRole:GetComponent("RawImage")
+        self.RImgRole = rImgRole:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
 
     local rImgName = self.Transform:FindTransform("RImgName")
     if rImgName then
         ---@type UnityEngine.UI.RawImage
-        self.RImgName = rImgName:GetComponent("RawImage")
+        self.RImgName = rImgName:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
 
     local txtRef = self.Transform:FindTransform("TxtRef")
     if txtRef then
-        self.TxtRef = txtRef:GetComponent("Text")
+        self.TxtRef = txtRef:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local txtName = self.Transform:FindTransform("TxtName")
     if txtName then
-        self.TxtName = txtName:GetComponent("Text")
+        self.TxtName = txtName:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local txtRoleType = self.Transform:FindTransform("TxtRoleType")
     if txtRoleType then
-        self.TxtRoleType = txtRoleType:GetComponent("Text")
+        self.TxtRoleType = txtRoleType:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local imgTypeIcon = self.Transform:FindTransform("ImgTypeIcon")
     if imgTypeIcon then
         ---@type UnityEngine.UI.RawImage
-        self.ImgTypeIcon = imgTypeIcon:GetComponent("RawImage")
+        self.ImgTypeIcon = imgTypeIcon:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
 
     local txtRoleName = self.Transform:FindTransform("TxtRoleName")
     if txtRoleName then
-        self.TxtRoleName = txtRoleName:GetComponent("Text")
+        self.TxtRoleName = txtRoleName:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local rImgRoleHead = self.Transform:FindTransform("RImgRoleHead")
     if rImgRoleHead then
         ---@type UnityEngine.UI.RawImage
-        self.RImgRoleHead = rImgRoleHead:GetComponent("RawImage")
+        self.RImgRoleHead = rImgRoleHead:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
 
     local rImgCubHead = self.Transform:FindTransform("RImgCubHead")
     if rImgCubHead then
         ---@type UnityEngine.UI.RawImage
-        self.RImgCubHead = rImgCubHead:GetComponent("RawImage")
+        self.RImgCubHead = rImgCubHead:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
 
     self.PanelInfo = self.Transform:FindTransform("PanleInfo")
 
     local txtNumberType = self.Transform:FindTransform("TxtNumberType")
     if txtNumberType then
-        self.TxtNumberType = txtNumberType:GetComponent("Text")
+        self.TxtNumberType = txtNumberType:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local txtTips = self.Transform:FindTransform("TetTips")
     if txtTips then
-        self.TxtTips = txtTips:GetComponent("Text")
+        self.TxtTips = txtTips:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local txtDrawName = self.Transform:FindTransform("TxtDrawName")
     if txtDrawName then
-        self.TxtDrawName = txtDrawName:GetComponent("Text")
+        self.TxtDrawName = txtDrawName:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local txtNameChouka = self.Transform:FindTransform("TxtNameChouka")
     if txtNameChouka then
-        self.TxtNameChouka = txtNameChouka:GetComponent("Text")
+        self.TxtNameChouka = txtNameChouka:GetComponent(typeof(CS.UnityEngine.UI.Text))
     end
 
     local rImgCharacterBg = self.Transform:FindTransform("RImgCharacterBg")
     if rImgCharacterBg then
-        self.RImgCharacterBg = rImgCharacterBg:GetComponent("RawImage")
+        self.RImgCharacterBg = rImgCharacterBg:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     end
     if self.RImgCharacterBg then
         self.RImgCharacterBgParent = self.Transform:FindTransform("RImgBg")
@@ -192,7 +192,7 @@ function XUiNewGridDrawBanner:TryGetComponent()
         if not btnSkip then
             break
         end
-        btnSkip = btnSkip.transform:GetComponent("Button")
+        btnSkip = btnSkip.transform:GetComponent(typeof(CS.UnityEngine.UI.Button))
         btnSkip.gameObject:SetActiveEx(false)
         self.BtnSkipList[index] = btnSkip
         index = index + 1

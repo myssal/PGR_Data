@@ -10,13 +10,13 @@ function XUiObtain:InitAutoScript()
 end
 
 function XUiObtain:AutoInitUi()
-    self.ScrView = self.Transform:Find("SafeAreaContentPane/ScrView"):GetComponent("ScrollRect")
+    self.ScrView = self.Transform:Find("SafeAreaContentPane/ScrView"):GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     self.PanelContent = self.Transform:Find("SafeAreaContentPane/ScrView/Viewport/PanelContent")
     self.GridCommon = self.Transform:Find("SafeAreaContentPane/ScrView/Viewport/PanelContent/GridCommon")
-    self.BtnBack = self.Transform:Find("SafeAreaContentPane/BtnBack"):GetComponent("Button")
-    self.TxtTitle = self.Transform:Find("SafeAreaContentPane/GameObject/TxtTitle1"):GetComponent("Text")
-    self.BtnCancel = self.Transform:Find("SafeAreaContentPane/BtnCancel"):GetComponent("Button")
-    self.BtnSure = self.Transform:Find("SafeAreaContentPane/BtnSure"):GetComponent("Button")
+    self.BtnBack = self.Transform:Find("SafeAreaContentPane/BtnBack"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtTitle = self.Transform:Find("SafeAreaContentPane/GameObject/TxtTitle1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnCancel = self.Transform:Find("SafeAreaContentPane/BtnCancel"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnSure = self.Transform:Find("SafeAreaContentPane/BtnSure"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiObtain:GetAutoKey(uiNode, eventName)
@@ -99,7 +99,7 @@ function XUiObtain:OnEnable()
     -- 避免弹窗弹得过快，显示ui的动画被打断
     local animTrans = self.Transform:Find("Animation/AniObtain")
     if animTrans then
-        local dctor = animTrans:GetComponent("PlayableDirector")
+        local dctor = animTrans:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
         if dctor.time <= 0 then
             dctor:Play()
         end

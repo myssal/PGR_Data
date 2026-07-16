@@ -5,7 +5,7 @@
         "Type": 101,
         "BeginAnim": "AniZhuanchangEnd",
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Texture/Image/BgStory/Bgstory533.jpg"
         ]
     },
     {
@@ -14,30 +14,3921 @@
         "Type": 401,
         "Params": [
             1,
-            36
+            6151
         ]
     },
     {
         "Id": 3,
         "ActionId": 3,
-        "Type": 301,
-        "BeginAnim": "DialogEnable",
+        "Type": 401,
         "Params": [
-            "",
-            "",
-            "Placeholder_占位"
+            2,
+            2979
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
         "Type": 301,
-        "IsEnd": 1,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Message",
+            "Gray Raven Commandant 【kuroname】, you have an urgent mission. Details will be disclosed upon arrival at the designated coordinates."
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 301,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "Shortly after you part ways with the others, a mission notification pings in from HQ. You grab some essential gear and head straight for the designated location."
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "And then..."
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 401,
+        "EndDelay": 800.0,
+        "Params": [
+            2,
+            2634
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_01_01.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_01_02.jpg"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 104,
+        "Params": [
+            "40|-130|-300",
+            0
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 513,
+        "EndAnim": "AniZhuanchangEnd",
+        "EndDelay": 200.0,
+        "Params": [
+            3,
+            0.2,
+            0,
+            1001
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            2.5
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 513,
+        "EndDelay": 2800.0,
+        "Params": [
+            0,
+            0.2,
+            2,
+            1001
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 401,
+        "Params": [
+            2,
+            904
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_01_03.jpg",
+            0,
+            1,
+            1.2
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_01_03.jpg"
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 402,
+        "Params": [
+            904
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "Where you expect officers standing at attention, you find only sunlight pooling around a single figure. The ocean breeze catches her hair just right. It's Helentine."
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 502,
+        "EndDelay": 300.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_01_07.png",
+            "",
+            "",
+            5,
+            "",
+            10
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_01_04.png"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 104,
+        "EndAnim": "AniZhuanchangEnd",
+        "EndDelay": 50.0,
+        "Params": [
+            "0|280|-200",
+            0
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 104,
+        "EndDelay": 3800.0,
+        "Params": [
+            "0|-200|-200",
+            3.5
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 205,
+        "EndDelay": 850.0,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_01_05.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_01_05.jpg",
+            "",
+            ""
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 205,
+        "Params": [
+            1007,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Her coating departs from her usual style. Cream white forms the base, adorned with motifs that resemble sea fairies. Surrounded by these delicate embellishments, Helentine stands like an ocean princess who has just stepped onto land."
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 401,
+        "Params": [
+            2,
+            5539
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A wave crashes against the shore, sending spray into the air. It mingles with the white fabric at the coating's hem, the translucent material only serving to accentuate her calm yet enigmatic presence."
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 402,
+        "Params": [
+            2634
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_01_06.png",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 104,
+        "Params": [
+            "-100|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 104,
+        "EndDelay": 1200.0,
+        "Params": [
+            "0|0|0",
+            0.8,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Helentine",
+            "You're here, Commandant.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018210
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 205,
+        "Params": [
+            999,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_01.png",
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 101,
+        "EndAnim": "AniZhuanchangEnd",
+        "EndDelay": 200.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_02.jpg"
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 401,
+        "Params": [
+            2,
+            2635
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 205,
+        "EndDelay": 850.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_03.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_03.jpg",
+            "",
+            ""
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_04.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_04.jpg",
+            "",
+            ""
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The seaside princess turns around, her gaze finding yours, and walks directly toward you."
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 302,
+        "Params": [
+            "",
+            "Helentine, this new look...?",
+            53
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_05.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 104,
+        "Params": [
+            "-450|0|0",
+            0,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 104,
+        "EndDelay": 1200.0,
+        "Params": [
+            "-350|0|0",
+            0.8,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            4,
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Helentine",
+            "It's a coating designed specifically for the seaside. I was instructed to wear it for environmental integration and field data collection.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018211
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She presents the coating to you, her words accompanying the gesture."
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "What's your assessment, Commandant?",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018212
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 302,
+        "Params": [
+            "",
+            "It's beautiful. Really suits you.",
+            62
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 104,
+        "EndDelay": 1100.0,
+        "Params": [
+            "0|0|0",
+            1,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 205,
+        "Params": [
+            1005,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_05.jpg",
+            "",
+            ""
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 205,
+        "EndDelay": 1300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_06.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_06.jpg",
+            "",
+            ""
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "?",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018213
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 302,
+        "Params": [
+            "",
+            "?",
+            70
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 205,
+        "EndDelay": 1300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_07.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_07.jpg",
+            "",
+            ""
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Helentine",
+            "...I actually meant your assessment of its performance. As a Commandant.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018214
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "But I'll take the compliment.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018215
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "If you find the visual profile acceptable, I'll wear it more often.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018216
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 302,
+        "Params": [
+            "",
+            "I love it!",
+            77
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 205,
+        "EndDelay": 1300.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_08.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_02_08.jpg",
+            "",
+            ""
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Helentine",
+            "I didn't expect you to make a joke like that. But I feel the same. I really enjoy wearing this coating too.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018217
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 101,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 401,
+        "Params": [
+            2,
+            4421
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "Terminal",
+            "Beep, beep, beep."
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 205,
+        "Params": [
+            1003,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_03_01.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 104,
+        "Params": [
+            "0|-150|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 104,
+        "EndDelay": 1200.0,
+        "Params": [
+            "0|0|0",
+            1,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 205,
+        "Params": [
+            1003,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_03_01.jpg"
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Helentine",
+            "Looks like it's time, Commandant. Let's get started on the mission.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018218
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_03_02.png",
+            "",
+            "",
+            7
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 205,
+        "Params": [
+            1003,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_03_03.jpg",
+            0,
+            1,
+            1.2
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_03_04.png",
+            0,
+            1,
+            1.2
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 113,
+        "Params": [
+            "0|1",
+            0,
+            "0|0|30",
+            4
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 104,
+        "Params": [
+            "450|500|0",
+            0,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            1006,
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_03_05.png",
+            0,
+            1,
+            1.2
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 113,
+        "Params": [
+            "0|1",
+            0.8,
+            "0|0|0",
+            4
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 104,
+        "EndDelay": 1200.0,
+        "Params": [
+            "0|0|0",
+            0.8,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "A notification from the terminal interrupts the moment, and Helentine's hand finds yours..."
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 302,
+        "Params": [
+            "",
+            "Wait, so what's the mission?",
+            103,
+            "So you got that message too?",
+            103
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            7,
+            1
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 205,
+        "Params": [
+            1003,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 205,
+        "Params": [
+            1004,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 205,
+        "Params": [
+            1006,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 100.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_03_06.jpg"
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Helentine",
+            "Looks like they left the briefing to me as well. Commandant, you know this island is under evacuation orders, right?",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018219
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 302,
+        "Params": [
+            "",
+            "Yeah, I was just helping with the evacuation.",
+            110
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Right. But according to command, it's not just the people who need to leave. The ecosystem and the entire culture here must be preserved, as well.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018220
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Only by protecting all of it can we be sure the island isn't truly lost.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018221
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "From Babylonia's standpoint, command wants us to preserve whatever we can. That's our mission objective.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018222
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 302,
+        "Params": [
+            "",
+            "Sounds like something the WGAA would push for.",
+            114
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "I believe it was their proposal. Though I suppose that's why I'm here now.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018223
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Helentine",
+            "By the way, that notification earlier was the signal to begin. Everyone else should be moving by now.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018224
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 502,
+        "EndDelay": 300.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_03_08.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V460Helentine2/V460_03_07.jpg"
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 104,
+        "Params": [
+            "-60|100|-300",
+            0
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "AniZhuanchangEnd"
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 104,
+        "EndDelay": 3500.0,
+        "Params": [
+            "0|0|0",
+            3.2
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Helentine",
+            "We should get going too, Commandant.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018225
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 302,
+        "Params": [
+            "",
+            "Alright, let's move out.",
+            124
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "According to Helentine, the items requiring preservation are already cataloged. All you have to do is follow the list and secure everything on it."
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 401,
+        "Params": [
+            1,
+            7191
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory744.jpg"
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "The mission's first objective takes you into a small grove on the island, where you search for a plant known as \"beach naupaka.\""
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            1
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 216,
+        "Params": [
+            1,
+            "AC_cszl",
+            "AC_cszl_blink"
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 301,
+        "Params": [
+            1,
+            "Helentine",
+            "Commandant, these old paths aren't used much now. The terrain's rough. Not much for support.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018226,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Just to be safe, would you like to hold my hand? It'll make the walk easier.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018227,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 302,
+        "Params": [
+            "",
+            "If you don't mind.",
+            135,
+            "It's okay. Should be fine.",
+            145
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 217,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "Alright, Commandant. Your hand.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018228,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 216,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            "AC_qs",
+            "AC_qs_blink",
+            "AC_cszl_to_AC_qs"
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "There is no reason to refuse Helentine's offer. She extends her hand graciously on the slope, and you reach back to take it."
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "First comes the brush of fingertips, still cool from the ocean air. Then your palms find each other, and her warmth bleeds through the gaps between your fingers, wrapping around your joined hands until the heat climbs into your chest."
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Neither of you speaks of it. The moment asks for nothing more."
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 501,
+        "EndDelay": 1400.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 306,
+        "EndDelay": 400.0
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "NextActionId": 176,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Mountain paths are familiar ground. You will reach for Helentine's hand if the climb demands it."
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Hmm?"
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 401,
+        "Params": [
+            2,
+            4700
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory744.jpg",
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 104,
+        "Params": [
+            "50|30|-120",
+            0.5,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 113,
+        "Params": [
+            "0.5|0",
+            0.5,
+            "0|0|5",
+            4
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 513,
+        "Params": [
+            1,
+            0.5,
+            0.5,
+            1004,
+            "",
+            "",
+            "",
+            "",
+            "",
+            30
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The next second, your right foot finds air where solid ground should be. Your balance tilts, then breaks—"
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 211,
+        "Params": [
+            18,
+            1021088,
+            4,
+            355,
+            -75,
+            -400,
+            1
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 301,
+        "Params": [
+            1,
+            "Helentine",
+            "Commandant.",
+            118,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018229,
+            18,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 212,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 401,
+        "Params": [
+            2,
+            6341
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory744.jpg",
+            "",
+            "",
+            4,
+            1
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 104,
+        "Params": [
+            "50|30|-120",
+            0
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 113,
+        "Params": [
+            "0.5|0.5",
+            0,
+            "0|0|0",
+            4
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 513,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 216,
+        "Params": [
+            1,
+            "AC_qs",
+            "AC_qs_blink"
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "AniZhuanchangEnd"
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0.4
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 213,
+        "EndDelay": 450.0,
+        "Params": [
+            1,
+            0.4,
+            "",
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "But the muddy ground never comes. The instant you pitch forward, Helentine reacts, her hand catching yours."
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Hold my hand as you walk, Commandant.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018230,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Helentine makes no comment on the mishap. Still holding your hand, she simply repeats her suggestion."
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 302,
+        "Params": [
+            "",
+            "Alright. Your way, then.",
+            173
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Good. That works.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018231,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "NextActionId": 176,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory539.jpg"
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 401,
+        "Params": [
+            2,
+            2930
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Hand in hand, you make your way toward where the beach naupaka grows. Greenery slowly envelops you and the Construct with each step, the crash of waves gradually yielding to the rustle of leaves and the call of birds."
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 401,
+        "Params": [
+            2,
+            6863
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A monkey creeping along a tree trunk ahead catches your eye. Noticing this, Helentine breaks the silence."
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 402,
+        "Params": [
+            6863
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 402,
+        "Params": [
+            2930
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            1
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 216,
+        "Params": [
+            1,
+            "AC_qs",
+            "AC_qs_blink"
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "That little monkey watching us from the tree is of the same genus as the pygmy marmoset. Native to this area.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018232,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 302,
+        "Params": [
+            "",
+            "Do we need to take it for preservation?",
+            187
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "Other Constructs handle the animals. I'm assigned to plants... There it is, Commandant.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018233,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 216,
+        "EndDelay": 1000.0,
+        "Params": [
+            1,
+            "AC_cszl",
+            "AC_cszl_blink",
+            "AC_qs_to_AC_cszl"
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 213,
+        "EndDelay": 450.0,
+        "Params": [
+            1,
+            0.5,
+            100
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 212,
+        "EndDelay": 300.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Helentine pauses in the middle of her explanation. You follow her line of sight and find shrubs dotted with clusters of small pink flowers. Her hand slips free of yours as she reaches for a conservation bottle in her portable case."
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 306
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            1
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 216,
+        "Params": [
+            1,
+            "AC_cszl",
+            "AC_cszl_blink"
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 301,
+        "Params": [
+            1,
+            "Helentine",
+            "This plant with plump leaves is called beach naupaka. The villagers have been cultivating it for generations. It has strong roots that can hold onto sandy soil.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018234,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 302,
+        "Params": [
+            "",
+            "Is this a unique variety in this area, too?",
+            199
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Yes. This cultivar doesn't exist in the wild.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018235,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 216,
+        "Params": [
+            1,
+            "idle",
+            "idle_blink",
+            "AC_cszl_to_idle"
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "Commandant, can you hold this bottle while I extract the samples?",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018236,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 302,
+        "Params": [
+            "",
+            "Alright.",
+            203
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 401,
+        "Params": [
+            2,
+            2704
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 104,
+        "EndDelay": 550.0,
+        "Params": [
+            "0|50|-50",
+            0.5
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "You accept the bottle and lower yourself beside Helentine before the shrubs. From her tools, she produces a pair of gardening shears, and with careful precision, she snips away several small branches."
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 302,
+        "Params": [
+            "",
+            "That's all we need?",
+            208
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 216,
+        "Params": [
+            1,
+            "AC_cszl",
+            "AC_cszl_blink"
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "It's enough. With just these samples, Babylonia can map out the species' entire genome.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018237,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 302,
+        "Params": [
+            "",
+            "So we could use this to restore the nature destroyed by the Punishing Virus?",
+            212
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Babylonia's lab does have plans for that. But... would nature that's been restored still be \"natural\"?",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018238,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 302,
+        "Params": [
+            "",
+            "I don't have an answer to that myself. What do you think?",
+            215,
+            "As long as it's how we remember it, wouldn't that be enough?",
+            217
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 217,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "NextActionId": 219,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "I don't think it would be. At the end of the day, it's just something we manufactured, isn't it? It already belongs to us.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018239,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 217,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "How we remember it... this reminds me of some of the conversations we had when we first met.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018240,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 211,
+        "Params": [
+            18,
+            1021080,
+            "",
+            225,
+            -90,
+            -300
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 301,
+        "Params": [
+            1,
+            "Island Villager",
+            "Ah, there you are! Didn't think anyone from the outside would make it this far in.",
+            118,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018241,
+            18,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 302,
+        "Params": [
+            "",
+            "And you are?",
+            222
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 212,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 217,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "He's a resident of the island. And a designated collaborator for our mission.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018242,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 401,
+        "Params": [
+            2,
+            2930
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 402,
+        "Params": [
+            2930
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 213,
+        "Params": [
+            1,
+            0,
+            -400
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 211,
+        "Params": [
+            2,
+            1021080,
+            "",
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 301,
+        "Params": [
+            1,
+            "Island Villager",
+            "Heh. Gray Raven Commandant, pleasure's all mine.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018243,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "After the introductions, the villager nimbly weaves through the trees toward you. As he draws closer, a large, yellowed pot comes into view, clearly aged from years of use."
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 302,
+        "Params": [
+            "",
+            "What's this?",
+            234
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Seafood stew. It is a staple of the local islander diet. Given that culinary practice is a fundamental subset of cultural data, this is a necessary item for the archive.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018244,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Before we arrived, I asked him to prepare a portion for me and bring it here.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018245,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 216,
+        "EndDelay": 1000.0,
+        "Params": [
+            1,
+            "idle",
+            "idle_blink",
+            "AC_cszl_to_idle"
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "But why not just put it in a bottle...?",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018246,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 301,
+        "Params": [
+            "",
+            "Island Villager",
+            "Oh, I set some aside in a jar, don't you worry. But since I had the fire going and the pot was full anyway, it seemed a shame to let it all go cold and sad without a proper welcome.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018247,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Helentine has no desire to sample the contents, but the villager's enthusiasm is unmistakable."
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 401,
+        "Params": [
+            2,
+            6733
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Before her confusion can fully register, the lid is off and two bowls are already being ladled full with a generous spoon."
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 213,
+        "Params": [
+            2,
+            0.4,
+            350
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 301,
+        "Params": [
+            "",
+            "Island Villager",
+            "Here, don't be shy.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018248,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 217,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Commandant, um...",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018249,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 302,
+        "Params": [
+            "",
+            "Let's give it a try.",
+            248,
+            "Can't let his kindness go to waste.",
+            248
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 213,
+        "Params": [
+            1,
+            0.5,
+            -300
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 213,
+        "Params": [
+            2,
+            0.5,
+            300
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "And so Helentine finds herself accepting the bowl of stew."
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 212,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "According to the villager, this stew is called \"Romilomi\", a name that, when spoken aloud, simply sounds like ocean waves."
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "As for the stew itself, it is exactly as Helentine described: a mix of whatever seafood the locals manage to catch. The broth carries a greenish tint, likely from the wild greens gathered across the island."
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 306
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 302,
+        "Params": [
+            "",
+            "(Take a sip)",
+            257
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 401,
+        "EndDelay": 500.0,
+        "Params": [
+            2,
+            5287
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "The villager's eyes are on you, waiting. It would be rude to stare at the bowl any longer, so you lift a piece of seafood with your fork. That is when you notice the broth is surprisingly thick, clinging to the morsel like warm syrup."
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            2
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Helentine",
+            "...It's a bit bitter, Commandant.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018250,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 310,
+        "Params": [
+            "She is right about the bitterness.",
+            "",
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 310,
+        "Params": [
+            "The broth arrives first with that familiar, syrupy heft, almost a paste against your tongue. Then it opens, releasing a wave of sharp bitterness that cuts through everything else."
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 310,
+        "Params": [
+            "Only after that does the seafood's natural flavor and texture emerge."
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 310,
+        "EndDelay": 500.0,
+        "Params": [
+            "You struggle to swallow, and once it finally goes down, you realize your mouth and throat are left coated with a faintly bitter, salty aftertaste.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 211,
+        "Params": [
+            2,
+            1021080,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Helentine",
+            "My sensors are flagging something unusual that is not typically categorized as a culinary ingredient. Am I correct?",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018251,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 301,
+        "Params": [
+            "",
+            "Island Villager",
+            "Ha! That's what makes Constructs so impressive! A regular person would've been makin' faces for a good minute before they placed it. You're right. Our stew gets a splash of seawater right at the end.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018252,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 302,
+        "Params": [
+            "",
+            "Do you really enjoy the taste?",
+            271
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 301,
+        "Params": [
+            "",
+            "Island Villager",
+            "Probably not, I'd imagine. But we're all used to it. Same way some folks can't live without their peppers and some can't stand 'em.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018253,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "I see. That explains why this dish is flagged for cultural preservation. May I ask... why seawater?",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018254,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 301,
+        "Params": [
+            "",
+            "Island Villager",
+            "Tradition, mostly. Way back, this island didn't have salt. No spice racks, no nothin'. Someone figured tossin' in a scoop of the ocean might fix the flat taste. It stuck around ever since.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018255,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 301,
+        "Params": [
+            "",
+            "Island Villager",
+            "Seawater's got that salty taste to it, y'know?",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018256,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Sensing your possible confusion, the villager is quick to add a few more words."
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 214,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Your ancestors made every effort to live here. This Romilomi... it stands as proof of that.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018257,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 212,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The explanation given, Helentine records a few notes on her terminal, likely another requirement of her mission."
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 211,
+        "Params": [
+            2,
+            1021080
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 301,
+        "Params": [
+            1,
+            "Island Villager",
+            "Effort, huh? Yeah. I guess you could call it that. They say our people crossed a whole ocean to get here.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018258,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 301,
+        "Params": [
+            "",
+            "Island Villager",
+            "When they washed up, there was nothin'. Ship was matchsticks. They had to patch together shelters from salvaged planks and banana leaves.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018259,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 301,
+        "Params": [
+            "",
+            "Island Villager",
+            "And food? Forget it. They were probably starvin' more often than not. Honestly, we owe it all to the Great Conch.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018260,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 302,
+        "Params": [
+            "",
+            "Great Conch?",
+            285
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 301,
+        "Params": [
+            "",
+            "Island Villager",
+            "Yeah, the Great Conch God. Unlike the Sea Spirit, this one's our local deity. All those Sea Spirit Conches you've been seeing are its children.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018261,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 213,
+        "Params": [
+            2,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 216,
+        "Params": [
+            1,
+            "idle",
+            "idle_blink"
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "...This is not in any of the preliminary files. What exactly is the Great Conch? I am required to document this. Local folklore and oral history fall within mission parameters.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018262,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 306,
+        "EndDelay": 400.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 301,
+        "IsEnd": 1,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Island Villager",
+            "You wanna write that down too? Babylonia sure is thorough. Alright, alright. I'll tell you what I know.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018263,
+            2,
+            "",
+            "v460summer"
         ]
     }
 ]

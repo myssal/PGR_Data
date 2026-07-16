@@ -2084,11 +2084,62 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 40183,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 184,
+        "Explain": "v4.6可肝商店新增打脸图",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40185,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 186,
+        "Explain": "4.6 Helentine SFX Coating",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40186,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 187,
+        "Explain": "4.6 Selena SFX Coating",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 40187,
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 188,
         "Explain": "V4.6 Preview Popup Image",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40188,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 189,
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40189,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 190,
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40190,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 191,
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -3308,6 +3359,15 @@
         "UiName": "UiSignBanner",
         "ParamId": 113,
         "Explain": "【每次新建】v4.5周卡签到弹窗跳转",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 50122,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 114,
+        "Explain": "4.6版本签到",
+        "TimeId": 48110,
         "IsHideFunc": true
     },
     {
@@ -6313,6 +6373,18 @@
         "FunctionalId": 10308,
         "CustomParams": [
             1041
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 535,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "Explain": "New Main Story Floating Record Chapter ER16",
+        "ConditionId": 1050153,
+        "FunctionalId": 10308,
+        "CustomParams": [
+            2016
         ],
         "IsHideFunc": true
     },
@@ -12727,6 +12799,18 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 7142,
+        "Origin": 7,
+        "UiName": "SkipToPartnerTeachingChapter",
+        "Explain": "To CUB Tutorial Trial - Chapter 35",
+        "ConditionId": 1050153,
+        "FunctionalId": 1801,
+        "CustomParams": [
+            35
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 7200,
         "Origin": 1,
         "UiName": "UiNewFuben",
@@ -17320,6 +17404,17 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 19081,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "Explain": "Go to Members",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1401003
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 20000,
         "Origin": 1,
         "UiName": "UiNewFuben",
@@ -19848,7 +19943,7 @@
         "Explain": "New Character Theme Trial (Edit event no. after the 33rd event)",
         "FunctionalId": 10325,
         "CustomParams": [
-            48
+            49
         ],
         "IsHideFunc": true
     },
@@ -21415,6 +21510,17 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 20368,
+        "Origin": 6,
+        "UiName": "UiFavorabilityStory",
+        "Explain": "Go to Helentine's Affection Story",
+        "IsRecord": true,
+        "CustomParams": [
+            1401003
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 20369,
         "Origin": 7,
         "UiName": "SkipToMainLine2",
@@ -21489,6 +21595,102 @@
         "CustomParams": [
             1,
             104
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20376,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            2016
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20377,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1401003
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20378,
+        "Origin": 6,
+        "UiName": "UiWelfare",
+        "Explain": "Complete the \"Summer's Rhythm\" event missions",
+        "FunctionalId": 1,
+        "CustomParams": [
+            1,
+            99
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20379,
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            1401003
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20380,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "Explain": "海伦汀赛利卡补习班跳转（33期之后，新增跳转id）",
+        "IsRecord": true,
+        "FunctionalId": 10325,
+        "CustomParams": [
+            49
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20381,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "Explain": "【v4.6海伦汀】前往主题卡池",
+        "FunctionalId": 401,
+        "StartTime": "2026/7/17 0:00",
+        "CloseTime": "2026/8/18 23:00",
+        "CustomParams": [
+            1,
+            35,
+            1499
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20382,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "【v4.6海伦汀】前往涂装补给包",
+        "FunctionalId": 3,
+        "StartTime": "2026/7/17 0:00",
+        "CloseTime": "2026/8/18 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20384,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeCharacterDetail",
+        "Explain": "跳转赛利卡教学（七实跃升）",
+        "FunctionalId": 1800,
+        "CustomParams": [
+            1051005,
+            30100229
         ],
         "IsHideFunc": true
     },
@@ -29446,6 +29648,96 @@
         ]
     },
     {
+        "SkipId": 80309,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/7/17 0:00",
+        "CloseTime": "2026/8/18 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80310,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "Coating Shop",
+        "FunctionalId": 1001,
+        "StartTime": "2026/8/18 23:00",
+        "CustomParams": [
+            1,
+            0,
+            504
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80311,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/7/17 0:00",
+        "CloseTime": "2026/8/18 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80312,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "Coating Shop",
+        "FunctionalId": 1001,
+        "StartTime": "2026/8/18 23:00",
+        "CustomParams": [
+            1,
+            0,
+            502
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80313,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/7/17 0:00",
+        "CloseTime": "2026/8/18 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80314,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/7/17 0:00",
+        "CloseTime": "2026/8/18 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 81001,
         "Origin": 7,
         "UiName": "SkipToSpringFestivalActivity",
@@ -30466,6 +30758,7 @@
         "Origin": 7,
         "UiName": "SkipToBossInshot",
         "Explain": "Boss Leap",
+        "IsRecord": true,
         "FunctionalId": 10467
     },
     {
@@ -30905,6 +31198,80 @@
             3,
             4
         ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 89105,
+        "Origin": 10,
+        "UiName": "XDyeMergeGame",
+        "Explain": "Grand Dyeing",
+        "IsRecord": true,
+        "FunctionalId": 10504
+    },
+    {
+        "SkipId": 89106,
+        "Origin": 7,
+        "UiName": "SkipToFashionStory",
+        "ConditionId": 1050153,
+        "FunctionalId": 10341,
+        "CustomParams": [
+            6
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 89107,
+        "Origin": 7,
+        "UiName": "SkipToFashionStoryChapter",
+        "ParamId": 14,
+        "ConditionId": 1050153,
+        "FunctionalId": 10341,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 89108,
+        "Origin": 7,
+        "UiName": "SkipToFashionStoryChapter",
+        "ParamId": 16,
+        "ConditionId": 1050153,
+        "FunctionalId": 10341,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 89109,
+        "Origin": 7,
+        "UiName": "SkipToFashionStoryChapter",
+        "ParamId": 15,
+        "ConditionId": 1050153,
+        "FunctionalId": 10341,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 89110,
+        "Origin": 7,
+        "UiName": "SkipToFashionStoryChapter",
+        "ParamId": 17,
+        "ConditionId": 1050153,
+        "FunctionalId": 10341,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 89111,
+        "Origin": 7,
+        "UiName": "SkipToFashionStoryChapter",
+        "ParamId": 18,
+        "ConditionId": 1050153,
+        "FunctionalId": 10341,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 89112,
+        "Origin": 10,
+        "UiName": "XTheatre6",
+        "Explain": "Shrouded Requiem - Phantom Clash",
+        "IsRecord": true,
+        "ConditionId": 1021100,
+        "FunctionalId": 10506,
         "IsHideFunc": true
     },
     {
@@ -31464,7 +31831,7 @@
         "SkipId": 90055,
         "Origin": 6,
         "UiName": "UiShop",
-        "Explain": "Skip to Grind Shop",
+        "Explain": "Service Shop",
         "CustomParams": [
             1,
             0,
@@ -31535,7 +31902,7 @@
         "SkipId": 90061,
         "Origin": 6,
         "UiName": "UiShop",
-        "Explain": "Skip to Grind Shop",
+        "Explain": "Service Shop",
         "CustomParams": [
             1,
             0,
@@ -31603,6 +31970,15 @@
             1498
         ],
         "IsHideFunc": true
+    },
+    {
+        "SkipId": 90068,
+        "Origin": 7,
+        "UiName": "SkipToConcertPreHeatingMain",
+        "Explain": "Go to Event [Dimensional Tuner]",
+        "ConditionId": 1050153,
+        "FunctionalId": 10505,
+        "TimeId": 48801
     },
     {
         "SkipId": 1000001,
@@ -33934,6 +34310,33 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 1300710,
+        "Origin": 6,
+        "UiName": "UiActivityBriefBase",
+        "Explain": "EN4.6活动主题面板deeplink",
+        "FunctionalId": 10303,
+        "TimeId": 2160715,
+        "CustomParams": [
+            0,
+            0,
+            0
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 1300711,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "Explain": "EN4.6海伦汀角色卡池deeplink",
+        "FunctionalId": 401,
+        "TimeId": 2160716,
+        "CustomParams": [
+            1,
+            35
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 1300626,
         "Origin": 2,
         "UiName": "UiAccumulateExpendShopMain",
@@ -34099,8 +34502,8 @@
         "Explain": "BP Face Close-Up",
         "ConditionId": 775500,
         "CustomParams": [
-            1783285200,
-            1783890000
+            1786309200,
+            1786914000
         ]
     },
     {
@@ -34120,5 +34523,36 @@
         "CustomParams": [
             122
         ]
+    },
+    {
+        "SkipId": 1300645,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.6海伦汀",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            124
+        ]
+    },
+    {
+        "SkipId": 1300646,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.6The赛",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            123
+        ]
+    },
+    {
+        "SkipId": 1300647,
+        "Origin": 10,
+        "UiName": "XPBRGame",
+        "IsRecord": true,
+        "ConditionId": 1050153,
+        "FunctionalId": 10500,
+        "TimeId": 48821,
+        "StartTime": "2026/8/28 10:00",
+        "CloseTime": "2026/9/20 5:00"
     }
 ]

@@ -3,7 +3,7 @@ local XUiGridPhotographSceneBtn = XClass(nil, "XUiGridPhotographSceneBtn")
 function XUiGridPhotographSceneBtn:Ctor(ui)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
-    self.RectTransform = ui:GetComponent("RectTransform")
+    self.RectTransform = ui:GetComponent(typeof(CS.UnityEngine.RectTransform))
     XTool.InitUiObject(self)
 end
 

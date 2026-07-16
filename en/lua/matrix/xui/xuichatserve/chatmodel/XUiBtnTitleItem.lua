@@ -16,8 +16,8 @@ function XUiBtnTitleItem:InitAutoScript()
 end
 
 function XUiBtnTitleItem:AutoInitUi()
-    self.TxtTitle = self.Transform:Find("TxtTitle"):GetComponent("Text")
-    self.TxtTitleDis = self.Transform:Find("TxtTitleDis"):GetComponent("Text")
+    self.TxtTitle = self.Transform:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtTitleDis = self.Transform:Find("TxtTitleDis"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.BtnToggle = self.Transform:GetComponent("Toggle")
     self.BgSel = self.Transform:Find("BgSel")
     self.BgDis = self.Transform:Find("BgDis")

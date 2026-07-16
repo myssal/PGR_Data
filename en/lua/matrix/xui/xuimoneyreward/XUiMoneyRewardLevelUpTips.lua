@@ -32,9 +32,9 @@ function XUiMoneyRewardLevelUpTips:InitAutoScript()
 end
 
 function XUiMoneyRewardLevelUpTips:AutoInitUi()
-    self.TxtNext = self.Transform:Find("FullScreenBackground/TxtNext"):GetComponent("Text")
-    self.TxtPre = self.Transform:Find("FullScreenBackground/TxtPre"):GetComponent("Text")
-    self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent("Button")
+    self.TxtNext = self.Transform:Find("FullScreenBackground/TxtNext"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtPre = self.Transform:Find("FullScreenBackground/TxtPre"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnBg = self.Transform:Find("FullScreenBackground/BtnBg"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiMoneyRewardLevelUpTips:GetAutoKey(uiNode, eventName)

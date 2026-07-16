@@ -156,7 +156,7 @@ function XUiPivotCombatCenterSettle:InitUI()
     --self.BtnReFight.gameObject:SetActiveEx(true)
     self.GridWinRole.gameObject:SetActiveEx(false)
     self.BossLoseHp.gameObject:SetActiveEx(false)
-    self.TxtAllRating = self.TxtHistoryScore.transform.parent:Find("TxtAllRating"):GetComponent("Text")
+    self.TxtAllRating = self.TxtHistoryScore.transform.parent:Find("TxtAllRating"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiPivotCombatCenterSettle:InitCB()

@@ -110,7 +110,7 @@ function XUiHackDevelop:Refresh()
         self.BtnBuffBarList[i]:SetButtonState(XDataCenter.FubenHackManager.IsBuffPosUnlock(i) and XUiButtonState.Normal or XUiButtonState.Disable)
         local item = self.BtnBuffBarList[i].transform
         local imgPlus = item:Find("ImgPlus")
-        local rimgBuff = item:Find("RImgBuff"):GetComponent("RawImage")
+        local rimgBuff = item:Find("RImgBuff"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
         if self.BuffBarList[i] == 0 then
             imgPlus.gameObject:SetActiveEx(XDataCenter.FubenHackManager.IsBuffPosUnlock(i))
             rimgBuff.gameObject:SetActiveEx(false)

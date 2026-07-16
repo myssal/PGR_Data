@@ -8,7 +8,7 @@ function XUiGridUnionCharacterItem:Ctor(rootUi, ui, character, clickCallback)
     -- 区分自己的和共享的角色
     self.Character = XMVCA.XCharacter:GetCharacter(self.ItemData.Id)
     self.ClickCallback = clickCallback
-    self.RectTransform = ui:GetComponent("RectTransform")
+    self.RectTransform = ui:GetComponent(typeof(CS.UnityEngine.RectTransform))
 
     XTool.InitUiObject(self)
 

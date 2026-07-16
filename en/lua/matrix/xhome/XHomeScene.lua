@@ -86,7 +86,7 @@ function XHomeScene:OnLoadComplete()
 end
 
 function XHomeScene:InitCamera()
-    self.Camera = self.GameObject.transform:Find("Camera"):GetComponent("Camera")
+    self.Camera = self.GameObject.transform:Find("Camera"):GetComponent(typeof(CS.UnityEngine.Camera))
     self.PhysicsRaycaster = self.Camera.gameObject:AddComponent(typeof(CS.UnityEngine.EventSystems.PhysicsRaycaster))
 
     CS.XGraphicManager.BindCamera(self.Camera)

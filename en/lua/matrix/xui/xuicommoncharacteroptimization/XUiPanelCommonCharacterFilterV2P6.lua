@@ -1007,7 +1007,7 @@ function XUiPanelCommonCharacterFilterV2P6:DoPlayGridFoldOrUnfoldAnim(isFold)
     end
 
     if self.DynamicTable then
-        local contentTrans = self.DynamicTable:GetImpl().transform:GetComponent("ScrollRect").content
+        local contentTrans = self.DynamicTable:GetImpl().transform:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect)).content
         local childCount = contentTrans.childCount
         local allCg = {}
         for i = 0, childCount - 1 do
@@ -1015,7 +1015,7 @@ function XUiPanelCommonCharacterFilterV2P6:DoPlayGridFoldOrUnfoldAnim(isFold)
             if XTool.UObjIsNil(foldParent) then
                 return
             end
-            local cg = foldParent:GetComponent("CanvasGroup")
+            local cg = foldParent:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
             if XTool.UObjIsNil(cg)  then
                 return
             end

@@ -16,8 +16,8 @@ function XUiGridFunctionContenItem:InitAutoScript()
 end
 
 function XUiGridFunctionContenItem:AutoInitUi()
-    self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
-    self.TxtValue = self.Transform:Find("TxtValue"):GetComponent("Text")
+    self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtValue = self.Transform:Find("TxtValue"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiGridFunctionContenItem:GetAutoKey(uiNode,eventName)

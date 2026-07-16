@@ -48,7 +48,7 @@ function XUiNonogramMain:InitViewData()
     self.ChapterItemList = { self.GridStage }
     self.ChapterLockItemList = { XUiHelper.TryGetComponent(self.GridStage.transform, "DisableRoot") }
     self.ChapterUnLockAnimNodeList = { XUiHelper.TryGetComponent(self.GridStage.transform, "AnimEnable/GridStageNromalEnable") }
-    self.ChapterItemCanvasGroupList = { self.GridStage.transform:GetComponent("CanvasGroup") }
+    self.ChapterItemCanvasGroupList = { self.GridStage.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup)) }
     self.CurSelectChapterIndex = 0
     self.CurSelectChapterId = 0
     self.RewardGoodGridCommons = {}
@@ -162,7 +162,7 @@ function XUiNonogramMain:RefreshChapterList()
             self.ChapterItemList[i] = go:GetComponent("XUiButton")
             self.ChapterLockItemList[i] = XUiHelper.TryGetComponent(go.transform, "DisableRoot")
             self.ChapterUnLockAnimNodeList[i] = XUiHelper.TryGetComponent(go.transform, "AnimEnable/GridStageNromalEnable")
-            self.ChapterItemCanvasGroupList[i] = go.transform:GetComponent("CanvasGroup")
+            self.ChapterItemCanvasGroupList[i] = go.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
         end
 
         self.ChapterItemList[i].transform.localPosition = Vector3.zero

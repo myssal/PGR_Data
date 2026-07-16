@@ -2154,11 +2154,75 @@
         "Description": "战区新焚烧"
     },
     {
+        "Id": 4194,
+        "BornMagic": [
+            764325,
+            756345
+        ],
+        "EnemyBornMagic": [
+            764367
+        ],
+        "Description": 1
+    },
+    {
+        "Id": 4195,
+        "BornMagic": [
+            764325,
+            756348
+        ],
+        "EnemyBornMagic": [
+            764367
+        ],
+        "Description": 11
+    },
+    {
+        "Id": 4196,
+        "BornMagic": [
+            764325,
+            756352
+        ],
+        "EnemyBornMagic": [
+            764367
+        ],
+        "Description": 14
+    },
+    {
+        "Id": 4197,
+        "BornMagic": [
+            764325
+        ],
+        "EnemyBornMagic": [
+            764367,
+            756354
+        ],
+        "Description": "Boss Customization"
+    },
+    {
+        "Id": 4198,
+        "BornMagic": [
+            764325,
+            199974,
+            756341
+        ],
+        "EnemyBornMagic": [
+            764367
+        ],
+        "Description": "新环境4.6"
+    },
+    {
+        "Id": 4199,
+        "BornMagic": [
+            784489
+        ],
+        "Description": "War Zone Alpha"
+    },
+    {
         "Id": 4201,
         "BornMagic": [
             764151,
             764018,
-            764136
+            764136,
+            175264
         ],
         "Description": "Battle Rating Mode - Lucia: Crimson Weave"
     },
@@ -2566,6 +2630,34 @@
             783525
         ],
         "Description": "Rating Vera Basic Attack"
+    },
+    {
+        "Id": 4544,
+        "BornMagic": [
+            782666
+        ],
+        "Description": "Rating Crimson Abyss Talent 1"
+    },
+    {
+        "Id": 4545,
+        "BornMagic": [
+            809550
+        ],
+        "Description": "Rating Crimson Abyss Talent 2"
+    },
+    {
+        "Id": 4546,
+        "BornMagic": [
+            782667
+        ],
+        "Description": "Rating Inverse Crown Talent 1"
+    },
+    {
+        "Id": 4547,
+        "BornMagic": [
+            782668
+        ],
+        "Description": "Rating Inverse Crown Talent 2"
     },
     {
         "Id": 4601,
@@ -2995,6 +3087,77 @@
             753449
         ],
         "Description": "Guitar Skill Tutorial Stage"
+    },
+    {
+        "Id": 4670,
+        "BornMagic": [
+            764137,
+            782646
+        ],
+        "EnemyBornMagic": [
+            764152
+        ],
+        "Description": "战斗评分玩法4.4BOSS"
+    },
+    {
+        "Id": 4671,
+        "BornMagic": [
+            782661,
+            764151,
+            764136
+        ],
+        "Description": "Score - Physical Alpha Injection"
+    },
+    {
+        "Id": 4672,
+        "BornMagic": [
+            782663,
+            764151,
+            764136
+        ],
+        "Description": "Score - Ice Alpha Injection"
+    },
+    {
+        "Id": 4673,
+        "BornMagic": [
+            737024
+        ],
+        "Description": "评分4.4BOSS教学关"
+    },
+    {
+        "Id": 4674,
+        "BornMagic": [
+            737025
+        ],
+        "Description": "评分4.4BOSS教学关"
+    },
+    {
+        "Id": 4675,
+        "BornMagic": [
+            737026
+        ],
+        "Description": "评分4.4BOSS教学关"
+    },
+    {
+        "Id": 4676,
+        "BornMagic": [
+            737027
+        ],
+        "Description": "评分4.4BOSS教学关"
+    },
+    {
+        "Id": 4677,
+        "BornMagic": [
+            737028
+        ],
+        "Description": "评分4.4BOSS教学关"
+    },
+    {
+        "Id": 4678,
+        "BornMagic": [
+            737029
+        ],
+        "Description": "评分4.4BOSS教学关"
     },
     {
         "Id": 5001,
@@ -47223,6 +47386,20 @@
         "Description": "Every time Ignition DMG (DMG Type is Ignition) is dealt, Boss takes significantly more Ignition DMG (Ignition Weakness). Initial: 17%. Then, 9% per stack, up to 8 stacks, max 80%. Lasts 10s. Duration resets every time it is triggered."
     },
     {
+        "Id": 2300065,
+        "EnemyBornMagic": [
+            785352
+        ],
+        "Description": "When dealing Lightning DMG, gain a 2,000-point Lightning Shield for 5s, stacking up to 10,000. Upon reaching the stack limit, the shield automatically detonates, applying a 20% Lightning Weakness to nearby units (field-wide range, enemies) for 10s. The weakness stacks up to 4 times. Each subsequent stack increases the Boss's Lightning Weakness by an additional 10%. Re-applying this effect refreshes its duration. All stacks are cleared when the duration expires."
+    },
+    {
+        "Id": 2300066,
+        "EnemyBornMagic": [
+            785370
+        ],
+        "Description": "Dealing Glaciation DMG makes the enemy take significantly more Glaciation DMG. Initial: 3%, then 1.5% per stack, up to 5 stacks (Glaciation Weakness). Lasts 10s. Duration resets every time the effect is triggered."
+    },
+    {
         "Id": 2301001,
         "EnemyBornMagic": [
             786015
@@ -48759,35 +48936,129 @@
     },
     {
         "Id": 2340113,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784722,
+            784732,
+            784733
+        ],
+        "Description": "miniRPG-丽芙buff1"
     },
     {
         "Id": 2340114,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784724
+        ],
+        "Description": "miniRPG-丽芙buff2"
     },
     {
         "Id": 2340115,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784729
+        ],
+        "Description": "miniRPG-丽芙buff3"
     },
     {
         "Id": 2340116,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784742,
+            784750,
+            784757,
+            784759,
+            784478,
+            784733
+        ],
+        "Description": "miniRPG-三小只buff1"
     },
     {
         "Id": 2340117,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784738,
+            784749,
+            784752,
+            784732
+        ],
+        "Description": "miniRPG-三小只buff2"
     },
     {
         "Id": 2340118,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784740,
+            784744,
+            784756
+        ],
+        "Description": "miniRPG-三小只buff3"
     },
     {
         "Id": 2340119,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784767,
+            784732,
+            784733
+        ],
+        "Description": "miniRPG-七实buff1"
     },
     {
         "Id": 2340120,
-        "Description": "miniRPG-占坑"
+        "BornMagic": [
+            784775
+        ],
+        "Description": "miniRPG-七实buff2"
+    },
+    {
+        "Id": 2340121,
+        "BornMagic": [
+            784784
+        ],
+        "Description": "miniRPG-七实buff3"
+    },
+    {
+        "Id": 2340122,
+        "BornMagic": [
+            784794
+        ],
+        "Description": "miniRPG-海伦汀buff1"
+    },
+    {
+        "Id": 2340123,
+        "BornMagic": [
+            785751
+        ],
+        "Description": "miniRPG-海伦汀buff2"
+    },
+    {
+        "Id": 2340124,
+        "BornMagic": [
+            785756
+        ],
+        "Description": "miniRPG-海伦汀buff3"
+    },
+    {
+        "Id": 2340125,
+        "BornMagic": [
+            784474
+        ],
+        "Description": "miniRPG-海伦汀任务计数"
+    },
+    {
+        "Id": 2340126,
+        "BornMagic": [
+            784475
+        ],
+        "Description": "miniRPG-七实任务计数"
+    },
+    {
+        "Id": 2340127,
+        "BornMagic": [
+            784476
+        ],
+        "Description": "miniRPG-丽芙任务计数"
+    },
+    {
+        "Id": 2340128,
+        "BornMagic": [
+            784477
+        ],
+        "Description": "miniRPG-灰鸦小队任务计数"
     },
     {
         "Id": 2410001,

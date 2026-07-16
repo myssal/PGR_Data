@@ -6,7 +6,7 @@ local XUiCourseManagement = XLuaUiManager.Register(XLuaUi, "UiCourseManagement")
 
 function XUiCourseManagement:OnAwake()
     self.StageGridList = {}
-    self.RectTransform = self.Transform:GetComponent("RectTransform")
+    self.RectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self:RegisterButtonEvent()
 end
 

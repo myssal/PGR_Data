@@ -134,7 +134,7 @@ end
 
 --点击chapter滑动到屏幕左侧，回调
 function XUiPivotCombatSecondary:OnScrollViewDoMove(gridTransform)
-    local gridRect = gridTransform:GetComponent("RectTransform")
+    local gridRect = gridTransform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local diffX = gridRect.localPosition.x + self.PanelStageContent.localPosition.x
     if diffX < XDataCenter.FubenMainLineManager.UiGridChapterMoveMinX or diffX > XDataCenter.FubenMainLineManager.UiGridChapterMoveMaxX then
         local targetPosX = XDataCenter.FubenMainLineManager.UiGridChapterMoveTargetX - gridRect.localPosition.x

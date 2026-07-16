@@ -17,12 +17,12 @@ end
 
 function XUiPanelSocialMyMsgEmojiItem:AutoInitUi()
     -- self.PanelRole = self.Transform:Find("PanelRole")
-    -- self.RImgIcon = self.Transform:Find("PanelRole/RImgIcon"):GetComponent("RawImage")
+    -- self.RImgIcon = self.Transform:Find("PanelRole/RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     -- self.HeadIconEffect = self.Transform:Find("PanelRole/RImgIcon/Effect"):GetComponent("XUiEffectLayer")
-    -- self.BtnView = self.Transform:Find("PanelRole/BtnView"):GetComponent("Button")
+    -- self.BtnView = self.Transform:Find("PanelRole/BtnView"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     -- self.PanelMsg = self.Transform:Find("PanelMsg")
-    -- self.TxtName = self.Transform:Find("PanelMsg/TxtName"):GetComponent("Text")
-    -- self.RImgEmoji = self.Transform:Find("PanelMsg/Content/RImgEmoji"):GetComponent("RawImage")
+    -- self.TxtName = self.Transform:Find("PanelMsg/TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    -- self.RImgEmoji = self.Transform:Find("PanelMsg/Content/RImgEmoji"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
 end
 
 function XUiPanelSocialMyMsgEmojiItem:GetAutoKey(uiNode, eventName)

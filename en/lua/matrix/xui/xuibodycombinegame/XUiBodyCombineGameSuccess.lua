@@ -4,7 +4,7 @@
 local XUiBodyCombineGameSuccess = XLuaUiManager.Register(XLuaUi, "UiBodyCombineGameSuccess")
 
 function XUiBodyCombineGameSuccess:OnAwake()
-    self.RImgQ = self.TxtMassage.transform.parent:Find("RImgQ"):GetComponent("RawImage")
+    self.RImgQ = self.TxtMassage.transform.parent:Find("RImgQ"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self:InitCB()
 end
 

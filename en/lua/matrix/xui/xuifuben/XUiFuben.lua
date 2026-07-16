@@ -220,11 +220,11 @@ function XUiFuben:InitAutoScript()
 end
 
 function XUiFuben:AutoInitUi()
-    self.BtnMainUi = self.Transform:Find("SafeAreaContentPane/Root/Top/BtnMainUi"):GetComponent("Button")
-    self.BtnBack = self.Transform:Find("SafeAreaContentPane/Root/Top/BtnBack"):GetComponent("Button")
+    self.BtnMainUi = self.Transform:Find("SafeAreaContentPane/Root/Top/BtnMainUi"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.BtnBack = self.Transform:Find("SafeAreaContentPane/Root/Top/BtnBack"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelContent = self.Transform:Find("SafeAreaContentPane/PanelContent")
     self.PanelAsset = self.Transform:Find("SafeAreaContentPane/Root/PanelAsset")
-    self.BtnTrial = self.Transform:Find("SafeAreaContentPane/Root/BtnTrial"):GetComponent("Button")
+    self.BtnTrial = self.Transform:Find("SafeAreaContentPane/Root/BtnTrial"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiFuben:AutoAddListener()

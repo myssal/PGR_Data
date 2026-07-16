@@ -51,9 +51,9 @@ function XUiGridEquipReplaceAttr:InitAutoScript()
 end
 
 function XUiGridEquipReplaceAttr:AutoInitUi()
-    self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
-    self.TxtCurAttr = self.Transform:Find("TxtCurAttr"):GetComponent("Text")
-    self.TxtSelectAttr = self.Transform:Find("TxtSelectAttr"):GetComponent("Text")
+    self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtCurAttr = self.Transform:Find("TxtCurAttr"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtSelectAttr = self.Transform:Find("TxtSelectAttr"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiGridEquipReplaceAttr:RegisterClickEvent(uiNode, func)

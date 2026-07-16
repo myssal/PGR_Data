@@ -22,8 +22,8 @@ end
 
 function XUiHintFunctional:AutoInitUi()
     self.PanelHintBox = self.Transform:Find("SafeAreaContentPane/PanelHintBox")
-    self.TxtBox = self.Transform:Find("SafeAreaContentPane/PanelHintBox/TxtBox"):GetComponent("Text")
-    self.BtnBox = self.Transform:Find("SafeAreaContentPane/PanelHintBox/BtnBox"):GetComponent("Button")
+    self.TxtBox = self.Transform:Find("SafeAreaContentPane/PanelHintBox/TxtBox"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnBox = self.Transform:Find("SafeAreaContentPane/PanelHintBox/BtnBox"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiHintFunctional:GetAutoKey(uiNode, eventName)

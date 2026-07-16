@@ -27,15 +27,15 @@ end
 
 function XUiPanelDeviceUpgradeInfo:AutoInitUi()
     self.Panel = self.Transform:Find("Panel")
-    self.TxtDeviceName = self.Transform:Find("Panel/TxtDeviceName"):GetComponent("Text")
-    self.TxtCurLevel = self.Transform:Find("Panel/TxtCurLevel"):GetComponent("Text")
-    self.TxtNextLevel = self.Transform:Find("Panel/TxtNextLevel"):GetComponent("Text")
+    self.TxtDeviceName = self.Transform:Find("Panel/TxtDeviceName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtCurLevel = self.Transform:Find("Panel/TxtCurLevel"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtNextLevel = self.Transform:Find("Panel/TxtNextLevel"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelContent = self.Transform:Find("Panel/PanelContent")
     self.GridFuncUpgradeInfoItem = self.Transform:Find("Panel/PanelContent/GridFuncUpgradeInfoItem")
-    self.ImgUpgradeCost = self.Transform:Find("GrpUpInfo/ImgUpgradeCost"):GetComponent("Image")
-    self.TxtUpgradeCostCount = self.Transform:Find("GrpUpInfo/TxtUpgradeCostCount"):GetComponent("Text")
-    self.TxtUpgradeCostTime = self.Transform:Find("GrpUpInfo/TxtUpgradeCostTime"):GetComponent("Text")
-    self.BtnUpgrade = self.Transform:Find("GrpUpInfo/BtnUpgrade"):GetComponent("Button")
+    self.ImgUpgradeCost = self.Transform:Find("GrpUpInfo/ImgUpgradeCost"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.TxtUpgradeCostCount = self.Transform:Find("GrpUpInfo/TxtUpgradeCostCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtUpgradeCostTime = self.Transform:Find("GrpUpInfo/TxtUpgradeCostTime"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnUpgrade = self.Transform:Find("GrpUpInfo/BtnUpgrade"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiPanelDeviceUpgradeInfo:GetAutoKey(uiNode, eventName)

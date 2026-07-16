@@ -264,7 +264,7 @@ end
 function XUiFightCaptureV217:OnBtnPhotoSaveClick()
     if not self.ImagePhotoCopy then
         local obj = XUiHelper.Instantiate(self.ImagePhoto.gameObject, self.ImagePhoto.transform.parent)
-        self.ImagePhotoCopy = obj:GetComponent("Image")
+        self.ImagePhotoCopy = obj:GetComponent(typeof(CS.UnityEngine.UI.Image))
     else
         self.ImagePhotoCopy.sprite = self.ImagePhoto.sprite
     end

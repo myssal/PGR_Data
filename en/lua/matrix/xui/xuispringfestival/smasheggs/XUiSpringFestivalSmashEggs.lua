@@ -33,9 +33,9 @@ function XUiSpringFestivalSmashEggs:OnEnable()
     self.BaodiGrid:SetButtonState(self.CurrentSafetyProtect == 0 and CS.UiButtonState.Normal or CS.UiButtonState.Select)
     self.BaodiGrid:SetRawImage(XDataCenter.ItemManager.GetItemIcon(protectId))
     self.AssetPanel = XUiPanelAsset.New(self, self.BtnShop, XSpringFestivalActivityConfigs.GetScoreConvertItemId())
-    local sliverText = self.GridTips01:Find("TxtTips"):GetComponent("Text")
+    local sliverText = self.GridTips01:Find("TxtTips"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     sliverText.text = XDataCenter.ItemManager.GetItemDescription(XSpringFestivalActivityConfigs.GetBuffItemItemId(XSpringFestivalActivityConfigs.BuffItem.SilverHammer))
-    local goldText = self.GridTips02:Find("TxtTips"):GetComponent("Text")
+    local goldText = self.GridTips02:Find("TxtTips"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     goldText.text = XDataCenter.ItemManager.GetItemDescription(XSpringFestivalActivityConfigs.GetBuffItemItemId(XSpringFestivalActivityConfigs.BuffItem.GoldHammer))
     self:InitHammerBtnGroup()
     self:InitBuffItemPanel()
@@ -66,7 +66,7 @@ function XUiSpringFestivalSmashEggs:InitSceneRoot()
         self["UISuccessed" .. i] = root:FindTransform("UISuccessed" .. i).gameObject
         self["FxUIHammerHit" .. i] = root:FindTransform("FxUIHammerHit" .. i).gameObject
         self["FxHongbao" .. i] = root:FindTransform("FxHongbao" .. i).gameObject
-        self["Model" .. i] = model:GetComponent("Animator")
+        self["Model" .. i] = model:GetComponent(typeof(CS.UnityEngine.Animator))
         local inputHandler = model:GetComponent(typeof(CS.XGoInputHandler))
         if not inputHandler then
             inputHandler = model:AddComponent(typeof(CS.XGoInputHandler))
@@ -74,7 +74,7 @@ function XUiSpringFestivalSmashEggs:InitSceneRoot()
         self["InputHandler" .. i] = inputHandler
     end
     for i = 1, HAMMER_COUNT do
-        self["Hammer" .. i] = root:FindTransform("Hammer" .. i):GetComponent("Animator")
+        self["Hammer" .. i] = root:FindTransform("Hammer" .. i):GetComponent(typeof(CS.UnityEngine.Animator))
         self["Hammer" .. i].gameObject:SetActive(false)
     end
 end

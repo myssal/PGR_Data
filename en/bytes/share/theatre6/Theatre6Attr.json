@@ -26,7 +26,7 @@
     {
         "Id": 3,
         "Name": "Fighting Will",
-        "Desc": "Casting skills consumes Fighting Will. When both sides run out of Fighting Will, Fighting Will is restored based on the Fighting Will stat.\\nDuring battle, each point of Fighting Will grants 0.3% DMG Reduction, up to 30%.",
+        "Desc": "Casting skills consumes Fighting Will.\\nDuring battle, each point of Fighting Will grants 0.3% DMG Reduction, up to 40%.\\nIn [Phantom Clash], only Fighting Will above 50 grants DMG Reduction.",
         "Min": 1,
         "Max": 9999999,
         "SaveScore": 48,
@@ -58,5 +58,13 @@
         "AttrKey": "OverClock",
         "Priority": 5,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
+    },
+    {
+        "Id": 6,
+        "Name": "Sanity Cap",
+        "Min": -200,
+        "Max": 9999999,
+        "AttrType": 3,
+        "AttrKey": "MaxSan"
     }
 ]

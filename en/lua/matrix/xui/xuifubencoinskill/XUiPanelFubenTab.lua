@@ -16,15 +16,15 @@ function XUiPanelFubenTab:InitAutoScript()
 end
 
 function XUiPanelFubenTab:AutoInitUi()
-    self.RImgFuben = self.Transform:Find("RImgFuben"):GetComponent("RawImage")
+    self.RImgFuben = self.Transform:Find("RImgFuben"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self.PanelFubenTitle = self.Transform:Find("PanelFubenTitle")
-    self.TxtFubenName = self.Transform:Find("PanelFubenTitle/TxtFubenName"):GetComponent("Text")
+    self.TxtFubenName = self.Transform:Find("PanelFubenTitle/TxtFubenName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelChallenge = self.Transform:Find("PanelChallenge")
-    self.TxtChallenge = self.Transform:Find("PanelChallenge/TxtChallenge"):GetComponent("Text")
-    self.TxtChallengeCount = self.Transform:Find("PanelChallenge/TxtChallengeCount"):GetComponent("Text")
-    self.TxtReward = self.Transform:Find("TxtReward"):GetComponent("Text")
-    self.BtnFuben = self.Transform:Find("BtnFuben"):GetComponent("Button")
-    self.ImgRewardUp = self.Transform:Find("ImgRewardUp"):GetComponent("Image")
+    self.TxtChallenge = self.Transform:Find("PanelChallenge/TxtChallenge"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtChallengeCount = self.Transform:Find("PanelChallenge/TxtChallengeCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtReward = self.Transform:Find("TxtReward"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.BtnFuben = self.Transform:Find("BtnFuben"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.ImgRewardUp = self.Transform:Find("ImgRewardUp"):GetComponent(typeof(CS.UnityEngine.UI.Image))
 end
 
 function XUiPanelFubenTab:GetAutoKey(uiNode,eventName)

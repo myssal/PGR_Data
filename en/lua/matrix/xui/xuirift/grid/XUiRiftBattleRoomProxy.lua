@@ -102,9 +102,9 @@ function XUiRiftBattleRoomProxy:RefreshTemplate()
         local attrLevel = attrTemplate:GetAttrLevel(index)
         local attrTxtName = "TxtSu0" .. index
         normalUiObject[attrTxtName].text = tostring(attrLevel)
-        uiObject.Normal.transform:Find("Txt0" .. index):GetComponent("Text").text = XMVCA.XRift:GetAttrName(index)
+        uiObject.Normal.transform:Find("Txt0" .. index):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XMVCA.XRift:GetAttrName(index)
         pressUiObject[attrTxtName].text = tostring(attrLevel)
-        uiObject.Press.transform:Find("Txt0" .. index):GetComponent("Text").text = XMVCA.XRift:GetAttrName(index)
+        uiObject.Press.transform:Find("Txt0" .. index):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XMVCA.XRift:GetAttrName(index)
     end
     RootUi.BtnPanelLoad:GetComponent("XUiButton"):SetNameByGroup(0, attrTemplate:GetAllLevel())
 end

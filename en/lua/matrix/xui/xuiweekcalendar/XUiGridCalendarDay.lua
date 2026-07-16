@@ -8,10 +8,10 @@ function XUiGridCalendarDay:Ctor(ui)
 end
 
 function XUiGridCalendarDay:InitUiView()
-	self.TxtWeekTitle = self.Transform:Find("Normal/Text1"):GetComponent("Text")
-	self.TxtDate = self.Transform:Find("Normal/Text2"):GetComponent("Text")
-	self.TxtTodayWeekTitle = self.Transform:Find("today/Text1"):GetComponent("Text")
-	self.TxtTodayDate = self.Transform:Find("today/Text2"):GetComponent("Text")
+	self.TxtWeekTitle = self.Transform:Find("Normal/Text1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+	self.TxtDate = self.Transform:Find("Normal/Text2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+	self.TxtTodayWeekTitle = self.Transform:Find("today/Text1"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+	self.TxtTodayDate = self.Transform:Find("today/Text2"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 	self.PanelToday = self.Transform:Find("today")
 end
 

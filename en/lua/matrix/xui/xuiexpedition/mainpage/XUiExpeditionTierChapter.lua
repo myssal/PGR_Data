@@ -12,7 +12,7 @@ function XUiExpeditionTierChapter:Init()
     self.Tiers = {}
     self.Chapter = XDataCenter.ExpeditionManager.GetCurrentChapter()
     self.Content = self.RootUi.PanelChapterContent
-    self.RectTransform = self.RootUi.Transform:GetComponent("RectTransform")
+    self.RectTransform = self.RootUi.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.RootUi.GridTierLayOff.gameObject:SetActiveEx(false)
     self.RootUi.GridTierLayOut.gameObject:SetActiveEx(false)
     self.RootUi.GridTierInfi.gameObject:SetActiveEx(false)
@@ -131,7 +131,7 @@ end
 function XUiExpeditionTierChapter:GotoTargetStage(tier)
     if not tier then return end
     CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.RootUi.PanelChapterContent)
-    local tierTransform = tier:GetRectTransform():GetComponent("RectTransform")
+    local tierTransform = tier:GetRectTransform():GetComponent(typeof(CS.UnityEngine.RectTransform))
     local posX = tierTransform.localPosition.x - self.RootUi.PanelChapter.rect.width / 2
     local scrollRectOffset = (self.RootUi.ScrollRect.content.rect.width - self.RootUi.PanelChapter.rect.width)
     local current = self.RootUi.ScrollRect.horizontalNormalizedPosition * scrollRectOffset

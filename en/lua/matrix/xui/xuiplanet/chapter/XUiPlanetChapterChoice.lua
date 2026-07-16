@@ -10,7 +10,7 @@ function XUiPlanetChapterChoice:OnAwake()
     self.GridStageObj = {}
     self._IsFirstEnable = true
     
-    self.UnlockAnim = self.Transform:Find("Animation/PanelLockDisable"):GetComponent("PlayableDirector")
+    self.UnlockAnim = self.Transform:Find("Animation/PanelLockDisable"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     if self.UnlockAnim then -- 音效挂在动画上,避免出声手动关闭
         self.UnlockAnim.gameObject:SetActiveEx(false)
         self.UnlockDuration = self.UnlockAnim.duration * 0.95

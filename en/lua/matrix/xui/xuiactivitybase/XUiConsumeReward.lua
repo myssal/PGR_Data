@@ -16,7 +16,7 @@ function XUiConsumeReward:Ctor(ui, rootUi)
 end
 
 function XUiConsumeReward:Init()
-    self.LayoutGroup = self.GridRewardPanel:GetComponent("HorizontalLayoutGroup")
+    self.LayoutGroup = self.GridRewardPanel:GetComponent(typeof(CS.UnityEngine.UI.HorizontalLayoutGroup))
     self.GridRewardPool = {}
     self.GridMiniRewardPool = {}
     self.LimitPosArr = {}

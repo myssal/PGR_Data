@@ -1899,6 +1899,23 @@
         ]
     },
     {
+        "Id": 240,
+        "Name": "Booster Structural Part - Grand Duke",
+        "Description": "A structural part of the Combat Unit Booster, Grand Duke. Collect a certain number of them to create the Combat Unit Booster.",
+        "WorldDesc": "All the essence of the Combat Unit Booster lies within its structure. Once there are sufficient parts, a CUB can be easily assembled.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconPet3Chandelier1.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconPet3Chandelier1Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 29600,
+        "MaxCount": 9999,
+        "GridCount": 9999,
+        "SkipIdParams": [
+            15006,
+            7212
+        ]
+    },
+    {
         "Id": 300,
         "Name": "HQ Shard",
         "Description": "Made from scrap metal. Can be exchanged for items with the Support Force.",
@@ -3953,6 +3970,21 @@
         "SellForCount": 10
     },
     {
+        "Id": 483,
+        "Name": "Ultima: Lacrimosa",
+        "Description": "Constructs that have awakened their Ultima rank get 3 Signal Orbs at the start of battle.",
+        "WorldDesc": "Ring device developed by the Science Council and customized for each individual construct. The internal nanomachines help Constructs perform high-frequency computing to generate Signal Orbs immediately.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconSkillRelease61.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconSkillRelease61Sp.png",
+        "ItemType": 1,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10
+    },
+    {
         "Id": 501,
         "Name": "Inver-Shard - Palefire",
         "Description": "Lee's Inver-Shard. Collect a sufficient amount to link with the Construct.",
@@ -5382,7 +5414,8 @@
         "SellForCount": 5,
         "SkipIdParams": [
             10012,
-            10048
+            10048,
+            90061
         ]
     },
     {
@@ -5419,7 +5452,8 @@
         "SellForCount": 5,
         "SkipIdParams": [
             10012,
-            10048
+            10048,
+            90061
         ]
     },
     {
@@ -5456,6 +5490,26 @@
         "SellForCount": 5,
         "SkipIdParams": [
             10012
+        ]
+    },
+    {
+        "Id": 593,
+        "Name": "Inver-Shard - Lacrimosa",
+        "Description": "Helentine's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1401003.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1401003Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 35,
+        "SellForCount": 5,
+        "SkipIdParams": [
+            10012,
+            10048,
+            90061
         ]
     },
     {
@@ -6717,7 +6771,7 @@
         "Name": "Crystallized Memory II",
         "Description": "Can be used to unlock story CGs in [Emerging Reflections].",
         "WorldDesc": "A clear voice rings in your ears. It comes from the past, familiar yet strange. You know it is your own voice.",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem13.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem14.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem14Sp.png",
         "ItemType": 262148,
         "Quality": 4,
@@ -6736,7 +6790,7 @@
         "Name": "Crystallized Memory III",
         "Description": "Can be used to unlock story CGs in [Emerging Reflections].",
         "WorldDesc": "A clear voice rings in your ears. It comes from the past, familiar yet strange. You know it is your own voice.",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem13.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem15.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem15Sp.png",
         "ItemType": 262148,
         "Quality": 4,
@@ -6755,7 +6809,7 @@
         "Name": "Crystallized Memory IV",
         "Description": "Can be used to unlock story CGs in [Emerging Reflections].",
         "WorldDesc": "A clear voice rings in your ears. It comes from the past, familiar yet strange. You know it is your own voice.",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem13.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem16.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem16Sp.png",
         "ItemType": 262148,
         "Quality": 4,
@@ -6774,7 +6828,7 @@
         "Name": "Crystallized Memory V",
         "Description": "Can be used to unlock story CGs in [Emerging Reflections].",
         "WorldDesc": "A clear voice rings in your ears. It comes from the past, familiar yet strange. You know it is your own voice.",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem13.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem17.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiNonogramItem17Sp.png",
         "ItemType": 262148,
         "Quality": 4,
@@ -6786,6 +6840,23 @@
         "Duration": 604800,
         "SkipIdParams": [
             20375
+        ]
+    },
+    {
+        "Id": 1087,
+        "Name": "Topology Pick",
+        "Description": "Can be used to start a game in [Summer's Rhythm].",
+        "WorldDesc": "The stage curtain must fall eventually, but at least there remains a shard that once burned and leaped with life, holding the memory of that star-studded night.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem05.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLivWarmItem05Sp.png",
+        "ItemType": 262148,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "StartTime": "2026/8/11 5:00",
+        "SkipIdParams": [
+            20378
         ]
     },
     {
@@ -25857,6 +25928,234 @@
         ]
     },
     {
+        "Id": 2981,
+        "Name": "Shadow Spider Lamp Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Shadow Spider Lamp].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheHailuntin001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheHailuntin001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 18,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2982,
+        "Name": "Marine Canopy Blueprint",
+        "Description": "Type: Ceiling",
+        "WorldDesc": "Changes Decor to [Marine Canopy].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheFish001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheFish001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2983,
+        "Name": "Sunny Island Blueprint",
+        "Description": "Type: Wall",
+        "WorldDesc": "Changes Decor to [Sunny Island].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheWall001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheWall001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2984,
+        "Name": "Ripple Bay Blueprint",
+        "Description": "Type: Floor",
+        "WorldDesc": "Changes Decor to [Ripple Bay].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheFlooring001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheFlooring001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2985,
+        "Name": "Koi Cruise Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Koi Cruise].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheDooring001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheDooring001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2986,
+        "Name": "White Shore Lounge Chair Blueprint",
+        "Description": "Type: Sofa",
+        "WorldDesc": "Changes Decor to [White Shore Lounge Chair].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2987,
+        "Name": "Ocean Noodle House Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Ocean Noodle House].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheLamian001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheLamian001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2988,
+        "Name": "Floating Summer Bar Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Floating Summer Bar].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheBeverages001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheBeverages001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2989,
+        "Name": "Skewer Food Stall Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Skewer Food Stall].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheSushi001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheSushi001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2990,
+        "Name": "Parasol Dessert Parlor Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Parasol Dessert Parlor].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheIce001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheIce001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2991,
+        "Name": "Summer Tide Station Blueprint",
+        "Description": "Type: Bed",
+        "WorldDesc": "Changes Decor to [Summer Tide Station].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsushePlatform001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsushePlatform001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2992,
+        "Name": "Sunny Cove Flora Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Sunny Cove Flora].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheTree001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheTree001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 87,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
         "Id": 3001,
         "Name": "5★ Weapon Resonance Material",
         "Description": "Can be used as any other 5★ weapon for Resonance.",
@@ -27894,6 +28193,25 @@
         ]
     },
     {
+        "Id": 32020,
+        "Name": "Leap Wafer: Startrail",
+        "Description": "Used as a material in [Startrail]'s Leap.",
+        "WorldDesc": "A data wafer that records massive battle data and greatly improves a frame's battle performance.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItCharEx125.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItCharEx125Sp.png",
+        "ItemType": 4,
+        "Quality": 5,
+        "Priority": 86902,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "SellForId": 32000,
+        "SellForCount": 5,
+        "FastTrading": 1,
+        "SkipIdParams": [
+            10036
+        ]
+    },
+    {
         "Id": 33000,
         "Name": "Uniframe Single Crystal",
         "Description": "Uniframe Single Crystals can be used to exchange for Uniframes.",
@@ -28075,6 +28393,22 @@
             89023,
             10044,
             89005
+        ]
+    },
+    {
+        "Id": 34001,
+        "Name": "Harmony Amplifier",
+        "Description": "A dedicated auxiliary device used for the second-stage Harmony of weapons.",
+        "WorldDesc": "Developed and improved by the Science Council Section 2 based on existing Harmony technology, this device can perform deep parameter calibration on weapons that have already undergone one Harmony cycle, stabilizing their high-frequency resonance state.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconWeaponOverrunItem02.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconWeaponOverrunItem02Sp.png",
+        "ItemType": 4,
+        "Quality": 6,
+        "Priority": 86900,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "SkipIdParams": [
+            89023
         ]
     },
     {
@@ -29074,6 +29408,24 @@
         ]
     },
     {
+        "Id": 40643,
+        "Name": "Vintage Notebook",
+        "Description": "Increases member's Affection. Helentine's favorite gift.",
+        "WorldDesc": "Helentine's earliest notebook, recording her feelings upon waking from her sickbed and everything Ophelia once hoped she would remember.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItGift0343.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItGift0343Sp.png",
+        "ItemType": 524292,
+        "Quality": 5,
+        "Priority": 69901,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 20,
+        "SkipIdParams": [
+            10007
+        ]
+    },
+    {
         "Id": 40681,
         "Name": "Best-Seller",
         "Description": "Increases members' Affection. A common gift everybody likes.",
@@ -29861,6 +30213,26 @@
         "SubTypeParams": [
             3,
             1435,
+            1
+        ]
+    },
+    {
+        "Id": 40924,
+        "Name": "Assessment Manual Shard Choice",
+        "Description": "Use it in Items > Item.",
+        "WorldDesc": "Use it to select and get the Inver-Shard of one of the following frames: Liv: Luminance, Rosetta: Rigor, Lee: Entropy, Karenina: Ember, Nanami: Pulse, Kamui: Tenebrion, Lucia: Crimson Abyss, Bianca: Veritas, Vera: Garnet, Liv: Empyrea, Karenina: Scire, Bianca: Stigmata, Lucia: Crimson Weave, Alisa: Echo, Watanabe: Epitaph, Luna: Oblivion, Hanying: Solacetune, and Nanami: Startrail.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconAlterRole13.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconAlterRole13.png",
+        "ItemType": 16,
+        "Quality": 5,
+        "Priority": 100004,
+        "MaxCount": 9999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 100,
+        "SubTypeParams": [
+            3,
+            1470,
             1
         ]
     },
@@ -40877,7 +41249,7 @@
         "MaxCount": 1,
         "GridCount": 1,
         "SkipIdParams": [
-            80295,
+            80309,
             80296
         ],
         "SubTypeParams": [
@@ -40959,6 +41331,45 @@
         ],
         "SubTypeParams": [
             12650001
+        ]
+    },
+    {
+        "Id": 80139,
+        "Name": "Summer Strings",
+        "Description": "Rippling Twilight—Bowstring Rapier",
+        "WorldDesc": "Sunshine for strings, sea breeze for a melody, emotions drift into the summer wind. The finest symphony on earth is born here, where light, waves, and a dancing silhouette cross paths.",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3LyreswordMd040011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3LyreswordMd040011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80309
+        ],
+        "SubTypeParams": [
+            12520003
+        ]
+    },
+    {
+        "Id": 80140,
+        "Name": "Serenading Waves",
+        "Description": "Rippling Twilight—Folding Buzzsaw",
+        "WorldDesc": "In the plan of days gone by, the essentials for spending an entire summer on the beach included: sunscreen spray, lemon-flavored iced drinks, and a float lounger meant for two... Yet the most heart-stirring moments of that summer were never written into any plan. They were quietly buried deep within their hearts: the unspoken chemistry of each other's company, the memories of strolling along the shore, and the gentle laughter dancing in the girl's eyes.",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3ChainsawMd020011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3ChainsawMd020011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80309,
+            80310
+        ],
+        "SubTypeParams": [
+            12660001
         ]
     },
     {
@@ -44731,6 +45142,64 @@
         ]
     },
     {
+        "Id": 95200,
+        "Name": "[Summer Archipelago] Blueprint Bundle",
+        "Description": "Gives a full set of [Summer Archipelago] Decor Blueprint.",
+        "WorldDesc": "Use it in Items > Item.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/It406FurSuit003.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/It406FurSuit003Sp.png",
+        "ItemType": 16,
+        "Quality": 5,
+        "Priority": 97001,
+        "MaxCount": 9,
+        "GridCount": 1,
+        "SellForId": 1,
+        "SellForCount": 100,
+        "SubTypeParams": [
+            1,
+            1480
+        ]
+    },
+    {
+        "Id": 95201,
+        "Name": "[Summer Archipelago] Set",
+        "Description": "Gives a full set of [Summer Archipelago] Decor.",
+        "WorldDesc": "Use it in Items > Item.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/It406FurSuit002.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/It406FurSuit002Sp.png",
+        "ItemType": 16,
+        "Quality": 5,
+        "Priority": 97001,
+        "MaxCount": 9,
+        "GridCount": 1,
+        "SellForId": 1,
+        "SellForCount": 100,
+        "SubTypeParams": [
+            1,
+            1482
+        ]
+    },
+    {
+        "Id": 95202,
+        "Name": "[Summer Archipelago] Blueprint Choice",
+        "Description": "Choose 1 of the [Summer Archipelago] Decor Blueprints.",
+        "WorldDesc": "Use it in Items > Item.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/It406FurSuit001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/It406FurSuit001Sp.png",
+        "ItemType": 16,
+        "Quality": 4,
+        "Priority": 97001,
+        "MaxCount": 99,
+        "GridCount": 99,
+        "SellForId": 1,
+        "SellForCount": 100,
+        "SubTypeParams": [
+            3,
+            1484,
+            1
+        ]
+    },
+    {
         "Id": 96000,
         "Name": "Lucky Chest",
         "Description": "A red envelope worthy of 180,000 Cogs. Share it with other members!  Share Cogs to unlock the corresponding [Cat Grab] member.",
@@ -47549,6 +48018,21 @@
             1458,
             1
         ]
+    },
+    {
+        "Id": 97090,
+        "Name": "Enigma Silver Seal",
+        "Description": "Can be used to exchange for rewards in the [Shrouded Requiem] limited-time shop.",
+        "WorldDesc": "An exquisite silver box concealing memories and whispers that were never meant to be uncovered.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiTheatre6IconV4P601.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiTheatre6IconV4P601Sp.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "StartTime": "2026/7/17 5:00",
+        "Duration": 5875200
     },
     {
         "Id": 250001,

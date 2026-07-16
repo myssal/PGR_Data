@@ -3666,6 +3666,10 @@ XEnumConst = {
         }
     },
     Theatre6 = {
+        CharacterNewTagType = {
+            Game = 1,
+            Story = 2,
+        },
         PlayMode = {
             GamePlay = 1, --玩法模式
             Story = 2, --剧情模式

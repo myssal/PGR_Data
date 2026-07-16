@@ -119,7 +119,7 @@
         "BorderColor": "#7E9EB4",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
-            "DMG dealt increases by 10%. Using any skill consumes 10 Rage. When Rage reaches 0, Berserk ends after the current skill finishes."
+            "Increases DMG by 20%. Using any skill consumes 10 Rage. When Rage reaches 0, Berserk ends after the skill finishes."
         ]
     },
     {
@@ -197,6 +197,19 @@
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
             "Character Max HP increases by 1."
+        ]
+    },
+    {
+        "Id": 1027101,
+        "Name": "Dawnlight",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon5702.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#B47E7E",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "Upon reaching 120 points, unleash Dawnlight Unbound, ignoring the original trigger conditions and forcibly activating the trigger skill in slot 1."
         ]
     },
     {
@@ -290,6 +303,19 @@
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
         "DetailDesc": [
             "Gains 20% of the Fighting Will cost when using the next skill."
+        ]
+    },
+    {
+        "Id": 10273011,
+        "Name": "ATK Drain",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0202.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "Drains 10 ATK from the enemy."
         ]
     }
 ]

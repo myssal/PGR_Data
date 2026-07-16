@@ -18,14 +18,14 @@ function XUiGridChapterDz:InitAutoScript()
 end
 
 function XUiGridChapterDz:AutoInitUi()
-    self.RImgDz = self.Transform:Find("RImgDz"):GetComponent("RawImage")
-    self.TxtProgress = self.Transform:Find("TxtProgress"):GetComponent("Text")
-    self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
-    self.Txt3 = self.Transform:Find("Txt3"):GetComponent("Text")
-    self.Txt4 = self.Transform:Find("Txt4"):GetComponent("Text")
-    self.ImgActivityTab = self.Transform:Find("ImgActivityTab"):GetComponent("Image")
-    self.BtnUnlockCover = self.Transform:Find("BtnUnlockCover"):GetComponent("Button")
-    self.TxtUnlockCondition = self.Transform:Find("BtnUnlockCover/TxtUnlockCondition"):GetComponent("Text")
+    self.RImgDz = self.Transform:Find("RImgDz"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtProgress = self.Transform:Find("TxtProgress"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.Txt3 = self.Transform:Find("Txt3"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.Txt4 = self.Transform:Find("Txt4"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgActivityTab = self.Transform:Find("ImgActivityTab"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.BtnUnlockCover = self.Transform:Find("BtnUnlockCover"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtUnlockCondition = self.Transform:Find("BtnUnlockCover/TxtUnlockCondition"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiGridChapterDz:RegisterClickEvent(uiNode, func)

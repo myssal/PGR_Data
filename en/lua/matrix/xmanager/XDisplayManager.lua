@@ -282,7 +282,7 @@ XDisplayManagerCreator = function()
         -- 更换模型
         local callback = function(model)
             state.Model = model
-            state.Animator = state.Model:GetComponent("Animator")
+            state.Animator = state.Model:GetComponent(typeof(CS.UnityEngine.Animator))
             -- 加载 animationController
             local runtimeController = CS.LoadHelper.LoadUiController(state.RuntimeControllerName, state.Animator.gameObject)
             if runtimeController == nil or not runtimeController:Exist() then

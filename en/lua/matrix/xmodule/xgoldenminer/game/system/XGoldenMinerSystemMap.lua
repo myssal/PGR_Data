@@ -928,7 +928,7 @@ function XGoldenMinerSystemMap:StoneChangeToOther(stoneEntity, stoneId, isGrab, 
     stoneEntity = self:_CreateStone(stoneData)
     if isGrab then
         stoneEntity:GetTransform():SetParent(parent, false)
-        local rectTransform = stoneEntity:GetTransform():GetComponent("RectTransform")
+        local rectTransform = stoneEntity:GetTransform():GetComponent(typeof(CS.UnityEngine.RectTransform))
         rectTransform.anchorMin = Vector2(0.5, 1)
         rectTransform.anchorMax = Vector2(0.5, 1)
         rectTransform.pivot = Vector2(0.5, 1)

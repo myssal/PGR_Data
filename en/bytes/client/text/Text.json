@@ -401,11 +401,11 @@
     },
     {
         "Key": "DailyActiveRewardTitle",
-        "Text": "Reward Details"
+        "Text": "Details"
     },
     {
         "Key": "WeeklyActiveRewardTitle",
-        "Text": "Reward Details"
+        "Text": "Details"
     },
     {
         "Key": "SettingCheckSave",
@@ -3034,7 +3034,7 @@
     },
     {
         "Key": "ExploreRewardTitle",
-        "Text": "Reward Details"
+        "Text": "Details"
     },
     {
         "Key": "ExploreExplain",
@@ -5243,6 +5243,10 @@
         "Text": "Border Stationing"
     },
     {
+        "Key": "CharacterSkillLevelDetailWeaponOverrun",
+        "Text": "Weapon Harmony"
+    },
+    {
         "Key": "CharacterSkillLevelDetail",
         "Text": "（+{0}）"
     },
@@ -6000,7 +6004,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00EEEE><size=28>{1}</size></color>"
+        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -9658,7 +9662,7 @@
     },
     {
         "Key": "PartnerBackItem",
-        "Text": "Return material"
+        "Text": "Materials Returned"
     },
     {
         "Key": "PartnerSkillLevelCN",
@@ -11299,6 +11303,26 @@
     {
         "Key": "FashionStoryProcess",
         "Text": "Progress: {0}/{1}"
+    },
+    {
+        "Key": "FashionStoryRewardLock",
+        "Text": "Available in {0}"
+    },
+    {
+        "Key": "FashionStoryRewardGo",
+        "Text": "Claim Reward"
+    },
+    {
+        "Key": "FashionStoryRewardReceived",
+        "Text": "Claimed"
+    },
+    {
+        "Key": "FashionStoryRewardActivityEnd",
+        "Text": "Event has ended"
+    },
+    {
+        "Key": "FashionStoryUnlockAfterTime",
+        "Text": "Available in {0}"
     },
     {
         "Key": "SocialBlackTipsDesc",
@@ -13814,11 +13838,11 @@
     },
     {
         "Key": "GoldenMinerReqportScore",
-        "Text": "{0}/{1} <color=#34AFF8><size=28>(+{2})</size></color>"
+        "Text": "{0}/{1}<color=#34AFF8><size=28>(+{2})</size></color>"
     },
     {
         "Key": "GoldenMinerReqportObjScore",
-        "Text": "{0} <color=#34AFF8><size=32>(+{1})</size></color>"
+        "Text": "{0}<color=#34AFF8><size=32>(+{1})</size></color>"
     },
     {
         "Key": "GoldenMinerReqportTotalScore",
@@ -16686,7 +16710,7 @@
     },
     {
         "Key": "TransfiniteSave2",
-        "Text": "You have <color=#0E70BD>dead</color> character(s) on team. Saving the result will make you <color=#0E70BD>not able to</color> use the character(s) in the subsequent battles."
+        "Text": "Some characters in your team have been <color=#0E70BD>defeated</color>. If you save your progress, they will be <color=#0E70BD>unavailable</color> in subsequent battles."
     },
     {
         "Key": "TransfiniteStageNotStartAnchorTips",
@@ -16743,6 +16767,38 @@
     {
         "Key": "EquipOverrunActiveEffectTips2",
         "Text": "No extra Memory Set effects can be activated. Activate and bind <color=#0E70BD>[{0}]</color>?"
+    },
+    {
+        "Key": "EquipOverrunUnActive",
+        "Text": "Not Activated"
+    },
+    {
+        "Key": "EquipOverrunUnBindSuit",
+        "Text": "<color=#6F6F6F>No Memory Bound</color>"
+    },
+    {
+        "Key": "EquipOverrunSkillTitleUnlock",
+        "Text": "Skill Boost"
+    },
+    {
+        "Key": "EquipOverrunSkillTitleStrength",
+        "Text": "Unlock Skill"
+    },
+    {
+        "Key": "EquipOverrunUnlockBeforeSkillTips",
+        "Text": "%s"
+    },
+    {
+        "Key": "EquipOverrunCharacterSkillTagName",
+        "Text": "Harmony Skill"
+    },
+    {
+        "Key": "EquipOverrunCharacterSkillTagIcon",
+        "Text": "Assets/Product/Texture/Image/IconSkill/lanse07.png"
+    },
+    {
+        "Key": "EquipOverrunCharacterWearTips",
+        "Text": "Equip Weapon: %s"
     },
     {
         "Key": "TransfiniteRewardReceive",
@@ -18398,7 +18454,7 @@
     },
     {
         "Key": "BossInshotNextScoreLevelTips",
-        "Text": "Earn {0} points to reach Lv.{1}."
+        "Text": "Earn {0} points to reach Rank {1}."
     },
     {
         "Key": "BossInshotFightTime",
@@ -18414,7 +18470,7 @@
     },
     {
         "Key": "BossInshotTalentUnlock",
-        "Text": "Unlocks with {0} Talent"
+        "Text": "{0} Talent Unlocked"
     },
     {
         "Key": "BossInshotDeletePlaybackConfirm",
@@ -18434,7 +18490,7 @@
     },
     {
         "Key": "BossInshotToastTowerDown",
-        "Text": "降层触发"
+        "Text": "Floor Drop Triggered"
     },
     {
         "Key": "BossInshotToastTowerClear",
@@ -18442,7 +18498,7 @@
     },
     {
         "Key": "BossInshotToastTowerDownProtected",
-        "Text": "降层保护触发"
+        "Text": "Floor Drop Protection Triggered"
     },
     {
         "Key": "BossInshotToastTowerFloor",
@@ -18450,19 +18506,115 @@
     },
     {
         "Key": "BossInshotToastTowerDescUp",
-        "Text": "评分达{0}，上升{1}层。"
+        "Text": "Score reached {0}. Up {1} floor(s)."
     },
     {
         "Key": "BossInshotToastTowerDescDown",
-        "Text": "评分未达{0}，降至{1}层。"
+        "Text": "Score below {0}. You've dropped to {1}F."
     },
     {
         "Key": "BossInshotToastTowerDescClear",
-        "Text": "可选择其他Boss挑战，获取更高排名。\\n失败不再触发降层。"
+        "Text": "You can challenge other Bosses to get a higher rank.\\nFailure will no longer trigger a floor drop."
     },
     {
         "Key": "BossInshotToastTowerDescDownProtected",
-        "Text": "首次未达{0}，不降层。"
+        "Text": "No Floor Drop on your first failure to reach {0} pts."
+    },
+    {
+        "Key": "BossInshotTowerFloor",
+        "Text": "{0}F"
+    },
+    {
+        "Key": "BossInshotTowerLevelSelectorBtnNoScore",
+        "Text": "--"
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseNotInTime",
+        "Text": "Stage is not yet available."
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseUnknown",
+        "Text": "This stage is locked due to an unknown reason."
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseNotReach",
+        "Text": "Unlocks once Floor {0} score reaches {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNext",
+        "Text": "Reach {0} pts to unlock the next floor."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFail2",
+        "Text": "Reach {0} pts to unlock the next floor. Fail twice and you will drop to Floor {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFail1",
+        "Text": "Reach {0} pts to unlock the next floor. Fail this attempt and you will drop to Floor {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFailN",
+        "Text": "Reach {0} pts to unlock the next floor. Fail {2} time(s) and you will drop to Floor {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFail2",
+        "Text": "Reach {0} pts to clear this floor. Fail twice and you will drop to Floor {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFail1",
+        "Text": "Reach {0} pts to clear this floor. Fail this attempt and you will drop to Floor {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFailN",
+        "Text": "Reach {0} pts to clear this floor. Fail {2} time(s) and you will drop to Floor {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipStageClear",
+        "Text": "Floor already cleared"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipAllClear",
+        "Text": "Cleared. Floor Drop will no longer trigger."
+    },
+    {
+        "Key": "BossInshotTowerChangeBossRanking",
+        "Text": "No. {0}"
+    },
+    {
+        "Key": "BossInshotTowerChangeBossNoRanking",
+        "Text": "Out of the ranking"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipRetryWin",
+        "Text": "Floor already cleared"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipNextLevelUnlocked",
+        "Text": "Next Floor Unlocked"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipNextLevelNotUnlocked",
+        "Text": "Reach {0} pts to unlock the next floor."
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipFallProtected",
+        "Text": "No Floor Drop on your first failure to reach {0} pts."
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipFall",
+        "Text": "Score below {0}. Floor dropped."
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipAllCleared",
+        "Text": "All Floors Cleared"
+    },
+    {
+        "Key": "BossInshotSettlementTowerCheatCannotSaveReplay",
+        "Text": "Replays cannot be saved while cheats are enabled."
+    },
+    {
+        "Key": "BossInshotTowerLockedNotInTime",
+        "Text": "Unlocks in <color=#e8deff>{0}</color>"
     },
     {
         "Key": "DlcRoomKickOutTip",
@@ -23366,7 +23518,7 @@
     },
     {
         "Key": "RaceGuessPropertyTimes",
-        "Text": "{0} time(s)"
+        "Text": "{0}   time(s)"
     },
     {
         "Key": "RacePropertyName1",
@@ -23822,7 +23974,7 @@
     },
     {
         "Key": "Theatre6BuffEffectTimes",
-        "Text": "Active: {0}"
+        "Text": "Activations: {0}"
     },
     {
         "Key": "Theatre6BuffRemainingTimes",
@@ -23889,6 +24041,10 @@
         "Text": "Select 3 missions"
     },
     {
+        "Key": "Theatre6BattleShopBuyLvUpRelicTip",
+        "Text": "No skills available to upgrade"
+    },
+    {
         "Key": "UsePackageOverMaxCount",
         "Text": "{0} usage limit reached"
     },
@@ -23918,7 +24074,7 @@
     },
     {
         "Key": "FashionSuitProgress3",
-        "Text": "This Coating series is still being updated. Complete Collection Rewards will unlock after full update."
+        "Text": "This Coating series is still being updated. Complete Collection Rewards will be revealed after full update."
     },
     {
         "Key": "TeamPrefabCannotCoverEmptyTeam",
@@ -24117,6 +24273,54 @@
         "Text": "Select"
     },
     {
+        "Key": "Theatre6PvpEnvReplaceSuccess",
+        "Text": "Stealth Barrier replaced successfully."
+    },
+    {
+        "Key": "Theatre6PvpEnvReplaceFail",
+        "Text": "This Stealth Barrier has not been unlocked yet."
+    },
+    {
+        "Key": "Theatre6PvpFightSuccsee",
+        "Text": "Challenge complete"
+    },
+    {
+        "Key": "Theatre6PvpFightFail",
+        "Text": "Challenge failed"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc1",
+        "Text": "Challenge Successful +{0}"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc2",
+        "Text": "Clean Sweep +{0}"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc3",
+        "Text": "<color=red>Challenge Failed {0}</color>"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc4",
+        "Text": "Grade Up Successful"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc5",
+        "Text": "Score locked. No penalty for defeat."
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc6",
+        "Text": "Score is locked. No points awarded for victory."
+    },
+    {
+        "Key": "Theatre6PvpRankTime",
+        "Text": "{0}-{1}"
+    },
+    {
+        "Key": "Theatre6PvpRoundName",
+        "Text": "Round {0}"
+    },
+    {
         "Key": "BattleFashionUndownloadedTipTitle",
         "Text": "Tips"
     },
@@ -24194,7 +24398,7 @@
     },
     {
         "Key": "PassportObtain",
-        "Text": "This Pass period has <color=#57f0fb>4</color> rounds. Compensation rewards have been sent to you."
+        "Text": "This Pass period has <color=#0f70bc>6</color> rounds. Compensation rewards have been sent to you."
     },
     {
         "Key": "ShopItemRoleTips",
@@ -24317,6 +24521,58 @@
         "Text": "All items are frozen. Unable to refresh."
     },
     {
+        "Key": "Theatre6SaveCoverDefenseContent",
+        "Text": "This archive is currently set to defense. Replacing it will deploy the new save to the defense team. Proceed?"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveNotOpen",
+        "Text": "Live stream starts at {0}"
+    },
+    {
+        "Key": "ConcertPreHeatingReplayNotOpen",
+        "Text": "Replay not yet available"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveUrlEmpty",
+        "Text": "Livestream link pending configuration"
+    },
+    {
+        "Key": "ConcertPreHeatingStageLockTip",
+        "Text": "Stage unlocks at {0}"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveDayText",
+        "Text": "Concert begins in {0} day(s)"
+    },
+    {
+        "Key": "ConcertPreHeatingFinalStageName",
+        "Text": "Awakening"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalFar",
+        "Text": "Parameters deviating from target index"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalNear",
+        "Text": "Initial calibration complete. Closing in on the target harmonic range!"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalVeryNear",
+        "Text": "Fine-tuning complete. Approaching the Harmonic Core!"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalSyncing",
+        "Text": "Harmonic Core reached. Loading resonance..."
+    },
+    {
+        "Key": "ConcertPreHeatingChatBeforeLiveText",
+        "Text": "Concert starts in {0}"
+    },
+    {
+        "Key": "ConcertPreHeatingChatLiveText",
+        "Text": "Concert Livestream is live! Tap to watch."
+    },
+    {
         "Key": "TurntableDrawTimes",
         "Text": "x{0}"
     },
@@ -24335,5 +24591,13 @@
     {
         "Key": "PassportTaskActivityProgress",
         "Text": "Manual Mission progress: {0}/{1}"
+    },
+    {
+        "Key": "PurchaseFashionDetailCoinNotEnough",
+        "Text": "<color=#FF0000>{0}</color>"
+    },
+    {
+        "Key": "PurchaseFashionSuitDetailCoinNotEnough",
+        "Text": "<color=#FF0000>{0}</color>"
     }
 ]

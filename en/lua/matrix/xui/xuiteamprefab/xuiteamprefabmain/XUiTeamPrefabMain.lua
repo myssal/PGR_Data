@@ -807,8 +807,8 @@ function XUiTeamPrefabMain:UpdateTagDetail(item, tagId)
     if not string.IsNilOrEmpty(cfg.Icon) then
         item.NormalUiImgIcon.gameObject:SetActiveEx(true)
         item.PressUiImgIcon.gameObject:SetActiveEx(true)
-        item.NormalUiImgIcon:GetComponent("RawImage"):SetRawImage(cfg.Icon)
-        item.PressUiImgIcon:GetComponent("RawImage"):SetRawImage(cfg.Icon)
+        item.NormalUiImgIcon:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(cfg.Icon)
+        item.PressUiImgIcon:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(cfg.Icon)
     else
         item.NormalUiImgIcon.gameObject:SetActiveEx(false)
         item.PressUiImgIcon.gameObject:SetActiveEx(false)

@@ -147,7 +147,7 @@ function XUiPacMan2Main:ScrollToChapter(index)
     local grid = self._GridStages[index]
     local chapterTransform = grid.Transform.parent
 
-    local scrollRect = self.PanelChapter:GetComponent("ScrollRect")
+    local scrollRect = self.PanelChapter:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     local content = scrollRect.content
 
     -- 计算滚动位置

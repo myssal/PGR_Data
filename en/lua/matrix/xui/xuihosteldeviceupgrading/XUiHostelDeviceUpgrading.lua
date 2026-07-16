@@ -9,10 +9,10 @@ end
 
 function XUiHostelDeviceUpgrading:AutoInitUi()
     self.PanelFuncUpgrading = self.Transform:Find("SafeAreaContentPane/PanelFuncUpgrading")
-    self.TxtSysName = self.Transform:Find("SafeAreaContentPane/PanelFuncUpgrading/TxtSysName"):GetComponent("Text")
-    self.TxtUpgradeLeftTime = self.Transform:Find("SafeAreaContentPane/PanelFuncUpgrading/TxtUpgradeLeftTime"):GetComponent("Text")
+    self.TxtSysName = self.Transform:Find("SafeAreaContentPane/PanelFuncUpgrading/TxtSysName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtUpgradeLeftTime = self.Transform:Find("SafeAreaContentPane/PanelFuncUpgrading/TxtUpgradeLeftTime"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelCharTopButton = self.Transform:Find("SafeAreaContentPane/PanelCharTopButton")
-    self.BtnBack = self.Transform:Find("SafeAreaContentPane/PanelCharTopButton/BtnBack"):GetComponent("Button")
+    self.BtnBack = self.Transform:Find("SafeAreaContentPane/PanelCharTopButton/BtnBack"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiHostelDeviceUpgrading:GetAutoKey(uiNode,eventName)

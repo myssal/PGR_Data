@@ -13,7 +13,7 @@ function XUiGuildBossRewardItem:Ctor(ui, parentUi)
     self.DisableIconPath = CS.XGame.ClientConfig:GetString("GuildBossRewardDisableIcon")
 
     self.ImgProgress.gameObject:SetActiveEx(false)
-    self.ProgressRT = self.ImgProgress.transform:GetComponent("RectTransform")
+    self.ProgressRT = self.ImgProgress.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.ProgressSize = self.ProgressRT.sizeDelta
 
     self.MyRewardType = GuildBossRewardType.Disable

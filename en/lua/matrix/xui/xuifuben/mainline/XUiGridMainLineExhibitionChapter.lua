@@ -7,7 +7,7 @@ function XUiGridMainLineExhibitionChapter:Ctor(uiGridModule, uiPanelExhibition, 
     self.UiGridModule = uiGridModule
     self.UiPanelExhibition = uiPanelExhibition
     self.LinkGo = linkGo -- 挂点
-    self.LinkGoRectTransform = linkGo:GetComponent("RectTransform")
+    self.LinkGoRectTransform = linkGo:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.ChapterId = chapterId
     self.Index = index
 end

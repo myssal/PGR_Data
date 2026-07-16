@@ -92,7 +92,7 @@ function XUiReformReadyPanel:SetData(baseStage)
         for i, v in ipairs(fightEvents) do
             go = CS.UnityEngine.Object.Instantiate(self.GridBuff, self.PanelBuffContent)
             go.gameObject:SetActiveEx(true)
-            go.transform:Find("Buff"):GetComponent("RawImage"):SetRawImage(v.Icon)
+            go.transform:Find("Buff"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(v.Icon)
         end
     end
     -- 奖励面板
@@ -200,7 +200,7 @@ function XUiReform:OnAwake()
     self.UiReformTaskGrids = {}
     -- self:InitTaskDataGrid()
     -- 模型动画播放
-    self.ModelAnimEnter = self.UiModelGo.transform:FindTransform("CamNearAnimation"):GetComponent("PlayableDirector")
+    self.ModelAnimEnter = self.UiModelGo.transform:FindTransform("CamNearAnimation"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     self.ModelAnimEnter:Play()
     -- 模型初始化
     local panelRoleModel = self.UiModelGo.transform:FindTransform("PanelRoleModel")
@@ -355,7 +355,7 @@ end
 function XUiReform:RefreshUiScene(stageType, cb)
     local sceneUrl, modelUrl = self.ReformActivityManager.GetSceneUrlAndModelUrl(self.CurrentStageType)
     self:LoadUiScene(sceneUrl, modelUrl, function()
-        self.ModelAnimEnter = self.UiModelGo.transform:FindTransform("CamNearAnimation"):GetComponent("PlayableDirector")
+        self.ModelAnimEnter = self.UiModelGo.transform:FindTransform("CamNearAnimation"):GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
         local panelRoleModel = self.UiModelGo.transform:FindTransform("PanelRoleModel")
         self.UiPanelRoleModel = XUiPanelRoleModel.New(panelRoleModel, self.Name, nil, true)
         self.ImgEffectHuanren = self.UiModelGo.transform:FindTransform("ImgEffectHuanren")

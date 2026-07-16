@@ -76,7 +76,7 @@ function XUiCoupleCombatMain:Refresh(isAutoScroll)
     local passCount, allCount = XDataCenter.FubenCoupleCombatManager.GetStageSchedule(chapterId)
     self.TxtProgress.text = string.format("%d/%d", passCount, allCount)
     if not self.ImgProgress then
-        self.ImgProgress = self.TxtProgress.transform.parent:GetChild(self.TxtProgress.transform.parent.childCount - 1):GetComponent("Image")
+        self.ImgProgress = self.TxtProgress.transform.parent:GetChild(self.TxtProgress.transform.parent.childCount - 1):GetComponent(typeof(CS.UnityEngine.UI.Image))
     end
     self.ImgProgress.fillAmount = passCount / allCount
 end

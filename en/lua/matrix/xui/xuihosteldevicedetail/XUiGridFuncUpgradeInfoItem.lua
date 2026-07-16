@@ -16,9 +16,9 @@ function XUiGridFuncUpgradeInfoItem:InitAutoScript()
 end
 
 function XUiGridFuncUpgradeInfoItem:AutoInitUi()
-    self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
-    self.TxtCurValue = self.Transform:Find("TxtCurValue"):GetComponent("Text")
-    self.TxtNextValue = self.Transform:Find("TxtNextValue"):GetComponent("Text")
+    self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtCurValue = self.Transform:Find("TxtCurValue"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtNextValue = self.Transform:Find("TxtNextValue"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiGridFuncUpgradeInfoItem:GetAutoKey(uiNode,eventName)

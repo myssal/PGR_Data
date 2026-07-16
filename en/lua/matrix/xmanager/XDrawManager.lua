@@ -888,28 +888,41 @@ XDrawManagerCreator = function()
             local groupRuleCfg = XDrawConfigs.GetDrawGroupRuleById(groupId)
             local groupName = groupRuleCfg and groupRuleCfg.TitleCN or ""
             local groupPriority = historyGroupInfo.Priority or 0
+            local groupSubTypes = historyGroupInfo.GroupSubTypes or {}
+            local hasOriginalOption = false
 
-            -- 真 Option：服务端 HistoryGroups 下发的 DrawGroupId，对应 GroupSubType=0 的历史入口
-            tableInsert(options, {
-                DrawGroupId = groupId,
-                GroupSubType = 0,
-                OptionKey = XDrawManager._MakeOptionKey(groupId, 0),
-                Name = groupName,
-                Priority = groupPriority,
-                IsExtraOption = false,
-            })
+            for _, groupSubType in ipairs(groupSubTypes) do
+                if groupSubType == 0 then
+                    hasOriginalOption = true
+                end
+            end
 
-            -- 假 Option：服务端 GroupSubTypes 下发子组类型，展示信息从 DrawExtraTagGroup 读取
-            for _, groupSubType in ipairs(historyGroupInfo.GroupSubTypes) do
-                local extraTagCfg = XDrawConfigs.GetDrawExtraTagGroupCfgById(groupSubType)
+            -- 普通入口只在服务端明确下发 GroupSubType=0 时展示
+            if hasOriginalOption then
                 tableInsert(options, {
                     DrawGroupId = groupId,
-                    GroupSubType = groupSubType,
-                    OptionKey = XDrawManager._MakeOptionKey(groupId, groupSubType),
-                    Name = extraTagCfg and extraTagCfg.Name or groupName,
-                    Priority = extraTagCfg and extraTagCfg.Priority or groupPriority,
-                    IsExtraOption = true,
+                    GroupSubType = 0,
+                    OptionKey = XDrawManager._MakeOptionKey(groupId, 0),
+                    Name = groupName,
+                    Priority = groupPriority,
+                    IsExtraOption = false,
                 })
+            end
+
+            -- 假 Option：服务端 GroupSubTypes 下发子组类型，展示信息从 DrawExtraTagGroup 读取
+            -- GroupSubType=0 已由上面的普通入口承载，服务端下发 0 时这里必须跳过，避免记录页出现同名重复项
+            for _, groupSubType in ipairs(groupSubTypes) do
+                if groupSubType > 0 then
+                    local extraTagCfg = XDrawConfigs.GetDrawExtraTagGroupCfgById(groupSubType)
+                    tableInsert(options, {
+                        DrawGroupId = groupId,
+                        GroupSubType = groupSubType,
+                        OptionKey = XDrawManager._MakeOptionKey(groupId, groupSubType),
+                        Name = extraTagCfg and extraTagCfg.Name or groupName,
+                        Priority = extraTagCfg and extraTagCfg.Priority or groupPriority,
+                        IsExtraOption = true,
+                    })
+                end
             end
         end
 

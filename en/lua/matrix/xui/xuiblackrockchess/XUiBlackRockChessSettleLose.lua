@@ -23,7 +23,7 @@ function XUiBlackRockChessSettleLose:InitUi()
     self.GridLoseTip.gameObject:SetActiveEx(false)
     self.TxtPeople.gameObject:SetActiveEx(false)
 
-    self.BtnLose = self.Transform:Find("SafeAreaContentPane/PanelLose/BtnLose"):GetComponent("Button")
+    self.BtnLose = self.Transform:Find("SafeAreaContentPane/PanelLose/BtnLose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
 end
 
 function XUiBlackRockChessSettleLose:InitCb()

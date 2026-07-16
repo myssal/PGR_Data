@@ -166,7 +166,7 @@ function XUiConnectingLineGame:UpdatePainting()
     local panelGrid = self.GridHead
     local gridSize = panelGrid.rect.size
     local gridLayoutGroup = self.BgGridLayout
-    local rectTransform = gridLayoutGroup:GetComponent("RectTransform")
+    local rectTransform = gridLayoutGroup:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local rect = rectTransform.rect
     local boardHeight = rect.height
     local offset = { X = -gridSize.x / 2, Y = boardHeight - gridSize.y / 2 }
@@ -676,7 +676,7 @@ function XUiConnectingLineGame:UpdateBackgroundSize()
     gridLayoutGroup.constraintCount = column
 
     ---@type UnityEngine.RectTransform
-    local rectTransform = gridLayoutGroup:GetComponent("RectTransform")
+    local rectTransform = gridLayoutGroup:GetComponent(typeof(CS.UnityEngine.RectTransform))
     CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform)
     local rect = rectTransform.rect
     local width = rect.width

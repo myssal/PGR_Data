@@ -80,6 +80,21 @@
         "Des": "Identical effects only apply once and cannot stack."
     },
     {
+        "Id": 27,
+        "Name": "Shield",
+        "Des": "When taking damage, consumes <color=#137D90><Icon=IconProtector|30|30|0.5/>Shield</color> to absorb an equal amount of damage. When both sides' <Icon=IconStamina|30|30|0.5/><color=#6F4877>Fighting Will</color> is depleted and a new Parry is about to begin, clears both sides' <color=#137D90><Icon=IconProtector|30|30|0.5/>Shield</color>."
+    },
+    {
+        "Id": 28,
+        "Name": "The Light of Dawn",
+        "Des": "When equipping any skill with <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> effect, activates special effect: each time an Active/Trigger/Parry/Counter skill is used, accumulates 10/15/20/20 <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> respectively."
+    },
+    {
+        "Id": 29,
+        "Name": "Dawnbreak Value",
+        "Des": "<color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> caps at 120. Each time <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> is full, depletes all <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> and unleashes <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight Unbound</color>: forcibly triggers the Trigger Skill in slot 1, ignoring its original activation conditions."
+    },
+    {
         "Id": 99,
         "Name": "Ignite",
         "Des": "When hit by enemy Skills, deal DMG equal to 10% Attack for every stack. Lasts indefinitely. Stacks infinitely."

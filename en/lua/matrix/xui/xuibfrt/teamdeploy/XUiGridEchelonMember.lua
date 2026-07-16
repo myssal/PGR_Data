@@ -88,16 +88,16 @@ function XUiGridEchelonMember:InitAutoScript()
 end
 
 function XUiGridEchelonMember:AutoInitUi()
-    self.BtnClick = self.Transform:Find("BtnClick"):GetComponent("Button")
+    self.BtnClick = self.Transform:Find("BtnClick"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelSlect = self.Transform:Find("PanelSlect")
-    self.ImgMask = self.Transform:Find("PanelSlect/ImgMask"):GetComponent("Image")
-    self.RImgRoleHead = self.Transform:Find("PanelSlect/ImgMask/RImgRoleHead"):GetComponent("RawImage")
-    self.TxtNowAbility = self.Transform:Find("PanelSlect/PanelNotPassCondition/TxtNowAbility"):GetComponent("Text")
+    self.ImgMask = self.Transform:Find("PanelSlect/ImgMask"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.RImgRoleHead = self.Transform:Find("PanelSlect/ImgMask/RImgRoleHead"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.TxtNowAbility = self.Transform:Find("PanelSlect/PanelNotPassCondition/TxtNowAbility"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelEmpty = self.Transform:Find("PanelEmpty")
     self.PanelColour = self.Transform:Find("PanelColour")
-    self.ImgYellow = self.Transform:Find("PanelColour/ImgYellow"):GetComponent("Image")
-    self.ImgBlue = self.Transform:Find("PanelColour/ImgBlue"):GetComponent("Image")
-    self.ImgRed = self.Transform:Find("PanelColour/ImgRed"):GetComponent("Image")
+    self.ImgYellow = self.Transform:Find("PanelColour/ImgYellow"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgBlue = self.Transform:Find("PanelColour/ImgBlue"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgRed = self.Transform:Find("PanelColour/ImgRed"):GetComponent(typeof(CS.UnityEngine.UI.Image))
     self.PanelLock = self.Transform:Find("PanelLock")
 end
 --endregion

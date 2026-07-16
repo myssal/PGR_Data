@@ -26,10 +26,10 @@ end
 function XUiGridFilterTagGroup:AutoInit()
     self.Button = self.Transform:GetComponent("XUiButton")
     self.PanelSelect = self.Transform:Find("PanelSelect")
-    self.TagName1 = self.Transform:Find("PanelNormal/TxtCategoryName"):GetComponent("Text")
-    self.TagName2 = self.Transform:Find("PanelSelect/TxtCategoryNameSelect"):GetComponent("Text")
-    self.Icon1 = self.Transform:Find("PanelNormal/Quality"):GetComponent("RawImage")
-    self.Icon2 = self.Transform:Find("PanelSelect/Quality"):GetComponent("RawImage")
+    self.TagName1 = self.Transform:Find("PanelNormal/TxtCategoryName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TagName2 = self.Transform:Find("PanelSelect/TxtCategoryNameSelect"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.Icon1 = self.Transform:Find("PanelNormal/Quality"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    self.Icon2 = self.Transform:Find("PanelSelect/Quality"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
 
     local tagName = XRoomCharFilterTipsConfigs.GetFilterTagName(self.Id)
     self.TagName1.text = tagName

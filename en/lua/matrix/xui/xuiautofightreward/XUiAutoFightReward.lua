@@ -90,15 +90,15 @@ function XUiAutoFightReward:InitAutoScript()
 end
 
 function XUiAutoFightReward:AutoInitUi()
-    self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent("Button")
+    self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelAutoFightReward = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward")
     self.PanelCharacters = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCharacters")
     self.PanelCommander = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander")
-    self.TxtLv = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander/TxtLv"):GetComponent("Text")
-    self.TxtExp = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander/TxtExp"):GetComponent("Text")
-    self.ImgExpBarBg = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander/ExpBar/ImgExpBarBg"):GetComponent("Image")
-    self.ImgExpBarReward = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander/ExpBar/ImgExpBarReward"):GetComponent("Image")
-    self.ImgExpBar = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander/ExpBar/ImgExpBar"):GetComponent("Image")
+    self.TxtLv = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander/TxtLv"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtExp = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander/TxtExp"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.ImgExpBarBg = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander/ExpBar/ImgExpBarBg"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgExpBarReward = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander/ExpBar/ImgExpBarReward"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgExpBar = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelCommander/ExpBar/ImgExpBar"):GetComponent(typeof(CS.UnityEngine.UI.Image))
     self.PanelItems = self.Transform:Find("SafeAreaContentPane/PanelAutoFightReward/PanelItems")
 end
 

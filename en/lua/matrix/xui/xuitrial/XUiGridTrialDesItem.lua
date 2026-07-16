@@ -22,7 +22,7 @@ function XUiGridTrialDesItem:InitAutoScript()
 end
 
 function XUiGridTrialDesItem:AutoInitUi()
-    -- self.TxtNameA = self.Transform:Find("TxtName"):GetComponent("Text")
+    -- self.TxtNameA = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiGridTrialDesItem:RegisterClickEvent(uiNode, func)

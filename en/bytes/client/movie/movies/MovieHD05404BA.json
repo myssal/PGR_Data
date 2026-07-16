@@ -3,14 +3,257 @@
         "Id": 1,
         "ActionId": 1,
         "Type": 101,
-        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Texture/Image/BgStory/BgStory1523.jpg"
         ]
     },
     {
         "Id": 2,
         "ActionId": 2,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 401,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            5068
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "This island has never mattered to the wider world. Resources are scarce, the trade routes pass elsewhere, and the terrain resists easy settlement. No power ever saw reason to trouble itself with this place."
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "But that very neglect became an open door. Those hungry for a new beginning packed their lives into small boats and braved the crossing, weathering one trial after another."
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "The days were punishing, yet the moment their feet touched this shore, hope took root—dreams of a future bright enough to justify all they had suffered."
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 306
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 101,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory968.png"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 304,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "They had no idea the island was already claimed. A deity dwelled here: the \"Great Conch\", the Great Conch God.",
+            "000000ff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -3,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 304,
+        "Params": [
+            "It was immense. Its shell alone ran the length of three ships.",
+            "000000ff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 304,
+        "Params": [
+            "After some time spent in wary conversation, the Great Conch revealed it had fled here in desperation.",
+            "000000ff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            1,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 304,
+        "Params": [
+            "For ages uncounted, it had kept a quiet vigil over humanity. But as people multiplied, they built their settlements right over its ancient resting places.",
+            "000000ff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -3,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 304,
+        "Params": [
+            "And still, it harbored no thought of vengeance.",
+            "000000ff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 304,
+        "Params": [
+            "It only withdrew, again and again, ceding ground to human ambition until this remote island became its final refuge.",
+            "000000ff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            1,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 304,
+        "Params": [
+            "At last, a pact was struck.",
+            "000000ff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -3,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 304,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "The Great Conch God offered its blessing, and under that quiet protection, the village found its footing and flourished.",
+            "000000ff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            "",
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
         "Type": 401,
         "Params": [
             1,
@@ -18,26 +261,3797 @@
         ]
     },
     {
-        "Id": 3,
-        "ActionId": 3,
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory539.jpg"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 401,
+        "Params": [
+            1,
+            7203
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "Helentine",
+            "And that is the legend of the Great Conch, the local deity, as told by the villager.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018264,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "What do you think, Commandant? Do you believe the Great Conch exists?",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018265,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 302,
+        "Params": [
+            "",
+            "It exists.",
+            30,
+            "It doesn't exist.",
+            34
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 217,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "I thought you would say that. I... also believe the Great Conch exists.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018266,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "NextActionId": 39,
+        "Type": 302,
+        "Params": [
+            "",
+            "I knew you'd think that.",
+            39
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "The ship that brought the villagers here could not have been too small. If we assume a minimum length of three meters per vessel, the Great Conch would measure approximately ten meters in total length. That is likely why you doubt its existence, Commandant.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018267,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 302,
+        "Params": [
+            "",
+            "And the talking part.",
+            36
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 217,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "That's fair. A talking aquatic creature from that era defies all known biological models. But even accounting for that... I believe the Great Conch was real.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018268,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "NextActionId": 40,
+        "Type": 302,
+        "Params": [
+            "",
+            "What makes you think that?",
+            40
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 217,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Everything has an origin. The stories people inherit are not purely empty. They are echoes. Distorted, perhaps, or embellished, but they begin with something. A prototype.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018269,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "The Sea Spirit that the islanders talk about, and all the beliefs surrounding it... they're the same way. The Sea Spirit is the sea itself, given voice and will. Then...",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018270,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 302,
+        "Params": [
+            "",
+            "So the Great Conch has a source too.",
+            43
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 217,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Yes. The mission briefing stated that culture cannot be preserved through surface-level understanding alone. I believe locating the Great Conch's origin would be worthwhile. It would mean something.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018271,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 217,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "The difficulty is the search. How do we find the origin of a story? Commandant, do you have any thoughts?",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018272,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 302,
+        "Params": [
+            "",
+            "Let's ask the villagers.",
+            48
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Helentine",
+            "A logical first step. That villager said he shared everything he knew. But others may hold different pieces.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018273,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 101,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory533.jpg"
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "Who better to ask about island matters than the people who live here? With a clear direction in mind, you and the Construct go door to door, gathering what the villagers know of the Great Conch."
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg4401_13.jpg"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 211,
+        "Params": [
+            1,
+            1021082,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 301,
+        "Params": [
+            1,
+            "Island Villager A",
+            "Hmm... the Great Conch? Doesn't ring a bell, sorry. Is that, like, some kind of giant Sea Spirit Conch or something?",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018274,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory731.jpg"
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 211,
+        "Params": [
+            2,
+            1021081,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 301,
+        "Params": [
+            1,
+            "Island Village Elder",
+            "Conch? Conches we got plenty of. Look up, we've even got those shells on our roofs...",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018275,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 213,
+        "Params": [
+            2,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 211,
+        "Params": [
+            1,
+            1021083,
+            1,
+            -400
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 301,
+        "Params": [
+            1,
+            "Island Villager B",
+            "Grandpa, not those conches! The Great Conch.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018276,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory751.jpg"
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 212,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 211,
+        "Params": [
+            3,
+            1021084,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 301,
+        "Params": [
+            1,
+            "Island Villager C",
+            "Oh, that. Yeah, I've heard people talk about it. But just, y'know... the story.",
+            103,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018277,
+            3,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory748.jpg"
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 212,
+        "Params": [
+            3,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 211,
+        "Params": [
+            1,
+            1021085,
+            1,
+            -400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 211,
+        "Params": [
+            2,
+            1021086,
+            1,
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 301,
+        "Params": [
+            1,
+            "Island Villager D",
+            "The Great Conch...? That's just old folks' talk. If there was really some giant snail out there big enough to feed everyone, our ancestors wouldn't have spent half their time starvin'.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018278,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Island Villager E",
+            "It's real. My aunt—she passed years back—she told me about it. Said the remains are still here somewhere. In the village.",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018279,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 212,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1330.jpg"
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 401,
+        "Params": [
+            1,
+            7187
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "But the plan meets reality soon enough. As with most whispered tales and half-remembered rumors, the Great Conch draws only blank looks from the majority of the villagers."
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Those few who have heard the name cannot say where the story began. And when it comes to the Great Conch's true nature, no one can provide an answer."
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            6
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 216,
+        "Params": [
+            1,
+            "AC_cszl",
+            "AC_cszl_blink"
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 301,
+        "Params": [
+            1,
+            "Helentine",
+            "Still, we did learn something important.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018280,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 302,
+        "Params": [
+            "",
+            "The Great Conch's remains are somewhere in the village.",
+            86
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "It could just be another layer of the legend. But investigations like this one... they need a little faith. Better to believe there's something and search for it, than to decide there's nothing and walk away.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018281,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 302,
+        "Params": [
+            "",
+            "So we search for the Great Conch's remains next?",
+            89
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 217,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "That's right. In most cases, significant remains are preserved and displayed. A museum, a shrine, some kind of facility.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018282,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 302,
+        "Params": [
+            "",
+            "The village doesn't have anything like that.",
+            92
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "Then the remains never left. They're still here, somewhere in the village itself.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018283,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 401,
+        "EndDelay": 300.0,
+        "Params": [
+            2,
+            13081710
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 104,
+        "Params": [
+            "250|50|-350",
+            0
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1523.jpg"
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 104,
+        "EndDelay": 1550.0,
+        "Params": [
+            "400|50|-350",
+            1.5
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Helentine turns as she speaks, her gaze settling on a nearby cliff top."
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 306
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1330.jpg"
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            1
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 216,
+        "Params": [
+            1,
+            "AC_cszl",
+            "AC_cszl_blink"
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "Helentine",
+            "Commandant, could we get to higher ground? I want to see this place from above.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018284,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 217,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Helentine",
+            "There are handrails. That's fortunate.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018285,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1523.jpg"
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 104,
+        "Params": [
+            "400|80|-350",
+            0
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "True to Helentine's suggestion, you circle around and start upward, only to find that this cliff doubles as a local tourist draw."
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Signs caution visitors at every turn, and chains hang along the route to provide some security. Yet the climb remains unforgiving. Moss coats the rock face, slick and treacherous underfoot."
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 302,
+        "Params": [
+            "",
+            "At least we made it up.",
+            115
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            1
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Helentine",
+            "And we can see the whole island from here. Commandant, let's look together. Keep an eye out for anything irregular. Any shape that doesn't quite belong.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018286,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1523.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 104,
+        "EndDelay": 1550.0,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1523.jpg"
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "This is the bold theory Helentine put forward before. The Great Conch's shell, she reasons, has either been swallowed by the ground or absorbed into another form entirely, rendering it invisible to the casual observer."
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 302,
+        "Params": [
+            "",
+            "(Look around)",
+            126
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 401,
+        "Params": [
+            2,
+            2915
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 401,
+        "Params": [
+            2,
+            903
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 104,
+        "EndDelay": 850.0,
+        "Params": [
+            "100|0|-100",
+            0.8
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 104,
+        "EndDelay": 850.0,
+        "Params": [
+            "-100|0|-100",
+            0.8
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "A sweep of the view from above offers nothing of the Great Conch. What comes instead is the sharp, briny breath of the sea breeze and a panorama of the island: the woods you passed through, the little boats beached along the shore, and the ordered lines of houses shaped by local tradition."
         ]
     },
     {
-        "Id": 4,
-        "ActionId": 4,
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Scattered below, villagers move with quiet purpose, readying for the festival and packing away their daily lives."
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 306
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1523.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 104,
+        "EndDelay": 1550.0,
+        "Params": [
+            "400|80|-350",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1523.jpg"
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 104,
+        "Params": [
+            "400|80|-350",
+            0
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 402,
+        "Params": [
+            2915
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 402,
+        "Params": [
+            903
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 302,
+        "Params": [
+            "",
+            "Won't be long before we say goodbye to this place.",
+            143
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            2
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Helentine",
+            "Yes. Soon, all of this will return to what you might call... \"nature without humans.\"",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018287,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 302,
+        "Params": [
+            "",
+            "Nature without humans?",
+            146
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 217,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "It's something a WGAA member told me during our travels. She said true nature vanished a long time ago. Everything we see now... it's what humanity made, after their struggle against nature.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018288,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Humans build houses to live in, raise animals for food, and reshape the wilderness until it fits them.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018289,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Even the woods we walked through earlier. The one that felt empty. That's still nature humans chose to leave behind. After reshaping everything else.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018290,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 217,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "So \"nature without humans\"... that's what true nature should be.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018291,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 302,
+        "Params": [
+            "",
+            "I can see what she means.",
+            154,
+            "That feels a bit narrow-minded.",
+            156
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "NextActionId": 158,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "I can see it, too. But people have to change their surroundings to survive. That's simply the reality we live in.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018292,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 217,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "Maybe. Artists tend to see things their own way. But... people have to change their surroundings to survive. That's simply the reality we live in.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018293,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 205,
+        "EndDelay": 500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.5,
+            0.5
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 401,
+        "Params": [
+            2,
+            2915
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 401,
+        "EndDelay": 500.0,
+        "Params": [
+            2,
+            979
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "The thought hangs for a moment, and in that pause, night claims the sky entirely. From below, the festival swells again—melodies rising, drums beating, wood crackling in the fires—and Helentine chooses this moment to speak again."
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 402,
+        "Params": [
+            2915
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            1
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 301,
+        "Params": [
+            1,
+            "Helentine",
+            "Well. It seems the Great Conch really didn't leave anything behind. I suppose this legend will have to stay what it is. Just words.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018294,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 217,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 216,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "AC_cszl",
+            "AC_cszl_blink",
+            "idle_to_AC_cszl"
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "If we keep searching, the festival will end before we find anything at all... Hm?",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018295,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 401,
+        "Params": [
+            2,
+            2576
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The words are barely finished when the lights begin to wake. One strand after another ignites across the village, their combined glow flooding the night with something close to moonlight."
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Colors dance, vivid and liquid, sliding across your skin, your clothes, and the Construct beside you. And in that sudden brightness, the truth reveals itself: atop every roof rests a fragment of shell, large and jagged, as though scattered there by design."
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 401,
+        "Params": [
+            2,
+            4278
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab"
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory731.jpg"
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.5,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 211,
+        "Params": [
+            2,
+            1021081,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 301,
+        "Params": [
+            1,
+            "Island Village Elder",
+            "Conch? Conches we got plenty of. Look up, we've even got those shells on our roofs...",
+            102,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018296,
+            2,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 212,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 401,
+        "Params": [
+            1,
+            7188
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1523.jpg"
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.5,
+            0
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "At that moment, something clicks. The memory of the old villager's voice surfaces unbidden. You and Helentine find each other's gaze in the same breath."
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            4
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "Helentine & 【kuroname】",
+            "Could it be...",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018297,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.5,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1195.jpg"
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "What was once a guardian deity now lives on as protective spirits perched above every home. The Great Conch's shell, broken apart and shared among the rooftops, remains in pieces both fragile and gentle."
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            4
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Helentine",
+            "So this is the truth behind the legend of the Great Conch.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018298,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 212,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 310,
+        "Params": [
+            "Piece by piece, you and Helentine assemble the borrowed shell fragments, slowly reconstructing the shape of the Great Conch as it once was.",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 310,
+        "EndDelay": 500.0,
+        "Params": [
+            "The creature must have been immense. Even the tiniest shard spans the width of Helentine's palm.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            1
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Helentine",
+            "Commandant, based on the data model, the next piece should be placed at a seventy-degree angle.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018299,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 302,
+        "Params": [
+            "",
+            "Alright.",
+            209
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 212,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "To record what you have discovered, you and Helentine locate an open stretch of beach nearby. There, with whatever materials come to hand, you set about recreating the silhouette of the Great Conch."
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 401,
+        "Params": [
+            2,
+            2635
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 104,
+        "EndDelay": 350.0,
+        "Params": [
+            "0|-15|-100",
+            0.3
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 401,
+        "Params": [
+            2,
+            2635
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 104,
+        "EndDelay": 350.0,
+        "Params": [
+            "0|15|-100",
+            0.3
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "You arrange the Sea Spirit Conches and gathered objects across the sand. Before long, the curved sweep of the Great Conch's shell begins to emerge."
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Yet the materials run out too soon. At the heart of the spiral, a gap remains."
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 306
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 211,
+        "Params": [
+            1,
+            1021088,
+            6
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Helentine",
+            "The rest is easy. We'll complete it ourselves. I made sure there was room in the center, enough for both of us to lie down.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018300,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 302,
+        "Params": [
+            "",
+            "So you left that space open on purpose?",
+            222
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 401,
+        "Params": [
+            2,
+            13081710
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 217,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 213,
+        "EndDelay": 450.0,
+        "Params": [
+            1,
+            0.4,
+            "",
+            -30,
+            -50
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 216,
+        "Params": [
+            1,
+            "AC_qs",
+            "AC_qs_blink",
+            "idle_to_AC_qs"
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "Come.",
+            101,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018301,
+            1,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 401,
+        "Params": [
+            2,
+            1087
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 213,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 104,
+        "EndDelay": 1050.0,
+        "Params": [
+            "0|30|-150",
+            1
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 212,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 104,
+        "EndDelay": 750.0,
+        "Params": [
+            "0|50|-200",
+            0.7
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 402,
+        "Params": [
+            6708
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 401,
+        "Params": [
+            2,
+            13081710
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 104,
+        "EndDelay": 750.0,
+        "Params": [
+            "0|35|-200",
+            0.7
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 401,
+        "Params": [
+            2,
+            2635
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Helentine's hand finds yours, and together you walk to the center of the Great Conch. She sinks onto the sand without a word, then gestures for you to lie beside her. The fine grains mold themselves around your bodies, holding you both in a soft, tender embrace."
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 104,
+        "EndDelay": 1050.0,
+        "Params": [
+            "0|-80|-200",
+            1
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 401,
+        "Params": [
+            2,
+            4276
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Overhead, the night presents its masterpiece—a sweep of brilliant stars, their light trembling and winking across an infinite dark."
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 401,
+        "Params": [
+            2,
+            6862
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 205,
+        "Params": [
+            1007,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "A drone appears, drifting lazily across the field of stars. For a moment, it blocks the light; then its camera comes alive. It pans slowly to you, to Helentine, to the Great Conch's outline etched into the sand, capturing everything without a sound."
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 211,
+        "Params": [
+            18,
+            1021088,
+            1,
+            355,
+            -75,
+            -400
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 301,
+        "Params": [
+            1,
+            "Helentine",
+            "Commandant. What we did today... Do you think it was meaningful?",
+            118,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018302,
+            18,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 212,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 302,
+        "Params": [
+            "",
+            "Why do you ask?",
+            252
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "The words are on your lips. You turn toward her—"
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab"
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6601_1.jpg"
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 104,
+        "Params": [
+            "250|-20|-200",
+            0
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 401,
+        "Params": [
+            1,
+            7185
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "Helentine",
+            "...",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018303
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "And she is already looking at you. Helentine's deep eyes hold yours, silent and still."
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her black hair sweeps across her forehead like a ribbon of moonlight, brushing past the corners of her eyes."
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 104,
+        "EndDelay": 1850.0,
+        "Params": [
+            "40|-20|-200",
+            1.8
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A porcelain coolness radiates from her skin, which glimmers faintly in the shifting dance of night and starlight. The bridge of her nose shines with the purity of new snow, and her lips are pressed together in a soft, unbroken calm.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 401,
+        "Params": [
+            2,
+            5966
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "At this distance, something kindles within you. A warmth rises, threading outward through every fiber of your being, until the salt-tinged breeze off the ocean fades into irrelevance."
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 205,
+        "EndDelay": 1550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6601_1.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Helentine",
+            "Everything in this world shifts and transforms. People change their surroundings just to survive. And in that act, they change what matters. What holds value.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018304
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Take the Great Conch, for example. Once, it was a revered guardian deity. Now... it's a fading memory. A few shells resting on rooftops. A story most people have already forgotten.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018305
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "Whatever is pure today... it fades. Whatever we fight to preserve... someday, it loses its meaning. Everything we did here. Tomorrow, it might all feel like nothing.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018306
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "...Commandant. Do you think change... is good?",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018307
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0,
+            0.8,
+            0.3
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "An inner conflict resolved is not the same as one vanished. The doubts remain, quieter perhaps, but present. Across this entire mission of cultural documentation and preservation, Helentine has found herself circling back to a single, stubborn question: what to make of change."
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "But she has already confessed to knowing the answer somewhere deep within. Now, as then, all she requires is a gentle push to let herself believe it."
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0.8,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 302,
+        "Params": [
+            "",
+            "No matter how much things change...",
+            279
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 302,
+        "Params": [
+            "",
+            "Some things will never lose their meaning.",
+            280
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "Hearing you say that... Commandant, it truly means something to me. You're right. The things we pour our hearts into... they don't just disappear. They hold meaning, and they always will.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018308
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 401,
+        "Params": [
+            2,
+            6569
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 205,
+        "EndDelay": 1050.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Helentine",
+            "But...",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018309
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 302,
+        "Params": [
+            "",
+            "Helentine?",
+            287
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Everything goes dark. A tender warmth blooms against your eyelids, carrying with it a subtle, sweet fragrance. Helentine has slipped her hands over your eyes, gentle and deliberate."
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 401,
+        "Params": [
+            2,
+            6569
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 205,
+        "EndDelay": 1050.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6601_1.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6601_1.jpg"
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Your hands rise instinctively to meet hers, but before they can, the darkness retreats. She is smiling—a soft, knowing curve of her lips—and her voice resumes, as gentle as her touch."
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "Type": 301,
+        "Params": [
+            "",
+            "Helentine",
+            "But still... I want to find something. Something that doesn't change. Something that proves... that our existence mattered, something that can stand against the passage of time.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018310
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "Type": 302,
+        "Params": [
+            "",
+            "What about everything we found today? Doesn't that count?",
+            295,
+            "What is it, then?",
+            296
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "NextActionId": 297,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "Even if we preserve them. Even if they last for a very long time. They'll still change, eventually. Time touches everything as it always does.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018311
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Helentine",
+            "What I'm looking for... it's right here with you.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018312
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "Type": 401,
+        "Params": [
+            2,
+            13081710
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "Type": 205,
+        "EndDelay": 1050.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Once again, her hands find your eyes, gentle and sure. The rustle of fabric grazing the sand drifts into your awareness, a quiet secret shared with the night."
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "Type": 401,
+        "Params": [
+            2,
+            6569
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The darkness holds you, and within it, only one sensation remains sharp: the delicate touch of her fingertips resting against your cheeks, impossibly tender."
+        ]
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "Type": 211,
+        "Params": [
+            18,
+            1021088,
+            7,
+            355,
+            -75,
+            -400
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "Type": 301,
+        "Params": [
+            1,
+            "Helentine",
+            "Commandant... No. I...",
+            118,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100018313,
+            18,
+            "",
+            "v460summer"
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 212,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 401,
+        "Params": [
+            2,
+            906
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 401,
+        "Params": [
+            2,
+            2624
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
         "Type": 301,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "And now there is only the tide, the rhythm of your own heart, and Helentine's tender words."
         ]
     }
 ]

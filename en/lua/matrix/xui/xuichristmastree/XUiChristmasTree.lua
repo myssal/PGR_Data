@@ -21,7 +21,7 @@ function XUiChristmasTree:OnAwake()
     self.DynamicTable:SetProxy(XUiOrnamentGrid)
     self.DynamicTable:SetDelegate(self)
     self.Camera = CS.XUiManager.Instance.UiCamera
-    self.RectTransform = self.Transform:GetComponent("RectTransform")
+    self.RectTransform = self.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
 end
 
 function XUiChristmasTree:OnEnable()
@@ -87,11 +87,11 @@ function XUiChristmasTree:InitUiView()
     for i, name in ipairs(self.ActTemplate.AttrName) do
         local scoreDetail = self.PanelScore:Find("panelScoreDetail/Score".. i)
         self.AttrViewList[i] = scoreDetail
-        scoreDetail:Find("TxtTitle"):GetComponent("Text").text = name
+        scoreDetail:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = name
 
         scoreDetail = self.PanelScoreEdit:Find("panelScoreDetail/Score".. i)
         self.AttrViewEditList[i] = scoreDetail
-        scoreDetail:Find("TxtTitle"):GetComponent("Text").text = name
+        scoreDetail:Find("TxtTitle"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = name
 
         local btnFilter = self.PanelFilter.transform:Find("BtnAttr".. i):GetComponent("XUiButton")
         self.BtnFilterList[i] = btnFilter
@@ -397,11 +397,11 @@ function XUiChristmasTree:RefreshView(lastGroup)
     local AttrValue = XDataCenter.ChristmasTreeManager.GetAttrValue()
     local AttrDelta = XDataCenter.ChristmasTreeManager.GetAttrDeltaValue()
     for i, attrScore in ipairs(self.InDressMode and self.AttrViewEditList or self.AttrViewList) do
-        local txtScore = attrScore:Find("TxtScore"):GetComponent("Text")
+        local txtScore = attrScore:Find("TxtScore"):GetComponent(typeof(CS.UnityEngine.UI.Text))
         txtScore.text = AttrValue[i]
         -- 仅显示子属性差值
         if i < #self.AttrViewList then
-            local txtDelta = attrScore:Find("TxtScorePlus"):GetComponent("Text")
+            local txtDelta = attrScore:Find("TxtScorePlus"):GetComponent(typeof(CS.UnityEngine.UI.Text))
             local value = AttrDelta[i]
             if value > 0 then
                 txtDelta.text = CSXTextManagerGetText("ChristmasTreeAttrDeltaPlus", value)
@@ -503,7 +503,7 @@ function XUiChristmasTree:SelectItem(index)
     if self.DragItem then
         return
     end
-    self.CloseBg = self.TreeGroup:Find("RawImage"):GetComponent("RawImage")
+    self.CloseBg = self.TreeGroup:Find("RawImage"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     local item = self.PlacePoint[index]
     if self.CurSelectGridIndex == index then
         self:OnCancelRemoveBtn()
