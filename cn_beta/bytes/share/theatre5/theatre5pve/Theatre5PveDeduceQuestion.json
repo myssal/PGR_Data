@@ -1,0 +1,702 @@
+[
+    {
+        "Id": 21000001,
+        "GroupId": 21000,
+        "Step": 1,
+        "Desc": "战争骑士的能力是什么？",
+        "ShowClueGroupId": 21001,
+        "AnswerClue": 2101,
+        "AnswerTip": "在先前多次的战斗中，渡边都展现出了召唤恶魔火枪的能力。",
+        "NormalWrongTip": "这并非战争骑士的能力。",
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 21000002,
+        "GroupId": 21000,
+        "Step": 2,
+        "Desc": "渡边和钢铁军团的关系是什么？",
+        "ShowClueGroupId": 21002,
+        "AnswerClue": 2102,
+        "AnswerTip": "之前渡边提到过，他的父亲“矛隼”曾是钢铁军团的统帅。",
+        "NormalWrongTip": "这不能直接表明渡边与钢铁军团的联系。",
+        "Info": "渡边能够召唤恶魔火枪。"
+    },
+    {
+        "Id": 21000003,
+        "GroupId": 21000,
+        "Step": 3,
+        "Desc": "渡边需要力量的理由？",
+        "ShowClueGroupId": 21003,
+        "AnswerClue": 2103,
+        "AnswerTip": "渡边需要我的力量去实现他的计划。",
+        "NormalWrongTip": "这不是渡边需要力量的理由。",
+        "Info": "渡边能够召唤恶魔火枪。\\n渡边的父亲曾是钢铁军团的统帅。"
+    },
+    {
+        "Id": 22000001,
+        "GroupId": 22000,
+        "Step": 1,
+        "Desc": "钢铁军团堕落的原因？",
+        "ShowClueGroupId": 22001,
+        "AnswerClue": 2203,
+        "AnswerTip": "圣堂控制了巴拉德，从而彻底执掌了钢铁军团。",
+        "NormalWrongTip": "还没有证据表明，天灾也可以腐化人类。",
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 22000002,
+        "GroupId": 22000,
+        "Step": 2,
+        "Desc": "钢铁军团近期的活动区域是？",
+        "ShowClueGroupId": 22002,
+        "AnswerClue": 2205,
+        "AnswerTip": "受控的钢铁军团毫无人性，在这里四处袭杀着人类。",
+        "NormalWrongTip": "目前还没有情报表示，军团曾出现在滚石谷。",
+        "Info": "钢铁军团被圣堂控制，堕落成了屠戮无辜的鹰犬。"
+    },
+    {
+        "Id": 22000003,
+        "GroupId": 22000,
+        "Step": 3,
+        "Desc": "钢铁军团最有可能朝哪个方向离开？",
+        "ShowClueGroupId": 22003,
+        "AnswerClue": 2202,
+        "AnswerTip": "很可能是圣堂为了让钢铁军团通过，才故意让天使避开这里。",
+        "NormalWrongTip": "钢铁军团的去向和这个无关。",
+        "Info": "钢铁军团被圣堂控制，堕落成了屠戮无辜的鹰犬。\\n钢铁军团近期曾出现在谢尔曼堡。"
+    },
+    {
+        "Id": 22000004,
+        "GroupId": 22000,
+        "Step": 4,
+        "Desc": "如何追上钢铁军团？",
+        "ShowClueGroupId": 22004,
+        "AnswerClue": 2206,
+        "AnswerTip": "先前被营救的旅行商人愿意借给我们马车。",
+        "NormalWrongTip": "这个对追击钢铁军团似乎没什么帮助。",
+        "SpWrongClues": [
+            2201
+        ],
+        "SpWrongTips": [
+            "显然没法指望一只鸟能带着两个人走。"
+        ],
+        "Info": "钢铁军团被圣堂控制，堕落成了屠戮无辜的鹰犬。\\n钢铁军团近期曾出现在谢尔曼堡。\\n钢铁军团可能会穿过滚石谷前往西部。"
+    },
+    {
+        "Id": 23000001,
+        "GroupId": 23000,
+        "Step": 1,
+        "Desc": "如今兵力不足，如何扩充队伍？",
+        "ShowClueGroupId": 23001,
+        "AnswerClue": 2304,
+        "AnswerTip": "吸收义军武装加入，就有机会对抗钢铁军团。",
+        "NormalWrongTip": "似乎不能直接成为我们的战力。",
+        "SpWrongClues": [
+            2301
+        ],
+        "SpWrongTips": [
+            "这想法是怎么从我脑子里冒出来的？"
+        ],
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 23000002,
+        "GroupId": 23000,
+        "Step": 2,
+        "Desc": "为什么无法强攻圣环要塞？",
+        "ShowClueGroupId": 23002,
+        "AnswerClue": 2306,
+        "AnswerTip": "强攻实在不是好选择，我们需要一个里应外合的计划。",
+        "NormalWrongTip": "这似乎对现状没有帮助。",
+        "SpWrongClues": [
+            2302
+        ],
+        "SpWrongTips": [
+            "听渡边说，使用圣环银弹需要充能，我们进攻时军团很难用上。"
+        ],
+        "Info": "我们需要联合义军武装，壮大队伍。"
+    },
+    {
+        "Id": 23000003,
+        "GroupId": 23000,
+        "Step": 3,
+        "Desc": "如何潜入圣环要塞，智取城门？",
+        "ShowClueGroupId": 23003,
+        "AnswerClue": 2303,
+        "AnswerTip": "如果能伪装成赏金猎人，或许可以光明正大地进入要塞。",
+        "NormalWrongTip": "这看起来不能帮助我们进入要塞。",
+        "Info": "我们需要联合义军武装，壮大队伍。\\n圣环要塞现在戒备森严，我们不能强攻。"
+    },
+    {
+        "Id": 23000004,
+        "GroupId": 23000,
+        "Step": 4,
+        "Desc": "潜入要塞后，还需要小心什么？",
+        "ShowClueGroupId": 23004,
+        "AnswerClue": 2301,
+        "AnswerTip": "铁殇的战斗力十分强悍，需要时刻提防他。",
+        "NormalWrongTip": "感觉这不是必须提防的事项。",
+        "SpWrongClues": [
+            2302
+        ],
+        "SpWrongTips": [
+            "听渡边说，使用圣环银弹需要充能，我们进攻时军团很难用上。"
+        ],
+        "Info": "我们需要联合义军武装，壮大队伍。\\n圣环要塞现在戒备森严，我们不能强攻。\\n似乎可以伪装成赏金猎人，从而混进钢铁要塞。"
+    },
+    {
+        "Id": 31000001,
+        "GroupId": 31000,
+        "Step": 1,
+        "Desc": "自己如何与死亡骑士结识？",
+        "ShowClueGroupId": 31001,
+        "AnswerClue": 3101,
+        "AnswerTip": "在记忆中，我用工兵铲与她缔结了契约。",
+        "NormalWrongTip": "不，我可不是通过这个认识她的。",
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 31000002,
+        "GroupId": 31000,
+        "Step": 2,
+        "Desc": "死亡骑士的真实身份是？",
+        "ShowClueGroupId": 31002,
+        "AnswerClue": 3102,
+        "AnswerTip": "她是恶魔领主，拥有死亡大君赐予的权柄。",
+        "NormalWrongTip": "不，这不是她的真实身份。",
+        "Info": "我用工兵铲在河滩挖出了昏迷已久的摆渡人，并将其刺入她的胸腔，与她缔结了契约。"
+    },
+    {
+        "Id": 31000003,
+        "GroupId": 31000,
+        "Step": 3,
+        "Desc": "死亡骑士为何要与圣堂为敌？",
+        "ShowClueGroupId": 31003,
+        "AnswerClue": 3103,
+        "AnswerTip": "听死亡骑士说，圣堂曾经夺走了她的列车。",
+        "NormalWrongTip": "这不是她与圣堂为敌的理由。",
+        "Info": "我用工兵铲在河滩挖出了昏迷已久的摆渡人，并将其刺入她的胸腔，与她缔结了契约。\\n缔结契约前，摆渡人是地狱的恶魔领主，受赐于死亡大君。"
+    },
+    {
+        "Id": 32000001,
+        "GroupId": 32000,
+        "Step": 1,
+        "Desc": "恶魔的起源是？",
+        "ShowClueGroupId": 32001,
+        "AnswerClue": 3201,
+        "AnswerTip": "在转世的过程中，“堕落”的灵魂进入地狱成为了恶魔。",
+        "NormalWrongTip": "恶魔可不是由此而来。",
+        "SpWrongClues": [
+            3206
+        ],
+        "SpWrongTips": [
+            "魔鬼是魔鬼，恶魔是恶魔，这是两个不同的种族。"
+        ],
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 32000002,
+        "GroupId": 32000,
+        "Step": 2,
+        "Desc": "如今灵魂为何无法进入地狱？",
+        "ShowClueGroupId": 32002,
+        "AnswerClue": 3202,
+        "AnswerTip": "死亡大君的死亡律法被隔绝于世，人世的灵魂无法正常流转。",
+        "NormalWrongTip": "灵魂并非被这东西阻挡才无法进入地狱。",
+        "SpWrongClues": [
+            3204
+        ],
+        "SpWrongTips": [
+            "审判庭恐怕最希望送别人下地狱。"
+        ],
+        "Info": "据说，在灵魂转世的过程里，生前犯下罪行的灵魂堕入地狱，成为地狱的恶魔。"
+    },
+    {
+        "Id": 32000003,
+        "GroupId": 32000,
+        "Step": 3,
+        "Desc": "如今谁在统治地狱？",
+        "ShowClueGroupId": 32003,
+        "AnswerClue": 3203,
+        "AnswerTip": "无法杀死彼此的恶魔领主统治着地狱，进行着永无止境的战争。",
+        "NormalWrongTip": "地狱真的是由此主宰吗？",
+        "Info": "据说，在灵魂转世的过程里，生前犯下罪行的灵魂堕入地狱，成为地狱的恶魔。\\n死亡大君被至高天打入万魔殿中，使得生死律法隔绝于世，自此生死的流转失去了秩序，人间灵魂无法流转，只能沦为活死人。"
+    },
+    {
+        "Id": 33000001,
+        "GroupId": 33000,
+        "Step": 1,
+        "Desc": "海妲魔女的能力是？",
+        "ShowClueGroupId": 33001,
+        "AnswerClue": 3301,
+        "AnswerTip": "海妲魔女能使用自己的能力，将魔堡塑造成复杂多变的迷宫。",
+        "NormalWrongTip": "海妲魔女的能力并非如此。",
+        "SpWrongClues": [
+            3304
+        ],
+        "SpWrongTips": [
+            "不对，秘法门是混沌门使的能力。"
+        ],
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 33000002,
+        "GroupId": 33000,
+        "Step": 2,
+        "Desc": "魔女拖延时间的目的是？",
+        "ShowClueGroupId": 33002,
+        "AnswerClue": 3302,
+        "AnswerTip": "海妲魔女试图拖延时间，等待膨胀的欧米伽卵孵化完成。",
+        "NormalWrongTip": "拖延时间为了这个？不太合理。",
+        "SpWrongClues": [
+            3306
+        ],
+        "SpWrongTips": [
+            "如果她目的真有这么单纯就好了……"
+        ],
+        "Info": "在海妲魔女能力的影响下，魔堡变成了一座复杂的迷宫，又是拥有了自己的意识一般，不断尝试着阻拦我们前进。"
+    },
+    {
+        "Id": 33000003,
+        "GroupId": 33000,
+        "Step": 3,
+        "Desc": "欧米伽卵会孵化出什么？",
+        "ShowClueGroupId": 33003,
+        "AnswerClue": 3303,
+        "AnswerTip": "“那卵绽放时，将洗涤地狱的污秽。未来与过去的死者，都将重获新生。”",
+        "NormalWrongTip": "卵应该不能孵化出这个东西。",
+        "SpWrongClues": [
+            3301
+        ],
+        "SpWrongTips": [
+            "圣堂这样大张旗鼓，不可能只是为了给她变出一个新的魔堡。"
+        ],
+        "Info": "在海妲魔女能力的影响下，魔堡变成了一座复杂的迷宫，又是拥有了自己的意识一般，不断尝试着阻拦我们前进。\\n她之所以这么做，应该是为了拖延我们的时间，等待不断膨胀的欧米伽卵孵化。"
+    },
+    {
+        "Id": 41000001,
+        "GroupId": 41000,
+        "Step": 1,
+        "Desc": "万事现在的身份是？",
+        "ShowClueGroupId": 41001,
+        "AnswerClue": 4101,
+        "AnswerTip": "万事是一位瘟疫医生。",
+        "NormalWrongTip": "不，这不是他的真实身份。",
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 41000002,
+        "GroupId": 41000,
+        "Step": 2,
+        "Desc": "万事是怎么与我认识的？",
+        "ShowClueGroupId": 41002,
+        "AnswerClue": 4102,
+        "AnswerTip": "我在活祭仪式现场发现万事倒在那里。",
+        "NormalWrongTip": "不，这不是我和他结识的缘由。",
+        "Info": "我在和身为瘟疫医生的万事一起行动。"
+    },
+    {
+        "Id": 41000003,
+        "GroupId": 41000,
+        "Step": 3,
+        "Desc": "万事与我签订契约的契机是？",
+        "ShowClueGroupId": 41003,
+        "AnswerClue": 4103,
+        "AnswerTip": "万事差点成为卡尔克萨仪式的被害者，为了拯救他，我和他结下了血契。",
+        "NormalWrongTip": "这跟契约没有联系。",
+        "SpWrongClues": [
+            4105
+        ],
+        "SpWrongTips": [
+            "万事身上没有蝗虫造成的创伤。"
+        ],
+        "Info": "我在和身为瘟疫医生的万事一起行动。我们之所以相识，是我在活祭现场发现并且救下了万事。"
+    },
+    {
+        "Id": 42000001,
+        "GroupId": 42000,
+        "Step": 1,
+        "Desc": "连环杀人案的死者死因是？",
+        "ShowClueGroupId": 42001,
+        "AnswerClue": 4201,
+        "AnswerTip": "根据尸检记录，这些人都死于喉部放血。",
+        "NormalWrongTip": "这不是死者的死因。",
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 42000002,
+        "GroupId": 42000,
+        "Step": 2,
+        "Desc": "有没有什么东西能揭示凶手的身份？",
+        "ShowClueGroupId": 42002,
+        "AnswerClue": 4202,
+        "AnswerTip": "放在祭坛上的木雕揭示了凶手的身份。",
+        "NormalWrongTip": "这不能直接指向凶手的身份。",
+        "SpWrongClues": [
+            4205
+        ],
+        "SpWrongTips": [
+            "药草在很多地方都能采到，应该还有更直接的证据。"
+        ],
+        "Info": "尸检记录显示，这些连环杀人案的死者都被划开喉咙，放血致死。"
+    },
+    {
+        "Id": 42000003,
+        "GroupId": 42000,
+        "Step": 3,
+        "Desc": "这些案件之间有没有什么联系？",
+        "ShowClueGroupId": 42003,
+        "AnswerClue": 4203,
+        "AnswerTip": "将案件的发生地在地图上逐一链接起来，似乎能组成一个巨大的五角星。",
+        "NormalWrongTip": "应该还有更直接的线索揭示凶手的目的。",
+        "Info": "尸检记录显示，这些连环杀人案的死者都被划开喉咙，放血致死。杀死他们的人和留下木雕的人，都应当是同一批部落民。"
+    },
+    {
+        "Id": 43000001,
+        "GroupId": 43000,
+        "Step": 1,
+        "Desc": "这些活死人生前的身份是？",
+        "ShowClueGroupId": 43001,
+        "AnswerClue": 4301,
+        "AnswerTip": "尸体身上共同的特殊徽记象征着他们的身份和信仰。",
+        "NormalWrongTip": "应该还有更直接的证据可以指向死者的身份。",
+        "SpWrongClues": [
+            4304
+        ],
+        "SpWrongTips": [
+            "很接近了，但光凭一个故事还不足以锁定他们的身份。"
+        ],
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 43000002,
+        "GroupId": 43000,
+        "Step": 2,
+        "Desc": "死者丧生于什么原因？",
+        "ShowClueGroupId": 43002,
+        "AnswerClue": 4302,
+        "AnswerTip": "他们死于自尽，凶器是散落在地上的匕首。",
+        "NormalWrongTip": "不，应当现场就有更明显的凶器。",
+        "SpWrongClues": [
+            4303
+        ],
+        "SpWrongTips": [
+            "据万事所说，药草香中有致幻成分，但并不致死。"
+        ],
+        "Info": "这些活死人，生前都是部落民。"
+    },
+    {
+        "Id": 43000003,
+        "GroupId": 43000,
+        "Step": 3,
+        "Desc": "现场是否有操办仪式之人的线索？",
+        "ShowClueGroupId": 43003,
+        "AnswerClue": 4303,
+        "AnswerTip": "仍然有特殊的草药香弥散在四周，凶手应该还在附近。",
+        "NormalWrongTip": "不，应当还有一些更为直接的证据。",
+        "SpWrongClues": [
+            4305
+        ],
+        "SpWrongTips": [
+            "烬土边疆上没有人真的目睹过巨人现身，还是不要将传说故事考虑在内吧。"
+        ],
+        "Info": "这些活死人，生前都是部落民。他们甚至是出于自愿，为活祭仪式献上了生命。"
+    },
+    {
+        "Id": 51000001,
+        "GroupId": 51000,
+        "Step": 1,
+        "Desc": "我在哪里与莉莉丝结识的？",
+        "ShowClueGroupId": 51001,
+        "AnswerClue": 5101,
+        "AnswerTip": "莉莉丝赢过无数次人间的赌局，却因为意外栽在了圣堂的牌局上。",
+        "NormalWrongTip": "这不是相遇时的情况。",
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 51000002,
+        "GroupId": 51000,
+        "Step": 2,
+        "Desc": "莉莉丝参与的博弈是？",
+        "ShowClueGroupId": 51002,
+        "AnswerClue": 5102,
+        "AnswerTip": "莉莉丝自称自己和拉斐尔夫人有血海深仇，但这背后似乎另有隐情。",
+        "NormalWrongTip": "莉莉丝当时没有参与这样的博弈。",
+        "SpWrongClues": [
+            5104
+        ],
+        "SpWrongTips": [
+            "她不会参与如此浅显的赌局。"
+        ],
+        "Info": "我曾在一场圣堂牌局结束后找到了濒死的莉莉丝。"
+    },
+    {
+        "Id": 51000003,
+        "GroupId": 51000,
+        "Step": 3,
+        "Desc": "拉斐尔夫人和莉莉丝争夺的目标是？",
+        "ShowClueGroupId": 51003,
+        "AnswerClue": 5103,
+        "AnswerTip": "莉莉丝似乎因为追查玛门财宝的下落被拉斐尔夫人灭口。",
+        "NormalWrongTip": "不，她们争夺的是别的事物。",
+        "Info": "我曾在一场圣堂牌局结束后找到了濒死的莉莉丝。她告诉我，她识破了天使长的出千而被灭口，但这背后似乎另有隐情。"
+    },
+    {
+        "Id": 52000001,
+        "GroupId": 52000,
+        "Step": 1,
+        "Desc": "拉斐尔夫人近期的动向是？",
+        "ShowClueGroupId": 52001,
+        "AnswerClue": 5201,
+        "AnswerTip": "拉斐尔夫人派手下在城镇中四处“回收”金币，挖掘线索，似乎另有所图。",
+        "NormalWrongTip": "这件事是他们所为的一部分，但不足以概况全部。",
+        "SpWrongClues": [
+            5203
+        ],
+        "SpWrongTips": [
+            "只有一部分天使在为此行动。"
+        ],
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 52000002,
+        "GroupId": 52000,
+        "Step": 2,
+        "Desc": "拉斐尔夫人的下一处目标是？",
+        "ShowClueGroupId": 52002,
+        "AnswerClue": 5202,
+        "AnswerTip": "只要占有宝窟，似乎就能完成圣堂下达于拉斐尔夫人的使命。",
+        "NormalWrongTip": "这恐怕不能协助拉斐尔夫人完成目的。",
+        "Info": "拉斐尔夫人因为某个原因，必须占有玛门的宝藏。"
+    },
+    {
+        "Id": 52000003,
+        "GroupId": 52000,
+        "Step": 3,
+        "Desc": "拉斐尔夫人为何还要安排手下反复来袭？",
+        "ShowClueGroupId": 52003,
+        "AnswerClue": 5203,
+        "AnswerTip": "尽管已扫荡了不少钱财，但天使们仍对我们穷追不放，或许是别有所图。",
+        "NormalWrongTip": "这个理由还不够充分。",
+        "Info": "拉斐尔夫人因为某个原因，必须占有玛门的宝藏。无归城主座空缺，而她具有占据其中财富所需的钥匙。"
+    },
+    {
+        "Id": 53000001,
+        "GroupId": 53000,
+        "Step": 1,
+        "Desc": "眼前的幻境由什么组成？",
+        "ShowClueGroupId": 53001,
+        "AnswerClue": 5301,
+        "AnswerTip": "这些受困者乐此不疲地满足自己的愿望，甚至不愿离开幻境。",
+        "NormalWrongTip": "幻境中还有其它存在。",
+        "SpWrongClues": [
+            5304
+        ],
+        "SpWrongTips": [
+            "幻境中不止存在死物。"
+        ],
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 53000002,
+        "GroupId": 53000,
+        "Step": 2,
+        "Desc": "有没有离开幻境的线索？",
+        "ShowClueGroupId": 53002,
+        "AnswerClue": 5302,
+        "AnswerTip": "顺着纸鹤前进，也许就能找到答案。",
+        "NormalWrongTip": "不，还有指向性更明确的事物。",
+        "SpWrongClues": [
+            5305
+        ],
+        "SpWrongTips": [
+            "滞留在此的人不仅不愿意走，甚至还在给我们当导游。"
+        ],
+        "Info": "受欲望所诱惑的人们在幻境之中徘徊。"
+    },
+    {
+        "Id": 53000003,
+        "GroupId": 53000,
+        "Step": 3,
+        "Desc": "纸鹤是谁留下的？",
+        "ShowClueGroupId": 53003,
+        "AnswerClue": 5303,
+        "AnswerTip": "放置这些纸鹤的，似乎是前任黄金之王。",
+        "NormalWrongTip": "应该能将答案缩小至特定的人。",
+        "SpWrongClues": [
+            5306
+        ],
+        "SpWrongTips": [
+            "这位创造者仍然留在幻境中。"
+        ],
+        "Info": "受欲望所诱惑的人们在幻境之中徘徊。路上留着很多白色的纸鹤，据无名幽灵所说，顺着纸鹤往前走就能找到离开幻境的方法。"
+    },
+    {
+        "Id": 61000001,
+        "GroupId": 61000,
+        "Step": 1,
+        "Desc": "该由哪些人突袭圣堂？",
+        "ShowClueGroupId": 61001,
+        "AnswerClue": 6101,
+        "AnswerTip": "己方最强战力构成精锐小队，不论是整备队伍还是实施突围都足够高效。",
+        "NormalWrongTip": "应该有更适合的战力。",
+        "SpWrongClues": [
+            6104
+        ],
+        "SpWrongTips": [
+            "规模庞大的军队不适合进行突袭作战。"
+        ],
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 61000002,
+        "GroupId": 61000,
+        "Step": 2,
+        "Desc": "突袭队伍如何登上圣堂？",
+        "ShowClueGroupId": 61002,
+        "AnswerClue": 6102,
+        "AnswerTip": "驾驶地狱列车，快速接近圣堂。",
+        "NormalWrongTip": "这份支持不足以令我们登上圣堂。",
+        "SpWrongClues": [
+            6103
+        ],
+        "SpWrongTips": [
+            "这个想法未免过于异想天开了。"
+        ],
+        "Info": "由四骑士与灰鸦构成与圣堂决战的精锐小队。"
+    },
+    {
+        "Id": 61000003,
+        "GroupId": 61000,
+        "Step": 3,
+        "Desc": "登上圣堂后，如何对战坐镇其中的“天使长”？",
+        "ShowClueGroupId": 61003,
+        "AnswerClue": 6103,
+        "AnswerTip": "圣环巨炮通过发射银弹，可以对“天使长”造成致命伤。",
+        "NormalWrongTip": "这不一定能制造致命一击。",
+        "SpWrongClues": [
+            6101
+        ],
+        "SpWrongTips": [
+            "“瘟疫”与“饥荒”曾完成过类似壮举，但他们如今无法使用对应的力量。"
+        ],
+        "Info": "由四骑士与灰鸦构成与圣堂决战的精锐小队。通过驾驶地狱列车进入圣堂，随后展开战斗。"
+    },
+    {
+        "Id": 71000001,
+        "GroupId": 71000,
+        "Step": 1,
+        "Desc": "当下身在何处？",
+        "ShowClueGroupId": 71001,
+        "AnswerClue": 7101,
+        "AnswerTip": "看起来是涅缇娅利用她的双重权能，制造出的特殊世界。",
+        "NormalWrongTip": "应该有更明确地指出特殊之处的证据。",
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 71000002,
+        "GroupId": 71000,
+        "Step": 2,
+        "Desc": "涅缇娅想让我看到什么？",
+        "ShowClueGroupId": 71002,
+        "AnswerClue": 7102,
+        "AnswerTip": "涅缇娅将她的回忆以幻境的形式展示在我面前，也许是希望我明白些什么。",
+        "NormalWrongTip": "此处远比梦境更清晰。",
+        "Info": "这个世界应当是由涅缇娅的回忆构建而成的。"
+    },
+    {
+        "Id": 71000003,
+        "GroupId": 71000,
+        "Step": 3,
+        "Desc": "出口……在哪？",
+        "ShowClueGroupId": 71003,
+        "AnswerClue": 7103,
+        "AnswerTip": "无形的边界将我困在了此处，看来现在必须按照涅缇娅的意愿行动。",
+        "NormalWrongTip": "或许应当将这里的特殊情况作为切入点。",
+        "Info": "这个世界应当是由涅缇娅的回忆构建而成的。\\n她将自己的回忆以幻境的形式展示在我面前，也许是希望我明白些什么。"
+    },
+    {
+        "Id": 72000001,
+        "GroupId": 72000,
+        "Step": 1,
+        "Desc": "在过去，涅缇娅是一个邪恶之人吗？",
+        "ShowClueGroupId": 72001,
+        "AnswerClue": 7201,
+        "AnswerTip": "她曾无偿地教导孩子们，也因此与村民交好，这些行动不完全是伪善。",
+        "NormalWrongTip": "还有更多人对涅缇娅当时的行为做出过反应。",
+        "SpWrongClues": [
+            7202
+        ],
+        "SpWrongTips": [
+            "在当时的情境下，这反而是构建欲加之罪的道具。"
+        ],
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 72000002,
+        "GroupId": 72000,
+        "Step": 2,
+        "Desc": "在过去，涅缇娅是一个良善之人吗？",
+        "ShowClueGroupId": 72002,
+        "AnswerClue": 7202,
+        "AnswerTip": "身为恶魔的她，在危机出现的时候，也呈现了凶暴的反应。",
+        "NormalWrongTip": "涅缇娅此时并未参与其中。",
+        "Info": "涅缇娅并非绝对的恶徒。"
+    },
+    {
+        "Id": 72000003,
+        "GroupId": 72000,
+        "Step": 3,
+        "Desc": "在过去，是什么改变了她的灵魂？",
+        "ShowClueGroupId": 72003,
+        "AnswerClue": 7203,
+        "AnswerTip": "那些曾在她生命中留下足迹的人类们，潜移默化地改变了她。",
+        "NormalWrongTip": "应该有更直接的影响因素。",
+        "Info": "涅缇娅并非绝对的恶徒，但也不是彻底的良善之人。"
+    },
+    {
+        "Id": 73000001,
+        "GroupId": 73000,
+        "Step": 1,
+        "Desc": "灾变后，涅缇娅以什么为目标行动？",
+        "ShowClueGroupId": 73001,
+        "AnswerClue": 7301,
+        "AnswerTip": "她想要成为新世界的神。",
+        "NormalWrongTip": "不，会有指向性更明确的线索。",
+        "SpWrongClues": [
+            7305
+        ],
+        "SpWrongTips": [
+            "现在看来，利用这个任务反而成了她实现目的的必要过程。"
+        ],
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 73000002,
+        "GroupId": 73000,
+        "Step": 2,
+        "Desc": "涅缇娅是为何走上这条道路的？",
+        "ShowClueGroupId": 73002,
+        "AnswerClue": 7302,
+        "AnswerTip": "她想要一个绝对公平的世界。",
+        "NormalWrongTip": "这尚不足以塑造信念。",
+        "SpWrongClues": [
+            7306
+        ],
+        "SpWrongTips": [
+            "他俩之间倒不至于有如此强劲的信念与羁绊。"
+        ],
+        "Info": "涅缇娅想要成为新世界的神。"
+    },
+    {
+        "Id": 73000003,
+        "GroupId": 73000,
+        "Step": 3,
+        "Desc": "为什么她对“绝对公平”的世界如此执着？",
+        "ShowClueGroupId": 73003,
+        "AnswerClue": 7303,
+        "AnswerTip": "她曾尝试通过“模仿”来成为一个好人，但命运对此报予否定。",
+        "NormalWrongTip": "应该有与她的信念更相关的人或物。",
+        "Info": "涅缇娅想要成为新世界的神，并塑造一个绝对公平的世界。"
+    }
+]

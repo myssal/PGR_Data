@@ -1,0 +1,100 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "Name": "向着未启之美",
+        "Title": "向着未启之美",
+        "Content": "完成前置任务，即可解锁空中花园更多丰富内容。",
+        "Priority": 1,
+        "ShowReward": 2002,
+        "BgPic": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldNews/UiBigWorldPopupNewsBg10.png",
+        "TextDialogId": 1001,
+        "Params": [
+            2002,
+            7001
+        ]
+    },
+    {
+        "Id": 2,
+        "Type": 2,
+        "Name": "冰心潜影",
+        "Title": "冰心潜影",
+        "Content": "冰川裂隙吞噬晨曦，冰心的暗影已隐秘蛰伏，空中花园的穹顶之下，一场危机正暗流涌动。",
+        "Priority": 2,
+        "ShowReward": 2001,
+        "SpineBanner": "Assets/Product/Ui/Spine/BigWorld/Common/PopuNews/V42UiBigWorldPopupNews_Lusaita_b.prefab",
+        "SkipId": 200106,
+        "Params": [
+            1002
+        ],
+        "PreConditions": [
+            50002053
+        ],
+        "PreSkipIds": [
+            200105
+        ]
+    },
+    {
+        "Id": 3,
+        "Type": 2,
+        "Name": "归航与启程",
+        "Title": "归航与启程",
+        "Content": "跨越劫难后，军部准备向所有奋战过的人们颁发勋章。整理装束，以毕业生代表的身份再度踏入法奥斯吧。",
+        "Priority": 3,
+        "ShowReward": 2003,
+        "ShowTimeId": 47001,
+        "ShowCountDown": 3801600,
+        "ShowTimeRewardTitle": "限时完成任务",
+        "ShowTimeRewardContent": "即可领取指挥官服饰",
+        "ShowTimeRewardTip": "限时领取将于2026/07/16 05:00截止",
+        "TagHideCondition": 50003202,
+        "EarlyAccessCondition": 50003203,
+        "BgPic": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldNews/UiBigWorldPopupNewsBg109.png",
+        "SkipId": 200122,
+        "RewardShowSkipId": 1204,
+        "TaskGroupId": 701,
+        "IsSpecial": true,
+        "CustomParamId": 2001,
+        "EarlyAccessTextDialogId": 1002,
+        "EarlyAccessSkipIds": [
+            200121
+        ],
+        "Params": [
+            7003
+        ],
+        "PreConditions": [
+            50003206
+        ],
+        "PreSkipIds": [
+            200121
+        ]
+    },
+    {
+        "Id": 4,
+        "Type": 2,
+        "Name": "归航与启程",
+        "Title": "归航与启程",
+        "Content": "跨越劫难后，军部准备向所有奋战过的人们颁发勋章。整理装束，以毕业生代表的身份再度踏入法奥斯吧。",
+        "Priority": 4,
+        "ShowReward": 2003,
+        "ShowTimeId": 47003,
+        "EarlyAccessCondition": 50003203,
+        "BgPic": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldNews/UiBigWorldPopupNewsBg109.png",
+        "SkipId": 200122,
+        "RewardShowSkipId": 1204,
+        "CustomParamId": 2001,
+        "EarlyAccessTextDialogId": 1002,
+        "EarlyAccessSkipIds": [
+            200121
+        ],
+        "Params": [
+            7003
+        ],
+        "PreConditions": [
+            50003206
+        ],
+        "PreSkipIds": [
+            200121
+        ]
+    }
+]

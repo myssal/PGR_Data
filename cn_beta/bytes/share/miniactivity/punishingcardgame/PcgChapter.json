@@ -1,0 +1,83 @@
+[
+    {
+        "Id": 1,
+        "ActivityId": 1,
+        "Name": "征途之启",
+        "Title": "教学章节1",
+        "Type": 1,
+        "StageIds": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ],
+        "CharacterUnlockIds": [
+            1,
+            2,
+            3
+        ],
+        "BgIcon": "Assets/Product/Texture/Image/UiPcg/UiPcgStageBg01Bt.png"
+    },
+    {
+        "Id": 2,
+        "ActivityId": 1,
+        "Name": "涂鸦艺术",
+        "Title": "挑战章节1",
+        "LockTips": "通关征途之启解锁",
+        "Type": 2,
+        "ChallengeStageId": 14,
+        "StageIds": [
+            10,
+            11,
+            12,
+            13
+        ],
+        "CharacterUnlockIds": [
+            4,
+            5,
+            6
+        ],
+        "BgIcon": "Assets/Product/Texture/Image/UiPcg/UiPcgStageBg02Bt.png"
+    },
+    {
+        "Id": 3,
+        "ActivityId": 1,
+        "Name": "苦刑之旅",
+        "Title": "挑战章节2",
+        "LockTips": "通关涂鸦艺术解锁",
+        "Type": 2,
+        "ChallengeStageId": 24,
+        "StageIds": [
+            20,
+            21,
+            22,
+            23
+        ],
+        "CharacterUnlockIds": [
+            7,
+            8,
+            9
+        ],
+        "BgIcon": "Assets/Product/Texture/Image/UiPcg/UiPcgStageBg03Bt.png"
+    },
+    {
+        "Id": 4,
+        "ActivityId": 1,
+        "Name": "终末展览",
+        "Title": "挑战章节3",
+        "LockTips": "通关苦刑之旅解锁",
+        "Type": 2,
+        "ChallengeStageId": 34,
+        "StageIds": [
+            30,
+            31,
+            32,
+            33
+        ],
+        "BgIcon": "Assets/Product/Texture/Image/UiPcg/UiPcgStageBg04Bt.png"
+    }
+]

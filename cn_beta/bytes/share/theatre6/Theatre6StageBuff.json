@@ -1,0 +1,1205 @@
+[
+    {
+        "Id": 1,
+        "Name": "淬心凝神",
+        "Desc": "初始获得1个<Icon=IconAnger|45|45|0.5/>怒火技能",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon23.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 5,
+        "BuffEffectParams": [
+            1
+        ],
+        "DurationType": 5,
+        "DeathType": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 2,
+        "Name": "刻印叠锋",
+        "Desc": "每次获得60个<Icon=IconGood01|45|45|0.5/>尘封异兆时，<Icon=IconAttr01|45|45|0.5/>攻击+1",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon09.png",
+        "BuffTriggerType": 2,
+        "BuffTriggerParams": [
+            1,
+            60
+        ],
+        "BuffEffectType": 7,
+        "BuffEffectParams": [
+            1,
+            1
+        ],
+        "DurationType": 1,
+        "DeathType": 2,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 99
+    },
+    {
+        "Id": 3,
+        "Name": "证念存形",
+        "Desc": "每完成1个任务，<Icon=IconAttr02|45|45|0.5/>生命+500",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon25.png",
+        "BuffTriggerType": 11,
+        "BuffEffectType": 7,
+        "BuffEffectParams": [
+            2,
+            500
+        ],
+        "DurationType": 1,
+        "DeathType": 2,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 3
+    },
+    {
+        "Id": 4,
+        "Name": "锋芒淬炼",
+        "Desc": "初始获得1个<Icon=IconBurning|45|45|0.5/>点燃技能",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon23.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 5,
+        "BuffEffectParams": [
+            2
+        ],
+        "DurationType": 5,
+        "DeathType": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 5,
+        "Name": "积狩成蕴",
+        "Desc": "每次获得25个<Icon=IconGood02|45|45|0.5/>寂渊秘识时，<Icon=IconAttr02|45|45|0.5/>生命+100",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon11.png",
+        "BuffTriggerType": 2,
+        "BuffTriggerParams": [
+            2,
+            25
+        ],
+        "BuffEffectType": 7,
+        "BuffEffectParams": [
+            2,
+            100
+        ],
+        "DurationType": 1,
+        "DeathType": 2,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 99
+    },
+    {
+        "Id": 6,
+        "Name": "回噬之息",
+        "Desc": "在迷境之间向左滑动时，<Icon=IconAttr02|45|45|0.5/>生命\\n+65",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon25.png",
+        "BuffTriggerType": 1,
+        "BuffTriggerParams": [
+            1,
+            1
+        ],
+        "BuffEffectType": 7,
+        "BuffEffectParams": [
+            2,
+            65
+        ],
+        "DurationType": 1,
+        "DeathType": 2,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 7,
+        "Name": "耀启",
+        "Desc": "初始获得1个<Icon=IconSun|45|45|0.5/>曦光技能",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon23.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 5,
+        "BuffEffectParams": [
+            6
+        ],
+        "DurationType": 5,
+        "DeathType": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 8,
+        "Name": "铸绯",
+        "Desc": "每次获得{0}个<Icon=IconGood03|45|45|0.5/>绯红异象时，<Icon=IconAttr02|45|45|0.5/>生命+{1}",
+        "DescParams": [
+            25,
+            100
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon13.png",
+        "BuffTriggerType": 2,
+        "BuffTriggerParams": [
+            3,
+            25
+        ],
+        "BuffEffectType": 7,
+        "BuffEffectParams": [
+            2,
+            100
+        ],
+        "DurationType": 1,
+        "DeathType": 2,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 99
+    },
+    {
+        "Id": 9,
+        "Name": "淬刃",
+        "Desc": "每次获得旧物时，<Icon=IconAttr01|45|45|0.5/>攻击力+{0}",
+        "DescParams": [
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon23.png",
+        "BuffTriggerType": 10,
+        "BuffEffectType": 7,
+        "BuffEffectParams": [
+            1,
+            3
+        ],
+        "DurationType": 1,
+        "DeathType": 2,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 53,
+        "Name": "升星",
+        "Desc": "获得1次技能升星机会",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon27.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 12,
+        "BuffEffectParams": [
+            1,
+            1
+        ],
+        "DurationType": 9,
+        "DeathType": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1001,
+        "Name": "呓语I",
+        "Desc": "进入战斗时，<Icon=IconAttr02|45|45|0.5/>生命值-15%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon2601.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025195
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 1002,
+        "Name": "呓语II",
+        "Desc": "进入战斗时，<Icon=IconAttr02|45|45|0.5/>生命值-30%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon2602.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025196
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 1003,
+        "Name": "呓语III",
+        "Desc": "进入战斗时，<Icon=IconAttr02|45|45|0.5/>生命值-45%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon2603.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025197
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 1004,
+        "Name": "呓语IV",
+        "Desc": "进入战斗时，<Icon=IconAttr02|45|45|0.5/>生命值-60%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon2604.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025198
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 1005,
+        "Name": "呓语V",
+        "Desc": "进入战斗时，<Icon=IconAttr02|45|45|0.5/>生命值-75%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon2605.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025199
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 1006,
+        "Name": "呓语缠身",
+        "Desc": "生机-1，<Icon=IconSan|45|45|0.5/>理智+70",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon26.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 6,
+        "BuffEffectParams": [
+            -1
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 1007,
+        "Name": "呓语缠身",
+        "Desc": "生机-1，<Icon=IconSan|45|45|0.5/>理智+70",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon26.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 2,
+        "BuffEffectParams": [
+            1,
+            70
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 1008,
+        "Name": "理智正常",
+        "Desc": "一切看上去都很正常，不是吗？",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon25.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 2,
+        "BuffEffectParams": [
+            1,
+            0
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 1010,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 11,
+        "BuffEffectParams": [
+            1
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 1011,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 11,
+        "BuffEffectParams": [
+            2
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 1012,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 11,
+        "BuffEffectParams": [
+            3
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 2000,
+        "Icon": "Assets/Product/Texture/Image/UiCollection/Iconcollection024.png",
+        "BuffTriggerType": 1,
+        "BuffTriggerParams": [
+            3,
+            1
+        ],
+        "BuffEffectType": 7,
+        "BuffEffectParams": [
+            1,
+            2,
+            2,
+            24
+        ],
+        "DurationType": 1,
+        "DeathType": 2,
+        "IsNotShow": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3000,
+        "Name": "侵蚀I",
+        "Desc": "降低<Icon=IconSan|45|45|0.5/>理智时，额外-2",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon2801.png",
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            4,
+            0,
+            2
+        ],
+        "BuffEffectType": 2,
+        "BuffEffectParams": [
+            1,
+            -2
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsCount": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 3001,
+        "Name": "侵蚀II",
+        "Desc": "降低<Icon=IconSan|45|45|0.5/>理智时，额外-4",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon2802.png",
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            4,
+            0,
+            2
+        ],
+        "BuffEffectType": 2,
+        "BuffEffectParams": [
+            1,
+            -4
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsCount": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 3500,
+        "Name": "回响·材料",
+        "Desc": "材料获取量提升20%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon27.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 4,
+        "BuffEffectParams": [
+            3600,
+            3601,
+            3602,
+            3603
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3501,
+        "Name": "回响·尘封异兆I",
+        "Desc": "本层<Icon=IconGood01|45|45|0.5/>尘封异兆获取量提升50%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon09.png",
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            1,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            500
+        ],
+        "DurationType": 6,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3502,
+        "Name": "回响·寂渊秘识I",
+        "Desc": "本层<Icon=IconGood02|45|45|0.5/>寂渊秘识获取量提升50%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon11.png",
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            2,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            500
+        ],
+        "DurationType": 6,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3503,
+        "Name": "回响·绯红异象I",
+        "Desc": "本层<Icon=IconGood03|45|45|0.5/>绯红异象获取量提升50%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon13.png",
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            3,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            500
+        ],
+        "DurationType": 6,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3504,
+        "Name": "回响·幻蚀秘藏I",
+        "Desc": "本层<Icon=IconGood04|45|45|0.5/>幻蚀秘藏获取量提升50%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon15.png",
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            4,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            500
+        ],
+        "DurationType": 6,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3505,
+        "Name": "回响·尘封异兆II",
+        "Desc": "本层<Icon=IconGood01|45|45|0.5/>尘封异兆获取量提升80%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon09.png",
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            1,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            800
+        ],
+        "DurationType": 6,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3506,
+        "Name": "回响·寂渊秘识II",
+        "Desc": "本层<Icon=IconGood02|45|45|0.5/>寂渊秘识获取量提升80%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon11.png",
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            2,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            800
+        ],
+        "DurationType": 6,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3507,
+        "Name": "回响·绯红异象II",
+        "Desc": "本层<Icon=IconGood03|45|45|0.5/>绯红异象获取量提升80%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon13.png",
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            3,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            800
+        ],
+        "DurationType": 6,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3508,
+        "Name": "回响·幻蚀秘藏II",
+        "Desc": "本层<Icon=IconGood04|45|45|0.5/>幻蚀秘藏获取量提升80%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon15.png",
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            4,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            800
+        ],
+        "DurationType": 6,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3600,
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            1,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            200
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3601,
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            2,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            200
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3602,
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            3,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            200
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 3603,
+        "BuffTriggerType": 3,
+        "BuffTriggerParams": [
+            2,
+            4,
+            1
+        ],
+        "BuffEffectType": 9,
+        "BuffEffectParams": [
+            200
+        ],
+        "DurationType": 8,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 4000,
+        "Name": "获得理智",
+        "Desc": "获得30点理智",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon27.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 2,
+        "BuffEffectParams": [
+            1,
+            30
+        ],
+        "DurationType": 5,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 4001,
+        "Name": "失去理智",
+        "Desc": "失去30点理智",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon28.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 2,
+        "BuffEffectParams": [
+            1,
+            -30
+        ],
+        "DurationType": 5,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "DebuffType": 2,
+        "Limit": 1
+    },
+    {
+        "Id": 10001,
+        "DurationType": 3,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 10002,
+        "DurationType": 3,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 10003,
+        "DurationType": 3,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 10004,
+        "DurationType": 3,
+        "DurationValues": [
+            1
+        ],
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025201,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025201
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025203,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025203
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025205,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025205
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025207,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025207
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025209,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025209
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025211,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025211
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025213,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025213
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025215,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025215
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025217,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025217
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025219,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025219
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025221,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025221
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025223,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025223
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025225,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025225
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025227,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025227
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025301,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025301
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025303,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025303
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025305,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025305
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025307,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025307
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025309,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025309
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025311,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025311
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025313,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025313
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025315,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025315
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025401,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025401
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025403,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025403
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025405,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025405
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025407,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025407
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025409,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025409
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025411,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025411
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025413,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025413
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025501,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025501
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025503,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025503
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025505,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025505
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025507,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025507
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025509,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025509
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025511,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025511
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025513,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025513
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    }
+]

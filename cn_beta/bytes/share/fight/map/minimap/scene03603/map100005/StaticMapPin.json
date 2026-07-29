@@ -1,0 +1,70 @@
+[
+    {
+        "Id": 1,
+        "MapPinGroup": 1,
+        "MapPinId": 1,
+        "MapPinTemplateId": 4,
+        "PinName": "传送01",
+        "PinDesc": "点击传送，保持原朝向\\n有镜头过渡",
+        "PosX": 270.7969,
+        "PosY": 201.0625,
+        "UniqueClickCB": true,
+        "CBText": [
+            "传送"
+        ],
+        "CBFunc": [
+            11
+        ]
+    },
+    {
+        "Id": 2,
+        "MapPinGroup": 1,
+        "MapPinId": 2,
+        "MapPinTemplateId": 3,
+        "PinName": "传送02",
+        "PinDesc": "点击传送，加magic，且朝向180",
+        "PosX": 262.5,
+        "PosY": 212.875,
+        "UniqueClickCB": true,
+        "CBText": [
+            "传送"
+        ],
+        "CBFunc": [
+            "12|10"
+        ]
+    },
+    {
+        "Id": 3,
+        "MapPinGroup": 1,
+        "MapPinId": 3,
+        "MapPinTemplateId": 6,
+        "PinName": "显示信息",
+        "PinDesc": "点击显示其他信息界面",
+        "PosX": 253.7656,
+        "PosY": 226.2188,
+        "UniqueClickCB": true,
+        "CBText": [
+            "信息"
+        ],
+        "CBFunc": [
+            14
+        ]
+    },
+    {
+        "Id": 4,
+        "MapPinGroup": 1,
+        "MapPinId": 4,
+        "MapPinTemplateId": 1,
+        "PinName": "点此传送至结算点",
+        "PinDesc": "传过去结算，直接跑到这也结算",
+        "PosX": 246,
+        "PosY": 235.9375,
+        "UniqueClickCB": true,
+        "CBText": [
+            "传送结算点"
+        ],
+        "CBFunc": [
+            13
+        ]
+    }
+]

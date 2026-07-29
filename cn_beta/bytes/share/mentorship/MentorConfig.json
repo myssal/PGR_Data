@@ -1,0 +1,252 @@
+[
+    {
+        "Key": "BeMentorLv",
+        "Comment": "成为师傅的等级",
+        "Value": 80
+    },
+    {
+        "Key": "GraduateLv",
+        "Comment": "徒弟毕业等级",
+        "Value": 80
+    },
+    {
+        "Key": "BeStudentLv",
+        "Comment": "成为徒弟的等级",
+        "Value": 20
+    },
+    {
+        "Key": "MaxStudentCount",
+        "Comment": "师傅可以带几个徒弟",
+        "Value": 3
+    },
+    {
+        "Key": "JudgeFailPassTime",
+        "Comment": "多少分钟不登录为不及格",
+        "Value": 4320
+    },
+    {
+        "Key": "TickPunishTime",
+        "Comment": "退师或开除徒弟，多少分钟不能再拜师或者招募",
+        "Value": 720
+    },
+    {
+        "Key": "CompleteTaskCount",
+        "Comment": "徒弟每周可完成几个任务",
+        "Value": 6
+    },
+    {
+        "Key": "SysReleaseTaskCount",
+        "Comment": "系统每日发布几个任务",
+        "Value": 5
+    },
+    {
+        "Key": "GetTaskCount",
+        "Comment": "徒弟每天可以领取几个任务",
+        "Value": 3
+    },
+    {
+        "Key": "ChangeTaskCount",
+        "Comment": "师傅每天可以更换几次任务",
+        "Value": 9
+    },
+    {
+        "Key": "MaxApplyCount",
+        "Comment": "申请列表最多有多少条消息",
+        "Value": 6
+    },
+    {
+        "Key": "ApplyTimeout",
+        "Comment": "申请消息存放时长（分钟）",
+        "Value": 1440
+    },
+    {
+        "Key": "MaxRecommendCount",
+        "Comment": "界面上展示的推荐数量",
+        "Value": 6
+    },
+    {
+        "Key": "ApplyCd",
+        "Comment": "申请被拒绝后x分钟内该师傅不会再收到此玩家的申请（配成0会报错）",
+        "Value": 5
+    },
+    {
+        "Key": "MaxRecommendRecordCount",
+        "Comment": "服务器存储的最大推荐记录数",
+        "Value": 100
+    },
+    {
+        "Key": "StudentRefuseApplyInterval",
+        "Comment": "申请被拒绝后x分钟内该学生不会再收到此玩家的申请（配成0会报错）",
+        "Value": 5
+    },
+    {
+        "Key": "RecommendIntervalTime",
+        "Comment": "\"获取推荐列表冷却时间（分钟）,譬如连续点了N次之后，并且每次两次点击之间的时间间隔少于X，会进入冷却CD，获取推荐列表和搜索通用\"",
+        "Value": 1
+    },
+    {
+        "Key": "MaxContinuousClickCount",
+        "Comment": "获取推荐列表最多连续点击次数",
+        "Value": 10
+    },
+    {
+        "Key": "MaxContinuousClickIntervalTime",
+        "Comment": "获取推荐列表两次点击间隔（秒）",
+        "Value": 10
+    },
+    {
+        "Key": "MaxDailyApply",
+        "Comment": "每天最多申请次数",
+        "Value": 100
+    },
+    {
+        "Key": "KickTeacherMailId",
+        "Comment": "退师发给师傅的邮件ID",
+        "Value": 60004
+    },
+    {
+        "Key": "KickStudentMailId",
+        "Comment": "踢徒弟发给徒弟的邮件ID",
+        "Value": 60003
+    },
+    {
+        "Key": "AnnouncementMaxLength",
+        "Comment": "宣言的最大长度",
+        "Value": 20
+    },
+    {
+        "Key": "AddMentorTeacherMailId",
+        "Comment": "收徒时发给师傅的邮件ID",
+        "Value": 60002
+    },
+    {
+        "Key": "AddMentorStudentMailId",
+        "Comment": "收徒时发给学生的邮件ID",
+        "Value": 60001
+    },
+    {
+        "Key": "MentorChatMaxCount",
+        "Comment": "师徒聊天消息的最大保存数（最新）",
+        "Value": 50
+    },
+    {
+        "Key": "GraduateRewardId",
+        "Comment": "毕业奖励（奖励表ID）",
+        "Value": 40750
+    },
+    {
+        "Key": "GraduateStudentRetainDay",
+        "Comment": "已毕业学生保留几天，给师傅领挑战任务奖励",
+        "Value": 7
+    },
+    {
+        "Key": "GraduateMailId",
+        "Comment": "学生点毕业时，如果有未完成的成长任务，自动完成任务，并且通过邮件发放奖励，邮件ID",
+        "Value": 60007
+    },
+    {
+        "Key": "NormalLabelMaxCount",
+        "Comment": "最大可选择个性标签数",
+        "Value": 2
+    },
+    {
+        "Key": "TimeLabelMaxCount",
+        "Comment": "最大可选择时间标签数",
+        "Value": 1
+    },
+    {
+        "Key": "MentorChangeTaskDisplayCount",
+        "Comment": "师傅打开更换任务界面时显示几条任务",
+        "Value": 5
+    },
+    {
+        "Key": "MentorGiveEquipCount",
+        "Comment": "一个任务可以赠送几个意识",
+        "Value": 2
+    },
+    {
+        "Key": "MentorGiveEquipMaxLevel",
+        "Comment": "可以赠送的意识最大等级",
+        "Value": 1
+    },
+    {
+        "Key": "MentorGiveEquipMaxStar",
+        "Comment": "可以赠送的意识最大星级",
+        "Value": 5
+    },
+    {
+        "Key": "StudentWeeklyResetSendEquipMailId",
+        "Comment": "每周重置时，如果学生没有领取师傅赠送的意识，通过邮件发送给学生，邮件ID",
+        "Value": 60005
+    },
+    {
+        "Key": "GraduateStudentCount",
+        "Comment": "师徒名录最多显示几个已毕业的学生",
+        "Value": 4
+    },
+    {
+        "Key": "GraduateTaskMailId",
+        "Comment": "学生点毕业时，如果有未领取的挑战任务，通过邮件发放奖励，邮件ID",
+        "Value": 60006
+    },
+    {
+        "Key": "FirstMentorMailId",
+        "Comment": "第一批教官邮件ID",
+        "Value": 60008
+    },
+    {
+        "Key": "FirstMentorRewardDeadline",
+        "Comment": "距离11月26号0点多少天后不再发教官邮件",
+        "Value": 29
+    },
+    {
+        "Key": "MonthlyStudentCount",
+        "Comment": "每月最多收徒数量",
+        "Value": 6
+    },
+    {
+        "Key": "GraduateCollectionId",
+        "Comment": "老师奖励界面展示用毕业收藏品ID",
+        "Value": 13000800
+    },
+    {
+        "Key": "AutoGraduateLv",
+        "Comment": "自动毕业等级",
+        "Value": 83
+    },
+    {
+        "Key": "MessageBoardMaxLen",
+        "Comment": "留言最大长度",
+        "Value": 100
+    },
+    {
+        "Key": "ActivationCount",
+        "Comment": "达到多少活跃度算满今日活跃度",
+        "Value": 100
+    },
+    {
+        "Key": "ActivationItemId",
+        "Comment": "教师达到活跃度显示的礼物ID",
+        "Value": 96006
+    },
+    {
+        "Key": "ActivationRewardId",
+        "Comment": "教师实际送给学员的rewardid",
+        "Value": 40802
+    },
+    {
+        "Key": "ActivationRewardCount",
+        "Comment": "达到活跃度奖励几份礼物",
+        "Value": 3
+    },
+    {
+        "Key": "GiftMailId",
+        "Comment": "送教师的礼物邮件ID",
+        "Value": 60010
+    },
+    {
+        "Key": "GuidePlayerSearchCD",
+        "Comment": "搜索师徒CD",
+        "Value": 3
+    }
+]

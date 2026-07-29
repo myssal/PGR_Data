@@ -1,0 +1,2843 @@
+[
+    {
+        "Id": 101,
+        "Type": 1,
+        "Name": "九龙商会特殊效果：自动收取顾客小费",
+        "Desc": "九龙商会特殊效果：自动收取顾客小费",
+        "Icon": "Assets/Product/Texture/Image/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/FouceIcon/UiSkyGardenShoppingStreetInsideBuildShopLuoPan.png",
+        "BgColor": "AD6600",
+        "Params": [
+            301,
+            1
+        ]
+    },
+    {
+        "Id": 102,
+        "Type": 1,
+        "Name": "阿迪莱商会特殊效果：自动记录顾客反馈",
+        "Desc": "阿迪莱商会特殊效果：自动记录顾客反馈",
+        "Icon": "Assets/Product/Texture/Image/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/FouceIcon/UiSkyGardenShoppingStreetInsideBuildShopForceBarbecue.png",
+        "BgColor": "AD6600",
+        "Params": [
+            302,
+            1
+        ]
+    },
+    {
+        "Id": 103,
+        "Type": 1,
+        "Name": "海洋之心旗舰特殊效果：拆除内圈店铺的返还公共储金提升",
+        "Desc": "海洋之心旗舰特殊效果：拆除内圈店铺的返还公共储金提升",
+        "Icon": "Assets/Product/Texture/Image/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/FouceIcon/UiSkyGardenShoppingStreetInsideBuildShopForceFishTank.png",
+        "BgColor": "AD6600",
+        "Params": [
+            303,
+            5000
+        ]
+    },
+    {
+        "Id": 104,
+        "Type": 1,
+        "Name": "雪松商店特殊效果：增加突发事件的收益",
+        "Desc": "雪松商店特殊效果：增加突发事件的收益",
+        "Icon": "Assets/Product/Texture/Image/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/FouceIcon/UiSkyGardenShoppingStreetInsideBuildShopProjectionn.png",
+        "BgColor": "AD6600",
+        "Params": [
+            305,
+            1
+        ]
+    },
+    {
+        "Id": 110011,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "委员会宣传",
+        "Desc": "{0}回合内，梵希食品的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 1,
+        "Params": [
+            3,
+            4,
+            111
+        ]
+    },
+    {
+        "Id": 110021,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "基础设施维护",
+        "Desc": "立刻获得{1}氛围值",
+        "BgColor": "287B00",
+        "Params": [
+            103,
+            2
+        ]
+    },
+    {
+        "Id": 110031,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "露天广场福利日",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            102,
+            1000
+        ]
+    },
+    {
+        "Id": 110041,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "网红打卡活动",
+        "Desc": "{0}回合内，朵莉烘焙的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 1,
+        "Params": [
+            3,
+            4,
+            113
+        ]
+    },
+    {
+        "Id": 110051,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "青培画展活动",
+        "Desc": "{0}回合内，前往茵泰百货消费的客人数量增加",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 1,
+        "Params": [
+            1,
+            1000,
+            112
+        ]
+    },
+    {
+        "Id": 110061,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "偶像义演",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            101,
+            1
+        ]
+    },
+    {
+        "Id": 110071,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "纪录片《特派员》",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 1,
+        "Params": [
+            102,
+            2000
+        ]
+    },
+    {
+        "Id": 110081,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "物流标准化",
+        "Desc": "{0}回合内，所有消费类店铺以及外圈店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            4,
+            2000,
+            111,
+            112,
+            113,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 110091,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "节日主题长廊",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            102,
+            1000
+        ]
+    },
+    {
+        "Id": 110101,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "艺术联动",
+        "Desc": "{0}回合内，茵泰百货的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 1,
+        "Params": [
+            3,
+            4,
+            112
+        ]
+    },
+    {
+        "Id": 110111,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "露天广场购物券发放",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            102,
+            1000
+        ]
+    },
+    {
+        "Id": 110121,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "绿化工程",
+        "Desc": "立刻获得{1}氛围值",
+        "BgColor": "287B00",
+        "Params": [
+            103,
+            5
+        ]
+    },
+    {
+        "Id": 110131,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "店内环境评级",
+        "Desc": "立刻获得{1}氛围值",
+        "BgColor": "287B00",
+        "Params": [
+            103,
+            3
+        ]
+    },
+    {
+        "Id": 110141,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "辅助机网红",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            101,
+            2
+        ]
+    },
+    {
+        "Id": 110151,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "灯光污染限令",
+        "Desc": "立刻获得{1}氛围值",
+        "BgColor": "287B00",
+        "Params": [
+            104,
+            1000
+        ]
+    },
+    {
+        "Id": 120011,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "商品配送超负荷",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "AD0023",
+        "Duration": 1,
+        "Params": [
+            101,
+            -1
+        ]
+    },
+    {
+        "Id": 120021,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "重力调节器异常",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "AD0023",
+        "Duration": 1,
+        "Params": [
+            102,
+            -1000
+        ]
+    },
+    {
+        "Id": 120031,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "废品回收压力过载",
+        "Desc": "{0}回合内，氛围值{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconEnvironment.png",
+        "BgColor": "AD0023",
+        "Duration": 2,
+        "Params": [
+            103,
+            -2
+        ]
+    },
+    {
+        "Id": 120041,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "瘦身热潮",
+        "Desc": "{0}回合内，除茵泰百货之外的消费类店铺以及所有外圈店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "AD0023",
+        "Duration": 1,
+        "Params": [
+            3,
+            -1,
+            111,
+            113,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 120051,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "舰体紧急维修",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "AD0023",
+        "Duration": 1,
+        "Params": [
+            101,
+            -1
+        ]
+    },
+    {
+        "Id": 120061,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "虚假宣传",
+        "Desc": "{0}回合内，前往茵泰百货消费的客人数量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "AD0023",
+        "Duration": 1,
+        "Params": [
+            2,
+            -500,
+            112
+        ]
+    },
+    {
+        "Id": 120071,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "环形灯带异常",
+        "Desc": "{0}回合内，前往外圈店铺消费的客人数量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "AD0023",
+        "Duration": 1,
+        "Params": [
+            2,
+            -500,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 120081,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "恶性竞争",
+        "Desc": "{0}回合内，所有消费类店铺以及外圈店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "AD0023",
+        "Duration": 2,
+        "Params": [
+            3,
+            -2,
+            111,
+            112,
+            113,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 120091,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "进口延期",
+        "Desc": "{0}回合内，前往所有店铺的客人数量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "AD0023",
+        "Duration": 2,
+        "Params": [
+            2,
+            -2000,
+            111,
+            112,
+            113,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 120101,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "无端造谣",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "AD0023",
+        "Duration": 1,
+        "Params": [
+            102,
+            -1500
+        ]
+    },
+    {
+        "Id": 220111,
+        "Type": 1,
+        "ShowType": 1,
+        "Name": "打折的G前期促销",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            101,
+            10
+        ]
+    },
+    {
+        "Id": 220112,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "促销进行中",
+        "Desc": "限时推广任务“打折的G”完成前，所有店铺利润降低{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "AD0023",
+        "Duration": 5,
+        "Params": [
+            4,
+            -5000,
+            111,
+            112,
+            113,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 220113,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "推广任务奖励",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            101,
+            10
+        ]
+    },
+    {
+        "Id": 220114,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "打折的G中期促销",
+        "Desc": "客流量+25%",
+        "Params": [
+            102,
+            2500
+        ]
+    },
+    {
+        "Id": 220211,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "打折的G末期促销",
+        "Desc": "氛围值+10",
+        "Params": [
+            103,
+            10
+        ]
+    },
+    {
+        "Id": 220311,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "库洛洛咖啡联名",
+        "Desc": "{0}回合内，所有店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            3,
+            5,
+            111,
+            112,
+            113,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 220312,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "环空影院寄售",
+        "Desc": "{0}回合内，所有店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            10,
+            111,
+            112,
+            113,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 220313,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "露天广场庆典",
+        "Desc": "客流量+5",
+        "Params": [
+            101,
+            5
+        ]
+    },
+    {
+        "Id": 220314,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "露天广场庆典",
+        "Desc": "氛围值+10",
+        "Params": [
+            103,
+            10
+        ]
+    },
+    {
+        "Id": 220315,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "露天广场庆典",
+        "Desc": "所有店铺利润永久提升{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Params": [
+            4,
+            2000,
+            111,
+            112,
+            113,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 220411,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "小型美食节",
+        "Desc": "{0}回合内，梵希食品的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            4,
+            5000,
+            111
+        ]
+    },
+    {
+        "Id": 220412,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "大型美食节",
+        "Desc": "{0}回合内，梵希食品的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 5,
+        "Params": [
+            4,
+            10000,
+            111
+        ]
+    },
+    {
+        "Id": 220511,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "小型百货特惠",
+        "Desc": "{0}回合内，茵泰百货的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            4,
+            5000,
+            112
+        ]
+    },
+    {
+        "Id": 220512,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "大型百货特惠",
+        "Desc": "{0}回合内，茵泰百货的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 5,
+        "Params": [
+            4,
+            10000,
+            112
+        ]
+    },
+    {
+        "Id": 220611,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "小型甜品鉴赏",
+        "Desc": "{0}回合内，朵莉烘焙的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            4,
+            5000,
+            113
+        ]
+    },
+    {
+        "Id": 220612,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "大型甜品鉴赏",
+        "Desc": "{0}回合内，朵莉烘焙的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 5,
+        "Params": [
+            4,
+            10000,
+            113
+        ]
+    },
+    {
+        "Id": 220711,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "轻级环境美化",
+        "Desc": "公共储金+50",
+        "Params": [
+            50
+        ]
+    },
+    {
+        "Id": 220712,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "中级环境美化",
+        "Desc": "公共储金+100",
+        "Params": [
+            100
+        ]
+    },
+    {
+        "Id": 220713,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "高级环境美化",
+        "Desc": "公共储金+250",
+        "Params": [
+            250
+        ]
+    },
+    {
+        "Id": 220811,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "初级合作",
+        "Desc": "{0}回合内，氛围值{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            103,
+            10
+        ]
+    },
+    {
+        "Id": 220812,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "深度合作",
+        "Desc": "氛围值+10",
+        "Params": [
+            103,
+            10
+        ]
+    },
+    {
+        "Id": 220911,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "装修升级",
+        "Desc": "{0}回合内，满意度{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconFavorabilityLevel.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            105,
+            10
+        ]
+    },
+    {
+        "Id": 220912,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "装修升级进行中",
+        "Desc": "限时推广任务“装修升级”完成前，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "AD0023",
+        "Duration": 5,
+        "Params": [
+            102,
+            -1000
+        ]
+    },
+    {
+        "Id": 220913,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "全面改造",
+        "Desc": "满意度{1}",
+        "Params": [
+            105,
+            8
+        ]
+    },
+    {
+        "Id": 220914,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "全面改造进行中",
+        "Desc": "限时推广任务“全面改造”完成前，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "AD0023",
+        "Duration": 5,
+        "Params": [
+            102,
+            -1000
+        ]
+    },
+    {
+        "Id": 311011,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会常规促销",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 1,
+        "Params": [
+            102,
+            3000
+        ]
+    },
+    {
+        "Id": 311021,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "九龙商会常规促销",
+        "Desc": "氛围值+10",
+        "Params": [
+            103,
+            10
+        ]
+    },
+    {
+        "Id": 311031,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会常规促销",
+        "Desc": "{0}回合内，推荐店铺利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 5,
+        "Params": [
+            205,
+            8
+        ]
+    },
+    {
+        "Id": 311041,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会常规促销",
+        "Desc": "{0}回合内，梵希食品的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            3,
+            10,
+            111
+        ]
+    },
+    {
+        "Id": 311051,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会常规促销",
+        "Desc": "{0}回合内，茵泰百货的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            3,
+            10,
+            112
+        ]
+    },
+    {
+        "Id": 311061,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会常规促销",
+        "Desc": "{0}回合内，朵莉烘焙的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            3,
+            10,
+            113
+        ]
+    },
+    {
+        "Id": 311071,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会常规促销",
+        "Desc": "{0}回合内，九龙商会的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            3,
+            8,
+            211
+        ]
+    },
+    {
+        "Id": 312011,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "阿迪莱商会常规促销",
+        "Desc": "公共储金+150",
+        "Params": [
+            150
+        ]
+    },
+    {
+        "Id": 312021,
+        "Type": 1,
+        "ShowType": 1,
+        "Name": "阿迪莱商会常规促销",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            101,
+            5
+        ]
+    },
+    {
+        "Id": 312031,
+        "Type": 1,
+        "ShowType": 1,
+        "Name": "阿迪莱商会常规促销",
+        "Desc": "{0}回合内，突发事件数量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            203,
+            1
+        ]
+    },
+    {
+        "Id": 312041,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会常规促销",
+        "Desc": "{0}回合内，会有更多顾客前往阿迪莱商会",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            4000,
+            221
+        ]
+    },
+    {
+        "Id": 312051,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会常规促销",
+        "Desc": "{0}回合内圈店铺升级消耗减少{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "AD0023",
+        "Duration": 2,
+        "Params": [
+            6,
+            -3000,
+            111,
+            112,
+            113,
+            121,
+            122,
+            131,
+            132
+        ]
+    },
+    {
+        "Id": 312061,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会常规促销",
+        "Desc": "{0}回合内，会有更多顾客前往首席推荐的店铺",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            208,
+            4000
+        ]
+    },
+    {
+        "Id": 312071,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会常规促销",
+        "Desc": "{0}回合内，每回合获得{2}公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            322042,
+            322042,
+            322042
+        ]
+    },
+    {
+        "Id": 312072,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "阿迪莱商会常规促销",
+        "Desc": "公共储金{1}",
+        "Params": [
+            70
+        ]
+    },
+    {
+        "Id": 313011,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰常规促销",
+        "Desc": "{1}回合后，获得{2}公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            2,
+            313012
+        ]
+    },
+    {
+        "Id": 313012,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "海洋之心旗舰常规促销",
+        "Desc": "公共储金{1}",
+        "Params": [
+            250
+        ]
+    },
+    {
+        "Id": 313021,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰常规促销",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            102,
+            2000
+        ]
+    },
+    {
+        "Id": 313031,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰常规促销",
+        "Desc": "{0}回合内，海洋之心利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            3,
+            8,
+            241
+        ]
+    },
+    {
+        "Id": 313041,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "海洋之心旗舰常规促销",
+        "Desc": "立刻获得100公共储金",
+        "Params": [
+            150
+        ]
+    },
+    {
+        "Id": 313051,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰常规促销",
+        "Desc": "{0}回合内，前往梵希食品的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            1,
+            2500,
+            111
+        ]
+    },
+    {
+        "Id": 313061,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰常规促销",
+        "Desc": "{0}回合内，前往茵泰百货的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            1,
+            2500,
+            112
+        ]
+    },
+    {
+        "Id": 313071,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰常规促销",
+        "Desc": "{0}回合内，前往朵莉烘焙的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            1,
+            2500,
+            113
+        ]
+    },
+    {
+        "Id": 314011,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店常规促销",
+        "Desc": "{0}回合内，前往梵希食品的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            2000,
+            111
+        ]
+    },
+    {
+        "Id": 314021,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店常规促销",
+        "Desc": "{0}回合内，前往茵泰百货的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            2000,
+            112
+        ]
+    },
+    {
+        "Id": 314031,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店常规促销",
+        "Desc": "{0}回合内，前往朵莉烘焙的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            2000,
+            113
+        ]
+    },
+    {
+        "Id": 314041,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店常规促销",
+        "Desc": "{0}回合内，每回合开始时，梵希食品的利润{2}，效果结束时清空加成",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            324032,
+            324032,
+            324032
+        ]
+    },
+    {
+        "Id": 314042,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店常规促销",
+        "Desc": "梵希食品的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            4,
+            111
+        ]
+    },
+    {
+        "Id": 314043,
+        "Type": 8,
+        "Name": "雪松商店常规促销",
+        "Desc": "{0}回合后，清除促销带来的利润BUFF",
+        "Duration": 3,
+        "Params": [
+            4,
+            324034
+        ]
+    },
+    {
+        "Id": 314044,
+        "Type": 9,
+        "Name": "雪松商店常规促销",
+        "Desc": "清除促销带来的利润BUFF",
+        "Params": [
+            324032
+        ]
+    },
+    {
+        "Id": 314051,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店常规促销",
+        "Desc": "{0}回合内，每回合开始时，茵泰百货的利润{2}，效果结束时清空加成",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            324042,
+            324042,
+            324042
+        ]
+    },
+    {
+        "Id": 314052,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店常规促销",
+        "Desc": "茵泰百货的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            4,
+            112
+        ]
+    },
+    {
+        "Id": 314053,
+        "Type": 8,
+        "Name": "雪松商店常规促销",
+        "Desc": "{0}回合后，清除促销带来的利润BUFF",
+        "Duration": 3,
+        "Params": [
+            4,
+            324044
+        ]
+    },
+    {
+        "Id": 314054,
+        "Type": 9,
+        "Name": "雪松商店常规促销",
+        "Desc": "清除促销带来的利润BUFF",
+        "Params": [
+            324042
+        ]
+    },
+    {
+        "Id": 314061,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店常规促销",
+        "Desc": "{0}回合内，每回合开始时，朵莉烘焙的利润{2}，效果结束时清空加成",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            324052,
+            324052,
+            324052
+        ]
+    },
+    {
+        "Id": 314062,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店常规促销",
+        "Desc": "朵莉烘焙的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            4,
+            113
+        ]
+    },
+    {
+        "Id": 314063,
+        "Type": 8,
+        "Name": "雪松商店常规促销",
+        "Desc": "{0}回合后，清除促销带来的利润BUFF",
+        "Duration": 3,
+        "Params": [
+            4,
+            324054
+        ]
+    },
+    {
+        "Id": 314064,
+        "Type": 9,
+        "Name": "雪松商店常规促销",
+        "Desc": "清除促销带来的利润BUFF",
+        "Params": [
+            324052
+        ]
+    },
+    {
+        "Id": 314071,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店常规促销",
+        "Desc": "{0}回合内，前往外圈店铺的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            1,
+            4000,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 321011,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会开业促销",
+        "Desc": "{0}回合内，梵希食品的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            5,
+            111
+        ]
+    },
+    {
+        "Id": 321021,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会开业促销",
+        "Desc": "{0}回合内，茵泰百货的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            5,
+            112
+        ]
+    },
+    {
+        "Id": 321031,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会开业促销",
+        "Desc": "{0}回合内，朵莉烘焙的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            5,
+            113
+        ]
+    },
+    {
+        "Id": 321041,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会开业促销",
+        "Desc": "{0}回合内，九龙商会的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            8,
+            211
+        ]
+    },
+    {
+        "Id": 321051,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会开业促销",
+        "Desc": "{0}回合内，每回合获得{1}公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            1,
+            321052,
+            321052,
+            321052,
+            321052
+        ]
+    },
+    {
+        "Id": 321052,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "九龙商会开业促销",
+        "Desc": "公共储金{1}",
+        "Params": [
+            40
+        ]
+    },
+    {
+        "Id": 321061,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会开业促销",
+        "Desc": "{0}回合内，客流量量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            102,
+            1500
+        ]
+    },
+    {
+        "Id": 321071,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "九龙商会开业促销",
+        "Desc": "{0}回合内圈店铺建造消耗{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "AD0023",
+        "Duration": 3,
+        "Params": [
+            5,
+            -4000,
+            111,
+            112,
+            113,
+            121,
+            122,
+            131,
+            132
+        ]
+    },
+    {
+        "Id": 322011,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会开业促销",
+        "Desc": "{0}回合内，会有更多顾客前往阿迪莱商会",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 5,
+        "Params": [
+            1,
+            3000,
+            221
+        ]
+    },
+    {
+        "Id": 322021,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会开业促销",
+        "Desc": "本回合内圈店铺升级消耗减少{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "AD0023",
+        "Duration": 1,
+        "Params": [
+            6,
+            -3000,
+            111,
+            112,
+            113,
+            121,
+            122,
+            131,
+            132
+        ]
+    },
+    {
+        "Id": 322031,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会开业促销",
+        "Desc": "{0}回合内，会有更多顾客前往首席推荐的店铺",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            208,
+            2500
+        ]
+    },
+    {
+        "Id": 322041,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会开业促销",
+        "Desc": "{0}回合内，每回合获得{2}公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            1,
+            322042,
+            322042
+        ]
+    },
+    {
+        "Id": 322042,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "阿迪莱商会开业促销",
+        "Desc": "公共储金{1}",
+        "Params": [
+            50
+        ]
+    },
+    {
+        "Id": 322051,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会开业促销",
+        "Desc": "{0}回合内，梵希食品的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            5,
+            111
+        ]
+    },
+    {
+        "Id": 322061,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会开业促销",
+        "Desc": "{0}回合内，茵泰百货的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            5,
+            112
+        ]
+    },
+    {
+        "Id": 322071,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "阿迪莱商会开业促销",
+        "Desc": "{0}回合内，朵莉烘焙的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            5,
+            113
+        ]
+    },
+    {
+        "Id": 323011,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰开业促销",
+        "Desc": "{0}回合内，客流量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            102,
+            2000
+        ]
+    },
+    {
+        "Id": 323021,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "海洋之心旗舰开业促销",
+        "Desc": "立刻获得10氛围值",
+        "Params": [
+            103,
+            10
+        ]
+    },
+    {
+        "Id": 323031,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "海洋之心旗舰开业促销",
+        "Desc": "立刻获得80公共储金",
+        "Params": [
+            80
+        ]
+    },
+    {
+        "Id": 323041,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰开业促销",
+        "Desc": "{0}回合内，前往梵希食品的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            1000,
+            111
+        ]
+    },
+    {
+        "Id": 323051,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰开业促销",
+        "Desc": "{0}回合内，前往茵泰百货的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            1000,
+            112
+        ]
+    },
+    {
+        "Id": 323061,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰开业促销",
+        "Desc": "{0}回合内，前往朵莉烘焙的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            1000,
+            113
+        ]
+    },
+    {
+        "Id": 323071,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "海洋之心旗舰开业促销",
+        "Desc": "{0}回合后，获得{2}公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            2,
+            323072
+        ]
+    },
+    {
+        "Id": 323072,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "海洋之心旗舰开业促销",
+        "Desc": "获得200公共储金",
+        "Params": [
+            200
+        ]
+    },
+    {
+        "Id": 324011,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店开业促销",
+        "Desc": "{0}回合内，每回合获得{1}氛围值",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconEnvironment.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            324012,
+            324012,
+            324012
+        ]
+    },
+    {
+        "Id": 324012,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "雪松商店开业促销",
+        "Desc": "获得5氛围值",
+        "Params": [
+            103,
+            5
+        ]
+    },
+    {
+        "Id": 324021,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店开业促销",
+        "Desc": "{0}回合内，运营阶段出现顾客小费的次数{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconFavorabilityLevel.png",
+        "BgColor": "AD6600",
+        "Duration": 2,
+        "Params": [
+            201,
+            4
+        ]
+    },
+    {
+        "Id": 324031,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店开业促销",
+        "Desc": "{0}回合内，每回合开始时，梵希食品的利润{2}，效果结束时清空加成",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            1,
+            324032,
+            324032,
+            324032,
+            324032
+        ]
+    },
+    {
+        "Id": 324032,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店开业促销",
+        "Desc": "梵希食品的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            3,
+            2,
+            111
+        ]
+    },
+    {
+        "Id": 324033,
+        "Type": 8,
+        "Name": "雪松商店开业促销",
+        "Desc": "{0}回合后，清除促销带来的利润BUFF",
+        "Duration": 4,
+        "Params": [
+            4,
+            324034
+        ]
+    },
+    {
+        "Id": 324034,
+        "Type": 9,
+        "Name": "雪松商店开业促销",
+        "Desc": "清除促销带来的利润BUFF",
+        "Params": [
+            324032
+        ]
+    },
+    {
+        "Id": 324041,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店开业促销",
+        "Desc": "{0}回合内，每回合开始时，茵泰百货的利润{2}，效果结束时清空加成",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            1,
+            324042,
+            324042,
+            324042,
+            324042
+        ]
+    },
+    {
+        "Id": 324042,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店开业促销",
+        "Desc": "茵泰百货的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            3,
+            2,
+            112
+        ]
+    },
+    {
+        "Id": 324043,
+        "Type": 8,
+        "Name": "雪松商店开业促销",
+        "Desc": "{0}回合后，清除促销带来的利润BUFF",
+        "Duration": 4,
+        "Params": [
+            4,
+            324044
+        ]
+    },
+    {
+        "Id": 324044,
+        "Type": 9,
+        "Name": "雪松商店开业促销",
+        "Desc": "清除促销带来的利润BUFF",
+        "Params": [
+            324042
+        ]
+    },
+    {
+        "Id": 324051,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店开业促销",
+        "Desc": "{0}回合内，每回合开始时，朵莉烘焙的利润{2}，效果结束时清空加成",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            1,
+            324052,
+            324052,
+            324052,
+            324052
+        ]
+    },
+    {
+        "Id": 324052,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店开业促销",
+        "Desc": "朵莉烘焙的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 4,
+        "Params": [
+            3,
+            2,
+            113
+        ]
+    },
+    {
+        "Id": 324053,
+        "Type": 8,
+        "Name": "雪松商店开业促销",
+        "Desc": "{0}回合后，清除促销带来的利润BUFF",
+        "Duration": 4,
+        "Params": [
+            4,
+            324054
+        ]
+    },
+    {
+        "Id": 324054,
+        "Type": 9,
+        "Name": "雪松商店开业促销",
+        "Desc": "清除促销带来的利润BUFF",
+        "Params": [
+            324052
+        ]
+    },
+    {
+        "Id": 324061,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店开业促销",
+        "Desc": "{0}回合内，客流量量{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 2,
+        "Params": [
+            101,
+            3
+        ]
+    },
+    {
+        "Id": 324071,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "雪松商店开业促销",
+        "Desc": "{0}回合内，前往外圈店铺的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            1,
+            2500,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 400011,
+        "Type": 7,
+        "Name": "新潮流",
+        "Desc": "朵莉烘焙的原料喜好大幅变化",
+        "Params": [
+            0,
+            6
+        ]
+    },
+    {
+        "Id": 400021,
+        "Type": 7,
+        "Name": "新潮流",
+        "Desc": "朵莉烘焙的原料喜好小幅变化",
+        "Params": [
+            0,
+            1
+        ]
+    },
+    {
+        "Id": 400031,
+        "Type": 7,
+        "Name": "新潮流",
+        "Desc": "朵莉烘焙的利润改变",
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 400041,
+        "Type": 5,
+        "Name": "新潮流",
+        "Desc": "改变梵希食品的厨师喜好",
+        "Params": [
+            0,
+            1,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 400051,
+        "Type": 5,
+        "Name": "新潮流",
+        "Desc": "改变梵希食品的所有配料喜好",
+        "Params": [
+            0,
+            0,
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 400061,
+        "Type": 5,
+        "Name": "新潮流",
+        "Desc": "改变梵希食品的利润喜好",
+        "Params": [
+            1,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 400071,
+        "Type": 4,
+        "Name": "新潮流",
+        "Desc": "随机一个店铺的喜好改变",
+        "Params": [
+            1,
+            111,
+            112,
+            113
+        ]
+    },
+    {
+        "Id": 400081,
+        "Type": 3,
+        "Name": "新潮流",
+        "Desc": "全部店铺的喜好改变",
+        "Params": [
+            111,
+            112,
+            113
+        ]
+    },
+    {
+        "Id": 400091,
+        "Type": 3,
+        "Name": "新潮流",
+        "Desc": "梵希食品的喜好完全改变",
+        "Params": [
+            111
+        ]
+    },
+    {
+        "Id": 400101,
+        "Type": 6,
+        "Name": "新潮流",
+        "Desc": "茵泰百货的随机2个商品喜好改变",
+        "Params": [
+            0,
+            2
+        ]
+    },
+    {
+        "Id": 400111,
+        "Type": 6,
+        "Name": "新潮流",
+        "Desc": "茵泰百货的随机1个商品利润喜好改变",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 400121,
+        "Type": 3,
+        "Name": "新潮流",
+        "Desc": "茵泰百货的喜好完全改变",
+        "Params": [
+            112
+        ]
+    },
+    {
+        "Id": 511011,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得30公共储金",
+        "Params": [
+            30
+        ]
+    },
+    {
+        "Id": 511021,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得50公共储金",
+        "Params": [
+            50
+        ]
+    },
+    {
+        "Id": 511031,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得70公共储金",
+        "Params": [
+            70
+        ]
+    },
+    {
+        "Id": 511041,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得5公共储金",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 511051,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得10公共储金",
+        "Params": [
+            10
+        ]
+    },
+    {
+        "Id": 511061,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得20公共储金",
+        "Params": [
+            20
+        ]
+    },
+    {
+        "Id": 511071,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得5氛围值",
+        "Params": [
+            103,
+            5
+        ]
+    },
+    {
+        "Id": 511081,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得10氛围值",
+        "Params": [
+            103,
+            10
+        ]
+    },
+    {
+        "Id": 512011,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得1氛围值",
+        "Params": [
+            103,
+            1
+        ]
+    },
+    {
+        "Id": 512012,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "下回合开始时，失去{2}公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "AD0023",
+        "Duration": 1,
+        "Params": [
+            1,
+            512013
+        ]
+    },
+    {
+        "Id": 512013,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "失去70公共储金",
+        "Params": [
+            -70
+        ]
+    },
+    {
+        "Id": 512021,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "立即获得200公共储金，下一回合扣除250公共储金",
+        "Params": [
+            200
+        ]
+    },
+    {
+        "Id": 512022,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "下回合开始时，失去{2}公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "AD0023",
+        "Duration": 1,
+        "Params": [
+            1,
+            512023
+        ]
+    },
+    {
+        "Id": 512023,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "失去250公共储金",
+        "Params": [
+            -250
+        ]
+    },
+    {
+        "Id": 512031,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "内圈店铺建造消耗永久{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Params": [
+            5,
+            -500,
+            111,
+            112,
+            113,
+            121,
+            122,
+            131,
+            132
+        ]
+    },
+    {
+        "Id": 512041,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "内圈店铺升级消耗永久{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "AD0023",
+        "Params": [
+            6,
+            500,
+            111,
+            112,
+            113,
+            121,
+            122,
+            131,
+            132
+        ]
+    },
+    {
+        "Id": 512051,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "{0}回合内，外圈店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            5,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 512061,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "{0}回合内，内圈店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            5,
+            111,
+            112,
+            113
+        ]
+    },
+    {
+        "Id": 512071,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "扣除5氛围值",
+        "Params": [
+            103,
+            -5
+        ]
+    },
+    {
+        "Id": 512081,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "{0}回合内，满意度{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconFavorabilityLevel.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            105,
+            5
+        ]
+    },
+    {
+        "Id": 513011,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "立即获得25公共储金",
+        "Params": [
+            25
+        ]
+    },
+    {
+        "Id": 513021,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "下个回合，获得{2}公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 1,
+        "Params": [
+            1,
+            513022
+        ]
+    },
+    {
+        "Id": 513022,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "100公共储金",
+        "Params": [
+            100
+        ]
+    },
+    {
+        "Id": 513031,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "立即扣除100公共储金，下一回合获得150公共储金",
+        "Params": [
+            -100
+        ]
+    },
+    {
+        "Id": 513032,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "下回合开始时，失去{2}公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 1,
+        "Params": [
+            1,
+            513033
+        ]
+    },
+    {
+        "Id": 513033,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "加150公共储金",
+        "Params": [
+            150
+        ]
+    },
+    {
+        "Id": 513041,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "本回合内圈店铺升级消耗减少{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "AD6600",
+        "Duration": 2,
+        "Params": [
+            6,
+            -2000,
+            111,
+            112,
+            113,
+            121,
+            122,
+            131,
+            132
+        ]
+    },
+    {
+        "Id": 513051,
+        "Type": 1,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "{0}回合内，运营阶段出现顾客小费的次数{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconFavorabilityLevel.png",
+        "BgColor": "AD0023",
+        "Duration": 3,
+        "Params": [
+            201,
+            2
+        ]
+    },
+    {
+        "Id": 513061,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "{0}回合内，内圈店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            8,
+            111,
+            112,
+            113
+        ]
+    },
+    {
+        "Id": 513071,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "{0}回合内，内圈店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            4,
+            3000,
+            111,
+            112,
+            113
+        ]
+    },
+    {
+        "Id": 513081,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "{0}回合内，前往内圈店铺的客人{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            2,
+            2000,
+            111,
+            112,
+            113,
+            121,
+            122,
+            131,
+            132
+        ]
+    },
+    {
+        "Id": 514011,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "立刻获得2客流量",
+        "Params": [
+            101,
+            2
+        ]
+    },
+    {
+        "Id": 514021,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "前往朵莉烘焙的客人+15%",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "BgColor": "287B00",
+        "Params": [
+            1,
+            1500,
+            113
+        ]
+    },
+    {
+        "Id": 514031,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "立刻获得5氛围值",
+        "Params": [
+            103,
+            5
+        ]
+    },
+    {
+        "Id": 514041,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "降低8%氛围值",
+        "Params": [
+            104,
+            -800
+        ]
+    },
+    {
+        "Id": 514051,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "{0}回合内，外圈店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            5,
+            211,
+            221,
+            231,
+            241
+        ]
+    },
+    {
+        "Id": 514061,
+        "Type": 10,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "{0}回合内，内圈店铺的利润{1}",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 3,
+        "Params": [
+            3,
+            5,
+            111,
+            112,
+            113
+        ]
+    },
+    {
+        "Id": 514071,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "立即获得25公共储金",
+        "Params": [
+            25
+        ]
+    },
+    {
+        "Id": 514081,
+        "Type": 8,
+        "ShowType": 1,
+        "GetShowType": 1,
+        "Name": "突发事件奖励",
+        "Desc": "下回合开始时，获得{2}公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "BgColor": "287B00",
+        "Duration": 1,
+        "Params": [
+            1,
+            514082
+        ]
+    },
+    {
+        "Id": 514082,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "100公共储金",
+        "Params": [
+            100
+        ]
+    },
+    {
+        "Id": 500011,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得30公共储金",
+        "Params": [
+            30
+        ]
+    },
+    {
+        "Id": 500021,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得50公共储金",
+        "Params": [
+            50
+        ]
+    },
+    {
+        "Id": 500031,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得70公共储金",
+        "Params": [
+            70
+        ]
+    },
+    {
+        "Id": 500041,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得5公共储金",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 500051,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得10公共储金",
+        "Params": [
+            10
+        ]
+    },
+    {
+        "Id": 500061,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得20公共储金",
+        "Params": [
+            20
+        ]
+    },
+    {
+        "Id": 500071,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得5氛围值",
+        "Params": [
+            103,
+            5
+        ]
+    },
+    {
+        "Id": 500081,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得10氛围值",
+        "Params": [
+            103,
+            10
+        ]
+    },
+    {
+        "Id": 500091,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件奖励",
+        "Desc": "获得1氛围值",
+        "Params": [
+            103,
+            1
+        ]
+    },
+    {
+        "Id": 501011,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件高级奖励",
+        "Desc": "获得45公共储金",
+        "Params": [
+            45
+        ]
+    },
+    {
+        "Id": 501021,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件高级奖励",
+        "Desc": "获得75公共储金",
+        "Params": [
+            75
+        ]
+    },
+    {
+        "Id": 501031,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件高级奖励",
+        "Desc": "获得105公共储金",
+        "Params": [
+            105
+        ]
+    },
+    {
+        "Id": 501041,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件高级奖励",
+        "Desc": "获得8公共储金",
+        "Params": [
+            8
+        ]
+    },
+    {
+        "Id": 501051,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件高级奖励",
+        "Desc": "获得15公共储金",
+        "Params": [
+            15
+        ]
+    },
+    {
+        "Id": 501061,
+        "Type": 2,
+        "ShowType": 2,
+        "Name": "突发事件高级奖励",
+        "Desc": "获得30公共储金",
+        "Params": [
+            30
+        ]
+    },
+    {
+        "Id": 501071,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件高级奖励",
+        "Desc": "获得8氛围值",
+        "Params": [
+            103,
+            8
+        ]
+    },
+    {
+        "Id": 501081,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件高级奖励",
+        "Desc": "获得15氛围值",
+        "Params": [
+            103,
+            15
+        ]
+    },
+    {
+        "Id": 501091,
+        "Type": 1,
+        "ShowType": 2,
+        "Name": "突发事件高级奖励",
+        "Desc": "获得2氛围值",
+        "Params": [
+            103,
+            2
+        ]
+    }
+]

@@ -1,0 +1,806 @@
+[
+    {
+        "Id": 200100,
+        "Priority": 200100,
+        "Desc": "v3.6日志引导",
+        "GuideType": 1,
+        "ConditionId": [
+            50001004
+        ],
+        "CompleteId": 200100,
+        "ActiveUi": "UiBigWorldHud",
+        "GroupId": 200100
+    },
+    {
+        "Id": 200101,
+        "Priority": 200101,
+        "Desc": "v3.6地图引导",
+        "GuideType": 1,
+        "ConditionId": [
+            50001007
+        ],
+        "CompleteId": 200101,
+        "ActiveUi": "UiBigWorldHud",
+        "GroupId": 200101
+    },
+    {
+        "Id": 200102,
+        "Priority": 200102,
+        "Desc": "v3.6宿舍-照片墙引导",
+        "GuideType": 1,
+        "ConditionId": [
+            50001003
+        ],
+        "CompleteId": 200102,
+        "ActiveUi": "UiSkyGardenDormPhotoWall",
+        "CheckNodeActive": "PanelHomePhoto",
+        "GroupId": 200102
+    },
+    {
+        "Id": 200103,
+        "Priority": 200103,
+        "Desc": "v3.6拍照引导",
+        "GuideType": 1,
+        "ConditionId": [
+            50001006
+        ],
+        "CompleteId": 200103,
+        "ActiveUi": "UiBigWorldHud",
+        "GroupId": 200103
+    },
+    {
+        "Id": 200200,
+        "Priority": 200200,
+        "Desc": "v3.6咖啡厅-首次进关",
+        "GuideType": 1,
+        "CompleteId": 200200,
+        "ActiveUi": "UiSkyGardenCafeMain",
+        "GroupId": 200200
+    },
+    {
+        "Id": 200201,
+        "Priority": 200201,
+        "Desc": "v3.6咖啡厅-1001时段1",
+        "GuideType": 1,
+        "ConditionId": [
+            50010006
+        ],
+        "CompleteId": 200201,
+        "ActiveUi": "UiSkyGardenCafeGame",
+        "GroupId": 200201
+    },
+    {
+        "Id": 200202,
+        "Priority": 200202,
+        "Desc": "v3.6咖啡厅-1001时段1 完成上个引导",
+        "GuideType": 1,
+        "ConditionId": [
+            50010006,
+            50010007
+        ],
+        "CompleteId": 200202,
+        "ActiveUi": "UiSkyGardenCafeGame",
+        "GroupId": 200202
+    },
+    {
+        "Id": 200203,
+        "Priority": 200203,
+        "Desc": "v3.6咖啡厅-1001时段2",
+        "GuideType": 1,
+        "ConditionId": [
+            50010008
+        ],
+        "CompleteId": 200203,
+        "ActiveUi": "UiSkyGardenCafeGame",
+        "GroupId": 200203
+    },
+    {
+        "Id": 200204,
+        "Priority": 200204,
+        "Desc": "v3.6咖啡厅-1001时段3",
+        "GuideType": 1,
+        "ConditionId": [
+            50010009
+        ],
+        "CompleteId": 200204,
+        "ActiveUi": "UiSkyGardenCafeGame",
+        "GroupId": 200204
+    },
+    {
+        "Id": 200205,
+        "Priority": 200205,
+        "Desc": "v3.6咖啡厅-通关1001回到主界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010013
+        ],
+        "CompleteId": 200205,
+        "ActiveUi": "UiSkyGardenCafeMain",
+        "GroupId": 200205
+    },
+    {
+        "Id": 200206,
+        "Priority": 200206,
+        "Desc": "v3.6咖啡厅-1002时段1",
+        "GuideType": 1,
+        "ConditionId": [
+            50010014
+        ],
+        "CompleteId": 200206,
+        "ActiveUi": "UiSkyGardenCafeGame",
+        "GroupId": 200206
+    },
+    {
+        "Id": 200207,
+        "Priority": 200207,
+        "Desc": "v3.6咖啡厅-1003时段1",
+        "GuideType": 1,
+        "ConditionId": [
+            50010015
+        ],
+        "CompleteId": 200207,
+        "ActiveUi": "UiSkyGardenCafeGame",
+        "GroupId": 200207
+    },
+    {
+        "Id": 200208,
+        "Priority": 200208,
+        "Desc": "v3.6咖啡厅-1004时段1",
+        "GuideType": 1,
+        "ConditionId": [
+            50010016
+        ],
+        "CompleteId": 200208,
+        "ActiveUi": "UiSkyGardenCafeGame",
+        "GroupId": 200208
+    },
+    {
+        "Id": 200209,
+        "Priority": 200209,
+        "Desc": "v3.6咖啡厅-1004时段3",
+        "GuideType": 1,
+        "ConditionId": [
+            50010017
+        ],
+        "CompleteId": 200209,
+        "ActiveUi": "UiSkyGardenCafeGame",
+        "GroupId": 200209
+    },
+    {
+        "Id": 200210,
+        "Priority": 200210,
+        "Desc": "v3.6咖啡厅-1005时段1",
+        "GuideType": 1,
+        "ConditionId": [
+            50010018
+        ],
+        "CompleteId": 200210,
+        "ActiveUi": "UiSkyGardenCafeGame",
+        "GroupId": 200210
+    },
+    {
+        "Id": 200211,
+        "Priority": 200211,
+        "Desc": "v3.6咖啡厅-通关1006回到主界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010019
+        ],
+        "CompleteId": 200211,
+        "ActiveUi": "UiSkyGardenCafeMain",
+        "GroupId": 200211
+    },
+    {
+        "Id": 200212,
+        "Priority": 200212,
+        "Desc": "v3.6咖啡厅-2001时段1替换客人",
+        "GuideType": 1,
+        "ConditionId": [
+            50010020
+        ],
+        "CompleteId": 200212,
+        "ActiveUi": "UiSkyGardenCafeGame",
+        "GroupId": 200212
+    },
+    {
+        "Id": 200213,
+        "Priority": 200213,
+        "Desc": "v3.6咖啡厅-2001时段1正式游戏",
+        "GuideType": 1,
+        "ConditionId": [
+            50010020
+        ],
+        "CompleteId": 200213,
+        "ActiveUi": "UiSkyGardenCafePopupBroadcastFirst",
+        "GroupId": 200213
+    },
+    {
+        "Id": 200230,
+        "Priority": 200230,
+        "Desc": "v3.6商业街-首次进关",
+        "GuideType": 1,
+        "CompleteId": 200230,
+        "ActiveUi": "UiSkyGardenShoppingStreetMain",
+        "GroupId": 200230
+    },
+    {
+        "Id": 200231,
+        "Priority": 200231,
+        "Desc": "v3.6商业街-处于1-1的准备界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010023,
+            50010021
+        ],
+        "CompleteId": 200231,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200231
+    },
+    {
+        "Id": 200232,
+        "Priority": 200232,
+        "Desc": "v3.6商业街-处于1-1的游玩界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010023,
+            50010022
+        ],
+        "CompleteId": 200232,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200232
+    },
+    {
+        "Id": 200233,
+        "Priority": 200233,
+        "Desc": "v3.6商业街-运营阶段出现小费气泡",
+        "GuideType": 1,
+        "ConditionId": [
+            50010024,
+            50010022
+        ],
+        "CompleteId": 200233,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200233
+    },
+    {
+        "Id": 200234,
+        "Priority": 200234,
+        "Desc": "v3.6商业街-运营阶段出现反馈气泡",
+        "GuideType": 1,
+        "ConditionId": [
+            50010025,
+            50010022
+        ],
+        "CompleteId": 200234,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200234
+    },
+    {
+        "Id": 200235,
+        "Priority": 200235,
+        "Desc": "v3.6商业街-处于1-2的准备界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010026,
+            50010021,
+            50010041,
+            50010042,
+            50010047
+        ],
+        "CompleteId": 200235,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "CheckNodeActive": "FullScreenBackground/ActivityLiBg/BuildingArea/Buildings/GridInsideBuild1/Edit/PanelLock",
+        "GroupId": 200235
+    },
+    {
+        "Id": 200236,
+        "Priority": 200236,
+        "Desc": "v3.6商业街-处于1-3的准备界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010027,
+            50010021,
+            50010041,
+            50010043
+        ],
+        "CompleteId": 200236,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "CheckNodeActive": "FullScreenBackground/ActivityLiBg/BuildingArea/Buildings/GridInsideBuild5/Edit/PanelLock",
+        "GroupId": 200236
+    },
+    {
+        "Id": 200237,
+        "Priority": 200237,
+        "Desc": "v3.6商业街-完成引导200236",
+        "GuideType": 1,
+        "ConditionId": [
+            50010021,
+            50010028
+        ],
+        "CompleteId": 200237,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200237
+    },
+    {
+        "Id": 200238,
+        "Priority": 200238,
+        "Desc": "v3.6商业街-处于2-1的准备界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010029,
+            50010021
+        ],
+        "CompleteId": 200238,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200238
+    },
+    {
+        "Id": 200239,
+        "Priority": 200239,
+        "Desc": "v3.6商业街-处于2-2的准备界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010030,
+            50010021,
+            50010044
+        ],
+        "CompleteId": 200239,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "CheckNodeActive": "FullScreenBackground/ActivityLiBg/BuildingArea/Buildings/GridInsideBuild6/Edit/PanelLock",
+        "GroupId": 200239
+    },
+    {
+        "Id": 200240,
+        "Priority": 200240,
+        "Desc": "v3.6商业街-处于2-2的游玩界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010030,
+            50010022
+        ],
+        "CompleteId": 200240,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200240
+    },
+    {
+        "Id": 200241,
+        "Priority": 200241,
+        "Desc": "v3.6商业街-处于3-1的准备界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010031,
+            50010021
+        ],
+        "CompleteId": 200241,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200241
+    },
+    {
+        "Id": 200242,
+        "Priority": 200242,
+        "Desc": "v3.6商业街-完成引导200241",
+        "GuideType": 1,
+        "ConditionId": [
+            50010032,
+            50010031,
+            50010021,
+            50010045
+        ],
+        "CompleteId": 200242,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "CheckNodeActive": "FullScreenBackground/ActivityLiBg/BuildingArea/Buildings/GridInsideBuild6/Edit/PanelLock",
+        "GroupId": 200242
+    },
+    {
+        "Id": 200243,
+        "Priority": 200243,
+        "Desc": "v3.6商业街-有可建造的外圈建筑",
+        "GuideType": 1,
+        "ConditionId": [
+            50010033,
+            50010034,
+            50010021
+        ],
+        "CompleteId": 200243,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200243
+    },
+    {
+        "Id": 200244,
+        "Priority": 200244,
+        "Desc": "v3.6商业街-完成引导200243",
+        "GuideType": 1,
+        "ConditionId": [
+            50010035
+        ],
+        "CompleteId": 200244,
+        "ActiveUi": "UiSkyGardenShoppingStreetBuild",
+        "CheckNodeActive": "BtnRecommend",
+        "GroupId": 200244
+    },
+    {
+        "Id": 200245,
+        "Priority": 200245,
+        "Desc": "v3.6商业街-突发事件",
+        "GuideType": 1,
+        "ConditionId": [
+            50010022,
+            50010033,
+            50010036
+        ],
+        "CompleteId": 200245,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200245
+    },
+    {
+        "Id": 200246,
+        "Priority": 200246,
+        "Desc": "v3.6商业街-常规促销",
+        "GuideType": 1,
+        "ConditionId": [
+            50010033,
+            50010037
+        ],
+        "CompleteId": 200246,
+        "ActiveUi": "UiSkyGardenShoppingStreetSale",
+        "GroupId": 200246
+    },
+    {
+        "Id": 200247,
+        "Priority": 200247,
+        "Desc": "v3.6商业街-完成引导200246",
+        "GuideType": 1,
+        "ConditionId": [
+            50010038,
+            50010033,
+            50010021
+        ],
+        "CompleteId": 200247,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "CheckNodeActive": "TxtBtnChooseSale",
+        "GroupId": 200247
+    },
+    {
+        "Id": 200248,
+        "Priority": 200248,
+        "Desc": "v3.6商业街-处于4-1的准备界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010039,
+            50010021
+        ],
+        "CompleteId": 200248,
+        "ActiveUi": "UiSkyGardenShoppingStreetGame",
+        "GroupId": 200248
+    },
+    {
+        "Id": 200249,
+        "Priority": 200249,
+        "Desc": "v3.6商业街-新闻界面",
+        "GuideType": 1,
+        "ConditionId": [
+            50010040
+        ],
+        "CompleteId": 200249,
+        "ActiveUi": "UiSkyGardenShoppingStreetToastNews",
+        "GroupId": 200249
+    },
+    {
+        "Id": 200250,
+        "Priority": 200250,
+        "Desc": "v3.6商业街-限时推广",
+        "GuideType": 1,
+        "ConditionId": [
+            50010040
+        ],
+        "CompleteId": 200250,
+        "ActiveUi": "UiSkyGardenShoppingStreetLight",
+        "GroupId": 200250
+    },
+    {
+        "Id": 200251,
+        "Priority": 200251,
+        "SequentialId": 2,
+        "Desc": "v4.2拍照引导1",
+        "GuideType": 1,
+        "ConditionId": [
+            50010301
+        ],
+        "CompleteId": 200251,
+        "ActiveUi": "UiBigWorldPhotographControl",
+        "GroupId": 200251
+    },
+    {
+        "Id": 200252,
+        "Priority": 200252,
+        "SequentialId": 2,
+        "Desc": "v4.2拍照引导2",
+        "GuideType": 1,
+        "ConditionId": [
+            50010302
+        ],
+        "CompleteId": 200252,
+        "ActiveUi": "UiBigWorldPhotographControl",
+        "GroupId": 200252
+    },
+    {
+        "Id": 200253,
+        "Priority": 200253,
+        "SequentialId": 2,
+        "Desc": "v4.2拍照引导3",
+        "GuideType": 1,
+        "ConditionId": [
+            50010303
+        ],
+        "CompleteId": 200253,
+        "ActiveUi": "UiBigWorldPhotographControl",
+        "GroupId": 200253
+    },
+    {
+        "Id": 200254,
+        "Priority": 200254,
+        "SequentialId": 2,
+        "Desc": "v4.2拍照引导4",
+        "GuideType": 1,
+        "ConditionId": [
+            50010304
+        ],
+        "CompleteId": 200254,
+        "ActiveUi": "UiBigWorldPhotographControl",
+        "GroupId": 200254
+    },
+    {
+        "Id": 200255,
+        "Priority": 200255,
+        "Desc": "v4.2引航任务",
+        "GuideType": 1,
+        "ConditionId": [
+            50002053
+        ],
+        "CompleteId": 200255,
+        "ActiveUi": "UiBigWorldHud",
+        "CheckNodeActive": "BtnNews",
+        "GroupId": 200255
+    },
+    {
+        "Id": 200256,
+        "Priority": 200256,
+        "Desc": "v4.2历程任务二期",
+        "GuideType": 1,
+        "ConditionId": [
+            50010048
+        ],
+        "CompleteId": 200256,
+        "ActiveUi": "UiBigWorldHud|UiBigWorldProcess",
+        "GroupId": 200256
+    },
+    {
+        "Id": 200261,
+        "Priority": 200261,
+        "Desc": "v4.2空域迷航-主界面",
+        "GuideType": 1,
+        "CompleteId": 200261,
+        "ActiveUi": "UiSkyGardenSGDroneMain",
+        "GroupId": 200261
+    },
+    {
+        "Id": 200262,
+        "Priority": 200262,
+        "Desc": "v4.2空域迷航-关卡介绍",
+        "GuideType": 1,
+        "CompleteId": 200262,
+        "ActiveUi": "UiSkyGardenSGDronePopupDetail",
+        "GroupId": 200262
+    },
+    {
+        "Id": 200263,
+        "Priority": 200263,
+        "Desc": "v4.2空域迷航-101前",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200263,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200263
+    },
+    {
+        "Id": 200264,
+        "Priority": 200264,
+        "Desc": "v4.2空域迷航-101中",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200264,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200264
+    },
+    {
+        "Id": 200265,
+        "Priority": 200265,
+        "Desc": "v4.2空域迷航-101后",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200265,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200265
+    },
+    {
+        "Id": 200266,
+        "Priority": 200266,
+        "Desc": "v4.2空域迷航-102详情",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200266,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200266
+    },
+    {
+        "Id": 200267,
+        "Priority": 200267,
+        "Desc": "v4.2空域迷航-102前",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200267,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200267
+    },
+    {
+        "Id": 200268,
+        "Priority": 200268,
+        "Desc": "v4.2空域迷航-102中",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200268,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200268
+    },
+    {
+        "Id": 200269,
+        "Priority": 200269,
+        "Desc": "v4.2空域迷航-102后",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200269,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200269
+    },
+    {
+        "Id": 200270,
+        "Priority": 200270,
+        "Desc": "v4.2空域迷航-201",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200270,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200270
+    },
+    {
+        "Id": 200271,
+        "Priority": 200271,
+        "Desc": "v4.2空域迷航-202",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200271,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200271
+    },
+    {
+        "Id": 200272,
+        "Priority": 200272,
+        "Desc": "v4.2空域迷航-301",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200272,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200272
+    },
+    {
+        "Id": 200273,
+        "Priority": 200273,
+        "Desc": "v4.2空域迷航-401前",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200273,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200273
+    },
+    {
+        "Id": 200274,
+        "Priority": 200274,
+        "Desc": "v4.2空域迷航-401后",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200274,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200274
+    },
+    {
+        "Id": 200275,
+        "Priority": 200275,
+        "Desc": "v4.2空域迷航-402",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200275,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200275
+    },
+    {
+        "Id": 200276,
+        "Priority": 200276,
+        "Desc": "v4.2空域迷航-403",
+        "GuideType": 1,
+        "ConditionId": [
+            50010411
+        ],
+        "CompleteId": 200276,
+        "ActiveUi": "UiSkyGardenSGDroneGame",
+        "GroupId": 200276
+    },
+    {
+        "Id": 200280,
+        "Priority": 200280,
+        "Desc": "v4.5法奥斯学院",
+        "GuideType": 1,
+        "CompleteId": 200280,
+        "ActiveUi": "UiBigWorldCollegeBanner",
+        "GroupId": 200280
+    },
+    {
+        "Id": 200281,
+        "Priority": 200281,
+        "Desc": "v4.5指挥官DIY优化",
+        "GuideType": 1,
+        "CompleteId": 200281,
+        "ActiveUi": "UiBigWorldDIY",
+        "CheckNodeActive": "PanelOutfitTab",
+        "GroupId": 200281
+    },
+    {
+        "Id": 200282,
+        "Priority": 200282,
+        "Desc": "v4.5历程2.0邀约",
+        "GuideType": 1,
+        "ConditionId": [
+            50003211
+        ],
+        "CompleteId": 200282,
+        "ActiveUi": "UiBigWorldTaskMainInvitation",
+        "GroupId": 200282
+    },
+    {
+        "Id": 200283,
+        "Priority": 200283,
+        "Desc": "v4.5历程2.0流程",
+        "GuideType": 1,
+        "ConditionId": [
+            50003222
+        ],
+        "CompleteId": 200283,
+        "ActiveUi": "UiBigWorldHud|UiBigWorldProcess",
+        "GroupId": 200283
+    }
+]

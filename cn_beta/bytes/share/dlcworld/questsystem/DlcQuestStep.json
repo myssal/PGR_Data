@@ -1,0 +1,436 @@
+[
+    {
+        "Id": 100101,
+        "QuestId": 1001,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 10010101
+    },
+    {
+        "Id": 401101,
+        "QuestId": 4011,
+        "WorldId": 400,
+        "LevelId": 4011,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 40110101
+    },
+    {
+        "Id": 401201,
+        "QuestId": 4012,
+        "WorldId": 400,
+        "LevelId": 4012,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 40120101
+    },
+    {
+        "Id": 402301,
+        "QuestId": 4023,
+        "WorldId": 400,
+        "LevelId": 4023,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 40230101
+    },
+    {
+        "Id": 402401,
+        "QuestId": 4024,
+        "WorldId": 400,
+        "LevelId": 4024,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 40240101
+    },
+    {
+        "Id": 10021,
+        "QuestId": 1002,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": false,
+        "RewardId": 0,
+        "FirstObjectiveId": 100211
+    },
+    {
+        "Id": 10022,
+        "QuestId": 1002,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 100214,
+        "PreStep": [
+            10021
+        ]
+    },
+    {
+        "Id": 200101,
+        "QuestId": 2001,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 20010102
+    },
+    {
+        "Id": 200401,
+        "QuestId": 2004,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": true,
+        "StepText": "和露西亚一起逛庆典",
+        "RewardId": 0,
+        "FirstObjectiveId": 20040101
+    },
+    {
+        "Id": 200501,
+        "QuestId": 2005,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": true,
+        "StepText": "和薇拉一起逛庆典",
+        "RewardId": 0,
+        "FirstObjectiveId": 20050101
+    },
+    {
+        "Id": 200301,
+        "QuestId": 2003,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 20030101
+    },
+    {
+        "Id": 200201,
+        "QuestId": 2002,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": false,
+        "RewardId": 0,
+        "FirstObjectiveId": 2002014
+    },
+    {
+        "Id": 200202,
+        "QuestId": 2002,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 2002052,
+        "PreStep": [
+            200201
+        ]
+    },
+    {
+        "Id": 401301,
+        "QuestId": 4013,
+        "WorldId": 400,
+        "LevelId": 4013,
+        "IsEndStep": true,
+        "StepText": "秘密基地副本",
+        "RewardId": 0,
+        "FirstObjectiveId": 40130101
+    },
+    {
+        "Id": 500101,
+        "QuestId": 5001,
+        "WorldId": 400,
+        "LevelId": 4008,
+        "IsEndStep": false,
+        "StepText": "开始挑战",
+        "RewardId": 0,
+        "FirstObjectiveId": 50010101
+    },
+    {
+        "Id": 500102,
+        "QuestId": 5001,
+        "WorldId": 400,
+        "LevelId": 4008,
+        "IsEndStep": false,
+        "StepText": "在规定的时间内到达终点",
+        "RewardId": 0,
+        "FirstObjectiveId": 50010201,
+        "PreStep": [
+            500101
+        ]
+    },
+    {
+        "Id": 500103,
+        "QuestId": 5001,
+        "WorldId": 400,
+        "LevelId": 4008,
+        "IsEndStep": true,
+        "StepText": "挑战结束",
+        "RewardId": 0,
+        "FirstObjectiveId": 50010301,
+        "PreStep": [
+            500101
+        ]
+    },
+    {
+        "Id": 500201,
+        "QuestId": 5002,
+        "WorldId": 400,
+        "LevelId": 4009,
+        "IsEndStep": false,
+        "StepText": "开始挑战",
+        "RewardId": 0,
+        "FirstObjectiveId": 50020101
+    },
+    {
+        "Id": 500202,
+        "QuestId": 5002,
+        "WorldId": 400,
+        "LevelId": 4009,
+        "IsEndStep": false,
+        "StepText": "在规定的时间内到达终点",
+        "RewardId": 0,
+        "FirstObjectiveId": 50020201,
+        "PreStep": [
+            500201
+        ]
+    },
+    {
+        "Id": 500203,
+        "QuestId": 5002,
+        "WorldId": 400,
+        "LevelId": 4009,
+        "IsEndStep": true,
+        "StepText": "挑战结束",
+        "RewardId": 0,
+        "FirstObjectiveId": 50020301,
+        "PreStep": [
+            500201
+        ]
+    },
+    {
+        "Id": 500301,
+        "QuestId": 5003,
+        "WorldId": 400,
+        "LevelId": 4010,
+        "IsEndStep": false,
+        "StepText": "开始挑战",
+        "RewardId": 0,
+        "FirstObjectiveId": 50030101
+    },
+    {
+        "Id": 500302,
+        "QuestId": 5003,
+        "WorldId": 400,
+        "LevelId": 4010,
+        "IsEndStep": false,
+        "StepText": "在规定的时间内到达终点",
+        "RewardId": 0,
+        "FirstObjectiveId": 50030201,
+        "PreStep": [
+            500301
+        ]
+    },
+    {
+        "Id": 500303,
+        "QuestId": 5003,
+        "WorldId": 400,
+        "LevelId": 4010,
+        "IsEndStep": true,
+        "StepText": "挑战结束",
+        "RewardId": 0,
+        "FirstObjectiveId": 50030301,
+        "PreStep": [
+            500301
+        ]
+    },
+    {
+        "Id": 500401,
+        "QuestId": 5004,
+        "WorldId": 400,
+        "LevelId": 4018,
+        "IsEndStep": false,
+        "StepText": "开始挑战",
+        "RewardId": 0,
+        "FirstObjectiveId": 50040101
+    },
+    {
+        "Id": 500402,
+        "QuestId": 5004,
+        "WorldId": 400,
+        "LevelId": 4018,
+        "IsEndStep": false,
+        "StepText": "在规定的时间内到达终点",
+        "RewardId": 0,
+        "FirstObjectiveId": 50040201,
+        "PreStep": [
+            500401
+        ]
+    },
+    {
+        "Id": 500403,
+        "QuestId": 5004,
+        "WorldId": 400,
+        "LevelId": 4018,
+        "IsEndStep": true,
+        "StepText": "挑战结束",
+        "RewardId": 0,
+        "FirstObjectiveId": 50040301,
+        "PreStep": [
+            500401
+        ]
+    },
+    {
+        "Id": 500501,
+        "QuestId": 5005,
+        "WorldId": 400,
+        "LevelId": 4019,
+        "IsEndStep": false,
+        "StepText": "开始挑战",
+        "RewardId": 0,
+        "FirstObjectiveId": 50050101
+    },
+    {
+        "Id": 500502,
+        "QuestId": 5005,
+        "WorldId": 400,
+        "LevelId": 4019,
+        "IsEndStep": false,
+        "StepText": "在规定的时间内到达终点",
+        "RewardId": 0,
+        "FirstObjectiveId": 50050201,
+        "PreStep": [
+            500501
+        ]
+    },
+    {
+        "Id": 500503,
+        "QuestId": 5005,
+        "WorldId": 400,
+        "LevelId": 4019,
+        "IsEndStep": true,
+        "StepText": "挑战结束",
+        "RewardId": 0,
+        "FirstObjectiveId": 50050301,
+        "PreStep": [
+            500501
+        ]
+    },
+    {
+        "Id": 500601,
+        "QuestId": 5006,
+        "WorldId": 400,
+        "LevelId": 4020,
+        "IsEndStep": false,
+        "StepText": "开始挑战",
+        "RewardId": 0,
+        "FirstObjectiveId": 50060101
+    },
+    {
+        "Id": 500602,
+        "QuestId": 5006,
+        "WorldId": 400,
+        "LevelId": 4020,
+        "IsEndStep": false,
+        "StepText": "在规定的时间内到达终点",
+        "RewardId": 0,
+        "FirstObjectiveId": 50060201,
+        "PreStep": [
+            500601
+        ]
+    },
+    {
+        "Id": 500603,
+        "QuestId": 5006,
+        "WorldId": 400,
+        "LevelId": 4020,
+        "IsEndStep": true,
+        "StepText": "挑战结束",
+        "RewardId": 0,
+        "FirstObjectiveId": 50060301,
+        "PreStep": [
+            500601
+        ]
+    },
+    {
+        "Id": 402101,
+        "QuestId": 4021,
+        "WorldId": 400,
+        "LevelId": 4021,
+        "IsEndStep": true,
+        "StepText": "和露西亚一起逛庆典",
+        "RewardId": 0,
+        "FirstObjectiveId": 40210100
+    },
+    {
+        "Id": 402201,
+        "QuestId": 4022,
+        "WorldId": 400,
+        "LevelId": 4022,
+        "IsEndStep": true,
+        "StepText": "和薇拉一起逛庆典",
+        "RewardId": 0,
+        "FirstObjectiveId": 40220101
+    },
+    {
+        "Id": 600101,
+        "QuestId": 6001,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 60010101
+    },
+    {
+        "Id": 300401,
+        "QuestId": 3004,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 30040101
+    },
+    {
+        "Id": 300501,
+        "QuestId": 3005,
+        "WorldId": 400,
+        "LevelId": 4001,
+        "IsEndStep": true,
+        "RewardId": 0,
+        "FirstObjectiveId": 30050101
+    },
+    {
+        "Id": 500701,
+        "QuestId": 5007,
+        "WorldId": 400,
+        "LevelId": 4008,
+        "IsEndStep": false,
+        "StepText": "开始挑战",
+        "RewardId": 0,
+        "FirstObjectiveId": 50070101
+    },
+    {
+        "Id": 500702,
+        "QuestId": 5007,
+        "WorldId": 400,
+        "LevelId": 4008,
+        "IsEndStep": false,
+        "StepText": "在规定的时间内到达终点",
+        "RewardId": 0,
+        "FirstObjectiveId": 50070201,
+        "PreStep": [
+            500701
+        ]
+    },
+    {
+        "Id": 500703,
+        "QuestId": 5007,
+        "WorldId": 400,
+        "LevelId": 4008,
+        "IsEndStep": true,
+        "StepText": "挑战结束",
+        "RewardId": 0,
+        "FirstObjectiveId": 50070301,
+        "PreStep": [
+            500701
+        ]
+    }
+]

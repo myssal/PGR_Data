@@ -1,0 +1,907 @@
+[
+    {
+        "Id": 100,
+        "Name": "哈桑回顾",
+        "ConditionIds": [
+            863058
+        ],
+        "Priority": 1,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 100
+    },
+    {
+        "Id": 101,
+        "Name": "剧情任务",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 1,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "丽芙",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 101
+    },
+    {
+        "Id": 102,
+        "Name": "获得角色丽芙",
+        "ConditionIds": [
+            70102
+        ],
+        "Priority": 2,
+        "BtnContent": "欢迎入队，丽芙",
+        "NpcName": "丽芙",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 113
+    },
+    {
+        "Id": 103,
+        "Name": "技能升级",
+        "ConditionIds": [
+            70103
+        ],
+        "Priority": 3,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "露西亚",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadluxiya1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 103
+    },
+    {
+        "Id": 104,
+        "Name": "新手目标",
+        "ConditionIds": [
+            70104
+        ],
+        "Priority": 4,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 104
+    },
+    {
+        "Id": 105,
+        "Name": "角色晋升",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 5,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "露西亚",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadluxiya1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 105
+    },
+    {
+        "Id": 1,
+        "Name": "签到",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 6,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "丽芙",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 1
+    },
+    {
+        "Id": 2,
+        "Name": "角色碎片",
+        "ConditionIds": [
+            84100111
+        ],
+        "Priority": 26,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "丽芙",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 114
+    },
+    {
+        "Id": 3,
+        "Name": "研发系统",
+        "ConditionIds": [
+            70105
+        ],
+        "Priority": 8,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "？？？",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadYongyechao1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 3
+    },
+    {
+        "Id": 111,
+        "Name": "引导主线任务",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 9,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "露西亚",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadluxiya1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 111
+    },
+    {
+        "Id": 106,
+        "Name": "引导开放所有资源关",
+        "ConditionIds": [
+            70111
+        ],
+        "Priority": 10,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "露西亚",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadluxiya1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 115
+    },
+    {
+        "Id": 4,
+        "Name": "普通商店",
+        "ConditionIds": [
+            70004
+        ],
+        "Priority": 11,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "丽芙",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 4
+    },
+    {
+        "Id": 5,
+        "Name": "开启赛利卡考级",
+        "ConditionIds": [
+            770424
+        ],
+        "Priority": 12,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 5
+    },
+    {
+        "Id": 107,
+        "Name": "引导师徒系统",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 13,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 117
+    },
+    {
+        "Id": 108,
+        "Name": "引导工会系统",
+        "ConditionIds": [
+            84100405
+        ],
+        "Priority": 14,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 118
+    },
+    {
+        "Id": 6,
+        "Name": "引导辅助机",
+        "ConditionIds": [
+            8006
+        ],
+        "Priority": 15,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 116
+    },
+    {
+        "Id": 7,
+        "Name": "装备突破本",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 16,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "里",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLi1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 7
+    },
+    {
+        "Id": 8,
+        "Name": "意识营救战",
+        "ConditionIds": [
+            863061
+        ],
+        "Priority": 17,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "阿西莫夫",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/AximofuNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 8
+    },
+    {
+        "Id": 9,
+        "Name": "剧情副本-困难",
+        "ConditionIds": [
+            70009
+        ],
+        "Priority": 18,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 9
+    },
+    {
+        "Id": 109,
+        "Name": "自动作战",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 19,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "丽芙",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 109
+    },
+    {
+        "Id": 10,
+        "Name": "高级装备掉落本",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 20,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "露西亚",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadluxiya1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 10
+    },
+    {
+        "Id": 11,
+        "Name": "角色-详情",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 21,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "神威",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadShenwei1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 11
+    },
+    {
+        "Id": 112,
+        "Name": "试玩区",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 22,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 112
+    },
+    {
+        "Id": 12,
+        "Name": "构造体军团",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 23,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "露西亚",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadluxiya1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 12
+    },
+    {
+        "Id": 13,
+        "Name": "协同作战",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 24,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 13
+    },
+    {
+        "Id": 110,
+        "Name": "支援",
+        "ConditionIds": [
+            70110
+        ],
+        "Priority": 25,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "丽芙",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 110
+    },
+    {
+        "Id": 14,
+        "Name": "前传副本",
+        "ConditionIds": [
+            70014
+        ],
+        "Priority": 26,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 14
+    },
+    {
+        "Id": 15,
+        "Name": "角色-时装",
+        "ConditionIds": [
+            200000
+        ],
+        "Priority": 27,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "露西亚",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadluxiya1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 15
+    },
+    {
+        "Id": 17,
+        "Name": "书房",
+        "ConditionIds": [
+            70017
+        ],
+        "Priority": 29,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 17
+    },
+    {
+        "Id": 18,
+        "Name": "基建与宿舍",
+        "ConditionIds": [
+            601000
+        ],
+        "Priority": 30,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "丽芙",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 18
+    },
+    {
+        "Id": 19,
+        "Name": "挑战-纷争战区",
+        "ConditionIds": [
+            770411
+        ],
+        "Priority": 31,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "阿西莫夫",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/AximofuNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 19
+    },
+    {
+        "Id": 20,
+        "Name": "挑战-幻痛囚笼",
+        "ConditionIds": [
+            601000
+        ],
+        "Priority": 32,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "尼科拉",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/NikelaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 20
+    },
+    {
+        "Id": 21,
+        "Name": "探索玩法",
+        "ConditionIds": [
+            774300
+        ],
+        "Priority": 33,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "阿西莫夫",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/AximofuNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 21
+    },
+    {
+        "Id": 22,
+        "Name": "勋章系统",
+        "ConditionIds": [
+            852931
+        ],
+        "Priority": 34,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 22
+    },
+    {
+        "Id": 23,
+        "Name": "挑战-边界公约",
+        "ConditionIds": [
+            774900
+        ],
+        "Priority": 35,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 23
+    },
+    {
+        "Id": 555,
+        "Name": "勋章1",
+        "ConditionIds": [
+            555
+        ],
+        "Priority": 35,
+        "SkipId": 500,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "尼科拉",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/NikelaNomal01.png",
+        "Type": 2,
+        "UiType": 2,
+        "ContentsGroupId": 555
+    },
+    {
+        "Id": 556,
+        "Name": "勋章2",
+        "ConditionIds": [
+            556
+        ],
+        "Priority": 36,
+        "SkipId": 500,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 2,
+        "UiType": 2,
+        "ContentsGroupId": 556
+    },
+    {
+        "Id": 557,
+        "Name": "勋章3",
+        "ConditionIds": [
+            557
+        ],
+        "Priority": 37,
+        "SkipId": 500,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "尼科拉",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/NikelaNomal01.png",
+        "Type": 2,
+        "UiType": 2,
+        "ContentsGroupId": 557
+    },
+    {
+        "Id": 558,
+        "Name": "勋章4",
+        "ConditionIds": [
+            558
+        ],
+        "Priority": 38,
+        "SkipId": 500,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 2,
+        "UiType": 2,
+        "ContentsGroupId": 558
+    },
+    {
+        "Id": 559,
+        "Name": "勋章5",
+        "ConditionIds": [
+            559
+        ],
+        "Priority": 39,
+        "SkipId": 500,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 2,
+        "UiType": 2,
+        "ContentsGroupId": 559
+    },
+    {
+        "Id": 599,
+        "Name": "通关据点战第1章",
+        "ConditionIds": [
+            70119
+        ],
+        "Priority": 40,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 599
+    },
+    {
+        "Id": 600,
+        "Name": "通关据点战第2章",
+        "ConditionIds": [
+            70113
+        ],
+        "Priority": 41,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 600
+    },
+    {
+        "Id": 601,
+        "Name": "通关据点战第3章",
+        "ConditionIds": [
+            70114
+        ],
+        "Priority": 42,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 601
+    },
+    {
+        "Id": 602,
+        "Name": "通关据点战第4章",
+        "ConditionIds": [
+            70115
+        ],
+        "Priority": 43,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 602
+    },
+    {
+        "Id": 603,
+        "Name": "通关据点战第5章",
+        "ConditionIds": [
+            70116
+        ],
+        "Priority": 44,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "阿西莫夫",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/AximofuNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 603
+    },
+    {
+        "Id": 604,
+        "Name": "通关据点战第6章",
+        "ConditionIds": [
+            70117
+        ],
+        "Priority": 45,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 604
+    },
+    {
+        "Id": 605,
+        "Name": "通关据点战第7章",
+        "ConditionIds": [
+            70118
+        ],
+        "Priority": 46,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "阿西莫夫",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/AximofuNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 605
+    },
+    {
+        "Id": 606,
+        "Name": "通关据点战第9章",
+        "ConditionIds": [
+            70120
+        ],
+        "Priority": 47,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 606
+    },
+    {
+        "Id": 607,
+        "Name": "通关据点战第10章",
+        "ConditionIds": [
+            70121
+        ],
+        "Priority": 48,
+        "BtnContent": "……倒也不必。",
+        "NpcName": "贾米拉",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/JiamilaNormal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 607
+    },
+    {
+        "Id": 608,
+        "Name": "通关据点战第11章",
+        "ConditionIds": [
+            70122
+        ],
+        "Priority": 49,
+        "BtnContent": "不客气。",
+        "NpcName": "蒲牢",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/PulaoNormal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 608
+    },
+    {
+        "Id": 609,
+        "Name": "通关据点战第12章",
+        "ConditionIds": [
+            70123
+        ],
+        "Priority": 50,
+        "BtnContent": "嗯。",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 609
+    },
+    {
+        "Id": 700,
+        "Name": "红包任务里",
+        "ConditionIds": [
+            400000
+        ],
+        "Priority": 51,
+        "SkipId": 8002,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "里",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLi1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 700
+    },
+    {
+        "Id": 701,
+        "Name": "红包任务丽芙",
+        "ConditionIds": [
+            400001
+        ],
+        "Priority": 52,
+        "SkipId": 8002,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "丽芙",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 701
+    },
+    {
+        "Id": 702,
+        "Name": "红包任务神威",
+        "ConditionIds": [
+            400002
+        ],
+        "Priority": 53,
+        "SkipId": 8002,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "神威",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadShenwei1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 702
+    },
+    {
+        "Id": 703,
+        "Name": "红包任务露西亚",
+        "ConditionIds": [
+            400003
+        ],
+        "Priority": 54,
+        "SkipId": 8002,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "露西亚",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadluxiya1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 703
+    },
+    {
+        "Id": 704,
+        "Name": "红包任务七实",
+        "ConditionIds": [
+            400004
+        ],
+        "Priority": 55,
+        "SkipId": 8002,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "七实",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadYongyechao1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 704
+    },
+    {
+        "Id": 705,
+        "Name": "红包任务赛利卡",
+        "ConditionIds": [
+            400005
+        ],
+        "Priority": 56,
+        "SkipId": 8002,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 705
+    },
+    {
+        "Id": 706,
+        "Name": "红包任务卡列",
+        "ConditionIds": [
+            400006
+        ],
+        "Priority": 57,
+        "SkipId": 8002,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "卡列尼娜",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadKalienina1.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 706
+    },
+    {
+        "Id": 24,
+        "Name": "挑战-异聚迷宫",
+        "ConditionIds": [
+            84700201
+        ],
+        "Priority": 36,
+        "SkipId": 21,
+        "BtnContent": "明白",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 24
+    },
+    {
+        "Id": 25,
+        "Name": "维系者行动",
+        "ConditionIds": [
+            870002,
+            773400
+        ],
+        "Priority": 28,
+        "SkipId": 21,
+        "BtnContent": "我明白了。",
+        "NpcName": "赛利卡",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/SailikaNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 25
+    },
+    {
+        "Id": 26,
+        "Name": "剧情全解锁",
+        "ConditionIds": [
+            84100112,
+            863060
+        ],
+        "Priority": 26,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 26
+    }
+]

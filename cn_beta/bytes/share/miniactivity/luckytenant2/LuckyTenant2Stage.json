@@ -1,0 +1,446 @@
+[
+    {
+        "Id": 101,
+        "ActivityId": 2,
+        "Name": "·01",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            5
+        ],
+        "InitialPieceNum": [
+            1
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "5回合，金币70",
+        "PerfectDesc": "5回合，金币70",
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": 1
+    },
+    {
+        "Id": 102,
+        "ActivityId": 2,
+        "PreStage": 101,
+        "Name": "·02",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            13,
+            14,
+            5,
+            6
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "10回合，金币500",
+        "PerfectDesc": "10回合，金币500",
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "2|1",
+        "TutorialPage": 4
+    },
+    {
+        "Id": 103,
+        "ActivityId": 2,
+        "PreStage": 102,
+        "Name": "·03",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            12,
+            11,
+            13,
+            6,
+            14,
+            5,
+            99999,
+            99998
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "10回合，金币600",
+        "PerfectDesc": "15回合，金币1400",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "2|1"
+    },
+    {
+        "Id": 201,
+        "ActivityId": 2,
+        "PreStage": 103,
+        "Name": "·01",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            29,
+            5,
+            1,
+            1,
+            1
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "10回合，金币400",
+        "PerfectDesc": "15回合，金币1200",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "3|2|1",
+        "TutorialPage": 5
+    },
+    {
+        "Id": 202,
+        "ActivityId": 2,
+        "PreStage": 201,
+        "Name": "·02",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            14,
+            25,
+            23,
+            24
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "15回合，金币1400",
+        "PerfectDesc": "20回合，金币2700",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "3|2|1"
+    },
+    {
+        "Id": 301,
+        "ActivityId": 2,
+        "PreStage": 202,
+        "Name": "·01",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            35,
+            45,
+            3,
+            4,
+            23,
+            24,
+            25
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "10回合，金币1500",
+        "PerfectDesc": "15回合，金币3000",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "4|3",
+        "TutorialPage": 6
+    },
+    {
+        "Id": 302,
+        "ActivityId": 2,
+        "PreStage": 301,
+        "Name": "·02",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            35,
+            42
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "15回合，金币2000",
+        "PerfectDesc": "20回合，金币4800",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "4|3|2"
+    },
+    {
+        "Id": 401,
+        "ActivityId": 2,
+        "PreStage": 302,
+        "Name": "·01",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            47,
+            48,
+            50,
+            51,
+            3,
+            4
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "10回合，金币1000",
+        "PerfectDesc": "15回合，金币2600",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "5|3|2|4|1|6",
+        "TutorialPage": 7
+    },
+    {
+        "Id": 402,
+        "ActivityId": 2,
+        "PreStage": 401,
+        "Name": "·02",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            48,
+            23,
+            24,
+            25,
+            38
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "15回合，金币3000",
+        "PerfectDesc": "20回合，金币5000",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "5|4|3|2|1|6"
+    },
+    {
+        "Id": 501,
+        "ActivityId": 2,
+        "PreStage": 402,
+        "Name": "·01",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            1,
+            1,
+            99999,
+            99998
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            5,
+            5
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "15回合，金币1600",
+        "PerfectDesc": "25回合，金币10000",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "5|3|4|2|1|6"
+    },
+    {
+        "Id": 502,
+        "ActivityId": 2,
+        "PreStage": 501,
+        "Name": "·02",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            1,
+            1,
+            99999,
+            99998
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            5,
+            5
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "15回合，金币800",
+        "PerfectDesc": "25回合，金币3500",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "3|2|1"
+    },
+    {
+        "Id": 601,
+        "ActivityId": 2,
+        "PreStage": 502,
+        "Name": "·01",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            5
+        ],
+        "InitialPieceNum": [
+            1
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "15回合，金币900",
+        "PerfectDesc": "20回合，金币1600",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "6|1|2|3|4",
+        "TutorialPage": 8
+    },
+    {
+        "Id": 602,
+        "ActivityId": 2,
+        "PreStage": 601,
+        "Name": "·02",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            59,
+            49,
+            50
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "15回合，金币4000",
+        "PerfectDesc": "25回合，金币12000",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "6|5|2|3|4|1"
+    },
+    {
+        "Id": 701,
+        "ActivityId": 2,
+        "PreStage": 602,
+        "Name": "·01",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            59,
+            57,
+            99999,
+            99998
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            5,
+            5
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "15回合，金币1800",
+        "PerfectDesc": "25回合，金币10000",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "6|1|2|3|4|5"
+    },
+    {
+        "Id": 702,
+        "ActivityId": 2,
+        "PreStage": 701,
+        "Name": "·02",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            59,
+            33,
+            99999,
+            99998
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            5,
+            5
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "15回合，金币1200",
+        "PerfectDesc": "25回合，金币5000",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "6|1|3|4"
+    },
+    {
+        "Id": 703,
+        "ActivityId": 2,
+        "PreStage": 702,
+        "Name": "·03",
+        "BagCapacity": 255,
+        "InitialPiece": [
+            1,
+            1,
+            99999,
+            99998
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            5,
+            5
+        ],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "15回合，金币1000",
+        "PerfectDesc": "30回合，金币10000",
+        "ShowDeleteOption": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "ShowBondId": "6|1|2|3|4|5"
+    }
+]
