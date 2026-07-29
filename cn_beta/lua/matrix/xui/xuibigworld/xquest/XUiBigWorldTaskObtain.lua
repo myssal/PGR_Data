@@ -1,0 +1,84 @@
+
+
+---@class XUiBigWorldTaskObtain : XBigWorldUi
+---@field GameObject UnityEngine.GameObject
+---@field Transform UnityEngine.Transform
+---@field _Control XBigWorldQuestControl
+local XUiBigWorldTaskObtain = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldTaskObtain")
+
+local OpType = XMVCA.XBigWorldQuest.QuestOpType
+
+local Duration
+
+function XUiBigWorldTaskObtain:OnAwake()
+    self:InitUi()
+    self:InitCb()
+
+    Duration = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetInt("QuestSmallPopUpDisplayTime")
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, OpType.PopupBegin)
+end
+
+function XUiBigWorldTaskObtain:OnStart(questId, isFinish)
+    local systemModuleId = XMVCA.XBigWorldQuest:GetQuestSystemUiStyleId(questId)
+    XMVCA.XBigWorldUI:ChangeTheme(XMVCA.XBigWorldUI.UiThemeModule.Quest, systemModuleId)
+    self._QuestId = questId
+    self._IsFinish = isFinish
+    self:InitView()
+    self:StartTimer()
+    
+    XMVCA.XBigWorldFunction:FreezeFunctionEvent()
+end
+
+function XUiBigWorldTaskObtain:OnDestroy()
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, OpType.PopupEnd)
+    self:StopTimer()
+    self:SendCmd()
+
+    XMVCA.XBigWorldFunction:UnFreezeFunctionEvent()
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_COMPLETE)
+end
+
+function XUiBigWorldTaskObtain:InitUi()
+end
+
+function XUiBigWorldTaskObtain:InitCb()
+    if self.BtnClose then
+        self.BtnClose:AddEventListener(handler(self, self.Close))
+    end
+end
+
+function XUiBigWorldTaskObtain:InitView()
+    local questId = self._QuestId
+    local isFinish = self._IsFinish
+    self.TxtTaskTitle.text = self._Control:GetQuestName(questId)
+    self.PanelClear.gameObject:SetActiveEx(isFinish)
+    self.PanelReceive.gameObject:SetActiveEx(not isFinish)
+end
+
+function XUiBigWorldTaskObtain:StartTimer()
+    if self._TimerId then
+        self:StopTimer()
+    end
+    self._TimerId = XScheduleManager.ScheduleOnce(function()
+        self:Close()
+    end, Duration)
+end
+
+function XUiBigWorldTaskObtain:StopTimer()
+    if not self._TimerId then
+        return
+    end
+    XScheduleManager.UnSchedule(self._TimerId)
+    self._TimerId = nil
+end
+
+function XUiBigWorldTaskObtain:SendCmd()
+    local questId = self._QuestId
+    local state = self._IsFinish and 2 or 1
+    XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_QUEST_POPUP_CLOSED, {
+        QuestId = questId,
+        State = state
+    })
+end
+
+return XUiBigWorldTaskObtain

@@ -1,0 +1,46 @@
+--- 主界面教学
+---@class XUiTheatre5MainTeaching: XUiNode
+---@field protected _Control XTheatre5Control
+local XUiTheatre5MainTeaching = XClass(XUiNode, 'XUiTheatre5MainTeaching')
+
+function XUiTheatre5MainTeaching:OnStart()
+    XUiHelper.RegisterClickEvent(self, self.BtnStart, self.OnClickStartEvent, true)
+end
+
+function XUiTheatre5MainTeaching:OnEnable()
+    local isTeaching = self._Control.PVEControl:IsInTeachingStoryLine()
+    local pvpTimeId = XMVCA.XTheatre5:GetPVPActivityTimeId()
+    if not XTool.IsNumberValid(pvpTimeId) then
+        pvpTimeId = self._Control.PVPControl:GetFuturePVPActivityTimeId()
+    end
+
+    local isEnded = true
+    if XTool.IsNumberValid(pvpTimeId) then
+        local endTime = XFunctionManager.GetEndTimeByTimeId(pvpTimeId)
+        isEnded = XTime.GetServerNowTimestamp() >= endTime
+    end
+
+    self.PanelFirst.gameObject:SetActiveEx(isTeaching)
+    self.PanelSecond.gameObject:SetActiveEx(not isTeaching and not isEnded)
+    self.PanelThird.gameObject:SetActiveEx(not isTeaching and isEnded)
+end
+
+function XUiTheatre5MainTeaching:OnClickStartEvent()
+    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameMode.PVE then
+        XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
+            if success then
+                self:EnterPVEMode()
+            end
+        end)
+    else
+        self:EnterPVEMode()
+    end
+end
+
+function XUiTheatre5MainTeaching:EnterPVEMode()
+    self:PlayAnimationWithMask("Enter", function()
+        self._Control.FlowControl:EnterModel()
+    end)
+end
+
+return XUiTheatre5MainTeaching

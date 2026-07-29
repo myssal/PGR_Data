@@ -1,0 +1,389 @@
+---
+--- Created by Jaylin.
+--- DateTime: 2023-03-06-006 11:41
+---
+local IsWindowsEditor = XMain.IsWindowsEditor
+
+---@class XControl
+---@field protected _Model XModel
+---@field protected _Event XEventDispatcher
+---@field private _Agency XAgency
+---@field private _Loader XLoaderUtil
+---@field private _TabConfig XTabConfig
+---@field private _MainControl XControl
+XControl = XClass(nil, "XControl")
+local LockRefKey = "__LockRefKey__"
+
+local XEventDispatcher = require("XCommon/XEventDispatcher")
+
+function XControl:Ctor(id, mainControl)
+    self._Id = id
+    self._Model = XMVCA:_GetOrRegisterModel(self._Id)
+    self._Agency = false
+    self._Loader = false
+    self._RefUi = {} --记录引用的ui列表
+    self._RefUiStackOperation = {} --记录引用的ui界面操作， 有些control只跟UiNode有关系，所以保留_RefUi,两个引用共同管理control的卸载
+    self._MainControl = mainControl
+    ---@type table<string, XControl>
+    self._SubControls = {} --子control, 支持多个control
+    self._DelayReleaseTime = 0 --延迟释放时间, 默认不延迟
+    self._LastUseTime = 0 --最后使用时间
+    self._Event = XEventDispatcher.New(nil)
+    self._IsRelease = false
+end
+
+function XControl:CallInit()
+    self:OnInit()
+    self:AddAgencyEvent()
+    if self:UseUiStackOperationRef() then
+        self._OnRemoveStackOperationHandler = handler(self, self.OnRemoveStackOperation)
+        CsXGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_REMOVE_STACK_OPERATION, self._OnRemoveStackOperationHandler)
+    end
+end
+
+function XControl:OnRemoveStackOperation(event, args)
+    local uuid = args and args[0]
+    if XTool.IsNumberValid(uuid) then
+        self:SubUiStackOperationRef(uuid)
+        XMVCA:CheckReleaseControl(self:GetId())
+    else
+        XLog.Error(string.format("Control%s监听到错误的UI栈操作", self._Id))
+    end
+end
+
+--用来开启是否使用UI栈同步control的卸载， 子类进行重写
+function XControl:UseUiStackOperationRef()
+    return false
+end
+
+function XControl:GetId()
+    return self._Id
+end
+
+function XControl:GetIsRelease()
+    return self._IsRelease
+end
+
+---设置延迟释放时间, 单位秒(s)
+---@param time number
+function XControl:SetDelayReleaseTime(time)
+    self._DelayReleaseTime = time
+end
+
+function XControl:_GetDelayReleaseTime()
+    return self._DelayReleaseTime
+end
+
+---更新最后使用时间
+function XControl:_UpdateLastUseTime()
+    self._LastUseTime = CS.UnityEngine.Time.realtimeSinceStartup
+end
+
+---获取最后使用时间
+function XControl:_GetLastUseTime()
+    return self._LastUseTime
+end
+
+---初始化函数,提供给子类重写
+function XControl:OnInit()
+end
+
+---获取模块的Agency
+---@return XAgency
+function XControl:GetAgency()
+    if not self._Agency then
+        self._Agency = XMVCA:GetAgency(self._Id)
+    end
+    return self._Agency
+end
+
+---获取绑定模块的加载器
+---@return XLoaderUtil
+function XControl:GetLoader()
+    if not self._Loader then
+        if self._MainControl then --有主control的就跟主control取就好了
+            self._Loader = self._MainControl:GetLoader()
+        else
+            self._Loader = CS.XLoaderUtil.GetModuleLoader(self._Id)
+        end
+    end
+    return self._Loader
+end
+
+---增加一个子control
+---@param cls any
+---@return XControl
+function XControl:AddSubControl(cls)
+    if not self._SubControls[cls] then
+        local control = cls.New(self._Id, self) --使用本control的id,这样才能保证获取的model一样
+        self._SubControls[cls] = control
+        control:CallInit()
+        return control
+    else
+        XLog.Error("请勿重复添加子control!")
+    end
+end
+
+---删除一个子Control
+---@param control XControl
+function XControl:RemoveSubControl(control)
+    if self._SubControls[control.__class] then
+        self._SubControls[control.__class] = nil
+        control:Release()
+    else
+        XLog.Error("移除不存在的子control: " .. control.__cname)
+    end
+    return nil
+end
+
+---获取一个子Control
+---@return XControl
+function XControl:GetSubControl(cls)
+    return self._SubControls[cls]
+end
+
+---control在生命周期启动的时候需要对Agency及对外的Agency进行添加监听
+function XControl:AddAgencyEvent()
+end
+
+---controld在生命周期结束的时候需要对Agency及对外的Agency进行移除监听
+function XControl:RemoveAgencyEvent()
+end
+
+---添加界面引用
+function XControl:AddViewRef(ui)
+    if self._RefUi[ui] then
+        XLog.Error(string.format("绑定已存在的ui序号: control %s, UId: %s", self._Id, ui))
+        return
+    end
+    self._RefUi[ui] = true
+end
+
+---移除界面引用
+function XControl:SubViewRef(ui)
+    if not self._RefUi[ui] then
+        XLog.Error(string.format("解绑不存在的ui序号: control %s, UId: %s", self._Id, ui))
+        return
+    end
+    self._RefUi[ui] = nil
+end
+
+function XControl:HasViewRef()
+    return self._RefUi and next(self._RefUi) ~= nil
+end
+
+--region ui界面栈操作引用
+function XControl:AddUiStackOperationRef(uuid)
+    if not self._RefUiStackOperation[uuid] then
+        self._RefUiStackOperation[uuid] = true
+    end
+end
+
+function XControl:SubUiStackOperationRef(uuid)
+    if self._RefUiStackOperation[uuid] then
+        self._RefUiStackOperation[uuid] = nil
+    end
+end
+
+function XControl:HasStackOperationRef()
+    return self._RefUiStackOperation and next(self._RefUiStackOperation) ~= nil
+end
+
+--endregion
+
+---手动锁定引用, 因为有些系统依赖场景
+function XControl:LockRef()
+    self:AddViewRef(LockRefKey)
+end
+
+---手动解除锁定
+function XControl:UnLockRef()
+    self:SubViewRef(LockRefKey)
+end
+
+function XControl:Release()
+    self._IsRelease = true
+    if self:UseUiStackOperationRef() then
+        CsXGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_REMOVE_STACK_OPERATION, self._OnRemoveStackOperationHandler)
+        self._OnRemoveStackOperationHandler = nil
+    end    
+    self:RemoveAgencyEvent()
+    self._RefUi = nil
+    self._RefUiStackOperation = nil
+
+    if self._MainControl == nil then
+        self._Model:ClearAllPrivate()
+        if self._TabConfig then --新版清理配置
+            self._TabConfig:ClearControl()
+        else
+            self._Model:ClearPrivateConfig() --旧版清理配置
+        end
+        
+        if self._Loader then --只有主loader才需要从C#层释放
+            CS.XLoaderUtil.ClearModuleLoader(self._Id)
+        end
+    end
+    self:Clear() --这里清理界面注册的事件
+    for _, subControl in pairs(self._SubControls) do
+        subControl:Release()
+    end
+    self._Loader = nil
+    self._Model = nil
+    self._Agency = nil
+    self._Event = nil
+    self._SubControls = nil
+    self._MainControl = nil
+    self._TabConfig = nil
+    self:OnRelease()
+    if IsWindowsEditor then
+        WeakRefCollector.AddRef(WeakRefCollector.Type.Control, self)
+    end
+end
+
+---热重载的释放得特殊处理
+function XControl:_HotReloadRelease()
+    self._IsRelease = true
+    self:RemoveAgencyEvent()
+    self._RefUi = nil
+    self._RefUiStackOperation = nil
+    self:Clear() --这里清理界面注册的事件
+    for _, subControl in pairs(self._SubControls) do
+        subControl:_HotReloadRelease()
+    end
+    self._Event = nil
+    self._Agency = nil
+    self._SubControls = nil
+    self._MainControl = nil
+    self:OnRelease()
+    if IsWindowsEditor then
+        WeakRefCollector.AddRef(WeakRefCollector.Type.Control, self)
+    end
+end
+
+function XControl:_HotReloadControl(oldCls, newCls)
+    local oldSubControl = self:GetSubControl(oldCls)
+    if oldSubControl then
+        self._SubControls[oldCls] = nil
+        oldSubControl:_HotReloadRelease()
+
+        self:AddSubControl(newCls)
+
+        --这里判断是否有暂时缓存的
+        for k, v in pairs(self) do
+            if v == oldSubControl then
+                self[k] = self:GetSubControl(newCls)
+            end
+        end
+    end
+end
+
+---保留函数, 热重载model
+---@param model XModel
+function XControl:_HotReloadModel(model)
+    if self._Model then
+        self._Model = model
+    end
+    for _, control in pairs(self._SubControls) do
+        control:_HotReloadModel(model)
+    end
+end
+
+---给子类重写, 当模块没有引用时触发
+function XControl:OnRefClear()
+end
+
+
+---给子类重写的, 当Control释放的时候执行
+function XControl:OnRelease()
+    XLog.Error("请在子类重写Control.OnRelease方法")
+end
+
+--region Event
+
+function XControl:Clear()
+    if not self._Event then
+        return
+    end
+    self._Event:Clear()
+end
+
+function XControl:AddEventListener(eventId, func, obj)
+    if not self._Event then
+        XLog.Error("添加事件失败，事件对象已被释放", self._Id)
+        return
+    end
+    self._Event:AddEventListener(eventId, func, obj)
+end
+
+function XControl:RemoveEventListener(eventId, func, obj)
+    if not self._Event then
+        XLog.Error("移除事件失败，事件对象已被释放", self._Id)
+        return
+    end
+    self._Event:RemoveEventListener(eventId, func, obj)
+end
+
+function XControl:DispatchEvent(eventId, ...)
+    if not self._Event then
+        XLog.Error("推送事件失败，事件对象已被释放", self._Id)
+        return
+    end
+    self._Event:DispatchEvent(eventId, ...)
+end
+
+--endregion
+
+--region TabConfig
+--[[
+配置表使用规范
+0. 配置表需要先Init，不然XTabConfig不会被创建出来
+1. 初始化通过self:InitConfigByTabKey()或self:InitConfigByArgs()来初始化
+2. 因为涉及到表格作用域，通过self:GetAllConfig... 或 self:GetConfigBy... 来获取配置
+3. 调用配置模块的其他方法 self:GetConfigInst():xxxx()来执行
+]]--
+
+function XControl:InitConfigByTabKey(parentPath, tabKey)
+    local tabConfig = self:GetConfigInst()
+    tabConfig:InitConfigByTabKey(parentPath, tabKey, XConfigUtil.TabScope.Control)
+end
+
+function XControl:InitConfigByArgs(args)
+    local tabConfig = self:GetConfigInst()
+    tabConfig:InitConfigByArgs(args)
+end
+
+function XControl:GetAllConfigByTabKey(tabKey)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:GetByTabKey(tabKey, XConfigUtil.TabScope.Control)
+end
+
+function XControl:GetConfigByTabKeyAndIdKey(tabKey, idKey, noTips)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:GetConfigByTabKeyAndId(tabKey, idKey, XConfigUtil.TabScope.Control, noTips)
+end
+
+function XControl:GetAllConfigByPath(path)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:Get(path, XConfigUtil.TabScope.Control)
+end
+
+function XControl:GetConfigByPathAndIdKey(tabKey, idKey, noTips)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:GetConfigByPathAndId(tabKey, idKey, XConfigUtil.TabScope.Control, noTips)
+end
+
+--- 获取配置实例
+---@return XTabConfig
+--------------------------
+function XControl:GetConfigInst()
+    if not self._TabConfig then
+        if self._MainControl then --子类直接引用父模块
+            self._TabConfig = self._MainControl:GetConfigInst()
+        else
+            self._TabConfig = XMVCA:_GetOrRegisterTabConfig(self._Id)
+        end
+    end
+    return self._TabConfig
+end
+
+--endregion

@@ -1,0 +1,300 @@
+---@class XReCallActivityModel : XModel
+local XReCallActivityModel = XClass(XModel, "XReCallActivityModel")
+
+local TableKey = {
+    HoldRegressionActivity = {
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
+    HoldRegressionTask = {
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
+    HoldRegressionInvite = {
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
+    HoldRegressionShareConfig = {
+        CacheType = XConfigUtil.CacheType.Normal,
+        Identifier = "Key",
+        ReadFunc = XConfigUtil.ReadType.String,
+    },
+    HoldRegressionClientConfig = {
+        CacheType = XConfigUtil.CacheType.Normal,
+        DirPath = XConfigUtil.DirectoryType.Client,
+        Identifier = "Key",
+        ReadFunc = XConfigUtil.ReadType.String,
+    },
+}
+
+function XReCallActivityModel:OnInit()
+    --初始化内部变量
+    --这里只定义一些基础数据, 请不要一股脑把所有表格在这里进行解析
+    self._ActivityId = nil
+    self.taskList = {}
+    self.ignoreChannelIds = {}
+    self.inviteCount = 0
+    self._ConfigUtil:InitConfigByTableKey("HoldRegression", TableKey)
+end
+
+-- 初始化任务数据
+function XReCallActivityModel:InitRecallTaskData()
+    self.taskList = {}
+    local taskConfig = self._ConfigUtil:GetByTableKey(TableKey.HoldRegressionTask)
+    for _, config in pairs(taskConfig) do
+        if config.ActivityId == self.recallData.ActivityId then
+            local template = {}
+            template.id = config.Id
+            template.priority = config.Priority
+            template.desc = config.Desc
+            template.icon = config.Icon
+            template.timeId = config.TimeId
+            template.needSchedule = config.NeedSchedule
+            template.taskTimesLimit = config.TaskTimesLimit --任务可重复完成次数
+            template.rewardId = config.RewardId
+            template.recvTimes = 0 --已领奖次数
+            template.progress = 0
+            template.Finish = false
+            self.taskList[config.Id] = template
+        end
+    end
+end
+
+function XReCallActivityModel:CalculateProgress(needSchedule,recvTimes,schedule)
+    local curProgress = schedule - (recvTimes*needSchedule)
+    if curProgress > 0 then
+        local progress = XUiHelper.GetFillAmountValue(curProgress,needSchedule)
+        return progress < 1 and progress or 1
+    end
+    return 0
+end
+
+---@desc 更新任务数据
+function XReCallActivityModel:UpdateTaskData(taskData)
+    if XTool.IsTableEmpty(self.taskList) and self.recallData then
+        self:InitRecallTaskData()
+    end
+    if taskData then
+        for _, task in pairs(taskData) do
+            if not XTool.IsTableEmpty(self.taskList[task.Id]) then 
+                self.taskList[task.Id].recvTimes = task.RecvTimes
+                if task.RecvTimes == self.taskList[task.Id].taskTimesLimit then
+                    self.taskList[task.Id].progress = 1
+                    self.taskList[task.Id].isComplete = true
+                else
+                    self.taskList[task.Id].isComplete = false
+                    if task.Schedule and task.Schedule ~= 0 then
+                        self.taskList[task.Id].progress = self:CalculateProgress(self.taskList[task.Id].needSchedule,task.RecvTimes,task.Schedule)
+                    else
+                        self.taskList[task.Id].progress = 0
+                    end
+                end
+                self.taskList[task.Id].Finish = self.taskList[task.Id].progress >= 1 or false
+            end
+        end
+    end
+end
+
+function XReCallActivityModel:GetTaskData()
+    return self.taskList
+end
+
+function XReCallActivityModel:SetInviteCount(count)
+    self.inviteCount = count
+end
+
+function XReCallActivityModel:GetInviteCount()
+    return self.inviteCount
+end
+
+function XReCallActivityModel:ClearPrivate()
+    --这里执行内部数据清理
+    --XLog.Error("请对内部数据进行清理")
+end
+
+function XReCallActivityModel:ResetAll()
+    --这里执行重登数据清理
+    --XLog.Error("重登数据清理")
+    self.taskList = {}
+    self.ignoreChannelIds = {}
+end
+
+function XReCallActivityModel:SetRecallData(data)
+    self.recallData = data
+end
+
+function XReCallActivityModel:GetRecallData()
+    return self.recallData
+end
+
+function XReCallActivityModel:SetIsGetShareReward(IsGetShareReward)
+    self.isGetShareReward = IsGetShareReward
+end
+
+function XReCallActivityModel:GetIsGetShareReward()
+    return self.isGetShareReward
+end
+
+function XReCallActivityModel:SetIgnoreChannelIds(IgnoreChannelIds)
+    self.ignoreChannelIds = {}
+    for _,v in ipairs(IgnoreChannelIds) do
+        self.ignoreChannelIds[v] = v
+    end
+end
+
+function XReCallActivityModel:GetIgnoreChannelIds()
+    return self.ignoreChannelIds
+end
+
+---@return XTableHoldRegressionActivity | nil
+function XReCallActivityModel:GetCurActivityCfg()
+    if not self.recallData then
+        return
+    end
+    
+    local activityId = self.recallData.ActivityId
+
+    if not XTool.IsNumberValidEx(activityId) then
+        return
+    end
+    
+    return self:GetActivityConfigById(activityId)
+end
+
+---@return XTableHoldRegressionActivity
+function XReCallActivityModel:GetActivityConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.HoldRegressionActivity, id, false) or {}
+end
+
+function XReCallActivityModel:GetActivityTimeIdById(id)
+    local config = self:GetActivityConfigById(id)
+
+    return config.TimeId
+end
+
+--- 获得回流活动专属聊天频道Id
+function XReCallActivityModel:GetActivityChatChannelId(id)
+    local config = self:GetActivityConfigById(id)
+
+    return config and config.ChatChannelId or 0
+end
+
+function XReCallActivityModel:GetActivityIsOpenChatChannel(id)
+    local config = self:GetActivityConfigById(id)
+
+    return config and config.OpenChatChannel or false
+end
+
+
+--获取渠道显示配置
+function XReCallActivityModel:GetRegressionChannelConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.HoldRegressionInvite, id, false) or {}
+end
+
+--获取平台分享配置
+function XReCallActivityModel:GetRegressionPlatformConfigByKey(key)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.HoldRegressionShareConfig, key, false) or {}
+end
+
+function XReCallActivityModel:GetCurReCallTimeId()
+    if self.recallData and self.recallData.ActivityId then
+        return self:GetActivityTimeIdById(self.recallData.ActivityId)
+    end
+    return nil
+end
+
+function XReCallActivityModel:GetCurInviteInTime()
+    if self.recallData and self.recallData.ActivityId then
+       local config = self:GetActivityConfigById(self.recallData.ActivityId)
+       if XFunctionManager.CheckInTimeByTimeId(config.InviteTimeId) then
+            return true
+       end
+    end
+    return false
+end
+
+function XReCallActivityModel:GetCurReCallChatChannelId()
+    if self.recallData and self.recallData.ActivityId then
+        return self:GetActivityChatChannelId(self.recallData.ActivityId)
+    end
+    return nil
+end
+
+function XReCallActivityModel:GetCurReCallIsOpenChatChannel()
+    if self.recallData and self.recallData.ActivityId then
+        return self:GetActivityIsOpenChatChannel(self.recallData.ActivityId)
+    end
+    
+    return false
+end
+
+--region ClientConfig
+
+function XReCallActivityModel:GetReCallTableClientConfigByKey(key, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.HoldRegressionClientConfig, key, notips)
+end
+
+function XReCallActivityModel:GetClientConfigReCallText(key, index)
+    index = index or 1
+    
+    local cfg = self:GetReCallTableClientConfigByKey(key)
+
+    if cfg then
+        return cfg.Values[index] or ''
+    end
+    
+    return ''
+end
+
+function XReCallActivityModel:GetClientConfigReCallNumber(key, index)
+    index = index or 1
+    
+    local cfg = self:GetReCallTableClientConfigByKey(key)
+
+    if cfg and not XTool.IsTableEmpty(cfg.Values) then
+        local valStr = cfg.Values[index]
+
+        if string.IsFloatNumber(valStr) then
+            return tonumber(valStr)
+        end
+    end
+
+    return 0
+end
+
+function XReCallActivityModel:GetClientConfigReCallNumArray(key)
+    local cfg = self:GetReCallTableClientConfigByKey(key)
+
+    if cfg and not XTool.IsTableEmpty(cfg.Values) then
+        local numberList = {}
+
+        for i, v in pairs(cfg.Values) do
+            if string.IsFloatNumber(v) then
+                table.insert(numberList, tonumber(v))
+            else
+                table.insert(numberList, 0)
+            end
+        end
+        
+        return numberList
+    end
+end
+--endregion
+
+--region 本地缓存
+
+--- 检查回归专属页签是否有点击标记
+function XReCallActivityModel:GetBackOnlyTagIsMark()
+    return self._SaveUtil:GetData("BackOnlyTagMark") or false
+end
+
+--- 设置回归专属页签显示缓存
+function XReCallActivityModel:SetBackOnlyTagMark(mark)
+    -- 默认标记缓存
+    if mark == nil then
+        mark = true
+    end
+    
+    self._SaveUtil:SaveData("BackOnlyTagMark", mark)
+end
+
+--endregion
+
+return XReCallActivityModel
