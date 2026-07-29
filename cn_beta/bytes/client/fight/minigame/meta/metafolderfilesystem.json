@@ -1,0 +1,72 @@
+[
+    {
+        "ID": 1,
+        "GameID": 1,
+        "Type": 1,
+        "Name": "Root",
+        "IsProtected": true
+    },
+    {
+        "ID": 2,
+        "GameID": 1,
+        "ParentID": 1,
+        "Type": 1,
+        "Name": "文件夹",
+        "IsProtected": true
+    },
+    {
+        "ID": 3,
+        "GameID": 1,
+        "ParentID": 2,
+        "Type": 2,
+        "Content": "文件内容",
+        "Name": "文件名",
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 4,
+        "GameID": 1,
+        "ParentID": 2,
+        "Type": 3,
+        "Content": "Assets/Product/Texture/Image/BgUi/BgFightLoading16.jpg",
+        "Name": "图片名",
+        "IsLocked": true,
+        "LockPassword": 1234,
+        "IsProtected": true,
+        "IsTarget": true,
+        "TargetType": 2,
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 5,
+        "GameID": 1,
+        "ParentID": 2,
+        "Type": 2,
+        "Content": "文件内容2",
+        "Name": "文件名2",
+        "TargetType": 1,
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 6,
+        "GameID": 1,
+        "ParentID": 2,
+        "Type": 2,
+        "Content": "文件内容3",
+        "Name": "文件名3",
+        "TargetType": 1,
+        "OptionType": [
+            1,
+            2
+        ]
+    }
+]

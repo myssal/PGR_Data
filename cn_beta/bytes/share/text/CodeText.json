@@ -2314,7 +2314,7 @@
     {
         "Id": 20019001,
         "Key": "GuideManagerGetGuideGroupTableNotFound",
-        "Text": "找不到抽卡组信息"
+        "Text": "获取不到引导组表"
     },
     {
         "Id": 20019002,
@@ -11874,6 +11874,16 @@
         "Id": 20111013,
         "Key": "LottoIsNotIncluded",
         "Text": "20111013该自选活动未包含此Lotto选项"
+    },
+    {
+        "Id": 20111014,
+        "Key": "LottoSelfChoiceReachMaxCount",
+        "Text": "20111014该自选活动已达到可选数量上限"
+    },
+    {
+        "Id": 20111015,
+        "Key": "LottoSelfChoiceNotSelected",
+        "Text": "20111015自选活动还未选择该Lotto"
     },
     {
         "Id": 20112001,
@@ -29165,6 +29175,11 @@
         "Text": "尚未完成前置关卡"
     },
     {
+        "Id": 20425007,
+        "Key": "DyeMergeStageNotComplete",
+        "Text": "20425007关卡未通关"
+    },
+    {
         "Id": 20426001,
         "Key": "ConcertPreHeatingFunctionNotOpen",
         "Text": "20426001音乐会预热活动未开启"
@@ -29348,6 +29363,141 @@
         "Id": 20427032,
         "Key": "Theatre6PvpBuffGroupCfgNotFound",
         "Text": "环境效果组配置不存在"
+    },
+    {
+        "Id": 20428001,
+        "Key": "EnvelopeActivityNotOpen",
+        "Text": "20428001活动未开启"
+    },
+    {
+        "Id": 20428002,
+        "Key": "EnvelopeCharacterNotFound",
+        "Text": "20428002角色配表不存在"
+    },
+    {
+        "Id": 20428003,
+        "Key": "EnvelopeListNotFound",
+        "Text": "20428003条目不存在"
+    },
+    {
+        "Id": 20428004,
+        "Key": "EnvelopeCharacterAlreadyOpened",
+        "Text": "20428004角色已开包"
+    },
+    {
+        "Id": 20428005,
+        "Key": "EnvelopeTicketItemNotConfigured",
+        "Text": "20428005开包券配置缺失"
+    },
+    {
+        "Id": 20428006,
+        "Key": "EnvelopeInstrumentNotFound",
+        "Text": "20428006乐器配表不存在"
+    },
+    {
+        "Id": 20428007,
+        "Key": "EnvelopeInstrumentNotUnlocked",
+        "Text": "20428007乐器未解锁"
+    },
+    {
+        "Id": 20428008,
+        "Key": "EnvelopeCharacterNotOpened",
+        "Text": "20428008角色尚未开包"
+    },
+    {
+        "Id": 20428009,
+        "Key": "EnvelopeCharacterDuplicatedInRequest",
+        "Text": "20428009请求中存在重复角色"
+    },
+    {
+        "Id": 20428010,
+        "Key": "EnvelopeRequestCountExceeded",
+        "Text": "20428010请求数量超出上限"
+    },
+    {
+        "Id": 20428011,
+        "Key": "EnvelopeFastOpenLocked",
+        "Text": "20428011一键开包尚未解锁"
+    },
+    {
+        "Id": 20428012,
+        "Key": "EnvelopeAvgAlreadyWatched",
+        "Text": "20428012角色已记录"
+    },
+    {
+        "Id": 20429001,
+        "Key": "AudioPlayerSongNotFound",
+        "Text": "20429001歌曲配表不存在"
+    },
+    {
+        "Id": 20429002,
+        "Key": "AudioPlayerFavoriteSongAlreadyExists",
+        "Text": "20429002歌曲已在心选歌单中"
+    },
+    {
+        "Id": 20429003,
+        "Key": "AudioPlayerSongLocked",
+        "Text": "20429003歌曲未解锁(无体验时间且解锁条件未满足，或体验时间已过)"
+    },
+    {
+        "Id": 20429004,
+        "Key": "AudioPlayerFavoriteSongCountLimit",
+        "Text": "20429004心选歌单数量已达上限"
+    },
+    {
+        "Id": 20429005,
+        "Key": "AudioPlayerFavoriteSongNotInList",
+        "Text": "20429005歌曲不在心选歌单中"
+    },
+    {
+        "Id": 20429006,
+        "Key": "AudioPlayerBackgroundSongAlreadyExists",
+        "Text": "20429006歌曲已在背景音乐歌单中"
+    },
+    {
+        "Id": 20429007,
+        "Key": "AudioPlayerBackgroundSongNotInList",
+        "Text": "20429007歌曲不在背景音乐歌单中"
+    },
+    {
+        "Id": 20429008,
+        "Key": "AudioPlayerBackgroundSongCannotBeEmpty",
+        "Text": "20429008背景音乐歌单至少保留一首，不可删除"
+    },
+    {
+        "Id": 20429009,
+        "Key": "AudioPlayerBackgroundSongMoveIndexInvalid",
+        "Text": "20429009背景音乐歌单移动目标位置非法"
+    },
+    {
+        "Id": 20429010,
+        "Key": "AudioPlayerBackgroundSongAlreadyAtTop",
+        "Text": "20429010背景音乐歌单歌曲已在顶部，无法置顶"
+    },
+    {
+        "Id": 20429011,
+        "Key": "AudioPlayerBackgroundSongAlreadyAtBottom",
+        "Text": "20429011背景音乐歌单歌曲已在末位，无法下移"
+    },
+    {
+        "Id": 20429012,
+        "Key": "AudioPlayerBackgroundSongMoveTypeInvalid",
+        "Text": "20429012背景音乐歌单移动操作类型非法"
+    },
+    {
+        "Id": 20429013,
+        "Key": "AudioPlayerBackgroundSongDuplicateInRequest",
+        "Text": "20429013批量加入背景音乐歌单的请求中存在重复歌曲"
+    },
+    {
+        "Id": 20429014,
+        "Key": "AudioPlayerBackgroundSongRequestEmpty",
+        "Text": "20429014批量加入背景音乐歌单的请求为空"
+    },
+    {
+        "Id": 20429015,
+        "Key": "AudioPlayerBackgroundSongCountLimit",
+        "Text": "20429015背景音乐歌单数量已达上限"
     },
     {
         "Id": 25000001,

@@ -5996,7 +5996,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
+        "Text": "{0}/<color=#00EEEE><size=28>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -19955,7 +19955,7 @@
     },
     {
         "Key": "BountyChallengeProgress",
-        "Text": "{0}<color=#FFFFFF><size=40>/{1}</size></color>"
+        "Text": "{0}<color=#937B4E><size=25>/{1}</size></color>"
     },
     {
         "Key": "UiCharacterSkillSwitchTitle",
@@ -21107,7 +21107,7 @@
     },
     {
         "Key": "PassportObtain",
-        "Text": "本期通行证轮次为 <color=#0f70bc>6</color> 轮，赠送您补偿奖励"
+        "Text": "因本期战略评定手册周期调整，现为您发放情报值补偿"
     },
     {
         "Key": "ShopItemRoleTips",
@@ -21254,10 +21254,6 @@
         "Text": "距音乐会还有{0}天"
     },
     {
-        "Key": "ConcertPreHeatingFinalStageName",
-        "Text": "揭幕"
-    },
-    {
         "Key": "ConcertPreHeatingTuneSignalFar",
         "Text": "参数偏离目标指数"
     },
@@ -21308,5 +21304,233 @@
     {
         "Key": "PurchaseFashionSuitDetailCoinNotEnough",
         "Text": "<color=#FF0000>{0}</color>"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelLeftTitle",
+        "Text": "每日赠送"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelLeftTitleWithDays",
+        "Text": "每日赠送（累计{0}天）"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelRightTitle",
+        "Text": "未领任务补发"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelItemCount",
+        "Text": "x{0}"
+    },
+    {
+        "Key": "EnvelopeGuessingNormalTaskTitle",
+        "Text": "邀约任务"
+    },
+    {
+        "Key": "EnvelopeGuessingDailyTaskTitle",
+        "Text": "每日任务"
+    },
+    {
+        "Key": "EnvelopeGuessingDailyTaskSubTitle",
+        "Text": "每日5:00刷新"
+    },
+    {
+        "Key": "EnvelopeGuessingDailyActivityRemainDays",
+        "Text": "{0}天"
+    },
+    {
+        "Key": "EnvelopeGuessingCollectionUiLockedCharacterName",
+        "Text": "未知"
+    },
+    {
+        "Key": "EnvelopeGuessingCollectionUiClickLockedCharacterTips",
+        "Text": "尚未接受来自该角色的邀约。"
+    },
+    {
+        "Key": "EnvelopeGuessingMainUiAllCharactersAlreadyOpened",
+        "Text": "已接受全部角色的邀约。"
+    },
+    {
+        "Key": "EnvelopeGuessingCharacterCardSpecifyCardTip",
+        "Text": "{0}正在等待你接受邀约"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationTicketNotEnough",
+        "Text": "悠乐凭券不足"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationChoiceTicketNotEnough",
+        "Text": "专属凭券不足"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationInviteButtonRedOne",
+        "Text": "<color=red>1</color>"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationInviteButtonWhiteOne",
+        "Text": "<color=#302918>1</color>"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelBindingSuccess",
+        "Text": "乐手{0}已上阵"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelUnbindingSuccess",
+        "Text": "乐手{0}正在退场"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelSwapSuccess",
+        "Text": "乐手{0}和乐手{1}已交换位置"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelMoveSuccess",
+        "Text": "乐手{0}已更换乐器"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelLocked",
+        "Text": "接受{0}次邀约后解锁"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonFinish",
+        "Text": "领 取"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonTomorrowRefresh",
+        "Text": "明 日 刷 新"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonArchived",
+        "Text": "已 完 成"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonSkip",
+        "Text": "前 往"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonNotFinished",
+        "Text": "未 完 成"
+    },
+    {
+        "Key": "MusicPlayerResetBGMList",
+        "Text": "已还原主界面背景音乐"
+    },
+    {
+        "Key": "MusicPlayerListTitleLike",
+        "Text": "心选歌单"
+    },
+    {
+        "Key": "MusicPlayerListTitleBgm",
+        "Text": "背景音乐"
+    },
+    {
+        "Key": "MusicPlayerListTitleTotle",
+        "Text": "所有歌曲"
+    },
+    {
+        "Key": "MusicPlayerTipLikeAddSuccess",
+        "Text": "加入心选音乐列表"
+    },
+    {
+        "Key": "MusicPlayerTipBgmAddSuccess",
+        "Text": "加入背景音乐列表"
+    },
+    {
+        "Key": "MusicPlayerTipLikeRemoveSuccess",
+        "Text": "移出心选音乐列表"
+    },
+    {
+        "Key": "MusicPlayerTipBgmRemoveSuccess",
+        "Text": "移出背景音乐列表"
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmRemoveNeedOne",
+        "Text": "请至少设置一首背景音乐"
+    },
+    {
+        "Key": "MusicPlayerErrorTipUnlockPlay",
+        "Text": "当前歌曲未解锁，无法播放"
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeAddAllBgm",
+        "Text": "背景音乐已达上限，无法批量添加"
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeAddLimitMax",
+        "Text": "心选歌单已达上限，无法添加"
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeRemove",
+        "Text": "该歌曲不在心选歌单中，无需移除"
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmAddRepeat",
+        "Text": "该歌曲已在背景音乐中"
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmAddLimit",
+        "Text": "背景歌单已达上限，无法添加"
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmRemoveNoExit",
+        "Text": "该歌曲不在背景音乐歌单中，无需移除"
+    },
+    {
+        "Key": "MusicPlayerErrorTipIndex2TopFaild",
+        "Text": "已经是第一首,无法再置顶"
+    },
+    {
+        "Key": "MusicPlayerErrorTipIndex2NextFaild",
+        "Text": "已经是最后一首,无法再下移"
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeAddBgmNoNeed",
+        "Text": "心选批量添加到背景音乐，没有需要添加的歌曲"
+    },
+    {
+        "Key": "MusicPlayerMusicListSortTipOld2New",
+        "Text": "发布时间从旧到新"
+    },
+    {
+        "Key": "MusicPlayerMusicListSortTipNew2Old",
+        "Text": "发布时间从新到旧"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipLimitedFree",
+        "Text": "限时获取歌曲"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipBgm",
+        "Text": "当前歌单-背景音乐"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipFavorite",
+        "Text": "当前歌单-心选歌单"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipNormal",
+        "Text": "当前歌单-所有歌曲"
+    },
+    {
+        "Key": "MusicPlayerLoopTypeSingleLoop",
+        "Text": "单曲循环"
+    },
+    {
+        "Key": "MusicPlayerLoopTypeRandomLoop",
+        "Text": "随机播放"
+    },
+    {
+        "Key": "MusicPlayerLoopTypeListLoop",
+        "Text": "列表循环"
+    },
+    {
+        "Key": "MusicPlayerMusicDetailTitle",
+        "Text": "歌曲信息"
+    },
+    {
+        "Key": "MusicPlayerConfirmLikeAllSetBgm",
+        "Text": "确认将心选歌单中的全部歌曲加入背景音乐吗？"
+    },
+    {
+        "Key": "MusicPlayerConfirmBgmReset",
+        "Text": "确认将背景音乐列表恢复至初始状态吗？"
     }
 ]

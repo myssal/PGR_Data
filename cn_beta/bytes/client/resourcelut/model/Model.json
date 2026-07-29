@@ -254,7 +254,10 @@
     {
         "Id": "Mb1CrabMd010001",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Mb1CrabMd010001.prefab",
-        "ControllerPath": "Assets/Product/Role/Animation/Mb1CrabMd010001/Mb1CrabMd010001/Mb1CrabMd010001.controller"
+        "ControllerPath": "Assets/Product/Role/Animation/Mb1CrabMd010001/Mb1CrabMd010001/Mb1CrabMd010001.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Mb1CrabMd010001/Mb1CrabMd010001/Mb1CrabMd010001Level1.controller"
+        ]
     },
     {
         "Id": "Mb1CthyllaMd010001",
@@ -774,6 +777,14 @@
         "ControllerPath": "Assets/Product/Role/Animation/Mb1RobotarmorMd030001/Mb1RobotarmorMd030001/Mb1RobotarmorMd030001.controller",
         "DisplayControllerPath": "Assets/Product/Role/Animation/Mb1RobotarmorMd030001/Mb1RobotarmorMd030001Display/Mb1RobotarmorMd030001Display.controller",
         "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Mb1RobotarmorMd030001/Mb1RobotarmorMd030001Display/UiStand1.anim"
+    },
+    {
+        "Id": "Mb1RusalkaMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Mb1RusalkaMd010011.prefab"
+    },
+    {
+        "Id": "Mb1RusalkawingMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Mb1RusalkawingMd010011.prefab"
     },
     {
         "Id": "Mb1SandwormMd030001",
@@ -2171,6 +2182,14 @@
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Mt1ChangjingyiziMd000001.prefab"
     },
     {
+        "Id": "Mt1ClawMd010001",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Mt1ClawMd010001.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Mt1ClawMd010001/Mt1ClawMd010001/Mt1ClawMd010001.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Mt1ClawMd010001/Mt1ClawMd010001/Mt1ClawMd010001Level1.controller"
+        ]
+    },
+    {
         "Id": "Mt1CrossMd000004",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Mt1CrossMd000004.prefab"
     },
@@ -2271,7 +2290,10 @@
         "Id": "Mt1MascotMd000001",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Mt1MascotMd000001.prefab",
         "LowModelPath": "Assets/Product/Role/CharaterPrefab/Mt1MascotMd000001Low.prefab",
-        "ControllerPath": "Assets/Product/Role/Animation/Mt1MascotMd000001/Mt1MascotMd000001/Mt1MascotMd000001.controller"
+        "ControllerPath": "Assets/Product/Role/Animation/Mt1MascotMd000001/Mt1MascotMd000001/Mt1MascotMd000001.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Mt1MascotMd000001/Mt1MascotMd000001/Mt1MascotMd000001Level1.controller"
+        ]
     },
     {
         "Id": "Mt1MineelectricMd000002",
@@ -2563,6 +2585,12 @@
         "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3ChiprobotonMdCommon/Pet3ChiprobotonMdCommonDisplay/UiStand1.anim"
     },
     {
+        "Id": "Pet3ClockonMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Pet3ClockonMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Pet3ClockonMd010011/Pet3ClockonMd010011/Pet3ClockonMd010011.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3ClockonMdCommon/Pet3ClockonMdCommonDisplay/UiStand1.anim"
+    },
+    {
         "Id": "Pet3CrowonMd010011",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Pet3CrowonMd010011.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Pet3CrowonMd010011/Pet3CrowonMd010011/Pet3CrowonMd010011.controller",
@@ -2845,6 +2873,18 @@
         "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3RedwolfonMdCommon/Pet3RedwolfonMdCommonDisplay/UiStand1.anim"
     },
     {
+        "Id": "Pet3SailfishoffMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Pet3SailfishoffMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Pet3SailfishoffMd010011/Pet3SailfishoffMd010011/Pet3SailfishoffMd010011.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3SailfishoffMdCommon/Pet3SailfishoffMdCommonDisplay/UiStand1.anim"
+    },
+    {
+        "Id": "Pet3SailfishonMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Pet3SailfishonMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Pet3SailfishonMd010011/Pet3SailfishonMd010011/Pet3SailfishonMd010011.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3SailfishonMdCommon/Pet3SailfishonMdCommonDisplay/UiStand1.anim"
+    },
+    {
         "Id": "Pet3SignaloffMd010011",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Pet3SignaloffMd010011.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Pet3SignaloffMd010011/Pet3SignaloffMd010011/Pet3SignaloffMd010011.controller",
@@ -2871,6 +2911,20 @@
         "ControllerPath": "Assets/Product/Role/Animation/Pet3SpeakeronMd010011/Pet3SpeakeronMd010011/Pet3SpeakeronMd010011.controller",
         "DisplayControllerPath": "Assets/Product/Role/Animation/Pet3SpeakeronMd010011/Pet3SpeakeronMd010011Display/Pet3SpeakeronMd010011Display.controller",
         "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3SpeakeronMdCommon/Pet3SpeakeronMdCommonDisplay/UiStand1.anim"
+    },
+    {
+        "Id": "Pet3StarfishoffMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Pet3StarfishoffMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Pet3StarfishoffMd010011/Pet3StarfishoffMd010011/Pet3StarfishoffMd010011.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/Pet3StarfishoffMd010011/Pet3StarfishoffMd010011Display/Pet3StarfishoffMd010011Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3StarfishoffMdCommon/Pet3StarfishoffMdCommonDisplay/UiStand1.anim"
+    },
+    {
+        "Id": "Pet3StarfishonMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Pet3StarfishonMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Pet3StarfishonMd010011/Pet3StarfishonMd010011/Pet3StarfishonMd010011.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/Pet3StarfishonMd010011/Pet3StarfishonMd010011Display/Pet3StarfishonMd010011Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/Pet3StarfishonMdCommon/Pet3StarfishonMdCommonDisplay/UiStand1.anim"
     },
     {
         "Id": "Pet3TuoffMd010011",
@@ -3255,6 +3309,14 @@
         ]
     },
     {
+        "Id": "Q3BuouxiongMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Q3BuouxiongMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Q3BuouxiongMd010011/Q3BuouxiongMd010011/Q3BuouxiongMd010011.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Q3BuouxiongMd010011/Q3BuouxiongMd010011/Q3BuouxiongMd010011Level1.controller"
+        ]
+    },
+    {
         "Id": "Q3DubianMd010011",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Q3DubianMd010011.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Q3DubianMd010011/Q3DubianMd010011/Q3DubianMd010011.controller",
@@ -3448,6 +3510,14 @@
         "ControllerPath": "Assets/Product/Role/Animation/Q4YongyechaoMd010011/Q4YongyechaoMd010011/Q4YongyechaoMd010011.controller",
         "LevelControllerPath": [
             "Assets/Product/Role/Animation/Q4YongyechaoMd010011/Q4YongyechaoMd010011/Q4YongyechaoMd010011Level1.controller"
+        ]
+    },
+    {
+        "Id": "Q5KalieninaMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Q5KalieninaMd010011.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/Q5KalieninaMd010011/Q5KalieninaMd010011/Q5KalieninaMd010011.controller",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/Q5KalieninaMd010011/Q5KalieninaMd010011/Q5KalieninaMd010011Level1.controller"
         ]
     },
     {
@@ -4885,6 +4955,11 @@
         ]
     },
     {
+        "Id": "R3AdelaideMd010021",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/R3AdelaideMd010021.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R3AdelaideMd010021/R3AdelaideMd010021/R3AdelaideMd010021.controller"
+    },
+    {
         "Id": "R3AilaMd010011",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/R3AilaMd010011.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/R3AilaMd010011/R3AilaMd010011/R3AilaMd010011.controller",
@@ -5074,6 +5149,13 @@
         "LevelControllerPath": [
             "Assets/Product/Role/Animation/R3BuouxiongMd019011/R3BuouxiongMd019011/R3BuouxiongMd019011Level1.controller"
         ]
+    },
+    {
+        "Id": "R3BuouxiongMd019271",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/R3BuouxiongMd019271.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R3BuouxiongMd019271/R3BuouxiongMd019271/R3BuouxiongMd019271.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/R3BuouxiongMd019271/R3BuouxiongMd019271Display/R3BuouxiongMd019271Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R3BuouxiongMd019271/R3BuouxiongMd019271Display/UiStand1.anim"
     },
     {
         "Id": "R3CibeizheMd010011",
@@ -5313,7 +5395,7 @@
     {
         "Id": "R3HelentineMd019271",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/R3HelentineMd019271.prefab",
-        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R3HelentineMd010011Low.prefab",
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R3HelentineMd019271Low.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/R3HelentineMd019271/R3HelentineMd019271/R3HelentineMd019271.controller",
         "DisplayControllerPath": "Assets/Product/Role/Animation/R3HelentineMd019271/R3HelentineMd019271Display/R3HelentineMd019271Display.controller",
         "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R3HelentineMd019271/R3HelentineMd019271Display/UiStand1.anim"
@@ -5450,7 +5532,9 @@
     {
         "Id": "R3KurumiMd010011",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/R3KurumiMd010011.prefab",
-        "ControllerPath": "Assets/Product/Role/Animation/R3KurumiMd010011/R3KurumiMd010011/R3KurumiMd010011.controller"
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R3KurumiMd010011Low.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R3KurumiMd010011/R3KurumiMd010011/R3KurumiMd010011.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R3KurumiMdCommon/R3KurumiMdCommonDisplay/UiStand1.anim"
     },
     {
         "Id": "R3LamiyaMd010011",
@@ -6335,10 +6419,7 @@
         "ModelPath": "Assets/Product/Role/CharaterPrefab/R3WeiluonikaMd019421.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/R3WeiluonikaMd019421/R3WeiluonikaMd019421/R3WeiluonikaMd019421.controller",
         "DisplayControllerPath": "Assets/Product/Role/Animation/R3WeiluonikaMd019421/R3WeiluonikaMd019421Display/R3WeiluonikaMd019421Display.controller",
-        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R3WeiluonikaMd019421/R3WeiluonikaMd019421Display/UiStand1.anim",
-        "LevelControllerPath": [
-            "Assets/Product/Role/Animation/R3WeiluonikaMd019421/R3WeiluonikaMd019421/R3WeiluonikaMd019421Level1.controller"
-        ]
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R3WeiluonikaMd019421/R3WeiluonikaMd019421Display/UiStand1.anim"
     },
     {
         "Id": "R3YalishaMd010011",
@@ -7159,9 +7240,63 @@
         ]
     },
     {
+        "Id": "R5BiankaMd019271",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/R5BiankaMd019271.prefab",
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R5BiankaMd010011Low.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R5BiankaMd019271/R5BiankaMd019271/R5BiankaMd019271.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/R5BiankaMd019271/R5BiankaMd019271Display/R5BiankaMd019271Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R5BiankaMd019271/R5BiankaMd019271Display/UiStand1.anim"
+    },
+    {
+        "Id": "R5KalieninaMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd010011.prefab",
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd010011Low.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R5KalieninaMd010011/R5KalieninaMd010011/R5KalieninaMd010011.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/R5KalieninaMd010011/R5KalieninaMd010011Display/R5KalieninaMd010011Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R5KalieninaMdCommon/R5KalieninaMdCommonDisplay/UiStand1.anim",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/R5KalieninaMd010011/R5KalieninaMd010011/R5KalieninaMd010011Level1.controller"
+        ]
+    },
+    {
         "Id": "R5KalieninaMd010021",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd010021.prefab",
-        "ControllerPath": "Assets/Product/Role/Animation/R5KalieninaMd010021/R5KalieninaMd010021/R5KalieninaMd010021.controller"
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd010011Low.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R5KalieninaMd010021/R5KalieninaMd010021/R5KalieninaMd010021.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/R5KalieninaMd010021/R5KalieninaMd010021Display/R5KalieninaMd010021Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R5KalieninaMdCommon/R5KalieninaMdCommonDisplay/UiStand1.anim",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/R5KalieninaMd010021/R5KalieninaMd010021/R5KalieninaMd010021Level1.controller"
+        ]
+    },
+    {
+        "Id": "R5KalieninaMd010031",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd010031.prefab",
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd010011Low.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R5KalieninaMd010031/R5KalieninaMd010031/R5KalieninaMd010031.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/R5KalieninaMd010031/R5KalieninaMd010031Display/R5KalieninaMd010031Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R5KalieninaMdCommon/R5KalieninaMdCommonDisplay/UiStand1.anim",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/R5KalieninaMd010031/R5KalieninaMd010031/R5KalieninaMd010031Level1.controller"
+        ]
+    },
+    {
+        "Id": "R5KalieninaMd010032",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd010032.prefab",
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd010011Low.prefab",
+        "ControllerPath": "Assets/Product/Role/Animation/R5KalieninaMd010031/R5KalieninaMd010031/R5KalieninaMd010031.controller",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/R5KalieninaMd010031/R5KalieninaMd010031Display/R5KalieninaMd010031Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R5KalieninaMdCommon/R5KalieninaMdCommonDisplay/UiStand1.anim",
+        "LevelControllerPath": [
+            "Assets/Product/Role/Animation/R5KalieninaMd010031/R5KalieninaMd010031/R5KalieninaMd010031Level1.controller"
+        ]
+    },
+    {
+        "Id": "R5KalieninaMd019011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd019011.prefab",
+        "LowModelPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd019011Low.prefab",
+        "DisplayControllerPath": "Assets/Product/Role/Animation/R5KalieninaMd019011/R5KalieninaMd019011Display/R5KalieninaMd019011Display.controller",
+        "UiDefaultAnimationPath": "Assets/Product/Role/Animation/R5KalieninaMd019011/R5KalieninaMd019011Display/UiStand1.anim"
     },
     {
         "Id": "R5LifuMd010011",
@@ -7552,6 +7687,14 @@
         "Id": "Mt1DianchiMd0000001",
         "ModelPath": "Assets/Product/Role/CharaterPrefab/Scene/066/Mt1DianchiMd0000001.prefab",
         "ControllerPath": "Assets/Product/Role/Animation/Mt1DianchiMd0000001/Mt1DianchiMd0000001/Mt1DianchiMd0000001.controller"
+    },
+    {
+        "Id": "Mt1V47AnchorMd010011",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Scene/067/Mt1V47AnchorMd010011.prefab"
+    },
+    {
+        "Id": "S05801_DoorposunAni",
+        "ModelPath": "Assets/Product/Role/CharaterPrefab/Scene/067/S05801_DoorposunAni.prefab"
     },
     {
         "Id": "Mt1baihuMd000001",

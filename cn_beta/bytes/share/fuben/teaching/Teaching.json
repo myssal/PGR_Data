@@ -48159,7 +48159,7 @@
     {
         "Id": 4452,
         "Group": 112365,
-        "Name": "任意三消",
+        "Name": "三消信号球",
         "Describe": "海伦汀-蓝三消",
         "IconType": 1,
         "Icon": 102,
@@ -48444,6 +48444,523 @@
         ],
         "SkillId": [
             106852
+        ]
+    },
+    {
+        "Id": 4473,
+        "Group": 112373,
+        "Name": "点击红球",
+        "Describe": "卡列-点击红球",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4474,
+        "Group": 112373,
+        "Name": "点击红球",
+        "Describe": "卡列-点击红球",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": 3000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106108,
+            106109,
+            106110
+        ]
+    },
+    {
+        "Id": 4475,
+        "Group": 112374,
+        "Name": "点击红球",
+        "Describe": "卡列-点击红球",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4476,
+        "Group": 112374,
+        "Name": "点击黄球",
+        "Describe": "卡列-点击黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "TimeOut": 3000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106113
+        ]
+    },
+    {
+        "Id": 4477,
+        "Group": 112375,
+        "Name": "长按普攻",
+        "Describe": "卡列-长按普攻登龙",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": -1,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106117
+        ]
+    },
+    {
+        "Id": 4478,
+        "Group": 112375,
+        "Name": "空中点击普攻",
+        "Describe": "点按普攻下砸",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": 3000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106118
+        ]
+    },
+    {
+        "Id": 4479,
+        "Group": 112376,
+        "Name": "长按闪避并移动",
+        "Describe": "按住闪避和方向键进入渡槎状态",
+        "IconType": 1,
+        "Icon": 2,
+        "Icon2": 4,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            106127
+        ]
+    },
+    {
+        "Id": 4480,
+        "Group": 112377,
+        "Name": "点击蓝球",
+        "Describe": "在渡槎状态下点按蓝球消球开炮",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": 10000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106137,
+            106138,
+            106139
+        ]
+    },
+    {
+        "Id": 4481,
+        "Group": 112378,
+        "Name": "静止中长按闪避",
+        "Describe": "长按闪避",
+        "IconType": 1,
+        "Icon": 2,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            106119
+        ]
+    },
+    {
+        "Id": 4482,
+        "Group": 112379,
+        "Name": "点击普攻",
+        "Describe": "点按普攻把潮痕替换为沧澜",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": 10000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106136
+        ]
+    },
+    {
+        "Id": 4483,
+        "Group": 112379,
+        "Name": "点击普攻",
+        "Describe": "点按普攻把潮痕替换为沧澜",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": 3000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106134
+        ]
+    },
+    {
+        "Id": 4484,
+        "Group": 112379,
+        "Name": "点击普攻",
+        "Describe": "点按普攻把潮痕替换为沧澜",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": 3000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106135
+        ]
+    },
+    {
+        "Id": 4485,
+        "Group": 112379,
+        "Name": "点击普攻",
+        "Describe": "点按普攻把潮痕替换为沧澜",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": 3000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106144
+        ]
+    },
+    {
+        "Id": 4486,
+        "Group": 112379,
+        "Name": "点击普攻",
+        "Describe": "点按普攻把潮痕替换为沧澜",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": 3000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106145
+        ]
+    },
+    {
+        "Id": 4487,
+        "Group": 112380,
+        "Name": "静止中长按闪避",
+        "Describe": "长按闪避",
+        "IconType": 4,
+        "Icon": 2,
+        "TimeOut": -1,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            106119
+        ]
+    },
+    {
+        "Id": 4488,
+        "Group": 112381,
+        "Name": "点击蓝球",
+        "Describe": "点击蓝球把潮痕替换为沧澜",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": 10000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106140,
+            106141,
+            106142
+        ]
+    },
+    {
+        "Id": 4489,
+        "Group": 112382,
+        "Name": "长按普攻",
+        "Describe": "长按普攻释放核心",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": 10000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106146,
+            106147
+        ]
+    },
+    {
+        "Id": 4490,
+        "Group": 112383,
+        "Name": "点按必杀",
+        "Describe": "卡列-点按必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4491,
+        "Group": 112384,
+        "Name": "卡列备用",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4492,
+        "Group": 112384,
+        "Name": "卡列备用",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4493,
+        "Group": 112385,
+        "Name": "卡列备用",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4494,
+        "Group": 112385,
+        "Name": "卡列备用",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4495,
+        "Group": 112386,
+        "Name": "卡列备用",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4496,
+        "Group": 112386,
+        "Name": "卡列备用",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4497,
+        "Group": 112387,
+        "Name": "卡列备用",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4498,
+        "Group": 112387,
+        "Name": "卡列备用",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4499,
+        "Group": 112388,
+        "Name": "卡列备用",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4500,
+        "Group": 112388,
+        "Name": "卡列备用",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
         ]
     }
 ]

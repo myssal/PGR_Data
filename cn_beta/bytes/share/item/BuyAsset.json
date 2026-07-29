@@ -70,7 +70,8 @@
         "ExchangeType": 1,
         "CanMutiply": 1,
         "AutoClose": 1,
-        "IsRestrictFreeBuy": 1
+        "IsRestrictFreeBuy": 1,
+        "ItemCombineGroupId": 1
     },
     {
         "Id": 50004,
@@ -2408,6 +2409,17 @@
         "BuyLimit": 135,
         "Config": [
             32020
+        ],
+        "ExchangeType": 2,
+        "CanMutiply": 2,
+        "AutoClose": 1
+    },
+    {
+        "Id": 32021,
+        "TotalLimit": 135,
+        "BuyLimit": 135,
+        "Config": [
+            32021
         ],
         "ExchangeType": 2,
         "CanMutiply": 2,

@@ -2,7 +2,7 @@
     {
         "Key": "MainShowRewardId",
         "Values": [
-            68400
+            69434
         ]
     },
     {
@@ -26,7 +26,7 @@
     {
         "Key": "PanelAssetItems",
         "Values": [
-            63620
+            63630
         ]
     },
     {
@@ -66,12 +66,29 @@
         ]
     },
     {
-        "Key": "SkillOrbStarColor",
+        "Key": "SkillOrbStarIcon",
         "Values": [
-            "2E9C80",
-            "D44B4B",
-            "008EFF",
-            "EAA516"
+            "Assets/Product/Texture/Atlas/UiPBR/UiPBRSkillStarBgRed01.png",
+            "Assets/Product/Texture/Atlas/UiPBR/UiPBRSkillStarBlue01.png",
+            "Assets/Product/Texture/Atlas/UiPBR/UiPBRSkillStarBgYellow01.png",
+            "Assets/Product/Texture/Atlas/UiPBR/UiPBRSkillStarBgGreen01.png"
+        ]
+    },
+    {
+        "Key": "SkillOrbStarBgIcon",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiPBR/UiPBRSkillStarBgRed02.png",
+            "Assets/Product/Texture/Atlas/UiPBR/UiPBRSkillStarBgBlue02.png",
+            "Assets/Product/Texture/Atlas/UiPBR/UiPBRSkillStarBgYellow02.png",
+            "Assets/Product/Texture/Atlas/UiPBR/UiPBRSkillStarBgGreen02.png"
+        ]
+    },
+    {
+        "Key": "SkillIconLaceColor",
+        "Values": [
+            "F36371",
+            "3690FF",
+            "F5D463"
         ]
     },
     {
@@ -302,6 +319,125 @@
         "Key": "SettleForceTips",
         "Values": [
             "已放弃上一局游戏"
+        ]
+    },
+    {
+        "Key": "BattleShopBackTips",
+        "Values": [
+            "游戏已暂停，暂离后返回将重新进入商店",
+            "退出并结算",
+            "保存并暂离"
+        ]
+    },
+    {
+        "Key": "CalibrateBgmId",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "CalibrateOffsetRange",
+        "Values": [
+            500
+        ]
+    },
+    {
+        "Key": "CalibrateAutoSampleCount",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "CalibrateAutoResultTips",
+        "Values": [
+            "校准完成，推荐延迟：{0} ms"
+        ]
+    },
+    {
+        "Key": "CalibrateAutoResultApplyTips",
+        "Values": [
+            "校准偏差值保存成功"
+        ]
+    },
+    {
+        "Key": "CalibrateShadowDurationMs",
+        "Values": [
+            1000
+        ]
+    },
+    {
+        "Key": "FeverCount",
+        "Values": [
+            "连锁"
+        ]
+    },
+    {
+        "Key": "PBRSkinTaskId"
+    },
+    {
+        "Key": "PBRPopupSkinCheckGuide",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "PBRSkinTaskTabIndex",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "PBRSkinFocusTaskId",
+        "Values": [
+            4
+        ]
+    },
+    {
+        "Key": "RangePickupDropRectEffect"
+    },
+    {
+        "Key": "RangePickupDropCircleEffect"
+    },
+    {
+        "Key": "BtnFeverActiveBgColor",
+        "Values": [
+            "fda0ff"
+        ]
+    },
+    {
+        "Key": "BtnFeverInactiveBgColor",
+        "Values": [
+            "4891ff"
+        ]
+    },
+    {
+        "Key": "RangePickupDropRedBallTrail",
+        "Values": [
+            "FxChaJianDiaoLuoRedTrail"
+        ]
+    },
+    {
+        "Key": "RangePickupDropBlueBallTrail",
+        "Values": [
+            "FxChaJianDiaoLuoBlueTrail"
+        ]
+    },
+    {
+        "Key": "RangePickupDropYellowBallTrail",
+        "Values": [
+            "FxChaJianDiaoLuoOrangeTrail"
+        ]
+    },
+    {
+        "Key": "RangePickupDropCommonTrail",
+        "Values": [
+            "FxChaJianDiaoLuoBlueTrail"
+        ]
+    },
+    {
+        "Key": "StageNameInSelection",
+        "Values": [
+            "第{0}关"
         ]
     }
 ]

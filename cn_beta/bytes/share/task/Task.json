@@ -37192,6 +37192,53 @@
         "Suffix": "活动"
     },
     {
+        "Id": 12555,
+        "SourceGroupId": 45011,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "绯影降临",
+        "Desc": "今日首次登录游戏",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanV308.png",
+        "Condition": [
+            12139
+        ],
+        "Result": 1,
+        "RewardId": 69346,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 12556,
+        "SourceGroupId": 45011,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "绯影降临",
+        "Desc": "今日累计消耗200血清",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanV308.png",
+        "Condition": [
+            12140
+        ],
+        "Result": 200,
+        "RewardId": 69347,
+        "SkipId": 2016,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 12557,
+        "SourceGroupId": 45011,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "绯影降临",
+        "Desc": "今日累计活跃度达到100点",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanV308.png",
+        "Condition": [
+            12141
+        ],
+        "Result": 100,
+        "RewardId": 69348,
+        "SkipId": 20038,
+        "Suffix": "活动"
+    },
+    {
         "Id": 120001,
         "Type": 11,
         "Priority": 9700,
@@ -39226,7 +39273,7 @@
         "Type": 11,
         "Priority": 9400,
         "Title": "余尘三重奏",
-        "Desc": "累计获得特制\"蜜饼\"50个",
+        "Desc": "\"累计获得特制\"\"蜜饼\"\"50个\"",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV204.png",
         "Condition": [
             12439
@@ -61964,7 +62011,7 @@
         "Type": 51,
         "Priority": 9900,
         "Title": "活动-拟像试炼",
-        "Desc": "拟像试炼任意难度下通关\"回音\"",
+        "Desc": "\"拟像试炼任意难度下通关\"\"回音\"\"\"",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
         "Condition": [
             80151
@@ -62980,6 +63027,51 @@
         "Result": 70,
         "RewardId": 800039,
         "SkipId": 89102,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 80248,
+        "Type": 51,
+        "Priority": 10000,
+        "Title": "战双兄弟",
+        "Desc": "任务占位",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80248
+        ],
+        "Result": 1500,
+        "RewardId": 800037,
+        "SkipId": 20017,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 80249,
+        "Type": 51,
+        "Priority": 9900,
+        "Title": "悬赏挑战",
+        "Desc": "任务占位",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80249
+        ],
+        "Result": 1500,
+        "RewardId": 800038,
+        "SkipId": 20017,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 80250,
+        "Type": 51,
+        "Priority": 9800,
+        "Title": "超难关",
+        "Desc": "任务占位",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconLifu1.png",
+        "Condition": [
+            80250
+        ],
+        "Result": 1500,
+        "RewardId": 800039,
+        "SkipId": 20017,
         "Suffix": "活动"
     },
     {
@@ -83607,7 +83699,7 @@
         ],
         "Result": 1,
         "RewardId": 34300,
-        "SkipId": 3438,
+        "SkipId": 3430,
         "Suffix": "育成",
         "AchvType": 3
     },
@@ -83623,7 +83715,7 @@
         ],
         "Result": 1,
         "RewardId": 34310,
-        "SkipId": 3439,
+        "SkipId": 3431,
         "Suffix": "育成",
         "ShowAfterTaskId": 4504,
         "AchvType": 3
@@ -83640,7 +83732,7 @@
         ],
         "Result": 1,
         "RewardId": 34320,
-        "SkipId": 3440,
+        "SkipId": 3432,
         "Suffix": "育成",
         "ShowAfterTaskId": 4505,
         "AchvType": 3
@@ -83657,7 +83749,7 @@
         ],
         "Result": 1,
         "RewardId": 34330,
-        "SkipId": 3441,
+        "SkipId": 3433,
         "Suffix": "育成",
         "ShowAfterTaskId": 4506,
         "AchvType": 3
@@ -83674,7 +83766,7 @@
         ],
         "Result": 1,
         "RewardId": 34340,
-        "SkipId": 3442,
+        "SkipId": 3434,
         "Suffix": "育成",
         "ShowAfterTaskId": 4507,
         "AchvType": 3
@@ -83691,7 +83783,7 @@
         ],
         "Result": 1,
         "RewardId": 34350,
-        "SkipId": 3443,
+        "SkipId": 3435,
         "Suffix": "育成",
         "ShowAfterTaskId": 4508,
         "AchvType": 3
@@ -83708,7 +83800,7 @@
         ],
         "Result": 1,
         "RewardId": 34360,
-        "SkipId": 3444,
+        "SkipId": 3436,
         "Suffix": "育成",
         "ShowAfterTaskId": 4509,
         "AchvType": 3
@@ -83725,9 +83817,144 @@
         ],
         "Result": 1,
         "RewardId": 34370,
-        "SkipId": 3445,
+        "SkipId": 3437,
         "Suffix": "育成",
         "ShowAfterTaskId": 4510,
+        "AchvType": 3
+    },
+    {
+        "Id": 4512,
+        "Type": 4,
+        "Priority": 25131,
+        "Title": "誓海征航 (1)",
+        "Desc": "烬航提升至10级",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4512
+        ],
+        "Result": 1,
+        "RewardId": 34300,
+        "SkipId": 3446,
+        "Suffix": "育成",
+        "AchvType": 3
+    },
+    {
+        "Id": 4513,
+        "Type": 4,
+        "Priority": 25130,
+        "Title": "誓海征航 (2)",
+        "Desc": "烬航提升至20级",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4513
+        ],
+        "Result": 1,
+        "RewardId": 34310,
+        "SkipId": 3447,
+        "Suffix": "育成",
+        "ShowAfterTaskId": 4512,
+        "AchvType": 3
+    },
+    {
+        "Id": 4514,
+        "Type": 4,
+        "Priority": 25129,
+        "Title": "誓海征航 (3)",
+        "Desc": "烬航提升至30级",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4514
+        ],
+        "Result": 1,
+        "RewardId": 34320,
+        "SkipId": 3448,
+        "Suffix": "育成",
+        "ShowAfterTaskId": 4513,
+        "AchvType": 3
+    },
+    {
+        "Id": 4515,
+        "Type": 4,
+        "Priority": 25128,
+        "Title": "誓海征航 (4)",
+        "Desc": "烬航提升至40级",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4515
+        ],
+        "Result": 1,
+        "RewardId": 34330,
+        "SkipId": 3449,
+        "Suffix": "育成",
+        "ShowAfterTaskId": 4514,
+        "AchvType": 3
+    },
+    {
+        "Id": 4516,
+        "Type": 4,
+        "Priority": 25127,
+        "Title": "誓海征航 (5)",
+        "Desc": "烬航提升至50级",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4516
+        ],
+        "Result": 1,
+        "RewardId": 34340,
+        "SkipId": 3450,
+        "Suffix": "育成",
+        "ShowAfterTaskId": 4515,
+        "AchvType": 3
+    },
+    {
+        "Id": 4517,
+        "Type": 4,
+        "Priority": 25126,
+        "Title": "誓海征航 (6)",
+        "Desc": "烬航提升至60级",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4517
+        ],
+        "Result": 1,
+        "RewardId": 34350,
+        "SkipId": 3451,
+        "Suffix": "育成",
+        "ShowAfterTaskId": 4516,
+        "AchvType": 3
+    },
+    {
+        "Id": 4518,
+        "Type": 4,
+        "Priority": 25125,
+        "Title": "誓海征航 (7)",
+        "Desc": "烬航提升至70级",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4518
+        ],
+        "Result": 1,
+        "RewardId": 34360,
+        "SkipId": 3452,
+        "Suffix": "育成",
+        "ShowAfterTaskId": 4517,
+        "AchvType": 3
+    },
+    {
+        "Id": 4519,
+        "Type": 4,
+        "Priority": 25124,
+        "Title": "誓海征航 (8)",
+        "Desc": "烬航提升至80级",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            4519
+        ],
+        "Result": 1,
+        "RewardId": 34370,
+        "SkipId": 3453,
+        "Suffix": "育成",
+        "ShowAfterTaskId": 4518,
         "AchvType": 3
     },
     {
@@ -86819,7 +87046,39 @@
         "Desc": "安魂进化至SSS品质",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
         "Condition": [
-            21058211
+            21058212
+        ],
+        "Result": 1,
+        "RewardId": 37182,
+        "SkipId": 3300,
+        "Suffix": "育成",
+        "AchvType": 3
+    },
+    {
+        "Id": 21058311,
+        "Type": 4,
+        "Priority": 25661,
+        "Title": "这就是烬航的实力 (1)",
+        "Desc": "烬航进化至SS品质",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            21058311
+        ],
+        "Result": 1,
+        "RewardId": 37082,
+        "SkipId": 3300,
+        "Suffix": "育成",
+        "AchvType": 3
+    },
+    {
+        "Id": 21058312,
+        "Type": 4,
+        "Priority": 25660,
+        "Title": "这就是烬航的实力 (2)",
+        "Desc": "烬航进化至SSS品质",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            21058312
         ],
         "Result": 1,
         "RewardId": 37182,
@@ -88309,6 +88568,22 @@
         "AchvType": 3
     },
     {
+        "Id": 21078301,
+        "Type": 4,
+        "Priority": 25417,
+        "Title": "烬航·终阶解放",
+        "Desc": "烬航达成终阶解放",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            21078301
+        ],
+        "Result": 1,
+        "RewardId": 37283,
+        "SkipId": 19082,
+        "Suffix": "育成",
+        "AchvType": 3
+    },
+    {
         "Id": 21080101,
         "Type": 4,
         "Priority": 25000,
@@ -89617,6 +89892,22 @@
         "Result": 1,
         "RewardId": 37500,
         "SkipId": 19081,
+        "Suffix": "育成",
+        "AchvType": 3
+    },
+    {
+        "Id": 21088301,
+        "Type": 4,
+        "Priority": 24919,
+        "Title": "烬航·超阶解放",
+        "Desc": "烬航达成超阶解放",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            21088301
+        ],
+        "Result": 1,
+        "RewardId": 37500,
+        "SkipId": 19082,
         "Suffix": "育成",
         "AchvType": 3
     },
@@ -93432,6 +93723,73 @@
         "AchvType": 3
     },
     {
+        "Id": 23014101,
+        "Type": 4,
+        "Priority": 24727,
+        "Title": "派德里被安排了 (1)",
+        "Desc": "派德里等级提升至10级",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23014101
+        ],
+        "Result": 1,
+        "RewardId": 374211,
+        "SkipId": 20110,
+        "Suffix": "育成",
+        "AchvType": 3
+    },
+    {
+        "Id": 23014102,
+        "Type": 4,
+        "Priority": 24726,
+        "Title": "派德里被安排了 (2)",
+        "Desc": "派德里等级提升至15级",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23014102
+        ],
+        "Result": 1,
+        "RewardId": 374212,
+        "SkipId": 20110,
+        "Suffix": "育成",
+        "ShowAfterTaskId": 23014101,
+        "AchvType": 3
+    },
+    {
+        "Id": 23014103,
+        "Type": 4,
+        "Priority": 24725,
+        "Title": "派德里被安排了 (3)",
+        "Desc": "派德里等级提升至25级",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23014103
+        ],
+        "Result": 1,
+        "RewardId": 374213,
+        "SkipId": 20110,
+        "Suffix": "育成",
+        "ShowAfterTaskId": 23014102,
+        "AchvType": 3
+    },
+    {
+        "Id": 23014104,
+        "Type": 4,
+        "Priority": 24724,
+        "Title": "派德里被安排了 (4)",
+        "Desc": "派德里等级提升至30级",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23014104
+        ],
+        "Result": 1,
+        "RewardId": 374214,
+        "SkipId": 20110,
+        "Suffix": "育成",
+        "ShowAfterTaskId": 23014103,
+        "AchvType": 3
+    },
+    {
         "Id": 23020001,
         "Type": 4,
         "Priority": 24599,
@@ -95011,6 +95369,38 @@
         ],
         "Result": 1,
         "RewardId": 37540,
+        "SkipId": 20110,
+        "Suffix": "育成",
+        "AchvType": 3
+    },
+    {
+        "Id": 23044101,
+        "Type": 4,
+        "Priority": 24419,
+        "Title": "放开那个派德里让我来 (1)",
+        "Desc": "派德里进化至SS品质",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23044101
+        ],
+        "Result": 1,
+        "RewardId": 37419,
+        "SkipId": 20110,
+        "Suffix": "育成",
+        "AchvType": 3
+    },
+    {
+        "Id": 23044102,
+        "Type": 4,
+        "Priority": 24418,
+        "Title": "放开那个派德里让我来 (2)",
+        "Desc": "派德里进化至SSS品质",
+        "Icon": "Assets/Product/Texture/Image/UIAchievemen/UIAchievementTaskPet41.png",
+        "Condition": [
+            23044102
+        ],
+        "Result": 1,
+        "RewardId": 37541,
         "SkipId": 20110,
         "Suffix": "育成",
         "AchvType": 3
@@ -97266,6 +97656,22 @@
         ],
         "Result": 1,
         "RewardId": 37382,
+        "SkipId": 3653,
+        "Suffix": "挑战",
+        "AchvType": 2
+    },
+    {
+        "Id": 31098301,
+        "Type": 4,
+        "Priority": 19519,
+        "Title": "烬航的礼物",
+        "Desc": "烬航信赖度达到8级",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconR3Helentine.png",
+        "Condition": [
+            31098301
+        ],
+        "Result": 1,
+        "RewardId": 37383,
         "SkipId": 3653,
         "Suffix": "挑战",
         "AchvType": 2
@@ -141574,6 +141980,32 @@
         "Suffix": "限时活动"
     },
     {
+        "Id": 99045,
+        "Type": 94,
+        "Priority": 10000,
+        "Title": "卡列尼娜大好感度1",
+        "Desc": "通关剧情3",
+        "Condition": [
+            99069
+        ],
+        "Result": 1,
+        "RewardId": 64880,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 99046,
+        "Type": 94,
+        "Priority": 9900,
+        "Title": "卡列尼娜大好感度2",
+        "Desc": "通关剧情7",
+        "Condition": [
+            99070
+        ],
+        "Result": 1,
+        "RewardId": 64881,
+        "Suffix": "活动"
+    },
+    {
         "Id": 100100,
         "SourceGroupId": 44005,
         "Type": 86,
@@ -154304,6 +154736,21 @@
         "Suffix": "生命树"
     },
     {
+        "Id": 131009,
+        "Type": 111,
+        "Priority": 9992,
+        "Title": "生命树档案",
+        "Desc": "解锁档案——卡列尼娜·烬航",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            131009
+        ],
+        "Result": 1,
+        "RewardId": 69080,
+        "SkipId": 20390,
+        "Suffix": "生命树"
+    },
+    {
         "Id": 91127,
         "Type": 11,
         "Priority": 9000,
@@ -154869,7 +155316,7 @@
         "Type": 11,
         "Priority": 9500,
         "Title": "终末诗篇",
-        "Desc": "任意难度通关\"镜像维吉尔\"",
+        "Desc": "\"任意难度通关\"\"镜像维吉尔\"\"\"",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV305.png",
         "Condition": [
             120516
@@ -158699,7 +159146,7 @@
         "Type": 11,
         "Priority": 9996,
         "Title": "汐海寄愿",
-        "Desc": "Placeholder_通过【未定】",
+        "Desc": "通过比安卡——第2关【在水中】",
         "Icon": "Assets/Product/Texture/Image/UiSummerFashionNew/UiFubenFashionStoryNewV406/UiFubenFashionStoryNewV406TaskBg.png",
         "Condition": [
             240766
@@ -158715,7 +159162,7 @@
         "Type": 11,
         "Priority": 9994,
         "Title": "汐海寄愿",
-        "Desc": "Placeholder_通过【未定】",
+        "Desc": "通过布偶熊——第2关【余浪留痕】",
         "Icon": "Assets/Product/Texture/Image/UiSummerFashionNew/UiFubenFashionStoryNewV406/UiFubenFashionStoryNewV406TaskBg.png",
         "Condition": [
             240767
@@ -161429,6 +161876,81 @@
         "Suffix": "活动"
     },
     {
+        "Id": 91182,
+        "Type": 11,
+        "Priority": 9000,
+        "Title": "材料常驻",
+        "Desc": "材料关累计消耗240血清",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91182
+        ],
+        "Result": 240,
+        "RewardId": 67001,
+        "SkipId": 20017,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 91183,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "材料常驻",
+        "Desc": "材料关累计消耗840血清",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91183
+        ],
+        "Result": 840,
+        "RewardId": 67002,
+        "SkipId": 20017,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 91184,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "材料常驻",
+        "Desc": "材料关累计消耗1710血清",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91184
+        ],
+        "Result": 1710,
+        "RewardId": 67003,
+        "SkipId": 20017,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 91185,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "材料常驻",
+        "Desc": "材料关累计消耗2820血清",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91185
+        ],
+        "Result": 2820,
+        "RewardId": 67004,
+        "SkipId": 20017,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 91186,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "材料常驻",
+        "Desc": "材料关累计消耗4050血清",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLineV212.png",
+        "Condition": [
+            91186
+        ],
+        "Result": 4050,
+        "RewardId": 67005,
+        "SkipId": 20017,
+        "Suffix": "活动"
+    },
+    {
         "Id": 120531,
         "Type": 11,
         "Priority": 10000,
@@ -163850,6 +164372,292 @@
         "Result": 1,
         "RewardId": 15215,
         "SkipId": 10035,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120697,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "溯讯衍波 (1)",
+        "Desc": "今日首次登录游戏",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanV307.png",
+        "Condition": [
+            120697
+        ],
+        "Result": 1,
+        "RewardId": 69422,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120698,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "溯讯衍波 (2)",
+        "Desc": "今日累计消耗200血清",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanV307.png",
+        "Condition": [
+            120698
+        ],
+        "Result": 200,
+        "RewardId": 69423,
+        "SkipId": 2016,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120699,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "溯讯衍波 (3)",
+        "Desc": "今日累计活跃度达到100点",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveYureguanV307.png",
+        "Condition": [
+            120699
+        ],
+        "Result": 100,
+        "RewardId": 69424,
+        "SkipId": 20038,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120700,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "拟战场域",
+        "Desc": "通关【拟战场域】1次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120700
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 20017,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120701,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "拟战场域",
+        "Desc": "通关【拟战场域】5次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120701
+        ],
+        "Result": 5,
+        "RewardId": 15215,
+        "SkipId": 20017,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120702,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "耀律狂潮",
+        "Desc": "通关关卡01",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120702
+        ],
+        "Result": 1,
+        "RewardId": 15216,
+        "SkipId": 1300635,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120703,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "疾速追缉",
+        "Desc": "通关一次困难及以上难度的【帕瓦特】",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120703
+        ],
+        "Result": 1,
+        "RewardId": 15216,
+        "SkipId": 89093,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120704,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "超难关",
+        "Desc": "任务占位",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120704
+        ],
+        "Result": 1,
+        "RewardId": 15219,
+        "SkipId": 20017,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120705,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "跃升补习",
+        "Desc": "完成【赛利卡补习班】誓焰-A-4",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120705
+        ],
+        "Result": 1,
+        "RewardId": 15216,
+        "SkipId": 20293,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120706,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "浮浪者破幻Ⅰ",
+        "Desc": "完成角色挑战关【逐浪执往】第1关",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120706
+        ],
+        "Result": 1,
+        "RewardId": 15217,
+        "SkipId": 20235,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120707,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "浮浪者破幻Ⅱ",
+        "Desc": "完成角色挑战关【逐浪执往】第2关",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120707
+        ],
+        "Result": 1,
+        "RewardId": 15217,
+        "SkipId": 20235,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120708,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "浮浪者破幻Ⅲ",
+        "Desc": "完成角色挑战关【逐浪执往】第3关",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120708
+        ],
+        "Result": 1,
+        "RewardId": 15217,
+        "SkipId": 20235,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120709,
+        "Type": 11,
+        "Priority": 9100,
+        "Title": "适配拟合·派德里",
+        "Desc": "完成【适配拟合·派德里】",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120709
+        ],
+        "Result": 1,
+        "RewardId": 15218,
+        "SkipId": 7107,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120710,
+        "SourceGroupId": 47002,
+        "Type": 11,
+        "Priority": 9000,
+        "Title": "炽音破律",
+        "Desc": "通关【炽音破律】涂装试玩关",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120710
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 10035,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120711,
+        "SourceGroupId": 47003,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "晴屿漫汐",
+        "Desc": "通关【晴屿漫汐】涂装试玩关",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120711
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 10035,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120712,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "罪妄月华",
+        "Desc": "通关【错位伊甸】1次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120712
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 90069,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120713,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "绮影凛然",
+        "Desc": "通关空都评话【CERII-05】1次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120713
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 90034,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120714,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "炸裂霓虹",
+        "Desc": "通关【理想晶体】1次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120714
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 90071,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 120715,
+        "Type": 11,
+        "Priority": 8500,
+        "Title": "夜诏终章",
+        "Desc": "通关【有罪者】1次",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconActiveMainLinev406.png",
+        "Condition": [
+            120715
+        ],
+        "Result": 1,
+        "RewardId": 15215,
+        "SkipId": 90072,
         "Suffix": "活动"
     },
     {
@@ -174673,7 +175481,7 @@
         "Type": 11,
         "Priority": 10000,
         "Title": "初试调频",
-        "Desc": "通关任意关卡1次",
+        "Desc": "通关任意1个关卡",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
         "Condition": [
             140200
@@ -174688,7 +175496,7 @@
         "Type": 11,
         "Priority": 9900,
         "Title": "拍子魔法",
-        "Desc": "通关任意关卡2次",
+        "Desc": "通关任意2个关卡",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
         "Condition": [
             140201
@@ -174703,7 +175511,7 @@
         "Type": 11,
         "Priority": 9800,
         "Title": "技术流派",
-        "Desc": "通关任意关卡3次",
+        "Desc": "通关任意3个关卡",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
         "Condition": [
             140202
@@ -174718,7 +175526,7 @@
         "Type": 11,
         "Priority": 9700,
         "Title": "情绪引爆",
-        "Desc": "通关任意关卡4次",
+        "Desc": "通关任意4个关卡",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
         "Condition": [
             140203
@@ -174939,6 +175747,118 @@
         "Suffix": "活动"
     },
     {
+        "Id": 140221,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10814,
+        "Title": "简单成就1-15",
+        "Desc": "15连胜",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140221
+        ],
+        "Result": 1,
+        "RewardId": 69277
+    },
+    {
+        "Id": 140222,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10814,
+        "Title": "简单成就1-15",
+        "Desc": "15连胜",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140222
+        ],
+        "Result": 1,
+        "RewardId": 69278
+    },
+    {
+        "Id": 140223,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10814,
+        "Title": "简单成就1-15",
+        "Desc": "15连胜",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140223
+        ],
+        "Result": 1,
+        "RewardId": 69279
+    },
+    {
+        "Id": 140224,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10914,
+        "Title": "困难成就1-15",
+        "Desc": "15连胜",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140224
+        ],
+        "Result": 1,
+        "RewardId": 69280
+    },
+    {
+        "Id": 140225,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10914,
+        "Title": "困难成就1-15",
+        "Desc": "15连胜",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140225
+        ],
+        "Result": 1,
+        "RewardId": 69281
+    },
+    {
+        "Id": 140226,
+        "SourceGroupId": 1004,
+        "Type": 80,
+        "Priority": 10914,
+        "Title": "困难成就1-15",
+        "Desc": "15连胜",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140226
+        ],
+        "Result": 1,
+        "RewardId": 69282
+    },
+    {
+        "Id": 140227,
+        "SourceGroupId": 1004,
+        "Type": 79,
+        "Priority": 10019,
+        "Title": "永恒观测Ⅱ",
+        "Desc": "达成15连胜",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140227
+        ],
+        "Result": 15,
+        "RewardId": 69283
+    },
+    {
+        "Id": 140228,
+        "SourceGroupId": 1004,
+        "Type": 79,
+        "Priority": 10119,
+        "Title": "永恒观测Ⅱ",
+        "Desc": "达成15连胜",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140228
+        ],
+        "Result": 15,
+        "RewardId": 69284
+    },
+    {
         "Id": 140229,
         "Type": 11,
         "Priority": 10000,
@@ -175089,5 +176009,787 @@
         "Suffix": "活动",
         "GroupId": 602,
         "ShowCondition": 1060038
+    },
+    {
+        "Id": 140237,
+        "Type": 112,
+        "Priority": 10000,
+        "Title": "今夕初见",
+        "Desc": "今日首次登录游戏",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140237
+        ],
+        "Result": 1,
+        "RewardId": 69330,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 724
+    },
+    {
+        "Id": 140238,
+        "Type": 112,
+        "Priority": 9900,
+        "Title": "佳期满盈",
+        "Desc": "今日累计活跃度达到100点",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140238
+        ],
+        "Result": 100,
+        "RewardId": 69331,
+        "SkipId": 20038,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 724
+    },
+    {
+        "Id": 140239,
+        "SourceGroupId": 47008,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "闲暇之约 (1)",
+        "Desc": "累计确认任意5个角色的邀约",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140239
+        ],
+        "Result": 5,
+        "RewardId": 69332,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 725
+    },
+    {
+        "Id": 140240,
+        "SourceGroupId": 47008,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "闲暇之约 (2)",
+        "Desc": "累计确认任意10个角色的邀约",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140240
+        ],
+        "Result": 10,
+        "RewardId": 69333,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 725
+    },
+    {
+        "Id": 140241,
+        "SourceGroupId": 47008,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "闲暇之约 (3)",
+        "Desc": "累计确认任意15个角色的邀约",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140241
+        ],
+        "Result": 15,
+        "RewardId": 69334,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 725
+    },
+    {
+        "Id": 140242,
+        "SourceGroupId": 47008,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "闲暇之约 (4)",
+        "Desc": "累计确认任意20个角色的邀约",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140242
+        ],
+        "Result": 20,
+        "RewardId": 69335,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 725
+    },
+    {
+        "Id": 140243,
+        "SourceGroupId": 47008,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "闲暇之约 (5)",
+        "Desc": "累计确认任意25个角色的邀约",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140243
+        ],
+        "Result": 25,
+        "RewardId": 69336,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 725
+    },
+    {
+        "Id": 140244,
+        "SourceGroupId": 47008,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "闲暇之约 (6)",
+        "Desc": "累计确认所有角色的邀约",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140244
+        ],
+        "Result": 40,
+        "RewardId": 69337,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 725
+    },
+    {
+        "Id": 140245,
+        "SourceGroupId": 47008,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "夏日约定 (1)",
+        "Desc": "累计阅读任意3个角色的邀约剧情",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140245
+        ],
+        "Result": 3,
+        "RewardId": 69338,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 725
+    },
+    {
+        "Id": 140246,
+        "SourceGroupId": 47008,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "夏日约定 (2)",
+        "Desc": "累计阅读任意10个角色的邀约剧情",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140246
+        ],
+        "Result": 10,
+        "RewardId": 69339,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 725
+    },
+    {
+        "Id": 140247,
+        "SourceGroupId": 47008,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "假日奏鸣 (1)",
+        "Desc": "2个乐器同时上阵过乐手",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140247
+        ],
+        "Result": 1,
+        "RewardId": 69340,
+        "StartTime": "2026/8/19 5:00",
+        "EndTime": "2026/9/23 5:00",
+        "GroupId": 725
+    },
+    {
+        "Id": 140248,
+        "SourceGroupId": 47008,
+        "Type": 11,
+        "Priority": 9100,
+        "Title": "假日奏鸣 (2)",
+        "Desc": "所有乐器上同时上阵过乐手",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconCommon.png",
+        "Condition": [
+            140248
+        ],
+        "Result": 1,
+        "RewardId": 69341,
+        "StartTime": "1999/8/19 5:00",
+        "EndTime": "1999/9/23 5:00",
+        "GroupId": 725
+    },
+    {
+        "Id": 140260,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "Placeholder_战双兄弟二期打脸涂装任务",
+        "Desc": "Placeholder_战双兄弟二期打脸涂装任务",
+        "Condition": [
+            140250
+        ],
+        "Result": 1,
+        "RewardId": 69420,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140261,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "地下试音",
+        "Desc": "通关关卡01",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140301
+        ],
+        "Result": 1,
+        "RewardId": 69403,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140262,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "街区炸场",
+        "Desc": "通关关卡02",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140302
+        ],
+        "Result": 1,
+        "RewardId": 69404,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140263,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "名声大噪",
+        "Desc": "通关关卡03",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140303
+        ],
+        "Result": 1,
+        "RewardId": 69405,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140264,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "燃爆全城",
+        "Desc": "通关关卡04",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140304
+        ],
+        "Result": 1,
+        "RewardId": 69406,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140265,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "黄金档期",
+        "Desc": "通关关卡05",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140305
+        ],
+        "Result": 1,
+        "RewardId": 69407,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140266,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "电音风暴",
+        "Desc": "通关关卡06",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140306
+        ],
+        "Result": 1,
+        "RewardId": 69408,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140267,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "霸榜巨星",
+        "Desc": "通关关卡07",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140307
+        ],
+        "Result": 1,
+        "RewardId": 69409,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140268,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "传奇不落",
+        "Desc": "通关关卡08",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140308
+        ],
+        "Result": 1,
+        "RewardId": 69410,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140269,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "追缉：帕瓦特",
+        "Desc": "通关一次困难及以上难度；",
+        "Condition": [
+            140269
+        ],
+        "Result": 1,
+        "RewardId": 69359,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140270,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "追缉：帕瓦特",
+        "Desc": "在困难及以上的难度战斗中，拼刀≥2次",
+        "Condition": [
+            140270
+        ],
+        "Result": 1,
+        "RewardId": 69360,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140271,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "追缉：帕瓦特",
+        "Desc": "通关一次噩梦及以上难度；",
+        "Condition": [
+            140271
+        ],
+        "Result": 1,
+        "RewardId": 69361,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140272,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "追缉：帕瓦特",
+        "Desc": "在噩梦及以上的难度战斗中，被【大钻头】命中＜1次",
+        "Condition": [
+            140272
+        ],
+        "Result": 1,
+        "RewardId": 69362,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140273,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "追缉：帕瓦特",
+        "Desc": "通关一次炼狱难度；",
+        "Condition": [
+            140273
+        ],
+        "Result": 1,
+        "RewardId": 69363,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140274,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "追缉：帕瓦特",
+        "Desc": "在炼狱难度中，反超算期间被命中次数≤2",
+        "Condition": [
+            140274
+        ],
+        "Result": 1,
+        "RewardId": 69364,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140275,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "追缉：玛格丽特",
+        "Desc": "通关一次困难及以上难度；",
+        "Condition": [
+            140275
+        ],
+        "Result": 1,
+        "RewardId": 69365,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140276,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "追缉：玛格丽特",
+        "Desc": "在困难及以上的难度战斗中，拼刀≥1次",
+        "Condition": [
+            140276
+        ],
+        "Result": 1,
+        "RewardId": 69366,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140277,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "追缉：玛格丽特",
+        "Desc": "通关一次噩梦及以上难度；",
+        "Condition": [
+            140277
+        ],
+        "Result": 1,
+        "RewardId": 69367,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140278,
+        "Type": 11,
+        "Priority": 9100,
+        "Title": "追缉：玛格丽特",
+        "Desc": "在噩梦及以上的难度战斗中，被【激光命中次数】≤5",
+        "Condition": [
+            140278
+        ],
+        "Result": 1,
+        "RewardId": 69368,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140279,
+        "Type": 11,
+        "Priority": 9000,
+        "Title": "追缉：玛格丽特",
+        "Desc": "通关一次炼狱难度；",
+        "Condition": [
+            140279
+        ],
+        "Result": 1,
+        "RewardId": 69369,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140280,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "追缉：玛格丽特",
+        "Desc": "在炼狱难度中，被命中次数≤5",
+        "Condition": [
+            140280
+        ],
+        "Result": 1,
+        "RewardId": 69370,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140281,
+        "Type": 11,
+        "Priority": 8800,
+        "Title": "追缉：埃则忒",
+        "Desc": "通关一次困难及以上难度；",
+        "Condition": [
+            140281
+        ],
+        "Result": 1,
+        "RewardId": 69371,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140282,
+        "Type": 11,
+        "Priority": 8700,
+        "Title": "追缉：埃则忒",
+        "Desc": "在困难及以上的难度战斗中，通关时死亡次数≤0",
+        "Condition": [
+            140282
+        ],
+        "Result": 1,
+        "RewardId": 69372,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140283,
+        "Type": 11,
+        "Priority": 8600,
+        "Title": "追缉：埃则忒",
+        "Desc": "通关一次噩梦及以上难度；",
+        "Condition": [
+            140283
+        ],
+        "Result": 1,
+        "RewardId": 69373,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140284,
+        "Type": 11,
+        "Priority": 8500,
+        "Title": "追缉：埃则忒",
+        "Desc": "在噩梦及以上的难度战斗中，被石头砸中次数<1",
+        "Condition": [
+            140284
+        ],
+        "Result": 1,
+        "RewardId": 69374,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140285,
+        "Type": 11,
+        "Priority": 8400,
+        "Title": "追缉：埃则忒",
+        "Desc": "通关一次炼狱难度；",
+        "Condition": [
+            140285
+        ],
+        "Result": 1,
+        "RewardId": 69375,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140286,
+        "Type": 11,
+        "Priority": 8300,
+        "Title": "追缉：埃则忒",
+        "Desc": "在炼狱难度中，被命中次数≤5",
+        "Condition": [
+            140286
+        ],
+        "Result": 1,
+        "RewardId": 69376,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140287,
+        "Type": 11,
+        "Priority": 8200,
+        "Title": "追缉：茯神",
+        "Desc": "通关一次困难及以上难度；",
+        "Condition": [
+            140287
+        ],
+        "Result": 1,
+        "RewardId": 69377,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140288,
+        "Type": 11,
+        "Priority": 8100,
+        "Title": "追缉：茯神",
+        "Desc": "在困难及以上的难度战斗中，被命中次数≤15",
+        "Condition": [
+            140288
+        ],
+        "Result": 1,
+        "RewardId": 69378,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140289,
+        "Type": 11,
+        "Priority": 8000,
+        "Title": "追缉：茯神",
+        "Desc": "通关一次噩梦及以上难度；",
+        "Condition": [
+            140289
+        ],
+        "Result": 1,
+        "RewardId": 69379,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140290,
+        "Type": 11,
+        "Priority": 7900,
+        "Title": "追缉：茯神",
+        "Desc": "在噩梦及以上的难度战斗中，被投技命中次数≤6",
+        "Condition": [
+            140290
+        ],
+        "Result": 1,
+        "RewardId": 69380,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140291,
+        "Type": 11,
+        "Priority": 7800,
+        "Title": "追缉：茯神",
+        "Desc": "通关一次炼狱难度；",
+        "Condition": [
+            140291
+        ],
+        "Result": 1,
+        "RewardId": 69381,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140292,
+        "Type": 11,
+        "Priority": 7700,
+        "Title": "追缉：茯神",
+        "Desc": "在炼狱难度中，被投技命中次数≤2",
+        "Condition": [
+            140292
+        ],
+        "Result": 1,
+        "RewardId": 69382,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140293,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 10000,
+        "Title": "贴脸狂欢",
+        "Desc": "在图鉴中解锁阿剑",
+        "Condition": [
+            140309
+        ],
+        "Result": 1,
+        "RewardId": 69411,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140294,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9900,
+        "Title": "音浪激射",
+        "Desc": "在图鉴中解锁阿烟",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140310
+        ],
+        "Result": 1,
+        "RewardId": 69412,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140295,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9800,
+        "Title": "环绕重低音",
+        "Desc": "在图鉴中解锁阿涂",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140311
+        ],
+        "Result": 1,
+        "RewardId": 69413,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140296,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9700,
+        "Title": "全能制作人",
+        "Desc": "在图鉴中解锁鲨士碧儿",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140312
+        ],
+        "Result": 1,
+        "RewardId": 69414,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140297,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9600,
+        "Title": "拒绝尬舞",
+        "Desc": "击败鲨士白白·阿修的数目达到6个",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140313
+        ],
+        "Result": 1,
+        "RewardId": 69415,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140298,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9500,
+        "Title": "音符大作",
+        "Desc": "击败鲨士白白·阿箭的数目达到6个",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140314
+        ],
+        "Result": 1,
+        "RewardId": 69416,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140299,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9400,
+        "Title": "暴走舞团",
+        "Desc": "击败鲨士白白·阿枪的数目达到6个",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140315
+        ],
+        "Result": 1,
+        "RewardId": 69417,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140300,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9300,
+        "Title": "安可时间",
+        "Desc": "通关关卡04时无尽波次达到第11波",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140316
+        ],
+        "Result": 1,
+        "RewardId": 69418,
+        "Suffix": "活动"
+    },
+    {
+        "Id": 140301,
+        "SourceGroupId": 47005,
+        "Type": 11,
+        "Priority": 9200,
+        "Title": "不眠白金夜",
+        "Desc": "通关关卡08时无尽波次达到第11波",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/UiPBRJuWai/UiPBRJWBg73.png",
+        "Condition": [
+            140317
+        ],
+        "Result": 1,
+        "RewardId": 69419,
+        "Suffix": "活动"
     }
 ]
