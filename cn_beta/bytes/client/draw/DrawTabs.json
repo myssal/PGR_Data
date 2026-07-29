@@ -1,0 +1,87 @@
+[
+    {
+        "Id": 1,
+        "TxtName1": 1,
+        "TxtName2": "武器",
+        "TxtName3": "武器狙击",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaJichu.png",
+        "Priority": 9,
+        "ParentName": "PanelCardsStandard"
+    },
+    {
+        "Id": 2,
+        "TxtName1": 2,
+        "TxtName2": "当期",
+        "TxtName3": "版本推荐角色",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaHuodong.png",
+        "Priority": 7,
+        "ParentName": "PanelCardsActivity"
+    },
+    {
+        "Id": 3,
+        "TxtName1": 3,
+        "TxtName2": "复刻",
+        "TxtName3": "往期版本角色",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaHuodong.png",
+        "Priority": 8,
+        "ParentName": "PanelCardsStandard"
+    },
+    {
+        "Id": 4,
+        "TxtName1": 4,
+        "TxtName2": "泛用",
+        "TxtName3": "A级角色&常规武器&独域机体",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaShougezhe.png",
+        "Priority": 12,
+        "ParentName": "PanelCardsActivity"
+    },
+    {
+        "Id": 5,
+        "TxtName1": 5,
+        "TxtName2": "联动",
+        "TxtName3": "但丁&维吉尔卡池",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaLiandong3.png",
+        "Priority": 7,
+        "ParentName": "PanelCardsStandard"
+    },
+    {
+        "Id": 6,
+        "TxtName1": 6,
+        "TxtName2": "苍蓝无尽夏",
+        "TxtName3": "限定涂装",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaTuzhuang.png",
+        "Priority": 11
+    },
+    {
+        "Id": 7,
+        "TxtName1": 7,
+        "TxtName2": "随行支援单位",
+        "TxtName3": "辅助机",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaFuzhuji.png",
+        "Priority": 10,
+        "ParentName": "PanelCardsActivity",
+        "Condition": [
+            8006
+        ]
+    },
+    {
+        "Id": 8,
+        "TxtName1": 8,
+        "TxtName2": "源树脉络",
+        "TxtName3": "源树脉络角色相关研发",
+        "TabBg": "Assets/Product/Texture/Image/UiNewDrawMainV4P5/UiNewDrawMainV4P5Alpha.png",
+        "Priority": 6,
+        "ParentName": "PanelCardsStandard",
+        "IsLifeTreePower": 1
+    },
+    {
+        "Id": 9,
+        "TxtName1": 9,
+        "TxtName2": "淬炼",
+        "TxtName3": "淬炼活动相关研发",
+        "TabBg": "Assets/Product/Texture/Image/UiNewDrawMainV4P5/UiNewDrawMainV4P5Helentine.png",
+        "Priority": 6,
+        "ParentName": "PanelCardsStandard",
+        "IsLifeTreePower": 1
+    }
+]

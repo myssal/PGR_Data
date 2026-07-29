@@ -1,0 +1,155 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory260.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            201
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 201,
+        "Params": [
+            1,
+            1031001,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 201,
+        "Params": [
+            2,
+            500026,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 201,
+        "Params": [
+            3,
+            500166
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "这个区域有一些散落的辅助数据块，但在那之后，又一个数据封锁横在面前。"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "…………？",
+            2
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "……也就是说这里其实是一个被刻意分隔开用来存储辅助数据块的空间吗。",
+            3
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "里",
+            "那只能……把同样的工作，再来一次了。",
+            22
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 305,
+        "Params": [
+            11,
+            14
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "打开了数据封锁，其后的道路看起来豁然开朗。"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "‘比安卡’的推断地点……就在前方。",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "露西亚",
+            "前进吧，大家都做好准备。我感觉前面不会太顺利的。",
+            3
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 202,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            2,
+            3,
+            "",
+            "",
+            1
+        ]
+    }
+]

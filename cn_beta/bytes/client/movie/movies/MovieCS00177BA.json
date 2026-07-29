@@ -1,0 +1,146 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "中秋动画测试"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 501,
+        "EndDelay": 5100.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageStart.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop.prefab"
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 501,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop2.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop2.prefab"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "测试完毕"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "A"
+        ]
+    }
+]

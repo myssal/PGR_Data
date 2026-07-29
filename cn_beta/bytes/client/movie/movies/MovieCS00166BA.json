@@ -1,0 +1,77 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory580.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 201,
+        "Params": [
+            1,
+            500196
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "spine动画测试",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 202,
+        "BeginAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 105,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieNuoAn01/UiMovieNuoAn01.prefab"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "A"
+        ]
+    }
+]

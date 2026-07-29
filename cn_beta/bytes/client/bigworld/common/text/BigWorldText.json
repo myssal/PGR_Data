@@ -1,0 +1,802 @@
+[
+    {
+        "Key": "EmptyTeamTip",
+        "Value": "队伍内没有成员，无法应用"
+    },
+    {
+        "Key": "QuestGoToText",
+        "Value": "前往%s领取"
+    },
+    {
+        "Key": "CommandantTradeName",
+        "Value": "指挥官"
+    },
+    {
+        "Key": "TeamFullText",
+        "Value": "当前队伍已满!"
+    },
+    {
+        "Key": "ChangeSuccessTip",
+        "Value": "更换成功"
+    },
+    {
+        "Key": "MessageMemesText",
+        "Value": "[表情]"
+    },
+    {
+        "Key": "MessageOptionsText",
+        "Value": "[输入中...]"
+    },
+    {
+        "Key": "MessageSystemText",
+        "Value": "[系统消息]"
+    },
+    {
+        "Key": "MessageVideoText",
+        "Value": "[视频]"
+    },
+    {
+        "Key": "MessageImageText",
+        "Value": "[图片]"
+    },
+    {
+        "Key": "DramaSkipConfirmTip",
+        "Value": "观看完整剧情有助于了故事发展，是否确认跳过？"
+    },
+    {
+        "Key": "MapPinDesc",
+        "Value": "图钉详情"
+    },
+    {
+        "Key": "ViewDetails",
+        "Value": "查看详情"
+    },
+    {
+        "Key": "MapPinQuestDesc",
+        "Value": "任务详情"
+    },
+    {
+        "Key": "MapAnchorQuestTip",
+        "Value": "当前任务没有追踪点"
+    },
+    {
+        "Key": "MapTeleportLevelDesc",
+        "Value": "传送至%s"
+    },
+    {
+        "Key": "MapTeleportLevelTips",
+        "Value": "是否传送至%s"
+    },
+    {
+        "Key": "MapTeleportDesc",
+        "Value": "传送"
+    },
+    {
+        "Key": "MapTrackFailDesc",
+        "Value": "已在追踪目标附近"
+    },
+    {
+        "Key": "MapQuickGoingTeleportDesc",
+        "Value": "是否传送至附近终端信标"
+    },
+    {
+        "Key": "MapQuickGoingNearTeleportDesc",
+        "Value": "当前位置更接近目标，是否继续传送"
+    },
+    {
+        "Key": "MapQuickGoingFarTeleportDesc",
+        "Value": "前往传送信标距离较远，是否继续传送"
+    },
+    {
+        "Key": "MapAiMemoryTitle",
+        "Value": "邂逅日志"
+    },
+    {
+        "Key": "CommmonTipsTitle",
+        "Value": "提示"
+    },
+    {
+        "Key": "CommmonTipsLock",
+        "Value": "功能未开启"
+    },
+    {
+        "Key": "CommmonSure",
+        "Value": "确定"
+    },
+    {
+        "Key": "SG_P_HideNpc",
+        "Value": "隐藏非控制角色"
+    },
+    {
+        "Key": "SG_P_HideSelf",
+        "Value": "隐藏控制角色"
+    },
+    {
+        "Key": "SG_P_LookAt",
+        "Value": "控制角色看镜头"
+    },
+    {
+        "Key": "SG_P_AutoSave",
+        "Value": "自动上传留影相册"
+    },
+    {
+        "Key": "SG_P_SelectAll",
+        "Value": "全选"
+    },
+    {
+        "Key": "SG_P_UnselectAll",
+        "Value": "取消全部"
+    },
+    {
+        "Key": "SG_P_UploadSucess",
+        "Value": "上传成功"
+    },
+    {
+        "Key": "SG_P_DeleteEmptyTips",
+        "Value": "请先选中照片"
+    },
+    {
+        "Key": "SG_P_UploadFull",
+        "Value": "请先清理留影相册后再尝试上传"
+    },
+    {
+        "Key": "SG_P_RemoveTips",
+        "Value": "删除后无法恢复，是否确认删除选中照片？"
+    },
+    {
+        "Key": "SG_P_NotEdit",
+        "Value": "暂无可编辑内容"
+    },
+    {
+        "Key": "SG_P_RenameEmpty",
+        "Value": "请输入修改的备注"
+    },
+    {
+        "Key": "SG_P_RenameLimitText",
+        "Value": "（1-%s字）"
+    },
+    {
+        "Key": "SG_P_TakePicDesc",
+        "Value": "拍摄%s"
+    },
+    {
+        "Key": "SG_P_TakePicTaskFinish",
+        "Value": "拍摄成功！"
+    },
+    {
+        "Key": "SG_P_DefaultFirstPersonSet",
+        "Value": "默认启用第一人称模式"
+    },
+    {
+        "Key": "SG_P_FakeSet",
+        "Value": "启动背景虚化"
+    },
+    {
+        "Key": "SG_P_FakePowerSet",
+        "Value": "虚化强度"
+    },
+    {
+        "Key": "SG_P_SaveSucess",
+        "Value": "保存成功"
+    },
+    {
+        "Key": "SG_P_QuestionTarget",
+        "Value": "？？？"
+    },
+    {
+        "Key": "SG_SS_UpgradeSucess",
+        "Value": "升级成功"
+    },
+    {
+        "Key": "SG_SS_SaveSucess",
+        "Value": "保存成功"
+    },
+    {
+        "Key": "SG_SS_EnterGameCanBuild",
+        "Value": "本轮还可以建造内圈店铺，确定要开始经营吗"
+    },
+    {
+        "Key": "SG_SS_EnterGameChangeTips",
+        "Value": "是否放弃当前建设进度，开始新一轮建设"
+    },
+    {
+        "Key": "SG_SS_GiveupStage",
+        "Value": "是否放弃当前建设进度"
+    },
+    {
+        "Key": "SG_SS_DestroyShop",
+        "Value": "是否决定拆除店铺"
+    },
+    {
+        "Key": "SG_SS_LeaveGame",
+        "Value": "是否暂时离开商业开发计划"
+    },
+    {
+        "Key": "SG_SS_FinishLeaveGame",
+        "Value": "所有关卡目标都已完成，是否马上结算关卡？"
+    },
+    {
+        "Key": "SG_SS_NotNewTips",
+        "Value": "没有黄金日刊内容"
+    },
+    {
+        "Key": "SG_SS_NoShop",
+        "Value": "需要建造有至少一个店铺"
+    },
+    {
+        "Key": "SG_SS_NoFeedback",
+        "Value": "请在运营阶段收集顾客反馈"
+    },
+    {
+        "Key": "SG_SS_NotEnoughCustomer",
+        "Value": "顾客数量不足"
+    },
+    {
+        "Key": "SG_SS_NotEnoughRes",
+        "Value": "资源不足"
+    },
+    {
+        "Key": "SG_SS_ResetConfirm",
+        "Value": "重置后会自动保存，是否重置本回合修改"
+    },
+    {
+        "Key": "SG_SS_Unselect",
+        "Value": "未选择"
+    },
+    {
+        "Key": "SG_SS_BuildingLock",
+        "Value": "未解锁"
+    },
+    {
+        "Key": "SG_SS_BuildingTagConsumpt",
+        "Value": "消费"
+    },
+    {
+        "Key": "SG_SS_BuildingTagPassenger",
+        "Value": "客流"
+    },
+    {
+        "Key": "SG_SS_BuildingTagEnvironment",
+        "Value": "氛围"
+    },
+    {
+        "Key": "SG_SS_BuildBtnBuild",
+        "Value": "建造"
+    },
+    {
+        "Key": "SG_SS_BuildBtnUpgrade",
+        "Value": "升级"
+    },
+    {
+        "Key": "SG_SS_BuildBtnCanUpgrade",
+        "Value": "可升级"
+    },
+    {
+        "Key": "SG_SS_BuildLevelMax",
+        "Value": "已满级"
+    },
+    {
+        "Key": "SG_SS_BuildBtnUnlock",
+        "Value": "建造"
+    },
+    {
+        "Key": "SG_SS_BuildBtnGo",
+        "Value": "前往"
+    },
+    {
+        "Key": "SG_SS_RunStart",
+        "Value": "开始建设"
+    },
+    {
+        "Key": "SG_SS_RunContinue",
+        "Value": "继续建设"
+    },
+    {
+        "Key": "SG_SS_NewsTitle",
+        "Value": "新闻消息"
+    },
+    {
+        "Key": "SG_SS_GrapevineTitle",
+        "Value": "小道传闻"
+    },
+    {
+        "Key": "SG_SS_LeftRoundText",
+        "Value": "剩余%s轮"
+    },
+    {
+        "Key": "SG_SS_RoundText",
+        "Value": "第%s轮"
+    },
+    {
+        "Key": "SG_SS_NextSaleSelectTips",
+        "Value": "下次促销还需%s轮"
+    },
+    {
+        "Key": "SG_SS_SaleSelectTips",
+        "Value": "请选择促销"
+    },
+    {
+        "Key": "SG_SS_SaleGridTab1",
+        "Value": "常规促销"
+    },
+    {
+        "Key": "SG_SS_SaleGridTab2",
+        "Value": "开业促销"
+    },
+    {
+        "Key": "SG_SS_LimitTaskSuccess",
+        "Value": "限时推广任务完成"
+    },
+    {
+        "Key": "SG_SS_LimitTaskFail",
+        "Value": "限时推广任务失败"
+    },
+    {
+        "Key": "SG_SS_UpgradeText1",
+        "Value": "累计消费人数：%s"
+    },
+    {
+        "Key": "SG_SS_UpgradeText2",
+        "Value": "升级还需<color=#FF0000FF>%s</color>名顾客消费"
+    },
+    {
+        "Key": "SG_SS_GoodAdd",
+        "Value": "多"
+    },
+    {
+        "Key": "SG_SS_GoodSub",
+        "Value": "少"
+    },
+    {
+        "Key": "SG_SS_PriceAdd",
+        "Value": "贵"
+    },
+    {
+        "Key": "SG_SS_PriceSub",
+        "Value": "便宜"
+    },
+    {
+        "Key": "SG_SS_GoodPosUp",
+        "Value": "上"
+    },
+    {
+        "Key": "SG_SS_GoodPosDown",
+        "Value": "下"
+    },
+    {
+        "Key": "SG_SS_SaveNotNeedTips",
+        "Value": "没有策略修改"
+    },
+    {
+        "Key": "SG_SS_SaveTipsConfirm",
+        "Value": "有未保存的修改，确认离开吗？"
+    },
+    {
+        "Key": "SG_SS_FirstReward",
+        "Value": "核心目标"
+    },
+    {
+        "Key": "SG_SS_FirstRewardDesc",
+        "Value": "完成%s轮经营或全部星级开发目标"
+    },
+    {
+        "Key": "SG_SS_NotYesterdayData",
+        "Value": "没有历史数据"
+    },
+    {
+        "Key": "SG_SS_BuildChanceText",
+        "Value": "【本轮还能建造：%s次】"
+    },
+    {
+        "Key": "SG_SS_BuildChanceTips",
+        "Value": "本轮建造次数已用完"
+    },
+    {
+        "Key": "SG_SS_NotShopToBuildTips",
+        "Value": "没有可以建造的店铺了"
+    },
+    {
+        "Key": "SG_SS_ShopAlreadyBuild",
+        "Value": "该店铺已建造"
+    },
+    {
+        "Key": "SG_SS_ShopResetNotChange",
+        "Value": "本轮没有修改"
+    },
+    {
+        "Key": "SG_SS_ShopSelectGoodFull",
+        "Value": "货架已满，无法上架新货物"
+    },
+    {
+        "Key": "SG_SS_UnlockShopSatisfactionTips",
+        "Value": "满意度不足"
+    },
+    {
+        "Key": "SG_SS_NewLimitTaskComfirmTips",
+        "Value": "有新的限时推广任务，请前往选择"
+    },
+    {
+        "Key": "SG_SS_YesterdayTxtDetail1Tips",
+        "Value": "顾客前往内圈店铺时可能会产生小费"
+    },
+    {
+        "Key": "SG_SS_YesterdayTxtDetail2Tips",
+        "Value": "顾客前往外圈店铺时可能产生突发事件"
+    },
+    {
+        "Key": "SG_SS_BillboardTurnLeft",
+        "Value": "%s轮"
+    },
+    {
+        "Key": "SG_SS_XUiSkyGardenShoppingStreetPopupRoundEnd1",
+        "Value": "店铺收入"
+    },
+    {
+        "Key": "SG_SS_XUiSkyGardenShoppingStreetPopupRoundEnd2",
+        "Value": "顾客小费"
+    },
+    {
+        "Key": "SG_SS_XUiSkyGardenShoppingStreetPopupRoundEnd3",
+        "Value": "其他变化"
+    },
+    {
+        "Key": "SG_SS_XUiSkyGardenShoppingStreetPopupRoundEnd4",
+        "Value": "氛围变化"
+    },
+    {
+        "Key": "SG_SS_XUiSkyGardenShoppingStreetPopupRoundEnd5",
+        "Value": "评分变化"
+    },
+    {
+        "Key": "SG_SS_XUiSkyGardenShoppingStreetPopupRoundEnd6",
+        "Value": "其他变化"
+    },
+    {
+        "Key": "SG_SS_Progress",
+        "Value": "开发计划星数："
+    },
+    {
+        "Key": "DIYUnRequiredPartName",
+        "Value": "不穿戴"
+    },
+    {
+        "Key": "DIYConfirmTips",
+        "Value": "是否保存修改？"
+    },
+    {
+        "Key": "DIYPreviewConfirmTips",
+        "Value": "穿戴了未获得部件，是否恢复未获得部件并保存其他部件？"
+    },
+    {
+        "Key": "DIYFirstConfirmText",
+        "Value": "确认"
+    },
+    {
+        "Key": "DIYResettingTips",
+        "Value": "是否重置修改？"
+    },
+    {
+        "Key": "DIYSaveSuccessTip",
+        "Value": "造型保存成功！"
+    },
+    {
+        "Key": "DIYChangeSuitTip",
+        "Value": "将卸下不能同时穿戴的套装部件，是否继续？"
+    },
+    {
+        "Key": "TeachHighlightColor",
+        "Value": "<color=#1a6ec4>%s</color>"
+    },
+    {
+        "Key": "InstLevelTipExitTitle",
+        "Value": "副本"
+    },
+    {
+        "Key": "InstLevelTipExitText",
+        "Value": "是否退出%s？"
+    },
+    {
+        "Key": "InstLevelTipExitSureText",
+        "Value": "重新开始"
+    },
+    {
+        "Key": "InstLevelTipExitCancelText",
+        "Value": "退出"
+    },
+    {
+        "Key": "CancelText",
+        "Value": "取消"
+    },
+    {
+        "Key": "StoryLevelTipExitTitle",
+        "Value": "剧情副本"
+    },
+    {
+        "Key": "StoryLevelTipExitText",
+        "Value": "是否退出剧情副本？"
+    },
+    {
+        "Key": "StoryLevelTipExitSureText",
+        "Value": "保存并退出"
+    },
+    {
+        "Key": "StoryLevelTipExitCancelText",
+        "Value": "不保存并退出"
+    },
+    {
+        "Key": "FunctionShieldTips",
+        "Value": "该功能暂时无法使用"
+    },
+    {
+        "Key": "BigWorldTrackText",
+        "Value": "请前往%s"
+    },
+    {
+        "Key": "BigWorldCourseExploreProgress",
+        "Value": "<size=50><color=#34aff8>%d</color></size>/%d"
+    },
+    {
+        "Key": "BigWorldCourseCoreProgressTitle",
+        "Value": "剧情奖励"
+    },
+    {
+        "Key": "BigWorldCourseCoreQuestProgress",
+        "Value": "完成「%s」可获得奖励"
+    },
+    {
+        "Key": "BigWorldCourseCoreSkipUnableTip",
+        "Value": "完成前置任务可解锁"
+    },
+    {
+        "Key": "BigWorldCourseTaskSkipUnableTip",
+        "Value": "当前无法跳转"
+    },
+    {
+        "Key": "BigWorldPerspectiveDefaultExplain",
+        "Value": "在第一人称模式下，使用角色为「指挥官」时，视角会自动进行切换\\n（游戏中可以自由切换视角模式）"
+    },
+    {
+        "Key": "BigWorldPerspectiveLevelExplain1",
+        "Value": "推荐使用【第三人称模式】游玩\\n（游玩中可随时切换视角）"
+    },
+    {
+        "Key": "NoTipToday",
+        "Value": "今日不再提示"
+    },
+    {
+        "Key": "WordTipExit",
+        "Value": "是否退出空中花园?"
+    },
+    {
+        "Key": "TipReward",
+        "Value": "奖励详情"
+    },
+    {
+        "Key": "RoleFashion",
+        "Value": "成员涂装"
+    },
+    {
+        "Key": "RoleHead",
+        "Value": "成员头像"
+    },
+    {
+        "Key": "LanguageSetTips",
+        "Value": "该语言模块在空中花园中暂未实装完毕，请指挥官耐心等候~"
+    },
+    {
+        "Key": "Open",
+        "Value": "打开"
+    },
+    {
+        "Key": "CurStatusCannotOpen",
+        "Value": "当前状态无法开启"
+    },
+    {
+        "Key": "StartTrackText",
+        "Value": "开始追踪"
+    },
+    {
+        "Key": "QuestCanNotGoToText",
+        "Value": "无法跳转"
+    },
+    {
+        "Key": "QuestReadMessageText",
+        "Value": "请阅读通讯"
+    },
+    {
+        "Key": "QuestGoToCurrentLevelText",
+        "Value": "请前往任务目标"
+    },
+    {
+        "Key": "QuestGoToNewLevelText",
+        "Value": "即将离开当前场景，前往新的场景。"
+    },
+    {
+        "Key": "SOMeshText0000_001_DLCLevel4001",
+        "Value": "\"这是一个 SceneObject 特效字 Key 格式示例，【建议】格式为 $\"\"SOMeshText{叙事飘字队列全局编号}_{队列内飘字序号}_DLCLevel{飘字所在的关卡 Id}\"\"\""
+    },
+    {
+        "Key": "SOMeshText0000_002_DLCLevel4001",
+        "Value": "\"这是 0000 号组的第 2 个飘字，下一个新的独立队列的起始文本 Key 应该是 \"\"SOMeshText0001_001_{飘字所在的关卡 Id}\"\"，队列的概念没有程序意义，只是希望能够方便查阅\""
+    },
+    {
+        "Key": "SOMeshText0000_003_DLCLevel4001",
+        "Value": "这是 0000 号组的第 3 个飘字，配置特效字文本时请注意长度和放置位置，避免穿模问题，并且为本地化后的文本考虑一下"
+    },
+    {
+        "Key": "DeliveryNotEnough",
+        "Value": "道具不足"
+    },
+    {
+        "Key": "SkipToFinshPreCondition",
+        "Value": "前往完成前置"
+    },
+    {
+        "Key": "SkipTo",
+        "Value": "前往"
+    },
+    {
+        "Key": "Complete",
+        "Value": "已完成"
+    },
+    {
+        "Key": "EarlyAccessDesc",
+        "Value": "可提前体验任务"
+    },
+    {
+        "Key": "EarlyAccessLock",
+        "Value": "未解锁"
+    },
+    {
+        "Key": "EarlyAccessText",
+        "Value": "提前体验"
+    },
+    {
+        "Key": "EarlyAccessTitle",
+        "Value": "提前体验"
+    },
+    {
+        "Key": "EarlyAccessSubtitle",
+        "Value": "以下为前置条件"
+    },
+    {
+        "Key": "EarlyAccessContent",
+        "Value": "您可以选择越过前置条件，提前体验相关内容。\\n此操作<color=#1272bb>不会影响前置条件的进度</color>。推荐以正常顺序进行游玩。"
+    },
+    {
+        "Key": "BigWorldPhotoSaveSuccessTip",
+        "Value": "照片已保存至:%s"
+    },
+    {
+        "Key": "BranchQuestAccepted",
+        "Value": "已经接取邀约，不可接取另一个角色的邀约任务"
+    },
+    {
+        "Key": "BranchQuestTips",
+        "Value": "接下来，您将与%s共度一段私人时光，进行情感交流，您可以自由选择是否体验。"
+    },
+    {
+        "Key": "LocalTextureExist",
+        "Value": "本地已经已经存在！"
+    },
+    {
+        "Key": "CourseCoreQuestProgressText",
+        "Value": "%s完成"
+    },
+    {
+        "Key": "InviteQuestFinishTotalText",
+        "Value": "结局达成数："
+    },
+    {
+        "Key": "EnvironmentQuestFinishTotalText",
+        "Value": "已完成邂逅:"
+    },
+    {
+        "Key": "InviteQuestBeginTip",
+        "Value": "即将与%s共度一段亲密的浪漫时光"
+    },
+    {
+        "Key": "QuestIsInActiveTip",
+        "Value": "任务尚未解锁"
+    },
+    {
+        "Key": "DramaPartSkipConfirmTip",
+        "Value": "观看完整剧情有助于了故事发展，是否确认跳过？"
+    },
+    {
+        "Key": "LoginWillNoLongerPrompt",
+        "Value": "本次登录不再提示"
+    },
+    {
+        "Key": "ShopBuySuccess",
+        "Value": "购买成功"
+    },
+    {
+        "Key": "ShopBuyNotEnough",
+        "Value": "购买所需材料不足"
+    },
+    {
+        "Key": "ShopBuyNotSales",
+        "Value": "未开始发售"
+    },
+    {
+        "Key": "SkipFailByTime",
+        "Value": "不在开放时间内，无法跳转"
+    },
+    {
+        "Key": "TemporarilyNone",
+        "Value": "暂无%s"
+    },
+    {
+        "Key": "NoTask",
+        "Value": "暂无任务"
+    },
+    {
+        "Key": "RemainingTime",
+        "Value": "剩余时间：%s"
+    },
+    {
+        "Key": "CourseVersionNotInTime",
+        "Value": "不在开放时间内"
+    },
+    {
+        "Key": "OutfitSwitchedSuccessfully",
+        "Value": "服饰分类切换成功！"
+    },
+    {
+        "Key": "DIYDoNotSupportWearingTips",
+        "Value": "当前不支持穿戴该部件，请切换服饰分类或衣装后再尝试"
+    },
+    {
+        "Key": "DIYConfirmTakeOffToDefaultConflicts",
+        "Value": "穿戴后会自动卸下互斥的部件，是否继续？"
+    },
+    {
+        "Key": "DIYNoSaveThenGoSkipConfirmTips",
+        "Value": "是否放弃当前调整，离开空中花园进行购买？"
+    },
+    {
+        "Key": "BigWorldPrecedenceTitle",
+        "Value": "提示"
+    },
+    {
+        "Key": "BigworldPrecedenceSubtitle",
+        "Value": "占用任务"
+    },
+    {
+        "Key": "BigWorldPrecedenceDetail",
+        "Value": "请先完成下方任务，方可继续推进当前任务"
+    },
+    {
+        "Key": "DIYDiscardChanges",
+        "Value": "存在未保存调整，是否放弃修改？"
+    },
+    {
+        "Key": "EnvironmentalStoryTip",
+        "Value": "完成角色的<color=#1272bb>任意</color>邂逅，即可获取角色相关奖励。"
+    },
+    {
+        "Key": "EnvironmentalStoryChangeTip",
+        "Value": "完成角色切换"
+    },
+    {
+        "Key": "EnvironmentalStoryOnDuty",
+        "Value": "已设定为执勤队伍"
+    },
+    {
+        "Key": "EnvironmentalStoryTryOnDuty",
+        "Value": "是否将当前组设为执勤"
+    },
+    {
+        "Key": "EnvironmentalStoryUnDutyTip",
+        "Value": "该角色当前未设为执勤，是否跳转至执勤设置？"
+    },
+    {
+        "Key": "NewsChangeTip",
+        "Value": "内容已更新"
+    },
+    {
+        "Key": "DIYDoNotSupportSkipTips",
+        "Value": "剧情中途无法前往，请稍后再试"
+    }
+]

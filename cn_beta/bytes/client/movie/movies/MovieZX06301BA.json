@@ -1,0 +1,1382 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "EndDelay": 5500.0,
+        "Params": [
+            2,
+            5303
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 401,
+        "Params": [
+            1,
+            201
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory211.png"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 401,
+        "Params": [
+            2,
+            212
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 201,
+        "Params": [
+            1,
+            500028
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "构造体A",
+            "检查子弹和其他随身装备。",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 203,
+        "EndDelay": 800.0,
+        "Params": [
+            1,
+            0.5,
+            -600
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 201,
+        "Params": [
+            5,
+            500019,
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 301,
+        "Params": [
+            1,
+            "构造体B",
+            "清点人数，和机群内的其他队员保持联系！",
+            5
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 203,
+        "EndDelay": 800.0,
+        "Params": [
+            5,
+            0.5,
+            600
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 202,
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "机舱中的构造体忙碌地做着备战准备，空气也随着他们的脚步声变得紧张起来。"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 402,
+        "Params": [
+            212
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 401,
+        "EndDelay": 500.0,
+        "Params": [
+            2,
+            4421
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 401,
+        "Params": [
+            2,
+            4422
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 509,
+        "EndDelay": 350.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory545.jpg",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            2,
+            11
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 201,
+        "Params": [
+            11,
+            500001,
+            4,
+            -600
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "赛利卡",
+            "先进行任务简报吧，【kuroname】你能听见我说的话吗。",
+            11
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 302,
+        "Params": [
+            "",
+            "可以听见。",
+            23,
+            "和我说说现在的情况。",
+            23
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "二十个自然日前，极地发生大规模冰层断裂——初步判定是红潮涌入海洋，搅乱洋流引发的连锁反应。",
+            11
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "断裂的冰原裂开数十公里深的沟壑，沿海多个港口被彻底冲毁，附近的数万平民受到波及，联合政府正在协助迁移善后工作。",
+            11
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "而这场灾害，还带出了谁都没预料到的敌人——苏菲亚城，也就是北极航线联合的旧首都。",
+            11
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 302,
+        "Params": [
+            "",
+            "旧首都？",
+            27,
+            "苏菲亚城？",
+            27
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "嗯，你也接触过相关人士，和九龙类似，联合航线以前也是个多势力融合国家，而苏菲亚城就是其中最为强大的城市力量。",
+            11
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "在某次毁灭性的帕弥什攻击中，苏菲亚城彻底失联……现在看来，恐怕当时是被冰封了起来。",
+            11
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "……随着冰层融化，不知为何被冰封的苏菲亚城与城里的感染体重现世间，这中间甚至检测到了疑似升格者的能量信号。",
+            11
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "所以在详细讨论以后，我们空中花园决定遵循协议向极地派出一个团左右的援军，自然，熟悉极地战斗的【kuroname】你也是援军的其中一员。",
+            11
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "以下是直接的作战任务指示——与先行的部队以及航线联合的军队会合，清除感染体威胁，守护联合航线的人民吧，【kuroname】。",
+            11
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 302,
+        "Params": [
+            "",
+            "我明白了。"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 201,
+        "Params": [
+            1,
+            501449,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "Params": [
+            1,
+            "罗塞塔",
+            "那接下来就换我说吧。",
+            1
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "眼神略带疲倦的罗塞塔从机舱后方走出。"
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 204,
+        "Params": [
+            11
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "这就是代号名为马尔库特的机体……",
+            11
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "现在的她换上了以白色为主的新机体，与之前简装的凛冽不同，这副机体多了不少装甲，尤其是后背部分的挂载让人觉得有一种“全副武装”的感觉。"
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 306
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "罗塞塔，新机体的整备完成了吗？",
+            11
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "简单做了一些检查，后勤人员说，现在最稳妥的办法，是让我待在【kuroname】身边——靠意识链接，能勉强稳住我的意识海。",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 204,
+        "Params": [
+            11,
+            4
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "……我刚也看过你这台新机体的报告了，要不是【kuroname】在空中花园上对其进行深潜的话，恐怕你现在还会因意识海的问题陷入昏迷。",
+            11
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "嗯，这种情况下我要是再昏迷一次恐怕会对战局有所影响，所以接下来的战斗我希望你们能让【kuroname】一起行动。",
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "这个应该没有问题，毕竟这次的战争你们两分别是空中花园和联合航线方的代表，一起行动也有利队伍的团结。",
+            11
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "指挥官，这样的安排可以吗？",
+            1
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 302,
+        "Params": [
+            "",
+            "这样也是最妥当的。",
+            49,
+            "你没有在勉强自己吧。",
+            51
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "NextActionId": 53,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "谢谢，和之前一样，我会尽我所能保护好你的，而且留在你身边的话，我肯定能捉住幸运。",
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "这可不是能退后的情况，能留在你身边的话，我肯定能捉住幸运。",
+            1
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "罗塞塔",
+            "获得这场战争的胜利。",
+            1
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
+            11
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 205,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.8,
+            0
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStory/Bgstory211.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "播报员",
+            "各位，本机即将进入交战区，就和之前的那样，我们会在到达指定空域后即刻返航。"
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 402,
+        "Params": [
+            2983
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 205,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.8,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStory/Bgstory211.png",
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            2,
+            11
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "罗塞塔",
+            "而我们，会以空投的形式落地，加入战场。",
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 204,
+        "Params": [
+            11
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 301,
+        "Params": [
+            "",
+            "赛利卡",
+            "刚更换新机体，就采用这么大胆的战术？",
+            11
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "罗塞塔",
+            "这片区域的感染体防空力量较弱，我和指挥官想尽快和友军会合，然后执行下一步的行动。",
+            1
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 202,
+        "Params": [
+            11,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 510,
+        "EndDelay": 300.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
+            11
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 205,
+        "EndDelay": 200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.8,
+            0.5
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "播报员",
+            "还有三分钟到达预定地点，全部作战人员都到舱门做好准备！"
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab"
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 402,
+        "Params": [
+            2983
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 302,
+        "Params": [
+            "",
+            "走吧，罗塞塔。",
+            82,
+            "不知道现场的状况如何。",
+            84
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 201,
+        "Params": [
+            1,
+            501449,
+            1
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "NextActionId": 86,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "罗塞塔",
+            "嗯，指挥官就在我之后降落吧，这样能减少一些冲击。",
+            1
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 201,
+        "Params": [
+            1,
+            501449,
+            1
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "罗塞塔",
+            "那就得看我们能努力到什么地步了。",
+            1
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.8,
+            0.5
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 401,
+        "Params": [
+            2,
+            1501
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 401,
+        "Params": [
+            2,
+            2983
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "播报员",
+            "在完成减压之后舱门将会打开——"
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 401,
+        "Params": [
+            2,
+            2923
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 301,
+        "Params": [
+            "",
+            "播报员",
+            "三，二，一！"
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 301,
+        "Params": [
+            "",
+            "播报员",
+            "打开舱门！"
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 402,
+        "Params": [
+            2923
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab"
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab"
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 402,
+        "Params": [
+            2983
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 401,
+        "EndAnim": "DialogDisable",
+        "EndDelay": 300.0,
+        "Params": [
+            2,
+            655
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 509,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1092.jpg",
+            1
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 401,
+        "Params": [
+            2,
+            5165
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgBlizzard.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "舱门随着播报员的口令打开，风与雪一同扑了进来呼在外装甲上，然后构造体的队伍依照顺序逐一跳落。"
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 401,
+        "EndDelay": 800.0,
+        "Params": [
+            1,
+            7101
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 201,
+        "Params": [
+            1,
+            501449,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "罗塞塔",
+            "到我们了，指挥官。",
+            1
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 302,
+        "Params": [
+            "",
+            "出发吧。",
+            111
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 401,
+        "Params": [
+            2,
+            9351042
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            1,
+            0.4,
+            350
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab",
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "以点头回应后，罗塞塔便握紧了武器，径直走到舱门正中，她先是闭眼呼了口气，机体也随之发出了微光。"
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这是一种调整各个机构的供能，为了降落以后能够立刻投入战斗的做法。"
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 401,
+        "Params": [
+            2,
+            1226
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 204,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            280
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "在数秒以后罗塞塔结束了调整，睁开了眼睛，然后机身后的挂载喷出微弱火光，同时她也向前跃出了一步。"
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 401,
+        "Params": [
+            2,
+            10113408
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5,
+            -400
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 205,
+        "EndDelay": 550.0,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgBlizzard.prefab"
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 510,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 104,
+        "Params": [
+            "-40|-175|-250",
+            0
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnowfall.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6201_30.jpg"
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 104,
+        "Params": [
+            "175|-155|-250",
+            0.5
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 401,
+        "Params": [
+            2,
+            9342059
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 205,
+        "EndDelay": 550.0,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg",
+            1,
+            0,
+            0.5
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 301,
+        "IsEnd": 1,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "罗塞塔",
+            "罗塞塔，出击！",
+            1
+        ]
+    }
+]

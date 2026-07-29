@@ -1,0 +1,174 @@
+[
+    {
+        "Key": "HelpKey",
+        "Comment": "帮助Key",
+        "Values": [
+            "Escape"
+        ]
+    },
+    {
+        "Key": "RemainTimeColor",
+        "Comment": "逃亡时间颜色",
+        "Values": [
+            "#00FF22",
+            "#FFF100",
+            "#FF3500"
+        ]
+    },
+    {
+        "Key": "RemainTimeShowColor",
+        "Comment": "大于60秒，绿色;59~30秒，黄色;29~0秒，红色",
+        "Values": [
+            60,
+            30,
+            0
+        ]
+    },
+    {
+        "Key": "ChapterSettleCondDesc",
+        "Comment": "阶段结算左侧参数描述",
+        "Values": [
+            "剩余时间"
+        ]
+    },
+    {
+        "Key": "ChapterSettleRemainTimeScore",
+        "Comment": "阶段结算评分",
+        "Values": [
+            80,
+            75,
+            70,
+            65,
+            60,
+            1
+        ]
+    },
+    {
+        "Key": "ChapterSettleRemainTimeGradeImgPath",
+        "Comment": "阶段结算评级的图片资源",
+        "Values": [
+            "Assets/Product/Texture/Image/UiSameColorGame/SameColorS.png",
+            "Assets/Product/Texture/Image/UiSameColorGame/SameColorA.png",
+            "Assets/Product/Texture/Image/UiSameColorGame/SameColorB.png",
+            "Assets/Product/Texture/Image/UiSameColorGame/SameColorC.png",
+            "Assets/Product/Texture/Image/UiSameColorGame/SameColorD.png",
+            "Assets/Product/Texture/Image/UiSameColorGame/SameColorE.png"
+        ]
+    },
+    {
+        "Key": "ChapterSettleRemainTimeGrade",
+        "Comment": "阶段结算评级",
+        "Values": [
+            "S",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+        ]
+    },
+    {
+        "Key": "DifficultyName",
+        "Comment": "难度名",
+        "Values": [
+            "常规",
+            "噩梦"
+        ]
+    },
+    {
+        "Key": "MainBg",
+        "Comment": "主界面背景",
+        "Values": [
+            "Assets/Product/Texture/Image/UiEscape/UiEscapeMainBg02.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscapeMainBg03.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscapeMainBg04.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscapeMainBg05.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscapeMainBg06.png"
+        ]
+    },
+    {
+        "Key": "FightSettleCondDesc",
+        "Comment": "战斗结算描述",
+        "Values": [
+            "当前区域"
+        ]
+    },
+    {
+        "Key": "MainShowRewardId",
+        "Comment": "主界面任务按钮展示的奖励",
+        "Values": [
+            550320
+        ]
+    },
+    {
+        "Key": "MainDifficultyBgUrl",
+        "Comment": "主界面难度背景底图Url",
+        "Values": [
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2MainBg01.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2MainBg02.png"
+        ]
+    },
+    {
+        "Key": "ChapterNumIconUrl",
+        "Comment": "章节数字Url",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiEscape/UiEscape2MainStageNun01.png",
+            "Assets/Product/Texture/Atlas/UiEscape/UiEscape2MainStageNun02.png",
+            "Assets/Product/Texture/Atlas/UiEscape/UiEscape2MainStageNun03.png",
+            "Assets/Product/Texture/Atlas/UiEscape/UiEscape2MainStageNun04.png",
+            "Assets/Product/Texture/Atlas/UiEscape/UiEscape2MainStageNun05.png",
+            "Assets/Product/Texture/Atlas/UiEscape/UiEscape2MainStageNun06.png"
+        ]
+    },
+    {
+        "Key": "ChapterDifficultyBgUrl",
+        "Comment": "章节难度背景底图Url",
+        "Values": [
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2MainStage01.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2MainStage02.png"
+        ]
+    },
+    {
+        "Key": "ChapterDifficultyLockUrl",
+        "Comment": "章节难度上锁底图Url",
+        "Values": [
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2MainStageLock.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2MainStageLock.png"
+        ]
+    },
+    {
+        "Key": "StageTitleColor",
+        "Comment": "章节节点标题颜色",
+        "Values": [
+            "55D0F0",
+            "55D0F0",
+            "9B62DA",
+            "FF8624"
+        ]
+    },
+    {
+        "Key": "SettleTitleIcon",
+        "Comment": "最终结算Icon",
+        "Values": [
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2SettleWin.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2SettleLose.png"
+        ]
+    },
+    {
+        "Key": "SettleTitleText",
+        "Comment": "最终结算text",
+        "Values": [
+            "逃出生天",
+            "时空破碎"
+        ]
+    },
+    {
+        "Key": "StageTitleBg",
+        "Values": [
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2FubenStage02.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2FubenStage02.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2FubenStage03.png",
+            "Assets/Product/Texture/Image/UiEscape/UiEscape2FubenStage04.png"
+        ]
+    }
+]

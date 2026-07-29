@@ -1,0 +1,151 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory275.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            201
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 201,
+        "Params": [
+            1,
+            500166
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "众人渐渐靠近了化工厂地区的出口，露西亚似乎有些出神地左右张望着。"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 302,
+        "Params": [
+            "",
+            "露西亚，怎么了？",
+            6
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "抱歉，我还是觉得这里很眼熟，但却想不起来。",
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 302,
+        "Params": [
+            "",
+            "在这里查找一下线索吧。",
+            8
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "这只是我的私事，就不占用任务时间了。",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 302,
+        "Params": [
+            "",
+            "不，这也很可能是升格者的线索。",
+            10
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "露西亚",
+            "……嗯，那就按照指挥官的意见来吧。",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 305,
+        "Params": [
+            12,
+            14
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "露西亚",
+            "露娜……？",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 302,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "去看看吧，露西亚。"
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 202,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    }
+]

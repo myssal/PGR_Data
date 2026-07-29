@@ -1,0 +1,903 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1340.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            120
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 201,
+        "Params": [
+            1,
+            501389,
+            8
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "墨利诺厄安静地坐在矿井深处。"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 401,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            2,
+            2987
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 205,
+        "EndDelay": 1050.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 204,
+        "Params": [
+            1,
+            14
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "片片蛛网如同破败白絮般堆积在她的身侧，她怔然地看着“艾丝琳”离开的方向。"
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "她再一次亲手把自己的孩子推向了无法预知的未来。"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 306
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 14,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 15,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 17,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 18,
+        "Type": 504,
+        "EndDelay": 2000.0,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 16,
+        "Type": 401,
+        "Params": [
+            1,
+            6250
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 19,
+        "Type": 201,
+        "Params": [
+            1,
+            501381,
+            14
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 20,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "“艾丝琳”",
+            "蛛丝……断了。",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 21,
+        "Type": 301,
+        "Params": [
+            "",
+            "“艾丝琳”",
+            "我的力量也不行了吗……",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 22,
+        "Type": 301,
+        "Params": [
+            "",
+            "“艾丝琳”",
+            "我……得不到<M>他们</M><W>她们</W>了吗？",
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 23,
+        "Type": 203,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 24,
+        "Type": 201,
+        "Params": [
+            2,
+            501389,
+            8,
+            400
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 25,
+        "Type": 301,
+        "Params": [
+            1,
+            "墨利诺厄",
+            "…………",
+            2
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 26,
+        "Type": 301,
+        "Params": [
+            "",
+            "“艾丝琳”",
+            "你失败了……？",
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 27,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "墨利诺厄沉默着，不知道应该如何回答“艾丝琳”的渴求。"
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 28,
+        "Type": 204,
+        "Params": [
+            2,
+            14
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 29,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "<M>他们</M><W>她们</W>已经发现我了。",
+            2
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 30,
+        "Type": 301,
+        "Params": [
+            "",
+            "“艾丝琳”",
+            "那我接下来该怎么做？",
+            1
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 31,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 32,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "你……走吧。",
+            2
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 33,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她垂下双眸，不愿看向孩子失落的眼睛。"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 34,
+        "Type": 204,
+        "Params": [
+            2,
+            14
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "丽芙……<M>他们</M><W>她们</W>很快就会找到这里来的。",
+            2
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "你刚刚诞生没多久，即使有这样的力量，也对付不了<M>他们</M><W>她们</W>。",
+            2
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 37,
+        "Type": 204,
+        "Params": [
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 38,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "去找命运之轮，你知道怎么找到他，对吗？",
+            2
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 39,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "我在他那里留下了东西。你清楚应该怎么使用它们。",
+            2
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 40,
+        "Type": 301,
+        "Params": [
+            "",
+            "“艾丝琳”",
+            "……那你呢？",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 41,
+        "Type": 204,
+        "Params": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "我……",
+            2
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 43,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她停顿了片刻。"
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 44,
+        "Type": 204,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 45,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "我留在这里。",
+            2
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 46,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 47,
+        "Type": 301,
+        "Params": [
+            "",
+            "“艾丝琳”",
+            "为什么？你应该和我一起走。",
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 48,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 49,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "墨利诺厄",
+            "……不行啊，艾丝琳，我们一起走，谁都走不了。",
+            2
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 50,
+        "Type": 204,
+        "Params": [
+            2,
+            14
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 51,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4,
+            200
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 52,
+        "Type": 401,
+        "Params": [
+            2,
+            2704
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 53,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4,
+            200,
+            -50
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 54,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "她收起尖利钩爪，小心地捋顺了孩子的乱发。"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 55,
+        "Type": 204,
+        "Params": [
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 56,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "我会帮你拖住<M>他们</M><W>她们</W>的脚步，所以……",
+            2
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 57,
+        "Type": 204,
+        "Params": [
+            2,
+            14
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 58,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "墨利诺厄",
+            "跑吧，艾丝琳。",
+            2
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 59,
+        "Type": 401,
+        "Params": [
+            2,
+            13081710
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 60,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4,
+            150,
+            -50
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 61,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4,
+            200,
+            -50
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 62,
+        "Type": 204,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 63,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "整了整孩子的衣摆，墨利诺厄露出苍白的微笑。"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 64,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "注意脚下的坑洞，不要摔跤……离开这里吧，走的越远越好。",
+            2
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 65,
+        "Type": 204,
+        "Params": [
+            2,
+            14
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 66,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "不要被发现，找个地方，躲起来，然后……",
+            2
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 67,
+        "Type": 204,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 68,
+        "Type": 401,
+        "Params": [
+            2,
+            1087
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 69,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4,
+            200
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 70,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4,
+            400
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 71,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "好好地长大。",
+            2
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 72,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 73,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她看向面前小小的人影，就像是看到了当年她亲手抱出的那个婴孩。"
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 74,
+        "Type": 306
+    },
+    {
+        "Id": 74,
+        "ActionId": 75,
+        "Type": 204,
+        "Params": [
+            2,
+            14
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 76,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "我保护不了她，但至少……我现在还能保护你。",
+            2
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 77,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "血肉在不应当生长的地方肆意发芽，她是机械体，但她又成为了一名“人类”的母亲。"
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 78,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 79,
+        "Type": 301,
+        "Params": [
+            "",
+            "“艾丝琳”",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 80,
+        "Type": 204,
+        "Params": [
+            1,
+            14
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 81,
+        "Type": 301,
+        "Params": [
+            "",
+            "“艾丝琳”",
+            "一起走，我可以保护你……",
+            1
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 82,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "来不及的。",
+            2
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 83,
+        "Type": 204,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 84,
+        "Type": 301,
+        "Params": [
+            "",
+            "墨利诺厄",
+            "跑吧，艾丝琳，向前跑……",
+            2
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 85,
+        "Type": 401,
+        "Params": [
+            2,
+            4044
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 86,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 87,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 88,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她用力将孩子推向前方。"
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 89,
+        "Type": 204,
+        "Params": [
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 90,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "墨利诺厄",
+            "不要回头。",
+            2
+        ]
+    }
+]

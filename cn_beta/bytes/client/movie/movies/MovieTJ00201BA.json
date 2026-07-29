@@ -1,0 +1,95 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 3,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory14.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 1,
+        "Type": 201,
+        "Params": [
+            1,
+            1031001,
+            1
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            204
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "丽芙",
+            "这下就全部弄好了，感谢指挥官和我一起整理这些浮游炮。",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 9,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 5,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "啊，搬运这种小事交给丽芙就好啦，指挥官去休息吧。",
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "毕竟收集它们就够辛苦的了，剩下的本就是我分内的工作，不该麻烦指挥官的。",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 6,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 8,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "丽芙",
+            "虽然指挥官能和我一起……让我很开心……",
+            1
+        ]
+    }
+]

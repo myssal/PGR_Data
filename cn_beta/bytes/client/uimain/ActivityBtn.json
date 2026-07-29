@@ -1,0 +1,288 @@
+[
+    {
+        "Id": 1,
+        "Priority": 100,
+        "Name": "生日快乐",
+        "NameEN": "HAPPY BIRTHDAY",
+        "SkipId": 89053,
+        "TimeId": 518,
+        "Conditions": [
+            32003
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainBrithday01.png",
+        "LeftTimeFun": "GetBirthday",
+        "EventId": "EVENT_PLAYER_SET_BIRTHDAY"
+    },
+    {
+        "Id": 4,
+        "Priority": 97,
+        "Name": "回归",
+        "NameEN": "WELCOME BACK",
+        "SkipId": 89002,
+        "TimeId": 14101,
+        "Conditions": [
+            32002
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSpRegression0301.png",
+        "LeftTimeFun": "GetRegression3rd",
+        "EventId": "EVENT_REGRESSION3_ACTIVITY_STATUS_CHANGE",
+        "RedPointConditions": [
+            "CONDITION_REGRESSION3_ALL"
+        ]
+    },
+    {
+        "Id": 5,
+        "Priority": 86,
+        "Name": "预下载",
+        "NameEN": "PRE DOWNLOAD",
+        "SkipId": 89042,
+        "TimeId": 903,
+        "Conditions": [
+            860748
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainDownload.png",
+        "RedPointConditions": [
+            "CONDITION_PRELOAD_NEW_VERSION"
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "眷慕心声",
+        "NameEN": "Dearest Whispers",
+        "SkipId": 189064,
+        "Conditions": [
+            30404
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/Mainlovergift2024520.png"
+    },
+    {
+        "Id": 7,
+        "Name": "蒲牢小店",
+        "NameEN": "PULAO'S DESSERTS",
+        "SkipId": 189065,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainPulaoDesserts.png",
+        "RedPointConditions": [
+            "CONDITION_DAILY_RESET"
+        ]
+    },
+    {
+        "Id": 8,
+        "Name": "逐浪拾光",
+        "NameEN": "Tidal Twirl",
+        "SkipId": 89026,
+        "TimeId": 47351,
+        "Conditions": [
+            30406
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainTurntable04.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "RedPointConditions": [
+            "CONDITION_TURNTABLE_SUMMARY"
+        ]
+    },
+    {
+        "Id": 9,
+        "Priority": 88,
+        "Name": "流绪天羽",
+        "NameEN": "Heavenly Tailwind",
+        "SkipId": 89056,
+        "TimeId": 47301,
+        "Conditions": [
+            774800
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainAccumulateExpend.png",
+        "LeftTimeFun": "GetAccumulateDraw",
+        "EventId": "EVENT_ACCUMULATE_DRWA_UPDATE",
+        "RedPointConditions": [
+            "CONDITION_ACCUMULATE_EXPEND_MAIN"
+        ]
+    },
+    {
+        "Id": 10,
+        "Priority": 87,
+        "Name": "霓潮夏讯",
+        "NameEN": "Luminous Tidesong",
+        "SkipId": 20226,
+        "TimeId": 48034,
+        "Conditions": [
+            770400
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainActivityShop05.png",
+        "LeftTimeFun": "GetByTimeIdCommon"
+    },
+    {
+        "Id": 11,
+        "Name": "甜蜜速递",
+        "NameEN": "Amber Sea",
+        "SkipId": 90037,
+        "Conditions": [
+            30406
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSlotmachine.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "RedPointConditions": [
+            "CONDITION_SLOT_MACHINE_RED"
+        ]
+    },
+    {
+        "Id": 12,
+        "Name": "灿星补给",
+        "NameEN": "SUPPLY",
+        "SkipId": 20230,
+        "Conditions": [
+            770402
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSupply01.png"
+    },
+    {
+        "Id": 13,
+        "Priority": 98,
+        "Name": "疾雷手册",
+        "NameEN": "MANUAL",
+        "ManagerName": "XWheelchairManual",
+        "IsAgency": true,
+        "SkipId": 89078,
+        "TimeId": 906,
+        "Conditions": [
+            770305
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainWheelChair.png",
+        "RedPointRefreshEventId": "EVENT_WHEELCHAIRMANUAL_REFRESH_MAINLEFTENTRANCE_REDDOT",
+        "RedPointConditions": [
+            "CONDITION_WHEELCHAIRMANUAL_MAIN"
+        ]
+    },
+    {
+        "Id": 15,
+        "Priority": 99,
+        "Name": "归途之旅",
+        "NameEN": "WELCOME BACK",
+        "SkipId": 89081,
+        "TimeId": 46301,
+        "Conditions": [
+            774800
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainHoldRegression.png",
+        "LeftTimeFun": "GetReCall",
+        "EventId": "EVENT_RECALL_OPEN_STATUS_UPDATE",
+        "RedPointConditions": [
+            "CONDITION_RECALL_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 16,
+        "Name": "昭星载梦",
+        "NameEN": "Starlit Dreams",
+        "SkipId": 89047,
+        "Conditions": [
+            860740
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/Main5thImg.png",
+        "RedPointConditions": [
+            "CONDITION_ANNIVERSARY_REPEATCHALLENGE",
+            "CONDITION_ANNIVERSARY_DRAW",
+            "CONDITION_SUMMER_SIGNIN_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 17,
+        "Name": "妄婪研发",
+        "NameEN": "RESEARCH",
+        "SkipId": 20239,
+        "Conditions": [
+            1050100
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainGachaCanLiver01.png",
+        "RedPointConditions": [
+            "CONDITION_GACHACANLIVER_MAIN"
+        ]
+    },
+    {
+        "Id": 18,
+        "Priority": 85,
+        "Name": "韶影洄廊",
+        "NameEN": "Passage of the Past",
+        "SkipId": 90017,
+        "Conditions": [
+            870003
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainVersionGift01.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "RedPointConditions": [
+            "CONDITION_VERSIONGIFT_TASK",
+            "CONDITION_VERSIONGIFT_REWARD"
+        ]
+    },
+    {
+        "Id": 19,
+        "Priority": 89,
+        "Name": "霁月献春",
+        "NameEN": "Blissful Gift",
+        "SkipId": 90022,
+        "Conditions": [
+            774800
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainWeeklyChallenge.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "RedPointConditions": [
+            "CONDITION_WEEK_CHALLENGE"
+        ]
+    },
+    {
+        "Id": 20,
+        "Name": "夏浪合击",
+        "NameEN": "Beach Bash",
+        "SkipId": 189069,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainWatermelon.png",
+        "RedPointConditions": [
+            "CONDITION_DAILY_RESET"
+        ]
+    },
+    {
+        "Id": 22,
+        "Priority": 97,
+        "Name": "新锐武备",
+        "NameEN": "Novice Arsenal",
+        "SkipId": 50050,
+        "TimeId": 24,
+        "Conditions": [
+            863105
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainQiriqiandaoNew.png"
+    },
+    {
+        "Id": 23,
+        "Name": "圣诞祝颂",
+        "NameEN": "Christmas Bliss",
+        "SkipId": 189071,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainChristmas.png",
+        "RedPointConditions": [
+            "CONDITION_DAILY_RESET"
+        ]
+    },
+    {
+        "Id": 24,
+        "Name": "琅函岁祝",
+        "NameEN": "Auspicious Treasury",
+        "SkipId": 1300626,
+        "Conditions": [
+            774800
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainAccumulateExpend.png",
+        "LeftTimeFun": "GetAccumulateExpendShopLeftTime",
+        "RedPointConditions": [
+            "CONDITION_ACCUMULATE_EXPEND_SHOP_NOTIFY"
+        ]
+    },
+    {
+        "Id": 25,
+        "Name": "心选狙击",
+        "NameEN": "Wishing Target",
+        "SkipId": 20361,
+        "TimeId": 46712,
+        "Conditions": [
+            770402
+        ],
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainBtnSummerSign306.png"
+    }
+]

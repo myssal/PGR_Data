@@ -1,0 +1,1646 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1228.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            204
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "夜幕降临，眼前的咖啡馆并未营业，不由得再次确认了终端上维罗妮卡发来的定位——是这里没错，但紧闭的门扉上却挂着“今日休息”的牌子。"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "与此同时，终端上又瞬间推送过来几条刚才赶路还没来得及查看的新消息。"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 304,
+        "Params": [
+            "<size=40>【系统推送】</size>",
+            "ffffffff",
+            0.5,
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 304,
+        "Params": [
+            "<size=30>以下是来自<color=#DC2E65>维罗妮卡</color>20分钟前的留言：</size>",
+            "ffffffff",
+            0.5,
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 304,
+        "Params": [
+            "到了没？",
+            "DC2E65",
+            0.5,
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 304,
+        "Params": [
+            "<size=40>【系统推送】</size>",
+            "ffffffff",
+            0.5,
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 304,
+        "Params": [
+            "<size=30>以下是来自<color=#DC2E65>维罗妮卡</color>17分钟前的留言：</size>",
+            "ffffffff",
+            0.5,
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 304,
+        "Params": [
+            "你太慢了。",
+            "DC2E65",
+            0.5,
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 304,
+        "Params": [
+            "<size=40>【系统推送】</size>",
+            "ffffffff",
+            0.5,
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 304,
+        "Params": [
+            "<size=30>以下是来自<color=#DC2E65>维罗妮卡</color>5分钟前的留言：</size>",
+            "ffffffff",
+            0.5,
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 304,
+        "Params": [
+            "我再发送一次定位，具体坐标是……",
+            "DC2E65",
+            "",
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 304,
+        "Params": [
+            "<size=40>【系统推送】</size>",
+            "ffffffff",
+            0.5,
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 304,
+        "Params": [
+            "<size=30>以下是来自<color=#DC2E65>维罗妮卡</color>1分钟前的留言：</size>",
+            "ffffffff",
+            0.5,
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 304,
+        "Params": [
+            "我听到你的脚步声了，直接进来。",
+            "DC2E65",
+            "",
+            "Assets/Product/Texture/Image/BgStory/Bgstory213.png",
+            "",
+            1,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "再定睛一看，那块“今日休息”的牌子上有一行手写的文字：<i>仅接待灰鸦指挥官。</i>"
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 306
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "（推开门）",
+            21
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 401,
+        "Params": [
+            2,
+            4872
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory101.png"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab",
+            1,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab",
+            1,
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 511,
+        "Params": [
+            1,
+            0,
+            "-500|0|-500"
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 511,
+        "Params": [
+            2,
+            0,
+            "500|0|-500"
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 502,
+        "EndDelay": 400.0,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "开门的一瞬间，扑面而来的无数气球一下子令人难以招架，仿佛是这个咖啡馆的每寸空间都被气球塞爆了，此刻它们正源源不绝地往自己脸上呼来。"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "每个气球上都写着“生日快乐”的字样。"
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 302,
+        "Params": [
+            "",
+            "不是你这……",
+            31,
+            "太多了，真的太多了。",
+            31
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 201,
+        "Params": [
+            1,
+            501364,
+            4,
+            "",
+            -20,
+            -100
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "Params": [
+            1,
+            "维罗妮卡",
+            "你来了，迟到了3分钟。",
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 203,
+        "Params": [
+            1,
+            0.4,
+            "",
+            -20,
+            -200
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 104,
+        "Params": [
+            "0|0|-50",
+            0.4
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 511,
+        "Params": [
+            1,
+            0.4,
+            "-2000|0|0"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 511,
+        "EndDelay": 400.0,
+        "Params": [
+            2,
+            0.4,
+            "2000|0|0"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab",
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "一只手从众多气球中伸出，一把将被气球“围困”的人类拉向了她的身边。"
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 302,
+        "Params": [
+            "",
+            "主要是在研究门口的指示牌。",
+            42
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "好了，今天接下来的事情，都交给我。",
+            1,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她一把从人类的手中拿走终端，调为静音模式，锁进了一旁的柜子里，然后，她把手按在人类的肩膀上，半强制地让对方坐在一个靠窗的位置上。"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 201,
+        "Params": [
+            1,
+            501364,
+            "",
+            "",
+            -20,
+            -200
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            1,
+            "维罗妮卡",
+            "在气球迎接环节之后，应该是……送上祝福语阶段。",
+            1,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 201,
+        "Params": [
+            1,
+            500470,
+            "",
+            1600,
+            -250,
+            400
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 201,
+        "Params": [
+            2,
+            500471,
+            "",
+            0,
+            -1000,
+            600
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 201,
+        "Params": [
+            3,
+            500488,
+            "",
+            -1500,
+            -300,
+            400
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 203,
+        "Params": [
+            1,
+            0.6,
+            900,
+            -250,
+            400
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 203,
+        "Params": [
+            2,
+            0.6,
+            0,
+            -350,
+            600
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 203,
+        "Params": [
+            3,
+            0.6,
+            -800,
+            -300,
+            400
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "随着维罗妮卡的话语，几个举着祝福灯牌的小机器人从各个角落鱼贯而出，发声模块里同时传出生日祝福的乐曲。"
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 301,
+        "Params": [
+            "",
+            "小机器人A",
+            "在这个特殊的日子，为您送上特别的祝福。",
+            1
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 301,
+        "Params": [
+            "",
+            "小机器人B",
+            "愿好运常伴您的身边每一天。",
+            2
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 301,
+        "Params": [
+            "",
+            "小机器人C",
+            "生日快乐，灰鸦指挥官！",
+            3
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 401,
+        "Params": [
+            2,
+            4081
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "",
+            "嘭——"
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 201,
+        "Params": [
+            1,
+            501364,
+            1,
+            "",
+            -20,
+            -200
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "说完祝福语后，几个小机器人同时拉动了手中的礼炮，无数彩带瞬间爆出，纷纷扬扬地飘洒而下，落在二人的身上。"
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "生日快乐，【kuroname】。",
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab"
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "说完这句简单而直白的祝福后，她不再说话，只是略带严肃地望着眼前的人类，似乎是在认真地等着对方的回应。"
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 302,
+        "Params": [
+            "",
+            "谢谢……这样的用心，我很感动。",
+            69,
+            "确实没想到你会这么做。",
+            69
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "但你没有笑，如果满意我对今天的安排，你脸上的表情就应该比现在更放松才对。",
+            1
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "看着她脸上一本正经的表情，再搭配上她满头挂着的彩带，刚才一直忍着的笑意终于蔓延开来。"
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 302,
+        "Params": [
+            "",
+            "抱歉，只是刚才注意力在别的地方，这里……",
+            72
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "嗯？",
+            1
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 204,
+        "Params": [
+            1,
+            10
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "意识到人类对她伸出手，维罗妮卡本能地偏过头闪避，试图看清人类要对她做什么。"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 302,
+        "Params": [
+            "",
+            "现在……先别动。",
+            76
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 104,
+        "Params": [
+            "0|0|-200",
+            0.8
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 203,
+        "EndDelay": 850.0,
+        "Params": [
+            1,
+            0.8,
+            "",
+            -160,
+            -300
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 401,
+        "EndDelay": 500.0,
+        "Params": [
+            2,
+            2902
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 402,
+        "Params": [
+            2902
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0.8
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 203,
+        "Params": [
+            1,
+            0.8,
+            "",
+            -20,
+            -200
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "伸出手，从她发间的“龙角”上摘下一条缠绕的彩带，举到她的眼前。"
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            1,
+            0.4,
+            "",
+            -100,
+            -250
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在明白人类此举的含义后，维罗妮卡不再抗拒，只是安静地低下头，让人类慢慢在她的头上清理那些纠缠的彩带。"
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 401,
+        "Params": [
+            2,
+            2902
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她发间和“龙角”上缠绕的彩带很多，刻意地放轻了手上的动作，无形间也让这个过程变得更久。"
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            1,
+            0.4,
+            "",
+            -20,
+            -200
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "终于，在摘下她发梢最后一条彩带后，维罗妮卡抬起了头，直直地盯着自己。用不着她提示也知道：自己的头上也一定是布满了彩带。"
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "轮到我了。",
+            1
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 203,
+        "EndDelay": 350.0,
+        "Params": [
+            1,
+            0.3,
+            "",
+            -50,
+            -250
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 401,
+        "Params": [
+            2,
+            2902
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她迅速逼近过来，近得可以感受到她的气息落在耳边，头上随之传来麻酥酥的感觉，那是她金属的指尖一点点摸索着缠在自己发间的彩带。"
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "咖啡馆里只有静默相对的二人，安静得可以听到彼此的呼吸声。"
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 401,
+        "Params": [
+            2,
+            2902
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "能感受到她手上的速度很快，似乎是还有更重要的事等着她去做，片刻之后，她如同展示战利品一般，将缠满彩带的指尖举到人类面前。"
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 306
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 201,
+        "Params": [
+            1,
+            501364,
+            1,
+            "",
+            -20,
+            -200
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 301,
+        "Params": [
+            1,
+            "维罗妮卡",
+            "……好了。",
+            1
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "接下来，按你们的说法，是最重要的“吃生日蛋糕”环节。",
+            1
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 401,
+        "Params": [
+            2,
+            4341
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 201,
+        "Params": [
+            1,
+            501366,
+            "",
+            "",
+            -20,
+            -200
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "她欲盖弥彰地展开了那对“龙翼”，身后传来窸窸窣窣的声音，脸上却依旧是一副严肃的表情，仿佛是这样就能让人类“猜不透”她在做什么一样。"
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 401,
+        "Params": [
+            2,
+            5290
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "片刻之后，一个巨大的生日蛋糕被她的长尾托举着，出现在人类面前——大得几乎遮住了人类看向她的视线。"
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 401,
+        "Params": [
+            2,
+            2683
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0,
+            0.8,
+            0.2
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.3,
+            0.2
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她熟练地插上蜡烛，点燃烛火，又起身关上所有的照明，仿佛是演练过许多次一样。"
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 201,
+        "Params": [
+            1,
+            501366,
+            "",
+            "",
+            -20,
+            -200
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "整个咖啡馆瞬间陷入一片黑暗中，摇曳的烛光照亮了对面机械体认真的脸。"
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 306
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "维罗妮卡",
+            "再接下来，该到“许愿和吹蜡烛”了，【kuroname】。",
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 302,
+        "Params": [
+            "",
+            "没关系，倒也用不着这么一板一眼的，",
+            122
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 302,
+        "Params": [
+            "",
+            "不过，你是怎么想到要搞这么一套全流程的……",
+            123
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 204,
+        "Params": [
+            1,
+            8,
+            8
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "维罗妮卡",
+            "向这家咖啡店的店长学的，条件是我在这里当一周的“特别代理店长”，报酬是今天的咖啡馆我可以自由使用。",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "包括这个蛋糕也是我做的，我在店长给的配方上，把所有的配料都加了三倍，这样的话，应该能让口感也同时提升三倍。",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 302,
+        "Params": [
+            "",
+            "……谢谢你的心意。",
+            128,
+            "不能这样简单换算啊……",
+            128
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0.8,
+            0,
+            0.2
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.3,
+            0.8,
+            0.2
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在她的目光下许下愿望，吹灭蜡烛，用餐刀切开蛋糕的同时，切实地感受到了“三倍配料”的含义，超量的奶油和水果堆满了二人的碟子。"
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 302,
+        "Params": [
+            "",
+            "（先吃一口）",
+            132
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 401,
+        "Params": [
+            2,
+            5287
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "蛋糕入口的瞬间，厚重的味道在口中炸开，超出预料的糖，奶油和水果一齐轰炸味觉，如同她一向直白而真实的心意。"
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 302,
+        "Params": [
+            "",
+            "你也一起试试？",
+            135
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在人类的注视下，机械体仔细地“品味”着那块属于她的蛋糕，连奶油沾在嘴角上也没有察觉。"
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "味道和三倍配方一致，呈现的效果并没有什么问题……不过，如果你之后想要完全按照你的想法进行制作的话，我也可以。",
+            1
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 302,
+        "Params": [
+            "",
+            "（伸手轻轻擦去她嘴角边的奶油）",
+            140,
+            "（将餐巾递给她）",
+            148
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "……",
+            1
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            "",
+            -30,
+            -250
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "正想找餐巾擦去指尖上的奶油时，手腕却被维罗妮卡一把抓住，反手送到了自己的唇边。"
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "这是我为你亲手制作的生日蛋糕，【kuroname】。",
+            1
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "维罗妮卡",
+            "所以，一点也不能浪费……明白了吗？",
+            1
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "……嗯？",
+            1
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在人类的示意下，她从窗户玻璃上的倒影意识到发生了什么，快速地用餐巾擦去了唇边的奶油后，又将视线投向了人类。"
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 301,
+        "Params": [
+            "",
+            "维罗妮卡",
+            "别以为转移我的注意力就可以“逃避”掉吃完它——这可是我为你亲手制作的生日蛋糕，【kuroname】。",
+            1
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "维罗妮卡",
+            "所以，一点也不能浪费……明白了吗？",
+            1
+        ]
+    }
+]

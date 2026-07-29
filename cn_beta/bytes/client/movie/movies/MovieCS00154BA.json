@@ -1,0 +1,85 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory438.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 4,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "新节点测试测试"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 5,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "测试一"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 6,
+        "Type": 307,
+        "IsBlock": 1,
+        "Params": [
+            "这是一行文本这是一行文本这是一行文本",
+            "",
+            80
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 7,
+        "Type": 307,
+        "IsBlock": 1,
+        "Params": [
+            "切换文本",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 8,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 9,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "结束"
+        ]
+    }
+]

@@ -1,0 +1,1156 @@
+[
+    {
+        "Key": "HelpKey",
+        "Note": "帮助Key",
+        "Params": [
+            "RogueSim"
+        ]
+    },
+    {
+        "Key": "MainCountDownDesc",
+        "Note": "倒计时描述",
+        "Params": [
+            "经营剩余时间：%s"
+        ]
+    },
+    {
+        "Key": "ExchangeCountDownDesc",
+        "Note": "倒计时描述",
+        "Params": [
+            "商店兑换剩余时间：%s"
+        ]
+    },
+    {
+        "Key": "StageNotUnlockDesc",
+        "Note": "关卡未解锁描述",
+        "Params": [
+            "%s后解锁",
+            "通关“%s”后解锁"
+        ]
+    },
+    {
+        "Key": "StageRoundDesc",
+        "Note": "关卡季度描述",
+        "Params": [
+            "<color=#ff0000>%s</color>季度"
+        ]
+    },
+    {
+        "Key": "ScenePath",
+        "Note": "场景预置，包括格子挂点和镜头",
+        "Params": [
+            "Assets/Product/Scene/ScenePrefab/SystemRogueSim3d01.prefab"
+        ]
+    },
+    {
+        "Key": "SceneLoadGridSpeed",
+        "Note": "场景每帧加载格子预制体的数量",
+        "Params": [
+            20
+        ]
+    },
+    {
+        "Key": "ProduceContent",
+        "Note": "生产界面描述",
+        "Params": [
+            "季度开始时会根据此设置生产商品"
+        ]
+    },
+    {
+        "Key": "ProduceBtnYesTips",
+        "Note": "生产按钮提示信息",
+        "Params": [
+            "请选择要生产商品",
+            "本季度产品生产时，溢出仓库容量的部分舍弃，不计入仓库",
+            "%s库存已达上限，无法继续生产"
+        ]
+    },
+    {
+        "Key": "ProduceDialogTitle",
+        "Note": "弹框标题",
+        "Params": [
+            "提示"
+        ]
+    },
+    {
+        "Key": "ProduceChangeContent",
+        "Note": "生产变更描述",
+        "Params": [
+            "生产商品更换成功"
+        ]
+    },
+    {
+        "Key": "ProduceNotSelectTips",
+        "Note": "未选择生产提示",
+        "Params": [
+            "请选择要生产的商品"
+        ]
+    },
+    {
+        "Key": "SellContent",
+        "Note": "贸易界面描述",
+        "Params": [
+            "商品销售获得的金贝会在下季度入账"
+        ]
+    },
+    {
+        "Key": "SellSingleValue",
+        "Note": "贸易单次减少/增加的数值",
+        "Params": [
+            9999999
+        ]
+    },
+    {
+        "Key": "SellChangeContent",
+        "Note": "贸易变更描述",
+        "Params": [
+            "装车成功",
+            "暂无商品装车"
+        ]
+    },
+    {
+        "Key": "BattleRoundNumDesc",
+        "Note": "季度数描述",
+        "Params": [
+            "季度 <color=#ffeb9b>%d</color>"
+        ]
+    },
+    {
+        "Key": "BattleRoundLine10",
+        "Params": [
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine10.png"
+        ]
+    },
+    {
+        "Key": "BattleRoundLine20",
+        "Params": [
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine20.png"
+        ]
+    },
+    {
+        "Key": "BattleRoundLine30",
+        "Params": [
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine30.png"
+        ]
+    },
+    {
+        "Key": "BattleRoundLine5",
+        "Params": [
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine5.png"
+        ]
+    },
+    {
+        "Key": "BattleRoundLine15",
+        "Params": [
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine15.png"
+        ]
+    },
+    {
+        "Key": "BattleRoundLine25",
+        "Params": [
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine25.png"
+        ]
+    },
+    {
+        "Key": "TransitionDuration",
+        "Note": "过场持续时间",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Key": "TransitionDesc",
+        "Note": "过场描述",
+        "Params": [
+            "经营时间还有：%d个季度",
+            "最后一个季度！"
+        ]
+    },
+    {
+        "Key": "BtnExplore",
+        "Note": "探索按钮",
+        "Params": [
+            "前往探索"
+        ]
+    },
+    {
+        "Key": "BtnDetail",
+        "Note": "详情按钮",
+        "Params": [
+            "查看详情"
+        ]
+    },
+    {
+        "Key": "LandBubbleBtnName",
+        "Note": "格子弹框按钮名称",
+        "Params": [
+            "前往探索",
+            "查看详情",
+            "查看升级",
+            "继续选择"
+        ]
+    },
+    {
+        "Key": "LandNotExplorableTips",
+        "Note": "格子不可探索提示",
+        "Params": [
+            "需要先通过探索连通道路"
+        ]
+    },
+    {
+        "Key": "North",
+        "Note": "传闻点位北方向",
+        "Params": [
+            "北方向"
+        ]
+    },
+    {
+        "Key": "South",
+        "Note": "传闻点位南方向",
+        "Params": [
+            "南方向"
+        ]
+    },
+    {
+        "Key": "East",
+        "Note": "传闻点位东方向",
+        "Params": [
+            "东方向"
+        ]
+    },
+    {
+        "Key": "West",
+        "Note": "传闻点位西方向",
+        "Params": [
+            "西方向"
+        ]
+    },
+    {
+        "Key": "Northeast",
+        "Note": "传闻点位东北方向",
+        "Params": [
+            "东北方向"
+        ]
+    },
+    {
+        "Key": "Southeast",
+        "Note": "传闻点位东南方向",
+        "Params": [
+            "东南方向"
+        ]
+    },
+    {
+        "Key": "Northwest",
+        "Note": "传闻点位西北方向",
+        "Params": [
+            "西北方向"
+        ]
+    },
+    {
+        "Key": "Southwest",
+        "Note": "传闻点位西南方向",
+        "Params": [
+            "西南方向"
+        ]
+    },
+    {
+        "Key": "MainMaxLevelDesc",
+        "Note": "主城最大等级描述",
+        "Params": [
+            "MAX"
+        ]
+    },
+    {
+        "Key": "MainLevelUpExpTips",
+        "Note": "主城经验提示",
+        "Params": [
+            "可升级",
+            "已满级！"
+        ]
+    },
+    {
+        "Key": "MainLevelUpAdditionDesc",
+        "Note": "主城等级加成描述",
+        "Params": [
+            "%s + %d",
+            "科技等级解锁 Lv.%d",
+            "探索区域解锁 Lv.%d"
+        ]
+    },
+    {
+        "Key": "MainLevelCanLevelUpTips",
+        "Note": "主城不可升级提示",
+        "Params": [
+            "已达最高等级",
+            "行商经验未满足升级需求",
+            "金贝不足"
+        ]
+    },
+    {
+        "Key": "MainLevelBtnLvUpText",
+        "Note": "升级按钮文本",
+        "Params": [
+            "升级",
+            "已满级"
+        ]
+    },
+    {
+        "Key": "MainLevelRewardColor",
+        "Note": "主城等级奖励颜色",
+        "Params": [
+            "524C3F",
+            "FF6500"
+        ]
+    },
+    {
+        "Key": "MainLevelUpgradeGoldColor",
+        "Note": "主城等级升级金币颜色",
+        "Params": [
+            "524C3F",
+            "FF6500"
+        ]
+    },
+    {
+        "Key": "ShopId",
+        "Note": "商店Id",
+        "Params": [
+            1434
+        ]
+    },
+    {
+        "Key": "PreviewShopGoodIds",
+        "Note": "商店预览商品id列表",
+        "Params": [
+            143366,
+            143367
+        ]
+    },
+    {
+        "Key": "TaskGroupId",
+        "Note": "任务组Id",
+        "Params": [
+            268
+        ]
+    },
+    {
+        "Key": "EventTurnNumberDesc",
+        "Note": "事件季度数描述",
+        "Params": [
+            "限时：需要%d季度内完成"
+        ]
+    },
+    {
+        "Key": "BuildingGoldNotEnough",
+        "Note": "建造建筑金贝不足提示",
+        "Params": [
+            "金贝不足"
+        ]
+    },
+    {
+        "Key": "StoryLockText",
+        "Note": "故事未解锁",
+        "Params": [
+            "暂未解锁"
+        ]
+    },
+    {
+        "Key": "TechLevelUnlockTips",
+        "Note": "科技树等级不足的提示",
+        "Params": [
+            "需要主城达到等级%s解锁！"
+        ]
+    },
+    {
+        "Key": "TechPreLevelUnlockTips",
+        "Note": "科技树关键科技需要先激活的提示",
+        "Params": [
+            "需要先激活左侧的关键科技!"
+        ]
+    },
+    {
+        "Key": "TechPreUnlockTips",
+        "Note": "科技树前置科技需要先激活的提示",
+        "Params": [
+            "请先点亮前置科技！"
+        ]
+    },
+    {
+        "Key": "TechGoldUnlockTips",
+        "Note": "科技树金贝不足提示",
+        "Params": [
+            "金贝不够升级！"
+        ]
+    },
+    {
+        "Key": "TechLevelNextUnlockTips",
+        "Note": "科技树关键科技下次解锁提示",
+        "Params": [
+            "剩余科技将在主城Lv.%s再次解锁"
+        ]
+    },
+    {
+        "Key": "TechCanUnlockTips",
+        "Note": "可解锁提示",
+        "Params": [
+            "可解锁：%s/%s"
+        ]
+    },
+    {
+        "Key": "TechSelectFull",
+        "Note": "关键科技已选满",
+        "Params": [
+            "当前选择已达到最大数量！"
+        ]
+    },
+    {
+        "Key": "TechActivePreLevelTechTips",
+        "Note": "关键科技前面未激活",
+        "Params": [
+            "请先激活前面的关键科技！"
+        ]
+    },
+    {
+        "Key": "TechNoSelectFullTips",
+        "Note": "关键科技未选满科技",
+        "Params": [
+            "请从中选择%s个科技！"
+        ]
+    },
+    {
+        "Key": "RoundStartSellHistogramColor",
+        "Note": "直方图颜色",
+        "Params": [
+            "DBCBA0",
+            "74CABD"
+        ]
+    },
+    {
+        "Key": "RoundStartSellPriceColor",
+        "Note": "利润颜色",
+        "Params": [
+            "FFA600",
+            "FF0015"
+        ]
+    },
+    {
+        "Key": "RoundStarProduceColor",
+        "Note": "产出颜色",
+        "Params": [
+            "0F70BC",
+            "FF0015"
+        ]
+    },
+    {
+        "Key": "SettlementDataContent",
+        "Note": "结算数据文本",
+        "Params": [
+            "获得金贝",
+            "主城等级",
+            "建造建筑",
+            "城邦总星级",
+            "事件与秘藏",
+            "购买区域"
+        ]
+    },
+    {
+        "Key": "ActivityEntryProgressTips",
+        "Note": "活动入口进度提示",
+        "Params": [
+            "进度:%s/%s",
+            "%s挑战中:%s/%s季度"
+        ]
+    },
+    {
+        "Key": "HandbookProgress",
+        "Note": "图鉴界面解锁进度文本",
+        "Params": [
+            "%s<color=#FFFFFF>/%s</color>"
+        ]
+    },
+    {
+        "Key": "AreaUnlockTips",
+        "Note": "点击未解锁区域的提示",
+        "Params": [
+            "主城提升到%s级时解锁区域！"
+        ]
+    },
+    {
+        "Key": "GridUnlockTips",
+        "Note": "点击未解锁格子的提示",
+        "Params": [
+            "请先探索连通!"
+        ]
+    },
+    {
+        "Key": "CameraPanelDragSizeOffset",
+        "Note": "相机拖拽区域大小偏移，参数1是宽度，参数2是高度",
+        "Params": [
+            -6,
+            -2
+        ]
+    },
+    {
+        "Key": "CameraDistance",
+        "Note": "摄像机距离地面距离，距离越远，看到的格子数量越多",
+        "Params": [
+            14
+        ]
+    },
+    {
+        "Key": "CameraDistanceRange",
+        "Note": "摄像机距离地面距离范围，参数1为最小值，参数2为最大值，参数3为加减号按钮一次变化的值，参数4为鼠标滚轮滑动的倍数",
+        "Params": [
+            10,
+            25,
+            2.5,
+            10
+        ]
+    },
+    {
+        "Key": "CameraRotationX",
+        "Note": "摄像机X方向上的旋转",
+        "Params": [
+            45
+        ]
+    },
+    {
+        "Key": "CityExploredEffect",
+        "Note": "城邦解锁特效",
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingLevelUp.prefab"
+        ]
+    },
+    {
+        "Key": "BuildingEffect",
+        "Note": "建筑建造成功特效",
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingFog.prefab"
+        ]
+    },
+    {
+        "Key": "MainLevelUpEffect",
+        "Note": "主城升级特效",
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingLevelUp.prefab"
+        ]
+    },
+    {
+        "Key": "GridCanExploreEffect",
+        "Note": "格子可探索特效",
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimGridTip.prefab"
+        ]
+    },
+    {
+        "Key": "StageMaxScoreEmpty",
+        "Note": "关卡无最高分数",
+        "Params": [
+            "暂未通关"
+        ]
+    },
+    {
+        "Key": "StageMaxScore",
+        "Note": "关卡最高分数",
+        "Params": [
+            "最高分数 %s"
+        ]
+    },
+    {
+        "Key": "MainLevelUpExpAnimTime",
+        "Note": "主城升级经验增加动画时长",
+        "Params": [
+            0.5
+        ]
+    },
+    {
+        "Key": "RoundSettlementConfirmTitle",
+        "Note": "季度结束确认标题",
+        "Params": [
+            "提示",
+            "提示",
+            "季度结束"
+        ]
+    },
+    {
+        "Key": "RoundSettlementConfirmContent",
+        "Note": "季度结束确认描述",
+        "Params": [
+            "当前还有尚未完成的探索节点，是否确认结束回合？",
+            "%s本季度的生产量大于剩余仓库容量，确定要结束本季度吗？",
+            "还有区域可以购买，是否确认结束当前季度？"
+        ]
+    },
+    {
+        "Key": "RoundSettlementExceedLimitTips",
+        "Note": "超出储存上限提示",
+        "Params": [
+            "%s库存已达上限，无法继续生产"
+        ]
+    },
+    {
+        "Key": "AllTargetCompleteTips",
+        "Note": "游戏内所有目标完成的提示",
+        "Params": [
+            "已完成所有目标"
+        ]
+    },
+    {
+        "Key": "Lv",
+        "Note": "科技树主城等级显示",
+        "Params": [
+            "Lv.%s"
+        ]
+    },
+    {
+        "Key": "PropBuffCumulativeMarkupTip",
+        "Note": "buff累计加成提示信息",
+        "Params": [
+            "(已加成%d%%)",
+            "(已加成%d)",
+            "已生效",
+            "未生效"
+        ]
+    },
+    {
+        "Key": "CityTaskSuccessContent",
+        "Note": "城邦任务完成描述",
+        "Params": [
+            "%s 任务已完成，完成全部任务后可前往城邦升级"
+        ]
+    },
+    {
+        "Key": "CityTaskSuccessAnimTime",
+        "Note": "任务完成动画时长",
+        "Params": [
+            0.5
+        ]
+    },
+    {
+        "Key": "ShopRedPointCoinNumber",
+        "Note": "商店蓝点代币阈值",
+        "Params": [
+            150
+        ]
+    },
+    {
+        "Key": "ShopRedPointTimerId",
+        "Note": "商店蓝点的显示时间",
+        "Params": [
+            33701
+        ]
+    },
+    {
+        "Key": "ExploreFail",
+        "Note": "探索完成未下发奖励",
+        "Params": [
+            "未知错误，探索失败！"
+        ]
+    },
+    {
+        "Key": "CameraMoveSpeed",
+        "Note": "镜头移动的速度",
+        "Params": [
+            30
+        ]
+    },
+    {
+        "Key": "CameraMoveMaxTime",
+        "Note": "镜头移动的最大时间(秒)",
+        "Params": [
+            0.6
+        ]
+    },
+    {
+        "Key": "CameraMoveSpeedOverlook",
+        "Note": "区域解锁，镜头远眺情况下，移动的速度",
+        "Params": [
+            30
+        ]
+    },
+    {
+        "Key": "CameraMoveMaxTimeOverlook",
+        "Note": "区域解锁，镜头远眺情况下，移动的最大时间(秒)",
+        "Params": [
+            0.5
+        ]
+    },
+    {
+        "Key": "CameraFocusGridOffsetXWan",
+        "Note": "聚焦格子在X方向的偏移(数值乘10000配置)，格子往屏幕中心点左边偏移是负数，右边是正数",
+        "Params": [
+            -4000
+        ]
+    },
+    {
+        "Key": "ActivityNotOpenTip",
+        "Note": "活动未开启提示",
+        "Params": [
+            "不在活动时间内"
+        ]
+    },
+    {
+        "Key": "PopupBuildIcon",
+        "Note": "建筑弹框图片",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimBuild.png"
+        ]
+    },
+    {
+        "Key": "PopupBuildTitle",
+        "Note": "建筑弹框标题",
+        "Params": [
+            "区 域 建 造"
+        ]
+    },
+    {
+        "Key": "PopupBuildTips",
+        "Note": "建筑弹框提示",
+        "Params": [
+            "消耗图纸与金贝可在当前区域进行建造"
+        ]
+    },
+    {
+        "Key": "MainEffectProduce",
+        "Note": "主城升级展示效果",
+        "Params": [
+            "生产力",
+            "Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimProduceIcon01.png"
+        ]
+    },
+    {
+        "Key": "MainEffectArea",
+        "Note": "主城升级展示效果",
+        "Params": [
+            "可购岛屿",
+            "Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimPurchaseArea.png"
+        ]
+    },
+    {
+        "Key": "MainEffectBuild",
+        "Note": "主城升级展示效果",
+        "Params": [
+            "建造区域",
+            "Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimProduceConstruction.png"
+        ]
+    },
+    {
+        "Key": "PopulationTextColor",
+        "Note": "生产力文本颜色",
+        "Params": [
+            "0F70BC",
+            "FF0015"
+        ]
+    },
+    {
+        "Key": "RoundEndRemainPopulationTips",
+        "Note": "回合结束尚余生产力提示",
+        "Params": [
+            "还有生产力未分配完"
+        ]
+    },
+    {
+        "Key": "RoundEndPopulationOverFlowTips",
+        "Note": "回合结束生产力溢出提示",
+        "Params": [
+            "生产力分配超出上限，请重新进行分配！"
+        ]
+    },
+    {
+        "Key": "RoundEndMainCanLevelUpTips",
+        "Note": "回合结束主城可升级提示",
+        "Params": [
+            "主城可升级，请前往待办事项处理！"
+        ]
+    },
+    {
+        "Key": "RoundEndPendingEventTips",
+        "Note": "回合结束代办事件提示",
+        "Params": [
+            "待办事项中有事件尚未处理！"
+        ]
+    },
+    {
+        "Key": "RoundEndEventGambleRewardTips",
+        "Note": "回合结束事件投机提示",
+        "Params": [
+            "投资奖励尚未领取，请前往待办事项处理！"
+        ]
+    },
+    {
+        "Key": "RoundEndCityCanLevelUpTips",
+        "Note": "回合结束城邦可升级提示",
+        "Params": [
+            "城邦可升级，请通过城邦委托前往处理！"
+        ]
+    },
+    {
+        "Key": "BuildingBluePrintNotSelectTips",
+        "Note": "自建建筑未选择提示",
+        "Params": [
+            "请选择建筑"
+        ]
+    },
+    {
+        "Key": "AutoSellNoProfitTips",
+        "Note": "自动出售没有利润提示",
+        "Params": [
+            "请设置出售数量"
+        ]
+    },
+    {
+        "Key": "CityLevelCanLevelUpTips",
+        "Note": "城邦不可升级提示",
+        "Params": [
+            "城邦未购买",
+            "已达最高等级",
+            "城邦任务未完成"
+        ]
+    },
+    {
+        "Key": "TemporaryBagRewardDropIcon",
+        "Note": "临时背包奖励掉落图标",
+        "Params": [
+            "Assets/Product/Texture/Image/IconTools/IconRogueSimTwo08.png"
+        ]
+    },
+    {
+        "Key": "TemporaryBagRewardTips",
+        "Note": "临时背包奖励提示",
+        "Params": [
+            "临时背包为空",
+            "%s仓库已满"
+        ]
+    },
+    {
+        "Key": "NoCityTip",
+        "Note": "没有城邦提示",
+        "Params": [
+            "暂未购买城邦"
+        ]
+    },
+    {
+        "Key": "NewsShowTime",
+        "Note": "传闻显示时长（单位：毫秒）",
+        "Params": [
+            10000
+        ]
+    },
+    {
+        "Key": "GambleLoading",
+        "Note": "配置loading文本",
+        "Params": [
+            "正在检查收益。。。"
+        ]
+    },
+    {
+        "Key": "GambleResultWin",
+        "Note": "倍率＞10000时的文本",
+        "Params": [
+            "市场大涨"
+        ]
+    },
+    {
+        "Key": "GambleResultLose",
+        "Note": "倍率＜10000时的文本",
+        "Params": [
+            "市场大降"
+        ]
+    },
+    {
+        "Key": "GambleImgWin",
+        "Note": "上涨时的配图",
+        "Params": [
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconZy13.png"
+        ]
+    },
+    {
+        "Key": "GambleDescWin",
+        "Note": "上涨时的文本",
+        "Params": [
+            "市场大涨"
+        ]
+    },
+    {
+        "Key": "GambleImgLose",
+        "Note": "下跌时的配图",
+        "Params": [
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconZy14.png"
+        ]
+    },
+    {
+        "Key": "GambleDescLose",
+        "Note": "下跌时的文本",
+        "Params": [
+            "市场大降"
+        ]
+    },
+    {
+        "Key": "GambleGainTips",
+        "Note": "收益比例",
+        "Params": [
+            "投资收益{0}%"
+        ]
+    },
+    {
+        "Key": "GambleEventOptionsCost",
+        "Note": "赌博事件选项消耗",
+        "Params": [
+            "{0}({1}%当前货币)"
+        ]
+    },
+    {
+        "Key": "GambleNotReady",
+        "Params": [
+            "事件投机未到回合数"
+        ]
+    },
+    {
+        "Key": "GridChangeAnim",
+        "Note": "格子变化的动画。参数1|3|5...是高度，参数2|4|6...是时间",
+        "Params": [
+            -0.2,
+            0.2,
+            0.6,
+            0.6,
+            0,
+            0.4
+        ]
+    },
+    {
+        "Key": "GridChangeTimeInterval",
+        "Note": "格子错开播放动画时间",
+        "Params": [
+            0.2
+        ]
+    },
+    {
+        "Key": "BuildingQualityIcon",
+        "Note": "建筑品质图标",
+        "Params": [
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb01.png",
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb02.png",
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb03.png"
+        ]
+    },
+    {
+        "Key": "ResourceNotEnoughTip",
+        "Note": "资源不够提示",
+        "Params": [
+            "%s不足"
+        ]
+    },
+    {
+        "Key": "BattleEarlySettlementTitle",
+        "Note": "提前结算标题",
+        "Params": [
+            "提示",
+            "提示"
+        ]
+    },
+    {
+        "Key": "BattleEarlySettlementContent",
+        "Note": "提前结算内容",
+        "Params": [
+            "当前挑战目标已全部达成，是否提前进行关卡结算",
+            "是否放弃游戏并进入结算"
+        ]
+    },
+    {
+        "Key": "BattleEarlySettlementBtnName",
+        "Note": "提前结算按钮文本",
+        "Params": [
+            "提前结算",
+            "放弃游戏"
+        ]
+    },
+    {
+        "Key": "StageStarConditionTips",
+        "Note": "关卡三星条件提示",
+        "Params": [
+            "三星条件未完成"
+        ]
+    },
+    {
+        "Key": "CommodityAttributeType",
+        "Note": "货物属性类型",
+        "Params": [
+            1002,
+            1003,
+            1005,
+            1006,
+            2003,
+            2005,
+            2006
+        ]
+    },
+    {
+        "Key": "CommodityAttributeScore",
+        "Note": "货物属性评分",
+        "Params": [
+            100,
+            10,
+            5,
+            1.5,
+            10,
+            5,
+            1.5
+        ]
+    },
+    {
+        "Key": "CommodityFluctuationScore",
+        "Note": "货物波动评分",
+        "Params": [
+            10
+        ]
+    },
+    {
+        "Key": "CommodityScoreInterval1",
+        "Note": "货物评分区间",
+        "Params": [
+            -1000,
+            0,
+            "00C314"
+        ]
+    },
+    {
+        "Key": "CommodityScoreInterval2",
+        "Note": "货物评分区间",
+        "Params": [
+            0,
+            1000,
+            808080
+        ]
+    },
+    {
+        "Key": "CommodityScoreInterval3",
+        "Note": "货物评分区间",
+        "Params": [
+            1000,
+            -1,
+            "FF0000"
+        ]
+    },
+    {
+        "Key": "AreaDefaultIcon",
+        "Note": "导航功能里区域默认图标",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimBuild.png"
+        ]
+    },
+    {
+        "Key": "DelayOpenNextTipsTime",
+        "Note": "延迟打开进入下一季度的提示时间，配置单位为毫秒",
+        "Params": [
+            1500
+        ]
+    },
+    {
+        "Key": "RollingNumberTime",
+        "Note": "滚动数字时长（ms）",
+        "Params": [
+            500
+        ]
+    },
+    {
+        "Key": "LandBubbleCommonBgIcon",
+        "Note": "界面左侧弹框通用背景图标",
+        "Params": [
+            "Assets/Product/Texture/Image/UiRogueSim/UiRogueSimTu.png"
+        ]
+    },
+    {
+        "Key": "TemporaryBagParticleInterval1",
+        "Note": "临时背包粒子区间（货物1）",
+        "Params": [
+            "0|10|1",
+            "10|50|5",
+            "50|100|8",
+            "100|200|12",
+            "200|300|15",
+            "300|400|20",
+            "400|500|25",
+            "500|-1|30"
+        ]
+    },
+    {
+        "Key": "TemporaryBagParticleInterval2",
+        "Note": "临时背包粒子区间（货物2）",
+        "Params": [
+            "0|25|1",
+            "25|100|8",
+            "100|250|12",
+            "250|400|20",
+            "400|600|25",
+            "600|-1|30"
+        ]
+    },
+    {
+        "Key": "TemporaryBagParticleInterval3",
+        "Note": "临时背包粒子区间（货物3）",
+        "Params": [
+            "0|2|1",
+            "2|30|4",
+            "30|50|8",
+            "50|80|10",
+            "80|150|15",
+            "150|200|18",
+            "200|300|25",
+            "300|-1|30"
+        ]
+    },
+    {
+        "Key": "TemporaryBagParticleTotalLimit",
+        "Note": "临时背包粒子总上限",
+        "Params": [
+            100
+        ]
+    },
+    {
+        "Key": "TemporaryBagParticleDuration",
+        "Note": "临时背包粒子时长（ms）",
+        "Params": [
+            2500
+        ]
+    },
+    {
+        "Key": "LandformIdsCommodity1",
+        "Note": "货物1对应的地貌Id列表",
+        "Params": [
+            3341,
+            3342,
+            3343
+        ]
+    },
+    {
+        "Key": "LandformIdsCommodity2",
+        "Note": "货物2对应的地貌Id列表",
+        "Params": [
+            3351,
+            3352,
+            3353
+        ]
+    },
+    {
+        "Key": "LandformIdsCommodity3",
+        "Note": "货物3对应的地貌Id列表",
+        "Params": [
+            3361,
+            3362,
+            3363
+        ]
+    },
+    {
+        "Key": "CommodityFullTitle",
+        "Note": "货物已满标题",
+        "Params": [
+            "提示"
+        ]
+    },
+    {
+        "Key": "CommodityFullContent",
+        "Note": "货物已满内容",
+        "Params": [
+            "%s仓库已满，是否继续探索。"
+        ]
+    }
+]

@@ -1,0 +1,519 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1253.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "3.8特效"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieKuaimen01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "快门特效"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieKuaimen01.prefab"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "End"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对焦虚化特效"
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab"
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对焦虚化开始"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "持续对焦虚化"
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu03.prefab"
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "对焦虚化结束"
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 111,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab"
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 111,
+        "EndDelay": 1500.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab"
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab"
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 111,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu03.prefab"
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "对焦虚化特效（组合）"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "End"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "纸张燃烧（全黑→四周向内燃烧出现背景）"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 501,
+        "EndDelay": 6000.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire01.prefab"
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "End"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "纸张燃烧（画面→四周向内燃烧全黑）"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 501,
+        "EndDelay": 5800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 101,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire02.prefab"
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "End"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1253.jpg"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "纸张燃烧（画面→中间向外燃烧全黑）"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 501,
+        "EndDelay": 5800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire03.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 101,
+        "EndDelay": 50.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire03.prefab"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "End"
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "纸张燃烧（全黑→中间向外燃烧出现背景）"
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 501,
+        "EndDelay": 50.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire04.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 101,
+        "EndDelay": 6500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1253.jpg"
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire04.prefab"
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "End"
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 101,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "落尘特效"
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1253.jpg"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "End"
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "光芒（透明底）"
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab"
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "End"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "演示结束"
+        ]
+    }
+]

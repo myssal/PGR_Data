@@ -1,0 +1,74 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 3,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory14.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 1,
+        "Type": 201,
+        "Params": [
+            1,
+            1011001
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            204
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "里",
+            "上膛，瞄准，射击。手枪一直是这样简单又实用。",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "看到你陈列的这些手枪我想你也有同样的感受。",
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 204,
+        "Params": [
+            1,
+            10
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 8,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "里",
+            "……辛苦了，手枪上遇到的问题以后可以随时来找我修理。",
+            1
+        ]
+    }
+]

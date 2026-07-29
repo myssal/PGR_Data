@@ -1,0 +1,156 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory24.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 100,
+        "Type": 401,
+        "Params": [
+            1,
+            201
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 2,
+        "Type": 201,
+        "Params": [
+            1,
+            1021001
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 3,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "露西亚",
+            "丽芙，成功了吗？",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 4,
+        "Type": 201,
+        "Params": [
+            1,
+            1031001
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 5,
+        "Type": 301,
+        "Params": [
+            1,
+            "丽芙",
+            "嗯，连接上了，病毒感染情况不算特别严重。",
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 6,
+        "Type": 201,
+        "Params": [
+            1,
+            1081001
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            1,
+            "神威",
+            "厉害啊，这个大家伙。",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 8,
+        "Type": 201,
+        "Params": [
+            1,
+            1021001
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 9,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "可以的话，我们读取一下它的记忆，看看有什么值得带回去的信息吧。",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 10,
+        "Type": 201,
+        "Params": [
+            1,
+            1031001
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 11,
+        "Type": 301,
+        "Params": [
+            1,
+            "丽芙",
+            "嗯。",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 12,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 13,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "数据载入成功……"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 14,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "图形信号生成中……"
+        ]
+    }
+]

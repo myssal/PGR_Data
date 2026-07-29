@@ -1,0 +1,165 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1052.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            208
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 302,
+        "Params": [
+            "",
+            "限定时间内得分越高，奖励越丰厚……",
+            4
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 201,
+        "Params": [
+            1,
+            500934
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "万事",
+            "双人射击气球……呼呵。",
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "万事",
+            "……你想玩吗？",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 302,
+        "Params": [
+            "",
+            "想玩。",
+            9,
+            "想赚点游戏币。",
+            9
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "万事",
+            "既然是你的愿望，那就速战速决吧。",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 502,
+        "EndDelay": 400.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1052.jpg"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 302,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "全部打中了……",
+            14
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 302,
+        "Params": [
+            "",
+            "但怎么把隔壁的气球也打了？！",
+            15
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 201,
+        "Params": [
+            1,
+            500934,
+            8
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 301,
+        "IsEnd": 1,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "万事",
+            "zzz……",
+            1
+        ]
+    }
+]

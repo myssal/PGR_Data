@@ -1,0 +1,1050 @@
+[
+    {
+        "Id": 1,
+        "Name": "主线活动",
+        "SkipId": 535,
+        "TimeId": 48401,
+        "BtnInitMethodName": "RefreshActivityMainLine2",
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 11
+    },
+    {
+        "Id": 2,
+        "Name": "支线活动",
+        "SkipId": 8000,
+        "BtnInitMethodName": "RefreshActivityBranch"
+    },
+    {
+        "Id": 3,
+        "Name": "超难关",
+        "SkipId": 11724,
+        "TimeId": 48101,
+        "BtnInitMethodName": "RefreshActivityBossSingle",
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 7,
+        "RedConditions": [
+            "CONDITION_ACTIVITY_BOSS_SINGLE_REWARD"
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "8/6-8/20",
+        "SkipId": 20019,
+        "BtnInitMethodName": "RefreshActivityBossOnline"
+    },
+    {
+        "Id": 5,
+        "Name": "间章1",
+        "SkipId": 20117,
+        "BtnInitMethodName": "RefreshAllActivityPrequel"
+    },
+    {
+        "Id": 6,
+        "Name": "巴别塔",
+        "SkipId": 20015,
+        "BtnInitMethodName": "RefreshNormal",
+        "RedConditions": [
+            "CONDITION_ACTIVITYBRIE_BABELTOWER_REWARD"
+        ]
+    },
+    {
+        "Id": 7,
+        "Name": "肉鸽爬塔",
+        "SkipId": 20018,
+        "BtnInitMethodName": "RefreshActivityRogueLike"
+    },
+    {
+        "Id": 8,
+        "Name": "复刷关",
+        "SkipId": 20017,
+        "TimeId": 48111,
+        "BtnInitMethodName": "RefreshActivityRepeateChallenge",
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 1,
+        "RedConditions": [
+            "CONDITION_REPEAT_CHALLENGE_ENTRANCE"
+        ],
+        "ActivityRewardIds": [
+            69060
+        ],
+        "RewardShowTimeIds": [
+            47703
+        ]
+    },
+    {
+        "Id": 9,
+        "Name": "区域联机",
+        "SkipId": 11723,
+        "BtnInitMethodName": "RefreshActivityArenaOnline"
+    },
+    {
+        "Id": 10,
+        "Name": "狙击战",
+        "SkipId": 11722,
+        "BtnInitMethodName": "RefreshActivityUnionKill"
+    },
+    {
+        "Id": 11,
+        "Name": "短篇故事",
+        "SkipId": 11729,
+        "BtnInitMethodName": "RefreshActivityShortStories"
+    },
+    {
+        "Id": 12,
+        "Name": "间章2",
+        "SkipId": 11731,
+        "BtnInitMethodName": "RefreshAllActivityPrequel"
+    },
+    {
+        "Id": 13,
+        "Name": "异聚迷宫",
+        "SkipId": 11726,
+        "BtnInitMethodName": "RefreshActivityLabyrinth"
+    },
+    {
+        "Id": 14,
+        "Name": "公会系统",
+        "SkipId": 15001,
+        "BtnInitMethodName": "RefreshActivitySociety"
+    },
+    {
+        "Id": 15,
+        "Name": "资源AE5",
+        "SkipId": 11728,
+        "BtnInitMethodName": "RefreshActivityResource"
+    },
+    {
+        "Id": 16,
+        "Name": "特训关",
+        "SkipId": 89025,
+        "BtnInitMethodName": "RefreshActivitySpecialTrain",
+        "TagCondition": "Default"
+    },
+    {
+        "Id": 17,
+        "Name": "九龙战役",
+        "SkipId": 99998,
+        "BtnInitMethodName": "RefreshActivityExtra"
+    },
+    {
+        "Id": 18,
+        "Name": "世界Boss",
+        "SkipId": 11735,
+        "BtnInitMethodName": "RefreshWorldBoss"
+    },
+    {
+        "Id": 19,
+        "Name": "自走棋",
+        "SkipId": 20104,
+        "BtnInitMethodName": "RefreshExpedition"
+    },
+    {
+        "Id": 20,
+        "Name": "新增终极区",
+        "SkipId": 10009,
+        "BtnInitMethodName": "RefreshFubenBossSingle",
+        "TagCondition": "CONDITION_ACTIVITYBRIE_BOSSSINGLE"
+    },
+    {
+        "Id": 21,
+        "Name": "活动商店",
+        "SkipId": 20055,
+        "BtnInitMethodName": "RefreshActivityShop"
+    },
+    {
+        "Id": 22,
+        "Name": "番外-隐藏",
+        "SkipId": 99995,
+        "BtnInitMethodName": "RefreshActivityExtra"
+    },
+    {
+        "Id": 23,
+        "Name": "大富翁玩法",
+        "SkipId": 11737,
+        "BtnInitMethodName": "RefreshMaintainerAction"
+    },
+    {
+        "Id": 24,
+        "Name": "RPG玩法",
+        "SkipId": 11736,
+        "BtnInitMethodName": "RefreshRpgTower"
+    },
+    {
+        "Id": 25,
+        "Name": "活动抽卡",
+        "SkipId": 20053,
+        "BtnInitMethodName": "RefreshDrawActivity"
+    },
+    {
+        "Id": 26,
+        "Name": "终焉福音-主线跑团活动",
+        "SkipId": 11738,
+        "BtnInitMethodName": "RefreshTRPG"
+    },
+    {
+        "Id": 27,
+        "Name": "新角色试玩",
+        "SkipId": 20235,
+        "TimeId": 48705,
+        "BtnInitMethodName": "RefreshNewCharActivity",
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 2,
+        "RedConditions": [
+            "CONDITION_KOROMCHARACTIVITYMAINRED"
+        ],
+        "TagCondition": "CONDITION_NEWCHARACT_ISCHALLENGEABLE"
+    },
+    {
+        "Id": 28,
+        "Name": "涂装试玩关",
+        "SkipId": 10035,
+        "TimeId": 48701,
+        "BtnInitMethodName": "RefreshFubenActivityTrial",
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 3,
+        "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL"
+    },
+    {
+        "Id": 29,
+        "Name": "师徒系统",
+        "SkipId": 15003,
+        "BtnInitMethodName": "RefreshShiTu"
+    },
+    {
+        "Id": 30,
+        "Name": "尼尔玩法",
+        "SkipId": 11749,
+        "BtnInitMethodName": "RefreshNier"
+    },
+    {
+        "Id": 31,
+        "Name": "口袋战双",
+        "SkipId": 11750,
+        "BtnInitMethodName": "RefreshPokemon"
+    },
+    {
+        "Id": 32,
+        "Name": "追及玩法",
+        "SkipId": 11751,
+        "BtnInitMethodName": "RefreshPursuit"
+    },
+    {
+        "Id": 33,
+        "Name": "超级据点",
+        "SkipId": 70001,
+        "BtnInitMethodName": "RefreshStrongHold"
+    },
+    {
+        "Id": 34,
+        "Name": "模拟作战",
+        "SkipId": 11752,
+        "BtnInitMethodName": "RefreshSimulate"
+    },
+    {
+        "Id": 35,
+        "Name": "宠物",
+        "SkipId": 7110,
+        "BtnInitMethodName": "RefreshPartner"
+    },
+    {
+        "Id": 36,
+        "Name": "2021白色情人节",
+        "SkipId": 80011
+    },
+    {
+        "Id": 37,
+        "Name": "猜拳小游戏",
+        "SkipId": 11753
+    },
+    {
+        "Id": 38,
+        "Name": "萌战",
+        "SkipId": 11756,
+        "BtnInitMethodName": "RefreshMoeWar"
+    },
+    {
+        "Id": 39,
+        "Name": "宠物抽卡系统",
+        "SkipId": 7212,
+        "BtnInitMethodName": "RefreshPetCard"
+    },
+    {
+        "Id": 40,
+        "Name": "新宠物活动",
+        "SkipId": 7109,
+        "BtnInitMethodName": "RefreshPetTrial"
+    },
+    {
+        "Id": 41,
+        "Name": "翻牌拼大小",
+        "SkipId": 11761,
+        "BtnInitMethodName": "RefreshPokerGuessing"
+    },
+    {
+        "Id": 42,
+        "Name": "骇入玩法",
+        "SkipId": 11758,
+        "BtnInitMethodName": "RefreshHack"
+    },
+    {
+        "Id": 43,
+        "Name": "推箱子",
+        "SkipId": 20128,
+        "BtnInitMethodName": "RefreshRpgMaker",
+        "RedConditions": [
+            "CONDITION_RPG_MAKER_GAME_RED"
+        ]
+    },
+    {
+        "Id": 44,
+        "Name": "界限构解",
+        "SkipId": 81104,
+        "BtnInitMethodName": "RefreshReform",
+        "RedConditions": [
+            "CONDITION_REFORM_All_RED_POINT"
+        ]
+    },
+    {
+        "Id": 45,
+        "Name": "双人同行",
+        "SkipId": 82001,
+        "BtnInitMethodName": "RefreshCoupleCombat"
+    },
+    {
+        "Id": 46,
+        "Name": "超级爬塔",
+        "SkipId": 20084,
+        "BtnInitMethodName": "RefreshSuperTower"
+    },
+    {
+        "Id": 47,
+        "Name": "夏活系列关",
+        "SkipId": 20088,
+        "BtnInitMethodName": "RefreshSummerSeries"
+    },
+    {
+        "Id": 48,
+        "Name": "杀戮空间",
+        "SkipId": 20083,
+        "BtnInitMethodName": "RefreshKillZone"
+    },
+    {
+        "Id": 49,
+        "Name": "虚像地平线",
+        "SkipId": 11734,
+        "BtnInitMethodName": "RefreshExpedition"
+    },
+    {
+        "Id": 50,
+        "Name": "三消-链合回路",
+        "SkipId": 82010,
+        "RedConditions": [
+            "CONDITION_SAMECOLOR_IS_CHALLENGE"
+        ]
+    },
+    {
+        "Id": 51,
+        "Name": "全境特遣-全服决战",
+        "SkipId": 80176,
+        "BtnInitMethodName": "RefreshAreaWar",
+        "RedConditions": [
+            "XRedPointConditionAreaWarActivity"
+        ],
+        "TagCondition": "XRedPointConditionAreaWarActivityTag"
+    },
+    {
+        "Id": 52,
+        "Name": "超限乱斗",
+        "SkipId": 20104,
+        "BtnInitMethodName": "RefreshSuperSmashBros",
+        "TagCondition": "Default"
+    },
+    {
+        "Id": 53,
+        "Name": "教学关涂装试玩",
+        "SkipId": 89012,
+        "BtnInitMethodName": "RefreshTeachingSkin",
+        "TagCondition": "Default"
+    },
+    {
+        "Id": 54,
+        "Name": "射击玩法",
+        "SkipId": 89011,
+        "BtnInitMethodName": "RefreshMaverick",
+        "TagCondition": "Default"
+    },
+    {
+        "Id": 55,
+        "Name": "意识营救战",
+        "SkipId": 82040,
+        "BtnInitMethodName": "RefreshMemorySave"
+    },
+    {
+        "Id": 56,
+        "Name": "肉鸽玩法",
+        "SkipId": 82020,
+        "BtnInitMethodName": "RefreshTheatre"
+    },
+    {
+        "Id": 57,
+        "Name": "模拟经营",
+        "SkipId": 82050,
+        "BtnInitMethodName": "RefreshDoomsDay"
+    },
+    {
+        "Id": 58,
+        "Name": "独域特攻 - Sp角色",
+        "SkipId": 82070,
+        "BtnInitMethodName": "RefreshPivotCombat",
+        "TagCondition": "CONDITION_PIVOTCOMBAT_NEW_AREA_OPEN_RED_POINT"
+    },
+    {
+        "Id": 59,
+        "Name": "限时逃脱",
+        "SkipId": 82080,
+        "BtnInitMethodName": "RefreshEscape",
+        "TagCondition": "CONDITION_ESCAPE_ACTIVITY_CHALLENGE"
+    },
+    {
+        "Id": 60,
+        "Name": "浮点纪实-故事集",
+        "SkipId": 20191,
+        "BtnInitMethodName": "RefreshFubenShortStory"
+    },
+    {
+        "Id": 61,
+        "Name": "塔防",
+        "SkipId": 82100,
+        "BtnInitMethodName": "RefreshDoubleTower"
+    },
+    {
+        "Id": 62,
+        "Name": "副面板活动商店",
+        "BtnInitMethodName": "RefreshFubenShortStory"
+    },
+    {
+        "Id": 63,
+        "Name": "副面板跳转",
+        "SkipId": 20125,
+        "BtnInitMethodName": "RefreshSecondActivityPanel"
+    },
+    {
+        "Id": 64,
+        "Name": "工会战",
+        "SkipId": 85016,
+        "BtnInitMethodName": "RefreshGuildWar",
+        "RedConditions": [
+            "CONDITION_GUILDWAR_Main"
+        ]
+    },
+    {
+        "Id": 65,
+        "Name": "矿工",
+        "SkipId": 20177,
+        "BtnInitMethodName": "RefreshGoldenMiner",
+        "RedConditions": [
+            "CONDITION_GOLDEN_MINER_REWARD"
+        ],
+        "TagCondition": "Default"
+    },
+    {
+        "Id": 66,
+        "Name": "春节七关",
+        "SkipId": 83010,
+        "BtnInitMethodName": "RefreshNormal"
+    },
+    {
+        "Id": 67,
+        "Name": "音游小游戏",
+        "SkipId": 84010,
+        "BtnInitMethodName": "RefreshTaiKoMaster",
+        "TagCondition": "CONDITION_ACTIVITY_TAIKO_MASTER_CD_UNLOCK"
+    },
+    {
+        "Id": 68,
+        "Name": "多维挑战",
+        "SkipId": 84020,
+        "BtnInitMethodName": "RefreshMultiDim"
+    },
+    {
+        "Id": 69,
+        "Name": "活动剧情",
+        "SkipId": 20147,
+        "BtnInitMethodName": "RefreshActivityFestival"
+    },
+    {
+        "Id": 70,
+        "Name": "拟真围剿",
+        "SkipId": 84040,
+        "BtnInitMethodName": "RefreshGuildBoss"
+    },
+    {
+        "Id": 71,
+        "Name": "正逆塔-心象风景",
+        "SkipId": 85013,
+        "BtnInitMethodName": "RefreshTwoSideTower",
+        "TagCondition": "CONDITION_TWO_SIDE_TOWER_NEW_CHAPTER"
+    },
+    {
+        "Id": 72,
+        "Name": "特训关",
+        "SkipId": 11727,
+        "BtnInitMethodName": "RefreshActivitySpecialTrain"
+    },
+    {
+        "Id": 73,
+        "Name": "七夕活动",
+        "SkipId": 11761,
+        "BtnInitMethodName": "RefreshActivityFestival"
+    },
+    {
+        "Id": 74,
+        "Name": "肉鸽2.0（厄愿潮声）",
+        "SkipId": 85015,
+        "BtnInitMethodName": "RefreshBiancaTheatre"
+    },
+    {
+        "Id": 75,
+        "Name": "中秋活动剧情",
+        "SkipId": 20166,
+        "BtnInitMethodName": "RefreshActivityFestival"
+    },
+    {
+        "Id": 76,
+        "Name": "本我回廊",
+        "SkipId": 11772,
+        "BtnInitMethodName": "RefreshActivityCharacterTower"
+    },
+    {
+        "Id": 77,
+        "Name": "战双大秘境",
+        "SkipId": 80201,
+        "BtnInitMethodName": "RefreshActivityRift",
+        "RedConditions": [
+            "CONDITION_RIFT_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 78,
+        "Name": "调色板战争",
+        "SkipId": 88004,
+        "BtnInitMethodName": "RefreshColorTable"
+    },
+    {
+        "Id": 79,
+        "Name": "光辉同行",
+        "SkipId": 89001,
+        "BtnInitMethodName": "RefreshBrilliantWalk"
+    },
+    {
+        "Id": 80,
+        "Name": "意识公约",
+        "SkipId": 11775,
+        "BtnInitMethodName": "RefreshFubenAwareness"
+    },
+    {
+        "Id": 81,
+        "Name": "战双厨房",
+        "SkipId": 89008,
+        "BtnInitMethodName": "RefreshRestaurant"
+    },
+    {
+        "Id": 82,
+        "Name": "特训关",
+        "SkipId": 89007,
+        "BtnInitMethodName": "RefreshActivitySpecialTrain",
+        "TagCondition": "Default"
+    },
+    {
+        "Id": 83,
+        "Name": "节日剧情",
+        "SkipId": 90024,
+        "BtnInitMethodName": "RefreshActivityFestival",
+        "RedConditions": [
+            "CONDITION_ACTIVITY_FESTIVAL_DMC"
+        ],
+        "RedParam": 15010306
+    },
+    {
+        "Id": 84,
+        "Name": "情人节",
+        "SkipId": 89013,
+        "BtnInitMethodName": "RefreshNormal",
+        "TagCondition": "CONDITION_MAZE_FIRST_TIME"
+    },
+    {
+        "Id": 85,
+        "Name": "星星环游记",
+        "SkipId": 89015,
+        "BtnInitMethodName": "RefreshPlanetRunning",
+        "TagCondition": "CONDITION_PLANET_RUNNING_NEW_CHAPTER"
+    },
+    {
+        "Id": 86,
+        "Name": "BVB",
+        "SkipId": 89016,
+        "BtnInitMethodName": "RefreshMonsterCombat",
+        "TagCondition": "CONDITION_MONSTER_COMBAT_NEW_CHAPTER"
+    },
+    {
+        "Id": 87,
+        "Name": "三头犬-余尘三重奏",
+        "SkipId": 89018,
+        "BtnInitMethodName": "RefreshNormal"
+    },
+    {
+        "Id": 88,
+        "Name": "超限连战",
+        "SkipId": 89023,
+        "BtnInitMethodName": "RefreshTransfinite"
+    },
+    {
+        "Id": 89,
+        "Name": "肉鸽3.0",
+        "SkipId": 89027,
+        "BtnInitMethodName": "RefreshTheatre3"
+    },
+    {
+        "Id": 90,
+        "Name": "黑岩国际战旗",
+        "SkipId": 89028,
+        "BtnInitMethodName": "RefreshNormal",
+        "RedConditions": [
+            "CONDITION_BLACK_ROCK_CHESS_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 91,
+        "Name": "九龙一商",
+        "SkipId": 89044,
+        "BtnInitMethodName": "RefreshNormal",
+        "RedConditions": [
+            "CONDITION_ROGUESIM_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 92,
+        "Name": "2.9主线活动特殊配置-隐藏关",
+        "SkipId": 511,
+        "BtnInitMethodName": "RefreshActivityMainLine",
+        "RedConditions": [
+            "CONDITION_MAINLINE_CHAPTER_REWARD"
+        ]
+    },
+    {
+        "Id": 94,
+        "Name": "涂装试玩关合体版",
+        "SkipId": 10035,
+        "BtnInitMethodName": "RefreshFubenActivityTrial",
+        "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL"
+    },
+    {
+        "Id": 95,
+        "Name": "魔方弹跳乐",
+        "SkipId": 89045,
+        "RedConditions": [
+            "CONDITION_DLC_CASUAL_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 96,
+        "Name": "隐藏剧情",
+        "SkipId": 510,
+        "BtnInitMethodName": "RefreshActivityMainLine"
+    },
+    {
+        "Id": 97,
+        "Name": "土耳其方块",
+        "SkipId": 89049,
+        "RedConditions": [
+            "CONDITION_FANGKUAI_MAIN"
+        ],
+        "TagCondition": "CONDITION_FANGKUAI_CHALLENGE"
+    },
+    {
+        "Id": 98,
+        "Name": "言灵",
+        "SkipId": 89050,
+        "RedConditions": [
+            "CONDITION_KOTODAMA_MAIN"
+        ],
+        "TagCondition": "CONDITION_KOTODAMA_NO_PASS_ALLSTAGE"
+    },
+    {
+        "Id": 99,
+        "Name": "庙会",
+        "SkipId": 89052,
+        "BtnInitMethodName": "RefreshNormal",
+        "RedConditions": [
+            "CONDITION_TEMPLE_MAIN"
+        ],
+        "TagCondition": "CONDITION_TEMPLE_CHALLENGE"
+    },
+    {
+        "Id": 100,
+        "Name": "战双工艺",
+        "SkipId": 89058,
+        "RedConditions": [
+            "CONDITION_LINKCRAFT_MAIN"
+        ]
+    },
+    {
+        "Id": 101,
+        "Name": "卧猫藏鼠",
+        "SkipId": 89057,
+        "RedConditions": [
+            "CONDITION_DLC_MOUSE_HUNTER_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 102,
+        "Name": "拉弥亚涂装试玩关",
+        "SkipId": 10035,
+        "BtnInitMethodName": "RefreshFubenActivityTrial",
+        "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL",
+        "TagParam": 107
+    },
+    {
+        "Id": 103,
+        "Name": "万事大连线",
+        "SkipId": 89062,
+        "RedConditions": [
+            "CONDITION_LINE_ARITHMETIC"
+        ]
+    },
+    {
+        "Id": 104,
+        "Name": "效应玩法",
+        "SkipId": 89063,
+        "RedConditions": [
+            "CONDITION_MECHANISM_MAIN"
+        ]
+    },
+    {
+        "Id": 105,
+        "Name": "涂装剧情",
+        "SkipId": 89065,
+        "RedConditions": [
+            "CONDITION_FASHION_STORY_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 106,
+        "Name": "评分玩法",
+        "SkipId": 89061,
+        "TimeId": 48501,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 9,
+        "RedConditions": [
+            "CONDITION_BOSS_INSHOT"
+        ]
+    },
+    {
+        "Id": 107,
+        "Name": "新高难",
+        "SkipId": 89073,
+        "RedConditions": [
+            "CONDITION_SUCCEED_BOSS"
+        ]
+    },
+    {
+        "Id": 108,
+        "Name": "数据演习活动",
+        "SkipId": 89071,
+        "RedConditions": [
+            "CONDITION_SIMULATE_TRAIN"
+        ]
+    },
+    {
+        "Id": 109,
+        "Name": "逛街玩法",
+        "SkipId": 89074,
+        "RedConditions": [
+            "CONDITION_TEMPLE2"
+        ]
+    },
+    {
+        "Id": 110,
+        "Name": "背包整理",
+        "SkipId": 90020,
+        "RedConditions": [
+            "CONDITION_BAGORGANIZE_ANY"
+        ]
+    },
+    {
+        "Id": 111,
+        "Name": 2048,
+        "SkipId": 89075,
+        "RedConditions": [
+            "CONDITION_GAME2048_MAIN"
+        ]
+    },
+    {
+        "Id": 112,
+        "Name": "FPS",
+        "SkipId": 89079,
+        "RedConditions": [
+            "CONDITION_FPSGAME_MAIN"
+        ]
+    },
+    {
+        "Id": 113,
+        "Name": "精选关",
+        "SkipId": 90010,
+        "RedConditions": [
+            "CONDITION_STAGE_MEMORY"
+        ]
+    },
+    {
+        "Id": 114,
+        "Name": "露娜卡池皮",
+        "SkipId": 80203
+    },
+    {
+        "Id": 115,
+        "Name": "异构阵线·绝境先锋",
+        "SkipId": 90011,
+        "RedConditions": [
+            "CONDITION_MAVERICK3_MAIN"
+        ]
+    },
+    {
+        "Id": 116,
+        "Name": "幸运房东",
+        "SkipId": 90014,
+        "RedConditions": [
+            "CONDITION_LUCKY_TENANT2"
+        ]
+    },
+    {
+        "Id": 117,
+        "Name": "可肝角色卡池",
+        "SkipId": 20239,
+        "RedConditions": [
+            "CONDITION_GACHACANLIVER_MAIN"
+        ]
+    },
+    {
+        "Id": 118,
+        "Name": "拟像试炼",
+        "SkipId": 89061,
+        "RedConditions": [
+            "CONDITION_BOSS_INSHOT"
+        ]
+    },
+    {
+        "Id": 119,
+        "Name": "打牌",
+        "SkipId": 90016,
+        "RedConditions": [
+            "CONDITION_PCG_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 120,
+        "Name": "情人节",
+        "SkipId": 90018,
+        "RedConditions": [
+            "CONDITION_POKER_GUESSING2"
+        ]
+    },
+    {
+        "Id": 121,
+        "Name": "新矿区",
+        "SkipId": 89091,
+        "RedConditions": [
+            "CONDITION_SCORETOWER_MAIN"
+        ]
+    },
+    {
+        "Id": 122,
+        "Name": "吃豆人",
+        "SkipId": 90025,
+        "RedConditions": [
+            "CONDITION_PACMAN2_NEW_STAGE"
+        ]
+    },
+    {
+        "Id": 123,
+        "Name": "肉鸽5",
+        "SkipId": 89092,
+        "RedConditions": [
+            "CONDITION_THEATRE5_PVP_NEW_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 124,
+        "Name": "3.6下半主线活动",
+        "SkipId": 526,
+        "BtnInitMethodName": "RefreshActivityMainLine2"
+    },
+    {
+        "Id": 125,
+        "Name": "全系回溯加料",
+        "SkipId": 89093,
+        "RedConditions": [
+            "CONDITION_BOUNTY_CHALLENGE"
+        ]
+    },
+    {
+        "Id": 126,
+        "Name": "作战覆写",
+        "SkipId": 89094,
+        "RedConditions": [
+            "CONDITION_SOLO_REFORM_MAIN",
+            "CONDITION_SOLO_REFORM_CHALLENGE_TASK"
+        ]
+    },
+    {
+        "Id": 133,
+        "Name": "赌马",
+        "SkipId": 89100,
+        "RedConditions": [
+            "CONDITION_RACE_MAIN"
+        ]
+    },
+    {
+        "Id": 134,
+        "Name": "周年面板",
+        "SkipId": 89047,
+        "RedConditions": [
+            "CONDITION_ANNIVERSARY_REPEATCHALLENGE",
+            "CONDITION_ANNIVERSARY_DRAW",
+            "CONDITION_SUMMER_SIGNIN_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 135,
+        "Name": "空花2.0",
+        "SkipId": 89076,
+        "RedConditions": [
+            "CONDITION_BIG_WORLD_SKY_GARDEN_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 136,
+        "Name": "空花预热签到",
+        "SkipId": 90058,
+        "RedConditions": [
+            "CONDITION_RADIO_SIGN"
+        ]
+    },
+    {
+        "Id": 137,
+        "Name": "relink",
+        "SkipId": 90047,
+        "RedConditions": [
+            "CONDITION_DLC_RELINK_MAIN"
+        ]
+    },
+    {
+        "Id": 138,
+        "Name": "卡池皮肤试玩",
+        "SkipId": 20363
+    },
+    {
+        "Id": 139,
+        "Name": "情人节打牌",
+        "SkipId": 90018,
+        "RedConditions": [
+            "CONDITION_POKER_GUESSING2"
+        ]
+    },
+    {
+        "Id": 140,
+        "Name": "勤务商店",
+        "SkipId": 90055,
+        "TimeId": 48032,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 13,
+        "ConstShowRewardId": 69238
+    },
+    {
+        "Id": 141,
+        "Name": "勤务任务",
+        "SkipId": 90057,
+        "TimeId": 48032,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 12,
+        "RedConditions": [
+            "CONDITION_TASK_CANLIVER"
+        ]
+    },
+    {
+        "Id": 142,
+        "Name": "肉鸽4",
+        "SkipId": 89090
+    },
+    {
+        "Id": 143,
+        "Name": "大好感",
+        "SkipId": 20368,
+        "TimeId": 48301,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 6,
+        "RedConditions": [
+            "CONDITION_FAVORABILITY_STORY_GIFT_TASK"
+        ],
+        "ConstShowRewardId": 703152
+    },
+    {
+        "Id": 144,
+        "Name": "战双兄弟",
+        "SkipId": 1300635,
+        "RedConditions": [
+            "CONDITION_PBRGAME_MAIN"
+        ]
+    },
+    {
+        "Id": 145,
+        "Name": "小游戏合集",
+        "SkipId": 1300640,
+        "RedConditions": [
+            "CONDITION_GAMECOLLECTION_CAN_REWARD_OR_BUY"
+        ]
+    },
+    {
+        "Id": 146,
+        "Name": "肉鸽6",
+        "SkipId": 89102,
+        "TimeId": 48602,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 5,
+        "RedConditions": [
+            "CONDITION_THEATRE6_MAIN"
+        ]
+    },
+    {
+        "Id": 147,
+        "Name": "大染色",
+        "SkipId": 89105,
+        "TimeId": 48128,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 8,
+        "RedConditions": [
+            "CONDITION_DYEMERGE_MAIN"
+        ]
+    },
+    {
+        "Id": 148,
+        "Name": "夏日剧情活动",
+        "SkipId": 89106,
+        "TimeId": 48820,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 10,
+        "RedConditions": [
+            "CONDITION_FASHION_STORY_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 149,
+        "Name": "mini改造",
+        "SkipId": 89094,
+        "TimeId": 48201,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 4,
+        "RedConditions": [
+            "CONDITION_SOLO_REFORM_MAIN"
+        ]
+    }
+]

@@ -1,0 +1,577 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory720.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            2,
+            2565
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "任务成就已完成，本次体验圆满结束，期待您的下一次体验——"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 401,
+        "Params": [
+            1,
+            100
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 501,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 501,
+        "EndDelay": 100.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab"
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory234.png"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "随着机械的提示音响起，白光渐盛，继而周遭的一切缓缓退去，又变成了最初的房间。"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 201,
+        "Params": [
+            1,
+            500445,
+            2
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 301,
+        "Params": [
+            1,
+            "蒲牢",
+            "我们赢啦——啦……欸？",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "怎……怎么回事？怎么就回来了？",
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 302,
+        "Params": [
+            "",
+            "因为故事就这么长了。",
+            17
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "坐在椅子上，向蒲牢扬了扬刚从夹缝中摸到的小册子。"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "故事就这么长了……什么意思？这又是什么？",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            "",
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "蒲牢迷惑地走近，从手中接过小册子。"
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "“九龙最新款虚拟现实体验仪器，能带您体验程序设定的虚拟世界，在仪器上坐下后即可启动——”",
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 204,
+        "Params": [
+            1,
+            14
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "唉唉，所以刚才的那些不是穿越进了小说里的世界，只是这个仪器模拟出来的假象吗？",
+            1
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "蒲牢撅起嘴，情绪蓦地低落。"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 302,
+        "Params": [
+            "",
+            "揉揉蒲牢的脑袋",
+            26,
+            "点点蒲牢的额头。",
+            26
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 203,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            0.25,
+            "",
+            -5,
+            -50
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            "",
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 302,
+        "Params": [
+            "",
+            "至少也是一次十分难得的体验嘛。",
+            29
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 302,
+        "Params": [
+            "",
+            "而且……",
+            30
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 302,
+        "Params": [
+            "",
+            "保护大家的那份心意，可不是假的。",
+            31
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "蒲牢",
+            "嗯————",
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "蒲牢的蹙起了眉头，嘴巴不情不愿地松下来。"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "要这么说的话倒也没错……",
+            1
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 302,
+        "Params": [
+            "",
+            "是吧，不管有没有法术。蒲牢大仙都是蒲牢大仙。",
+            36
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对着仍有些别扭的少女，模仿先前看见的场景，假假地耍了几个动作。"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 302,
+        "Params": [
+            "",
+            "多谢上仙出手相助！",
+            38
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "嘿嘿……",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "蒲牢不好意思地挠了挠脑袋，恢复了往日的笑容。"
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 201,
+        "Params": [
+            1,
+            500445,
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 301,
+        "Params": [
+            1,
+            "蒲牢",
+            "其实我也没有一定要做什么大仙啦——只要能保护重要的人，是神仙还是构造体都没什么差别。",
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "只是因为书里的大仙都是神通广大的，稍微动动手指，敌人就不敢再冒犯了，所以才比较羡慕他们。",
+            1
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 302,
+        "Params": [
+            "",
+            "大仙也不是一天就登顶的。",
+            46
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 302,
+        "Params": [
+            "",
+            "只要勤加练习，就算不会法术，蒲牢也可以和他们一样“神通广大”。",
+            47
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "……嗯！没错！指挥官你说得对，我可是蒲牢！",
+            1
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "无论是在现实还是梦里，我都会继续加油的。",
+            1
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "九龙有一句话，叫做“铁杵磨针，水滴石穿。”",
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "Params": [
+            "",
+            "蒲牢",
+            "等着瞧吧，有朝一日“蒲牢大仙”的传奇一定会再现江湖！",
+            1
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 401,
+        "Params": [
+            2,
+            2764
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "放在桌上的仙侠小说被风吹动，纸页晃了几下。经过几番“挣扎”后，页面停留在书的最后一页，也就是笔者寄语的地方。"
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 402,
+        "Params": [
+            2764
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "“或许每个九龙人的心里，都藏着一个仙侠梦。”"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "“愿喜爱这本书的每位读者，心中都能留有一个救济苍生、四海太平的理想世界。”"
+        ]
+    }
+]

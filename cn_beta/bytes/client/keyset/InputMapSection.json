@@ -1,0 +1,275 @@
+[
+    {
+        "Id": 1,
+        "MutualExclusionIds": [
+            2
+        ]
+    },
+    {
+        "Id": 2,
+        "MutualExclusionIds": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 3,
+        "MutualExclusionIds": [
+            2
+        ]
+    },
+    {
+        "Id": 101
+    },
+    {
+        "Id": 102,
+        "MutualExclusionIds": [
+            103
+        ]
+    },
+    {
+        "Id": 103,
+        "MutualExclusionIds": [
+            102
+        ]
+    },
+    {
+        "Id": 111,
+        "MutualExclusionIds": [
+            112
+        ]
+    },
+    {
+        "Id": 112,
+        "MutualExclusionIds": [
+            111,
+            114,
+            115
+        ]
+    },
+    {
+        "Id": 113,
+        "MutualExclusionIds": [
+            115
+        ]
+    },
+    {
+        "Id": 114,
+        "MutualExclusionIds": [
+            115
+        ]
+    },
+    {
+        "Id": 115,
+        "MutualExclusionIds": [
+            112,
+            113,
+            114
+        ]
+    },
+    {
+        "Id": 116
+    },
+    {
+        "Id": 150,
+        "MutualExclusionIds": [
+            151,
+            153,
+            154,
+            1001,
+            1002,
+            1003,
+            1004,
+            1005,
+            1006,
+            1007,
+            1008
+        ]
+    },
+    {
+        "Id": 151,
+        "MutualExclusionIds": [
+            150,
+            153,
+            154,
+            1001,
+            1002,
+            1003,
+            1004,
+            1005,
+            1006,
+            1007,
+            1008
+        ]
+    },
+    {
+        "Id": 153,
+        "MutualExclusionIds": [
+            150
+        ]
+    },
+    {
+        "Id": 154,
+        "MutualExclusionIds": [
+            1002
+        ]
+    },
+    {
+        "Id": 1001,
+        "MutualExclusionIds": [
+            1002,
+            1003,
+            1004,
+            1005,
+            150,
+            151,
+            154,
+            1006,
+            1007,
+            1008
+        ]
+    },
+    {
+        "Id": 1002,
+        "MutualExclusionIds": [
+            1001,
+            1003,
+            1004,
+            1005,
+            150,
+            151,
+            154,
+            1006,
+            1007,
+            1008
+        ]
+    },
+    {
+        "Id": 1003,
+        "MutualExclusionIds": [
+            1001,
+            1002,
+            1004,
+            1005,
+            150,
+            151,
+            154,
+            1006,
+            1007,
+            1008
+        ]
+    },
+    {
+        "Id": 1004,
+        "MutualExclusionIds": [
+            1001,
+            1002,
+            1003,
+            1005,
+            150,
+            151,
+            154,
+            1006,
+            1007,
+            1008
+        ]
+    },
+    {
+        "Id": 1005,
+        "MutualExclusionIds": [
+            1001,
+            1002,
+            1003,
+            1004,
+            150,
+            151,
+            154,
+            1006,
+            1007,
+            1008
+        ]
+    },
+    {
+        "Id": 1006,
+        "MutualExclusionIds": [
+            1001,
+            1002,
+            1003,
+            1004,
+            150,
+            154,
+            1005,
+            151,
+            1007,
+            1008
+        ]
+    },
+    {
+        "Id": 1007,
+        "MutualExclusionIds": [
+            1001,
+            1002,
+            1003,
+            1004,
+            150,
+            154,
+            1005,
+            151,
+            1006,
+            1008
+        ]
+    },
+    {
+        "Id": 1008,
+        "MutualExclusionIds": [
+            1001,
+            1002,
+            1003,
+            1004,
+            150,
+            154,
+            1005,
+            151,
+            1006,
+            1007
+        ]
+    },
+    {
+        "Id": 16028,
+        "MutualExclusionIds": [
+            16029
+        ]
+    },
+    {
+        "Id": 16029,
+        "MutualExclusionIds": [
+            16028
+        ]
+    },
+    {
+        "Id": 16030,
+        "MutualExclusionIds": [
+            16031,
+            16028,
+            16029
+        ]
+    },
+    {
+        "Id": 16031,
+        "MutualExclusionIds": [
+            16030
+        ]
+    },
+    {
+        "Id": 4,
+        "MutualExclusionIds": [
+            5
+        ]
+    },
+    {
+        "Id": 5,
+        "MutualExclusionIds": [
+            4
+        ]
+    }
+]

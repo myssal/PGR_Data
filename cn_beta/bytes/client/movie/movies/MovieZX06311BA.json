@@ -1,0 +1,595 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1399.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            381
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 201,
+        "Params": [
+            1,
+            500028
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "构造体A",
+            "给武器补给用的能量罐还有吗，帮损耗大的人都换一个新的。",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 201,
+        "Params": [
+            2,
+            500019,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            1,
+            "构造体B",
+            "岗哨那边由我来吧。",
+            2
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "简单的阵地已经布置完成，联军的士兵们一部分靠在掩体或者是物资箱上整备与休整，一部分则是保持着战时的忙碌不断移动。"
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 401,
+        "Params": [
+            2,
+            4422
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 509,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1397.jpg",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            2,
+            12
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 201,
+        "Params": [
+            2,
+            500773,
+            "",
+            -800
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 201,
+        "Params": [
+            11,
+            500208,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 201,
+        "Params": [
+            12,
+            500208,
+            "",
+            -550,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 205,
+        "Params": [
+            12,
+            "",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 201,
+        "Params": [
+            1,
+            501449,
+            4,
+            600
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "罗塞塔",
+            "各位记得不要冒进，出现问题就立刻退回阵地。",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25,
+            -1270
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            11,
+            0.25,
+            -600
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "仿生熊人",
+            "任务的最终目的是侦察不是摧毁，这事我们都记得了，就看我们的吧，罗塞塔！",
+            11
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 401,
+        "Params": [
+            2,
+            4423
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 510,
+        "EndDelay": 300.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 202,
+        "Params": [
+            11,
+            12
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 205,
+        "Params": [
+            12,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
+            12
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            1,
+            0.25
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "航线联合的小队长在记下罗塞塔的叮嘱以后就关闭了通讯，像是结束了一场战斗似的，罗塞塔长舒了一口气。"
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 302,
+        "Params": [
+            "",
+            "情况不太好吗？",
+            32,
+            "能帮你些什么吗？",
+            35
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "情况尚可，毕竟战场上还有这么多可以依靠的同伴。",
+            1
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "NextActionId": 37,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "我刚刚只是在舒缓战场上的紧张感而已，毕竟意识海一直都不太稳定，为了让指挥官轻松些，我也得多进行些自我调节。",
+            1
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "谢谢，指挥官已经帮我帮的够多了，我并没有感到累，只是有些不习惯一次性对这么多人发号施令而已。",
+            1
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "对了指挥官，趁着现在强行侦察队去搜索感染体生产线……再确认一下我们这支部队需要做什么吧。",
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 302,
+        "Params": [
+            "",
+            "你说。",
+            40,
+            "我都记得，不用了。",
+            48
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "按照先前的讨论，联军的战术目标，将会暂时变更为破坏苏菲亚城内的感染体生产线。",
+            1
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "只要切断援军进入战场的路径，那我们就能摆脱现在这种以少打多的局面。",
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 302,
+        "Params": [
+            "",
+            "会有多少呢……",
+            43
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "能破坏一些是一些，出于隐蔽的需求，每个工厂本身都不大，单次输送的兵力是有限的。",
+            1
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "所以只要我们保持局部战场的优势，持续破坏敌军的生产，逆转兵力的差距只不过是时间问题。",
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "NextActionId": 50,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "到时候我们只要捉住这个破绽进行猛攻即可，至少在猛攻这点上，我对在场的每个人都相当有自信。",
+            1
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "的确，毕竟指挥官一直都有参与作战计划的制定，那复述就免了吧。",
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 201,
+        "Params": [
+            2,
+            500204,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "Params": [
+            1,
+            "斥候",
+            "报告，之后要一同参加破坏行动的队伍都选拔完成了。",
+            2
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "嗯。",
+            1
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            1,
+            0.25
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "罗塞塔",
+            "指挥官，在侦察完成以后，这边将会同时出击，进攻感染体的生产线。所以为了行动顺利，我们也趁现在进行整备吧。",
+            1
+        ]
+    }
+]

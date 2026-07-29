@@ -1,0 +1,365 @@
+[
+    {
+        "Name": "Drama_Stand_01_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_01.anim"
+    },
+    {
+        "Name": "Drama_Stand_02_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_02_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_02_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_02_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_02_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_02_End.anim"
+    },
+    {
+        "Name": "Drama_Stand_03_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_03_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_03_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_03_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_03_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_03_End.anim"
+    },
+    {
+        "Name": "Drama_Stand_06_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_06_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_06_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_06_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_06_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_06_End.anim"
+    },
+    {
+        "Name": "Walk",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -895785005,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Walk.anim"
+    },
+    {
+        "Name": "WalkStart",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -895785005,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/WalkStart.anim"
+    },
+    {
+        "Name": "WalkEnd",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -895785005,
+        "BlendParameter": 846125279,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Walk_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Walk_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Walk_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "RunStart",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -162882405,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStart.anim"
+    },
+    {
+        "Name": "RunStartEnd01",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 895008329,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStartEnd01_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStartEnd01_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStartEnd01_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "RunStartEnd01_L",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -162882405,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStartEnd01_L.anim"
+    },
+    {
+        "Name": "RunStartEnd01_R",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -162882405,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStartEnd01_R.anim"
+    },
+    {
+        "Name": "Run",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 1391530821,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunLeanL.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Run.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunLeanR.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -20.0,
+            0.0,
+            20.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Stop",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 1601072779,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Run_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Run_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Run_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Stop_Run_L",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -162882405,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Run_L.anim"
+    },
+    {
+        "Name": "Stop_Run_R",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -162882405,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Run_R.anim"
+    },
+    {
+        "Name": "SprintStart",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStart.anim"
+    },
+    {
+        "Name": "SprintStartEnd01",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "BlendParameter": 714672925,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/SprintStop.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Sprint",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "BlendParameter": -1977151796,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/SprintLeanL.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Sprint.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/SprintLeanR.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -20.0,
+            0.0,
+            20.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "SprintStop",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "BlendParameter": -1989393594,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Stop_Sprint_L",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_L.anim"
+    },
+    {
+        "Name": "Stop_Sprint_R",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_R.anim"
+    },
+    {
+        "Name": "Turn90L",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Turn90L.anim"
+    },
+    {
+        "Name": "Turn90R",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Turn90R.anim"
+    },
+    {
+        "Name": "IdleJumpToStandHeavy",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpdown11.anim"
+    },
+    {
+        "Name": "MoveJumpToStandHeavy",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpdown21.anim"
+    },
+    {
+        "Name": "Drama_BoardAct0203_Loop1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_BoardAct0203_Loop1.anim"
+    },
+    {
+        "Name": "Drama_BoardAct1004_Loop1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_BoardAct1004_Loop1.anim"
+    },
+    {
+        "Name": "Drama_BoardAct1004_Loop2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_BoardAct1004_Loop2.anim"
+    },
+    {
+        "Name": "Drama_BoardAct1005_Loop1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_BoardAct1005_Loop1.anim"
+    },
+    {
+        "Name": "Drama_BoardAct1006_Loop1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_BoardAct1006_Loop1.anim"
+    },
+    {
+        "Name": "Drama_BoardAct1006_Loop2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_BoardAct1006_Loop2.anim"
+    },
+    {
+        "Name": "Photo_01",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Photo_01.anim"
+    },
+    {
+        "Name": "Photo_02",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Photo_02.anim"
+    },
+    {
+        "Name": "Photo_03",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Photo_03.anim"
+    },
+    {
+        "Name": "Photo_04",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Photo_04.anim"
+    },
+    {
+        "Name": "Drama_Stand_01",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Drama_Stand_01.anim"
+    },
+    {
+        "Name": "Drama_Angry_Preset",
+        "Layer": "FaceLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/FaceLayer/Drama_Angry_Preset.anim"
+    },
+    {
+        "Name": "Drama_Blink_Preset",
+        "Layer": "FaceLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/FaceLayer/Drama_Blink_Preset.anim"
+    },
+    {
+        "Name": "Drama_Happy_Preset",
+        "Layer": "FaceLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/FaceLayer/Drama_Happy_Preset.anim"
+    },
+    {
+        "Name": "Drama_Sad_Preset",
+        "Layer": "FaceLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/FaceLayer/Drama_Sad_Preset.anim"
+    },
+    {
+        "Name": "Drama_Smile_Preset",
+        "Layer": "FaceLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/FaceLayer/Drama_Smile_Preset.anim"
+    },
+    {
+        "Name": "Drama_Suprise_Preset",
+        "Layer": "FaceLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/FaceLayer/Drama_Suprise_Preset.anim"
+    }
+]

@@ -1,0 +1,83 @@
+[
+    {
+        "Id": 100,
+        "TagName": "新手",
+        "ShowCondition": 770419,
+        "ShowTypeInHideFunc": 2,
+        "RedPointArgs": [
+            1
+        ]
+    },
+    {
+        "Id": 101,
+        "TagName": "入门",
+        "TagType": 4,
+        "ShowCondition": 770420,
+        "ShowTypeInHideFunc": 2,
+        "RedPointConditions": [
+            "CONDITION_MAIN_NEWBIE_TASK"
+        ]
+    },
+    {
+        "Id": 102,
+        "TagName": "目标",
+        "TagType": 5,
+        "ShowCondition": 770421,
+        "ShowTypeInHideFunc": 2,
+        "RedPointConditions": [
+            "CONDITION_MAIN_NEWPLAYER_TASK"
+        ]
+    },
+    {
+        "Id": 200,
+        "TagName": "每日",
+        "TagType": 1,
+        "ShowCondition": 770425,
+        "FunctionId": 503,
+        "ShowTypeInHideFunc": 1,
+        "RedPointConditions": [
+            "CONDITION_TASK_TYPE"
+        ],
+        "RedPointArgs": [
+            2
+        ]
+    },
+    {
+        "Id": 300,
+        "TagName": "每周",
+        "TagType": 2,
+        "ShowCondition": 770411,
+        "FunctionId": 505,
+        "ShowTypeInHideFunc": 1,
+        "RedPointConditions": [
+            "CONDITION_TASK_TYPE"
+        ],
+        "RedPointArgs": [
+            3
+        ]
+    },
+    {
+        "Id": 400,
+        "TagName": "活动",
+        "TagType": 3,
+        "ShowCondition": 770417,
+        "FunctionId": 504,
+        "ShowTypeInHideFunc": 1,
+        "RedPointConditions": [
+            "CONDITION_TASK_TYPE"
+        ],
+        "RedPointArgs": [
+            5
+        ]
+    },
+    {
+        "Id": 500,
+        "TagName": "勤务",
+        "TagType": 6,
+        "ShowCondition": 1060018,
+        "ShowTypeInHideFunc": 2,
+        "RedPointConditions": [
+            "CONDITION_TASK_CANLIVER"
+        ]
+    }
+]

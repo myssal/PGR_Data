@@ -1,0 +1,173 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory6.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 100,
+        "Type": 401,
+        "Params": [
+            1,
+            202
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 2,
+        "Type": 201,
+        "Params": [
+            1,
+            1011001,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 3,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "里",
+            "地面出现不明扰动。",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 4,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "附近的结构都很脆弱，随时注意从裂缝中出现的敌人。",
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 5,
+        "Type": 201,
+        "Params": [
+            2,
+            1081001,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 6,
+        "Type": 301,
+        "Params": [
+            1,
+            "神威",
+            "为什么这些陷阱都没有被那个臭罗兰和感染体触发啊？",
+            2
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "这下全留给我们了。",
+            2
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 8,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 9,
+        "Type": 201,
+        "Params": [
+            1,
+            1021001
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 10,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "没关系，它们还阻止不了我们前进。",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 11,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "丽芙，别紧张，按照你的步调来，我们会配合你。",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 12,
+        "Type": 201,
+        "Params": [
+            1,
+            1031001
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 13,
+        "Type": 301,
+        "Params": [
+            1,
+            "丽芙",
+            "好，好的！",
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 14,
+        "Type": 201,
+        "Params": [
+            1,
+            1021001
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 15,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "露西亚",
+            "指挥官，丽芙负责的防守方向，就先交给你了。",
+            1
+        ]
+    }
+]

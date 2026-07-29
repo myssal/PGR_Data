@@ -1,0 +1,1841 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1405.jpg",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            122
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 107,
+        "Params": [
+            "库洛洛咖啡",
+            "空中花园",
+            "",
+            "10:00"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "空中花园，库洛洛咖啡，10:00"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 108
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "节日总会带来特别的氛围，就连战备中的空中花园也不例外。娇艳欲滴的玫瑰，四处可见的粉色蝴蝶结，上架即空的酒心巧克力共同构成了情人节主题。"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "此时咖啡店门口也已排起长龙……"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 201,
+        "Params": [
+            1,
+            501385
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 301,
+        "Params": [
+            1,
+            "丽芙",
+            "指挥官，想好喝什么了吗？",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 302,
+        "Params": [
+            "",
+            "苦柠美式固然经典。",
+            11,
+            "摸鱼喵拿铁固然可爱。",
+            13,
+            "羽衣甘蓝椰子水固然健康。",
+            15
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "NextActionId": 17,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "唔，点了这杯的话，指挥官今晚不用考虑休息了。",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "NextActionId": 17,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "销量第一的咖啡呢，总是让人想到在太阳下摊着肚皮昏睡的慵懒小猫。",
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 204,
+        "Params": [
+            1,
+            15
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "我也想推荐这款，不过指挥官的语气……听起来好像有点失落？",
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 302,
+        "Params": [
+            "",
+            "那么，我选情人节限定。"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 204,
+        "Params": [
+            1,
+            12
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "好的，不过我很好奇……为什么指挥官选择了常来的咖啡厅做拍照地点……",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 302,
+        "Params": [
+            "",
+            "指挥官的直觉。",
+            21,
+            "战术秘密。",
+            23,
+            "顺便喝个咖啡。",
+            25
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "NextActionId": 27,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "丽芙",
+            "那么，我相信指挥官的判断。",
+            1
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "NextActionId": 27,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "丽芙",
+            "那就听从指挥官的安排，等待“秘密”揭晓的时刻好了。",
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "丽芙",
+            "确实，能够悠闲自在地在咖啡店度过一天也很不错。",
+            1
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "身为构造体无需进食，但能感知到食物味道带来的氛围。咖啡的气息令她回忆起黄金时代的景况。"
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 401,
+        "Params": [
+            2,
+            895
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory894.jpg"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "彼时父亲喜欢用英国骨瓷装载黄金色泽的意式咖啡开始一天的工作。而妈妈喜欢安排高低桌的下午茶，拿铁和甜点是庭院的常客。"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 401,
+        "Params": [
+            2,
+            895
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory14.png"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "而指挥官不同，<M>他</M><W>她</W>只是一杯一杯啜饮办公区咖啡，像束缚在工区的地缚灵一般幽怨地盯着屏幕，借此抵御疲惫困倦。"
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 306
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1405.jpg"
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 201,
+        "Params": [
+            1,
+            501385,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 301,
+        "Params": [
+            1,
+            "丽芙",
+            "说起来，指挥官喜欢休息室那边提供的咖啡吗？",
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 302,
+        "Params": [
+            "",
+            "一点也不喜欢，只是因为免费。",
+            45,
+            "喝的够多空中花园会破产吗？",
+            48
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 204,
+        "Params": [
+            1,
+            12
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "如果收费的话，指挥官应该不会摄入那么多的咖啡因了。",
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 302,
+        "Params": [
+            "",
+            "收费的话，我会破产。",
+            55,
+            "可怕的想法，不可以再这么想了……",
+            55
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 204,
+        "Params": [
+            1,
+            12
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "空中花园不会破产，可是指挥官的体检报告会变得更加让人担心。",
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 302,
+        "Params": [
+            "",
+            "……",
+            51,
+            "忘记吧，体检报告之类的。",
+            53
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 204,
+        "Params": [
+            1,
+            12
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "NextActionId": 55,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "指挥官的健康对我来说，很重要，非常重要。",
+            1
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "好，那么……这份“忘记”也是“今日限定”哦？",
+            1
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 204,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 501,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryWhite.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab"
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 401,
+        "EndDelay": 500.0,
+        "Params": [
+            2,
+            6378
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "丽芙低下头露出浅淡笑意，旁边的指挥官举起相机，捕捉少女少有的神态。"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 201,
+        "Params": [
+            1,
+            501385,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 201,
+        "Params": [
+            2,
+            500937,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "店员",
+            "请问二位要什么？",
+            2
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "你好，要一份情人节双人套餐。",
+            1
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 301,
+        "Params": [
+            "",
+            "店员",
+            "好的，现在有活动要参加吗？只要两位大声念出限定饮品名并做出爱心战斗手势，便有机会获取非常奖励哦。",
+            2
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "店员的盛情邀约引起周围人的注视，丽芙本想要拒绝，但不自觉地望向指挥官，不知因为紧张还是期待，心下如泡腾片入水般微微沸腾。"
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 201,
+        "Params": [
+            1,
+            501385,
+            12
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 301,
+        "Params": [
+            1,
+            "丽芙",
+            "指挥官……我们要参加吗？",
+            1
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "虽然不习惯引人注目，但是和指挥官在一起会觉得安心。发出的问题比起询问，更类似于邀请。"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 302,
+        "Params": [
+            "",
+            "有奖励的话。",
+            76,
+            "有丽芙陪着的话。",
+            76
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "指挥官模仿着丽芙的动作，双手握拳放在胸前做出加油的样子，随即坚定地点头示意。"
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "伴随着周遭人的微笑鼓励，两人随即被店员指引到活动区接受挑战前的训练——作为今天的第一队挑战者。"
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 201,
+        "Params": [
+            2,
+            500937
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 301,
+        "Params": [
+            1,
+            "店员",
+            "首先，大声叫出你的名字。",
+            2
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 201,
+        "Params": [
+            1,
+            501385,
+            5
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "丽芙举着提词牌，明明是简单的指令和字符，几次鼓足勇气试着张开口，却始终发不出正常音量的声音。最后一次，只低下头别过脸，盯着脚尖。"
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 306
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 201,
+        "Params": [
+            2,
+            500937
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 301,
+        "Params": [
+            1,
+            "店员",
+            "看样子这位女孩子需要一些准备时间，请你的同伴先来练习吧。",
+            2
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 302,
+        "Params": [
+            "",
+            "到我出场的时刻了，交给我吧。",
+            90
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 301,
+        "Params": [
+            "",
+            "店员",
+            "好，很有气势。现在请大声念出你的名字。",
+            2
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "只消看了一眼题词牌就觉得刚刚的气势全无，但想到丽芙手足无措的窘态和店员的热情，却又打不响退堂鼓，只是勉强维持着镇定。"
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "无论如何，完成任务总是很重要的，为此每个人都有一些不得不做的事。指挥官在心中不断激励着自己。"
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 302,
+        "Params": [
+            "",
+            "在下，独一无二芝芝草莓快乐咖。",
+            95
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "伴随着指挥官的大声宣誓，周遭先是寂静，随即发出礼貌不失优雅的笑声。见过大场面且拥有职业素养的店员仍旧保持着清醒和专业。"
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 201,
+        "Params": [
+            2,
+            500937
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 301,
+        "Params": [
+            1,
+            "店员",
+            "很好，很大声。独一无二芝芝草莓快乐咖。练习的很好，一气呵成，没有断气。记得下次要做动作哦。",
+            2
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "店员",
+            "这位客人，如果，如果说咱们的喊话里再多一些甜美，笃定，效果会不会更好一些呢？",
+            2
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 302,
+        "Params": [
+            "",
+            "还有动作……",
+            100,
+            "甜美和笃定……",
+            100
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 201,
+        "Params": [
+            1,
+            501385,
+            16
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "丽芙",
+            "那么我就是，独一无二……",
+            1
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在指挥官结束演出的瞬间，被其震撼的丽芙闭上双眼，似乎鼓足了勇气，紧跟着也喊了出来。她用力挥动手臂增加气势——事实上那没什么用。"
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "冰冰薄荷……",
+            1
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 302,
+        "Params": [
+            "",
+            "丽芙？",
+            106,
+            "现在退出已经来不及了。",
+            106
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 401,
+        "Params": [
+            2,
+            5526
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "指挥官轻轻扶住丽芙的手臂，试图为她输送一些勇气。"
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "不管什么时候，被坚定选择和陪伴，总会让人感到幸福。好像能对这个世界大声宣告，“看，我不是一个人”。"
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "周遭哄笑的人群也因少女的认真而显得郑重起来。尤其是冲在前排的库洛洛咖啡吉祥物库洛洛。"
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 201,
+        "Params": [
+            1,
+            501385,
+            4
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 501,
+        "EndDelay": 100.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryLineSpread.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "丽芙",
+            "掀翻屋顶……气泡水。",
+            1
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryLineSpread.prefab"
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "丽芙的声音越来越大，到了最后有些轻微的撕扯，到最后才骤然睁开眼睛，面颊涨红，鼻头微蹙，但这不影响她表现本身的优异。"
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "指挥官，我……做到了……",
+            1
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 401,
+        "Params": [
+            2,
+            6341
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "指挥官轻轻揉了下丽芙的额头，即便在最险恶的战场，<M>他们</M><W>她们</W>也从未如此直观地感觉到彼此互为倚靠的力量。"
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 201,
+        "Params": [
+            2,
+            500937
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "店员",
+            "嗯，接下来就是正式挑战了。请两位直视对方的眼睛，自信，自然，从容地向对方做出爱心挑战手势及喊话。注意，不要笑场哦。",
+            2
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 401,
+        "Params": [
+            1,
+            6244
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "那一天，店内外都洋溢着快乐的氛围。"
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 201,
+        "Params": [
+            1,
+            501385,
+            5,
+            600,
+            -50,
+            -100,
+            1
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "",
+            "挑战的第一阶段，丽芙手臂张开，指尖向头顶，做出比心状，对指挥官发起“无情挑战”。"
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "除了声量越来越小，到最后几乎微不可闻，吐字清晰，音质透彻，几乎完美。"
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 402,
+        "Params": [
+            6378,
+            "",
+            "",
+            7
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 201,
+        "Params": [
+            1,
+            500678,
+            "",
+            -600,
+            -50,
+            -100,
+            1
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "",
+            "挑战的第二阶段，指挥官双手交握，于面部平行，举起了虚空中的手枪，向着丽芙做出虚空中的射击。"
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "指挥官竭尽全力保持着冷酷的姿态，接受了来自丽芙的“莫名暴击”。"
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront107.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 201,
+        "Params": [
+            1,
+            501385,
+            6,
+            275,
+            -130,
+            120,
+            1
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 201,
+        "Params": [
+            2,
+            500678,
+            "",
+            -275,
+            -30,
+            -150,
+            1
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "",
+            "挑战的第三阶段，指挥官和丽芙的视线交汇，本该剑拔弩张的对手情不自禁地笑了起来。"
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 401,
+        "EndDelay": 500.0,
+        "Params": [
+            2,
+            6378
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "丽芙双手捂着脸背过身去，指挥官一手仍保持着索敌的姿势，另一只手扶在额上，试图做一些徒劳无功的补救。"
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 101,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1405.jpg"
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "在场面彻底无法收拾前，两人被库洛洛红牌警告下场。这一幕也作为挑战失败的纪念照片被送到二人手中。"
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 201,
+        "Params": [
+            1,
+            501385
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 301,
+        "Params": [
+            1,
+            "丽芙",
+            "这张相片拍的很好，也许我知道为什么指挥官选择这里做拍照地点了？",
+            1
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 302,
+        "Params": [
+            "",
+            "嗯？",
+            153
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "不需要华丽的布景，也不需要被赋予的意义，没有战斗的沉重，更不需要长篇大论的说教。"
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "相片的我们，看上去很平常，像极了两个普通人，有着生活的样子，跟工作和战斗时都不一样的样子。",
+            1
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "丽芙",
+            "有时候我会想，如果那一天真的到来时，我和指挥官会做什么呢？",
+            1
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 302,
+        "Params": [
+            "",
+            "不是现在可以幻想的事，",
+            159
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "却是未来一定会发生的事。",
+            161
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 202,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory334.png",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 101,
+        "EndAnim": "AniZhuanchangEnd",
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            4,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 304,
+        "Params": [
+            "<size=40>收复地球后的重建工作？开花店？和灰鸦小队继续太空漫游？</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            "",
+            "",
+            -4,
+            1,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg"
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 304,
+        "Params": [
+            "<size=40>在山林庄园里隐居？和指挥官品尝不同风味的咖啡豆？回到故乡看看家人们？</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            "",
+            "",
+            -4,
+            1,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory782.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory782.jpg"
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 304,
+        "Params": [
+            "<size=40>也许现在的丽芙关于幸福的想象还是太过贫瘠，</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            "",
+            "",
+            -3,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 304,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "<size=40>但是现在开始出发的话，总能在那个未来里追赶上指挥官的脚步。</size>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png",
+            "",
+            "",
+            -1,
+            "",
+            "",
+            1
+        ]
+    }
+]

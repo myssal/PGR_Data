@@ -1,0 +1,351 @@
+[
+    {
+        "Key": "CameraDistance",
+        "Comment": "摄像机距离调节： 1：最小距离；2：最大距离",
+        "Values": [
+            10,
+            20
+        ]
+    },
+    {
+        "Key": "PrefabPath",
+        "Comment": "预制资源路径",
+        "Values": [
+            "Assets/Product/Scene/ArenaWar/Prefabs/AreaWarScene.prefab"
+        ]
+    },
+    {
+        "Key": "CameraZoomSpeed",
+        "Comment": "摄像机缩放速度",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "CameraSmallDisRatio",
+        "Comment": "点位缩小的相机距离比例",
+        "Values": [
+            0.4
+        ]
+    },
+    {
+        "Key": "ArticleTips",
+        "Comment": "文章相关提示",
+        "Values": [
+            "文章未解锁！",
+            "%s    %s 发布"
+        ]
+    },
+    {
+        "Key": "ArticleGroupTip",
+        "Comment": "文章组提示",
+        "Values": [
+            "板块未解锁！"
+        ]
+    },
+    {
+        "Key": "ArticleLikeCountBoundary",
+        "Comment": "1. 点赞分界线，低于这个数，则显示具体的数量，高于则显示对应单位；2. 单位",
+        "Values": [
+            10000,
+            "W"
+        ]
+    },
+    {
+        "Key": "EndTimeTips",
+        "Comment": "时间结束文本提示",
+        "Values": [
+            "%s后结束"
+        ]
+    },
+    {
+        "Key": "GiftsRewardIds",
+        "Comment": "打脸奖励Id",
+        "Values": [
+            "6002806|1",
+            "80082|1",
+            "102|2000",
+            "50005|1000",
+            "11000205|1"
+        ]
+    },
+    {
+        "Key": "FirstPlayStoryId",
+        "Comment": "首次进入玩法剧情"
+    },
+    {
+        "Key": "UnlockAnimationInfo",
+        "Comment": "解锁动画信息 1.动画类型；2.动画时长；3.动画位移高度",
+        "Values": [
+            2,
+            1.2,
+            0.82,
+            8
+        ]
+    },
+    {
+        "Key": "IdleAnimationInfo",
+        "Comment": "呼吸动画信息 1.动画类型；2.动画时长；3.动画位移高度",
+        "Values": [
+            0,
+            5,
+            0.82
+        ]
+    },
+    {
+        "Key": "PlateLiftUpInfo",
+        "Comment": "板块上升动画 1: Y向下偏移，隐藏在地图外；2.从地图外上升所需时间",
+        "Values": [
+            -3,
+            0.8
+        ]
+    },
+    {
+        "Key": "StageDetailFightTip",
+        "Comment": "关卡详情在鞭尸期与非鞭尸期时战斗描述",
+        "Values": [
+            "限时内，评分越高，奖励越丰富",
+            "参与作战，获得奖励"
+        ]
+    },
+    {
+        "Key": "StageDetailBtnChallenge",
+        "Values": [
+            "作战准备",
+            "多重挑战"
+        ]
+    },
+    {
+        "Key": "ItemNotEnough",
+        "Values": [
+            "\"调度申请不足, 请通过援护任务获取\"",
+            "当前体力不足，是否将多重挑战次数调整至<color=#4dc5ff>X%d</color>?",
+            "当前体力不足，无法继续作战"
+        ]
+    },
+    {
+        "Key": "QuestName",
+        "Comment": "探索任务Name",
+        "Values": [
+            "特派任务",
+            "特派任务",
+            "援护任务"
+        ]
+    },
+    {
+        "Key": "QuestDesc",
+        "Comment": "探索任务Desc",
+        "Values": [
+            "个人任务",
+            "个人任务",
+            "互助任务"
+        ]
+    },
+    {
+        "Key": "BlockLevelTypeIcon",
+        "Comment": "详情图标",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame02.png",
+            "Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame01.png"
+        ]
+    },
+    {
+        "Key": "BlockLevelTypeMapIcon",
+        "Comment": "地图图标",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame02.png",
+            "Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame01.png"
+        ]
+    },
+    {
+        "Key": "GrowBuffLockTip",
+        "Comment": "buff解锁提示",
+        "Values": [
+            "等级达到%s解锁"
+        ]
+    },
+    {
+        "Key": "FinishAllQuestTip",
+        "Values": [
+            "已完成本日所有异常调查",
+            "已完成本日所有救援任务"
+        ]
+    },
+    {
+        "Key": "RescueDetailText",
+        "Values": [
+            "请 求 支 援",
+            "队友遇到危险，请求救援"
+        ]
+    },
+    {
+        "Key": "RescuedDetailText",
+        "Values": [
+            "获 得 帮 助",
+            "其他玩家向你提供了帮助"
+        ]
+    },
+    {
+        "Key": "TrailEffectUrl",
+        "Values": [
+            "Assets/Product/Ui/Prefab/UiEffect/UiAreaWar/FxUiAreaWarMainBtnTuowei.prefab"
+        ]
+    },
+    {
+        "Key": "CancelBtnText",
+        "Values": [
+            "取消",
+            "兑换体力"
+        ]
+    },
+    {
+        "Key": "ItemUnlockTips",
+        "Comment": "藏品解锁的提示文本",
+        "Values": [
+            "等级%s解锁"
+        ]
+    },
+    {
+        "Key": "ItemRoomAttrs",
+        "Comment": "藏品室属性",
+        "Values": [
+            "攻击",
+            "生命",
+            "多重挑战最大倍率"
+        ]
+    },
+    {
+        "Key": "ItemRoomLvUpCost",
+        "Comment": "升级材料足够的数量显示",
+        "Values": [
+            "<color=#0E70BD>%s</color>/%s"
+        ]
+    },
+    {
+        "Key": "ItemRoomLvUpCostNoEnough",
+        "Comment": "升级材料不够的数量显示",
+        "Values": [
+            "<color=#EE2323>%s</color>/%s"
+        ]
+    },
+    {
+        "Key": "ItemRoomLvUpNoEnoughTips",
+        "Comment": "升级材料不足提示",
+        "Values": [
+            "升级所需材料不足！"
+        ]
+    },
+    {
+        "Key": "AuctionItemRemainTips",
+        "Comment": "交易行道具剩余数量提示",
+        "Values": [
+            "（仅剩%s件）"
+        ]
+    },
+    {
+        "Key": "AuctionBuyNoEnoughCoinTips",
+        "Comment": "交易行购买时货币不足提示",
+        "Values": [
+            "拍卖行货币不足"
+        ]
+    },
+    {
+        "Key": "AuctionBuyNoEnoughCoinColor",
+        "Comment": "交易行购买时货币不足颜色",
+        "Values": [
+            "<color=#EE2323>%s</color>"
+        ]
+    },
+    {
+        "Key": "AuctionBuyNoEnoughShopTips",
+        "Comment": "交易行购买时商品不足提示",
+        "Values": [
+            "商品补货中"
+        ]
+    },
+    {
+        "Key": "AuctionBuySuccessTips",
+        "Comment": "交易行购买成功提示",
+        "Values": [
+            "购买成功"
+        ]
+    },
+    {
+        "Key": "AuctionRefreshReBuyTips",
+        "Comment": "交易行购买时，数据刷新",
+        "Values": [
+            "交易行已刷新，请重新购买！"
+        ]
+    },
+    {
+        "Key": "LightUpNoEnoughTips",
+        "Comment": "点亮藏品数量不足提示",
+        "Values": [
+            "藏品数量不足"
+        ]
+    },
+    {
+        "Key": "QualityTabAll",
+        "Comment": "品质筛选里的全部页签",
+        "Values": [
+            "全部"
+        ]
+    },
+    {
+        "Key": "ItemDetailUnlockTips",
+        "Comment": "道具详情解锁获取提示",
+        "Values": [
+            "藏品室等级%s解锁获取"
+        ]
+    },
+    {
+        "Key": "OrderPutOffConfirmTips",
+        "Comment": "取消订单二次确认提示",
+        "Values": [
+            "提示",
+            "是否下架此商品？"
+        ]
+    },
+    {
+        "Key": "OrderPutOffFailTips",
+        "Comment": "在二次确认过程中，订单出售成功了的提示",
+        "Values": [
+            "下架商品失败，订单已出售成功！"
+        ]
+    },
+    {
+        "Key": "ServerRedisCircuitBreakerTips",
+        "Comment": "服务器交易行挂了，客户端不再请求协议，提示5秒后重试！",
+        "Values": [
+            "拍卖行繁忙，请5秒后重试！"
+        ]
+    },
+    {
+        "Key": "BtnCollectionUnlockConditionId",
+        "Comment": "收藏室按钮的解锁条件",
+        "Values": [
+            863120
+        ]
+    },
+    {
+        "Key": "RareModelUnlockEffect",
+        "Comment": "珍稀藏品界面模型未解锁特效",
+        "Values": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMain/FxUiBlack.prefab"
+        ]
+    },
+    {
+        "Key": "UseItemNumNoEnoughTips",
+        "Comment": "使用藏品道具数量不足",
+        "Values": [
+            "可消耗藏品数量不足"
+        ]
+    },
+    {
+        "Key": "CollectionLockTips",
+        "Comment": "藏品室上锁提示",
+        "Values": [
+            "全服净化进度达到%s后解锁"
+        ]
+    }
+]

@@ -1,0 +1,220 @@
+[
+    {
+        "Id": 101,
+        "Type": 1,
+        "ConstantGroupId": 101
+    },
+    {
+        "Id": 102,
+        "Type": 1,
+        "ConstantGroupId": 102
+    },
+    {
+        "Id": 103,
+        "Type": 1,
+        "ConstantGroupId": 103
+    },
+    {
+        "Id": 104,
+        "Type": 1,
+        "ConstantGroupId": 104
+    },
+    {
+        "Id": 105,
+        "Type": 1,
+        "ConstantGroupId": 105
+    },
+    {
+        "Id": 106,
+        "Type": 1,
+        "ConstantGroupId": 106
+    },
+    {
+        "Id": 107,
+        "Type": 1,
+        "ConstantGroupId": 107
+    },
+    {
+        "Id": 108,
+        "Type": 1,
+        "ConstantGroupId": 108
+    },
+    {
+        "Id": 109,
+        "Type": 1,
+        "ConstantGroupId": 109
+    },
+    {
+        "Id": 110,
+        "Type": 1,
+        "ConstantGroupId": 110
+    },
+    {
+        "Id": 111,
+        "Type": 1,
+        "ConstantGroupId": 111
+    },
+    {
+        "Id": 112,
+        "Type": 1,
+        "ConstantGroupId": 112
+    },
+    {
+        "Id": 113,
+        "Type": 2,
+        "TimeIndex": 1,
+        "RandInterval": 30.0,
+        "RandGroupIds": [
+            113,
+            114,
+            115
+        ],
+        "Duration": 200.0,
+        "PeriodTitle": "测试",
+        "PeriodDesc": "限时打包"
+    },
+    {
+        "Id": 114,
+        "Type": 2,
+        "TimeIndex": 2,
+        "RandInterval": 30.0,
+        "RandGroupIds": [
+            116,
+            117,
+            118
+        ],
+        "Duration": 40.0,
+        "PeriodTitle": "测试",
+        "PeriodDesc": "不限时"
+    },
+    {
+        "Id": 115,
+        "Type": 2,
+        "TimeIndex": 3,
+        "RandInterval": 30.0,
+        "RandGroupIds": [
+            113,
+            114,
+            115
+        ],
+        "Duration": 60.0,
+        "PeriodTitle": "测试",
+        "PeriodDesc": "双倍积分",
+        "ScoreRateAdds": 1.0
+    },
+    {
+        "Id": 121,
+        "Type": 2,
+        "TimeIndex": 1,
+        "RandInterval": 30.0,
+        "RandGroupIds": [
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            221,
+            224,
+            225,
+            226
+        ],
+        "Duration": 30.0,
+        "PeriodTitle": "工作时间",
+        "PeriodDesc": "限时打包"
+    },
+    {
+        "Id": 122,
+        "Type": 2,
+        "TimeIndex": 2,
+        "RandInterval": 30.0,
+        "RandGroupIds": [
+            131,
+            132,
+            133,
+            134,
+            136,
+            201,
+            204,
+            205,
+            206
+        ],
+        "Duration": 25.0,
+        "PeriodTitle": "休息时间",
+        "PeriodDesc": "不限时"
+    },
+    {
+        "Id": 123,
+        "Type": 2,
+        "TimeIndex": 3,
+        "RandInterval": 30.0,
+        "RandGroupIds": [
+            222,
+            223,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            301,
+            302,
+            303,
+            304,
+            305,
+            306,
+            308,
+            310,
+            311,
+            312
+        ],
+        "Duration": 30.0,
+        "PeriodTitle": "工作时间",
+        "PeriodDesc": "限时打包"
+    },
+    {
+        "Id": 124,
+        "Type": 2,
+        "TimeIndex": 4,
+        "RandInterval": 30.0,
+        "RandGroupIds": [
+            301,
+            302,
+            303,
+            304,
+            305,
+            306,
+            307,
+            308,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            316
+        ],
+        "Duration": 25.0,
+        "PeriodTitle": "工作时间",
+        "PeriodDesc": "限时打包"
+    },
+    {
+        "Id": 125,
+        "Type": 2,
+        "TimeIndex": 5,
+        "RandInterval": 30.0,
+        "RandGroupIds": [
+            121
+        ],
+        "Duration": 60.0,
+        "PeriodTitle": "工作时间",
+        "PeriodDesc": "双倍积分",
+        "ScoreRateAdds": 1.0
+    }
+]

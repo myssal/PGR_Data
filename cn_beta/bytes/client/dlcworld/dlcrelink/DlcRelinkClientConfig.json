@@ -1,0 +1,908 @@
+[
+    {
+        "Key": "HelpKey",
+        "Params": [
+            "DlcRelink"
+        ]
+    },
+    {
+        "Key": "TeachingLevelId",
+        "Params": [
+            9001
+        ]
+    },
+    {
+        "Key": "TrainingLevelId",
+        "Params": [
+            9012
+        ]
+    },
+    {
+        "Key": "LevelPassProgressTip",
+        "Params": [
+            "进度：%s"
+        ]
+    },
+    {
+        "Key": "MainCountDownDesc",
+        "Params": [
+            "%s后结束"
+        ]
+    },
+    {
+        "Key": "MainTipsSwitchInterval",
+        "Params": [
+            5000
+        ]
+    },
+    {
+        "Key": "MainBtnEnterDesc",
+        "Params": [
+            "开始链接",
+            "链接中"
+        ]
+    },
+    {
+        "Key": "ChapterCountDownDesc",
+        "Params": [
+            "%s后解锁"
+        ]
+    },
+    {
+        "Key": "ChapterNotOpenDesc",
+        "Params": [
+            "%s未开启"
+        ]
+    },
+    {
+        "Key": "LevelUnlockDesc",
+        "Params": [
+            "通关%s可解锁",
+            "%s后可解锁"
+        ]
+    },
+    {
+        "Key": "RoomBossLevelLimit",
+        "Params": [
+            "Lv.%s"
+        ]
+    },
+    {
+        "Key": "CharacterOccupationName",
+        "Params": [
+            "进攻",
+            "装甲",
+            "增幅"
+        ]
+    },
+    {
+        "Key": "CharacterOccupationIcon",
+        "Params": [
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkCharacterIconCha01.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkCharacterIconCha02.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkCharacterIconCha03.png"
+        ]
+    },
+    {
+        "Key": "CharacterOccupationIconTwo",
+        "Params": [
+            "Assets/Product/Texture/Image/IconType/IconCharacter3.png",
+            "Assets/Product/Texture/Image/IconType/IconCharacter1.png",
+            "Assets/Product/Texture/Image/IconType/IconCharacter2.png"
+        ]
+    },
+    {
+        "Key": "EquipOccupationName",
+        "Params": [
+            "进攻",
+            "装甲",
+            "增幅"
+        ]
+    },
+    {
+        "Key": "EquipOccupationIcon",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkCharacterIconattribute01.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkCharacterIconattribute02.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkCharacterIconattribute03.png"
+        ]
+    },
+    {
+        "Key": "EquipTabsDesc",
+        "Params": [
+            "全部",
+            "进攻",
+            "装甲",
+            "增幅"
+        ]
+    },
+    {
+        "Key": "EquipTabsIcon",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipTabIcon01.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipTabIcon02.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipTabIcon03.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipTabIcon04.png"
+        ]
+    },
+    {
+        "Key": "EquipFilterBtnColor",
+        "Params": [
+            "FFFFFF",
+            "AABEFF"
+        ]
+    },
+    {
+        "Key": "MatchSuccessTips",
+        "Params": [
+            "匹配成功"
+        ]
+    },
+    {
+        "Key": "PlayerEnterRoomTips",
+        "Params": [
+            "%s加入房间"
+        ]
+    },
+    {
+        "Key": "RoomNotSelectRoleTips",
+        "Params": [
+            "请选择角色"
+        ]
+    },
+    {
+        "Key": "RoomNotSelectLevelTips",
+        "Params": [
+            "请选择Boss"
+        ]
+    },
+    {
+        "Key": "RoomMaxPlayerLevelTips",
+        "Params": [
+            "Max"
+        ]
+    },
+    {
+        "Key": "CharacterBtnBattleDesc",
+        "Params": [
+            "上阵",
+            "已上阵"
+        ]
+    },
+    {
+        "Key": "EquipBagBtnReplaceDesc",
+        "Params": [
+            "替换",
+            "穿戴",
+            "更换"
+        ]
+    },
+    {
+        "Key": "EquipReformDeleteTips",
+        "Params": [
+            "可删除次数：%s"
+        ]
+    },
+    {
+        "Key": "EquipReformDeleteNoTimesTips",
+        "Params": [
+            "该装备已无删除次数"
+        ]
+    },
+    {
+        "Key": "EquipReformDeleteSuccessTips",
+        "Params": [
+            "特性删除成功"
+        ]
+    },
+    {
+        "Key": "EquipReformAbsorbNoEquipTips",
+        "Params": [
+            "请选择装备强化素材"
+        ]
+    },
+    {
+        "Key": "EquipReformAbsorbLockTips",
+        "Params": [
+            "当前装备已锁定，请解锁"
+        ]
+    },
+    {
+        "Key": "EquipReformAbsorbFullTips",
+        "Params": [
+            "当前装备无法继续强化"
+        ]
+    },
+    {
+        "Key": "EquipCapacityDesc",
+        "Params": [
+            "容量%s/%s",
+            "容量<color=#FF0000>%s/%s</color>"
+        ]
+    },
+    {
+        "Key": "EquipDecomposeSelectedCountDesc",
+        "Params": [
+            "未选择",
+            "已选择%s"
+        ]
+    },
+    {
+        "Key": "EquipDecomposeLockTips",
+        "Params": [
+            "该装备已被锁定"
+        ]
+    },
+    {
+        "Key": "EquipDecomposeWearTips",
+        "Params": [
+            "当前装备角色佩戴中"
+        ]
+    },
+    {
+        "Key": "EquipDecomposePresetTips",
+        "Params": [
+            "当前装备在预设中"
+        ]
+    },
+    {
+        "Key": "EquipDecomposeNoSelectTips",
+        "Params": [
+            "请先选择装备"
+        ]
+    },
+    {
+        "Key": "EquipPresetNameEmpty",
+        "Params": [
+            "请输入预设名称"
+        ]
+    },
+    {
+        "Key": "EquipPresetNameTooLong",
+        "Params": [
+            "名称长度超过%s个字"
+        ]
+    },
+    {
+        "Key": "EquipPresetRenameSuccess",
+        "Params": [
+            "预设改名成功"
+        ]
+    },
+    {
+        "Key": "EquipPresetNameLengthFormat",
+        "Params": [
+            "%s/%s",
+            "<color=#FF0000>%s</color>/%s"
+        ]
+    },
+    {
+        "Key": "EquipComposeCountLimitTips",
+        "Params": [
+            "当前数量已为最小",
+            "当前数量已为最大"
+        ]
+    },
+    {
+        "Key": "EquipComposeCountZero",
+        "Params": [
+            "请选择合成数量"
+        ]
+    },
+    {
+        "Key": "EquipComposeItemNotEnough",
+        "Params": [
+            "%s代币不足"
+        ]
+    },
+    {
+        "Key": "TipTitle",
+        "Params": [
+            "提示"
+        ]
+    },
+    {
+        "Key": "EquipReplaceWearTipContent",
+        "Params": [
+            "当前装备已被%s穿戴，是否继续穿戴",
+            "穿戴",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipReformAbsorbWearTipContent",
+        "Params": [
+            "当前装备已被%s穿戴，是否继续吸收",
+            "吸收",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipReformAbsorbPresetTipContent",
+        "Params": [
+            "当前装备已在预设中，是否继续吸收",
+            "吸收",
+            "取消"
+        ]
+    },
+    {
+        "Key": "WearEquipDecomposeTipContent",
+        "Params": [
+            "当前装备已被%s穿戴，是否继续分解",
+            "分解",
+            "取消"
+        ]
+    },
+    {
+        "Key": "PresetEquipDecomposeTipContent",
+        "Params": [
+            "当前装备已在预设中，是否继续分解",
+            "分解",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipPresetSetCoverTipContent",
+        "Params": [
+            "是否将当前角色穿戴装备覆盖该预设",
+            "覆盖",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipPresetSetUseTipContent",
+        "Params": [
+            "当前预设中有装备其他角色使用中，是否卸下并穿戴到当前角色",
+            "穿戴",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipReformDeleteConfirmTipContent",
+        "Params": [
+            "当前特性等级较高，是否继续删除",
+            "删除",
+            "取消"
+        ]
+    },
+    {
+        "Key": "ChangeLeaderConfirmTipContent",
+        "Params": [
+            "是否将该队友设置为房主",
+            "确定",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipBagFullMatchTipContent",
+        "Params": [
+            "当前装备库存已满，是否继续匹配",
+            "继续挑战",
+            "分解装备"
+        ]
+    },
+    {
+        "Key": "RoomTeamOccupationNotRationalTipContent",
+        "Params": [
+            "当前队伍职业不合理，挑战关卡难度较高，是否继续挑战",
+            "继续挑战",
+            "取消"
+        ]
+    },
+    {
+        "Key": "RoomTeamEquipAbilityNotRationalTipContent",
+        "Params": [
+            "当前队伍中有成员装备等级低于推荐，是否继续",
+            "继续挑战",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipOneClickWearTipContent",
+        "Params": [
+            "存在更符合当前角色的装备是否一键替换？",
+            "确定",
+            "取消"
+        ]
+    },
+    {
+        "Key": "AutoSettingUnsavedTipContent",
+        "Params": [
+            "您有未保存的修改，确定要退出吗？",
+            "确定",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipFactorOverflowWearTipContent",
+        "Params": [
+            "以下词条超过当前等级上限,超出部分将无法生效,是否继续?\\n{0}",
+            "穿戴",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipFactorOverflowAbsorbTipContent",
+        "Params": [
+            "以下词条超过当前等级上限,超出部分将无法生效,是否继续?\\n{0}",
+            "强化",
+            "取消"
+        ]
+    },
+    {
+        "Key": "EquipFactorOverflowDesc",
+        "Params": [
+            "%s（<color=#fa7d81>%s</color>/%s）"
+        ]
+    },
+    {
+        "Key": "LikeSuccessDesc",
+        "Params": [
+            "%s给你点赞"
+        ]
+    },
+    {
+        "Key": "SwitchStyleSuccessDesc",
+        "Params": [
+            "形态已切换为%s"
+        ]
+    },
+    {
+        "Key": "EquipPresetSetDefaultName",
+        "Params": [
+            "预设%s"
+        ]
+    },
+    {
+        "Key": "EquipPresetSetUseEmpty",
+        "Params": [
+            "当前预设为空"
+        ]
+    },
+    {
+        "Key": "EquipPresetSetUseSuccess",
+        "Params": [
+            "预设穿戴成功"
+        ]
+    },
+    {
+        "Key": "EquipPresetSetUseSameEquip",
+        "Params": [
+            "当前预设与装备相同"
+        ]
+    },
+    {
+        "Key": "NoWearEquip",
+        "Params": [
+            "未佩戴装备"
+        ]
+    },
+    {
+        "Key": "PlayerNextLevelDesc",
+        "Params": [
+            "已满级"
+        ]
+    },
+    {
+        "Key": "PlayerLevelNotEnoughCoinColor",
+        "Params": [
+            "0F70BC",
+            "ff0000"
+        ]
+    },
+    {
+        "Key": "PlayerLevelNotEnoughCoinDesc",
+        "Params": [
+            "当前拥有%s不足，可分解装备获得"
+        ]
+    },
+    {
+        "Key": "PlayerLevelUpConditionDesc",
+        "Params": [
+            "请通关任意%s难度的关卡"
+        ]
+    },
+    {
+        "Key": "SettlementFailTips",
+        "Params": [
+            "推荐通过装备-强化提升装备等级",
+            "推荐玩家合理搭配队伍职业",
+            "合理搭配装备可以有效提升角色实力",
+            "合理利用极限技和必杀连携来逆转战局"
+        ]
+    },
+    {
+        "Key": "SkillDetailSecondTitle",
+        "Params": [
+            "技能效果"
+        ]
+    },
+    {
+        "Key": "SkillDamageSliderColor",
+        "Params": [
+            "AEBDFC",
+            "ffc85f"
+        ]
+    },
+    {
+        "Key": "ShopTaskTagName",
+        "Params": [
+            "商店",
+            "任务"
+        ]
+    },
+    {
+        "Key": "ShopItemTextColor",
+        "Params": [
+            "FFFFFFFF",
+            "Fa7d81"
+        ]
+    },
+    {
+        "Key": "ShopCanBuyColor",
+        "Params": [
+            "FFFFFFFF",
+            "Fa7d81"
+        ]
+    },
+    {
+        "Key": "MainPreviewRewardId",
+        "Params": [
+            67888
+        ]
+    },
+    {
+        "Key": "SettlementResultBg",
+        "Params": [
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkSettlementBg.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkSettlementBgFailure.png"
+        ]
+    },
+    {
+        "Key": "SettlementResultEffect",
+        "Params": [
+            "Assets/Product/Effect/DlcPrefab/FxRelink/Prefeb/FxUi/FxUiDlcRelinkSettlementWinNew/FxUiDlcRelinkSettlementWin01.prefab",
+            "Assets/Product/Effect/DlcPrefab/FxRelink/Prefeb/FxUi/FxUiDlcRelinkSettlementWinNew/FxUiDlcRelinkSettlementFailure01.prefab"
+        ]
+    },
+    {
+        "Key": "DefaultRankText",
+        "Params": [
+            "无"
+        ]
+    },
+    {
+        "Key": "SkillDetailCdFormat",
+        "Params": [
+            "%ss"
+        ]
+    },
+    {
+        "Key": "SettlementResearchTitle",
+        "Params": [
+            "研发进度 <color=#9db1e9>%s</color>",
+            "研发进度 <color=#9db1e9>%s (Max)</color>"
+        ]
+    },
+    {
+        "Key": "EquipSlotNoUnlock",
+        "Params": [
+            "暂未解锁",
+            "研发等级达到8级后可解锁槽位",
+            "穿戴职业装备解锁槽位"
+        ]
+    },
+    {
+        "Key": "EquipBagEmpty",
+        "Params": [
+            "暂未获得任何装备"
+        ]
+    },
+    {
+        "Key": "RoomWaitAllReadyTips",
+        "Params": [
+            "等待队友准备"
+        ]
+    },
+    {
+        "Key": "InvitedUnlockedLevel",
+        "Params": [
+            40
+        ]
+    },
+    {
+        "Key": "InvitedUnlockLevelTips",
+        "Params": [
+            "指挥官%s级解锁"
+        ]
+    },
+    {
+        "Key": "InviteButtonText",
+        "Params": [
+            "邀请",
+            "已邀请(%ss)"
+        ]
+    },
+    {
+        "Key": "InviteCdTips",
+        "Params": [
+            "%ss后可再次邀请"
+        ]
+    },
+    {
+        "Key": "WikiTypeTabNormalIcon",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon05.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon06.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon07.png"
+        ]
+    },
+    {
+        "Key": "WikiTypeTabSelectIcon",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon02.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon03.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon08.png"
+        ]
+    },
+    {
+        "Key": "LoadingReturnRoomTips",
+        "Params": [
+            "存在成员断线，请重新开始作战"
+        ]
+    },
+    {
+        "Key": "SelectTrainingTip",
+        "Params": [
+            "房间内存在其他玩家，无法进入"
+        ]
+    },
+    {
+        "Key": "TrainingCreateRoomTip",
+        "Params": [
+            "当前关卡不支持联机，是否继续创建房间？"
+        ]
+    },
+    {
+        "Key": "FirstPlayTeachingLevelTip",
+        "Params": [
+            "请先点击开始战斗完成教学"
+        ]
+    },
+    {
+        "Key": "TutorialLevelName",
+        "Params": [
+            "教学关",
+            "训练关"
+        ]
+    },
+    {
+        "Key": "CharacterNoEquipCannotRecordPreset",
+        "Params": [
+            "当前角色无装备无法覆盖到预设"
+        ]
+    },
+    {
+        "Key": "RoomEquipAbilityNotRationalTips",
+        "Params": [
+            "角色装备总等级低于要求，无法加入匹配"
+        ]
+    },
+    {
+        "Key": "RoomLeaderEquipAbilityNotRationalTips",
+        "Params": [
+            "角色装备总等级低于要求，无法开放房间"
+        ]
+    },
+    {
+        "Key": "RoomBossLevelBgColor",
+        "Params": [
+            "FFFFFF",
+            "A5E0F8",
+            "E0A2DF",
+            "FFD170",
+            "FF8981"
+        ]
+    },
+    {
+        "Key": "EquipSlotExpandTip",
+        "Params": [
+            "特殊模块装备槽位解锁"
+        ]
+    },
+    {
+        "Key": "TipsInBlessing",
+        "Params": [
+            "特性等级+1（职业装备加持中）"
+        ]
+    },
+    {
+        "Key": "TipsNotEffective",
+        "Params": [
+            "额外加持未生效"
+        ]
+    },
+    {
+        "Key": "EquipSlotNotEffectiveDesc",
+        "Params": [
+            "当前装备职业类型不符,未满足加持生效条件"
+        ]
+    },
+    {
+        "Key": "WifiSwitchTips",
+        "Params": [
+            "检测到您当前网络环境为移动网络，玩法推荐在WiFi环境下体验更佳，是否继续体验？"
+        ]
+    },
+    {
+        "Key": "BecomeLeaderTips",
+        "Params": [
+            "已成为房主"
+        ]
+    },
+    {
+        "Key": "ForbidSelectRoleTip",
+        "Params": [
+            "教学关无法更换角色"
+        ]
+    },
+    {
+        "Key": "TeachingNotPassedTips",
+        "Params": [
+            "教学关未完成"
+        ]
+    },
+    {
+        "Key": "EquipComposeInputTip",
+        "Params": [
+            "请输入正整数"
+        ]
+    },
+    {
+        "Key": "RankDefaultTimeText",
+        "Params": [
+            "暂无"
+        ]
+    },
+    {
+        "Key": "EquipReformSelectSameEquipTip",
+        "Params": [
+            "不能放入相同的装备"
+        ]
+    },
+    {
+        "Key": "TeachingLevelGuideId",
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Key": "BattleSettleShowTitleMaxCount",
+        "Params": [
+            4
+        ]
+    },
+    {
+        "Key": "GlobalMatchRewardDesc",
+        "Params": [
+            "额外装备奖励 (<color=#a1b9ff>%s</color><color=#a1b9ff>/%s</color>)",
+            "额外装备奖励 (<color=#fa7d81>%s</color><color=#fa7d81>/%s</color>)"
+        ]
+    },
+    {
+        "Key": "GlobalMatchDetailTipContent",
+        "Params": [
+            "1.开启全局匹配后将快速加入任意关卡的房间\\n2.通过全局匹配进入房间完成挑战后可获得额外装备奖励\\n3.额外装备奖励每日5点刷新可获取次数"
+        ]
+    },
+    {
+        "Key": "GlobalMatchDisableChooseBossTip",
+        "Params": [
+            "全局匹配时无法选择关卡"
+        ]
+    },
+    {
+        "Key": "ChooseBossBtnName",
+        "Params": [
+            "未选关卡",
+            "随机关卡"
+        ]
+    },
+    {
+        "Key": "CustomRichTextDesc",
+        "Params": [
+            "<b><u><color=#34aff8ff><link={0}>{1}</link></color></u></b>"
+        ]
+    },
+    {
+        "Key": "LongPressProgressBarPath",
+        "Params": [
+            "Assets/Product/Ui/ComponentPrefab/UiDlcRelink/PanelTimer.prefab"
+        ]
+    },
+    {
+        "Key": "LongPressProgressBarShowTime",
+        "Params": [
+            0.3
+        ]
+    },
+    {
+        "Key": "EquipCancelDiscardTips",
+        "Params": [
+            "装备已取消弃置"
+        ]
+    },
+    {
+        "Key": "EquipUnlockAndDiscardTips",
+        "Params": [
+            "装备已取消锁定，并设为弃置"
+        ]
+    },
+    {
+        "Key": "EquipSetDiscardTips",
+        "Params": [
+            "装备已设为弃置"
+        ]
+    },
+    {
+        "Key": "EquipOneClickWearNoChangeTip",
+        "Params": [
+            "无需更换"
+        ]
+    },
+    {
+        "Key": "AutoSettingTabName",
+        "Params": [
+            "自动锁定",
+            "自动弃置"
+        ]
+    },
+    {
+        "Key": "AutoSettingTabImage",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipLocked.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkExchangeWheelDelete.png"
+        ]
+    },
+    {
+        "Key": "AutoSettingEquipTypeName",
+        "Params": [
+            "主控装备",
+            "普通装备"
+        ]
+    },
+    {
+        "Key": "AutoSettingQualityTypeName",
+        "Params": [
+            "蓝色",
+            "紫色",
+            "金色",
+            "红色"
+        ]
+    },
+    {
+        "Key": "RoomUiLoadingType",
+        "Params": [
+            1071062
+        ]
+    },
+    {
+        "Key": "AutoSettingDesc",
+        "Params": [
+            "保存设置后，将在获取装备时自动进行锁定",
+            "保存设置后，将在获取装备时自动进行弃置"
+        ]
+    },
+    {
+        "Key": "AutoSettingSavedTip",
+        "Params": [
+            "设置已保存"
+        ]
+    },
+    {
+        "Key": "FactorLevelTypeIcon",
+        "Params": [
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkMainBtn02.png"
+        ]
+    }
+]
