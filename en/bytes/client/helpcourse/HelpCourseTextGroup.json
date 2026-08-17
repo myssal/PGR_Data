@@ -466,13 +466,13 @@
     {
         "Id": 1021501,
         "Texts": [
-            "① Rapid Pursuit has four stages, and each stage offers four difficulty levels."
+            "① 疾速追缉共有四个关卡，每个关卡拥有三个难度。"
         ]
     },
     {
         "Id": 1021502,
         "Texts": [
-            "① Easy and Hard are available by default. Nightmare and Inferno unlock only after clearing the <color=#0E70BD>previous difficulty</color>.",
+            "① 玩法默认开启困难，噩梦难度，炼狱难度需要通关<color=#0E70BD>上一难度</color>后解锁。",
             "② Tap here to view <color=#0E70BD>enemy move details</color> for all Challenge Missions.",
             "③ Each bounty target features multiple missions that offer rewards upon completion.",
             "④ Certain difficulties are limited to specific characters."
@@ -969,7 +969,7 @@
     {
         "Id": 1004501,
         "Texts": [
-            "① Convert <color=#0E70BD>Beacons</color> into puzzle shards. You can earn <color=#0E70BD>Beacons</color> by completing event missions."
+            "Convert <color=#0E70BD>Copper Pocket Watch</color> into puzzle shards. You can earn <color=#0E70BD>Copper Pocket Watch</color> by completing event missions."
         ]
     },
     {
@@ -1021,9 +1021,9 @@
     {
         "Id": 1033102,
         "Texts": [
-            "①. <color=#0E70BD>Only patterned tiles</color> can pass their color to adjacent <color=#0E70BD>colorless tiles</color>.",
-            "②. When a colorless tile is adjacent to multiple patterned tiles, <color=#0E70BD>their colors are combined</color>. <color=#0E70BD>If the colors can't be combined, an × appears</color>.",
-            "③. The bottom of a <color=#0E70BD>colorless tile</color> shows the color it needs. The top shows the color it's currently receiving. When the two match, the tile is activated.",
+            "①. You can apply your color to an adjacent <color=#0E70BD>colorless tile</color>.",
+            "②. When multiple colors are applied to the same tile, they will <color=#0E70BD>combine</color>.",
+            "③. A <color=#0E70BD>colorless tile</color> is activated when its color matches the required color.",
             "④. <color=#0E70BD>Activate all colorless tiles</color> to complete the stage.",
             "⑤. You can view <color=#0E70BD>placement tips</color> here."
         ]
@@ -1031,10 +1031,10 @@
     {
         "Id": 1033103,
         "Texts": [
-            "①. A patterned tile can pass its color to nearby colorless tiles.",
-            "②. Cycles through up to 4 colors and passes color to adjacent tiles.",
-            "③. Creates up to 4 tiles in a set direction and passes color to nearby tiles.",
-            "④. Rotates to color the first tile along its path. Mirrors can change its direction."
+            "①. You can apply your color to an adjacent colorless tile.",
+            "②. Switch between up to four colors and apply them to tiles.",
+            "③. Generate up to four tiles in a chosen direction and apply a color to them.",
+            "④. Rotate to project color in a chosen direction. Mirrors can change its path."
         ]
     },
     {
@@ -1090,6 +1090,15 @@
             "③ Sprint Charge: Affects the speed at which sprint charges up.",
             "④ Knockback: Affects how far targets are knocked back when hit by basic attacks.",
             "⑤ Chain Duration: The duration of the state when the chain stack count is at 1. The higher the chain stack count, the faster the stacks decay."
+        ]
+    },
+    {
+        "Id": 1022407,
+        "Texts": [
+            "① 沉浸态增伤：影响沉浸态期间伤害强度。",
+            "② 沉浸态护甲：沉浸态期间，受到伤害时，按一定比例减少伤害。",
+            "③ 沉浸态生命偷取：沉浸态期间，造成伤害时，回复生命的比例。",
+            "④ 自动获取范围：影响重音节拍时，自动拾取的作用范围。"
         ]
     },
     {
@@ -1398,8 +1407,8 @@
         "Id": 1011802,
         "Texts": [
             "① Three attackable targets will pop out of the boxes. They will hide back inside the boxes after some time. Teddy: Can be defeated in 1 hit, but will <color=#0E70BD>retreat into the box early</color>, and awards a moderate number of points.",
-            "② Teddy: Can be defeated in 1 hit, but will <color=#0E70BD>retreat into the box early</color>, and awards a moderate number of points.",
-            "③ Bianca: Can be defeated in 1 hit, and awards a small number of points.",
+            "② Bianca: Can be defeated in 1 hit, and awards a small number of points.",
+            "③ Boss Huhu: <color=#0E70BD>Requires multiple hits</color> to defeat, and awards a large number of points.",
             "④ Boss Huhu: Requires <color=#0E70BD>multiple hits</color> to defeat, and awards a large number of points."
         ]
     },
@@ -1470,6 +1479,21 @@
         ]
     },
     {
+        "Id": 1023401,
+        "Texts": [
+            "① Tap here to select a stage.",
+            "② Tap here to start tuning."
+        ]
+    },
+    {
+        "Id": 1023402,
+        "Texts": [
+            "① Try dragging the slider to find the right frequency, the one that resonates with them!",
+            "② As the resonance rate rises, scattered notes will start to converge.",
+            "③ Keep an eye on the hints here to find your target faster."
+        ]
+    },
+    {
         "Id": 1023501,
         "Texts": [
             "① Tap the Harmony II <color=#0E70BD>node button</color> to enter the Details screen and view detailed information such as <color=#0E70BD>node effects</color>.",
@@ -1483,6 +1507,44 @@
             "② Node <color=#0E70BD>effect</color> details.",
             "③ You can also <color=#0E70BD>switch</color> nodes by tapping the list buttons below to view effect info of different nodes.",
             "④ Details of the <color=#0E70BD>resource</color> <color=#0E70BD>consumed</color> to activate a node."
+        ]
+    },
+    {
+        "Id": 1023601,
+        "Texts": [
+            "① 每日5:00会发放3张悠乐凭券，完成玩法内的每日任务、邀约任务还能获取更多悠乐凭券、专属凭券。",
+            "② 此处可以接受来自不同角色的邀约。",
+            "③ 当接受了指定数量的角色邀约后，此处会解锁乐器，点击上方按钮可以将已接受邀约的角色设置为演奏乐器的乐手。",
+            "④ 此处可以查看已接受邀约的角色图像及对应的邀约剧情。"
+        ]
+    },
+    {
+        "Id": 1023602,
+        "Texts": [
+            "① 此处切换选择邀约的模式。",
+            "② 在线索邀约中，需要通过观察邀请函上的提示语，及旋转邀请函后露出的图像，来推测对应角色。移动端使用重力感应，PC端移动鼠标，均可以让邀请函旋转。",
+            "③ 点击此处可以随机一张邀请函。",
+            "④ 点击此处消耗悠乐凭券确认邀请函，并进入揭开封签的环节。在接受9次邀约后，还可以选择一键开启。"
+        ]
+    },
+    {
+        "Id": 1023603,
+        "Texts": [
+            "① 在定向邀约中，可以直接选择未接受邀约的对应角色。",
+            "② 点击此处消耗悠乐凭券与专属凭券确认邀请函，并进入揭开封签的环节。在接受9次邀约后，还可以选择一键开启。"
+        ]
+    },
+    {
+        "Id": 1023604,
+        "Texts": [
+            "① 由左往右拉开封签，即可揭晓发出邀约的角色。"
+        ]
+    },
+    {
+        "Id": 1023605,
+        "Texts": [
+            "① 点击此处开始邀约，阅读对应剧情。",
+            "② 当完成邀约后，角色图像将会揭晓专属背景。"
         ]
     }
 ]

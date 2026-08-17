@@ -204,6 +204,36 @@
     },
     {
         "Role": "Mt1MascotMd000001",
+        "Target": "Squatdown",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Target": "Squatup",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Target": "Squat",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Target": "Squatrun",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Target": "Squatrunstart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Target": "Squatrunstop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
         "Target": "RunStartEnd02",
         "TransitionDuration": 0.1
     },
@@ -245,6 +275,16 @@
     {
         "Role": "Mt1MascotMd000001",
         "Target": "RTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Target": "HitLB",
         "TransitionDuration": 0.1
     },
     {
@@ -660,6 +700,12 @@
     {
         "Role": "Mt1MascotMd000001",
         "State": "RTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "State": "HitLB",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     }

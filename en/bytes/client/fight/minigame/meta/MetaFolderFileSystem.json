@@ -1,0 +1,149 @@
+[
+    {
+        "ID": 1,
+        "GameID": 1,
+        "Type": 1,
+        "Name": "能源调配中枢",
+        "IsProtected": true
+    },
+    {
+        "ID": 2,
+        "GameID": 1,
+        "ParentID": 1,
+        "Type": 1,
+        "Name": "最高权限认证",
+        "IsLocked": true,
+        "LockPassword": 819,
+        "IsProtected": true,
+        "TargetType": 4,
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 3,
+        "GameID": 1,
+        "ParentID": 1,
+        "Type": 1,
+        "Name": "基础框架总览",
+        "IsProtected": true
+    },
+    {
+        "ID": 4,
+        "GameID": 1,
+        "ParentID": 1,
+        "Type": 1,
+        "Name": "新建文件夹",
+        "IsProtected": true
+    },
+    {
+        "ID": 5,
+        "GameID": 1,
+        "ParentID": 4,
+        "Type": 1,
+        "Name": "我的资料",
+        "IsProtected": true
+    },
+    {
+        "ID": 6,
+        "GameID": 1,
+        "ParentID": 1,
+        "Type": 2,
+        "Content": "只要能跑，就不要动之前的代码。",
+        "Name": "安全提示",
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 7,
+        "GameID": 1,
+        "ParentID": 2,
+        "Type": 2,
+        "Content": "骇入中枢",
+        "Name": "中枢密钥",
+        "IsProtected": true,
+        "IsTarget": true,
+        "TargetType": 2,
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 8,
+        "GameID": 1,
+        "ParentID": 2,
+        "Type": 2,
+        "Content": "7月4日\\n本期维护任务：完成能源调配中枢各级资料梳理，完善层级权限管理。排查节点所有设备设施，每日更新维护记录。预计工时：一周。\\n……\\n7月14日（摸鱼）\\n7月15日（摸鱼）\\n7月16日\\n唉！我怎么能如此堕落！就算工作比较无聊，也不该忘记自己的职业操守！\\n7月17日\\n吃泡面。\\n7月18日（摸鱼）",
+        "Name": "维护日志",
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 9,
+        "GameID": 1,
+        "ParentID": 3,
+        "Type": 2,
+        "Content": "软件已过期，请购买。",
+        "Name": "[解压码：8888]能源分布信息.zip",
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 10,
+        "GameID": 1,
+        "ParentID": 3,
+        "Type": 2,
+        "Content": "[安全事件通报 · SEC03]\\n------------------------------\\n检测到未知终端短时间多次尝试建立链路\\n风险判定：中风险\\n已对全部访问指令执行拦截\\n------------------------------",
+        "Name": "节点访问记录.log",
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 11,
+        "GameID": 1,
+        "ParentID": 3,
+        "Type": 3,
+        "Content": "Assets/Product/Texture/Image/BgUi/BgFightLoading16.jpg",
+        "Name": "超软萌无口系甜妹.jpg",
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 12,
+        "GameID": 1,
+        "ParentID": 5,
+        "Type": 2,
+        "Content": 819,
+        "Name": "访问密码",
+        "IsProtected": true,
+        "TargetType": 3,
+        "OptionType": [
+            1,
+            2
+        ]
+    },
+    {
+        "ID": 13,
+        "GameID": 1,
+        "ParentID": 5,
+        "Type": 2,
+        "Content": "使用说明.txt \\n--------------\\nK.R.软件站 提供游戏和软件下载服务\\n最绿色安全的软件下载平台，无病毒、无插件、无恶意代码！\\n--------------",
+        "Name": "使用说明.txt",
+        "OptionType": [
+            1,
+            2
+        ]
+    }
+]

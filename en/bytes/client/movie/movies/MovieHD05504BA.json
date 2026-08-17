@@ -1,0 +1,2927 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory10.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 205,
+        "EndAnim": "AniZhuanchangEnd",
+        "Params": [
+            1003,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0,
+            0.9
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 401,
+        "Params": [
+            1,
+            209
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 401,
+        "Params": [
+            2,
+            6603
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Streetlights are few and far between at the outskirts of Constellia. A gravel path stretches ahead, its long shadow trailing behind a flashlight's beam. The girl walking in front slows to a stop and glances back at you."
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 201,
+        "Params": [
+            1,
+            501040,
+            4
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            1,
+            "Yata",
+            "Should be somewhere around here. Witnesses said it's the flat area to the north of the windmill shown on the radar.",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "A dilapidated building that only shows up on the Double Seventh Festival... sounds like a ghost story to me. But those dark figures are real, and they might be Corrupted. We need to check it out.",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 302,
+        "Params": [
+            "",
+            "Is your idea of a date taking me here on the Double Seventh Festival?",
+            10,
+            "Acting on nothing but a rumor... That's quite diligent of you.",
+            10
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "This isn't a date, after all. It's a mission.",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "...Although there is a reason this is happening on the Double Seventh Festival.",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 401,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She does not elaborate. Instead, she quickens her pace, leaving the conversation unfinished."
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory39.jpg"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Sure enough, you find a derelict building looming in the dark after rounding a corner with Yata. You two follow a shadowy path until you reach a suspicious door."
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 201,
+        "Params": [
+            1,
+            501040,
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "Params": [
+            1,
+            "Yata",
+            "...Here we are. Let's head in.",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "(Open the door)",
+            22
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 401,
+        "Params": [
+            2,
+            2701
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 101,
+        "EndAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory270.png"
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 401,
+        "Params": [
+            1,
+            209
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Stepping through the rusted door, you immediately step on something soft. White cotton lies scattered across the floor before drifting on the air currents, creating a strange snowfall indoors."
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 104,
+        "EndDelay": 100.0,
+        "Params": [
+            "0|0|-100",
+            1
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 402,
+        "Params": [
+            6708
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Further inside, half-cut fabrics and frozen sewing machines sit upon rows of worktables. A glass cabinet sits beside them, displaying faded samples of different kinds of dolls, each one facing the same direction eerily."
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 306
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 201,
+        "Params": [
+            1,
+            501040,
+            4
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "Params": [
+            1,
+            "Yata",
+            "A doll factory... Did places like this exist in Constellia too?",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Yata's gaze sweeps the room, and she suddenly stops. A small brown teddy bear lies sprawled on the floor as if silently pleading for help, the stitching across its chest loose."
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 203,
+        "EndDelay": 550.0,
+        "Params": [
+            1,
+            0.5,
+            0,
+            -50,
+            0
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She crouches down and picks it up, carefully working the loose threads back into place."
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 302,
+        "Params": [
+            "",
+            "Huh?",
+            48
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Doesn't feel right for it to be lying on the floor.",
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She sets the bear back on the worktable before continuing on, as if nothing has happened."
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 401,
+        "Params": [
+            2,
+            6738
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "...!",
+            1
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 401,
+        "Params": [
+            2,
+            9332014
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 401,
+        "Params": [
+            2,
+            5918
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Creak—the sound comes from the adult-sized dolls hanging from the ceiling. The gantry they are hanging from somehow gets powered on, and they slowly spin, their shadows stretched long by the flashlight."
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 402,
+        "Params": [
+            5918
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 401,
+        "Params": [
+            2,
+            844
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 201,
+        "Params": [
+            1,
+            501374,
+            "",
+            100,
+            -20,
+            0
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5,
+            1200,
+            -20,
+            0
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Suddenly, a shadow in the corner moves."
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 306
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 201,
+        "Params": [
+            1,
+            501040,
+            4
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Yata",
+            "I see it. Follow me.",
+            1
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1035.jpg"
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 401,
+        "Params": [
+            2,
+            844
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 201,
+        "EndDelay": 200.0,
+        "Params": [
+            1,
+            501374,
+            "",
+            100,
+            -20,
+            0
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            1200,
+            -20,
+            0
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 401,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 104,
+        "EndDelay": 500.0,
+        "Params": [
+            "0|0|-100",
+            0.5
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "You chase after the leaping shadow, cutting through dark corridor after dark corridor. The beam of your flashlight is your only anchor in this endless darkness."
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 401,
+        "EndDelay": 200.0,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 205,
+        "Params": [
+            1003
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 401,
+        "Params": [
+            2,
+            4928
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 104,
+        "Params": [
+            "0|0|-200",
+            0.5
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 205,
+        "EndDelay": 600.0,
+        "Params": [
+            1003,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.95,
+            0.5
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "You round a corner, and the light dies. Total darkness closes in around you."
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 201,
+        "Params": [
+            1,
+            501040,
+            5
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 301,
+        "Params": [
+            1,
+            "Yata",
+            "Tch... The batteries died. Seriously, what is this? A horror movie?",
+            1
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 401,
+        "Params": [
+            2,
+            4834
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Shaking the flashlight, she makes sure that it is dead before stuffing it into her bag resignedly."
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Alright. We'll hug the wall and keep moving.",
+            1
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "It is easier said than done with such low visibility. Your hands outstretched, you fumble through the dark until your fingers brush against something soft."
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 302,
+        "Params": [
+            "",
+            "I've found the wall.",
+            97,
+            "I've found something weird.",
+            97
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Yata",
+            "That's my face, 【kuroname】.",
+            1
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 302,
+        "Params": [
+            "",
+            "...Sorry.",
+            100
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 302,
+        "Params": [
+            "",
+            "(Reach out again)",
+            101
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Yata",
+            "...It's my hand this time.",
+            1
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 302,
+        "Params": [
+            "",
+            "(Let go)",
+            103,
+            "Sorry about that.",
+            103
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "That's okay. I didn't tell you to let go.",
+            1
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Yata catches your hand the moment you pull it back. For some reason, her grip is startlingly warm and unusually firm."
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Standing side by side with her in the dark, you can both hear each other's breath."
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "...You're breathing a little fast.",
+            1
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 302,
+        "Params": [
+            "",
+            "Your palm's pretty warm.",
+            110,
+            "Your grip is pretty tight.",
+            110
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "That's because I train regularly, and I'm stuck in a pitch-black room with someone else.",
+            1
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 302,
+        "Params": [
+            "",
+            "I see. I'll rely on your protection, Lady Yata.",
+            112,
+            "I see. I'll keep you safe then, Yata.",
+            112
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Bickering the whole way, you press forward until you notice a faint, strange glow ahead. It is the light reflected by the glass eyes of a cluster of dolls in the corner. They are looking up, their heads tilted back."
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 306
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 201,
+        "Params": [
+            1,
+            501040,
+            4
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 301,
+        "Params": [
+            1,
+            "Yata",
+            "That direction is... the roof. They're pointing the way.",
+            1
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 401,
+        "Params": [
+            2,
+            5812
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "She barely finishes speaking when the floor below you splits open with a thunderous crack.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 205,
+        "EndDelay": 600.0,
+        "Params": [
+            1003,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.95,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 205,
+        "Params": [
+            1003
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "You fall, but just before the impact comes—",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "Six ghostly hands come raking through the dark toward you. For a moment, it feels like you are going to be consumed by a horrifying demon."
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab"
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 302,
+        "Params": [
+            "",
+            "Yata, help—",
+            131,
+            "(Struggle)",
+            131
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 201,
+        "Params": [
+            1,
+            501041,
+            4
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Yata",
+            "Stop squirming. It's me.",
+            1
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The owner of those six hands looks thoroughly unamused."
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 205,
+        "EndDelay": 600.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1029.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1029.jpg"
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 401,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 401,
+        "Params": [
+            2,
+            2914
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "When you get back on solid ground, you realize you are surrounded by nothing but darkness. Meanwhile, you hear a low, menacing hum somewhere in the distance."
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "It feels like a production floor of some kind. Narrow and sealed off, it has nothing to offer but walls as the two of you feel your way around in the dark."
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 402,
+        "Params": [
+            2914
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 201,
+        "Params": [
+            1,
+            501041
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 301,
+        "Params": [
+            1,
+            "Yata",
+            "If this is a typical horror game, some creepy little dolls will spawn in this sealed room at any moment. We'll get chased around before we can find the key out of here among them, 【kuroname】.",
+            1
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 302,
+        "Params": [
+            "",
+            "But...",
+            146,
+            "A horror game?",
+            146
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "But this isn't a horror game.",
+            1
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 401,
+        "Params": [
+            1,
+            42
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 401,
+        "Params": [
+            2,
+            4558
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "In the dark, Yata rolls her neck and flexes all six arms. The mechanical joints pop and click eagerly, and she extends one arm to push you back, signaling you to give her some room."
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 302,
+        "Params": [
+            "",
+            "(Step back)",
+            153
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 401,
+        "Params": [
+            2,
+            4795
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 203,
+        "Params": [
+            1,
+            0.1,
+            100
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 203,
+        "Params": [
+            1,
+            0.1,
+            0
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "Yata",
+            "<size=60>Ora!</size>",
+            1
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 302,
+        "Params": [
+            "",
+            "...?",
+            161
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 401,
+        "Params": [
+            2,
+            4795
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 203,
+        "EndDelay": 100.0,
+        "Params": [
+            1,
+            0.1,
+            0
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Ora!",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 401,
+        "Params": [
+            2,
+            4795
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 203,
+        "EndDelay": 100.0,
+        "Params": [
+            1,
+            0.1,
+            200,
+            20,
+            -50
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Ora!",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 401,
+        "Params": [
+            2,
+            4795
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 203,
+        "EndDelay": 100.0,
+        "Params": [
+            1,
+            0.1,
+            -50
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Ora!",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 401,
+        "Params": [
+            2,
+            4795
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 203,
+        "EndDelay": 100.0,
+        "Params": [
+            1,
+            0.1,
+            100,
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Ora!",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 401,
+        "Params": [
+            2,
+            4795
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 203,
+        "EndDelay": 100.0,
+        "Params": [
+            1,
+            0.1,
+            -100
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Ora!",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 401,
+        "Params": [
+            2,
+            4795
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 203,
+        "Params": [
+            1,
+            0.1
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "Yata",
+            "Ora—",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 401,
+        "Params": [
+            2,
+            771
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab",
+            2,
+            "",
+            "",
+            33
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 511,
+        "Params": [
+            33,
+            0,
+            "0|-50|0"
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1035.jpg"
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "The load-bearing wall gives way under Yata's relentless barrage, crumbling with a thunderous crash."
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab",
+            "",
+            "",
+            33
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab"
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 201,
+        "Params": [
+            1,
+            501041,
+            1
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "When the dust settles, Yata is standing in the breach, all her six arms crackling with residual electricity. One of her hands bats away a chunk of debris flying your way, while another gives you a thumbs-up."
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 302,
+        "Params": [
+            "",
+            "Cool.",
+            197,
+            "I like this violent demolition.",
+            197
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Mm-hmm. Can't let these annoying things ruin our date—I mean our mission.",
+            1
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 401,
+        "Params": [
+            2,
+            844
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 201,
+        "Params": [
+            1,
+            501374,
+            "",
+            100,
+            -20,
+            0
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5,
+            1200,
+            -20,
+            0
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "While you talk, the shadow appears once more at the far end of the corridor fleetingly before it bolts toward the stairwell."
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 306
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 201,
+        "Params": [
+            1,
+            501041,
+            4
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "There it is. Keep up, 【kuroname】.",
+            1
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 401,
+        "EndDelay": 100.0,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 104,
+        "Params": [
+            "0|0|-200",
+            0.5
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 401,
+        "Params": [
+            2,
+            2701
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "You chase it all the way to the roof, and as you push open the final door—"
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1222.jpg"
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A breeze rushes in, and the starry sky opens up. The doll you have been chasing stops at the center of the roof before bowing slowly and going still, surrounded by dolls of all sizes that are guarding a device."
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 201,
+        "Params": [
+            1,
+            501040
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 301,
+        "Params": [
+            1,
+            "Yata",
+            "...It's the last one.",
+            1
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 401,
+        "Params": [
+            1,
+            386
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 401,
+        "Params": [
+            2,
+            4081
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The device flickers to life. A warped melody spills out of the music box, while confetti cannons on both sides go off at once."
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Bang! Streamers and heart-shaped balloons explode into the night sky, each balloon printed with tiny hearts and the words \"Happy Double Seventh Festival\"."
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab"
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 201,
+        "Params": [
+            1,
+            501040,
+            7
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 301,
+        "Params": [
+            1,
+            "Yata",
+            "What's... all this...?",
+            1
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 401,
+        "Params": [
+            2,
+            627
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "A projection bursts into view, its text flashing insistently:"
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 205,
+        "Params": [
+            1003,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront162.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 109,
+        "EndDelay": 350.0,
+        "Params": [
+            1,
+            "<size=40>Congratulations, lovebirds! You found the last surprise...\\nA giant, super-smart teddy bear that gives real hugs!\\nToday is the Double Seventh Festival, and it's been waiting just for you! Stay together and happy forever!</size>",
+            50,
+            "",
+            0,
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "Congratulations, lovebirds! You found the last surprise—a giant, super-smart teddy bear that gives real hugs! Today is the Double Seventh Festival, and it's been waiting just for you! Stay together and happy forever!"
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 110
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 205,
+        "Params": [
+            1003
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 201,
+        "Params": [
+            1,
+            501040
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Yata",
+            "So corny...",
+            1
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Yata complains quietly, her gaze unreadable."
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "There's a signature here too... Looks like it was a scheduled thing.",
+            1
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The date on the signature marks the first Double Seventh Festival after the Punishing Virus outbreak."
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Who would have come after the Punishing Virus outbreak? These dolls just kept waiting for people who were never going to show up.",
+            1
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Haunted building that only appears on the Double Seventh Festival... It's just an abandoned factory from the Golden Age.",
+            1
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "...It's just a bunch of fools who wanted to leave a blessing for couples celebrating the Double Seventh Festival.",
+            1
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 401,
+        "Params": [
+            2,
+            13081710
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The two of you go through the dolls one by one, straightening their soft, slumped bodies, patting the dust from them, and arranging them neatly beside the factory's Double Seventh Festival display."
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Once everything is in order, Yata dusts off her hands and reaches into the pile, grabbing the large doll that guided you here."
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 302,
+        "Params": [
+            "",
+            "What's with that teddy bear?",
+            253,
+            "You like it?",
+            253
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 201,
+        "Params": [
+            1,
+            501040
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 301,
+        "Params": [
+            1,
+            "Yata",
+            "Apparently this thing is supposed to give hugs... but it's out of power, so that's not happening anytime soon.",
+            1
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Pale moonlight washes over the bear, chasing away the shadows around it. Its head droops just slightly, like a childhood friend you have not seen in years, worn with time but somehow still warm."
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Yata pulls the big brown bear into her arms and rests her chin on top of its head."
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 306
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 201,
+        "Params": [
+            1,
+            501040,
+            8
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 301,
+        "Params": [
+            1,
+            "Yata",
+            "Dumb bear. Waited all these years and couldn't even give one decent hug before calling it quits.",
+            1
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She pauses. For once, she does not look away from you. And for once, the tips of her ears are slightly red."
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "So... how do I put this... I'll fill in for it. It's out of power, but I've got more than enough to spare.",
+            1
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She is still holding the bear, her chin resting on its head. With a slightly clumsy tilt of her head in your direction, she seems to be signaling you to do something."
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 302,
+        "Params": [
+            "",
+            "(Walk over and hug Yata and the bear)",
+            268,
+            "(Play dumb and stay put)",
+            269
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "NextActionId": 273,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "You walk over and reach around from the other side, drawing Yata and the brown bear into your arms."
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "...What are you standing there for? Don't leave it hanging. Get over here.",
+            1
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Before you even think about it, your legs carry you over, and you reach around from the other side, pulling Yata and the brown bear in."
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The stuffed bear is tucked snugly between the two of you, its soft body yielding gently under the pressure, as if it has finally found where it belongs between two people who are warm and real."
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Finally got itself a hug... by two people, no less. Twice the original specs. Completely off the charts.",
+            1
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "With half her face buried in the bear's head, Yata's voice comes out muffled. She hesitates for a long while before she finally reaches over with her arms and draws you in."
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "Alright, don't just hold it. Get closer to me.",
+            1
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 301,
+        "Params": [
+            "",
+            "Yata",
+            "The blessing here was late for many years... I don't want mine to be late too. Happy Double Seventh Festival, 【kuroname】.",
+            1
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "The night breeze sends the streamers drifting through the air before they land softly over the shoulders of two people and one bear. In the distance, the lights of Constellia glisten for those who are together tonight."
+        ]
+    }
+]
