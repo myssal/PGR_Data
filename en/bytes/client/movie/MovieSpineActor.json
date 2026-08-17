@@ -2050,9 +2050,7 @@
             "face_jingya",
             "face_sikao",
             "face_weixiao",
-            "face_wenrou",
-            "idle_to_AC_qs",
-            "AC_qs_to_AC_cszl"
+            "face_wenrou"
         ],
         "RoleAnims2": [
             "idle_blink",
@@ -2061,13 +2059,7 @@
             "face_jingya_blink",
             "face_sikao_blink",
             "face_weixiao_blink",
-            "face_wenrou_blink",
-            "",
-            "",
-            "",
-            "",
-            "AC_qs_to_idle_blink",
-            "AC_cszl_to_AC_qs"
+            "face_wenrou_blink"
         ],
         "KouIdleAnims": [
             "idle",
@@ -2076,8 +2068,7 @@
             "face_jingya",
             "face_sikao",
             "face_weixiao",
-            "face_wenrou",
-            "idle_to_AC_cszl"
+            "face_wenrou"
         ],
         "KouTalkAnims": [
             "idle",
@@ -2086,8 +2077,7 @@
             "face_jingya",
             "face_sikao",
             "face_weixiao",
-            "face_wenrou",
-            "AC_cszl_to_idle_blink"
+            "face_wenrou"
         ]
     },
     {
@@ -2103,9 +2093,7 @@
             "face_weixiao",
             "face_wunai",
             "face_zypj",
-            "face_beishang2",
-            "idle_to_AC_qs",
-            "AC_qs_to_AC_cszl"
+            "face_beishang2"
         ],
         "RoleAnims2": [
             "idle_blink",
@@ -2116,11 +2104,7 @@
             "face_weixiao_blink",
             "face_wunai_blink",
             "face_zypj_blink",
-            "face_beishang2_blink",
-            "",
-            "",
-            "AC_qs_to_idle",
-            "AC_cszl_to_AC_qs"
+            "face_beishang2_blink"
         ],
         "KouIdleAnims": [
             "idle",
@@ -2131,8 +2115,7 @@
             "face_weixiao",
             "face_wunai",
             "face_zypj",
-            "face_beishang2",
-            "idle_to_AC_cszl"
+            "face_beishang2"
         ],
         "KouTalkAnims": [
             "idle",
@@ -2143,8 +2126,115 @@
             "face_weixiao",
             "face_wunai",
             "face_zypj",
-            "face_beishang2",
-            "AC_cszl_to_idle"
+            "face_beishang2"
+        ]
+    },
+    {
+        "RoleId": 1021091,
+        "Name": "海岛村老妇",
+        "SpinePath": "Assets/Product/Ui/Spine/4_7_Spine/V47UIMovie_haidaocunlaotai/V47UIMovie_haidaocunlaotai.prefab",
+        "RoleAnims": [
+            "Fa/idle"
+        ],
+        "KouIdleAnims": [
+            "Mo/idle"
+        ],
+        "KouTalkAnims": [
+            "Mo/idle"
+        ]
+    },
+    {
+        "RoleId": 1021092,
+        "Name": "比安卡泳装皮",
+        "SpinePath": "Assets/Product/Ui/Spine/4_7_Spine/V47UIMovie_bianka/V47UIMovie_bianka.prefab",
+        "RoleAnims": [
+            "Fa/idle",
+            "Fa/biyanweixiao",
+            "Fa/weixiao",
+            "Fa/shengqi",
+            "Fa/biyansikao",
+            "Fa/jingya",
+            "Fa/haixiu",
+            "Fa/shishen"
+        ],
+        "RoleAnims2": [
+            "Fa/idle_blink",
+            "Fa/biyanweixiao",
+            "Fa/weixiao_blink",
+            "Fa/shengqi_blink",
+            "Fa/biyansikao",
+            "Fa/jingya_blink",
+            "Fa/haixiu_blink",
+            "Fa/shishen_blink"
+        ],
+        "KouIdleAnims": [
+            "Mo/idle",
+            "Mo/biyanweixiao",
+            "Mo/weixiao",
+            "Mo/shengqi",
+            "Mo/biyansikao",
+            "Mo/jingya",
+            "Mo/haixiu",
+            "Mo/shishen"
+        ],
+        "KouTalkAnims": [
+            "Mo/idle_blink",
+            "Mo/biyanweixiao",
+            "Mo/weixiao_blink",
+            "Mo/shengqi_blink",
+            "Mo/biyansikao",
+            "Mo/jingya_blink",
+            "Mo/haixiu_blink",
+            "Mo/shishen_blink"
+        ]
+    },
+    {
+        "RoleId": 1021093,
+        "Name": "布偶熊泳装",
+        "SpinePath": "Assets/Product/Ui/Spine/4_7_Spine/V47UIMovie_buouxiong/V47UIMovie_buouxiong.prefab",
+        "RoleAnims": [
+            "Fa/idle",
+            "Fa/weixiao",
+            "Fa/shengqi",
+            "Fa/biyan",
+            "Fa/jingya",
+            "Fa/haixiu",
+            "Fa/renzhen",
+            "Fa/sikao",
+            "Fa/lengxiao"
+        ],
+        "RoleAnims2": [
+            "Fa/idle_blink",
+            "Fa/weixiao_blink",
+            "Fa/shengqi_blink",
+            "Fa/biyan",
+            "Fa/jingya_blink",
+            "Fa/haixiu_blink",
+            "Fa/renzhen_blink",
+            "Fa/sikao_blink",
+            "Fa/lengxiao_blink"
+        ],
+        "KouIdleAnims": [
+            "Mo/idle",
+            "Mo/weixiao",
+            "Mo/shengqi",
+            "Mo/biyan",
+            "Mo/jingya",
+            "Mo/haixiu",
+            "Mo/renzhen",
+            "Mo/sikao",
+            "Mo/lengxiao"
+        ],
+        "KouTalkAnims": [
+            "Mo/idle_blink",
+            "Mo/weixiao_blink",
+            "Mo/shengqi_blink",
+            "Mo/biyan",
+            "Mo/jingya_blink",
+            "Mo/haixiu_blink",
+            "Mo/renzhen_blink",
+            "Mo/sikao_blink",
+            "Mo/lengxiao_blink"
         ]
     }
 ]

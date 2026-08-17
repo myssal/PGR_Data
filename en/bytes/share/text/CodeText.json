@@ -2137,6 +2137,16 @@
         "Text": "20012040 Item exchange quantity invalid"
     },
     {
+        "Id": 20012041,
+        "Key": "ItemTargetIdNotFoundFromItemCombine",
+        "Text": "20012041兑换道具无法在合并组找到"
+    },
+    {
+        "Id": 20012042,
+        "Key": "ItemTargetIdNotCostGem",
+        "Text": "20012042兑换道具消耗的不是黑卡"
+    },
+    {
         "Id": 20014001,
         "Key": "ArrangeManagerCalTypeFail",
         "Text": "\"Invalid ID, unable to identify the type.\""
@@ -8777,6 +8787,11 @@
         "Id": 20065007,
         "Key": "ArchiveInvalidEvaluateType",
         "Text": "20065007 Invalid Codex type"
+    },
+    {
+        "Id": 20065008,
+        "Key": "ArchiveMailNotUnlock",
+        "Text": "20065008邮件图鉴未解锁"
     },
     {
         "Id": 20066001,
@@ -29207,7 +29222,7 @@
     {
         "Id": 20427001,
         "Key": "Theatre6PvpNotOpen",
-        "Text": "诡城交锋未开启"
+        "Text": "Phantom Clash is not yet available"
     },
     {
         "Id": 20427002,
@@ -29367,137 +29382,142 @@
     {
         "Id": 20428001,
         "Key": "EnvelopeActivityNotOpen",
-        "Text": "20428001活动未开启"
+        "Text": "20428001 Event not open"
     },
     {
         "Id": 20428002,
         "Key": "EnvelopeCharacterNotFound",
-        "Text": "20428002角色配表不存在"
+        "Text": "20428002 Character config does not exist"
     },
     {
         "Id": 20428003,
         "Key": "EnvelopeListNotFound",
-        "Text": "20428003条目不存在"
+        "Text": "20428003 Entry does not exist"
     },
     {
         "Id": 20428004,
         "Key": "EnvelopeCharacterAlreadyOpened",
-        "Text": "20428004角色已开包"
+        "Text": "20428004 Character already invited"
     },
     {
         "Id": 20428005,
         "Key": "EnvelopeTicketItemNotConfigured",
-        "Text": "20428005开包券配置缺失"
+        "Text": "20428005 Voucher config missing"
     },
     {
         "Id": 20428006,
         "Key": "EnvelopeInstrumentNotFound",
-        "Text": "20428006乐器配表不存在"
+        "Text": "20428006 Instrument config does not exist"
     },
     {
         "Id": 20428007,
         "Key": "EnvelopeInstrumentNotUnlocked",
-        "Text": "20428007乐器未解锁"
+        "Text": "20428007 Instrument locked"
     },
     {
         "Id": 20428008,
         "Key": "EnvelopeCharacterNotOpened",
-        "Text": "20428008角色尚未开包"
+        "Text": "20428008 Character not yet invited"
     },
     {
         "Id": 20428009,
         "Key": "EnvelopeCharacterDuplicatedInRequest",
-        "Text": "20428009请求中存在重复角色"
+        "Text": "20428009 Duplicate characters in request"
     },
     {
         "Id": 20428010,
         "Key": "EnvelopeRequestCountExceeded",
-        "Text": "20428010请求数量超出上限"
+        "Text": "20428010 Request count exceeds limit"
     },
     {
         "Id": 20428011,
         "Key": "EnvelopeFastOpenLocked",
-        "Text": "20428011一键开包尚未解锁"
+        "Text": "20428011 Quick invite not unlocked"
     },
     {
         "Id": 20428012,
         "Key": "EnvelopeAvgAlreadyWatched",
-        "Text": "20428012角色已记录"
+        "Text": "20428012 Character already recorded"
     },
     {
         "Id": 20429001,
         "Key": "AudioPlayerSongNotFound",
-        "Text": "20429001歌曲配表不存在"
+        "Text": "20429001 Music config does not exist"
     },
     {
         "Id": 20429002,
         "Key": "AudioPlayerFavoriteSongAlreadyExists",
-        "Text": "20429002歌曲已在心选歌单中"
+        "Text": "20429002 Track already in Favorites"
     },
     {
         "Id": 20429003,
         "Key": "AudioPlayerSongLocked",
-        "Text": "20429003歌曲未解锁(无体验时间且解锁条件未满足，或体验时间已过)"
+        "Text": "20429003 Track locked (Trial expired or unlock conditions not met)"
     },
     {
         "Id": 20429004,
         "Key": "AudioPlayerFavoriteSongCountLimit",
-        "Text": "20429004心选歌单数量已达上限"
+        "Text": "20429004 Favorites playlist full"
     },
     {
         "Id": 20429005,
         "Key": "AudioPlayerFavoriteSongNotInList",
-        "Text": "20429005歌曲不在心选歌单中"
+        "Text": "20429005 Track not in Favorites"
     },
     {
         "Id": 20429006,
         "Key": "AudioPlayerBackgroundSongAlreadyExists",
-        "Text": "20429006歌曲已在背景音乐歌单中"
+        "Text": "20429006 Track already in BGM Playlist"
     },
     {
         "Id": 20429007,
         "Key": "AudioPlayerBackgroundSongNotInList",
-        "Text": "20429007歌曲不在背景音乐歌单中"
+        "Text": "20429007 Track not in BGM Playlist"
     },
     {
         "Id": 20429008,
         "Key": "AudioPlayerBackgroundSongCannotBeEmpty",
-        "Text": "20429008背景音乐歌单至少保留一首，不可删除"
+        "Text": "20429008 BGM Playlist must contain at least one track"
     },
     {
         "Id": 20429009,
         "Key": "AudioPlayerBackgroundSongMoveIndexInvalid",
-        "Text": "20429009背景音乐歌单移动目标位置非法"
+        "Text": "20429009 Invalid target position for BGM Playlist"
     },
     {
         "Id": 20429010,
         "Key": "AudioPlayerBackgroundSongAlreadyAtTop",
-        "Text": "20429010背景音乐歌单歌曲已在顶部，无法置顶"
+        "Text": "20429010 Track is already at the top"
     },
     {
         "Id": 20429011,
         "Key": "AudioPlayerBackgroundSongAlreadyAtBottom",
-        "Text": "20429011背景音乐歌单歌曲已在末位，无法下移"
+        "Text": "20429011 Track is already at the bottom"
     },
     {
         "Id": 20429012,
         "Key": "AudioPlayerBackgroundSongMoveTypeInvalid",
-        "Text": "20429012背景音乐歌单移动操作类型非法"
+        "Text": "20429012 Invalid movement type for BGM Playlist"
     },
     {
         "Id": 20429013,
         "Key": "AudioPlayerBackgroundSongDuplicateInRequest",
-        "Text": "20429013批量加入背景音乐歌单的请求中存在重复歌曲"
+        "Text": "20429013 Duplicate tracks in batch request"
     },
     {
         "Id": 20429014,
         "Key": "AudioPlayerBackgroundSongRequestEmpty",
-        "Text": "20429014批量加入背景音乐歌单的请求为空"
+        "Text": "20429014 Batch request cannot be empty"
     },
     {
         "Id": 20429015,
         "Key": "AudioPlayerBackgroundSongCountLimit",
-        "Text": "20429015背景音乐歌单数量已达上限"
+        "Text": "20429015 BGM Playlist full"
+    },
+    {
+        "Id": 20433001,
+        "Key": "RepeatChallengeMultiRewardActivityNotOpen",
+        "Text": "20433001 Pre-event bonus activity not open"
     },
     {
         "Id": 25000001,

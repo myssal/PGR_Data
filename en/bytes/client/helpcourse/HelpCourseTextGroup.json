@@ -466,13 +466,13 @@
     {
         "Id": 1021501,
         "Texts": [
-            "① 疾速追缉共有四个关卡，每个关卡拥有三个难度。"
+            "① Rapid Pursuit has four stages, and each stage offers three difficulty levels."
         ]
     },
     {
         "Id": 1021502,
         "Texts": [
-            "① 玩法默认开启困难，噩梦难度，炼狱难度需要通关<color=#0E70BD>上一难度</color>后解锁。",
+            "① Hard is available by default. Nightmare and Inferno unlock only after clearing the <color=#0E70BD>previous difficulty</color>.",
             "② Tap here to view <color=#0E70BD>enemy move details</color> for all Challenge Missions.",
             "③ Each bounty target features multiple missions that offer rewards upon completion.",
             "④ Certain difficulties are limited to specific characters."
@@ -1041,7 +1041,7 @@
         "Id": 1022401,
         "Texts": [
             "① In this mode, you use the joystick to control <color=#0E70BD>character movement</color>, while the character <color=#0E70BD>attacks automatically</color> with basic attacks.",
-            "② Attacking or defeating enemies drops Signal Orbs. Collect 3 of the same color to automatically trigger a powerful <color=#0E70BD>Signal Orb Skill</color> and enter <color=#0E70BD>Chain State</color>.",
+            "② Attacking or defeating enemies drops Signal Orbs. Collect 3 of the same color to automatically trigger a powerful <color=#0E70BD>Signal Orb Skill</color> and enter <color=#0E70BD>Combo State</color>.",
             "③ The <color=#0E70BD>Sprint</color> ability can be unlocked through <color=#0E70BD>character upgrades</color> or <color=#0E70BD>enhancement items</color>."
         ]
     },
@@ -1089,16 +1089,16 @@
             "② Penetration: Affects the number of targets that projectile skills can penetrate.",
             "③ Sprint Charge: Affects the speed at which sprint charges up.",
             "④ Knockback: Affects how far targets are knocked back when hit by basic attacks.",
-            "⑤ Chain Duration: The duration of the state when the chain stack count is at 1. The higher the chain stack count, the faster the stacks decay."
+            "⑤ Combo Duration: The duration of the state when the combo stack count is at 1. The higher the combo stack count, the faster the stacks decay."
         ]
     },
     {
         "Id": 1022407,
         "Texts": [
-            "① 沉浸态增伤：影响沉浸态期间伤害强度。",
-            "② 沉浸态护甲：沉浸态期间，受到伤害时，按一定比例减少伤害。",
-            "③ 沉浸态生命偷取：沉浸态期间，造成伤害时，回复生命的比例。",
-            "④ 自动获取范围：影响重音节拍时，自动拾取的作用范围。"
+            "① Damage Boost (Fever): Affects the damage dealt during Fever.",
+            "② Armor (Fever): Reduces incoming damage by a set percentage during Fever.",
+            "③ Lifesteal (Fever): The percentage of HP restored when dealing damage during Fever.",
+            "④ Auto Pickup Range: Affects the pickup range on accent beats."
         ]
     },
     {
@@ -1400,7 +1400,7 @@
     {
         "Id": 1011801,
         "Texts": [
-            "① Spend <color=#0E70BD>[Topology Picks]</color> to unlock stages. <color=#0E70BD>[Topology Picks]</color> can be obtained through event missions."
+            "① Use<color=#0E70BD>[Topology Picks]</color> to unlock stages. <color=#0E70BD>[Topology Picks]</color> can be obtained through event missions."
         ]
     },
     {
@@ -1408,8 +1408,7 @@
         "Texts": [
             "① Three attackable targets will pop out of the boxes. They will hide back inside the boxes after some time. Teddy: Can be defeated in 1 hit, but will <color=#0E70BD>retreat into the box early</color>, and awards a moderate number of points.",
             "② Bianca: Can be defeated in 1 hit, and awards a small number of points.",
-            "③ Boss Huhu: <color=#0E70BD>Requires multiple hits</color> to defeat, and awards a large number of points.",
-            "④ Boss Huhu: Requires <color=#0E70BD>multiple hits</color> to defeat, and awards a large number of points."
+            "③ Boss Huhu: <color=#0E70BD>Requires multiple hits</color> to defeat, and awards a large number of points."
         ]
     },
     {
@@ -1421,15 +1420,15 @@
     {
         "Id": 1011804,
         "Texts": [
-            "③ Defeating the correct targets consecutively will charge up [Jubilance]. At maximum Jubilance, you will enter a special state for a certain period of time.",
-            "③ In [Jubilance], you only need to<color=#0E70BD> defeat a correct target once</color> to <color=#0E70BD>defeat all the targets</color>, but the waiting time for all the targets is <color=#0E70BD>greatly reduced</color>.",
+            "① Defeating the correct targets consecutively will charge up [Jubilance]. At maximum Jubilance, you will enter a special state for a certain period of time.",
+            "② In [Jubilance], you only need to<color=#0E70BD> defeat a correct target once</color> to <color=#0E70BD>defeat all the targets</color>, but the waiting time for all the targets is <color=#0E70BD>greatly reduced</color>.",
             "③ Hitting <color=#0E70BD>Karenina</color> will end the [Jubilance] state early."
         ]
     },
     {
         "Id": 1011805,
         "Texts": [
-            "③ The highest points earned in every stage will be accumulated. You can collect rewards once you have met the corresponding point targets."
+            "① The highest points earned in every stage will be accumulated. You can collect rewards once you have met the corresponding point targets."
         ]
     },
     {
@@ -1490,7 +1489,7 @@
         "Texts": [
             "① Try dragging the slider to find the right frequency, the one that resonates with them!",
             "② As the resonance rate rises, scattered notes will start to converge.",
-            "③ Keep an eye on the hints here to find your target faster."
+            "③ Keep an eye on the hints to find your target faster."
         ]
     },
     {
@@ -1512,39 +1511,39 @@
     {
         "Id": 1023601,
         "Texts": [
-            "① 每日5:00会发放3张悠乐凭券，完成玩法内的每日任务、邀约任务还能获取更多悠乐凭券、专属凭券。",
-            "② 此处可以接受来自不同角色的邀约。",
-            "③ 当接受了指定数量的角色邀约后，此处会解锁乐器，点击上方按钮可以将已接受邀约的角色设置为演奏乐器的乐手。",
-            "④ 此处可以查看已接受邀约的角色图像及对应的邀约剧情。"
+            "① 3 Leisure Vouchers are issued daily at 5:00 (UTC). Complete Daily Missions and Invitation Missions in this mode to earn even more Leisure Vouchers and Exclusive Vouchers.",
+            "② Accept invitations from various characters here.",
+            "③ Once you accept a set number of character invitations, instruments will unlock here. Tap the button above to assign characters whose invitations you have accepted as performers for the instruments.",
+            "④ View the images of characters whose invitations you have accepted, along with their corresponding invitation stories here."
         ]
     },
     {
         "Id": 1023602,
         "Texts": [
-            "① 此处切换选择邀约的模式。",
-            "② 在线索邀约中，需要通过观察邀请函上的提示语，及旋转邀请函后露出的图像，来推测对应角色。移动端使用重力感应，PC端移动鼠标，均可以让邀请函旋转。",
-            "③ 点击此处可以随机一张邀请函。",
-            "④ 点击此处消耗悠乐凭券确认邀请函，并进入揭开封签的环节。在接受9次邀约后，还可以选择一键开启。"
+            "① Switch between invitation modes here.",
+            "② In Clue Invitations, infer the corresponding character by observing the hint on the invitation and the image revealed as you spin it. Spin the invitation using motion controls on mobile, or by moving your mouse on PC.",
+            "③ Tap here to draw a random invitation.",
+            "④ Tap here to spend Leisure Vouchers to confirm the invitation and proceed to open the seal. After accepting 9 invitations, you can also choose to open all at once."
         ]
     },
     {
         "Id": 1023603,
         "Texts": [
-            "① 在定向邀约中，可以直接选择未接受邀约的对应角色。",
-            "② 点击此处消耗悠乐凭券与专属凭券确认邀请函，并进入揭开封签的环节。在接受9次邀约后，还可以选择一键开启。"
+            "① In a targeted invitation, you can directly select a character whose invitation you have not yet accepted.",
+            "② Tap here to spend Leisure Vouchers and Exclusive Vouchers to confirm the invitation and proceed to open the seal. After accepting 9 invitations, you can also choose to open all at once."
         ]
     },
     {
         "Id": 1023604,
         "Texts": [
-            "① 由左往右拉开封签，即可揭晓发出邀约的角色。"
+            "① Swipe the seal from left to right to reveal the character who sent the invitation."
         ]
     },
     {
         "Id": 1023605,
         "Texts": [
-            "① 点击此处开始邀约，阅读对应剧情。",
-            "② 当完成邀约后，角色图像将会揭晓专属背景。"
+            "① Tap here to start an invitation and read the corresponding story.",
+            "② Once an invitation is complete, an exclusive background will be revealed for the character."
         ]
     }
 ]

@@ -14,30 +14,553 @@
         "Type": 401,
         "Params": [
             1,
-            36
+            12
         ]
     },
     {
         "Id": 3,
         "ActionId": 3,
-        "Type": 301,
-        "BeginAnim": "DialogEnable",
+        "Type": 310,
         "Params": [
+            "From the moment we were born, nothing but darkness surrounded us.",
             "",
             "",
-            "Placeholder_占位"
+            "",
+            5
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
+        "Type": 310,
+        "Params": [
+            "We grew used to that darkness. It was all we knew, the whole of our world.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 401,
+        "BeginDelay": 1000.0,
+        "Params": [
+            2,
+            4276
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 501,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
         "Type": 301,
-        "IsEnd": 1,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Then the project stalled, and we came under threat. And in that darkness, we suddenly saw light."
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 401,
+        "Params": [
+            2,
+            4134
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab",
+            2,
+            "",
+            "",
+            22
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 511,
+        "EndDelay": 1000.0,
+        "Params": [
+            22,
+            0,
+            "-48|0|0"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 501,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping01New.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab",
+            "",
+            "",
+            22
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping01New.prefab"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory952.png"
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping02New.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Like the birth of the universe itself, light erupted in an instant, flooding everything. We saw images."
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiheixianNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The first cell, coming to life."
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Those cells were layered together with the light, multiplying, spreading outward."
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "They kept evolving, their forms shifting endlessly, image after image, until finally, what remained...",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiheixianNew.prefab"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 502,
+        "EndDelay": 300.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 304,
+        "Params": [
+            "...was me. Crawling out of the primordial soup on unsteady limbs, turning to look back. I had a body. I had hands and feet. I had eyes.",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
+            "",
+            -2
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 304,
+        "Params": [
+            "But what was that look on my face? Why that expression?",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 304,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "And then—",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
+            "",
+            -2,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 307,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "For the first time, I knew <color=#ff4e4eff>myself</color>.",
+            0,
+            70,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "For the first time, I knew <color=#ff4e4eff>myself</color>."
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 502,
+        "Params": [
+            "AniZhuanchangBegin"
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "\"Helio\"",
+            "Abyss Passer, you've gone even deeper. I honestly didn't expect that."
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "This isn't the real Helio, just a fragment of memory. And yet—"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 301,
+        "Params": [
+            "",
+            "\"I\"",
+            "I failed. We failed."
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "Params": [
+            "",
+            "\"Helio\"",
+            "Look, I came to tell you something. I can't exactly say it to the others. It'd kill morale."
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "He doesn't answer me. He just keeps going."
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 301,
+        "Params": [
+            "",
+            "\"Helio\"",
+            "I don't think the Millennium Project is going to succeed. Not in our hands, anyway."
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 301,
+        "Params": [
+            "",
+            "\"Helio\"",
+            "That's how science works, you know? Theory and discovery come first. Then proof takes decades, or sometimes centuries."
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            "",
+            "\"Helio\"",
+            "So all those wild dreams I keep going on about, the ones everyone buys into, just so you know... we're probably going to fail."
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 301,
+        "Params": [
+            "",
+            "\"I\"",
+            "\"Helio\"."
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "Params": [
+            "",
+            "\"Helio\"",
+            "Even so, I'm going to see it through. I want the Millennium Project to connect this millennium to the next, and the one after that."
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 301,
+        "Params": [
+            "",
+            "\"Helio\"",
+            "Just like how life is handed down, built on. So that the ones who come after us..."
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "\"Helio\"",
+            "...can take our failure and use it to define their success."
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The look on Dale's face is the same as mine."
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 301,
+        "Params": [
+            "",
+            "\"I\"",
+            "Dale."
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "I try to reach out, to get closer to him. But there is no strength left in me."
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "So Dale leans down. He gathers us up in his arms."
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Dale",
+            "You're so light."
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 401,
+        "Params": [
+            2,
+            4282
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 301,
+        "IsEnd": 1,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "He murmurs it softly, and then, step by step, he walks back into the abyss."
         ]
     }
 ]

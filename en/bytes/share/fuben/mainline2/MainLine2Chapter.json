@@ -1133,7 +1133,7 @@
             "Next Chapter"
         ],
         "SkipChapterNames": [
-            "Steering By Light"
+            "<size=29>Steering By Light</size>"
         ],
         "SpineStageIndexs": [
             3,
@@ -1171,7 +1171,6 @@
         "Difficult": 1,
         "DifficultName": "NORMAL",
         "DifficultEnName": "Difficulty",
-        "ActivityTimeId": 48401,
         "ActivityCondition": 770400,
         "OpenCondition": 770400,
         "StageGroupIds": [
@@ -1231,8 +1230,9 @@
     {
         "ChapterId": 1042,
         "Difficult": 1,
-        "DifficultName": "NORMAL",
-        "DifficultEnName": "Difficulty",
+        "DifficultName": "<size=29>Steering By Light</size>",
+        "DifficultEnName": "I",
+        "DifficultColor": "#49E6FF",
         "ActivityTimeId": 49401,
         "ActivityCondition": 770400,
         "OpenCondition": 770400,
@@ -1251,20 +1251,63 @@
         ],
         "ProgressTextColors": [
             "#ffffff"
+        ],
+        "IdleSpineStageIndexs": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+        ],
+        "IdleSpineName": [
+            "Day_Blue_Cloudy_Small_Whale",
+            "Day_Blue_Cloudy_Large_Whale",
+            "Day_Red_Cloudy_Large",
+            "Night_Blue_Calm",
+            "Night_Blue_ComingRainstorm",
+            "Night_Blue_Rainstorm_Large",
+            "Day_Red_Cloudy_Large",
+            "Day_Blue_Cloudy_Calm",
+            "Night_Blue_Calm",
+            "Day_Blue_Cloudy_Large",
+            "Day_Red_Cloudy_Large",
+            "Day_Blue_Cloudy_Large"
+        ],
+        "IdleSoundName": [
+            "Day_Blue_Cloudy_Small_Whale",
+            "Day_Blue_Cloudy_Large_Whale",
+            "Day_Red_Cloudy_Large",
+            "Night_Blue_Calm",
+            "Night_Blue_ComingRainstorm",
+            "Night_Blue_Rainstorm_Large",
+            "Day_Red_Cloudy_Large",
+            "Day_Blue_Cloudy_Calm",
+            "Night_Blue_Calm",
+            "Day_Blue_Cloudy_Large",
+            "Day_Red_Cloudy_Large",
+            "Day_Blue_Cloudy_Large"
         ]
     },
     {
         "ChapterId": 1142,
-        "Difficult": 1,
-        "DifficultName": "NORMAL",
-        "DifficultEnName": "Difficulty",
-        "ActivityTimeId": 49401,
-        "ActivityCondition": 1007267,
-        "OpenCondition": 1007267,
+        "Difficult": 2,
+        "DifficultName": "<size=29>Steering By Light</size>",
+        "DifficultEnName": "II",
+        "DifficultColor": "#49E6FF",
+        "ActivityTimeId": 49402,
+        "ActivityCondition": 990419,
+        "OpenCondition": 990419,
         "StageGroupIds": [
             64
         ],
-        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor42.prefab",
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor42B.prefab",
         "BgStageIndexs": [
             1
         ],
@@ -1276,6 +1319,76 @@
         ],
         "ProgressTextColors": [
             "#ffffff"
+        ],
+        "SwitchSpineStageIndex": [
+            10
+        ],
+        "SwitchAheadSpineName": [
+            "Day_Blue_Cloudy_Calm_kalie"
+        ],
+        "IdleSpineStageIndexs": [
+            1,
+            3,
+            5,
+            8,
+            9,
+            10,
+            11
+        ],
+        "IdleSpineName": [
+            "Day_Blue_Cloudy_Large",
+            "Day_Blue_Sunny_Calm_LighthouseIsland",
+            "Day_Blue_Cloudy_Large",
+            "Day_Blue_Cloudy_Calm_FishGroup",
+            "Day_Red_Cloudy_Large_LighthouseIsland",
+            "Day_Blue_Sunny_Calm_LighthouseIsland",
+            "Day_Blue_Sunny_Calm_LighthouseIsland"
+        ],
+        "IdleSoundName": [
+            "Day_Blue_Cloudy_Large",
+            "Day_Blue_Sunny_Calm_LighthouseIsland",
+            "Day_Blue_Cloudy_Large",
+            "Day_Blue_Cloudy_Calm_FishGroup",
+            "Day_Red_Cloudy_Large_LighthouseIsland",
+            "Day_Blue_Sunny_Calm_LighthouseIsland",
+            "Day_Blue_Sunny_Calm_LighthouseIsland"
+        ],
+        "SwitchAheadSoundName": [
+            "Day_Blue_Cloudy_Calm_kalie"
+        ]
+    },
+    {
+        "ChapterId": 1242,
+        "Difficult": 3,
+        "DifficultName": "Hidden Story",
+        "DifficultColor": "#AF49FF",
+        "ActivityTimeId": 49402,
+        "ActivityCondition": 990420,
+        "OpenCondition": 990420,
+        "StageGroupIds": [
+            65
+        ],
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor42C.prefab",
+        "BgStageIndexs": [
+            1
+        ],
+        "TitleTextColors": [
+            "#ffffff"
+        ],
+        "LeftTimeTextColors": [
+            "#0f70BC"
+        ],
+        "ProgressTextColors": [
+            "#ffffff"
+        ],
+        "IdleSpineStageIndexs": [
+            6
+        ],
+        "IdleSpineName": [
+            "Day_Blue_Cloudy_Large"
+        ],
+        "IdleSoundName": [
+            "Day_Blue_Cloudy_Large"
         ]
     }
 ]

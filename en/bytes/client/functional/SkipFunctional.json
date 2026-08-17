@@ -2148,6 +2148,7 @@
         "UiName": "UiAutoWindow",
         "ParamId": 192,
         "Explain": "4.7卡列特效打脸图",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2156,6 +2157,7 @@
         "UiName": "UiAutoWindow",
         "ParamId": 193,
         "Explain": "4.7比安卡特效打脸图",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2164,6 +2166,7 @@
         "UiName": "UiAutoWindow",
         "ParamId": 194,
         "Explain": "4.6跨4.7预热打脸图",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2172,6 +2175,7 @@
         "UiName": "UiAutoWindow",
         "ParamId": 195,
         "Explain": "4.8洁塔薇联动皮打脸",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2180,6 +2184,7 @@
         "UiName": "UiAutoWindow",
         "ParamId": 196,
         "Explain": "4.7跨4.8预热打脸1",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2188,6 +2193,7 @@
         "UiName": "UiAutoWindow",
         "ParamId": 197,
         "Explain": "4.7跨4.8预热打脸2",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2196,6 +2202,7 @@
         "UiName": "UiAutoWindow",
         "ParamId": 198,
         "Explain": "4.7500卡池复刻打脸",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -2204,6 +2211,16 @@
         "UiName": "UiAutoWindow",
         "ParamId": 199,
         "Explain": "土豆兄弟打脸图",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40199,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 200,
+        "Explain": "4.7露娜涂鸦打脸图",
+        "ConditionId": 1050153,
         "IsHideFunc": true
     },
     {
@@ -12900,6 +12917,7 @@
         "Origin": 7,
         "UiName": "SkipToPartnerTeachingChapter",
         "Explain": "前往辅助机教学试玩-第三十七章",
+        "ConditionId": 1050153,
         "FunctionalId": 1801,
         "CustomParams": [
             37
@@ -21819,6 +21837,7 @@
         "UiName": "UiFavorabilityStory",
         "Explain": "Advance to Karenina's Affection Story",
         "IsRecord": true,
+        "ConditionId": 1050153,
         "CustomParams": [
             1071005
         ],
@@ -29962,7 +29981,7 @@
         "ParamId": 3,
         "Explain": "Coating Shop",
         "FunctionalId": 1001,
-        "StartTime": "2026/8/19 0:00",
+        "StartTime": "2026/9/23 23:00",
         "CustomParams": [
             1,
             0,
@@ -30004,7 +30023,8 @@
         "SkipId": 80319,
         "Origin": 10,
         "UiName": "XPBRGame",
-        "Explain": "前往活动【耀律狂潮】",
+        "Explain": "Go to the Blazing Rhapsody event.",
+        "ConditionId": 1050153,
         "FunctionalId": 10500,
         "StartTime": "2025/8/19 5:00",
         "CloseTime": "2026/9/23 5:00",
@@ -30012,6 +30032,36 @@
     },
     {
         "SkipId": 80320,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/8/19 0:00",
+        "CloseTime": "2026/9/23 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80322,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/8/19 0:00",
+        "CloseTime": "2026/9/23 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80323,
         "Origin": 6,
         "UiName": "UiPurchase",
         "Explain": "Purchase Coating Supply Pack",
@@ -31577,6 +31627,16 @@
         "FunctionalId": 10507
     },
     {
+        "SkipId": 89114,
+        "Origin": 10,
+        "UiName": "XMusicPlayer",
+        "CustomParams": [
+            1,
+            81
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 90000,
         "Origin": 6,
         "UiName": "UiShop",
@@ -32362,6 +32422,54 @@
             2,
             0,
             4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90078,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "Advance to event [Luna Pool Story].",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2001,
+            2
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90079,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "前往活动【薇拉卡池剧情】",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2002,
+            2
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90080,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "Advance to event [Karenina Pool Story]",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2003,
+            2
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90081,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "前往活动【慈悲者卡池剧情】",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2004,
+            2
         ],
         "IsHideFunc": true
     },
@@ -34836,7 +34944,7 @@
         "SkipId": 1300635,
         "Origin": 10,
         "UiName": "XPBRGame",
-        "Explain": "前往活动【耀律狂潮】",
+        "Explain": "Go to the Blazing Rhapsody event.",
         "IsRecord": true,
         "FunctionalId": 10500,
         "TimeId": 49920
@@ -34963,6 +35071,7 @@
         "Origin": 7,
         "UiName": "OpenUiPaintingExperiencePass",
         "Explain": "涂装试玩-4.8洁塔薇",
+        "ConditionId": 1050153,
         "CustomParams": [
             1
         ]
@@ -34972,6 +35081,7 @@
         "Origin": 7,
         "UiName": "OpenUiPaintingExperiencePass",
         "Explain": "涂装试玩-4.7卡列",
+        "ConditionId": 1050153,
         "CustomParams": [
             128
         ]
@@ -34981,8 +35091,19 @@
         "Origin": 7,
         "UiName": "OpenUiPaintingExperiencePass",
         "Explain": "涂装试玩-4.7比安卡",
+        "ConditionId": 1050153,
         "CustomParams": [
             125
+        ]
+    },
+    {
+        "SkipId": 1300651,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.7露娜涂鸦",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            133
         ]
     }
 ]

@@ -198,7 +198,7 @@
         "Name": "Steering By Light",
         "GroupId": 265,
         "SortId": 1,
-        "TimeId": 49401,
+        "TimeId": 49701,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMainLinev407.png",
@@ -257,7 +257,7 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuanxiv407.png",
         "ActivityTitle": "Rapid Pursuit",
-        "ActivityDes": "Requirements: Commandant Lv.42\\nEvent Info:\\n1. This event features 4 stages, each with 3 difficulty levels.\\n2. Defeat Bosses of different difficulties in bounties with the required characters.\\n3. Complete bounty missions to claim rewards.\\n",
+        "ActivityDes": "Requirements: Commandant Lv.42\\n\\nEvent Info:\\n1. This event features 4 stages, each with 3 difficulty levels.\\n2. Defeat Bosses of different difficulties in bounties with the required characters.\\n3. Complete bounty missions to claim rewards.",
         "Params": [
             89093
         ],
@@ -273,17 +273,17 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDifficultv407.png",
         "ActivityTitle": "Waves in Wrath",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. There are a total of 6 difficulty levels, all of which are highly challenging with [Tavis Spelmin] being your formidable enemy.\\n2. All members will be reset once knocked out during the challenge, making the challenge easier to complete.\\n3. Each stage has its own 3-star clearance conditions. Collectibles will be rewarded once you have earned a total of 3 stars. The more stars you earn, the higher the quality of the collectibles will be.",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. There are a total of 5 difficulty levels, all of which are highly challenging with [Mannan M-1A] being your formidable enemy.\\n2. All members will be reset once knocked out during the challenge, making the challenge easier to complete.\\n3. Each stage has its own 3-star clearance conditions. Collectibles will be rewarded once you have earned a total of 3 stars. The more stars you earn, the higher the quality of the collectibles will be.",
         "Params": [
             11724
         ],
-        "ConditionId": 1050141
+        "ConditionId": 772200
     },
     {
         "Id": 405,
         "Name": "Omniframe Target",
         "GroupId": 265,
-        "SortId": 6,
+        "SortId": 7,
         "TimeId": 49702,
         "ActivityType": 3,
         "ActivityBgType": 1,
@@ -293,13 +293,14 @@
         "Params": [
             7209
         ],
-        "ConditionId": 770402
+        "ConditionId": 770402,
+        "ShowBeginTime": "After the update on 2026-08-19"
     },
     {
         "Id": 406,
         "Name": "CUB Target",
         "GroupId": 265,
-        "SortId": 7,
+        "SortId": 8,
         "TimeId": 49702,
         "ActivityType": 3,
         "ActivityBgType": 1,
@@ -309,13 +310,14 @@
         "Params": [
             7212
         ],
-        "ConditionId": 770402
+        "ConditionId": 770402,
+        "ShowBeginTime": "After the update on 2026-08-19"
     },
     {
         "Id": 407,
         "Name": "New Coating - Blazing Rhythm",
         "GroupId": 265,
-        "SortId": 8,
+        "SortId": 9,
         "TimeId": 49704,
         "ActivityType": 3,
         "ActivityBgType": 1,
@@ -332,7 +334,7 @@
         "Id": 408,
         "Name": "New Coating - Sunlit Tides",
         "GroupId": 265,
-        "SortId": 9,
+        "SortId": 10,
         "TimeId": 49704,
         "ActivityType": 3,
         "ActivityBgType": 1,
@@ -349,13 +351,13 @@
         "Id": 409,
         "Name": "Tactical Assessment Manual",
         "GroupId": 265,
-        "SortId": 10,
-        "TimeId": 49703,
+        "SortId": 11,
+        "TimeId": 49904,
         "ActivityType": 3,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBPCommon.png",
         "ActivityTitle": "Tactical Assessment Manual",
-        "ActivityDes": "Requirements: \\nCommandant Lv.40\\nEvent Info:\\n1. Accumulate Intel Value by completing the Rating Missions of the Daily, the Round, and the current Intel Manual.\\n2. Raise the Rating Level by reaching the required Intel Value.\\n3. You will obtain the corresponding reward upon reaching the required Rating Level.\\n4. You can also purchase additional Intel to get better rewards.",
+        "ActivityDes": "Requirements: \\nCommandant Lv.40\\nEvent Info:\\n1. Complete Daily, Round, and Manual Missions to gain Intel Value.\\n2. Raise the Rating Level by reaching the required Intel Value.\\n3. You will obtain the corresponding reward upon reaching the required Rating Level.\\n4. You can also purchase additional Intel to get better rewards.",
         "Params": [
             20171
         ],
@@ -367,7 +369,7 @@
         "Name": "Breakers Resurfaced",
         "GroupId": 266,
         "SortId": 1,
-        "TimeId": 49702,
+        "TimeId": 49924,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterTryv407.png",
@@ -385,12 +387,12 @@
         "Name": "Adaptation Fitting - Patrick",
         "GroupId": 267,
         "SortId": 1,
-        "TimeId": 49702,
+        "TimeId": 49103,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerTryv407.png",
         "ActivityTitle": "Adaptation Fitting - Patrick",
-        "ActivityDes": "Requirements: Commandant Lv.61.",
+        "ActivityDes": "Requirements: Commandant Lv.61",
         "Params": [
             7107,
             752
@@ -408,12 +410,12 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharaUp.png",
         "ActivityTitle": "Character Leap - Pyroath",
-        "ActivityDes": "Requirements:\\nCommandant Lv.61\\n\\n\\nEvent Info:\\nComplete the tutorial stage and experience the changes brought by the Leap.",
+        "ActivityDes": "Requirements:\\nClear Normal Story 1-8\\n\\nEvent Info:\\nComplete the tutorial stage and experience the changes brought by the leap.",
         "Params": [
-            20293,
+            20392,
             753
         ],
-        "ConditionId": 8006,
+        "ConditionId": 774501,
         "ShowBeginTime": "After the update on 2026-08-19",
         "ShowEndTime": "Permanent"
     },
@@ -456,7 +458,7 @@
     {
         "Id": 415,
         "Name": "Tainted Moonrise",
-        "GroupId": 271,
+        "GroupId": 273,
         "SortId": 1,
         "TimeId": 49501,
         "ActivityType": 1,
@@ -465,16 +467,15 @@
         "ActivityTitle": "Tainted Moonrise",
         "ActivityDes": "Info: During the event, [Tainted Moonrise] can be obtained through \"main interface - Tainted Moonrise\" Coating Research Event for a limited time.",
         "Params": [
-            90033,
+            90069,
             756
         ],
-        "ConditionId": 1050375,
-        "ShowBeginTime": "2026/8/26 10:00"
+        "ConditionId": 1050115
     },
     {
         "Id": 416,
         "Name": "Grandiose Glamor",
-        "GroupId": 272,
+        "GroupId": 274,
         "SortId": 1,
         "TimeId": 49501,
         "ActivityType": 1,
@@ -483,16 +484,15 @@
         "ActivityTitle": "Grandiose Glamor",
         "ActivityDes": "Info: During the event, [Grandiose Glamor] can be obtained through \"main interface - Grandiose Glamor\" Coating Research Event for a limited time.",
         "Params": [
-            90033,
+            90070,
             757
         ],
-        "ConditionId": 1050375,
-        "ShowBeginTime": "2026/8/26 10:00"
+        "ConditionId": 1050115
     },
     {
         "Id": 426,
         "Name": "Neon Dynamite",
-        "GroupId": 273,
+        "GroupId": 275,
         "SortId": 1,
         "TimeId": 49501,
         "ActivityType": 1,
@@ -501,16 +501,15 @@
         "ActivityTitle": "Neon Dynamite",
         "ActivityDes": "Info: During the event, [Neon Dynamite] can be obtained through \"main interface - Neon Dynamite\" Coating Research Event for a limited time.",
         "Params": [
-            90033,
+            90071,
             758
         ],
-        "ConditionId": 1050375,
-        "ShowBeginTime": "2026/8/26 10:00"
+        "ConditionId": 1050115
     },
     {
         "Id": 427,
         "Name": "Nightfall Finale",
-        "GroupId": 274,
+        "GroupId": 276,
         "SortId": 1,
         "TimeId": 49501,
         "ActivityType": 1,
@@ -519,11 +518,10 @@
         "ActivityTitle": "Nightfall Finale",
         "ActivityDes": "Info: During the event, [Nightfall Finale] can be obtained through \"main interface - Nightfall Finale\" Coating Research Event for a limited time.",
         "Params": [
-            90033,
+            90072,
             759
         ],
-        "ConditionId": 1050375,
-        "ShowBeginTime": "2026/8/26 10:00"
+        "ConditionId": 1050115
     },
     {
         "Id": 417,
@@ -572,5 +570,58 @@
             20091,
             747
         ]
+    },
+    {
+        "Id": 429,
+        "Name": "Drift Into Summer",
+        "GroupId": 271,
+        "SortId": 1,
+        "TimeId": 49105,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseTeddyEffectCoatingv407.png",
+        "ActivityTitle": "Drift Into Summer",
+        "ActivityDes": "New Coating:\\nOmniframe [Teddy: Spectre] Coating: [Drift Into Summer]",
+        "Params": [
+            10035,
+            760
+        ],
+        "ConditionId": 770400,
+        "ShowBeginTime": "After the update on 2026-08-19"
+    },
+    {
+        "Id": 430,
+        "Name": "Graffiti Code",
+        "GroupId": 272,
+        "SortId": 1,
+        "TimeId": 49111,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLunaEffectCoatingv407.png",
+        "ActivityTitle": "Graffiti Code",
+        "ActivityDes": "Coating Rerun:\\nOmniframe [Luna: Oblivion] Coating: [Graffiti Code]",
+        "Params": [
+            10035,
+            761
+        ],
+        "ConditionId": 770400,
+        "ShowBeginTime": "After the update on 2026-08-19"
+    },
+    {
+        "Id": 431,
+        "Name": "Love's Leisure Hour",
+        "GroupId": 265,
+        "SortId": 6,
+        "TimeId": 49201,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiEnvelopeGuessingSpecialInvitationBg3.png",
+        "ActivityTitle": "Love's Leisure Hour",
+        "ActivityDes": "[Requirements]:\\nCommandant Lv.40\\n[Event Info]:\\n1. The event features 40 invitations from different characters. Study the hints on each invitation and the image revealed by rotating it to identify the sender.\\n2. You will receive 3 Leisure Vouchers daily to accept invitations. Complete event missions to earn more Leisure Vouchers and Exclusive Vouchers.\\n3. Accept an Invitation to reveal the character's full artwork and unlock their corresponding Invitation Story.\\n4. Read the story to unveil the exclusive background behind the artwork.",
+        "Params": [
+            89113
+        ],
+        "ConditionId": 774800,
+        "ShowBeginTime": "After the update on 2026-08-19"
     }
 ]

@@ -142,7 +142,7 @@
     {
         "Id": 50301,
         "Priority": 50301,
-        "Desc": "Complete 1-4 Guide: Member Evolution",
+        "Desc": "Complete 1-4 Guide: Lucia Upgrade (Originally Lucia Skill Upgrade)",
         "GuideType": 1,
         "ConditionId": [
             70103
@@ -167,7 +167,7 @@
     {
         "Id": 50611,
         "Priority": 50611,
-        "Desc": "Complete 1-6 Guide: Beginner Target",
+        "Desc": "Complete 1-4 Guide: Thunderbolt Manual",
         "GuideType": 1,
         "ConditionId": [
             70103,
@@ -1372,7 +1372,7 @@
         "Id": 53002,
         "Priority": 53002,
         "Ignore": 1,
-        "Desc": "Guide: Virtual Horizon",
+        "Desc": "Guide Virtual Horizon",
         "GuideType": 1,
         "ConditionId": [
             862112,
@@ -2382,7 +2382,7 @@
         "Id": 60001,
         "Priority": 60001,
         "Ignore": 1,
-        "Desc": "Guide - Plum Snow Interface",
+        "Desc": "Guide: Plum Snow Interface",
         "GuideType": 1,
         "ConditionId": [
             862112,
@@ -6866,7 +6866,7 @@
     {
         "Id": 63030,
         "Priority": 63030,
-        "Desc": "v2.13 Guide: Mine New Weather Affix",
+        "Desc": "v2.13 Guide Mine New Weather  Affix",
         "GuideType": 1,
         "ConditionId": [
             862112,
@@ -11884,5 +11884,35 @@
         "CompleteId": 64923,
         "ActiveUi": "UiEnvelopeGuessingMain",
         "GroupId": 64923
+    },
+    {
+        "Id": 64931,
+        "Priority": 64931,
+        "Desc": "v4.7 主线断章提醒（海外专用）",
+        "GuideType": 1,
+        "ConditionId": [
+            863179,
+            863180,
+            863181,
+            863182
+        ],
+        "CompleteId": 64931,
+        "ActiveUi": "UiNewFuben|UiActivityBriefBase",
+        "GroupId": 64931
+    },
+    {
+        "Id": 64932,
+        "Priority": 64932,
+        "Desc": "v4.7 主线断章提醒空引导（海外专用）",
+        "GuideType": 1,
+        "ConditionId": [
+            863179,
+            863180,
+            863181,
+            863183
+        ],
+        "CompleteId": 64932,
+        "ActiveUi": "UiMainLine2Chapter",
+        "GroupId": 64932
     }
 ]

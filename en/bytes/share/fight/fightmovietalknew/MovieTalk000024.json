@@ -2,9 +2,9 @@
     {
         "Type": 1,
         "UiType": 1,
-        "Name": "梁爽",
+        "Name": "Liang Shuang",
         "Icon": 1,
-        "Text": "MovieTalk表-梁爽",
+        "Text": "MovieTalk Table - Liang Shuang",
         "Duration": 0
     },
     {
@@ -12,7 +12,7 @@
         "Type": 3,
         "UiType": 1,
         "Name": "Placeholder",
-        "Text": "这是一句占位台词",
+        "Text": "Placeholder",
         "Duration": 99
     },
     {
@@ -21,7 +21,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "我已经进来了，看上去这里确实进入了战备状态下的全封锁模式……指挥官，我该往哪里走?",
+        "Text": "I'm in. The whole place is sealed under combat lockdown... Commandant, where do I go from here?",
         "Duration": 99
     },
     {
@@ -30,7 +30,7 @@
         "UiType": 1,
         "Name": "Commandant",
         "Icon": 500678,
-        "Text": "根据里破译的坐标，全域中控中心在你的右前方，战备状态下，只会留下一个正常出入口。",
+        "Text": "Based on the coordinates Lee decrypted, the central control is ahead on your right. In combat lockdown, only one normal entrance stays open.",
         "Duration": 99
     },
     {
@@ -39,7 +39,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "往这边走对吧?",
+        "Text": "This way, right?",
         "Duration": 99
     },
     {
@@ -48,7 +48,7 @@
         "UiType": 1,
         "Name": "Commandant",
         "Icon": 500678,
-        "Text": "协议说明里写了，芬里尔节点的防护等级是最高的，要顺利覆盖旧协议、不节外生枝，必须避免触发系统的安防自检。",
+        "Text": "The protocol says the Fenrir node has the highest security level. If we want to override the old protocol cleanly, we need to avoid triggering a security self-check.",
         "Duration": 99
     },
     {
@@ -57,7 +57,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "知道知道，我会很小心的——",
+        "Text": "Yeah, yeah. I'll be careful—",
         "Duration": 99
     },
     {
@@ -66,8 +66,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "嗯?是警示灯，过不去了……我没走错呀?",
-        "Duration": 99
+        "Text": "Huh? Warning lights... the path is blocked. But I didn't go the wrong way, did I?",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470007,
@@ -75,8 +82,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "唯一入口是吧……那只好用一点强硬手段——",
-        "Duration": 99
+        "Text": "So much for the only entrance... Guess I'll have to force my way through—",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470008,
@@ -84,9 +98,13 @@
         "UiType": 1,
         "Name": "Commandant",
         "Icon": 500678,
-        "Text": "卡列尼娜，我们不是要尽量避免暴力破坏、避免系统进入自检吗?",
+        "Text": "Karenina, aren't we supposed to avoid damage so the system doesn't start a self-check?",
         "Duration": 99,
         "Params": [
+            1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -96,9 +114,13 @@
         "UiType": 1,
         "Name": "Commandant",
         "Icon": 500678,
-        "Text": "首先，禁止重破锤，其次，禁止爆炸物，最后，禁止“拆开来看看就好了!”",
+        "Text": "First, no Blast Hammer. Second, no explosives. And third, no \"let's just take it apart and see!\"",
         "Duration": 99,
         "Params": [
+            1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -108,8 +130,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "这可不是你的语气，是哪个家伙说的!",
-        "Duration": 99
+        "Text": "That doesn't sound like you. Who wrote that?",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470011,
@@ -117,9 +146,13 @@
         "UiType": 1,
         "Name": "Commandant",
         "Icon": 500678,
-        "Text": "布偶熊写在注释里的。",
+        "Text": "Teddy put it in the notes.",
         "Duration": 99,
         "Params": [
+            1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -129,8 +162,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "注释不是给她放这些乱七八糟东西的地方。好了好了，我知道了……指挥官，你先把能源调度终端的位置标出来。",
-        "Duration": 99
+        "Text": "Notes are not for dumping random nonsense. Fine, fine, I get it... Commandant, mark the power distribution terminal first.",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470013,
@@ -138,8 +178,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "芬里尔节点的能源调配方式，和其他地方的应该差不多，根据调配比例和线路，我可以反推出前往全域中控的其他入口。",
-        "Duration": 99
+        "Text": "The Fenrir node's power distribution should work like the other areas. If I check the power flow and the lines, I can trace another way into central control.",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470014,
@@ -147,8 +194,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "不就是手段柔和一点，另辟蹊径嘛。我只是平时懒得发挥罢了……我可是很聪明的。",
-        "Duration": 99
+        "Text": "Basically, we're taking a softer approach and finding another way around. I just don't usually bother showing off... but I am smart, you know.",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470015,
@@ -156,8 +210,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "就是这里，不过得先拿到一点权限，才能查看能源结构。",
-        "Duration": 99
+        "Text": "This is it. But I need a bit of access first before I can read the power layout.",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470016,
@@ -165,9 +226,13 @@
         "UiType": 1,
         "Name": "Commandant",
         "Icon": 500678,
-        "Text": "一点权限?",
+        "Text": "A bit of access?",
         "Duration": 99,
         "Params": [
+            1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -177,8 +242,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "不用担心，既然我们需要覆盖旧协议，获得权限就是第一个要解决的问题，所以……",
-        "Duration": 99
+        "Text": "Don't worry. If we're overriding the old protocol, getting access was always the first problem to solve. So...",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470018,
@@ -186,8 +258,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "只要在这里输入……就能唤起布偶熊预设在协议里的“代理人”。",
-        "Duration": 99
+        "Text": "If I enter this here... it should wake the \"agent\" Teddy built into the protocol.",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470019,
@@ -198,6 +277,10 @@
         "Text": "Teddy?",
         "Duration": 99,
         "Params": [
+            1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -207,18 +290,29 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "只是个ai程序形象啦。好了，快动手吧，把权限抢过来。",
-        "Duration": 99
+        "Text": "It's just an AI avatar. Come on, let's move. We're taking that access.",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470021,
         "Type": 1,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "我应该在中控中心输入，而不是这里。这是能源调度终端，理论上，需要多花费7倍左右的时间——",
+        "Text": "This should be entered at central control, not here. This is only a power distribution terminal. In theory, this will take about seven times longer—",
         "Duration": 99,
         "Params": [
+            1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -228,8 +322,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "别管啦别管啦，勇敢熊熊不怕困难，上!",
-        "Duration": 99
+        "Text": "Doesn't matter! Brave little bear fears no challenge. Go!",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470023,
@@ -237,7 +338,7 @@
         "UiType": 1,
         "Name": "Commandant",
         "Icon": 500678,
-        "Text": "警报响了?卡列，小心!",
+        "Text": "An alarm? Karenina, watch out!",
         "Duration": 99,
         "Params": [
             1
@@ -249,16 +350,16 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "是敌袭，那些感染体摸过来了，我挡住它们……布偶熊，你快一点。",
+        "Text": "Enemy attack. The Corrupted are closing in. I'll hold them off... Teddy, hurry up.",
         "Duration": 99
     },
     {
         "Id": 470025,
         "Type": 3,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "首先，我不是布偶熊；其次——“别管啦别管啦，勇敢卡列不怕困难，上!”",
+        "Text": "First, I am not Teddy. Second—\"Doesn't matter! Brave Karenina fears no challenge. Go!\"",
         "Duration": 99,
         "Params": [
             1
@@ -270,16 +371,16 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "搞定，你搞定了吗?",
+        "Text": "Done. What about you?",
         "Duration": 99
     },
     {
         "Id": 470027,
         "Type": 3,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "搞定，比你早一点搞定。",
+        "Text": "Done. A little earlier than you, actually.",
         "Duration": 99
     },
     {
@@ -288,18 +389,29 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "这是什么?为什么还要解锁?",
-        "Duration": 99
+        "Text": "What is this? Why is there another lock?",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470029,
         "Type": 1,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "我只是个预设的协议覆盖安装流程，可没附赠什么额外的解密破译服务。",
+        "Text": "I'm only a preset protocol override routine. Extra decryption services were not included.",
         "Duration": 99,
         "Params": [
+            1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -307,10 +419,17 @@
         "Id": 470030,
         "Type": 1,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "自己打开吧。很简单的，弱得就像你的终端防火墙一样。",
-        "Duration": 99
+        "Text": "Open it yourself. It's easy. About as weak as your terminal firewall.",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470031,
@@ -318,18 +437,29 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "不要以为你是ai我就对你没办法啊!",
-        "Duration": 99
+        "Text": "Don't think I can't do anything to you just because you're an AI!",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470032,
         "Type": 1,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "啧，不会是害怕了吧。",
+        "Text": "Tsk. Don't tell me you're scared.",
         "Duration": 99,
         "Params": [
+            1,
+            "",
+            "",
+            "",
             1
         ]
     },
@@ -339,8 +469,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "来就来!",
-        "Duration": 99
+        "Text": "Bring it on!",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470034,
@@ -348,16 +485,16 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "哼哼，这种程度的小把戏——",
+        "Text": "Hmph. A little trick like this—",
         "Duration": 99
     },
     {
         "Id": 470035,
         "Type": 3,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "友情提醒，感染体正在围剿各个功能单位，建议你跑快点。",
+        "Text": "Friendly reminder: The Corrupted are surrounding multiple functional units. You might want to run.",
         "Duration": 99,
         "Params": [
             1
@@ -369,7 +506,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "现在才想起来提醒?谢、谢、您、了。",
+        "Text": "You're only telling me now? Thanks. A. Lot.",
         "Duration": 99
     },
     {
@@ -378,7 +515,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "从这个分配比重分析，中控中心应该就在全视监控大厅的正下方一层。",
+        "Text": "Based on this power distribution, central control should be one floor directly below the surveillance hall.",
         "Duration": 99
     },
     {
@@ -387,7 +524,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "顺着能源调度线路就能找到全视大厅，这边……直走!",
+        "Text": "Follow the power lines, and we'll reach the surveillance hall. This way... straight ahead!",
         "Duration": 99
     },
     {
@@ -396,7 +533,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "呼……还没到，真不是人走的路。",
+        "Text": "Phew... still not there. This route was definitely not made for people.",
         "Duration": 99
     },
     {
@@ -405,7 +542,7 @@
         "UiType": 1,
         "Name": "Commandant",
         "Icon": 500678,
-        "Text": "累了吗?坚持一下……",
+        "Text": "Are you tired? Just a little farther...",
         "Duration": 99
     },
     {
@@ -414,7 +551,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "我可没有在喊累。",
+        "Text": "I never said I was tired.",
         "Duration": 99
     },
     {
@@ -423,7 +560,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "我的意思是……这是能源调配的线路，不是供人通行的路线规划。",
+        "Text": "I mean this is a power route... not a walking path.",
         "Duration": 99
     },
     {
@@ -441,7 +578,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "真的就在下一层……这么简单。",
+        "Text": "It's really just one floor down... that's it.",
         "Duration": 99
     },
     {
@@ -450,7 +587,7 @@
         "UiType": 1,
         "Name": "Commandant",
         "Icon": 500678,
-        "Text": "What's wrong?",
+        "Text": "Is something wrong?",
         "Duration": 99
     },
     {
@@ -459,7 +596,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "感染体追过来了，阴魂不散。",
+        "Text": "The Corrupted caught up. They really don't give up.",
         "Duration": 99
     },
     {
@@ -468,7 +605,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "一堆杂鱼。中控中心不会也藏着一堆吧，我可不想跳下去的时候一脚踩谁脸上，打起来再弄坏点什么。",
+        "Text": "Just small fry. I hope central control isn't full of them too... Last thing I need is dropping in, stepping on someone's face, and wrecking the place on the way down.",
         "Duration": 99
     },
     {
@@ -477,8 +614,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "那个长得和布偶熊一样的ai，脾气也臭得和布偶熊本人一样，最好是别给她理由叨叨我。",
-        "Duration": 99
+        "Text": "That AI looks like Teddy and has the same nasty temper too. Better not give her a reason to nag me.",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470049,
@@ -486,8 +630,15 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "指挥官， 我先用全视中心的无人机巡察一圈。",
-        "Duration": 99
+        "Text": "Commandant, I'll use the surveillance center drones to sweep the area first.",
+        "Duration": 99,
+        "Params": [
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
     },
     {
         "Id": 470050,
@@ -495,7 +646,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "那边、那边、还有那边——藏得挺好。可惜了，逃不过我预判~",
+        "Text": "There, there, and there. Nice hiding spots. Too bad I saw them coming.",
         "Duration": 99
     },
     {
@@ -504,7 +655,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "指挥官，我找到了。",
+        "Text": "Commandant, I found it.",
         "Duration": 99
     },
     {
@@ -513,16 +664,16 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "中控终端，输入……",
+        "Text": "Central control terminal. Entering...",
         "Duration": 99
     },
     {
         "Id": 470053,
         "Type": 3,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "开始覆盖协议——",
+        "Text": "Beginning protocol override—",
         "Duration": 99,
         "Params": [
             1
@@ -534,16 +685,16 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "进度条可以跑快一点吗?",
+        "Text": "Can this progress bar move any faster?",
         "Duration": 99
     },
     {
         "Id": 470055,
         "Type": 3,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "不要说些为难ai的话。",
+        "Text": "Please don't ask an AI to do the impossible.",
         "Duration": 99,
         "Params": [
             1
@@ -555,16 +706,16 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "好慢，好慢，好慢好慢，一会那堆杂鱼该察觉了。",
+        "Text": "Too slow. Too slow! Those small fry are going to notice any second.",
         "Duration": 99
     },
     {
         "Id": 470057,
         "Type": 3,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "您好，这里是布偶熊预设代理服务，正在为您覆盖旧有协议，需要您的耐心等待，按1请闭嘴，按2请消失，按3回到第1项。",
+        "Text": "Hello. You have reached Teddy's preset proxy service. Your old protocol is being overridden. Please wait patiently. Press 1 to be quiet, press 2 to disappear, or press 3 to return to option 1.",
         "Duration": 99,
         "Params": [
             1
@@ -583,9 +734,9 @@
         "Id": 470059,
         "Type": 3,
         "UiType": 1,
-        "Name": "布偶熊AI",
+        "Name": "Teddy AI",
         "Icon": 501216,
-        "Text": "加速服务仅供会员使用，请问您需要升级会员吗?为工程部队副队长处理十年杂务即可。",
+        "Text": "Speed-up service is for members only. Would you like to upgrade? All it takes is ten years of errands for the Engineering Force vice-captain.",
         "Duration": 99,
         "Params": [
             1
@@ -597,7 +748,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "不要以为我对ai没办法啊!",
+        "Text": "Don't think I can't deal with an AI!",
         "Duration": 99
     },
     {
@@ -606,7 +757,7 @@
         "UiType": 1,
         "Name": "Karenina",
         "Icon": 501232,
-        "Text": "——回头再跟你算账!",
+        "Text": "I'll settle this with you later!",
         "Duration": 99
     }
 ]

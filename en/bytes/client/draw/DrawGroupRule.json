@@ -130,7 +130,7 @@
     },
     {
         "Id": 11,
-        "TitleCN": "Themed Character",
+        "TitleCN": "Themed Construct",
         "TitleEN": "Standard Mode",
         "RareRank": 2,
         "MainRules": [
@@ -145,7 +145,7 @@
         "BaseRules": [
             "Guaranteed to receive an A-Rank or above Omniframe for every 10 research attempts.",
             "Guaranteed to receive an S-Rank Omniframe for every 60 research attempts.",
-            "The guarantee is inherited between the same type of pools. For example, after an [Arrival Construct Pool] has ended, its guarantee progress will be inherited by the next [Arrival Construct Pool]. [Inverse Crown Event Construct Pool] is considered a Phylotree Nexus research pool and shares guarantee progress with both [Themed Construct Pool] and [Phylotree Nexus Rerun Pool]."
+            "The guarantee is inherited between the same type of pools. For example, after an [Arrival Construct Pool] has ended, its guarantee progress will be inherited by the next [Arrival Construct Pool]."
         ],
         "EventRuleTitles": [
             "Rate in S-Rank pool:"
@@ -162,7 +162,7 @@
             "Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>"
         ],
         "IsCharacterImage": 1,
-        "DrawName": "THEMED\n  RESEARCH",
+        "DrawName": "Themed Research",
         "DrawGroupName": "NORMAL"
     },
     {
@@ -317,7 +317,7 @@
             "Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>"
         ],
         "IsCharacterImage": 1,
-        "DrawName": "命运主题研发",
+        "DrawName": "Fate Themed Research",
         "DrawGroupName": "FATE"
     },
     {
@@ -536,9 +536,9 @@
             "Research Pool Inheritance Rules"
         ],
         "BaseRules": [
-            "Select 1 CUB to pull. Selected target gains increased chances.",
+            "Select 1 CUB for research. The drop rate for the selected CUB will be increased.",
             "Select a CUB in Target Mode for greatly increased chances.",
-            "In the CUB Target Pool, the guaranteed attempt of pulling A-Rank and S-Rank CUBs will not be affected when you change your targeted CUB, which means the guarantee progress is inherited."
+            "Changing your targeted CUB in the CUB Target Pool will not reset your guarantee progress. The guarantee counts for A-Rank and S-Rank CUBs will be retained."
         ],
         "EventRuleTitles": [
             "Rate in S-Rank pool:"

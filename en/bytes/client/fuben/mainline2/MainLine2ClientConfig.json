@@ -260,5 +260,21 @@
         "Params": [
             7000234
         ]
+    },
+    {
+        "Key": "AutoSwitchChapterDirectTriggerIds",
+        "Note": "章节直跳触发章节ChapterId组(与目标组同下标对应)",
+        "Params": [
+            1042,
+            1142
+        ]
+    },
+    {
+        "Key": "AutoSwitchChapterDirectTargetIds",
+        "Note": "章节直跳目标章节ChapterId组(与触发组同下标对应)",
+        "Params": [
+            1142,
+            1242
+        ]
     }
 ]

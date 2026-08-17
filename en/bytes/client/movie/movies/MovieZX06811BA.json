@@ -2,15 +2,547 @@
     {
         "Id": 1,
         "ActionId": 1,
-        "Type": 101,
-        "BeginAnim": "AniZhuanchangEnd",
+        "Type": 501,
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            3
         ]
     },
     {
         "Id": 2,
         "ActionId": 2,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory691.jpg"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 401,
+        "Params": [
+            1,
+            210
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 201,
+        "Params": [
+            1,
+            501767,
+            1,
+            -400
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 201,
+        "Params": [
+            2,
+            500969,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Cordelia",
+            "It's going to be forever and ever and ever before we can see each other again. You're not gonna miss me at all?",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "Params": [
+            "",
+            "???",
+            "...Aren't you the one who sent in my application and resume?",
+            2
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "And? It's perfect. You can bury yourself in research. No more navigating all that social nonsense you hate. You'll be with people who actually get you, doing what you actually enjoy.",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "And... no one's going to give you a hard time for being Kalon's student anymore.",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 301,
+        "Params": [
+            "",
+            "???",
+            "Honestly... I never really noticed any of that.",
+            2
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Of course you didn't. The only thing in the world you care about is science.",
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "If you ever had to weigh me against the truth on some cosmic scale, you'd pick your big, shiny truth without blinking. Admit it!",
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 301,
+        "Params": [
+            "",
+            "???",
+            "...",
+            2
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "?",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Hey! What does that silence mean?! You're supposed to lie to me right now! Even as a joke! Just once!",
+            1
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Ugh, forget it. You really are perfect for that place.",
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "You're going to meet so many people who like you there.",
+            1
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "Params": [
+            "",
+            "???",
+            "Atlantis?",
+            2
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory936.png"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 201,
+        "Params": [
+            1,
+            501761,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            1,
+            "Larsen",
+            "Atlantis.",
+            1
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Larsen spoke his conclusion again."
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "The classified order gave us exact coordinates for Atlantis.",
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "From what I've heard, it's basically a city at sea. A research base like that has to have the comms equipment we need.",
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 401,
+        "Params": [
+            2,
+            4327
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 201,
+        "Params": [
+            2,
+            501754,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Lyndae",
+            "Given the size of a city-level population, their supply reserves should be significant.",
+            2
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 201,
+        "Params": [
+            1,
+            501666,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lumi",
+            "A research base like that... then they'd have advanced medical facilities! We could treat the wounded properly.",
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 202,
+        "Params": [
+            2,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 201,
+        "Params": [
+            2,
+            501746,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Onni",
+            "Probably some decent cigarettes too...",
+            2
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 201,
+        "Params": [
+            1,
+            501761,
+            2,
+            400
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "Params": [
+            1,
+            "Larsen",
+            "We have the coordinates. We have the submersible route. We can take the survivors to Atlantis. Then we'll definitely—",
+            1
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 402,
+        "Params": [
+            4327
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
         "Type": 401,
         "Params": [
             1,
@@ -18,26 +550,7623 @@
         ]
     },
     {
-        "Id": 3,
-        "ActionId": 3,
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            5
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "—Get sunk before we get close.",
+            1
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "In the grip of extreme hardship, a lone soul was prone to despair."
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "With more voices gathered, that very despair could swing toward reckless hope."
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 401,
+        "Params": [
+            1,
+            381
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory936.png",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 201,
+        "Params": [
+            15,
+            501756,
+            "",
+            100,
+            -100,
+            -50
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 201,
+        "Params": [
+            16,
+            501754,
+            "",
+            -300
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 201,
+        "Params": [
+            17,
+            501666,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 201,
+        "Params": [
+            1,
+            501746,
+            4,
+            -700,
+            -50
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 201,
+        "Params": [
+            2,
+            501761,
+            "",
+            980,
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 104,
+        "Params": [
+            "0|0|-200",
+            2,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 203,
+        "Params": [
+            15,
+            2,
+            -100,
+            -100,
+            -50
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 203,
+        "Params": [
+            16,
+            2,
+            -500
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 203,
+        "Params": [
+            17,
+            2,
+            300
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 203,
+        "Params": [
+            1,
+            2,
+            -900,
+            -50
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 203,
+        "EndDelay": 2500.0,
+        "Params": [
+            2,
+            2,
+            780,
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "The back-and-forth fed on itself, and the discussion began to boil. False optimism, born only to soothe fear, began to cast a solid shadow."
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 202,
+        "Params": [
+            15,
+            16,
+            17
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Once that shadow hardened into a seamless wall, even the cruelest truth could not pierce it."
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "It must be stamped out before it took root."
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 306
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 205,
+        "EndDelay": 500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory936.png",
+            1,
+            0,
+            0.5
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            2,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            8
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Cordelia",
+            "I'm not trying to be cruel.",
+            1
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "But I know—better than any of you, better than this rookie—what kind of people get to enter that fortress.",
+            1
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "The researchers at Atlantis are the elite of the elite. \"Absolute rationality.\" That's who they are...",
+            1
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Larsen, let me ask you something.",
+            1
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 201,
+        "Params": [
+            1,
+            501761
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "The timid young engineer caught his breath at her words."
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Cordelia might have had no love for her family, but the imperious edge they had instilled in her still had a way of unnerving him."
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            3
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "Does absolute rationality mean absolute justice?",
+            1
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Does absolute justice mean absolute compassion?",
+            1
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Go on. Try to picture it. For a group of absolutely rational geniuses, how do you think they'd define compassion for humanity? Right now. In this.",
+            1
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 201,
+        "Params": [
+            18,
+            501761
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 301,
+        "Params": [
+            1,
+            "Larsen",
+            "...",
+            18
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Open doors? Warm welcome? Everyone supporting each other like one big happy family?",
+            1
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The young engineer swallowed hard, forcing his illusions back down his throat."
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "In contrast to the bowed head beside him, Lieutenant Onni raised his hand with a frown."
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 201,
+        "Params": [
+            1,
+            501746,
+            4
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Onni",
+            "I don't get it...",
+            1
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Onni",
+            "If this place is real, they wouldn't just open fire on their own people, right? We're asking for help.",
+            1
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            8
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "A top-secret research facility hidden in the deep ocean. Without that false secret order, half the people in this room wouldn't just lack the coordinates. You wouldn't even know it existed.",
+            1
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "On top of that, the facility is capable of submerging entirely. We're not talking about a submarine here, but the whole facility. An entire city, as our Mr. Poet put it.",
+            1
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "The engineering required to hide an entire city under the sea... it's almost unimaginable.",
+            1
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "So... tell me why. Why build it that way? Lieutenant Onni.",
+            1
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 201,
+        "Params": [
+            18,
+            501746,
+            4
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Onni",
+            "Because... it's important. And because... they don't want to be found?",
+            18
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Exactly. \"Don't want to be found.\"",
+            1
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Not long ago, we, ordinary people trying to survive, sank passing ships just because they didn't answer our hails.",
+            1
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Now picture this. A virus is eating through military base systems. Missiles are flying blind. And somewhere out there is a vital research facility designed entirely around staying hidden. Run by purely rational scientists. You think they'll welcome us with open arms?",
+            1
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Your immune system attacks invaders. It kills infected cells. So tell me... what are we to Atlantis?",
+            1
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Cordelia's question came out like a sharp blade."
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "The moment we enter their firing range, we're locked.",
+            1
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "And then, bang.",
+            1
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Congratulations. You've reached the end of your story.",
+            1
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 201,
+        "Params": [
+            1,
+            501751
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 301,
+        "Params": [
+            1,
+            "Gloomy Lieutenant",
+            "Everything you just said assumes we go to Atlantis as beggars, asking Atlantis to take us in...",
+            1
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 301,
+        "Params": [
+            "",
+            "Gloomy Lieutenant",
+            "But what if we... took a harder approach?",
+            1
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 401,
+        "Params": [
+            2,
+            4079
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 201,
+        "Params": [
+            18,
+            501756
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "Stigan!",
+            18
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Gunnar rebuked his subordinate's reckless proposal with a sharp, stern voice."
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Stigan was a fresh face at the war table, having assumed the deputy captain's role in the detachment after Sander's death."
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 306
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Yet he ignored his superior's clear warning and continued on regardless."
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "If we intervene with force...",
+            1
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "Let's be honest. They're just a bunch of scientists. Nerds, right?",
+            1
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 201,
+        "Params": [
+            18,
+            501746,
+            5
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Onni",
+            "What the hell's wrong with you?!",
+            18
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "...Captain, I'm not saying we actually attack Atlantis.",
+            1
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "I'm saying... with this many lives on the line, maybe we scare them a little. Just a little...",
+            1
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "We put on a show. No one in Atlantis actually gets hurt.",
+            1
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "Besides, doesn't Ms. Erhorn know that place well?",
+            1
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "We could even signal them first, friendly. Let them know we mean no harm, and then—",
+            1
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 201,
+        "Params": [
+            1,
+            501754,
+            4,
+            -400
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 201,
+        "Params": [
+            2,
+            501746,
+            4,
+            400
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Lyndae",
+            "Right. Because the people about to blow you out of the water are really going to care about a friendly signal.",
+            1
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Onni",
+            "This is insane. That's not even a plan.",
+            2
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 201,
+        "Params": [
+            1,
+            501751
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "If it was just us, I wouldn't care where we ended up. But there are civilians. That's why I'm proposing something this reckless, to save more people.",
+            1
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "We saved them. That means we're responsible for them. It's our duty as soldiers to protect them.",
+            1
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 201,
+        "Params": [
+            1,
+            501754,
+            4,
+            -400
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 201,
+        "Params": [
+            2,
+            501666,
+            2,
+            400
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Lyndae",
+            "Lumi, this one's on you.",
+            1
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lumi",
+            "What—huh? Me?",
+            2
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Lyndae",
+            "...Your smoking ban has fried everyone's brain.",
+            1
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 201,
+        "Params": [
+            1,
+            501751
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "...Easy for you to say. Come up with a better plan, then.",
+            1
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "Captain Gunnar. You don't think it'll work either?",
+            1
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 201,
+        "Params": [
+            1,
+            501756,
+            "",
+            "",
+            -150
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Gunnar remained silent."
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 306
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 201,
+        "Params": [
+            1,
+            501751
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "...Then give us your orders.",
+            1
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 401,
+        "Params": [
+            2,
+            2689
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Glances passed among the gathered soldiers. Gunnar still held his tongue. It was in that silence that Cordelia stood."
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            4
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "We can't go.",
+            1
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "No... it's not that we can't. It's that we shouldn't.",
+            1
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 201,
+        "Params": [
+            18,
+            501751
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "And your reason?",
+            18
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "The same one you just gave. To save more people.",
+            1
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Cordelia drew a slow breath, though her modified body had no real need for the calming gesture."
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Still, she would rather feel human than mechanical."
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "It's precisely to save more people...",
+            1
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "So... if going to Atlantis is the only way we live, then I'd rather none of us survive.",
+            1
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "..."
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The silence stretched for two full seconds."
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 401,
+        "Params": [
+            2,
+            5310
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Before the questions and accusations could explode, Captain Gunnar raised a closed fist."
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Every soldier froze in place, struck mute. The combat hand signal for \"halt\" triggered something deeper than thought, a reflex carved into their bodies."
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Gunnar lowered his fist and lifted his palm slightly, motioning for Cordelia to continue."
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            3,
+            -400
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 201,
+        "Params": [
+            2,
+            501761,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "The distress signals show the virus is spreading faster across the ocean. The corruption rate is accelerating.",
+            1
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "If it's already this bad at sea... with the population density on land, no research facility stands a chance.",
+            1
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "I... I see what you mean now.",
+            2
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "Because Atlantis is underwater...",
+            2
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Larsen, who had been stunned moments before by Cordelia's \"mad\" words, finally grasped her true intent.",
+            1
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            8
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "Yes. Because it's underwater, Atlantis might be the only place that can escape the virus. Or at least hold out the longest.",
+            1
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Atlantis is a giant research machine. It never stops.",
+            1
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "It's cold, ruthless. It treats emotion as noise. Calling them mad scientists wouldn't be wrong.",
+            1
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "And that's exactly why there's no hesitation there. No mercy. None of the impossible choices we're facing now.",
+            1
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "And I do hope that in a place like that, absolute reason can give birth to absolute compassion... Compassion for all of humanity.",
+            1
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "In an apocalypse like this, these fanatics of truth, hidden in the last clean place on Earth... they might be our best chance at finding an answer.",
+            1
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "And I intend to protect that possibility.",
+            1
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Cordelia's voice carried a resolute, unshakable certainty."
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Yet her firmness only made the gloomy lieutenant's frown cut deeper into his face."
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 201,
+        "Params": [
+            1,
+            501751
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "That was a moving speech, miss.",
+            1
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "If these scientists can really build that future... then as a soldier, I can respect their madness.",
+            1
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "But in the end, Atlantis firing on unknown vessels is just your theory.",
+            1
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "Are we supposed to look those survivors in the eye—civilians, ordinary soldiers—and tell them, sorry, we've decided to let you die? All for a possibility? A maybe?",
+            1
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The lieutenant held Cordelia's gaze, refusing to back down."
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 201,
+        "Params": [
+            2,
+            501761,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 301,
+        "Params": [
+            1,
+            "Larsen",
+            "I think... what Ms. Erhorn also means is... we might be the sick cells...",
+            2
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Stigan turned a hard stare on Larsen. Against all expectations, the timid young engineer found his nerve and offered a halting, stuttered response."
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "What are you talking about, young man?",
+            1
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "Ms. Erhorn just said... the immune system attacks invaders and infected cells...",
+            2
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "We might not just be invaders. We could be the sick cells... carrying that new virus.",
+            2
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "If we board Atlantis, the virus...",
+            2
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            3
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Cordelia held the baby tighter against her chest and raised her chin, stripping the cruel reality down to its bones for everyone in the room."
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "There will be too many variables at sea. We barely understand this virus. If one stray strain slips into a single electronic device on board, even a tiny crystal board...",
+            1
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Atlantis cracks open from that one breach.",
+            1
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "And even if we had the exact coordinates right now, without the central AI, finding Atlantis is like searching for a needle in an ocean.",
+            1
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Why are the lights on in this war room? Why are the doors open? Do you think Frigga did that for us, Mr. Stigan?",
+            1
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 201,
+        "Params": [
+            1,
+            501761
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Larsen flinched and shrank back. In the days since the base went manual, he had been handling an endless stream of little, unglamorous tasks. Cordelia had noticed every one of them."
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            3
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "How does this virus spread? Is it airborne? Those corrupted crab robots were on the port platform. Could they have compromised Frigga even while she's offline?",
+            1
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Frigga right now is just like that cat in the sealed box.",
+            1
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her gaze passed over each person in turn and landed squarely on Stigan."
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Can you guarantee that when Frigga comes back online, there won't be a single trace of the virus hiding in her database? Something no one caught?",
+            1
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Can you guarantee that on our way to Atlantis, we won't become the very corruption we're running from?",
+            1
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Can you guarantee we won't destroy that last clean place?",
+            1
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Just as you have your own duties as soldiers, the people in Atlantis have their own strengths and purpose.",
+            1
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "It's not to fall with the virus, but to keep that sanctuary of science standing, to find the source, and to find the way forward.",
+            1
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "...I'm trying not to ruin that possibility. That's all I'm doing.",
+            1
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "You said my speech was moving.",
+            1
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "You're wrong about me, Mr. Stigan. I don't share a soldier's honor.",
+            1
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Without this hanging over us... you think I wouldn't fight to survive?",
+            1
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The silence in the room grew so thick that every single breath could be heard."
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "It was Larsen who finally shattered it."
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 201,
+        "Params": [
+            1,
+            501761
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 301,
+        "Params": [
+            1,
+            "Larsen",
+            "...I want to live, too... I really want to.",
+            1
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "But not like this. Not walking blind into a place we can't predict, knowing we might destroy humanity's last hope.",
+            1
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Larsen said his piece and looked down. Cordelia held her gaze on him a moment longer, the engineer she had jokingly called the poet of ideals, then swept her eyes across the rest of the room."
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            3
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "\"The hour of departure has arrived, and we go our ways...\"",
+            1
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "\"...I to die, and you to live.\"",
+            1
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "...Hah. Never thought I'd be quoting a philosopher one day...",
+            1
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "No one spoke against her. No one spoke for her, either."
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Cordelia was not surprised by the silence, but she still waited, holding out for that chance."
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The sea rescue had already proven the true nature of these soldiers."
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Whatever their exteriors might suggest, they were, at their core, simple and decent people."
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "Type": 201,
+        "Params": [
+            1,
+            501756,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "Type": 201,
+        "Params": [
+            2,
+            501768,
+            3,
+            -400
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "Type": 301,
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            3
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Captain Gunnar, who had been sparing with his words the entire time, turned his head and let his gaze rest on the baby cradled in Cordelia's arms."
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Cordelia felt a muscle in her forearm giving an involuntary twitch. It was a reflexive tic of tension, the body's instinctive response to being found out."
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "But her modified body gave nothing away. It was only a phantom echo of a habit her body no longer truly had."
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "Type": 306
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Everything Cordelia had just laid out was nothing but plain, undeniable truth."
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Yet she could not claim it had been spoken from pure righteousness. The baby in her arms, beneath all the noble rhetoric, was the one thing she could not be objective about."
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 201,
+        "Params": [
+            1,
+            501756,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 201,
+        "Params": [
+            2,
+            501768,
+            3,
+            -400
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "...",
+            2
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She lifted her chin and met that probing stare without flinching."
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She had to hold the line against every prying gaze."
+        ]
+    },
+    {
+        "Id": 312,
+        "ActionId": 312,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "To ordinary people, the little monster in her arms was merely a peculiar child. But the so-called geniuses of Atlantis would never be fooled."
+        ]
+    },
+    {
+        "Id": 313,
+        "ActionId": 313,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "If word slipped out, even if Atlantis meant them no harm, Arius finding them was only a matter of time."
+        ]
+    },
+    {
+        "Id": 314,
+        "ActionId": 314,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "And if the child's true nature ever became public knowledge, it would attract far more than just an Erhorn's greed."
+        ]
+    },
+    {
+        "Id": 315,
+        "ActionId": 315,
+        "Type": 201,
+        "Params": [
+            1,
+            501751
+        ]
+    },
+    {
+        "Id": 316,
+        "ActionId": 316,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 317,
+        "ActionId": 317,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Stigan appeared to read the hesitation in Gunnar's face. Without waiting, he broke the silence."
+        ]
+    },
+    {
+        "Id": 318,
+        "ActionId": 318,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "Ms. Erhorn, for the future of humanity, perhaps you're right.",
+            1
+        ]
+    },
+    {
+        "Id": 319,
+        "ActionId": 319,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "His shadowed expression undercut whatever sincerity the words might have carried."
+        ]
+    },
+    {
+        "Id": 320,
+        "ActionId": 320,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "But this is Rainbow Bridge Military Base. You're not the one in command here.",
+            1
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 322,
+        "ActionId": 322,
+        "Type": 201,
+        "Params": [
+            1,
+            501756,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 323,
+        "ActionId": 323,
+        "Type": 201,
+        "Params": [
+            2,
+            501768,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 324,
+        "ActionId": 324,
+        "Type": 301,
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "Seems this base still answers to me.",
+            1
+        ]
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Captain Gunnar shifted his gaze from the baby, let it drift across the ceiling for a moment, and then brought it to rest on Cordelia's face, right between her eyes."
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "It was as if he were trying to see through her, or perhaps watching a reflection of his own thoughts somewhere just beyond her."
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "Type": 201,
+        "Params": [
+            1,
+            501757,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 331,
+        "ActionId": 331,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Then, slowly, he took off his cap."
+        ]
+    },
+    {
+        "Id": 332,
+        "ActionId": 332,
+        "Type": 204,
+        "Params": [
+            2,
+            14
+        ]
+    },
+    {
+        "Id": 333,
+        "ActionId": 333,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Cordelia",
+            "(That's it. It's over...)",
+            2
+        ]
+    },
+    {
+        "Id": 334,
+        "ActionId": 334,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 335,
+        "ActionId": 335,
+        "Type": 401,
+        "Params": [
+            1,
+            6236
+        ]
+    },
+    {
+        "Id": 336,
+        "ActionId": 336,
+        "Type": 310,
+        "Params": [
+            "She had seen this gesture many times before. The opening move of an apology.",
+            "",
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 337,
+        "ActionId": 337,
+        "Type": 310,
+        "Params": [
+            "Next, he would clutch his cap to his chest, exhale a long sigh, confess his powerlessness, praise her reasoning, and then hit her with the inevitable \"but.\"",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 338,
+        "ActionId": 338,
+        "Type": 310,
+        "Params": [
+            "The perceptive captain had spotted her hidden stake and grown wary. And suspicion alone was enough to stop any commander from leading soldiers and civilians to their deaths."
+        ]
+    },
+    {
+        "Id": 339,
+        "ActionId": 339,
+        "Type": 310,
+        "Params": [
+            "But she was not some pampered heiress. If they wanted to test that—",
+            "",
+            "",
+            "",
+            1,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 340,
+        "ActionId": 340,
+        "Type": 201,
+        "Params": [
+            1,
+            501757
+        ]
+    },
+    {
+        "Id": 341,
+        "ActionId": 341,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "The situation outside is dire, and it's deteriorating fast. As wartime commander, the authority to issue orders falls to me, naturally.",
+            1
+        ]
+    },
+    {
+        "Id": 342,
+        "ActionId": 342,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 343,
+        "ActionId": 343,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "But I have something else to add.",
+            1
+        ]
+    },
+    {
+        "Id": 344,
+        "ActionId": 344,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 345,
+        "ActionId": 345,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Rainbow Bridge was built under the patronage of the Erhorn family. The money, the design, the materials, the labor, the daily supplies... all of it came from them. I trust none of this is news to anyone here.",
+            1
+        ]
+    },
+    {
+        "Id": 346,
+        "ActionId": 346,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Military designation aside, this base essentially belongs to the Erhorn family.",
+            1
+        ]
+    },
+    {
+        "Id": 347,
+        "ActionId": 347,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "For extreme scenarios, such as the base falling into enemy hands, the central system was built with a self-destruct protocol. Activating it requires the palm print of the highest authority. That's me.",
+            1
+        ]
+    },
+    {
+        "Id": 348,
+        "ActionId": 348,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Gunnar raised his right hand."
+        ]
+    },
+    {
+        "Id": 349,
+        "ActionId": 349,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "And the Erhorn family's key. That's you.",
+            1
+        ]
+    },
+    {
+        "Id": 350,
+        "ActionId": 350,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Gunnar pointed his right hand at Cordelia."
+        ]
+    },
+    {
+        "Id": 351,
+        "ActionId": 351,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Neither can be skipped.",
+            1
+        ]
+    },
+    {
+        "Id": 352,
+        "ActionId": 352,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 353,
+        "ActionId": 353,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            5
+        ]
+    },
+    {
+        "Id": 354,
+        "ActionId": 354,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "Cordelia's eyes widened. That move was supposed to be hers."
+        ]
+    },
+    {
+        "Id": 355,
+        "ActionId": 355,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0,
+            0.8,
+            0.3
+        ]
+    },
+    {
+        "Id": 356,
+        "ActionId": 356,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Cordelia",
+            "(What a cunning man!)",
+            1
+        ]
+    },
+    {
+        "Id": 357,
+        "ActionId": 357,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 358,
+        "ActionId": 358,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0.8,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 359,
+        "ActionId": 359,
+        "Type": 201,
+        "Params": [
+            1,
+            501757
+        ]
+    },
+    {
+        "Id": 360,
+        "ActionId": 360,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "In this context, any decision about this base—and everyone in it, their fate included—should be made by the two of us together, Ms. Erhorn.",
+            1
+        ]
+    },
+    {
+        "Id": 361,
+        "ActionId": 361,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "He turned his face toward her and gave a solemn nod."
+        ]
+    },
+    {
+        "Id": 362,
+        "ActionId": 362,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "That's the first point. Second: those of you ranked lieutenant and above should already know this. Rainbow Bridge is a covert outpost for Atlantis.",
+            1
+        ]
+    },
+    {
+        "Id": 363,
+        "ActionId": 363,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "As its outpost, protecting Atlantis is our duty. Plain and simple.",
+            1
+        ]
+    },
+    {
+        "Id": 364,
+        "ActionId": 364,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Not to mention Atlantis may be the last hope for all of humanity.",
+            1
+        ]
+    },
+    {
+        "Id": 365,
+        "ActionId": 365,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Now, three orders.",
+            1
+        ]
+    },
+    {
+        "Id": 366,
+        "ActionId": 366,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "One: I reject any proposal involving travel to Atlantis, or anything that could put it at risk.",
+            1
+        ]
+    },
+    {
+        "Id": 367,
+        "ActionId": 367,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Two: Take inventory of personnel and supplies. Until we find another solution, keep everyone safe and calm.",
+            1
+        ]
+    },
+    {
+        "Id": 368,
+        "ActionId": 368,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 369,
+        "ActionId": 369,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Three... For ****'s sake, you're all adults. Soldiers. Next time, don't fight in front of a baby.",
+            1
+        ]
+    },
+    {
+        "Id": 370,
+        "ActionId": 370,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Always do what soldiers are supposed to do.",
+            1
+        ]
+    },
+    {
+        "Id": 371,
+        "ActionId": 371,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 372,
+        "ActionId": 372,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Ms. Erhorn, what's your say?",
+            1
+        ]
+    },
+    {
+        "Id": 373,
+        "ActionId": 373,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 374,
+        "ActionId": 374,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The expressions around the room varied wildly, but Gunnar's words laid the matter to rest."
+        ]
+    },
+    {
+        "Id": 375,
+        "ActionId": 375,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "He gave Cordelia a light pat on the shoulder."
+        ]
+    },
+    {
+        "Id": 376,
+        "ActionId": 376,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "She felt a brief wave of disorientation wash over her and could only recall murmuring a quiet thanks."
+        ]
+    },
+    {
+        "Id": 377,
+        "ActionId": 377,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 378,
+        "ActionId": 378,
+        "Type": 401,
+        "EndDelay": 200.0,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 379,
+        "ActionId": 379,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 380,
+        "ActionId": 380,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "After the base commander handed out new temporary assignments to everyone, the crowd dispersed."
         ]
     },
     {
-        "Id": 4,
-        "ActionId": 4,
+        "Id": 381,
+        "ActionId": 381,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Only Gunnar and Cordelia remained in the room... along with Larsen, who stubbornly lingered."
+        ]
+    },
+    {
+        "Id": 382,
+        "ActionId": 382,
+        "Type": 201,
+        "Params": [
+            1,
+            501756,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 383,
+        "ActionId": 383,
+        "Type": 201,
+        "Params": [
+            2,
+            501761,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 384,
+        "ActionId": 384,
+        "Type": 301,
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "What? Not happy with your assignment?",
+            1
+        ]
+    },
+    {
+        "Id": 385,
+        "ActionId": 385,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "I... I want to apologize.",
+            2
+        ]
+    },
+    {
+        "Id": 386,
+        "ActionId": 386,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 387,
+        "ActionId": 387,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 388,
+        "ActionId": 388,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "Apologize? For what?",
+            1
+        ]
+    },
+    {
+        "Id": 389,
+        "ActionId": 389,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "I was being careless. I shouldn't have brought up Atlantis.",
+            2
+        ]
+    },
+    {
+        "Id": 390,
+        "ActionId": 390,
+        "Type": 301,
+        "Params": [
+            "",
+            "Larsen",
+            "Ahem. I just mean... if sacrificing individual happiness could bring greater happiness to everyone, then I think... that sacrifice is justified. I can accept being left behind. I'm willing to be the one sacrificed.",
+            2
+        ]
+    },
+    {
+        "Id": 391,
+        "ActionId": 391,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Larsen squared his shoulders after he finished, mustering the little courage he could claim."
+        ]
+    },
+    {
+        "Id": 392,
+        "ActionId": 392,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Cordelia frowned and looked over at Gunnar, who answered with a shrug."
+        ]
+    },
+    {
+        "Id": 393,
+        "ActionId": 393,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Sigh... that's not quite how \"sacrifice\" works, Mr. Poet.",
+            1
+        ]
+    },
+    {
+        "Id": 394,
+        "ActionId": 394,
+        "Type": 204,
+        "Params": [
+            2,
+            7
+        ]
+    },
+    {
+        "Id": 395,
+        "ActionId": 395,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Larsen",
+            "But you just said...",
+            2
+        ]
+    },
+    {
+        "Id": 396,
+        "ActionId": 396,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 397,
+        "ActionId": 397,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 398,
+        "ActionId": 398,
+        "Type": 513,
+        "Params": [
+            3,
+            0.3,
+            0.3,
+            1001,
+            1003
+        ]
+    },
+    {
+        "Id": 399,
+        "ActionId": 399,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory936.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 400,
+        "ActionId": 400,
+        "Type": 104,
+        "EndDelay": 400.0,
+        "Params": [
+            "0|0|-200",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 401,
+        "ActionId": 401,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory936.png"
+        ]
+    },
+    {
+        "Id": 402,
+        "ActionId": 402,
+        "Type": 104,
+        "Params": [
+            "0|0|-200",
+            0
+        ]
+    },
+    {
+        "Id": 403,
+        "ActionId": 403,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 404,
+        "ActionId": 404,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 405,
+        "ActionId": 405,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            "",
+            "",
+            -150,
+            -150,
+            1
+        ]
+    },
+    {
+        "Id": 406,
+        "ActionId": 406,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Cordelia",
+            "Because the situation we're in is exceptional. That's the premise.",
+            1
+        ]
+    },
+    {
+        "Id": 407,
+        "ActionId": 407,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 408,
+        "ActionId": 408,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "If this really is the apocalypse, then... the survival of civilization and our species becomes a necessity above everything else.",
+            1
+        ]
+    },
+    {
+        "Id": 409,
+        "ActionId": 409,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 410,
+        "ActionId": 410,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "And every sacrifice becomes necessary.",
+            1
+        ]
+    },
+    {
+        "Id": 411,
+        "ActionId": 411,
+        "Type": 201,
+        "Params": [
+            18,
+            501756
+        ]
+    },
+    {
+        "Id": 412,
+        "ActionId": 412,
+        "Type": 301,
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "But here's the question. Does sacrificing the few today really secure the future for all of humanity?",
+            18
+        ]
+    },
+    {
+        "Id": 413,
+        "ActionId": 413,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 414,
+        "ActionId": 414,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She nodded along with Gunnar's counterpoint as if she had been waiting for it all along. Larsen stared, caught completely off guard."
+        ]
+    },
+    {
+        "Id": 415,
+        "ActionId": 415,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Gunnar's right. If happiness and suffering could be calculated down to the exact number—sacrifice everyone here at this base, gain a net positive for humanity—then sacrifice becomes a moral obligation.",
+            1
+        ]
+    },
+    {
+        "Id": 416,
+        "ActionId": 416,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "I can choose my own \"sacrifice,\" sure, but just now, I asked the same of all of you. I even asked those survivors to give up their lives.",
+            1
+        ]
+    },
+    {
+        "Id": 417,
+        "ActionId": 417,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 418,
+        "ActionId": 418,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "It was unreasonable, and arrogant. I know that. And I wasn't free of selfish motives... I can own that.",
+            1
+        ]
+    },
+    {
+        "Id": 419,
+        "ActionId": 419,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Gunnar let his gaze fall on the baby in Cordelia's arms for a moment, then turned his eyes elsewhere."
+        ]
+    },
+    {
+        "Id": 420,
+        "ActionId": 420,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 421,
+        "ActionId": 421,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "So, it was only natural that all the doubt and arguments happened.",
+            1
+        ]
+    },
+    {
+        "Id": 422,
+        "ActionId": 422,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "The reason we're still arguing, still hesitating... it's because we're all trying to hold the line. To not turn anyone into a pure tool.",
+            1
+        ]
+    },
+    {
+        "Id": 423,
+        "ActionId": 423,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 424,
+        "ActionId": 424,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Cordelia",
+            "Just because sacrifice is justified doesn't mean it should be taken for granted, or weaponized into a moral absolute.",
+            1
+        ]
+    },
+    {
+        "Id": 425,
+        "ActionId": 425,
+        "Type": 513,
+        "Params": [
+            3,
+            0,
+            0.3,
+            1001,
+            1003
+        ]
+    },
+    {
+        "Id": 426,
+        "ActionId": 426,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 427,
+        "ActionId": 427,
+        "Type": 306
+    },
+    {
+        "Id": 428,
+        "ActionId": 428,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory936.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 429,
+        "ActionId": 429,
+        "Type": 104,
+        "EndDelay": 400.0,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 430,
+        "ActionId": 430,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory936.png"
+        ]
+    },
+    {
+        "Id": 431,
+        "ActionId": 431,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 432,
+        "ActionId": 432,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 433,
+        "ActionId": 433,
+        "Type": 201,
+        "Params": [
+            1,
+            501756,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 434,
+        "ActionId": 434,
+        "Type": 201,
+        "Params": [
+            2,
+            501768,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 435,
+        "ActionId": 435,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "You did nothing wrong, Larsen. Don't apologize.",
+            1
+        ]
+    },
+    {
+        "Id": 436,
+        "ActionId": 436,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Cordelia",
+            "We're all just doing what we believe is right. That's all.",
+            2
+        ]
+    },
+    {
+        "Id": 437,
+        "ActionId": 437,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory548.jpg"
+        ]
+    },
+    {
+        "Id": 438,
+        "ActionId": 438,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 439,
+        "ActionId": 439,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 440,
+        "ActionId": 440,
+        "Type": 401,
+        "Params": [
+            2,
+            904
+        ]
+    },
+    {
+        "Id": 441,
+        "ActionId": 441,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "A salt-laden wind, heavy with the scent of rust, swept over the desolate base. Its port saw no more rescue ships."
+        ]
+    },
+    {
+        "Id": 442,
+        "ActionId": 442,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The crimson of the sky slowly bled away, uncovering a ghost of a moon."
+        ]
+    },
+    {
+        "Id": 443,
+        "ActionId": 443,
+        "Type": 402,
+        "Params": [
+            904
+        ]
+    },
+    {
+        "Id": 444,
+        "ActionId": 444,
+        "Type": 401,
+        "Params": [
+            2,
+            2513
+        ]
+    },
+    {
+        "Id": 445,
+        "ActionId": 445,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "",
+            "BANG—"
+        ]
+    },
+    {
+        "Id": 446,
+        "ActionId": 446,
+        "Type": 401,
+        "Params": [
+            1,
+            354
+        ]
+    },
+    {
+        "Id": 447,
+        "ActionId": 447,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Gunfire ripped the silence open."
+        ]
+    },
+    {
+        "Id": 448,
+        "ActionId": 448,
+        "Type": 401,
+        "Params": [
+            2,
+            6718
+        ]
+    },
+    {
+        "Id": 449,
+        "ActionId": 449,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "In its wake, wails and shrieks shattered the stillness of the night."
+        ]
+    },
+    {
+        "Id": 450,
+        "ActionId": 450,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 451,
+        "ActionId": 451,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory936.png"
+        ]
+    },
+    {
+        "Id": 452,
+        "ActionId": 452,
+        "Type": 201,
+        "Params": [
+            1,
+            501756,
+            "",
+            -400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 453,
+        "ActionId": 453,
+        "Type": 201,
+        "Params": [
+            2,
+            501761,
+            7,
+            400,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 454,
+        "ActionId": 454,
+        "Type": 301,
+        "BeginAnim": "PanelActor2Shake",
+        "Params": [
+            1,
+            "Larsen",
+            "What happened?!",
+            2
+        ]
+    },
+    {
+        "Id": 455,
+        "ActionId": 455,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "...Riot. Ready yourselves!",
+            1
+        ]
+    },
+    {
+        "Id": 456,
+        "ActionId": 456,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 457,
+        "ActionId": 457,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The three of them raced toward the sound of the shot."
+        ]
+    },
+    {
+        "Id": 458,
+        "ActionId": 458,
+        "Type": 401,
+        "Params": [
+            2,
+            4931
+        ]
+    },
+    {
+        "Id": 459,
+        "ActionId": 459,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 460,
+        "ActionId": 460,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1579.jpg"
+        ]
+    },
+    {
+        "Id": 461,
+        "ActionId": 461,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "At the far side of the port, two masses of people churned together like swarms of maddened flies."
+        ]
+    },
+    {
+        "Id": 462,
+        "ActionId": 462,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "At the bow end of the ocean-going ship, a figure emerged from the wheelhouse with hands held up, forced out at gunpoint, step by slow step."
+        ]
+    },
+    {
+        "Id": 463,
+        "ActionId": 463,
+        "Type": 401,
+        "Params": [
+            2,
+            1504
+        ]
+    },
+    {
+        "Id": 464,
+        "ActionId": 464,
+        "Type": 401,
+        "EndDelay": 100.0,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 465,
+        "ActionId": 465,
+        "Type": 401,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 466,
+        "ActionId": 466,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The crowd lunged forward."
+        ]
+    },
+    {
+        "Id": 467,
+        "ActionId": 467,
+        "Type": 201,
+        "Params": [
+            15,
+            501384,
+            "",
+            200,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 468,
+        "ActionId": 468,
+        "Type": 201,
+        "Params": [
+            2,
+            501774,
+            "",
+            -200,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 469,
+        "ActionId": 469,
+        "Type": 301,
+        "BeginAnim": "PanelActor15Shake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Young Mother",
+            "My child! At least let my child go! Stop pushing! Stop—ah!",
+            15
+        ]
+    },
+    {
+        "Id": 470,
+        "ActionId": 470,
+        "Type": 401,
+        "Params": [
+            2,
+            3079
+        ]
+    },
+    {
+        "Id": 471,
+        "ActionId": 471,
+        "Type": 203,
+        "Params": [
+            15,
+            0.25,
+            300,
+            -500
+        ]
+    },
+    {
+        "Id": 472,
+        "ActionId": 472,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25,
+            -100,
+            -500
+        ]
+    },
+    {
+        "Id": 473,
+        "ActionId": 473,
+        "Type": 202,
+        "EndDelay": 400.0,
+        "Params": [
+            15,
+            2
+        ]
+    },
+    {
+        "Id": 474,
+        "ActionId": 474,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "A grimy boot kicked into her stomach, accompanied by a torrent of curses. The young mother threw her arms up on instinct, desperate to keep her feverish child from harm."
+        ]
+    },
+    {
+        "Id": 475,
+        "ActionId": 475,
+        "Type": 401,
+        "Params": [
+            2,
+            3079
+        ]
+    },
+    {
+        "Id": 476,
+        "ActionId": 476,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She toppled backward, was caught for a heartbeat by someone behind her, then shoved into another shoulder and swallowed whole by a tangle of pressing bodies and flailing arms."
+        ]
+    },
+    {
+        "Id": 477,
+        "ActionId": 477,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A hand clamped over her face in the bedlam."
+        ]
+    },
+    {
+        "Id": 478,
+        "ActionId": 478,
+        "Type": 401,
+        "EndDelay": 100.0,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 479,
+        "ActionId": 479,
+        "Type": 401,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 480,
+        "ActionId": 480,
+        "Type": 401,
+        "Params": [
+            2,
+            4306
+        ]
+    },
+    {
+        "Id": 481,
+        "ActionId": 481,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "An instant later, she hit the ground, a chaotic rush of feet pounding across her back. She wrapped her arms tightly, curling her entire body over the child beneath her."
+        ]
+    },
+    {
+        "Id": 482,
+        "ActionId": 482,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Only three more steps. Three more steps up that long gangway, and she would have been aboard the ship."
+        ]
+    },
+    {
+        "Id": 483,
+        "ActionId": 483,
+        "Type": 201,
+        "Params": [
+            18,
+            501384,
+            "",
+            135,
+            -190,
+            -200
+        ]
+    },
+    {
+        "Id": 484,
+        "ActionId": 484,
+        "Type": 301,
+        "Params": [
+            1,
+            "Young Mother",
+            "Help...",
+            18
+        ]
+    },
+    {
+        "Id": 485,
+        "ActionId": 485,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 486,
+        "ActionId": 486,
+        "Type": 201,
+        "Params": [
+            18,
+            501774
+        ]
+    },
+    {
+        "Id": 487,
+        "ActionId": 487,
+        "Type": 301,
+        "Params": [
+            1,
+            "Girl in a Red Dress",
+            "Mom... sob...",
+            18
+        ]
+    },
+    {
+        "Id": 488,
+        "ActionId": 488,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 489,
+        "ActionId": 489,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Everything had been going smoothly. That safe haven called Atlantis was the last hope in this catastrophe."
+        ]
+    },
+    {
+        "Id": 490,
+        "ActionId": 490,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "All she had to do was follow the crowd, slip past the soldiers who hid the information, and board the ship unnoticed. She would have made it."
+        ]
+    },
+    {
+        "Id": 491,
+        "ActionId": 491,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "But one gunshot was all it took to light the panic and twist humanity into savage beasts."
+        ]
+    },
+    {
+        "Id": 492,
+        "ActionId": 492,
+        "Type": 201,
+        "Params": [
+            15,
+            501384,
+            "",
+            500,
+            -150,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 493,
+        "ActionId": 493,
+        "Type": 201,
+        "Params": [
+            2,
+            501774,
+            "",
+            100,
+            -150,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 494,
+        "ActionId": 494,
+        "Type": 201,
+        "Params": [
+            1,
+            501671,
+            5,
+            -500,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 495,
+        "ActionId": 495,
+        "Type": 203,
+        "EndDelay": 400.0,
+        "Params": [
+            1,
+            0.25,
+            -300,
+            -100
+        ]
+    },
+    {
+        "Id": 496,
+        "ActionId": 496,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 497,
+        "ActionId": 497,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "Sieg",
+            "Get up! Get away from the crowd!",
+            1
+        ]
+    },
+    {
+        "Id": 498,
+        "ActionId": 498,
+        "Type": 401,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 499,
+        "ActionId": 499,
+        "Type": 203,
+        "Params": [
+            15,
+            0.25,
+            500
+        ]
+    },
+    {
+        "Id": 500,
+        "ActionId": 500,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25,
+            100
+        ]
+    },
+    {
+        "Id": 501,
+        "ActionId": 501,
+        "Type": 203,
+        "EndDelay": 400.0,
+        "Params": [
+            1,
+            0.25,
+            -300
+        ]
+    },
+    {
+        "Id": 502,
+        "ActionId": 502,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Amid the surge of bodies, the young cadet caught hold of the woman and her child and pulled them to their feet."
+        ]
+    },
+    {
+        "Id": 503,
+        "ActionId": 503,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 504,
+        "ActionId": 504,
+        "Type": 301,
+        "Params": [
+            "",
+            "Sieg",
+            "Find Lumi. She'll take care of you.",
+            1
+        ]
+    },
+    {
+        "Id": 505,
+        "ActionId": 505,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "His eyes were as clear as a northern fjord."
+        ]
+    },
+    {
+        "Id": 506,
+        "ActionId": 506,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 507,
+        "ActionId": 507,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1265.jpg"
+        ]
+    },
+    {
+        "Id": 508,
+        "ActionId": 508,
+        "Type": 401,
+        "Params": [
+            2,
+            1504
+        ]
+    },
+    {
+        "Id": 509,
+        "ActionId": 509,
+        "Type": 202,
+        "Params": [
+            15,
+            1,
+            2,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 510,
+        "ActionId": 510,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "A stampede of footsteps pounded against the metal deck, the vibrations shuddering through the walls in a low, rolling roar."
+        ]
+    },
+    {
+        "Id": 511,
+        "ActionId": 511,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The limping man held his breath and pressed his full weight against the door, even though he had already checked the lock."
+        ]
+    },
+    {
+        "Id": 512,
+        "ActionId": 512,
+        "Type": 201,
+        "Params": [
+            1,
+            500340
+        ]
+    },
+    {
+        "Id": 513,
+        "ActionId": 513,
+        "Type": 301,
+        "Params": [
+            1,
+            "Limping Man",
+            "Phew...",
+            1
+        ]
+    },
+    {
+        "Id": 514,
+        "ActionId": 514,
+        "Type": 401,
+        "Params": [
+            2,
+            2927
+        ]
+    },
+    {
+        "Id": 515,
+        "ActionId": 515,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Muffled shouts sounded from the other side of the door, followed by the sharp crack of several gunshots."
+        ]
+    },
+    {
+        "Id": 516,
+        "ActionId": 516,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The thick metal door smothered most of the riot's noise."
+        ]
+    },
+    {
+        "Id": 517,
+        "ActionId": 517,
+        "Type": 402,
+        "Params": [
+            2927
+        ]
+    },
+    {
+        "Id": 518,
+        "ActionId": 518,
+        "Type": 301,
+        "Params": [
+            "",
+            "Limping Man",
+            "(Is it over...? Did we make it?)",
+            1
+        ]
+    },
+    {
+        "Id": 519,
+        "ActionId": 519,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Winning this \"battle\" for the vessel meant the difference between survival and death."
+        ]
+    },
+    {
+        "Id": 520,
+        "ActionId": 520,
+        "Type": 301,
+        "Params": [
+            "",
+            "Limping Man",
+            "(If we get on board and get away... good. But if they find us... unarmed civilians against soldiers...)",
+            1
+        ]
+    },
+    {
+        "Id": 521,
+        "ActionId": 521,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "As soon as he set foot on the ship, he discovered the cargo hold and bolted the door behind him."
+        ]
+    },
+    {
+        "Id": 522,
+        "ActionId": 522,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "With enough food on hand, he simply needed to wait until the world outside fell quiet."
+        ]
+    },
+    {
+        "Id": 523,
+        "ActionId": 523,
+        "Type": 301,
+        "Params": [
+            "",
+            "Limping Man",
+            "(I just got on the ship. I didn't hurt anyone. Those soldiers... they won't kill me. I'm sure they won't.)",
+            1
+        ]
+    },
+    {
+        "Id": 524,
+        "ActionId": 524,
+        "Type": 401,
+        "Params": [
+            2,
+            4161
+        ]
+    },
+    {
+        "Id": 525,
+        "ActionId": 525,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Clomp. Clomp. The sound of approaching footsteps came again."
+        ]
+    },
+    {
+        "Id": 526,
+        "ActionId": 526,
+        "Type": 301,
+        "Params": [
+            "",
+            "Limping Man",
+            "(But... what if...?)",
+            1
+        ]
+    },
+    {
+        "Id": 527,
+        "ActionId": 527,
+        "Type": 401,
+        "Params": [
+            2,
+            10028804
+        ]
+    },
+    {
+        "Id": 528,
+        "ActionId": 528,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "He clenched his fingers around the gun."
+        ]
+    },
+    {
+        "Id": 529,
+        "ActionId": 529,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Clomp, clomp, clomp. The footsteps came nearer, and he could almost swear he heard the metallic slide of a round being chambered."
+        ]
+    },
+    {
+        "Id": 530,
+        "ActionId": 530,
+        "Type": 401,
+        "Params": [
+            2,
+            6609
+        ]
+    },
+    {
+        "Id": 531,
+        "ActionId": 531,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Beep, beep. Beep—"
+        ]
+    },
+    {
+        "Id": 532,
+        "ActionId": 532,
+        "Type": 402,
+        "Params": [
+            6609
+        ]
+    },
+    {
+        "Id": 533,
+        "ActionId": 533,
+        "Type": 401,
+        "Params": [
+            2,
+            6300
+        ]
+    },
+    {
+        "Id": 534,
+        "ActionId": 534,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "The door lock's electronic chime announced that the danger was no longer approaching. It was here. He gripped the gun even tighter."
+        ]
+    },
+    {
+        "Id": 535,
+        "ActionId": 535,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 536,
+        "ActionId": 536,
+        "Type": 203,
+        "EndDelay": 400.0,
+        "Params": [
+            1,
+            0.25,
+            "",
+            -50,
+            -150
+        ]
+    },
+    {
+        "Id": 537,
+        "ActionId": 537,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Limping Man",
+            "AAAAARGH!",
+            1
+        ]
+    },
+    {
+        "Id": 538,
+        "ActionId": 538,
+        "Type": 401,
+        "Params": [
+            2,
+            1510
+        ]
+    },
+    {
+        "Id": 539,
+        "ActionId": 539,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 540,
+        "ActionId": 540,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 541,
+        "ActionId": 541,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 542,
+        "ActionId": 542,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1579.jpg"
+        ]
+    },
+    {
+        "Id": 543,
+        "ActionId": 543,
+        "Type": 201,
+        "Params": [
+            1,
+            501671,
+            5,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 544,
+        "ActionId": 544,
+        "Type": 502,
+        "Params": [
+            "DialogShake"
+        ]
+    },
+    {
+        "Id": 545,
+        "ActionId": 545,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "BANG—"
+        ]
+    },
+    {
+        "Id": 546,
+        "ActionId": 546,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 547,
+        "ActionId": 547,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 548,
+        "ActionId": 548,
+        "Type": 201,
+        "Params": [
+            1,
+            501662,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 549,
+        "ActionId": 549,
+        "Type": 205,
+        "EndDelay": 400.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 550,
+        "ActionId": 550,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "A bullet tore through Sieg's neck."
+        ]
+    },
+    {
+        "Id": 551,
+        "ActionId": 551,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 552,
+        "ActionId": 552,
+        "Type": 401,
+        "Params": [
+            2,
+            4306
+        ]
+    },
+    {
+        "Id": 553,
+        "ActionId": 553,
+        "Type": 203,
+        "Params": [
+            1,
+            0.8,
+            "",
+            -500
+        ]
+    },
+    {
+        "Id": 554,
+        "ActionId": 554,
+        "Type": 202,
+        "EndDelay": 1000.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 555,
+        "ActionId": 555,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "He didn't seem to understand what had happened. Shock filled his gaze."
+        ]
+    },
+    {
+        "Id": 556,
+        "ActionId": 556,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "His widened eyes were as clear as a northern fjord."
+        ]
+    },
+    {
+        "Id": 557,
+        "ActionId": 557,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 558,
+        "ActionId": 558,
+        "Type": 401,
+        "Params": [
+            1,
+            7236
+        ]
+    },
+    {
+        "Id": 559,
+        "ActionId": 559,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "The riot was put down not long after."
+        ]
+    },
+    {
+        "Id": 560,
+        "ActionId": 560,
+        "Type": 201,
+        "Params": [
+            1,
+            501746,
+            4
+        ]
+    },
+    {
+        "Id": 561,
+        "ActionId": 561,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Onni",
+            "...That should be all of them. We're out of cuffs, so rope'll have to do.",
+            1
+        ]
+    },
+    {
+        "Id": 562,
+        "ActionId": 562,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 563,
+        "ActionId": 563,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Gunnar, Cordelia, and the others stood between the two groups, listening to Onni's report."
+        ]
+    },
+    {
+        "Id": 564,
+        "ActionId": 564,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A low chorus of weak moans and scattered curses hung over the entire port like a shroud."
+        ]
+    },
+    {
+        "Id": 565,
+        "ActionId": 565,
+        "Type": 201,
+        "Params": [
+            1,
+            501746,
+            4
+        ]
+    },
+    {
+        "Id": 566,
+        "ActionId": 566,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Onni",
+            "All the wounded are here. Civilians, rioters, but mostly our own...",
+            1
+        ]
+    },
+    {
+        "Id": 567,
+        "ActionId": 567,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Onni gestured toward the group on the far left, his brow furrowed and his voice thick with exhaustion."
+        ]
+    },
+    {
+        "Id": 568,
+        "ActionId": 568,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Onni",
+            "There are too many. We don't have enough hands. Lumi's buried. I just told them to stay flat and try not to make it worse. There's... there's too goddamn many...",
+            1
+        ]
+    },
+    {
+        "Id": 569,
+        "ActionId": 569,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 570,
+        "ActionId": 570,
+        "Type": 201,
+        "Params": [
+            2,
+            501756,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 571,
+        "ActionId": 571,
+        "Type": 301,
+        "Params": [
+            1,
+            "Gunnar",
+            "Who gave the order to open fire?",
+            2
+        ]
+    },
+    {
+        "Id": 572,
+        "ActionId": 572,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Gunnar cut Onni off mid-sentence."
+        ]
+    },
+    {
+        "Id": 573,
+        "ActionId": 573,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 574,
+        "ActionId": 574,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Onni",
+            "This ************...",
+            1
+        ]
+    },
+    {
+        "Id": 575,
+        "ActionId": 575,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "He pointed at the man who sat collapsed aside, his expression empty and lost."
+        ]
+    },
+    {
+        "Id": 576,
+        "ActionId": 576,
+        "Type": 301,
+        "Params": [
+            "",
+            "Gunnar",
+            "Breathe, Onni.",
+            2
+        ]
+    },
+    {
+        "Id": 577,
+        "ActionId": 577,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Gunnar laid a hand on Onni's shoulder."
+        ]
+    },
+    {
+        "Id": 578,
+        "ActionId": 578,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Onni dropped his head and pinched the bridge of his nose hard."
+        ]
+    },
+    {
+        "Id": 579,
+        "ActionId": 579,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 580,
+        "ActionId": 580,
+        "Type": 201,
+        "Params": [
+            1,
+            501746,
+            4
+        ]
+    },
+    {
+        "Id": 581,
+        "ActionId": 581,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Onni",
+            "I'm just... Boss, we put our lives on the line for these people. And they turned around and... now Sieg's lying over there...",
+            1
+        ]
+    },
+    {
+        "Id": 582,
+        "ActionId": 582,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "At the mention of Sieg's name, Gunnar parted his lips, but every word had lost its meaning."
+        ]
+    },
+    {
+        "Id": 583,
+        "ActionId": 583,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Onni",
+            "Sorry... Boss. It's fine. My head's just scrambled...",
+            1
+        ]
+    },
+    {
+        "Id": 584,
+        "ActionId": 584,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Onni",
+            "Ahem. The rioters said someone was spreading word about Atlantis, stirring people up, and told them to steal the ship.",
+            1
+        ]
+    },
+    {
+        "Id": 585,
+        "ActionId": 585,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Onni",
+            "Their story was that the remaining ships couldn't carry everyone. We knew the truth but hid it from them, so we could ditch them and run.",
+            1
+        ]
+    },
+    {
+        "Id": 586,
+        "ActionId": 586,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Onni",
+            "I was on patrol with my squad, and we ran straight into a crowd trying to take the ship. We tried to talk them down, gave them warnings, but they just wouldn't listen. Then it turned physical.",
+            1
+        ]
+    },
+    {
+        "Id": 587,
+        "ActionId": 587,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Onni",
+            "In the chaos, one of them pulled a knife... Killed a soldier and took his gun.",
+            1
+        ]
+    },
+    {
+        "Id": 588,
+        "ActionId": 588,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lieutenant Junior Grade Onni",
+            "His squadmate fired back on reflex. After that... it all came apart.",
+            1
+        ]
+    },
+    {
+        "Id": 589,
+        "ActionId": 589,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 590,
+        "ActionId": 590,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "As Onni's chin sank toward his chest, Gunnar breathed out deeply and ran his palm over Onni's hair in a firm, soothing motion."
+        ]
+    },
+    {
+        "Id": 591,
+        "ActionId": 591,
+        "Type": 201,
+        "Params": [
+            1,
+            501756
+        ]
+    },
+    {
+        "Id": 592,
+        "ActionId": 592,
+        "Type": 301,
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "That's enough, Onni.",
+            1
+        ]
+    },
+    {
+        "Id": 593,
+        "ActionId": 593,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 594,
+        "ActionId": 594,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            3
+        ]
+    },
+    {
+        "Id": 595,
+        "ActionId": 595,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "How did the survivors find out about Atlantis?",
+            1
+        ]
+    },
+    {
+        "Id": 596,
+        "ActionId": 596,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 597,
+        "ActionId": 597,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "At her question, all of Onni's weariness and sorrow ignited into raw fury."
+        ]
+    },
+    {
+        "Id": 598,
+        "ActionId": 598,
+        "Type": 201,
+        "Params": [
+            1,
+            501746,
+            5
+        ]
+    },
+    {
+        "Id": 599,
+        "ActionId": 599,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Onni",
+            "...Ask him!",
+            1
+        ]
+    },
+    {
+        "Id": 600,
+        "ActionId": 600,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 601,
+        "ActionId": 601,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 602,
+        "ActionId": 602,
+        "Type": 201,
+        "Params": [
+            1,
+            501751,
+            "",
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 603,
+        "ActionId": 603,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 604,
+        "ActionId": 604,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 605,
+        "ActionId": 605,
+        "Type": 306
+    },
+    {
+        "Id": 606,
+        "ActionId": 606,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "He pointed toward a figure standing rigidly amid the crowd on the right."
+        ]
+    },
+    {
+        "Id": 607,
+        "ActionId": 607,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Armed soldiers formed a line, their eyes fixed on the subdued mass before them."
+        ]
+    },
+    {
+        "Id": 608,
+        "ActionId": 608,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Some rioters lay face down, others knelt, their wrists cinched behind their backs, bodies slumping in exhaustion."
+        ]
+    },
+    {
+        "Id": 609,
+        "ActionId": 609,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Some still spat curses, a few shifted restlessly, but only one remained kneeling at the center, his spine held perfectly straight."
+        ]
+    },
+    {
+        "Id": 610,
+        "ActionId": 610,
+        "Type": 201,
+        "Params": [
+            1,
+            501756
+        ]
+    },
+    {
+        "Id": 611,
+        "ActionId": 611,
+        "Type": 301,
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "You?",
+            1
+        ]
+    },
+    {
+        "Id": 612,
+        "ActionId": 612,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 613,
+        "ActionId": 613,
+        "Type": 201,
+        "Params": [
+            1,
+            501751
+        ]
+    },
+    {
+        "Id": 614,
+        "ActionId": 614,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Stigan pressed his lips into a thin line and averted his gaze."
+        ]
+    },
+    {
+        "Id": 615,
+        "ActionId": 615,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "It wasn't supposed to go like this.",
+            1
+        ]
+    },
+    {
+        "Id": 616,
+        "ActionId": 616,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 617,
+        "ActionId": 617,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 618,
+        "ActionId": 618,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Gunnar moved to stand before him, fury smoldering just beneath a thin veneer of calm."
+        ]
+    },
+    {
+        "Id": 619,
+        "ActionId": 619,
+        "Type": 201,
+        "Params": [
+            1,
+            501756,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 620,
+        "ActionId": 620,
+        "Type": 201,
+        "Params": [
+            2,
+            501751,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 621,
+        "ActionId": 621,
+        "Type": 301,
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "Why did you spread word about Atlantis?",
+            1
+        ]
+    },
+    {
+        "Id": 622,
+        "ActionId": 622,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "...",
+            2
+        ]
+    },
+    {
+        "Id": 623,
+        "ActionId": 623,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Do you see your comrades' blood?",
+            1
+        ]
+    },
+    {
+        "Id": 624,
+        "ActionId": 624,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "...",
+            2
+        ]
+    },
+    {
+        "Id": 625,
+        "ActionId": 625,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Speak!",
+            1
+        ]
+    },
+    {
+        "Id": 626,
+        "ActionId": 626,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "Is it wrong to want to live?",
+            2
+        ]
+    },
+    {
+        "Id": 627,
+        "ActionId": 627,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "He held his head high and stared back into Gunnar's disappointed eyes."
+        ]
+    },
+    {
+        "Id": 628,
+        "ActionId": 628,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "The guy with a bad leg almost threw Lyndae into the sea, just to save himself. You didn't punish him.",
+            2
+        ]
+    },
+    {
+        "Id": 629,
+        "ActionId": 629,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "I asked him why!",
+            2
+        ]
+    },
+    {
+        "Id": 630,
+        "ActionId": 630,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "And he said, \"Is it wrong to want to live?\"",
+            2
+        ]
+    },
+    {
+        "Id": 631,
+        "ActionId": 631,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "Stigan",
+            "So tell me. Where's the wrong in wanting to live?",
+            2
+        ]
+    },
+    {
+        "Id": 632,
+        "ActionId": 632,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 633,
+        "ActionId": 633,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 634,
+        "ActionId": 634,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Stigan pressed his hands to his head, his face twisted in anguish."
+        ]
+    },
+    {
+        "Id": 635,
+        "ActionId": 635,
+        "Type": 201,
+        "Params": [
+            1,
+            501751
+        ]
+    },
+    {
+        "Id": 636,
+        "ActionId": 636,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "Yes, I've become a coward... But I only enlisted so my mother could have a better life. She's dead now. Her last words were... live. Live well for her.",
+            1
+        ]
+    },
+    {
+        "Id": 637,
+        "ActionId": 637,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "Stigan",
+            "So is it wrong... to be scared of dying? For her?!",
+            1
+        ]
+    },
+    {
+        "Id": 638,
+        "ActionId": 638,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 639,
+        "ActionId": 639,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            14
+        ]
+    },
+    {
+        "Id": 640,
+        "ActionId": 640,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "At the mention of \"mother,\" Cordelia's hand spasmed involuntarily where she stood amidst the crowd."
+        ]
+    },
+    {
+        "Id": 641,
+        "ActionId": 641,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 642,
+        "ActionId": 642,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She drew the baby closer, arms tightening."
+        ]
+    },
+    {
+        "Id": 643,
+        "ActionId": 643,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -200
+        ]
+    },
+    {
+        "Id": 644,
+        "ActionId": 644,
+        "Type": 201,
+        "Params": [
+            2,
+            501741,
+            "",
+            200
+        ]
+    },
+    {
+        "Id": 645,
+        "ActionId": 645,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "The little mechanical potted plant seemed to catch the shift in her state, floating up and nestling near her body."
+        ]
+    },
+    {
+        "Id": 646,
+        "ActionId": 646,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 647,
+        "ActionId": 647,
+        "Type": 201,
+        "Params": [
+            1,
+            501751
+        ]
+    },
+    {
+        "Id": 648,
+        "ActionId": 648,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "You all talked about... humanity's future...",
+            1
+        ]
+    },
+    {
+        "Id": 649,
+        "ActionId": 649,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "Stigan",
+            "What does that have to do with me?! I just want to live! Where's the crime in that?! A human being wanting to stay alive... what's wrong with it?! Answer me!",
+            1
+        ]
+    },
+    {
+        "Id": 650,
+        "ActionId": 650,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "Maybe you're right about everything. But I... I just want to make it through this!",
+            1
+        ]
+    },
+    {
+        "Id": 651,
+        "ActionId": 651,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 652,
+        "ActionId": 652,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            14
+        ]
+    },
+    {
+        "Id": 653,
+        "ActionId": 653,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 654,
+        "ActionId": 654,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Cordelia looked at the man in front of her and found herself utterly without words."
+        ]
+    },
+    {
+        "Id": 655,
+        "ActionId": 655,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 656,
+        "ActionId": 656,
+        "Type": 201,
+        "Params": [
+            1,
+            501751
+        ]
+    },
+    {
+        "Id": 657,
+        "ActionId": 657,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "I wanted to run. They did too. So I thought... we could run together.",
+            1
+        ]
+    },
+    {
+        "Id": 658,
+        "ActionId": 658,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "Ms. Erhorn, does someone who just wants to live owe anyone an apology?!",
+            1
+        ]
+    },
+    {
+        "Id": 659,
+        "ActionId": 659,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 660,
+        "ActionId": 660,
+        "Type": 401,
+        "Params": [
+            2,
+            4280
+        ]
+    },
+    {
+        "Id": 661,
+        "ActionId": 661,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            14
+        ]
+    },
+    {
+        "Id": 662,
+        "ActionId": 662,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "A sharp ringing flooded Cordelia's ears, drowning out everything else."
+        ]
+    },
+    {
+        "Id": 663,
+        "ActionId": 663,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 664,
+        "ActionId": 664,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 665,
+        "ActionId": 665,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 666,
+        "ActionId": 666,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1236.jpg"
+        ]
+    },
+    {
+        "Id": 667,
+        "ActionId": 667,
+        "Type": 201,
+        "Params": [
+            1,
+            500463,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 668,
+        "ActionId": 668,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 669,
+        "ActionId": 669,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia's Mother",
+            "You have to survive... No matter what, you have to keep living, Cordy...",
+            1
+        ]
+    },
+    {
+        "Id": 670,
+        "ActionId": 670,
+        "Type": 402,
+        "Params": [
+            4280
+        ]
+    },
+    {
+        "Id": 671,
+        "ActionId": 671,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 672,
+        "ActionId": 672,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 673,
+        "ActionId": 673,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 674,
+        "ActionId": 674,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 675,
+        "ActionId": 675,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1579.jpg"
+        ]
+    },
+    {
+        "Id": 676,
+        "ActionId": 676,
+        "Type": 201,
+        "Params": [
+            1,
+            501751,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 677,
+        "ActionId": 677,
+        "Type": 301,
+        "Params": [
+            1,
+            "Stigan",
+            "I want to live. Even if I have to trade my dignity and honor for every last breath, I just want to live...",
+            1
+        ]
+    },
+    {
+        "Id": 678,
+        "ActionId": 678,
+        "Type": 301,
+        "Params": [
+            "",
+            "Stigan",
+            "I get what you said about the new virus... so I just won't turn Frigga on... I won't touch her at all... That's enough, right?!",
+            1
+        ]
+    },
+    {
+        "Id": 679,
+        "ActionId": 679,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 680,
+        "ActionId": 680,
+        "Type": 201,
+        "Params": [
+            1,
+            501756
+        ]
+    },
+    {
+        "Id": 681,
+        "ActionId": 681,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "Gunnar tugged the brim of his cap low over his eyes and held back a sigh."
+        ]
+    },
+    {
+        "Id": 682,
+        "ActionId": 682,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Gunnar",
+            "A person who wants to live doesn't owe anyone an apology. But if survival means putting other people's lives below yours... you owe them an answer.",
+            1
+        ]
+    },
+    {
+        "Id": 683,
+        "ActionId": 683,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 684,
+        "ActionId": 684,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 685,
+        "ActionId": 685,
+        "Type": 401,
+        "Params": [
+            1,
+            229
+        ]
+    },
+    {
+        "Id": 686,
+        "ActionId": 686,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "The sea wind swept away the faint scent of blood. Rainbow Bridge Base, which should have fallen silent by then, was quickly consumed by frantic activity once again."
+        ]
+    },
+    {
+        "Id": 687,
+        "ActionId": 687,
+        "Type": 201,
+        "Params": [
+            1,
+            501754,
+            4
+        ]
+    },
+    {
+        "Id": 688,
+        "ActionId": 688,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lyndae",
+            "...Some of the rioters chose to stay. Most have been boarded with supplies divided by headcount.",
+            1
+        ]
+    },
+    {
+        "Id": 689,
+        "ActionId": 689,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 690,
+        "ActionId": 690,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The limping man who had been the most fervent agitator during the riot now walked at the very front of the boarding line, throwing himself into the task of checking all supplies."
+        ]
+    },
+    {
+        "Id": 691,
+        "ActionId": 691,
+        "Type": 201,
+        "Params": [
+            1,
+            501756,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 692,
+        "ActionId": 692,
+        "Type": 201,
+        "Params": [
+            2,
+            501754,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 693,
+        "ActionId": 693,
+        "Type": 301,
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "Any working smoke flares on that ship?",
+            1
+        ]
+    },
+    {
+        "Id": 694,
+        "ActionId": 694,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lyndae",
+            "We used some in a drill ages ago. Should be a few left. What can they use those antiques for?",
+            2
+        ]
+    },
+    {
+        "Id": 695,
+        "ActionId": 695,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Go confirm that. Make sure they get some of the smoke grenades and handheld flares.",
+            1
+        ]
+    },
+    {
+        "Id": 696,
+        "ActionId": 696,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "The virus is eating the ocean. Electronic signals might be useless soon.",
+            1
+        ]
+    },
+    {
+        "Id": 697,
+        "ActionId": 697,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "Maybe the old stuff will bring them better luck.",
+            1
+        ]
+    },
+    {
+        "Id": 698,
+        "ActionId": 698,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 699,
+        "ActionId": 699,
+        "Type": 201,
+        "Params": [
+            1,
+            501746,
+            4,
+            400
+        ]
+    },
+    {
+        "Id": 700,
+        "ActionId": 700,
+        "Type": 301,
+        "Params": [
+            1,
+            "Onni",
+            "We're really just letting them leave?",
+            1
+        ]
+    },
+    {
+        "Id": 701,
+        "ActionId": 701,
+        "Type": 301,
+        "Params": [
+            "",
+            "Lyndae",
+            "We can deal with rioting soldiers. But civilians... what are we supposed to do with them?",
+            2
+        ]
+    },
+    {
+        "Id": 702,
+        "ActionId": 702,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 703,
+        "ActionId": 703,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            3
+        ]
+    },
+    {
+        "Id": 704,
+        "ActionId": 704,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "I can't strip them of their right to survive either. Not with a clear conscience... Things are bad enough as they are.",
+            1
+        ]
+    },
+    {
+        "Id": 705,
+        "ActionId": 705,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 706,
+        "ActionId": 706,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "They made their choice. They know the risks. They know they might not make it. They know Atlantis might sink them on sight.",
+            1
+        ]
+    },
+    {
+        "Id": 707,
+        "ActionId": 707,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 708,
+        "ActionId": 708,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Even so, it's the \"hope\" they chose.",
+            1
+        ]
+    },
+    {
+        "Id": 709,
+        "ActionId": 709,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A chill wind blew in from the water, and she hugged the baby closer to her chest."
+        ]
+    },
+    {
+        "Id": 710,
+        "ActionId": 710,
+        "Type": 204,
+        "Params": [
+            1,
+            14
+        ]
+    },
+    {
+        "Id": 711,
+        "ActionId": 711,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "They all just want to live... but... what's even the point of living?",
+            1
+        ]
+    },
+    {
+        "Id": 712,
+        "ActionId": 712,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Cordelia",
+            "If this is the end of the world... is fate just testing whether we can survive?",
+            1
+        ]
+    },
+    {
+        "Id": 713,
+        "ActionId": 713,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 714,
+        "ActionId": 714,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory548.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 715,
+        "ActionId": 715,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory548.jpg"
+        ]
+    },
+    {
+        "Id": 716,
+        "ActionId": 716,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 717,
+        "ActionId": 717,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "She stared out toward the horizon, toward Atlantis, where there was nothing but an endless sheet of sea merging into the sky."
+        ]
+    },
+    {
+        "Id": 718,
+        "ActionId": 718,
+        "Type": 205,
+        "EndDelay": 550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1579.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 719,
+        "ActionId": 719,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1579.jpg"
+        ]
+    },
+    {
+        "Id": 720,
+        "ActionId": 720,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 721,
+        "ActionId": 721,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            14
+        ]
+    },
+    {
+        "Id": 722,
+        "ActionId": 722,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "Cordelia stroked the baby's forehead softly. The riot had not disturbed the child at all."
+        ]
+    },
+    {
+        "Id": 723,
+        "ActionId": 723,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "We're not just primates who figured out tools. We built a conscience so we could live together. That's what makes us a civilization.",
+            1
+        ]
+    },
+    {
+        "Id": 724,
+        "ActionId": 724,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "We're soft, and we scare easy. We're brave, and we mess up. We feel for each other, but we can't ever really, fully understand. And still, we try to hold on... All that complexity is exactly what makes us human.",
+            1
+        ]
+    },
+    {
+        "Id": 725,
+        "ActionId": 725,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The baby curled her tiny hand around Cordelia's trembling finger."
+        ]
+    },
+    {
+        "Id": 726,
+        "ActionId": 726,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 727,
+        "ActionId": 727,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Isn't that right?",
+            1
+        ]
+    },
+    {
+        "Id": 728,
+        "ActionId": 728,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She did not pull away, but instead stroked the tiny, soft palm with the lightest touch."
+        ]
+    },
+    {
+        "Id": 729,
+        "ActionId": 729,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 730,
+        "ActionId": 730,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 731,
+        "ActionId": 731,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "(This world is terrible enough as it is. I don't want the only thing you see to be humans tearing each other apart.)",
+            1
+        ]
+    },
+    {
+        "Id": 732,
+        "ActionId": 732,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 733,
+        "ActionId": 733,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "(But just denying it... isn't enough.)",
+            1
+        ]
+    },
+    {
+        "Id": 734,
+        "ActionId": 734,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "(We need a plan... a real one...)",
+            1
+        ]
+    },
+    {
+        "Id": 735,
+        "ActionId": 735,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 736,
+        "ActionId": 736,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 737,
+        "ActionId": 737,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 738,
+        "ActionId": 738,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 739,
+        "ActionId": 739,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 740,
+        "ActionId": 740,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1601.jpg"
+        ]
+    },
+    {
+        "Id": 741,
+        "ActionId": 741,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 742,
+        "ActionId": 742,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her thoughts drifted to a remote island: Mirage Island, birthplace of the undersea database's initial construction."
+        ]
+    },
+    {
+        "Id": 743,
+        "ActionId": 743,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Was that a good place to go? That narrow patch of land could not accommodate everyone, and the journey would mean stretching their water and rations thin, all while navigating through the Mannan-series units in the area."
+        ]
+    },
+    {
+        "Id": 744,
+        "ActionId": 744,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 745,
+        "ActionId": 745,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 746,
+        "ActionId": 746,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 747,
+        "ActionId": 747,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 748,
+        "ActionId": 748,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1579.jpg"
+        ]
+    },
+    {
+        "Id": 749,
+        "ActionId": 749,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            8,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 750,
+        "ActionId": 750,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "She rocked the baby in her arms, patting a soft, soothing rhythm against her back."
+        ]
+    },
+    {
+        "Id": 751,
+        "ActionId": 751,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 752,
+        "ActionId": 752,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 753,
+        "ActionId": 753,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "(Still... it's worth trying.)",
+            1
+        ]
+    },
+    {
+        "Id": 754,
+        "ActionId": 754,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 755,
+        "ActionId": 755,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 756,
+        "ActionId": 756,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Her skin felt dry and tight from the salt breeze. She rubbed her face and forced the corners of her mouth upward into something resembling calm."
+        ]
+    },
+    {
+        "Id": 757,
+        "ActionId": 757,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "Look at you, Mr. Poet, always so listless. You never looked like an engineer anyway. If it's not for you, just quit!",
+            1
+        ]
+    },
+    {
+        "Id": 758,
+        "ActionId": 758,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 759,
+        "ActionId": 759,
+        "Type": 201,
+        "Params": [
+            2,
+            501761,
+            7,
+            400
+        ]
+    },
+    {
+        "Id": 760,
+        "ActionId": 760,
+        "Type": 301,
+        "Params": [
+            1,
+            "Larsen",
+            "Listless? Am I?",
+            2
+        ]
+    },
+    {
+        "Id": 761,
+        "ActionId": 761,
+        "Type": 204,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 762,
+        "ActionId": 762,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "You love poetry and literature, so go chase that dream. Top university, top program, take your pick. Gunnar wants to go home? Sure, let's pull some strings and get him assigned back to the Arctic Route Union.",
+            1
+        ]
+    },
+    {
+        "Id": 763,
+        "ActionId": 763,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "I'll make every one of your dreams come true.",
+            1
+        ]
+    },
+    {
+        "Id": 764,
+        "ActionId": 764,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 765,
+        "ActionId": 765,
+        "Type": 201,
+        "Params": [
+            1,
+            501746
+        ]
+    },
+    {
+        "Id": 766,
+        "ActionId": 766,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Onni",
+            "What about me, miss? Can I make a wish too?",
+            1
+        ]
+    },
+    {
+        "Id": 767,
+        "ActionId": 767,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 768,
+        "ActionId": 768,
+        "Type": 201,
+        "Params": [
+            1,
+            501754
+        ]
+    },
+    {
+        "Id": 769,
+        "ActionId": 769,
+        "Type": 301,
+        "Params": [
+            1,
+            "Lieutenant Junior Grade Lyndae",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 770,
+        "ActionId": 770,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 771,
+        "ActionId": 771,
+        "Type": 201,
+        "Params": [
+            1,
+            501756
+        ]
+    },
+    {
+        "Id": 772,
+        "ActionId": 772,
+        "Type": 301,
+        "Params": [
+            1,
+            "Captain Gunnar",
+            "This time of year... the snow back home must be deep by now. Fishing in that... it's something else. Onni, Lyndae, when we get back to the pole, I'll show you.",
+            1
+        ]
+    },
+    {
+        "Id": 773,
+        "ActionId": 773,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "His voice carried a faint trace of melancholy."
+        ]
+    },
+    {
+        "Id": 774,
+        "ActionId": 774,
+        "Type": 301,
+        "Params": [
+            "",
+            "Captain Gunnar",
+            "You're welcome too, Ms. Erhorn. I know you like painting. The snow in my hometown is really worth seeing.",
+            1
+        ]
+    },
+    {
+        "Id": 775,
+        "ActionId": 775,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 776,
+        "ActionId": 776,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Cordelia rested her cheek softly against the baby's."
+        ]
+    },
+    {
+        "Id": 777,
+        "ActionId": 777,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Just as her mother had once done with her, so many years ago."
+        ]
+    },
+    {
+        "Id": 778,
+        "ActionId": 778,
+        "Type": 201,
+        "Params": [
+            1,
+            501768,
+            8
+        ]
+    },
+    {
+        "Id": 779,
+        "ActionId": 779,
+        "Type": 301,
+        "Params": [
+            1,
+            "Cordelia",
+            "I'll make all your dreams come true. I'll give you a world that's free and happy.",
+            1
+        ]
+    },
+    {
+        "Id": 780,
+        "ActionId": 780,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 781,
+        "ActionId": 781,
+        "Type": 301,
+        "Params": [
+            "",
+            "Cordelia",
+            "You'll be the happiest child there is. Everything your eyes find and everything your ears catch... None of it will ever make you sad.",
+            1
+        ]
+    },
+    {
+        "Id": 782,
+        "ActionId": 782,
         "Type": 301,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "Just as her mother had once told her, so many years ago."
         ]
     }
 ]

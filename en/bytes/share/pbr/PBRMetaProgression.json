@@ -1,13 +1,13 @@
 [
     {
         "NodeId": 1,
-        "NodeName": "沉浸节拍",
+        "NodeName": "Fever Beat",
         "NodeType": 1,
         "NodeGroup": 1,
         "NodeCost": 75,
         "NodeCondition": 865011,
-        "TextUnlock": "解锁沉浸节拍能力",
-        "TextLocked": "解锁沉浸节拍能力",
+        "TextUnlock": "Unlock Fever Beat abilities",
+        "TextLocked": "Unlock Fever Beat abilities",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconFeverComboBoostWindow.png",
         "NodeStats": [
             61
@@ -19,17 +19,17 @@
     {
         "NodeId": 2,
         "PreNode": 1,
-        "NodeName": "额外充能Ⅰ",
+        "NodeName": "Extra Charge I",
         "NodeGroup": 1,
         "NodeCost": 50,
-        "TextUnlock": "Max Sprint Charge <color=#3ACC3B>+2</color>.",
-        "TextLocked": "Max Sprint Charge <color=#3ACC3B>+2</color>.",
+        "TextUnlock": "Max Sprint Charge <color=#67ef8a>+2</color>.",
+        "TextLocked": "Max Sprint Charge <color=#67ef8a>+2</color>.",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconDashLimitNumUp.png",
         "NodeStats": [
             55
         ],
         "NodeStatsNum": [
-            200000
+            400000
         ]
     },
     {
@@ -38,14 +38,14 @@
         "NodeName": "DMG Increase",
         "NodeGroup": 1,
         "NodeCost": 50,
-        "TextUnlock": "Fever DMG <color=#3ACC3B>+100%</color>",
-        "TextLocked": "沉浸态伤害<color=#3ACC3B>+70%</color>",
+        "TextUnlock": "Fever DMG <color=#67ef8a>+50%</color>",
+        "TextLocked": "Fever DMG <color=#67ef8a>+50%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconFeverBasicAttackDmg.png",
         "NodeStats": [
             60
         ],
         "NodeStatsNum": [
-            7000
+            5000
         ]
     },
     {
@@ -54,8 +54,8 @@
         "NodeName": "Acrobatics",
         "NodeGroup": 1,
         "NodeCost": 50,
-        "TextUnlock": "Signal Orb DMG <color=#3ACC3B>+30%</color>",
-        "TextLocked": "Signal Orb DMG Bonus <color=#3ACC3B>+30%</color>",
+        "TextUnlock": "Signal Orb DMG Bonus <color=#67ef8a>+30%</color>",
+        "TextLocked": "Signal Orb DMG Bonus <color=#67ef8a>+30%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconSignalOrbsDmgUp.png",
         "NodeStats": [
             12
@@ -70,8 +70,8 @@
         "NodeName": "Basic Attack",
         "NodeGroup": 1,
         "NodeCost": 50,
-        "TextUnlock": "Basic ATK DMG <color=#3ACC3B>+45%</color>",
-        "TextLocked": "Basic ATK DMG <color=#3ACC3B>+45%</color>",
+        "TextUnlock": "Basic ATK DMG <color=#67ef8a>+45%</color>",
+        "TextLocked": "Basic ATK DMG <color=#67ef8a>+45%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBasicAttackDmgUp.png",
         "NodeStats": [
             11
@@ -88,7 +88,7 @@
         "NodeGroup": 4,
         "NodeCost": 100,
         "NodeCondition": 865012,
-        "TextUnlock": "Unlock Blue Orb skill [Armored Assault]\\nUnlock Item [Anchor of Courage]",
+        "TextUnlock": "Unlocks Blue Orb Skill [Armored Assault]\\nUnlocks Item [Anchor of Courage]",
         "TextLocked": "Unlock Blue Orb skill [Armored Assault]\\nUnlock Item [Anchor of Courage]",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconPBRItemUp.png",
         "RewardItemIds": [
@@ -107,7 +107,7 @@
         "NodeGroup": 4,
         "NodeCost": 100,
         "NodeCondition": 865012,
-        "TextUnlock": "Unlock Red Orb skill [Dual-Feed Rotor]\\nUnlock Item [Digital Storage]",
+        "TextUnlock": "Unlocks Red Orb Skill [Dual-Feed Rotor]\\nUnlocks Item [Digital Storage]",
         "TextLocked": "Unlock Red Orb skill [Dual-Feed Rotor]\\nUnlock Item [Digital Storage]",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconPBRItemUp.png",
         "RewardItemIds": [
@@ -121,13 +121,13 @@
     {
         "NodeId": 8,
         "PreNode": 5,
-        "NodeName": "额外充能Ⅱ",
+        "NodeName": "Extra Charge II",
         "NodeType": 1,
         "NodeGroup": 2,
         "NodeCost": 75,
         "NodeCondition": 865015,
-        "TextUnlock": "Max Sprint Charge <color=#3ACC3B>+2</color>.",
-        "TextLocked": "Max Sprint Charge <color=#3ACC3B>+2</color>.",
+        "TextUnlock": "Max Sprint Charge <color=#67ef8a>+2</color>.",
+        "TextLocked": "Max Sprint Charge <color=#67ef8a>+2</color>.",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconDashLimitNumUp.png",
         "NodeStats": [
             55
@@ -142,8 +142,8 @@
         "NodeName": "Full Health",
         "NodeGroup": 2,
         "NodeCost": 50,
-        "TextUnlock": "Max HP <color=#3ACC3B>+20</color>.",
-        "TextLocked": "Max HP <color=#3ACC3B>+20</color>.",
+        "TextUnlock": "Max HP <color=#67ef8a>+20</color>.",
+        "TextLocked": "Max HP <color=#67ef8a>+20</color>.",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconMaxHPUp.png",
         "NodeStats": [
             1
@@ -158,8 +158,8 @@
         "NodeName": "Fever Armor",
         "NodeGroup": 2,
         "NodeCost": 50,
-        "TextUnlock": "Fever Armor <color=#3ACC3B>+6</color>",
-        "TextLocked": "Fever Armor <color=#3ACC3B>+6</color>",
+        "TextUnlock": "Fever Armor <color=#67ef8a>+6</color>",
+        "TextLocked": "Fever Armor <color=#67ef8a>+6</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconFeverArmor.png",
         "NodeStats": [
             59
@@ -174,8 +174,8 @@
         "NodeName": "Signal Orb Drop Rate",
         "NodeGroup": 2,
         "NodeCost": 50,
-        "TextUnlock": "Red Orb drop rate <color=#3ACC3B>+15%</color>, Yellow Orb drop rate <color=#3ACC3B>+15%</color>, Blue Orb drop rate <color=#3ACC3B>+15%</color>",
-        "TextLocked": "Red Orb drop rate <color=#3ACC3B>+15%</color>, Yellow Orb drop rate <color=#3ACC3B>+15%</color>, Blue Orb drop rate <color=#3ACC3B>+15%</color>",
+        "TextUnlock": "Red Orb drop rate <color=#67ef8a>+15%</color>, Yellow Orb drop rate <color=#67ef8a>+15%</color>, Blue Orb drop rate <color=#67ef8a>+15%</color>",
+        "TextLocked": "Red Orb drop rate <color=#67ef8a>+15%</color>, Yellow Orb drop rate <color=#67ef8a>+15%</color>, Blue Orb drop rate <color=#67ef8a>+15%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconRedOrbsAttackDropRateUp.png",
         "NodeStats": [
             154,
@@ -194,8 +194,8 @@
         "NodeName": "Window Time",
         "NodeGroup": 2,
         "NodeCost": 50,
-        "TextUnlock": "Chain duration <color=#3ACC3B>+2</color>s",
-        "TextLocked": "Chain duration <color=#3ACC3B>+2</color>s",
+        "TextUnlock": "Chain duration <color=#67ef8a>+2</color>s",
+        "TextLocked": "Combo duration <color=#67ef8a>+2</color>s",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconComboBoostWindowUp.png",
         "NodeStats": [
             77
@@ -232,7 +232,7 @@
         "NodeGroup": 5,
         "NodeCost": 100,
         "NodeCondition": 865016,
-        "TextUnlock": "Unlock Red Orb Skill [Precise Shots]",
+        "TextUnlock": "Unlocks Red Orb Skill [Precise Shots]",
         "TextLocked": "Unlock Red Orb Skill [Precise Shots]",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconPBRItemUp.png",
         "RewardItemIds": [
@@ -250,19 +250,19 @@
         "NodeGroup": 3,
         "NodeCost": 75,
         "NodeCondition": 865019,
-        "TextUnlock": "Shop refresh attempts <color=#3ACC3B>+2</color>",
-        "TextLocked": "Shop refresh attempts <color=#3ACC3B>+2</color>",
+        "TextUnlock": "Shop refresh attempts <color=#67ef8a>+2</color>",
+        "TextLocked": "Shop refresh attempts <color=#67ef8a>+2</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBuyCountUp.png",
         "ShopFreshCount": 2
     },
     {
         "NodeId": 16,
         "PreNode": 15,
-        "NodeName": "声浪",
+        "NodeName": "Sound Wave",
         "NodeGroup": 3,
         "NodeCost": 50,
-        "TextUnlock": "Range <color=#3ACC3B>+2</color>",
-        "TextLocked": "Range <color=#3ACC3B>+2</color>",
+        "TextUnlock": "Range <color=#67ef8a>+2</color>",
+        "TextLocked": "Range <color=#67ef8a>+2</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBasicAttackRangeUp.png",
         "NodeStats": [
             75
@@ -274,11 +274,11 @@
     {
         "NodeId": 17,
         "PreNode": 16,
-        "NodeName": "击退",
+        "NodeName": "Knockback",
         "NodeGroup": 3,
         "NodeCost": 50,
-        "TextUnlock": "Knockback <color=#3ACC3B>+1</color>",
-        "TextLocked": "Knockback <color=#3ACC3B>+1</color>",
+        "TextUnlock": "Knockback <color=#67ef8a>+1</color>",
+        "TextLocked": "Knockback <color=#67ef8a>+1</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconBasicAttackKnockbackUp.png",
         "NodeStats": [
             78
@@ -293,8 +293,8 @@
         "NodeName": "Vital Boost",
         "NodeGroup": 3,
         "NodeCost": 50,
-        "TextUnlock": "HP Growth <color=#3ACC3B>+2</color>",
-        "TextLocked": "HP Growth <color=#3ACC3B>+2</color>",
+        "TextUnlock": "HP Growth <color=#67ef8a>+2</color>",
+        "TextLocked": "HP Growth <color=#67ef8a>+2</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconHpPerLevelUp.png",
         "NodeStats": [
             17
@@ -309,8 +309,8 @@
         "NodeName": "Grand Performance",
         "NodeGroup": 3,
         "NodeCost": 50,
-        "TextUnlock": "Fever Lifesteal Efficiency <color=#3ACC3B>+2%</color>",
-        "TextLocked": "沉浸态生命偷取效率<color=#3ACC3B>+1%</color>",
+        "TextUnlock": "Lifesteal Efficiency (Fever) <color=#67ef8a>+1%</color>",
+        "TextLocked": "Lifesteal Efficiency (Fever) <color=#67ef8a>+1%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconFeverLifestealRate.png",
         "NodeStats": [
             63
@@ -327,8 +327,8 @@
         "NodeGroup": 3,
         "NodeCost": 200,
         "NodeCondition": 865020,
-        "TextUnlock": "Fever Duration <color=#3ACC3B>+2</color>s, Fever DMG <color=#3ACC3B>+100%</color>, Fever Armor <color=#3ACC3B>+6</color>s, Fever Lifesteal Efficiency <color=#3ACC3B>+2%</color>",
-        "TextLocked": "沉浸态时长<color=#3ACC3B>+2</color>秒，沉浸态伤害<color=#3ACC3B>+70%</color>，沉浸态护甲<color=#3ACC3B>+6</color>，沉浸态生命偷取效率<color=#3ACC3B>+1%</color>",
+        "TextUnlock": "Fever Duration <color=#67ef8a>+2</color>s, Fever DMG <color=#67ef8a>+50%</color>, Fever Armor <color=#67ef8a>+6</color>, Fever Lifesteal Efficiency <color=#67ef8a>+1%</color>",
+        "TextLocked": "Fever Duration <color=#67ef8a>+2</color>s, Fever DMG <color=#67ef8a>+50%</color>, Fever Armor <color=#67ef8a>+6</color>, Fever Lifesteal Efficiency <color=#67ef8a>+1%</color>",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconFeverComboBoostWindow.png",
         "NodeStats": [
             61,
@@ -338,7 +338,7 @@
         ],
         "NodeStatsNum": [
             2000,
-            7000,
+            5000,
             6,
             100
         ]
@@ -351,7 +351,7 @@
         "NodeGroup": 6,
         "NodeCost": 100,
         "NodeCondition": 865021,
-        "TextUnlock": "Unlocks Red Orb Skill: [Thundering Rush]\\nUnlock Item: [Whatever You Want]",
+        "TextUnlock": "Unlocks Red Orb Skill: [Thundering Rush]\\nUnlocks Item: [Whatever You Want]",
         "TextLocked": "Unlocks Red Orb Skill: [Thundering Rush]\\nUnlocks Item: [Whatever You Want]",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconPBRItemUp.png",
         "RewardItemIds": [
@@ -370,7 +370,7 @@
         "NodeGroup": 6,
         "NodeCost": 100,
         "NodeCondition": 865021,
-        "TextUnlock": "Unlock Item [Small Round Thing]",
+        "TextUnlock": "Unlocks Item [Small Round Thing]",
         "TextLocked": "Unlock Item [Small Round Thing]",
         "NodeIcon": "Assets/Product/Texture/Image/UiPBR/IconPBRItemUp.png",
         "RewardItemIds": [
@@ -383,7 +383,11 @@
         "NodeName": "Placeholder_不可见道具用节点",
         "NodeCost": 1000000,
         "RewardItemIds": [
-            249
+            249,
+            73,
+            74,
+            75,
+            76
         ]
     }
 ]

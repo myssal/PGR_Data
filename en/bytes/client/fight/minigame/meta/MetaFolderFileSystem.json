@@ -1,17 +1,9 @@
 [
     {
-        "ID": 1,
-        "GameID": 1,
-        "Type": 1,
-        "Name": "能源调配中枢",
-        "IsProtected": true
-    },
-    {
         "ID": 2,
         "GameID": 1,
-        "ParentID": 1,
         "Type": 1,
-        "Name": "最高权限认证",
+        "Name": "Root Authorization",
         "IsLocked": true,
         "LockPassword": 819,
         "IsProtected": true,
@@ -24,17 +16,15 @@
     {
         "ID": 3,
         "GameID": 1,
-        "ParentID": 1,
         "Type": 1,
-        "Name": "基础框架总览",
+        "Name": "Base Framework Overview",
         "IsProtected": true
     },
     {
         "ID": 4,
         "GameID": 1,
-        "ParentID": 1,
         "Type": 1,
-        "Name": "新建文件夹",
+        "Name": "New Folder",
         "IsProtected": true
     },
     {
@@ -42,7 +32,7 @@
         "GameID": 1,
         "ParentID": 4,
         "Type": 1,
-        "Name": "我的资料",
+        "Name": "My Files",
         "IsProtected": true
     },
     {
@@ -50,8 +40,8 @@
         "GameID": 1,
         "ParentID": 1,
         "Type": 2,
-        "Content": "只要能跑，就不要动之前的代码。",
-        "Name": "安全提示",
+        "Content": "If it runs, don't touch the code.",
+        "Name": "Security Alert",
         "OptionType": [
             1,
             2
@@ -62,8 +52,8 @@
         "GameID": 1,
         "ParentID": 2,
         "Type": 2,
-        "Content": "骇入中枢",
-        "Name": "中枢密钥",
+        "Content": "Hack the hub",
+        "Name": "Hub Passkey",
         "IsProtected": true,
         "IsTarget": true,
         "TargetType": 2,
@@ -77,8 +67,8 @@
         "GameID": 1,
         "ParentID": 2,
         "Type": 2,
-        "Content": "7月4日\\n本期维护任务：完成能源调配中枢各级资料梳理，完善层级权限管理。排查节点所有设备设施，每日更新维护记录。预计工时：一周。\\n……\\n7月14日（摸鱼）\\n7月15日（摸鱼）\\n7月16日\\n唉！我怎么能如此堕落！就算工作比较无聊，也不该忘记自己的职业操守！\\n7月17日\\n吃泡面。\\n7月18日（摸鱼）",
-        "Name": "维护日志",
+        "Content": "July 4\\nMaintenance Tasks for this period: Organize data across all levels of the Energy Distribution Hub, and refine hierarchical permission management. Inspect all equipment and facilities across all nodes, and update daily maintenance records. Estimated Workload: 1 week.\\n...\\nJuly 14 (Slacking off)\\nJuly 15 (Slacking off)\\nJuly 16\\nUgh! How could I sink this low! The job may be boring, but that's no excuse to forget my professional ethics!\\nJuly 17\\nHad instant noodles.\\nJuly 18 (Slacking off)",
+        "Name": "Maintenance Logs",
         "OptionType": [
             1,
             2
@@ -89,8 +79,8 @@
         "GameID": 1,
         "ParentID": 3,
         "Type": 2,
-        "Content": "软件已过期，请购买。",
-        "Name": "[解压码：8888]能源分布信息.zip",
+        "Content": "This software has expired. Please purchase a license.",
+        "Name": "[Password 8888] Energy Distribution Data.zip",
         "OptionType": [
             1,
             2
@@ -101,8 +91,8 @@
         "GameID": 1,
         "ParentID": 3,
         "Type": 2,
-        "Content": "[安全事件通报 · SEC03]\\n------------------------------\\n检测到未知终端短时间多次尝试建立链路\\n风险判定：中风险\\n已对全部访问指令执行拦截\\n------------------------------",
-        "Name": "节点访问记录.log",
+        "Content": "[Security Incident Report: SEC03]\\n------------------------------\\nDetected multiple link attempt requests from an unknown terminal in a short duration.\\nRisk Rating: Medium\\nAll access commands have been intercepted and blocked.\\n------------------------------",
+        "Name": "Node_Access_Logs.log",
         "OptionType": [
             1,
             2
@@ -113,8 +103,8 @@
         "GameID": 1,
         "ParentID": 3,
         "Type": 3,
-        "Content": "Assets/Product/Texture/Image/BgUi/BgFightLoading16.jpg",
-        "Name": "超软萌无口系甜妹.jpg",
+        "Content": "Assets/Product/Texture/Image/Role/RoleHuhu.png",
+        "Name": "Confidential.jpg",
         "OptionType": [
             1,
             2
@@ -126,7 +116,7 @@
         "ParentID": 5,
         "Type": 2,
         "Content": 819,
-        "Name": "访问密码",
+        "Name": "Access Passwords",
         "IsProtected": true,
         "TargetType": 3,
         "OptionType": [
@@ -139,8 +129,8 @@
         "GameID": 1,
         "ParentID": 5,
         "Type": 2,
-        "Content": "使用说明.txt \\n--------------\\nK.R.软件站 提供游戏和软件下载服务\\n最绿色安全的软件下载平台，无病毒、无插件、无恶意代码！\\n--------------",
-        "Name": "使用说明.txt",
+        "Content": "ReadMe.txt\\n--------------\\nK.R. Software Depot provides game and software downloads.\\nYour safest software platform. 100% clean, virus-free, plug-in free, and malware-free!\\n--------------",
+        "Name": "ReadMe.txt",
         "OptionType": [
             1,
             2

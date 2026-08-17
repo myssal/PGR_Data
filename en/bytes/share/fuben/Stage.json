@@ -47546,7 +47546,7 @@
         "StageId": 10410114,
         "Type": 87,
         "Name": "Folded Course",
-        "Description": "It causes me pain, and that is the fundamental difference between us. Because I am human... just like the materials you speak of. We share the same flesh and soul.",
+        "Description": "I will carry this guilt. That is the fundamental difference between us. I am human... Just like the materials you speak of. We share the same flesh. The same soul.",
         "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
         "BgmId": 36,
@@ -48063,6 +48063,246 @@
         "KeepPlayingStory": 1,
         "BeginStoryIds": [
             "ZX06826BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10410127
+        ]
+    },
+    {
+        "StageId": 10410127,
+        "Type": 87,
+        "Name": "\"Moses\"",
+        "Description": "Request to any human who arrives here: please help us reconnect to the master AI. Please let the Millennium Project continue.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 27,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10410126
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06801BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10410128
+        ]
+    },
+    {
+        "StageId": 10410128,
+        "Type": 87,
+        "Name": "\"Symbiotic Siren\"",
+        "Description": "When necessary, abandon the project and survive at all costs!",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 28,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10410127
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06802BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10410129
+        ]
+    },
+    {
+        "StageId": 10410129,
+        "Type": 87,
+        "Name": "\"Netherweb\"",
+        "Description": "Will you help me destroy those children of sin?",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 29,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10410128
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06803BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10410130
+        ]
+    },
+    {
+        "StageId": 10410130,
+        "Type": 87,
+        "Name": "\"CPU0\"",
+        "Description": "Copperfield's creations are like themselves: a little naive.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 30,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10410129
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06804BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10410131
+        ]
+    },
+    {
+        "StageId": 10410131,
+        "Type": 87,
+        "Name": "\"Abyss Passer\"",
+        "Description": "All we want is to return to where life began.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 31,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10410130
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06805BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10410132
+        ]
+    },
+    {
+        "StageId": 10410132,
+        "Type": 87,
+        "Name": "Millennium Project",
+        "Description": "Let our failures define what success means.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 32,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10410131
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06806BA"
         ],
         "OnlinePlayerLimit": 3,
         "StarDesc": [
@@ -105409,6 +105649,9 @@
             1,
             2,
             3
+        ],
+        "NextStageId": [
+            30100230
         ]
     },
     {
@@ -105514,15 +105757,12 @@
             1,
             2,
             3
-        ],
-        "NextStageId": [
-            30100230
         ]
     },
     {
         "StageId": 30100230,
         "Type": 17,
-        "Name": 4,
+        "Name": "A-4",
         "Description": "Leap Trial",
         "Icon": "Assets/Product/Texture/Image/UiFubenPracticeCharacter/UiFubenPracticeCharacterGuanqia2.png",
         "BgmId": 5040,
@@ -105531,7 +105771,7 @@
         "OrderId": 1,
         "LimitBuffId": 2,
         "PreStageId": [
-            30100084
+            30100081
         ],
         "FirstRewardShow": 30100801,
         "FirstRewardId": 30100801,
@@ -105545,7 +105785,8 @@
         "FunctionLeftBtn": 4,
         "FunctionRightBtn": 1,
         "RobotId": [
-            172431
+            9247,
+            9246
         ],
         "RebootId": 3,
         "StageGridStyle": "Rectangle",
@@ -108065,7 +108306,7 @@
         "FunctionLeftBtn": 4,
         "FunctionRightBtn": 1,
         "RobotId": [
-            174279,
+            9247,
             2334
         ],
         "RebootId": 3,
@@ -108076,7 +108317,7 @@
             3
         ],
         "GeneralSkillIds": [
-            5
+            6
         ]
     },
     {
@@ -115076,7 +115317,7 @@
         ],
         "Restartable": true,
         "GeneralSkillIds": [
-            5
+            6
         ]
     },
     {
@@ -174501,7 +174742,7 @@
     {
         "StageId": 30006893,
         "Type": 16,
-        "Name": "怒海翻澜-1",
+        "Name": "Waves in Wrath - 1",
         "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt1.png",
         "BgmId": 101,
         "LoadingType": 20011,
@@ -174510,7 +174751,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败曼南M-1A",
+            "Defeat Mannan M-1A",
             "Get taken down no more than 5 times.",
             "Get taken down no more than 3 times."
         ],
@@ -174527,7 +174768,7 @@
     {
         "StageId": 30006894,
         "Type": 16,
-        "Name": "怒海翻澜-2",
+        "Name": "Waves in Wrath - 2",
         "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt2.png",
         "BgmId": 101,
         "LoadingType": 20011,
@@ -174536,7 +174777,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败曼南M-1A",
+            "Defeat Mannan M-1A",
             "Get taken down no more than 5 times.",
             "Get taken down no more than 3 times."
         ],
@@ -174553,7 +174794,7 @@
     {
         "StageId": 30006895,
         "Type": 16,
-        "Name": "怒海翻澜-3",
+        "Name": "Waves in Wrath - 3",
         "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt3.png",
         "BgmId": 101,
         "LoadingType": 20011,
@@ -174562,7 +174803,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败曼南M-1A",
+            "Defeat Mannan M-1A",
             "Get taken down no more than 5 times.",
             "Get taken down no more than 3 times."
         ],
@@ -174579,7 +174820,7 @@
     {
         "StageId": 30006896,
         "Type": 16,
-        "Name": "怒海翻澜-4",
+        "Name": "Waves in Wrath - 4",
         "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt4.png",
         "BgmId": 101,
         "LoadingType": 20011,
@@ -174588,7 +174829,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败曼南M-1A",
+            "Defeat Mannan M-1A",
             "Get taken down no more than 3 times.",
             "Die no more than once."
         ],
@@ -174605,7 +174846,7 @@
     {
         "StageId": 30006897,
         "Type": 16,
-        "Name": "怒海翻澜-5",
+        "Name": "Waves in Wrath - 5",
         "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt5.png",
         "BgmId": 101,
         "LoadingType": 20011,
@@ -174614,7 +174855,7 @@
         "RequireLevel": 40,
         "LimitBuffId": 1,
         "StarDesc": [
-            "击败曼南M-1A",
+            "Defeat Mannan M-1A",
             "Die no more than once.",
             "Have all members survive."
         ],
@@ -178620,8 +178861,8 @@
     {
         "StageId": 30130493,
         "Type": 46,
-        "Name": "于海上",
-        "Description": "循着海风与生灵的指引，与比安卡共赴一场隐没于潮汐中的蔚蓝梦境。",
+        "Name": "Upon the Sea",
+        "Description": "Guided by the sea breeze and the living things it carries, join Bianca on a journey into an azure dream hidden within the tides.",
         "Icon": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/UiEpicFashionGachaStageLineStoryBg3.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/StageTips5.png",
         "BgmId": 230,
@@ -178655,8 +178896,8 @@
     {
         "StageId": 30130494,
         "Type": 46,
-        "Name": "在水中",
-        "Description": "无惧洞窟暗礁，归途风浪亦不再冰冷，皆因有光、有你。",
+        "Name": "Beneath the Waves",
+        "Description": "Unafraid of cavern reefs, no longer chilled by the stormy voyage home. It is all because of the light, and because of you.",
         "Icon": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/UiEpicFashionGachaStageLineStoryBg3.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/StageTips5.png",
         "BgmId": 230,
@@ -178687,8 +178928,8 @@
     {
         "StageId": 30130495,
         "Type": 46,
-        "Name": "碎浪调试",
-        "Description": "夕阳、海边、排球。在这一场与布偶熊“不期而遇”的机能测试中，你是唯一的受邀者。",
+        "Name": "Splash Calibration",
+        "Description": "Sunset, seaside, volleyball. In this \"chance\" functionality test with Teddy, you are the only one invited.",
         "Icon": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/UiEpicFashionGachaStageLineStoryBg3.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/StageTips5.png",
         "BgmId": 230,
@@ -178722,8 +178963,8 @@
     {
         "StageId": 30130496,
         "Type": 46,
-        "Name": "余浪留痕",
-        "Description": "世界由无数参数构成，而布偶熊所有推演与运算最终指向的，是与你共度这一段闲逸的夏日时光。",
+        "Name": "Lingering Ripples",
+        "Description": "The world is made of countless parameters, yet every calculation and simulation Teddy runs points to one thing: spending these leisurely summer days with you.",
         "Icon": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/UiEpicFashionGachaStageLineStoryBg3.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/StageTips5.png",
         "BgmId": 230,
@@ -206632,7 +206873,7 @@
         "FunctionLeftBtn": 2,
         "FunctionRightBtn": 1,
         "RobotId": [
-            172424
+            172481
         ],
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -206661,7 +206902,7 @@
         "FunctionLeftBtn": 2,
         "FunctionRightBtn": 1,
         "RobotId": [
-            172425
+            172480
         ],
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -206690,7 +206931,7 @@
         "FunctionLeftBtn": 2,
         "FunctionRightBtn": 1,
         "RobotId": [
-            172453
+            172482
         ],
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -206807,6 +207048,35 @@
         "FunctionRightBtn": 1,
         "RobotId": [
             172299
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101142,
+        "Type": 13,
+        "Name": "Graffiti Code",
+        "Description": "Bring all your graffiti spray cans and turn the rock music in your headphones all the way up. What comes next is a wild street party that lasts all night. \"If we don't have our names all over this alley by sunrise, you lose.\"",
+        "Icon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172506
         ],
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -207671,7 +207941,7 @@
         "StageId": 30101137,
         "Type": 43,
         "Name": "Patrick",
-        "Description": "派德里描述",
+        "Description": "Patrick Description",
         "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterStarfishStage01.png",
         "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
         "BgmId": 101,
@@ -207685,13 +207955,13 @@
         "OnlinePlayerLimit": 3,
         "StarDesc": [
             "Pay attention to CUB tutorial tips.",
-            "Learn practical skills of CUB Allos."
+            "Learn practical skills of CUB Patrick."
         ],
         "HaveFirstPass": true,
         "FunctionLeftBtn": 2,
         "FunctionRightBtn": 1,
         "RobotId": [
-            2330
+            2336
         ],
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -281546,7 +281816,7 @@
     {
         "StageId": 30165459,
         "Type": 83,
-        "Name": "低算力区18-15",
+        "Name": "Low Power Zone 18-15",
         "BgmId": 173,
         "LoadingType": 20014,
         "NormalEventIdOnPassed": 1,
@@ -281566,7 +281836,7 @@
     {
         "StageId": 30165460,
         "Type": 83,
-        "Name": "低算力区17-15",
+        "Name": "Low Power Zone 17-15",
         "BgmId": 173,
         "LoadingType": 20014,
         "NormalEventIdOnPassed": 1,
@@ -281586,7 +281856,7 @@
     {
         "StageId": 30165461,
         "Type": 83,
-        "Name": "低算力区16-15",
+        "Name": "Low Power Zone 16-15",
         "BgmId": 173,
         "LoadingType": 20014,
         "NormalEventIdOnPassed": 1,
@@ -281606,7 +281876,7 @@
     {
         "StageId": 30165462,
         "Type": 83,
-        "Name": "高算力区18-15",
+        "Name": "High Power Zone 18-15",
         "BgmId": 173,
         "LoadingType": 20014,
         "NormalEventIdOnPassed": 1,
@@ -281626,7 +281896,7 @@
     {
         "StageId": 30165463,
         "Type": 83,
-        "Name": "高算力区17-15",
+        "Name": "High Power Zone 17-15",
         "BgmId": 173,
         "LoadingType": 20014,
         "NormalEventIdOnPassed": 1,
@@ -281646,7 +281916,7 @@
     {
         "StageId": 30165464,
         "Type": 83,
-        "Name": "高算力区16-15",
+        "Name": "High Power Zone 16-15",
         "BgmId": 173,
         "LoadingType": 20014,
         "NormalEventIdOnPassed": 1,

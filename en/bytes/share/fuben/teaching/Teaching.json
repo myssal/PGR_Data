@@ -48473,6 +48473,7 @@
         "Describe": "卡列-点击红球",
         "IconType": 1,
         "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightIconR5Kalienina12.png",
         "TimeOut": 3000,
         "EffectType": [
             1
@@ -48513,6 +48514,7 @@
         "Describe": "卡列-点击黄球",
         "IconType": 1,
         "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightIconR5Kalienina32.png",
         "TimeOut": 3000,
         "EffectType": [
             1
@@ -48545,7 +48547,7 @@
     {
         "Id": 4478,
         "Group": 112375,
-        "Name": "空中点击普攻",
+        "Name": "Tap Basic Attack while airborne",
         "Describe": "点按普攻下砸",
         "IconType": 1,
         "Icon": 1,
@@ -48563,11 +48565,11 @@
     {
         "Id": 4479,
         "Group": 112376,
-        "Name": "长按闪避并移动",
-        "Describe": "按住闪避和方向键进入渡槎状态",
-        "IconType": 1,
+        "Name": "<size=22>Doubl-tap Dodge while moving</size>",
+        "Describe": "Hold a Direction Key and double-tap Dodge to enter the ferry state.",
+        "IconType": 2,
         "Icon": 2,
-        "Icon2": 4,
+        "Icon2": 2,
         "TimeOut": -1,
         "EffectType": [
             1
@@ -48581,12 +48583,12 @@
     },
     {
         "Id": 4480,
-        "Group": 112377,
-        "Name": "Tap Blue Orb",
+        "Group": 112376,
+        "Name": "<size=22>Press Blue Orb while moving</size>",
         "Describe": "在渡槎状态下点按蓝球消球开炮",
         "IconType": 1,
         "Icon": 102,
-        "TimeOut": 10000,
+        "TimeOut": 6000,
         "EffectType": [
             1
         ],
@@ -48602,7 +48604,7 @@
     {
         "Id": 4481,
         "Group": 112378,
-        "Name": "静止中长按闪避",
+        "Name": "Press and Hold Dodge while stationary",
         "Describe": "Press and hold Dodge",
         "IconType": 1,
         "Icon": 2,
@@ -48619,12 +48621,12 @@
     },
     {
         "Id": 4482,
-        "Group": 112379,
+        "Group": 112378,
         "Name": "Tap Basic Attack",
         "Describe": "点按普攻把潮痕替换为沧澜",
         "IconType": 1,
         "Icon": 1,
-        "TimeOut": 10000,
+        "TimeOut": 3000,
         "EffectType": [
             1
         ],
@@ -48637,7 +48639,7 @@
     },
     {
         "Id": 4483,
-        "Group": 112379,
+        "Group": 112378,
         "Name": "Tap Basic Attack",
         "Describe": "点按普攻把潮痕替换为沧澜",
         "IconType": 1,
@@ -48655,7 +48657,7 @@
     },
     {
         "Id": 4484,
-        "Group": 112379,
+        "Group": 112378,
         "Name": "Tap Basic Attack",
         "Describe": "点按普攻把潮痕替换为沧澜",
         "IconType": 1,
@@ -48673,7 +48675,7 @@
     },
     {
         "Id": 4485,
-        "Group": 112379,
+        "Group": 112378,
         "Name": "Tap Basic Attack",
         "Describe": "点按普攻把潮痕替换为沧澜",
         "IconType": 1,
@@ -48691,7 +48693,7 @@
     },
     {
         "Id": 4486,
-        "Group": 112379,
+        "Group": 112378,
         "Name": "Tap Basic Attack",
         "Describe": "点按普攻把潮痕替换为沧澜",
         "IconType": 1,
@@ -48709,9 +48711,28 @@
     },
     {
         "Id": 4487,
+        "Group": 112378,
+        "Name": "Press and Hold Basic Attack",
+        "Describe": "Press and hold Basic ATK to release the core.",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": 3000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106146,
+            106147
+        ]
+    },
+    {
+        "Id": 4488,
         "Group": 112380,
-        "Name": "静止中长按闪避",
-        "Describe": "Press and hold Dodge",
+        "Name": "Press and Hold Dodge while stationary",
+        "Describe": "Press and Hold Dodge",
         "IconType": 4,
         "Icon": 2,
         "TimeOut": -1,
@@ -48726,10 +48747,10 @@
         ]
     },
     {
-        "Id": 4488,
+        "Id": 4489,
         "Group": 112381,
-        "Name": "Tap Blue Orb",
-        "Describe": "点击蓝球把潮痕替换为沧澜",
+        "Name": "Press Blue Orb",
+        "Describe": "Press Blue Orb to convert Tide Mark into Tidal Force.",
         "IconType": 1,
         "Icon": 102,
         "TimeOut": 10000,
@@ -48746,10 +48767,10 @@
         ]
     },
     {
-        "Id": 4489,
+        "Id": 4490,
         "Group": 112382,
-        "Name": "Press and hold Basic Attack",
-        "Describe": "长按普攻释放核心",
+        "Name": "Press and Hold Basic Attack",
+        "Describe": "Press and hold Basic ATK to release the core.",
         "IconType": 4,
         "Icon": 1,
         "TimeOut": 10000,
@@ -48765,29 +48786,10 @@
         ]
     },
     {
-        "Id": 4490,
-        "Group": 112383,
-        "Name": "Tap Signature",
-        "Describe": "卡列-点按必杀",
-        "IconType": 1,
-        "Icon": 3,
-        "TimeOut": -1,
-        "EffectType": [
-            1
-        ],
-        "EffectButton": [
-            17
-        ],
-        "SkillId": [
-            106148,
-            106149
-        ]
-    },
-    {
         "Id": 4491,
-        "Group": 112384,
-        "Name": "Press and Hold Signature Move",
-        "Describe": "誓焰跃升-效应入场必杀",
+        "Group": 112383,
+        "Name": "Press Signature",
+        "Describe": "Karenina - Press Signature",
         "IconType": 1,
         "Icon": 3,
         "TimeOut": -1,
@@ -48804,135 +48806,133 @@
     },
     {
         "Id": 4492,
-        "Group": 112385,
-        "Name": "Press and hold Red Orb",
-        "Describe": "誓焰跃升-长按红球",
+        "Group": 112384,
+        "Name": "Press and Hold Signature",
+        "Describe": "Pyroath Leap - Effect Entry Signature",
         "IconType": 1,
         "Icon": 3,
         "TimeOut": -1,
         "EffectType": [
-            1
+            2
         ],
         "EffectButton": [
             17
         ],
         "SkillId": [
-            106148,
-            106149
+            106275,
+            106275
         ]
     },
     {
         "Id": 4493,
-        "Group": 112386,
-        "Name": "Press and Hold Signature Move",
-        "Describe": "誓焰跃升-长按必杀",
+        "Group": 112385,
+        "Name": "Press and Hold Red Orb",
+        "Describe": "Pyroath Leap - Press and Hold Red Orb",
         "IconType": 1,
-        "Icon": 3,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya12.png",
         "TimeOut": -1,
         "EffectType": [
             1
         ],
         "EffectButton": [
-            17
+            3
         ],
-        "SkillId": [
-            106148,
-            106149
+        "MissileId": [
+            10623624,
+            176211
         ]
     },
     {
         "Id": 4494,
         "Group": 112387,
-        "Name": "Ping Plasma Orb",
-        "Describe": "誓焰跃升-消离电球",
+        "Name": "Press and Hold Signature",
+        "Describe": "Pyroath Leap - Press and Hold Signature",
         "IconType": 1,
         "Icon": 3,
         "TimeOut": -1,
         "EffectType": [
-            1
+            2
         ],
         "EffectButton": [
             17
         ],
         "SkillId": [
-            106148,
-            106149
+            106275,
+            106275
         ]
     },
     {
         "Id": 4495,
-        "Group": 112388,
-        "Name": "卡列备用",
-        "Describe": "占坑",
+        "Group": 112387,
+        "Name": "Ping Plasma Orb",
+        "Describe": "Pyroath Leap - Ping Plasma Orb",
         "IconType": 1,
-        "Icon": 3,
-        "TimeOut": -1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya41.png",
+        "TimeOut": 3000,
         "EffectType": [
             1
         ],
         "EffectButton": [
-            17
+            3
         ],
         "SkillId": [
-            106148,
-            106149
+            106205
         ]
     },
     {
         "Id": 4496,
-        "Group": 112388,
-        "Name": "卡列备用",
-        "Describe": "占坑",
+        "Group": 112387,
+        "Name": "Ping Plasma Orb",
+        "Describe": "Pyroath Leap - Ping Plasma Orb",
         "IconType": 1,
-        "Icon": 3,
-        "TimeOut": -1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya41.png",
+        "TimeOut": 3000,
         "EffectType": [
             1
         ],
         "EffectButton": [
-            17
+            3
         ],
         "SkillId": [
-            106148,
-            106149
+            106205
         ]
     },
     {
         "Id": 4497,
-        "Group": 112388,
-        "Name": "卡列备用",
-        "Describe": "占坑",
-        "IconType": 1,
+        "Group": 112386,
+        "Name": "Press and Hold Signature",
+        "Describe": "Lucia - Fire Thunder Form",
+        "IconType": 4,
         "Icon": 3,
-        "TimeOut": -1,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya51.png",
+        "TimeOut": 8000,
         "EffectType": [
-            1
+            2
         ],
         "EffectButton": [
             17
         ],
         "SkillId": [
-            106148,
-            106149
+            106236
         ]
     },
     {
         "Id": 4498,
-        "Group": 112388,
-        "Name": "卡列备用",
-        "Describe": "占坑",
+        "Group": 112386,
+        "Name": "Press Blue Orb",
+        "Describe": "Lucia - Blue Ping",
         "IconType": 1,
-        "Icon": 3,
-        "TimeOut": -1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya22.png",
+        "TimeOut": 5000,
         "EffectType": [
-            1
+            2
         ],
-        "EffectButton": [
-            17
-        ],
-        "SkillId": [
-            106148,
-            106149
+        "MissileId": [
+            10623625
         ]
     },
     {
@@ -48971,6 +48971,293 @@
         "SkillId": [
             106148,
             106149
+        ]
+    },
+    {
+        "Id": 4501,
+        "Group": 112388,
+        "Name": "卡列备用",
+        "Describe": "占坑",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4502,
+        "Group": 112388,
+        "Name": "卡列备用",
+        "Describe": "占坑",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4503,
+        "Group": 112388,
+        "Name": "卡列备用",
+        "Describe": "占坑",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4504,
+        "Group": 112388,
+        "Name": "卡列备用",
+        "Describe": "占坑",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4505,
+        "Group": 112389,
+        "Name": "Tap Red Orb",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4506,
+        "Group": 112389,
+        "Name": "Tap Red Orb",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106108,
+            106109,
+            106110,
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4507,
+        "Group": 112389,
+        "Name": "Stellar Pulse",
+        "Describe": "卡列-辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424102,
+            424103,
+            424104,
+            424105,
+            424106,
+            424107
+        ]
+    },
+    {
+        "Id": 4508,
+        "Group": 112390,
+        "Name": "Tap Red Orb",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4509,
+        "Group": 112390,
+        "Name": "Tap Red Orb",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106108,
+            106109,
+            106110,
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4510,
+        "Group": 112390,
+        "Name": "Sunder Dash",
+        "Describe": "卡列-辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424108,
+            424109,
+            424110,
+            424111,
+            424112,
+            424113
+        ]
+    },
+    {
+        "Id": 4511,
+        "Group": 112391,
+        "Name": "Tap Red Orb",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4512,
+        "Group": 112391,
+        "Name": "Tap Red Orb",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106108,
+            106109,
+            106110,
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4513,
+        "Group": 112392,
+        "Name": "Press and hold Dodge",
+        "Describe": "卡列-长按闪避",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106119
+        ]
+    },
+    {
+        "Id": 4514,
+        "Group": 112393,
+        "Name": "Press and hold Basic Attack",
+        "Describe": "卡列-长按普攻登龙",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": 5000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106146
         ]
     }
 ]
