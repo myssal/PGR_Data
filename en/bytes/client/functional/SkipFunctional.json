@@ -2143,6 +2143,70 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 40191,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 192,
+        "Explain": "4.7卡列特效打脸图",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40192,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 193,
+        "Explain": "4.7比安卡特效打脸图",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40193,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 194,
+        "Explain": "4.6跨4.7预热打脸图",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40194,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 195,
+        "Explain": "4.8洁塔薇联动皮打脸",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40195,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 196,
+        "Explain": "4.7跨4.8预热打脸1",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40196,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 197,
+        "Explain": "4.7跨4.8预热打脸2",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40197,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 198,
+        "Explain": "4.7500卡池复刻打脸",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40198,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 199,
+        "Explain": "土豆兄弟打脸图",
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 40756,
         "Origin": 7,
         "UiName": "OnOpenRepeatChallengeActivity",
@@ -3368,6 +3432,15 @@
         "ParamId": 114,
         "Explain": "4.6版本签到",
         "TimeId": 48110,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 50123,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 115,
+        "Explain": "4.7版本签到",
+        "TimeId": 49110,
         "IsHideFunc": true
     },
     {
@@ -6385,6 +6458,18 @@
         "FunctionalId": 10308,
         "CustomParams": [
             2016
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 536,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "Explain": "New Main Story Chapter 42",
+        "ConditionId": 1050153,
+        "FunctionalId": 10308,
+        "CustomParams": [
+            1042
         ],
         "IsHideFunc": true
     },
@@ -12811,6 +12896,17 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 7143,
+        "Origin": 7,
+        "UiName": "SkipToPartnerTeachingChapter",
+        "Explain": "前往辅助机教学试玩-第三十七章",
+        "FunctionalId": 1801,
+        "CustomParams": [
+            37
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 7200,
         "Origin": 1,
         "UiName": "UiNewFuben",
@@ -16434,8 +16530,8 @@
     {
         "SkipId": 15001,
         "Origin": 7,
-        "UiName": "OnOpenGuild",
-        "Explain": "Go to Guild",
+        "UiName": "OnOpenGuildDorm",
+        "Explain": "Go to Guild Dorm",
         "IsRecord": true,
         "FunctionalId": 1901,
         "IsHideFunc": true
@@ -17411,6 +17507,17 @@
         "FunctionalId": 101,
         "CustomParams": [
             1401003
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 19082,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "Explain": "Go to Members",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1071005
         ],
         "IsHideFunc": true
     },
@@ -19943,7 +20050,7 @@
         "Explain": "New Character Theme Trial (Edit event no. after the 33rd event)",
         "FunctionalId": 10325,
         "CustomParams": [
-            49
+            50
         ],
         "IsHideFunc": true
     },
@@ -21683,6 +21790,18 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 20383,
+        "Origin": 6,
+        "UiName": "UiWelfare",
+        "Explain": "Complete the \"Crimson Descent\" event mission",
+        "FunctionalId": 1,
+        "CustomParams": [
+            1,
+            99
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 20384,
         "Origin": 6,
         "UiName": "UiFubenPracticeCharacterDetail",
@@ -21691,6 +21810,90 @@
         "CustomParams": [
             1051005,
             30100229
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20385,
+        "Origin": 6,
+        "UiName": "UiFavorabilityStory",
+        "Explain": "Advance to Karenina's Affection Story",
+        "IsRecord": true,
+        "CustomParams": [
+            1071005
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20386,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "Explain": "To Karenina: Celica's Class (New jump id after the 33rd event)",
+        "IsRecord": true,
+        "FunctionalId": 10325,
+        "CustomParams": [
+            50
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20387,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "Explain": "【v4.7卡列】前往主题卡池",
+        "FunctionalId": 401,
+        "StartTime": "2026/8/19 0:00",
+        "CloseTime": "2026/9/23 23:00",
+        "CustomParams": [
+            1,
+            11
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20388,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "【v4.7卡列】前往涂装补给包",
+        "FunctionalId": 3,
+        "StartTime": "2026/8/19 0:00",
+        "CloseTime": "2026/9/23 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20390,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            1042
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20391,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1071005
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20392,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeCharacterDetail",
+        "Explain": "跳转赛利卡教学（火露跃升）",
+        "FunctionalId": 1800,
+        "CustomParams": [
+            1021006,
+            30100230
         ],
         "IsHideFunc": true
     },
@@ -29738,6 +29941,91 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 80315,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/8/19 0:00",
+        "CloseTime": "2026/9/23 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80316,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "Coating Shop",
+        "FunctionalId": 1001,
+        "StartTime": "2026/8/19 0:00",
+        "CustomParams": [
+            1,
+            0,
+            504
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80317,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/8/19 0:00",
+        "CloseTime": "2026/9/23 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80318,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "Coating Shop",
+        "FunctionalId": 1001,
+        "StartTime": "2026/9/23 23:00",
+        "CustomParams": [
+            1,
+            0,
+            502
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80319,
+        "Origin": 10,
+        "UiName": "XPBRGame",
+        "Explain": "前往活动【耀律狂潮】",
+        "FunctionalId": 10500,
+        "StartTime": "2025/8/19 5:00",
+        "CloseTime": "2026/9/23 5:00",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80320,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/8/19 0:00",
+        "CloseTime": "2026/9/23 23:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 81001,
         "Origin": 7,
         "UiName": "SkipToSpringFestivalActivity",
@@ -30906,6 +31194,12 @@
         "Explain": "Christmas Bliss"
     },
     {
+        "SkipId": 189072,
+        "Origin": 9,
+        "ParamId": 16,
+        "Explain": "Strings Workshop"
+    },
+    {
         "SkipId": 89074,
         "Origin": 7,
         "UiName": "SkipToTemple2",
@@ -31172,7 +31466,7 @@
         "SkipId": 89102,
         "Origin": 10,
         "UiName": "XTheatre6",
-        "Explain": "The Godfall Revelation",
+        "Explain": "Shrouded Requiem",
         "IsRecord": true,
         "ConditionId": 1050153,
         "FunctionalId": 10501,
@@ -31273,6 +31567,14 @@
         "ConditionId": 1021100,
         "FunctionalId": 10506,
         "IsHideFunc": true
+    },
+    {
+        "SkipId": 89113,
+        "Origin": 7,
+        "UiName": "SkipToEnvelopeGuessing",
+        "Explain": "Love's Leisure Hour",
+        "IsRecord": true,
+        "FunctionalId": 10507
     },
     {
         "SkipId": 90000,
@@ -31778,6 +32080,15 @@
         "Explain": "Cloud Gaming"
     },
     {
+        "SkipId": 90049,
+        "Origin": 7,
+        "UiName": "SkipToTeamPrefab",
+        "Explain": "Skip to Squad Presets",
+        "CustomParams": [
+            1
+        ]
+    },
+    {
         "SkipId": 90050,
         "Origin": 1,
         "UiName": "UiLoginVideoV4P0",
@@ -31831,7 +32142,7 @@
         "SkipId": 90055,
         "Origin": 6,
         "UiName": "UiShop",
-        "Explain": "Service Shop",
+        "Explain": "Go to Service Shop",
         "CustomParams": [
             1,
             0,
@@ -31902,7 +32213,7 @@
         "SkipId": 90061,
         "Origin": 6,
         "UiName": "UiShop",
-        "Explain": "Service Shop",
+        "Explain": "Go to Service Shop",
         "CustomParams": [
             1,
             0,
@@ -31981,13 +32292,89 @@
         "TimeId": 48801
     },
     {
+        "SkipId": 90069,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "Advance to event [Tainted Moonrise]",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2001,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90070,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "Advance to event [Vera Pool]",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2002,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90071,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "Advance to event [Karenina Pool]",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2003,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90072,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "Go to Event [Nightfall Finale]",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2004,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90075,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "4.7跳转到音乐场景礼包",
+        "FunctionalId": 3,
+        "CustomParams": [
+            2,
+            0,
+            7
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90076,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "4.7跳转到音乐涂装礼包",
+        "FunctionalId": 3,
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 1000001,
         "Origin": 2,
         "UiName": "UiSet",
         "ParamId": 12,
         "FunctionalId": 7,
         "CustomParams": [
-            7
+            0,
+            0,
+            1
         ]
     },
     {
@@ -34093,15 +34480,6 @@
         "IsHideFunc": true
     },
     {
-        "SkipId": 90049,
-        "Origin": 7,
-        "UiName": "SkipToTeamPrefab",
-        "Explain": "Skip to Squad Presets",
-        "CustomParams": [
-            1
-        ]
-    },
-    {
         "SkipId": 1300616,
         "Origin": 2,
         "UiName": "UiSignBanner",
@@ -34332,7 +34710,34 @@
         "TimeId": 2160716,
         "CustomParams": [
             1,
-            35
+            11
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 1300712,
+        "Origin": 6,
+        "UiName": "UiActivityBriefBase",
+        "Explain": "EN4.7活动主题面板deeplink",
+        "FunctionalId": 10303,
+        "TimeId": 2160717,
+        "CustomParams": [
+            0,
+            0,
+            0
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 1300713,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "Explain": "EN4.7卡列角色卡池deeplink",
+        "FunctionalId": 401,
+        "TimeId": 2160718,
+        "CustomParams": [
+            1,
+            11
         ],
         "IsHideFunc": true
     },
@@ -34431,10 +34836,10 @@
         "SkipId": 1300635,
         "Origin": 10,
         "UiName": "XPBRGame",
-        "Explain": "Placeholder_战双兄弟跳转占位",
+        "Explain": "前往活动【耀律狂潮】",
         "IsRecord": true,
         "FunctionalId": 10500,
-        "TimeId": 46930
+        "TimeId": 49920
     },
     {
         "SkipId": 1300636,
@@ -34502,8 +34907,8 @@
         "Explain": "BP Face Close-Up",
         "ConditionId": 775500,
         "CustomParams": [
-            1786309200,
-            1786914000
+            1789333200,
+            1789938000
         ]
     },
     {
@@ -34551,8 +34956,33 @@
         "IsRecord": true,
         "ConditionId": 1050153,
         "FunctionalId": 10500,
-        "TimeId": 48821,
-        "StartTime": "2026/8/28 10:00",
-        "CloseTime": "2026/9/20 5:00"
+        "TimeId": 49920
+    },
+    {
+        "SkipId": 1300648,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.8洁塔薇",
+        "CustomParams": [
+            1
+        ]
+    },
+    {
+        "SkipId": 1300649,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.7卡列",
+        "CustomParams": [
+            128
+        ]
+    },
+    {
+        "SkipId": 1300650,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.7比安卡",
+        "CustomParams": [
+            125
+        ]
     }
 ]

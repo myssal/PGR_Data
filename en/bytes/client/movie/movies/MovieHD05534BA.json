@@ -1,0 +1,778 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory912.jpg",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            5061
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "Ayla's already bright voice buzzes with excitement when you answer her call."
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Ayla, who only ever moves this fast when inspiration strikes, has sent you an invitation to meet by the artificial canal."
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "By the time you arrive at the meeting spot, Ayla is already there waiting for you."
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 401,
+        "Params": [
+            2,
+            903
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A few simple water lanterns are drifting down the canal, one after another."
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 402,
+        "Params": [
+            903
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 201,
+        "Params": [
+            1,
+            500576
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "Params": [
+            1,
+            "Ayla",
+            "Commandant! I'm sure you've already figured out why I invited you here, haven't you?",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 302,
+        "Params": [
+            "",
+            "The water lanterns?",
+            12,
+            "En plein air?",
+            14
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "NextActionId": 16,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "That's right. This looks like something out of a dream! The lanterns aren't very colorful themselves, but there's a beauty to their simplicity, don't you think?",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "Looks like my influence on you is showing! Your first reaction when you see a beautiful view is the same as mine now! I've got my sketchbook and brushes with me, but there's something we need to do first.",
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 401,
+        "Params": [
+            2,
+            5526,
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Beaming with pride, she holds out a folded papercraft for you to see."
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "Apparently, a tradition of the Double Seventh Festival is releasing water lanterns down a river. They light the way for people who are apart to find each other.",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "What a romantic thing to do. Placing your hopes in a tiny flame, letting it drift wherever the current takes it... Like the bonds between people, it's so fragile yet so brilliant.",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "I like this tradition a lot, so I learned how to make these water lanterns, and I even put my spin on it. That's a peony blossom. Pretty, isn't it?",
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "If you like it too, Commandant, I can make one for you! Or better yet, we can make one together! How does that sound? But first, let's send this one on its way!",
+            1
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "Ayla places the blossom in her open palm and lifts it up."
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 25,
+        "Type": 302,
+        "Params": [
+            "",
+            "(Reach out and take the peony blossom)",
+            26
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 26,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5,
+            "",
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 27,
+        "Type": 104,
+        "Params": [
+            "0|0|-50",
+            0.5
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 28,
+        "Type": 401,
+        "EndDelay": 800.0,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 29,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 30,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Ayla",
+            "Hehe. Hold it steady, Commandant!",
+            1
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 31,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Ayla's smile brightens. She carefully tends to the flower resting in your palm, gently coaxing the petals to open one at a time."
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 32,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 33,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "Open the petals, fix the wick in place... Hmm, something's still missing, isn't it?",
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 34,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "Ooh, I've got an idea!",
+            1
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 36,
+        "Type": 401,
+        "Params": [
+            2,
+            911
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 37,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The bubbly girl produces a pastel-gold marker from seemingly nowhere and scrawls her signature across one of the petals in a flourished script."
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 38,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 39,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "\"Ayla...\"",
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 40,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "Done! Hmm, maybe a different font would've suited it better?",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 41,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "Sign your name too, Commandant! Then this will truly be our lantern!",
+            1
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 42,
+        "Type": 302,
+        "Params": [
+            "",
+            "You can sign for me, Ayla.",
+            43,
+            "Sure thing.",
+            49
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 43,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "Sure! What style do you prefer, Commandant? Do you want to match mine?",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 44,
+        "Type": 302,
+        "Params": [
+            "",
+            "(Nod)",
+            45
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 45,
+        "Type": 401,
+        "Params": [
+            2,
+            911
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "With your confirmation, Ayla writes down \"【kuroname】\" in clean, confident strokes right beside her signature."
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 47,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 48,
+        "NextActionId": 53,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "\"【kuroname】 \"... It's even better than mine! Hehe, your name is like a fountain of inspiration, Commandant.",
+            1
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "Then I'll hold the lantern steady! Make sure you sign it properly, Commandant. It's all part of the creative process!",
+            1
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 50,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 51,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Ayla studies the freshly signed name with the same focused expression she wears when appraising art."
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 52,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "It's got your style written all over it, Commandant. It's true that the handwriting reflects the person!",
+            1
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 53,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "Now, for the final step... Let's set it on the river together, Commandant!",
+            1
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 54,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 55,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 56,
+        "Type": 401,
+        "Params": [
+            2,
+            5533
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 57,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "She nods happily. Together, the two of you light the candle of the peony lantern."
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 58,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignLizi02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 59,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "A tiny flame dances between the petals, casting a faint golden glow on the folds of paper."
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 60,
+        "Type": 401,
+        "Params": [
+            2,
+            903
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 61,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "Ayla crouches at the water's edge and gently lowers the lantern onto the river. Her movements are slow, almost reverent."
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 62,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "The peony lantern, signed with both your names, drifts away on the gentle current."
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 63,
+        "Type": 306
+    },
+    {
+        "Id": 63,
+        "ActionId": 64,
+        "Type": 402,
+        "Params": [
+            903
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 65,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignLizi02.prefab"
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 66,
+        "Type": 201,
+        "Params": [
+            1,
+            500576,
+            0
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 67,
+        "Type": 301,
+        "Params": [
+            1,
+            "Ayla",
+            "I wish it could just drift on like this forever.",
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 68,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "Ayla",
+            "The road that brings people together can always use a little more light.",
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 70,
+        "Type": 302,
+        "Params": [
+            "",
+            "You can make that wish come true with your own hands, Ayla.",
+            71
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 71,
+        "Type": 302,
+        "Params": [
+            "",
+            "A lantern doesn't burn forever in the real world, but it does in your art.",
+            72
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 72,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 73,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "Ayla",
+            "A lantern that burns forever... Yes! I've got an idea for my next painting!",
+            1
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 74,
+        "Type": 204,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 75,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "I'd love to run back and start sketching right now, but... my time with you is more important, Commandant!",
+            1
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 76,
+        "Type": 301,
+        "Params": [
+            "",
+            "Ayla",
+            "Or maybe... we can go and paint next? Think of it as the next item on the agenda!",
+            1
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 77,
+        "Type": 302,
+        "Params": [
+            "",
+            "Of course, I'd love to.",
+            78
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 78,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 79,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "Ayla",
+            "It'd be the perfect chance to show you my latest piece, Commandant! I can give you a little hint... it's a portrait! Care to guess who?",
+            1
+        ]
+    }
+]

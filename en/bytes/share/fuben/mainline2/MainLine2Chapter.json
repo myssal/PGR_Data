@@ -1120,6 +1120,21 @@
         "ProgressTextColors": [
             "#ffffff"
         ],
+        "SkipIds": [
+            536
+        ],
+        "SkipConditions": [
+            1007152
+        ],
+        "SkipIcons": [
+            "Assets/Product/Texture/Image/StoryJump/StoryMainLineJump42.png"
+        ],
+        "SkipNames": [
+            "Next Chapter"
+        ],
+        "SkipChapterNames": [
+            "Steering By Light"
+        ],
         "SpineStageIndexs": [
             3,
             4,
@@ -1156,7 +1171,7 @@
         "Difficult": 1,
         "DifficultName": "NORMAL",
         "DifficultEnName": "Difficulty",
-        "ActivityTimeId": 48301,
+        "ActivityTimeId": 48401,
         "ActivityCondition": 770400,
         "OpenCondition": 770400,
         "StageGroupIds": [
@@ -1211,6 +1226,56 @@
             "Enable4_3_page2",
             "Enable5_4_page2",
             "Enable6_5_page2"
+        ]
+    },
+    {
+        "ChapterId": 1042,
+        "Difficult": 1,
+        "DifficultName": "NORMAL",
+        "DifficultEnName": "Difficulty",
+        "ActivityTimeId": 49401,
+        "ActivityCondition": 770400,
+        "OpenCondition": 770400,
+        "StageGroupIds": [
+            63
+        ],
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor42.prefab",
+        "BgStageIndexs": [
+            1
+        ],
+        "TitleTextColors": [
+            "#ffffff"
+        ],
+        "LeftTimeTextColors": [
+            "#0f70BC"
+        ],
+        "ProgressTextColors": [
+            "#ffffff"
+        ]
+    },
+    {
+        "ChapterId": 1142,
+        "Difficult": 1,
+        "DifficultName": "NORMAL",
+        "DifficultEnName": "Difficulty",
+        "ActivityTimeId": 49401,
+        "ActivityCondition": 1007267,
+        "OpenCondition": 1007267,
+        "StageGroupIds": [
+            64
+        ],
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor42.prefab",
+        "BgStageIndexs": [
+            1
+        ],
+        "TitleTextColors": [
+            "#ffffff"
+        ],
+        "LeftTimeTextColors": [
+            "#0f70BC"
+        ],
+        "ProgressTextColors": [
+            "#ffffff"
         ]
     }
 ]

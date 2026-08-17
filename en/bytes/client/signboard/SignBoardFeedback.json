@@ -21459,6 +21459,328 @@
         "IsUseCamPosAndRot": 1
     },
     {
+        "Id": 1070501,
+        "RoleId": 1071005,
+        "ConditionId": 10001,
+        "ConditionParam": 1,
+        "Content": "Display Pose 1",
+        "CvId": 172018,
+        "ActionId": "BoardAct0201",
+        "Duration": [
+            29.5669,
+            29.5669,
+            29.5669,
+            29.5669
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "ShowButton": "1|2"
+    },
+    {
+        "Id": 1070502,
+        "RoleId": 1071005,
+        "ConditionId": 10001,
+        "ConditionParam": 1,
+        "Content": "Display Pose 2",
+        "CvId": 172021,
+        "ActionId": "BoardAct0202",
+        "Duration": [
+            32.7669,
+            32.7669,
+            32.7669,
+            32.7669
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Kalienina/KalieninaBoardAct0202.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1070503,
+        "RoleId": 1071005,
+        "ConditionId": 10001,
+        "ConditionParam": 1,
+        "Content": "Display Pose 3",
+        "CvId": 172010,
+        "ActionId": "BoardAct0203",
+        "Duration": [
+            38.1669,
+            38.1669,
+            38.1669,
+            38.1669
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "ShowButton": "1|2"
+    },
+    {
+        "Id": 1070504,
+        "RoleId": 1071005,
+        "ConditionId": 120,
+        "ConditionParam": -1,
+        "Content": "Display Pose 3",
+        "CvId": 172010,
+        "ActionId": "BoardAct0203",
+        "Duration": [
+            38.1669,
+            38.1669,
+            38.1669,
+            38.1669
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "ShowButton": "1|2"
+    },
+    {
+        "Id": 1070505,
+        "RoleId": 1071005,
+        "ConditionId": 2,
+        "ConditionParam": -1,
+        "Content": "Affection Up",
+        "CvId": 172035,
+        "ActionId": "BoardAct1001",
+        "Duration": [
+            29.0,
+            29.0,
+            29.0,
+            29.0
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Kalienina/KalieninaBoardAct1001.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1070506,
+        "RoleId": 1071005,
+        "ConditionId": 10001,
+        "ConditionParam": 3,
+        "Content": "Quick Tap",
+        "CvId": 172059,
+        "ActionId": "BoardAct1002",
+        "Duration": [
+            21.333,
+            21.333,
+            21.333,
+            21.333
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Kalienina/KalieninaBoardAct1002.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1070507,
+        "RoleId": 1071005,
+        "ConditionId": 10001,
+        "ConditionParam": 4,
+        "Content": "Quick Tap",
+        "CvId": 172059,
+        "ActionId": "BoardAct1002",
+        "Duration": [
+            21.333,
+            21.333,
+            21.333,
+            21.333
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Kalienina/KalieninaBoardAct1002.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1070508,
+        "RoleId": 1071005,
+        "ConditionId": 10001,
+        "ConditionParam": 5,
+        "Content": "Quick Tap",
+        "CvId": 172059,
+        "ActionId": "BoardAct1002",
+        "Duration": [
+            21.333,
+            21.333,
+            21.333,
+            21.333
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Kalienina/KalieninaBoardAct1002.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1070509,
+        "RoleId": 1071005,
+        "ShowType": 1,
+        "ConditionId": 101,
+        "ConditionParam": 10,
+        "Content": "Connection Made",
+        "CvId": 172048,
+        "ActionId": "BoardAct1004",
+        "Duration": [
+            60.4329,
+            60.4329,
+            60.4329,
+            60.4329
+        ],
+        "Weight": 96,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Kalienina/KalieninaBoardAct1004.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1070510,
+        "RoleId": 1071005,
+        "ShowType": 1,
+        "ConditionId": 111,
+        "ConditionParam": 3600,
+        "Content": "Excessive Online Time",
+        "CvId": 172044,
+        "ActionId": "BoardAct1007",
+        "Duration": [
+            31.5,
+            31.5,
+            31.5,
+            31.5
+        ],
+        "Weight": 98,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1070511,
+        "RoleId": 1071005,
+        "ShowType": 1,
+        "ConditionId": 1,
+        "ConditionParam": 900,
+        "Content": "Idle",
+        "CvId": 172040,
+        "ActionId": "BoardAct1005",
+        "Duration": [
+            49.833,
+            49.833,
+            49.833,
+            49.833
+        ],
+        "Weight": 97,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Kalienina/KalieninaBoardAct1005.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1070512,
+        "RoleId": 1071005,
+        "ConditionId": 10002,
+        "ConditionParam": -1,
+        "Content": "Shake",
+        "CvId": 172057,
+        "ActionId": "BoardAct1003",
+        "Duration": [
+            21.0,
+            21.0,
+            21.0,
+            21.0
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Kalienina/KalieninaBoardAct1003.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1070513,
+        "RoleId": 1071005,
+        "ShowType": 2,
+        "ConditionId": 102,
+        "ConditionParam": 2,
+        "Content": "Extended Offline Time",
+        "CvId": 172054,
+        "ActionId": "BoardAct1006",
+        "Duration": [
+            31.9669,
+            31.9669,
+            31.9669,
+            31.9669
+        ],
+        "Weight": 99,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Kalienina/KalieninaBoardAct1006.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
         "Id": 1999991,
         "RoleId": 1999990,
         "ConditionId": 10001,

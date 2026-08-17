@@ -3,10 +3,9 @@
         "Id": 1,
         "Name": "3.4主线活动",
         "SkipId": 535,
-        "TimeId": 48401,
+        "TimeId": 49401,
         "BtnInitMethodName": "RefreshActivityMainLine2",
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 11
+        "RemindPriority": 10
     },
     {
         "Id": 2,
@@ -18,10 +17,9 @@
         "Id": 3,
         "Name": "3.4超难关",
         "SkipId": 11724,
-        "TimeId": 48101,
+        "TimeId": 49101,
         "BtnInitMethodName": "RefreshActivityBossSingle",
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 7,
+        "RemindPriority": 4,
         "RedConditions": [
             "CONDITION_ACTIVITY_BOSS_SINGLE_REWARD"
         ]
@@ -57,9 +55,8 @@
         "Id": 8,
         "Name": "Multi Clear",
         "SkipId": 20017,
-        "TimeId": 48111,
+        "TimeId": 49303,
         "BtnInitMethodName": "RefreshActivityRepeateChallenge",
-        "IsRemindWhenOpen": 1,
         "RemindPriority": 1,
         "RedConditions": [
             "CONDITION_REPEAT_CHALLENGE_ENTRANCE"
@@ -185,10 +182,9 @@
         "Id": 27,
         "Name": "3.4新角色试玩",
         "SkipId": 20235,
-        "TimeId": 48705,
+        "TimeId": 49924,
         "BtnInitMethodName": "RefreshNewCharActivity",
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 2,
+        "RemindPriority": 3,
         "RedConditions": [
             "CONDITION_KOROMCHARACTIVITYMAINRED"
         ],
@@ -198,10 +194,9 @@
         "Id": 28,
         "Name": "涂装试玩关",
         "SkipId": 10035,
-        "TimeId": 48701,
+        "TimeId": 49104,
         "BtnInitMethodName": "RefreshFubenActivityTrial",
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 3,
+        "RemindPriority": 9,
         "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL"
     },
     {
@@ -732,9 +727,6 @@
         "Id": 106,
         "Name": "Rating Mode",
         "SkipId": 89061,
-        "TimeId": 48501,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 9,
         "RedConditions": [
             "CONDITION_BOSS_INSHOT"
         ]
@@ -882,6 +874,8 @@
         "Id": 125,
         "Name": "Holographic Replay Bonuses",
         "SkipId": 89093,
+        "TimeId": 49601,
+        "RemindPriority": 6,
         "RedConditions": [
             "CONDITION_BOUNTY_CHALLENGE"
         ]
@@ -988,18 +982,12 @@
         "Id": 140,
         "Name": "Service Shop",
         "SkipId": 90055,
-        "TimeId": 48032,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 13,
         "ConstShowRewardId": 69238
     },
     {
         "Id": 141,
         "Name": "Service Mission",
         "SkipId": 90057,
-        "TimeId": 48032,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 12,
         "RedConditions": [
             "CONDITION_TASK_CANLIVER"
         ]
@@ -1013,9 +1001,8 @@
         "Id": 143,
         "Name": "大好感",
         "SkipId": 20368,
-        "TimeId": 48301,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 6,
+        "TimeId": 49551,
+        "RemindPriority": 5,
         "RedConditions": [
             "CONDITION_FAVORABILITY_STORY_GIFT_TASK"
         ],
@@ -1025,6 +1012,8 @@
         "Id": 144,
         "Name": "PGR Brothers",
         "SkipId": 1300635,
+        "TimeId": 49920,
+        "RemindPriority": 11,
         "RedConditions": [
             "CONDITION_PBRGAME_MAIN"
         ]
@@ -1041,9 +1030,8 @@
         "Id": 146,
         "Name": "肉鸽6",
         "SkipId": 89102,
-        "TimeId": 48602,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 5,
+        "TimeId": 48601,
+        "RemindPriority": 2,
         "RedConditions": [
             "CONDITION_THEATRE6_MAIN"
         ]
@@ -1052,9 +1040,6 @@
         "Id": 147,
         "Name": "Grand Dyeing",
         "SkipId": 89105,
-        "TimeId": 48128,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 8,
         "RedConditions": [
             "CONDITION_DYEMERGE_MAIN"
         ]
@@ -1064,8 +1049,7 @@
         "Name": "夏日剧情活动",
         "SkipId": 89106,
         "TimeId": 48820,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 10,
+        "RemindPriority": 8,
         "RedConditions": [
             "CONDITION_FASHION_STORY_ENTRANCE"
         ]
@@ -1074,11 +1058,18 @@
         "Id": 149,
         "Name": "Mini Modification",
         "SkipId": 89094,
-        "TimeId": 48201,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 4,
         "RedConditions": [
             "CONDITION_SOLO_REFORM_MAIN"
+        ]
+    },
+    {
+        "Id": 150,
+        "Name": "七夕开包",
+        "SkipId": 89113,
+        "TimeId": 49201,
+        "RemindPriority": 7,
+        "RedConditions": [
+            "CONDITION_ENVELOPE_GUESSING_ENTRANCE"
         ]
     }
 ]

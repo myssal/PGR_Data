@@ -4,6 +4,7 @@
         "CharacterName": "Tiny Kamui",
         "CharacterIcon": "Assets/Product/Texture/Image/Role/RoleHeadR4Shenwei2Q.png",
         "ShowPriority": 4,
+        "IsHide": true,
         "CharacterType": 1,
         "BasicAttackDesc": "Uses the greatsword to perform slow sweeping attacks.",
         "CorePassiveDesc": "Signal Orb DMG bonus <color=#3ACC3B>+50%</color>.\\nSprint Charge <color=#DB1D1A>-50%</color>.",
@@ -23,19 +24,23 @@
         "CharacterType": 1,
         "BasicAttackDesc": "Uses the katana to unleash rapid thrusting melee attacks.",
         "CorePassiveDesc": "Speed grants a proportional DMG bonus.\\nSignal Orb DMG bonus <color=#DB1D1A>-25%.</color>",
-        "ComboBoostDesc": "The higher the combo count, the greater the Dodge gained, up to <color=#3ACC3B>60%</color>.",
-        "CharacterUnlockStage": 30063130,
+        "ComboBoostDesc": "<color=#ff7aec><b>- 连锁增益</b></color>\\n连锁次数越高，获得越高的闪避，至多<color=#3ACC3B>60%</color>。\\n<color=#ff7aec><b>- 露露出击！</b></color>\\n沉浸节拍期间，露西亚会沿场地移动。在合适的节拍点点击移动，露西亚会向对应方向冲刺，并对路线上的敌人造成伤害。冲刺伤害视为普攻伤害。伤害<color=#3ACC3B>=100。</color>",
+        "CharacterUnlockStage": 30063138,
         "CuteModelName": "QR6LuxiyaMd010011TX",
         "RecommendStatus": [
             11,
             144
-        ]
+        ],
+        "IdleAction": "Kiss01",
+        "WinAction": "Win",
+        "FailAction": "Attack05"
     },
     {
         "CharacterId": 5057,
         "CharacterName": "Tiny Wanshi",
         "CharacterIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Wanshi2Q.png",
         "ShowPriority": 2,
+        "IsHide": true,
         "CharacterType": 2,
         "BasicAttackDesc": "Fires sniper rounds.",
         "CorePassiveDesc": "Sniper rifle bullets deal higher DMG the farther they travel.\\ Max HP <color=#DB1D1A>-25%.</color>",
@@ -55,13 +60,54 @@
         "CharacterType": 2,
         "BasicAttackDesc": "Fires tracking bullets with the Levi-Gun.",
         "CorePassiveDesc": "Summon duration +<color=#3ACC3B>75%</color>.\\nBasic Attack DMG <color=#DB1D1A>-25%.</color>",
-        "ComboBoostDesc": "The higher the combo count, the greater the summon's DMG Boost (affected by Liv's Signal Orb DMG bonus, CRIT Rate, and CRIT DMG).",
-        "CharacterUnlockStage": 30063126,
+        "ComboBoostDesc": "<color=#ff7aec><b>- Combo Bonus</b></color>\\nHigher Combo count grants summons a greater DMG Boost (affected by Liv's Signal Orb DMG Bonus, CRIT, and CRIT DMG stats).\\n<color=#ff7aec><b>- Liv's Groove</b></color>\\nDuring Fever, tapping to move on the beat causes all pieces to immediately attack.",
+        "CharacterUnlockStage": 30063136,
         "CuteModelName": "QR5LifuMd010011PBR",
         "RecommendStatus": [
             154,
             155,
             156
-        ]
+        ],
+        "IdleAction": "Love01",
+        "WinAction": "Win",
+        "FailAction": "Attack05"
+    },
+    {
+        "CharacterId": 5059,
+        "CharacterName": "Tiny Teddy",
+        "CharacterIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Buouxiong2Q.png",
+        "ShowPriority": 5,
+        "CharacterType": 1,
+        "BasicAttackDesc": "Summons a Giant Bear to assist in battle (Attack DMG and Attack Range are affected by Teddy's Basic ATK DMG Bonus and Attack Range stats).",
+        "CorePassiveDesc": "普攻伤害加成修正<color=#3ACC3B>+10%</color>。升级所需经验减少<color=#3ACC3B>50%</color>。黄/蓝球掉落概率修正<color=#DB1D1A>-10%。</color>攻速加成修正<color=#DB1D1A>-10%。</color>",
+        "ComboBoostDesc": "<color=#ff7aec><b>- Combo Bonus</b></color>\\nHigher Combo count grants more Attack Range.\\n<color=#ff7aec><b>- Anomaly Bear Claw</b></color>\\nDuring Fever, tapping to move on the beat causes the Giant Bear to unleash a powerful attack.",
+        "CharacterUnlockStage": 30063134,
+        "CuteModelName": "QR3BuouxiongMd010011PBR",
+        "RecommendStatus": [
+            75,
+            11
+        ],
+        "IdleAction": "Thanks01",
+        "WinAction": "Win",
+        "FailAction": "Attack05"
+    },
+    {
+        "CharacterId": 5060,
+        "CharacterName": "Tiny Karenina",
+        "CharacterIcon": "Assets/Product/Texture/Image/Role/RoleHeadR5Kalienina2Q.png",
+        "ShowPriority": 6,
+        "CharacterType": 1,
+        "BasicAttackDesc": "Uses an anchor for low-frequency melee attacks, pulling enemies in.",
+        "CorePassiveDesc": "受到伤害时，在小范围内造成一次爆炸，爆炸伤害视为信号球伤害。伤害<color=#3ACC3B>=20+</color>护甲<color=#3ACC3B>*200%。</color>",
+        "ComboBoostDesc": "<color=#ff7aec><b>- Combo Bonus</b></color>\\nHigher Combo count grants more Armor.\\n<color=#ff7aec><b>- Captain, Set Sail!</b></color>\\nDuring Fever, tapping to move on the beat causes Karenina to throw anchors in multiple directions.",
+        "CuteModelName": "QR5KalieninaMd010011PBR",
+        "RecommendStatus": [
+            33,
+            1,
+            12
+        ],
+        "IdleAction": "Show06",
+        "WinAction": "Win",
+        "FailAction": "Attack05"
     }
 ]

@@ -1916,6 +1916,23 @@
         ]
     },
     {
+        "Id": 241,
+        "Name": "Booster Structural Part - Patrick",
+        "Description": "A structural part of the Combat Unit Booster, Patrick. Collect a certain number of them to create the Combat Unit Booster.",
+        "WorldDesc": "All the essence of the Combat Unit Booster lies within its structure. Once there are sufficient parts, a CUB can be easily assembled.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconPet3Starfish1.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconPet3Starfish1Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 29600,
+        "MaxCount": 9999,
+        "GridCount": 9999,
+        "SkipIdParams": [
+            15006,
+            7212
+        ]
+    },
+    {
         "Id": 300,
         "Name": "HQ Shard",
         "Description": "Made from scrap metal. Can be exchanged for items with the Support Force.",
@@ -3985,9 +4002,24 @@
         "SellForCount": 10
     },
     {
+        "Id": 484,
+        "Name": "Ultima: Effulgence",
+        "Description": "Constructs that have awakened their Ultima rank get 3 Signal Orbs at the start of battle.",
+        "WorldDesc": "Ring device developed by the Science Council and customized for each individual construct. The internal nanomachines help Constructs perform high-frequency computing to generate Signal Orbs immediately.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconSkillRelease62.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconSkillRelease62Sp.png",
+        "ItemType": 1,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10
+    },
+    {
         "Id": 501,
         "Name": "Inver-Shard - Palefire",
-        "Description": "Lee's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lee: Palefire's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1011001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1011001Sp.png",
@@ -4006,7 +4038,7 @@
     {
         "Id": 502,
         "Name": "Inver-Shard - Lotus",
-        "Description": "Lucia's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lucia: Lotus' Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021001Sp.png",
@@ -4025,7 +4057,7 @@
     {
         "Id": 503,
         "Name": "Inver-Shard - Eclipse",
-        "Description": "Liv's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Liv: Eclipse's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1031001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1031001Sp.png",
@@ -4044,7 +4076,7 @@
     {
         "Id": 504,
         "Name": "Inver-Shard - Zero",
-        "Description": "Bianca's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Bianca: Zero's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1041001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1041001Sp.png",
@@ -4063,7 +4095,7 @@
     {
         "Id": 505,
         "Name": "Inver-Shard - Storm",
-        "Description": "Nanami's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Nanami: Storm's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1051001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1051001Sp.png",
@@ -4082,7 +4114,7 @@
     {
         "Id": 506,
         "Name": "Inver-Shard - Bastion",
-        "Description": "Kamui's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Kamui: Bastion's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1061001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1061001Sp.png",
@@ -4101,7 +4133,7 @@
     {
         "Id": 507,
         "Name": "Inver-Shard - Blast",
-        "Description": "Karenina's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Karenina: Blast's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1071001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1071001Sp.png",
@@ -4120,7 +4152,7 @@
     {
         "Id": 508,
         "Name": "Inver-Shard - Nightblade",
-        "Description": "Watanabe's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Watanabe: Nightblade's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1081001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1081001Sp.png",
@@ -4139,7 +4171,7 @@
     {
         "Id": 509,
         "Name": "Inver-Shard - Brilliance",
-        "Description": "Ayla's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Ayla: Brilliance's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1091002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1091002Sp.png",
@@ -4158,7 +4190,7 @@
     {
         "Id": 512,
         "Name": "Inver-Shard - Dawn",
-        "Description": "Lucia's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lucia: Dawn's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021002Sp.png",
@@ -4177,7 +4209,7 @@
     {
         "Id": 513,
         "Name": "Inver-Shard - Lux",
-        "Description": "Liv's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Liv: Lux's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1031002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1031002Sp.png",
@@ -4196,7 +4228,7 @@
     {
         "Id": 514,
         "Name": "Inver-Shard - Veritas",
-        "Description": "Bianca's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Bianca: Veritas's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1041003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1041003Sp.png",
@@ -4215,7 +4247,7 @@
     {
         "Id": 515,
         "Name": "Inver-Shard - Pulse",
-        "Description": "Nanami's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Nanami: Pulse's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1051003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1051003Sp.png",
@@ -4234,7 +4266,7 @@
     {
         "Id": 516,
         "Name": "Inver-Shard - Tenebrion",
-        "Description": "Kamui's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Kamui: Tenebrion's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1061002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1061002Sp.png",
@@ -4253,7 +4285,7 @@
     {
         "Id": 517,
         "Name": "Inver-Shard - Ember",
-        "Description": "Karenina's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Karenina: Ember's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1071002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1071002Sp.png",
@@ -4272,7 +4304,7 @@
     {
         "Id": 521,
         "Name": "Inver-Shard - Entropy",
-        "Description": "Lee's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lee: Entropy's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1011002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1011002Sp.png",
@@ -4291,7 +4323,7 @@
     {
         "Id": 522,
         "Name": "Inver-Shard - Crimson Abyss",
-        "Description": "Lucia's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lucia: Crimson Abyss' Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021003Sp.png",
@@ -4310,7 +4342,7 @@
     {
         "Id": 523,
         "Name": "Inver-Shard - Luminance",
-        "Description": "Liv's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Liv: Luminance's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1031003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1031003Sp.png",
@@ -4329,7 +4361,7 @@
     {
         "Id": 528,
         "Name": "Inver-Shard - Astral",
-        "Description": "Watanabe's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Watanabe: Astral's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1081003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1081003Sp.png",
@@ -4348,7 +4380,7 @@
     {
         "Id": 531,
         "Name": "Inver-Shard - Silverfang",
-        "Description": "Sophia's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Sophia: Silverfang's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1101002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1101002Sp.png",
@@ -4367,7 +4399,7 @@
     {
         "Id": 532,
         "Name": "Inver-Shard - Plume",
-        "Description": "Lucia's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lucia: Plume's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021004Sp.png",
@@ -4385,7 +4417,7 @@
     {
         "Id": 533,
         "Name": "Inver-Shard - Rozen",
-        "Description": "Vera's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Vera: Rozen's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1131002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1131002Sp.png",
@@ -4404,7 +4436,7 @@
     {
         "Id": 534,
         "Name": "Inver-Shard - Crocotta",
-        "Description": "Camu's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Camu: Crocotta's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1511003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1511003Sp.png",
@@ -4422,7 +4454,7 @@
     {
         "Id": 535,
         "Name": "Inver-Shard - Rigor",
-        "Description": "Rosetta's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Rosetta: Rigor's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1141003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1141003Sp.png",
@@ -4441,7 +4473,7 @@
     {
         "Id": 536,
         "Name": "Inver-Shard - Pavo",
-        "Description": "Qu's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Qu: Pavo's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1521003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1521003Sp.png",
@@ -4459,7 +4491,7 @@
     {
         "Id": 537,
         "Name": "Inver-Shard - Qilin",
-        "Description": "Changyu's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Changyu: Qilin's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1161002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1161002Sp.png",
@@ -4478,7 +4510,7 @@
     {
         "Id": 539,
         "Name": "Inver-Shard - Arclight",
-        "Description": "Chrome's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Chrome: Arclight's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1201002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1201002Sp.png",
@@ -4497,7 +4529,7 @@
     {
         "Id": 538,
         "Name": "Inver-Shard - Laurel",
-        "Description": "Luna's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Luna: Laurel's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1171003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1171003Sp.png",
@@ -4569,7 +4601,7 @@
     {
         "Id": 543,
         "Name": "Inver-Shard - Hypnos",
-        "Description": "Wanshi's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Wanshi: Hypnos's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1211002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1211002Sp.png",
@@ -4588,7 +4620,7 @@
     {
         "Id": 544,
         "Name": "Inver-Shard - Tempest",
-        "Description": "Selena's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Selena: Tempest's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1531003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1531003Sp.png",
@@ -4606,7 +4638,7 @@
     {
         "Id": 545,
         "Name": "Inver-Shard - Glory",
-        "Description": "Chrome's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Chrome: Glory's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1121003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1121003Sp.png",
@@ -4624,7 +4656,7 @@
     {
         "Id": 546,
         "Name": "Inver-Shard - XXI",
-        "Description": "No. 21's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "No. 21: XXI's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1221002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1221002Sp.png",
@@ -4643,7 +4675,7 @@
     {
         "Id": 547,
         "Name": "Inver-Shard - Garnet",
-        "Description": "Vera's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Vera: Garnet's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1131003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1131003Sp.png",
@@ -4662,7 +4694,7 @@
     {
         "Id": 548,
         "Name": "Inver-Shard - Flambeau",
-        "Description": "Roland's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Roland: Flambeau's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1541003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1541003Sp.png",
@@ -4680,7 +4712,7 @@
     {
         "Id": 549,
         "Name": "Inver-Shard - Empyrea",
-        "Description": "Liv's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Liv: Empyrea's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1031004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1031004Sp.png",
@@ -4699,7 +4731,7 @@
     {
         "Id": 550,
         "Name": "Inver-Shard - Capriccio",
-        "Description": "Selena's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Selena: Capriccio's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1531004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1531004Sp.png",
@@ -4718,7 +4750,7 @@
     {
         "Id": 551,
         "Name": "Inver-Shard - Dragontoll",
-        "Description": "Pulao's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Pulao: Dragontoll's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1551003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1551003Sp.png",
@@ -4736,7 +4768,7 @@
     {
         "Id": 552,
         "Name": "Inver-Shard - Starfarer",
-        "Description": "Nanami's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Nanami: Starfarer's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1051004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1051004Sp.png",
@@ -4754,7 +4786,7 @@
     {
         "Id": 553,
         "Name": "Inver-Shard - Starveil",
-        "Description": "Haicma's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Haicma: Starveil's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1561003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1561003Sp.png",
@@ -4772,7 +4804,7 @@
     {
         "Id": 554,
         "Name": "Inver-Shard - Scire",
-        "Description": "Karenina's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Karenina: Scire's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1071004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1071004Sp.png",
@@ -4791,7 +4823,7 @@
     {
         "Id": 555,
         "Name": "Inver-Shard - Arca",
-        "Description": "Noan's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Noan: Arca's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1571003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1571003Sp.png",
@@ -4809,7 +4841,7 @@
     {
         "Id": 556,
         "Name": "Inver-Shard - Stigmata",
-        "Description": "Bianca's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Bianca: Stigmata's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1041004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1041004Sp.png",
@@ -4828,7 +4860,7 @@
     {
         "Id": 557,
         "Name": "Inver-Shard - Vitrum",
-        "Description": "Bambinata's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Bambinata: Vitrum's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1231002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1231002Sp.png",
@@ -4847,7 +4879,7 @@
     {
         "Id": 558,
         "Name": "Inver-Shard - Hyperreal",
-        "Description": "Lee's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lee: Hyperreal's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1011004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1011004Sp.png",
@@ -4865,7 +4897,7 @@
     {
         "Id": 559,
         "Name": "Inver-Shard - Kaleido",
-        "Description": "Ayla's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Ayla: Kaleido's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1091003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1091003Sp.png",
@@ -4884,7 +4916,7 @@
     {
         "Id": 560,
         "Name": "Inver-Shard - Crimson Weave",
-        "Description": "Lucia's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lucia: Crimson Weave's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021005.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021005Sp.png",
@@ -4903,7 +4935,7 @@
     {
         "Id": 561,
         "Name": "Inver-Shard - Zitherwoe",
-        "Description": "Hanying's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Hanying: Zitherwoe's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1241002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1241002Sp.png",
@@ -4922,7 +4954,7 @@
     {
         "Id": 562,
         "Name": "Inver-Shard - Feral",
-        "Description": "No. 21's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "No. 21: Feral's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1221003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1221003Sp.png",
@@ -4940,7 +4972,7 @@
     {
         "Id": 563,
         "Name": "Inver-Shard - Indomitus",
-        "Description": "Noctis' Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Noctis: Indomitus' Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1251002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1251002Sp.png",
@@ -4959,7 +4991,7 @@
     {
         "Id": 564,
         "Name": "Inver-Shard - Echo",
-        "Description": "Alisa's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Alisa: Echo's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1261003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1261003Sp.png",
@@ -4978,7 +5010,7 @@
     {
         "Id": 565,
         "Name": "Inver-Shard - Lost Lullaby",
-        "Description": "Lamia's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lamia: Lost Lullaby's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1271003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1271003Sp.png",
@@ -5014,7 +5046,7 @@
     {
         "Id": 567,
         "Name": "Inver-Shard - Epitaph",
-        "Description": "Watanabe's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Watanabe: Epitaph's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1081004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1081004Sp.png",
@@ -5033,7 +5065,7 @@
     {
         "Id": 568,
         "Name": "Inver-Shard - Shukra",
-        "Description": "Qu's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Qu: Shukra's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1521004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1521004Sp.png",
@@ -5051,7 +5083,7 @@
     {
         "Id": 569,
         "Name": "Inver-Shard - Decryptor",
-        "Description": "Teddy's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Teddy: Decryptor's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1291002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1291002Sp.png",
@@ -5070,7 +5102,7 @@
     {
         "Id": 570,
         "Name": "Inver-Shard - Oblivion",
-        "Description": "Luna's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Luna: Oblivion's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1171004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1171004Sp.png",
@@ -5089,7 +5121,7 @@
     {
         "Id": 571,
         "Name": "Inver-Shard - Ardeo",
-        "Description": "Bridget's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Bridget: Ardeo's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1301002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1301002Sp.png",
@@ -5108,7 +5140,7 @@
     {
         "Id": 572,
         "Name": "Inver-Shard - Solacetune",
-        "Description": "Hanying's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Hanying: Solacetune's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1241003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1241003Sp.png",
@@ -5126,7 +5158,7 @@
     {
         "Id": 573,
         "Name": "Inver-Shard - Lucid Dreamer",
-        "Description": "Wanshi's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Wanshi: Lucid Dreamer's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1211003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1211003Sp.png",
@@ -5145,7 +5177,7 @@
     {
         "Id": 574,
         "Name": "Inver-Shard - Pyroath",
-        "Description": "Lucia's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lucia: Pyroath's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021006.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021006Sp.png",
@@ -5163,7 +5195,7 @@
     {
         "Id": 575,
         "Name": "Inver-Shard - Fulgor",
-        "Description": "Yata's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Yata: Fulgor's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1311002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1311002Sp.png",
@@ -5182,7 +5214,7 @@
     {
         "Id": 576,
         "Name": "Inver-Shard - Startrail",
-        "Description": "Nanami's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Nanami: Startrail's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1051005.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1051005Sp.png",
@@ -5200,7 +5232,7 @@
     {
         "Id": 577,
         "Name": "Inver-Shard - Parhelion",
-        "Description": "Ishmael's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Ishmael: Parhelion's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1321003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1321003Sp.png",
@@ -5218,7 +5250,7 @@
     {
         "Id": 578,
         "Name": "Inver-Shard - Daemonissa",
-        "Description": "Lilith's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lilith: Daemonissa's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1331003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1331003Sp.png",
@@ -5237,7 +5269,7 @@
     {
         "Id": 579,
         "Name": "Inver-Shard - Pianissimo",
-        "Description": "Selena's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Selena: Pianissimo's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1531005.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1531005Sp.png",
@@ -5255,7 +5287,7 @@
     {
         "Id": 580,
         "Name": "Inver-Shard - Daybreak",
-        "Description": "Jetavie's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Jetavie: Daybreak's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1341002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1341002Sp.png",
@@ -5274,7 +5306,7 @@
     {
         "Id": 581,
         "Name": "Inver-Shard - Geiravor",
-        "Description": "Vera's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Vera: Geiravor's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1131004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1131004Sp.png",
@@ -5328,7 +5360,7 @@
     {
         "Id": 584,
         "Name": "Inver-Shard - Crepuscule",
-        "Description": "Crepuscule's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Bianca: Crepuscule's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1041005.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1041005Sp.png",
@@ -5346,7 +5378,7 @@
     {
         "Id": 585,
         "Name": "Inver-Shard - Secator",
-        "Description": "Secator's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Discord: Secator's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding character.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1371002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1371002Sp.png",
@@ -5365,7 +5397,7 @@
     {
         "Id": 586,
         "Name": "Inver-Shard - Aegis",
-        "Description": "Aegis' Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Veronica: Aegis's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding character.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1381003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1381003Sp.png",
@@ -5383,7 +5415,7 @@
     {
         "Id": 587,
         "Name": "Inver-Shard - Limpidity",
-        "Description": "Limpidity's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Liv: Limpidity's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1031005.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1031005Sp.png",
@@ -5401,7 +5433,7 @@
     {
         "Id": 588,
         "Name": "Inver-Shard - Spectre",
-        "Description": "Teddy's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Teddy: Spectre's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1291003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1291003Sp.png",
@@ -5414,14 +5446,13 @@
         "SellForCount": 5,
         "SkipIdParams": [
             10012,
-            10048,
-            90061
+            10048
         ]
     },
     {
         "Id": 589,
         "Name": "Inver-Shard - Arete",
-        "Description": "Rosetta's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Rosetta: Arete's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1141004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1141004Sp.png",
@@ -5439,7 +5470,7 @@
     {
         "Id": 590,
         "Name": "Inver-Shard - Dirge",
-        "Description": "Dirge's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Nirvatia: Dirge's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1391003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1391003Sp.png",
@@ -5459,7 +5490,7 @@
     {
         "Id": 591,
         "Name": "Inver-Shard - Aeternion",
-        "Description": "Kamui's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Kamui: Aeternion's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1061004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1061004Sp.png",
@@ -5477,7 +5508,7 @@
     {
         "Id": 592,
         "Name": "Inver-Shard - Inverse Crown",
-        "Description": "Inverse Crown's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Lucia: Inverse Crown's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021007.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021007Sp.png",
@@ -5495,7 +5526,7 @@
     {
         "Id": 593,
         "Name": "Inver-Shard - Lacrimosa",
-        "Description": "Helentine's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "Description": "Helentine: Lacrimosa's Inver-Shard. Collect a sufficient amount to link with the Construct.",
         "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1401003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1401003Sp.png",
@@ -5510,6 +5541,24 @@
             10012,
             10048,
             90061
+        ]
+    },
+    {
+        "Id": 594,
+        "Name": "Inver-Shard - Effulgence",
+        "Description": "Karenina: Effulgence's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1071005.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1071005Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 35,
+        "SellForCount": 5,
+        "SkipIdParams": [
+            10012
         ]
     },
     {
@@ -6847,8 +6896,8 @@
         "Name": "Topology Pick",
         "Description": "Can be used to start a game in [Summer's Rhythm].",
         "WorldDesc": "The stage curtain must fall eventually, but at least there remains a shard that once burned and leaped with life, holding the memory of that star-studded night.",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem05.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLivWarmItem05Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem07.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLivWarmItem07Sp.png",
         "ItemType": 262148,
         "Quality": 4,
         "Priority": 10,
@@ -6857,6 +6906,40 @@
         "StartTime": "2026/8/11 5:00",
         "SkipIdParams": [
             20378
+        ]
+    },
+    {
+        "Id": 1088,
+        "Name": "Copper Pocket Watch",
+        "Description": "Can be used to unlock [Crimson Descent] stages.",
+        "WorldDesc": "A personal belonging of a certain young woman. Strangely, the markings on its dial never rotate with the passage of time.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiDragPuzzleItem12.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiDragPuzzleItem12Sp.png",
+        "ItemType": 262148,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "StartTime": "2026/9/14 5:00",
+        "SkipIdParams": [
+            20383
+        ]
+    },
+    {
+        "Id": 1089,
+        "Name": "F.O.S. Badge",
+        "Description": "Use it to swap the position of cards in [Wave Trace].",
+        "WorldDesc": "法奥斯颁予每位学生的校徽，纵使岁月流转，徽面上的金属光泽也从未黯淡。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem06.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLivWarmItem06Sp.png",
+        "ItemType": 262148,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "StartTime": "2026/9/14 5:00",
+        "SkipIdParams": [
+            20389
         ]
     },
     {
@@ -26156,6 +26239,215 @@
         ]
     },
     {
+        "Id": 2993,
+        "Name": "Anchor of the Heart Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Anchor of the Heart].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheFish001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheFish001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 18,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2994,
+        "Name": "\"Party Starter\" Blueprint",
+        "Description": "Type: Ceiling",
+        "WorldDesc": "Changes Decor to [\"Party Starter\"].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheWall001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheWall001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2995,
+        "Name": "Mini Neon Night Blueprint",
+        "Description": "Type: Wall",
+        "WorldDesc": "Changes Decor to [Mini Neon Night].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheFlooring001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheFlooring001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2996,
+        "Name": "Path to Stardom Blueprint",
+        "Description": "Type: Floor",
+        "WorldDesc": "Changes Decor to [Path to Stardom].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheDooring001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheDooring001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2997,
+        "Name": "Under Spotlight Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Under Spotlight].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2998,
+        "Name": "Reverb Overdrive Bass Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Reverb Overdrive Bass].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheLamian001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheLamian001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2999,
+        "Name": "Electro Sax Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Electro Sax].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheBeverages001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheBeverages001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3000,
+        "Name": "Soundwave Synth Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Soundwave Synth].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheSushi001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheSushi001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3006,
+        "Name": "Blast Drum Kit Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Blast Drum Kit].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsusheIce001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsusheIce001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3007,
+        "Name": "高保真音响·右图纸",
+        "Description": "Type: Object",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【高保真音响·右】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsushePlatform001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsushePlatform001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3008,
+        "Name": "高保真音响·左图纸",
+        "Description": "Type: Object",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【高保真音响·左】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueHaishangsushePlatform001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueHaishangsushePlatform001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
         "Id": 3001,
         "Name": "5★ Weapon Resonance Material",
         "Description": "Can be used as any other 5★ weapon for Resonance.",
@@ -28212,6 +28504,25 @@
         ]
     },
     {
+        "Id": 32021,
+        "Name": "Leap Wafer: Pyroath",
+        "Description": "Used as a material in [Pyroath]'s Leap.",
+        "WorldDesc": "A data wafer that records massive battle data and greatly improves a frame's battle performance.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItCharEx126.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItCharEx126Sp.png",
+        "ItemType": 4,
+        "Quality": 5,
+        "Priority": 86902,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "SellForId": 32000,
+        "SellForCount": 5,
+        "FastTrading": 1,
+        "SkipIdParams": [
+            10036
+        ]
+    },
+    {
         "Id": 33000,
         "Name": "Uniframe Single Crystal",
         "Description": "Uniframe Single Crystals can be used to exchange for Uniframes.",
@@ -30237,6 +30548,26 @@
         ]
     },
     {
+        "Id": 40925,
+        "Name": "Assessment Manual Shard Choice",
+        "Description": "Use it in Items > Item.",
+        "WorldDesc": "使用后可以从丽芙·仰光、罗塞塔·凛冽、里·乱数、卡列尼娜·烬燃、七实·脉冲、神威·暗能、露西亚·深红之渊、比安卡·真理、薇拉·绯耀、丽芙·极昼、卡列尼娜·辉晓、比安卡·深痕、露西亚·深红囚影、亚里莎·回音、渡边·尘铭、露娜·终焉、含英·檀心、七实·芒星之迹、露西亚·誓焰的逆元碎片中任选一个。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconAlterRole14.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconAlterRole14Sp.png",
+        "ItemType": 16,
+        "Quality": 5,
+        "Priority": 100004,
+        "MaxCount": 9999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 100,
+        "SubTypeParams": [
+            3,
+            1471,
+            1
+        ]
+    },
+    {
         "Id": 50000,
         "Name": "Basic Construct R&D Ticket",
         "Description": "Used to research Constructs.",
@@ -30501,6 +30832,19 @@
         "Duration": 3715140,
         "RecycleRewardId": 852,
         "RecycleByMail": true
+    },
+    {
+        "Id": 50020,
+        "Name": "Target Weapon R&D Ticket",
+        "Description": "Used to research specific weapons.",
+        "WorldDesc": "Tickets issued to Executor Squads. Accumulate them to access special equipment research facilities.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconConsumeTicD2.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconConsumeTicD2Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 999999,
+        "GridCount": 9999
     },
     {
         "Id": 50100,
@@ -31660,6 +32004,78 @@
         "Priority": 800,
         "MaxCount": 99999,
         "GridCount": 9999
+    },
+    {
+        "Id": 50171,
+        "Name": "Heart of Divinity",
+        "Description": "[Tainted Moonrise] research event item.",
+        "WorldDesc": "To bring the divine to ruin, must you offer your heart.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLottoCardEv300.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLottoCardEv300Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/26 10:00",
+        "Duration": 2487600,
+        "RecycleRewardId": 820,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50172,
+        "Name": "Heroic Song",
+        "Description": "[Grandiose Glamor] Research event item.",
+        "WorldDesc": "A letter from Babylonia Poets Society that praises a legendary female general with glamorous, ornate language.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLottoCardEv209.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLottoCardEv209Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/26 10:00",
+        "Duration": 2487600,
+        "RecycleRewardId": 820,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50173,
+        "Name": "Concert Ticket",
+        "Description": "[Neon Dynamite] Research event item.",
+        "WorldDesc": "Concert tickets to Constellia's Paradise Festival. Get ready to witness the explosive debut of a dazzling rising star!",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLottoCardEv32.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLottoCardEv32Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/26 10:00",
+        "Duration": 2487600,
+        "RecycleRewardId": 820,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50174,
+        "Name": "\"Order and Chaos\"",
+        "Description": "[Nightfall Finale] research event item.",
+        "WorldDesc": "When the way forward is obscured, let this die be your guide.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLottoCardEv400.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLottoCardEv400Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/26 10:00",
+        "Duration": 2487600,
+        "RecycleRewardId": 820,
+        "RecycleByMail": true
     },
     {
         "Id": 60000,
@@ -37179,6 +37595,22 @@
         "Duration": 3542400
     },
     {
+        "Id": 63630,
+        "Name": "Soundwave Coin",
+        "Description": "Coins can be used to enhance character stats in out-of-battle training.",
+        "WorldDesc": "Keep the music playing to earn more event currency! Save it up. It'll come in handy!",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/PBRItemsIconCoin.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/PBRItemsIconCoin.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 999999,
+        "GridCount": 999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/19 5:00",
+        "Duration": 3542400
+    },
+    {
         "Id": 70000,
         "Name": "Hypertune Material Pack",
         "Description": "Gives Hypertune Crystal α x480 and Hypertune Crystal β x80.",
@@ -39983,7 +40415,7 @@
         "MaxCount": 1,
         "GridCount": 1,
         "SkipIdParams": [
-            80244
+            80315
         ],
         "SubTypeParams": [
             12360001
@@ -41370,6 +41802,64 @@
         ],
         "SubTypeParams": [
             12660001
+        ]
+    },
+    {
+        "Id": 80141,
+        "Name": "Ripples of Starlight",
+        "Description": "Rippling Twilight — Lashblade",
+        "WorldDesc": "A cool night breeze stirs you awake from your doze on the bench. You open your eyes to find her already there, smiling down at you, soft and warm. Starlight fills her eyes, and so does something she's never needed to say aloud. Your fingers find hers. Neither of you speaks. You simply hold onto this moment, one that could end any second, yet somehow feels like it'll last forever.",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3ChainswordMd040011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3ChainswordMd040011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80315
+        ],
+        "SubTypeParams": [
+            12570003
+        ]
+    },
+    {
+        "Id": 80142,
+        "Name": "Tropical Lullaby",
+        "Description": "Rippling Twilight — Digital Warboots",
+        "WorldDesc": "The evening breeze carries a whisper of sea salt as her feet dance across the sand, turning the entire beach into her own private stage. Her laughter, playful and bright, paints the whole summer in dreamy candy hues.",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3ShoesMd030011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3ShoesMd030011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80319
+        ],
+        "SubTypeParams": [
+            12610002
+        ]
+    },
+    {
+        "Id": 80143,
+        "Name": "Storm Sonata",
+        "Description": "Rippling Twilight — Drift Anchor",
+        "WorldDesc": "Her fingertips glide across the strings, sending shimmering droplets dancing with every note. The warmth of the summer shore, its vibrant spirit, and every precious moment you've shared are woven into a melody for your ears alone.",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3AnchorMd020011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3AnchorMd020011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80315,
+            80316
+        ],
+        "SubTypeParams": [
+            12670001
         ]
     },
     {
@@ -48033,6 +48523,38 @@
         "GridCount": 999999,
         "StartTime": "2026/7/17 5:00",
         "Duration": 5875200
+    },
+    {
+        "Id": 97091,
+        "Name": "Leisure Voucher",
+        "Description": "Use to accept an invitation during Love's Leisure Hour.",
+        "WorldDesc": "在空中花园七夕节组织的活动中，用于接受来自某人的邀约的电子凭券。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconEnvelopeGuessing01.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconEnvelopeGuessing01Sp.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/19 5:00",
+        "Duration": 3024000
+    },
+    {
+        "Id": 97092,
+        "Name": "Exclusive Voucher",
+        "Description": "Use to designate a character to invite during Love's Leisure Hour.",
+        "WorldDesc": "在空中花园七夕节组织的活动中，用于指定邀约对象的辅助电子凭券。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconEnvelopeGuessing02.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconEnvelopeGuessing02Sp.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/19 5:00",
+        "Duration": 3024000
     },
     {
         "Id": 250001,

@@ -696,9 +696,9 @@
             "Character Status"
         ],
         "Contents": [
-            "① In this mode, the character attacks automatically with basic attacks.\\nYou can control the character to move and dodge enemy attacks.",
-            "② After completing a wave, you can choose <color=#7FF2F4>Signal Orb Skills</color> and <color=#7FF2F4>items</color> in the Enhancement Shop to strengthen the character.\\nDefeat enemies and collect dropped <color=#7FF2F4>EXP</color> to level up the character and increase the number of <color=#7FF2F4>shop</color> choices. Complete a set number of waves to clear the challenge.",
-            "③ The character's current <color=#7FF2F4>HP</color> and <color=#7FF2F4>EXP</color> are displayed in the top-left corner."
+            "①本次玩法中，角色将使用普攻自动攻击。\\n②指挥官可以控制角色进行移动，躲避怪物的攻击。",
+            "①波次战斗完成后，可以在强化商店选择<color=#7FF2F4>信号球技能</color>和<color=#7FF2F4>道具</color>来提升角色能力。\\n②角色通过消灭怪物，拾取掉落的<color=#7FF2F4>经验值</color>升级，可以增加<color=#7FF2F4>商店</color>选择次数。完成一定数量波次即可挑战成功。",
+            "角色当前<color=#7FF2F4>生命值</color>、<color=#7FF2F4>经验值</color>可在界面左上角查看。"
         ],
         "AssetPaths": [
             31060,
@@ -718,8 +718,8 @@
             "Signal Orbs"
         ],
         "Contents": [
-            "① Pick up drops from defeated enemies to gain bonuses:\\nEXP Orb: Increases <color=#7FF2F4>character level</color>.\\nHealing Orb: Restores <color=#7FF2F4>HP</color>.\\nGift Box: Grants 1 <color=#7FF2F4>additional enhancement</color> at the next Enhancement Shop.",
-            "② Dropped by defeated enemies. Collect them to build charge progress. Collect <color=#7FF2F4>3</color> to trigger the corresponding colored <color=#7FF2F4>Signal Orb Skill</color>."
+            "消灭怪物掉落，可通过碰撞拾取：\\n·经验球：拾取一定数量经验球后可以提升<color=#7FF2F4>角色等级</color>。\\n·治疗球：拾取治疗球可以回复角色当前<color=#7FF2F4>生命值</color>。\\n·礼盒：拾取礼盒后可以在下个强化商店增加一次<color=#7FF2F4>强化次数</color>。",
+            "消灭怪物掉落，拾取后累计充能进度，累计拾取<color=#7FF2F4>三个</color>，可以触发对应颜色的<color=#7FF2F4>信号球技能</color>。每个重音节拍时，会触发一次<color=#7FF2F4>自动拾取</color>。"
         ],
         "AssetPaths": [
             "Assets/Product/Texture/Image/UiPBR/UiPBRHelp07.png",
@@ -728,6 +728,25 @@
         "AssetTypes": [
             2,
             2
+        ]
+    },
+    {
+        "Id": 300631253,
+        "Titles": [
+            "沉浸节拍",
+            "沉浸节拍"
+        ],
+        "Contents": [
+            "①连锁层数达到一定要求，点击按钮可以进入<color=#7FF2F4>沉浸节拍</color>状态。\\n②沉浸节拍状态下，角色将忘情舞蹈，期间只能通过<color=#7FF2F4>特殊方式</color>移动。",
+            "③沉浸节拍期间，在合适的节拍点击移动会触发角色的<color=#7FF2F4>特殊技能</color>，特殊技能效果可于角色技能界面查看。\\n④沉浸节拍状态下自动拾取会在每个节拍触发，部分信号球会获得<color=#7FF2F4>强化效果</color>。"
+        ],
+        "AssetPaths": [
+            "Assets/Product/Texture/Image/UiPBR/UiPBRHelp09.png",
+            31061
+        ],
+        "AssetTypes": [
+            2,
+            1
         ]
     },
     {
@@ -762,7 +781,7 @@
         ],
         "Contents": [
             "The Boss can consume \"Saturation Gauge\" to unleash powerful Overdrive moves, which can only be dodged.\\n\\nThe final hit of an Overdrive move ignores normal Dodge, and on hit it reduces \"Saturation Gauge\".",
-            "Use \"Threshold Surge\" to perfectly dodge the final hit of an Overdrive Move, after which you will enter the \"Threshold State\".\\n\\nIn the \"Threshold State\", your next attack is enhanced, and hitting the Boss will leave him Imbalanced.",
+            "Use \"Threshold Surge\" to perfectly dodge the final hit of an Overdrive move, after which you will enter the \"Threshold state\".\\n\\nIn the \"Threshold state\", your next attack is enhanced, and hitting the Boss will leave it Imbalanced.",
             "Press and hold the Threshold Surge button to unleash an enhanced version of \"Threshold Surge,\" dealing a shockwave centered on yourself.\\n\\nThis shockwave can directly knock the Boss into Imbalanced, but this move consumes a large amount of \"Saturation Gauge.\""
         ],
         "AssetPaths": [
