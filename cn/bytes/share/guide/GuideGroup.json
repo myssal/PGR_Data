@@ -10769,6 +10769,7 @@
     {
         "Id": 64601,
         "Priority": 64601,
+        "Ignore": 1,
         "Desc": "v4.4 战双兄弟 主界面介绍",
         "GuideType": 1,
         "ConditionId": [
@@ -10782,6 +10783,7 @@
     {
         "Id": 64602,
         "Priority": 64602,
+        "Ignore": 1,
         "Desc": "v4.4 战双兄弟 商店介绍",
         "GuideType": 1,
         "ConditionId": [
@@ -10795,6 +10797,7 @@
     {
         "Id": 64603,
         "Priority": 64603,
+        "Ignore": 1,
         "Desc": "v4.4 战双兄弟 商店升阶",
         "GuideType": 1,
         "ConditionId": [
@@ -10809,6 +10812,7 @@
     {
         "Id": 64604,
         "Priority": 64604,
+        "Ignore": 1,
         "Desc": "v4.4 战双兄弟 养成界面",
         "GuideType": 1,
         "ConditionId": [
@@ -10822,6 +10826,7 @@
     {
         "Id": 64605,
         "Priority": 64605,
+        "Ignore": 1,
         "Desc": "v4.4 战双兄弟 关卡失败",
         "GuideType": 1,
         "ConditionId": [
@@ -10836,6 +10841,7 @@
     {
         "Id": 64606,
         "Priority": 64606,
+        "Ignore": 1,
         "Desc": "v4.4 战双兄弟 关卡胜利",
         "GuideType": 1,
         "ConditionId": [
@@ -11705,5 +11711,178 @@
         "ActiveUi": "UiActivityBossSingleRoot",
         "CheckNodeActive": "goHardRoot",
         "GroupId": 64842
+    },
+    {
+        "Id": 64901,
+        "Priority": 64901,
+        "Desc": "v4.7 露娜皮肤卡池引导",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64901,
+        "ActiveUi": "UiLottoLuna",
+        "GroupId": 64901
+    },
+    {
+        "Id": 64902,
+        "Priority": 64902,
+        "Desc": "v4.7 薇拉皮肤卡池引导",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64902,
+        "ActiveUi": "UiLottoVera",
+        "GroupId": 64902
+    },
+    {
+        "Id": 64903,
+        "Priority": 64903,
+        "Desc": "v4.7 卡列皮肤卡池引导",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64903,
+        "ActiveUi": "UiLottoKarenina",
+        "GroupId": 64903
+    },
+    {
+        "Id": 64904,
+        "Priority": 64904,
+        "Desc": "v4.7 慈悲者皮肤卡池引导",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64904,
+        "ActiveUi": "UiLottoCibeizhe",
+        "GroupId": 64904
+    },
+    {
+        "Id": 64911,
+        "Priority": 64911,
+        "Desc": "v4.7 战双兄弟2.0 主界面介绍",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64911,
+        "ActiveUi": "UiPBRMain",
+        "GroupId": 64911
+    },
+    {
+        "Id": 64912,
+        "Priority": 64912,
+        "Desc": "v4.7 战双兄弟2.0 商店介绍",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64912,
+        "ActiveUi": "UiPBRShopNew",
+        "GroupId": 64912
+    },
+    {
+        "Id": 64913,
+        "Priority": 64913,
+        "Desc": "v4.7 战双兄弟2.0 商店升阶",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863144
+        ],
+        "CompleteId": 64913,
+        "ActiveUi": "UiPBRShopNew",
+        "GroupId": 64913
+    },
+    {
+        "Id": 64914,
+        "Priority": 64914,
+        "Desc": "v4.7 战双兄弟2.0 养成界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64914,
+        "ActiveUi": "UiPBRGenius",
+        "GroupId": 64914
+    },
+    {
+        "Id": 64915,
+        "Priority": 64915,
+        "Desc": "v4.7 战双兄弟2.0 关卡失败",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64915,
+        "ActiveUi": "UiPBRSettlement",
+        "CheckNodeActive": "TxtResultFail",
+        "GroupId": 64915
+    },
+    {
+        "Id": 64916,
+        "Priority": 64916,
+        "Desc": "v4.7 战双兄弟2.0 关卡胜利",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64916,
+        "ActiveUi": "UiPBRSettlement",
+        "CheckNodeActive": "BtnNext",
+        "GroupId": 64916
+    },
+    {
+        "Id": 64921,
+        "Priority": 64921,
+        "Desc": "v4.7 七夕活动主界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64921,
+        "ActiveUi": "UiEnvelopeGuessingMain",
+        "GroupId": 64921
+    },
+    {
+        "Id": 64922,
+        "Priority": 64922,
+        "Desc": "v4.7 七夕开包",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64922,
+        "ActiveUi": "UiEnvelopeGuessingOpenPackage",
+        "GroupId": 64922
+    },
+    {
+        "Id": 64923,
+        "Priority": 64923,
+        "Desc": "v4.7 七夕乐队",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863178
+        ],
+        "CompleteId": 64923,
+        "ActiveUi": "UiEnvelopeGuessingMain",
+        "GroupId": 64923
     }
 ]

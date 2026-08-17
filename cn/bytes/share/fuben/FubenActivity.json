@@ -41,7 +41,7 @@
         "Name": "拟战场域",
         "ManagerName": "FubenRepeatChallengeManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner146.png",
-        "TimeId": 48111,
+        "TimeId": 49303,
         "FunctionNameId": 10309,
         "SkipId": 20017,
         "Order": 1,
@@ -52,13 +52,13 @@
     },
     {
         "Id": 5,
-        "Name": "葬途残声",
+        "Name": "怒海翻澜",
         "ManagerName": "FubenActivityBossSingleManager",
-        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner234.png",
-        "TimeId": 48101,
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner239.png",
+        "TimeId": 49101,
         "FunctionNameId": 10304,
         "SkipId": 11724,
-        "Order": 4,
+        "Order": 5,
         "RedPointConditions": [
             "CONDITION_ACTIVITYBRIE_BOSSSINGLE"
         ],
@@ -165,13 +165,13 @@
     },
     {
         "Id": 16,
-        "Name": "通晓者难明",
+        "Name": "浮浪者破幻",
         "ManagerName": "FubenNewCharActivityManager",
-        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner233.png",
-        "TimeId": 48705,
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner241.png",
+        "TimeId": 49924,
         "FunctionNameId": 10325,
         "SkipId": 20235,
-        "Order": 2,
+        "Order": 3,
         "RedPointConditions": [
             "CONDITION_KOROMCHARACTIVITYMAINRED"
         ],
@@ -504,10 +504,8 @@
         "Name": "拟像试炼",
         "ManagerName": "XBossInshotAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner178.png",
-        "TimeId": 48501,
         "FunctionNameId": 10467,
         "SkipId": 89061,
-        "Order": 5,
         "RedPointConditions": [
             "CONDITION_BOSS_INSHOT"
         ],
@@ -837,23 +835,24 @@
         "Name": "疾速追缉",
         "ManagerName": "XBountyChallengeAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner228.png",
+        "TimeId": 49601,
         "FunctionNameId": 10492,
         "SkipId": 89093,
+        "Order": 6,
         "RedPointConditions": [
             "CONDITION_BOUNTY_CHALLENGE"
         ],
         "Note": "悬赏挑战",
-        "IsAgency": 1
+        "IsAgency": 1,
+        "IsRecord": true
     },
     {
         "Id": 72,
         "Name": "虚像破执",
         "ManagerName": "XSoloReformAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner237.png",
-        "TimeId": 48201,
         "FunctionNameId": 10353,
         "SkipId": 89094,
-        "Order": 6,
         "RedPointConditions": [
             "CONDITION_SOLO_REFORM_MAIN"
         ],
@@ -960,12 +959,14 @@
     },
     {
         "Id": 86,
-        "Name": "黄油咖啡奇遇事",
+        "Name": "耀律狂潮",
         "ManagerName": "XPBRGameAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner224.png",
+        "TimeId": 49920,
         "ShowConditionId": 774800,
         "FunctionNameId": 10500,
         "SkipId": 1300635,
+        "Order": 7,
         "RedPointConditions": [
             "CONDITION_PBRGAME_MAIN"
         ],
@@ -1075,10 +1076,8 @@
         "Name": "忽忽的奇幻花园",
         "ManagerName": "XDyeMergeGameAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner236.png",
-        "TimeId": 48128,
         "FunctionNameId": 10504,
         "SkipId": 89105,
-        "Order": 7,
         "RedPointConditions": [
             "CONDITION_DYEMERGE_MAIN"
         ],
@@ -1094,11 +1093,43 @@
         "TimeId": 48820,
         "FunctionNameId": 10341,
         "SkipId": 89106,
-        "Order": 3,
+        "Order": 4,
         "RedPointConditions": [
             "CONDITION_FASHION_STORY_ENTRANCE"
         ],
         "Note": "4.6+4.7夏日涂装剧情",
+        "IsAgency": 1
+    },
+    {
+        "Id": 99,
+        "Name": "夕韵暇光",
+        "ManagerName": "XEnvelopeGuessingAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner242.png",
+        "TimeId": 49201,
+        "FunctionNameId": 10507,
+        "SkipId": 89113,
+        "Order": 8,
+        "RedPointConditions": [
+            "CONDITION_ENVELOPE_GUESSING_ENTRANCE"
+        ],
+        "Note": "七夕开卡",
+        "IsAgency": 1,
+        "IsRecord": true
+    },
+    {
+        "Id": 100,
+        "Name": "次元调频",
+        "ManagerName": "XConcertPreHeatingAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner235.png",
+        "TimeId": 48801,
+        "ShowConditionId": 774800,
+        "FunctionNameId": 10505,
+        "SkipId": 90068,
+        "Order": 2,
+        "RedPointConditions": [
+            "CONDITION_CONCERT_PRE_HEATING_MAIN"
+        ],
+        "Note": "4.6+4.7音乐会预热",
         "IsAgency": 1
     }
 ]

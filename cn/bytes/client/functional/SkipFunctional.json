@@ -2151,6 +2151,87 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 40191,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 192,
+        "Explain": "4.7卡列特效打脸图",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40192,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 193,
+        "Explain": "4.7比安卡特效打脸图",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40193,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 194,
+        "Explain": "4.6跨4.7预热打脸图",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40194,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 195,
+        "Explain": "4.8洁塔薇联动皮打脸",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40195,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 196,
+        "Explain": "4.7跨4.8预热打脸1",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40196,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 197,
+        "Explain": "4.7跨4.8预热打脸2",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40197,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 198,
+        "Explain": "4.7500卡池复刻打脸",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40198,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 199,
+        "Explain": "土豆兄弟打脸图",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40199,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 200,
+        "Explain": "4.7露娜涂鸦打脸图",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 40756,
         "Origin": 7,
         "UiName": "OnOpenRepeatChallengeActivity",
@@ -3376,6 +3457,15 @@
         "ParamId": 114,
         "Explain": "4.6版本签到",
         "TimeId": 48110,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 50123,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 115,
+        "Explain": "4.7版本签到",
+        "TimeId": 49110,
         "IsHideFunc": true
     },
     {
@@ -6393,6 +6483,18 @@
         "FunctionalId": 10308,
         "CustomParams": [
             2016
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 536,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "Explain": "新主线第四十二章",
+        "ConditionId": 1050153,
+        "FunctionalId": 10308,
+        "CustomParams": [
+            1042
         ],
         "IsHideFunc": true
     },
@@ -12819,6 +12921,18 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 7143,
+        "Origin": 7,
+        "UiName": "SkipToPartnerTeachingChapter",
+        "Explain": "前往辅助机教学试玩-第三十七章",
+        "ConditionId": 1050153,
+        "FunctionalId": 1801,
+        "CustomParams": [
+            37
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 7200,
         "Origin": 1,
         "UiName": "UiNewFuben",
@@ -16442,8 +16556,8 @@
     {
         "SkipId": 15001,
         "Origin": 7,
-        "UiName": "OnOpenGuild",
-        "Explain": "前往公会",
+        "UiName": "OnOpenGuildDorm",
+        "Explain": "前往公会宿舍",
         "IsRecord": true,
         "FunctionalId": 1901,
         "IsHideFunc": true
@@ -17419,6 +17533,17 @@
         "FunctionalId": 101,
         "CustomParams": [
             1401003
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 19082,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "Explain": "前往成员功能",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1071005
         ],
         "IsHideFunc": true
     },
@@ -19951,7 +20076,7 @@
         "Explain": "新角色主题试玩（33期之后，修改期数）",
         "FunctionalId": 10325,
         "CustomParams": [
-            49
+            50
         ],
         "IsHideFunc": true
     },
@@ -21720,6 +21845,18 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 20383,
+        "Origin": 6,
+        "UiName": "UiWelfare",
+        "Explain": "完成“绯影降临”活动任务",
+        "FunctionalId": 1,
+        "CustomParams": [
+            1,
+            99
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 20384,
         "Origin": 6,
         "UiName": "UiFubenPracticeCharacterDetail",
@@ -21728,6 +21865,91 @@
         "CustomParams": [
             1051005,
             30100229
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20385,
+        "Origin": 6,
+        "UiName": "UiFavorabilityStory",
+        "Explain": "前往卡列尼娜好感度剧情",
+        "IsRecord": true,
+        "ConditionId": 1050153,
+        "CustomParams": [
+            1071005
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20386,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "Explain": "卡列赛利卡补习班跳转（33期之后，新增跳转id）",
+        "IsRecord": true,
+        "FunctionalId": 10325,
+        "CustomParams": [
+            50
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20387,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "Explain": "【v4.7卡列】前往主题卡池",
+        "FunctionalId": 401,
+        "StartTime": "2026/8/19 5:00",
+        "CloseTime": "2026/9/24 5:00",
+        "CustomParams": [
+            1,
+            11
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20388,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "【v4.7卡列】前往涂装补给包",
+        "FunctionalId": 3,
+        "StartTime": "2026/8/19 5:00",
+        "CloseTime": "2026/9/24 5:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20390,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            1042
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20391,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1071005
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20392,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeCharacterDetail",
+        "Explain": "跳转赛利卡教学（火露跃升）",
+        "FunctionalId": 1800,
+        "CustomParams": [
+            1021006,
+            30100230
         ],
         "IsHideFunc": true
     },
@@ -29766,6 +29988,126 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 80315,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "购买涂装补给包",
+        "FunctionalId": 5,
+        "StartTime": "2026/8/19 5:00",
+        "CloseTime": "2026/9/24 5:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80316,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "涂装商店",
+        "FunctionalId": 1001,
+        "StartTime": "2026/9/24 5:00",
+        "CustomParams": [
+            1,
+            0,
+            504
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80317,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "购买涂装补给包",
+        "FunctionalId": 5,
+        "StartTime": "2026/8/19 5:00",
+        "CloseTime": "2026/9/24 5:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80318,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "涂装商店",
+        "FunctionalId": 1001,
+        "StartTime": "2026/9/24 5:00",
+        "CustomParams": [
+            1,
+            0,
+            502
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80319,
+        "Origin": 10,
+        "UiName": "XPBRGame",
+        "Explain": "前往活动【耀律狂潮】",
+        "ConditionId": 1050153,
+        "FunctionalId": 10500,
+        "StartTime": "2025/8/19 5:00",
+        "CloseTime": "2026/9/23 5:00",
+        "IsHideFunc": true,
+        "NotShowUI": [
+            "UiPBRTask",
+            "UiPBRMain"
+        ]
+    },
+    {
+        "SkipId": 80320,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "购买涂装补给包",
+        "FunctionalId": 5,
+        "StartTime": "2026/8/19 5:00",
+        "CloseTime": "2026/9/24 5:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80322,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "购买涂装补给包",
+        "FunctionalId": 5,
+        "StartTime": "2026/8/19 5:00",
+        "CloseTime": "2026/9/24 5:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80323,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "购买涂装补给包",
+        "FunctionalId": 5,
+        "StartTime": "2026/8/19 5:00",
+        "CloseTime": "2026/9/24 5:00",
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 81001,
         "Origin": 7,
         "UiName": "SkipToSpringFestivalActivity",
@@ -30934,6 +31276,12 @@
         "Explain": "圣诞祝颂"
     },
     {
+        "SkipId": 189072,
+        "Origin": 9,
+        "ParamId": 16,
+        "Explain": "弦语工坊"
+    },
+    {
         "SkipId": 189073,
         "Origin": 9,
         "ParamId": 17,
@@ -31206,7 +31554,7 @@
         "SkipId": 89102,
         "Origin": 10,
         "UiName": "XTheatre6",
-        "Explain": "神寂启示录",
+        "Explain": "雾夜镇魂曲",
         "IsRecord": true,
         "ConditionId": 1050153,
         "FunctionalId": 10501,
@@ -31306,6 +31654,24 @@
         "IsRecord": true,
         "ConditionId": 1021100,
         "FunctionalId": 10506,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 89113,
+        "Origin": 7,
+        "UiName": "SkipToEnvelopeGuessing",
+        "Explain": "夕韵暇光",
+        "IsRecord": true,
+        "FunctionalId": 10507
+    },
+    {
+        "SkipId": 89114,
+        "Origin": 10,
+        "UiName": "XMusicPlayer",
+        "CustomParams": [
+            1,
+            81
+        ],
         "IsHideFunc": true
     },
     {
@@ -31812,6 +32178,15 @@
         "Explain": "云游戏"
     },
     {
+        "SkipId": 90049,
+        "Origin": 7,
+        "UiName": "SkipToTeamPrefab",
+        "Explain": "跳转到编队预设",
+        "CustomParams": [
+            1
+        ]
+    },
+    {
         "SkipId": 90050,
         "Origin": 1,
         "UiName": "UiLoginVideoV4P0",
@@ -32015,13 +32390,126 @@
         "TimeId": 48801
     },
     {
-        "SkipId": 90049,
+        "SkipId": 90069,
         "Origin": 7,
-        "UiName": "SkipToTeamPrefab",
-        "Explain": "跳转到编队预设",
+        "UiName": "OpenLotto",
+        "Explain": "前往活动【露娜卡池】",
+        "FunctionalId": 10306,
         "CustomParams": [
+            2001,
             1
-        ]
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90070,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "前往活动【薇拉卡池】",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2002,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90071,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "前往活动【卡列卡池】",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2003,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90072,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "前往活动【夜诏终章】",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2004,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90075,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "4.7跳转到音乐场景礼包",
+        "FunctionalId": 3,
+        "CustomParams": [
+            2,
+            0,
+            7
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90076,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "4.7跳转到音乐涂装礼包",
+        "FunctionalId": 3,
+        "CustomParams": [
+            2,
+            0,
+            4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90078,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "前往活动【露娜卡池剧情】",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2001,
+            2
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90079,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "前往活动【薇拉卡池剧情】",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2002,
+            2
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90080,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "前往活动【卡列卡池剧情】",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2003,
+            2
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90081,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "前往活动【慈悲者卡池剧情】",
+        "FunctionalId": 10306,
+        "CustomParams": [
+            2004,
+            2
+        ],
+        "IsHideFunc": true
     },
     {
         "SkipId": 1300626,
@@ -32118,10 +32606,10 @@
         "SkipId": 1300635,
         "Origin": 10,
         "UiName": "XPBRGame",
-        "Explain": "Placeholder_战双兄弟跳转占位",
+        "Explain": "前往活动【耀律狂潮】",
         "IsRecord": true,
         "FunctionalId": 10500,
-        "TimeId": 46930
+        "TimeId": 49920
     },
     {
         "SkipId": 1300636,
@@ -32189,8 +32677,8 @@
         "Explain": "BP拍脸",
         "ConditionId": 775500,
         "CustomParams": [
-            1786309200,
-            1786914000
+            1789333200,
+            1789938000
         ]
     },
     {
@@ -32238,8 +32726,46 @@
         "IsRecord": true,
         "ConditionId": 1050153,
         "FunctionalId": 10500,
-        "TimeId": 48821,
-        "StartTime": "2026/8/28 10:00",
-        "CloseTime": "2026/9/20 5:00"
+        "TimeId": 49920
+    },
+    {
+        "SkipId": 1300648,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.8洁塔薇",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            1
+        ]
+    },
+    {
+        "SkipId": 1300649,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.7卡列",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            128
+        ]
+    },
+    {
+        "SkipId": 1300650,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.7比安卡",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            125
+        ]
+    },
+    {
+        "SkipId": 1300651,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.7露娜涂鸦",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            133
+        ]
     }
 ]

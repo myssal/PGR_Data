@@ -1,7 +1,6 @@
 [
     {
         "StageId": 30063125,
-        "TimeId": 46931,
         "StageName": 1,
         "StageType": 1,
         "FinishWaves": 3,
@@ -12,11 +11,13 @@
             102,
             103
         ],
-        "MaxWaves": 3
+        "MaxWaves": 3,
+        "BgmIds": [
+            2
+        ]
     },
     {
         "StageId": 30063126,
-        "TimeId": 46931,
         "PreStageId": 30063125,
         "StageName": 2,
         "StageType": 1,
@@ -28,11 +29,13 @@
             202,
             203
         ],
-        "MaxWaves": 3
+        "MaxWaves": 3,
+        "BgmIds": [
+            2
+        ]
     },
     {
         "StageId": 30063127,
-        "TimeId": 46931,
         "PreStageId": 30063126,
         "StageName": 3,
         "GridStyle": 1,
@@ -51,11 +54,13 @@
             308,
             309
         ],
-        "MaxWaves": 9
+        "MaxWaves": 9,
+        "BgmIds": [
+            2
+        ]
     },
     {
         "StageId": 30063128,
-        "TimeId": 46931,
         "PreStageId": 30063127,
         "StageName": 4,
         "GridStyle": 2,
@@ -77,11 +82,13 @@
             411,
             412
         ],
-        "MaxWaves": 999
+        "MaxWaves": 999,
+        "BgmIds": [
+            2
+        ]
     },
     {
         "StageId": 30063129,
-        "TimeId": 46932,
         "PreStageId": 30063128,
         "StageName": 5,
         "GridStyle": 1,
@@ -103,11 +110,13 @@
             511,
             512
         ],
-        "MaxWaves": 9
+        "MaxWaves": 9,
+        "BgmIds": [
+            2
+        ]
     },
     {
         "StageId": 30063130,
-        "TimeId": 46932,
         "PreStageId": 30063129,
         "StageName": 6,
         "GridStyle": 2,
@@ -129,11 +138,13 @@
             611,
             612
         ],
-        "MaxWaves": 999
+        "MaxWaves": 999,
+        "BgmIds": [
+            2
+        ]
     },
     {
         "StageId": 30063131,
-        "TimeId": 46933,
         "PreStageId": 30063130,
         "StageName": 7,
         "GridStyle": 1,
@@ -155,11 +166,13 @@
             711,
             712
         ],
-        "MaxWaves": 9
+        "MaxWaves": 9,
+        "BgmIds": [
+            2
+        ]
     },
     {
         "StageId": 30063132,
-        "TimeId": 46933,
         "PreStageId": 30063131,
         "StageName": 8,
         "GridStyle": 2,
@@ -180,6 +193,223 @@
             811,
             812
         ],
-        "MaxWaves": 999
+        "MaxWaves": 999,
+        "BgmIds": [
+            2
+        ]
+    },
+    {
+        "StageId": 30063133,
+        "TimeId": 49921,
+        "StageName": 1,
+        "StageType": 1,
+        "FinishWaves": 3,
+        "FinishRewards": 69444,
+        "RecommendChar": 5060,
+        "MonsterWaves": [
+            101,
+            102,
+            103
+        ],
+        "MaxWaves": 3,
+        "BgmIds": [
+            2
+        ]
+    },
+    {
+        "StageId": 30063134,
+        "TimeId": 49921,
+        "PreStageId": 30063133,
+        "StageName": 2,
+        "StageType": 1,
+        "FinishWaves": 3,
+        "FinishRewards": 69444,
+        "RecommendChar": 5060,
+        "MonsterWaves": [
+            201,
+            202,
+            203
+        ],
+        "MaxWaves": 3,
+        "BgmIds": [
+            2
+        ]
+    },
+    {
+        "StageId": 30063135,
+        "TimeId": 49921,
+        "PreStageId": 30063134,
+        "StageName": 3,
+        "GridStyle": 1,
+        "StageType": 2,
+        "FinishWaves": 9,
+        "FinishRewards": 69444,
+        "RecommendChar": 5059,
+        "MonsterWaves": [
+            1101,
+            1102,
+            1103,
+            1104,
+            1105,
+            1106,
+            1107,
+            1108,
+            1109
+        ],
+        "MaxWaves": 9,
+        "BgmIds": [
+            7
+        ]
+    },
+    {
+        "StageId": 30063136,
+        "TimeId": 49921,
+        "PreStageId": 30063135,
+        "StageName": 4,
+        "GridStyle": 2,
+        "StageType": 3,
+        "FinishWaves": 9,
+        "FinishRewards": 69444,
+        "MonsterWaves": [
+            1201,
+            1202,
+            1203,
+            1204,
+            1205,
+            1206,
+            1207,
+            1208,
+            1209,
+            1210,
+            1211,
+            1212
+        ],
+        "MaxWaves": 999,
+        "BgmIds": [
+            11,
+            2,
+            7
+        ]
+    },
+    {
+        "StageId": 30063137,
+        "TimeId": 49922,
+        "PreStageId": 30063136,
+        "StageName": 5,
+        "GridStyle": 1,
+        "StageType": 2,
+        "FinishWaves": 9,
+        "FinishRewards": 69445,
+        "RecommendChar": 5058,
+        "MonsterWaves": [
+            1301,
+            1302,
+            1303,
+            1304,
+            1305,
+            1306,
+            1307,
+            1308,
+            1309
+        ],
+        "MaxWaves": 9,
+        "BgmIds": [
+            4
+        ]
+    },
+    {
+        "StageId": 30063138,
+        "TimeId": 49922,
+        "PreStageId": 30063137,
+        "StageName": 6,
+        "GridStyle": 2,
+        "StageType": 3,
+        "FinishWaves": 9,
+        "FinishRewards": 69445,
+        "MonsterWaves": [
+            1401,
+            1402,
+            1403,
+            1404,
+            1405,
+            1406,
+            1407,
+            1408,
+            1409,
+            1410,
+            1411,
+            1412
+        ],
+        "MaxWaves": 999,
+        "BgmIds": [
+            5,
+            2,
+            7,
+            4,
+            11
+        ]
+    },
+    {
+        "StageId": 30063139,
+        "TimeId": 49923,
+        "PreStageId": 30063138,
+        "StageName": 7,
+        "GridStyle": 1,
+        "StageType": 2,
+        "FinishWaves": 9,
+        "FinishRewards": 69445,
+        "RecommendChar": 5056,
+        "MonsterWaves": [
+            1501,
+            1502,
+            1503,
+            1504,
+            1505,
+            1506,
+            1507,
+            1508,
+            1509
+        ],
+        "MaxWaves": 9,
+        "BgmIds": [
+            10
+        ]
+    },
+    {
+        "StageId": 30063140,
+        "TimeId": 49923,
+        "PreStageId": 30063139,
+        "StageName": 8,
+        "GridStyle": 2,
+        "StageType": 3,
+        "FinishWaves": 9,
+        "FinishRewards": 69445,
+        "MonsterWaves": [
+            1601,
+            1602,
+            1603,
+            1604,
+            1605,
+            1606,
+            1607,
+            1608,
+            1609,
+            1610,
+            1611,
+            1612
+        ],
+        "MaxWaves": 999,
+        "BgmIds": [
+            9,
+            2,
+            7,
+            4,
+            5,
+            6,
+            11,
+            8,
+            3,
+            10
+        ]
     }
 ]

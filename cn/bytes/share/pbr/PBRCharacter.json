@@ -4,9 +4,10 @@
         "CharacterName": "小小神威",
         "CharacterIcon": "Assets/Product/Texture/Image/Role/RoleHeadR4Shenwei2Q.png",
         "ShowPriority": 4,
+        "IsHide": true,
         "CharacterType": 1,
         "BasicAttackDesc": "使用大剑低频率横扫。",
-        "CorePassiveDesc": "信号球伤害加成修正<color=#3ACC3B>+50%</color>。\\n冲刺充能修正<color=#DB1D1A>-50%。</color>",
+        "CorePassiveDesc": "信号球伤害加成修正<color=#67ef8a>+50%</color>。\\n冲刺充能修正<color=#ff4b5a>-50%。</color>",
         "ComboBoostDesc": "①连锁次数越高，冲刺时获得越强的减伤效果。\\n②连锁状态下，冲刺时受伤会立即触发1次红球技能。",
         "CuteModelName": "QR4ShenweiMd010011TX",
         "RecommendStatus": [
@@ -22,23 +23,27 @@
         "ShowPriority": 1,
         "CharacterType": 1,
         "BasicAttackDesc": "使用太刀高频率直刺近战攻击。",
-        "CorePassiveDesc": "速度属性按比例提供伤害加成。\\n信号球伤害加成修正<color=#DB1D1A>-25%。</color>",
-        "ComboBoostDesc": "连锁次数越高，获得越高的闪避，至多<color=#3ACC3B>60%</color>。",
-        "CharacterUnlockStage": 30063130,
-        "CuteModelName": "QR6LuxiyaMd010011TX",
+        "CorePassiveDesc": "速度属性按比例提供伤害加成。\\n信号球伤害加成修正<color=#ff4b5a>-25%。</color>",
+        "ComboBoostDesc": "<color=#ff7aec><b>- 连锁增益</b></color>\\n连锁次数越高，获得越高的闪避，至多<color=#67ef8a>60%</color>。\\n<color=#ff7aec><b>- 露露出击！</b></color>\\n沉浸节拍期间，露西亚会获得高额移速，并将闪避上限提升至<color=#67ef8a>80%。</color>",
+        "CharacterUnlockStage": 30063138,
+        "CuteModelName": "QR6LuxiyaMd010011PBR2",
         "RecommendStatus": [
             11,
             144
-        ]
+        ],
+        "IdleAction": "Stand99",
+        "WinAction": "Win",
+        "FailAction": "Attack05"
     },
     {
         "CharacterId": 5057,
         "CharacterName": "小小万事",
         "CharacterIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Wanshi2Q.png",
         "ShowPriority": 2,
+        "IsHide": true,
         "CharacterType": 2,
         "BasicAttackDesc": "使用狙击枪发射子弹",
-        "CorePassiveDesc": "狙击枪子弹距离越远，伤害越高。\\n最大生命值修正<color=#DB1D1A>-25%。</color>",
+        "CorePassiveDesc": "狙击枪子弹距离越远，伤害越高。\\n最大生命值修正<color=#ff4b5a>-25%。</color>",
         "ComboBoostDesc": "连锁次数越高，获得越高的贯穿。",
         "CharacterUnlockStage": 30063128,
         "CuteModelName": "QR3WanshiMd010011PBR",
@@ -54,14 +59,55 @@
         "ShowPriority": 3,
         "CharacterType": 2,
         "BasicAttackDesc": "使用浮游炮发射追踪子弹。",
-        "CorePassiveDesc": "召唤物持续时间增加<color=#3ACC3B>75%</color>。\\n普攻伤害修正<color=#DB1D1A>-25%。</color>",
-        "ComboBoostDesc": "连锁次数越高，召唤物获得越高的伤害增幅（受丽芙的信号球伤害加成、暴击、暴击伤害属性影响）。",
-        "CharacterUnlockStage": 30063126,
-        "CuteModelName": "QR5LifuMd010011PBR",
+        "CorePassiveDesc": "召唤物持续时间增加<color=#67ef8a>75%</color>。\\n普攻伤害修正<color=#ff4b5a>-25%。</color>",
+        "ComboBoostDesc": "<color=#ff7aec><b>- 连锁增益</b></color>\\n连锁次数越高，召唤物获得越高的伤害增幅（受丽芙的信号球伤害加成、暴击、暴击伤害属性影响）。\\n<color=#ff7aec><b>- 芙心悦动~</b></color>\\n沉浸节拍期间，所有棋子会在每个节拍进行一次攻击。",
+        "CharacterUnlockStage": 30063136,
+        "CuteModelName": "QR5LifuMd010011PBR2",
         "RecommendStatus": [
             154,
             155,
             156
-        ]
+        ],
+        "IdleAction": "Stand99",
+        "WinAction": "Win",
+        "FailAction": "Attack05"
+    },
+    {
+        "CharacterId": 5059,
+        "CharacterName": "小小布偶熊",
+        "CharacterIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Buouxiong2Q.png",
+        "ShowPriority": 5,
+        "CharacterType": 1,
+        "BasicAttackDesc": "召唤巨大熊熊协助攻击（攻击伤害、攻击范围受布偶熊的普攻伤害加成、射程属性影响）。",
+        "CorePassiveDesc": "普攻伤害加成修正<color=#67ef8a>+10%</color>。升级所需经验减少<color=#67ef8a>50%</color>。黄/蓝球掉落概率修正<color=#ff4b5a>-10%。</color>攻速加成修正<color=#ff4b5a>-10%。</color>",
+        "ComboBoostDesc": "<color=#ff7aec><b>- 连锁增益</b></color>\\n连锁次数越高，获得越高的射程。\\n<color=#ff7aec><b>- 异元熊爪</b></color>\\n沉浸节拍期间，巨大熊熊会在每个节拍使出强力攻击。",
+        "CharacterUnlockStage": 30063134,
+        "CuteModelName": "QR3BuouxiongMd010011PBR2",
+        "RecommendStatus": [
+            75,
+            11
+        ],
+        "IdleAction": "Stand99",
+        "WinAction": "Win",
+        "FailAction": "Attack05"
+    },
+    {
+        "CharacterId": 5060,
+        "CharacterName": "小小卡列尼娜",
+        "CharacterIcon": "Assets/Product/Texture/Image/Role/RoleHeadR5Kalienina2Q.png",
+        "ShowPriority": 6,
+        "CharacterType": 1,
+        "BasicAttackDesc": "使用船锚低频率近战攻击并拉回敌人。",
+        "CorePassiveDesc": "受到伤害时，在小范围内造成一次爆炸，爆炸伤害视为信号球伤害。伤害<color=#67ef8a>=20+</color>护甲<color=#67ef8a>*400%。</color>",
+        "ComboBoostDesc": "<color=#ff7aec><b>- 连锁增益</b></color>\\n连锁次数越高，获得越高的护甲。\\n<color=#ff7aec><b>- 船长出航！</b></color>\\n沉浸节拍期间，卡列尼娜会在每个节拍向多个方向扔出船锚。",
+        "CuteModelName": "QR5KalieninaMd010011PBR2",
+        "RecommendStatus": [
+            33,
+            1,
+            12
+        ],
+        "IdleAction": "Stand99",
+        "WinAction": "Win",
+        "FailAction": "Attack05"
     }
 ]

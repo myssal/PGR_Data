@@ -1916,6 +1916,23 @@
         ]
     },
     {
+        "Id": 241,
+        "Name": "支援架构零件-派德里",
+        "Description": "支援单位派德里的架构零件，收集一定数量后可组合支援单位。",
+        "WorldDesc": "支援单位的核心技术都浓缩在架构上。只要收集足够的架构零件，就能组合出支援单位来。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconPet3Starfish1.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconPet3Starfish1Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 29600,
+        "MaxCount": 9999,
+        "GridCount": 9999,
+        "SkipIdParams": [
+            15006,
+            7212
+        ]
+    },
+    {
         "Id": 300,
         "Name": "基地残片",
         "Description": "废弃金属制作的代币，能和支援部队换些道具。",
@@ -3985,9 +4002,24 @@
         "SellForCount": 10
     },
     {
+        "Id": 484,
+        "Name": "终解·烬航",
+        "Description": "构造体终阶解放后，将会在每一场战斗中，首次登场时获取3个同色信号球。",
+        "WorldDesc": "科学理事会研发，根据机体单独配备的光环型装置，内含动能驱动的纳米机器人，可以辅助构造体进行高频计算，立刻产生信号球。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconSkillRelease62.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconSkillRelease62Sp.png",
+        "ItemType": 1,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10
+    },
+    {
         "Id": 501,
         "Name": "逆元碎片-异火",
-        "Description": "里的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "里·异火的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1011001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1011001Sp.png",
@@ -4006,7 +4038,7 @@
     {
         "Id": 502,
         "Name": "逆元碎片-红莲",
-        "Description": "露西亚的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "露西亚·红莲的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021001Sp.png",
@@ -4025,7 +4057,7 @@
     {
         "Id": 503,
         "Name": "逆元碎片-蚀暗",
-        "Description": "丽芙的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "丽芙·蚀暗的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1031001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1031001Sp.png",
@@ -4044,7 +4076,7 @@
     {
         "Id": 504,
         "Name": "逆元碎片-零度",
-        "Description": "比安卡的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "比安卡·零度的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1041001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1041001Sp.png",
@@ -4063,7 +4095,7 @@
     {
         "Id": 505,
         "Name": "逆元碎片-风暴",
-        "Description": "七实的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "七实·风暴的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1051001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1051001Sp.png",
@@ -4082,7 +4114,7 @@
     {
         "Id": 506,
         "Name": "逆元碎片-重能",
-        "Description": "神威的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "神威·重能的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1061001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1061001Sp.png",
@@ -4101,7 +4133,7 @@
     {
         "Id": 507,
         "Name": "逆元碎片-爆裂",
-        "Description": "卡列尼娜的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "卡列尼娜·爆裂的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1071001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1071001Sp.png",
@@ -4120,7 +4152,7 @@
     {
         "Id": 508,
         "Name": "逆元碎片-夜刃",
-        "Description": "渡边的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "渡边·夜刃的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1081001.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1081001Sp.png",
@@ -4139,7 +4171,7 @@
     {
         "Id": 509,
         "Name": "逆元碎片-溢彩",
-        "Description": "艾拉的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "艾拉·溢彩的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1091002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1091002Sp.png",
@@ -4158,7 +4190,7 @@
     {
         "Id": 512,
         "Name": "逆元碎片-黎明",
-        "Description": "露西亚的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "露西亚·黎明的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021002Sp.png",
@@ -4177,7 +4209,7 @@
     {
         "Id": 513,
         "Name": "逆元碎片-流光",
-        "Description": "丽芙的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "丽芙·流光的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1031002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1031002Sp.png",
@@ -4196,7 +4228,7 @@
     {
         "Id": 514,
         "Name": "逆元碎片-真理",
-        "Description": "比安卡的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "比安卡·真理的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1041003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1041003Sp.png",
@@ -4215,7 +4247,7 @@
     {
         "Id": 515,
         "Name": "逆元碎片-脉冲",
-        "Description": "七实的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "七实·脉冲的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1051003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1051003Sp.png",
@@ -4234,7 +4266,7 @@
     {
         "Id": 516,
         "Name": "逆元碎片-暗能",
-        "Description": "神威的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "神威·暗能的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1061002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1061002Sp.png",
@@ -4253,7 +4285,7 @@
     {
         "Id": 517,
         "Name": "逆元碎片-烬燃",
-        "Description": "卡列尼娜的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "卡列尼娜·烬燃的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1071002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1071002Sp.png",
@@ -4272,7 +4304,7 @@
     {
         "Id": 521,
         "Name": "逆元碎片-乱数",
-        "Description": "里的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "里·乱数的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1011002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1011002Sp.png",
@@ -4291,7 +4323,7 @@
     {
         "Id": 522,
         "Name": "逆元碎片-深红之渊",
-        "Description": "露西亚的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "露西亚·深红之渊的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021003Sp.png",
@@ -4310,7 +4342,7 @@
     {
         "Id": 523,
         "Name": "逆元碎片-仰光",
-        "Description": "丽芙的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "丽芙·仰光的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1031003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1031003Sp.png",
@@ -4329,7 +4361,7 @@
     {
         "Id": 528,
         "Name": "逆元碎片-夙星",
-        "Description": "渡边的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "渡边·夙星的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1081003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1081003Sp.png",
@@ -4348,7 +4380,7 @@
     {
         "Id": 531,
         "Name": "逆元碎片-银牙",
-        "Description": "苏菲亚的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "苏菲亚·银牙的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1101002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1101002Sp.png",
@@ -4367,7 +4399,7 @@
     {
         "Id": 532,
         "Name": "逆元碎片-鸦羽",
-        "Description": "露西亚的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "露西亚·鸦羽的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021004Sp.png",
@@ -4385,7 +4417,7 @@
     {
         "Id": 533,
         "Name": "逆元碎片-瑰丽",
-        "Description": "薇拉的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "薇拉·瑰丽的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1131002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1131002Sp.png",
@@ -4404,7 +4436,7 @@
     {
         "Id": 534,
         "Name": "逆元碎片-狂犬",
-        "Description": "卡穆的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "卡穆·狂犬的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1511003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1511003Sp.png",
@@ -4422,7 +4454,7 @@
     {
         "Id": 535,
         "Name": "逆元碎片-凛冽",
-        "Description": "罗塞塔的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "罗塞塔·凛冽的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1141003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1141003Sp.png",
@@ -4441,7 +4473,7 @@
     {
         "Id": 536,
         "Name": "逆元碎片-雀翎",
-        "Description": "曲的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "曲·雀翎的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1521003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1521003Sp.png",
@@ -4459,7 +4491,7 @@
     {
         "Id": 537,
         "Name": "逆元碎片-游麟",
-        "Description": "常羽的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "常羽·游麟的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1161002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1161002Sp.png",
@@ -4478,7 +4510,7 @@
     {
         "Id": 539,
         "Name": "逆元碎片-弧光",
-        "Description": "库洛姆的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "库洛姆·弧光的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1201002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1201002Sp.png",
@@ -4497,7 +4529,7 @@
     {
         "Id": 538,
         "Name": "逆元碎片-银冕",
-        "Description": "露娜的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "露娜·银冕的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1171003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1171003Sp.png",
@@ -4569,7 +4601,7 @@
     {
         "Id": 543,
         "Name": "逆元碎片-明觉",
-        "Description": "万事的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "万事·明觉的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1211002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1211002Sp.png",
@@ -4588,7 +4620,7 @@
     {
         "Id": 544,
         "Name": "逆元碎片-岚音",
-        "Description": "赛琳娜的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "赛琳娜·岚音的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1531003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1531003Sp.png",
@@ -4606,7 +4638,7 @@
     {
         "Id": 545,
         "Name": "逆元碎片-荣光",
-        "Description": "库洛姆的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "库洛姆·荣光的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1121003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1121003Sp.png",
@@ -4624,7 +4656,7 @@
     {
         "Id": 546,
         "Name": "逆元碎片-XXI",
-        "Description": "21号的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "21号·XXI的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1221002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1221002Sp.png",
@@ -4643,7 +4675,7 @@
     {
         "Id": 547,
         "Name": "逆元碎片-绯耀",
-        "Description": "薇拉的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "薇拉·绯耀的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1131003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1131003Sp.png",
@@ -4662,7 +4694,7 @@
     {
         "Id": 548,
         "Name": "逆元碎片-戏炎",
-        "Description": "罗兰的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "罗兰·戏炎的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1541003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1541003Sp.png",
@@ -4680,7 +4712,7 @@
     {
         "Id": 549,
         "Name": "逆元碎片-极昼",
-        "Description": "丽芙的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "丽芙·极昼的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1031004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1031004Sp.png",
@@ -4699,7 +4731,7 @@
     {
         "Id": 550,
         "Name": "逆元碎片-幻奏",
-        "Description": "赛琳娜的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "赛琳娜·幻奏的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1531004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1531004Sp.png",
@@ -4718,7 +4750,7 @@
     {
         "Id": 551,
         "Name": "逆元碎片-华钟",
-        "Description": "蒲牢的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "蒲牢·华钟的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1551003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1551003Sp.png",
@@ -4736,7 +4768,7 @@
     {
         "Id": 552,
         "Name": "逆元碎片-遥星之座",
-        "Description": "七实的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "七实·遥星之座的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1051004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1051004Sp.png",
@@ -4754,7 +4786,7 @@
     {
         "Id": 553,
         "Name": "逆元碎片-隐星",
-        "Description": "哈卡玛的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "哈卡玛·隐星的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1561003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1561003Sp.png",
@@ -4772,7 +4804,7 @@
     {
         "Id": 554,
         "Name": "逆元碎片-辉晓",
-        "Description": "卡列尼娜的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "卡列尼娜·辉晓的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1071004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1071004Sp.png",
@@ -4791,7 +4823,7 @@
     {
         "Id": 555,
         "Name": "逆元碎片-逆旅",
-        "Description": "诺安的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "诺安·逆旅的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1571003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1571003Sp.png",
@@ -4809,7 +4841,7 @@
     {
         "Id": 556,
         "Name": "逆元碎片-深痕",
-        "Description": "比安卡的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "比安卡·深痕的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1041004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1041004Sp.png",
@@ -4828,7 +4860,7 @@
     {
         "Id": 557,
         "Name": "逆元碎片-琉璃",
-        "Description": "邦比娜塔的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "邦比娜塔·琉璃的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1231002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1231002Sp.png",
@@ -4847,7 +4879,7 @@
     {
         "Id": 558,
         "Name": "逆元碎片-超刻",
-        "Description": "里的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "里·超刻的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1011004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1011004Sp.png",
@@ -4865,7 +4897,7 @@
     {
         "Id": 559,
         "Name": "逆元碎片-万华",
-        "Description": "艾拉的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "艾拉·万华的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1091003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1091003Sp.png",
@@ -4884,7 +4916,7 @@
     {
         "Id": 560,
         "Name": "逆元碎片-深红囚影",
-        "Description": "露西亚的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "露西亚·深红囚影的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021005.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021005Sp.png",
@@ -4903,7 +4935,7 @@
     {
         "Id": 561,
         "Name": "逆元碎片-清商",
-        "Description": "含英的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "含英·清商的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1241002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1241002Sp.png",
@@ -4922,7 +4954,7 @@
     {
         "Id": 562,
         "Name": "逆元碎片-森息",
-        "Description": "21号的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "21号·森息的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1221003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1221003Sp.png",
@@ -4940,7 +4972,7 @@
     {
         "Id": 563,
         "Name": "逆元碎片-擎驱",
-        "Description": "诺克提的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "诺克提·擎驱的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1251002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1251002Sp.png",
@@ -4959,7 +4991,7 @@
     {
         "Id": 564,
         "Name": "逆元碎片-回音",
-        "Description": "亚里莎的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "亚里莎·回音的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1261003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1261003Sp.png",
@@ -4978,7 +5010,7 @@
     {
         "Id": 565,
         "Name": "逆元碎片-深谣",
-        "Description": "拉弥亚的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "拉弥亚·深谣的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1271003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1271003Sp.png",
@@ -5014,7 +5046,7 @@
     {
         "Id": 567,
         "Name": "逆元碎片-尘铭",
-        "Description": "渡边的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "渡边·尘铭的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1081004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1081004Sp.png",
@@ -5033,7 +5065,7 @@
     {
         "Id": 568,
         "Name": "逆元碎片-启明",
-        "Description": "曲的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "曲·启明的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1521004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1521004Sp.png",
@@ -5051,7 +5083,7 @@
     {
         "Id": 569,
         "Name": "逆元碎片-觅语",
-        "Description": "布偶熊的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "布偶熊·觅语的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1291002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1291002Sp.png",
@@ -5070,7 +5102,7 @@
     {
         "Id": 570,
         "Name": "逆元碎片-终焉",
-        "Description": "露娜的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "露娜·终焉的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1171004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1171004Sp.png",
@@ -5089,7 +5121,7 @@
     {
         "Id": 571,
         "Name": "逆元碎片-耀炎",
-        "Description": "布丽姬特的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "布丽姬特·耀炎的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1301002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1301002Sp.png",
@@ -5108,7 +5140,7 @@
     {
         "Id": 572,
         "Name": "逆元碎片-檀心",
-        "Description": "含英的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "含英·檀心的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1241003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1241003Sp.png",
@@ -5120,13 +5152,14 @@
         "SellForId": 35,
         "SellForCount": 5,
         "SkipIdParams": [
-            10012
+            10012,
+            10048
         ]
     },
     {
         "Id": 573,
         "Name": "逆元碎片-明晰梦",
-        "Description": "万事的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "万事·明晰梦的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1211003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1211003Sp.png",
@@ -5145,7 +5178,7 @@
     {
         "Id": 574,
         "Name": "逆元碎片-誓焰",
-        "Description": "露西亚的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "露西亚·誓焰的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021006.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021006Sp.png",
@@ -5163,7 +5196,7 @@
     {
         "Id": 575,
         "Name": "逆元碎片-徊闪",
-        "Description": "八咫的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "八咫·徊闪的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1311002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1311002Sp.png",
@@ -5182,7 +5215,7 @@
     {
         "Id": 576,
         "Name": "逆元碎片-芒星之迹",
-        "Description": "七实的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "七实·芒星之迹的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1051005.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1051005Sp.png",
@@ -5194,13 +5227,14 @@
         "SellForId": 35,
         "SellForCount": 5,
         "SkipIdParams": [
-            10012
+            10012,
+            10048
         ]
     },
     {
         "Id": 577,
         "Name": "逆元碎片-幻日",
-        "Description": "伊什梅尔的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "伊什梅尔·幻日的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1321003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1321003Sp.png",
@@ -5218,7 +5252,7 @@
     {
         "Id": 578,
         "Name": "逆元碎片-谬影",
-        "Description": "莉莉丝的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "莉莉丝·谬影的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1331003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1331003Sp.png",
@@ -5237,7 +5271,7 @@
     {
         "Id": 579,
         "Name": "逆元碎片-希声",
-        "Description": "赛琳娜的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "赛琳娜·希声的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1531005.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1531005Sp.png",
@@ -5255,7 +5289,7 @@
     {
         "Id": 580,
         "Name": "逆元碎片-破晓",
-        "Description": "洁塔薇的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "洁塔薇·破晓的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1341002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1341002Sp.png",
@@ -5274,7 +5308,7 @@
     {
         "Id": 581,
         "Name": "逆元碎片-灼惘",
-        "Description": "薇拉的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "薇拉·灼惘的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1131004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1131004Sp.png",
@@ -5328,7 +5362,7 @@
     {
         "Id": 584,
         "Name": "逆元碎片-晖暮",
-        "Description": "晖暮的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "比安卡·晖暮的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1041005.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1041005Sp.png",
@@ -5346,7 +5380,7 @@
     {
         "Id": 585,
         "Name": "逆元碎片-裁律",
-        "Description": "裁律的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "斜奏·裁律的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1371002.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1371002Sp.png",
@@ -5365,7 +5399,7 @@
     {
         "Id": 586,
         "Name": "逆元碎片-铮骨",
-        "Description": "铮骨的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "维罗妮卡·铮骨的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1381003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1381003Sp.png",
@@ -5383,7 +5417,7 @@
     {
         "Id": 587,
         "Name": "逆元碎片-霁梦",
-        "Description": "霁梦的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "丽芙·霁梦的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1031005.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1031005Sp.png",
@@ -5401,7 +5435,7 @@
     {
         "Id": 588,
         "Name": "逆元碎片-骇影",
-        "Description": "骇影的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "布偶熊·骇影的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1291003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1291003Sp.png",
@@ -5414,14 +5448,13 @@
         "SellForCount": 5,
         "SkipIdParams": [
             10012,
-            10048,
-            90061
+            10048
         ]
     },
     {
         "Id": 589,
         "Name": "逆元碎片-极锋",
-        "Description": "极锋的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "罗塞塔·极锋的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1141004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1141004Sp.png",
@@ -5439,7 +5472,7 @@
     {
         "Id": 590,
         "Name": "逆元碎片-亡歌",
-        "Description": "亡歌的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "涅缇娅·亡歌的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1391003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1391003Sp.png",
@@ -5459,7 +5492,7 @@
     {
         "Id": 591,
         "Name": "逆元碎片-不落日",
-        "Description": "不落日的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "神威·不落日的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1061004.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1061004Sp.png",
@@ -5477,7 +5510,7 @@
     {
         "Id": 592,
         "Name": "逆元碎片-逆冕",
-        "Description": "逆冕的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "露西亚·逆冕的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1021007.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1021007Sp.png",
@@ -5495,7 +5528,7 @@
     {
         "Id": 593,
         "Name": "逆元碎片-安魂",
-        "Description": "安魂的逆元碎片，收集一定数量后可连接构造体。",
+        "Description": "海伦汀·安魂的逆元碎片，收集一定数量后可连接构造体。",
         "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1401003.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1401003Sp.png",
@@ -5510,6 +5543,24 @@
             10012,
             10048,
             90061
+        ]
+    },
+    {
+        "Id": 594,
+        "Name": "逆元碎片-烬航",
+        "Description": "卡列尼娜·烬航的逆元碎片，收集一定数量后可连接构造体。",
+        "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1071005.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1071005Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 35,
+        "SellForCount": 5,
+        "SkipIdParams": [
+            10012
         ]
     },
     {
@@ -6847,8 +6898,8 @@
         "Name": "拓扑拨片",
         "Description": "可在【暄夏节拍】玩法中用于开启游戏。",
         "WorldDesc": "舞台终会落幕，但至少还有一枚曾炙热跃动过的碎片，铭记着那个群星璀璨的夜晚。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem05.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLivWarmItem05Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem07.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLivWarmItem07Sp.png",
         "ItemType": 262148,
         "Quality": 4,
         "Priority": 10,
@@ -6857,6 +6908,40 @@
         "StartTime": "2026/8/11 5:00",
         "SkipIdParams": [
             20378
+        ]
+    },
+    {
+        "Id": 1088,
+        "Name": "铜质怀表",
+        "Description": "可在【绯影降临】玩法中用于解锁关卡。",
+        "WorldDesc": "某位少女的随身物品。奇妙的是，其表盘的刻度却不会随着时间流逝而循迹转动。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiDragPuzzleItem12.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiDragPuzzleItem12Sp.png",
+        "ItemType": 262148,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "StartTime": "2026/9/14 5:00",
+        "SkipIdParams": [
+            20383
+        ]
+    },
+    {
+        "Id": 1089,
+        "Name": "法奥斯校徽",
+        "Description": "可在【溯讯衍波】玩法中交换卡牌位置。",
+        "WorldDesc": "法奥斯颁予每位学生的校徽，纵使岁月流转，徽面上的金属光泽也从未黯淡。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem06.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLivWarmItem06Sp.png",
+        "ItemType": 262148,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "StartTime": "2026/9/14 5:00",
+        "SkipIdParams": [
+            20389
         ]
     },
     {
@@ -26156,6 +26241,215 @@
         ]
     },
     {
+        "Id": 2993,
+        "Name": "心旅引锚图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【心旅引锚】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueKaliesusheChuanmao001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueKaliesusheChuanmao001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 18,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2994,
+        "Name": "“派对制造者”图纸",
+        "Description": "类型：天花板。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【“派对制造者”】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheCeiling001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheCeiling001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2995,
+        "Name": "微型霓虹夜图纸",
+        "Description": "类型：墙。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【微型霓虹夜】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheWall001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheWall001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2996,
+        "Name": "逐梦之路图纸",
+        "Description": "类型：地板。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【逐梦之路】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheFlooring001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheFlooring001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2997,
+        "Name": "全场焦点图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【全场焦点】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheStage001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheStage001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2998,
+        "Name": "超混响贝斯图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【超混响贝斯】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheBass001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheBass001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 2999,
+        "Name": "电音萨克斯图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【电音萨克斯】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSaxophone001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSaxophone001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3000,
+        "Name": "音浪合成器图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【音浪合成器】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheDjji001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheDjji001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3006,
+        "Name": "爆裂架子鼓图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【爆裂架子鼓】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheDrum001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheDrum001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3007,
+        "Name": "高保真音响·右图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【高保真音响·右】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSound001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSound001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3008,
+        "Name": "高保真音响·左图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【高保真音响·左】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSound002.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSound002Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 88,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
         "Id": 3001,
         "Name": "5星武器共鸣材料",
         "Description": "可以替代其他5星武器在共鸣时作为消耗使用",
@@ -28212,6 +28506,25 @@
         ]
     },
     {
+        "Id": 32021,
+        "Name": "跃升晶片·誓焰",
+        "Description": "在【誓焰】的机能跃升中作为材料使用",
+        "WorldDesc": "记录有大量战斗数据的数据晶片，能够让机体的战斗性能显著提高。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItCharEx126.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItCharEx126Sp.png",
+        "ItemType": 4,
+        "Quality": 5,
+        "Priority": 86902,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "SellForId": 32000,
+        "SellForCount": 5,
+        "FastTrading": 1,
+        "SkipIdParams": [
+            10036
+        ]
+    },
+    {
         "Id": 33000,
         "Name": "独域单晶",
         "Description": "可以用于兑换独域机体的独域晶体",
@@ -28399,7 +28712,7 @@
         "Id": 34001,
         "Name": "谐振增幅器",
         "Description": "用于武器二阶段谐振的专用辅助装置",
-        "WorldDesc": "科由科学理事会二部在既有谐振技术基础上改良开发，可对已完成一次谐振的武器进行深层参数定标，稳定其高频共振状态",
+        "WorldDesc": "由科学理事会二部在既有谐振技术基础上改良开发，可对已完成一次谐振的武器进行深层参数定标，稳定其高频共振状态",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconWeaponOverrunItem02.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconWeaponOverrunItem02Sp.png",
         "ItemType": 4,
@@ -30232,6 +30545,26 @@
         ]
     },
     {
+        "Id": 40925,
+        "Name": "评定手册碎片自选",
+        "Description": "在仓库-道具界面使用该道具。",
+        "WorldDesc": "使用后可以从丽芙·仰光、罗塞塔·凛冽、里·乱数、卡列尼娜·烬燃、七实·脉冲、神威·暗能、露西亚·深红之渊、比安卡·真理、薇拉·绯耀、丽芙·极昼、卡列尼娜·辉晓、比安卡·深痕、露西亚·深红囚影、亚里莎·回音、渡边·尘铭、露娜·终焉、含英·檀心、七实·芒星之迹、露西亚·誓焰的逆元碎片中任选一个。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconAlterRole14.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconAlterRole14Sp.png",
+        "ItemType": 16,
+        "Quality": 5,
+        "Priority": 100004,
+        "MaxCount": 9999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 100,
+        "SubTypeParams": [
+            3,
+            1471,
+            1
+        ]
+    },
+    {
         "Id": 50000,
         "Name": "基准角色研发券",
         "Description": "研发角色用的道具。",
@@ -30496,6 +30829,19 @@
         "Duration": 3621600,
         "RecycleRewardId": 852,
         "RecycleByMail": true
+    },
+    {
+        "Id": 50020,
+        "Name": "狙击武器研发券",
+        "Description": "研发特定武器用的道具。",
+        "WorldDesc": "统一配发给各执行者小队的资格券，累积多个以后可以使用一次特殊装备的研发设备。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconConsumeTicD2.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconConsumeTicD2Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 999999,
+        "GridCount": 9999
     },
     {
         "Id": 50100,
@@ -31655,6 +32001,78 @@
         "Priority": 800,
         "MaxCount": 99999,
         "GridCount": 9999
+    },
+    {
+        "Id": 50171,
+        "Name": "神明之心",
+        "Description": "【罪妄月华】研发活动用道具",
+        "WorldDesc": "祭献我心，引神沉沦。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLottoCardEv300.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLottoCardEv300Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/26 10:00",
+        "Duration": 2487600,
+        "RecycleRewardId": 820,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50172,
+        "Name": "英兰令",
+        "Description": "【绮影凛然】研发活动用道具",
+        "WorldDesc": "一封来自空都诗社的信函，行文优美，用华丽的辞藻表达了对某位传奇女将的赞誉。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLottoCardEv209.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLottoCardEv209Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/26 10:00",
+        "Duration": 2487600,
+        "RecycleRewardId": 820,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50173,
+        "Name": "演唱会门票",
+        "Description": "【炸裂霓虹】研发活动用道具",
+        "WorldDesc": "康斯塔雷耶乐园节的演唱会门票。盛大的舞台之上，一颗炫目的新星即将炸裂登场！",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLottoCardEv32.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLottoCardEv32Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/26 10:00",
+        "Duration": 2487600,
+        "RecycleRewardId": 820,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50174,
+        "Name": "“秩序与混乱”",
+        "Description": "【夜诏终章】研发活动用道具",
+        "WorldDesc": "前路浮沉，行人无法窥见远方，那就依靠这枚骰子吧。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLottoCardEv400.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLottoCardEv400Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/26 10:00",
+        "Duration": 2487600,
+        "RecycleRewardId": 820,
+        "RecycleByMail": true
     },
     {
         "Id": 60000,
@@ -37174,6 +37592,22 @@
         "Duration": 3542400
     },
     {
+        "Id": 63630,
+        "Name": "音浪乐币",
+        "Description": "使用乐币可在局外培养中提升角色属性。",
+        "WorldDesc": "听得越多就会获得越多的特殊音乐货币~！细心收集，总有妙用!",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/PBRItemsIconCoin.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/PBRItemsIconCoin.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 999999,
+        "GridCount": 999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/19 5:00",
+        "Duration": 3024000
+    },
+    {
         "Id": 70000,
         "Name": "超频共振材料包",
         "Description": "打开可获得480个超频晶币·高，80个超频晶币·极",
@@ -39978,7 +40412,7 @@
         "MaxCount": 1,
         "GridCount": 1,
         "SkipIdParams": [
-            80244
+            80315
         ],
         "SubTypeParams": [
             12360001
@@ -41032,7 +41466,7 @@
         "MaxCount": 1,
         "GridCount": 1,
         "SkipIdParams": [
-            80272
+            80315
         ],
         "SubTypeParams": [
             12430004
@@ -41365,6 +41799,64 @@
         ],
         "SubTypeParams": [
             12660001
+        ]
+    },
+    {
+        "Id": 80141,
+        "Name": "琉星澜漪",
+        "Description": "汐落浮光系列——蛇腹剑",
+        "WorldDesc": "沁凉的夜风轻拂，悠然唤醒在长椅上的小憩，缓缓睁开双眼，看到的是身侧少女温柔的笑颜。在她的眼中，看到漫天洒落的星光，和她无需宣之于口的情意。双手交握，无需言语，只是静静地独享这刹那又永恒的一刻。",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3ChainswordMd040011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3ChainswordMd040011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80315
+        ],
+        "SubTypeParams": [
+            12570003
+        ]
+    },
+    {
+        "Id": 80142,
+        "Name": "椰风甜屿",
+        "Description": "汐落浮光系列——数码战靴",
+        "WorldDesc": "晚风裹挟着海盐的咸味，伴随着跃动的脚步，整片海滩如同她独自起舞的舞台，来自少女的欢笑与俏皮，将夏日里的一切都涂抹成了梦幻般的糖果色。",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3ShoesMd030011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3ShoesMd030011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80319
+        ],
+        "SubTypeParams": [
+            12610002
+        ]
+    },
+    {
+        "Id": 80143,
+        "Name": "怒海狂弦",
+        "Description": "往昔重绽系列——浮海舶锚",
+        "WorldDesc": "指尖拨动琴弦，细碎水光随音律飞溅，把夏日海岸的温柔与热烈，以及共度的每一刻珍贵的时光，都尽数谱入只有二人独享的乐章中。",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3AnchorMd020011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3AnchorMd020011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80315,
+            80316
+        ],
+        "SubTypeParams": [
+            12670001
         ]
     },
     {
@@ -48028,5 +48520,37 @@
         "GridCount": 999999,
         "StartTime": "2026/7/17 5:00",
         "Duration": 5875200
+    },
+    {
+        "Id": 97091,
+        "Name": "悠乐凭券",
+        "Description": "可在夕韵暇光中用于接受邀约。",
+        "WorldDesc": "在空中花园七夕节组织的活动中，用于接受来自某人的邀约的电子凭券。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconEnvelopeGuessing01.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconEnvelopeGuessing01Sp.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/19 5:00",
+        "Duration": 3024000
+    },
+    {
+        "Id": 97092,
+        "Name": "专属凭券",
+        "Description": "可在夕韵暇光中指定邀约角色。",
+        "WorldDesc": "在空中花园七夕节组织的活动中，用于指定邀约对象的辅助电子凭券。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconEnvelopeGuessing02.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconEnvelopeGuessing02Sp.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "TimelinessType": 1,
+        "StartTime": "2026/8/19 5:00",
+        "Duration": 3024000
     }
 ]

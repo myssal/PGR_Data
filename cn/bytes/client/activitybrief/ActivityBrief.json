@@ -1,13 +1,28 @@
 [
     {
         "Id": 1,
-        "TimeId": 48126,
+        "TimeId": 49901,
         "TaskInfoId": 1,
         "BgType": 1,
         "EnterAniCheckType": 1,
         "SpecialEnterAnimName": "Enable",
         "EnterAnimName": "Enable",
         "LoopAnimName": "Loop",
+        "SpineDiffTag": [
+            "small",
+            "medium",
+            "large"
+        ],
+        "SpineDiffAnimName": [
+            "Loop",
+            "Loop_2",
+            "Loop_3"
+        ],
+        "SpineDiffSoundCueId": [
+            8029,
+            8030,
+            8031
+        ],
         "IsAfterFirstAnimSetSkip": 1,
         "ShopInfoId": [
             1,
@@ -18,24 +33,25 @@
             "ActivityRole09001"
         ],
         "SpinePath": [
-            "Assets/Product/Ui/Spine/4_6_Spine/V46Activty_HaiLunTing/V46Activty_HaiLunTing.prefab"
+            "Assets/Product/Ui/Spine/4_7_Spine/V47Activty_KaLieNiNa/V47Activty_KaLieNiNa.prefab"
         ],
         "GroupIdList": [
+            146,
+            3,
+            125,
             8,
             27,
-            28,
-            149,
-            146,
             143,
-            3,
-            147,
-            106,
+            150,
+            28,
             148,
             1,
-            141,
-            140,
+            144,
+            0,
+            0,
             0,
             0
-        ]
+        ],
+        "TitleDiffCondition": 84103469
     }
 ]

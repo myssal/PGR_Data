@@ -214,6 +214,51 @@
     },
     {
         "Role": "Q4KalieninaMd010011",
+        "Target": "WalkStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "WalkStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "LTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "LTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "RTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "RTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "HitLB",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
         "Target": "Attack01",
         "TransitionDuration": 0.1
     },
@@ -420,6 +465,31 @@
     {
         "Role": "Q4KalieninaMd010011",
         "Target": "Attack71",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "Attack80",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "Attack81",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "Attack82",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "Attack83",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Target": "Attack84",
         "TransitionDuration": 0.1
     },
     {
@@ -694,6 +764,12 @@
     },
     {
         "Role": "Q4KalieninaMd010011",
+        "State": "RunStartEnd01",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
         "State": "Hit1",
         "Target": "Stand2"
     },
@@ -775,6 +851,66 @@
     {
         "Role": "Q4KalieninaMd010011",
         "State": "Caught",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "State": "WalkStart",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "State": "WalkStart",
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "State": "WalkStart",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "State": "WalkStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "State": "WalkStartEnd",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "State": "LTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "State": "LTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "State": "RTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "State": "RTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "State": "HitLB",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     },
@@ -1037,6 +1173,60 @@
     {
         "Role": "Q4KalieninaMd010011",
         "Layer": 1,
+        "Target": "WalkStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "WalkStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "LTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "LTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "RTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "RTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "HitLB",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
         "Target": "Attack01",
         "TransitionDuration": 0.1
     },
@@ -1284,6 +1474,36 @@
         "Role": "Q4KalieninaMd010011",
         "Layer": 1,
         "Target": "Attack71",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "Attack80",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "Attack81",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "Attack82",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "Attack83",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "Target": "Attack84",
         "TransitionDuration": 0.1
     },
     {
@@ -1604,6 +1824,13 @@
     {
         "Role": "Q4KalieninaMd010011",
         "Layer": 1,
+        "State": "RunStartEnd01",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
         "State": "Hit1",
         "Target": "Stand2"
     },
@@ -1699,6 +1926,76 @@
         "Role": "Q4KalieninaMd010011",
         "Layer": 1,
         "State": "Caught",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "State": "WalkStart",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "State": "WalkStart",
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "State": "WalkStart",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "State": "WalkStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "State": "WalkStartEnd",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "State": "LTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "State": "LTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "State": "RTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "State": "RTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Q4KalieninaMd010011",
+        "Layer": 1,
+        "State": "HitLB",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     }
