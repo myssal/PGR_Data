@@ -21811,7 +21811,7 @@
         "SkipId": 20383,
         "Origin": 6,
         "UiName": "UiWelfare",
-        "Explain": "Complete the \"Crimson Descent\" event mission",
+        "Explain": "Complete the \"Scarlet Arrival\" event mission",
         "FunctionalId": 1,
         "CustomParams": [
             1,
@@ -30028,7 +30028,11 @@
         "FunctionalId": 10500,
         "StartTime": "2025/8/19 5:00",
         "CloseTime": "2026/9/23 5:00",
-        "IsHideFunc": true
+        "IsHideFunc": true,
+        "NotShowUI": [
+            "UiPBRTask",
+            "UiPBRMain"
+        ]
     },
     {
         "SkipId": 80320,
@@ -32202,7 +32206,7 @@
         "SkipId": 90055,
         "Origin": 6,
         "UiName": "UiShop",
-        "Explain": "Go to Service Shop",
+        "Explain": "Service Shop",
         "CustomParams": [
             1,
             0,
@@ -32273,7 +32277,7 @@
         "SkipId": 90061,
         "Origin": 6,
         "UiName": "UiShop",
-        "Explain": "Go to Service Shop",
+        "Explain": "Service Shop",
         "CustomParams": [
             1,
             0,
