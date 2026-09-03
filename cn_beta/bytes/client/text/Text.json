@@ -676,6 +676,10 @@
         "Text": "小时"
     },
     {
+        "Key": "Double",
+        "Text": "双"
+    },
+    {
         "Key": "Aha",
         "Text": "啊哈"
     },
@@ -3508,7 +3512,7 @@
     },
     {
         "Key": "PurchaseYKDes",
-        "Text": "月卡购买后，持续30日，每日5:00，可领取100黑卡。\\n月卡最多购买6张，时间叠加，每天只能领取一次100黑卡奖励。\\n购买后可立即获取300黑卡。"
+        "Text": "月卡购买后，持续30日，每日5:00，可领取100黑卡。\\n月卡最多购买6张，时间叠加，每天只能领取一次。\\n购买后可立即获取300黑卡。"
     },
     {
         "Key": "SaveShowSetting",
@@ -3597,6 +3601,30 @@
     {
         "Key": "PurchaseYKBuyText3",
         "Text": "不可续购"
+    },
+    {
+        "Key": "PurchaseYKValidIng",
+        "Text": "生效中："
+    },
+    {
+        "Key": "PurchaseYKRemainDayItem1",
+        "Text": "①{0}天"
+    },
+    {
+        "Key": "PurchaseYKRemainDayItem2",
+        "Text": "②{0}天"
+    },
+    {
+        "Key": "PurchaseYKRemainDayItem3",
+        "Text": "③{0}天"
+    },
+    {
+        "Key": "PurchaseYKRemainDaySep",
+        "Text": "，"
+    },
+    {
+        "Key": "PurchaseYKHelpRemainDesc",
+        "Text": "\\n当前剩余生效时间：{0}"
     },
     {
         "Key": "PurchaseGiftValitimeTips1",
@@ -4705,6 +4733,30 @@
     {
         "Key": "ActivityRepeatChallengeChapterLock",
         "Text": "剩余{0}开启"
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardTag1",
+        "Text": "拟战场域{0}倍奖励中"
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardTag2",
+        "Text": "{0}倍"
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardTitle",
+        "Text": "行动说明"
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardDesc",
+        "Text": "预热活动期间每日最多{0}次{1}倍奖励，活动时间内最多{2}次{1}倍奖励，目前剩余{3}次{1}倍奖励\\n若回归{1}倍奖励活动同时开启，会优先消耗每天奖励次数"
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardTimes",
+        "Text": "每天{0}倍奖励次数："
+    },
+    {
+        "Key": "ActivityRepeatChallengeName",
+        "Text": "{0}倍活动"
     },
     {
         "Key": "ItemHaveSelectedCount",
@@ -5996,7 +6048,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00EEEE><size=28>{1}</size></color>"
+        "Text": "{0}/{1}"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -15043,7 +15095,19 @@
     },
     {
         "Key": "EquipGuideChangeTargetIdenticalRoleTips",
-        "Text": "是否将装备目标【{0}组合】切换成【{1}组合】?"
+        "Text": "是否将装备目标【{0}】切换成【{1}】？"
+    },
+    {
+        "Key": "TeamRecommendCharacterTargetDesc",
+        "Text": "{0}组合"
+    },
+    {
+        "Key": "TeamRecommendStageTypeBossSingle",
+        "Text": "幻痛囚笼"
+    },
+    {
+        "Key": "TeamRecommendStageTypeArena",
+        "Text": "纷争战区"
     },
     {
         "Key": "EquipGuideChangeTargetInequalityRoleTips",
@@ -17919,7 +17983,7 @@
     },
     {
         "Key": "FangKuaiItemFull",
-        "Text": "道具已满，\\n溢出道具转化为狂热值"
+        "Text": "道具已满"
     },
     {
         "Key": "FangKuaiReset",
@@ -17992,6 +18056,14 @@
     {
         "Key": "FangKuaiCollectionTitle",
         "Text": "藏品已升级"
+    },
+    {
+        "Key": "FangKuaiItemUseBtn",
+        "Text": "使用"
+    },
+    {
+        "Key": "FangKuaiItemUseLimitBtn",
+        "Text": "已达上限"
     },
     {
         "Key": "AnniverReviewAwarenessProcess",
@@ -20490,6 +20562,10 @@
         "Text": "编队内其他角色使用了重复装备，无法上阵"
     },
     {
+        "Key": "TeamPrefabPartnerEquippedByOtherInPreset",
+        "Text": "编队内其他角色携带了重复辅助机，无法上阵"
+    },
+    {
         "Key": "NecessaryResourcesNotDownloaded",
         "Text": "未下载必要资源"
     },
@@ -20800,6 +20876,18 @@
     {
         "Key": "DrawTenDiscountDescMingyunXuan",
         "Text": "命运心选折扣次数 {0}/{1}"
+    },
+    {
+        "Key": "DrawLinkageSkipOpen",
+        "Text": "还有{0}关闭"
+    },
+    {
+        "Key": "DrawLinkageSkipClose",
+        "Text": "还有{0}开启"
+    },
+    {
+        "Key": "DrawLinkageSkipUnlockTip",
+        "Text": "开启时间：{0}"
     },
     {
         "Key": "PayWithLoginErrorTips",
@@ -21532,5 +21620,713 @@
     {
         "Key": "MusicPlayerConfirmBgmReset",
         "Text": "确认将背景音乐列表恢复至初始状态吗？"
+    },
+    {
+        "Key": "MusicPlayerOperationTooFrequentTip",
+        "Text": "操作过于频繁，请稍后再试"
+    },
+    {
+        "Key": "MusicPlayerSPMusicStatueNormal",
+        "Text": "当前状态:人声"
+    },
+    {
+        "Key": "MusicPlayerSPMusicStatueGuitar",
+        "Text": "当前状态:吉他"
+    },
+    {
+        "Key": "MusicPlayerSPMusicGetTip",
+        "Text": "「霓虹快闪」场景点击库洛洛可切换"
+    },
+    {
+        "Key": "TeamRecommendLeftSwitchTitle",
+        "Text": "培养目标：{0}"
+    },
+    {
+        "Key": "TeamRecommendAwarenessResonanceTitleUp",
+        "Text": "{0}-上位"
+    },
+    {
+        "Key": "TeamRecommendAwarenessResonanceTitleDown",
+        "Text": "{0}-下位"
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenTargetDesc",
+        "Text": "{0}个意识达到Lv.{1}"
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenTips",
+        "Text": "一键提升等级时，仅会自动选择四星及以下材料，不会选择五星材料。"
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenAwarenessStarTag",
+        "Text": "{0}星意识"
+    },
+    {
+        "Key": "AwarenessOneClickChooseCostTips",
+        "Text": "勾选养成模块后，将会根据玩家选择的方案自动消耗进行养成，优先消耗玩家背包内拥有材料（不会消耗5星材料），勾选自动兑换后，材料不足将会自动消耗代币进行材料兑换。"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTimesDesc",
+        "Text": "共鸣技能x{0}，最大共鸣{1}次"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTimesTips",
+        "Text": "1.该选项是单个技能的最大共鸣次数，达成选择目标后将会停止共鸣。\\n2.选择【共鸣直至达成全部目标】将不再设置共鸣次数上限，直至达成所选目标或者是消耗材料不足为止。\\n3.一键过程中可以点击中止按钮，点击后将会返回剩余未消耗材料。"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetTimesDesc",
+        "Text": "共鸣技能x{0}，共鸣直至达成目标"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetUpDesc",
+        "Text": "上位-{0}"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetDownDesc",
+        "Text": "下位-{0}"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetCombinedDesc",
+        "Text": "{0}、{1}"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceSkillTypeAny",
+        "Text": "任意技能"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceSkillTypeAttack",
+        "Text": "任意攻击技能"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceSkillTypeAttackAttribute",
+        "Text": "任意攻击属性"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceSkillTypeTarget",
+        "Text": "方案指定技能"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetSettingPending",
+        "Text": "待选择目标设置"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceMaterialNotEnough",
+        "Text": "共鸣材料不足"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceMaterialSingleCostNotEnough",
+        "Text": "材料数量不足单次消耗"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceMaterialOwnedCount",
+        "Text": "<color=#000000>拥有</color>{0}"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceMaterialSelectedCount",
+        "Text": "<color=#000000>已选</color>{0}"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetNotSelected",
+        "Text": "待选择共鸣目标"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetUpSchemeNotSelected",
+        "Text": "待选择目标期望"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetDownSchemeNotSelected",
+        "Text": "待选择目标期望"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceMaterialNotSelected",
+        "Text": "待勾选消耗材料"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTimesNotSelected",
+        "Text": "待选择目标共鸣次数"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetAchieved",
+        "Text": "目标已达成"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetUpNotSelected",
+        "Text": "当前未选择上位共鸣目标"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetDownNotSelected",
+        "Text": "当前未选择下位共鸣目标"
+    },
+    {
+        "Key": "AwarenessOneClickAwakeTimesDesc",
+        "Text": "超频共鸣技能x{0}"
+    },
+    {
+        "Key": "AwarenessOneClickAwakeNoSkillDesc",
+        "Text": "意识满级且携带共鸣后才可超频"
+    },
+    {
+        "Key": "AwarenessOneClickAwakeNoSkillTitle",
+        "Text": "暂无可超频技能"
+    },
+    {
+        "Key": "AwarenessOneClickAwakeNoMaterialDesc",
+        "Text": "缺少{0}"
+    },
+    {
+        "Key": "AwarenessOneClickMaterialNotEnough",
+        "Text": "材料不足"
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenLackBreakthroughMaterial",
+        "Text": "缺少突破材料"
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenLackLevelUpMaterial",
+        "Text": "缺少升级材料"
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenLackCoin",
+        "Text": "缺少螺母"
+    },
+    {
+        "Key": "AwarenessOneClickAwakeProgressDesc",
+        "Text": "可超频技能{0}/{1}"
+    },
+    {
+        "Key": "AwarenessOneClickProgressAbort",
+        "Text": "养成中止，剩余材料已返还至仓库"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceProcessing",
+        "Text": "共鸣中(次数：{0})"
+    },
+    {
+        "Key": "AwarenessOneClickConfirmContent",
+        "Text": "是否消耗选定材料进行一键养成？"
+    },
+    {
+        "Key": "RoleCultureDoubleCheck",
+        "Text": "是否消耗选定材料进行一键养成"
+    },
+    {
+        "Key": "RoleCultureHaveProgress",
+        "Text": "当前角色存在培养进度，所消耗的材料将不会返还。确定要继续使用{0}吗？"
+    },
+    {
+        "Key": "EquipResonanceSlotTitle",
+        "Text": "共鸣槽位{0}"
+    },
+    {
+        "Key": "TeamRecommendSetTargetSuccess",
+        "Text": "设定目标成功"
+    },
+    {
+        "Key": "TeamRecommendDeleteTargetSuccess",
+        "Text": "删除目标成功"
+    },
+    {
+        "Key": "TeamRecommendTargetFullyEquipped",
+        "Text": "角色当前已穿戴此方案，无法继续培养"
+    },
+    {
+        "Key": "TeamRecommendResonanceSkillInvalid",
+        "Text": "当前配置共鸣技能错误，无法使用"
+    },
+    {
+        "Key": "TeamRecommendTargetLimitReached",
+        "Text": "当前设为目标数量已达上限，是否前往培养目标界面进行调整？"
+    },
+    {
+        "Key": "TeamRecommendRoleTargetDetailDesc",
+        "Text": "此处仅计算方案基础模块的养成进度，不包含额外提升模块（辅助机进化、辅助机技能）。"
+    },
+    {
+        "Key": "RoleCultureUnitProcessingProgress",
+        "Text": "养成中（{0}/{1}）"
+    },
+    {
+        "Key": "RoleCultureUnitProcessing",
+        "Text": "养成中"
+    },
+    {
+        "Key": "RoleCultureUnitPartiallyDone",
+        "Text": "部分达成({0}/{1})"
+    },
+    {
+        "Key": "RoleCultureProgressTitle",
+        "Text": "养成中"
+    },
+    {
+        "Key": "RoleCultureItemNotEnough",
+        "Text": "强化材料不足，请重新分配"
+    },
+    {
+        "Key": "RoleCultureProgressTitleDone",
+        "Text": "养成完毕"
+    },
+    {
+        "Key": "RoleCultureUnitLevel",
+        "Text": "等级"
+    },
+    {
+        "Key": "RoleCultureUnitGrade",
+        "Text": "晋升"
+    },
+    {
+        "Key": "RoleCultureUnitSkill",
+        "Text": "技能升级"
+    },
+    {
+        "Key": "RoleCultureUnitLevelTarget",
+        "Text": "Lv.{0}"
+    },
+    {
+        "Key": "RoleCultureUnitSkillTarget",
+        "Text": "达到指定技能等级（Lv.{0}）"
+    },
+    {
+        "Key": "RoleCultureProgressAbort",
+        "Text": "养成中止，剩余材料已返还至仓库"
+    },
+    {
+        "Key": "RoleCultureUnitWaiting",
+        "Text": "等待中"
+    },
+    {
+        "Key": "RoleCultureMaxGrade",
+        "Text": "已满级："
+    },
+    {
+        "Key": "RoleCultureStrengthen",
+        "Text": "角色属性提升"
+    },
+    {
+        "Key": "EquipOneClickCultureLevelTitle",
+        "Text": "等级与突破【武器达到Lv.{0}】"
+    },
+    {
+        "Key": "EquipOneClickCultureResonanceTitle",
+        "Text": "共鸣【共鸣所有指定技能】"
+    },
+    {
+        "Key": "EquipOneClickCultureOverrunTitle",
+        "Text": "谐振【解锁等级{0}并绑定{1}】"
+    },
+    {
+        "Key": "EquipOneClickCultureOneClick",
+        "Text": "一键养成"
+    },
+    {
+        "Key": "EquipWeaponOneClickUpgradePreview",
+        "Text": "武器达到Lv.{0}"
+    },
+    {
+        "Key": "EquipWeaponOneClickResonancePreview",
+        "Text": "共鸣{0}个技能"
+    },
+    {
+        "Key": "EquipWeaponOneClickOverrunPreview",
+        "Text": "激活谐振节点{0}/{1}"
+    },
+    {
+        "Key": "EquipWeaponOneClickOverrunRecommend",
+        "Text": "推荐激活节点{0}"
+    },
+    {
+        "Key": "EquipWeaponOneClickMaterialNotEnough",
+        "Text": "持有材料不足"
+    },
+    {
+        "Key": "EquipWeaponOneClickDesc",
+        "Text": "勾选养成模块后，将会根据玩家选择的方案自动消耗进行养成，优先消耗玩家背包内拥有材料（不会消耗5星材料），勾选自动兑换后，材料不足将会自动消耗代币进行材料兑换。"
+    },
+    {
+        "Key": "RoleCultureDetail",
+        "Text": "不同技能的等级上限不同，以技能实际等级上限为准，不会超出其上限。"
+    },
+    {
+        "Key": "RoleCultureGrade",
+        "Text": "等级:{0}"
+    },
+    {
+        "Key": "EquipWeaponCultureUnitOverrun",
+        "Text": "谐振"
+    },
+    {
+        "Key": "EquipWeaponCultureUnitOverrunTarget",
+        "Text": "激活谐振节点{0}"
+    },
+    {
+        "Key": "EquipOneClickCultureMaterialNotEnough",
+        "Text": "材料不足"
+    },
+    {
+        "Key": "EquipOneClickAutoSettingSaved",
+        "Text": "设置已保存"
+    },
+    {
+        "Key": "TransfiniteTowerHelp",
+        "Text": "超频演算帮助"
+    },
+    {
+        "Key": "TransfiniteTowerStageHelp",
+        "Text": "超频演算选关帮助"
+    },
+    {
+        "Key": "TransfiniteTowerTaskProgress",
+        "Text": "任务({0}/{1})"
+    },
+    {
+        "Key": "TransfiniteTowerActivityEnd",
+        "Text": "活动已结束"
+    },
+    {
+        "Key": "TransfiniteTowerLastSettleTitle",
+        "Text": "最佳表现"
+    },
+    {
+        "Key": "TransfiniteTowerChangeMvpTip",
+        "Text": "【MVP可修改】"
+    },
+    {
+        "Key": "TransfiniteTowerSwitchMvpSuccessTip",
+        "Text": "【更换成功】"
+    },
+    {
+        "Key": "TransfiniteTowerEarlySettlementTitle",
+        "Text": "提前结算"
+    },
+    {
+        "Key": "TransfiniteTowerEarlySettlementContent",
+        "Text": "是否以目前演算进度进行结算，结算后当前演算只能从头开始。"
+    },
+    {
+        "Key": "TransfiniteTowerRollbackTitle",
+        "Text": "数据回档"
+    },
+    {
+        "Key": "TransfiniteTowerRollbackContent",
+        "Text": "是否回档至该回档点？回档后关卡将重置并返还算力配额消耗"
+    },
+    {
+        "Key": "TransfiniteTowerRollbackSuccessTip",
+        "Text": "【回档成功】"
+    },
+    {
+        "Key": "TransfiniteTowerResetProgressTip",
+        "Text": "【关卡已重置】"
+    },
+    {
+        "Key": "TransfiniteTowerPrevStageNotPassTip",
+        "Text": "【请先通关前置关卡】"
+    },
+    {
+        "Key": "TransfiniteTowerTowerLockedTip",
+        "Text": "【未到解锁时间】"
+    },
+    {
+        "Key": "TransfiniteTowerBattlePrevNotPass",
+        "Text": "上层未通关"
+    },
+    {
+        "Key": "TransfiniteTowerBattleCompleted",
+        "Text": "作战完成"
+    },
+    {
+        "Key": "TransfiniteTowerBattleRechallenge",
+        "Text": "重新挑战"
+    },
+    {
+        "Key": "TransfiniteTowerBattleEnergyNotEnough",
+        "Text": "【成员算力不足】"
+    },
+    {
+        "Key": "TransfiniteTowerBattleNeedLeader",
+        "Text": "【缺少超频核心】"
+    },
+    {
+        "Key": "TransfiniteTowerBattleForbidLeader",
+        "Text": "【无法上阵超频核心】"
+    },
+    {
+        "Key": "TransfiniteTowerSettleNextTrait",
+        "Text": "【下一层为【腐蚀】环境】"
+    },
+    {
+        "Key": "TransfiniteTowerSettleNextTeamChange",
+        "Text": "【下一层无法上阵【超频核心】】"
+    },
+    {
+        "Key": "TransfiniteTowerSettleSaveConfirm",
+        "Text": "是否保存本关记录？保存后将扣除出战成员算力配额。"
+    },
+    {
+        "Key": "TransfiniteTowerFormationAtLeast",
+        "Text": "仅限{0}位超频核心上阵"
+    },
+    {
+        "Key": "TransfiniteTowerFormationCan",
+        "Text": "可以上阵{0}位超频核心"
+    },
+    {
+        "Key": "TransfiniteTowerFormationForbid",
+        "Text": "不可上阵超频核心"
+    },
+    {
+        "Key": "TransfiniteTowerSettlePopupTitle",
+        "Text": "结算-{0}"
+    },
+    {
+        "Key": "TransfiniteTowerTowerUnlockTime",
+        "Text": "{0} 开启"
+    },
+    {
+        "Key": "TransfiniteTowerRankUnlockTip",
+        "Text": "【峰值排行将于 {0} 开启】"
+    },
+    {
+        "Key": "TransfiniteTowerRankUnlockCondition",
+        "Text": "通关基准测试后解锁"
+    },
+    {
+        "Key": "TransfiniteTowerNeedResetTip",
+        "Text": "【请先重置进度】"
+    },
+    {
+        "Key": "TransfiniteTowerBattleLeaderTooMany",
+        "Text": "【最多上阵{0}位超频核心】"
+    },
+    {
+        "Key": "TransfiniteTowerRollbackHigherActive",
+        "Text": "【已激活更高层的数据回档点】"
+    },
+    {
+        "Key": "TransfiniteTowerRollbackNotReached",
+        "Text": "【请先通关本层】"
+    },
+    {
+        "Key": "TransfiniteTowerBattlePrepare",
+        "Text": "作战准备"
+    },
+    {
+        "Key": "TransfiniteTowerNotRanked",
+        "Text": "未上榜"
+    },
+    {
+        "Key": "TransfiniteTowerRankNotUpdated",
+        "Text": "未更新"
+    },
+    {
+        "Key": "TransfiniteTowerRankPercent",
+        "Text": "前{0}%"
+    },
+    {
+        "Key": "WeaponOverrun1",
+        "Text": "Ⅰ"
+    },
+    {
+        "Key": "WeaponOverrun7",
+        "Text": "Ⅱ-5"
+    },
+    {
+        "Key": "RoleExchangeShopTips",
+        "Text": "{0}兑换"
+    },
+    {
+        "Key": "EquipWeaponOneClickBind",
+        "Text": "绑定意识套装"
+    },
+    {
+        "Key": "TransfiniteTowerReset",
+        "Text": "是否要重置进度"
+    },
+    {
+        "Key": "TransfiniteTowerSettlementTitle",
+        "Text": "全部结算"
+    },
+    {
+        "Key": "TransfiniteTowerSettlementContent",
+        "Text": "是否以当前演算进度进行结算，结算后当前演算只能从头开始。"
+    },
+    {
+        "Key": "EquipOneClickCultureStar",
+        "Text": "{0}星武器"
+    },
+    {
+        "Key": "EquipOneClickCultureComplete",
+        "Text": "已达成"
+    },
+    {
+        "Key": "TransfiniteTowerBattleEnergyEmptyKick",
+        "Text": "角色算力不足，自动退出队伍"
+    },
+    {
+        "Key": "PartnerOneKeyLevelUpTitle",
+        "Text": "等级提升"
+    },
+    {
+        "Key": "PartnerOneKeyLevelUpPreview",
+        "Text": "辅助机达到 LV {0}"
+    },
+    {
+        "Key": "PartnerOneKeyStarUpTitle",
+        "Text": "品质提升"
+    },
+    {
+        "Key": "PartnerOneKeyStarUpPreview",
+        "Text": "辅助机进化至{0}"
+    },
+    {
+        "Key": "PartnerOneKeySkillUpTitle",
+        "Text": "技能提升"
+    },
+    {
+        "Key": "PartnerOneKeySkillUpPreview",
+        "Text": "所有装配技能平均等级 LV {0}"
+    },
+    {
+        "Key": "PartnerOneKeySkillPlan",
+        "Text": "主动技{0}/1 被动技{1}/{2}"
+    },
+    {
+        "Key": "PartnerOneKeyNotSelected",
+        "Text": "未选中"
+    },
+    {
+        "Key": "PartnerOneKeySelectCostMaterial",
+        "Text": "选择消耗材料"
+    },
+    {
+        "Key": "PartnerOneKeyCommitConfirm",
+        "Text": "是否消耗选定材料进行一键养成？"
+    },
+    {
+        "Key": "PartnerOneKeyNothingToCulture",
+        "Text": "没有什么可以养的！！！"
+    },
+    {
+        "Key": "PartnerOneKeyBubbleDetail",
+        "Text": "勾选养成模块后，将会根据玩家选择的方案自动消耗进行养成，优先消耗玩家背包内拥有材料（不会消耗5星材料），勾选自动兑换后，材料不足将会自动消耗代币进行材料兑换。"
+    },
+    {
+        "Key": "PartnerOneKeySelectPartnerTip",
+        "Text": "请选中辅助机"
+    },
+    {
+        "Key": "PartnerOneKeySelectCountFull",
+        "Text": "选择数量已满"
+    },
+    {
+        "Key": "PartnerOneKeyProgressTitleProcessing",
+        "Text": "养成中..."
+    },
+    {
+        "Key": "PartnerOneKeyProgressTitleFinish",
+        "Text": "养成完毕"
+    },
+    {
+        "Key": "PartnerOneKeyProgressTitleInterrupt",
+        "Text": "养成中断"
+    },
+    {
+        "Key": "PartnerOneKeyUnitLevelUp",
+        "Text": "升级"
+    },
+    {
+        "Key": "PartnerOneKeyUnitStarUp",
+        "Text": "升星"
+    },
+    {
+        "Key": "PartnerOneKeyUnitSkill",
+        "Text": "技能"
+    },
+    {
+        "Key": "PartnerOneKeyPreviewLevelUp",
+        "Text": "等级提升至Lv.{0}"
+    },
+    {
+        "Key": "PartnerOneKeyPreviewStarUp",
+        "Text": "品质提升至{0}"
+    },
+    {
+        "Key": "PartnerOneKeyPreviewSkill",
+        "Text": "技能平均等级{0}"
+    },
+    {
+        "Key": "PartnerOneKeyStatusWaiting",
+        "Text": "等待中"
+    },
+    {
+        "Key": "PartnerOneKeyProcessingLevelUp",
+        "Text": "升级中"
+    },
+    {
+        "Key": "PartnerOneKeyProcessingStarUp",
+        "Text": "升星中"
+    },
+    {
+        "Key": "PartnerOneKeyProcessingSkillUp",
+        "Text": "技能升级中"
+    },
+    {
+        "Key": "PartnerOneKeyProcessingDefault",
+        "Text": "养成中"
+    },
+    {
+        "Key": "PartnerOneKeyDetailLevelTitle",
+        "Text": "等级与突破【辅助机达到Lv.{0}】"
+    },
+    {
+        "Key": "PartnerOneKeyDetailStarTitle",
+        "Text": "进化【品质达到{0}】"
+    },
+    {
+        "Key": "PartnerOneKeyDetailSkillTitle",
+        "Text": "技能【装配所有技能达到满级】"
+    },
+    {
+        "Key": "TransfiniteTowerRankCloseTip",
+        "Text": "【峰值排行已关闭】"
+    },
+    {
+        "Key": "TransfiniteTowerTowerClosed",
+        "Text": "当前演算已关闭"
+    },
+    {
+        "Key": "TransfiniteTowerRankTime",
+        "Text": "用时少于<color=#5AC8FF>{0}</color>即可计入峰值排行，数据根据排行情况实时更新"
+    },
+    {
+        "Key": "TransfiniteTowerRankNoTime",
+        "Text": "完成峰值演算全部关卡才可计入峰值排行"
+    },
+    {
+        "Key": "ItemChoose",
+        "Text": "已选"
+    },
+    {
+        "Key": "EquipOneClickAutoSettingNoChange",
+        "Text": "当前没有改动信息"
+    },
+    {
+        "Key": "TransfiniteTowerTowerLockConditionNotMatch",
+        "Text": "通关基准测试开启"
+    },
+    {
+        "Key": "FightGetClickOperationRecord",
+        "Text": "操作Id：{0}"
+    },
+    {
+        "Key": "PartnerOneKeyLackCoin",
+        "Text": "螺母不足"
+    },
+    {
+        "Key": "PartnerOneKeyLackLevelUpMaterial",
+        "Text": "升级突破材料不足"
+    },
+    {
+        "Key": "PartnerOneKeyLackSkillUpMaterial",
+        "Text": "技能升级材料不足"
     }
 ]

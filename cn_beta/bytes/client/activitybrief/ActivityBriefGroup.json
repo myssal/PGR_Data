@@ -2,9 +2,10 @@
     {
         "Id": 1,
         "Name": "主线活动",
-        "SkipId": 535,
+        "SkipId": 536,
         "TimeId": 49401,
         "BtnInitMethodName": "RefreshActivityMainLine2",
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 10
     },
     {
@@ -19,6 +20,7 @@
         "SkipId": 11724,
         "TimeId": 49101,
         "BtnInitMethodName": "RefreshActivityBossSingle",
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 4,
         "RedConditions": [
             "CONDITION_ACTIVITY_BOSS_SINGLE_REWARD"
@@ -57,15 +59,16 @@
         "SkipId": 20017,
         "TimeId": 49303,
         "BtnInitMethodName": "RefreshActivityRepeateChallenge",
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 1,
         "RedConditions": [
             "CONDITION_REPEAT_CHALLENGE_ENTRANCE"
         ],
         "ActivityRewardIds": [
-            69060
+            69443
         ],
         "RewardShowTimeIds": [
-            47703
+            49303
         ]
     },
     {
@@ -184,6 +187,7 @@
         "SkipId": 20235,
         "TimeId": 49924,
         "BtnInitMethodName": "RefreshNewCharActivity",
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 3,
         "RedConditions": [
             "CONDITION_KOROMCHARACTIVITYMAINRED"
@@ -196,6 +200,7 @@
         "SkipId": 10035,
         "TimeId": 49104,
         "BtnInitMethodName": "RefreshFubenActivityTrial",
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 9,
         "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL"
     },
@@ -875,6 +880,7 @@
         "Name": "全系回溯加料",
         "SkipId": 89093,
         "TimeId": 49601,
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 6,
         "RedConditions": [
             "CONDITION_BOUNTY_CHALLENGE"
@@ -966,8 +972,9 @@
     {
         "Id": 143,
         "Name": "大好感",
-        "SkipId": 20368,
+        "SkipId": 20385,
         "TimeId": 49551,
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 5,
         "RedConditions": [
             "CONDITION_FAVORABILITY_STORY_GIFT_TASK"
@@ -979,6 +986,7 @@
         "Name": "战双兄弟",
         "SkipId": 1300635,
         "TimeId": 49920,
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 11,
         "RedConditions": [
             "CONDITION_PBRGAME_MAIN"
@@ -997,6 +1005,7 @@
         "Name": "肉鸽6",
         "SkipId": 89102,
         "TimeId": 48601,
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 2,
         "RedConditions": [
             "CONDITION_THEATRE6_MAIN"
@@ -1015,6 +1024,7 @@
         "Name": "夏日剧情活动",
         "SkipId": 89106,
         "TimeId": 48820,
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 8,
         "RedConditions": [
             "CONDITION_FASHION_STORY_ENTRANCE"
@@ -1033,6 +1043,7 @@
         "Name": "七夕开包",
         "SkipId": 89113,
         "TimeId": 49201,
+        "IsRemindWhenOpen": 1,
         "RemindPriority": 7,
         "RedConditions": [
             "CONDITION_ENVELOPE_GUESSING_ENTRANCE"

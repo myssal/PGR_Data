@@ -3,41 +3,1731 @@
         "Id": 1,
         "ActionId": 1,
         "Type": 101,
-        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg"
         ]
     },
     {
         "Id": 2,
         "ActionId": 2,
-        "Type": 401,
+        "Type": 101,
         "Params": [
-            1,
-            36
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront52.png",
+            "",
+            "",
+            4
         ]
     },
     {
         "Id": 3,
         "ActionId": 3,
-        "Type": 301,
-        "BeginAnim": "DialogEnable",
+        "Type": 205,
         "Params": [
-            "",
-            "",
-            "Placeholder_占位"
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg",
+            0,
+            0,
+            0
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 502,
+        "Params": [
+            "RImgBg3Shake2Loop"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 401,
+        "Params": [
+            1,
+            5068
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 401,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            2,
+            317
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "南方的旷野上，一辆蒸汽小火车沿着窄轨行驶。车轮碾过铁轨的声音被风拉长，在浅色的原野上飘散。"
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这条轨道是很久以前修建的小型观光环线，附近人烟稀少，所以保存完好。火车则还原自黑白电影时期的喜剧《上校号》，除车头外只挂了一节车厢。驾驶室很窄，刚好够两个人站在一起。"
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "海伦汀带自己参观地下影视博物馆那次，提到过有机会一定要带自己体验一下这辆火车。"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 402,
+        "Params": [
+            317
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 201,
+        "Params": [
+            1,
+            501628,
+            3
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "海伦汀",
+            "火车已经起步，指挥官站稳就好。",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 202,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 401,
+        "Params": [
+            2,
+            6858
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 401,
+        "Params": [
+            2,
+            967
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 205,
+        "EndDelay": 500.0,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "汽笛拉响。窗外的田埂开始向后退去，风裹着草叶和泥土的气味从窗口涌进来。"
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "远处的山丘贴着天际线，近处的农田和树林交替掠过。"
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 402,
+        "Params": [
+            967
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 201,
+        "Params": [
+            1,
+            501628,
+            3
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 301,
+        "Params": [
+            1,
+            "海伦汀",
+            "指挥官感觉如何？",
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 302,
+        "Params": [
+            "",
+            "风景很不错。",
+            26,
+            "火车运行得很稳。",
+            28
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 204,
+        "Params": [
+            1,
+            13
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "NextActionId": 30,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "……嗯，环大西洋独特的南部田园风光，想分享给指挥官。",
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "起初，我还担心这辆火车太久没开动，会很颠簸。",
+            1
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 401,
+        "Params": [
+            2,
+            1543,
+            1
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 203,
+        "Params": [
+            1,
+            0.2,
+            "",
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "火车过弯的时候，车身轻轻一晃。海伦汀的肩膀碰到了自己的手臂。"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 401,
+        "Params": [
+            2,
+            2625
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "她的视线始终跟着窗外，手指却悄悄攥住了身旁的扶手，时不时看一眼驾驶室里的老旧机械钟。"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 402,
+        "Params": [
+            2625
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 401,
+        "Params": [
+            2,
+            317
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "还没来得及多看两眼，火车已经开始减速。前方，出发时的站台重新出现在视野里。"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 402,
+        "Params": [
+            317
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 201,
+        "Params": [
+            1,
+            501628
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 301,
+        "Params": [
+            1,
+            "海伦汀",
+            "到终点了。",
+            1
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 401,
+        "Params": [
+            2,
+            5845
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 505,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Disable"
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 505,
+        "Params": [
+            "RImgBg3Shake2Loop"
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 502,
+        "Params": [
+            "RImgBg3Shake2Disable"
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "火车停稳了。海伦汀没有动，手还搭在操纵杆上，目光落在前方某个不确定的地方。"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 401,
+        "Params": [
+            2,
+            5884,
+            0.9
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "引擎怠速的震动声从脚底传上来，细密而持续。"
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 302,
+        "Params": [
+            "",
+            "还有些意犹未尽呢。",
+            57
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 204,
+        "Params": [
+            1,
+            10
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "刚才指挥官站的位置主要是环线内圈，能看的地方不多。",
+            1
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "我们换个位置，再游览一圈？",
+            1
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "……车速也有些快。慢一点的话，可以给指挥官讲讲这辆车。",
+            1
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 302,
+        "Params": [
+            "",
+            "好啊。",
+            62,
+            "想听。",
+            62
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 401,
+        "Params": [
+            2,
+            6858
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "两人交换位置。窄小的驾驶室里侧身而过时，彼此的距离近到能感觉到对方的体温。火车重新启动。"
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront52.png",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 501,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "外圈的一侧，视野开阔了不少。午后的光铺满田埂，大片的玉米田和向日葵田交错分布。远处几间农庄，米色的墙被晒得发亮。"
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 302,
+        "Params": [
+            "",
+            "这边向阳的路段更长，麦田也更明亮。",
+            71
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "这一回，她的话多了一些。比如这条轨道是她亲自寻找的，花了不少时间。把火车从地下搬运出来也费了些功夫。"
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 306
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront52.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 201,
+        "Params": [
+            1,
+            501628,
+            3,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 502,
+        "Params": [
+            "RImgBg3Shake2Loop"
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "海伦汀",
+            "《上校号》在它的拍摄年代，属于极高成本的喜剧片了，包含大量的危险动作……",
+            1
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "海伦汀讲了一些《上校号》在电影里的情节。她说话的时候视线在窗外和操纵杆之间切换，可能因为是她感兴趣的东西，较平时松弛了不少。"
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "不知不觉中，站台第二次出现在前方。"
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 401,
+        "Params": [
+            2,
+            5845
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 505,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Disable"
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 505,
+        "Params": [
+            "RImgBg3Shake2Loop"
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 502,
+        "Params": [
+            "RImgBg3Shake2Disable"
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "火车减速。"
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 201,
+        "Params": [
+            1,
+            501628
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 301,
+        "Params": [
+            1,
+            "海伦汀",
+            "……",
+            1
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 204,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "指挥官，其实这条轨道沿路还有——",
+            1
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 302,
+        "Params": [
+            "",
+            "海伦汀。",
+            96
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 401,
+        "Params": [
+            2,
+            2623,
+            1
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她的手指从操纵杆上慢慢收回来，垂在身侧。"
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "驾驶室里只剩下引擎怠速的低鸣，和远处田野里隐约的虫声。"
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 402,
+        "Params": [
+            2623
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 302,
+        "Params": [
+            "",
+            "你是不是，有什么想和我说的？",
+            102
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 204,
+        "Params": [
+            1,
+            10
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "指挥官好不容易来一趟，想必也需要花不少时间做准备。",
+            1
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "能做的事情却不多，总觉得……不够。",
+            1
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 401,
+        "Params": [
+            2,
+            1543,
+            1
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "说完这两个字，她的手指慢慢收紧，攥进身侧的裙摆里，低下头去。"
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 302,
+        "Params": [
+            "",
+            "风景，火车，还有你讲的那些事。",
+            109
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 302,
+        "Params": [
+            "",
+            "都能看出你为了今天做了很多准备。",
+            110
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 401,
+        "Params": [
+            2,
+            1543,
+            1
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "她抬起头来。"
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 302,
+        "Params": [
+            "",
+            "我能感受到你的心意，怎么会不够呢？",
+            114
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 204,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "海伦汀",
+            "【kuroname】……",
+            1
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 302,
+        "Params": [
+            "",
+            "两个人在一起，能做的就有很多。",
+            117
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5,
+            "",
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 104,
+        "Params": [
+            "0|0|-50",
+            0.5,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 104,
+        "EndDelay": 1500.0,
+        "Params": [
+            "0|0|-50",
+            0.5,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 401,
+        "Params": [
+            2,
+            1543,
+            1
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 204,
+        "EndDelay": 1000.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "自己稳稳握住了她攥在裙摆里的那只手。她的手指僵了一瞬，然后一根一根松开，反过来稳稳扣住了自己。"
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "嗯，我明白了。",
+            1
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 401,
+        "Params": [
+            2,
+            318
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1320.jpg",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 502,
+        "Params": [
+            "RImgBg3Shake2Loop"
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "火车再次发动，黄昏逼近，田野的光景随之变化。"
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "傍晚的光把田野染成深金色。自己和海伦汀站在窄小的驾驶室里，肩膀贴着肩膀，手指扣着手指。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 402,
+        "Params": [
+            318
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 401,
+        "Params": [
+            2,
+            967
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 505,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Disable"
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 505,
+        "Params": [
+            "RImgBg3Shake2Loop"
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 502,
+        "EndDelay": 1500.0,
+        "Params": [
+            "RImgBg3Shake2Disable"
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 401,
+        "Params": [
+            2,
+            5845
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 309,
+        "Params": [
+            "",
+            "傍晚的光把田野染成深金色。自己和海伦汀站在窄小的驾驶室里，肩膀贴着肩膀，手指扣着手指。直到火车再次进站，铃声响起，彼此的身影又靠近了一点。"
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "直到火车再次进站，铃声响起，彼此的身影又靠近了一点。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 201,
+        "Params": [
+            1,
+            501628,
+            1
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 402,
+        "Params": [
+            967
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "海伦汀想起什么似的，拿出终端，将摄像头打开。"
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "指挥官，看一看镜头？",
+            1
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 302,
+        "Params": [
+            "",
+            "（摆好姿势）",
+            148,
+            "（拉着她拍一张合照）",
+            155
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 401,
+        "Params": [
+            2,
+            4930
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "指挥官，很好看。",
+            1
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 302,
+        "Params": [
+            "",
+            "也让我给海伦汀拍几张吧。",
+            152
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "站在镜头前，海伦汀起初有些生硬，多试几次后，她也能配合摆出一些平日里看不见的姿势。"
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "NextActionId": 164,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "……好，一起。",
+            1
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 401,
+        "Params": [
+            2,
+            2936
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 203,
+        "Params": [
+            1,
+            0.5,
+            "",
+            "",
+            -50
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "海伦汀看着镜头，眼睛有些闪烁，但还是悄悄将脸往自己凑了凑。"
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 401,
+        "Params": [
+            2,
+            4930
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "合影里，留下了海伦汀青涩的表情。"
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "两人拍了不少照片。窗外掠过的田野，落日映着的车厢，还有彼此没来得及收好的表情，都被收进了小小的屏幕里。"
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 201,
+        "Params": [
+            1,
+            501628,
+            13
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 301,
+        "Params": [
+            1,
+            "海伦汀",
+            "无论是眼前的景色，还是和指挥官在一起的时光，我都想好好记录下来。",
+            1
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "这也是，我们可以一起做的事情。",
+            1
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 401,
+        "Params": [
+            2,
+            317
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake2Loop"
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "火车沿着窄轨继续往前跑。同样的风景，每一次都能被赋予不同的意义。落日一点一点沉进远处的山丘，车窗上映出两个人并排的影子。"
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
         "Type": 301,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "今天剩下的时间里，能一起做的事，还有很多。"
         ]
     }
 ]

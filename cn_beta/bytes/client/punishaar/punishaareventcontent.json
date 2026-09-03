@@ -1,0 +1,1040 @@
+[
+    {
+        "Id": 101,
+        "NextEvent": 102,
+        "Name": "战略投资",
+        "Desc": "一位西装革履的商人踱步而来。",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/BoshiNomal02.png"
+        ],
+        "RoleNames": [
+            "商人"
+        ],
+        "RoleContents": [
+            "“要不要做一笔稳赚不赔的买卖？我不要多，只需你划出一小块战略用地，作为大学生创新创业的启动资金。”"
+        ],
+        "ConfirmContent": "我投了！",
+        "LocationDescUnselect": "未知的投资项目，要不尝试投资一下？"
+    },
+    {
+        "Id": 102,
+        "Name": "战略投资",
+        "Desc": "你的投资卓有成效，获得了商人回馈的金币。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "未知的投资项目，要不尝试投资一下？"
+    },
+    {
+        "Id": 103,
+        "NextEvent": 104,
+        "Name": "战略投资",
+        "Desc": "一位西装革履的商人踱步而来。",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/BoshiNomal02.png"
+        ],
+        "RoleNames": [
+            "商人"
+        ],
+        "RoleContents": [
+            "“要不要做一笔稳赚不赔的买卖？我不要多，只需你划出一小块战略用地，作为大学生创新创业的启动资金。”"
+        ],
+        "ConfirmContent": "斟酌一下",
+        "LocationDescUnselect": "未知的投资项目，还是再斟酌一下，不要盲目投资吧。"
+    },
+    {
+        "Id": 104,
+        "Name": "战略投资",
+        "Desc": "他离开了，带着他可能永远无法实现的创业梦离开了。他给你留下了一些倾听感谢费。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "未知的投资项目，还是再斟酌一下，不要盲目投资吧。"
+    },
+    {
+        "Id": 201,
+        "NextEvent": 202,
+        "Name": "前线广告",
+        "Desc": "前线炮火连天，你的通讯部队却截获了一段异常信号源。你决定：",
+        "RoleNames": [
+            "异常信号"
+        ],
+        "RoleContents": [
+            "便宜好货，童叟无欺！枪械弹药，成箱批发！买十送一，今日特价！"
+        ],
+        "ConfirmContent": "必须订购！",
+        "LocationDescUnselect": "异常信号接入中，接通听听是谁打来的吧。"
+    },
+    {
+        "Id": 202,
+        "Name": "前线广告",
+        "Desc": "此后，这个频道不断地传来通讯申请，原来是骚扰电话！投诉后，你获得了一笔补偿款。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "异常信号接入中，接通听听是谁打来的吧。"
+    },
+    {
+        "Id": 203,
+        "NextEvent": 204,
+        "Name": "前线广告",
+        "Desc": "前线炮火连天，你的通讯部队却截获了一段异常信号源。你决定：",
+        "RoleNames": [
+            "异常信号"
+        ],
+        "RoleContents": [
+            "便宜好货，童叟无欺！枪械弹药，成箱批发！买十送一，今日特价！"
+        ],
+        "ConfirmContent": "结束通讯",
+        "LocationDescUnselect": "异常信号接入中，有些可疑，还是直接挂断吧。"
+    },
+    {
+        "Id": 204,
+        "Name": "前线广告",
+        "Desc": "怎么想都是诈骗吧！无论在哪里都要提高警惕才行。你的警惕吸引了其他人的敬仰，从而前来投奔你。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "异常信号接入中，有些可疑，还是直接挂断吧。"
+    },
+    {
+        "Id": 205,
+        "NextEvent": 206,
+        "Name": "惊喜收获",
+        "Desc": "前线的战场里搜刮出一个物资箱！但为什么这个箱子里有滴滴滴的响声啊！",
+        "RoleNames": [
+            "物资箱"
+        ],
+        "RoleContents": [
+            "滴滴滴——滴滴滴——"
+        ],
+        "ConfirmContent": "倒卖给黑商",
+        "LocationDescUnselect": "神秘的物资箱，倒卖给其他人或许会获得奖励。"
+    },
+    {
+        "Id": 206,
+        "Name": "惊喜收获",
+        "Desc": "滴滴滴的声音令人十分不安，还是倒卖给其他人来处理吧，出售后获得了一些金币。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "神秘的物资箱，倒卖给其他人或许会获得奖励。"
+    },
+    {
+        "Id": 207,
+        "NextEvent": 208,
+        "Name": "惊喜收获",
+        "Desc": "前线的战场里搜刮出一个物资箱！但为什么这个箱子里有滴滴滴的响声啊！",
+        "RoleNames": [
+            "物资箱"
+        ],
+        "RoleContents": [
+            "滴滴滴——滴滴滴——"
+        ],
+        "ConfirmContent": "呼叫拆弹专家",
+        "LocationDescUnselect": "神秘的物资箱，拆开看看有没有什么惊喜。"
+    },
+    {
+        "Id": 208,
+        "Name": "惊喜收获",
+        "Desc": "你决定呼叫拆弹专家前来处理，打开后果然是虚惊一场，但你因此结识了一位优秀的拆弹专家！",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "神秘的物资箱，拆开看看有没有什么惊喜。"
+    },
+    {
+        "Id": 301,
+        "NextEvent": 302,
+        "Name": "神秘帮助",
+        "Desc": "在你沉迷“回路演算”的时候，旁边的一位牌佬凑了过来。在分析了局势后，她偷偷塞过来一些东西……",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/BankaNomal01.png"
+        ],
+        "RoleNames": [
+            "神秘人"
+        ],
+        "RoleContents": [
+            "……"
+        ],
+        "ConfirmContent": "接受好意",
+        "LocationDescUnselect": "神秘人的帮助，也许会带来好运。"
+    },
+    {
+        "Id": 302,
+        "Name": "神秘帮助",
+        "Desc": "你接受了她的好意，接下来登场的是，神秘人的馈赠！",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "神秘人的帮助，也许会带来好运。"
+    },
+    {
+        "Id": 303,
+        "NextEvent": 304,
+        "Name": "神秘帮助",
+        "Desc": "在你沉迷“回路演算”的时候，旁边的一位牌佬凑了过来。在分析了局势后，她偷偷塞过来一些东西……",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/BankaNomal01.png"
+        ],
+        "RoleNames": [
+            "神秘人"
+        ],
+        "RoleContents": [
+            "……"
+        ],
+        "ConfirmContent": "委婉拒绝",
+        "LocationDescUnselect": "神秘人的帮助，也许会带来好运。"
+    },
+    {
+        "Id": 304,
+        "Name": "神秘帮助",
+        "Desc": "你拒绝了她的好意，但她走后，你发现了一些遗留的金币……",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "神秘人的帮助，也许会带来好运。"
+    },
+    {
+        "Id": 305,
+        "NextEvent": 306,
+        "Name": "库存电解质液",
+        "Desc": "在前线的仓库里发现了整个仓库的电解质液……只是味道都很奇怪……寿司味，蛋包饭味，鹅肝味？",
+        "RoleNames": [
+            "库存电解质液"
+        ],
+        "RoleContents": [
+            "尝尝吧——尝尝吧——"
+        ],
+        "ConfirmContent": "打开尝尝",
+        "LocationDescUnselect": "味道好奇怪，打开喝一口吧！"
+    },
+    {
+        "Id": 306,
+        "Name": "库存电解质液",
+        "Desc": "打开尝了尝，味道似乎也不是完全不能接受，并与同好一起分享了剩下的几瓶。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "味道好奇怪，打开喝一口吧！"
+    },
+    {
+        "Id": 307,
+        "NextEvent": 308,
+        "Name": "库存电解质液",
+        "Desc": "在前线的仓库里发现了整个仓库的电解质液……只是味道都很奇怪……寿司味，蛋包饭味，鹅肝味？",
+        "RoleNames": [
+            "库存电解质液"
+        ],
+        "RoleContents": [
+            "尝尝吧——尝尝吧——"
+        ],
+        "ConfirmContent": "低价出售",
+        "LocationDescUnselect": "味道好奇怪，低价卖给别人吧！"
+    },
+    {
+        "Id": 308,
+        "Name": "库存电解质液",
+        "Desc": "卖掉这批电解质液，获得了一些金币",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "味道好奇怪，低价卖给别人吧！"
+    },
+    {
+        "Id": 401,
+        "NextEvent": 402,
+        "Name": "后勤大酬宾",
+        "Desc": "为回馈新老用户，后勤供应商举行了“长情用户回馈计划”！凭借多年如一日的采购记录，光荣当选“长情用户”！",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/CaifaNormal01.png"
+        ],
+        "RoleNames": [
+            "供应商"
+        ],
+        "RoleContents": [
+            "长情用户回馈计划火热进行中！"
+        ],
+        "ConfirmContent": "选择礼品",
+        "LocationDescUnselect": "后勤供应商正在开展回馈活动，选择礼品福利吧。"
+    },
+    {
+        "Id": 402,
+        "Name": "后勤大酬宾",
+        "Desc": "你选择了赠送礼品作为福利。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "后勤供应商正在开展回馈活动，选择礼品福利吧。"
+    },
+    {
+        "Id": 403,
+        "NextEvent": 404,
+        "Name": "后勤大酬宾",
+        "Desc": "为回馈新老用户，后勤供应商举行了“长情用户回馈计划”！凭借多年如一日的采购记录，光荣当选“长情用户”！",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/CaifaNormal01.png"
+        ],
+        "RoleNames": [
+            "供应商"
+        ],
+        "RoleContents": [
+            "长情用户回馈计划火热进行中！"
+        ],
+        "ConfirmContent": "选择返利",
+        "LocationDescUnselect": "后勤供应商正在开展回馈活动，选择返利福利吧。"
+    },
+    {
+        "Id": 404,
+        "Name": "后勤大酬宾",
+        "Desc": "比起礼品，你更想要一点实在的福利，选择了返利福利，获得了一些金币。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "后勤供应商正在开展回馈活动，选择返利福利吧。"
+    },
+    {
+        "Id": 405,
+        "NextEvent": 406,
+        "Name": "清空库存",
+        "Desc": "收拾战略物资时，整理出了一些已经过时的装备，可是装备已经全面换新，旧的怎么办？等等，这句话怎么听着有点耳熟？",
+        "RoleNames": [
+            "过时的装备"
+        ],
+        "RoleContents": [
+            "……"
+        ],
+        "ConfirmContent": "交换情报",
+        "LocationDescUnselect": "过时的装备该怎么处理？用来和商人交换情报吧。"
+    },
+    {
+        "Id": 406,
+        "Name": "清空库存",
+        "Desc": "用这些装备和商人交换情报，获得了一些有价值的信息。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "过时的装备该怎么处理？用来和商人交换情报吧。"
+    },
+    {
+        "Id": 407,
+        "NextEvent": 408,
+        "Name": "清空库存",
+        "Desc": "收拾战略物资时，整理出了一些已经过时的装备，可是装备已经全面换新，旧的怎么办？等等，这句话怎么听着有点耳熟？",
+        "RoleNames": [
+            "过时的装备"
+        ],
+        "RoleContents": [
+            "……"
+        ],
+        "ConfirmContent": "卖给商人",
+        "LocationDescUnselect": "过时的装备该怎么处理？听说有人正在高价回收……"
+    },
+    {
+        "Id": 408,
+        "Name": "清空库存",
+        "Desc": "商人欣然回收了这些装备，得到了一些金币。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "过时的装备该怎么处理？听说有人正在高价回收……"
+    },
+    {
+        "Id": 409,
+        "NextEvent": 410,
+        "Name": "奇怪的机械体",
+        "Desc": "一群奇装异服的机械体悄然降临战场。它们浑身缀满废铁与霓虹管，动作古怪而虔诚。",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png"
+        ],
+        "RoleNames": [
+            "奇怪机械"
+        ],
+        "RoleContents": [
+            "机魂……同胞……回收……安息……"
+        ],
+        "ConfirmContent": "发出警告",
+        "LocationDescUnselect": "奇怪的机械体正在游荡，向他们发出警告！"
+    },
+    {
+        "Id": 410,
+        "Name": "奇怪的机械体",
+        "Desc": "机魂不悦！向你发出了威慑，希望别在接下来的战斗中遇到不好的事情……",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png"
+        ],
+        "RoleNames": [
+            "奇怪机械"
+        ],
+        "RoleContents": [
+            "呃……啊——！！！"
+        ],
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "奇怪的机械体正在游荡，向他们发出警告！"
+    },
+    {
+        "Id": 411,
+        "NextEvent": 412,
+        "Name": "奇怪的机械体",
+        "Desc": "一群奇装异服的机械体悄然降临战场。它们浑身缀满废铁与霓虹管，动作古怪而虔诚。",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png"
+        ],
+        "RoleNames": [
+            "奇怪机械"
+        ],
+        "RoleContents": [
+            "机魂……同胞……回收……安息……"
+        ],
+        "ConfirmContent": "倾听诉求",
+        "LocationDescUnselect": "奇怪的机械体正在游荡，听听它们在说什么……"
+    },
+    {
+        "Id": 412,
+        "Name": "奇怪的机械体",
+        "Desc": "机械体絮絮叨叨地说了一些不明所以的话之后离开了，留下了一些无用之物。",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/BiancaTheatreShashibierNormal01.png"
+        ],
+        "RoleNames": [
+            "奇怪机械"
+        ],
+        "RoleContents": [
+            "啊……嗬嗬嗬……"
+        ],
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "奇怪的机械体正在游荡，听听它们在说什么……"
+    },
+    {
+        "Id": 413,
+        "NextEvent": 414,
+        "Name": "再次清空库存",
+        "Desc": "积压的库存堆成山，你灵机一动，为什么自己不能带货多余的军备物资呢？于是你架起镜头，清了清嗓子。",
+        "RoleNames": [
+            "库存军备"
+        ],
+        "RoleContents": [
+            "……"
+        ],
+        "ConfirmContent": "最后三件！",
+        "LocationDescUnselect": "奇妙的库存怎么这么多，你决定大肆兜售它们。"
+    },
+    {
+        "Id": 414,
+        "Name": "再次清空库存",
+        "Desc": "“家人们！最后三件！三二一，上链接！”你的库存很快就清空了，获得了数量可观的金币。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "奇妙的库存怎么这么多，你决定大肆兜售它们。"
+    },
+    {
+        "Id": 415,
+        "NextEvent": 416,
+        "Name": "再次清空库存",
+        "Desc": "积压的库存堆成山，你灵机一动，为什么自己不能带货多余的军备物资呢？你刚想架起镜头，想了想，还是决定如实按照战损价格清仓处理。",
+        "RoleNames": [
+            "库存军备"
+        ],
+        "RoleContents": [
+            "……"
+        ],
+        "ConfirmContent": "如实清仓",
+        "LocationDescUnselect": "奇妙的库存怎么这么多，你决定老实地按清仓价出售它们。"
+    },
+    {
+        "Id": 416,
+        "Name": "再次清空库存",
+        "Desc": "货没卖出去，不过宣传了自己的阵地，有人来毛遂自荐来加入你的队伍了。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "奇妙的库存怎么这么多，你决定老实地按清仓价出售它们。"
+    },
+    {
+        "Id": 501,
+        "NextEvent": 502,
+        "Name": "内幕消息？",
+        "Desc": "一个神神秘秘的家伙把你拉到墙角，压低嗓门：“内部消息，只告诉你一个人——下季度██工股，稳涨！现在抄底，明天翻倍，后天退役！”事已至此，你决定不如：",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/IcesailorNomal.png"
+        ],
+        "RoleNames": [
+            "神秘人"
+        ],
+        "RoleContents": [
+            "内部消息，只告诉你一个人——"
+        ],
+        "ConfirmContent": "抄底！",
+        "LocationDescUnselect": "据说有内幕消息，要选择相信吗？"
+    },
+    {
+        "Id": 502,
+        "Name": "内幕消息？",
+        "Desc": "这是个千载难逢的机会，你综合判断其他已知信息后，在投资上大获成果！",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "据说有内幕消息，要选择相信吗？"
+    },
+    {
+        "Id": 503,
+        "NextEvent": 504,
+        "Name": "内幕消息？",
+        "Desc": "一个神神秘秘的家伙把你拉到墙角，压低嗓门：“内部消息，只告诉你一个人——下季度██工股，稳涨！现在抄底，明天翻倍，后天退役！”事已至此，你决定还是：",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/IcesailorNomal.png"
+        ],
+        "RoleNames": [
+            "神秘人"
+        ],
+        "RoleContents": [
+            "内部消息，只告诉你一个人——"
+        ],
+        "ConfirmContent": "不信！",
+        "LocationDescUnselect": "据说有内幕消息，听起来就像骗人的吧！"
+    },
+    {
+        "Id": 504,
+        "Name": "内幕消息？",
+        "Desc": "你不信这游戏还有实时股市系统，决定将这条信息弃之不顾。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "据说有内幕消息，听起来就像骗人的吧！"
+    },
+    {
+        "Id": 505,
+        "NextEvent": 506,
+        "Name": "救救后勤线",
+        "Desc": "前线传来线报，自己的供货商团居然被机械体拦截了！怎么还有断后勤线的玩法？当下你决定：",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/CaifaNormal01.png"
+        ],
+        "RoleNames": [
+            "供应商"
+        ],
+        "RoleContents": [
+            "救救……救救我……"
+        ],
+        "ConfirmContent": "立即救援！",
+        "LocationDescUnselect": "线报称，供应商团被机械体拦截了！当下应该立即前往救援！"
+    },
+    {
+        "Id": 506,
+        "Name": "救救后勤线",
+        "Desc": "幸好救援及时，没有太大的损失，你长舒一口气。",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/CaifaNormal01.png"
+        ],
+        "RoleNames": [
+            "供应商"
+        ],
+        "RoleContents": [
+            "得救了，谢谢你……"
+        ],
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "线报称，供应商团被机械体拦截了！当下应该立即前往救援！"
+    },
+    {
+        "Id": 507,
+        "NextEvent": 508,
+        "Name": "救救后勤线",
+        "Desc": "前线传来线报，自己的供货商团居然被机械体拦截了！怎么还有断后勤线的玩法？当下你决定：",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/CaifaNormal01.png"
+        ],
+        "RoleNames": [
+            "供应商"
+        ],
+        "RoleContents": [
+            "救救……救救我……"
+        ],
+        "ConfirmContent": "谨慎布局",
+        "LocationDescUnselect": "线报称，供应商团被机械体拦截了！当下应该谨慎布局下一步的操作。"
+    },
+    {
+        "Id": 508,
+        "Name": "救救后勤线",
+        "Desc": "无论何时都不能抛下指挥官的冷静，你决定谨慎布局下一步的行动，保全了供应商团的人身安全，货物也完好无损。",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/CaifaNormal01.png"
+        ],
+        "RoleNames": [
+            "供应商"
+        ],
+        "RoleContents": [
+            "得救了，谢谢你……"
+        ],
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "线报称，供应商团被机械体拦截了！当下应该谨慎布局下一步的操作。"
+    },
+    {
+        "Id": 509,
+        "NextEvent": 510,
+        "Name": "宿敌就是……？",
+        "Desc": "激战正酣，你缴获一箱敌军补给，打开一看——包装、批号，跟你自己的军需一模一样。你俩，是同一个供应商的客户。",
+        "RoleNames": [
+            "敌军补给"
+        ],
+        "RoleContents": [
+            "……"
+        ],
+        "ConfirmContent": "沉思",
+        "LocationDescUnselect": "缴获敌军补给！你决定立即拆开占为己有。"
+    },
+    {
+        "Id": 510,
+        "Name": "宿敌就是……？",
+        "Desc": "这下尴尬了，你和宿敌表面斗争得难舍难分，实则都用着同一家供应商的货，怪不得难分高下，一想到这，你心中升起一丝莫名的情绪……",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "缴获敌军补给！你决定立即拆开占为己有。"
+    },
+    {
+        "Id": 511,
+        "NextEvent": 512,
+        "Name": "宿敌就是……？",
+        "Desc": "激战正酣，你缴获一箱敌军补给，打开一看——包装、批号，跟你自己的军需一模一样。你俩，是同一个供应商的客户。",
+        "RoleNames": [
+            "敌军补给"
+        ],
+        "RoleContents": [
+            "……"
+        ],
+        "ConfirmContent": "沉思",
+        "LocationDescUnselect": "缴获敌军补给！但这包装好像有点眼熟，你陷入了沉思。"
+    },
+    {
+        "Id": 512,
+        "Name": "宿敌就是……？",
+        "Desc": "“宿敌就是宿敌，宿敌是不会变成……”你抑制住了莫名其妙想说出口的话，久久不能言语……",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "缴获敌军补给！但这包装好像有点眼熟，你陷入了沉思。"
+    },
+    {
+        "Id": 513,
+        "NextEvent": 514,
+        "Name": "敌方正在接近",
+        "Desc": "敌方的战线正在迅速推进。毕竟机械体甚至可以夜里转移！已经推进至警戒距离了！反复斟酌后，你决定：",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/BoerpuNormal01.png"
+        ],
+        "RoleNames": [
+            "不明机械体"
+        ],
+        "RoleContents": [
+            "——！！！"
+        ],
+        "ConfirmContent": "战略转移",
+        "LocationDescUnselect": "敌军正在接近中，你决定立即进行战略转移。"
+    },
+    {
+        "Id": 514,
+        "Name": "敌方正在接近",
+        "Desc": "你的转移十分成功，几乎没有任何损失，蛰伏是为了更好的作战，你坚信这一点。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "敌军正在接近中，你决定立即进行战略转移。"
+    },
+    {
+        "Id": 515,
+        "NextEvent": 516,
+        "Name": "敌方正在接近",
+        "Desc": "敌方的战线正在迅速推进。毕竟机械体甚至可以夜里转移！已经推进至警戒距离了！你当即决定：",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/BoerpuNormal01.png"
+        ],
+        "RoleNames": [
+            "不明机械体"
+        ],
+        "RoleContents": [
+            "——！！！"
+        ],
+        "ConfirmContent": "反击作战",
+        "LocationDescUnselect": "敌军正在接近中，你决定就地开启反击！"
+    },
+    {
+        "Id": 516,
+        "Name": "敌方正在接近",
+        "Desc": "你带领队伍就地开启反击，敌军不战自退，留下了部分物资。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "敌军正在接近中，你决定就地开启反击！"
+    },
+    {
+        "Id": 601,
+        "NextEvent": 602,
+        "Name": "战场外卖",
+        "Desc": "前线阵地上空突然飞来一架涂着醒目logo的无人机，精准降落在你的指挥桌上。——这是谁在战区点的外卖？！",
+        "RoleNames": [
+            "订单信息"
+        ],
+        "RoleContents": [
+            "订单备注写着：“麻烦放门口，别按门铃。”"
+        ],
+        "ConfirmContent": "签收！",
+        "LocationDescUnselect": "一份没有收货人信息的外卖正在等待签收，不如就此收下吧？"
+    },
+    {
+        "Id": 602,
+        "Name": "战场外卖",
+        "Desc": "打开一看，除了已经凉透的餐食外，底下居然垫着一层抽奖券，意外获得了超高额返现！",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一份没有收货人信息的外卖正在等待签收，不如就此收下吧？"
+    },
+    {
+        "Id": 603,
+        "NextEvent": 604,
+        "Name": "战场外卖",
+        "Desc": "前线阵地上空突然飞来一架涂着醒目logo的无人机，精准降落在你的指挥桌上。——这是谁在战区点的外卖？！",
+        "RoleNames": [
+            "订单信息"
+        ],
+        "RoleContents": [
+            "订单备注写着：“麻烦放门口，别按门铃。”"
+        ],
+        "ConfirmContent": "原路退回",
+        "LocationDescUnselect": "一份没有收货人信息的外卖正在等待签收，好可疑，还是不要了……"
+    },
+    {
+        "Id": 604,
+        "Name": "战场外卖",
+        "Desc": "无人机飞走后不久，一个气喘吁吁的家伙跑来道谢——他追了这架无人机三个战区。出于感激，他决定留下来帮忙。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一份没有收货人信息的外卖正在等待签收，好可疑，还是不要了……"
+    },
+    {
+        "Id": 605,
+        "NextEvent": 606,
+        "Name": "机遂自荐",
+        "Desc": "一台西装涂装的机械体无视炮火从天而降，径直走向你的前线，双手奉上名片：",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V2100gwNormal02.png"
+        ],
+        "RoleNames": [
+            "神秘机械体"
+        ],
+        "RoleContents": [
+            "我是这附近的军需HR，需要合作吗？"
+        ],
+        "ConfirmContent": "与它合作",
+        "LocationDescUnselect": "一台西装涂装的机械体无视炮火从天而降，听听它要说什么吧！"
+    },
+    {
+        "Id": 606,
+        "Name": "机遂自荐",
+        "Desc": "很快，一位全新的队员就被推荐进你的战列。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一台西装涂装的机械体无视炮火从天而降，听听它要说什么吧！"
+    },
+    {
+        "Id": 607,
+        "NextEvent": 608,
+        "Name": "机遂自荐",
+        "Desc": "一台西装涂装的机械体无视炮火从天而降，径直走向你的前线，双手奉上名片：",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V2100gwNormal02.png"
+        ],
+        "RoleNames": [
+            "神秘机械体"
+        ],
+        "RoleContents": [
+            "我是这附近的军需HR，需要合作吗？"
+        ],
+        "ConfirmContent": "拒绝它",
+        "LocationDescUnselect": "一台西装涂装的机械体无视炮火从天而降，保持警惕，别跟它距离太近。"
+    },
+    {
+        "Id": 608,
+        "Name": "机遂自荐",
+        "Desc": "它鞠了个躬，随即向着敌方的炮火走去。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一台西装涂装的机械体无视炮火从天而降，保持警惕，别跟它距离太近。"
+    },
+    {
+        "Id": 609,
+        "NextEvent": 610,
+        "Name": "救救陌生人",
+        "Desc": "一队陌生的小队传来救援通讯！你决定亲自前往救援，毕竟互帮互助是你一直以来的习惯。",
+        "ConfirmContent": "前往救援",
+        "LocationDescUnselect": "一队陌生的小队传来救援通讯！要提供救援吗？"
+    },
+    {
+        "Id": 610,
+        "Name": "救救陌生人",
+        "Desc": "你成功救援了一支迷路的小队，你的热心让对方大为感动，并因此获赠了一大笔物资。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一队陌生的小队传来救援通讯！要提供救援吗？"
+    },
+    {
+        "Id": 611,
+        "NextEvent": 612,
+        "Name": "救救陌生人",
+        "Desc": "一队陌生的小队传来救援通讯！你怀疑这很可能是陷阱，决定无视这条信息。",
+        "ConfirmContent": "无视消息",
+        "LocationDescUnselect": "一队陌生的小队传来救援通讯！可能是陷阱！"
+    },
+    {
+        "Id": 612,
+        "Name": "救救陌生人",
+        "Desc": "谨慎的策略是明智的，基地获得了难得的修整时间。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一队陌生的小队传来救援通讯！可能是陷阱！"
+    },
+    {
+        "Id": 613,
+        "NextEvent": 614,
+        "Name": "五星好评",
+        "Desc": "后勤部门突然发来一封正式通知，信息内容是，你的基地在这个季度中获得的评分是——三星半！究竟是谁在给你打分？满分多少？",
+        "RoleNames": [
+            "后勤通知"
+        ],
+        "RoleContents": [
+            "根据前线综合战力评估系统，您的基地在本季度荣获——三星半。"
+        ],
+        "ConfirmContent": "申请复评！",
+        "LocationDescUnselect": "接到了一则后勤部门的通知，要看一下吗？"
+    },
+    {
+        "Id": 614,
+        "Name": "五星好评",
+        "Desc": "这分也太低了！你决定无论如何都要申请复评！好在复评员实地考察后，被你的热情招待打动了——评分提升至四星半，并且额外为你发放了一些评分奖励。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "接到了一则后勤部门的通知，要看一下吗？"
+    },
+    {
+        "Id": 615,
+        "NextEvent": 616,
+        "Name": "五星好评",
+        "Desc": "后勤部门突然发来一封正式通知，信息内容是——",
+        "ConfirmContent": "扔掉",
+        "LocationDescUnselect": "接到了一则后勤部门的通知，那种东西谁会看啊，扔掉扔掉。"
+    },
+    {
+        "Id": 616,
+        "Name": "五星好评",
+        "Desc": "你一个字都没有看就扔掉了这则通知，只留下了随着通知一起寄来的评分奖励，至于评分究竟是多少，谁在乎？",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "接到了一则后勤部门的通知，那种东西谁会看啊，扔掉扔掉。"
+    },
+    {
+        "Id": 701,
+        "NextEvent": 702,
+        "Name": "保修服务",
+        "Desc": "一门主力火炮在关键时刻哑火了。翻遍说明书，最后一页小字写着：“本产品享受三年质保，请联系售后。”",
+        "ConfirmContent": "拨通电话",
+        "LocationDescUnselect": "一门主力火炮在关键时刻哑火了，你决定立即联系保修服务。"
+    },
+    {
+        "Id": 702,
+        "Name": "保修服务",
+        "Desc": "你拨通了售后热线，等待音乐是《寻找四叶草的阿呆蛙》。在等待了漫长的语音导航后，对方表示可以“以旧换新”，并给出了不错的折价。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一门主力火炮在关键时刻哑火了，你决定立即联系保修服务。"
+    },
+    {
+        "Id": 703,
+        "NextEvent": 704,
+        "Name": "保修服务",
+        "Desc": "一门主力火炮在关键时刻哑火了。翻遍说明书，最后一页小字写着：“本产品享受三年质保，请联系售后。”",
+        "ConfirmContent": "自己动手",
+        "LocationDescUnselect": "一门主力火炮在关键时刻哑火了，你决定立即自己动手修理。"
+    },
+    {
+        "Id": 704,
+        "Name": "保修服务",
+        "Desc": "战场时间宝贵，你决定自己动手修理。拆开炮管的过程中，你意外发现了上一任使用者藏在里面的私房钱，看来有人把炮管当保险柜了。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一门主力火炮在关键时刻哑火了，你决定立即自己动手修理。"
+    },
+    {
+        "Id": 705,
+        "NextEvent": 706,
+        "Name": "敌方快递",
+        "Desc": "侦查兵截获了一批敌方的后勤运输。你拆箱检查时愣住了——这不是武器弹药，而是一整批装备“保养套装”：润滑油、防锈漆、还有一本《机械体心灵成长手册》。",
+        "ConfirmContent": "仔细研究",
+        "LocationDescUnselect": "侦查兵截获了一批敌方的后勤运输，你决定拆开看看。"
+    },
+    {
+        "Id": 706,
+        "Name": "敌方快递",
+        "Desc": "研究手册后，你对机械体的行为模式有了更深理解，这大概会为你之后的战斗带来不小的好处。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "侦查兵截获了一批敌方的后勤运输，你决定拆开看看。"
+    },
+    {
+        "Id": 707,
+        "NextEvent": 708,
+        "Name": "敌方快递",
+        "Desc": "侦查兵截获了一批敌方的后勤运输。你拆箱检查时愣住了——这不是武器弹药，而是一整批装备“保养套装”：润滑油、防锈漆、还有一本《机械体心灵成长手册》。",
+        "ConfirmContent": "立即转卖",
+        "LocationDescUnselect": "侦查兵截获了一批敌方的后勤运输，你决定在二手市场上卖掉它们。"
+    },
+    {
+        "Id": 708,
+        "Name": "敌方快递",
+        "Desc": "这么难得的东西想必能卖个好价钱，你当即决定把截获的东西全都拿去二手市场上卖掉。果然如你所料，在黑市上这套东西居然是抢手货，你获得了十分丰厚的利润！",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "侦查兵截获了一批敌方的后勤运输，你决定在二手市场上卖掉它们。"
+    },
+    {
+        "Id": 709,
+        "NextEvent": 710,
+        "Name": "退伍机械体",
+        "Desc": "一台锈迹斑斑的机械体缓缓走向你的防线，举着一块手写纸板：“已退役。求收留。会做饭。”你和你的队员们面面相觑。",
+        "ConfirmContent": "收留它吧",
+        "LocationDescUnselect": "一台锈迹斑斑的机械体缓缓走向你的防线……要收留它吗？"
+    },
+    {
+        "Id": 710,
+        "Name": "退伍机械体",
+        "Desc": "你思前想后决定收留它，好在它确实已经完全去除了作战程序，并且——它做的饭真的很好吃。甚至这成为了你的队伍招人的福利！",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一台锈迹斑斑的机械体缓缓走向你的防线……要收留它吗？"
+    },
+    {
+        "Id": 711,
+        "NextEvent": 712,
+        "Name": "退伍机械体",
+        "Desc": "一台锈迹斑斑的机械体缓缓走向你的防线，举着一块手写纸板：“已退役。求收留。会做饭。”你和你的队员们面面相觑。",
+        "ConfirmContent": "驱赶它",
+        "LocationDescUnselect": "一台锈迹斑斑的机械体缓缓走向你的防线，发出警告，让它立即离开！"
+    },
+    {
+        "Id": 712,
+        "Name": "退伍机械体",
+        "Desc": "你提供给它一些补给，但要求它立即离开，它默默接过补给转身离去。过了几天，你发现防线附近的地雷被人悄悄排掉了。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一台锈迹斑斑的机械体缓缓走向你的防线，发出警告，让它立即离开！"
+    },
+    {
+        "Id": 713,
+        "NextEvent": 714,
+        "Name": "招标大会进行中",
+        "Desc": "三家军需供应商同时到达基地，彼此一照面，气氛瞬间剑拔弩张。“我方报价最低！”“我方赠送售后！”“我方老板是你远房表舅！”",
+        "ConfirmContent": "价低者得！",
+        "LocationDescUnselect": "一场前线招标大会正在进行，你决定选择——价格最低的那位！"
+    },
+    {
+        "Id": 714,
+        "Name": "招标大会进行中",
+        "Desc": "价低者得！你这么说道，于是三方疯狂压价，最后你以跳楼价拿到了一大批物资。商战的胜利属于甲方！",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一场前线招标大会正在进行，你决定选择——价格最低的那位！"
+    },
+    {
+        "Id": 715,
+        "NextEvent": 716,
+        "Name": "招标大会进行中",
+        "Desc": "三家军需供应商同时到达基地，彼此一照面，气氛瞬间剑拔弩张。“我方报价最低！”“我方赠送售后！”“我方老板是你远房表舅！”",
+        "ConfirmContent": "谁最靠谱",
+        "LocationDescUnselect": "一场前线招标大会正在进行，你决定谨慎评估，选择最靠谱的那位。"
+    },
+    {
+        "Id": 716,
+        "Name": "招标大会进行中",
+        "Desc": "“我要综合评估，选最靠谱的那位。”你这么说道。经过谨慎评估后，最终中标的供应商对你感激涕零，不仅供货稳定，还顺带提供了其他的优质资源给你。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一场前线招标大会正在进行，你决定谨慎评估，选择最靠谱的那位。"
+    },
+    {
+        "Id": 801,
+        "NextEvent": 802,
+        "Name": "自动售货机",
+        "Desc": "你在前线捡到一台仍在运行的自动售货机，屏幕上滚动着一行字：“投入一枚金币，随机获得惊喜！”旁边还贴着手写备注：本机概不负责售后。",
+        "ConfirmContent": "投币",
+        "LocationDescUnselect": "捡到一台仍在运行的自动售货机，投个币试试？"
+    },
+    {
+        "Id": 802,
+        "Name": "自动售货机",
+        "Desc": "搏一搏，单车变战车！你这么想着，投入了一枚饱含希望的金币。结果售货机突然启动，接连吐出了许多珍贵的物资！",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "捡到一台仍在运行的自动售货机，投个币试试？"
+    },
+    {
+        "Id": 803,
+        "NextEvent": 804,
+        "Name": "自动售货机",
+        "Desc": "你在前线捡到一台仍在运行的自动售货机，屏幕上滚动着一行字：“投入一枚金币，随机获得惊喜！”旁边还贴着手写备注：本机概不负责售后。",
+        "ConfirmContent": "拆掉",
+        "LocationDescUnselect": "捡到一台仍在运行的自动售货机，不如直接拆了卖废铁吧！"
+    },
+    {
+        "Id": 804,
+        "Name": "自动售货机",
+        "Desc": "这东西一看就没什么价值，不如直接拆了卖废铁。没想到拆开后发现里面藏着不少高纯度金属，卖出了不错的价格。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "捡到一台仍在运行的自动售货机，不如直接拆了卖废铁吧！"
+    },
+    {
+        "Id": 805,
+        "NextEvent": 806,
+        "Name": "奇怪的邮件",
+        "Desc": "后勤频道收到一封奇怪的邮件：“尊敬的指挥官，恭喜您成为本季度幸运用户！只要完成身份验证，即可领取神秘大奖！”落款是一串看不懂的机械字符。",
+        "ConfirmContent": "直接删掉",
+        "LocationDescUnselect": "后勤频道收到一封奇怪的邮件，应该是垃圾邮件，直接删掉吧。"
+    },
+    {
+        "Id": 806,
+        "Name": "奇怪的邮件",
+        "Desc": "你压根没细看邮件的内容，就直接点击了删除，这种一看就是诈骗邮件的东西，你才不会上当。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "后勤频道收到一封奇怪的邮件，应该是垃圾邮件，直接删掉吧。"
+    },
+    {
+        "Id": 807,
+        "NextEvent": 808,
+        "Name": "奇怪的邮件",
+        "Desc": "后勤频道收到一封奇怪的邮件：“尊敬的指挥官，恭喜您成为本季度幸运用户！只要完成身份验证，即可领取神秘大奖！”落款是一串看不懂的机械字符。",
+        "ConfirmContent": "尝试调查",
+        "LocationDescUnselect": "后勤频道收到一封奇怪的邮件，你鬼使神差地点了进去……"
+    },
+    {
+        "Id": 808,
+        "Name": "奇怪的邮件",
+        "Desc": "你尝试先调查邮件来源，在反复阅读邮件后，你解读出了其中隐藏的信息，最终找到了商会的隐藏仓库，并获得了一批补给物资。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "后勤频道收到一封奇怪的邮件，你鬼使神差地点了进去……"
+    },
+    {
+        "Id": 809,
+        "NextEvent": 810,
+        "Name": "游客？",
+        "Desc": "一个拖着行李箱的游客举着自拍杆闯进了阵地，对着弹坑和掩体连连拍照。",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4300studentNormal01.png"
+        ],
+        "RoleNames": [
+            "游客"
+        ],
+        "RoleContents": [
+            "哇！这个实景体验也太沉浸了吧！请问你们几点关门？纪念品商店在哪？"
+        ],
+        "ConfirmContent": "兜售纪念品",
+        "LocationDescUnselect": "一个拖着行李箱的游客举着自拍杆闯进了阵地，要不卖他点纪念品？"
+    },
+    {
+        "Id": 810,
+        "Name": "游客？",
+        "Desc": "你把几箱多余的弹壳和碎零件包装成“限定战场纪念品”，高价卖了出去，对方还觉得捡到宝了。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一个拖着行李箱的游客举着自拍杆闯进了阵地，要不卖他点纪念品？"
+    },
+    {
+        "Id": 811,
+        "NextEvent": 812,
+        "Name": "游客？",
+        "Desc": "一个拖着行李箱的游客举着自拍杆闯进了阵地，对着弹坑和掩体连连拍照。",
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4300studentNormal01.png"
+        ],
+        "RoleNames": [
+            "游客"
+        ],
+        "RoleContents": [
+            "哇！这个实景体验也太沉浸了吧！请问你们几点关门？纪念品商店在哪？"
+        ],
+        "ConfirmContent": "卫兵！！！",
+        "LocationDescUnselect": "一个拖着行李箱的游客举着自拍杆闯进了阵地，赶紧把他请走！"
+    },
+    {
+        "Id": 812,
+        "Name": "游客？",
+        "Desc": "卫兵把人请走后，这位游客在社交媒体上发了一条五星好评，标题是“超硬核沉浸式战争体验”。随后有人循着帖子慕名来你这里参观，意外收获了一笔不菲的门票钱。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一个拖着行李箱的游客举着自拍杆闯进了阵地，赶紧把他请走！"
+    },
+    {
+        "Id": 813,
+        "NextEvent": 814,
+        "Name": "侧方停车",
+        "Desc": "一辆贴着“学”字的装甲车歪歪扭扭地碾过战场，差点撞上你的弹药库。车门打开，一个满脸尴尬的学员探出头：“教练他……他说让我在这练练侧方停车……请问我可以在这练习吗？以及这个掩体算不算边线？”",
+        "ConfirmContent": "练吧练吧",
+        "LocationDescUnselect": "一辆贴着“学”字的装甲车歪歪扭扭地碾过战场……"
+    },
+    {
+        "Id": 814,
+        "Name": "侧方停车",
+        "Desc": "学员练了一下午，居然真把侧方停车练会了。为了报答场地之恩，教练给你分了一笔他的奖金。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一辆贴着“学”字的装甲车歪歪扭扭地碾过战场……"
+    },
+    {
+        "Id": 815,
+        "NextEvent": 816,
+        "Name": "侧方停车",
+        "Desc": "一辆贴着“学”字的装甲车歪歪扭扭地碾过战场，差点撞上你的弹药库。车门打开，一个满脸尴尬的学员探出头：“教练他……他说让我在这练练侧方停车……请问我可以在这练习吗？以及这个掩体算不算边线？”",
+        "ConfirmContent": "当然不行！",
+        "LocationDescUnselect": "一辆贴着“学”字的装甲车歪歪扭扭地碾过战场……你是从哪来的啊！"
+    },
+    {
+        "Id": 816,
+        "Name": "侧方停车",
+        "Desc": "他们开走的时候又蹭倒了一面墙，教练二话不说掏出现金赔了你。这维修费给得倒是爽快。",
+        "ConfirmContent": "结束",
+        "LocationDescUnselect": "一辆贴着“学”字的装甲车歪歪扭扭地碾过战场……你是从哪来的啊！"
+    }
+]

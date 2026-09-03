@@ -21376,7 +21376,8 @@
             0,
             1
         ],
-        "IsUseCamPosAndRot": 1
+        "IsUseCamPosAndRot": 1,
+        "IsCloseRoleShadow": 1
     },
     {
         "Id": 1070510,
@@ -21479,6 +21480,599 @@
             1
         ],
         "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1410301,
+        "RoleId": 1411003,
+        "ConditionId": 10001,
+        "ConditionParam": 1,
+        "Content": "看板动作1",
+        "CvId": 173021,
+        "ActionId": "BoardAct0201",
+        "Duration": [
+            50.0,
+            50.0,
+            50.0,
+            50.0
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1410302,
+        "RoleId": 1411003,
+        "ConditionId": 10001,
+        "ConditionParam": 1,
+        "Content": "看板动作2",
+        "CvId": 173010,
+        "ActionId": "BoardAct0202",
+        "Duration": [
+            36.0999,
+            36.0999,
+            36.0999,
+            36.0999
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Shiqikuangsan/ShiqikuangsanBoardAct0202.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1410303,
+        "RoleId": 1411003,
+        "ConditionId": 10001,
+        "ConditionParam": 1,
+        "Content": "看板动作3",
+        "CvId": 173015,
+        "ActionId": "BoardAct0203",
+        "Duration": [
+            45.733,
+            45.733,
+            45.733,
+            45.733
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1410304,
+        "RoleId": 1411003,
+        "ConditionId": 120,
+        "ConditionParam": -1,
+        "Content": "看板动作3",
+        "CvId": 173015,
+        "ActionId": "BoardAct0203",
+        "Duration": [
+            45.733,
+            45.733,
+            45.733,
+            45.733
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1410305,
+        "RoleId": 1411003,
+        "ConditionId": 2,
+        "ConditionParam": -1,
+        "Content": "信赖提升",
+        "CvId": 173116,
+        "ActionId": "BoardAct1001",
+        "Duration": [
+            37.5999,
+            37.5999,
+            37.5999,
+            37.5999
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Shiqikuangsan/ShiqikuangsanBoardAct1001.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1410306,
+        "RoleId": 1411003,
+        "ConditionId": 10001,
+        "ConditionParam": 3,
+        "Content": "快速点击",
+        "CvId": 173058,
+        "ActionId": "BoardAct1002",
+        "Duration": [
+            32.033,
+            32.033,
+            32.033,
+            32.033
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Shiqikuangsan/ShiqikuangsanBoardAct1002.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1410307,
+        "RoleId": 1411003,
+        "ConditionId": 10001,
+        "ConditionParam": 4,
+        "Content": "快速点击",
+        "CvId": 173058,
+        "ActionId": "BoardAct1002",
+        "Duration": [
+            32.033,
+            32.033,
+            32.033,
+            32.033
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Shiqikuangsan/ShiqikuangsanBoardAct1002.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1410308,
+        "RoleId": 1411003,
+        "ConditionId": 10001,
+        "ConditionParam": 5,
+        "Content": "快速点击",
+        "CvId": 173058,
+        "ActionId": "BoardAct1002",
+        "Duration": [
+            32.033,
+            32.033,
+            32.033,
+            32.033
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Shiqikuangsan/ShiqikuangsanBoardAct1002.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1410309,
+        "RoleId": 1411003,
+        "ShowType": 1,
+        "ConditionId": 101,
+        "ConditionParam": 10,
+        "Content": "链接接入",
+        "CvId": 173052,
+        "ActionId": "BoardAct1004",
+        "Duration": [
+            32.0,
+            32.0,
+            32.0,
+            32.0
+        ],
+        "Weight": 96,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1410310,
+        "RoleId": 1411003,
+        "ShowType": 1,
+        "ConditionId": 111,
+        "ConditionParam": 3600,
+        "Content": "链接时间过长",
+        "CvId": 173044,
+        "ActionId": "BoardAct1007",
+        "Duration": [
+            29.0,
+            29.0,
+            29.0,
+            29.0
+        ],
+        "Weight": 98,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Shiqikuangsan/ShiqikuangsanBoardAct1007.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1410311,
+        "RoleId": 1411003,
+        "ShowType": 1,
+        "ConditionId": 1,
+        "ConditionParam": 900,
+        "Content": "空闲",
+        "CvId": 173039,
+        "ActionId": "BoardAct1005",
+        "Duration": [
+            24.3999,
+            24.3999,
+            24.3999,
+            24.3999
+        ],
+        "Weight": 97,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1410312,
+        "RoleId": 1411003,
+        "ConditionId": 10002,
+        "ConditionParam": -1,
+        "Content": "摇晃",
+        "CvId": 173056,
+        "ActionId": "BoardAct1003",
+        "Duration": [
+            30.0,
+            30.0,
+            30.0,
+            30.0
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1410313,
+        "RoleId": 1411003,
+        "ShowType": 2,
+        "ConditionId": 102,
+        "ConditionParam": 2,
+        "Content": "长时间未接入",
+        "CvId": 173054,
+        "ActionId": "BoardAct1006",
+        "Duration": [
+            44.9669,
+            44.9669,
+            44.9669,
+            44.9669
+        ],
+        "Weight": 99,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Shiqikuangsan/ShiqikuangsanBoardAct1006.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1420301,
+        "RoleId": 1421003,
+        "ConditionId": 10001,
+        "ConditionParam": 1,
+        "Content": "看板动作1",
+        "CvId": 173021,
+        "ActionId": "BoardAct0201",
+        "Duration": [
+            30.033,
+            30.033,
+            30.033,
+            30.033
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1420302,
+        "RoleId": 1421003,
+        "ConditionId": 10001,
+        "ConditionParam": 1,
+        "Content": "看板动作2",
+        "CvId": 173010,
+        "ActionId": "BoardAct0202",
+        "Duration": [
+            43.333,
+            43.333,
+            43.333,
+            43.333
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1420303,
+        "RoleId": 1421003,
+        "ConditionId": 10001,
+        "ConditionParam": 1,
+        "Content": "看板动作3",
+        "CvId": 173015,
+        "ActionId": "BoardAct0203",
+        "Duration": [
+            28.0,
+            28.0,
+            28.0,
+            28.0
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1420304,
+        "RoleId": 1421003,
+        "ConditionId": 120,
+        "ConditionParam": -1,
+        "Content": "看板动作3",
+        "CvId": 173015,
+        "ActionId": "BoardAct0203",
+        "Duration": [
+            28.0,
+            28.0,
+            28.0,
+            28.0
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1420305,
+        "RoleId": 1421003,
+        "ConditionId": 2,
+        "ConditionParam": -1,
+        "Content": "信赖提升",
+        "CvId": 173116,
+        "ActionId": "BoardAct1001",
+        "Duration": [
+            28.6669,
+            28.6669,
+            28.6669,
+            28.6669
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Adelaide/AdelaideBoardAct1001.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1420306,
+        "RoleId": 1421003,
+        "ConditionId": 10001,
+        "ConditionParam": 3,
+        "Content": "快速点击",
+        "CvId": 173058,
+        "ActionId": "BoardAct1002",
+        "Duration": [
+            18.8999,
+            18.8999,
+            18.8999,
+            18.8999
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Adelaide/AdelaideBoardAct1002.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1420307,
+        "RoleId": 1421003,
+        "ConditionId": 10001,
+        "ConditionParam": 4,
+        "Content": "快速点击",
+        "CvId": 173058,
+        "ActionId": "BoardAct1002",
+        "Duration": [
+            18.8999,
+            18.8999,
+            18.8999,
+            18.8999
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Adelaide/AdelaideBoardAct1002.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1420308,
+        "RoleId": 1421003,
+        "ConditionId": 10001,
+        "ConditionParam": 5,
+        "Content": "快速点击",
+        "CvId": 173058,
+        "ActionId": "BoardAct1002",
+        "Duration": [
+            18.8999,
+            18.8999,
+            18.8999,
+            18.8999
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Adelaide/AdelaideBoardAct1002.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1420309,
+        "RoleId": 1421003,
+        "ShowType": 1,
+        "ConditionId": 101,
+        "ConditionParam": 10,
+        "Content": "链接接入",
+        "CvId": 173052,
+        "ActionId": "BoardAct1004",
+        "Duration": [
+            41.0,
+            41.0,
+            41.0,
+            41.0
+        ],
+        "Weight": 96,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1420310,
+        "RoleId": 1421003,
+        "ShowType": 1,
+        "ConditionId": 111,
+        "ConditionParam": 3600,
+        "Content": "链接时间过长",
+        "CvId": 173044,
+        "ActionId": "BoardAct1007",
+        "Duration": [
+            37.367,
+            37.367,
+            37.367,
+            37.367
+        ],
+        "Weight": 98,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Adelaide/AdelaideBoardAct1007.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1420311,
+        "RoleId": 1421003,
+        "ShowType": 1,
+        "ConditionId": 1,
+        "ConditionParam": 900,
+        "Content": "空闲",
+        "CvId": 173039,
+        "ActionId": "BoardAct1005",
+        "Duration": [
+            37.833,
+            37.833,
+            37.833,
+            37.833
+        ],
+        "Weight": 97,
+        "Validity": -1.0,
+        "CoolTime": -1
+    },
+    {
+        "Id": 1420312,
+        "RoleId": 1421003,
+        "ConditionId": 10002,
+        "ConditionParam": -1,
+        "Content": "摇晃",
+        "CvId": 173056,
+        "ActionId": "BoardAct1003",
+        "Duration": [
+            21.1329,
+            21.1329,
+            21.1329,
+            21.1329
+        ],
+        "Weight": 1,
+        "Validity": -1.0,
+        "CoolTime": -1,
+        "IsShowHideUi": true,
+        "SceneCamAnimPrefab": "Assets/Product/Ui/UiModel/UiCameraAnimation/Adelaide/AdelaideBoardAct1003.prefab",
+        "IsUseSelfUiAnims": [
+            1,
+            1,
+            0,
+            1
+        ],
+        "IsUseCamPosAndRot": 1
+    },
+    {
+        "Id": 1420313,
+        "RoleId": 1421003,
+        "ShowType": 2,
+        "ConditionId": 102,
+        "ConditionParam": 2,
+        "Content": "长时间未接入",
+        "CvId": 173054,
+        "ActionId": "BoardAct1006",
+        "Duration": [
+            18.6669,
+            18.6669,
+            18.6669,
+            18.6669
+        ],
+        "Weight": 99,
+        "Validity": -1.0,
+        "CoolTime": -1
     },
     {
         "Id": 1999991,

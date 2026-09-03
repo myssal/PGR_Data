@@ -1171,7 +1171,6 @@
         "Difficult": 1,
         "DifficultName": "普通",
         "DifficultEnName": "难度",
-        "ActivityTimeId": 48401,
         "ActivityCondition": 770400,
         "OpenCondition": 770400,
         "StageGroupIds": [
@@ -1226,6 +1225,200 @@
             "Enable4_3_page2",
             "Enable5_4_page2",
             "Enable6_5_page2"
+        ]
+    },
+    {
+        "ChapterId": 1042,
+        "Difficult": 1,
+        "DifficultName": "歧海循光",
+        "DifficultEnName": "上",
+        "DifficultColor": "#49E6FF",
+        "ActivityTimeId": 49401,
+        "ActivityCondition": 770400,
+        "OpenCondition": 770400,
+        "StageGroupIds": [
+            63
+        ],
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor42.prefab",
+        "BgStageIndexs": [
+            1
+        ],
+        "TitleTextColors": [
+            "#ffffff"
+        ],
+        "LeftTimeTextColors": [
+            "#0f70BC"
+        ],
+        "ProgressTextColors": [
+            "#ffffff"
+        ],
+        "IdleSpineStageIndexs": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+        ],
+        "IdleSpineName": [
+            "Day_Blue_Cloudy_Small_Whale",
+            "Day_Blue_Cloudy_Large_Whale",
+            "Day_Red_Cloudy_Large",
+            "Night_Blue_Calm",
+            "Night_Blue_ComingRainstorm",
+            "Night_Blue_Rainstorm_Large",
+            "Day_Red_Cloudy_Large",
+            "Day_Blue_Cloudy_Calm",
+            "Night_Blue_Calm",
+            "Day_Blue_Cloudy_Large",
+            "Day_Red_Cloudy_Large",
+            "Day_Blue_Cloudy_Large"
+        ],
+        "IdleSoundName": [
+            "Day_Blue_Cloudy_Small_Whale",
+            "Day_Blue_Cloudy_Large_Whale",
+            "Day_Red_Cloudy_Large",
+            "Night_Blue_Calm",
+            "Night_Blue_ComingRainstorm",
+            "Night_Blue_Rainstorm_Large",
+            "Day_Red_Cloudy_Large",
+            "Day_Blue_Cloudy_Calm",
+            "Night_Blue_Calm",
+            "Day_Blue_Cloudy_Large",
+            "Day_Red_Cloudy_Large",
+            "Day_Blue_Cloudy_Large"
+        ]
+    },
+    {
+        "ChapterId": 1142,
+        "Difficult": 2,
+        "DifficultName": "歧海循光",
+        "DifficultEnName": "下",
+        "DifficultColor": "#49E6FF",
+        "ActivityTimeId": 49401,
+        "ActivityCondition": 1007267,
+        "OpenCondition": 1007267,
+        "StageGroupIds": [
+            64
+        ],
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor42B.prefab",
+        "BgStageIndexs": [
+            1
+        ],
+        "TitleTextColors": [
+            "#ffffff"
+        ],
+        "LeftTimeTextColors": [
+            "#0f70BC"
+        ],
+        "ProgressTextColors": [
+            "#ffffff"
+        ],
+        "SkipIds": [
+            537
+        ],
+        "SkipConditions": [
+            1007155
+        ],
+        "SkipIcons": [
+            "Assets/Product/Texture/Image/StoryJump/StoryMainLineJump42.png"
+        ],
+        "SkipNames": [
+            "下一章节"
+        ],
+        "SkipChapterNames": [
+            "远信回响"
+        ],
+        "SwitchSpineStageIndex": [
+            10
+        ],
+        "SwitchAheadSpineName": [
+            "Day_Blue_Cloudy_Calm_kalie"
+        ],
+        "IdleSpineStageIndexs": [
+            1,
+            3,
+            5,
+            8,
+            9,
+            10,
+            11
+        ],
+        "IdleSpineName": [
+            "Day_Blue_Cloudy_Large",
+            "Day_Blue_Sunny_Calm_LighthouseIsland",
+            "Day_Blue_Cloudy_Large",
+            "Day_Blue_Cloudy_Calm_FishGroup",
+            "Day_Red_Cloudy_Large_LighthouseIsland",
+            "Day_Blue_Sunny_Calm_LighthouseIsland",
+            "Day_Blue_Sunny_Calm_LighthouseIsland"
+        ],
+        "IdleSoundName": [
+            "Day_Blue_Cloudy_Large",
+            "Day_Blue_Sunny_Calm_LighthouseIsland",
+            "Day_Blue_Cloudy_Large",
+            "Day_Blue_Cloudy_Calm_FishGroup",
+            "Day_Red_Cloudy_Large_LighthouseIsland",
+            "Day_Blue_Sunny_Calm_LighthouseIsland",
+            "Day_Blue_Sunny_Calm_LighthouseIsland"
+        ],
+        "SwitchAheadSoundName": [
+            "Day_Blue_Cloudy_Calm_kalie"
+        ]
+    },
+    {
+        "ChapterId": 1242,
+        "Difficult": 3,
+        "DifficultName": "隐藏剧情",
+        "DifficultColor": "#AF49FF",
+        "ActivityTimeId": 49401,
+        "ActivityCondition": 1007268,
+        "OpenCondition": 1007268,
+        "StageGroupIds": [
+            65
+        ],
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor42C.prefab",
+        "BgStageIndexs": [
+            1
+        ],
+        "TitleTextColors": [
+            "#ffffff"
+        ],
+        "LeftTimeTextColors": [
+            "#0f70BC"
+        ],
+        "ProgressTextColors": [
+            "#ffffff"
+        ],
+        "SkipIds": [
+            537
+        ],
+        "SkipConditions": [
+            1007155
+        ],
+        "SkipIcons": [
+            "Assets/Product/Texture/Image/StoryJump/StoryMainLineJump42.png"
+        ],
+        "SkipNames": [
+            "下一章节"
+        ],
+        "SkipChapterNames": [
+            "远信回响"
+        ],
+        "IdleSpineStageIndexs": [
+            6
+        ],
+        "IdleSpineName": [
+            "Day_Blue_Cloudy_Large"
+        ],
+        "IdleSoundName": [
+            "Day_Blue_Cloudy_Large"
         ]
     }
 ]

@@ -1,0 +1,153 @@
+[
+    {
+        "Key": "MasterCardTypeList",
+        "Desc": "主卡类型列表",
+        "Param": [
+            1,
+            2
+        ]
+    },
+    {
+        "Key": "SubCardTypeList",
+        "Desc": "副卡类型列表",
+        "Param": [
+            3,
+            4
+        ]
+    },
+    {
+        "Key": "InitialBattleCardAreaCount",
+        "Desc": "初始卡牌对战区域位置",
+        "Param": [
+            4
+        ]
+    },
+    {
+        "Key": "GrowBattleCardAreaCount",
+        "Desc": "胜利1场卡牌对战区域位置增长数量",
+        "Param": [
+            1
+        ]
+    },
+    {
+        "Key": "MaxBattleCardAreaCount",
+        "Desc": "最大对战区格子数",
+        "Param": [
+            8
+        ]
+    },
+    {
+        "Key": "InitialBagCardAreaCount",
+        "Desc": "初始背包格子位置",
+        "Param": [
+            4
+        ]
+    },
+    {
+        "Key": "GrowBagCardAreaCount",
+        "Desc": "胜利1场背包位置增长数量",
+        "Param": [
+            1
+        ]
+    },
+    {
+        "Key": "MaxBagCardAreaCount",
+        "Desc": "最大背包格子数",
+        "Param": [
+            8
+        ]
+    },
+    {
+        "Key": "ShopRefresh",
+        "Desc": "刷新商店花费金币数",
+        "Param": [
+            1,
+            1
+        ]
+    },
+    {
+        "Key": "Durability",
+        "Desc": "单局内耐久度，即允许玩家失败后重新挑战的次数",
+        "Param": [
+            3
+        ]
+    },
+    {
+        "Key": "HPValue",
+        "Desc": "关卡开始时指挥官的初始血量值",
+        "Param": [
+            400
+        ]
+    },
+    {
+        "Key": "HPGrowthValue",
+        "Desc": "关卡每胜利1次，增加的指挥官的血量值",
+        "Param": [
+            250
+        ]
+    },
+    {
+        "Key": "InitialGoldCount",
+        "Desc": "初始发放金币数量",
+        "Param": [
+            4
+        ]
+    },
+    {
+        "Key": "EndlessStageBuff",
+        "Desc": "无尽关每次从头开始新一轮时，给怪物增加的血量和攻击力值",
+        "Param": [
+            2500,
+            130
+        ]
+    },
+    {
+        "Key": "ShopRandomAmount",
+        "Desc": "在商店节点每次随机出的商店数量",
+        "Param": [
+            2
+        ]
+    },
+    {
+        "Key": "FightRandomAmount",
+        "Desc": "在type=4的战斗节点每次随机出的战斗数量",
+        "Param": [
+            2
+        ]
+    },
+    {
+        "Key": "MasterCardSlotTypeLimit",
+        "Desc": "主副卡的装配对应关系，偶数位的副卡能被装配给其-1位的奇数位主卡",
+        "Param": [
+            1,
+            3,
+            2,
+            4
+        ]
+    },
+    {
+        "Key": "MaxSaveCount",
+        "Desc": "最多支持多少个关卡暂存进度",
+        "Param": [
+            2
+        ]
+    },
+    {
+        "Key": "EndlessMaxRound",
+        "Desc": "无尽关最大轮次限制",
+        "Param": [
+            10
+        ]
+    },
+    {
+        "Key": "MaxShopCardAreaCount",
+        "Desc": "商店最大格子数",
+        "Param": [
+            8
+        ]
+    },
+    {
+        "Key": "RemedyShopHudGroupId",
+        "Desc": "补强商店使用的hudgroupId"
+    }
+]

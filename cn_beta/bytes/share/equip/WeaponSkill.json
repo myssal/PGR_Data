@@ -27,7 +27,7 @@
         "Ability": 100,
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTongyongGandianshanbi.png",
         "Name": "超算闪电",
-        "Description": "超算空间内/超维预演持续时间内移动速度大幅提升，使空间内所有敌人额外伤害减免降低10%。"
+        "Description": "超算空间内/超维预演/聚变升维持续时间内移动速度大幅提升，使空间内所有敌人额外伤害减免降低10%。"
     },
     {
         "Id": 201,
@@ -2337,7 +2337,52 @@
             512477
         ],
         "Name": "泊星迟燃",
-        "Description": "攻击力提高10%，由卡列·烬航施加的透甲之击效果增加20%。每次入场首次释放纵滔锐进后获得6颗信号球。消耗沧澜提升纵滔锐进基础伤害效果提升5%。",
+        "Description": "攻击力提高10%，由卡列尼娜·烬航施加的透甲之击效果增加20%。每次入场后，首次消耗大于或等于300点沧澜的纵滔锐进后获得6颗信号球。消耗沧澜提升纵滔锐进基础伤害效果翻倍。",
+        "Account": "攻击强化"
+    },
+    {
+        "Id": 2685001,
+        "BornMagic": [
+            512484
+        ],
+        "Name": "TEXT",
+        "Description": "TEXT",
+        "Account": "新手过渡"
+    },
+    {
+        "Id": 2686001,
+        "BornMagic": [
+            512486
+        ],
+        "Name": "TEXT",
+        "Description": "TEXT",
+        "Account": "攻击强化"
+    },
+    {
+        "Id": 2694001,
+        "BornMagic": [
+            512487
+        ],
+        "Name": "诺无虚响",
+        "Description": "攻击力增加5%。"
+    },
+    {
+        "Id": 2695001,
+        "BornMagic": [
+            512488
+        ],
+        "Name": "淤火淬明",
+        "Description": "暗属性伤害提高10%。",
+        "Account": "新手过渡"
+    },
+    {
+        "Id": 2696001,
+        "BornMagic": [
+            512489,
+            512490
+        ],
+        "Name": "万火予一",
+        "Description": "攻击力提高10%，消耗回响值为连射式、压制式、穿光态、重压态提供基础伤害效率翻倍。",
         "Account": "攻击强化"
     }
 ]

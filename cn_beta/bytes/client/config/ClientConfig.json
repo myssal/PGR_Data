@@ -5197,12 +5197,12 @@
     {
         "Key": "RenderPipelineDummyMaterialSVC",
         "Type": "string",
-        "Value": "Assets/Product/Common/RenderPipelineDummyMaterialSVC.shadervariants"
+        "Value": "Assets/Product/Common/RenderPipelineDummyMaterialSVC.asset"
     },
     {
         "Key": "ProductMaterialSVC",
         "Type": "string",
-        "Value": "Assets/Product/Common/ProductMaterialSVC.shadervariants"
+        "Value": "Assets/Product/Common/ProductMaterialSVC.asset"
     },
     {
         "Key": "MusicPlayerRandomPlayListMaxCount",
@@ -5235,6 +5235,21 @@
         "Value": "Assets/Product/Role/Room/Animation/QRFemaleMdCommon/QRFemaleMdCommon/QixiCharFemaleCommon.controller"
     },
     {
+        "Key": "EnvelopeGuessingControllerLuosaita",
+        "Type": "string",
+        "Value": "Assets/Product/Role/Room/Animation/QRFemaleMdCommon/QRFemaleMdCommon/QixiCharFemaleLuosaita.controller"
+    },
+    {
+        "Key": "EnvelopeGuessingControllerCibeizhe",
+        "Type": "string",
+        "Value": "Assets/Product/Role/Room/Animation/QRFemaleMdCommon/QRFemaleMdCommon/QixiCharFemaleCibeizhe.controller"
+    },
+    {
+        "Key": "EnvelopeGuessingControllerHelentine",
+        "Type": "string",
+        "Value": "Assets/Product/Role/Room/Animation/QRFemaleMdCommon/QRFemaleMdCommon/QixiCharFemaleHelentine.controller"
+    },
+    {
         "Key": "EnvelopeGuessingEnvelopeCardSlideProgressMin",
         "Type": "float",
         "Value": 0
@@ -5248,5 +5263,20 @@
         "Key": "EnvelopeGuessingEnvelopeBGMFadeDuration",
         "Type": "int",
         "Value": 500
+    },
+    {
+        "Key": "EnvelopeGuessingDailyTaskTicketLimit",
+        "Type": "int",
+        "Value": 40
+    },
+    {
+        "Key": "RenderPipelineDummyMaterialSVCRef",
+        "Type": "string",
+        "Value": "Assets/Product/Common/RenderPipelineDummyMaterialSVC_Ref.asset"
+    },
+    {
+        "Key": "ProductMaterialSVCRef",
+        "Type": "string",
+        "Value": "Assets/Product/Common/ProductMaterialSVC_Ref.asset"
     }
 ]

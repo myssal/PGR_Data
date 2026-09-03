@@ -3,12 +3,10 @@
         "Id": 1,
         "Kind": 1,
         "NextItemId": 15,
-        "Name": "谱长缩减",
+        "Name": "敲击",
         "Desc": "选择一种颜色，对当前所有该颜色的方块消除1个单位长度",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai14.png",
-        "BlockTypes": [
-            2
-        ]
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai02.png",
+        "IsChooseColor": true
     },
     {
         "Id": 2,
@@ -21,12 +19,10 @@
         "Id": 3,
         "Kind": 3,
         "NextItemId": 17,
-        "Name": "音律简化",
+        "Name": "细化",
         "Desc": "选择一种颜色，对当前所有该颜色的方块拆散为1单位方块",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai03.png",
-        "BlockTypes": [
-            3
-        ]
+        "IsChooseColor": true
     },
     {
         "Id": 4,
@@ -36,12 +32,14 @@
         ],
         "Name": "死线救援",
         "Desc": "使用后，增加 2 行动回合",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai05.png"
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai05.png",
+        "IsShowUseBtn": true
     },
     {
         "Id": 5,
         "Kind": 5,
-        "Name": "顺序重置",
+        "NextItemId": 18,
+        "Name": "双行",
         "Desc": "选择任意两行区域，并对其进行位置交换",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai06.png"
     },
@@ -55,9 +53,12 @@
     {
         "Id": 7,
         "Kind": 7,
-        "Name": "变量冻结",
+        "NextItemId": 19,
+        "Name": "冰冻",
         "Desc": "冻结1次上升栏，下回合开始将不上升方块（同时最多可存在3次冻结效果）",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai07.png"
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai07.png",
+        "IsShowUseBtn": true,
+        "IsBubbleUseLongBg": true
     },
     {
         "Id": 8,
@@ -71,21 +72,27 @@
         "Kind": 9,
         "Name": "随机函数α",
         "Desc": "随机选择一种颜色，并对其应用随机效果（随机效果：结构调整、数据简化、参数膨胀、筛选扩张）",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai09.png"
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai09.png",
+        "IsShowUseBtn": true,
+        "IsBubbleUseLongBg": true
     },
     {
         "Id": 10,
         "Kind": 10,
         "Name": "随机函数β",
         "Desc": "随机选择任意行数，并对其应用随机效果（随机效果：代码清理、顺序重置、定向移算）",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai13.png"
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai13.png",
+        "IsShowUseBtn": true,
+        "IsBubbleUseLongBg": true
     },
     {
         "Id": 11,
         "Kind": 11,
-        "Name": "参数还原",
-        "Desc": "随机净化一个特殊方块（若无则不生效）",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai10.png"
+        "NextItemId": 20,
+        "Name": "净化",
+        "Desc": "随机净化一个红浪/蓝浪/绿浪方块（若无则不生效）",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai10.png",
+        "IsShowUseBtn": true
     },
     {
         "Id": 12,
@@ -95,18 +102,17 @@
         ],
         "Name": "参数膨胀",
         "Desc": "选择一种颜色，对当前所有该颜色方块生长8单位长度",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai11.png"
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai11.png",
+        "IsChooseColor": true
     },
     {
         "Id": 13,
         "Kind": 13,
         "NextItemId": 16,
-        "Name": "音节延奏",
+        "Name": "孵化",
         "Desc": "选择一种颜色，在当前所有该颜色方块附近空位生成对应颜色的若干1单位方块，直至碰到其他方块",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai12.png",
-        "BlockTypes": [
-            4
-        ]
+        "IsChooseColor": true
     },
     {
         "Id": 14,
@@ -120,27 +126,60 @@
         "Id": 15,
         "Kind": 15,
         "BackItemId": 1,
-        "Name": "谱长缩减·极",
+        "Name": "超级敲击",
         "Desc": "所有颜色的普通方块消除1个单位长度",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai15.png",
-        "ItemType": 1
+        "ItemType": 1,
+        "IsShowUseBtn": true
     },
     {
         "Id": 16,
         "Kind": 16,
         "BackItemId": 13,
-        "Name": "音节延奏·极",
+        "Name": "超级孵化",
         "Desc": "所有颜色的普通方块附近空位生成对应颜色的若干1单位方块，直至碰到其他方块",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai17.png",
-        "ItemType": 1
+        "ItemType": 1,
+        "IsShowUseBtn": true
     },
     {
         "Id": 17,
         "Kind": 17,
         "BackItemId": 3,
-        "Name": "音律简化·极",
+        "Name": "超级细化",
         "Desc": "当前所有颜色的普通方块拆散为1单位方块",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai16.png",
+        "ItemType": 1,
+        "IsShowUseBtn": true
+    },
+    {
+        "Id": 18,
+        "Kind": 18,
+        "BackItemId": 5,
+        "Name": "超级双行",
+        "Desc": "选择任意两行区域，对该行内所有方块进行一次消除",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai18.png",
         "ItemType": 1
+    },
+    {
+        "Id": 19,
+        "Kind": 19,
+        "BackItemId": 7,
+        "Name": "超级冰冻",
+        "Desc": "冻结3次上升栏，下回合开始将不上升方块（同时最多可存在3次冻结效果）",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai19.png",
+        "ItemType": 1,
+        "IsShowUseBtn": true,
+        "IsBubbleUseLongBg": true
+    },
+    {
+        "Id": 20,
+        "Kind": 20,
+        "BackItemId": 11,
+        "Name": "超级净化",
+        "Desc": "净化所有红浪/蓝浪/绿浪方块（若无则不生效）",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai20.png",
+        "ItemType": 1,
+        "IsShowUseBtn": true
     }
 ]

@@ -879,12 +879,39 @@
         "Name": "返涌黯潮Ⅱ",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingBuffIconNew1017.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
-        "Desc": "造成黯衍伤害时，使敌人受到黯衍伤害显著提升，最多叠加9层，持续10秒，重复触发刷新持续时间。",
+        "Desc": "造成黯衍伤害时，使敌人受到黯衍伤害显著提升，最多叠加7层，持续10秒，重复触发刷新持续时间。",
         "FightEventIds": [
             2300068
         ],
         "ShowRecommendIds": [
             6
+        ],
+        "Type": 1,
+        "FormationType": 2
+    },
+    {
+        "Id": 69,
+        "Name": "湮灭靡华Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "每消除一个球，使Boss受到暗属性伤害显著提升，最多叠加4层，持续10秒，重复触发刷新持续时间。",
+        "FightEventIds": [
+            2300069
+        ],
+        "Type": 1,
+        "FormationType": 1
+    },
+    {
+        "Id": 70,
+        "Name": "明刃破妄Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingBuffIconNew1021.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "每次释放真意斩，使Boss受到真意斩效应伤害显著提升、自身物理伤害显著提升，最多可叠加5层，持续10秒，重复触发刷新持续时间。",
+        "FightEventIds": [
+            2300070
+        ],
+        "ShowRecommendIds": [
+            3
         ],
         "Type": 1,
         "FormationType": 2

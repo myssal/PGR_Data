@@ -1,0 +1,37 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "Name": "基准测试",
+        "UnLockTimeId": 50100,
+        "StageGroupId": 1005
+    },
+    {
+        "Id": 2,
+        "Type": 2,
+        "Name": "并行演算·α",
+        "UnLockTimeId": 50101,
+        "ConditionId": 1050363,
+        "StageGroupId": 1002
+    },
+    {
+        "Id": 3,
+        "Type": 2,
+        "Name": "并行演算·β",
+        "UnLockTimeId": 50102,
+        "ConditionId": 1050363,
+        "StageGroupId": 1003
+    },
+    {
+        "Id": 4,
+        "Type": 3,
+        "Name": "峰值演算",
+        "UnLockTimeId": 50113,
+        "ConditionId": 1050363,
+        "StageGroupId": 1001,
+        "IsRank": true,
+        "RankRewardIds": [
+            69521
+        ]
+    }
+]

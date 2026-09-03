@@ -1269,15 +1269,7 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 11,
-        "StageId": [
-            30130482,
-            30130483,
-            30130484,
-            30130485,
-            30130486,
-            30130487
-        ]
+        "ChapterBgm": 11
     },
     {
         "Id": 56,
@@ -1295,15 +1287,7 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 11,
-        "StageId": [
-            30130458,
-            30130459,
-            30130460,
-            30130461,
-            30130462,
-            30130463
-        ]
+        "ChapterBgm": 11
     },
     {
         "Id": 57,
@@ -1321,16 +1305,7 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 11,
-        "StageId": [
-            30130451,
-            30130452,
-            30130453,
-            30130454,
-            30130455,
-            30130456,
-            30130457
-        ]
+        "ChapterBgm": 11
     },
     {
         "Id": 58,
@@ -1347,16 +1322,7 @@
         "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
         "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
         "ChapterType": 27,
-        "ChapterBgm": 5034,
-        "StageId": [
-            30130431,
-            30130432,
-            30130433,
-            30130434,
-            30130435,
-            30130436,
-            30130437
-        ]
+        "ChapterBgm": 5034
     },
     {
         "Id": 59,
@@ -1603,6 +1569,149 @@
             30130479,
             30130480,
             30130481
+        ],
+        "IsRetainData": true
+    },
+    {
+        "Id": 68,
+        "TimeId": 50202,
+        "Name": "空滞轮旋之梦",
+        "Priority": 62,
+        "SkipId": [
+            90073
+        ],
+        "FunctionOpenId": 10513,
+        "StagePrefix": "DAL-",
+        "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner240.png",
+        "MainBackgound": "Assets/Product/Texture/Image/UiDALStage/UiDALStageBgA.png",
+        "FubenPrefab": "Assets/Product/Ui/Prefab/UiDALStage/UiDALStage.prefab",
+        "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridDALStageFight07.prefab",
+        "GridStoryPrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridDALStageStory01.prefab",
+        "ChapterType": 27,
+        "StageId": [
+            15010701,
+            15010702,
+            15010703,
+            15010704,
+            15010705,
+            15010706,
+            15010707,
+            15010708
+        ],
+        "Condition": [
+            84600647
+        ],
+        "ConditionBg": [
+            "Assets/Product/Texture/Image/UiDALStage/UiDALStageBgB.png"
+        ]
+    },
+    {
+        "Id": 69,
+        "TimeId": 51001,
+        "Name": "寐影帷声",
+        "Priority": 52,
+        "SkipId": [
+            20396
+        ],
+        "FunctionOpenId": 1308,
+        "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
+        "MainBackgound": "Assets/Product/Texture/Image/UiEpicFashionGachaStageLine/UiEpicFashionGachaStageLineBg.png",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/UiGachaBianka402/UiGachaBianka402Line.prefab",
+        "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/UiGachaBianka402/GridGachaBianka402Fight.prefab",
+        "GridStoryPrefab": "Assets/Product/Ui/ComponentPrefab/UiGachaBianka402/GridGachaBianka402Story.prefab",
+        "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
+        "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
+        "ChapterType": 27,
+        "ChapterBgm": 11,
+        "StageId": [
+            30130482,
+            30130483,
+            30130484,
+            30130485,
+            30130486,
+            30130487
+        ],
+        "IsRetainData": true
+    },
+    {
+        "Id": 70,
+        "TimeId": 51001,
+        "Name": "梦栖宵暮·复刻",
+        "Priority": 53,
+        "SkipId": [
+            20397
+        ],
+        "FunctionOpenId": 1308,
+        "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaSelena/FubenGachaSelenaLine.prefab",
+        "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaSelena/GridGachaSelenaFight.prefab",
+        "GridStoryPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaSelena/GridGachaSelenaStory.prefab",
+        "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
+        "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
+        "ChapterType": 27,
+        "ChapterBgm": 11,
+        "StageId": [
+            30130458,
+            30130459,
+            30130460,
+            30130461,
+            30130462,
+            30130463
+        ],
+        "IsRetainData": true
+    },
+    {
+        "Id": 71,
+        "TimeId": 51001,
+        "Name": "恋屿千年歌·复刻",
+        "Priority": 54,
+        "SkipId": [
+            20398
+        ],
+        "FunctionOpenId": 1308,
+        "BannerBg": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLucia/FubenGachaLuciaLine.prefab",
+        "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLucia/GridGachaLuciaFight.prefab",
+        "GridStoryPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaLucia/GridGachaLuciaStory.prefab",
+        "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
+        "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
+        "ChapterType": 27,
+        "ChapterBgm": 11,
+        "StageId": [
+            30130451,
+            30130452,
+            30130453,
+            30130454,
+            30130455,
+            30130456,
+            30130457
+        ],
+        "IsRetainData": true
+    },
+    {
+        "Id": 72,
+        "TimeId": 51001,
+        "Name": "鸣神叹妙·复刻",
+        "Priority": 55,
+        "SkipId": [
+            20399
+        ],
+        "FunctionOpenId": 1308,
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/FubenGachaAlphaLine.prefab",
+        "GridFubenPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/GridGachaAlphaFight.prefab",
+        "GridStoryPrefab": "Assets/Product/Ui/ComponentPrefab/FubenGachaAlpha/GridGachaAlphaStory.prefab",
+        "TitleIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanImg01.png",
+        "TitleBg": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenTuzhuangShiwanTitleBg01.png",
+        "ChapterType": 27,
+        "ChapterBgm": 5034,
+        "StageId": [
+            30130431,
+            30130432,
+            30130433,
+            30130434,
+            30130435,
+            30130436,
+            30130437
         ],
         "IsRetainData": true
     }

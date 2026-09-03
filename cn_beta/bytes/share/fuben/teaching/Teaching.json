@@ -48447,6 +48447,153 @@
         ]
     },
     {
+        "Id": 4466,
+        "Group": 112370,
+        "Name": "三消信号球",
+        "Describe": "TEXT",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine21.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816,
+            106819,
+            106813,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4467,
+        "Group": 112370,
+        "Name": "任意三消",
+        "Describe": "TEXT",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Helentine21.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816,
+            106819,
+            106813,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4468,
+        "Group": 112370,
+        "Name": "煌然钟鸣",
+        "Describe": "TEXT",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424003
+        ]
+    },
+    {
+        "Id": 4469,
+        "Group": 112371,
+        "Name": "任意三消",
+        "Describe": "TEXT",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816,
+            106819,
+            106813,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4470,
+        "Group": 112371,
+        "Name": "任意三消",
+        "Describe": "TEXT",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106816,
+            106819,
+            106813,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4471,
+        "Group": 112371,
+        "Name": "弹雨齐发",
+        "Describe": "TEXT",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424009
+        ]
+    },
+    {
+        "Id": 4472,
+        "Group": 112372,
+        "Name": "长按闪避",
+        "Describe": "TEXT",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": 8000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            130839,
+            130837
+        ]
+    },
+    {
         "Id": 4473,
         "Group": 112373,
         "Name": "点击红球",
@@ -48473,6 +48620,7 @@
         "Describe": "卡列-点击红球",
         "IconType": 1,
         "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightIconR5Kalienina12.png",
         "TimeOut": 3000,
         "EffectType": [
             1
@@ -48513,6 +48661,7 @@
         "Describe": "卡列-点击黄球",
         "IconType": 1,
         "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightIconR5Kalienina32.png",
         "TimeOut": 3000,
         "EffectType": [
             1
@@ -48563,11 +48712,11 @@
     {
         "Id": 4479,
         "Group": 112376,
-        "Name": "长按闪避并移动",
-        "Describe": "按住闪避和方向键进入渡槎状态",
-        "IconType": 1,
+        "Name": "<size=22>移动并双击闪避</size>",
+        "Describe": "按住方向键双击闪避进入渡槎状态",
+        "IconType": 2,
         "Icon": 2,
-        "Icon2": 4,
+        "Icon2": 2,
         "TimeOut": -1,
         "EffectType": [
             1
@@ -48581,12 +48730,12 @@
     },
     {
         "Id": 4480,
-        "Group": 112377,
-        "Name": "点击蓝球",
+        "Group": 112376,
+        "Name": "<size=22>移动期间点击蓝球</size>",
         "Describe": "在渡槎状态下点按蓝球消球开炮",
         "IconType": 1,
         "Icon": 102,
-        "TimeOut": 10000,
+        "TimeOut": 6000,
         "EffectType": [
             1
         ],
@@ -48619,12 +48768,12 @@
     },
     {
         "Id": 4482,
-        "Group": 112379,
+        "Group": 112378,
         "Name": "点击普攻",
         "Describe": "点按普攻把潮痕替换为沧澜",
         "IconType": 1,
         "Icon": 1,
-        "TimeOut": 10000,
+        "TimeOut": 3000,
         "EffectType": [
             1
         ],
@@ -48637,7 +48786,7 @@
     },
     {
         "Id": 4483,
-        "Group": 112379,
+        "Group": 112378,
         "Name": "点击普攻",
         "Describe": "点按普攻把潮痕替换为沧澜",
         "IconType": 1,
@@ -48655,7 +48804,7 @@
     },
     {
         "Id": 4484,
-        "Group": 112379,
+        "Group": 112378,
         "Name": "点击普攻",
         "Describe": "点按普攻把潮痕替换为沧澜",
         "IconType": 1,
@@ -48673,7 +48822,7 @@
     },
     {
         "Id": 4485,
-        "Group": 112379,
+        "Group": 112378,
         "Name": "点击普攻",
         "Describe": "点按普攻把潮痕替换为沧澜",
         "IconType": 1,
@@ -48691,7 +48840,7 @@
     },
     {
         "Id": 4486,
-        "Group": 112379,
+        "Group": 112378,
         "Name": "点击普攻",
         "Describe": "点按普攻把潮痕替换为沧澜",
         "IconType": 1,
@@ -48709,6 +48858,25 @@
     },
     {
         "Id": 4487,
+        "Group": 112378,
+        "Name": "长按普攻",
+        "Describe": "长按普攻释放核心",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": 3000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106146,
+            106147
+        ]
+    },
+    {
+        "Id": 4488,
         "Group": 112380,
         "Name": "静止中长按闪避",
         "Describe": "长按闪避",
@@ -48726,7 +48894,7 @@
         ]
     },
     {
-        "Id": 4488,
+        "Id": 4489,
         "Group": 112381,
         "Name": "点击蓝球",
         "Describe": "点击蓝球把潮痕替换为沧澜",
@@ -48746,7 +48914,7 @@
         ]
     },
     {
-        "Id": 4489,
+        "Id": 4490,
         "Group": 112382,
         "Name": "长按普攻",
         "Describe": "长按普攻释放核心",
@@ -48765,7 +48933,7 @@
         ]
     },
     {
-        "Id": 4490,
+        "Id": 4491,
         "Group": 112383,
         "Name": "点按必杀",
         "Describe": "卡列-点按必杀",
@@ -48784,153 +48952,141 @@
         ]
     },
     {
-        "Id": 4491,
-        "Group": 112384,
-        "Name": "卡列备用",
-        "IconType": 1,
-        "Icon": 3,
-        "TimeOut": -1,
-        "EffectType": [
-            1
-        ],
-        "EffectButton": [
-            17
-        ],
-        "SkillId": [
-            106148,
-            106149
-        ]
-    },
-    {
         "Id": 4492,
         "Group": 112384,
-        "Name": "卡列备用",
+        "Name": "长按必杀",
+        "Describe": "誓焰跃升-效应入场必杀",
         "IconType": 1,
         "Icon": 3,
         "TimeOut": -1,
         "EffectType": [
-            1
+            2
         ],
         "EffectButton": [
             17
         ],
         "SkillId": [
-            106148,
-            106149
+            106275,
+            106275
         ]
     },
     {
         "Id": 4493,
         "Group": 112385,
-        "Name": "卡列备用",
+        "Name": "长按红球",
+        "Describe": "誓焰跃升-长按红球",
         "IconType": 1,
-        "Icon": 3,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya12.png",
         "TimeOut": -1,
         "EffectType": [
             1
         ],
         "EffectButton": [
-            17
+            3
         ],
-        "SkillId": [
-            106148,
-            106149
+        "MissileId": [
+            10623624,
+            176211
         ]
     },
     {
         "Id": 4494,
-        "Group": 112385,
-        "Name": "卡列备用",
+        "Group": 112387,
+        "Name": "长按必杀",
+        "Describe": "誓焰跃升-长按必杀",
         "IconType": 1,
         "Icon": 3,
         "TimeOut": -1,
         "EffectType": [
-            1
+            2
         ],
         "EffectButton": [
             17
         ],
         "SkillId": [
-            106148,
-            106149
+            106275,
+            106275
         ]
     },
     {
         "Id": 4495,
-        "Group": 112386,
-        "Name": "卡列备用",
+        "Group": 112387,
+        "Name": "消离电球",
+        "Describe": "誓焰跃升-消离电球",
         "IconType": 1,
-        "Icon": 3,
-        "TimeOut": -1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya41.png",
+        "TimeOut": 3000,
         "EffectType": [
             1
         ],
         "EffectButton": [
-            17
+            3
         ],
         "SkillId": [
-            106148,
-            106149
+            106205
         ]
     },
     {
         "Id": 4496,
-        "Group": 112386,
-        "Name": "卡列备用",
+        "Group": 112387,
+        "Name": "消离电球",
+        "Describe": "誓焰跃升-消离电球",
         "IconType": 1,
-        "Icon": 3,
-        "TimeOut": -1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya41.png",
+        "TimeOut": 3000,
         "EffectType": [
             1
         ],
         "EffectButton": [
-            17
+            3
         ],
         "SkillId": [
-            106148,
-            106149
+            106205
         ]
     },
     {
         "Id": 4497,
-        "Group": 112387,
-        "Name": "卡列备用",
-        "IconType": 1,
+        "Group": 112386,
+        "Name": "长按必杀",
+        "Describe": "露西亚-焰雷模式",
+        "IconType": 4,
         "Icon": 3,
-        "TimeOut": -1,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya51.png",
+        "TimeOut": 8000,
         "EffectType": [
-            1
+            2
         ],
         "EffectButton": [
             17
         ],
         "SkillId": [
-            106148,
-            106149
+            106236
         ]
     },
     {
         "Id": 4498,
-        "Group": 112387,
-        "Name": "卡列备用",
+        "Group": 112386,
+        "Name": "点击蓝球",
+        "Describe": "露西亚-蓝消",
         "IconType": 1,
-        "Icon": 3,
-        "TimeOut": -1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya22.png",
+        "TimeOut": 5000,
         "EffectType": [
-            1
+            2
         ],
-        "EffectButton": [
-            17
-        ],
-        "SkillId": [
-            106148,
-            106149
+        "MissileId": [
+            10623625
         ]
     },
     {
         "Id": 4499,
         "Group": 112388,
         "Name": "卡列备用",
+        "Describe": "占坑",
         "IconType": 1,
         "Icon": 3,
         "TimeOut": -1,
@@ -48949,6 +49105,7 @@
         "Id": 4500,
         "Group": 112388,
         "Name": "卡列备用",
+        "Describe": "占坑",
         "IconType": 1,
         "Icon": 3,
         "TimeOut": -1,
@@ -48961,6 +49118,1048 @@
         "SkillId": [
             106148,
             106149
+        ]
+    },
+    {
+        "Id": 4501,
+        "Group": 112388,
+        "Name": "卡列备用",
+        "Describe": "占坑",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4502,
+        "Group": 112388,
+        "Name": "卡列备用",
+        "Describe": "占坑",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4503,
+        "Group": 112388,
+        "Name": "卡列备用",
+        "Describe": "占坑",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4504,
+        "Group": 112388,
+        "Name": "卡列备用",
+        "Describe": "占坑",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106148,
+            106149
+        ]
+    },
+    {
+        "Id": 4505,
+        "Group": 112389,
+        "Name": "点击红球",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4506,
+        "Group": 112389,
+        "Name": "点击红球",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106108,
+            106109,
+            106110,
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4507,
+        "Group": 112389,
+        "Name": "星跃脉冲",
+        "Describe": "卡列-辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424102,
+            424103,
+            424104,
+            424105,
+            424106,
+            424107
+        ]
+    },
+    {
+        "Id": 4508,
+        "Group": 112390,
+        "Name": "点击红球",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4509,
+        "Group": 112390,
+        "Name": "点击红球",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106108,
+            106109,
+            106110,
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4510,
+        "Group": 112390,
+        "Name": "解离突进",
+        "Describe": "卡列-辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424108,
+            424109,
+            424110,
+            424111,
+            424112,
+            424113
+        ]
+    },
+    {
+        "Id": 4511,
+        "Group": 112391,
+        "Name": "点击红球",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4512,
+        "Group": 112391,
+        "Name": "点击红球",
+        "Describe": "卡列-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106108,
+            106109,
+            106110,
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4513,
+        "Group": 112392,
+        "Name": "长按闪避",
+        "Describe": "卡列-长按闪避",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106119
+        ]
+    },
+    {
+        "Id": 4514,
+        "Group": 112393,
+        "Name": "长按普攻",
+        "Describe": "卡列-长按普攻登龙",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": 5000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106146
+        ]
+    },
+    {
+        "Id": 4515,
+        "Group": 112394,
+        "Name": "任意三消两次",
+        "Describe": "深红之渊-三消红",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4516,
+        "Group": 112394,
+        "Name": "<color=#ffda58>长按</color>普攻",
+        "Describe": "深红之渊-蓄力普攻",
+        "IconType": 1,
+        "Icon": 99,
+        "TimeOut": 2000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            102233,
+            102232
+        ]
+    },
+    {
+        "Id": 4517,
+        "Group": 112394,
+        "Name": "<color=#ffda58>松开</color>普攻",
+        "Describe": "深红之渊-蓄力普攻",
+        "IconType": 1,
+        "Icon": 99,
+        "TimeOut": 3000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            102239,
+            102236
+        ]
+    },
+    {
+        "Id": 4518,
+        "Group": 112395,
+        "Name": "任意三消两次",
+        "Describe": "深红之渊-蓝三消",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4519,
+        "Group": 112395,
+        "Name": "必杀",
+        "Describe": "深红之渊一段必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            102216
+        ]
+    },
+    {
+        "Id": 4520,
+        "Group": 112395,
+        "Name": "<color=#ffda58>长按</color>普攻",
+        "Describe": "深红之渊-蓄力普攻",
+        "IconType": 1,
+        "Icon": 99,
+        "TimeOut": 5000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            199282
+        ],
+        "MissileId": [
+            10221621,
+            10221622,
+            10221623
+        ]
+    },
+    {
+        "Id": 4521,
+        "Group": 112396,
+        "Name": "点按黄球",
+        "Describe": "超频演算-抢占id神威",
+        "IconType": 1,
+        "Icon": 103,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            100610,
+            100608,
+            100609
+        ]
+    },
+    {
+        "Id": 4522,
+        "Group": 112396,
+        "Name": "点按普攻",
+        "Describe": "超频演算-抢占id神威",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            100629
+        ]
+    },
+    {
+        "Id": 4523,
+        "Group": 112398,
+        "Name": "任意三消两次",
+        "Describe": "超频演算-抢占id比安卡",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4524,
+        "Group": 112399,
+        "Name": "任意三消两次",
+        "Describe": "超频演算-抢占id比安卡",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4525,
+        "Group": 112400,
+        "Name": "任意三消两次",
+        "Describe": "超频演算-抢占id比安卡",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4526,
+        "Group": 112400,
+        "Name": "任意三消两次",
+        "Describe": "超频演算-抢占id比安卡",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4527,
+        "Group": 112401,
+        "Name": "任意三消两次",
+        "Describe": "超频演算-抢占id卡列",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4528,
+        "Group": 112401,
+        "Name": "任意三消两次",
+        "Describe": "超频演算-抢占id卡列",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4529,
+        "Group": 112402,
+        "Name": "任意三消两次",
+        "Describe": "超频演算-抢占id卡列",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4530,
+        "Group": 112402,
+        "Name": "任意三消两次",
+        "Describe": "超频演算-抢占id卡列",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4531,
+        "Group": 112402,
+        "Name": "任意三消两次",
+        "Describe": "超频演算-抢占id卡列",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4532,
+        "Group": 112403,
+        "Name": "点按红球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106914
+        ]
+    },
+    {
+        "Id": 4533,
+        "Group": 112404,
+        "Name": "点按蓝球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4534,
+        "Group": 112405,
+        "Name": "长按闪避",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106918,
+            106919
+        ]
+    },
+    {
+        "Id": 4535,
+        "Group": 112406,
+        "Name": "点按必杀",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4536,
+        "Group": 112407,
+        "Name": "点按红球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4537,
+        "Group": 112407,
+        "Name": "点按红球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4538,
+        "Group": 112408,
+        "Name": "点按红球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4539,
+        "Group": 112408,
+        "Name": "点按红球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4540,
+        "Group": 112408,
+        "Name": "长按普攻",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4541,
+        "Group": 112409,
+        "Name": "点按蓝球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4542,
+        "Group": 112409,
+        "Name": "点按蓝球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4543,
+        "Group": 112410,
+        "Name": "点按蓝球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4544,
+        "Group": 112410,
+        "Name": "点按蓝球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4545,
+        "Group": 112410,
+        "Name": "长按普攻",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4546,
+        "Group": 112411,
+        "Name": "点按黄球",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4547,
+        "Group": 112411,
+        "Name": "长按普攻",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4548,
+        "Group": 112412,
+        "Name": "点按必杀",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4549,
+        "Group": 112413,
+        "Name": "点按必杀",
+        "Describe": "占位",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4550,
+        "Group": 112414,
+        "Name": "点按黄球",
+        "Describe": "卡列-黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            101730,
+            101732,
+            101711,
+            101713
+        ]
+    },
+    {
+        "Id": 4551,
+        "Group": 112415,
+        "Name": "任意三消",
+        "Describe": "比安卡三消",
+        "IconType": 3,
+        "Icon": 99,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            100413,
+            100410,
+            100407
+        ]
+    },
+    {
+        "Id": 4552,
+        "Group": 112415,
+        "Name": "任意三消",
+        "Describe": "比安卡三消",
+        "IconType": 3,
+        "Icon": 99,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            100413,
+            100410,
+            100407
+        ]
+    },
+    {
+        "Id": 4553,
+        "Group": 112415,
+        "Name": "任意三消",
+        "Describe": "比安卡三消",
+        "IconType": 3,
+        "Icon": 99,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            100413,
+            100410,
+            100407
+        ]
+    },
+    {
+        "Id": 4554,
+        "Group": 112416,
+        "Name": "点按必杀",
+        "Describe": "比安卡必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            100420
         ]
     }
 ]

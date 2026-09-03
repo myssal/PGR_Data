@@ -3,14 +3,561 @@
         "Id": 1,
         "ActionId": 1,
         "Type": 101,
-        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Texture/Image/BgStory/BgStory833.jpg"
         ]
     },
     {
         "Id": 2,
         "ActionId": 2,
+        "Type": 104,
+        "Params": [
+            "0|0|-160",
+            0
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.4,
+            0
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 401,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            6245
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 401,
+        "Params": [
+            2,
+            2924
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 501,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 401,
+        "Params": [
+            2,
+            2924
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "巨蟹的体内有些昏暗，偶有闪烁的电火花划出一道道转瞬即逝的白光。"
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 401,
+        "Params": [
+            2,
+            2576
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 401,
+        "Params": [
+            2,
+            2924
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLightNew.prefab",
+            2,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 511,
+        "Params": [
+            1,
+            0,
+            "0|70|-200",
+            180
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLightNew.prefab",
+            2,
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 511,
+        "Params": [
+            2,
+            0,
+            "0|70|-200",
+            180
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "卡列尼娜走在前面，照明光束在黑暗中切出一道白色的扇面。自己跟在她身后，仔细观察着周围的环境。"
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLightNew.prefab",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLightNew.prefab",
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 201,
+        "Params": [
+            1,
+            501734,
+            4
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡列尼娜",
+            "通天大路都走成羊肠小道了。",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这具庞大机械已被帕弥什侵蚀又被亚利乌斯重塑过，内部结构已经面目全非，原本的内部房室挤压变形，更不用说道路。"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 302,
+        "Params": [
+            "",
+            "好在这一块的布局没有特别大变化。",
+            24
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 201,
+        "Params": [
+            1,
+            501734,
+            4
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 301,
+        "Params": [
+            1,
+            "卡列尼娜",
+            "柯黛留下的内部构造图足够清晰，我们只要找到核心控制室，输入密钥，就能启动自毁程序。",
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 401,
+        "Params": [
+            2,
+            8006
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "突然，卡列尼娜的手指定在图纸的某一处。"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.7,
+            0.3
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 204,
+        "Params": [
+            1,
+            17
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡列尼娜",
+            "（又来了……）",
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.7,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那个她无比熟悉的噪音，从意识海的深处浮上来，像水底的气泡，缓慢地向水面升去。"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 402,
+        "Params": [
+            8006
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 302,
+        "Params": [
+            "",
+            "怎么了？",
+            35
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 204,
+        "Params": [
+            1,
+            20
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "卡列尼娜只是摇了摇头。"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡列尼娜",
+            "按照路线显示，巨蟹的核心应当在……",
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "卡列尼娜",
+            "呼……这还挺有空间艺术？",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            1,
+            0.4,
+            200
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "她看似轻快地一边吐槽，一边越过那些渐渐离构造图越来越迥异的通路，就当作从未听见那萦绕不绝的“噪音”。"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 306
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 104,
+        "EndDelay": 1250.0,
+        "Params": [
+            "-100|0|-160",
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 201,
+        "Params": [
+            1,
+            501734
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "卡列尼娜",
+            "亚利乌斯如果想彻底控制这个节点，最关键的一步，就在巨蟹本身。",
+            1
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            "",
+            "卡列尼娜",
+            "我们要让他计划泡汤，最直接的办法就是……启动巨蟹身体里的自毁程序。",
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "这样， 北部节点的压力也能大大减轻。"
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 302,
+        "Params": [
+            "",
+            "不知道露西亚和里那边怎么样了。",
+            53
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 310,
+        "Params": [
+            "远方的北部节点，露西亚和里想必也陷入了不同程度的焦灼之中。",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 310,
+        "Params": [
+            "但他们一定没有问题——因为无数次的一同奋战、无数次的歃血断金、披心相付，将几人的心与灵魂紧紧地维系在一起。"
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 310,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "相距千里的不同战场，每个人都在为同样的目标而战斗着。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
         "Type": 401,
         "Params": [
             1,
@@ -18,26 +565,2760 @@
         ]
     },
     {
-        "Id": 3,
-        "ActionId": 3,
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.4,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory85.png"
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 104,
+        "Params": [
+            "0|0|-150",
+            0
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 401,
+        "Params": [
+            1,
+            7127
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 107,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "北部节点",
+            "海拉全域中控中心"
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "北部节点，海拉全域中控中心。"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 108,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 201,
+        "Params": [
+            1,
+            501572,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 201,
+        "Params": [
+            2,
+            501404,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 401,
+        "Params": [
+            2,
+            844090
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 203,
+        "Params": [
+            1,
+            0.4,
+            400,
+            -30
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4,
+            -400,
+            -30
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 401,
+        "Params": [
+            2,
+            8510086
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 401,
+        "Params": [
+            2,
+            4304
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 501,
+        "EndDelay": 1200.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiReturnActivity/FxUiBlindBox.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 502,
+        "Params": [
+            "PanelActor1Shake"
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 505,
+        "Params": [
+            "PanelActor1Shake"
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 505,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 401,
+        "Params": [
+            2,
+            4306
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 203,
+        "Params": [
+            1,
+            0.4,
+            400,
+            -80
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4,
+            -400,
+            -80
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab"
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
         "Type": 301,
         "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "北极航线派来的支援在节点外围布成一个防御队形，炮口齐齐朝外，炮火一刻不停地沿着海面压制涌来的异合生物。"
         ]
     },
     {
-        "Id": 4,
-        "ActionId": 4,
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 201,
+        "Params": [
+            1,
+            501391
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "北极航线支援队员",
+            "二十分钟……才过去二十分钟，防线就……",
+            1
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 401,
+        "Params": [
+            2,
+            844090
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 201,
+        "Params": [
+            1,
+            501572,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 201,
+        "Params": [
+            2,
+            501657,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 203,
+        "Params": [
+            1,
+            0.4,
+            200,
+            -30
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4,
+            -200,
+            -30
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 201,
+        "Params": [
+            3,
+            501572,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 201,
+        "EndDelay": 450.0,
+        "Params": [
+            4,
+            501657,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "敌人无穷无尽般涌上来，似乎随时都要突破他们脆弱的防御。"
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            4,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 201,
+        "Params": [
+            1,
+            501391
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "北极航线支援队员",
+            "七点钟方向……小心！",
+            1
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 201,
+        "Params": [
+            2,
+            501656,
+            "",
+            "",
+            -30
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 203,
+        "EndDelay": 450.0,
+        "Params": [
+            2,
+            0.4
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 401,
+        "Params": [
+            2,
+            4806
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 502,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "刀尖划过感染体的金属面，刺耳的声音在耳膜上同鼓噪的心跳一起噪响。"
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 401,
+        "Params": [
+            2,
+            4806
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 501,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 505,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 401,
+        "Params": [
+            2,
+            4225
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "凌厉的武器再次从侧方追来，举重若轻般击倒了敌人，将这即将被突破的战线又重新稳固。"
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 201,
+        "Params": [
+            1,
+            501391
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 301,
+        "Params": [
+            1,
+            "北极航线队员",
+            "灰、灰鸦小队的露西亚……",
+            1
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 201,
+        "Params": [
+            2,
+            500993,
+            5,
+            -400
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "露西亚",
+            "别分心。",
+            2
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 202,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 401,
+        "Params": [
+            2,
+            10042608
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 401,
+        "Params": [
+            2,
+            819016
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 501,
+        "EndDelay": 350.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab"
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "太刀出鞘，刀锋向巨鲸腹部蠕动的腐肉砍去，刀锋没入的瞬间，一股黑腥的液体向高空喷溅。"
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 401,
+        "Params": [
+            2,
+            8005
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "RImgBg3Shake"
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 401,
+        "Params": [
+            2,
+            6961
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieHongchaoHs.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "撕裂天空的闪电与巨物濒死的低鸣同时抵达，仰倒的庞大身躯瞬间激起十米巨浪。"
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieHongchaoHs.prefab"
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 402,
+        "Params": [
+            8005
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 201,
+        "Params": [
+            2,
+            500993,
+            5
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "回撤防线。",
+            2
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露西亚借着浪势，一个旋身跃回节点平台，此时更多暗红的影子从深处浮上来。"
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 201,
+        "Params": [
+            1,
+            501391
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 301,
+        "Params": [
+            1,
+            "北极航线队员",
+            "可是——",
+            1
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 201,
+        "Params": [
+            2,
+            500993,
+            5,
+            -400
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "Params": [
+            1,
+            "露西亚",
+            "收缩防线不是坏事。",
+            2
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "我们人数有限，我可以一直拼杀下去，但维持庞大的防线迟早会出现漏洞。",
+            2
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 204,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "露西亚",
+            "只要守住最重要的地方。",
+            2
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 401,
+        "Params": [
+            2,
+            4779
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 203,
+        "EndDelay": 350.0,
+        "Params": [
+            1,
+            0.3,
+            400,
+            -30
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 203,
+        "EndDelay": 350.0,
+        "Params": [
+            1,
+            0.3,
+            400
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "露西亚稳定的语气似乎将安定也传递给了周围的人，队员握紧了手中的武器。"
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "北极航线队员",
+            "我知道了！",
+            1
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 104,
+        "EndDelay": 750.0,
+        "Params": [
+            "-80|0|-150",
+            0.7
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "露西亚点点头，回首望向中枢中心所在的地方。"
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory214.png"
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 401,
+        "Params": [
+            2,
+            5323
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "与外部的嘈乱不同，节点内部安静得能听到电流涌动的嘶嘶声。"
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 402,
+        "Params": [
+            5323
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 401,
+        "Params": [
+            1,
+            172
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 201,
+        "Params": [
+            1,
+            500568
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 301,
+        "Params": [
+            1,
+            "里",
+            "……",
+            1
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这里没有无穷的怪潮与拼杀，只有一个人，面对着同样波涛汹涌的战场。"
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "庞大的面板在里的面前展开，手指飞速起落间，他的大脑，他的运算速度，他的身体，在此刻皆化作武器。"
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 306
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 201,
+        "Params": [
+            1,
+            500568,
+            7
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 301,
+        "Params": [
+            1,
+            "里",
+            "无法调用……",
+            1
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "耶梦加得节点落入亚利乌斯手中后，原本平稳运行的替代协议就变得岌岌可危。"
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在肉眼无法看见的另一片海洋之中，质点如遥远的月亮般牵引起数据的潮汐，向这里涌来的是更疯狂更庞然不可挡的数据洪流。"
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 201,
+        "Params": [
+            1,
+            500568,
+            10
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 301,
+        "Params": [
+            1,
+            "里",
+            "模式识别……分类引导……",
+            1
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab"
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg"
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "现在，挡在滔天的洪水和人类岌岌可危的信息网络之间的，只有里一个人。"
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他与质点带来的狂潮艰难对峙着，只为撑住这张庞大网络的骨架。"
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory214.png"
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 201,
+        "Params": [
+            1,
+            500568,
+            13
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "里",
+            "……不太乐观，但足够应付。",
+            1
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 202,
+        "EndDelay": 400.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 310,
+        "Params": [
+            "与轻描淡写地描述相对的，是极为恶劣的现实。",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 310,
+        "Params": [
+            "将自己变成纯粹的“工具”，里以近乎恐怖的速度进行模式识别与数据分类。"
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 310,
+        "Params": [
+            "无序的攻击数据被逐一分类标记，强行截停。"
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 310,
+        "Params": [
+            "哪怕无法完全处理，也极大地减缓了洪流淹没系统的速度。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 201,
+        "Params": [
+            1,
+            500568
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "里",
+            "如果，可调用的转换中继器更多一些……",
+            1
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "里此时已经无暇思考更多，他似乎已经不是第一次置身这庞大无序的混沌中，燃烧自己去寻找一条出路。"
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "庞大的无序包裹着他，推动着他，不再丝毫隐藏自己的可怖，而是倾尽一切要将他打倒、吞噬。"
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 401,
+        "Params": [
+            2,
+            4062
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStory/BgStory844.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory951.png"
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStory/BgStory844.jpg",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 307,
+        "Params": [
+            "警告，意识海荷载已接近临界值——",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "系统音",
+            "警告，意识海荷载已接近临界值——"
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 201,
+        "Params": [
+            18,
+            500568,
+            10,
+            265,
+            -205,
+            -350
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "里",
+            "……",
+            18
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 401,
+        "Params": [
+            2,
+            4062
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "面板上不断上下变动的数据如此刻海洋上的暴雨狂风一般要吞噬天地，代表警告的鲜红几乎淹没了一切，如恶兽的血盆大口正要扑向他。"
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 201,
+        "Params": [
+            18,
+            500568,
+            9,
+            265,
+            -205,
+            -350
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 301,
+        "Params": [
+            1,
+            "里",
+            "这里还……不是极限。",
+            18
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 401,
+        "Params": [
+            2,
+            1015
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab"
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 111,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab"
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab"
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 111,
+        "Params": [
+            0,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab"
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "被鲜红压至最低的一丝代表安全的蓝色，在剧烈的闪烁之中，重新顽强地一片片亮了起来。"
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "他终于露出一点点笑容。"
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 401,
+        "Params": [
+            2,
+            2924
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg",
+            1,
+            0.5,
+            0.3
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg",
+            0.5,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "而下一刻，更大的浪涛涌来，里收敛心神，进入新一轮的战役中。"
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 201,
+        "Params": [
+            18,
+            500568,
+            10,
+            265,
+            -205,
+            -350
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 301,
+        "Params": [
+            1,
+            "里",
+            "（如果……可调用的中继器更多一些……）",
+            18
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "如果转换中继器更多一些，应该能极大缓解目前的压力，但海面上已经没有更多的援兵。"
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab"
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1608.jpg"
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 401,
+        "Params": [
+            1,
+            7136
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront186.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "小岛附近的云层已经低得仿佛要垂入海面，浪潮如山般重重袭来。"
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "浪脊犹如野兽的利齿，互相撕咬撞击，碎成漫天水雾。"
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 201,
+        "Params": [
+            1,
+            501648,
+            5,
+            -400
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 201,
+        "Params": [
+            2,
+            501744,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 301,
+        "Params": [
+            1,
+            "希德科萨纳特拉克",
+            "啊啊啊啊啊——快逃，拉森先生！开快一点。",
+            1
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 204,
+        "Params": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 301,
+        "Params": [
+            "",
+            "拉森",
+            "……",
+            2
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "拉森抹了一把脸上的水，这艘小船在浪涛间渺小得像一片浮叶。"
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 401,
+        "Params": [
+            2,
+            2597
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 401,
+        "Params": [
+            2,
+            8004
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 301,
+        "BeginAnim": "RImgBg3Shake",
+        "Params": [
+            "",
+            "",
+            "风从船头灌进来，船板在止不住地呻吟。"
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "远处浪山不断崩塌又重聚，仿佛永远没有穷尽的时刻。"
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 402,
+        "Params": [
+            2597
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 201,
+        "Params": [
+            1,
+            501672,
+            4
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "萨瓦",
+            "逃什么逃！还能逃到哪里去！",
+            1
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "还能逃去哪，还能祈求谁。"
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 201,
+        "Params": [
+            1,
+            501672,
+            4
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 301,
+        "Params": [
+            1,
+            "萨瓦",
+            "难道你真的要丢下队长！",
+            1
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 301,
+        "Params": [
+            "",
+            "萨瓦",
+            "她让我们先走，我们就真的这样逃跑吗？她没有抛弃过我们，我们怎么能这样丢下她。",
+            1
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "作为队长乃至船长的卡列尼娜，总是冲在最前面替所有人承担一切。"
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 201,
+        "Params": [
+            1,
+            501648,
+            2,
+            -400
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 201,
+        "Params": [
+            2,
+            501672,
+            4,
+            400
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 301,
+        "Params": [
+            1,
+            "希德科萨纳特拉克",
+            "我……可是现在这种境况，我们还能做什么……",
+            1
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 301,
+        "Params": [
+            "",
+            "萨瓦",
+            "替换协议的稳定需要调用转换中继器，越多越好……这是我们能做的！",
+            2
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "萨瓦",
+            "如果让那家伙得逞了，我们就算逃了又有什么用！军情通讯断绝，地面防线被迫割裂，我们还能去哪？",
+            2
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "风浪扑在他的脸上，他几乎是闭紧了眼睛大吼了出来。"
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 201,
+        "Params": [
+            1,
+            501672
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 301,
+        "Params": [
+            1,
+            "萨瓦",
+            "我们是工程部队派往大西洋执行中继器抢修任务的布缆小队，我们的队长、船长，是卡列尼娜。",
+            1
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 301,
+        "Params": [
+            "",
+            "萨瓦",
+            "我们要完成自己的任务。",
+            1
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 401,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "滔天的巨浪遮蔽天日，颠簸的小船，漫天的水雾，无法完成的任务，看似徒劳的努力——渺小的人。"
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 201,
+        "Params": [
+            1,
+            501672,
+            10
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 301,
+        "Params": [
+            1,
+            "萨瓦",
+            "做好自己该做的事情……",
+            1
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他深呼吸了一口气。"
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "萨瓦",
+            "做好自己该做的事情，就已经够了。",
+            1
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 202,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "Type": 310,
+        "Params": [
+            "这种天气下，作业设备已经无法深潜下海，两个布缆队员只能手动替换。",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "Type": 310,
+        "Params": [
+            "而凭他们的机体只能勉强达到中继器安装位的深度，能替换的中继器更是杯水车薪。"
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "Type": 310,
+        "Params": [
+            "渐渐聚拢的红潮会侵蚀他们的机体，也许下一个上浮下潜，他们就会殒命在红色的海水中。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.7,
+            0.3
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "Type": 201,
+        "Params": [
+            1,
+            501672,
+            4
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "萨瓦",
+            "（但我们必须挣扎……不，是坚持下去。）",
+            1
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.7,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "Type": 301,
+        "Params": [
+            "",
+            "萨瓦",
+            "希德科萨纳特拉克，坚持到比最后一刻，再多一刻。",
+            1
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "Type": 301,
+        "Params": [
+            "",
+            "萨瓦",
+            "你名字真的好长。",
+            1
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他的战友笑了，随即大声喊道。"
+        ]
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "Type": 201,
+        "Params": [
+            1,
+            501648
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "Type": 301,
+        "Params": [
+            1,
+            "希德科萨纳特拉克",
+            "拉森大叔！我们要撑得久一点！",
+            1
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 401,
+        "Params": [
+            2,
+            13081710
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "拉森没有回头，海风吹得他的衣袖咧咧作响，他握紧了船舵，骨节泛白。"
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "还是这样，年轻的、昂扬的，奋不顾身的声音。"
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这片海上，永远有这样明亮热烈的灵魂。"
+        ]
+    },
+    {
+        "Id": 312,
+        "ActionId": 312,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "就像多年前那个毁掉一切的雨夜一样，命运的阴影笼罩于炽热的灵魂之火上。"
+        ]
+    },
+    {
+        "Id": 313,
+        "ActionId": 313,
+        "Type": 306,
+        "EndDelay": 350.0
+    },
+    {
+        "Id": 314,
+        "ActionId": 314,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.7,
+            0.3
+        ]
+    },
+    {
+        "Id": 315,
+        "ActionId": 315,
+        "Type": 201,
+        "Params": [
+            1,
+            501744,
+            4
+        ]
+    },
+    {
+        "Id": 316,
+        "ActionId": 316,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "拉森",
+            "（我能做到……我能做到吗？）",
+            1
+        ]
+    },
+    {
+        "Id": 317,
+        "ActionId": 317,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.7,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 318,
+        "ActionId": 318,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 319,
+        "ActionId": 319,
+        "Type": 201,
+        "Params": [
+            2,
+            501648,
+            4
+        ]
+    },
+    {
+        "Id": 320,
+        "ActionId": 320,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "希德科萨纳特拉克",
+            "拉森大叔，稳住，我下去了！",
+            2
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
+        "Type": 401,
+        "Params": [
+            2,
+            5517
+        ]
+    },
+    {
+        "Id": 322,
+        "ActionId": 322,
+        "Type": 401,
+        "Params": [
+            2,
+            2597
+        ]
+    },
+    {
+        "Id": 323,
+        "ActionId": 323,
+        "Type": 203,
+        "EndDelay": 550.0,
+        "Params": [
+            2,
+            0.5,
+            -200
+        ]
+    },
+    {
+        "Id": 324,
+        "ActionId": 324,
+        "Type": 202,
+        "EndDelay": 500.0,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "风暴灌满了他的耳朵，他甚至听不到这个构造体青年跳下去的声音。"
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那一晚他被命运击溃了，那么今夜呢？"
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "身后是新的战友，面前是与当年别无二致的风暴——坚持到最后，他要带这两个有着赴死之心的年轻人坚持到最后。"
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
         "Type": 301,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "船舶工程师拉森紧握着船舵，风浪又将他带回过去。"
         ]
     }
 ]

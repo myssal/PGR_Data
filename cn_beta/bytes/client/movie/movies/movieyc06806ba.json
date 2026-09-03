@@ -14,30 +14,553 @@
         "Type": 401,
         "Params": [
             1,
-            36
+            12
         ]
     },
     {
         "Id": 3,
         "ActionId": 3,
-        "Type": 301,
-        "BeginAnim": "DialogEnable",
+        "Type": 310,
         "Params": [
+            "从出生开始，周遭的一切都是漆黑的。",
             "",
             "",
-            "Placeholder_占位"
+            "",
+            5
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
+        "Type": 310,
+        "Params": [
+            "我们早已习惯这片漆黑，因为这便是我们认知里的整个世界。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 401,
+        "BeginDelay": 1000.0,
+        "Params": [
+            2,
+            4276
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 501,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
         "Type": 301,
-        "IsEnd": 1,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "当计划受阻，自身受到威胁的时候，我们突然在那黑暗中看见了光。"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 401,
+        "Params": [
+            2,
+            4134
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab",
+            2,
+            "",
+            "",
+            22
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 511,
+        "EndDelay": 1000.0,
+        "Params": [
+            22,
+            0,
+            "-48|0|0"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 501,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping01New.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab",
+            "",
+            "",
+            22
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping01New.prefab"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory952.png"
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping02New.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "如宇宙大爆炸那般，光在瞬间迸发开来，填满了整个黑暗，我们看见了一些图像。"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiheixianNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "第一个细胞诞生的画面。"
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那些细胞和光一起堆叠，呈指数式地成长，扩散。"
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "它们不断演化，形态不断更迭，画面一个接一个的变换，最终停留下来的——",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiheixianNew.prefab"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 502,
+        "EndDelay": 300.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 304,
+        "Params": [
+            "是我从原始汤中艰难爬出，转过头来看着这边的画面，我有了身体，有了手脚，有了眼睛。",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
+            "",
+            -2
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 304,
+        "Params": [
+            "可那是什么表情，为什么是这个表情？",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 304,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "于是。",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            "",
+            "",
+            -2,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 307,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "我第一次知道了<color=#ff4e4eff>我</color>。",
+            0,
+            70,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "我第一次知道了<color=#ff4e4eff>我</color>。"
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 502,
+        "Params": [
+            "AniZhuanchangBegin"
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "“赫里欧”",
+            "“深渊过客”，你又去到更深的地方了，真是出乎我的意料。"
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这不是真实的“赫里欧”，他只是回忆中的其中一个，可——"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 301,
+        "Params": [
+            "",
+            "“我”",
+            "我失败了，我们失败了。"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "Params": [
+            "",
+            "“赫里欧”",
+            "我今天是想来和你说一件事的，因为这事没法跟别人说，很打击士气。"
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他没理我，他还是继续说。"
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 301,
+        "Params": [
+            "",
+            "“赫里欧”",
+            "我不认为“千年计划”能成功，至少不会在我们这里成功。"
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 301,
+        "Params": [
+            "",
+            "“赫里欧”",
+            "科学这种东西基本都是先有理论和发现，后面再用数十、甚至数百年去证明的学问。"
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            "",
+            "“赫里欧”",
+            "所以虽然我总是在说梦话，大家又相信这种梦话，但，你要知道，我们大概是要以失败收场的。"
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 301,
+        "Params": [
+            "",
+            "“我”",
+            "“赫里欧”。"
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "Params": [
+            "",
+            "“赫里欧”",
+            "即便如此我还是会做，我要让千年计划，将这个千年与下个，与再下一个千年联系起来。"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 301,
+        "Params": [
+            "",
+            "“赫里欧”",
+            "就像生命那样，不断传递，不断积累，让后面来的人——"
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "“赫里欧”",
+            "用我们的失败，去定义成功。"
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "道尔的表情，和我的是一样的。"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 301,
+        "Params": [
+            "",
+            "“我”",
+            "道尔。"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "我想往前伸手，想要靠近他，却发现自己没有半点力量。"
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "于是道尔俯下身，将我们几个抱了起来。"
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "道尔",
+            "好轻啊。"
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 401,
+        "Params": [
+            2,
+            4282
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 301,
+        "IsEnd": 1,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "他就这样呢喃着，一步，又一步地，走回了深渊。"
         ]
     }
 ]

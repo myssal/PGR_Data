@@ -174,8 +174,8 @@
         "Key": "RoleAttribShowLabel",
         "Values": [
             "{0}",
-            "<color=#25BB45>{0}</color>",
-            "<color=#DD3333>{0}</color>"
+            "<color=#67ef8a>{0}</color>",
+            "<color=#ff4b5a>{0}</color>"
         ]
     },
     {
@@ -372,7 +372,10 @@
         ]
     },
     {
-        "Key": "PBRSkinTaskId"
+        "Key": "PBRSkinTaskId",
+        "Values": [
+            140260
+        ]
     },
     {
         "Key": "PBRPopupSkinCheckGuide",
@@ -383,13 +386,13 @@
     {
         "Key": "PBRSkinTaskTabIndex",
         "Values": [
-            2
+            1
         ]
     },
     {
         "Key": "PBRSkinFocusTaskId",
         "Values": [
-            4
+            140264
         ]
     },
     {
@@ -438,6 +441,18 @@
         "Key": "StageNameInSelection",
         "Values": [
             "第{0}关"
+        ]
+    },
+    {
+        "Key": "IpadResolutionLimit",
+        "Values": [
+            1.4
+        ]
+    },
+    {
+        "Key": "ShopGiveUpSuccessTips",
+        "Values": [
+            "放弃成功"
         ]
     }
 ]

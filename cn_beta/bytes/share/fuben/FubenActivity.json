@@ -41,7 +41,6 @@
         "Name": "拟战场域",
         "ManagerName": "FubenRepeatChallengeManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner146.png",
-        "TimeId": 49303,
         "FunctionNameId": 10309,
         "SkipId": 20017,
         "Order": 1,
@@ -52,12 +51,12 @@
     },
     {
         "Id": 5,
-        "Name": "怒海翻澜",
+        "Name": "悍猎季风",
         "ManagerName": "FubenActivityBossSingleManager",
-        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner234.png",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner239.png",
         "FunctionNameId": 10304,
         "SkipId": 11724,
-        "Order": 4,
+        "Order": 5,
         "RedPointConditions": [
             "CONDITION_ACTIVITYBRIE_BOSSSINGLE"
         ],
@@ -166,7 +165,7 @@
         "Id": 16,
         "Name": "浮浪者破幻",
         "ManagerName": "FubenNewCharActivityManager",
-        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner233.png",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner241.png",
         "FunctionNameId": 10325,
         "SkipId": 20235,
         "Order": 2,
@@ -460,16 +459,18 @@
     },
     {
         "Id": 41,
-        "Name": "鲨鲨破坏王",
+        "Name": "忽忽破坏王",
         "ManagerName": "XFangKuaiAgency",
-        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner153.png",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner243.png",
         "FunctionNameId": 10461,
         "SkipId": 89049,
+        "Order": 8,
         "RedPointConditions": [
             "CONDITION_FANGKUAI_MAIN"
         ],
         "Note": "消灭方块",
-        "IsAgency": 1
+        "IsAgency": 1,
+        "IsRecord": true
     },
     {
         "Id": 42,
@@ -835,7 +836,6 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner228.png",
         "FunctionNameId": 10492,
         "SkipId": 89093,
-        "Order": 5,
         "RedPointConditions": [
             "CONDITION_BOUNTY_CHALLENGE"
         ],
@@ -959,11 +959,9 @@
         "Name": "耀律狂潮",
         "ManagerName": "XPBRGameAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner224.png",
-        "TimeId": 49920,
         "ShowConditionId": 774800,
         "FunctionNameId": 10500,
         "SkipId": 1300635,
-        "Order": 6,
         "RedPointConditions": [
             "CONDITION_PBRGAME_MAIN"
         ],
@@ -1089,7 +1087,6 @@
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner232.png",
         "FunctionNameId": 10341,
         "SkipId": 89106,
-        "Order": 3,
         "RedPointConditions": [
             "CONDITION_FASHION_STORY_ENTRANCE"
         ],
@@ -1100,10 +1097,9 @@
         "Id": 99,
         "Name": "夕韵暇光",
         "ManagerName": "XEnvelopeGuessingAgency",
-        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner232.png",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner242.png",
         "FunctionNameId": 10507,
         "SkipId": 89113,
-        "Order": 7,
         "RedPointConditions": [
             "CONDITION_ENVELOPE_GUESSING_ENTRANCE"
         ],
@@ -1124,5 +1120,61 @@
         ],
         "Note": "4.6+4.7音乐会预热",
         "IsAgency": 1
+    },
+    {
+        "Id": 101,
+        "Name": "空滞轮旋之梦",
+        "ManagerName": "FubenFestivalActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner240.png",
+        "ShowConditionId": 774800,
+        "FunctionNameId": 10513,
+        "SkipId": 90073,
+        "Order": 4,
+        "Note": "约战联动剧情",
+        "IsRecord": true
+    },
+    {
+        "Id": 102,
+        "Name": "回路演算",
+        "ManagerName": "XPunishaarAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner246.png",
+        "TimeId": 50201,
+        "ShowConditionId": 774800,
+        "FunctionNameId": 10509,
+        "SkipId": 90074,
+        "Order": 7,
+        "RedPointConditions": [
+            "CONDITION_PUNISHAAR_MAIN"
+        ],
+        "Note": "4.8战双扎活动",
+        "IsAgency": 1,
+        "IsRecord": true
+    },
+    {
+        "Id": 103,
+        "Name": "溯时者逆洄",
+        "ManagerName": "FubenNewCharActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner238.png",
+        "FunctionNameId": 10325,
+        "SkipId": 20395,
+        "Order": 3,
+        "RedPointConditions": [
+            "CONDITION_KOROMCHARACTIVITYMAINRED"
+        ],
+        "Note": "角色试玩关"
+    },
+    {
+        "Id": 104,
+        "Name": "超频演算",
+        "ManagerName": "XTransfiniteTowerAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner245.png",
+        "TimeId": 50100,
+        "ShowConditionId": 774800,
+        "FunctionNameId": 10510,
+        "SkipId": 90077,
+        "Order": 6,
+        "Note": "4.8超限",
+        "IsAgency": 1,
+        "IsRecord": true
     }
 ]

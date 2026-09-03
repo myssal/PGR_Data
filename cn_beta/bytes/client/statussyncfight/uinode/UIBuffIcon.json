@@ -317,5 +317,44 @@
         "DetailDesc": [
             "吸取对手10点攻击属性"
         ]
+    },
+    {
+        "Id": 1028101,
+        "Name": "惑梦",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon5802.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#B47E7E",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "达到13点时，造成失心，吸取对手15点战意值，强制触发自身一号位的主动技能"
+        ]
+    },
+    {
+        "Id": 1028103,
+        "Name": "暗咒",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon5902.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgRed.png",
+        "BorderColor": "#B47E7E",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridDeBuff.prefab",
+        "DetailDesc": [
+            "每有一层，自身使用技能时额外受到10%攻击的伤害，该伤害无视护盾"
+        ]
+    },
+    {
+        "Id": 1028106,
+        "Name": "吸取战意",
+        "Priority": 1,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon0302.png",
+        "BgIcon": "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkBuffBgBlue.png",
+        "BorderColor": "#7E9EB4",
+        "ShowCount": 1,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcTheatre6/Theatre6GridBuff.prefab",
+        "DetailDesc": [
+            "吸取对手1点战意属性"
+        ]
     }
 ]

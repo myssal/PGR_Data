@@ -214,6 +214,51 @@
     },
     {
         "Role": "Mo1MegactinianMd010001",
+        "Target": "WalkStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Target": "WalkStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Target": "LTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Target": "LTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Target": "RTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Target": "RTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Target": "HitLB",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
         "Target": "Attack01",
         "TransitionDuration": 0.1
     },
@@ -270,6 +315,11 @@
     {
         "Role": "Mo1MegactinianMd010001",
         "Target": "Attack12",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Target": "Attack13",
         "TransitionDuration": 0.1
     },
     {
@@ -544,6 +594,12 @@
     },
     {
         "Role": "Mo1MegactinianMd010001",
+        "State": "RunStartEnd01",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
         "State": "Hit1",
         "Target": "Stand2"
     },
@@ -625,6 +681,66 @@
     {
         "Role": "Mo1MegactinianMd010001",
         "State": "Caught",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "State": "WalkStart",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "State": "WalkStart",
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "State": "WalkStart",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "State": "WalkStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "State": "WalkStartEnd",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "State": "LTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "State": "LTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "State": "RTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "State": "RTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "State": "HitLB",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     }

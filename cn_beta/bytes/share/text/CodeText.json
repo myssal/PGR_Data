@@ -1857,6 +1857,16 @@
         "Text": "20009063该状态已被设置，不能重复设置"
     },
     {
+        "Id": 20009064,
+        "Key": "CharacterOneClickNothingToTrain",
+        "Text": "20009064该角色没有可养成的内容"
+    },
+    {
+        "Id": 20009065,
+        "Key": "CharacterOneClickTrainFail",
+        "Text": "20009065角色一键养成失败"
+    },
+    {
         "Id": 20010001,
         "Key": "FashionManagerGetFashionNotFound",
         "Text": "涂装未找到"
@@ -2137,6 +2147,16 @@
         "Text": "20012040道具兑换数量非法"
     },
     {
+        "Id": 20012041,
+        "Key": "ItemTargetIdNotFoundFromItemCombine",
+        "Text": "20012041兑换道具无法在合并组找到"
+    },
+    {
+        "Id": 20012042,
+        "Key": "ItemTargetIdNotCostGem",
+        "Text": "20012042兑换道具消耗的不是黑卡"
+    },
+    {
         "Id": 20014001,
         "Key": "ArrangeManagerCalTypeFail",
         "Text": "ID不正确，无法识别类型"
@@ -2310,6 +2330,11 @@
         "Id": 20018028,
         "Key": "DrawManagerAdjustActiveCannotChangeGroupId",
         "Text": "活动期间不能更改研发组"
+    },
+    {
+        "Id": 20018029,
+        "Key": "DrawManagerDrawTicketTimesNotMatch",
+        "Text": "20018029抽卡使用的抽卡券对应次数不匹配"
     },
     {
         "Id": 20019001,
@@ -8777,6 +8802,11 @@
         "Id": 20065007,
         "Key": "ArchiveInvalidEvaluateType",
         "Text": "20065007无效的图鉴类型"
+    },
+    {
+        "Id": 20065008,
+        "Key": "ArchiveMailNotUnlock",
+        "Text": "20065008邮件图鉴未解锁"
     },
     {
         "Id": 20066001,
@@ -29207,7 +29237,7 @@
     {
         "Id": 20427001,
         "Key": "Theatre6PvpNotOpen",
-        "Text": "肉鸽6PVP未开启"
+        "Text": "诡城交锋未开启"
     },
     {
         "Id": 20427002,
@@ -29498,6 +29528,521 @@
         "Id": 20429015,
         "Key": "AudioPlayerBackgroundSongCountLimit",
         "Text": "20429015背景音乐歌单数量已达上限"
+    },
+    {
+        "Id": 20430001,
+        "Key": "PunishaarActivityNotOpen",
+        "Text": "20430001活动未开启"
+    },
+    {
+        "Id": 20430002,
+        "Key": "PunishaarStageConfigNotFound",
+        "Text": "20430002关卡配置不存在"
+    },
+    {
+        "Id": 20430003,
+        "Key": "PunishaarStageInProgress",
+        "Text": "20430003已有关卡正在进行中"
+    },
+    {
+        "Id": 20430004,
+        "Key": "PunishaarStageNotInProgress",
+        "Text": "20430004没有正在进行的关卡"
+    },
+    {
+        "Id": 20430005,
+        "Key": "PunishaarNodeNotFound",
+        "Text": "20430005当前没有节点"
+    },
+    {
+        "Id": 20430006,
+        "Key": "PunishaarNodeTypeNotMatch",
+        "Text": "20430006节点类型不匹配"
+    },
+    {
+        "Id": 20430007,
+        "Key": "PunishaarNodeConditionNotMet",
+        "Text": "20430007节点退出条件未完成"
+    },
+    {
+        "Id": 20430008,
+        "Key": "PunishaarNodeHandlerNotFound",
+        "Text": "20430008节点处理器不存在"
+    },
+    {
+        "Id": 20430009,
+        "Key": "PunishaarNodeConfigNotFound",
+        "Text": "20430009节点配置不存在"
+    },
+    {
+        "Id": 20430010,
+        "Key": "PunishaarStageNotOpen",
+        "Text": "20430010关卡未在当期开启"
+    },
+    {
+        "Id": 20430011,
+        "Key": "PunishaarGoldNotEnough",
+        "Text": "20430011金币不足"
+    },
+    {
+        "Id": 20430012,
+        "Key": "PunishaarPrevStageNotPassed",
+        "Text": "20430012前置关卡未通关"
+    },
+    {
+        "Id": 20430013,
+        "Key": "PunishaarFightNotInCandidates",
+        "Text": "20430013选择的战斗不在候选列表中"
+    },
+    {
+        "Id": 20430014,
+        "Key": "PunishaarEventNotInCandidates",
+        "Text": "20430014选择的事件不在候选列表中"
+    },
+    {
+        "Id": 20430015,
+        "Key": "PunishaarEventAlreadySelected",
+        "Text": "20430015事件已选择过，不能重复选择"
+    },
+    {
+        "Id": 20430016,
+        "Key": "PunishaarFightAlreadySelected",
+        "Text": "20430016战斗已选择过，不能重复选择"
+    },
+    {
+        "Id": 20430017,
+        "Key": "PunishaarEventNotSelected",
+        "Text": "20430017事件未选择"
+    },
+    {
+        "Id": 20430018,
+        "Key": "PunishaarEventAlreadyFinished",
+        "Text": "20430018事件已完成，不能重复完成"
+    },
+    {
+        "Id": 20430019,
+        "Key": "PunishaarEventConfigNotFound",
+        "Text": "20430019事件配置不存在"
+    },
+    {
+        "Id": 20430020,
+        "Key": "PunishaarFightNotSelected",
+        "Text": "20430020战斗未选择"
+    },
+    {
+        "Id": 20430021,
+        "Key": "PunishaarFightAlreadyFinished",
+        "Text": "20430021战斗已胜利，不能重复结算"
+    },
+    {
+        "Id": 20430022,
+        "Key": "PunishaarSignalBallColorInvalid",
+        "Text": "20430022信号球颜色非法"
+    },
+    {
+        "Id": 20430023,
+        "Key": "PunishaarNodeStatusNotFinished",
+        "Text": "20430023节点状态未完成，不能退出"
+    },
+    {
+        "Id": 20430024,
+        "Key": "PunishaarNodeStatusTransitionInvalid",
+        "Text": "20430024节点状态迁移非法"
+    },
+    {
+        "Id": 20430025,
+        "Key": "PunishaarSaveCountLimit",
+        "Text": "20430025关卡存档数量已达上限"
+    },
+    {
+        "Id": 20430026,
+        "Key": "PunishaarActivityConfigNotFound",
+        "Text": "20430026活动配置不存在"
+    },
+    {
+        "Id": 20430027,
+        "Key": "PunishaarStageTimeNotOpen",
+        "Text": "20430027关卡不在开放时段"
+    },
+    {
+        "Id": 20430028,
+        "Key": "PunishaarStageFirstNodeNotFound",
+        "Text": "20430028关卡首节点配置不存在"
+    },
+    {
+        "Id": 20430029,
+        "Key": "PunishaarFightNotWin",
+        "Text": "20430029战斗未胜利，不能退出"
+    },
+    {
+        "Id": 20430030,
+        "Key": "PunishaarNodeInitFailed",
+        "Text": "20430030节点初始化失败"
+    },
+    {
+        "Id": 20430031,
+        "Key": "PunishaarNodeStatusNotRewardReplace",
+        "Text": "20430031节点不在奖励替换中"
+    },
+    {
+        "Id": 20430032,
+        "Key": "PunishaarNoPendingRewardCard",
+        "Text": "20430032无暂存奖励卡牌"
+    },
+    {
+        "Id": 20430033,
+        "Key": "PunishaarMasterCardNotFound",
+        "Text": "20430033主卡不存在"
+    },
+    {
+        "Id": 20430034,
+        "Key": "PunishaarCardCountMismatch",
+        "Text": "20430034卡牌数量与移动前不一致"
+    },
+    {
+        "Id": 20430035,
+        "Key": "PunishaarCardPosDuplicate",
+        "Text": "20430035移动后出现重复卡牌"
+    },
+    {
+        "Id": 20430036,
+        "Key": "PunishaarCardPosOutOfRange",
+        "Text": "20430036卡牌位置越界或超过格数上限"
+    },
+    {
+        "Id": 20430037,
+        "Key": "PunishaarCardPosOverlap",
+        "Text": "20430037卡牌位置重叠"
+    },
+    {
+        "Id": 20430038,
+        "Key": "PunishaarCardPosListNull",
+        "Text": "20430038卡牌位置列表为空"
+    },
+    {
+        "Id": 20430039,
+        "Key": "PunishaarCardAreaTypeInvalid",
+        "Text": "20430039卡牌所在区域非法"
+    },
+    {
+        "Id": 20430040,
+        "Key": "PunishaarCardConfigNotFound",
+        "Text": "20430040卡牌配置不存在"
+    },
+    {
+        "Id": 20430041,
+        "Key": "PunishaarCardSizeInvalid",
+        "Text": "20430041卡牌尺寸非法"
+    },
+    {
+        "Id": 20430042,
+        "Key": "PunishaarCardLevelConfigNotFound",
+        "Text": "20430042卡牌等级配置不存在"
+    },
+    {
+        "Id": 20430043,
+        "Key": "PunishaarCardUpgradeError",
+        "Text": "20430044卡牌升级异常"
+    },
+    {
+        "Id": 20430044,
+        "Key": "PunishaarSubCardNotInMergedRange",
+        "Text": "20430045选择的副卡不在合成卡牌携带范围内"
+    },
+    {
+        "Id": 20430045,
+        "Key": "PunishaarCardTypeInvalid",
+        "Text": "20430046卡牌类型非法"
+    },
+    {
+        "Id": 20430046,
+        "Key": "PunishaarSubCardSlotEmpty",
+        "Text": "20430047副卡已被卸下"
+    },
+    {
+        "Id": 20430047,
+        "Key": "PunishaarCurrentStageNotSelected",
+        "Text": "20430048未选中关卡存档"
+    },
+    {
+        "Id": 20430048,
+        "Key": "PunishaarConditionGoldNotMet",
+        "Text": "20430049局内金币数量条件未满足"
+    },
+    {
+        "Id": 20430049,
+        "Key": "PunishaarConditionCompareInvalid",
+        "Text": "20430050局内条件大小关系参数非法"
+    },
+    {
+        "Id": 20430050,
+        "Key": "PunishaarConditionNodeRangeNotMet",
+        "Text": "20430051局内当前节点区间条件未满足"
+    },
+    {
+        "Id": 20430051,
+        "Key": "PunishaarShopNotInCandidates",
+        "Text": "20430052选择的商店不在候选列表中"
+    },
+    {
+        "Id": 20430052,
+        "Key": "PunishaarShopAlreadySelected",
+        "Text": "20430053商店已选择过，不能重复选择"
+    },
+    {
+        "Id": 20430053,
+        "Key": "PunishaarShopNotSelected",
+        "Text": "20430054商店未选择"
+    },
+    {
+        "Id": 20430054,
+        "Key": "PunishaarShopRefreshGoldNotEnough",
+        "Text": "20430055刷新商店金币不足"
+    },
+    {
+        "Id": 20430055,
+        "Key": "PunishaarShopAllFrozen",
+        "Text": "20430056商店商品已全部冻结，不能刷新"
+    },
+    {
+        "Id": 20430056,
+        "Key": "PunishaarGoodsNotFound",
+        "Text": "20430057商店商品不存在"
+    },
+    {
+        "Id": 20430057,
+        "Key": "PunishaarGoodsGoldNotEnough",
+        "Text": "20430058购买商品金币不足"
+    },
+    {
+        "Id": 20430058,
+        "Key": "PunishaarBuyAddCardFailed",
+        "Text": "20430059购买商品发卡失败"
+    },
+    {
+        "Id": 20430059,
+        "Key": "PunishaarCardSaleConfigNotFound",
+        "Text": "20430060卡牌售价配置不存在"
+    },
+    {
+        "Id": 20430060,
+        "Key": "PunishaarSellNodeInvalid",
+        "Text": "20430061当前节点不可卖出卡牌"
+    },
+    {
+        "Id": 20430061,
+        "Key": "PunishaarSellCardNotFound",
+        "Text": "20430062要卖出的主卡不存在"
+    },
+    {
+        "Id": 20430062,
+        "Key": "PunishaarSellRemoveFailed",
+        "Text": "20430063卖出主卡移除失败"
+    },
+    {
+        "Id": 20430063,
+        "Key": "PunishaarFightInRemedy",
+        "Text": "20430064处于补强商店中"
+    },
+    {
+        "Id": 20430064,
+        "Key": "PunishaarGoodsAlreadyBought",
+        "Text": "20430065当前商品已购买过，无法重复购买"
+    },
+    {
+        "Id": 20431001,
+        "Key": "TransfiniteTowerActivityNotOpen",
+        "Text": "20431001活动未开启"
+    },
+    {
+        "Id": 20431002,
+        "Key": "TransfiniteTowerChapterNotOpen",
+        "Text": "20431002章节未解锁"
+    },
+    {
+        "Id": 20431003,
+        "Key": "TransfiniteTowerStageProgressError",
+        "Text": "20431003关卡进度不符"
+    },
+    {
+        "Id": 20431004,
+        "Key": "TransfiniteTowerNavigatorRequired",
+        "Text": "20431004缺少必选领航员"
+    },
+    {
+        "Id": 20431005,
+        "Key": "TransfiniteTowerChallengeCountNotEnough",
+        "Text": "20431005角色挑战次数不足"
+    },
+    {
+        "Id": 20431006,
+        "Key": "TransfiniteTowerNavigatorLocked",
+        "Text": "20431006领航员未解锁"
+    },
+    {
+        "Id": 20431007,
+        "Key": "TransfiniteTowerRollbackInvalid",
+        "Text": "20431007回溯点无效"
+    },
+    {
+        "Id": 20431008,
+        "Key": "TransfiniteTowerNoCurBattle",
+        "Text": "20431008章节战斗信息为空"
+    },
+    {
+        "Id": 20431009,
+        "Key": "TransfiniteTowerSettleCondNotEnough",
+        "Text": "20431009结算条件不足"
+    },
+    {
+        "Id": 20431010,
+        "Key": "TransfiniteTowerMvpInvalid",
+        "Text": "20431010MVP不在出战名单中"
+    },
+    {
+        "Id": 20431011,
+        "Key": "TransfiniteTowerRankNotAvailable",
+        "Text": "20431011排行榜不可用"
+    },
+    {
+        "Id": 20431012,
+        "Key": "TransfiniteTowerChapterCfgNotFound",
+        "Text": "20431012章节塔配置不存在"
+    },
+    {
+        "Id": 20431013,
+        "Key": "TransfiniteTowerStageCfgNotFound",
+        "Text": "20431013关卡配置不存在"
+    },
+    {
+        "Id": 20431014,
+        "Key": "TransfiniteTowerNotSettled",
+        "Text": "20431014该章节塔未结算"
+    },
+    {
+        "Id": 20431015,
+        "Key": "TransfiniteTowerStageNotSettled",
+        "Text": "20431015存在未确认的关卡结算"
+    },
+    {
+        "Id": 20431016,
+        "Key": "TransfiniteTowerNoPendingStage",
+        "Text": "20431016无待确认的关卡战斗"
+    },
+    {
+        "Id": 20431017,
+        "Key": "TransfiniteTowerLastRecordNotReset",
+        "Text": "20431017存在上轮爬塔记录，需先重置章节塔"
+    },
+    {
+        "Id": 20431018,
+        "Key": "TransfiniteTowerNoLastRecord",
+        "Text": "20431018无上轮爬塔记录可重置"
+    },
+    {
+        "Id": 20431019,
+        "Key": "TransfiniteTowerTeamSlotOverLimit",
+        "Text": "20431019队伍槽位数超上限"
+    },
+    {
+        "Id": 20431020,
+        "Key": "TransfiniteTowerTeamSlotConflict",
+        "Text": "20431020同一槽位自机与机器人冲突"
+    },
+    {
+        "Id": 20431021,
+        "Key": "TransfiniteTowerTeamMemberDuplicate",
+        "Text": "20431021角色重复上阵"
+    },
+    {
+        "Id": 20431022,
+        "Key": "TransfiniteTowerTeamMemberNotInGroup",
+        "Text": "20431022角色不在可上阵范围内"
+    },
+    {
+        "Id": 20431023,
+        "Key": "TransfiniteTowerTeamCharacterMismatch",
+        "Text": "20431023该角色不可用自机出战"
+    },
+    {
+        "Id": 20431024,
+        "Key": "TransfiniteTowerNavigatorForbidden",
+        "Text": "20431024本关禁止领航员上阵"
+    },
+    {
+        "Id": 20431025,
+        "Key": "TransfiniteTowerCharacterLocked",
+        "Text": "20431025角色未解锁"
+    },
+    {
+        "Id": 20431026,
+        "Key": "TransfiniteTowerNavigatorCountOverLimit",
+        "Text": "20431026领航员数量超上限"
+    },
+    {
+        "Id": 20431027,
+        "Key": "TransfiniteTowerCharacterGroupCfgNotFound",
+        "Text": "20431027角色组配置不存在"
+    },
+    {
+        "Id": 20431028,
+        "Key": "TransfiniteTowerRefightTeamChanged",
+        "Text": "20431028重新挑战阵容与通关记录不一致"
+    },
+    {
+        "Id": 20432001,
+        "Key": "TeamRecommendTargetLimitExceed",
+        "Text": "20432001阵容推荐目标数量超出上限"
+    },
+    {
+        "Id": 20432002,
+        "Key": "TeamRecommendCharacterCfgNotFound",
+        "Text": "20432002角色配置不存在"
+    },
+    {
+        "Id": 20432003,
+        "Key": "TeamRecommendBaseCharacterCfgNotFound",
+        "Text": "20432003角色基础配置不存在"
+    },
+    {
+        "Id": 20432004,
+        "Key": "TeamRecommendParamError",
+        "Text": "20432004请求参数非法"
+    },
+    {
+        "Id": 20432005,
+        "Key": "TeamRecommendDetailNotFound",
+        "Text": "20432005推荐详情不存在"
+    },
+    {
+        "Id": 20432006,
+        "Key": "TeamRecommendFormationCfgNotFound",
+        "Text": "20432006阵容配置不存在"
+    },
+    {
+        "Id": 20432007,
+        "Key": "TeamRecommendBaseFormationCfgNotFound",
+        "Text": "20432007阵容保底配置不存在"
+    },
+    {
+        "Id": 20432008,
+        "Key": "TeamRecommendTargetNotFound",
+        "Text": "20432008角色目标不存在"
+    },
+    {
+        "Id": 20432009,
+        "Key": "TeamRecommendFormationNotMatch",
+        "Text": "20432009阵容目标与来源不一致"
+    },
+    {
+        "Id": 20432010,
+        "Key": "TeamRecommendBaseFormationCharacterNotMatch",
+        "Text": "20432010目标角色与配置阵容角色不匹配"
+    },
+    {
+        "Id": 20433001,
+        "Key": "RepeatChallengeMultiRewardActivityNotOpen",
+        "Text": "20433001预热关多倍奖励活动未开启"
     },
     {
         "Id": 25000001,

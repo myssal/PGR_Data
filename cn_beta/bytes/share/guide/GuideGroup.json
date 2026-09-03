@@ -11844,5 +11844,340 @@
         "ActiveUi": "UiPBRSettlement",
         "CheckNodeActive": "BtnNext",
         "GroupId": 64916
+    },
+    {
+        "Id": 64921,
+        "Priority": 64921,
+        "Desc": "v4.7 七夕活动主界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64921,
+        "ActiveUi": "UiEnvelopeGuessingMain",
+        "GroupId": 64921
+    },
+    {
+        "Id": 64922,
+        "Priority": 64922,
+        "Desc": "v4.7 七夕开包",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 64922,
+        "ActiveUi": "UiEnvelopeGuessingOpenPackage",
+        "GroupId": 64922
+    },
+    {
+        "Id": 64923,
+        "Priority": 64923,
+        "Desc": "v4.7 七夕乐队",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863178
+        ],
+        "CompleteId": 64923,
+        "ActiveUi": "UiEnvelopeGuessingMain",
+        "GroupId": 64923
+    },
+    {
+        "Id": 65001,
+        "Priority": 65001,
+        "Desc": "v4.8 比安卡皮肤卡池引导",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65001,
+        "ActiveUi": "UiGachaBianka402Main",
+        "CheckNodeActive": "PanelGachaGroup",
+        "GroupId": 65001
+    },
+    {
+        "Id": 65002,
+        "Priority": 65002,
+        "Desc": "v4.8 赛琳娜皮肤卡池引导",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65002,
+        "ActiveUi": "UiGachaSelenaMain",
+        "CheckNodeActive": "PanelGachaGroup",
+        "GroupId": 65002
+    },
+    {
+        "Id": 65003,
+        "Priority": 65003,
+        "Desc": "v4.8 露西亚皮肤卡池引导",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65003,
+        "ActiveUi": "UiGachaLuciaMain",
+        "CheckNodeActive": "PanelGachaGroup",
+        "GroupId": 65003
+    },
+    {
+        "Id": 65004,
+        "Priority": 65004,
+        "Desc": "v4.8 雷阿尔法皮肤卡池引导",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65004,
+        "ActiveUi": "UiGachaAlphaMain",
+        "CheckNodeActive": "PanelGachaGroup",
+        "GroupId": 65004
+    },
+    {
+        "Id": 65011,
+        "Priority": 65011,
+        "Desc": "v4.8 超频演算主界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65011,
+        "ActiveUi": "UiTransfiniteTowerMain",
+        "GroupId": 65011
+    },
+    {
+        "Id": 65012,
+        "Priority": 65012,
+        "Desc": "v4.8 超频演算教学",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65012,
+        "ActiveUi": "UiTransfiniteTowerTeach",
+        "GroupId": 65012
+    },
+    {
+        "Id": 65021,
+        "Priority": 65021,
+        "Desc": "v4.8 超频演算主界面-基准测试",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65021,
+        "ActiveUi": "UiTransfiniteTowerMain",
+        "GroupId": 65021
+    },
+    {
+        "Id": 65022,
+        "Priority": 65022,
+        "Desc": "v4.8 超频演算选人",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65022,
+        "ActiveUi": "UiBattleRoleRoom",
+        "CheckNodeActive": "PanelFormationTips",
+        "GroupId": 65022
+    },
+    {
+        "Id": 65023,
+        "Priority": 65023,
+        "Ignore": 1,
+        "Desc": "v4.8 超频演算编队（废弃）",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65023,
+        "ActiveUi": "UiBattleRoleRoom",
+        "CheckNodeActive": "ImgEnergy1",
+        "GroupId": 65023
+    },
+    {
+        "Id": 65024,
+        "Priority": 65024,
+        "Ignore": 1,
+        "Desc": "v4.8 超频演算数据回档",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65024,
+        "ActiveUi": "UiTransfiniteTowerSettlement",
+        "GroupId": 65024
+    },
+    {
+        "Id": 65025,
+        "Priority": 65025,
+        "Desc": "v4.8 超频演算数据峰值演算",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863190
+        ],
+        "CompleteId": 65025,
+        "ActiveUi": "UiTransfiniteTowerStage",
+        "GroupId": 65025
+    },
+    {
+        "Id": 65026,
+        "Priority": 65026,
+        "Desc": "v4.8 超频演算数据演算词缀",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863191
+        ],
+        "CompleteId": 65026,
+        "ActiveUi": "UiTransfiniteTowerStage",
+        "GroupId": 65026
+    },
+    {
+        "Id": 65031,
+        "Priority": 65031,
+        "Desc": "v4.8 大巴扎主界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65031,
+        "ActiveUi": "UiPunishaarMain",
+        "GroupId": 65031
+    },
+    {
+        "Id": 65032,
+        "Priority": 65032,
+        "Desc": "v4.8 大巴扎战斗1-2",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863184
+        ],
+        "CompleteId": 65032,
+        "ActiveUi": "UiPunishaarFightMain",
+        "GroupId": 65032
+    },
+    {
+        "Id": 65033,
+        "Priority": 65033,
+        "Desc": "v4.8 大巴扎胜利结算",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65033,
+        "ActiveUi": "UiPunishaarBattleSettlement",
+        "CheckNodeActive": "TitleWin",
+        "GroupId": 65033
+    },
+    {
+        "Id": 65034,
+        "Priority": 65034,
+        "Desc": "v4.8 大巴扎事件选择1-3",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863185
+        ],
+        "CompleteId": 65034,
+        "ActiveUi": "UiPunishaarEventSelection",
+        "GroupId": 65034
+    },
+    {
+        "Id": 65035,
+        "Priority": 65035,
+        "Desc": "v4.8 大巴扎商店升级1-4",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863186
+        ],
+        "CompleteId": 65035,
+        "ActiveUi": "UiPunishaarFightMain",
+        "CheckNodeActive": "PanelShop",
+        "GroupId": 65035
+    },
+    {
+        "Id": 65036,
+        "Priority": 65036,
+        "Desc": "v4.8 大巴扎商店辅助机卡1-6",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863187
+        ],
+        "CompleteId": 65036,
+        "ActiveUi": "UiPunishaarFightMain",
+        "CheckNodeActive": "PanelShop",
+        "GroupId": 65036
+    },
+    {
+        "Id": 65037,
+        "Priority": 65037,
+        "Desc": "v4.8 大巴扎自动释放2-2",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863188
+        ],
+        "CompleteId": 65037,
+        "ActiveUi": "UiPunishaarFightMain",
+        "CheckNodeActive": "BtnAuto",
+        "GroupId": 65037
+    },
+    {
+        "Id": 65038,
+        "Priority": 65038,
+        "Desc": "v4.8 大巴扎失败结算",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65038,
+        "ActiveUi": "UiPunishaarBattleSettlement",
+        "CheckNodeActive": "TitleLose",
+        "GroupId": 65038
+    },
+    {
+        "Id": 65039,
+        "Priority": 65039,
+        "Desc": "v4.8 大巴扎商店配件卡4-15",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863189
+        ],
+        "CompleteId": 65039,
+        "ActiveUi": "UiPunishaarFightMain",
+        "CheckNodeActive": "PanelShop",
+        "GroupId": 65039
     }
 ]

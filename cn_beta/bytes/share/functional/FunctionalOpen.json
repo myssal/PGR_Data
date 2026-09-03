@@ -39,7 +39,7 @@
         "Name": "签到",
         "Priority": 4,
         "Condition": [
-            770200
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -55,9 +55,6 @@
         "Id": 7,
         "Name": "福利",
         "Priority": 5,
-        "Condition": [
-            200000
-        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -228,7 +225,7 @@
         "Name": "装备目标-推荐",
         "Priority": 14,
         "Condition": [
-            770400
+            770422
         ],
         "Type": 1,
         "FunctionType": 1
@@ -238,7 +235,7 @@
         "Name": "装备目标-设定",
         "Priority": 14,
         "Condition": [
-            770400
+            770422
         ],
         "Type": 1,
         "FunctionType": 1
@@ -355,9 +352,6 @@
         "Id": 603,
         "Name": "战队-成就",
         "Priority": 25,
-        "Condition": [
-            200000
-        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -601,7 +595,7 @@
         "Name": "信赖度-档案",
         "Priority": 49,
         "Condition": [
-            200000
+            773600
         ],
         "Type": 1,
         "FunctionType": 1
@@ -611,7 +605,7 @@
         "Name": "信赖度-剧情",
         "Priority": 50,
         "Condition": [
-            200000
+            773700
         ],
         "Type": 1,
         "FunctionType": 1
@@ -621,7 +615,7 @@
         "Name": "信赖度-礼物",
         "Priority": 51,
         "Condition": [
-            200000
+            773800
         ],
         "Type": 1,
         "FunctionType": 1
@@ -631,7 +625,7 @@
         "Name": "信赖度-偶遇",
         "Priority": 52,
         "Condition": [
-            200000
+            773900
         ],
         "Type": 1,
         "FunctionType": 1
@@ -802,9 +796,6 @@
         "Id": 2300,
         "Name": "2级菜单",
         "Priority": 113,
-        "Condition": [
-            200000
-        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -878,9 +869,6 @@
         "Id": 8001,
         "Name": "邀请码分享",
         "Priority": 105,
-        "Condition": [
-            200000
-        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -1711,6 +1699,46 @@
         "FunctionType": 1
     },
     {
+        "Id": 10509,
+        "Name": "战双扎玩法",
+        "Priority": 132,
+        "Condition": [
+            774800
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10510,
+        "Name": "4.8超限玩法",
+        "Priority": 133,
+        "Condition": [
+            774800
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10512,
+        "Name": "复刷关双倍任务",
+        "Priority": 134,
+        "Condition": [
+            770422
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10513,
+        "Name": "4.8联动开启",
+        "Priority": 135,
+        "Condition": [
+            100001
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
         "Id": 109001,
         "Name": "成员特训 RS-2",
         "Priority": 81,
@@ -2034,7 +2062,7 @@
         "Name": "新手入门",
         "Priority": 1,
         "Condition": [
-            200000
+            770417
         ],
         "Type": 1,
         "FunctionType": 1
@@ -2659,6 +2687,16 @@
         "FunctionType": 1
     },
     {
+        "Id": 10511,
+        "Name": "成员-一键养成",
+        "Priority": 11,
+        "Condition": [
+            30404
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
         "Id": 20000,
         "Name": "空花本体",
         "Priority": 70,
@@ -2793,7 +2831,7 @@
         "Name": "生命树档案",
         "Priority": 70,
         "Condition": [
-            770431
+            200000
         ],
         "Type": 1,
         "FunctionType": 1

@@ -1071,7 +1071,7 @@
     {
         "Id": 1025205,
         "Name": "哀泣日记",
-        "Desc": "使用任意技能时，每拥有{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性，返还{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，至多{2}点。一场战斗至多触发{3}次，<color=#E7D09A>唯一</color>。",
+        "Desc": "使用任意技能时，每拥有{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性（当前：{Attr:3}），返还{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，至多{2}点。一场战斗至多触发{3}次，<color=#E7D09A>唯一</color>。",
         "ShortDesc": "使用技能后，根据<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性，返还<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
         "DescParams": [
             40,
@@ -1259,7 +1259,7 @@
     {
         "Id": 1025217,
         "Name": "未知秘录",
-        "Desc": "进入战斗时，自身每有{0}点<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>或<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性，<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性提升{1}点，<color=#E7D09A>唯一</color>。",
+        "Desc": "进入战斗时，自身每有{0}点<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>（当前：{Attr:5}）或<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>（当前：{Attr:4}）属性，<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性提升{1}点，<color=#E7D09A>唯一</color>。",
         "ShortDesc": "根据<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序</color>和<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，提升<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性",
         "DescParams": [
             30,
@@ -1386,7 +1386,7 @@
     {
         "Id": 1025225,
         "Name": "僭主桂冠",
-        "Desc": "每次释放技能时，自身<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性提升{0}点，<color=#E7D09A>唯一</color>。",
+        "Desc": "每次释放技能时，自身<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性（当前：{Attr:3}）提升{0}点，<color=#E7D09A>唯一</color>。",
         "ShortDesc": "每次释放技能时，提升<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性",
         "DescParams": [
             2
@@ -1993,7 +1993,7 @@
     {
         "Id": 1025505,
         "Name": "幽绯浮瞳",
-        "Desc": "进入战斗时，获得<color=#487F3B><Icon=IconLife|30|30|0.5/>生命</color>属性{0}的<color=#137D90><Icon=IconProtector|30|30|0.5/>护盾</color>，<color=#E7D09A>唯一</color>。",
+        "Desc": "进入战斗时，获得<color=#487F3B><Icon=IconLife|30|30|0.5/>生命</color>属性（当前：{Attr:2}）{0}的<color=#137D90><Icon=IconProtector|30|30|0.5/>护盾</color>，<color=#E7D09A>唯一</color>。",
         "ShortDesc": "进入战斗时，基于<color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>生命</color>属性获得<color=#137D90><Icon=IconProtectorBlack|30|30|0.5/>护盾</color>",
         "DescParams": [
             "5%"
