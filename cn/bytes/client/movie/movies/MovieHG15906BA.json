@@ -441,7 +441,6 @@
         "Id": 43,
         "ActionId": 43,
         "Type": 301,
-        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "主持人",
@@ -460,23 +459,28 @@
     },
     {
         "Id": 45,
-        "ActionId": 45,
-        "Type": 202,
-        "EndAnim": "DialogDisable",
-        "Params": [
-            18
-        ]
-    },
-    {
-        "Id": 46,
         "ActionId": 46,
         "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "又是凯基？！",
             47,
             "……？",
             47
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 45,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
         ]
     },
     {
@@ -492,7 +496,6 @@
         "Id": 48,
         "ActionId": 48,
         "Type": 205,
-        "EndAnim": "AniZhuanchangEnd",
         "Params": [
             1004,
             "Assets/Product/Texture/Image/BgStory/BgStory0.png",
@@ -525,7 +528,7 @@
         "Id": 51,
         "ActionId": 51,
         "Type": 301,
-        "BeginAnim": "DialogEnable",
+        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
             1,
             "主持人",

@@ -658,7 +658,7 @@
         "Id": 64,
         "ActionId": 64,
         "Type": 301,
-        "EndAnim": "AniZhuanchangEnd",
+        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
             "",
             "",
@@ -823,14 +823,16 @@
         "Id": 79,
         "ActionId": 79,
         "Type": 101,
+        "BeginAnim": "DialogDisable",
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/Bgstory295.png"
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
         ]
     },
     {
         "Id": 80,
         "ActionId": 80,
         "Type": 302,
+        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
             "",
             "相信她们吧。",
@@ -868,18 +870,35 @@
     },
     {
         "Id": 84,
+        "ActionId": 2000,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 2001,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory295.png"
+        ]
+    },
+    {
+        "Id": 86,
         "ActionId": 84,
         "Type": 502,
-        "BeginDelay": 1000.0,
+        "EndDelay": 1000.0,
         "Params": [
             "RImgBg1Shake"
         ]
     },
     {
-        "Id": 85,
+        "Id": 87,
         "ActionId": 85,
         "Type": 301,
-        "BeginAnim": "AniZhuanchangEnd",
+        "BeginAnim": "DialogEnable",
         "Params": [
             "",
             "",
@@ -887,7 +906,7 @@
         ]
     },
     {
-        "Id": 86,
+        "Id": 88,
         "ActionId": 86,
         "Type": 301,
         "Params": [
@@ -897,7 +916,7 @@
         ]
     },
     {
-        "Id": 87,
+        "Id": 89,
         "ActionId": 87,
         "Type": 201,
         "Params": [
@@ -907,7 +926,7 @@
         ]
     },
     {
-        "Id": 88,
+        "Id": 90,
         "ActionId": 88,
         "Type": 301,
         "IsEnd": 1,

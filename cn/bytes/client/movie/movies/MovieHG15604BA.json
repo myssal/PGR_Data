@@ -2198,7 +2198,6 @@
         "Id": 214,
         "ActionId": 214,
         "Type": 301,
-        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "Vie酱",
@@ -2210,7 +2209,7 @@
         "Id": 215,
         "ActionId": 215,
         "Type": 302,
-        "BeginAnim": "DialogDisable",
+        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "现实被一种名为帕弥什的病毒入侵，大多数人都牺牲了。",
@@ -2221,6 +2220,7 @@
         "Id": 216,
         "ActionId": 216,
         "Type": 202,
+        "BeginAnim": "DialogDisable",
         "Params": [
             1,
             "",
@@ -2242,7 +2242,6 @@
         "Id": 218,
         "ActionId": 218,
         "Type": 306,
-        "EndAnim": "AniZhuanchangEnd",
         "EndDelay": 300.0,
         "Params": [
             1
@@ -2252,6 +2251,7 @@
         "Id": 219,
         "ActionId": 219,
         "Type": 302,
+        "BeginAnim": "AniZhuanchangEnd",
         "Params": [
             "",
             "我们面临的灾难，远比历史上任何一次的危机更为残酷。",
