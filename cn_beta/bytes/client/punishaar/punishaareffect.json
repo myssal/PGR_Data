@@ -4067,10 +4067,10 @@
     {
         "Id": 338,
         "GroupId": 239,
-        "TriggerId": 224,
+        "TriggerId": 239,
         "ScopeType": 8,
         "ScopeParams": [
-            3
+            1
         ],
         "EffectType": 1,
         "EffectParams": [
@@ -4106,10 +4106,10 @@
     {
         "Id": 563,
         "GroupId": 241,
-        "TriggerId": 219,
+        "TriggerId": 218,
         "ScopeType": 8,
         "ScopeParams": [
-            3
+            1
         ],
         "EffectType": 1,
         "EffectParams": [
@@ -5711,7 +5711,8 @@
     },
     {
         "Id": 480,
-        "GroupId": 265,
+        "GroupId": 308,
+        "TriggerId": 1,
         "ScopeType": 3,
         "EffectType": 7,
         "EffectParams": [
@@ -6401,7 +6402,7 @@
             1.0,
             1.0,
             1.0,
-            0.8999
+            1.0
         ]
     },
     {
@@ -6448,7 +6449,7 @@
             1.0,
             1.0,
             1.0,
-            0.8999
+            1.0
         ]
     },
     {
@@ -6536,7 +6537,7 @@
     {
         "Id": 1026,
         "GroupId": 1014,
-        "TriggerId": 234,
+        "TriggerId": 233,
         "ScopeType": 4,
         "EffectType": 3,
         "EffectParams": [
@@ -6555,6 +6556,32 @@
         "EffectParams": [
             3.0,
             3.0
+        ]
+    },
+    {
+        "Id": 1045,
+        "GroupId": 1006,
+        "TriggerId": 229,
+        "ScopeType": 4,
+        "EffectType": 3,
+        "EffectParams": [
+            3.0,
+            4.0,
+            0.8999,
+            355.0
+        ]
+    },
+    {
+        "Id": 1046,
+        "GroupId": 1009,
+        "TriggerId": 230,
+        "ScopeType": 4,
+        "EffectType": 3,
+        "EffectParams": [
+            3.0,
+            4.0,
+            0.8999,
+            355.0
         ]
     }
 ]
