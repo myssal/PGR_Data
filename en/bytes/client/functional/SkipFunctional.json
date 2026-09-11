@@ -2183,7 +2183,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 196,
-        "Explain": "4.7跨4.8预热打脸1",
+        "Explain": "4.7跨4.8预热打脸狂三",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -2192,7 +2192,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 197,
-        "Explain": "4.7跨4.8预热打脸2",
+        "Explain": "4.7跨4.8预热打脸阿德莱德",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -20436,7 +20436,7 @@
         "Explain": "Jump to Phantoms in the Mirror",
         "FunctionalId": 10324,
         "CustomParams": [
-            10,
+            12,
             102
         ],
         "IsHideFunc": true
@@ -21809,13 +21809,14 @@
     },
     {
         "SkipId": 20383,
-        "Origin": 6,
-        "UiName": "UiWelfare",
+        "Origin": 7,
+        "UiName": "SkipToUiWelfare",
         "Explain": "Complete the \"Scarlet Arrival\" event mission",
         "FunctionalId": 1,
         "CustomParams": [
-            1,
-            99
+            9,
+            47,
+            418
         ],
         "IsHideFunc": true
     },
@@ -21881,6 +21882,19 @@
             2,
             0,
             4
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20389,
+        "Origin": 7,
+        "UiName": "SkipToUiWelfare",
+        "Explain": "Complete \"Ripples of the Past\" event missions",
+        "FunctionalId": 1,
+        "CustomParams": [
+            9,
+            47,
+            428
         ],
         "IsHideFunc": true
     },
