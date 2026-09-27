@@ -48447,12 +48447,13 @@
         ]
     },
     {
-        "Id": 4473,
-        "Group": 112373,
-        "Name": "Tap Red Orb",
-        "Describe": "卡列-点击红球",
+        "Id": 4466,
+        "Group": 112370,
+        "Name": "3-Ping Orbs",
+        "Describe": "Kurumi - Blue Orb 3-Ping",
         "IconType": 1,
-        "Icon": 101,
+        "Icon": 102,
+        "Icon2": 101,
         "TimeOut": -1,
         "EffectType": [
             1
@@ -48461,20 +48462,21 @@
             2
         ],
         "SkillId": [
-            106105,
-            106106,
-            106107
+            106914,
+            106922,
+            106833,
+            106848
         ]
     },
     {
-        "Id": 4474,
-        "Group": 112373,
-        "Name": "Tap Red Orb",
-        "Describe": "卡列-点击红球",
+        "Id": 4467,
+        "Group": 112370,
+        "Name": "Any 3-Ping",
+        "Describe": "Kurumi - Blue Orb 3-Ping",
         "IconType": 1,
-        "Icon": 101,
-        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightIconR5Kalienina12.png",
-        "TimeOut": 3000,
+        "Icon": 102,
+        "Icon2": 101,
+        "TimeOut": -1,
         "EffectType": [
             1
         ],
@@ -48482,16 +48484,161 @@
             2
         ],
         "SkillId": [
-            106108,
-            106109,
-            106110
+            106914,
+            106922,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4468,
+        "Group": 112370,
+        "Name": "Resplendent Chime",
+        "Describe": "Kurumi - CUB Skill",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424206
+        ]
+    },
+    {
+        "Id": 4469,
+        "Group": 112371,
+        "Name": "Any 3-Ping",
+        "Describe": "Kurumi - Blue Orb 3-Ping",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106914,
+            106922,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4470,
+        "Group": 112371,
+        "Name": "Any 3-Ping",
+        "Describe": "Kurumi - Blue Orb 3-Ping",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106914,
+            106922,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4471,
+        "Group": 112371,
+        "Name": "Bullet Barrage",
+        "Describe": "Kurumi - CUB Skill",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424212
+        ]
+    },
+    {
+        "Id": 4472,
+        "Group": 112372,
+        "Name": "Any 3-Ping",
+        "Describe": "Kurumi - Blue Orb 3-Ping",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106914,
+            106922,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4473,
+        "Group": 112372,
+        "Name": "Any 3-Ping",
+        "Describe": "Kurumi - Blue Orb 3-Ping",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106914,
+            106922,
+            106833,
+            106848
+        ]
+    },
+    {
+        "Id": 4474,
+        "Group": 112372,
+        "Name": "<size=20>Press and hold Dodge to cast Aleph</size>.",
+        "Describe": "Kurumi - Long Dodge",
+        "IconType": 4,
+        "Icon": 2,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            106918,
+            106919
         ]
     },
     {
         "Id": 4475,
-        "Group": 112374,
+        "Group": 112373,
         "Name": "Tap Red Orb",
-        "Describe": "卡列-点击红球",
+        "Describe": "Karenina - Tap Red Orb",
         "IconType": 1,
         "Icon": 101,
         "TimeOut": -1,
@@ -48509,9 +48656,50 @@
     },
     {
         "Id": 4476,
+        "Group": 112373,
+        "Name": "Tap Red Orb",
+        "Describe": "Karenina - Tap Red Orb",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightIconR5Kalienina12.png",
+        "TimeOut": 3000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106108,
+            106109,
+            106110
+        ]
+    },
+    {
+        "Id": 4477,
+        "Group": 112374,
+        "Name": "Tap Red Orb",
+        "Describe": "Karenina - Tap Red Orb",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106105,
+            106106,
+            106107
+        ]
+    },
+    {
+        "Id": 4478,
         "Group": 112374,
         "Name": "Tap Yellow Orb",
-        "Describe": "卡列-点击黄球",
+        "Describe": "Karenina - Tap Yellow Orb",
         "IconType": 1,
         "Icon": 103,
         "IconCustom": "Assets/Product/Texture/Image/UiFight/FightIconR5Kalienina32.png",
@@ -48527,7 +48715,7 @@
         ]
     },
     {
-        "Id": 4477,
+        "Id": 4479,
         "Group": 112375,
         "Name": "Press and hold Basic Attack",
         "Describe": "Karenina - Press and Hold Basic Attack Dracorise",
@@ -48545,10 +48733,10 @@
         ]
     },
     {
-        "Id": 4478,
+        "Id": 4480,
         "Group": 112375,
         "Name": "Tap Basic Attack while airborne",
-        "Describe": "点按普攻下砸",
+        "Describe": "Tap Basic Attack to slam down.",
         "IconType": 1,
         "Icon": 1,
         "TimeOut": 3000,
@@ -48563,9 +48751,9 @@
         ]
     },
     {
-        "Id": 4479,
+        "Id": 4481,
         "Group": 112376,
-        "Name": "<size=22>Double-tap Dodge while moving</size>",
+        "Name": "<size=22>Doubl-tap Dodge while moving</size>",
         "Describe": "Hold a Direction Key and double-tap Dodge to enter the ferry state.",
         "IconType": 2,
         "Icon": 2,
@@ -48582,10 +48770,10 @@
         ]
     },
     {
-        "Id": 4480,
+        "Id": 4482,
         "Group": 112376,
         "Name": "<size=22>Press Blue Orb while moving</size>",
-        "Describe": "在渡槎状态下点按蓝球消球开炮",
+        "Describe": "While Drifting, tap a Blue Orb to ping it and fire the cannon.",
         "IconType": 1,
         "Icon": 102,
         "TimeOut": 6000,
@@ -48602,7 +48790,7 @@
         ]
     },
     {
-        "Id": 4481,
+        "Id": 4483,
         "Group": 112378,
         "Name": "Press and Hold Dodge while stationary",
         "Describe": "Press and hold Dodge",
@@ -48620,10 +48808,10 @@
         ]
     },
     {
-        "Id": 4482,
+        "Id": 4484,
         "Group": 112378,
         "Name": "Tap Basic Attack",
-        "Describe": "点按普攻把潮痕替换为沧澜",
+        "Describe": "Tap Basic Attack to replace Tide Mark with Deepblue.",
         "IconType": 1,
         "Icon": 1,
         "TimeOut": 3000,
@@ -48638,10 +48826,10 @@
         ]
     },
     {
-        "Id": 4483,
+        "Id": 4485,
         "Group": 112378,
         "Name": "Tap Basic Attack",
-        "Describe": "点按普攻把潮痕替换为沧澜",
+        "Describe": "Tap Basic Attack to replace Tide Mark with Deepblue.",
         "IconType": 1,
         "Icon": 1,
         "TimeOut": 3000,
@@ -48656,10 +48844,10 @@
         ]
     },
     {
-        "Id": 4484,
+        "Id": 4486,
         "Group": 112378,
         "Name": "Tap Basic Attack",
-        "Describe": "点按普攻把潮痕替换为沧澜",
+        "Describe": "Tap Basic Attack to replace Tide Mark with Deepblue.",
         "IconType": 1,
         "Icon": 1,
         "TimeOut": 3000,
@@ -48674,10 +48862,10 @@
         ]
     },
     {
-        "Id": 4485,
+        "Id": 4487,
         "Group": 112378,
         "Name": "Tap Basic Attack",
-        "Describe": "点按普攻把潮痕替换为沧澜",
+        "Describe": "Tap Basic Attack to replace Tide Mark with Deepblue.",
         "IconType": 1,
         "Icon": 1,
         "TimeOut": 3000,
@@ -48692,10 +48880,10 @@
         ]
     },
     {
-        "Id": 4486,
+        "Id": 4488,
         "Group": 112378,
         "Name": "Tap Basic Attack",
-        "Describe": "点按普攻把潮痕替换为沧澜",
+        "Describe": "Tap Basic Attack to replace Tide Mark with Deepblue.",
         "IconType": 1,
         "Icon": 1,
         "TimeOut": 3000,
@@ -48710,9 +48898,9 @@
         ]
     },
     {
-        "Id": 4487,
+        "Id": 4489,
         "Group": 112378,
-        "Name": "Press and Hold Basic Attack",
+        "Name": "Press and hold Basic Attack",
         "Describe": "Press and hold Basic ATK to release the core.",
         "IconType": 4,
         "Icon": 1,
@@ -48729,10 +48917,10 @@
         ]
     },
     {
-        "Id": 4488,
+        "Id": 4490,
         "Group": 112380,
         "Name": "Press and Hold Dodge while stationary",
-        "Describe": "Press and Hold Dodge",
+        "Describe": "Press and hold Dodge",
         "IconType": 4,
         "Icon": 2,
         "TimeOut": -1,
@@ -48747,9 +48935,9 @@
         ]
     },
     {
-        "Id": 4489,
+        "Id": 4491,
         "Group": 112381,
-        "Name": "Press Blue Orb",
+        "Name": "Tap Blue Orb",
         "Describe": "Press Blue Orb to convert Tide Mark into Tidal Force.",
         "IconType": 1,
         "Icon": 102,
@@ -48767,9 +48955,9 @@
         ]
     },
     {
-        "Id": 4490,
+        "Id": 4492,
         "Group": 112382,
-        "Name": "Press and Hold Basic Attack",
+        "Name": "Press and hold Basic Attack",
         "Describe": "Press and hold Basic ATK to release the core.",
         "IconType": 4,
         "Icon": 1,
@@ -48786,9 +48974,9 @@
         ]
     },
     {
-        "Id": 4491,
+        "Id": 4493,
         "Group": 112383,
-        "Name": "Press Signature",
+        "Name": "Tap Signature",
         "Describe": "Karenina - Press Signature",
         "IconType": 1,
         "Icon": 3,
@@ -48805,7 +48993,7 @@
         ]
     },
     {
-        "Id": 4492,
+        "Id": 4494,
         "Group": 112384,
         "Name": "Press and Hold Signature",
         "Describe": "Pyroath Leap - Effect Entry Signature",
@@ -48824,9 +49012,9 @@
         ]
     },
     {
-        "Id": 4493,
+        "Id": 4495,
         "Group": 112385,
-        "Name": "Press and Hold Red Orb",
+        "Name": "Press and hold Red Orb",
         "Describe": "Pyroath Leap - Press and Hold Red Orb",
         "IconType": 1,
         "Icon": 101,
@@ -48844,9 +49032,9 @@
         ]
     },
     {
-        "Id": 4494,
+        "Id": 4496,
         "Group": 112387,
-        "Name": "Press and Hold Signature",
+        "Name": "Press and Hold Signature Move",
         "Describe": "Pyroath Leap - Press and Hold Signature",
         "IconType": 1,
         "Icon": 3,
@@ -48863,47 +49051,47 @@
         ]
     },
     {
-        "Id": 4495,
-        "Group": 112387,
-        "Name": "Ping Plasma Orb",
-        "Describe": "Pyroath Leap - Ping Plasma Orb",
-        "IconType": 1,
-        "Icon": 102,
-        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya41.png",
-        "TimeOut": 3000,
-        "EffectType": [
-            1
-        ],
-        "EffectButton": [
-            3
-        ],
-        "SkillId": [
-            106205
-        ]
-    },
-    {
-        "Id": 4496,
-        "Group": 112387,
-        "Name": "Ping Plasma Orb",
-        "Describe": "Pyroath Leap - Ping Plasma Orb",
-        "IconType": 1,
-        "Icon": 102,
-        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya41.png",
-        "TimeOut": 3000,
-        "EffectType": [
-            1
-        ],
-        "EffectButton": [
-            3
-        ],
-        "SkillId": [
-            106205
-        ]
-    },
-    {
         "Id": 4497,
+        "Group": 112387,
+        "Name": "Ping Plasma Orb",
+        "Describe": "Pyroath Leap - Ping Plasma Orb",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya41.png",
+        "TimeOut": 3000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            3
+        ],
+        "SkillId": [
+            106205
+        ]
+    },
+    {
+        "Id": 4498,
+        "Group": 112387,
+        "Name": "Ping Plasma Orb",
+        "Describe": "Pyroath Leap - Ping Plasma Orb",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR6Luxiya41.png",
+        "TimeOut": 3000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            3
+        ],
+        "SkillId": [
+            106205
+        ]
+    },
+    {
+        "Id": 4499,
         "Group": 112386,
-        "Name": "Press and Hold Signature",
+        "Name": "Press and Hold Signature Move",
         "Describe": "Lucia - Fire Thunder Form",
         "IconType": 4,
         "Icon": 3,
@@ -48920,9 +49108,9 @@
         ]
     },
     {
-        "Id": 4498,
+        "Id": 4500,
         "Group": 112386,
-        "Name": "Press Blue Orb",
+        "Name": "Tap Blue Orb",
         "Describe": "Lucia - Blue Ping",
         "IconType": 1,
         "Icon": 102,
@@ -48933,44 +49121,6 @@
         ],
         "MissileId": [
             10623625
-        ]
-    },
-    {
-        "Id": 4499,
-        "Group": 112388,
-        "Name": "卡列备用",
-        "Describe": "占坑",
-        "IconType": 1,
-        "Icon": 3,
-        "TimeOut": -1,
-        "EffectType": [
-            1
-        ],
-        "EffectButton": [
-            17
-        ],
-        "SkillId": [
-            106148,
-            106149
-        ]
-    },
-    {
-        "Id": 4500,
-        "Group": 112388,
-        "Name": "卡列备用",
-        "Describe": "占坑",
-        "IconType": 1,
-        "Icon": 3,
-        "TimeOut": -1,
-        "EffectType": [
-            1
-        ],
-        "EffectButton": [
-            17
-        ],
-        "SkillId": [
-            106148,
-            106149
         ]
     },
     {
@@ -49258,6 +49408,1168 @@
         ],
         "SkillId": [
             106146
+        ]
+    },
+    {
+        "Id": 4515,
+        "Group": 112394,
+        "Name": "Any 3-Ping x2",
+        "Describe": "Crimson Abyss - Red 3-Ping",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4516,
+        "Group": 112394,
+        "Name": "<color=#ffda58>Press and hold</color> Basic Attack",
+        "Describe": "Crimson Abyss - Charged Basic Attack",
+        "IconType": 1,
+        "Icon": 99,
+        "TimeOut": 2000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            102233,
+            102232
+        ]
+    },
+    {
+        "Id": 4517,
+        "Group": 112394,
+        "Name": "<color=#ffda58>Release</color> Basic Attack",
+        "Describe": "Crimson Abyss - Charged Basic Attack",
+        "IconType": 1,
+        "Icon": 99,
+        "TimeOut": 3000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            102239,
+            102236
+        ]
+    },
+    {
+        "Id": 4518,
+        "Group": 112395,
+        "Name": "Any 3-Ping x2",
+        "Describe": "Crimson Abyss - Blue 3-Ping",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4519,
+        "Group": 112395,
+        "Name": "Signature",
+        "Describe": "Crimson Abyss Phase I Signature",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": 2000,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            102216
+        ]
+    },
+    {
+        "Id": 4520,
+        "Group": 112395,
+        "Name": "<color=#ffda58>Press and hold</color> Basic Attack",
+        "Describe": "Crimson Abyss - Charged Basic Attack",
+        "IconType": 1,
+        "Icon": 99,
+        "TimeOut": 5000,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            199282
+        ],
+        "MissileId": [
+            10221621,
+            10221622,
+            10221623
+        ]
+    },
+    {
+        "Id": 4521,
+        "Group": 112396,
+        "Name": "Tap Yellow Orb",
+        "Describe": "超频演算-抢占id神威",
+        "IconType": 1,
+        "Icon": 103,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            100610,
+            100608,
+            100609
+        ]
+    },
+    {
+        "Id": 4522,
+        "Group": 112396,
+        "Name": "Tap Basic Attack",
+        "Describe": "超频演算-抢占id神威",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            100629
+        ]
+    },
+    {
+        "Id": 4523,
+        "Group": 112397,
+        "Name": "<size=24>Perform any 3-Ping</size>",
+        "Describe": "阿德-蓝三消",
+        "IconType": 1,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkilliconR3Adelaide31.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1,
+            1
+        ],
+        "EffectButton": [
+            3,
+            4
+        ],
+        "SkillId": [
+            107034,
+            107040,
+            107009,
+            107015
+        ]
+    },
+    {
+        "Id": 4524,
+        "Group": 112397,
+        "Name": "<size=24>Perform any 3-Ping</size>",
+        "Describe": "阿德-蓝三消",
+        "IconType": 1,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkilliconR3Adelaide31.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1,
+            1
+        ],
+        "EffectButton": [
+            3,
+            4
+        ],
+        "SkillId": [
+            107034,
+            107040,
+            107009,
+            107015
+        ]
+    },
+    {
+        "Id": 4525,
+        "Group": 112397,
+        "Name": "Crimson Barrage",
+        "Describe": "阿德--辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424306
+        ]
+    },
+    {
+        "Id": 4526,
+        "Group": 112398,
+        "Name": "<size=24>Perform any 3-Ping</size>",
+        "Describe": "阿德-蓝三消",
+        "IconType": 1,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkilliconR3Adelaide31.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1,
+            1
+        ],
+        "EffectButton": [
+            3,
+            4
+        ],
+        "SkillId": [
+            107034,
+            107040,
+            107009,
+            107015
+        ]
+    },
+    {
+        "Id": 4527,
+        "Group": 112398,
+        "Name": "<size=24>Perform any 3-Ping</size>",
+        "Describe": "阿德-蓝三消",
+        "IconType": 1,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkilliconR3Adelaide31.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1,
+            1
+        ],
+        "EffectButton": [
+            3,
+            4
+        ],
+        "SkillId": [
+            107034,
+            107040,
+            107009,
+            107015
+        ]
+    },
+    {
+        "Id": 4528,
+        "Group": 112398,
+        "Name": "Scarlet Pursuit",
+        "Describe": "阿德--辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            424312
+        ]
+    },
+    {
+        "Id": 4529,
+        "Group": 112399,
+        "Name": "<size=22>Use Basic Attack in Abyssfarer Form</size>",
+        "Describe": "阿德-普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            1,
+            2
+        ],
+        "EffectButton": [
+            1,
+            15
+        ],
+        "SkillId": [
+            107049,
+            107045
+        ]
+    },
+    {
+        "Id": 4530,
+        "Group": 112402,
+        "Name": "Any 3-Ping x2",
+        "Describe": "超频演算-抢占id卡列",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4531,
+        "Group": 112402,
+        "Name": "Any 3-Ping x2",
+        "Describe": "超频演算-抢占id卡列",
+        "IconType": 2,
+        "Icon": 101,
+        "Icon2": 102,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            102218
+        ]
+    },
+    {
+        "Id": 4532,
+        "Group": 112403,
+        "Name": "Tap Red Orb",
+        "Describe": "狂三-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106914
+        ]
+    },
+    {
+        "Id": 4533,
+        "Group": 112404,
+        "Name": "Tap Blue Orb",
+        "Describe": "Kurumi - Blue Orb 3-Ping",
+        "IconType": 1,
+        "Icon": 102,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106922
+        ]
+    },
+    {
+        "Id": 4534,
+        "Group": 112405,
+        "Name": "Press and hold Dodge",
+        "Describe": "Kurumi - Long Dodge",
+        "IconType": 4,
+        "Icon": 2,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            106918,
+            106919
+        ]
+    },
+    {
+        "Id": 4535,
+        "Group": 112406,
+        "Name": "Tap Signature",
+        "Describe": "狂三-一段大",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            106951
+        ]
+    },
+    {
+        "Id": 4536,
+        "Group": 112407,
+        "Name": "Tap Red Orb",
+        "Describe": "狂三-二阶段红球1",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi12.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106913
+        ]
+    },
+    {
+        "Id": 4537,
+        "Group": 112407,
+        "Name": "Tap Red Orb",
+        "Describe": "狂三-二阶段红球2",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi11.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106921
+        ]
+    },
+    {
+        "Id": 4538,
+        "Group": 112408,
+        "Name": "Tap Red Orb",
+        "Describe": "狂三-二阶段红球1",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi12.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106913
+        ]
+    },
+    {
+        "Id": 4539,
+        "Group": 112408,
+        "Name": "Tap Red Orb",
+        "Describe": "狂三-二阶段红球2",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi11.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            106921
+        ]
+    },
+    {
+        "Id": 4540,
+        "Group": 112408,
+        "Name": "Press and hold Basic Attack",
+        "Describe": "狂三-红长普",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": 4000,
+        "IsMySelf": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106915,
+            106916,
+            106917
+        ]
+    },
+    {
+        "Id": 4541,
+        "Group": 112409,
+        "Name": "Tap Blue Orb",
+        "Describe": "狂三-二阶段蓝球1",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi22.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106931
+        ]
+    },
+    {
+        "Id": 4542,
+        "Group": 112409,
+        "Name": "Tap Blue Orb",
+        "Describe": "狂三-二阶段蓝球2",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi23.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106932
+        ]
+    },
+    {
+        "Id": 4543,
+        "Group": 112410,
+        "Name": "Tap Blue Orb",
+        "Describe": "狂三-二阶段蓝球1",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi22.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106931
+        ]
+    },
+    {
+        "Id": 4544,
+        "Group": 112410,
+        "Name": "Tap Blue Orb",
+        "Describe": "狂三-二阶段蓝球2",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi23.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106932
+        ]
+    },
+    {
+        "Id": 4545,
+        "Group": 112410,
+        "Name": "Press and hold Basic Attack",
+        "Describe": "狂三-蓝长普",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": 4000,
+        "IsMySelf": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106934
+        ]
+    },
+    {
+        "Id": 4546,
+        "Group": 112411,
+        "Name": "Tap Yellow Orb",
+        "Describe": "狂三-二阶段黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi31.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            3
+        ],
+        "SkillId": [
+            106933
+        ]
+    },
+    {
+        "Id": 4547,
+        "Group": 112411,
+        "Name": "Press and hold Basic Attack",
+        "Describe": "狂三-黄长普",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": 4000,
+        "IsMySelf": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            106923,
+            106924,
+            106925
+        ]
+    },
+    {
+        "Id": 4548,
+        "Group": 112412,
+        "Name": "Tap Signature",
+        "Describe": "狂三-二段大",
+        "IconType": 1,
+        "Icon": 3,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi52.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106952
+        ]
+    },
+    {
+        "Id": 4549,
+        "Group": 112413,
+        "Name": "Tap Signature",
+        "Describe": "狂三-二段大",
+        "IconType": 1,
+        "Icon": 3,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Kurumi52.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            106952
+        ]
+    },
+    {
+        "Id": 4550,
+        "Group": 112414,
+        "Name": "Tap Yellow Orb",
+        "Describe": "卡列-黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            101730,
+            101732,
+            101711,
+            101713
+        ]
+    },
+    {
+        "Id": 4551,
+        "Group": 112415,
+        "Name": "Any 3-Ping",
+        "Describe": "比安卡三消",
+        "IconType": 3,
+        "Icon": 99,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            100413,
+            100410,
+            100407
+        ]
+    },
+    {
+        "Id": 4552,
+        "Group": 112415,
+        "Name": "Any 3-Ping",
+        "Describe": "比安卡三消",
+        "IconType": 3,
+        "Icon": 99,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            100413,
+            100410,
+            100407
+        ]
+    },
+    {
+        "Id": 4553,
+        "Group": 112415,
+        "Name": "Any 3-Ping",
+        "Describe": "比安卡三消",
+        "IconType": 3,
+        "Icon": 99,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            100413,
+            100410,
+            100407
+        ]
+    },
+    {
+        "Id": 4554,
+        "Group": 112416,
+        "Name": "Tap Signature",
+        "Describe": "比安卡必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            100420
+        ]
+    },
+    {
+        "Id": 4555,
+        "Group": 112417,
+        "Name": "Tap Yellow Orb",
+        "Describe": "狂三-二阶段黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            3
+        ],
+        "SkillId": [
+            106933
+        ]
+    },
+    {
+        "Id": 4556,
+        "Group": 112418,
+        "Name": "Tap Yellow Orb",
+        "Describe": "阿德-点按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkilliconR3Adelaide31.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1,
+            1
+        ],
+        "EffectButton": [
+            3,
+            4
+        ],
+        "SkillId": [
+            107009,
+            107015
+        ]
+    },
+    {
+        "Id": 4557,
+        "Group": 112419,
+        "Name": "Press and Hold Yellow Orb",
+        "Describe": "阿德-长按黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkilliconR3Adelaide31.png",
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            2,
+            2
+        ],
+        "EffectButton": [
+            3,
+            4
+        ],
+        "SkillId": [
+            107012,
+            107020
+        ]
+    },
+    {
+        "Id": 4558,
+        "Group": 112422,
+        "Name": "Tap Blue Orb",
+        "Describe": "阿德-点按蓝球",
+        "IconType": 1,
+        "Icon": 101,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            107021
+        ]
+    },
+    {
+        "Id": 4559,
+        "Group": 112423,
+        "Name": "Tap Red Orb",
+        "Describe": "阿德-点按红球",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkilliconR3Adelaide11.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "EffectType": [
+            1,
+            1
+        ],
+        "EffectButton": [
+            3,
+            4
+        ],
+        "SkillId": [
+            107034,
+            107040
+        ]
+    },
+    {
+        "Id": 4560,
+        "Group": 112424,
+        "Name": "Press and hold Red Orb",
+        "Describe": "阿德-长按红球",
+        "IconType": 1,
+        "Icon": 102,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkilliconR3Adelaide11.png",
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            2,
+            2
+        ],
+        "EffectButton": [
+            3,
+            4
+        ],
+        "SkillId": [
+            107036,
+            107042
+        ]
+    },
+    {
+        "Id": 4561,
+        "Group": 112427,
+        "Name": "Tap Signature",
+        "Describe": "阿德-点按必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            107030
+        ]
+    },
+    {
+        "Id": 4562,
+        "Group": 112428,
+        "Name": "Tap Guardian Orb",
+        "Describe": "阿德-点按守望球",
+        "IconType": 1,
+        "Icon": 101,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkilliconR3Adelaide41.png",
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            107028
+        ]
+    },
+    {
+        "Id": 4563,
+        "Group": 112429,
+        "Name": "Press and Hold Basic Attack",
+        "Describe": "阿德-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            107044
+        ]
+    },
+    {
+        "Id": 4564,
+        "Group": 112429,
+        "Name": "Press and Hold Basic Attack",
+        "Describe": "阿德-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            107049
+        ]
+    },
+    {
+        "Id": 4565,
+        "Group": 112429,
+        "Name": "Press and Hold Basic Attack",
+        "Describe": "阿德-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            107046
+        ]
+    },
+    {
+        "Id": 4566,
+        "Group": 112430,
+        "Name": "Tap Signature",
+        "Describe": "阿德-点按必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            107029
+        ]
+    },
+    {
+        "Id": 4567,
+        "Group": 112431,
+        "Name": "Tap Dodge",
+        "Describe": "阿德-点按闪避",
+        "IconType": 4,
+        "Icon": 2,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            107017
+        ]
+    },
+    {
+        "Id": 4568,
+        "Group": 112432,
+        "Name": "Press and Hold Basic Attack",
+        "Describe": "阿德-长按普攻",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            107044,
+            107049,
+            107046
+        ]
+    },
+    {
+        "Id": 4569,
+        "Group": 112433,
+        "Name": "Tap Dodge",
+        "Describe": "阿德-点按闪避",
+        "IconType": 4,
+        "Icon": 2,
+        "TimeOut": -1,
+        "IsMySelf": true,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            107017
+        ]
+    },
+    {
+        "Id": 4570,
+        "Group": 112432,
+        "Name": "Press and Hold Basic Attack",
+        "Describe": "阿德-长按普攻",
+        "IconType": 1,
+        "Icon": 1,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            107044,
+            107049,
+            107046
+        ]
+    },
+    {
+        "Id": 4571,
+        "Group": 112435,
+        "Name": "Tap Signature",
+        "Describe": "阿德-点按必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "TimeOut": -1,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            107029
         ]
     }
 ]

@@ -2,6 +2,7 @@ local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
 local XUiPanelItemList = require("XUi/XUiShop/XUiPanelItemList")
 local CSXTextManagerGetText = CS.XTextManager.GetText
 
+---@class XUiPanelShop
 local XUiPanelShop = XClass(nil, "XUiPanelShop")
 
 function XUiPanelShop:Ctor(ui, rootUi)

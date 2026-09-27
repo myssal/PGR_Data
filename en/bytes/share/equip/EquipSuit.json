@@ -1502,7 +1502,7 @@
             "",
             "Each dodge increases Movement Speed by 15% and Extra DMG Bonus by 5% for 5s. Can be stacked up to 3 times. Duration resets every time it is triggered.",
             "",
-            "Triggering Matrix reduces all enemies' Speed by 20% and Extra DMG Reduction during Matrix/Hypermatrix Deduction by 15% for 4s. 8s cooldown."
+            "Triggering Matrix reduces all enemies' Speed by 20% and Extra DMG Reduction during Matrix/Hypermatrix Deduction/Overlink Ascension by 15% for 4s. 8s cooldown."
         ],
         "SuitType": 6,
         "EquipIds": [
@@ -2598,7 +2598,7 @@
             "",
             "Nihil DMG increases by 10%.",
             "",
-            "Casting Phantom Annihilation grants 18/36/36/36/54 Collapse Points based on the hit count. Casting Ethereal Mirage grants 150 Phantom Points immediately. Casting Dimensional Collapse increases Base DMG of the next Signature - Silent Punishment by 100%. When hitting enemies with Hyperspace Realm as a Tank/Breaker, reduces enemy Elemental Resistance based on Observation Notes. When Hyperspace Realm is active, as an Amplifier, heals allies for 8% of ATK per second and increases their Elemental DMG based on Observation Notes."
+            "Casting Phantom Annihilation grants 18/36/36/36/54 Collapse Points based on the hit count. Casting Ethereal Mirage grants 150 Phantom Points immediately. Casting Dimensional Collapse increases the Base DMG of the next Signature - Silent Punishment by 100%. When hitting enemies with Hyperspace Realm as a Tank/Breaker, reduces enemy Elemental Resistance based on Observation Notes. When Hyperspace Realm is active, as an Amplifier/Overlinker, heals allies for 8% of ATK per second and increases their Elemental DMG based on Observation Notes."
         ],
         "SuitType": 14,
         "EquipIds": [
@@ -2752,7 +2752,7 @@
             "",
             "ATK increases by 5%. Dark DMG and Raydiance DMG increase by 5%.",
             "",
-            "Severed Sea DMG is doubled. When casting Corrosive Chain: Gain 10 Prayer stacks per Commandment point consumed. Consuming 9 Commandment points grants an additional 45 Prayer stacks."
+            "Severed Sea DMG is doubled. When casting Corrosive Chain, gains 10 Prayer stacks per Commandment point consumed. Consuming 9 Commandment points grants an additional 45 Prayer stacks and triggers Matrix if it is not on cooldown."
         ],
         "SuitType": 2,
         "EquipIds": [
@@ -3133,6 +3133,37 @@
         ],
         "EquipType": 1,
         "RecommendCharacterId": 1071005
+    },
+    {
+        "Id": 1665,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ESimoneI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ESimoneI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ESimoneI01002.png",
+        "Name": "Pesanteur",
+        "Description": "Dark Boost",
+        "SkillEffect": [
+            "",
+            166502,
+            "",
+            166504
+        ],
+        "SkillDescription": [
+            "",
+            "ATK increases by 5%. Dark DMG and Ultima Slash DMG increase by 5%.",
+            "",
+            "Abyssal Tactics and Abyssal Tactics: Combo deal 50% more Extra DMG. The Base DMG bonus granted by each stack of Abyssal Beacon increases to 35%. Each time Anabasis enters the battlefield, casting Kindler's Light for the first time restores 2 Kindler's Orbs."
+        ],
+        "SuitType": 5,
+        "EquipIds": [
+            3016065,
+            3026065,
+            3036065,
+            3046065,
+            3056065,
+            3066065
+        ],
+        "EquipType": 5,
+        "RecommendCharacterId": 1421003
     },
     {
         "Id": 20001,

@@ -2,6 +2,27 @@ XGmTestManager = XGmTestManager or {}
 local Panel
 
 local ReLogin = CS.XDebugManager.ReLogin
+
+-- Lua 单元测试菜单配色（直接设 Text.color，无需富文本）：默认黄、通过转绿、失败转红
+local GM_TEST_COLOR_DEFAULT = CS.UnityEngine.Color(1, 0.92, 0, 1)
+local GM_TEST_COLOR_PASS = CS.UnityEngine.Color(0, 1, 0, 1)
+local GM_TEST_COLOR_FAIL = CS.UnityEngine.Color(1, 0.25, 0.25, 1)
+
+-- 设置 GM 条目（Button/Toggle）的字体颜色；条目去重返回 nil 时安全跳过
+local function SetGmEntryTextColor(component, color)
+    if not component then
+        return
+    end
+    local txtNode = component.transform:Find("TxtName")
+    if XTool.UObjIsNil(txtNode) then
+        return
+    end
+    local text = txtNode:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    if not XTool.UObjIsNil(text) then
+        text.color = color
+    end
+end
+
 local function Open(name, ...)
     if not XLoginManager.IsLogin() then
         XUiManager.TipMsg("请先登录")
@@ -475,7 +496,13 @@ local function AddServerFunction()
     )
 end
 
+-- 前向声明：登录动态漫相关 GM 挂在「开发专用」子菜单下，其定义在本函数之后
+local AddLoginDynamicAnimFunction
+local AddLoginDynamicAnimReasonGm
+
 local function AddDebugUse()
+    Panel:AddSubMenu("登录动态漫", AddLoginDynamicAnimFunction)
+    Panel:AddSubMenu("登录动态漫播放原因", AddLoginDynamicAnimReasonGm)
     local uiName = "UiSet"
     Panel:AddInput(
         "界面名称",
@@ -939,6 +966,10 @@ local function AddBigWorldUse()
             XUiManager.TipMsg("请输入正确的TipId")
         end
     end)
+
+    Panel:AddButton("打开奥法斯UI", function()
+        XMVCA.XBigWorldSkipFunction:SkipTo(300101)
+    end)
 end
 
 -- 日志打印
@@ -1213,7 +1244,7 @@ local function AddAudioDebugFunction()
                 XUiManager.TipMsg("请填写SelectorName和LabelName")
                 return
             end
-            CS.XAudioManager.SetAllSourceSelector(selectorName, labelName)
+            CS.XAudioManager.SetWholeSelector(selectorName, labelName)
             XUiManager.TipMsg("全局Selector已设置: " .. selectorName .. " = " .. labelName)
         end
     )
@@ -1643,13 +1674,183 @@ local function AddSubPackageFunction()
     skipGmToggle.isOn = XMVCA.XSubPackage:IsSkipGMTest()
 end
 
+local function AddFangKuaiDebugFunction()
+    local isInit = true
+    local debugToggle = Panel:AddToggle("显示Debug信息", function(isOn)
+        if isInit then
+            return
+        end
+        if isOn then
+            XMVCA.XFangKuai:EnterDebegMode()
+        else
+            XMVCA.XFangKuai:CloseDebegMode()
+        end
+    end)
+    if debugToggle then
+        debugToggle.isOn = XSaveTool.GetData("FangKuai_Debug") == true
+    end
+    isInit = false
+
+    local itemId
+    Panel:AddInput(
+        "道具Id:",
+        function(value)
+            itemId = tonumber(value)
+        end
+    )
+
+    Panel:AddButton("添加道具", function()
+        XMVCA.XFangKuai:DebugAddItem(itemId)
+    end)
+end
+
 --------------Ui组件创建 begin----------------
+local function AddLuaUnitTest()
+    local XLuaTestRunner = require("EditorOnly/XUnitTest/XLuaTestRunner")
+
+    local function RunSingle(fullName, button)
+        local startMs = CS.UnityEngine.Time.realtimeSinceStartupAsDouble * 1000
+        XLuaTestRunner.RunOne(fullName, function(ok, msg)
+            local elapsed = CS.UnityEngine.Time.realtimeSinceStartupAsDouble * 1000 - startMs
+            local elapsedTag = string.format("<color=#FFD700>(%.1fms)</color>", elapsed)
+            if ok then
+                XLog.Debug(string.format("[XLuaTest] <color=#00FF00>[PASS]</color> %s %s", fullName, elapsedTag))
+            else
+                XLog.Error(
+                    string.format(
+                        "[XLuaTest] <color=#FF4040>[FAIL]</color> %s %s | %s",
+                        fullName,
+                        elapsedTag,
+                        tostring(msg)
+                    )
+                )
+            end
+            SetGmEntryTextColor(button, ok and GM_TEST_COLOR_PASS or GM_TEST_COLOR_FAIL)
+        end)
+    end
+
+    -- 顶层：一键全跑（一级绿）
+    local runAllButton = Panel:AddButton("【全部】运行所有 Lua 单元测试", function()
+        XLuaTestRunner.RunAll()
+    end)
+    SetGmEntryTextColor(runAllButton, GM_TEST_COLOR_DEFAULT)
+
+    -- 顶层：每个模块一个 toggle，勾选即运行该模块全部子用例（一级绿；跑完自动复位并按结果着色）
+    for _, moduleName in ipairs(XLuaTestRunner.ListModules()) do
+        local isInit = true
+        local toggle
+        toggle = Panel:AddToggle("运行模块: " .. moduleName .. "（含全部用例）", function(isOn)
+            if isInit or not isOn then
+                return
+            end
+            XLuaTestRunner.RunModule(moduleName, function(summary)
+                if toggle then
+                    toggle.isOn = false
+                    SetGmEntryTextColor(toggle, summary.failed == 0 and GM_TEST_COLOR_PASS or GM_TEST_COLOR_FAIL)
+                end
+            end)
+        end)
+        if toggle then
+            toggle.isOn = false
+            isInit = false
+            SetGmEntryTextColor(toggle, GM_TEST_COLOR_DEFAULT)
+        end
+    end
+
+    -- 每个模块挂一个二级菜单（菜单头一级绿；内部 = 模块全部 + 各单条，二级黄、跑完按结果着色）
+    for _, moduleName in ipairs(XLuaTestRunner.ListModules()) do
+        local subMenu = Panel:AddSubMenu(moduleName, function()
+            local moduleAllButton
+            moduleAllButton = Panel:AddButton("【模块】" .. moduleName .. " 全部", function()
+                XLuaTestRunner.RunModule(moduleName, function(summary)
+                    SetGmEntryTextColor(
+                        moduleAllButton,
+                        summary.failed == 0 and GM_TEST_COLOR_PASS or GM_TEST_COLOR_FAIL
+                    )
+                end)
+            end)
+            SetGmEntryTextColor(moduleAllButton, GM_TEST_COLOR_DEFAULT)
+            for _, fullName in ipairs(XLuaTestRunner.ListModuleCases(moduleName)) do
+                local caseName = string.match(fullName, "%.([^%.]+)$") or fullName
+                local caseButton
+                caseButton = Panel:AddButton(caseName, function()
+                    RunSingle(fullName, caseButton)
+                end)
+                SetGmEntryTextColor(caseButton, GM_TEST_COLOR_DEFAULT)
+            end
+        end)
+        SetGmEntryTextColor(subMenu, GM_TEST_COLOR_DEFAULT)
+    end
+end
+
+function AddLoginDynamicAnimFunction()
+    local XLoginAnimationPlayPolicy = require("XUi/XUiLogin/XLoginAnimationPlayPolicy")
+    local XVersionUtil = require("XCommon/XVersionUtil")
+
+    Panel:AddButton("打印当前版本标识", function()
+        local documentVersion = XVersionUtil.GetDocumentVersion()
+        local versionKey = XLoginAnimationPlayPolicy.GetVersionKey(documentVersion)
+        XUiManager.TipMsg(
+            string.format("DocumentVersion=%s -> 版本标识=%s", tostring(documentVersion), tostring(versionKey))
+        )
+    end)
+
+    Panel:AddButton("重置首次登录(当前版本)", function()
+        XLoginAnimationPlayPolicy.New():ResetLocalForTest(XVersionUtil.GetDocumentVersion())
+        XUiManager.TipMsg("已重置：下次登录将视为版本内首次（完整播放+自动勾选跳过）")
+    end)
+
+    Panel:AddButton("强制勾选跳过", function()
+        XLoginAnimationPlayPolicy.New():SetIsSkip(true)
+        XUiManager.TipMsg("已勾选跳过：下次登录仅播循环动画")
+    end)
+
+    Panel:AddButton("取消勾选跳过", function()
+        XLoginAnimationPlayPolicy.New():SetIsSkip(false)
+        XUiManager.TipMsg("已取消跳过：下次登录播放完整动画")
+    end)
+
+    local isInit = true
+    local legacyToggle = Panel:AddToggle("切回旧逻辑(UseLegacy)", function(isOn)
+        if isInit then
+            return
+        end
+        XLoginAnimationPlayPolicy.SetUseLegacy(isOn)
+        XUiManager.TipMsg(isOn and "已切回旧逻辑：总是开场+循环、无勾选框" or "已切回新逻辑")
+    end)
+    legacyToggle.isOn = XLoginAnimationPlayPolicy.IsUseLegacy()
+    isInit = false
+end
+
+-- LuaGM：登录动态漫播放原因实时排查（"为什么没播完整开场动画"）
+function AddLoginDynamicAnimReasonGm()
+    local XLoginAnimationPlayPolicy = require("XUi/XUiLogin/XLoginAnimationPlayPolicy")
+
+    Panel:AddButton("打印最近一次播放判定原因", function()
+        local description = XLoginAnimationPlayPolicy.DescribeLastDecision()
+        XLog.Debug(description)
+        XUiManager.TipMsg(description)
+    end)
+
+    local isInit = true
+    local logToggle = Panel:AddToggle("实时打印每次播放判定原因", function(isOn)
+        if isInit then
+            return
+        end
+        XLoginAnimationPlayPolicy.SetLogReason(isOn)
+        XUiManager.TipMsg(isOn and "已开启：每次登录播放判定都会打印原因" or "已关闭实时打印")
+    end)
+    logToggle.isOn = XLoginAnimationPlayPolicy.IsLogReason()
+    isInit = false
+end
+
 function XGmTestManager.Init()
     Panel = CS.XDebugManager.DebuggerGm
     Panel:AddSubMenu("本地测试", XGmTestManager.TestFunc)
     Panel:AddSubMenu("当前信息", AddInfo, true)
     Panel:AddSubMenu("服务器", AddServerFunction, true)
     Panel:AddSubMenu("开发专用", AddDebugUse)
+    SetGmEntryTextColor(Panel:AddSubMenu("Lua单元测试", AddLuaUnitTest), GM_TEST_COLOR_DEFAULT)
     Panel:AddSubMenu("测试专用", AddTestUse)
     Panel:AddSubMenu("活动测试", AddActivityUse)
     Panel:AddSubMenu("策划专用", AddPlannerUse)
@@ -1681,6 +1882,7 @@ function XGmTestManager.Init()
     Panel:AddSubMenu("2048玩法", AddGame2048DebugFunction)
     Panel:AddSubMenu("黄金矿工玩法", AddGoldenMinerDebugFunction)
     Panel:AddSubMenu("分包调试", AddSubPackageFunction)
+    Panel:AddSubMenu("熊熊破坏王", AddFangKuaiDebugFunction)
 
     local isInit = true
     local skipRecordTog = Panel:AddToggle("通用跳转埋点测试", function(isOn)

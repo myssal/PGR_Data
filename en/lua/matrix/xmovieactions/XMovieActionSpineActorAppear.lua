@@ -1,6 +1,43 @@
 local vector = CS.UnityEngine.Vector3
+local CSDOTween = CS.DG.Tweening.DOTween
+local DEFAULT_FADE_DURATION = 0.8
 
 local XMovieActionSpineActorAppear = XClass(XMovieActionBase, "XMovieActionSpineActorAppear")
+
+local function FadeSpineImageAlpha(actor, fromAlpha, toAlpha, duration, finishCb)
+    actor:StopSpineAlphaFade()
+
+    local component = actor:GetOrAddSpineFadeComponent(fromAlpha)
+    if not component then
+        if finishCb then
+            finishCb()
+        end
+        return
+    end
+
+    local curAlpha = fromAlpha
+    component:SetSpineImageAlpha(curAlpha)
+    local tween = CSDOTween.To(function()
+        return curAlpha
+    end, function(alpha)
+        curAlpha = alpha
+        component:SetSpineImageAlpha(alpha)
+    end, toAlpha, duration)
+
+    actor.SpineAlphaFadeTween = tween
+    if tween then
+        tween:OnComplete(function()
+            if actor.SpineAlphaFadeTween == tween then
+                actor.SpineAlphaFadeTween = nil
+                if finishCb then
+                    finishCb()
+                end
+            end
+        end)
+    elseif finishCb then
+        finishCb()
+    end
+end
 
 function XMovieActionSpineActorAppear:OnInit(actionData)
     local params = actionData.Params
@@ -22,17 +59,23 @@ function XMovieActionSpineActorAppear:OnInit(actionData)
     local posZ = paramToNumber(params[6])
     self.FixPos = vector(XDataCenter.MovieManager.Fit(posX), posY, posZ)
     self.IsSkipAnim = paramToNumber(params[7]) == 1
+    self.FadeDuration = DEFAULT_FADE_DURATION
 end
 
 function XMovieActionSpineActorAppear:OnEnter()
     local actor = self.UiRoot:GetSpineActor(self.ActorIndex)
+    actor:CleanupSpineFadeComponent()
     actor:SetShow(true)
     actor:UpdateSpineActor(self.ActorId, self.AnimId)
     actor:SetPos(self.FixPos)
 
-    if not self.IsSkipAnim then
-        actor:PlayUiAnimation(XMovieConfigs.SpineActorAnim.PanelActorEnable)
+    if self.IsSkipAnim then
+        return
     end
+
+    FadeSpineImageAlpha(actor, 0, 1, self.FadeDuration, function()
+        actor:CleanupSpineFadeComponent(false)
+    end)
 end
 
 function XMovieActionSpineActorAppear:IsPassedActionRun(index)
@@ -52,7 +95,12 @@ function XMovieActionSpineActorAppear:IsPassedActionCovered(action)
 end
 
 function XMovieActionSpineActorAppear:OnPassedActionRun()
-    self:OnEnter()
+    local actor = self.UiRoot:GetSpineActor(self.ActorIndex)
+    actor:StopSpineAlphaFade()
+    actor:SetShow(true)
+    actor:UpdateSpineActor(self.ActorId, self.AnimId)
+    actor:SetPos(self.FixPos)
+    actor:CleanupSpineFadeComponent(false)
 end
 
 return XMovieActionSpineActorAppear

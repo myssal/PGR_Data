@@ -1,0 +1,2115 @@
+[
+    {
+        "Id": 10001,
+        "Name": "Rosetta: Arete",
+        "Desc": "· [Permanent] Adjacent unit to the right gains +{0} DMG.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 196,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR4Luosaita2Q.png",
+        "IsShow": true,
+        "Order": 1,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            30
+        ]
+    },
+    {
+        "Id": 10002,
+        "Name": "Bianca: Crepuscule",
+        "Desc": "· [Permanent] Adjacent units' DMG +{0}.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 197,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR5Bianka2Q.png",
+        "IsShow": true,
+        "Order": 2,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            16
+        ]
+    },
+    {
+        "Id": 10003,
+        "Name": "Adelyde: Anabasis",
+        "Desc": "· [Per Trigger] Adjacent units' DMG +{0}.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 198,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Adelaide2Q.png",
+        "IsShow": true,
+        "Order": 3,
+        "Tag": [
+            1,
+            3
+        ],
+        "DescParams": [
+            8
+        ]
+    },
+    {
+        "Id": 10004,
+        "Name": "Karenina: Effulgence",
+        "Desc": "· [Permanent] Max cooldown -{0} for the adjacent unit to the left.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 199,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR5Kalienina2Q.png",
+        "IsShow": true,
+        "Order": 4,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            "30%"
+        ]
+    },
+    {
+        "Id": 10005,
+        "Name": "Selena: Pianissimo",
+        "Desc": "· When any unit triggers, cooldown -{0}s.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 200,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR5Sailinna2Q.png",
+        "IsShow": true,
+        "Order": 5,
+        "Tag": [
+            1
+        ],
+        "DescParams": [
+            0.5
+        ]
+    },
+    {
+        "Id": 10006,
+        "Name": "Veronica: Aegis",
+        "Desc": "· [Per Trigger] All units to the right gain +{0} DMG.",
+        "Type": 1,
+        "Size": 2,
+        "Color": 1,
+        "EffectGroupId": 201,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Weiluonika2Q.png",
+        "IsShow": true,
+        "Order": 6,
+        "Tag": [
+            1,
+            3
+        ],
+        "DescParams": [
+            10
+        ]
+    },
+    {
+        "Id": 10007,
+        "Name": "Hanying: Solacetune",
+        "Desc": "· [Per Trigger] Leftmost unit's DMG +{0}.",
+        "Type": 1,
+        "Size": 2,
+        "Color": 1,
+        "EffectGroupId": 202,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Hanying2Q.png",
+        "IsShow": true,
+        "Order": 7,
+        "Tag": [
+            1,
+            3
+        ],
+        "DescParams": [
+            "20%"
+        ]
+    },
+    {
+        "Id": 10008,
+        "Name": "Discord: Secator",
+        "Desc": "· [Permanent] DMG +{0} when in the leftmost position.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 203,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR2Xiezou2Q.png",
+        "IsShow": true,
+        "Order": 8,
+        "Tag": [
+            3
+        ],
+        "DescParams": [
+            5
+        ]
+    },
+    {
+        "Id": 10009,
+        "Name": "Yata: Fulgor",
+        "Desc": "· [Permanent] Adjacent unit to the left gains +{0} DMG.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 204,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR2Bazhi2Q.png",
+        "IsShow": true,
+        "Order": 9,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            5
+        ]
+    },
+    {
+        "Id": 10010,
+        "Name": "Jetavie: Daybreak",
+        "Desc": "· [Permanent] Adjacent units' DMG +{0}.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 2,
+        "Color": 1,
+        "EffectGroupId": 205,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR2Jietawei2Q.png",
+        "IsShow": true,
+        "Order": 10,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            3
+        ]
+    },
+    {
+        "Id": 10011,
+        "Name": "Qu: Shukra",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 313,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Qu2Q.png",
+        "IsShow": true,
+        "Order": 11
+    },
+    {
+        "Id": 10201,
+        "Name": "Buzzling",
+        "Desc": "· Deals {0} hits of DMG.\\n· [Multi-Hit] Deals multiple hits based on DMG value within a single trigger.",
+        "Type": 2,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 206,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Signal1.png",
+        "IsShow": true,
+        "Order": 13,
+        "Tag": [
+            1
+        ],
+        "DescParams": [
+            3
+        ]
+    },
+    {
+        "Id": 10202,
+        "Name": "Noctiluca",
+        "Desc": "· Deals {0} hits of DMG.\\n· [Permanent] DMG +{1} when adjacent to any unit.\\n· [Multi-Hit] Deals multiple hits based on DMG within a single trigger.",
+        "Type": 2,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 207,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Jellyfish1.png",
+        "IsShow": true,
+        "Order": 14,
+        "Tag": [
+            1,
+            3
+        ],
+        "DescParams": [
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 10203,
+        "Name": "Kelpie",
+        "Desc": "· Deals {0} hits of DMG.\\n· When an adjacent unit triggers, DMG +{1}.\\n· [Multi-Hit] Deals multiple hits based on DMG within a single trigger.",
+        "Type": 2,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 208,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Sailfish1.png",
+        "IsShow": true,
+        "Order": 15,
+        "Tag": [
+            1,
+            3
+        ],
+        "DescParams": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 10204,
+        "Name": "Patrick",
+        "Desc": "· No special effects.",
+        "Type": 2,
+        "Size": 2,
+        "Color": 1,
+        "EffectGroupId": 209,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Starfish1.png",
+        "IsShow": true,
+        "Order": 16,
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 10205,
+        "Name": "Snow Waltz",
+        "Desc": "· Deals {0} hits of DMG.\\n· [Per Trigger] Adjacent characters' cooldowns -{1}s.\\n· [Multi-Hit] Deals multiple hits based on DMG within a single trigger.",
+        "Type": 2,
+        "Size": 2,
+        "Color": 1,
+        "EffectGroupId": 210,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Speaker1.png",
+        "IsShow": true,
+        "Order": 17,
+        "Tag": [
+            1,
+            3
+        ],
+        "DescParams": [
+            3,
+            0.5
+        ]
+    },
+    {
+        "Id": 10206,
+        "Name": "Scaled Rampart",
+        "Desc": "· Deals {0} hits of DMG.\\n· Hit count +{2} for every {1} adjacent Red Orb CUB(s).\\n· [Multi-Hit] Deals multiple hits based on DMG within a single trigger.",
+        "Type": 2,
+        "Size": 3,
+        "Color": 1,
+        "EffectGroupId": 211,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Bladeshield1.png",
+        "IsShow": true,
+        "Order": 18,
+        "Tag": [
+            1,
+            6
+        ],
+        "DescParams": [
+            4,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10207,
+        "Name": "Dreamwing",
+        "Desc": "· When a battle starts, the first hit of DMG dealt is doubled.",
+        "Type": 2,
+        "Size": 3,
+        "Color": 1,
+        "EffectGroupId": 212,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Die1.png",
+        "IsShow": true,
+        "Order": 19,
+        "Tag": [
+            2
+        ],
+        "DescParams": [
+            1
+        ]
+    },
+    {
+        "Id": 10208,
+        "Name": "Jet Jaeger",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 213,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Hu.png",
+        "IsShow": true,
+        "Order": 20
+    },
+    {
+        "Id": 10209,
+        "Name": "Moonhopper",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 2,
+        "Color": 1,
+        "EffectGroupId": 214,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Tu1.png",
+        "IsShow": true,
+        "Order": 21
+    },
+    {
+        "Id": 10210,
+        "Name": "Shimmer",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 3,
+        "Color": 1,
+        "EffectGroupId": 215,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Yu1.png",
+        "IsShow": true,
+        "Order": 22
+    },
+    {
+        "Id": 10211,
+        "Name": "Huiyu",
+        "Desc": "· Deals {0} hits of DMG.\\n· [Multi-Hit] Deals multiple hits based on DMG value within a single trigger.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 216,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Peacock1.png",
+        "IsShow": true,
+        "Order": 23,
+        "Tag": [
+            1
+        ],
+        "DescParams": [
+            2
+        ]
+    },
+    {
+        "Id": 10212,
+        "Name": "Motorbolt",
+        "Desc": "· Deals {0} hits of DMG.\\n· [Multi-Hit] Deals multiple hits based on DMG value within a single trigger.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 2,
+        "Color": 1,
+        "EffectGroupId": 217,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Motor1.png",
+        "IsShow": true,
+        "Order": 24,
+        "Tag": [
+            1
+        ],
+        "DescParams": [
+            2
+        ]
+    },
+    {
+        "Id": 10213,
+        "Name": "Toniris",
+        "Desc": "· Deals {0} hits of DMG.\\n· [Multi-Hit] Deals multiple hits based on DMG value within a single trigger.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 3,
+        "Color": 1,
+        "EffectGroupId": 218,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3He2.png",
+        "IsShow": true,
+        "Order": 25,
+        "Tag": [
+            1
+        ],
+        "DescParams": [
+            2
+        ]
+    },
+    {
+        "Id": 11001,
+        "Name": "Sinful Peak",
+        "Desc": "· [Permanent] Associated character's orb generation +{0}, max cooldown +{1}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 219,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Luosaita/R4Luosaitahong1.png",
+        "IsShow": true,
+        "Order": 26,
+        "Tag": [
+            4
+        ],
+        "DescParams": [
+            5,
+            "40%"
+        ]
+    },
+    {
+        "Id": 11002,
+        "Name": "Twilight Judgment",
+        "Desc": "· [Permanent] Associated character's DMG -{0}.\\n· [Battle Start] Shield +{1}.\\n· [Shield] Blocks 1 hit of DMG.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 220,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R5Biankahong1.png",
+        "IsShow": true,
+        "Order": 27,
+        "Tag": [
+            4
+        ],
+        "DescParams": [
+            5,
+            4
+        ]
+    },
+    {
+        "Id": 11003,
+        "Name": "Remote Detonation",
+        "Desc": "· [Permanent] Associated character's max cooldown -{0}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 221,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Helentinehong1.png",
+        "IsShow": true,
+        "Order": 28,
+        "Tag": [
+            6
+        ],
+        "DescParams": [
+            "30%"
+        ]
+    },
+    {
+        "Id": 11004,
+        "Name": "Helm Awakened",
+        "Desc": "· [Permanent] Associated character's orb generation +{0}, DMG +{1}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 222,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R5Kalieninahong1.png",
+        "IsShow": true,
+        "Order": 29,
+        "Tag": [
+            4,
+            6
+        ],
+        "DescParams": [
+            2,
+            15
+        ]
+    },
+    {
+        "Id": 11005,
+        "Name": "Flaming Chord",
+        "Desc": "· When any unit's cooldown is reduced, associated character's orb generation +{0}, this attack's DMG +{1}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 223,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R5Sailinnahong1.png",
+        "IsShow": true,
+        "Order": 30,
+        "Tag": [
+            1,
+            6
+        ],
+        "DescParams": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 11006,
+        "Name": "Raging Thornfire",
+        "Desc": "· [Per Trigger] All Red Orb CUBs' cooldowns -{0}s.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 224,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Weiluonikahong1.png",
+        "IsShow": true,
+        "Order": 31,
+        "Tag": [
+            1,
+            6
+        ],
+        "DescParams": [
+            0.7
+        ]
+    },
+    {
+        "Id": 11007,
+        "Name": "Shattered Melody",
+        "Desc": "· [Per Trigger] Leftmost unit's DMG +{0}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 225,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Hanyinghong1.png",
+        "IsShow": true,
+        "Order": 32,
+        "Tag": [
+            1,
+            3
+        ],
+        "DescParams": [
+            "15%"
+        ]
+    },
+    {
+        "Id": 11201,
+        "Name": "Wave Drift",
+        "Desc": "· [Permanent] Associated CUB's orb cost +{0}, max cooldown -{1}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 226,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3SignalSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 36,
+        "Tag": [
+            4,
+            6
+        ],
+        "DescParams": [
+            1,
+            "30%"
+        ]
+    },
+    {
+        "Id": 11202,
+        "Name": "Luminous Stinger",
+        "Desc": "· [Permanent] Associated CUB's orb cost +{0}, DMG +{1}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 227,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3JellyfishSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 37,
+        "Tag": [
+            4,
+            6
+        ],
+        "DescParams": [
+            1,
+            "25%"
+        ]
+    },
+    {
+        "Id": 11203,
+        "Name": "Tidal Aftermath",
+        "Desc": "· [Permanent] Associated CUB's orb cost +{0}, DMG +{1}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 228,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3SailfishSkillbeidong03.png",
+        "IsShow": true,
+        "Order": 38,
+        "Tag": [
+            4,
+            6
+        ],
+        "DescParams": [
+            1,
+            18
+        ]
+    },
+    {
+        "Id": 11204,
+        "Name": "Hunter's Halo",
+        "Desc": "· [Permanent] Associated Red Orb CUB's hit count +{0}, DMG -{1}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 229,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3StarfishSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 39,
+        "Tag": [
+            1
+        ],
+        "DescParams": [
+            1,
+            "20%"
+        ]
+    },
+    {
+        "Id": 11205,
+        "Name": "Light and Shade",
+        "Desc": "· [Per Trigger] All Red Orb CUBs' DMG +{0}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 230,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3SoundSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 40,
+        "Tag": [
+            1,
+            6
+        ],
+        "DescParams": [
+            2
+        ]
+    },
+    {
+        "Id": 11206,
+        "Name": "Searing Ember",
+        "Desc": "· [Per Trigger] Associated CUB's DMG +{0}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 231,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3BladeshieldSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 41,
+        "Tag": [
+            1,
+            6
+        ],
+        "DescParams": [
+            6
+        ]
+    },
+    {
+        "Id": 11207,
+        "Name": "River Immortal",
+        "Desc": "· [Permanent] Associated CUB's DMG +{0}, hit count +{1}, orb cost +{2}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 1,
+        "EffectGroupId": 232,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3DieSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 42,
+        "Tag": [
+            2,
+            6
+        ],
+        "DescParams": [
+            "10%",
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 20001,
+        "Name": "Kamui: Aeternion",
+        "Desc": "· [Permanent] Adjacent CUB to the right costs {0} fewer orb(s).",
+        "Type": 1,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 233,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR4Shenwei2Q.png",
+        "IsShow": true,
+        "Order": 87,
+        "Tag": [
+            3,
+            4
+        ],
+        "DescParams": [
+            2
+        ]
+    },
+    {
+        "Id": 20002,
+        "Name": "Vera: Geiravor",
+        "Desc": "· [Permanent] Adjacent units' max cooldown -{0}.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 234,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR4Weila2Q.png",
+        "IsShow": true,
+        "Order": 88,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            "15%"
+        ]
+    },
+    {
+        "Id": 20003,
+        "Name": "Watanabe: Epitaph",
+        "Desc": "· [Permanent] When the adjacent unit to the left triggers, restores {0} Blue Orb(s).",
+        "Type": 1,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 235,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR4Dubian2Q.png",
+        "IsShow": true,
+        "Order": 89,
+        "Tag": [
+            3,
+            4
+        ],
+        "DescParams": [
+            3
+        ]
+    },
+    {
+        "Id": 20004,
+        "Name": "Nirvatia: Dirge",
+        "Desc": "· [Permanent] Adjacent units' DMG +{0}.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 236,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Nietiya2Q.png",
+        "IsShow": true,
+        "Order": 90,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            "30%"
+        ]
+    },
+    {
+        "Id": 20005,
+        "Name": "Luna: Oblivion",
+        "Desc": "· [Battle Start] Generates {0} Blue Orb(s), orb slot limit +{1}.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 237,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR4Luna2Q.png",
+        "IsShow": true,
+        "Order": 91,
+        "Tag": [
+            4
+        ],
+        "DescParams": [
+            5,
+            5
+        ]
+    },
+    {
+        "Id": 20006,
+        "Name": "Ishmael: Parhelion",
+        "Desc": "· [Permanent] Adjacent CUBs' DMG +{0}. Restores {1} Blue Orb(s) when triggered.",
+        "Type": 1,
+        "Size": 2,
+        "Color": 3,
+        "EffectGroupId": 238,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Cibeizhe2Q.png",
+        "IsShow": true,
+        "Order": 92,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            "30%",
+            2
+        ]
+    },
+    {
+        "Id": 20007,
+        "Name": "Lee: Hyperreal",
+        "Desc": "· [Permanent] Every {0} triggers of the adjacent unit to the left, that unit's next hit of DMG +{1}.\\n· [Permanent] Max cooldown -{2}s for the unit to the left.",
+        "Type": 1,
+        "Size": 2,
+        "Color": 3,
+        "EffectGroupId": 239,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR4Li2Q.png",
+        "IsShow": true,
+        "Order": 93,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            2,
+            "60%",
+            1.5
+        ]
+    },
+    {
+        "Id": 20008,
+        "Name": "Liv: Empyrea",
+        "Desc": "· [Permanent] DMG +{0} when in the rightmost position.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 240,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR4Lifu3Q.png",
+        "IsShow": true,
+        "Order": 94,
+        "Tag": [
+            3
+        ],
+        "DescParams": [
+            "10%"
+        ]
+    },
+    {
+        "Id": 20009,
+        "Name": "Lucia: Pyroath",
+        "Desc": "· [Permanent] Adjacent unit to the left gains +{0} DMG.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 241,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR6Luxiya2Q.png",
+        "IsShow": true,
+        "Order": 95,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            "10%"
+        ]
+    },
+    {
+        "Id": 20010,
+        "Name": "Sophia: Silverfang",
+        "Desc": "· [Permanent] Adjacent units' DMG +{0}.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 2,
+        "Color": 3,
+        "EffectGroupId": 242,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadSufeiya3Q.png",
+        "IsShow": true,
+        "Order": 96,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            "5%"
+        ]
+    },
+    {
+        "Id": 20011,
+        "Name": "Lilith: Daemonissa",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 314,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Lilith2Q.png",
+        "IsShow": true,
+        "Order": 97
+    },
+    {
+        "Id": 20201,
+        "Name": "Ignis",
+        "Desc": "· Deals {0} hits of DMG.\\n· When the adjacent unit to the right triggers, DMG +{1}.",
+        "Type": 2,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 243,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Lion1.png",
+        "IsShow": true,
+        "Order": 98,
+        "Tag": [
+            1,
+            3
+        ],
+        "DescParams": [
+            1,
+            "20%"
+        ]
+    },
+    {
+        "Id": 20202,
+        "Name": "Wrathfang",
+        "Desc": "· Deals {0} hits of DMG.\\n· When an adjacent unit triggers, DMG +{1}.",
+        "Type": 2,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 244,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Redwolf1.png",
+        "IsShow": true,
+        "Order": 99,
+        "Tag": [
+            1,
+            3
+        ],
+        "DescParams": [
+            1,
+            "10%"
+        ]
+    },
+    {
+        "Id": 20203,
+        "Name": "Shadow Wing",
+        "Desc": "· Deals {0} hits of DMG.\\n· When an adjacent unit triggers, reduces this card's current cooldown by {1}.",
+        "Type": 2,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 245,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Bat1.png",
+        "IsShow": true,
+        "Order": 100,
+        "Tag": [
+            1,
+            3
+        ],
+        "DescParams": [
+            1,
+            "20%"
+        ]
+    },
+    {
+        "Id": 20204,
+        "Name": "Morigan",
+        "Desc": "· Deals {0} hits of DMG.\\n· Every {1} triggers, the adjacent CUB to the right deals {2} more DMG on the next hit.",
+        "Type": 2,
+        "Size": 2,
+        "Color": 3,
+        "EffectGroupId": 246,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Duya1.png",
+        "IsShow": true,
+        "Order": 101,
+        "Tag": [
+            2,
+            3
+        ],
+        "DescParams": [
+            1,
+            2,
+            "100%"
+        ]
+    },
+    {
+        "Id": 20205,
+        "Name": "Guardrake",
+        "Desc": "· Deals {0} hits of DMG.\\n· [Per Trigger] Adjacent Blue Orb CUB to the right gains +{1} DMG.",
+        "Type": 2,
+        "Size": 2,
+        "Color": 3,
+        "EffectGroupId": 247,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Dragon1.png",
+        "IsShow": true,
+        "Order": 102,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            1,
+            "40%"
+        ]
+    },
+    {
+        "Id": 20206,
+        "Name": "Diamaton",
+        "Desc": "· Deals {0} hits of DMG.\\n· [Per Trigger] DMG +{1}.",
+        "Type": 2,
+        "Size": 3,
+        "Color": 3,
+        "EffectGroupId": 248,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Pandora1.png",
+        "IsShow": true,
+        "Order": 103,
+        "Tag": [
+            1,
+            6
+        ],
+        "DescParams": [
+            1,
+            "33%"
+        ]
+    },
+    {
+        "Id": 20207,
+        "Name": "Punchy",
+        "Desc": "· Deals {0} hits of DMG.\\n· After every {1} attacks, the next hit deals +{2} DMG.",
+        "Type": 2,
+        "Size": 3,
+        "Color": 3,
+        "EffectGroupId": 249,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Quan1.png",
+        "IsShow": true,
+        "Order": 104,
+        "Tag": [
+            2
+        ],
+        "DescParams": [
+            1,
+            2,
+            "300%"
+        ]
+    },
+    {
+        "Id": 20208,
+        "Name": "Hades Fangs",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 250,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Wolf1.png",
+        "IsShow": true,
+        "Order": 105
+    },
+    {
+        "Id": 20209,
+        "Name": "Corvus",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 2,
+        "Color": 3,
+        "EffectGroupId": 251,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Raven1.png",
+        "IsShow": true,
+        "Order": 106
+    },
+    {
+        "Id": 20210,
+        "Name": "Yuan Ye",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 3,
+        "Color": 3,
+        "EffectGroupId": 252,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/RolePartnerPet2Niu2.png",
+        "IsShow": true,
+        "Order": 107
+    },
+    {
+        "Id": 20211,
+        "Name": "Noctua",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 253,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Xiao2.png",
+        "IsShow": true,
+        "Order": 108
+    },
+    {
+        "Id": 20212,
+        "Name": "Seeshell",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 2,
+        "Color": 3,
+        "EffectGroupId": 254,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet2Bei1.png",
+        "IsShow": true,
+        "Order": 109
+    },
+    {
+        "Id": 20213,
+        "Name": "Frost Oath",
+        "Desc": "· No special effect.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 3,
+        "Color": 3,
+        "EffectGroupId": 255,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Ma1.png",
+        "IsShow": true,
+        "Order": 110
+    },
+    {
+        "Id": 21001,
+        "Name": "Heartfall",
+        "Desc": "· [Permanent] Associated character's orb generation +{0}, max cooldown -{1}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 256,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Shenweilan1.png",
+        "IsShow": true,
+        "Order": 111,
+        "Tag": [
+            4,
+            6
+        ],
+        "DescParams": [
+            2,
+            "30%"
+        ]
+    },
+    {
+        "Id": 21002,
+        "Name": "Scorching Sweep",
+        "Desc": "· [Permanent] Associated character's orb generation -{0}.\\n· [Battle Start] Shield +{1}.\\n· [Shield] Blocks 1 hit of DMG.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 257,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Weilalan1.png",
+        "IsShow": true,
+        "Order": 112,
+        "Tag": [
+            4
+        ],
+        "DescParams": [
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 21003,
+        "Name": "Fiery Glimpse",
+        "Desc": "· [Permanent] Max orb slots +{0}; associated character's max cooldown -{1}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 258,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Dubianlan1.png",
+        "IsShow": true,
+        "Order": 113,
+        "Tag": [
+            4
+        ],
+        "DescParams": [
+            5,
+            "40%"
+        ]
+    },
+    {
+        "Id": 21004,
+        "Name": "Burial Rites",
+        "Desc": "· [Battle Start] Immediately generates {0} Blue Orb(s); all Blue Orb CUBs' cooldown -{1}",
+        "Type": 3,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 259,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Nietiyalan1.png",
+        "IsShow": true,
+        "Order": 114,
+        "Tag": [
+            4,
+            5
+        ],
+        "DescParams": [
+            10,
+            "30%"
+        ]
+    },
+    {
+        "Id": 21005,
+        "Name": "Waning Trajectory",
+        "Desc": "· When any unit triggers, the next trigger generates {0} additional orb(s), DMG +{1}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 260,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Lunalan1.png",
+        "IsShow": true,
+        "Order": 115,
+        "Tag": [
+            4,
+            6
+        ],
+        "DescParams": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 21006,
+        "Name": "Celestial Aria",
+        "Desc": "· [Battle Start] Adjacent Blue Orb CUBs' cooldowns -{0}, DMG +{1}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 261,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Cibeizhelan1.png",
+        "IsShow": true,
+        "Order": 116,
+        "Tag": [
+            2,
+            3
+        ],
+        "DescParams": [
+            "30%",
+            30
+        ]
+    },
+    {
+        "Id": 21007,
+        "Name": "Falling Blast",
+        "Desc": "· [Battle Start] All Blue Orb CUBs' next hit of DMG +{0}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 262,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Lianglan1.png",
+        "IsShow": true,
+        "Order": 117,
+        "Tag": [
+            2,
+            3
+        ],
+        "DescParams": [
+            "100%"
+        ]
+    },
+    {
+        "Id": 21201,
+        "Name": "Solar Rupture",
+        "Desc": "· [Permanent] Associated CUB's orb cost -{0}, DMG +{1}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 263,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3GoldenLionSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 125,
+        "Tag": [
+            4,
+            6
+        ],
+        "DescParams": [
+            4,
+            "20%"
+        ]
+    },
+    {
+        "Id": 21202,
+        "Name": "Jagged Assault",
+        "Desc": "· [Permanent] Associated CUB's DMG +{0}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 264,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3RedwolfSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 126,
+        "Tag": [
+            2,
+            6
+        ],
+        "DescParams": [
+            "50%"
+        ]
+    },
+    {
+        "Id": 21203,
+        "Name": "Propelled Incineration",
+        "Desc": "· [Battle Start] Restores {0} Blue Orb(s), next hit of DMG +{1}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 265,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3BatSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 127,
+        "Tag": [
+            2,
+            4
+        ],
+        "DescParams": [
+            5,
+            "150%"
+        ]
+    },
+    {
+        "Id": 21204,
+        "Name": "Soultether",
+        "Desc": "· [Battle Start] Next hit of DMG +{0}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 266,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3CrowSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 128,
+        "Tag": [
+            2
+        ],
+        "DescParams": [
+            "200%"
+        ]
+    },
+    {
+        "Id": 21205,
+        "Name": "Dark Nihility",
+        "Desc": "· [Battle Start] Cooldown -{0}; the next hit of DMG costs no orbs.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 267,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3DragonSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 129,
+        "Tag": [
+            2,
+            4
+        ],
+        "DescParams": [
+            "100%"
+        ]
+    },
+    {
+        "Id": 21206,
+        "Name": "Union of Life",
+        "Desc": "· [Permanent] Costs {0} extra orbs; associated CUB's max cooldown -{1}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 268,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3PandoraSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 130,
+        "Tag": [
+            1,
+            4
+        ],
+        "DescParams": [
+            3,
+            "40%"
+        ]
+    },
+    {
+        "Id": 21207,
+        "Name": "Flame Blast",
+        "Desc": "· [Permanent] Costs {0} extra orbs; associated CUB's DMG +{1}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 3,
+        "EffectGroupId": 269,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3QuanSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 131,
+        "Tag": [
+            2,
+            4
+        ],
+        "DescParams": [
+            4,
+            "100%"
+        ]
+    },
+    {
+        "Id": 30001,
+        "Name": "Lucia: Inverse Crown",
+        "Desc": "· [Per Trigger] Adjacent units' cooldowns -{0}s.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 270,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR7Luxiya2Q.png",
+        "IsShow": true,
+        "Order": 43,
+        "Tag": [
+            5,
+            3
+        ],
+        "DescParams": [
+            1.5
+        ]
+    },
+    {
+        "Id": 30002,
+        "Name": "Teddy: Spectre",
+        "Desc": "· When any unit triggers, cooldown -{0}s.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 271,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Buouxiong2Q.png",
+        "IsShow": true,
+        "Order": 44,
+        "Tag": [
+            5
+        ],
+        "DescParams": [
+            1
+        ]
+    },
+    {
+        "Id": 30003,
+        "Name": "Wanshi: Lucid Dreamer",
+        "Desc": "· When any unit's cooldown is reduced, current orb generation +{0}.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 353,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Wanshi2Q.png",
+        "IsShow": true,
+        "Order": 45,
+        "Tag": [
+            5,
+            4
+        ],
+        "DescParams": [
+            2
+        ]
+    },
+    {
+        "Id": 30004,
+        "Name": "Liv: Limpidity",
+        "Desc": "· [Per Trigger] Cooldown -{0}s for the adjacent unit to the left.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 273,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR5Lifu2Q.png",
+        "IsShow": true,
+        "Order": 46,
+        "Tag": [
+            5,
+            3
+        ],
+        "DescParams": [
+            2.5
+        ]
+    },
+    {
+        "Id": 30005,
+        "Name": "Helentine: Lacrimosa",
+        "Desc": "· When any unit triggers, cooldown -{0}s.",
+        "Type": 1,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 274,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Helentine2Q.png",
+        "IsShow": true,
+        "Order": 47,
+        "Tag": [
+            5
+        ],
+        "DescParams": [
+            2
+        ]
+    },
+    {
+        "Id": 30006,
+        "Name": "Nanami: Startrail",
+        "Desc": "· When the adjacent unit to the right triggers, this unit's current cooldown -{0}.",
+        "Type": 1,
+        "Size": 2,
+        "Color": 2,
+        "EffectGroupId": 275,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR6Yongyechao2Q.png",
+        "IsShow": true,
+        "Order": 48,
+        "Tag": [
+            5,
+            3
+        ],
+        "DescParams": [
+            "100%"
+        ]
+    },
+    {
+        "Id": 30007,
+        "Name": "Alisa: Echo",
+        "Desc": "· [Per Trigger] The rightmost unit's cooldown -{0}.",
+        "Type": 1,
+        "Size": 2,
+        "Color": 2,
+        "EffectGroupId": 276,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Yalisha2Q.png",
+        "IsShow": true,
+        "Order": 49,
+        "Tag": [
+            5,
+            3
+        ],
+        "DescParams": [
+            "100%"
+        ]
+    },
+    {
+        "Id": 30008,
+        "Name": "Haicma: Starveil",
+        "Desc": "· [Permanent] Max cooldown -{0} when in the rightmost position.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 277,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadHakama3Qnew.png",
+        "IsShow": true,
+        "Order": 50,
+        "Tag": [
+            3
+        ],
+        "DescParams": [
+            "25%"
+        ]
+    },
+    {
+        "Id": 30009,
+        "Name": "Ayla: Kaleido",
+        "Desc": "· [Permanent] Max cooldown -{0} for the adjacent unit to the right.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 278,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Aila2Q.png",
+        "IsShow": true,
+        "Order": 51,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            "20%"
+        ]
+    },
+    {
+        "Id": 30010,
+        "Name": "Roland: Flambeau",
+        "Desc": "· [Permanent] Max cooldown -{0} for adjacent units.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 2,
+        "Color": 2,
+        "EffectGroupId": 279,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR2Luolan3Q.png",
+        "IsShow": true,
+        "Order": 52,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            "10%"
+        ]
+    },
+    {
+        "Id": 30011,
+        "Name": "Lamia: Lost Lullaby",
+        "Desc": "· [Permanent] Max cooldown -{1} for {0} units to the right.\\n· [Tap to Cast]",
+        "Type": 1,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 312,
+        "Icon": "Assets/Product/Texture/Image/Role/RoleHeadR3Lamiya2Q.png",
+        "IsShow": true,
+        "Order": 53,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            2,
+            "10%"
+        ]
+    },
+    {
+        "Id": 30201,
+        "Name": "Allos",
+        "Desc": "· Inflicts [DoT].\\n· [Per Trigger] Reduces adjacent units' current cooldowns by {0}.\\n· [DoT] Deals {1} hit(s) of DMG per second and can stack.",
+        "Type": 2,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 280,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Motordragon1.png",
+        "IsShow": true,
+        "Order": 54,
+        "Tag": [
+            5,
+            3
+        ],
+        "DescParams": [
+            "30%",
+            1
+        ]
+    },
+    {
+        "Id": 30202,
+        "Name": "Pop",
+        "Desc": "· Inflicts [DoT].\\n· [Per Trigger] Reduces the adjacent unit to the right's cooldown by {0}.\\n· [DoT] Deals {1} hit(s) of DMG per second and can stack.",
+        "Type": 2,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 281,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Elecpanda1.png",
+        "IsShow": true,
+        "Order": 55,
+        "Tag": [
+            5,
+            3
+        ],
+        "DescParams": [
+            "30%",
+            1
+        ]
+    },
+    {
+        "Id": 30203,
+        "Name": "Snowveil",
+        "Desc": "· Inflicts [DoT].\\n· Whenever any unit's cooldown is reduced, DMG +{0}.\\n· [DoT] Deals {1} hit(s) of DMG per second and can stack.",
+        "Type": 2,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 282,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Fox1.png",
+        "IsShow": true,
+        "Order": 56,
+        "Tag": [
+            5,
+            6
+        ],
+        "DescParams": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 30204,
+        "Name": "Levvi",
+        "Desc": "· Inflicts [DoT].\\n· [Per Trigger] Reduces adjacent Yellow Orb CUBs' current cooldowns by {0}.\\n· [DoT] Deals {1} hit(s) of DMG per second and can stack.",
+        "Type": 2,
+        "Size": 2,
+        "Color": 2,
+        "EffectGroupId": 283,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Wuya1.png",
+        "IsShow": true,
+        "Order": 57,
+        "Tag": [
+            5,
+            3
+        ],
+        "DescParams": [
+            "15%",
+            1
+        ]
+    },
+    {
+        "Id": 30205,
+        "Name": "Grand Duke",
+        "Desc": "· Inflicts [DoT].\\n· Whenever any unit's cooldown is reduced, reduces this card's current cooldown by {0}.\\n· [DoT] Deals {1} hit(s) of DMG per second and can stack.",
+        "Type": 2,
+        "Size": 2,
+        "Color": 2,
+        "EffectGroupId": 284,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Chandelier1.png",
+        "IsShow": true,
+        "Order": 58,
+        "Tag": [
+            5
+        ],
+        "DescParams": [
+            "30%",
+            1
+        ]
+    },
+    {
+        "Id": 30206,
+        "Name": "Bramble Angler",
+        "Desc": "· Inflicts [DoT].\\n· When an adjacent CUB triggers, reduces this card's current cooldown by {0}.\\n· [DoT] Deals {1} hit(s) of DMG per second and can stack.",
+        "Type": 2,
+        "Size": 3,
+        "Color": 2,
+        "EffectGroupId": 285,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Anglerfish1.png",
+        "IsShow": true,
+        "Order": 59,
+        "Tag": [
+            5,
+            3
+        ],
+        "DescParams": [
+            "50%",
+            1
+        ]
+    },
+    {
+        "Id": 30207,
+        "Name": "Dawn Chorus",
+        "Desc": "· Inflicts [DoT].\\n· When this card's cooldown is reduced, the next hit's DMG is doubled.\\n· [DoT] Deals {0} hit(s) of DMG per second and can stack.",
+        "Type": 2,
+        "Size": 3,
+        "Color": 2,
+        "EffectGroupId": 286,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Griffon1.png",
+        "IsShow": true,
+        "Order": 60,
+        "Tag": [
+            5,
+            6
+        ],
+        "DescParams": [
+            1
+        ]
+    },
+    {
+        "Id": 30208,
+        "Name": "Lingya",
+        "Desc": "· Inflicts [DoT].\\n· [DoT] Deals {0} hit(s) of DMG per second and can stack.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 287,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet2Yang1.png",
+        "IsShow": true,
+        "Order": 61,
+        "DescParams": [
+            1
+        ]
+    },
+    {
+        "Id": 30209,
+        "Name": "Rainbow",
+        "Desc": "· Inflicts [DoT].\\n· [DoT] Deals {0} hit(s) of DMG per second and can stack.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 2,
+        "Color": 2,
+        "EffectGroupId": 288,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Wuzei1.png",
+        "IsShow": true,
+        "Order": 62,
+        "DescParams": [
+            1
+        ]
+    },
+    {
+        "Id": 30210,
+        "Name": "Thorny",
+        "Desc": "· Inflicts [DoT].\\n· [DoT] Deals {0} hit(s) of DMG per second and can stack.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 3,
+        "Color": 2,
+        "EffectGroupId": 289,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet2Ciwei.png",
+        "IsShow": true,
+        "Order": 63,
+        "DescParams": [
+            1
+        ]
+    },
+    {
+        "Id": 30211,
+        "Name": "Cetus",
+        "Desc": "· Inflicts [DoT].\\n· [DoT] Deals {0} hit(s) of DMG per second and can stack.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 290,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Dolphin1.png",
+        "IsShow": true,
+        "Order": 64,
+        "DescParams": [
+            1
+        ]
+    },
+    {
+        "Id": 30212,
+        "Name": "Billie",
+        "Desc": "· Inflicts [DoT].\\n· [DoT] Deals {0} hit(s) of DMG per second and can stack.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 2,
+        "Color": 2,
+        "EffectGroupId": 291,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Chiprobot1.png",
+        "IsShow": true,
+        "Order": 65,
+        "DescParams": [
+            1
+        ]
+    },
+    {
+        "Id": 30213,
+        "Name": "Nitor",
+        "Desc": "· Inflicts [DoT].\\n· [DoT] Deals {0} hit(s) of DMG per second and can stack.\\n· [Tap to Cast]",
+        "Type": 2,
+        "ReleaseMode": 1,
+        "Size": 3,
+        "Color": 2,
+        "EffectGroupId": 292,
+        "Icon": "Assets/Product/Texture/Image/RolePartner/Pet3Mao1.png",
+        "IsShow": true,
+        "Order": 66,
+        "DescParams": [
+            1
+        ]
+    },
+    {
+        "Id": 31001,
+        "Name": "Dusklit Severance",
+        "Desc": "· [Permanent] Associated units' orb generation +{0}, DMG +{1}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 293,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R7Luxiyahuang1.png",
+        "IsShow": true,
+        "Order": 67,
+        "Tag": [
+            4
+        ],
+        "DescParams": [
+            3,
+            8
+        ]
+    },
+    {
+        "Id": 31002,
+        "Name": "Ultra Bass Reverb",
+        "Desc": "· [Permanent] Associated unit's max cooldown +{0}s.\\n· [Battle Start] Shield +{1}.\\n· [Shield] Blocks 1 hit of DMG.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 294,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionghuang1.png",
+        "IsShow": true,
+        "Order": 68,
+        "Tag": [
+            4
+        ],
+        "DescParams": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 31003,
+        "Name": "Strigine Assault",
+        "Desc": "· [Battle Start] All units' cooldowns -{0}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 295,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Wanshihuang1.png",
+        "IsShow": true,
+        "Order": 69,
+        "Tag": [
+            5,
+            6
+        ],
+        "DescParams": [
+            "50%"
+        ]
+    },
+    {
+        "Id": 31004,
+        "Name": "Scattered Delusion",
+        "Desc": "· [Per Trigger] Adjacent units' next hit of DMG +{0}.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 296,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R5Lifuhuang1.png",
+        "IsShow": true,
+        "Order": 70,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            10
+        ]
+    },
+    {
+        "Id": 31005,
+        "Name": "Withered Cycle",
+        "Desc": "· [Per Trigger] Adjacent units' cooldowns -{0}s.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 297,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Helentinehuang1.png",
+        "IsShow": true,
+        "Order": 71,
+        "Tag": [
+            5,
+            3
+        ],
+        "DescParams": [
+            1.5
+        ]
+    },
+    {
+        "Id": 31006,
+        "Name": "Starbeam Deconstruction",
+        "Desc": "· [Per Trigger] All units' cooldowns -{0}s.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 298,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R5Yongyechaohuang1.png",
+        "IsShow": true,
+        "Order": 72,
+        "Tag": [
+            5,
+            1
+        ],
+        "DescParams": [
+            0.5
+        ]
+    },
+    {
+        "Id": 31007,
+        "Name": "Cosmic Descent",
+        "Desc": "· [Per Trigger] Associated unit has a {0} chance to trigger again. Can trigger multiple times.",
+        "Type": 3,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 299,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Yalishahuang1.png",
+        "IsShow": true,
+        "Order": 73,
+        "Tag": [
+            5,
+            1
+        ],
+        "DescParams": [
+            "40%"
+        ]
+    },
+    {
+        "Id": 31201,
+        "Name": "Glacial Embers",
+        "Desc": "· [Permanent] Adjacent Yellow Orb characters' max cooldowns -{0}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 300,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3MotordragonSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 74,
+        "Tag": [
+            3
+        ],
+        "DescParams": [
+            "30%"
+        ]
+    },
+    {
+        "Id": 31202,
+        "Name": "Photon-Cooling Cycle",
+        "Desc": "· [Permanent] Adjacent Yellow Orb CUBs' DMG +{0}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 301,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3PandaSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 75,
+        "Tag": [
+            3,
+            6
+        ],
+        "DescParams": [
+            5
+        ]
+    },
+    {
+        "Id": 31203,
+        "Name": "Lucent Heart",
+        "Desc": "· [Per Trigger] Adjacent Yellow Orb CUBs' cooldowns -{0}s.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 302,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3FoxSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 76,
+        "Tag": [
+            5,
+            3
+        ],
+        "DescParams": [
+            3
+        ]
+    },
+    {
+        "Id": 31204,
+        "Name": "Azure Blessing",
+        "Desc": "· [Permanent] Associated CUB's DMG +{0}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 303,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3WuyaSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 77,
+        "Tag": [
+            6
+        ],
+        "DescParams": [
+            10
+        ]
+    },
+    {
+        "Id": 31205,
+        "Name": "Fluorite Dispersion",
+        "Desc": "· When the associated CUB's cooldown is reduced, current orb cost -{0}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 304,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3ChandelierSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 78,
+        "Tag": [
+            5,
+            4
+        ],
+        "DescParams": [
+            3
+        ]
+    },
+    {
+        "Id": 31206,
+        "Name": "Cosmic Flame Rift",
+        "Desc": "· Each time the associated CUB's cooldown is reduced, DMG +{0}.",
+        "Type": 4,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 305,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3AnglerfishSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 79,
+        "Tag": [
+            5,
+            6
+        ],
+        "DescParams": [
+            4
+        ]
+    },
+    {
+        "Id": 31207,
+        "Name": "Free Soaring",
+        "Desc": "· Each time any unit's cooldown is reduced, the associated CUB's DMG +{0}",
+        "Type": 4,
+        "Size": 1,
+        "Color": 2,
+        "EffectGroupId": 306,
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3GriffonSkillbeidong04.png",
+        "IsShow": true,
+        "Order": 80,
+        "Tag": [
+            5,
+            6
+        ],
+        "DescParams": [
+            2
+        ]
+    }
+]

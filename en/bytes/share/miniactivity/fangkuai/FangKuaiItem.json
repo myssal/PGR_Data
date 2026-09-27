@@ -3,12 +3,10 @@
         "Id": 1,
         "Kind": 1,
         "NextItemId": 15,
-        "Name": "Score Reduction",
-        "Desc": "Choose a color and reduce all cubes of that color by 1 unit",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai14.png",
-        "BlockTypes": [
-            2
-        ]
+        "Name": "Tap",
+        "Desc": "Select a color to remove 1 unit from all cubes of that color.",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai02.png",
+        "IsChooseColor": true
     },
     {
         "Id": 2,
@@ -21,12 +19,10 @@
         "Id": 3,
         "Kind": 3,
         "NextItemId": 17,
-        "Name": "Melody Simplification",
-        "Desc": "Choose a color and divide all blocks of that color into 1-unit blocks.",
+        "Name": "Refine",
+        "Desc": "Choose a color and divide all cubes of that color into 1-unit cubes.",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai03.png",
-        "BlockTypes": [
-            3
-        ]
+        "IsChooseColor": true
     },
     {
         "Id": 4,
@@ -36,13 +32,15 @@
         ],
         "Name": "Deadline Rescue",
         "Desc": "Gain 2 turns after use",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai05.png"
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai05.png",
+        "IsShowUseBtn": true
     },
     {
         "Id": 5,
         "Kind": 5,
-        "Name": "Sequence Reset",
-        "Desc": "Choose any 2 areas and swap their locations",
+        "NextItemId": 18,
+        "Name": "Swap",
+        "Desc": "Choose any 2 rows and swap their locations.",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai06.png"
     },
     {
@@ -55,9 +53,12 @@
     {
         "Id": 7,
         "Kind": 7,
-        "Name": "Freeze Convert",
+        "NextItemId": 19,
+        "Name": "Freeze",
         "Desc": "Freeze the ascending bar once. No cubes will be ascended starting the next round (This effect can be stacked up to 3 times.)",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai07.png"
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai07.png",
+        "IsShowUseBtn": true,
+        "IsBubbleUseLongBg": true
     },
     {
         "Id": 8,
@@ -71,21 +72,27 @@
         "Kind": 9,
         "Name": "Random Function α",
         "Desc": "Randomly select a color and apply a random effect to it. (Random effects: Structural Adjustment, Data Simplification, Parameter Inflation, and Filter Inflation)",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai09.png"
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai09.png",
+        "IsShowUseBtn": true,
+        "IsBubbleUseLongBg": true
     },
     {
         "Id": 10,
         "Kind": 10,
         "Name": "Random Function β",
         "Desc": "Randomly select a column and apply a random effect to it. (Random effects: Code Extermination, Sequence Reset, and Directed Movement)",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai13.png"
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai13.png",
+        "IsShowUseBtn": true,
+        "IsBubbleUseLongBg": true
     },
     {
         "Id": 11,
         "Kind": 11,
-        "Name": "Restore Parameter",
-        "Desc": "Randomly purify 1 Special Cube (no effect if none exists).",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai10.png"
+        "NextItemId": 20,
+        "Name": "Purify",
+        "Desc": "Randomly purifies 1 Red Wave, Blue Wave, or Green Wave Cube (no effect if none exists).",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai10.png",
+        "IsShowUseBtn": true
     },
     {
         "Id": 12,
@@ -95,18 +102,17 @@
         ],
         "Name": "Parameter Inflation",
         "Desc": "Choose a color and add 8 units to all cubes of that color.",
-        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai11.png"
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai11.png",
+        "IsChooseColor": true
     },
     {
         "Id": 13,
         "Kind": 13,
         "NextItemId": 16,
-        "Name": "Sustain",
-        "Desc": "Select a color. Generate multiple unit cubes of the same color in the empty spaces adjacent to all existing cubes of that color until they encounter other blocks.",
+        "Name": "Hatch",
+        "Desc": "Select a color to fill empty adjacent spaces around all matching cubes with 1-unit cubes, until they hit other cubes.",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai12.png",
-        "BlockTypes": [
-            4
-        ]
+        "IsChooseColor": true
     },
     {
         "Id": 14,
@@ -120,27 +126,60 @@
         "Id": 15,
         "Kind": 15,
         "BackItemId": 1,
-        "Name": "Score Reduction β",
-        "Desc": "Reduce all Normal Blocks, regardless of color, by 1 unit.",
+        "Name": "Super Tap",
+        "Desc": "Remove 1 unit from all normal cubes of any color.",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai15.png",
-        "ItemType": 1
+        "ItemType": 1,
+        "IsShowUseBtn": true
     },
     {
         "Id": 16,
         "Kind": 16,
         "BackItemId": 13,
-        "Name": "Sustain β",
-        "Desc": "Generate multiple 1-unit blocks in the empty spaces adjacent to all existing Normal Blocks (regardless of color) until they encounter other blocks.",
+        "Name": "Super Hatch",
+        "Desc": "Fill empty adjacent spaces around all normal cubes with matching 1-unit cubes, until they hit other cubes.",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai17.png",
-        "ItemType": 1
+        "ItemType": 1,
+        "IsShowUseBtn": true
     },
     {
         "Id": 17,
         "Kind": 17,
         "BackItemId": 3,
-        "Name": "Melody Simplification β",
-        "Desc": "Divide all existing Normal Blocks, regardless of color, into 1-unit blocks.",
+        "Name": "Super Refine",
+        "Desc": "Divide all existing normal cubes into 1-unit cubes.",
         "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai16.png",
+        "ItemType": 1,
+        "IsShowUseBtn": true
+    },
+    {
+        "Id": 18,
+        "Kind": 18,
+        "BackItemId": 5,
+        "Name": "Double Row Clear",
+        "Desc": "Choose any 2 rows and clear all cubes in them once.",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai18.png",
         "ItemType": 1
+    },
+    {
+        "Id": 19,
+        "Kind": 19,
+        "BackItemId": 7,
+        "Name": "Super Freeze",
+        "Desc": "Freeze the ascending bar 3 times. No cubes will be ascended starting the next turn (This effect can be stacked up to 3 times.)",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai19.png",
+        "ItemType": 1,
+        "IsShowUseBtn": true,
+        "IsBubbleUseLongBg": true
+    },
+    {
+        "Id": 20,
+        "Kind": 20,
+        "BackItemId": 11,
+        "Name": "Super Purify",
+        "Desc": "Purifies all Red Wave, Blue Wave, and Green Wave Cubes (no effect if none exist).",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconFangKuai20.png",
+        "ItemType": 1,
+        "IsShowUseBtn": true
     }
 ]

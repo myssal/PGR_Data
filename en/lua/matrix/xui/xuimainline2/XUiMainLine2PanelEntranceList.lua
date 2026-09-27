@@ -225,7 +225,7 @@ function XUiMainLine2PanelEntranceList:GetRImgChapterBg(index)
     local bgName = "RImgChapterBg" .. tostring(index)
     local rImgBg = self[bgName]
     if not rImgBg then
-        rImgBg = self.Transform:Find(bgName):GetComponent("CanvasGroup")
+        rImgBg = self.Transform:Find(bgName):GetComponent(typeof(CS.UnityEngine.CanvasGroup))
         self[bgName] = rImgBg
     end
     return rImgBg

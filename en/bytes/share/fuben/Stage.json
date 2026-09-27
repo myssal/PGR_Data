@@ -17478,6 +17478,291 @@
         ]
     },
     {
+        "StageId": 15010701,
+        "Type": 18,
+        "Name": "Where the Dream Starts",
+        "Description": "Welcome. Here, you'll find only new friends and the sweetest dreams.",
+        "Icon": "Assets/Product/Texture/Image/UiDALStage/UiDALStageStory01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX07001BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15010702
+        ]
+    },
+    {
+        "StageId": 15010702,
+        "Type": 18,
+        "Name": "Daydream Streets",
+        "Description": "This is a strange world, and yet, it may be the \"future\" meant to be yours.",
+        "Icon": "Assets/Product/Texture/Image/UiDALStage/UiDALStageStory02.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 2,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            15010701
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX07002BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15010703
+        ]
+    },
+    {
+        "StageId": 15010703,
+        "Type": 18,
+        "Name": "Happiness or Embers",
+        "Description": "You can have your wishes granted again and again, but what will you have left to pay the price?",
+        "Icon": "Assets/Product/Texture/Image/UiDALStage/UiDALStageStory03.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 3,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            15010702
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX07003BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15010704
+        ]
+    },
+    {
+        "StageId": 15010704,
+        "Type": 18,
+        "Name": "Fleeting Fireworks",
+        "Description": "From afar comes the soft, sizzling sound of sparks vanishing into the depths of the lake.",
+        "Icon": "Assets/Product/Texture/Image/UiDALStage/UiDALStageStory04.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 4,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            15010703
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX07004BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15010705
+        ]
+    },
+    {
+        "StageId": 15010705,
+        "Type": 18,
+        "Name": "To Be Myself",
+        "Description": "Allow me to tell you a story. A story of a girl who, after time beyond measure, finally found her way to \"herself.\"",
+        "Icon": "Assets/Product/Texture/Image/UiDALStage/UiDALStageStory05.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 5,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            15010704
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX07005BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15010706
+        ]
+    },
+    {
+        "StageId": 15010706,
+        "Type": 18,
+        "Name": "Android and Electric Sheep",
+        "Description": "One morning, the Dream Machine woke up in bed and found that it had become human.",
+        "Icon": "Assets/Product/Texture/Image/UiDALStage/UiDALStageStory06.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 6,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            15010705
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX07006BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15010707
+        ]
+    },
+    {
+        "StageId": 15010707,
+        "Type": 18,
+        "Name": "Shatter the Nightmare",
+        "Description": "This dream has gone on long enough. It's time to wake to the dawn.",
+        "Icon": "Assets/Product/Texture/Image/UiDALStage/UiDALStageStory07.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiDALStage/UiDALStageStoryDetail07.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 7,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            15010706
+        ],
+        "FirstRewardShow": 3200,
+        "FirstRewardId": 3200,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX07007BA"
+        ],
+        "EndStoryIds": [
+            "ZX07007EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172507
+        ],
+        "StageType": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            15010708
+        ]
+    },
+    {
+        "StageId": 15010708,
+        "Type": 18,
+        "Name": "To the World You Love",
+        "Description": "Alright then, I shall witness it for myself. Just what is it about this world that makes you love it so dearly?",
+        "Icon": "Assets/Product/Texture/Image/UiDALStage/UiDALStageStory08.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 8,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "PreStageId": [
+            15010707
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX07008BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageType": 2,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
         "StageId": 10140101,
         "Type": 1,
         "Name": "Game in a Cage",
@@ -48321,6 +48606,1175 @@
         ]
     },
     {
+        "StageId": 10420101,
+        "Type": 87,
+        "Name": "Ocean Heart Awakens",
+        "Description": "You don't see the military tearing itself apart every day. Can you really blame me for staying to watch the show?",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06901BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420102
+        ]
+    },
+    {
+        "StageId": 10420102,
+        "Type": 87,
+        "Name": "Abyss Offensive",
+        "Description": "The reset works, we all walk away alive. It doesn't, and the world checks out early.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 2,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420101
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06902BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420103
+        ]
+    },
+    {
+        "StageId": 10420103,
+        "Type": 87,
+        "Name": "Handshake Protocol",
+        "Description": "\"That's no excuse for our failure today.\"",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 3,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420102
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06903BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420104
+        ]
+    },
+    {
+        "StageId": 10420104,
+        "Type": 87,
+        "Name": "Sailor Adrift",
+        "Description": "The truth is, Adelyde hasn't understood any of it. Not a single word.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 4,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420103
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06904BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420105
+        ]
+    },
+    {
+        "StageId": 10420105,
+        "Type": 87,
+        "Name": "Day of Enlightenment",
+        "Description": "This place really is full of visionaries.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 5,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420104
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06905BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420106
+        ]
+    },
+    {
+        "StageId": 10420106,
+        "Type": 87,
+        "Name": "Whose New World",
+        "Description": "In your future... did any of what we fought for...",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 6,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420105
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06906BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420107
+        ]
+    },
+    {
+        "StageId": 10420107,
+        "Type": 87,
+        "Name": "Shattered Dawn",
+        "Description": "Humanity's dream of standing united beneath the stars shatters in an instant, leaving a pall over the broken heavens.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 7,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420106
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06907BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420108
+        ]
+    },
+    {
+        "StageId": 10420108,
+        "Type": 87,
+        "Name": "The Long Road",
+        "Description": "Those who choose this path must tear down the old before they can build it anew.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 8,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420107
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06908BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420109
+        ]
+    },
+    {
+        "StageId": 10420109,
+        "Type": 87,
+        "Name": "Past Intertwined",
+        "Description": "Nice to meet you, Helio.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 9,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420108
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06909BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420110
+        ]
+    },
+    {
+        "StageId": 10420110,
+        "Type": 87,
+        "Name": "Upstream",
+        "Description": "What proof do I have that you won't become one of them?",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 10,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420109
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06910BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420111
+        ]
+    },
+    {
+        "StageId": 10420111,
+        "Type": 87,
+        "Name": "Mutual Destruction",
+        "Description": "The rift between us was real, but that doesn't mean I should refuse to reach out.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 11,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420110
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06911BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420112
+        ]
+    },
+    {
+        "StageId": 10420112,
+        "Type": 87,
+        "Name": "Golden Dawn",
+        "Description": "This banner embodies the spirit, memories, and convictions of F.O.S.'s brightest students at their fearless best. F.O.S. has treasured it ever since.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 12,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420111
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06912BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420113
+        ]
+    },
+    {
+        "StageId": 10420113,
+        "Type": 87,
+        "Name": "Cataclysm and Resurrection",
+        "Description": "The hateful, pathetic world we call reality.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 13,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420112
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06913BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420114
+        ]
+    },
+    {
+        "StageId": 10420114,
+        "Type": 87,
+        "Name": "Conviction",
+        "Description": "Even if no one follows, I'll break through the abyss and charge straight into hell. And if all I can do is steal a boat from the Styx and ferry people back, then that's what I'll do.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 14,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420113
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06914BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420115
+        ]
+    },
+    {
+        "StageId": 10420115,
+        "Type": 87,
+        "Name": "Styx Crossing",
+        "Description": "We are the Atlantic Eye.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 15,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420114
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06915BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420116
+        ]
+    },
+    {
+        "StageId": 10420116,
+        "Type": 87,
+        "Name": "Keeping Watch at Eternity's End",
+        "Description": "The human heart is the one variable no equation can solve and no prediction can account for.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 16,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420115
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06916BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420117
+        ]
+    },
+    {
+        "StageId": 10420117,
+        "Type": 87,
+        "Name": "Bearer of the Heavens",
+        "Description": "Love, pride, and ideals that bridge every divide, forged into a shield mighty enough to bear the heavens.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 17,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420116
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06917BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420118
+        ]
+    },
+    {
+        "StageId": 10420118,
+        "Type": 87,
+        "Name": "Parting the Sea",
+        "Description": "This is our idealism: finding strength in despair and defiance, in everything we hate and everything we refuse to lose.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabN4318.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenImgN4318.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 18,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420117
+        ],
+        "KeepPlayingStory": 1,
+        "EndStoryIds": [
+            "ZX06918EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172514
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleSpecial",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "IsBanGeneralSkill": true,
+        "NextStageId": [
+            10420119
+        ]
+    },
+    {
+        "StageId": 10420119,
+        "Type": 87,
+        "Name": "Rebuilding \"Ananke\"",
+        "Description": "Those who came after now stand where their predecessors' convictions still echo, kindling that golden sea of stars once more.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabN4319.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenImgN4319.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 19,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420118
+        ],
+        "KeepPlayingStory": 1,
+        "EndStoryIds": [
+            "ZX06919EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172514
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleSpecial",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "IsBanGeneralSkill": true,
+        "NextStageId": [
+            10420120
+        ]
+    },
+    {
+        "StageId": 10420120,
+        "Type": 87,
+        "Name": "Inquest and Farewell",
+        "Description": "What are you fighting for?",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabN4320.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainTab/UiFubenImgN4320.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 20,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420119
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06920BA"
+        ],
+        "EndStoryIds": [
+            "ZX06920EA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172514
+        ],
+        "RebootId": 17,
+        "StageType": 1,
+        "StageGridStyle": "GridStageMainLineBattleBoss",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "IsBanGeneralSkill": true,
+        "NextStageId": [
+            10420121
+        ]
+    },
+    {
+        "StageId": 10420121,
+        "Type": 87,
+        "Name": "Anchored in Faith",
+        "Description": "Create. Share. Protect. Carry it forward. Believe.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 21,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420120
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06921BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420122
+        ]
+    },
+    {
+        "StageId": 10420122,
+        "Type": 87,
+        "Name": "Into the Future",
+        "Description": "Into the storm we fly, bound for the blue beyond.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 22,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420121
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06922BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420123
+        ]
+    },
+    {
+        "StageId": 10420123,
+        "Type": 87,
+        "Name": "Caged Bird",
+        "Description": "No matter how this begins or ends, our choice remains the same.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 23,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420122
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "ZX06923BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420124
+        ]
+    },
+    {
+        "StageId": 10420124,
+        "Type": 87,
+        "Name": "Temporary Joint Operation",
+        "Description": "As the Egret's advance agent, Leia's next assignment puts her alongside the Purifying Force.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 24,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420123
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06901BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420125
+        ]
+    },
+    {
+        "StageId": 10420125,
+        "Type": 87,
+        "Name": "The Past",
+        "Description": "The Purifying Force captures Jorge, the logistics chief who secretly aided an Ascendant. His confession reveals a crime whose consequences are still unfolding.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 25,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420124
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06902BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420126
+        ]
+    },
+    {
+        "StageId": 10420126,
+        "Type": 87,
+        "Name": "Beneath the Ashes",
+        "Description": "Searching for both the Ascendant and Jorge's adopted daughter, Caro, Leia and the others comb the ruins of the warehouse—",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 26,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420125
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06903BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420127
+        ]
+    },
+    {
+        "StageId": 10420127,
+        "Type": 87,
+        "Name": "Hunting Through the Flames",
+        "Description": "Caro is alive, and so is the Ascendant. Leia gets Caro to safety, but the Ascendant has already seized the traitor.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 27,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420126
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06904BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420128
+        ]
+    },
+    {
+        "StageId": 10420128,
+        "Type": 87,
+        "Name": "Amazigh",
+        "Description": "Arius isn't the only Ascendant on the move. But stopping them comes second to one thing: surviving.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 28,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420127
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06905BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            10420129
+        ]
+    },
+    {
+        "StageId": 10420129,
+        "Type": 87,
+        "Name": "No Easy Answer",
+        "Description": "Amazigh is gone, and devastation is all that remains. But was she really the cause of it all?",
+        "Icon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg3.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenMainLineNew/UiFubenMainLineNewStoryBg1.png",
+        "BgmId": 36,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 29,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "PreStageId": [
+            10420128
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "YC06906BA"
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 17,
+        "StageType": 2,
+        "StageGridStyle": "GridStageMainLineStory",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
         "StageId": 17010101,
         "Type": 1,
         "Name": "Fallen Star",
@@ -52524,6 +53978,35 @@
         "StageId": 17014302,
         "Type": 87,
         "Name": "Of Solitude and Stillness",
+        "BgmId": 101,
+        "LoadingType": 10101,
+        "EventId": 2410015,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "RequireLevel": 1,
+        "PassTimeLimit": 300,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Defeat all enemies"
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 1,
+        "StageType": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 17014401,
+        "Type": 87,
+        "Name": "Steering By Light",
         "BgmId": 101,
         "LoadingType": 10101,
         "EventId": 2410015,
@@ -108321,6 +109804,226 @@
         ]
     },
     {
+        "StageId": 30100237,
+        "Type": 36,
+        "Name": "A1",
+        "Description": "Core Skill",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3KuangsanV408/UiCharacterFileR3KuangsanActivityTutorial.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to the tutorial tips.",
+            "Learn the Construct's combat techniques.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2337
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30100238
+        ]
+    },
+    {
+        "StageId": 30100238,
+        "Type": 36,
+        "Name": "A2",
+        "Description": "Combat Practice",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3KuangsanV408/UiCharacterFileR3KuangsanActivityTutorial.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100237
+        ],
+        "FirstRewardShow": 30100801,
+        "FirstRewardId": 30100801,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to the tutorial tips.",
+            "Learn the Construct's combat techniques.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2337
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30100239
+        ]
+    },
+    {
+        "StageId": 30100239,
+        "Type": 36,
+        "Name": "A3",
+        "Description": "Combat Practice",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3KuangsanV408/UiCharacterFileR3KuangsanActivityTutorial.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100238
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to the tutorial tips.",
+            "Learn the Construct's combat techniques.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2337
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "GeneralSkillIds": [
+            9999
+        ]
+    },
+    {
+        "StageId": 30100243,
+        "Type": 36,
+        "Name": "A1",
+        "Description": "Core Skill",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3AdelaideActivityV408/UiCharacterFileR3AdelaideActivityTutorial01.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to the tutorial tips.",
+            "Learn the Construct's combat techniques.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2340
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30100244
+        ]
+    },
+    {
+        "StageId": 30100244,
+        "Type": 36,
+        "Name": "A2",
+        "Description": "Combat Practice I",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3AdelaideActivityV408/UiCharacterFileR3AdelaideActivityTutorial01.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100243
+        ],
+        "FirstRewardShow": 30100801,
+        "FirstRewardId": 30100801,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to the tutorial tips.",
+            "Learn the Construct's combat techniques.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2340
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "NextStageId": [
+            30100245
+        ]
+    },
+    {
+        "StageId": 30100245,
+        "Type": 36,
+        "Name": "A3",
+        "Description": "Combat Practice II",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3AdelaideActivityV408/UiCharacterFileR3AdelaideActivityTutorial01.png",
+        "BgmId": 5063,
+        "LoadingType": 10101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100244
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to the tutorial tips.",
+            "Learn the Construct's combat techniques.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2340
+        ],
+        "RebootId": 3,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "GeneralSkillIds": [
+            3
+        ]
+    },
+    {
         "StageId": 30161301,
         "Type": 49,
         "Name": "Roseblade",
@@ -115318,6 +117021,216 @@
         "Restartable": true,
         "GeneralSkillIds": [
             6
+        ]
+    },
+    {
+        "StageId": 30100240,
+        "Type": 36,
+        "Name": 1,
+        "Description": "Character Challenge",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3KuangsanV408/UiCharacterFileR3KuangsanActivityChallenge.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Successfully clear stages.",
+            "Clear within 180s.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160537,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ],
+        "NextStageId": [
+            30100241
+        ]
+    },
+    {
+        "StageId": 30100241,
+        "Type": 36,
+        "Name": 2,
+        "Description": "Character Challenge",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3KuangsanV408/UiCharacterFileR3KuangsanActivityChallenge.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100240
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Successfully clear stages.",
+            "Clear within 180s.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160538,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ],
+        "NextStageId": [
+            30100242
+        ]
+    },
+    {
+        "StageId": 30100242,
+        "Type": 36,
+        "Name": 3,
+        "Description": "Character Challenge",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3KuangsanV408/UiCharacterFileR3KuangsanActivityChallenge.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100241
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Successfully clear stages.",
+            "Clear within 180s.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160539,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ]
+    },
+    {
+        "StageId": 30100246,
+        "Type": 36,
+        "Name": 1,
+        "Description": "Character Challenge",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3AdelaideActivityV408/UiCharacterFileR3AdelaideActivityTutorial05.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Successfully clear stages.",
+            "Clear within 180s.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160537,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ],
+        "NextStageId": [
+            30100247
+        ]
+    },
+    {
+        "StageId": 30100247,
+        "Type": 36,
+        "Name": 2,
+        "Description": "Character Challenge",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3AdelaideActivityV408/UiCharacterFileR3AdelaideActivityTutorial05.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100246
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Successfully clear stages.",
+            "Clear within 180s.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160538,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            9999
+        ],
+        "NextStageId": [
+            30100248
+        ]
+    },
+    {
+        "StageId": 30100248,
+        "Type": 36,
+        "Name": 3,
+        "Description": "Character Challenge",
+        "Icon": "Assets/Product/Texture/Image/UiCharacterFile/UiCharacterFileR3AdelaideActivityV408/UiCharacterFileR3AdelaideActivityTutorial05.png",
+        "BgmId": 5071,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "LimitBuffId": 2,
+        "PreStageId": [
+            30100247
+        ],
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Successfully clear stages.",
+            "Clear within 180s.",
+            "Have all members survive."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 4,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "FightControlId": 30160539,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true,
+        "GeneralSkillIds": [
+            3
         ]
     },
     {
@@ -174870,6 +176783,136 @@
         "Restartable": true
     },
     {
+        "StageId": 30006898,
+        "Type": 16,
+        "Name": "Wrathful Monsoon - 1",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt1.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "Defeat Rusalka: Cruising Vanguard",
+            "Get taken down no more than 5 times.",
+            "Get taken down no more than 3 times."
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006899,
+        "Type": 16,
+        "Name": "Wrathful Monsoon - 2",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt2.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 2,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "Defeat Rusalka: Cruising Vanguard",
+            "Get taken down no more than 5 times.",
+            "Get taken down no more than 3 times."
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006900,
+        "Type": 16,
+        "Name": "Wrathful Monsoon - 3",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt3.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 3,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "Defeat Rusalka: Cruising Vanguard",
+            "Get taken down no more than 5 times.",
+            "Get taken down no more than 3 times."
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006901,
+        "Type": 16,
+        "Name": "Wrathful Monsoon - 4",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt4.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 4,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "Defeat Rusalka: Cruising Vanguard",
+            "Get taken down no more than 3 times.",
+            "Die no more than once."
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30006902,
+        "Type": 16,
+        "Name": "Wrathful Monsoon - 5",
+        "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt5.png",
+        "BgmId": 101,
+        "LoadingType": 20011,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 5,
+        "RequireLevel": 40,
+        "LimitBuffId": 1,
+        "StarDesc": [
+            "Defeat Rusalka: Cruising Vanguard",
+            "Die no more than once.",
+            "Have all members survive."
+        ],
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RebootId": 3,
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
         "StageId": 30010007,
         "Name": "Comicon Team",
         "Icon": "Assets/Product/Texture/Image/UiActivityBossSingle/UiActivityBossDetailBt5.png",
@@ -206912,6 +208955,35 @@
         ]
     },
     {
+        "StageId": 30101134,
+        "Type": 13,
+        "Name": "Ember Ceremony",
+        "Description": "She lifts her skirt to gracefully vault over the campus railing, her crimson dress blooming in the night, with only muzzle flashes serving as adornment. Shell casings hit the ground as embers drift away alongside mournful whispers, and the girl holsters her weapon with a mischievous smile—this dance of hers is far from over.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172453
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
         "StageId": 30101136,
         "Type": 13,
         "Name": "Blazing Rhythm",
@@ -207077,6 +209149,213 @@
         "FunctionRightBtn": 1,
         "RobotId": [
             172506
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101143,
+        "Type": 13,
+        "Name": "Calamity's End",
+        "Description": "Blue flames consume her shackles, burning away every fear and doubt in the endless night. She grips the thorns and lets them pierce her palm—a sharp reminder never to let this fire burn in vain. \"Before judgment comes, I'll light the dawn myself.\"",
+        "Icon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172520
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101144,
+        "Type": 13,
+        "Name": "Fading Reverie",
+        "Description": "She leaves behind the lies that held her captive for half a lifetime. Tonight, the undertaker returns with a blade in hand.\\nHer heart remains pure, and she entrusts the dimly glowing lantern to someone she believes in. Begone, whispering curse. She'll sever the chains buried deep within her soul with her own hands.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172521
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101145,
+        "Type": 13,
+        "Name": "Night Sonata",
+        "Description": "Lift the curtain of the night, climb the steps of a melody, and enter the theater of fate.\\nShe waits in patience, for the one who perceives the face behind the veil. In that destined moment, she will offer you both her discarded disguise and her heart, laid bare and beating in your hands.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172522
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101146,
+        "Type": 13,
+        "Name": "Threads of Destiny",
+        "Description": "The first light of dawn softly illuminates the outlines of the mountain forest. Moss-covered stones, ancient towering trees—everything is immersed in her solemn prayer. As the ritual hymns rise and the threefold offering is presented, she gently lifts the red cup filled with vows. Warmth passes between your fingertips as you touch hers. Sharing the clear, mellow wine, you gently bind the two hearts and two futures together in a covenant. This warm bond, tied by fate, will remain harmonious and last till the end of time.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172523
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101147,
+        "Type": 13,
+        "Name": "Love's Dawn",
+        "Description": "The vows exchanged at dawn demonstrate the couple's loyalty to love. When the bell rings, the pigeons chirp, and the sakura petals dance in the air, the newlyweds gently slip the rings on each other's fingers. She will be there for every moment of life with you on the journey ahead, whether it is the snow in winter or the rainbow at dawn.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172524
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101148,
+        "Type": 13,
+        "Name": "Tsubaki",
+        "Description": "On a moonless, silent night, a hint of crimson flashes through the snow-covered forest. Outside the grand hall, the three sins—greed, hatred, and delusion—manifest, bringing forth countless evils, while the sea of illusions and suffering grows. Undaunted, she severs all bonds. Her resolve, swift like thunder, scatters the cold frost. Ghosts and phantoms hide, and the true heart is found once more. Step by step, through the mountain's path, the crimson hue of camellias echoes like the final note of meditation.",
+        "Icon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiFubenTrialBanner/UiFubenKuromuIvy.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172525
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101149,
+        "Type": 43,
+        "Name": "Kelpie",
+        "Description": "Kelpie Description",
+        "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterKelpieStage01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to CUB tutorial tips.",
+            "Learn practical skills of CUB Kelpie."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2342
         ],
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -207962,6 +210241,39 @@
         "FunctionRightBtn": 1,
         "RobotId": [
             2336
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "StageId": 30101135,
+        "Type": 43,
+        "Name": "Zafkiel",
+        "Description": "Zafkiel Description",
+        "Icon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingKekediStage01.png",
+        "StoryIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterMaoStage01.png",
+        "BgmId": 101,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 1,
+        "LimitBuffId": 1,
+        "FirstRewardShow": 12051,
+        "FirstRewardId": 12051,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "StarDesc": [
+            "Pay attention to tutorial tips.",
+            "Learn practical skills of Zafkiel."
+        ],
+        "HaveFirstPass": true,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            2339
         ],
         "StageGridStyle": "Rectangle",
         "NeedJobType": [
@@ -281934,6 +284246,606 @@
         "Restartable": true
     },
     {
+        "StageId": 30165465,
+        "Type": 83,
+        "Name": "Low Power Zone 19-1",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165466,
+        "Type": 83,
+        "Name": "Low Power Zone 19-2",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165467,
+        "Type": 83,
+        "Name": "Low Power Zone 19-3",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165468,
+        "Type": 83,
+        "Name": "Low Power Zone 19-4",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165469,
+        "Type": 83,
+        "Name": "Low Power Zone 19-5",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165470,
+        "Type": 83,
+        "Name": "Low Power Zone 19-6",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165471,
+        "Type": 83,
+        "Name": "Low Power Zone 19-7",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165472,
+        "Type": 83,
+        "Name": "Low Power Zone 19-8",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165473,
+        "Type": 83,
+        "Name": "Low Power Zone 19-9",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165474,
+        "Type": 83,
+        "Name": "Low Power Zone 19-10",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165475,
+        "Type": 83,
+        "Name": "Low Power Zone 19-11",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165476,
+        "Type": 83,
+        "Name": "Low Power Zone 19-12",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165477,
+        "Type": 83,
+        "Name": "Low Power Zone 19-13",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165478,
+        "Type": 83,
+        "Name": "Low Power Zone 19-14",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165479,
+        "Type": 83,
+        "Name": "Low Power Zone 19-15",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165480,
+        "Type": 83,
+        "Name": "High Power Zone 19-1",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165481,
+        "Type": 83,
+        "Name": "High Power Zone 19-2",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165482,
+        "Type": 83,
+        "Name": "High Power Zone 19-3",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165483,
+        "Type": 83,
+        "Name": "High Power Zone 19-4",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165484,
+        "Type": 83,
+        "Name": "High Power Zone 19-5",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165485,
+        "Type": 83,
+        "Name": "High Power Zone 19-6",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165486,
+        "Type": 83,
+        "Name": "High Power Zone 19-7",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165487,
+        "Type": 83,
+        "Name": "High Power Zone 19-8",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165488,
+        "Type": 83,
+        "Name": "High Power Zone 19-9",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165489,
+        "Type": 83,
+        "Name": "High Power Zone 19-10",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165490,
+        "Type": 83,
+        "Name": "High Power Zone 19-11",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165491,
+        "Type": 83,
+        "Name": "High Power Zone 19-12",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165492,
+        "Type": 83,
+        "Name": "High Power Zone 19-13",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165493,
+        "Type": 83,
+        "Name": "High Power Zone 19-14",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30165494,
+        "Type": 83,
+        "Name": "High Power Zone 19-15",
+        "BgmId": 173,
+        "LoadingType": 20014,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RequireLevel": 80,
+        "LimitBuffId": 1,
+        "SettleLoseTipId": 17,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Square",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
         "StageId": 99993090,
         "Name": "BP-3 Elemental Dragon",
         "Description": "Spring Festival Babel Tower",
@@ -300739,6 +303651,897 @@
         "Restartable": true
     },
     {
+        "StageId": 30163451,
+        "Type": 103,
+        "Name": "Peak Calculation - 1",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163452,
+        "Type": 103,
+        "Name": "Peak Calculation - 14",
+        "Description": "Placeholder_15层塔2层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163453,
+        "Type": 103,
+        "Name": "Peak Calculation - 3",
+        "Description": "Placeholder_15层塔3层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163454,
+        "Type": 103,
+        "Name": "Peak Calculation - 4",
+        "Description": "Placeholder_15层塔4层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163455,
+        "Type": 103,
+        "Name": "Peak Calculation - 5",
+        "Description": "Placeholder_15层塔5层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163456,
+        "Type": 103,
+        "Name": "Peak Calculation - 1",
+        "Description": "Placeholder_15层塔6层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163457,
+        "Type": 103,
+        "Name": "Peak Calculation - 7",
+        "Description": "Placeholder_15层塔7层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163458,
+        "Type": 103,
+        "Name": "Peak Calculation - 8",
+        "Description": "Placeholder_15层塔8层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163459,
+        "Type": 103,
+        "Name": "Peak Calculation - 9",
+        "Description": "Placeholder_15层塔9层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163460,
+        "Type": 103,
+        "Name": "Peak Calculation - 10",
+        "Description": "Placeholder_15层塔10层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163461,
+        "Type": 103,
+        "Name": "Peak Calculation - 11",
+        "Description": "Placeholder_15层塔11层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163462,
+        "Type": 103,
+        "Name": "Peak Calculation - 12",
+        "Description": "Placeholder_15层塔12层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163463,
+        "Type": 103,
+        "Name": "Peak Calculation - 13",
+        "Description": "Placeholder_15层塔13层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163464,
+        "Type": 103,
+        "Name": "Peak Calculation - 2",
+        "Description": "Placeholder_15层塔14层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163465,
+        "Type": 103,
+        "Name": "Peak Calculation - 15",
+        "Description": "Placeholder_15层塔15层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163466,
+        "Type": 103,
+        "Name": "Parallel Calculation - α-1",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163467,
+        "Type": 103,
+        "Name": "Parallel Calculation - α-2",
+        "Description": "Placeholder_8层塔2层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163468,
+        "Type": 103,
+        "Name": "Parallel Calculation - α-3",
+        "Description": "Placeholder_8层塔3层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163469,
+        "Type": 103,
+        "Name": "Parallel Calculation - α-4",
+        "Description": "Placeholder_8层塔4层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163470,
+        "Type": 103,
+        "Name": "Parallel Calculation - α-5",
+        "Description": "Placeholder_8层塔5层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163471,
+        "Type": 103,
+        "Name": "Parallel Calculation - α-6",
+        "Description": "Placeholder_8层塔6层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163472,
+        "Type": 103,
+        "Name": "Parallel Calculation - α-7",
+        "Description": "Placeholder_8层塔7层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163473,
+        "Type": 103,
+        "Name": "Parallel Calculation - α-8",
+        "Description": "Placeholder_8层塔8层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163474,
+        "Type": 103,
+        "Name": "Parallel Calculation - β-1",
+        "Description": "Placeholder_8层塔其二1层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163475,
+        "Type": 103,
+        "Name": "Parallel Calculation - β-2",
+        "Description": "Placeholder_8层塔其二2层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163476,
+        "Type": 103,
+        "Name": "Parallel Calculation - β-3",
+        "Description": "Placeholder_8层塔其二3层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163477,
+        "Type": 103,
+        "Name": "Parallel Calculation - β-4",
+        "Description": "Placeholder_8层塔其二4层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163478,
+        "Type": 103,
+        "Name": "Parallel Calculation - β-5",
+        "Description": "Placeholder_8层塔其二5层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163479,
+        "Type": 103,
+        "Name": "Parallel Calculation - β-6",
+        "Description": "Placeholder_8层塔其二6层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163480,
+        "Type": 103,
+        "Name": "Parallel Calculation - β-7",
+        "Description": "Placeholder_8层塔其二7层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163481,
+        "Type": 103,
+        "Name": "Parallel Calculation - β-8",
+        "Description": "Placeholder_8层塔其二8层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163482,
+        "Type": 103,
+        "Name": "Benchmark Test - 1",
+        "Description": "Placeholder_3层塔1层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172456,
+            172471,
+            172457
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163483,
+        "Type": 103,
+        "Name": "Benchmark Test - 2",
+        "Description": "Placeholder_3层塔2层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163484,
+        "Type": 103,
+        "Name": "Benchmark Test - 3",
+        "Description": "Placeholder_3层塔3层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163495,
+        "Type": 103,
+        "Name": "Hypertune Core - 1",
+        "Description": "Placeholder_教学1",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172471
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163496,
+        "Type": 103,
+        "Name": "Hypertune Core - 2",
+        "Description": "Placeholder_教学2",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172461
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163497,
+        "Type": 103,
+        "Name": "Hypertune Core - 3",
+        "Description": "Placeholder_教学3",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172459
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163498,
+        "Type": 103,
+        "Name": "Hypertune Core - 4",
+        "Description": "Placeholder_教学4",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172469
+        ],
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163485,
+        "Type": 103,
+        "Name": "Peak Calculation - 6",
+        "Description": "Placeholder_15层塔1层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
+        "StageId": 30163486,
+        "Type": 103,
+        "Name": "Parallel Calculation - α-1",
+        "Description": "Placeholder_8层塔1层",
+        "BgmId": 104,
+        "NormalEventIdOnPassed": 1,
+        "OrderId": 1,
+        "RecommandLevel": 80,
+        "LimitBuffId": 1,
+        "KeepPlayingStory": 1,
+        "OnlinePlayerLimit": 3,
+        "FunctionLeftBtn": 2,
+        "FunctionRightBtn": 1,
+        "StageGridStyle": "Rectangle",
+        "NeedJobType": [
+            1,
+            2,
+            3
+        ],
+        "Restartable": true
+    },
+    {
         "StageId": 30163101,
         "Type": 88,
         "Name": "CRA-I",
@@ -304067,6 +307870,147 @@
             172454
         ],
         "StageType": 1,
+        "FightControlId": 1,
+        "Restartable": true
+    },
+    {
+        "StageId": 13021501,
+        "Type": 95,
+        "Name": "Setting Sail",
+        "Description": "She's waiting for the moment—a moment that has been a long time coming.",
+        "OrderId": 1,
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16901BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021502
+        ]
+    },
+    {
+        "StageId": 13021502,
+        "Type": 95,
+        "Name": "The Undercurrent",
+        "Description": "With one commanding the gray simulated warship and the other commanding the red, their battle begins.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021501
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16902BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021503
+        ]
+    },
+    {
+        "StageId": 13021503,
+        "Type": 95,
+        "Name": "Against the Waves",
+        "Description": "The thick fog reveals more than the true nature of both sides. It also brings some unexpected guests.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021502
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16903BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021504
+        ]
+    },
+    {
+        "StageId": 13021504,
+        "Type": 95,
+        "Name": "Broken Helm",
+        "Description": "Even in a simulation, you wouldn't want anyone to be sacrificed. She would feel the same.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021503
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16904BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021505
+        ]
+    },
+    {
+        "StageId": 13021505,
+        "Type": 95,
+        "Name": "Flag Raised",
+        "Description": "Winning or losing comes second. Protecting lives comes first.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021504
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16905BA"
+        ],
+        "StageType": 2,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021506
+        ]
+    },
+    {
+        "StageId": 13021506,
+        "Type": 95,
+        "Name": "Aboard Together",
+        "Description": "We ran these simulations to find a possibility. Now we've found one.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021505
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16906BA"
+        ],
+        "EndStoryIds": [
+            "HG16906EA"
+        ],
+        "FunctionRightBtn": 1,
+        "RobotId": [
+            172514
+        ],
+        "StageType": 1,
+        "FightControlId": 1,
+        "Restartable": true,
+        "NextStageId": [
+            13021507
+        ]
+    },
+    {
+        "StageId": 13021507,
+        "Type": 95,
+        "Name": "The Landfall",
+        "Description": "\"It's a pleasure to meet you. Starting today, I'll be your instructor for this semester,\" Adelyde says.",
+        "OrderId": 1,
+        "PreStageId": [
+            13021506
+        ],
+        "KeepPlayingStory": 1,
+        "BeginStoryIds": [
+            "HG16907BA"
+        ],
+        "StageType": 2,
         "FightControlId": 1,
         "Restartable": true
     },

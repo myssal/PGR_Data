@@ -33,7 +33,7 @@ function XUiPanelMainLineExhibition:OnEnable()
     end
 
     self.IsEnable = true
-    
+
     -- 子界面OnEnable
     for _, module in pairs(self.ModuleList) do
         module:OnEnable()
@@ -78,7 +78,8 @@ function XUiPanelMainLineExhibition:OnDisable()
 
     self.UiPanelModuleDropdown:CloseDropdown()
     self.firstNewTagExhibitionChapterId = nil
-    self.RootUi.BgmMusicPlayer:ClearTempMusic()
+    -- 临时 BGM 功能本期暂不启用
+    -- self.RootUi.BgmMusicPlayer:ClearTempMusic()
 end
 
 function XUiPanelMainLineExhibition:OnDestroy()
@@ -311,7 +312,7 @@ function XUiPanelMainLineExhibition:SwitchBriefUi()
 end
 
 function XUiPanelMainLineExhibition:InitDragArea()
-    self.DragAreaRectTransform = self.DragArea:GetComponent("RectTransform")
+    self.DragAreaRectTransform = self.DragArea:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.PanelAreaScaleDrag.MaxScale = XEnumConst.MAINLINE2.EXHIBITION_MAX_SCALE
     self.PanelAreaScaleDrag.MinScale = XEnumConst.MAINLINE2.EXHIBITION_MIN_SCALE
     local scale = XEnumConst.MAINLINE2.EXHIBITION_SHOW_INIT_SCALE
@@ -452,12 +453,13 @@ function XUiPanelMainLineExhibition:RefreshBgAndBgm(moduleId)
     self:RefreshBgSpine(condSpinePath)
     self:SetDropdownModuleId(moduleId)
 
-    local bgmCueId = moduleConfig.BgmCueId
-    if bgmCueId ~= 0 then
-        self.RootUi.BgmMusicPlayer:SetTempMusic(bgmCueId)
-    else
-        self.RootUi.BgmMusicPlayer:ClearTempMusic()
-    end
+    -- 临时 BGM 功能本期暂不启用
+    -- local bgmCueId = moduleConfig.BgmCueId
+    -- if bgmCueId ~= 0 then
+    --     self.RootUi.BgmMusicPlayer:SetTempMusic(bgmCueId)
+    -- else
+    --     self.RootUi.BgmMusicPlayer:ClearTempMusic()
+    -- end
 end
 
 -- 按条件加载/隐藏背景 Spine

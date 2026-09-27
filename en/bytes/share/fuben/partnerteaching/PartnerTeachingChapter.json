@@ -877,8 +877,34 @@
         "PartnerId": 16400000
     },
     {
+        "Id": 36,
+        "Name": "Adaptation Fitting: Zafkiel",
+        "ActivityTimeId": 50104,
+        "ActivityCondition": [
+            8006
+        ],
+        "StagePrefix": "KKD-",
+        "OpenCondition": [
+            1002150
+        ],
+        "BannerIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBannerChapter36.png",
+        "Background": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterBg36.png",
+        "ChapterIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBigBanner30.png",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/PartnerTeaching/TuTeachingChapter.prefab",
+        "FightStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingFight.prefab",
+        "StoryStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingStory.prefab",
+        "StoryStageDetailBg": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingKekediStage01.png",
+        "StoryStageDetailIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingImgBgMa02.png",
+        "StageIds": [
+            30101135
+        ],
+        "Order": 36,
+        "NewTag": "New CUB",
+        "PartnerId": 16420000
+    },
+    {
         "Id": 37,
-        "Name": "Adaptation Fitting - Patrick",
+        "Name": "Adaptation Fitting: Patrick",
         "ActivityTimeId": 49103,
         "ActivityCondition": [
             8006
@@ -901,5 +927,31 @@
         "Order": 37,
         "NewTag": "New CUB",
         "PartnerId": 16410000
+    },
+    {
+        "Id": 38,
+        "Name": "Adaptation Fitting: Kelpie",
+        "ActivityTimeId": 50106,
+        "ActivityCondition": [
+            8006
+        ],
+        "StagePrefix": "KEP-",
+        "OpenCondition": [
+            1002152
+        ],
+        "BannerIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBannerChapter38.png",
+        "Background": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterBg38.png",
+        "ChapterIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBigBanner32.png",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/PartnerTeaching/TuTeachingChapter.prefab",
+        "FightStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingFight.prefab",
+        "StoryStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingStory.prefab",
+        "StoryStageDetailBg": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterKelpieStage01.png",
+        "StoryStageDetailIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingImgBgMa02.png",
+        "StageIds": [
+            30101149
+        ],
+        "Order": 38,
+        "NewTag": "New CUB",
+        "PartnerId": 16430000
     }
 ]

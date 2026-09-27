@@ -1243,7 +1243,7 @@
     },
     {
         "Id": 10084,
-        "Name": "Dreams Weaved",
+        "Name": "Cosmic Wonders",
         "Function": "MineSweepingGame",
         "Describe": "MineSweeper Rules",
         "IsShowCourse": 3,
@@ -1400,7 +1400,7 @@
         "Id": 10095,
         "Name": "Ripples of the Past",
         "Function": "LivWarmActivityHelp",
-        "Describe": "Signal Ripples: Illustrated Guide",
+        "Describe": "Ripples of the Past: Image Guide",
         "IsShowCourse": 3,
         "ImageAsset": [
             "Assets/Product/Texture/Image/UiLivWarmActivity/UiLivWarmActivityHelp01.png",
@@ -1968,7 +1968,7 @@
         "Id": 10127,
         "Name": "Black Card Monthly Pass A",
         "Function": "MonthcardBg02",
-        "Describe": "1. Purchase [Black Card Monthly Pass A] to claim 100 Black Cards daily at 05:00 UTC for 30 days.\\n2. Each purchase extends the duration by 30 days, up to a maximum of 180 days. [Black Card Monthly Pass A] and [Black Card Monthly Pass C] cannot be active at the same time.\\n3. Upon purchase, you will receive 300 Black Cards immediately.",
+        "Describe": "1. Purchase [Black Card Monthly Pass A] to claim 100 Black Cards and 1 Serum Bundle β (M) daily at 05:00 UTC for 30 days.\\n2. Each purchase extends the duration by 30 days, up to a maximum of 180 days. [Black Card Monthly Pass A] and [Black Card Monthly Pass C] cannot be active at the same time.\\n3. Upon purchase, you will receive 300 Black Cards immediately.",
         "IsShowCourse": 2
     },
     {
@@ -2801,18 +2801,19 @@
     },
     {
         "Id": 10187,
-        "Name": "Wreck-It Shark-speare",
+        "Name": "Wreck-It Huhu",
         "Function": "FangkuaiHelp",
-        "Describe": "Wreck-It Shark-speare Image Guide",
-        "IsShowCourse": 1,
+        "Describe": "Wreck-It Huhu Image Guide",
+        "IsShowCourse": 3,
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai01V306.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai02V306.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai03V306.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai04V306.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai05V306.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai06V306.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai07V306.png"
+            "Assets/Product/Texture/Image/UiFangKuai/V408UiHelpFangKuai01.png",
+            "Assets/Product/Texture/Image/UiFangKuai/V408UiHelpFangKuai02.png",
+            "Assets/Product/Texture/Image/UiFangKuai/V408UiHelpFangKuai03.png"
+        ],
+        "TextGroupIds": [
+            1018701,
+            1018702,
+            1018703
         ]
     },
     {
@@ -3503,7 +3504,7 @@
         "Id": 1010128,
         "Name": "Black Card Monthly Pass C",
         "Function": "MonthcardBg04",
-        "Describe": "1. Purchase [Black Card Monthly Pass C] to claim 90 Black Cards daily at 05:00 UTC for 30 days.\\n2. Each purchase extends the duration by 30 days, up to a maximum of 180 days. [Black Card Monthly Pass A] and [Black Card Monthly Pass C] cannot be active at the same time.\\n3. Upon purchase, you will receive 300 Black Cards immediately.",
+        "Describe": "1. Purchase [Black Card Monthly Pass C] to claim 90 Black Cards and 1 Serum Bundle β (M) daily at 05:00 UTC for 30 days.\\n2. Each purchase extends the duration by 30 days, up to a maximum of 180 days. [Black Card Monthly Pass A] and [Black Card Monthly Pass C] cannot be active at the same time.\\n3. Upon purchase, you will receive 300 Black Cards immediately.",
         "IsShowCourse": 2
     },
     {
@@ -3720,5 +3721,144 @@
             1023604,
             1023605
         ]
+    },
+    {
+        "Id": 10237,
+        "Name": "Circuit Calculus",
+        "Function": "XPunishaarHelp",
+        "Describe": "Circuit Calculus Image Guide",
+        "IsShowCourse": 3,
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiPunishaar/UiPunishaarHelp01.png",
+            "Assets/Product/Texture/Image/UiPunishaar/UiPunishaarHelp02.png",
+            "Assets/Product/Texture/Image/UiPunishaar/UiPunishaarHelp03.png"
+        ],
+        "TextGroupIds": [
+            1023701,
+            1023702,
+            1023703
+        ]
+    },
+    {
+        "Id": 10238,
+        "Name": "Quick Upgrade - Overview",
+        "Function": "OneClickCultivationRule",
+        "IsShowCourse": 3,
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation01.png",
+            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation02.png",
+            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation03.png"
+        ],
+        "TextGroupIds": [
+            1023801,
+            1023802,
+            1023803
+        ]
+    },
+    {
+        "Id": 10239,
+        "Name": "Quick Upgrade - Characters",
+        "Function": "RoleCultureDetailMain",
+        "IsShowCourse": 3,
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation07.png"
+        ],
+        "TextGroupIds": [
+            1023901
+        ]
+    },
+    {
+        "Id": 10240,
+        "Name": "Quick Upgrade - Weapons",
+        "Function": "EquipOneClickCultureDetailMain",
+        "IsShowCourse": 3,
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation04.png"
+        ],
+        "TextGroupIds": [
+            1024001
+        ]
+    },
+    {
+        "Id": 10241,
+        "Name": "Quick Upgrade - Memories",
+        "Function": "UiEquipAwarenessEnhanceMainHelpKey",
+        "IsShowCourse": 3,
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation05.png"
+        ],
+        "TextGroupIds": [
+            1024101
+        ]
+    },
+    {
+        "Id": 10242,
+        "Name": "Quick Upgrade - CUBs",
+        "Function": "UiEquipOneClickCulturePartnerMainHelpKey",
+        "IsShowCourse": 3,
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation06.png"
+        ],
+        "TextGroupIds": [
+            1024201
+        ]
+    },
+    {
+        "Id": 10243,
+        "Name": "Overclock Simulation",
+        "Function": "TransfiniteTowerHelp",
+        "IsShowCourse": 3,
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp01.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp02.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp03.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp04.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp05.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp06.png"
+        ],
+        "TextGroupIds": [
+            1023711,
+            1023712,
+            1023713,
+            1023714,
+            1023715,
+            1023716
+        ]
+    },
+    {
+        "Id": 10244,
+        "Name": "Overclock Simulation",
+        "Function": "TransfiniteTowerStageHelp",
+        "IsShowCourse": 3,
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp01.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp02.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp03.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp04.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp05.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp06.png"
+        ],
+        "TextGroupIds": [
+            1023711,
+            1023712,
+            1023713,
+            1023714,
+            1023715,
+            1023716
+        ]
+    },
+    {
+        "Id": 10245,
+        "Name": "Serum Supply",
+        "Function": "MonthcardBg05",
+        "Describe": "After purchasing [Advanced Character Serum Monthly Pass Bundle], you'll instantly get 300 Black Cards and Serum Bundle β (M) x10. Starting from the day of purchase, you can claim one Monthly Pass mail at 05:00 (UTC) per day for 30 days. The mail contains Serum Bundle β (M) x3.",
+        "IsShowCourse": 2
+    },
+    {
+        "Id": 10246,
+        "Name": "Weapon Resonance",
+        "Function": "MonthcardBg06",
+        "Describe": "After purchasing [Weapon Resonance Monthly Pass Bundle], you'll instantly get 980 Black Cards and 6★ Weapon Resonance Shard x30. Starting from the day of purchase, you can claim one Monthly Pass mail at 05:00 (UTC) per day for 30 days. The mail contains Target Weapon R&D Ticket x50 and 6★ Weapon Resonance Shard x4.",
+        "IsShowCourse": 2
     }
 ]

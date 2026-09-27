@@ -101,7 +101,7 @@ function XUiLivWarmActivityPop:UpdateLoseText()
     local itemId = XLivWarmActivityConfigs.GetLivWarmActivityItemId()
     local useItemCount = XLivWarmActivityConfigs.GetLivWarmActivityUseItemCount()
     local itemCount = XDataCenter.ItemManager.GetCount(itemId)
-    local color = itemCount < useItemCount and "#7EE4D7" or "#cc84d5"
+    local color = itemCount < useItemCount and "#ec4858" or "#FFE173"
     local isMaxItemUseCount = self:GetCurUseItemData()
     useItemCount = isMaxItemUseCount and 0 or useItemCount      --达到消耗上限显示0
     self.LoseText.text = CSXTextManagerGetText("LivWarmActivityUseItemCountText", color, useItemCount)

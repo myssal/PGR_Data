@@ -52,9 +52,9 @@ function XUiGridActivityBossSingle:Refresh(stageId, index)
         self.goHardLv1.gameObject:SetActiveEx(false)
         self.goHardLv2.gameObject:SetActiveEx(false)
         self.goHardLv3 .gameObject:SetActiveEx(false)
-        self.PanelBgNorma01.gameObject:SetActiveEx(false)
-        self.PanelBgNorma02.gameObject:SetActiveEx(false)
-        self.PanelBgNorma03.gameObject:SetActiveEx(false)
+        -- self.PanelBgNorma01.gameObject:SetActiveEx(false)
+        -- self.PanelBgNorma02.gameObject:SetActiveEx(false)
+        -- self.PanelBgNorma03.gameObject:SetActiveEx(false)
 
         local curScore = XDataCenter.FubenActivityBossSingleManager.GetCurDifficultScoreRecord(stageId)
         local lastScore =  XDataCenter.FubenActivityBossSingleManager.GetLastDifficultScoreRecord(stageId)
@@ -90,13 +90,13 @@ function XUiGridActivityBossSingle:Refresh(stageId, index)
             local hardLevel = levelCO.Id
             if hardLevel == 1 then
                 self.goHardLv1.gameObject:SetActiveEx(true)
-                self.PanelBgNorma01.gameObject:SetActiveEx(true)
+                -- self.PanelBgNorma01.gameObject:SetActiveEx(true)
             elseif hardLevel == 2 then
                 self.goHardLv2.gameObject:SetActiveEx(true)
-                self.PanelBgNorma02.gameObject:SetActiveEx(true)
+                -- self.PanelBgNorma02.gameObject:SetActiveEx(true)
             else
                 self.goHardLv3.gameObject:SetActiveEx(true)
-                self.PanelBgNorma03.gameObject:SetActiveEx(true)
+                -- self.PanelBgNorma03.gameObject:SetActiveEx(true)
             end
         else
             self.hardLv0.gameObject:SetActiveEx(true)

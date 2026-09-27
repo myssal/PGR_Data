@@ -130,6 +130,7 @@
         "Desc": "Each time {0} <Icon=IconGood03|45|45|0.5/>Scarlet Visions are obtained, <Icon=IconAttr02|45|45|0.5/>HP +{1}",
         "DescParams": [
             25,
+            100,
             100
         ],
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon13.png",
@@ -162,6 +163,73 @@
         "BuffEffectParams": [
             1,
             3
+        ],
+        "DurationType": 1,
+        "DeathType": 2,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 10,
+        "Name": "Dreamlure Whispers",
+        "Desc": "Starts with 1 <Icon=IconCharm|45|45|0.5/>Dreamlure Skill.",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon23.png",
+        "BuffTriggerType": 7,
+        "BuffEffectType": 5,
+        "BuffEffectParams": [
+            22
+        ],
+        "DurationType": 5,
+        "DeathType": 1,
+        "DebuffType": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 11,
+        "Name": "Blooming Ember",
+        "Desc": "Increases <Icon=IconAttr02|45|45|0.5/>HP by {1} for every {0} <Icon=IconGood04|45|45|0.5/>Spectral Artifacts obtained.",
+        "DescParams": [
+            25,
+            100,
+            100
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon15.png",
+        "BuffTriggerType": 2,
+        "BuffTriggerParams": [
+            4,
+            25
+        ],
+        "BuffEffectType": 7,
+        "BuffEffectParams": [
+            2,
+            100
+        ],
+        "DurationType": 1,
+        "DeathType": 2,
+        "IsCount": 1,
+        "DebuffType": 1,
+        "Limit": 99
+    },
+    {
+        "Id": 12,
+        "Name": "Family Head's Gift",
+        "Desc": "Each time a skill levels up, <Icon=IconAttr04|45|45|0.5/>Initiative +{0}, <Icon=IconAttr05|45|45|0.5/>Hypersequence +{1}, and <Icon=IconAttr03|45|45|0.5/>Fighting Will +{2}.",
+        "DescParams": [
+            10,
+            10,
+            5
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon23.png",
+        "BuffTriggerType": 5,
+        "BuffEffectType": 7,
+        "BuffEffectParams": [
+            4,
+            10,
+            5,
+            10,
+            3,
+            5
         ],
         "DurationType": 1,
         "DeathType": 2,
@@ -1196,6 +1264,90 @@
         "BuffEffectType": 8,
         "BuffEffectParams": [
             1025513
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025601,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025601
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025603,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025603
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025605,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025605
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025607,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025607
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025609,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025609
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025611,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025611
+        ],
+        "DurationType": 1,
+        "DeathType": 1,
+        "IsNotShow": 1,
+        "Limit": 1
+    },
+    {
+        "Id": 1025613,
+        "BuffTriggerType": 7,
+        "BuffEffectType": 8,
+        "BuffEffectParams": [
+            1025613
         ],
         "DurationType": 1,
         "DeathType": 1,

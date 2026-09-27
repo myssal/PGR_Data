@@ -67,6 +67,9 @@
 ---@field CloudGameManager XCloudGameManager
 ---@field AutoWindowManager XAutoWindowManager
 ---@field NoticeManager XNoticeManager
+---@field FubenExperimentManager XFubenExperimentManager
+---@field SignInManager XSignInManager
+---@field FubenRepeatChallengeManager XFubenRepeatChallengeManager
 XDataCenter = XDataCenter or {}
 
 local IsWindowsEditor = XMain.IsWindowsEditor
@@ -146,7 +149,6 @@ function XDataCenter.InitDependency()
     InitManager("FubenRepeatChallengeManager", XFubenRepeatChallengeManagerCreator)
 
     InitManager("TeamManager", XTeamManagerCreator)
-    InitManager("EquipGuideManager", XEquipGuideManagerCreator)
     InitManager("FurnitureManager", XFurnitureManagerCreator)
     InitManager("HeadPortraitManager", XHeadPortraitManagerCreator)
     InitManager("DormManager", XDormManagerCreator)

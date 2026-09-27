@@ -147,4 +147,11 @@ ModuleId = {
   XLowMemory = "XLowMemory",
   XDyeMergeGame = "XDyeMergeGame",
   XConcertPreHeating = "XConcertPreHeating",
+  XMusicPlayer = "XMusicPlayer",
+  XEnvelopeGuessing = "XEnvelopeGuessing",
+  XTeamRecommend = "XTeamRecommend",
+  XPunishaar = "XPunishaar",
+  XMusicScene = "XMusicScene",
+    XPartner = "XPartner",
+  XTransfiniteTower = "XTransfiniteTower",
 }

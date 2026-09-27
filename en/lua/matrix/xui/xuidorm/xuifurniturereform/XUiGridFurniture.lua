@@ -96,7 +96,7 @@ function XUiGridFurniture:OnBtnItemOnDrag(data)
         local camera = XHomeSceneManager.GetSceneCamera()
         if not XTool.UObjIsNil(camera) then
             local ray = camera:ScreenPointToRay(CS.UnityEngine.Vector3(data.position.x, data.position.y, 0))
-            local layerMask = CS.UnityEngine.LayerMask.GetMask("HomeSurface")
+            local layerMask = CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Terrain)
             if (layerMask) then
                 local ret, hit = ray:RayCast(layerMask)
                 if ret then

@@ -1071,7 +1071,7 @@
     {
         "Id": 1025205,
         "Name": "Weeping Diary",
-        "Desc": "When using any skill, gains {1} <color=#6F4877><Icon=IconStamina|30|30|0.5/>Fighting Will</color> for every {0} <color=#6F4877><Icon=IconStamina|30|30|0.5/>Fighting Will</color>, up to {2}. Can trigger up to {3} times per battle. <color=#E7D09A>Unique</color>.",
+        "Desc": "When using any skill, gains {1} <color=#6F4877><Icon=IconStamina|30|30|0.5/>Fighting Will</color> for every {0} <color=#6F4877><Icon=IconStamina|30|30|0.5/>Fighting Will</color> (Current: {Attr:3}), up to {2}. Can trigger up to {3} times per battle. <color=#E7D09A>Unique</color>.",
         "ShortDesc": "After using a skill, gains <color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>Fighting Will</color> based on your <color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>Fighting Will</color>.",
         "DescParams": [
             40,
@@ -1259,7 +1259,7 @@
     {
         "Id": 1025217,
         "Name": "Unknown Archive",
-        "Desc": "Upon entering battle, <color=#6F4877><Icon=IconStamina|30|30|0.5/>Fighting Will</color> increases by {1} for every {0} <color=#516797><Icon=IconOverClock|30|30|0.5/>Hypersequence</color> or <color=#B96716><Icon=IconWrestle|30|30|0.5/>Initiative</color>. <color=#E7D09A>Unique</color>.",
+        "Desc": "Upon entering battle, <color=#6F4877><Icon=IconStamina|30|30|0.5/>Fighting Will</color> increases by {1} for every {0} <color=#516797><Icon=IconOverClock|30|30|0.5/>Hypersequence</color> (Current: {Attr:5}) or <color=#B96716><Icon=IconWrestle|30|30|0.5/>Initiative</color> (Current: {Attr:4}). <color=#E7D09A>Unique</color>.",
         "ShortDesc": "Increases <color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>Fighting Will</color> based on <color=#516797><Icon=IconOverClockBlack|30|30|0.5/>Hypersequence</color> and <color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>Initiative</color>.",
         "DescParams": [
             30,
@@ -1386,7 +1386,7 @@
     {
         "Id": 1025225,
         "Name": "Usurper Laurel",
-        "Desc": "Every time a skill is cast, <color=#6F4877><Icon=IconStamina|30|30|0.5/>Fighting Will</color> increases by {0}. <color=#E7D09A>Unique</color>.",
+        "Desc": "Every time a skill is cast, <color=#6F4877><Icon=IconStamina|30|30|0.5/>Fighting Will</color> (Current: {Attr:3}) increases by {0}. <color=#E7D09A>Unique</color>.",
         "ShortDesc": "Each time a skill is cast, increases <color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>Fighting Will</color>.",
         "DescParams": [
             2
@@ -1993,7 +1993,7 @@
     {
         "Id": 1025505,
         "Name": "Crimson Gaze",
-        "Desc": "Upon entering battle, gains a <color=#137D90><Icon=IconProtector|30|30|0.5/>Shield<color=#487F3B><Icon=IconLife|30|30|0.5/> equal to {0} of </color>HP</color>. <color=#E7D09A>Unique Effect</color>.",
+        "Desc": "Upon entering battle, gains a <color=#137D90><Icon=IconProtector|30|30|0.5/>shield</color> equal to {0} of <color=#487F3B><Icon=IconLife|30|30|0.5/>HP</color> (Current: {Attr:2}). <color=#E7D09A>Unique</color>.",
         "ShortDesc": "Upon entering battle, gains a <color=#137D90><Icon=IconProtectorBlack|30|30|0.5/>Shield</color> based on <color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>HP</color>.",
         "DescParams": [
             "5%"
@@ -2157,6 +2157,247 @@
         "KeyWordIds": [
             26,
             29
+        ]
+    },
+    {
+        "Id": 1025601,
+        "Name": "Desolate Indigo",
+        "Desc": "When triggering <color=#B96716><Icon=IconCrit|30|30|0.5/>CRIT</color>, increases <color=#516797><Icon=IconOverClockBlack|30|30|0.5/>Hypersequence</color> by {0}. <color=#E7D09A>Unique</color>.",
+        "ShortDesc": "When triggering <color=#B96716><Icon=IconCritBlack|30|30|0.5/>CRIT</color>, increases <color=#516797><Icon=IconOverClockBlack|30|30|0.5/>Hypersequence</color>.",
+        "DescParams": [
+            6
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3SpecialItem008.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            16,
+            24
+        ],
+        "BuffIds": [
+            1025601
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 5,
+        "Priority": 4,
+        "KeyWordIds": [
+            26,
+            15
+        ]
+    },
+    {
+        "Id": 1025603,
+        "Name": "Voidfrost Flame",
+        "Desc": "For every {0} <color=#B96716><Icon=IconCrit|30|30|0.5/>CRIT</color> skills cast, gains {1} stacks of <color=#B96716><<Icon=IconCrit|30|30|0.5/>CRIT></color>. <color=#E7D09A>Unique</color>.",
+        "ShortDesc": "When a skill triggers <color=#B96716><Icon=IconCritBlack|30|30|0.5/>CRIT</color> multiple times, gains <color=#B96716><<Icon=IconCritBlack|30|30|0.5/>CRIT></color>.",
+        "DescParams": [
+            4,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3SpecialItem039.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            16
+        ],
+        "BuffIds": [
+            1025603
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 5,
+        "Priority": 4,
+        "KeyWordIds": [
+            26,
+            15
+        ]
+    },
+    {
+        "Id": 1025605,
+        "Name": "Cryptic Scraps",
+        "Desc": "Inflicts {0} stacks of <color=#685BA4><Icon=IconPoisoned|30|30|0.5/>Dark Hex</color> upon entering battle. <color=#E7D09A>Unique</color>.",
+        "ShortDesc": "Inflicts <color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>Dark Hex</color> upon entering battle.",
+        "DescParams": [
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3SpecialItem030.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            30
+        ],
+        "BuffIds": [
+            1025605
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 5,
+        "Priority": 4,
+        "KeyWordIds": [
+            26
+        ]
+    },
+    {
+        "Id": 1025607,
+        "Name": "Quietus Flute",
+        "Desc": "For every {0} hits of <color=#685BA4><Icon=IconPoisoned|30|30|0.5/>Dark Hex</color> DMG dealt, inflicts {1} stacks of <color=#685BA4><Icon=IconPoisoned|30|30|0.5/>Dark Hex</color>. <color=#E7D09A>Unique</color>.",
+        "ShortDesc": "When inflicting <color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>Dark Hex</color> DMG multiple times, inflicts <color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>Dark Hex</color>.",
+        "DescParams": [
+            4,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconTheatre01.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            30
+        ],
+        "BuffIds": [
+            1025607
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 5,
+        "Priority": 4,
+        "KeyWordIds": [
+            26
+        ]
+    },
+    {
+        "Id": 1025609,
+        "Name": "Emberheart Core",
+        "Desc": "Reduces DMG taken by {0} and gains {1} <color=#8A5096><Icon=IconCharm|30|30|0.5/>Dreamlure</color> upon entering battle. <color=#E7D09A>Unique</color>.",
+        "ShortDesc": "Reduces DMG taken and gains <color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>Dreamlure</color> upon entering battle.",
+        "DescParams": [
+            "5%",
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem03.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            31
+        ],
+        "BuffIds": [
+            1025609
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 5,
+        "Priority": 4,
+        "KeyWordIds": [
+            26,
+            32
+        ]
+    },
+    {
+        "Id": 1025611,
+        "Name": "Starshard Orb",
+        "Desc": "After <color=#8A5096><Icon=IconCharm|30|30|0.5/>Entranced</color> is triggered for the first time, gains {0} <color=#8A5096><Icon=IconCharm|30|30|0.5/>Dreamlure</color>. <color=#E7D09A>Unique</color>.",
+        "ShortDesc": "After <color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>Entranced</color> is triggered for the first time, gains <color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>Dreamlure</color>.",
+        "DescParams": [
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiNonogramItem13.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            31
+        ],
+        "BuffIds": [
+            1025611
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 5,
+        "Priority": 4,
+        "KeyWordIds": [
+            26,
+            32
+        ]
+    },
+    {
+        "Id": 1025613,
+        "Name": "Sealed Amber",
+        "Desc": "When the enemy's <color=#487F3B><Icon=IconLife|30|30|0.5/>HP</color> drops below {0} for the first time, gains {1} <color=#8A5096><Icon=IconCharm|30|30|0.5/>Dreamlure</color>. When <color=#487F3B><Icon=IconLife|30|30|0.5/>HP</color> drops below {0} for the first time, gains {1} <color=#8A5096><Icon=IconCharm|30|30|0.5/>Dreamlure</color>. <color=#E7D09A>Unique</color>.",
+        "ShortDesc": "When either side's <color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>HP</color> first drops below a certain threshold, gains <color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>Dreamlure</color>.",
+        "DescParams": [
+            "50%",
+            2
+        ],
+        "Icon": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon17.png",
+        "AttrTypes": [
+            1,
+            2
+        ],
+        "AttrNums": [
+            5,
+            100
+        ],
+        "BuildTags": [
+            31
+        ],
+        "BuffIds": [
+            1025613
+        ],
+        "Quality": 4,
+        "BuyPrice": 50,
+        "SaveScore": 1500,
+        "LimitCount": 1,
+        "Character": 5,
+        "Priority": 4,
+        "KeyWordIds": [
+            26,
+            32
         ]
     }
 ]

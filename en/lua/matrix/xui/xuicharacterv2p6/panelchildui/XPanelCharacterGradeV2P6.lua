@@ -1,3 +1,5 @@
+---@class XPanelCharacterGradeV2P6 : XUiNode
+---@field _Control XCharacterControl
 local XPanelCharacterGradeV2P6 = XClass(XUiNode, "XPanelCharacterGradeV2P6")
 
 local Show_Part = {
@@ -110,8 +112,18 @@ function XPanelCharacterGradeV2P6:OnStart()
     self:InitTable()
 end
 
+function XPanelCharacterGradeV2P6:OnEnable()
+    self:RefreshOneClickBtn()
+    XDataCenter.GuideManager.CheckGuideOpen()
+end
+
 function XPanelCharacterGradeV2P6:InitButton()
     XUiHelper.RegisterClickEvent(self, self.BtnWisdom, self.OnBtnWisdomClick)
+    self.BtnOneClick:AddEventListener(handler(self, self.OnBtnOneClickClick))
+end
+
+function XPanelCharacterGradeV2P6:OnBtnOneClickClick()
+    XMVCA.XCharacter:OpenUiRoleCultureDetailMain(self.CharacterId)
 end
 
 function XPanelCharacterGradeV2P6:OnBtnWisdomClick()
@@ -130,7 +142,28 @@ function XPanelCharacterGradeV2P6:RefreshUiShow()
     self:UpdateGradeData()
     self.CanvasGroup.alpha = 1
 
+    self:RefreshOneClickBtn()
+    self:RefreshTrainingItemBubble()
+
     self:AddEventListener()
+end
+
+function XPanelCharacterGradeV2P6:RefreshOneClickBtn()
+    self.CharacterId = self.Parent.ParentUi.CurCharacter.Id
+    local isOneClickOpen = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.CharacterOneClick)
+        and self._Control:CheckRoleCultureHasAnyUpgradableByCurState(self.CharacterId)
+    self.BtnOneClick.gameObject:SetActiveEx(isOneClickOpen)
+end
+
+--- 一键养成道具持有提示：有道具才展示气泡
+function XPanelCharacterGradeV2P6:RefreshTrainingItemBubble()
+    local count = self._Control:GetRoleCultureSpecialItemCount()
+    self.GroupBubble.gameObject:SetActiveEx(count > 0)
+    if count <= 0 then
+        return
+    end
+    self.IconTrainingItem:SetRawImage(XDataCenter.ItemManager.GetItemIcon(self._Control:GetRoleCultureSpecialItemId()))
+    self.TxtItemNum.text = "x" .. count
 end
 
 function XPanelCharacterGradeV2P6:HidePanel()

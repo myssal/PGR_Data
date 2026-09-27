@@ -483,19 +483,18 @@ function XUiBagItem:ShowBtnMinusWhenMinSelectCount(show)
 end
 
 function XUiBagItem:RefreshSelf(NeedDefulatQulity, isSmallIcon, notCommonBg)
+    local isUseable = XDataCenter.ItemManager.IsUseable(self.TemplateId)
+        and not XDataCenter.ItemManager.IsNormalConsumable(self.TemplateId)
     if self.BtnUse then
-        local isUseable = XDataCenter.ItemManager.IsUseable(self.TemplateId)
         self.BtnUse.gameObject:SetActive(isUseable)
         self.BtnUse.interactable = self.SelectCount > 0
     end
 
     if self.ImgCanUse then
-        local isUseable = XDataCenter.ItemManager.IsUseable(self.TemplateId)
         self.ImgCanUse.gameObject:SetActive(isUseable)
     end
 
     if self.BtnOk then
-        local isUseable = XDataCenter.ItemManager.IsUseable(self.TemplateId)
         self.BtnOk.gameObject:SetActive(not isUseable)
     end
 
@@ -534,9 +533,9 @@ function XUiBagItem:RefreshSelf(NeedDefulatQulity, isSmallIcon, notCommonBg)
     if template.RewardType == XRewardManager.XRewardType.Character then
         quality = quality < 3 and 5 or 6
     end
-    -- 宠物品质背景特殊处理
+    -- 辅助机品质背景特殊处理
     if template.RewardType == XRewardManager.XRewardType.Partner then
-        quality = quality < 3 and 5 or 6
+        quality = XMVCA.XPartner.Util.GetGoodsQualityByPartnerQuality(quality)
     end
 
     if self.ImgIconBg then

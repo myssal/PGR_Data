@@ -10,8 +10,8 @@ function XUiGachaAlphaMain:OnAwake()
     self._FinishCbTrigger = nil -- 抽卡结束触发器，抽卡请求回调设置，播放完抽卡演出后触发
     self._GachaAllFinishTrigger = nil -- 抽卡全结束触发器，1/10回抽按钮设置，抽卡结果界面关闭后刷新触发
     self._TipCbTrigger = nil -- 奖励弹框
-    self._HasBeenKey = "GachaAlphaHasBeenKey"
-    self._SkipBtnKey = "UiGachaAlpha"
+    self._HasBeenKey = XGachaConfigs.GetSkipAnimCacheKey("GachaAlphaHasBeenKey")
+    self._SkipBtnKey = XGachaConfigs.GetSkipAnimCacheKey("UiGachaAlpha")
     self._GachaStoryRedPoint = "GachaStoryRedPoint"
     self._TimerStoryRoleEnable = nil
     self._IsParentShow = true
@@ -52,6 +52,8 @@ function XUiGachaAlphaMain:OnStart(gachaId, autoOpenStory)
             self.TxtTime.text = XUiHelper.GetText("GachaAlphaTime", XUiHelper.GetTime(time, XUiHelper.TimeFormatType.CHATEMOJITIMER))
         end
     end, nil, 0)
+
+    self:RefreshBtnChange()
 end
 
 function XUiGachaAlphaMain:OnEnable()
@@ -140,7 +142,7 @@ function XUiGachaAlphaMain:SetSelfActive(flag)
 end
 
 function XUiGachaAlphaMain:InitButton()
-    self:RegisterClickEvent(self.BtnBack, self.Close)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self:RegisterClickEvent(self.BtnMainUi, function()
         XLuaUiManager.RunMain()
     end)
@@ -162,6 +164,30 @@ function XUiGachaAlphaMain:InitButton()
     self:RegisterClickEvent(self.BtnSet, function()
         XLuaUiManager.Open("UiSet")
     end)
+    -- BtnChange 为自选gacha专用切换按钮，普通卡池预制体无此节点，需判空守卫
+    if self.BtnChange then
+        self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
+    end
+end
+
+function XUiGachaAlphaMain:RefreshBtnChange()
+    if not self.BtnChange then return end
+    self.BtnChange.gameObject:SetActiveEx(XDataCenter.GachaManager.IsGachaIdBelongSelfChoice(self._GachaId))
+end
+
+function XUiGachaAlphaMain:OnBtnChangeClick()
+    -- 必须先翻 Entrance.IsChangeMode 再 Close，否则 Entrance.OnEnable 会因已选直接关闭
+    XDataCenter.GachaManager.OpenSelfChoiceEntranceForChange(self._GachaId)
+    self:Close()
+end
+
+function XUiGachaAlphaMain:OnBtnBackClick()
+    -- 自选卡池：直接回主界面（Entrance 由 RunMain 一并关闭）
+    if XDataCenter.GachaManager.IsGachaIdBelongSelfChoice(self._GachaId) then
+        XLuaUiManager.RunMain()
+        return
+    end
+    self:Close()
 end
 
 function XUiGachaAlphaMain:Init3DSceneInfo()
@@ -211,6 +237,9 @@ function XUiGachaAlphaMain:OnChildClose()
         XScheduleManager.UnSchedule(self._TimerStoryRoleEnable)
         self._TimerStoryRoleEnable = nil
     end
+
+    -- 从剧情关返回时不会重新触发 EVENT_UI_ALLOWOPERATE，手动检测一次引导
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 function XUiGachaAlphaMain:AutoOpenChild()

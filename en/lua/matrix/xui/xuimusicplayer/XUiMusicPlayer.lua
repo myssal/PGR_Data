@@ -108,13 +108,14 @@ end
 
 function XUiMusicPlayer:UpdateSpectrum(id)
     local template = XMVCA.XAudio:GetAlbumTemplateById(id)
-    XAudioManager.PlayMusicCDWithAnalyzer(template.CueId, 2, 4)
+    XAudioManager.StartAnalyzer()
+    XAudioManager.PlayMusicInOut2(template.CueId, -1, -1, -1, -1, 2, 4)
     if self.ScheduleId then
         XScheduleManager.UnSchedule(self.ScheduleId)
         self.ScheduleId = nil
     end
     self.ScheduleId = XScheduleManager.ScheduleForever(function()
-        local spectrumData = XAudioManager.GetSpectrumLvData()
+        local spectrumData = XAudioManager.MusicVisualSpectrumProcessor:Get()
         for _, panel in ipairs(self.PanelSpectrumList) do
             panel:UpdateSpectrum(spectrumData)
         end

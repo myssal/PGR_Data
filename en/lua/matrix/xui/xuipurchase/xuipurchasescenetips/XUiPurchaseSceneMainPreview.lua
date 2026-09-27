@@ -32,7 +32,7 @@ end
 function XUiPurchaseSceneMainPreview:OnEnable()
     self:StartScheduleToHideUi(HideDelayCD)
     self:Refresh()
-
+    self:RefreshHintText()
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_PREVIEW)
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UIMAIN_STATE_CHANGE)
 
@@ -80,10 +80,11 @@ function XUiPurchaseSceneMainPreview:AutoSetUi()
     if self.SwitchBtn == nil then return end
     if not XTool.IsTableEmpty(XPhotographConfigs.GetBackgroundSwitchDescById(self.SceneId)) then
         local btn = require("XUi/XUiSceneTip/XUiSwitchBtn")
-        local isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
+        local isFirst = XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId)
+        -- 购买预览: 未拥有场景, 切档不落库(persist=false)
         self.BtnSwitch = btn.New(self.SwitchBtn, isFirst, self.SceneId, function ()
             self:OnBtnUiClick()
-        end)
+        end, false)
     else
         self.SwitchBtn.gameObject:SetActiveEx(false)
     end
@@ -101,7 +102,7 @@ end
 --region 界面刷新
 function XUiPurchaseSceneMainPreview:Refresh()
     self.TogPreview.isOn = true
-    local isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
+    local isFirst = XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId)
     if self.BtnSwitch then
         self.BtnSwitch:RefreshSelect(isFirst)
     end
@@ -269,5 +270,15 @@ function XUiPurchaseSceneMainPreview:CloseTips()
 
 end
 --endregion
+
+function XUiPurchaseSceneMainPreview:RefreshHintText()
+    local hintText = XPhotographConfigs.GetBackgroundHintText(self.SceneId)
+    if string.IsNilOrEmpty(hintText) then
+        self.PanelHintText.gameObject:SetActiveEx(false)
+    else
+        self.PanelHintText.gameObject:SetActiveEx(true)
+        self.HintText.text = XUiHelper.ReplaceTextNewLine(hintText)
+    end
+end
 
 return XUiPurchaseSceneMainPreview

@@ -41,7 +41,7 @@
         "Name": "Simulated Battlefield",
         "ManagerName": "FubenRepeatChallengeManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner146.png",
-        "TimeId": 49303,
+        "TimeId": 50402,
         "FunctionNameId": 10309,
         "SkipId": 20017,
         "Order": 1,
@@ -52,10 +52,10 @@
     },
     {
         "Id": 5,
-        "Name": "Waves in Wrath",
+        "Name": "Wrathful Monsoon",
         "ManagerName": "FubenActivityBossSingleManager",
-        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner239.png",
-        "TimeId": 49101,
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner247.png",
+        "TimeId": 50502,
         "FunctionNameId": 10304,
         "SkipId": 11724,
         "Order": 5,
@@ -165,17 +165,20 @@
     },
     {
         "Id": 16,
-        "Name": "Breakers Resurfaced",
+        "Name": "A Kindler's Watch",
         "ManagerName": "FubenNewCharActivityManager",
-        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner241.png",
-        "TimeId": 49924,
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner244.png",
+        "TimeId": 50602,
         "FunctionNameId": 10325,
         "SkipId": 20235,
-        "Order": 3,
+        "Order": 2,
         "RedPointConditions": [
             "CONDITION_KOROMCHARACTIVITYMAINRED"
         ],
-        "Note": "Character Trial Stage"
+        "Note": "Character Trial Stage",
+        "CustomParams": [
+            52
+        ]
     },
     {
         "Id": 17,
@@ -222,10 +225,10 @@
         "Id": 21,
         "Name": "Lost in Whitebloom: Rerun",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
-        "ShowConditionId": 1050114,
         "FunctionNameId": 403,
         "SkipId": 20260,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 1050114
     },
     {
         "Id": 22,
@@ -328,14 +331,14 @@
         "Name": "Lightning and Thunder: Rerun",
         "ManagerName": "XCerberusGame",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner131.png",
-        "ShowConditionId": 1050135,
         "FunctionNameId": 10448,
         "SkipId": 90034,
         "RedPointConditions": [
             "CERBERUSE_GAME_CHECK_BTN_FASHION_STORY_RED",
             "CERBERUSE_GAME_CHECK_BTN_FASHION_CHALLENGE_RED"
         ],
-        "Note": "Cerberus"
+        "Note": "Cerberus",
+        "ShowConditionId": 1050135
     },
     {
         "Id": 31,
@@ -462,16 +465,19 @@
     },
     {
         "Id": 41,
-        "Name": "Wreck-It Shark-speare",
+        "Name": "Wreck-It Huhu",
         "ManagerName": "XFangKuaiAgency",
-        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner153.png",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner243.png",
+        "TimeId": 50801,
         "FunctionNameId": 10461,
         "SkipId": 89049,
+        "Order": 8,
         "RedPointConditions": [
             "CONDITION_FANGKUAI_MAIN"
         ],
         "Note": "Remove Space",
-        "IsAgency": 1
+        "IsAgency": 1,
+        "IsRecord": true
     },
     {
         "Id": 42,
@@ -638,20 +644,20 @@
         "Name": "Shape of Thunder: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner154.png",
-        "ShowConditionId": 1050112,
         "FunctionNameId": 10306,
         "SkipId": 20256,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 1050112
     },
     {
         "Id": 55,
         "Name": "Sinking Mermaid: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
-        "ShowConditionId": 1050113,
         "FunctionNameId": 10306,
         "SkipId": 20258,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 1050113
     },
     {
         "Id": 56,
@@ -684,10 +690,10 @@
         "Name": "Scorched Moon: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
-        "ShowConditionId": 1050134,
         "FunctionNameId": 10306,
         "SkipId": 90030,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 1050134
     },
     {
         "Id": 59,
@@ -807,20 +813,20 @@
         "Name": "Viva la Nina: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner121.png",
-        "ShowConditionId": 1050136,
         "FunctionNameId": 10306,
         "SkipId": 90031,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 1050136
     },
     {
         "Id": 69,
         "Name": "Slumberland: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner83.png",
-        "ShowConditionId": 1050137,
         "FunctionNameId": 10306,
         "SkipId": 90032,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 1050137
     },
     {
         "Id": 70,
@@ -835,10 +841,8 @@
         "Name": "Rapid Pursuit",
         "ManagerName": "XBountyChallengeAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner228.png",
-        "TimeId": 49601,
         "FunctionNameId": 10492,
         "SkipId": 89093,
-        "Order": 6,
         "RedPointConditions": [
             "CONDITION_BOUNTY_CHALLENGE"
         ],
@@ -878,39 +882,39 @@
         "Id": 74,
         "Name": "Lost in Whitebloom: Rerun",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
-        "ShowConditionId": 1050218,
         "FunctionNameId": 1308,
         "SkipId": 20292,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 1050218
     },
     {
         "Id": 75,
         "Name": "Shape of Thunder: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner154.png",
-        "ShowConditionId": 1050216,
         "FunctionNameId": 1308,
         "SkipId": 20290,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 1050216
     },
     {
         "Id": 76,
         "Name": "Sinking Mermaid: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
-        "ShowConditionId": 1050217,
         "FunctionNameId": 1308,
         "SkipId": 20291,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 1050217
     },
     {
         "Id": 77,
         "Name": "A Love Story Across Time: Rerun",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner180.png",
-        "ShowConditionId": 1050215,
         "FunctionNameId": 1308,
         "SkipId": 20289,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 1050215
     },
     {
         "Id": 81,
@@ -962,105 +966,103 @@
         "Name": "Blazing Rhapsody",
         "ManagerName": "XPBRGameAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner224.png",
-        "TimeId": 49920,
-        "ShowConditionId": 774800,
         "FunctionNameId": 10500,
         "SkipId": 1300635,
-        "Order": 7,
         "RedPointConditions": [
             "CONDITION_PBRGAME_MAIN"
         ],
         "Note": "Placeholder_战双兄弟",
         "IsAgency": 1,
+        "ShowConditionId": 774800,
         "IsRecord": true
     },
     {
         "Id": 87,
         "Name": "Dreams at Twilight: Rerun",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner196.png",
-        "ShowConditionId": 863242,
         "FunctionNameId": 1308,
         "SkipId": 20342,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 863242
     },
     {
         "Id": 88,
         "Name": "A Love Story Across Time: Rerun",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner180.png",
-        "ShowConditionId": 863243,
         "FunctionNameId": 1308,
         "SkipId": 20343,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 863243
     },
     {
         "Id": 89,
         "Name": "Shape of Thunder: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner154.png",
-        "ShowConditionId": 863244,
         "FunctionNameId": 1308,
         "SkipId": 20344,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 863244
     },
     {
         "Id": 90,
         "Name": "Sinking Mermaid: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
-        "ShowConditionId": 863245,
         "FunctionNameId": 1308,
         "SkipId": 20345,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 863245
     },
     {
         "Id": 91,
         "Name": "A Love Story Across Time: Rerun",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner180.png",
-        "ShowConditionId": 863246,
         "FunctionNameId": 1308,
         "SkipId": 20350,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 863246
     },
     {
         "Id": 92,
         "Name": "Shape of Thunder: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner154.png",
-        "ShowConditionId": 863247,
         "FunctionNameId": 1308,
         "SkipId": 20351,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 863247
     },
     {
         "Id": 93,
         "Name": "Sinking Mermaid: Rerun",
         "ManagerName": "FubenFestivalActivityManager",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
-        "ShowConditionId": 863248,
         "FunctionNameId": 1308,
         "SkipId": 20352,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 863248
     },
     {
         "Id": 94,
         "Name": "Lost in Whitebloom: Rerun",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
-        "ShowConditionId": 863249,
         "FunctionNameId": 1308,
         "SkipId": 20353,
-        "Note": "Coating Story"
+        "Note": "Coating Story",
+        "ShowConditionId": 863249
     },
     {
         "Id": 95,
         "Name": "Retro Arcade",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner227.png",
-        "ShowConditionId": 774800,
         "FunctionNameId": 10503,
         "SkipId": 1300640,
         "RedPointConditions": [
             "CONDITION_GAMECOLLECTION_CAN_REWARD_OR_BUY"
         ],
         "Note": "Retro Arcade",
+        "ShowConditionId": 774800,
         "IsRecord": true
     },
     {
@@ -1090,10 +1092,8 @@
         "Name": "Tidal Wishes",
         "ManagerName": "XFashionStoryAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner232.png",
-        "TimeId": 48820,
         "FunctionNameId": 10341,
         "SkipId": 89106,
-        "Order": 4,
         "RedPointConditions": [
             "CONDITION_FASHION_STORY_ENTRANCE"
         ],
@@ -1105,10 +1105,8 @@
         "Name": "Love's Leisure Hour",
         "ManagerName": "XEnvelopeGuessingAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner242.png",
-        "TimeId": 49201,
         "FunctionNameId": 10507,
         "SkipId": 89113,
-        "Order": 8,
         "RedPointConditions": [
             "CONDITION_ENVELOPE_GUESSING_ENTRANCE"
         ],
@@ -1121,15 +1119,77 @@
         "Name": "Dimensional Tuner",
         "ManagerName": "XConcertPreHeatingAgency",
         "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner235.png",
-        "TimeId": 48801,
-        "ShowConditionId": 774800,
         "FunctionNameId": 10505,
         "SkipId": 90068,
-        "Order": 2,
         "RedPointConditions": [
             "CONDITION_CONCERT_PRE_HEATING_MAIN"
         ],
         "Note": "4.6+4.7音乐会预热",
-        "IsAgency": 1
+        "IsAgency": 1,
+        "ShowConditionId": 774800
+    },
+    {
+        "Id": 101,
+        "Name": "Dream of Stagnant Cycle",
+        "ManagerName": "FubenFestivalActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner240.png",
+        "TimeId": 50202,
+        "FunctionNameId": 10513,
+        "SkipId": 90073,
+        "Order": 4,
+        "Note": "Date A Live Collab Story",
+        "ShowConditionId": 100001,
+        "IsRecord": true
+    },
+    {
+        "Id": 102,
+        "Name": "Circuit Calculus",
+        "ManagerName": "XPunishaarAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner246.png",
+        "TimeId": 50201,
+        "FunctionNameId": 10509,
+        "SkipId": 90074,
+        "Order": 7,
+        "RedPointConditions": [
+            "CONDITION_PUNISHAAR_MAIN"
+        ],
+        "Note": "4.8战双扎活动",
+        "IsAgency": 1,
+        "ShowConditionId": 774800,
+        "IsRecord": true
+    },
+    {
+        "Id": 103,
+        "Name": "Against the Flow of Time",
+        "ManagerName": "FubenNewCharActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner238.png",
+        "TimeId": 50601,
+        "FunctionNameId": 10325,
+        "SkipId": 20395,
+        "Order": 3,
+        "RedPointConditions": [
+            "CONDITION_KOROMCHARACTIVITYMAINRED"
+        ],
+        "Note": "Character Trial Stage",
+        "CustomParams": [
+            51
+        ]
+    },
+    {
+        "Id": 104,
+        "Name": "Overclock Simulation",
+        "ManagerName": "XTransfiniteTowerAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner245.png",
+        "TimeId": 50100,
+        "FunctionNameId": 10510,
+        "SkipId": 90077,
+        "Order": 6,
+        "RedPointConditions": [
+            "CONDITION_TRANSFINITE_TOWER_MAIN"
+        ],
+        "Note": "4.8超限",
+        "IsAgency": 1,
+        "ShowConditionId": 774800,
+        "IsRecord": true
     }
 ]

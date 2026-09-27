@@ -542,7 +542,10 @@
         "Quality": 4,
         "Priority": 10,
         "MaxCount": 99999,
-        "GridCount": 99999
+        "GridCount": 99999,
+        "SkipIdParams": [
+            20126
+        ]
     },
     {
         "Id": 40,
@@ -1922,6 +1925,39 @@
         "WorldDesc": "All the essence of the Combat Unit Booster lies within its structure. Once there are sufficient parts, a CUB can be easily assembled.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconPet3Starfish1.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconPet3Starfish1Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 29600,
+        "MaxCount": 9999,
+        "GridCount": 9999,
+        "SkipIdParams": [
+            15006,
+            7212
+        ]
+    },
+    {
+        "Id": 242,
+        "Name": "Booster Structural Part - Zafkiel",
+        "Description": "A structural part of the Combat Unit Booster, Zafkiel. Collect a certain number of them to create the Combat Unit Booster.",
+        "WorldDesc": "All the essence of the Combat Unit Booster lies within its structure. Once there are sufficient parts, a CUB can be easily assembled.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconPet3Kekedi1.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconPet3Kekedi1Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 29600,
+        "MaxCount": 9999,
+        "GridCount": 9999,
+        "SkipIdParams": [
+            20413
+        ]
+    },
+    {
+        "Id": 243,
+        "Name": "Booster Structural Part - Kelpie",
+        "Description": "A structural part of the Combat Unit Booster, Kelpie. Collect a certain number of them to create the Combat Unit Booster.",
+        "WorldDesc": "All the essence of the Combat Unit Booster lies within its structure. Once there are sufficient parts, a CUB can be easily assembled.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconPet3Sailfish1.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconPet3Sailfish1Sp.png",
         "ItemType": 8,
         "Quality": 5,
         "Priority": 29600,
@@ -4017,6 +4053,36 @@
         "SellForCount": 10
     },
     {
+        "Id": 485,
+        "Name": "Ultima: Kurumi Tokisaki",
+        "Description": "Constructs that have awakened their Ultima rank get 3 Signal Orbs of the same color on debut.",
+        "WorldDesc": "Ring device developed by the Science Council, tailored to each individual Construct. The nanomachines inside help Constructs perform high-frequency computing to instantly generate Signal Orbs.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconSkillRelease63.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconSkillRelease63Sp.png",
+        "ItemType": 1,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10
+    },
+    {
+        "Id": 486,
+        "Name": "Ultima: Anabasis",
+        "Description": "Constructs that have awakened their Ultima rank get 3 Signal Orbs at the start of battle.",
+        "WorldDesc": "Ring device developed by the Science Council and customized for each individual construct. The internal nanomachines help Constructs perform high-frequency computing to generate Signal Orbs immediately.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconSkillRelease64.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconSkillRelease64Sp.png",
+        "ItemType": 1,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10
+    },
+    {
         "Id": 501,
         "Name": "Inver-Shard - Palefire",
         "Description": "Lee: Palefire's Inver-Shard. Collect a sufficient amount to link with the Construct.",
@@ -5564,6 +5630,44 @@
         ]
     },
     {
+        "Id": 595,
+        "Name": "Inver-Shard - Kurumi Tokisaki",
+        "Description": "Kurumi Tokisaki's Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding character.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1411003.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1411003Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 35,
+        "SellForCount": 5,
+        "SkipIdParams": [
+            20393
+        ]
+    },
+    {
+        "Id": 596,
+        "Name": "Inver-Shard - Anabasis",
+        "Description": "Adelyde: Anabasis' Inver-Shard. Collect a sufficient amount to link with the Construct.",
+        "WorldDesc": "Construct Memory can be recycled into Inver-Shards. Collect Inver-Shards to link with the corresponding Construct.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1421003.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1421003Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 35,
+        "SellForCount": 5,
+        "SkipIdParams": [
+            10012,
+            10048,
+            90061
+        ]
+    },
+    {
         "Id": 1000,
         "Name": "Christmas Voucher",
         "Description": "Use it to exchange Christmas Gifts with Constructs.",
@@ -6942,6 +7046,23 @@
         "StartTime": "2026/9/14 5:00",
         "SkipIdParams": [
             20389
+        ]
+    },
+    {
+        "Id": 1090,
+        "Name": "Egret",
+        "Description": "Can be used to start a game in [Cosmic Wonders].",
+        "WorldDesc": "Vanessa designed this badge for her team and made each one by hand, with a slightly different design for every member.",
+        "BigIcon": "Assets/Product/Texture/Image/UiSweep/UiSweepImg8.png",
+        "Icon": "Assets/Product/Texture/Image/UiSweep/UiSweepImg8.png",
+        "ItemType": 262148,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "StartTime": "2026/10/26 5:00",
+        "SkipIdParams": [
+            20409
         ]
     },
     {
@@ -26450,6 +26571,159 @@
         ]
     },
     {
+        "Id": 3009,
+        "Name": "Froggie's Dream Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Froggie's Dream].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueTediansusheLuxiyaxiaowo001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueTediansusheLuxiyaxiaowo001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "StartTime": "2026/12/1 5:00",
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 18,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3010,
+        "Name": "\"Her Oath\" Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [\"Her Oath\"].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheHaogan001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheHaogan001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 18,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3011,
+        "Name": "Years of Discipline Blueprint",
+        "Description": "Type: Wall",
+        "WorldDesc": "Changes Decor to [Years of Discipline].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheFloor001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheFloor001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 89,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3012,
+        "Name": "Highlighted Supplies Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Highlighted Supplies].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheBox001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheBox001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 89,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3013,
+        "Name": "Star Instructor Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Star Instructor].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheDdban001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheDdban001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 89,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3014,
+        "Name": "Energy Depot Blueprint",
+        "Description": "Type: Table",
+        "WorldDesc": "Changes Decor to [Energy Depot].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheWorkbench001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheWorkbench001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 89,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3015,
+        "Name": "Silent Bullseye Blueprint",
+        "Description": "Type: Object",
+        "WorldDesc": "Changes Decor to [Silent Bullseye].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheTarget001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheTarget001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 89,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3016,
+        "Name": "\"Limited Stock\" Blueprint",
+        "Description": "Type: Sofa",
+        "WorldDesc": "Changes Decor to [\"Limited Stock\"].",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 89,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
         "Id": 3001,
         "Name": "5★ Weapon Resonance Material",
         "Description": "Can be used as any other 5★ weapon for Resonance.",
@@ -27698,6 +27972,22 @@
         "GridCount": 999,
         "SellForId": 1,
         "SellForCount": 10
+    },
+    {
+        "Id": 30000,
+        "Name": "Transition Device",
+        "Description": "Used in the [Quick Upgrade] system",
+        "WorldDesc": "Use to max out a character's standard upgrades.\\nMaterials already spent on a character's existing upgrades won't be refunded.\\nStandard upgrades include level, promotion, and standard skills (excluding Evolution, Leap, and Uniframe).",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItExpI30000.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItExpI30000Sp.png",
+        "ItemType": 128,
+        "Quality": 5,
+        "Priority": 87999,
+        "MaxCount": 9999,
+        "GridCount": 999,
+        "SubTypeParams": [
+            1
+        ]
     },
     {
         "Id": 30011,
@@ -29739,6 +30029,42 @@
         ]
     },
     {
+        "Id": 40644,
+        "Name": "Black Forest Cake",
+        "Description": "Increases member's Affection. Kurumi Tokisaki's favorite gift.",
+        "WorldDesc": "A chocolate cake with notes of subtle bitterness, a flavor perfectly matched to Kurumi Tokisaki's palate. Surprise her with a slice at teatime, and she'll be absolutely delighted.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItGift0344.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItGift0344Sp.png",
+        "ItemType": 524292,
+        "Quality": 5,
+        "Priority": 69901,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 20,
+        "SkipIdParams": [
+            10007
+        ]
+    },
+    {
+        "Id": 40645,
+        "Name": "A Testament to Triumph",
+        "Description": "Increases member's Affection. Adelyde's favorite gift.",
+        "WorldDesc": "A trophy Adelyde and her friends fought hard to win when they were young. It still sits on her desk today, their signatures as clear as the day they signed it.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItGift0345.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItGift0345Sp.png",
+        "ItemType": 524292,
+        "Quality": 5,
+        "Priority": 69901,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 20,
+        "SkipIdParams": [
+            10007
+        ]
+    },
+    {
         "Id": 40681,
         "Name": "Best-Seller",
         "Description": "Increases members' Affection. A common gift everybody likes.",
@@ -30712,7 +31038,7 @@
     {
         "Id": 50010,
         "Name": "Collab Construct R&D Ticket",
-        "Description": "Collab item - will be converted into Event Construct R&D Ticket upon expiry.",
+        "Description": "Collab item. Will be converted into Event Construct R&D Ticket upon expiry.",
         "WorldDesc": "Tickets issued to Executor Squads. Accumulate them to access Construct research facilities.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconNierRoleCard.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconNierRoleCardSp.png",
@@ -30748,7 +31074,7 @@
     {
         "Id": 50012,
         "Name": "BLACK★ROCK SHOOTER Collab Construct R&D Ticket",
-        "Description": "Collab item - will be converted into Event Construct R&D Ticket upon expiry.",
+        "Description": "Collab item. Will be converted into Event Construct R&D Ticket upon expiry.",
         "WorldDesc": "Tickets issued to the Task Force. Accumulate them to access the Construct research facility. This one seems to connect to something special.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBRSRoleCard.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBRSRoleCardSp.png",
@@ -30784,7 +31110,7 @@
     {
         "Id": 50014,
         "Name": "DMC Character R&D Ticket",
-        "Description": "Collab item - will be converted into Event Construct R&D Ticket upon expiry.",
+        "Description": "Collab item. Will be converted into Event Construct R&D Ticket upon expiry.",
         "WorldDesc": "Tickets issued to the Task Force. Accumulate them to access the character research facility. This one seems to connect to something special.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDMCRoleCard.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDMCRoleCardSp.png",
@@ -30836,6 +31162,60 @@
         "RecycleByMail": true
     },
     {
+        "Id": 50017,
+        "Name": "Date A Live Character R&D Ticket",
+        "Description": "Collab item. Will be converted into Event Construct R&D Ticket upon expiry.",
+        "WorldDesc": "Tickets issued to the Task Force. Accumulate them to access the character research facility. This one seems to connect to a visitor from another world.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveRoleCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveRoleCardSp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/29 10:00",
+        "Duration": 3074340,
+        "RecycleRewardId": 817,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50018,
+        "Name": "Date A Live Weapon R&D Ticket",
+        "Description": "Collab item - will be converted into Target Weapon R&D Ticket upon expiry.",
+        "WorldDesc": "Tickets issued to the Task Force. Accumulate them to access the special equipment research facility. This one seems to connect to a certain Astral Dress from another world.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveWeaponsCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveWeaponsCardSp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/29 10:00",
+        "Duration": 3074340,
+        "RecycleRewardId": 818,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50019,
+        "Name": "Date A Live Armament R&D Ticket",
+        "Description": "Collab item - will be converted into CUB R&D Ticket upon expiry.",
+        "WorldDesc": "Tickets issued to the Task Force. Accumulate them to access the Otherworld Armament research facility. This one seems capable of answering the call of a mysterious power.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveCubCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveCubCardSp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/29 10:00",
+        "Duration": 3074340,
+        "RecycleRewardId": 852,
+        "RecycleByMail": true
+    },
+    {
         "Id": 50020,
         "Name": "Target Weapon R&D Ticket",
         "Description": "Used to research specific weapons.",
@@ -30847,6 +31227,60 @@
         "Priority": 800,
         "MaxCount": 999999,
         "GridCount": 9999
+    },
+    {
+        "Id": 50021,
+        "Name": "Date A Live Character R&D Ticket",
+        "Description": "Collab item. Will be converted into Event Construct R&D Ticket upon expiry.",
+        "WorldDesc": "Tickets issued to the Task Force. Collect them to access the character research facility. This one seems to connect to a visitor from another world.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveRoleCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveRoleCardSp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/29 10:00",
+        "Duration": 3074340,
+        "RecycleRewardId": 817,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50022,
+        "Name": "Date A Live Weapon R&D Ticket",
+        "Description": "Collab item - will be converted into Target Weapon R&D Ticket upon expiry.",
+        "WorldDesc": "Tickets issued to the Task Force. Collect them to access the special weapon research facility. This one seems to connect to a certain Astral Dress from another world.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveWeaponsCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveWeaponsCardSp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/29 10:00",
+        "Duration": 3074340,
+        "RecycleRewardId": 818,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50023,
+        "Name": "Date A Live Equipment R&D Ticket",
+        "Description": "Collab item - will be converted into CUB R&D Ticket upon expiry.",
+        "WorldDesc": "Tickets issued to the Task Force. Collect them to access the CUB research facility. This one seems capable of answering the call of a mysterious power.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveCubCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveCubCardSp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/29 10:00",
+        "Duration": 3074340,
+        "RecycleRewardId": 852,
+        "RecycleByMail": true
     },
     {
         "Id": 50100,
@@ -32077,6 +32511,78 @@
         "StartTime": "2026/8/26 10:00",
         "Duration": 2466000,
         "RecycleRewardId": 820,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50175,
+        "Name": "Evenstar's Wish",
+        "Description": "[Night Sonata] research event item.",
+        "WorldDesc": "May the lights of this night never fade, as eternal vows echo through countless beautiful dreams.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiGachaCard402.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiGachaCard402Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/26 10:00",
+        "Duration": 3416400,
+        "RecycleRewardId": 909,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50176,
+        "Name": "Destiny Bell",
+        "Description": "[Threads of Destiny] research event item.",
+        "WorldDesc": "Bind our cherished thoughts to the chimes and may our hearts unite for eternity, and our vows remain unchanged.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiGachaCardEv306.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiGachaCardEv306Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/26 10:00",
+        "Duration": 3416400,
+        "RecycleRewardId": 909,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50177,
+        "Name": "Eternal Oath",
+        "Description": "[Love's Dawn] Research Event item",
+        "WorldDesc": "\"Gold does not tarnish, and jade remains whole, just like the promise that binds us.\"",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiGachaCardEv302.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiGachaCardEv302Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/26 10:00",
+        "Duration": 3416400,
+        "RecycleRewardId": 909,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50178,
+        "Name": "Scattering Blooms",
+        "Description": "[Tsubaki] Research event item.",
+        "WorldDesc": "A token of protection, a witness to a once-in-a-lifetime moment.",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiGachaCardEv215.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiGachaCardEv215Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/26 10:00",
+        "Duration": 3416400,
+        "RecycleRewardId": 909,
         "RecycleByMail": true
     },
     {
@@ -35536,7 +36042,10 @@
         "Quality": 4,
         "Priority": 10,
         "MaxCount": 999999,
-        "GridCount": 999999
+        "GridCount": 999999,
+        "SkipIdParams": [
+            40756
+        ]
     },
     {
         "Id": 62801,
@@ -41865,6 +42374,64 @@
         ]
     },
     {
+        "Id": 80144,
+        "Name": "Scorching Torrent",
+        "Description": "New Life — Fusion Gunsword",
+        "WorldDesc": "A Fusion Gunsword that has seemingly sealed the power of \"Efreet\" within. When she grasps it, her breathing synchronizes quietly with the dancing flames at the muzzle, and the light bursting from its core is enough to paint the sky red.",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3PistolMd040011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3PistolMd040011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80329
+        ],
+        "SubTypeParams": [
+            12530003
+        ]
+    },
+    {
+        "Id": 80145,
+        "Name": "Sacrament of Ruin",
+        "Description": "Shrouded Requiem — Judgment Scythe",
+        "WorldDesc": "Moonlight glides along the blade as mist coils around an ancient pact. A smile touches her ruby eyes as she extends an invitation to fate—will you join her tonight for this final, nightmarish dance?",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3SickleMd030011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3SickleMd030011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80327
+        ],
+        "SubTypeParams": [
+            12630002
+        ]
+    },
+    {
+        "Id": 80146,
+        "Name": "Pale Pyre",
+        "Description": "Paradise Lost—Cross Cannon",
+        "WorldDesc": "Forged from iron and fire, its roar splits the sky and heralds both destruction and rebirth. Its flames cut through every season, day and night. Wherever its barrel points, all falls silent.",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3HeavycrossMd020011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3HeavycrossMd020011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80327,
+            80328
+        ],
+        "SubTypeParams": [
+            12690001
+        ]
+    },
+    {
         "Id": 81001,
         "Name": "Light Silk",
         "Description": "Festival — Levi-Gun",
@@ -44156,7 +44723,7 @@
     {
         "Id": 95006,
         "Name": "Black Card Monthly Pass",
-        "Description": "Activate to receive 300 Black Cards instantly. From that day onward, log in daily to claim 100 Black Cards for 30 days.",
+        "Description": "Activate to receive 300 Black Cards instantly. From that day onward, log in daily to claim 100 Black Cards and Serum Bundle β (M) x1 for 30 days.",
         "WorldDesc": "Purchase the pack to activate immediately.",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconYK30Day.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconYK30DaySp.png",

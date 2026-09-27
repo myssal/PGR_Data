@@ -44,6 +44,7 @@ function XCharacterAgency:InitEvent()
     self:AddAgencyEvent(XEventId.EVENT_CHARACTER_SKILL_UP, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
     self:AddAgencyEvent(XEventId.EVENT_CHARACTER_ENHANCESKILL_UNLOCK, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
     self:AddAgencyEvent(XEventId.EVENT_CHARACTER_ENHANCESKILL_UP, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
+    self:AddAgencyEvent(XEventId.EVENT_CHARACTER_EXHIBITION_REFRESH, self.CheckAndUnlockExhibitionLiberationSkill, self)
 end
 
 function XCharacterAgency:RemoveEvent()
@@ -51,6 +52,7 @@ function XCharacterAgency:RemoveEvent()
     self:RemoveAgencyEvent(XEventId.EVENT_CHARACTER_SKILL_UP, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
     self:RemoveAgencyEvent(XEventId.EVENT_CHARACTER_ENHANCESKILL_UNLOCK, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
     self:RemoveAgencyEvent(XEventId.EVENT_CHARACTER_ENHANCESKILL_UP, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
+    self:RemoveAgencyEvent(XEventId.EVENT_CHARACTER_EXHIBITION_REFRESH, self.CheckAndUnlockExhibitionLiberationSkill, self)
 end
 
 ----------public start----------
@@ -1536,6 +1538,8 @@ end
 
 --获取武器超限提升的技能等级
 function XCharacterAgency:GetWeaponOverrunUpSkillLevel(characterId, skillId)
+    if not characterId or characterId == 0 then return 0 end
+    if not self:IsOwnCharacter(characterId) then return 0 end
     local skillGroupId = XMVCA.XCharacter:GetSkillGroupIdAndIndex(skillId)
     local weapon = XMVCA.XEquip:GetCharacterWeapon(characterId)
     return weapon:GetOverrunUpSkillLevel(skillGroupId)
@@ -1616,6 +1620,29 @@ function XCharacterAgency:UnlockMaxLiberationSkill(characterId)
     end
 end
 
+-- 4.7 卡列(1071005)终阶解放技能因配置缺失未发放，进展览数据后补发一次
+function XCharacterAgency:CheckAndUnlockExhibitionLiberationSkill()
+    local characterId = 1071005
+    local skillGroupId = 1075270
+    if not self:IsOwnCharacter(characterId) then
+        return
+    end
+
+    if not XDataCenter.ExhibitionManager.CheckCharacterGraduation(characterId) then
+        return
+    end
+
+    local character = self._Model.OwnCharacters[characterId]
+    if not character then
+        return
+    end
+
+    local skillLevel = character:GetSkillLevel(skillGroupId)
+    if not skillLevel or skillLevel <= 0 then
+        self:UnlockSubSkill(nil, characterId, nil, skillGroupId)
+    end
+end
+
 -- 技能相关end --
 -- 服务端相关begin--
 function XCharacterAgency:ExchangeCharacter(templateId, cb)
@@ -1676,7 +1703,10 @@ function XCharacterAgency:OnSyncCharacterEquipChange(charIdDic)
 
     for charId, _ in pairs(charIdDic) do
         local character = self._Model.OwnCharacters[charId]
-        character:RefreshAttribs()
+        -- 抽卡抽到角色时先推NotifyEquipData，再推NotifyCharacterData，此时会因为拿不到角色数据而报错，所以这里加个判空
+        if character then
+            character:RefreshAttribs()
+        end
     end
 
     XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_CHARACTER_EQUIP_CHANGE, charIdDic)
@@ -2707,6 +2737,14 @@ function XCharacterAgency:GetModelCharacterObsTriggerMagic()
     return self._Model:GetCharacterObsTriggerMagic()
 end
 
+function XCharacterAgency:GetModelUiSkillObservationMagicInfoController()
+    return self._Model:GetUiSkillObservationMagicInfoController()
+end
+
+function XCharacterAgency:GetModelCharacterObsTransform()
+    return self._Model:GetCharacterObsTransform()
+end
+
 function XCharacterAgency:GetModelCharacterSkill()
     return self._Model:GetCharacterSkill()
 end
@@ -3147,6 +3185,13 @@ function XCharacterAgency:GetEnhanceSkillConfig(CharacterId)
         XLog.Error("CharacterId Is Not Exist In EnhanceSkill.tab", CharacterId)
     end
     return cfg
+end
+
+function XCharacterAgency:GetEnhanceSkillConfigSafe(CharacterId)
+    if CharacterId then
+        return self:GetModelEnhanceSkill()[CharacterId]
+    end
+    return self:GetModelEnhanceSkill()
 end
 
 function XCharacterAgency:GetEnhanceSkillGroupConfig(Id)
@@ -4129,6 +4174,11 @@ function XCharacterAgency:GetCharacterSkillPoolSkillInfo(skillId)
     return self._Model.CharSkillPoolSkillIdDic[skillId]
 end
 
+function XCharacterAgency:GetCharacterSkillPoolRowById(id)
+    local pool = self._Model:GetCharacterSkillPool()
+    return pool and pool[id]
+end
+
 function XCharacterAgency:GetCharacterSkillPoolSkillInfos(poolId, characterId)
     local skillInfos = {}
 
@@ -4835,6 +4885,31 @@ end
 -- Notify协议相关
 function XCharacterAgency:NotifyCharacterDataListV2P6(data)
     self:NotifyCharacterDataList(data)
+end
+
+--- 打开一键培养主界面（先预拉取自动兑换涉及的商店数据，避免兑换计算报错）
+function XCharacterAgency:OpenUiRoleCultureDetailMain(characterId)
+    CS.XRecord.Record("1000007", "EnterRoleCultureDetailMain")
+    local allShopIds = { XShopManager.MaterialShopId, XShopManager.EnhanceShopId, XShopManager.UniqueShopId }
+    --先拉商店基础信息(含 ConditionIds),才能判断玩家是否满足商店开放条件
+    XShopManager.GetBaseInfo(function()
+        local shopIds = {}
+        for _, shopId in ipairs(allShopIds) do
+            if XShopManager.IsShopUnlock(shopId) then
+                table.insert(shopIds, shopId)
+            end
+        end
+        if #shopIds == 0 then
+            XLuaUiManager.Open("UiRoleCultureDetailMain", characterId)
+            return
+        end
+        --只对玩家已满足开放条件的商店请求有效信息,避免未解锁商店触发服务器异常
+        XShopManager.RequestShopValidInfo(shopIds, function()
+            XShopManager.GetShopInfoList(shopIds, function()
+                XLuaUiManager.Open("UiRoleCultureDetailMain", characterId)
+            end, XShopManager.ShopType.Common, true)
+        end)
+    end)
 end
 
 return XCharacterAgency

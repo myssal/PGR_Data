@@ -16,6 +16,15 @@ end
 
 -- region 配置
 
+---@return string[]
+function XFashionSuitControl:GetClientConfigs(key)
+    local config = self._Model:GetClientConfigById(key)
+    if config then
+        return config.Values
+    end
+    return nil
+end
+
 ---@return string
 function XFashionSuitControl:GetClientConfig(key, index)
     index = index or 1

@@ -56,6 +56,7 @@ function XUiPanelFashionSuitNormal:OnEnable()
             self:ShowDynamicRootGO()
         end
     end
+    self:PlaySummerSound()
 end
 
 function XUiPanelFashionSuitNormal:OnDestroy()
@@ -184,10 +185,15 @@ function XUiPanelFashionSuitNormal:OnDynamicTableEvent(event, index, grid)
         index = index % self.DynamicTable.Imp.TotalCount + 1
         grid:Refresh(self._Id, self._Config.FashionIds[index])
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_TWEEN_OVER then
-        local startIndex = self.DynamicTable.Imp.StartIndex
-        local selectIndex = startIndex % self.DynamicTable.Imp.TotalCount + 1
-        self._SelectIndex = selectIndex - 1
-        self:UpdateFashionSelect(selectIndex)
+        XScheduleManager.ScheduleNextFrame(function()
+            if XTool.UObjIsNil(self.GameObject) then
+                return
+            end
+            local startIndex = self.DynamicTable.Imp.StartIndex
+            local selectIndex = startIndex % self.DynamicTable.Imp.TotalCount + 1
+            self._SelectIndex = selectIndex - 1
+            self:UpdateFashionSelect(selectIndex)
+        end)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         self.DynamicTable.Imp:TweenToIndex(index)
         if self.DynamicTable.Imp.StartIndex == index then
@@ -244,6 +250,26 @@ function XUiPanelFashionSuitNormal:ReleaseFashionGrid(grid)
 
     grid:OnDestroyUi()
     grid:Release()
+end
+
+---夏日涂装特殊处理，后续通过修改UI结构和timeline实现
+function XUiPanelFashionSuitNormal:PlaySummerSound()
+    local summerSuit = self._Control:GetClientConfigs("SummerSuitId")
+    local index = table.indexof(summerSuit, tostring(self._Id))
+    if not index then
+        return
+    end
+    local total = #self._FashionIds
+    local own = self._Control:GetCollectCount(self._Id)
+    if total > own then
+        return
+    end
+    local delay = self._Control:GetIntClientConfig("SummerSound", index * 2 - 1)
+    local cueId = self._Control:GetIntClientConfig("SummerSound", index * 2)
+    local timeId = XScheduleManager.ScheduleOnce(function()
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
+    end, delay)
+    self.Parent:_AddTimerId(timeId)
 end
 
 return XUiPanelFashionSuitNormal

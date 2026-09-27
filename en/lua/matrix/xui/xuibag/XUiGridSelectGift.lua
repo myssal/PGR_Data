@@ -76,10 +76,10 @@ function XUiGridSelectGift:RefreshSelf(NeedDefulatQulity, isSmallIcon, notCommon
     if template.RewardType == XRewardManager.XRewardType.Character then
         quality = quality < 3 and 5 or 6
     end
-    
-    -- 宠物品质背景特殊处理
+
+    -- 辅助机品质背景特殊处理
     if template.RewardType == XRewardManager.XRewardType.Partner then
-        quality = quality < 3 and 5 or 6
+        quality = XMVCA.XPartner.Util.GetGoodsQualityByPartnerQuality(quality)
     end
 
     if self.ImgIconBg then

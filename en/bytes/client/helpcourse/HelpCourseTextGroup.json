@@ -2,7 +2,7 @@
     {
         "Id": 1009501,
         "Texts": [
-            "①. Spend <color=#0E70BD>F.O.S. Badges</color> to swap portraits; <color=#0E70BD>F.O.S. Badges</color> can be obtained through event missions.",
+            "①. Spend <color=#0E70BD>F.O.S. Badges</color> to swap portraits; <color=#0E70BD>F.O.S. Badges</color> can be obtained through event missions",
             "②. Once you have spent a certain number of tokens, no more tokens will be consumed in the current stage."
         ]
     },
@@ -150,22 +150,22 @@
     {
         "Id": 1008401,
         "Texts": [
-            "①. Spend <color=#0E70BD>Dreamcatchers</color> to challenge stages.",
-            "②. <color=#0E70BD>Dreamcatchers</color> can be obtained through event missions."
+            "①. Spend <color=#0E70BD>Egrets</color> to challenge stages.",
+            "②. <color=#0E70BD>Egrets</color> can be obtained through event missions."
         ]
     },
     {
         "Id": 1008402,
         "Texts": [
             "①. Light up safe areas to increase corresponding progress.",
-            "②. The numbers on the grid represent the count of <color=#0E70BD>Spider Webs</color> within the <color=#0E70BD>3x3 grid area</color>.",
+            "②. The numbers on the grid represent the count of <color=#0E70BD>Bambinatas</color> within the <color=#0E70BD>3x3 grid area</color>.",
             "③. If you tap on a safe area, all the safe areas within the <color=#0E70BD>3x3 grid area</color> will light up."
         ]
     },
     {
         "Id": 1008403,
         "Texts": [
-            "①. If you tap on a <color=#0E70BD>Spider Web</color>, only that grid would light up.",
+            "①. If you tap on a <color=#0E70BD>Bambinata</color>, only its corresponding tile will light up.",
             "②. This also increases your accumulated failure progress by 1."
         ]
     },
@@ -1021,9 +1021,9 @@
     {
         "Id": 1033102,
         "Texts": [
-            "①. You can apply your color to an adjacent <color=#0E70BD>colorless tile</color>.",
-            "②. When multiple colors are applied to the same tile, they will <color=#0E70BD>combine</color>.",
-            "③. A <color=#0E70BD>colorless tile</color> is activated when its color matches the required color.",
+            "①. <color=#0E70BD>Only patterned tiles</color> can pass their color to adjacent <color=#0E70BD>colorless tiles</color>.",
+            "②. When a colorless tile is adjacent to multiple patterned tiles, <color=#0E70BD>their colors are combined</color>. <color=#0E70BD>If the colors can't be combined, an × appears</color>.",
+            "③. The bottom of a <color=#0E70BD>colorless tile</color> shows the color it needs. The top shows the color it's currently receiving. When the two match, the tile is activated.",
             "④. <color=#0E70BD>Activate all colorless tiles</color> to complete the stage.",
             "⑤. You can view <color=#0E70BD>placement tips</color> here."
         ]
@@ -1031,10 +1031,10 @@
     {
         "Id": 1033103,
         "Texts": [
-            "①. You can apply your color to an adjacent colorless tile.",
-            "②. Switch between up to four colors and apply them to tiles.",
-            "③. Generate up to four tiles in a chosen direction and apply a color to them.",
-            "④. Rotate to project color in a chosen direction. Mirrors can change its path."
+            "①. A patterned tile can pass its color to nearby colorless tiles.",
+            "②. Cycles through up to 4 colors and passes color to adjacent tiles.",
+            "③. Creates up to 4 tiles in a set direction and passes color to nearby tiles.",
+            "④. Rotates to color the first tile along its path. Mirrors can change its direction."
         ]
     },
     {
@@ -1544,6 +1544,151 @@
         "Texts": [
             "① Tap here to start an invitation and read the corresponding story.",
             "② Once an invitation is complete, an exclusive background will be revealed for the character."
+        ]
+    },
+    {
+        "Id": 1023701,
+        "Texts": [
+            "① Circuit Calculus consists of 9 stages that unlock over time. Clear each stage to unlock the next one.",
+            "② Stages 1-8 are standard stages, while Stage 9 is the Infinite Stage. After completing a full cycle, you will restart from the stage's starting node.",
+            "③ Complete event missions to claim rewards."
+        ]
+    },
+    {
+        "Id": 1023702,
+        "Texts": [
+            "① Deploy different cards to fight enemies and earn Coins, then use those Coins to expand your lineup. Keep winning until you clear the stage.",
+            "② There are two types of cards: battle cards and support cards. Battle cards can be placed in the battle zone below or stored in the storage area. Support cards must be equipped to a compatible battle card and cannot be placed in either area on their own. Battle cards are divided into character cards and CUB cards. Character cards generate Signal Orbs of different colors when attacking, while CUB card attacks cost a specified number of Signal Orbs.",
+            "③ Spend Coins in the shop to buy the cards you need. If none of them are useful, refresh the selection. Once your lineup is ready, move on to the next challenge."
+        ]
+    },
+    {
+        "Id": 1023703,
+        "Texts": [
+            "① Only cards placed in the battle zone can enter combat and attack. Choose the best battle cards for your lineup and equip them with suitable support cards.",
+            "② Some enemies have unique skills. Check their skills before battle and choose your cards accordingly."
+        ]
+    },
+    {
+        "Id": 1023711,
+        "Texts": [
+            "① Overclock Simulation includes Parallel Calculation and Peak Calculation. Both unlock gradually. Clear the prerequisite Benchmark Test stages to access later stages.",
+            "② Complete the event stages to unlock calculation goals and claim event rewards.",
+            "③ Peak Rankings opens alongside Peak Calculation."
+        ]
+    },
+    {
+        "Id": 1023712,
+        "Texts": [
+            "① Floors unlock progressively as you clear stages.",
+            "② Clearing certain stages unlocks Data Rollback, allowing you to restart the challenge from the stage's rollback point.",
+            "③ Some stages feature special affixes. Build your team to counter them."
+        ]
+    },
+    {
+        "Id": 1023713,
+        "Texts": [
+            "① Entering a stage consumes the character's Computing Power quota. A character cannot be deployed once their quota is depleted.",
+            "② During the event, classic frame characters gain Standard Unit Enhancement."
+        ]
+    },
+    {
+        "Id": 1023714,
+        "Texts": [
+            "① The event provides 4 Hypertune Core characters with additional Hypertune Drive effects.",
+            "② Tap to view a detailed tutorial on Hypertune Drive effects."
+        ]
+    },
+    {
+        "Id": 1023715,
+        "Texts": [
+            "① Deploying Hypertune Core characters does not consume Computing Power quota.",
+            "② Some simulation stages require a Hypertune Core character in the team to enter."
+        ]
+    },
+    {
+        "Id": 1023716,
+        "Texts": [
+            "① Peak Rankings displays player rankings for Peak Calculation.",
+            "② Tap Details to view the player's team.",
+            "③ Peak Rankings are settled daily. At settlement, players who meet the ranking requirements will receive item rewards."
+        ]
+    },
+    {
+        "Id": 1018701,
+        "Texts": [
+            "① Your current score is shown here.",
+            "② After 40 turns, or once you reach an SSS score rating, you may end the stage early.",
+            "③ Each turn, you may move one cube horizontally. It can only move through adjacent empty spaces to its left or right.",
+            "④ When the vacant space beneath a cube is equal to or wider than the cube itself, the cube drops automatically."
+        ]
+    },
+    {
+        "Id": 1018702,
+        "Texts": [
+            "① Filling an entire row clears every cube in that row.",
+            "② Some cubes follow special clearing rules. Before the stage begins, you can preview these cubes and review how they work.",
+            "③ Clear a cube linked to an item to obtain that item. You can preview the available items before the stage begins.",
+            "④ Clearing special cubes enhances items in your inventory. Any excess enhancements are stored."
+        ]
+    },
+    {
+        "Id": 1018703,
+        "Texts": [
+            "① After each move, you can preview the cubes that will fall from above and rise from below.",
+            "② The game ends when cubes rise above the top."
+        ]
+    },
+    {
+        "Id": 1023801,
+        "Texts": [
+            "① Tap the <color=#0E70BD>tabs</color> to view <color=#0E70BD>gear</color> and <color=#0E70BD>member</color> configurations for different game modes.",
+            "② If the character has multiple <color=#0E70BD>elemental attributes</color> or <color=#0E70BD>effects</color>, use the <color=#0E70BD>tabs</color> above to view the gear and member configurations for each one.",
+            "③ Select <color=#0E70BD>Upgrade by Team</color> to view that team's <color=#0E70BD>deployed characters</color> on the right. Tap View to check their <color=#0E70BD>gear details</color>.",
+            "④ Once a <color=#0E70BD>target team</color> is set, its <color=#0E70BD>upgrade goal</color> will appear <color=#0E70BD>above</color>. Tap the current <color=#0E70BD>target team</color> to view its team details."
+        ]
+    },
+    {
+        "Id": 1023802,
+        "Texts": [
+            "① View a character's gear loadout, including <color=#0E70BD>Weapons</color>, <color=#0E70BD>Memories</color>, and <color=#0E70BD>CUBs</color>. Once a goal is set, tap <color=#0E70BD>Upgrade Now</color> to open the Quick Upgrade screen.",
+            "② Displays the team details."
+        ]
+    },
+    {
+        "Id": 1023803,
+        "Texts": [
+            "① Displays the character's gear <color=#0E70BD>upgrade progress</color>. Tap <color=#0E70BD>Switch</color> to view another character.",
+            "② Displays upgrade details for <color=#0E70BD>Weapons</color>, <color=#0E70BD>Memories</color>, and <color=#0E70BD>CUBs</color>. Tap <color=#0E70BD>Upgrade</color> to open the corresponding upgrade screen.",
+            "③ If you're not satisfied with the selected plan, you can <color=#0E70BD>Delete</color> it or <color=#0E70BD>Switch</color> to another."
+        ]
+    },
+    {
+        "Id": 1023901,
+        "Texts": [
+            "① Available upgrade options include <color=#0E70BD>Level</color>, <color=#0E70BD>Promotion</color>, and <color=#0E70BD>Skills</color>.",
+            "② Once an upgrade goal is set, the required <color=#0E70BD>materials</color> will be <color=#0E70BD>displayed</color>. Tap <color=#0E70BD>Upgrade</color> below to perform a Quick Upgrade based on the <color=#0E70BD>selected goal</color>."
+        ]
+    },
+    {
+        "Id": 1024001,
+        "Texts": [
+            "① Displays an <color=#0E70BD>overview</color> of the weapon's upgrades.",
+            "② Displays the <color=#0E70BD>upgrade goals</color> and <color=#0E70BD>material costs</color> for the relevant module. Tap <color=#0E70BD>Quick Upgrade</color> to open the <color=#0E70BD>Quick Upgrade screen</color>."
+        ]
+    },
+    {
+        "Id": 1024101,
+        "Texts": [
+            "① Displays an <color=#0E70BD>overview</color> of the Memory's upgrades.",
+            "② Displays the <color=#0E70BD>upgrade goals</color> and <color=#0E70BD>material costs</color> for the relevant module. Tap <color=#0E70BD>Quick Upgrade</color> to open the <color=#0E70BD>Quick Upgrade screen</color>."
+        ]
+    },
+    {
+        "Id": 1024201,
+        "Texts": [
+            "① Displays an <color=#0E70BD>overview</color> of the CUB's upgrades. Tap <color=#0E70BD>Skills</color> to change its equipped skill.",
+            "② Displays the <color=#0E70BD>upgrade goals</color> and <color=#0E70BD>material costs</color> for the relevant module. Tap <color=#0E70BD>Quick Upgrade</color> to open the <color=#0E70BD>Quick Upgrade screen</color>."
         ]
     }
 ]

@@ -2,10 +2,12 @@ local tableInsert = table.insert
 
 ---@class XEquipAgency : XAgency
 ---@field _Model XEquipModel
+---@field public Enum XEquipEnum
 local XEquipAgency = XClass(XAgency, "XEquipAgency")
 
 function XEquipAgency:OnInit()
     --初始化一些变量
+    self.Enum = require('XModule/XEquip/XEquipEnum')
 end
 
 function XEquipAgency:InitRpc()
@@ -21,6 +23,21 @@ function XEquipAgency:InitEvent()
     --实现跨Agency事件注册
     --self:AddAgencyEvent()
 end
+
+---达到共鸣技能数量要求时，请求解锁意识一键共鸣功能。
+function XEquipAgency:TryUnlockAwarenessOneClickResonance()
+    local functionId = XFunctionManager.FunctionName.AwarenessOneClickResonance
+    if XFunctionManager.IsPlayerMark(functionId) then
+        return
+    end
+
+    if not XFunctionManager.JudgeCanOpen(functionId) then
+        return
+    end
+
+    XPlayer.ChangeMarks(functionId)
+end
+
 
 --============================================================== #region rpc ==============================================================
 -- 登陆初始化装备数据
@@ -188,11 +205,18 @@ function XEquipAgency:NotifyEquipDataTestList(data)
 end
 
 function XEquipAgency:NotifyEquipDataList(data)
+    local changedCharacterIdDic = {}
     if data.EquipDataList then
-        self._Model:UpdateEquipData(data.EquipDataList)
+        changedCharacterIdDic = self._Model:UpdateEquipData(data.EquipDataList)
     end
+
     if data.DeletedEquipIdList then 
         self._Model:DeleteEquips(data.DeletedEquipIdList)
+    end
+    -- 仅当角色穿戴部位的最终状态实际变化时重算属性并广播，避免普通装备数据同步触发无效刷新。
+    if next(changedCharacterIdDic) then
+        XMVCA.XCharacter:OnSyncCharacterEquipChange(changedCharacterIdDic)
+        XMVCA.XTeamRecommend:CheckServerCharacterTargetsProgressAndFinish(changedCharacterIdDic)
     end
     CsXGameEventManager.Instance:Notify(XEventId.EVENT_EQUIP_DATA_LIST_UPDATE_NOTYFY)
 end
@@ -240,56 +264,21 @@ function XEquipAgency:PutOn(characterId, equipId, cb)
     local equip = self:GetEquip(equipId)
     local site = self:GetEquipSite(equip.TemplateId)
     local req = { CharacterId = characterId, Site = site, EquipId = equipId }
-    XNetwork.CallWithAutoHandleErrorCode("EquipPutOnRequest", req, function(res)
-        -- 更新装备数据
+    XNetwork.CallWithAutoHandleErrorCode("EquipPutOnRequest", req, function()
         self:OnEquipPutOnSuccess(characterId, equipId, nil, cb)
     end)
 end
 
+---@param characterId number
+---@param equipId number
+---@param doNotPlayVoice boolean|nil
+---@param cb fun()|nil
 function XEquipAgency:OnEquipPutOnSuccess(characterId, equipId, doNotPlayVoice, cb)
-    local equip = self:GetEquip(equipId)
-    local site = self:GetEquipSite(equip.TemplateId)
-    local switchCharacterId = equip.CharacterId
-    local oldEquipId = self:GetCharacterEquipId(characterId, site)
-    local isWeapon = site == XEnumConst.EQUIP.EQUIP_SITE.WEAPON
-
-    -- 卸下旧装备
-    if oldEquipId then
-        local oldEquip = self:GetEquip(oldEquipId)
-        if isWeapon then
-            oldEquip:PutOn(switchCharacterId)
-        else
-            oldEquip:TakeOff()
-        end
-        XDataCenter.EquipGuideManager.HandleEquipGuidePutOnOrTakeOff({ equipId }, switchCharacterId, false)
-    end
-
-    local charIdDic = {}
-    if switchCharacterId ~= 0 then
-        charIdDic[switchCharacterId] = true
-    end
-    charIdDic[characterId] = true
-
-    -- 穿戴新装备
-    equip:PutOn(characterId)
-    XDataCenter.EquipGuideManager.HandleEquipGuidePutOnOrTakeOff({ equipId }, characterId, true)
-
-    -- 更新数据模型
-    if switchCharacterId ~= 0 then
-        if oldEquipId and isWeapon then
-            self._Model:SetCharacterEquipId(switchCharacterId, oldEquipId)
-        else
-            self._Model:RemoveCharacterEquipId(switchCharacterId, equipId)
-        end
-    end
-    self._Model:SetCharacterEquipId(characterId, equipId)
-
-    -- 通知系统
-    XMVCA:GetAgency(ModuleId.XCharacter):OnSyncCharacterEquipChange(charIdDic)
     CsXGameEventManager.Instance:Notify(XEventId.EVENT_EQUIP_PUTON_NOTYFY, equipId)
     XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_PUTON_NOTYFY, equipId)
 
-    if isWeapon and oldEquipId ~= equipId and not doNotPlayVoice then
+    local isWeapon = self:GetEquipSiteByEquipId(equipId) == XEnumConst.EQUIP.EQUIP_SITE.WEAPON
+    if isWeapon and not doNotPlayVoice then
         XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_PUTON_WEAPON_NOTYFY, characterId, equipId)
     end
 
@@ -312,22 +301,14 @@ function XEquipAgency:TakeOff(equipIds)
     end
 
     local req = {EquipIds = equipIds}
-    XNetwork.CallWithAutoHandleErrorCode("EquipTakeOffRequest", req, function(res)
+    XNetwork.CallWithAutoHandleErrorCode("EquipTakeOffRequest", req, function()
         self:TipEquipOperation(nil, XUiHelper.GetText("EquipTakeOffSuc"))
 
-        local charIdDic = {}
+        -- 装备实体、角色部位索引、属性和装备目标已由先到达的 NotifyEquipDataList 统一更新。
         for _, equipId in pairs(equipIds) do
-            local equip = self:GetEquip(equipId)
-            local characterId = equip.CharacterId
-            charIdDic[characterId] = true
-            equip:TakeOff()
-            XDataCenter.EquipGuideManager.HandleEquipGuidePutOnOrTakeOff({ equipId }, characterId, false)
-            self._Model:RemoveCharacterEquipId(characterId, equipId)
             XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_TAKEOFF_NOTYFY, equipId)
         end
 
-        -- 更新角色数据
-        XMVCA:GetAgency(ModuleId.XCharacter):OnSyncCharacterEquipChange(charIdDic)
         XEventManager.DispatchEvent(XEventId.EVENT_EQUIPLIST_TAKEOFF_NOTYFY, equipIds)
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_EQUIPLIST_TAKEOFF_NOTYFY, equipIds)
     end)
@@ -384,33 +365,8 @@ function XEquipAgency:EquipSuitPrefabEquip(prefabIndex, characterId, cb)
     end
 
     local req = {CharacterId = characterId, GroupId = suitPrefabInfo:GetGroupId()}
-    XNetwork.CallWithAutoHandleErrorCode("EquipPutOnChipGroupRequest", req, function(res)
-        -- 卸下成员身上的旧装备
-        for _, equipId in pairs(oldEquipIds) do
-            local equip = self:GetEquip(equipId)
-            equip:TakeOff()
-            self._Model:RemoveCharacterEquipId(characterId, equipId)
-        end
-        XDataCenter.EquipGuideManager.HandleEquipGuidePutOnOrTakeOff(oldEquipIds, characterId, false)
-
-        -- 穿在其他成员身上，先卸下装备，再穿上装备
-        local charIdDic = {}
-        for _, equipId in pairs(newEquipIds) do
-            local equip = self:GetEquip(equipId)
-            -- 穿在其他成员身上
-            if equip:IsWearing() then
-                self._Model:RemoveCharacterEquipId(equip.CharacterId, equipId)
-                charIdDic[equip.CharacterId] = true
-            end
-            -- 穿上装备
-            equip:PutOn(characterId)
-            self._Model:SetCharacterEquipId(characterId, equipId)
-            charIdDic[characterId] = true
-        end
-        XDataCenter.EquipGuideManager.HandleEquipGuidePutOnOrTakeOff(newEquipIds, characterId, true)
-
-        -- 更新角色数据
-        XMVCA:GetAgency(ModuleId.XCharacter):OnSyncCharacterEquipChange(charIdDic)
+    XNetwork.CallWithAutoHandleErrorCode("EquipPutOnChipGroupRequest", req, function()
+        -- 批量换装状态由完整下推统一落地，回调只保留界面事件、业务回调和提示。
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_EQUIPLIST_TAKEOFF_NOTYFY, newEquipIds)
         XEventManager.DispatchEvent(XEventId.EVENT_EQUIPLIST_TAKEOFF_NOTYFY, newEquipIds)
 
@@ -561,8 +517,11 @@ function XEquipAgency:Breakthrough(equipId)
 end
 
 -- 请求一键升级
-function XEquipAgency:EquipOneKeyFeedRequest(equipId, targetBreakthrough, targetLevel, operations, cb)
+function XEquipAgency:EquipOneKeyFeedRequest(equipId, targetBreakthrough, targetLevel, operations, cb, errCb)
     if XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.EquipQuick) then
+        if errCb then
+            errCb("EquipQuickNotOpen")
+        end
         return
     end
 
@@ -594,6 +553,9 @@ function XEquipAgency:EquipOneKeyFeedRequest(equipId, targetBreakthrough, target
     end
     -- 拦截空操作
     if XTool.IsTableEmpty(req.OperationInfos) then
+        if errCb then
+            errCb("EmptyOperationInfos")
+        end
         return
     end
 
@@ -603,6 +565,9 @@ function XEquipAgency:EquipOneKeyFeedRequest(equipId, targetBreakthrough, target
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             XLog.Error(XLog.Dump(req))
+            if errCb then
+                errCb(res.Code)
+            end
             return
         end
 
@@ -654,18 +619,39 @@ function XEquipAgency:RequestEquipResonance(equipId, slots, characterId, useEqui
     end
 end
 
-function XEquipAgency:CallEquipResonanceRequest(equipId, slots, characterId, useEquipId, useItemId, selectSkillIds, equipResonanceType)
+--- 发起装备共鸣请求，并在本地数据与刷新事件处理完成后回调请求结果。
+---@param equipId number
+---@param slots number[]
+---@param characterId number
+---@param useEquipId number|nil
+---@param useItemId number|nil
+---@param selectSkillIds number[]|nil
+---@param equipResonanceType number|nil
+---@param successCb fun()|nil
+---@param failCb fun(errorCode:any)|nil
+function XEquipAgency:CallEquipResonanceRequest(equipId, slots, characterId, useEquipId, useItemId,
+                                                selectSkillIds, equipResonanceType, successCb, failCb)
     local req = { EquipId = equipId, Slots = slots, CharacterId = characterId, UseEquipId = useEquipId, 
         UseItemId = useItemId, SelectSkillIds = selectSkillIds, SelectType = equipResonanceType }
+    local requestEquip = self:GetEquip(equipId)
+    local firstResonanceSlotMap = {}
+    for _, slot in ipairs(slots) do
+        firstResonanceSlotMap[slot] = requestEquip:GetResonanceInfo(slot) == nil
+    end
 
-    XNetwork.CallWithAutoHandleErrorCode("EquipResonanceRequest", req, function(res)
-        local equip = self:GetEquip(equipId)
-        for i, resonanceData in ipairs(res.ResonanceDatas) do
-            if equip:IsWeapon() then
-                equip:Resonance(resonanceData, true)
-            else
-                equip:Resonance(resonanceData)
+    XNetwork.Call("EquipResonanceRequest", req, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            if failCb then
+                failCb(res.Code)
             end
+            return
+        end
+
+        local equip = self:GetEquip(equipId)
+        for _, resonanceData in ipairs(res.ResonanceDatas) do
+            local isDirectApply = equip:IsWeapon() or firstResonanceSlotMap[resonanceData.Slot]
+            equip:Resonance(resonanceData, isDirectApply)
         end
         --5星及以上的装备（包括武器、意识）共鸣操作成功之后，将该装备自动上锁
         if self:CanResonance(equipId) then
@@ -681,7 +667,10 @@ function XEquipAgency:CallEquipResonanceRequest(equipId, slots, characterId, use
         XMVCA:GetAgency(ModuleId.XCharacter):OnSyncCharacterEquipChange(charIdDic)
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_EQUIP_RESONANCE_NOTYFY, equipId, slots)
         XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_RESONANCE_NOTYFY, equipId, slots)
-    end)
+        if successCb then
+            successCb()
+        end
+    end, nil, failCb, failCb)
 end
 
 -- 共鸣技能确认
@@ -1055,6 +1044,19 @@ end
 -- 获取所有装备的XEquip对象实例
 function XEquipAgency:GetEquipDic()
     return self._Model:GetEquipDic()
+end
+
+---获取玩家当前持有意识的共鸣技能总数。
+---@return number
+function XEquipAgency:GetAwarenessResonanceSkillCount()
+    local resonanceSkillCount = 0
+    for _, equip in pairs(self:GetEquipDic()) do
+        if equip:IsAwareness() then
+            resonanceSkillCount = resonanceSkillCount + equip:GetResonanceCount()
+        end
+    end
+
+    return resonanceSkillCount
 end
 
 -- 获取装备的配置表Id
@@ -1440,6 +1442,44 @@ function XEquipAgency:GetResonanceSkillInfo(equipId, pos)
     return self._Model:GetResonanceSkillInfo(equipId, pos)
 end
 
+-- 获取意识共鸣目标的达成和角色绑定状态
+function XEquipAgency:GetAwarenessResonanceTargetState(equipId, pos, targetResonanceData, characterId)
+    local state = {
+        HasTarget = false,
+        IsAchieved = false,
+        IsBindOtherCharacter = false,
+    }
+    local targetResonanceType = targetResonanceData and targetResonanceData.ResonanceType
+    local targetSkillId = targetResonanceData and targetResonanceData.SkillId
+    if not XTool.IsNumberValid(pos) or not XTool.IsNumberValid(targetResonanceType)
+        or not XTool.IsNumberValid(targetSkillId) then
+        return state
+    end
+
+    state.HasTarget = true
+    local equip = XTool.IsNumberValid(equipId) and self:GetEquip(equipId) or nil
+    local resonanceInfo = equip and equip:GetResonanceInfo(pos)
+    if not resonanceInfo then
+        return state
+    end
+
+    local bindCharacterId = resonanceInfo.CharacterId or 0
+    state.IsBindOtherCharacter = bindCharacterId ~= 0 and bindCharacterId ~= characterId
+    state.IsAchieved = not state.IsBindOtherCharacter
+        and resonanceInfo.Type == targetResonanceType
+        and resonanceInfo.TemplateId == targetSkillId
+    return state
+end
+
+function XEquipAgency:CreateResonanceSkillInfo(resonanceType, skillId)
+    if not XTool.IsNumberValid(resonanceType) or not XTool.IsNumberValid(skillId) then
+        return nil
+    end
+
+    local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
+    return XSkillInfoObj.New(resonanceType, skillId)
+end
+
 -- 修改后的GuessResonanceType方法，支持通过skillId和equipId推断共鸣类型
 function XEquipAgency:GuessResonanceType(skillId, equipTemplateId)
     -- 1. 先通过装备ID获取装备实例及品质信息
@@ -1503,38 +1543,55 @@ end
 
 -- 获取装备共鸣预览技能
 function XEquipAgency:GetResonancePreviewSkillInfoList(equipId, characterId, slot)
-    local skillInfoList = {}
-    local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
     local equip = self._Model:GetEquip(equipId)
-    local resonanceCfg = self._Model:GetConfigEquipResonance(equip.TemplateId)
+    if not equip then
+        return {}
+    end
+
+    return self:GetResonancePreviewSkillInfoListByTemplateId(equip.TemplateId, characterId, slot)
+end
+
+-- 获取装备共鸣预览技能（静态模板）
+function XEquipAgency:GetResonancePreviewSkillInfoListByTemplateId(templateId, characterId, slot)
+    local skillInfoList = {}
+    if not XTool.IsNumberValid(templateId) or not XTool.IsNumberValid(slot) then
+        return skillInfoList
+    end
+
+    local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
+    local resonanceCfg = self._Model:GetConfigEquipResonance(templateId)
 
     if XTool.IsTableEmpty(resonanceCfg) then
         return skillInfoList
     end
 
-    if characterId then
-        if equip:IsWeapon() then
+    if XTool.IsNumberValid(characterId) then
+        if self:IsEquipWeapon(templateId) then
             local poolId = resonanceCfg.WeaponSkillPoolId[slot]
-            local skillIds = self._Model:GetWeaponSkillPoolSkillIds(poolId, characterId, true)
-            if skillIds then
-                for _, skillId in ipairs(skillIds) do
-                    local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL, skillId)
-                    table.insert(skillInfoList, skillInfo)
+            if XTool.IsNumberValid(poolId) then
+                local skillIds = self._Model:GetWeaponSkillPoolSkillIds(poolId, characterId, true)
+                if skillIds then
+                    for _, skillId in ipairs(skillIds) do
+                        local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL, skillId)
+                        table.insert(skillInfoList, skillInfo)
+                    end
                 end
             end
         else
             local skillPoolId = resonanceCfg.CharacterSkillPoolId[slot]
-            local skillInfos = XMVCA.XCharacter:GetCharacterSkillPoolSkillInfos(skillPoolId, characterId)
-            for _, v in ipairs(skillInfos) do
-                local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL, v.SkillId)
-                table.insert(skillInfoList, skillInfo)
+            if XTool.IsNumberValid(skillPoolId) then
+                local skillInfos = XMVCA.XCharacter:GetCharacterSkillPoolSkillInfos(skillPoolId, characterId)
+                for _, v in ipairs(skillInfos) do
+                    local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL, v.SkillId)
+                    table.insert(skillInfoList, skillInfo)
+                end
             end
         end
     end
 
     -- 属性技能
     local attrPoolId = resonanceCfg.AttribPoolId[slot]
-    if attrPoolId then
+    if XTool.IsNumberValid(attrPoolId) then
         local attrInfos = XAttribConfigs.GetAttribGroupTemplateByPoolId(attrPoolId)
         local attribIdDic = {} -- 过滤重复AttribId，五星武器的共鸣技能
         for _, v in ipairs(attrInfos) do
@@ -1547,6 +1604,17 @@ function XEquipAgency:GetResonancePreviewSkillInfoList(equipId, characterId, slo
     end
 
     return skillInfoList
+end
+
+-- 共鸣技能是否在指定装备、角色和槽位的候选池中
+function XEquipAgency:IsResonanceSkillValid(templateId, characterId, slot, resonanceType, skillId)
+    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(resonanceType) or not XTool.IsNumberValid(skillId) then return false end
+
+    for _, skillInfo in ipairs(self:GetResonancePreviewSkillInfoListByTemplateId(templateId, characterId, slot)) do
+        if skillInfo.EquipResonanceType == resonanceType and skillInfo:GetSkillIdToServer() == skillId then return true end
+    end
+
+    return false
 end
 
 function XEquipAgency:GetSuitQuality(suitId)
@@ -2413,9 +2481,32 @@ end
 
 
 ---------------------------------------- #region EquipSkipId ----------------------------------------
+local EquipSkipCheckFunc = {
+    -- 跳转到协同作战，只支持5星及以下的装备。
+    [4003] = function(skipId, templateId)
+        if not XTool.IsNumberValid(templateId) then
+            return false
+        end
+        local cfg = XMVCA.XEquip:GetConfigEquip(templateId)
+        return cfg.Star < XEnumConst.EQUIP.MAX_STAR_COUNT
+    end,
+}
+
 function XEquipAgency:GetEquipSkipIds(templateId)
     local equipType = self:GetEquipClassifyByTemplateId(templateId)
     return self._Model:GetEquipSkipIds(equipType)
+end
+
+function XEquipAgency:GenerateEquipSkipData(templateId, func)
+    local data = {}
+    local ids = self:GetEquipSkipIds(templateId)
+    for _, id in ipairs(ids) do
+        local hook = EquipSkipCheckFunc[id]
+        if not hook or hook(id, templateId) then
+            table.insert(data, { id, false, func, templateId })
+        end
+    end
+    return data
 end
 ---------------------------------------- #endregion EquipSkipId ----------------------------------------
 
@@ -2468,6 +2559,16 @@ function XEquipAgency:GetWeaponOverrunCharacterId(weaponTemplateId)
     return self._Model:GetWeaponOverrunCharacterId(weaponTemplateId)
 end
 
+--- 判断武器在指定角色上下文下是否配置超限2
+---@param weaponTemplateId number
+---@param characterId number|nil 角色Id为空时使用武器关联角色
+---@return boolean
+function XEquipAgency:IsHasOverrunLevel2(weaponTemplateId, characterId)
+    characterId = XTool.IsNumberValidEx(characterId) and characterId or self:GetWeaponOverrunCharacterId(weaponTemplateId)
+    local overrunCfgIds = self:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
+    return XTool.IsNumberValidEx(overrunCfgIds[XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL2])
+end
+
 -- 通过配置表Id判断能否超限
 function XEquipAgency:CanOverrunByTemplateId(weaponTemplateId)
     return self._Model:CanOverrunByTemplateId(weaponTemplateId)
@@ -2497,6 +2598,13 @@ function XEquipAgency:GetWeaponOverrunSkillConfigById(id)
     return self._Model:GetWeaponOverrunSkillConfigById(id)
 end
 ---------------------------------------- #endregion WeaponOverrun ----------------------------------------
+
+
+---------------------------------------- #region EquipConfig ----------------------------------------
+function XEquipAgency:GetEquipConfigValuesByKey(key)
+    return self._Model:GetEquipConfigValuesByKey(key)
+end
+---------------------------------------- #endregion EquipConfig ----------------------------------------
 
 
 ---------------------------------------- #region LevelUpTemplate ----------------------------------------
@@ -2633,6 +2741,45 @@ end
 -- 打开装备意识界面
 function XEquipAgency:OpenUiEquipAwareness(characterId)
     XLuaUiManager.Open("UiEquipAwarenessV2P6", characterId)
+end
+
+--- 请求意识一键养成所需的商店数据。
+---@param cb function
+function XEquipAgency:_RequestAwarenessEnhanceShopInfo(cb)
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) then
+        cb()
+        return
+    end
+
+    XShopManager.GetBaseInfo(function()
+        -- 固定请求列表，避免同一缓存键因商店解锁状态变化而对应不同的商店集合。
+        XShopManager.GetShopInfoList({
+            XShopManager.MaterialShopId,
+            XGuildConfig.GuildPersonalShop,
+        }, cb, XShopManager.ActivityShopType.AwarenessOneKeyEnhance, true)
+    end)
+end
+
+-- 打开意识一键养成主界面
+function XEquipAgency:OpenUiEquipAwarenessEnhanceMain(characterId)
+    self:_RequestAwarenessEnhanceShopInfo(function()
+        XLuaUiManager.Open("UiEquipAwarenessEnhanceMain", characterId)
+    end)
+end
+
+--- 打开武器一键养成主界面：按角色从推荐阵容拉取目标武器方案数据
+---@param characterId number 角色Id
+function XEquipAgency:OpenUiEquipOneClickCultureDetailMain(characterId)
+    local roleTargetDetailData = XMVCA.XTeamRecommend:BuildRoleTargetDetailData(characterId)
+    local targetData = roleTargetDetailData and roleTargetDetailData.RecommendCharData
+    if not targetData or not XTool.IsNumberValid(targetData.WeaponId) then
+        XLog.Error("没有养成数据")
+        return
+    end
+    local shopId = XShopManager.MaterialShopId
+    XShopManager.GetShopInfoList({ shopId }, function()
+        XLuaUiManager.Open("UiEquipOneClickCultureDetailMain", targetData)
+    end, XShopManager.ShopType.Common, true)
 end
 
 -- 打开操作成功提示界面
@@ -2817,5 +2964,187 @@ function XEquipAgency:GetWeaponResonanceEffectPathByFight(fightNpcData)
     return result
 end
 --endregion
+
+
+--region 一键养成自动设置（对外接口）
+---@param settingType XEquipEnum.OneClickAutoSettingType
+---@return boolean
+function XEquipAgency:GetOneClickAutoSetting(settingType)
+    return self._Model:GetOneClickAutoSettingModel():GetSetting(settingType)
+end
+
+--endregion
+
+----------------------------------------
+-- 编辑器调试
+----------------------------------------
+-- 共鸣目标异常类型在日志中的强调颜色。
+local AWARENESS_RESONANCE_ERROR_TYPE_COLOR = "#FF4D4F"
+
+-- 共鸣类型 Id 到日志中文名称的映射。
+local AWARENESS_RESONANCE_TYPE_NAME = {
+    [XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB] = "属性",
+    [XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL] = "角色技能",
+    [XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL] = "武器技能",
+}
+
+-- 共鸣类型对应 EquipResonance 配置中的技能池字段。
+local AWARENESS_RESONANCE_POOL_FIELD = {
+    [XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB] = "AttribPoolId",
+    [XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL] = "CharacterSkillPoolId",
+    [XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL] = "WeaponSkillPoolId",
+}
+
+local AWARENESS_RESONANCE_POOL_NAME = {
+    [XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB] = "属性技能池",
+    [XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL] = "角色技能池",
+    [XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL] = "武器技能池",
+}
+
+local AWARENESS_RESONANCE_POOL_TYPE_LIST = {
+    XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB,
+    XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL,
+    XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL,
+}
+
+-- 获取共鸣类型的中文名称，未配置的类型保留 Id 便于排查。
+local function GetAwarenessResonanceLogTypeName(resonanceType)
+    return AWARENESS_RESONANCE_TYPE_NAME[resonanceType] or string.format("未知类型(%s)", tostring(resonanceType))
+end
+
+-- 获取指定意识模板和槽位下的候选技能池详情，用于解释目标技能为何未命中。
+---@param equipAgency XEquipAgency 装备模块 Agency
+---@param templateId number 目标意识模板 Id
+---@param characterId number 当前角色 Id
+---@param pos number 共鸣槽位
+---@param resonanceType number|nil 指定共鸣类型，nil 表示输出所有已配置类型
+---@return table poolDetailList 候选技能池技能详情列表
+local function GetAwarenessResonanceLogPoolDetailList(equipAgency, templateId, characterId, pos, resonanceType)
+    local resonanceConfig = equipAgency:GetConfigEquipResonance(templateId)
+    local skillInfoList = equipAgency:GetResonancePreviewSkillInfoListByTemplateId(templateId, characterId, pos)
+    local poolTypeList = resonanceType and { resonanceType } or AWARENESS_RESONANCE_POOL_TYPE_LIST
+    local poolDetailList = {}
+
+    for _, poolType in ipairs(poolTypeList) do
+        local poolField = AWARENESS_RESONANCE_POOL_FIELD[poolType]
+        local poolIdList = resonanceConfig and poolField and resonanceConfig[poolField]
+        local poolId = poolIdList and poolIdList[pos]
+        if XTool.IsNumberValid(poolId) then
+            local skillList = {}
+            for _, skillInfo in ipairs(skillInfoList) do
+                if skillInfo.EquipResonanceType == poolType then
+                    table.insert(skillList, tostring(skillInfo:GetSkillIdToServer()))
+                end
+            end
+
+            local poolName = AWARENESS_RESONANCE_POOL_NAME[poolType] or GetAwarenessResonanceLogTypeName(poolType)
+            table.insert(poolDetailList, {
+                Key = string.format("%s:%s", tostring(poolType), tostring(poolId)),
+                PoolType = poolType,
+                Text = string.format("%s（Id=%s）：候选技能Id=[%s]", poolName, tostring(poolId),
+                    #skillList > 0 and table.concat(skillList, "、") or "无"),
+            })
+        end
+    end
+
+    return poolDetailList
+end
+
+-- 将候选技能池详情写入去重汇总。
+---@param poolDetailMap table<string, boolean> 已记录的技能池详情键集合
+---@param poolDetailList table[] 去重后的技能池详情列表
+---@param currentPoolDetailList table 当前目标的技能池详情列表
+local function CollectAwarenessResonanceLogPoolDetail(poolDetailMap, poolDetailList, currentPoolDetailList)
+    for _, poolDetail in ipairs(currentPoolDetailList) do
+        if not poolDetailMap[poolDetail.Key] then
+            poolDetailMap[poolDetail.Key] = true
+            table.insert(poolDetailList, poolDetail)
+        end
+    end
+end
+
+-- 检查目标意识的共鸣技能是否缺失，或是否存在于对应意识的共鸣技能池中。
+---@param characterId number 当前角色 Id
+function XEquipAgency:CheckCharacterTargetAwarenessResonanceSkill(characterId)
+    if not XMain.IsEditorDebug then
+        return
+    end
+
+    local targetAwarenessSlotList = XMVCA.XTeamRecommend:GetCharacterTargetAwarenessSlotList(characterId) or {}
+    local targetErrorInfoList = {}
+    local missingCount = 0
+    local unavailableCount = 0
+    local poolDetailMap = {}
+    local poolDetailList = {}
+    local missingTargetErrorType = string.format("<color=%s>目标技能缺失</color>", AWARENESS_RESONANCE_ERROR_TYPE_COLOR)
+    local unavailableTargetErrorType = string.format("<color=%s>目标技能不在池内</color>",
+        AWARENESS_RESONANCE_ERROR_TYPE_COLOR)
+    for site = 1, XEnumConst.EQUIP.WEAR_AWARENESS_COUNT do
+        for pos = 1, XEnumConst.EQUIP.AWARENESS_RESONANCE_COUNT do
+            local targetSlotData = targetAwarenessSlotList[site]
+            if targetSlotData and XTool.IsNumberValid(targetSlotData.EquipTemplateId) then
+                local targetResonanceData = targetSlotData.ResonanceList and targetSlotData.ResonanceList[pos]
+                if not targetResonanceData or not XTool.IsNumberValid(targetResonanceData.ResonanceType)
+                    or not XTool.IsNumberValid(targetResonanceData.SkillId) then
+                    local targetType = targetResonanceData and targetResonanceData.ResonanceType
+                    local currentPoolDetailList = GetAwarenessResonanceLogPoolDetailList(self,
+                        targetSlotData.EquipTemplateId, characterId, pos,
+                        XTool.IsNumberValid(targetType) and targetType or nil)
+                    CollectAwarenessResonanceLogPoolDetail(poolDetailMap, poolDetailList, currentPoolDetailList)
+                    missingCount = missingCount + 1
+                    local targetTypeName = XTool.IsNumberValid(targetType)
+                        and GetAwarenessResonanceLogTypeName(targetType) or "未配置"
+                    local targetSkillId = targetResonanceData and XTool.IsNumberValid(targetResonanceData.SkillId)
+                        and tostring(targetResonanceData.SkillId) or "未配置"
+                    table.insert(targetErrorInfoList, string.format(
+                        "意识位=%s 槽位=%s 装备Id=%s 异常类型：%s 目标技能类型=%s 目标技能Id=%s",
+                        site, pos, tostring(targetSlotData.EquipTemplateId), missingTargetErrorType,
+                        targetTypeName, targetSkillId))
+                else
+                    local isValid = self:IsResonanceSkillValid(targetSlotData.EquipTemplateId, characterId,
+                        pos, targetResonanceData.ResonanceType, targetResonanceData.SkillId)
+                    if not isValid then
+                        local currentPoolDetailList = GetAwarenessResonanceLogPoolDetailList(self,
+                            targetSlotData.EquipTemplateId, characterId, pos, targetResonanceData.ResonanceType)
+                        CollectAwarenessResonanceLogPoolDetail(poolDetailMap, poolDetailList, currentPoolDetailList)
+                        unavailableCount = unavailableCount + 1
+                        table.insert(targetErrorInfoList, string.format(
+                            "意识位=%s 槽位=%s 装备Id=%s 异常类型：%s 目标技能类型=%s 目标技能Id=%s",
+                            site, pos, tostring(targetSlotData.EquipTemplateId), unavailableTargetErrorType,
+                            GetAwarenessResonanceLogTypeName(targetResonanceData.ResonanceType),
+                            tostring(targetResonanceData.SkillId)))
+                    end
+                end
+            end
+        end
+    end
+
+    if missingCount == 0 and unavailableCount == 0 then
+        return
+    end
+
+    local messageList = { string.format(
+        "XEquipAgency: 共鸣目标检测异常（角色Id=%s，总数=%s，目标缺失=%s，池外=%s）",
+        tostring(characterId), missingCount + unavailableCount, missingCount, unavailableCount) }
+    table.insert(messageList, "【目标技能异常】")
+    for _, targetErrorInfo in ipairs(targetErrorInfoList) do
+        table.insert(messageList, "    " .. targetErrorInfo)
+    end
+    if #poolDetailList > 0 then
+        table.insert(messageList, "【候选技能池详情】")
+        for _, poolType in ipairs(AWARENESS_RESONANCE_POOL_TYPE_LIST) do
+            for _, poolDetail in ipairs(poolDetailList) do
+                if poolDetail.PoolType == poolType then
+                    table.insert(messageList, "    " .. poolDetail.Text)
+                end
+            end
+        end
+    end
+    XLog.Error(table.concat(messageList, "\n"))
+end
+
+----------------------------------------
+-- 编辑器调试结束
+----------------------------------------
 
 return XEquipAgency

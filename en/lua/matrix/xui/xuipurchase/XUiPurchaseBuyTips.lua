@@ -116,6 +116,38 @@ function XUiPurchaseBuyTips:OnStart(data, checkBuyFun, updateCb, beforeBuyReqFun
         end
     end
 
+    self:RefreshYKRemainDayList()
+end
+
+-- 刷新"生效中"与剩余时长（仅血清月卡/武器研发的详情弹窗挂载了对应组件）
+function XUiPurchaseBuyTips:RefreshYKRemainDayList()
+    if not self.TxtValid or not self.TxtTimeRemain then
+        return
+    end
+
+    -- 资源月卡每月可购买一次，可能有多个过期时间，过滤出有效（>0）的剩余天数
+    local remainList = {}
+    for _, day in ipairs(self.Data.ResMonthlyCardRemainDayList or table.empty) do
+        if day > 0 then
+            table.insert(remainList, day)
+        end
+    end
+
+    -- 未购买任何一条：整行不显示（既不显示 0 天）
+    local hasAny = #remainList > 0
+    self.TxtValid.gameObject:SetActiveEx(hasAny)
+    self.TxtTimeRemain.gameObject:SetActiveEx(hasAny)
+    if not hasAny then
+        return
+    end
+
+    self.TxtValid.text = TextManager.GetText("PurchaseYKValidIng")
+
+    local parts = {}
+    for i, day in ipairs(remainList) do
+        table.insert(parts, TextManager.GetText("PurchaseYKRemainDayItem" .. i, day))
+    end
+    self.TxtTimeRemain.text = table.concat(parts, TextManager.GetText("PurchaseYKRemainDaySep"))
 end
 
 function XUiPurchaseBuyTips:OnEnable()
@@ -1235,25 +1267,36 @@ end
 --endregion
 
 function XUiPurchaseBuyTips:RefreshItemCount(itemId, priceTxt)
+    self:RefreshSignTipBuyBtnColor()
+
     if itemId ~= self.CurItemId then
         return
     end
     self:PayCoinStates(self.CurItemId, self.CurPriceTxt)
 end
 
+-- 虹卡数量变动时，重刷当前打开的签到礼包子面板购买按钮的价格颜色
+function XUiPurchaseBuyTips:RefreshSignTipBuyBtnColor()
+    local signTip = self.CurPrefabPath and self.PurchaseSignTipDic[self.CurPrefabPath]
+    if signTip and signTip.RefreshBuyBtnColor then
+        signTip:RefreshBuyBtnColor()
+    end
+end
+
+-- 按虹卡(消耗道具)拥有量给价格上色：足够为充足色，不足为不足色，返回富文本
+function XUiPurchaseBuyTips:GetConsumePriceColorText(itemId, price)
+    local colorEnough = CS.XGame.ClientConfig:GetString("UiPurchaseBuyTipsButtonColor1")
+    local colorUnenough = CS.XGame.ClientConfig:GetString("UiPurchaseBuyTipsButtonColor2")
+    local item = XDataCenter.ItemManager.GetItem(itemId)
+    local itemCount = item and item.Count or 0
+    local color = itemCount >= tonumber(price) and colorEnough or colorUnenough
+    return string.format("<color=%s>%s</color>", color, price)
+end
+
 function XUiPurchaseBuyTips:PayCoinStates(itemId, priceTxt)
     self.CurPriceTxt = priceTxt
     self.CurItemId = itemId
-    local colorEnough = CS.XGame.ClientConfig:GetString("UiPurchaseBuyTipsButtonColor1")
-    local colorUnenough = CS.XGame.ClientConfig:GetString("UiPurchaseBuyTipsButtonColor2")
-    local itemCount = XDataCenter.ItemManager.GetItem(itemId).Count
-    local priceText = ""
-    if itemCount >= tonumber(priceTxt) then
-        priceText = string.format("<color=%s>%s</color>", colorEnough, priceTxt)
-    else
-        priceText = string.format("<color=%s>%s</color>", colorUnenough, priceTxt)
-    end
-    self.BtnBuy:SetName(priceText)
+    self.BtnBuy:SetName(self:GetConsumePriceColorText(itemId, priceTxt))
 end
 
 ---@param data XPurchaseComboData

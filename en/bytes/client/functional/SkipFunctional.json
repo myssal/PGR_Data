@@ -2224,6 +2224,50 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 40200,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 201,
+        "Explain": "4.8阿德莱德特效皮",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40201,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 202,
+        "Explain": "4.8涅缇娅特效皮",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40202,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 203,
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40203,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 204,
+        "Explain": "4.8卡池复刻打脸图",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40204,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 205,
+        "Explain": "v4.8可肝商店新增打脸图",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 40756,
         "Origin": 7,
         "UiName": "OnOpenRepeatChallengeActivity",
@@ -3458,6 +3502,41 @@
         "ParamId": 115,
         "Explain": "4.7版本签到",
         "TimeId": 49110,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 50124,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 116,
+        "Explain": "4.8联动签到",
+        "TimeId": 50301,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 50125,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 117,
+        "Explain": "4.8版本签到",
+        "TimeId": 50911,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 50126,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 118,
+        "Explain": "4.8中秋签到",
+        "TimeId": 50912,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 50127,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 119,
+        "Explain": "【每次新建】v4.8五日周卡签到弹窗跳转",
         "IsHideFunc": true
     },
     {
@@ -6487,6 +6566,18 @@
         "FunctionalId": 10308,
         "CustomParams": [
             1042
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 537,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "Explain": "New Main Story Chapter 43",
+        "ConditionId": 1050153,
+        "FunctionalId": 10308,
+        "CustomParams": [
+            1043
         ],
         "IsHideFunc": true
     },
@@ -12925,6 +13016,29 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 7144,
+        "Origin": 7,
+        "UiName": "SkipToPartnerTeachingChapter",
+        "Explain": "To CUB Tutorial Trial - Chapter 36",
+        "FunctionalId": 1801,
+        "CustomParams": [
+            36
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 7145,
+        "Origin": 7,
+        "UiName": "SkipToPartnerTeachingChapter",
+        "Explain": "To CUB Tutorial Trial - Chapter 38",
+        "ConditionId": 1050153,
+        "FunctionalId": 1801,
+        "CustomParams": [
+            38
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 7200,
         "Origin": 1,
         "UiName": "UiNewFuben",
@@ -13156,6 +13270,19 @@
             1,
             22,
             7064
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 7220,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "Explain": "Go to Kurumi Collab Research - Otherworld Armament",
+        "FunctionalId": 401,
+        "CustomParams": [
+            1,
+            40,
+            7068
         ],
         "IsHideFunc": true
     },
@@ -14059,8 +14186,8 @@
     {
         "SkipId": 8017,
         "Origin": 7,
-        "UiName": "SkipToEquipGuideView",
-        "Explain": "To Crimson Weave Equipment Goal Setting Interface",
+        "UiName": "SkipToTeamRecommendView",
+        "Explain": "Go to Team Upgrade Recommendations",
         "CustomParams": [
             1021005
         ],
@@ -17540,6 +17667,28 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 19083,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "Explain": "Go to Members",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1411003
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 19084,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "Explain": "Go to Members",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1421003
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 20000,
         "Origin": 1,
         "UiName": "UiNewFuben",
@@ -17657,7 +17806,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -17756,7 +17905,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -18183,7 +18332,7 @@
         "CustomParams": [
             2,
             0,
-            5
+            6
         ],
         "IsHideFunc": true
     },
@@ -18212,7 +18361,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -18734,7 +18883,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -19215,7 +19364,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20068,7 +20217,7 @@
         "Explain": "New Character Theme Trial (Edit event no. after the 33rd event)",
         "FunctionalId": 10325,
         "CustomParams": [
-            50
+            52
         ],
         "IsHideFunc": true
     },
@@ -20144,7 +20293,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20215,7 +20364,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20276,7 +20425,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20411,7 +20560,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20488,7 +20637,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20641,7 +20790,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20793,7 +20942,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20869,7 +21018,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20992,7 +21141,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21143,7 +21292,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21184,7 +21333,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21280,7 +21429,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21618,7 +21767,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21803,7 +21952,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21881,7 +22030,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21919,6 +22068,44 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 20395,
+        "Origin": 7,
+        "UiName": "OnOpenCharacterFileFubenActivity",
+        "Explain": "新角色主题试玩（狂三）",
+        "FunctionalId": 10325,
+        "CustomParams": [
+            51
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20393,
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
+        "Explain": "Research",
+        "FunctionalId": 401,
+        "StartTime": "2026/9/29 10:00",
+        "CloseTime": "2026/11/3 23:59",
+        "CustomParams": [
+            1,
+            37,
+            5612
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20394,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "Explain": "【v4.8狂三】赛利卡补习班跳转（33期之后，新增跳转id）",
+        "IsRecord": true,
+        "FunctionalId": 10325,
+        "CustomParams": [
+            51
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 20392,
         "Origin": 6,
         "UiName": "UiFubenPracticeCharacterDetail",
@@ -21927,6 +22114,218 @@
         "CustomParams": [
             1021006,
             30100230
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20396,
+        "Origin": 7,
+        "UiName": "OnOpenGacha",
+        "Explain": "v4.8比安卡剧情跳转·自选复刻",
+        "FunctionalId": 1308,
+        "CustomParams": [
+            50,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20397,
+        "Origin": 7,
+        "UiName": "OnOpenGacha",
+        "FunctionalId": 1308,
+        "CustomParams": [
+            51,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20398,
+        "Origin": 7,
+        "UiName": "OnOpenGacha",
+        "FunctionalId": 1308,
+        "CustomParams": [
+            52,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20399,
+        "Origin": 7,
+        "UiName": "OnOpenGacha",
+        "FunctionalId": 1308,
+        "CustomParams": [
+            53,
+            1
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20400,
+        "Origin": 7,
+        "UiName": "SkipToSelfChoiceGacha",
+        "Explain": "v4.8跳转到当期Gacha自选卡池",
+        "FunctionalId": 10489,
+        "CustomParams": [
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20401,
+        "Origin": 7,
+        "UiName": "OnOpenGacha",
+        "ConditionId": 774800,
+        "FunctionalId": 403,
+        "CustomParams": [
+            50
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20402,
+        "Origin": 7,
+        "UiName": "OnOpenGacha",
+        "ConditionId": 774800,
+        "FunctionalId": 403,
+        "CustomParams": [
+            51
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20403,
+        "Origin": 7,
+        "UiName": "OnOpenGacha",
+        "ConditionId": 774800,
+        "FunctionalId": 403,
+        "CustomParams": [
+            52
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20404,
+        "Origin": 7,
+        "UiName": "OnOpenGacha",
+        "ConditionId": 774800,
+        "FunctionalId": 403,
+        "CustomParams": [
+            53
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20405,
+        "Origin": 6,
+        "UiName": "UiFavorabilityStory",
+        "Explain": "Go to Adelyde Affection Story",
+        "IsRecord": true,
+        "ConditionId": 1050153,
+        "CustomParams": [
+            1421003
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20406,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            1043
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20407,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1421003
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20408,
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            1421003
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20409,
+        "Origin": 7,
+        "UiName": "SkipToUiWelfare",
+        "Explain": "Complete \"Cosmic Wonders\" event missions",
+        "FunctionalId": 1,
+        "CustomParams": [
+            9,
+            47,
+            430
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20410,
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
+        "Explain": "【v4.8阿德莱德】前往主题卡池",
+        "FunctionalId": 401,
+        "StartTime": "2026/9/24 0:00",
+        "CloseTime": "2026/11/4 23:00",
+        "CustomParams": [
+            1,
+            35,
+            1516
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20411,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "【v4.8阿德莱德】前往涂装补给包",
+        "FunctionalId": 3,
+        "StartTime": "2026/9/24 0:00",
+        "CloseTime": "2026/11/4 23:00",
+        "CustomParams": [
+            2,
+            0,
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20412,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "Explain": "阿德莱德赛利卡补习班跳转（33期之后，新增跳转id）",
+        "IsRecord": true,
+        "FunctionalId": 10325,
+        "CustomParams": [
+            52
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20413,
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
+        "Explain": "Research",
+        "FunctionalId": 401,
+        "StartTime": "2026/9/29 10:00",
+        "CloseTime": "2026/11/3 23:59",
+        "CustomParams": [
+            1,
+            40,
+            7068
         ],
         "IsHideFunc": true
     },
@@ -25691,7 +26090,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -25759,7 +26158,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -25774,7 +26173,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -25804,7 +26203,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -25834,7 +26233,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -25856,7 +26255,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -25886,7 +26285,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -25931,7 +26330,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -25961,7 +26360,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -25976,7 +26375,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26001,7 +26400,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26031,7 +26430,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26083,7 +26482,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26123,7 +26522,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26213,7 +26612,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26257,7 +26656,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26287,7 +26686,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26302,7 +26701,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26341,7 +26740,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26366,7 +26765,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26406,7 +26805,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26436,7 +26835,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26486,7 +26885,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26552,7 +26951,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26592,7 +26991,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26607,7 +27006,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26647,7 +27046,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26662,7 +27061,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26677,7 +27076,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26717,7 +27116,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26732,7 +27131,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26757,7 +27156,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26797,7 +27196,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26838,7 +27237,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26872,7 +27271,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26887,7 +27286,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26902,7 +27301,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26932,7 +27331,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26957,7 +27356,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26972,7 +27371,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26997,7 +27396,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27012,7 +27411,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27197,7 +27596,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27212,7 +27611,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27227,7 +27626,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27264,7 +27663,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27279,7 +27678,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27294,7 +27693,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27334,7 +27733,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27349,7 +27748,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27364,7 +27763,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27379,7 +27778,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27394,7 +27793,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27432,7 +27831,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27472,7 +27871,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27497,7 +27896,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27540,7 +27939,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27585,7 +27984,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27615,7 +28014,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27652,7 +28051,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27682,7 +28081,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27749,7 +28148,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27779,7 +28178,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27817,7 +28216,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27832,7 +28231,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27862,7 +28261,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27892,7 +28291,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27922,7 +28321,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27937,7 +28336,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27975,7 +28374,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27990,7 +28389,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28020,7 +28419,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28086,7 +28485,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28114,7 +28513,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28144,7 +28543,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28159,7 +28558,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28184,7 +28583,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28224,7 +28623,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28254,7 +28653,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28279,7 +28678,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28307,7 +28706,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28337,7 +28736,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28352,7 +28751,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28428,7 +28827,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28481,7 +28880,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28496,7 +28895,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28546,7 +28945,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28561,7 +28960,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28591,7 +28990,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28606,7 +29005,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28659,7 +29058,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28689,7 +29088,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28714,7 +29113,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28729,7 +29128,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28769,7 +29168,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28794,7 +29193,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28824,7 +29223,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28849,7 +29248,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28879,7 +29278,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28894,7 +29293,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28909,7 +29308,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28924,7 +29323,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28939,7 +29338,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28973,7 +29372,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28988,7 +29387,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29044,7 +29443,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29059,7 +29458,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29099,7 +29498,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29114,7 +29513,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29142,7 +29541,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29172,7 +29571,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29187,7 +29586,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29202,7 +29601,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29217,7 +29616,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29247,7 +29646,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29290,7 +29689,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29330,7 +29729,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29399,7 +29798,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29439,7 +29838,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29479,7 +29878,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29522,7 +29921,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29547,7 +29946,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29577,7 +29976,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29592,7 +29991,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29607,7 +30006,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29622,7 +30021,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29662,7 +30061,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29688,7 +30087,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29718,7 +30117,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29762,7 +30161,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29777,7 +30176,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29807,7 +30206,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29822,7 +30221,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29837,7 +30236,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29880,7 +30279,7 @@
         "CustomParams": [
             2,
             0,
-            9
+            1
         ]
     },
     {
@@ -29894,7 +30293,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29924,7 +30323,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29954,7 +30353,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29969,7 +30368,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29984,7 +30383,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30014,7 +30413,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30059,7 +30458,22 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80321,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/9/24 0:00",
+        "CloseTime": "2026/11/4 23:00",
+        "CustomParams": [
+            2,
+            0,
+            5
         ],
         "IsHideFunc": true
     },
@@ -30074,7 +30488,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30089,7 +30503,97 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80324,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/9/24 0:00",
+        "CloseTime": "2026/11/4 23:00",
+        "CustomParams": [
+            2,
+            0,
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80325,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "Coating Shop",
+        "FunctionalId": 1001,
+        "StartTime": "2026/11/4 23:00",
+        "CustomParams": [
+            1,
+            0,
+            502
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80326,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/9/29 10:00",
+        "CloseTime": "2026/11/3 23:59",
+        "CustomParams": [
+            2,
+            0,
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80327,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/9/24 0:00",
+        "CloseTime": "2026/11/4 23:00",
+        "CustomParams": [
+            2,
+            0,
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80328,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "Coating Shop",
+        "FunctionalId": 1001,
+        "StartTime": "2026/11/4 23:00",
+        "CustomParams": [
+            1,
+            0,
+            504
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80329,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "Purchase Coating Supply Pack",
+        "FunctionalId": 5,
+        "StartTime": "2026/9/29 10:00",
+        "CloseTime": "2026/11/3 23:59",
+        "CustomParams": [
+            2,
+            0,
+            5
         ],
         "IsHideFunc": true
     },
@@ -31775,7 +32279,7 @@
         "SkipId": 90009,
         "Origin": 7,
         "UiName": "SkipToRepeatChallengeActivityShopByIndex",
-        "Explain": "Purchase Overclock Material Box (α) to obtain",
+        "Explain": "Simulation Shop Exchange",
         "FunctionalId": 1001,
         "CustomParams": [
             2
@@ -31828,7 +32332,7 @@
         "SkipId": 90015,
         "Origin": 7,
         "UiName": "SkipToRepeatChallengeActivityShopByIndex",
-        "Explain": "Purchase Overclock Material Box (β) to obtain",
+        "Explain": "Simulation Shop Exchange",
         "FunctionalId": 1001,
         "CustomParams": [
             2
@@ -32418,6 +32922,29 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 90073,
+        "Origin": 7,
+        "UiName": "OnOpenDALFestival",
+        "Explain": "Go to Event [Dream of Stagnant Cycle]",
+        "IsRecord": true,
+        "FunctionalId": 10513,
+        "TimeId": 50202,
+        "CustomParams": [
+            68
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90074,
+        "Origin": 10,
+        "UiName": "XPunishaar",
+        "Explain": "Go to Event [Circuit Calculus]",
+        "IsRecord": true,
+        "FunctionalId": 10509,
+        "TimeId": 50201,
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 90075,
         "Origin": 6,
         "UiName": "UiPurchase",
@@ -32426,7 +32953,7 @@
         "CustomParams": [
             2,
             0,
-            7
+            8
         ],
         "IsHideFunc": true
     },
@@ -32439,8 +32966,19 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90077,
+        "Origin": 1,
+        "UiName": "UiTransfiniteTowerMain",
+        "Explain": "Go to Event [Overclock Simulation]",
+        "IsRecord": true,
+        "ConditionId": 1050153,
+        "FunctionalId": 10510,
+        "TimeId": 50100,
         "IsHideFunc": true
     },
     {
@@ -32448,6 +32986,7 @@
         "Origin": 7,
         "UiName": "OpenLotto",
         "Explain": "Advance to event [Luna Pool Story].",
+        "ConditionId": 1050153,
         "FunctionalId": 10306,
         "CustomParams": [
             2001,
@@ -32460,6 +32999,7 @@
         "Origin": 7,
         "UiName": "OpenLotto",
         "Explain": "Go to Event [Vera Pool Story]",
+        "ConditionId": 1050153,
         "FunctionalId": 10306,
         "CustomParams": [
             2002,
@@ -32472,6 +33012,7 @@
         "Origin": 7,
         "UiName": "OpenLotto",
         "Explain": "Advance to event [Karenina Pool Story]",
+        "ConditionId": 1050153,
         "FunctionalId": 10306,
         "CustomParams": [
             2003,
@@ -32484,6 +33025,7 @@
         "Origin": 7,
         "UiName": "OpenLotto",
         "Explain": "Go to Event [The Merciful One Pool Story]",
+        "ConditionId": 1050153,
         "FunctionalId": 10306,
         "CustomParams": [
             2004,
@@ -32906,7 +33448,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ]
     },
     {
@@ -33042,7 +33584,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ]
     },
     {
@@ -33099,7 +33641,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ]
     },
     {
@@ -33510,7 +34052,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -34836,7 +35378,7 @@
         "TimeId": 2160716,
         "CustomParams": [
             1,
-            11
+            35
         ],
         "IsHideFunc": true
     },
@@ -34864,6 +35406,61 @@
         "CustomParams": [
             1,
             11
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 1300714,
+        "Origin": 6,
+        "UiName": "UiActivityBriefBase",
+        "Explain": "EN4.8活动主题面板deeplink",
+        "FunctionalId": 10303,
+        "TimeId": 2160719,
+        "CustomParams": [
+            0,
+            0,
+            0
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 1300715,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "Explain": "EN4.8阿德莱德卡池deeplink",
+        "FunctionalId": 401,
+        "TimeId": 2160720,
+        "CustomParams": [
+            1,
+            35
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 1300716,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "Explain": "EN4.8联动狂三卡池deeplink",
+        "FunctionalId": 401,
+        "TimeId": 2160721,
+        "CustomParams": [
+            1,
+            37,
+            5612
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 1300717,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "EN4.8洁塔薇联动涂装deeplink",
+        "FunctionalId": 3,
+        "TimeId": 2160722,
+        "CustomParams": [
+            2,
+            0,
+            5
         ],
         "IsHideFunc": true
     },
@@ -35022,7 +35619,7 @@
         "CustomParams": [
             2,
             0,
-            9
+            1
         ]
     },
     {
@@ -35033,8 +35630,8 @@
         "Explain": "BP Face Close-Up",
         "ConditionId": 775500,
         "CustomParams": [
-            1789333200,
-            1789938000
+            1792962000,
+            1793566800
         ]
     },
     {
@@ -35091,7 +35688,7 @@
         "Explain": "涂装试玩-4.8洁塔薇",
         "ConditionId": 1050153,
         "CustomParams": [
-            1
+            127
         ]
     },
     {
@@ -35122,6 +35719,26 @@
         "ConditionId": 1050153,
         "CustomParams": [
             133
+        ]
+    },
+    {
+        "SkipId": 1300652,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.8阿德莱德试玩",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            139
+        ]
+    },
+    {
+        "SkipId": 1300653,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.8涅缇娅试玩",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            138
         ]
     }
 ]
