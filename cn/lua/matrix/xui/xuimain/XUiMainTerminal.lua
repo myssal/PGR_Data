@@ -75,26 +75,79 @@ function XUiMainTerminal:OnStart(uiMain)
     self.GridTips = {}
     self:InitUi()
     self:InitCb()
+    self:InitAudioCueEventListener()
+end
+
+function XUiMainTerminal:ResetAudioCueEffectState()
+    self.AudioCueEffectActiveIds = {}
+    self.AudioCueEffectActiveCount = 0
+    self.UiMain:StopAnimation("V4P7PanelEgg‌On", true, false)
+    self.UiMain:StopAnimation("V4P7PanelEgg‌Off", true, false)
+    self.UiMain:ForceSkipToEndAnimation("V4P7PanelEgg‌Off")
+    self.PanelV4P7.gameObject:SetActiveEx(false)
 end
 
 function XUiMainTerminal:OnEnable(uiMain)
-    XEventManager.AddEventListener(XEventId.EVENT_SIGN_IN_FIVE_OCLOCK_REFRESH, self.RefreshGridTips, self)
-    XEventManager.AddEventListener(XEventId.EVENT_MAINUI_TERMINAL_NEED_REFRESH, self.RefreshGridTips, self)
+    self:_SetEvent(true)
+    self:ResetAudioCueEffectState()
     self:Show()
 end
+
+
+
+function XUiMainTerminal:OnDisable()
+    if not XTool.IsTableEmpty(self.SequenceList) then
+        for _, tween in ipairs(self.SequenceList) do
+            tween:Kill();
+        end
+        self.SequenceList = {}
+    end
+    
+    --改变状态-触发红点检查
+    XEventManager.DispatchEvent(XEventId.EVENT_MAINUI_TERMINAL_STATUS_CHANGE)
+    CsXGameEventManager.Instance:Notify(XEventId.EVENT_MAINUI_TERMINAL_STATUS_CHANGE)
+    XDataCenter.UiPcManager.OnUiDisableAbandoned(true, self)
+    self:_SetEvent(false)
+    self:ResetAudioCueEffectState()
+end
+
+--region event
+function XUiMainTerminal:_SetEvent(flag)
+    if flag then
+        XEventManager.AddEventListener(XEventId.EVENT_SIGN_IN_FIVE_OCLOCK_REFRESH, self.RefreshGridTips, self)
+        XEventManager.AddEventListener(XEventId.EVENT_MAINUI_TERMINAL_NEED_REFRESH, self.RefreshGridTips, self)
+        XEventManager.AddEventListener(XEventId.EVENT_MUSIC_PLAYER_CHANGE, self._OnMusicPlayerChange, self)
+        if self._TimerId then
+            XScheduleManager.UnSchedule(self._TimerId)
+            self._TimerId = nil
+        end
+        self._TimerId = XScheduleManager.ScheduleForever(function()
+            self:RefreshTime()
+        end, Minute)
+    else
+        XEventManager.RemoveEventListener(XEventId.EVENT_SIGN_IN_FIVE_OCLOCK_REFRESH, self.RefreshGridTips, self)
+        XEventManager.RemoveEventListener(XEventId.EVENT_MAINUI_TERMINAL_NEED_REFRESH, self.RefreshGridTips, self)
+        XEventManager.RemoveEventListener(XEventId.EVENT_MUSIC_PLAYER_CHANGE, self._OnMusicPlayerChange, self)
+        if self._TimerId then
+            XScheduleManager.UnSchedule(self._TimerId)
+            self._TimerId = nil
+        end
+    end
+end
+
+function XUiMainTerminal:_OnMusicPlayerChange()
+    self:_RefreshMusicPlayer()
+end
+--endregion
+
 
 function XUiMainTerminal:Show()
     --时间刷新
     self:RefreshTime()
-    if not self.TimerId then
-        self.TimerId = XScheduleManager.ScheduleForever(function()
-            self:RefreshTime()
-        end, Minute)
-    end
     local isPc = XDataCenter.UiPcManager.IsPc()
     self.ImgBattery.transform.parent.gameObject:SetActiveEx(not isPc)
     --刷新播放器
-    self:RefreshMusicPlayer()
+    self:_RefreshMusicPlayer()
     --刷新子菜单
     self:RefreshSubMenu()
     --刷新提示栏
@@ -109,26 +162,6 @@ function XUiMainTerminal:Show()
     XDataCenter.UiPcManager.OnUiEnable(self, "OnBtnTanchuangCloseBig")
 end
 
-function XUiMainTerminal:OnDisable()
-    if self.TimerId then
-        XScheduleManager.UnSchedule(self.TimerId)
-        self.TimerId = nil
-    end
-
-    if not XTool.IsTableEmpty(self.SequenceList) then
-        for _, tween in ipairs(self.SequenceList) do
-            tween:Kill();
-        end
-        self.SequenceList = {}
-    end
-    
-    --改变状态-触发红点检查
-    XEventManager.DispatchEvent(XEventId.EVENT_MAINUI_TERMINAL_STATUS_CHANGE)
-    CsXGameEventManager.Instance:Notify(XEventId.EVENT_MAINUI_TERMINAL_STATUS_CHANGE)
-    XDataCenter.UiPcManager.OnUiDisableAbandoned(true, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_SIGN_IN_FIVE_OCLOCK_REFRESH, self.RefreshGridTips, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_MAINUI_TERMINAL_NEED_REFRESH, self.RefreshGridTips, self)
-end
 
 function XUiMainTerminal:OnRelease()
     self:RemoveItemListener()
@@ -191,6 +224,7 @@ function XUiMainTerminal:InitUi()
     self.ScreenPointId=self:AddRedPointEvent(self.BtnScreen,self.CheckBtnScreenRedPoint,self,RedPointConditionGroup.Screen)
 end
 
+
 function XUiMainTerminal:RefreshTime()
     local timeOfNow = XTime.GetServerNowTimestamp()
     local dayOfWeek = os.date("%A", timeOfNow)
@@ -201,20 +235,19 @@ function XUiMainTerminal:RefreshTime()
     self.TxtTime.text = XTime.TimestampToGameDateTimeString(timeOfNow, "HH:mm")
 end
 
-function XUiMainTerminal:RefreshMusicPlayer()
+function XUiMainTerminal:_RefreshMusicPlayer()
     if XUiManager.IsHideFunc then
         self.BtnMusicPlayer.gameObject:SetActiveEx(false)
     end
-    
-    local albumId = XMVCA.XAudio:GetUiMainNeedPlayedAlbumId()
-    local template = XMVCA.XAudio:GetAlbumTemplateById(albumId)
-    if not template then
+
+    local musicCO = XMVCA.XMusicPlayer:GetCurCommonBgnCO()   
+    if not musicCO then
         return
     end
-    self.TxtMusicName.text  = string.gsub(XUiHelper.ReplaceTextNewLine(template.Name), "\n", "")
-    self.TxtAuthorName.text = string.gsub(XUiHelper.ReplaceTextNewLine(template.Composer), "\n", "")
-    self.RImgMusicIcon:SetRawImage(template.Cover)
-    self.RImgMusicBg:SetRawImage(template.Bg)
+    self.TxtMusicName.text  = string.gsub(XUiHelper.ReplaceTextNewLine(musicCO.Name), "\n", "")
+    self.TxtAuthorName.text = string.gsub(XUiHelper.ReplaceTextNewLine(musicCO.Composer), "\n", "")
+    self.RImgMusicIcon:SetRawImage(musicCO.Cover)
+    self.RImgMusicBg:SetRawImage(musicCO.Bg)
 
     CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.PanelAuthorName)
     self.ContentWidth   = self.PanelAuthorName.sizeDelta.x
@@ -226,7 +259,7 @@ end
 
 --音乐选择界面关闭回调
 function XUiMainTerminal:OnMusicPlayerClose()
-    self:RefreshMusicPlayer()
+    self:_RefreshMusicPlayer()
 end
 
 function XUiMainTerminal:RefreshSubMenu()
@@ -313,7 +346,59 @@ function XUiMainTerminal:OnBtnMusicPlayerClick()
         return
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnMusicPlayer)
-    XLuaUiManager.Open("UiMusicPlayer", handler(self, self.OnMusicPlayerClose))
+    -- XLuaUiManager.Open("UiMusicPlayer", handler(self, self.OnMusicPlayerClose))
+    XLuaUiManager.Open("UiMusicPlayerMain")
+end
+
+function XUiMainTerminal:InitAudioCueEventListener()
+    local audioCueEventListener = self.BtnMusicPlayer.transform:GetComponent(typeof(CS.XAudioCueEventListener))
+    if not audioCueEventListener then return end
+
+    self.AudioCueEffectActiveIds = {}
+    self.AudioCueEffectActiveCount = 0
+    audioCueEventListener:AddCuePlayListener(handler(self, self.OnAudioCueEffectPlay))
+    audioCueEventListener:AddCueStopListener(handler(self, self.OnAudioCueEffectStop))
+end
+
+function XUiMainTerminal:OnAudioCueEffectPlay(audioInfo)
+    if not XMVCA.XMusicPlayer:CheckMainUiEasterEggOpen() then
+        return
+    end
+
+    if not audioInfo then
+        return
+    end
+
+    if self.AudioCueEffectActiveIds[audioInfo.Id] then
+        return
+    end
+
+    self.AudioCueEffectActiveIds[audioInfo.Id] = true
+    self.AudioCueEffectActiveCount = self.AudioCueEffectActiveCount + 1
+
+    if self.AudioCueEffectActiveCount == 1 then
+        self.UiMain:StopAnimation("V4P7PanelEgg‌Off", true, false)
+        self.PanelV4P7.gameObject:SetActiveEx(true)
+        self.UiMain:PlayAnimation("V4P7PanelEgg‌On")
+    end
+end
+
+function XUiMainTerminal:OnAudioCueEffectStop(audioInfo)
+    if not audioInfo or not self.AudioCueEffectActiveIds[audioInfo.Id] then
+        return
+    end
+
+    self.AudioCueEffectActiveIds[audioInfo.Id] = nil
+    self.AudioCueEffectActiveCount = self.AudioCueEffectActiveCount - 1
+
+    if self.AudioCueEffectActiveCount <= 0 then
+        self.UiMain:StopAnimation("V4P7PanelEgg‌On", true, false)
+        self.UiMain:PlayAnimation("V4P7PanelEgg‌Off", function()
+            if self.AudioCueEffectActiveCount <= 0 then
+                self.PanelV4P7.gameObject:SetActiveEx(false)
+            end
+        end)
+    end
 end
 
 --活动日历

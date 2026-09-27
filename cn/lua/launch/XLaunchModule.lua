@@ -35,6 +35,7 @@ local UI_MODULE_NAME = "XLaunchUiModule"
 local PathModule = require(APP_PATH_MODULE_NAME)
 local FileModuleCreator = require(FILE_MODULE_NAME)
 local XLaunchUiModule = require(UI_MODULE_NAME)
+pcall(require, "XLaunchRuntimeGmInject")
 local VersionModule
 
 local LaunchFileModule
@@ -176,15 +177,49 @@ InitGame = function(urlTable, hashTable)
     end
 
     if not PathModule.IsEditorOrStandalone() or CsApplication.Mode == CS.XMode.Release then
-
         CS.XResourceManager.SetFileDelegate()
         CS.XResourceManager.ResolveBundleManifest("matrixmanifest")
     end
 
     --补充做一下GC
     --collectgarbage("collect")
-    CS.XGame.InitGame()
+    local value = CS.UnityEngine.PlayerPrefs.GetInt("ShaderWarmUp", 0)
+    if CS.XRemoteConfig.IsShaderWarmUp and value == 0 then
+    -- if value == 0 then
+        ShaderWarmUp()
+    else
+        CS.XGame.InitGame()
+    end
 end
+
+ShaderWarmUp = function()
+    local xsvcInst = CS.XSVCWarmUp.Instance
+    xsvcInst:WarmUpShader()
+    local vtotalCount = xsvcInst.TotalVariantCount
+    if vtotalCount <= 0 then
+        CS.XGame.InitGame()
+        return
+    end
+
+    local warmUpTime = os.time()
+    -- 显示进度条
+    CsGameEventManager:Notify(CS.XEventId.EVENT_LAUNCH_START_DOWNLOAD, vtotalCount, false, CsApplication.GetText("ShaderWarmUp") .. "(%d/%d)")
+    CsApplication.SetProgress(0)
+    local timerId
+    timerId = CS.XScheduleManager.ScheduleForever(function()
+        local progress = xsvcInst.WarmUpProgress
+        CsApplication.SetProgress(progress)
+        if progress >= 1 then
+            CS.XLog.Debug("Shader WarmUp cost time " .. (os.time() - warmUpTime))
+            CS.UnityEngine.PlayerPrefs.SetInt("ShaderWarmUp", 1)
+            CS.UnityEngine.PlayerPrefs.Save()
+            CsGameEventManager:Notify(CS.XEventId.EVENT_LAUNCH_START_LOADING)
+            CS.XScheduleManager.UnSchedule(timerId)
+            CS.XGame.InitGame()
+        end
+    end, 100)
+end
+
 --- <<<<<<<<<<<<<<<<<<<<<<<<<< 私有方法 * 定义 <<<<<<<<<<<<<<<<<<<<<<<<<<
 
 CheckUpdate = function(isReloaded)

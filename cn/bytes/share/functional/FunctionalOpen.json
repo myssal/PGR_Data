@@ -222,7 +222,7 @@
         "Name": "装备目标-推荐",
         "Priority": 14,
         "Condition": [
-            770400
+            770422
         ],
         "Type": 1,
         "FunctionType": 1
@@ -232,7 +232,7 @@
         "Name": "装备目标-设定",
         "Priority": 14,
         "Condition": [
-            770400
+            770422
         ],
         "Type": 1,
         "FunctionType": 1
@@ -1690,11 +1690,41 @@
         "FunctionType": 1
     },
     {
+        "Id": 10509,
+        "Name": "战双扎玩法",
+        "Priority": 132,
+        "Condition": [
+            774800
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10510,
+        "Name": "4.8超限玩法",
+        "Priority": 133,
+        "Condition": [
+            774800
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
         "Id": 10512,
         "Name": "复刷关双倍任务",
         "Priority": 134,
         "Condition": [
             770422
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10513,
+        "Name": "4.8联动开启",
+        "Priority": 135,
+        "Condition": [
+            100001
         ],
         "Type": 1,
         "FunctionType": 1
@@ -2644,6 +2674,16 @@
         "Id": 10498,
         "Name": "累消商店活动",
         "Priority": 70,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10511,
+        "Name": "成员-一键养成",
+        "Priority": 11,
+        "Condition": [
+            30404
+        ],
         "Type": 1,
         "FunctionType": 1
     },

@@ -1397,8 +1397,28 @@
         "ChipBindType": 1,
         "ActiveSuitItemId": 47,
         "ActiveSuitItemCount": 1200,
+        "ShowOverrunEffect": true,
+        "Name": "谐振吸收",
         "Desc": "谐振吸收：绑定意识套装效果计数+2",
-        "Ability": 90
+        "Ability": 90,
+        "UiNodePosX": [
+            -668.0,
+            -678.9
+        ],
+        "UiNodePosY": [
+            132.0,
+            71.5999
+        ],
+        "UiLinePointList": [
+            "491.6,-53.8|243.36,7.78|188,7.78",
+            "520.21,7.78|188,7.78"
+        ],
+        "SelectedCameraPosX": 0.3684,
+        "SelectedCameraPosY": 0.3885,
+        "SelectedCameraPosZ": -25.5627,
+        "SelectedCameraRotX": 2.2588,
+        "SelectedCameraRotY": 0.0887,
+        "SelectedCameraRotZ": -11.3662
     },
     {
         "Id": 78,
@@ -1794,6 +1814,325 @@
     {
         "Id": 90,
         "WeaponId": 2676001,
+        "Level": 1,
+        "LevelName": 1,
+        "ConsumeItemIds": [
+            34000
+        ],
+        "ConsumeItemCounts": [
+            25
+        ],
+        "OverrunType": 1,
+        "ChipBindType": 1,
+        "ActiveSuitItemId": 47,
+        "ActiveSuitItemCount": 1200,
+        "Desc": "谐振吸收：绑定意识套装效果计数+2",
+        "Ability": 90
+    },
+    {
+        "Id": 91,
+        "WeaponId": 2686001,
+        "Level": 1,
+        "LevelName": 1,
+        "ConsumeItemIds": [
+            34000
+        ],
+        "ConsumeItemCounts": [
+            25
+        ],
+        "OverrunType": 1,
+        "ChipBindType": 1,
+        "ActiveSuitItemId": 47,
+        "ActiveSuitItemCount": 1200,
+        "Desc": "谐振吸收：绑定意识套装效果计数+2",
+        "Ability": 90
+    },
+    {
+        "Id": 92,
+        "WeaponId": 2606001,
+        "Level": 2,
+        "LevelName": 2,
+        "ConsumeItemIds": [
+            34001
+        ],
+        "ConsumeItemCounts": [
+            25
+        ],
+        "OverrunType": 2,
+        "MagicIds": [
+            126312
+        ],
+        "ShowOverrunSkillId": 2,
+        "ShowOverrunEffect": true,
+        "CharacterId": 1031005,
+        "Name": "谐振觉醒",
+        "Desc": "获得谐振技能—镜梦偕生",
+        "Ability": 90,
+        "UiNodePosX": [
+            234.3,
+            235.8,
+            218.1999
+        ],
+        "UiNodePosY": [
+            247.8,
+            296.6,
+            296.6
+        ],
+        "UiLinePointList": [
+            "-373.1,-197.8|-234.6,0|-196.27,0",
+            "-418,-218.3|-301,0|-196.27,0",
+            "-569.5,-66.5|-232.7,0|-196.27,0"
+        ],
+        "SelectedCameraPosX": 0.37,
+        "SelectedCameraPosY": 0.61,
+        "SelectedCameraPosZ": -25.5627,
+        "SelectedCameraRotX": 11.76,
+        "SelectedCameraRotY": 0.089,
+        "SelectedCameraRotZ": -11.366
+    },
+    {
+        "Id": 93,
+        "WeaponId": 2606001,
+        "Level": 3,
+        "LevelName": "2_1",
+        "ConsumeItemIds": [
+            34001
+        ],
+        "ConsumeItemCounts": [
+            5
+        ],
+        "OverrunType": 3,
+        "CharacterId": 1031005,
+        "Name": "核心谐振—1",
+        "Desc": "核心被动醒世明光+1",
+        "UpSkillGroupId": 1035210,
+        "UpSkillGroupLevel": 1,
+        "UiNodePosX": [
+            97.3,
+            130.3,
+            208.8999,
+            270.1
+        ],
+        "UiNodePosY": [
+            -215.5,
+            -272.2,
+            -178.1999,
+            145.3999
+        ],
+        "UiLinePointList": [
+            "-281.65,169|-194.3,2.3|-149.31,2.3",
+            "-289.58,160.5|-225.1,2.3|-149.31,2.3",
+            "-733.74,144.7|-214.1,2.3|-149.31,2.3",
+            "-715.12,-401.3|-232.2,2.3|-149.31,2.3"
+        ],
+        "SelectedCameraPosX": 0.1473,
+        "SelectedCameraPosY": 1.3846,
+        "SelectedCameraPosZ": -24.8791,
+        "SelectedCameraRotX": 61.8283,
+        "SelectedCameraRotY": 21.2084,
+        "SelectedCameraRotZ": -25.239
+    },
+    {
+        "Id": 94,
+        "WeaponId": 2606001,
+        "Level": 4,
+        "LevelName": "2_2",
+        "ConsumeItemIds": [
+            34001
+        ],
+        "ConsumeItemCounts": [
+            5
+        ],
+        "OverrunType": 3,
+        "CharacterId": 1031005,
+        "Name": "核心谐振—2",
+        "Desc": "核心被动醒世明光+1",
+        "UpSkillGroupId": 1035210,
+        "UpSkillGroupLevel": 1,
+        "UiNodePosX": [
+            "",
+            "",
+            -650.4,
+            -674.0999,
+            -541.0999
+        ],
+        "UiNodePosY": [
+            "",
+            "",
+            -6.8,
+            -194.8999,
+            -323.7999
+        ],
+        "UiLinePointList": [
+            "",
+            "",
+            "225.43,15.8|139,15.8",
+            "363.8,108.5|197,15.8|139,15.8",
+            "378.9,116.6|197,15.8|139,15.8"
+        ],
+        "SelectedCameraPosX": 0.1,
+        "SelectedCameraPosY": 1.35,
+        "SelectedCameraPosZ": -24.8791,
+        "SelectedCameraRotX": 61.8279,
+        "SelectedCameraRotY": 21.208,
+        "SelectedCameraRotZ": -69.8
+    },
+    {
+        "Id": 95,
+        "WeaponId": 2606001,
+        "Level": 5,
+        "LevelName": "2_3",
+        "ConsumeItemIds": [
+            34001
+        ],
+        "ConsumeItemCounts": [
+            5
+        ],
+        "OverrunType": 3,
+        "CharacterId": 1031005,
+        "Name": "必杀谐振—3",
+        "Desc": "必杀技于万象中重生+1",
+        "UpSkillGroupId": 1035170,
+        "UpSkillGroupLevel": 1,
+        "UiNodePosX": [
+            "",
+            "",
+            "",
+            -657.5999,
+            -743.9,
+            -663.4,
+            -321.5
+        ],
+        "UiNodePosY": [
+            "",
+            "",
+            "",
+            250.8,
+            113.6999,
+            297.2,
+            262.1
+        ],
+        "UiLinePointList": [
+            "",
+            "",
+            "",
+            "356.6,-148.2|189,18.5|140.9,18.5",
+            "373.3,18.5|140.9,18.5",
+            "276.27,-134.3|194.5,18.5|140.9,18.5",
+            "323.9,-157.9|180.9,18.5|140.9,18.5"
+        ],
+        "SelectedCameraPosX": -0.3499,
+        "SelectedCameraPosY": 1.0,
+        "SelectedCameraPosZ": -24.6,
+        "SelectedCameraRotX": 42.5351,
+        "SelectedCameraRotY": 71.8339,
+        "SelectedCameraRotZ": -9.2799
+    },
+    {
+        "Id": 96,
+        "WeaponId": 2606001,
+        "Level": 6,
+        "LevelName": "2_4",
+        "ConsumeItemIds": [
+            34001
+        ],
+        "ConsumeItemCounts": [
+            5
+        ],
+        "OverrunType": 3,
+        "CharacterId": 1031005,
+        "Name": "必杀谐振—1",
+        "Desc": "必杀技于万象中重生+1",
+        "UpSkillGroupId": 1035170,
+        "UpSkillGroupLevel": 1,
+        "UiNodePosX": [
+            "",
+            "",
+            "",
+            "",
+            221.6999,
+            251.5,
+            240.5
+        ],
+        "UiNodePosY": [
+            "",
+            "",
+            "",
+            "",
+            276.2999,
+            196.8,
+            -188.6
+        ],
+        "UiLinePointList": [
+            "",
+            "",
+            "",
+            "",
+            "-303.8,-153.1|-206.3,3.2|-148.12,3.2",
+            "-490.4,129.6|-206.3,3.2|-148.12,3.2",
+            "-382.9,132.3|-206.3,3.2|-148.12,3.2"
+        ],
+        "SelectedCameraPosX": -0.15,
+        "SelectedCameraPosY": 1.0,
+        "SelectedCameraPosZ": -25.0,
+        "SelectedCameraRotX": 36.7999,
+        "SelectedCameraRotY": 38.4099,
+        "SelectedCameraRotZ": 8.06
+    },
+    {
+        "Id": 97,
+        "WeaponId": 2606001,
+        "Level": 7,
+        "LevelName": "2_5",
+        "ConsumeItemIds": [
+            34001
+        ],
+        "ConsumeItemCounts": [
+            5
+        ],
+        "OverrunType": 3,
+        "CharacterId": 1031005,
+        "Name": "必杀谐振—2",
+        "Desc": "必杀技于万象中重生+1",
+        "UpSkillGroupId": 1035170,
+        "UpSkillGroupLevel": 1,
+        "UiNodePosX": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            -701.7,
+            -681.2999
+        ],
+        "UiNodePosY": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            -213.8,
+            -285.0
+        ],
+        "UiLinePointList": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "679.9,-196.4|194.5,18.5|140.9,18.5",
+            "271.5,275.8|195.8,18.5|140.9,18.5"
+        ],
+        "SelectedCameraPosX": 0.1,
+        "SelectedCameraPosY": 0.15,
+        "SelectedCameraPosZ": -25.36,
+        "SelectedCameraRotX": -10.0,
+        "SelectedCameraRotY": 15.1999,
+        "SelectedCameraRotZ": -17.3199
+    },
+    {
+        "Id": 98,
+        "WeaponId": 2696001,
         "Level": 1,
         "LevelName": 1,
         "ConsumeItemIds": [

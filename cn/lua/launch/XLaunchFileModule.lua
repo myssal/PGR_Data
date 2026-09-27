@@ -515,9 +515,6 @@ local module_creator = function()
                     removeResIdsRecord = {}
                 end
 
-                -- 4.6兜底：本次强制下载sub=4000并补写Launch下载记录
-                local needForceSub4000Download46 = XLaunchDlcManager.CheckNeedForceSub4000Download46()
-
                 -- 分包补丁
                 ResSizeDic = {}
                 local subHasUninstalledCache = {} -- 缓存Sub级卸载意图检查结果，避免同Sub下多个res重复查询
@@ -562,12 +559,6 @@ local module_creator = function()
                             needDownloadDlc = true
                         end
                     end
-                    if not needDownloadDlc and needForceSub4000Download46
-                            and ResId2SubIdMap and tostring(ResId2SubIdMap[resId]) == "4000"
-                            and not isUninstalled then
-                        needDownloadDlc = true
-                        XLaunchDlcManager.SetLaunchDownloadRecord(resId) -- 补写记录，确保后续热更能下载补丁
-                    end
                     if IsDebugBuild then
                         needDownloadMap[resId] = needDownloadDlc
                         print(string.format("[Debug] resId: %s isHotUpdateRes: %s, isSelectFullOrSelectRemove: %s, checkNeedDownload: %s, removeResIdsRecord: %s, ignore: %s", resId,
@@ -599,10 +590,6 @@ local module_creator = function()
                 end
 
                 SetDlcTable(dlcTableMap)
-                -- 4.6兜底：标记已触发，下次启动不再重复
-                if needForceSub4000Download46 then
-                    XLaunchDlcManager.MarkForceSub4000Downloaded46()
-                end
                 if IsDebugBuild then
                     local logTab = {}
                     for dlcId, need in pairs(needDownloadMap) do

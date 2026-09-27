@@ -955,7 +955,6 @@
     },
     {
         "Id": 4001,
-        "TimeId": 47501,
         "Name": "鲨鲨破坏王",
         "BossName": "无",
         "BuffTitle": [
@@ -981,5 +980,369 @@
         "FevExctiedValue": 1000000,
         "FevStageMulti": 20000,
         "InitialFev": 900000
+    },
+    {
+        "Id": 5011,
+        "TimeId": 50802,
+        "Name": "透光层漂浮-1",
+        "BossName": "无",
+        "BuffTitle": [
+            "忽忽转圈"
+        ],
+        "BuffDesc": [
+            "忽悠噗悠~"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 25,
+        "ShowItem": [
+            1,
+            13
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5012,
+        "PreStageId": 5011,
+        "TimeId": 50802,
+        "Name": "透光层漂浮-2",
+        "BossName": "无",
+        "BuffTitle": [
+            "投射光线"
+        ],
+        "BuffDesc": [
+            "棋盘上方有概率掉落方块"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 3,
+        "InitLineCount": 4,
+        "MaxRound": 100,
+        "ShowItem": [
+            1,
+            13
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5013,
+        "PreStageId": 5012,
+        "TimeId": 50802,
+        "Name": "透光层漂浮-3",
+        "BossName": "无",
+        "BuffTitle": [
+            "投射光线",
+            "暗流奔涌"
+        ],
+        "BuffDesc": [
+            "棋盘上方有概率掉落方块",
+            "开始浪潮调节！"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 100,
+        "ShowItem": [
+            1,
+            13
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5014,
+        "PreStageId": 5013,
+        "TimeId": 50802,
+        "Name": "透光层漂浮-4",
+        "BossName": "无",
+        "BuffTitle": [
+            "投射光线"
+        ],
+        "BuffDesc": [
+            "棋盘上方有概率掉落方块"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 5,
+        "MaxRound": 100,
+        "ShowItem": [
+            1,
+            13,
+            11
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5021,
+        "TimeId": 50803,
+        "Name": "微光带巡游-1",
+        "BossName": "无",
+        "BuffTitle": [
+            "灰鸦登场"
+        ],
+        "BuffDesc": [
+            "呼叫空花支援！"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 6,
+        "MaxRound": 25,
+        "ShowItem": [
+            1,
+            13,
+            11
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5022,
+        "PreStageId": 5021,
+        "TimeId": 50803,
+        "Name": "微光带巡游-2",
+        "BossName": "无",
+        "BuffTitle": [
+            "投射光线"
+        ],
+        "BuffDesc": [
+            "棋盘上方有概率掉落方块"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 5,
+        "MaxRound": 100,
+        "ShowItem": [
+            1,
+            13,
+            3,
+            5
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5023,
+        "PreStageId": 5022,
+        "TimeId": 50803,
+        "Name": "微光带巡游-3",
+        "BossName": "无",
+        "BuffTitle": [
+            "飘忽洋流"
+        ],
+        "BuffDesc": [
+            "有概率一回合上升两行方块"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 5,
+        "MaxRound": 100,
+        "EnvironmentId": 5023,
+        "ShowItem": [
+            1,
+            3,
+            5,
+            7
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5024,
+        "PreStageId": 5023,
+        "TimeId": 50803,
+        "Name": "微光带巡游-4",
+        "BossName": "无",
+        "BuffTitle": [
+            "飘忽洋流"
+        ],
+        "BuffDesc": [
+            "有概率一回合上升两行方块"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 5,
+        "MaxRound": 200,
+        "EnvironmentId": 5024,
+        "ShowItem": [
+            11,
+            3,
+            5,
+            7
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5031,
+        "TimeId": 50804,
+        "Name": "无光区深潜-1",
+        "BossName": "无",
+        "BuffTitle": [
+            "投射光线"
+        ],
+        "BuffDesc": [
+            "棋盘上方有概率掉落方块"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 5,
+        "MaxRound": 200,
+        "ShowItem": [
+            1,
+            13,
+            3,
+            5,
+            7
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5032,
+        "PreStageId": 5031,
+        "TimeId": 50804,
+        "Name": "无光区深潜-2",
+        "BossName": "无",
+        "BuffTitle": [
+            "飘忽洋流"
+        ],
+        "BuffDesc": [
+            "有概率一回合上升两行方块"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 500,
+        "EnvironmentId": 5032,
+        "ShowItem": [
+            1,
+            13,
+            11,
+            3,
+            7
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5033,
+        "PreStageId": 5032,
+        "TimeId": 50804,
+        "Name": "无光区深潜-3",
+        "BossName": "无",
+        "BuffTitle": [
+            "投射光线",
+            "飘忽洋流"
+        ],
+        "BuffDesc": [
+            "棋盘上方有概率掉落方块",
+            "有概率一回合上升两行方块"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 500,
+        "EnvironmentId": 5033,
+        "ShowItem": [
+            13,
+            11,
+            3,
+            5,
+            7
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
+    },
+    {
+        "Id": 5034,
+        "PreStageId": 5033,
+        "TimeId": 50804,
+        "Name": "无光区深潜-4",
+        "BossName": "无",
+        "BuffTitle": [
+            "投射光线",
+            "飘忽洋流"
+        ],
+        "BuffDesc": [
+            "棋盘上方有概率掉落方块",
+            "有概率一回合上升两行方块"
+        ],
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 1000,
+        "EnvironmentId": 5034,
+        "ShowItem": [
+            1,
+            11,
+            3,
+            5,
+            7
+        ],
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "SettleScoreGrade": 5
     }
 ]

@@ -185,3 +185,10 @@ function XFashionSuitControl:IsSuitHasNew(suitId)
     return false
 end
 return XFashionSuitControl
+     if not XWeaponFashionConfigs.IsWeaponFashion(fashionId) and not self._Model:IsFashionViewed(fashionId) then
+            return true
+        end
+    end
+    return false
+end
+return XFashionSuitControl

@@ -4,6 +4,7 @@ local XUiGridMovieSpineActor = require("XUi/XUiMovie/XUiGridMovieSpineActor")
 local XUiPanelMovie3D = require("XUi/XUiMovie/XUiPanelMovie3D")
 ---@class XUiMovie
 ---@field UiPanelText XUiPanelText
+---@field UiPanelClickButton XUiMovieClickButtonPanel
 ---@field UiMovieBg XUiMovieBg
 ---@field _Control XMovieControl
 ---@field Actors XUiGridMovieActor[]
@@ -81,7 +82,9 @@ function XUiMovie:RemoveLoadingTimer()
 end
 
 function XUiMovie:SelectPanelShowing()
-    return self.PanelSelectRight.gameObject.activeSelf or self.PanelSelectLeft.gameObject.activeSelf
+    return self.PanelSelectRight.gameObject.activeSelf
+            or self.PanelSelectLeft.gameObject.activeSelf
+            or (self.UiPanelClickButton and self.UiPanelClickButton:IsShowing())
 end
 
 function XUiMovie:OnDisable()
@@ -136,6 +139,10 @@ function XUiMovie:OnDestroy()
     if self.PanelItem and self.PanelItem.OnDestroy then
         self.PanelItem:OnDestroy()
     end
+    if self.UiPanelClickButton and self.UiPanelClickButton.OnDestroy then
+        self.UiPanelClickButton:OnDestroy()
+        self.UiPanelClickButton = nil
+    end
 
     self:RemoveBtnNextCallback()
     XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_UI_DESTROY)
@@ -184,6 +191,11 @@ function XUiMovie:InitView()
     if self.PanelItem then
         local XUiMovieItemPanel = require("XUi/XUiMovie/XUiMovieItemPanel")
         self.PanelItem = XUiMovieItemPanel.New(self.PanelItem, self)
+    end
+    local clickButtonRoot = self.PanelClickButton
+    if clickButtonRoot then
+        local XUiMovieClickButtonPanel = require("XUi/XUiMovie/XUiMovieClickButtonPanel")
+        self.UiPanelClickButton = XUiMovieClickButtonPanel.New(clickButtonRoot, self)
     end
     self:InitSpeedGroup()
 end
@@ -786,6 +798,29 @@ end
 function XUiMovie:GetText(id)
     self:InitUiPanelText()
     return self.UiPanelText:GetText(id)
+end
+--endregion
+
+--region SingleClickButton
+function XUiMovie:AddSingleClickButton(buttonId, imagePath, x, y, targetActionId, clickCb)
+    if not self.UiPanelClickButton then
+        XLog.Error("XUiMovie:AddSingleClickButton error: PanelClickButton or PanelSingleClickButton is missing in UiMovie prefab")
+        return
+    end
+    self.UiPanelClickButton:AddButton(buttonId, imagePath, x, y, targetActionId, clickCb)
+end
+
+function XUiMovie:GetSingleClickButtonSelectedActionId()
+    if not self.UiPanelClickButton then
+        return 0
+    end
+    return self.UiPanelClickButton:GetSelectedActionId()
+end
+
+function XUiMovie:ClearSingleClickButtons()
+    if self.UiPanelClickButton then
+        self.UiPanelClickButton:Clear()
+    end
 end
 --endregion
 

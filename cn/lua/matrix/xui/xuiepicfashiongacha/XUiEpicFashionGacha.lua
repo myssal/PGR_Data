@@ -875,3 +875,7 @@ function XUiEpicFashionGacha:ShowWeaponFashion()
         XUiManager.OpenUiObtain(rewards)
     end
 end
+ta.ItemCount } }
+        XUiManager.OpenUiObtain(rewards)
+    end
+end

@@ -310,14 +310,14 @@ XTransfiniteManagerCreator = function()
         end
 
         -- 保存最大的轮换关卡进度
-        if not stageGroup:IsIsland() and battleInfo then
-            _Data:SetMaxRotateStageProgressIndex(battleInfo.StageProgressIndex or 0)
+        if not stageGroup:IsIsland() then
+            _Data:SetMaxRotateStageProgressIndex(res.MaxRotateStageProgressIndex or 0)
         end
 
         stageGroup:SetDataFromServer(battleInfo)
         XEventManager.DispatchEvent(XEventId.EVENT_TRANSFINITE_UPDATE_ROOM, true)
 
-        if _Result and (_Result:IsFinalStage() or _Result:IsSettle()) then
+        if _Result and not _Result:IsGiveUp() and (_Result:IsFinalStage() or _Result:IsSettle()) then
             _Result:SetRewardGoodList(res.RewardGoodsList)
             XLuaUiManager.Open("UiTransfinitePassageSettlement", _Result)
         end
@@ -379,6 +379,7 @@ XTransfiniteManagerCreator = function()
         local result = require("XEntity/XTransfinite/XTransfiniteResult").New()
         _Result = result
         result:SetDataFromLastResult(stageGroup)
+        result:SetIsGiveUp(true)
         XNetwork.CallWithAutoHandleErrorCode(RequestProto.Confirm, {
             StageGroupId = stageGroup:GetId(),
             IsGiveUp = true

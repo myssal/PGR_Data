@@ -1827,6 +1827,7 @@
         "Priority": 2530,
         "EquipType": 60,
         "EquipId": 2604001,
+        "ExclusiveEquipId": 2606001,
         "EmotionIcon": "Assets/Product/Texture/Image/IconType/IconCharacter3.png",
         "DefaultNpcFashtionId": 6005601,
         "CaptainSkillId": 103522,
@@ -2019,5 +2020,55 @@
             6
         ],
         "Career": 8
+    },
+    {
+        "Id": 1411003,
+        "Name": "时崎狂三",
+        "TradeName": "时崎狂三",
+        "LogName": "时崎狂三",
+        "EnName": "Kurumi Tokisaki",
+        "Type": 1,
+        "Sex": 1,
+        "StoryChapterId": 1,
+        "Intro": "和时之天使“刻刻帝”结下契约的精灵少女，拥有着操纵影子和时间的能力。",
+        "ItemId": 595,
+        "LevelUpTemplateId": 1,
+        "Priority": 2610,
+        "EquipType": 68,
+        "EquipId": 2685001,
+        "EmotionIcon": "Assets/Product/Texture/Image/IconType/IconCharacter3.png",
+        "DefaultNpcFashtionId": 6006401,
+        "CaptainSkillId": 141322,
+        "MissionInfo": "未命名",
+        "Code": "Kurumi Tokisaki",
+        "Element": 5,
+        "LinkageType": 1,
+        "Career": 1
+    },
+    {
+        "Id": 1421003,
+        "Name": "阿德莱德",
+        "TradeName": "破渊",
+        "LogName": "阿德莱德·破渊",
+        "EnName": "Adelyde",
+        "Type": 1,
+        "Sex": 1,
+        "StoryChapterId": 1,
+        "Intro": "环大西洋赫里欧家族前继承人，现法奥斯非常驻军事实训教官。身为空中花园军部初代构造体之一，其机体经多次迭代更新，长期活跃于前线战场与教学之间，其深渊破阵的信念始终如一。",
+        "ItemId": 596,
+        "LevelUpTemplateId": 1,
+        "Priority": 2620,
+        "EquipType": 69,
+        "EquipId": 2694001,
+        "EmotionIcon": "Assets/Product/Texture/Image/IconType/IconCharacter3.png",
+        "DefaultNpcFashtionId": 6006501,
+        "CaptainSkillId": 142322,
+        "MissionInfo": "未命名",
+        "Code": "BPA-09",
+        "Element": 5,
+        "GeneralSkillIds": [
+            3
+        ],
+        "Career": 9
     }
 ]

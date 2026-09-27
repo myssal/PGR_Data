@@ -10,8 +10,8 @@ function XUiGachaLuciaMain:OnAwake()
     self._FinishCbTrigger = nil -- 抽卡结束触发器，抽卡请求回调设置，播放完抽卡演出后触发
     self._GachaAllFinishTrigger = nil -- 抽卡全结束触发器，1/10回抽按钮设置，抽卡结果界面关闭后刷新触发
     self._TipCbTrigger = nil -- 奖励弹框
-    self._HasBeenKey = "LuciaHasBeenKey"
-    self._SkipBtnKey = "UiGachaLucia"
+    self._HasBeenKey = XGachaConfigs.GetSkipAnimCacheKey("LuciaHasBeenKey")
+    self._SkipBtnKey = XGachaConfigs.GetSkipAnimCacheKey("UiGachaLucia")
     self._GachaStoryRedPoint = "GachaStoryRedPoint"
     self._TimerStoryRoleEnable = nil
     self._IsParentShow = true
@@ -64,6 +64,8 @@ function XUiGachaLuciaMain:OnStart(gachaId, autoOpenStory)
     self.AssetPanel:SetButtonCb(3, function()
         self:OpenGachaItemShop()
     end)
+
+    self:RefreshBtnChange()
 end
 
 function XUiGachaLuciaMain:OnEnable()
@@ -147,7 +149,7 @@ function XUiGachaLuciaMain:SetSelfActive(flag)
 end
 
 function XUiGachaLuciaMain:InitButton()
-    self:RegisterClickEvent(self.BtnBack, self.Close)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self:RegisterClickEvent(self.BtnMainUi, function()
         XLuaUiManager.RunMain()
     end)
@@ -169,6 +171,30 @@ function XUiGachaLuciaMain:InitButton()
         XLuaUiManager.Open("UiSet")
     end)
     self.BtnTemp.CallBack = handler(self, self.PlayInteraction)
+    -- BtnChange 为自选gacha专用切换按钮，普通卡池预制体无此节点，需判空守卫
+    if self.BtnChange then
+        self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
+    end
+end
+
+function XUiGachaLuciaMain:RefreshBtnChange()
+    if not self.BtnChange then return end
+    self.BtnChange.gameObject:SetActiveEx(XDataCenter.GachaManager.IsGachaIdBelongSelfChoice(self._GachaId))
+end
+
+function XUiGachaLuciaMain:OnBtnChangeClick()
+    -- 必须先翻 Entrance.IsChangeMode 再 Close，否则 Entrance.OnEnable 会因已选直接关闭
+    XDataCenter.GachaManager.OpenSelfChoiceEntranceForChange(self._GachaId)
+    self:Close()
+end
+
+function XUiGachaLuciaMain:OnBtnBackClick()
+    -- 自选卡池：直接回主界面（Entrance 由 RunMain 一并关闭）
+    if XDataCenter.GachaManager.IsGachaIdBelongSelfChoice(self._GachaId) then
+        XLuaUiManager.RunMain()
+        return
+    end
+    self:Close()
 end
 
 function XUiGachaLuciaMain:Init3DSceneInfo()
@@ -216,6 +242,9 @@ function XUiGachaLuciaMain:OnChildClose()
         XScheduleManager.UnSchedule(self._TimerStoryRoleEnable)
         self._TimerStoryRoleEnable = nil
     end
+
+    -- 从剧情关返回时不会重新触发 EVENT_UI_ALLOWOPERATE，手动检测一次引导
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 function XUiGachaLuciaMain:AutoOpenChild()
@@ -776,6 +805,9 @@ function XUiGachaLuciaMain:OnBtnStoryLineClick(isAutoOpen)
     -- 防止AnimEnableStory和AnimEnableLong冲突
     if not self._CanPlayEnableAnim or isAutoOpen then
         -- 在Hold状态时，最后一个事件帧触发会有问题
+
+        -- AnimStart2 控制渐变背景隐藏，仅在此处播放会导致从剧情子界面返回时背景异常显示
+        -- 在 OnAfterStageLineEnable 中补播，恢复背景隐藏状态
         self:PlayAnimationWithMask("AnimStart2")
     end
     self.Panel3D.UiFarCamStory.gameObject:SetActiveEx(false)
@@ -784,6 +816,8 @@ function XUiGachaLuciaMain:OnBtnStoryLineClick(isAutoOpen)
 end
 
 function XUiGachaLuciaMain:OnAfterStageLineEnable()
+    -- 覆盖式子界面关闭后 Timeline 的 Hold 状态会丢失，重新隐藏剧情界面下的渐变背景
+    self:PlayAnimationWithMask("AnimStart2")
     self.Panel3D.AnimDisableStory.gameObject:SetActiveEx(false)
     self.Panel3D.AnimEnableStory.gameObject:SetActiveEx(true)
     self.Panel3D.AnimEnableStory:PlayTimelineAnimation()

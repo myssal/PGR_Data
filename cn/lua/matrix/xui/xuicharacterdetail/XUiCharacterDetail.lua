@@ -52,10 +52,7 @@ end
 
 function XUiCharacterDetail:OnBtnEquipRecomendClick()
     --self:SwitchView(CharDetailUiType.Equip)
-    local isOwn = XMVCA:GetAgency(ModuleId.XCharacter):IsOwnCharacter(self.CharacterId)
-    local isUnlock = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend)
-    local canSet = isOwn and isUnlock
-    XDataCenter.EquipGuideManager.OpenEquipGuideRecommend(self.CharacterId, not canSet)
+    XMVCA.XTeamRecommend:OpenCharacterRecommend(self.CharacterId)
 end
 
 function XUiCharacterDetail:OnBtnDetialClick()
@@ -148,12 +145,18 @@ function XUiCharacterDetail:OnStart(CharacterId)
 
     self.CharacterId = CharacterId
 
+    -- 无剧情的角色隐藏剧情按钮
+    local hasPlot = XMVCA.XPlotExhibition:HasCharacterPlot(CharacterId)
+    if self.BtnPlot then
+        self.BtnPlot.gameObject:SetActiveEx(hasPlot)
+    end
+
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     self.PanelContentRtf = self.PanelContent:GetComponent(typeof(CS.UnityEngine.RectTransform))
     -- self.BtnArchive.gameObject:SetActiveEx(true)
     self.BtnDetial.gameObject:SetActiveEx(false)
     self.AssetPanel:Close()
-    self.BtnEquipRecomend.gameObject:SetActiveEx(XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend))
+    self.BtnEquipRecomend.gameObject:SetActiveEx(XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.TeamRecommend))
     
     self:SwitchView(CharDetailUiType.Detail)
 

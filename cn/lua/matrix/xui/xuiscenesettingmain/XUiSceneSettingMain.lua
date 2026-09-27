@@ -100,7 +100,8 @@ function XUiSceneSettingMain:InitButton()
                 handler(self, self.OnClickDropData), 
                 handler(self, self.OnClickDropPower), 
                 handler(self, self.OnClickDropGyro),
-                handler(self, self.OnClickDropEnvMusic))
+                handler(self, self.OnClickDropEnvMusic),
+                handler(self, self.OnClickDropSceneMusic))
     end
 end
 
@@ -265,6 +266,10 @@ function XUiSceneSettingMain:OnClickDropEnvMusic()
 
     local isOn =  self.PanelDropDownCtrl and self.PanelDropDownCtrl:GetDropMusicIsOn() or false
     sceneSfxControl:SetMuteAndSave(not isOn)
+end
+
+function XUiSceneSettingMain:OnClickDropSceneMusic(index)
+    XDataCenter.PhotographManager.ApplySceneSwitch(self.CurSelectedBackgroundId, index, true) --index从0开始, 门面内 +1
 end
 
 function XUiSceneSettingMain:InitDynamicTable()
@@ -539,6 +544,7 @@ function XUiSceneSettingMain:OnUiSceneLoaded(firstload, scenePath)
     --刷新右上角信息栏显示
     self:RefreshSceneInfo()
     self:RefreshEvnirmentSoundControl()
+    self:RefreshHintText()
     -- self.Parent:RefreshRightTagPanel()
 
     -- 恢复相机
@@ -555,6 +561,8 @@ function XUiSceneSettingMain:OnUiSceneLoaded(firstload, scenePath)
     self.FirstLoad = false
     self.LastScenePath = scenePath
     self.SwitchableScene:Play(self.CurSelectedBackgroundId, self.UiSceneInfo.Transform)
+    self.MusicScene:SetForbidSwitch()
+    self.MusicScene:Play(self.CurSelectedBackgroundId, self.UiSceneInfo.Transform)
 end
 
 -- [场景电池相关]
@@ -853,6 +861,8 @@ end
 function XUiSceneSettingMain:OnStart()
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
+    ---@type XUiPanelMusicScene
+    self.MusicScene = require("XUi/XUiMusicScene/XUiPanelMusicScene").New(self)
     
     local curSceneId = XDataCenter.PhotographManager.GetCurSceneId()
     self.CurSelectedBackgroundId = curSceneId    
@@ -889,10 +899,12 @@ function XUiSceneSettingMain:OnDisable()
     end
     self.LastScenePath = nil
     self.SwitchableScene:Stop()
+    self.MusicScene:Stop()
 end
 
 function XUiSceneSettingMain:OnDestroy()
     self.SwitchableScene:OnDestory()
+    self.MusicScene:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_FAVORABILITY_ASSISTLIST_CHANGE, self.RefreshPanelAssistantByServerSync, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PHOTO_SYNC_CHANGE_TO_MAIN, self.RefreshPanelSceneByServerSync, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PHOTO_SYNC_CHANGE_TO_MAIN, self.RefreshSyncBtnState, self)
@@ -916,14 +928,14 @@ end
 --region 场景切换选项
 
 function XUiSceneSettingMain:OnClickDropData(index)
-    XMVCA.XSwitchableScene:SetSceneSetting(self.CurSelectedBackgroundId, index)
+    XDataCenter.PhotographManager.ApplySceneSwitch(self.CurSelectedBackgroundId, index, true)
     if self:InitBatteryUi() then
         self:UpdateBatteryMode()
     end
 end
 
 function XUiSceneSettingMain:OnClickDropPower(index)
-    XMVCA.XSwitchableScene:SetSceneSetting(self.CurSelectedBackgroundId, index)
+    XDataCenter.PhotographManager.ApplySceneSwitch(self.CurSelectedBackgroundId, index, true)
     if self:InitBatteryUi() then
         self:UpdateBatteryMode()
     end
@@ -976,6 +988,16 @@ function XUiSceneSettingMain:RefreshEvnirmentSoundControl()
     -- 读取缓存静音状态（游戏逻辑：true=开？false=关？你原逻辑不变）
     if self.PanelDropDownCtrl then
         self.PanelDropDownCtrl:SetDropMusicState(not sceneSfxControl:GetCacheMuteState())
+    end
+end
+
+function XUiSceneSettingMain:RefreshHintText()
+    local hintText = XPhotographConfigs.GetBackgroundHintText(self.CurSelectedBackgroundId)
+    if string.IsNilOrEmpty(hintText) then
+        self.PanelHintText.gameObject:SetActiveEx(false)
+    else
+        self.PanelHintText.gameObject:SetActiveEx(true)
+        self.HintText.text = XUiHelper.ReplaceTextNewLine(hintText)
     end
 end
 

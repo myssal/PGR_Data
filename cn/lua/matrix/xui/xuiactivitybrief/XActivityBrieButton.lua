@@ -21,6 +21,7 @@ end
 function XActivityBrieButton:OnDisable()
     self:_ReleaseRedPoint()
     self:_ReleaseTagRedPoint()
+    self:_CancelUnlockAnimTimer()
 end
 
 function XActivityBrieButton:Refresh(args)
@@ -43,6 +44,38 @@ function XActivityBrieButton:ShowBtnCom(isOpen, isWaitLockAnim)
     self.BtnCom:SetDisable(not isOpen or isOpen and isWaitLockAnim)   
 end
 
+function XActivityBrieButton:ShowActivityTag()
+    self:SetActivityTagVisible(false)
+
+    if XDataCenter.FubenRepeatChallengeManager.IsMultiRewardOpen() then
+        local multiRewardCfg = XDataCenter.FubenRepeatChallengeManager.GetMultiRewardActivityCfg()
+        if multiRewardCfg.ActivityBriefGroupId == self.activityGroupId then
+            local countStr = XTool.ConvertChineseNumberString(multiRewardCfg.Multiple)
+            self:SetActivityTagVisible(true)
+            self:SetActivityTagText(XUiHelper.GetText("ActivityRepeatChallengeMultiRewardTag2", countStr))
+            return
+        end
+    end
+end
+
+function XActivityBrieButton:SetActivityTagVisible(isShow)
+    for i = 1, 3 do
+        local tag = self[string.format("Tag%s", i)]
+        if not XTool.UObjIsNil(tag) then
+            tag.gameObject:SetActiveEx(isShow)
+        end
+    end
+end
+
+function XActivityBrieButton:SetActivityTagText(words)
+    for i = 1, 3 do
+        local tagText = self[string.format("TextTag%s", i)]
+        if not XTool.UObjIsNil(tagText) then
+            tagText.text = words
+        end
+    end
+end
+
 --region Ui - Anim
 ---初始化解锁动画状态
 function XActivityBrieButton:InitUnlockAnim()
@@ -60,13 +93,23 @@ function XActivityBrieButton:PlayUnlockAnim(cb)
         self.PanelEffectLock.gameObject:SetActiveEx(false)
         self.PanelEffectLock.gameObject:SetActiveEx(true)
         self.BtnCom:SetDisable(false)
-        XScheduleManager.ScheduleOnce(function()
+        self._UnlockAnimTimer = XScheduleManager.ScheduleOnce(function()
+            self._UnlockAnimTimer = nil
             -- 关闭特效防止跳转其他界面返回时出现特效
-            self.PanelEffectLock.gameObject:SetActiveEx(false)
+            if not XTool.UObjIsNil(self.PanelEffectLock) then
+                self.PanelEffectLock.gameObject:SetActiveEx(false)
+            end
             if cb then cb() end
         end, 800)
     else
         if cb then cb() end
+    end
+end
+
+function XActivityBrieButton:_CancelUnlockAnimTimer()
+    if self._UnlockAnimTimer then
+        XScheduleManager.UnSchedule(self._UnlockAnimTimer)
+        self._UnlockAnimTimer = nil
     end
 end
 --endregion

@@ -6062,7 +6062,6 @@
             1026394
         ],
         "BuildTags": [
-            23,
             20
         ],
         "Level": 1,
@@ -11036,6 +11035,3831 @@
         "IsOutPool": true,
         "SaveScore": 1000,
         "Character": 4,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10281011,
+        "SkillKey": 1028101,
+        "Name": "逆馈",
+        "Desc": "造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>，每使用过一次此技能，造成的<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>层数+{1}",
+        "ShortDesc": "造成伤害，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            2,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon11.png",
+        "ComboList": [
+            1028101
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 1,
+        "Magics": [
+            10281010
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 2
+    },
+    {
+        "Id": 10281012,
+        "SkillKey": 1028101,
+        "Name": "逆馈",
+        "Desc": "造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>，每使用过一次此技能，造成的<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>层数+{1}",
+        "ShortDesc": "造成伤害，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            3,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon11.png",
+        "ComboList": [
+            1028101
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 2,
+        "Magics": [
+            10281010
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 2
+    },
+    {
+        "Id": 10281013,
+        "SkillKey": 1028101,
+        "Name": "逆馈",
+        "Desc": "造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>，每使用过一次此技能，造成的<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>层数+{1}",
+        "ShortDesc": "造成伤害，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            4,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon11.png",
+        "ComboList": [
+            1028101
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 3,
+        "Magics": [
+            10281010
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 2
+    },
+    {
+        "Id": 10281021,
+        "SkillKey": 1028102,
+        "Name": "断罪回锋",
+        "Desc": "消耗{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "造成伤害，消耗<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            10,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon25.png",
+        "ComboList": [
+            1028102,
+            1028103
+        ],
+        "BuildTags": [
+            16
+        ],
+        "Level": 1,
+        "Magics": [
+            10281020
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 16000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            15
+        ]
+    },
+    {
+        "Id": 10281022,
+        "SkillKey": 1028102,
+        "Name": "断罪回锋",
+        "Desc": "消耗{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "造成伤害，消耗<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            10,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon25.png",
+        "ComboList": [
+            1028102,
+            1028103
+        ],
+        "BuildTags": [
+            16
+        ],
+        "Level": 2,
+        "Magics": [
+            10281020
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 20000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            15
+        ]
+    },
+    {
+        "Id": 10281023,
+        "SkillKey": 1028102,
+        "Name": "断罪回锋",
+        "Desc": "消耗{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "造成伤害，消耗<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            10,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon25.png",
+        "ComboList": [
+            1028102,
+            1028103
+        ],
+        "BuildTags": [
+            16
+        ],
+        "Level": 3,
+        "Magics": [
+            10281020
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 20,
+        "CSMag": 25000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            15
+        ]
+    },
+    {
+        "Id": 10281031,
+        "SkillKey": 1028103,
+        "Name": "亡歌逆斩",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n此次技能若是<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>，获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，若是<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>，额外获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon26.png",
+        "ComboList": [
+            1028104
+        ],
+        "BuildTags": [
+            31,
+            16
+        ],
+        "Level": 1,
+        "Magics": [
+            10281030
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 25,
+        "CSMag": 15000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32,
+            15
+        ]
+    },
+    {
+        "Id": 10281032,
+        "SkillKey": 1028103,
+        "Name": "亡歌逆斩",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n此次技能若是<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>，获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，若是<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>，额外获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon26.png",
+        "ComboList": [
+            1028104
+        ],
+        "BuildTags": [
+            31,
+            16
+        ],
+        "Level": 2,
+        "Magics": [
+            10281030
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 25,
+        "CSMag": 18000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32,
+            15
+        ]
+    },
+    {
+        "Id": 10281033,
+        "SkillKey": 1028103,
+        "Name": "亡歌逆斩",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n此次技能若是<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>，获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，若是<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>，额外获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            2,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon26.png",
+        "ComboList": [
+            1028104
+        ],
+        "BuildTags": [
+            31,
+            16
+        ],
+        "Level": 3,
+        "Magics": [
+            10281030
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 25,
+        "CSMag": 18000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32,
+            15
+        ]
+    },
+    {
+        "Id": 10281041,
+        "SkillKey": 1028104,
+        "Name": "惑心",
+        "Desc": "每有{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "造成伤害，根据<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>点数，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            4,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon34.png",
+        "ComboList": [
+            1028105
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10281040
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 25,
+        "CSMag": 14000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32,
+            13
+        ]
+    },
+    {
+        "Id": 10281042,
+        "SkillKey": 1028104,
+        "Name": "惑心",
+        "Desc": "每有{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "造成伤害，根据<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>点数，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            4,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon34.png",
+        "ComboList": [
+            1028105
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10281040
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 25,
+        "CSMag": 19000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32,
+            13
+        ]
+    },
+    {
+        "Id": 10281043,
+        "SkillKey": 1028104,
+        "Name": "惑心",
+        "Desc": "每有{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "造成伤害，根据<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>点数，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            4,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon34.png",
+        "ComboList": [
+            1028105
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10281040
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 25,
+        "CSMag": 24000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32,
+            13
+        ]
+    },
+    {
+        "Id": 10281051,
+        "SkillKey": 1028105,
+        "Name": "织惑",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n<color=#9B8015><Icon=IconAttack|30|30|0.5/>攻击</color>属性提升{1}点",
+        "ShortDesc": "造成伤害，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，提升<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性",
+        "DescParams": [
+            1,
+            20
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon79.png",
+        "ComboList": [
+            1028112
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10281050
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 25,
+        "CSMag": 12500,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281052,
+        "SkillKey": 1028105,
+        "Name": "织惑",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n<color=#9B8015><Icon=IconAttack|30|30|0.5/>攻击</color>属性提升{1}点",
+        "ShortDesc": "造成伤害，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，提升<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性",
+        "DescParams": [
+            1,
+            20
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon79.png",
+        "ComboList": [
+            1028112
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10281050
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 25,
+        "CSMag": 15000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281053,
+        "SkillKey": 1028105,
+        "Name": "织惑",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n<color=#9B8015><Icon=IconAttack|30|30|0.5/>攻击</color>属性提升{1}点",
+        "ShortDesc": "造成伤害，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，提升<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性",
+        "DescParams": [
+            2,
+            20
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon79.png",
+        "ComboList": [
+            1028112
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10281050
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 25,
+        "CSMag": 17500,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281061,
+        "SkillKey": 1028106,
+        "Name": "毒蚀",
+        "Desc": "造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n触发{1}次<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>伤害",
+        "ShortDesc": "造成伤害，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>，触发<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害",
+        "DescParams": [
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon69.png",
+        "ComboList": [
+            1028106
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 1,
+        "Magics": [
+            10281060
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 30,
+        "CSMag": 14000,
+        "TLDam": 1,
+        "Quality": 2
+    },
+    {
+        "Id": 10281062,
+        "SkillKey": 1028106,
+        "Name": "毒蚀",
+        "Desc": "造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n触发{1}次<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>伤害",
+        "ShortDesc": "造成伤害，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>，触发<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害",
+        "DescParams": [
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon69.png",
+        "ComboList": [
+            1028106
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 2,
+        "Magics": [
+            10281060
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 30,
+        "CSMag": 19000,
+        "TLDam": 1,
+        "Quality": 2
+    },
+    {
+        "Id": 10281063,
+        "SkillKey": 1028106,
+        "Name": "毒蚀",
+        "Desc": "造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n触发{1}次<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>伤害",
+        "ShortDesc": "造成伤害，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>，触发<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害",
+        "DescParams": [
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon69.png",
+        "ComboList": [
+            1028106
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 3,
+        "Magics": [
+            10281060
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 30,
+        "CSMag": 24000,
+        "TLDam": 1,
+        "Quality": 2
+    },
+    {
+        "Id": 10281071,
+        "SkillKey": 1028107,
+        "Name": "渊狱",
+        "Desc": "对手每有{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>，获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，至多获得{2}点",
+        "ShortDesc": "造成伤害，根据对手<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>层数，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            4,
+            1,
+            2
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon40.png",
+        "ComboList": [
+            1028114
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10281070
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 25,
+        "CSMag": 15000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281072,
+        "SkillKey": 1028107,
+        "Name": "渊狱",
+        "Desc": "对手每有{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>，获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，至多获得{2}点",
+        "ShortDesc": "造成伤害，根据对手<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>层数，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            4,
+            1,
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon40.png",
+        "ComboList": [
+            1028114
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10281070
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 25,
+        "CSMag": 20000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281073,
+        "SkillKey": 1028107,
+        "Name": "渊狱",
+        "Desc": "对手每有{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>，获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，至多获得{2}点",
+        "ShortDesc": "造成伤害，根据对手<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>层数，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            4,
+            1,
+            4
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon40.png",
+        "ComboList": [
+            1028114
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10281070
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 25,
+        "CSMag": 25000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281081,
+        "SkillKey": 1028108,
+        "Name": "葬月悲鸣",
+        "Desc": "命中处于<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>的对手时，获得{0}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "造成伤害，命中处于<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>的对手时，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon70.png",
+        "ComboList": [
+            1028115
+        ],
+        "BuildTags": [
+            30,
+            16
+        ],
+        "Level": 1,
+        "Magics": [
+            10281080
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 25,
+        "CSMag": 12000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            15,
+            13
+        ]
+    },
+    {
+        "Id": 10281082,
+        "SkillKey": 1028108,
+        "Name": "葬月悲鸣",
+        "Desc": "命中处于<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>的对手时，获得{0}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "造成伤害，命中处于<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>的对手时，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon70.png",
+        "ComboList": [
+            1028115
+        ],
+        "BuildTags": [
+            30,
+            16
+        ],
+        "Level": 2,
+        "Magics": [
+            10281080
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 25,
+        "CSMag": 15000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            15,
+            13
+        ]
+    },
+    {
+        "Id": 10281083,
+        "SkillKey": 1028108,
+        "Name": "葬月悲鸣",
+        "Desc": "命中处于<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>的对手时，获得{0}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "造成伤害，命中处于<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>的对手时，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon70.png",
+        "ComboList": [
+            1028115
+        ],
+        "BuildTags": [
+            30,
+            16
+        ],
+        "Level": 3,
+        "Magics": [
+            10281080
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 25,
+        "CSMag": 18000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            15,
+            13
+        ]
+    },
+    {
+        "Id": 10281091,
+        "SkillKey": 1028109,
+        "Name": "逆理之舞",
+        "Desc": "扣除双方{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，如果此技能是因<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>触发的，不扣除自身<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>\\n\\n获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "扣除双方<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>，因<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>触发时，获得额外效果，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            30,
+            2
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon21.png",
+        "ComboList": [
+            1028108,
+            1028109
+        ],
+        "BuildTags": [
+            31,
+            16
+        ],
+        "Level": 1,
+        "Magics": [
+            10281090
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 25,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32,
+            15
+        ]
+    },
+    {
+        "Id": 10281092,
+        "SkillKey": 1028109,
+        "Name": "逆理之舞",
+        "Desc": "扣除双方{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，如果此技能是因<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>触发的，不扣除自身<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>\\n\\n获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "扣除双方<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>，因<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>触发时，获得额外效果，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            30,
+            2
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon21.png",
+        "ComboList": [
+            1028108,
+            1028109
+        ],
+        "BuildTags": [
+            31,
+            16
+        ],
+        "Level": 2,
+        "Magics": [
+            10281090
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 25,
+        "CSMag": 12500,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32,
+            15
+        ]
+    },
+    {
+        "Id": 10281093,
+        "SkillKey": 1028109,
+        "Name": "逆理之舞",
+        "Desc": "扣除双方{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，如果此技能是因<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>触发的，不扣除自身<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>\\n\\n获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "扣除双方<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>，因<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>触发时，获得额外效果，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            30,
+            2
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon21.png",
+        "ComboList": [
+            1028108,
+            1028109
+        ],
+        "BuildTags": [
+            31,
+            16
+        ],
+        "Level": 3,
+        "Magics": [
+            10281090
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 25,
+        "CSMag": 15500,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32,
+            15
+        ]
+    },
+    {
+        "Id": 10281101,
+        "SkillKey": 1028110,
+        "Name": "御厄",
+        "Desc": "获得{0}层<color=#516797><<Icon=IconBlock|30|30|0.5/>格挡></color>\\n\\n恢复{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "造成伤害，获得<color=#516797><<Icon=IconBlockBlack|30|30|0.5/>格挡></color>，恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            1,
+            5
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon23.png",
+        "ComboList": [
+            1028110,
+            1028111
+        ],
+        "BuildTags": [
+            18
+        ],
+        "Level": 1,
+        "Magics": [
+            10281100
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 25,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 2
+    },
+    {
+        "Id": 10281102,
+        "SkillKey": 1028110,
+        "Name": "御厄",
+        "Desc": "获得{0}层<color=#516797><<Icon=IconBlock|30|30|0.5/>格挡></color>\\n\\n恢复{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "造成伤害，获得<color=#516797><<Icon=IconBlockBlack|30|30|0.5/>格挡></color>，恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            1,
+            5
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon23.png",
+        "ComboList": [
+            1028110,
+            1028111
+        ],
+        "BuildTags": [
+            18
+        ],
+        "Level": 2,
+        "Magics": [
+            10281100
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 25,
+        "CSMag": 13000,
+        "TLDam": 1,
+        "Quality": 2
+    },
+    {
+        "Id": 10281103,
+        "SkillKey": 1028110,
+        "Name": "御厄",
+        "Desc": "获得{0}层<color=#516797><<Icon=IconBlock|30|30|0.5/>格挡></color>\\n\\n恢复{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "造成伤害，获得<color=#516797><<Icon=IconBlockBlack|30|30|0.5/>格挡></color>，恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            1,
+            5
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon23.png",
+        "ComboList": [
+            1028110,
+            1028111
+        ],
+        "BuildTags": [
+            18
+        ],
+        "Level": 3,
+        "Magics": [
+            10281100
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 25,
+        "CSMag": 16000,
+        "TLDam": 1,
+        "Quality": 2
+    },
+    {
+        "Id": 10281111,
+        "SkillKey": 1028111,
+        "Name": "挽歌暂歇",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n每造成过{1}次<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>，此技能伤害倍率提升{2}",
+        "ShortDesc": "获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，根据造成过<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>的次数，提升伤害倍率",
+        "DescParams": [
+            2,
+            1,
+            "20%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon33.png",
+        "ComboList": [
+            1028107
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10281110
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 25,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281112,
+        "SkillKey": 1028111,
+        "Name": "挽歌暂歇",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n每造成过{1}次<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>，此技能伤害倍率提升{2}",
+        "ShortDesc": "获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，根据造成过<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>的次数，提升伤害倍率",
+        "DescParams": [
+            2,
+            1,
+            "40%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon33.png",
+        "ComboList": [
+            1028107
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10281110
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 25,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281113,
+        "SkillKey": 1028111,
+        "Name": "挽歌暂歇",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n每造成过{1}次<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>，此技能伤害倍率提升{2}",
+        "ShortDesc": "获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，根据造成过<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>的次数，提升伤害倍率",
+        "DescParams": [
+            2,
+            1,
+            "60%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon33.png",
+        "ComboList": [
+            1028107
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10281110
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 25,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281121,
+        "SkillKey": 1028112,
+        "Name": "至夜丧钟",
+        "Desc": "每使用过{0}次此技能，此技能伤害倍率提升{1}\\n\\n每通过<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>触发过{0}次此技能，此技能伤害倍率提升{2}",
+        "ShortDesc": "根据使用此技能的次数，提升伤害倍率，通过<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>触发时，获得额外效果",
+        "DescParams": [
+            1,
+            "20%",
+            "30%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon30.png",
+        "ComboList": [
+            1028113
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10281120
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 30,
+        "CSMag": 14000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281122,
+        "SkillKey": 1028112,
+        "Name": "至夜丧钟",
+        "Desc": "每使用过{0}次此技能，此技能伤害倍率提升{1}\\n\\n每通过<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>触发过{0}次此技能，此技能伤害倍率提升{2}",
+        "ShortDesc": "根据使用此技能的次数，提升伤害倍率，通过<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>触发时，获得额外效果",
+        "DescParams": [
+            1,
+            "40%",
+            "30%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon30.png",
+        "ComboList": [
+            1028113
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10281120
+        ],
+        "Type": 1,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 30,
+        "CSMag": 14000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10281123,
+        "SkillKey": 1028112,
+        "Name": "至夜丧钟",
+        "Desc": "每使用过{0}次此技能，此技能伤害倍率提升{1}\\n\\n每通过<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>触发过{0}次此技能，此技能伤害倍率提升{2}",
+        "ShortDesc": "根据使用此技能的次数，提升伤害倍率，通过<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>触发时，获得额外效果",
+        "DescParams": [
+            1,
+            "60%",
+            "30%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon30.png",
+        "ComboList": [
+            1028113
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10281120
+        ],
+        "Type": 1,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CostTL": 30,
+        "CSMag": 14000,
+        "TLDam": 1,
+        "Quality": 2,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282011,
+        "SkillKey": 1028201,
+        "Name": "裁心",
+        "Desc": "<b><color=#E7D09A>每次使用{0}号位的【主动技能】时触发：</color></b>\\n\\n造成{1}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "每次使用1号位的【主动技能】时，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon19.png",
+        "ComboList": [
+            1028201,
+            1028202,
+            1028203
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 1,
+        "Magics": [
+            10282010
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 5000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            13
+        ]
+    },
+    {
+        "Id": 10282012,
+        "SkillKey": 1028201,
+        "Name": "裁心",
+        "Desc": "<b><color=#E7D09A>每次使用{0}号位的【主动技能】时触发：</color></b>\\n\\n造成{1}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "每次使用1号位的【主动技能】时，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            1,
+            2
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon19.png",
+        "ComboList": [
+            1028201,
+            1028202,
+            1028203
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 2,
+        "Magics": [
+            10282010
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 5000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            13
+        ]
+    },
+    {
+        "Id": 10282013,
+        "SkillKey": 1028201,
+        "Name": "裁心",
+        "Desc": "<b><color=#E7D09A>每次使用{0}号位的【主动技能】时触发：</color></b>\\n\\n造成{1}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "每次使用1号位的【主动技能】时，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            1,
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon19.png",
+        "ComboList": [
+            1028201,
+            1028202,
+            1028203
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 3,
+        "Magics": [
+            10282010
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 5000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            13
+        ]
+    },
+    {
+        "Id": 10282021,
+        "SkillKey": 1028202,
+        "Name": "冥途掠影",
+        "Desc": "<b><color=#E7D09A>每累计造成{0}</color><color=#E7D09A>层</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#E7D09A>时触发：</color></b>\\n\\n触发{1}次<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>伤害\\n\\n获得{2}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "多次造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>时，触发<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            13,
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon27.png",
+        "ComboList": [
+            1028204
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10282020
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3
+    },
+    {
+        "Id": 10282022,
+        "SkillKey": 1028202,
+        "Name": "冥途掠影",
+        "Desc": "<b><color=#E7D09A>每累计造成{0}</color><color=#E7D09A>层</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#E7D09A>时触发：</color></b>\\n\\n触发{1}次<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>伤害\\n\\n获得{2}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "多次造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>时，触发<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            11,
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon27.png",
+        "ComboList": [
+            1028204
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10282020
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3
+    },
+    {
+        "Id": 10282023,
+        "SkillKey": 1028202,
+        "Name": "冥途掠影",
+        "Desc": "<b><color=#E7D09A>每累计造成{0}</color><color=#E7D09A>层</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#E7D09A>时触发：</color></b>\\n\\n触发{1}次<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>伤害\\n\\n获得{2}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "多次造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>时，触发<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            9,
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon27.png",
+        "ComboList": [
+            1028204
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10282020
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3
+    },
+    {
+        "Id": 10282031,
+        "SkillKey": 1028203,
+        "Name": "冥蛊",
+        "Desc": "<b><color=#E7D09A>每累计造成{0}次</color><color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color><color=#E7D09A>技能时触发：</color></b>\\n\\n造成{1}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n获得{2}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "多次造成<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>技能时，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            4,
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon66.png",
+        "ComboList": [
+            1028205
+        ],
+        "BuildTags": [
+            16,
+            30
+        ],
+        "Level": 1,
+        "Magics": [
+            10282030
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            15
+        ]
+    },
+    {
+        "Id": 10282032,
+        "SkillKey": 1028203,
+        "Name": "冥蛊",
+        "Desc": "<b><color=#E7D09A>每累计造成{0}次</color><color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color><color=#E7D09A>技能时触发：</color></b>\\n\\n造成{1}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n获得{2}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "多次造成<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>技能时，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            4,
+            2,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon66.png",
+        "ComboList": [
+            1028205
+        ],
+        "BuildTags": [
+            16,
+            30
+        ],
+        "Level": 2,
+        "Magics": [
+            10282030
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            15
+        ]
+    },
+    {
+        "Id": 10282033,
+        "SkillKey": 1028203,
+        "Name": "冥蛊",
+        "Desc": "<b><color=#E7D09A>每累计造成{0}次</color><color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color><color=#E7D09A>技能时触发：</color></b>\\n\\n造成{1}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n获得{2}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>",
+        "ShortDesc": "多次造成<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>技能时，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>",
+        "DescParams": [
+            4,
+            3,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon66.png",
+        "ComboList": [
+            1028205
+        ],
+        "BuildTags": [
+            16,
+            30
+        ],
+        "Level": 3,
+        "Magics": [
+            10282030
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            15
+        ]
+    },
+    {
+        "Id": 10282041,
+        "SkillKey": 1028204,
+        "Name": "掠影留痕",
+        "Desc": "<b><color=#E7D09A>对手每使用{0}次【主动技能】时触发：</color></b>\\n\\n获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "对手多次使用【主动技能】时，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            5,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon10.png",
+        "ComboList": [
+            1028206
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10282040
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282042,
+        "SkillKey": 1028204,
+        "Name": "掠影留痕",
+        "Desc": "<b><color=#E7D09A>对手每使用{0}次【主动技能】时触发：</color></b>\\n\\n获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "对手多次使用【主动技能】时，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            5,
+            2
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon10.png",
+        "ComboList": [
+            1028206
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10282040
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282043,
+        "SkillKey": 1028204,
+        "Name": "掠影留痕",
+        "Desc": "<b><color=#E7D09A>对手每使用{0}次【主动技能】时触发：</color></b>\\n\\n获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "对手多次使用【主动技能】时，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            5,
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon10.png",
+        "ComboList": [
+            1028206
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10282040
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282051,
+        "SkillKey": 1028205,
+        "Name": "夺心呢喃",
+        "Desc": "<b><color=#E7D09A>本场战斗中首次累计造成{0}</color><color=#E7D09A>次</color><color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color><color=#E7D09A>后触发：</color></b>\\n\\n对手每有{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性，自身吸取其{2}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "首次造成多次<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>后，根据对手<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性，吸取其<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性",
+        "DescParams": [
+            4,
+            4,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon65.png",
+        "ComboList": [
+            1028208,
+            1028209,
+            1028210
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10282050
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32,
+            13
+        ]
+    },
+    {
+        "Id": 10282052,
+        "SkillKey": 1028205,
+        "Name": "夺心呢喃",
+        "Desc": "<b><color=#E7D09A>本场战斗中首次累计造成{0}</color><color=#E7D09A>次</color><color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color><color=#E7D09A>后触发：</color></b>\\n\\n对手每有{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性，自身吸取其{2}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "首次造成多次<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>后，根据对手<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性，吸取其<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性",
+        "DescParams": [
+            3,
+            4,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon65.png",
+        "ComboList": [
+            1028208,
+            1028209,
+            1028210
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10282050
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32,
+            13
+        ]
+    },
+    {
+        "Id": 10282053,
+        "SkillKey": 1028205,
+        "Name": "夺心呢喃",
+        "Desc": "<b><color=#E7D09A>本场战斗中首次累计造成{0}</color><color=#E7D09A>次</color><color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color><color=#E7D09A>后触发：</color></b>\\n\\n对手每有{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性，自身吸取其{2}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>",
+        "ShortDesc": "首次造成多次<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>后，根据对手<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性，吸取其<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性",
+        "DescParams": [
+            2,
+            4,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon65.png",
+        "ComboList": [
+            1028208,
+            1028209,
+            1028210
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10282050
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32,
+            13
+        ]
+    },
+    {
+        "Id": 10282061,
+        "SkillKey": 1028206,
+        "Name": "渊狱终宴",
+        "Desc": "<b><color=#E7D09A>对手身上的</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#E7D09A>层数每次>={0}层时触发：</color></b>\\n\\n清空对手<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>层数\\n\\n获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，每使用过{2}次此技能，额外获得{3}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，至多额外获得{4}点",
+        "ShortDesc": "对手的<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>层数每次达到一定层数时触发，清空对手<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>层数，获得大量<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            10,
+            3,
+            1,
+            1,
+            5
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon76.png",
+        "ComboList": [
+            1028214
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10282060
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282062,
+        "SkillKey": 1028206,
+        "Name": "渊狱终宴",
+        "Desc": "<b><color=#E7D09A>对手身上的</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#E7D09A>层数每次>={0}层时触发：</color></b>\\n\\n清空对手<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>层数\\n\\n获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，每使用过{2}次此技能，额外获得{3}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，至多额外获得{4}点",
+        "ShortDesc": "对手的<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>层数每次达到一定层数时触发，清空对手<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>层数，获得大量<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            10,
+            4,
+            1,
+            1,
+            5
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon76.png",
+        "ComboList": [
+            1028214
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10282060
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282063,
+        "SkillKey": 1028206,
+        "Name": "渊狱终宴",
+        "Desc": "<b><color=#E7D09A>对手身上的</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#E7D09A>层数每次>={0}层时触发：</color></b>\\n\\n清空对手<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>层数\\n\\n获得{1}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，每使用过{2}次此技能，额外获得{3}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，至多额外获得{4}点",
+        "ShortDesc": "对手的<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>层数每次达到一定层数时触发，清空对手<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>层数，获得大量<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            10,
+            5,
+            1,
+            1,
+            5
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon76.png",
+        "ComboList": [
+            1028214
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10282060
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282071,
+        "SkillKey": 1028207,
+        "Name": "归途引息",
+        "Desc": "<b><color=#E7D09A>每累计造成{0}次</color><color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color><color=#E7D09A>时触发：</color></b>\\n\\n<color=#9B8015><Icon=IconAttack|30|30|0.5/>攻击</color>属性提升{1}点\\n\\n恢复{2}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "造成多次<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>时，提升<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性，并恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            3,
+            30,
+            25
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon39.png",
+        "ComboList": [
+            1028207
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10282070
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282072,
+        "SkillKey": 1028207,
+        "Name": "归途引息",
+        "Desc": "<b><color=#E7D09A>每累计造成{0}次</color><color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color><color=#E7D09A>时触发：</color></b>\\n\\n<color=#9B8015><Icon=IconAttack|30|30|0.5/>攻击</color>属性提升{1}点\\n\\n恢复{2}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "造成多次<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>时，提升<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性，并恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            3,
+            60,
+            25
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon39.png",
+        "ComboList": [
+            1028207
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10282070
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282073,
+        "SkillKey": 1028207,
+        "Name": "归途引息",
+        "Desc": "<b><color=#E7D09A>每累计造成{0}次</color><color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color><color=#E7D09A>时触发：</color></b>\\n\\n<color=#9B8015><Icon=IconAttack|30|30|0.5/>攻击</color>属性提升{1}点\\n\\n恢复{2}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "造成多次<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>时，提升<color=#9B8015><Icon=IconAttackBlack|30|30|0.5/>攻击</color>属性，并恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            3,
+            100,
+            25
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon39.png",
+        "ComboList": [
+            1028207
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10282070
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282081,
+        "SkillKey": 1028208,
+        "Name": "死告绝影",
+        "Desc": "<b><color=#E7D09A>每累计触发{0}次</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#E7D09A>伤害后触发：</color></b>\\n\\n自身每有{1}点<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性（当前：{Attr:4}），获得{2}点<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性\\n\\n获得{3}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "多次触发<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害后，根据自身<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，获得<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，获得大量<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            13,
+            40,
+            1,
+            13
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon102.png",
+        "ComboList": [
+            1028217
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10282080
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282082,
+        "SkillKey": 1028208,
+        "Name": "死告绝影",
+        "Desc": "<b><color=#E7D09A>每累计触发{0}次</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#E7D09A>伤害后触发：</color></b>\\n\\n自身每有{1}点<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性（当前：{Attr:4}），获得{2}点<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性\\n\\n获得{3}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "多次触发<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害后，根据自身<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，获得<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，获得大量<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            13,
+            30,
+            1,
+            13
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon102.png",
+        "ComboList": [
+            1028217
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10282080
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282083,
+        "SkillKey": 1028208,
+        "Name": "死告绝影",
+        "Desc": "<b><color=#E7D09A>每累计触发{0}次</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#E7D09A>伤害后触发：</color></b>\\n\\n自身每有{1}点<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性（当前：{Attr:4}），获得{2}点<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性\\n\\n获得{3}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "多次触发<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害后，根据自身<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，获得<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，获得大量<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            13,
+            20,
+            1,
+            13
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon102.png",
+        "ComboList": [
+            1028217
+        ],
+        "BuildTags": [
+            30,
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10282080
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282091,
+        "SkillKey": 1028209,
+        "Name": "安魂",
+        "Desc": "<b><color=#E7D09A>本场战斗中我方</color><color=#487F3B><Icon=IconLife|30|30|0.5/>生命值</color><color=#E7D09A>首次低于{0}时触发：</color></b>\\n\\n清空双方的<color=#516797><<Icon=IconBlock|30|30|0.5/>格挡></color><color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color><color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color><color=#9F3232><Icon=IconAngry|30|30|0.5/>狂暴</color><color=#9B8015><Icon=IconBurning|30|30|0.5/>点燃</color><color=#137D90><Icon=IconProtector|30|30|0.5/>护盾</color><color=#CB4B12><Icon=IconSun|30|30|0.5/>曦光值</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n造成<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>\\n\\n恢复{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "我方<color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>生命值</color>首次低于一定值时，清空双方的所有标记与负面状态，造成<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>，恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            "30%",
+            20
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon105.png",
+        "ComboList": [
+            1028212
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10282090
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 8000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282092,
+        "SkillKey": 1028209,
+        "Name": "安魂",
+        "Desc": "<b><color=#E7D09A>本场战斗中我方</color><color=#487F3B><Icon=IconLife|30|30|0.5/>生命值</color><color=#E7D09A>首次低于{0}时触发：</color></b>\\n\\n清空双方的<color=#516797><<Icon=IconBlock|30|30|0.5/>格挡></color><color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color><color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color><color=#9F3232><Icon=IconAngry|30|30|0.5/>狂暴</color><color=#9B8015><Icon=IconBurning|30|30|0.5/>点燃</color><color=#137D90><Icon=IconProtector|30|30|0.5/>护盾</color><color=#CB4B12><Icon=IconSun|30|30|0.5/>曦光值</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n造成<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>\\n\\n恢复{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "我方<color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>生命值</color>首次低于一定值时，清空双方的所有标记与负面状态，造成<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>，恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            "30%",
+            40
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon105.png",
+        "ComboList": [
+            1028212
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10282090
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 8000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282093,
+        "SkillKey": 1028209,
+        "Name": "安魂",
+        "Desc": "<b><color=#E7D09A>本场战斗中我方</color><color=#487F3B><Icon=IconLife|30|30|0.5/>生命值</color><color=#E7D09A>首次低于{0}时触发：</color></b>\\n\\n清空双方的<color=#516797><<Icon=IconBlock|30|30|0.5/>格挡></color><color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color><color=#9F3232><Icon=IconAnger|30|30|0.5/>怒火</color><color=#9F3232><Icon=IconAngry|30|30|0.5/>狂暴</color><color=#9B8015><Icon=IconBurning|30|30|0.5/>点燃</color><color=#137D90><Icon=IconProtector|30|30|0.5/>护盾</color><color=#CB4B12><Icon=IconSun|30|30|0.5/>曦光值</color><color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color><color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n造成<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>\\n\\n恢复{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "我方<color=#487F3B><Icon=IconLifeBlack|30|30|0.5/>生命值</color>首次低于一定值时，清空双方的所有标记与负面状态，造成<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>，恢复<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            "30%",
+            60
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon105.png",
+        "ComboList": [
+            1028212
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10282090
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 8000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282101,
+        "SkillKey": 1028210,
+        "Name": "烬蚀狂宴",
+        "Desc": "<b><color=#E7D09A>每累计消耗{0}</color><color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color><color=#E7D09A>后触发：</color></b>\\n\\n获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n获得{2}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "累计消耗一定<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>后，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            150,
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon78.png",
+        "ComboList": [
+            1028215
+        ],
+        "BuildTags": [
+            16,
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10282100
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32,
+            15
+        ]
+    },
+    {
+        "Id": 10282102,
+        "SkillKey": 1028210,
+        "Name": "烬蚀狂宴",
+        "Desc": "<b><color=#E7D09A>每累计消耗{0}</color><color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color><color=#E7D09A>后触发：</color></b>\\n\\n获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n获得{2}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "累计消耗一定<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>后，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            150,
+            1,
+            2
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon78.png",
+        "ComboList": [
+            1028215
+        ],
+        "BuildTags": [
+            16,
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10282100
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32,
+            15
+        ]
+    },
+    {
+        "Id": 10282103,
+        "SkillKey": 1028210,
+        "Name": "烬蚀狂宴",
+        "Desc": "<b><color=#E7D09A>每累计消耗{0}</color><color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color><color=#E7D09A>后触发：</color></b>\\n\\n获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n获得{2}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "累计消耗一定<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>后，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            150,
+            1,
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon78.png",
+        "ComboList": [
+            1028215
+        ],
+        "BuildTags": [
+            16,
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10282100
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32,
+            15
+        ]
+    },
+    {
+        "Id": 10282111,
+        "SkillKey": 1028211,
+        "Name": "绝罚",
+        "Desc": "<b><color=#E7D09A>使用【反制技能】后触发：</color></b>\\n\\n造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n【被动】进入战斗时，造成{1}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>",
+        "ShortDesc": "使用【反制技】后，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>，进入战斗时造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            1,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon18.png",
+        "ComboList": [
+            1028213
+        ],
+        "BuildTags": [
+            24,
+            30
+        ],
+        "Level": 1,
+        "Magics": [
+            10282110
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3
+    },
+    {
+        "Id": 10282112,
+        "SkillKey": 1028211,
+        "Name": "绝罚",
+        "Desc": "<b><color=#E7D09A>使用【反制技能】后触发：</color></b>\\n\\n造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n【被动】进入战斗时，造成{1}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>",
+        "ShortDesc": "使用【反制技】后，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>，进入战斗时造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            2,
+            2
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon18.png",
+        "ComboList": [
+            1028213
+        ],
+        "BuildTags": [
+            24,
+            30
+        ],
+        "Level": 2,
+        "Magics": [
+            10282110
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3
+    },
+    {
+        "Id": 10282113,
+        "SkillKey": 1028211,
+        "Name": "绝罚",
+        "Desc": "<b><color=#E7D09A>使用【反制技能】后触发：</color></b>\\n\\n造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n【被动】进入战斗时，造成{1}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>",
+        "ShortDesc": "使用【反制技】后，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>，进入战斗时造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            3,
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon18.png",
+        "ComboList": [
+            1028213
+        ],
+        "BuildTags": [
+            24,
+            30
+        ],
+        "Level": 3,
+        "Magics": [
+            10282110
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3
+    },
+    {
+        "Id": 10282121,
+        "SkillKey": 1028212,
+        "Name": "血锋悲音",
+        "Desc": "<b><color=#E7D09A>使用【拼刀技能】后触发：</color></b>\\n\\n获得{0}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n每造成过{1}次<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>，此技能伤害倍率提升{2}",
+        "ShortDesc": "使用【拼刀技】后，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>，根据造成过<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>的次数，提升伤害倍率",
+        "DescParams": [
+            2,
+            1,
+            "15%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon09.png",
+        "ComboList": [
+            1028216
+        ],
+        "BuildTags": [
+            23,
+            16
+        ],
+        "Level": 1,
+        "Magics": [
+            10282120
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            15
+        ]
+    },
+    {
+        "Id": 10282122,
+        "SkillKey": 1028212,
+        "Name": "血锋悲音",
+        "Desc": "<b><color=#E7D09A>使用【拼刀技能】后触发：</color></b>\\n\\n获得{0}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n每造成过{1}次<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>，此技能伤害倍率提升{2}",
+        "ShortDesc": "使用【拼刀技】后，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>，根据造成过<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>的次数，提升伤害倍率",
+        "DescParams": [
+            2,
+            1,
+            "30%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon09.png",
+        "ComboList": [
+            1028216
+        ],
+        "BuildTags": [
+            23,
+            16
+        ],
+        "Level": 2,
+        "Magics": [
+            10282120
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            15
+        ]
+    },
+    {
+        "Id": 10282123,
+        "SkillKey": 1028212,
+        "Name": "血锋悲音",
+        "Desc": "<b><color=#E7D09A>使用【拼刀技能】后触发：</color></b>\\n\\n获得{0}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n每造成过{1}次<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>，此技能伤害倍率提升{2}",
+        "ShortDesc": "使用【拼刀技】后，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>，根据造成过<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>的次数，提升伤害倍率",
+        "DescParams": [
+            2,
+            1,
+            "45%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon09.png",
+        "ComboList": [
+            1028216
+        ],
+        "BuildTags": [
+            23,
+            16
+        ],
+        "Level": 3,
+        "Magics": [
+            10282120
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            15
+        ]
+    },
+    {
+        "Id": 10282131,
+        "SkillKey": 1028213,
+        "Name": "妄执堕语",
+        "Desc": "<b><color=#E7D09A>每累计使用{0}次【触发技能】时触发：</color></b>\\n\\n获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n获得{2}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，首次使用时，额外获得{3}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>。",
+        "ShortDesc": "多次使用【触发技能】时，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>，获得大量<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            5,
+            1,
+            7,
+            6
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon104.png",
+        "ComboList": [
+            1028211
+        ],
+        "BuildTags": [
+            16,
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10282130
+        ],
+        "Type": 4,
+        "SaveScore": 3000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282132,
+        "SkillKey": 1028213,
+        "Name": "妄执堕语",
+        "Desc": "<b><color=#E7D09A>每累计使用{0}次【触发技能】时触发：</color></b>\\n\\n获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n获得{2}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，首次使用时，额外获得{3}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>。",
+        "ShortDesc": "多次使用【触发技能】时，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>，获得大量<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            5,
+            2,
+            7,
+            6
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon104.png",
+        "ComboList": [
+            1028211
+        ],
+        "BuildTags": [
+            16,
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10282130
+        ],
+        "Type": 4,
+        "SaveScore": 4500,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10282133,
+        "SkillKey": 1028213,
+        "Name": "妄执堕语",
+        "Desc": "<b><color=#E7D09A>每累计使用{0}次【触发技能】时触发：</color></b>\\n\\n获得{1}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n获得{2}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>，首次使用时，额外获得{3}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>。",
+        "ShortDesc": "多次使用【触发技能】时，获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>，获得大量<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            5,
+            3,
+            7,
+            6
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon104.png",
+        "ComboList": [
+            1028211
+        ],
+        "BuildTags": [
+            16,
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10282130
+        ],
+        "Type": 4,
+        "SaveScore": 6000,
+        "Character": 5,
+        "BuyPrice": 160,
+        "SellPrice": 80,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 3,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10283011,
+        "SkillKey": 1028301,
+        "Name": "逆羽裁心",
+        "Desc": "<b><color=#E7D09A>拼刀成功后：</color></b>\\n\\n获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>\\n\\n【被动】每有{1}点<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性（当前：{Attr:4}），造成<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>所需的<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>降低{2}点，至多降低{3}点\\n\\n造成<color=#487F3B><Icon=IconHitFly|30|30|0.5/>击飞</color>\\n\\n造成{4}秒<Icon=IconStun|30|30|0.5/>晕眩",
+        "ShortDesc": "拼刀成功后，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，根据<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，降低造成<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>所需的<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>，造成<color=#487F3B><Icon=IconHitFlyBlack|30|30|0.5/>击飞</color>与<Icon=IconStunBlack|30|30|0.5/>晕眩",
+        "DescParams": [
+            6,
+            200,
+            1,
+            5,
+            5
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon101.png",
+        "ComboList": [
+            1028301
+        ],
+        "BuildTags": [
+            23,
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10283010
+        ],
+        "Type": 2,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 20000,
+        "TLDam": 1,
+        "Quality": 4,
+        "KeyWordIds": [
+            32,
+            13
+        ]
+    },
+    {
+        "Id": 10283021,
+        "SkillKey": 1028302,
+        "Name": "葬月挽镰",
+        "Desc": "<b><color=#E7D09A>拼刀成功后：</color></b>\\n\\n造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>\\n\\n触发{1}次<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>伤害\\n\\n【被动】使用【触发技能】时，触发{2}次<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>伤害，每有{3}点<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性（当前：{Attr:4}），对手受到的<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>伤害提升{4}\\n\\n造成{5}秒<Icon=IconStun|30|30|0.5/>晕眩",
+        "ShortDesc": "拼刀成功后，造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>，触发<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害并<Icon=IconStunBlack|30|30|0.5/>晕眩，本场战斗中，根据<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，提升<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>伤害并触发额外效果",
+        "DescParams": [
+            5,
+            2,
+            1,
+            1,
+            "0.30%",
+            5
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon99.png",
+        "ComboList": [
+            1028302,
+            1028303,
+            1028304
+        ],
+        "BuildTags": [
+            23,
+            30
+        ],
+        "Level": 1,
+        "Magics": [
+            10283020
+        ],
+        "Type": 2,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 15000,
+        "TLDam": 1,
+        "Quality": 4,
+        "KeyWordIds": [
+            11
+        ]
+    },
+    {
+        "Id": 10283031,
+        "SkillKey": 1028304,
+        "Name": "暗翼暮袭",
+        "Desc": "<b><color=#E7D09A>拼刀成功后：</color></b>\\n\\n<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性（当前：{Attr:4}）高于{0}点时，额外造成{1}攻击伤害\\n\\n造成{2}秒<Icon=IconStun|30|30|0.5/>晕眩",
+        "ShortDesc": "拼刀成功后，造成伤害，并根据<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性，造成额外伤害",
+        "DescParams": [
+            230,
+            "100%",
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon69.png",
+        "ComboList": [
+            1028305
+        ],
+        "BuildTags": [
+            23
+        ],
+        "Level": 1,
+        "Magics": [
+            10283030
+        ],
+        "Type": 2,
+        "IsOutPool": true,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 20000,
+        "TLDam": 1,
+        "Quality": 4,
+        "KeyWordIds": [
+            11
+        ]
+    },
+    {
+        "Id": 10284011,
+        "SkillKey": 1028401,
+        "Name": "冥河邀舞",
+        "Desc": "<b><color=#E7D09A>反制成功后：</color></b>\\n\\n造成<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>\\n\\n【被动】每有{0}点<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>属性（当前：{Attr:5}），造成<color=#8A5096><Icon=IconCharm|30|30|0.5/>失心</color>时，额外获得{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，并扣除对手等量<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "反制成功后，造成<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>，造成<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>失心</color>时，根据<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序</color>属性，自身额外获得并扣除对手<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            75,
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon100.png",
+        "ComboList": [
+            1028401
+        ],
+        "BuildTags": [
+            24,
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10284010
+        ],
+        "Type": 3,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 15000,
+        "TLDam": 1,
+        "Quality": 4,
+        "KeyWordIds": [
+            32,
+            13
+        ]
+    },
+    {
+        "Id": 10284021,
+        "SkillKey": 1028402,
+        "Name": "悲悯之刑",
+        "Desc": "<b><color=#E7D09A>反制成功后：</color></b>\\n\\n获得{0}层<color=#B96716><<Icon=IconCrit|30|30|0.5/>暴击></color>\\n\\n【被动】本局游戏中每次造成<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>时，获得{1}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>，并扣除对手等量<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "反制成功后获得<color=#B96716><<Icon=IconCritBlack|30|30|0.5/>暴击></color>，每次造成<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>时，自身获得并扣除对手<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            3,
+            10
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon103.png",
+        "ComboList": [
+            1028402
+        ],
+        "BuildTags": [
+            24,
+            16
+        ],
+        "Level": 1,
+        "Magics": [
+            10284020
+        ],
+        "Type": 3,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 20000,
+        "TLDam": 1,
+        "Quality": 4,
+        "KeyWordIds": [
+            15
+        ]
+    },
+    {
+        "Id": 10284041,
+        "SkillKey": 1028404,
+        "Name": "罪业回声",
+        "Desc": "<b><color=#E7D09A>反制成功后：</color></b>\\n\\n<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>属性（当前：{Attr:5}）>{0}点时，额外造成{1}攻击伤害\\n\\n扣除对手{2}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "反制成功后，造成伤害，并根据<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序</color>属性，造成额外伤害",
+        "DescParams": [
+            230,
+            "100%",
+            20
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon52.png",
+        "ComboList": [
+            1028403
+        ],
+        "BuildTags": [
+            24
+        ],
+        "Level": 1,
+        "Magics": [
+            10284030
+        ],
+        "Type": 3,
+        "IsOutPool": true,
+        "SaveScore": 4000,
+        "Character": 5,
+        "BuyPrice": 80,
+        "SellPrice": 40,
+        "CSMag": 20000,
+        "TLDam": 1,
+        "Quality": 4
+    },
+    {
+        "Id": 10285011,
+        "SkillKey": 1028501,
+        "Name": "掠尘绝意",
+        "Desc": "<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性>{0}点时（当前：{Attr:4}），伤害倍率提高{1}",
+        "ShortDesc": "造成伤害并根据<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性额外提升伤害",
+        "DescParams": [
+            230,
+            "20%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon79.png",
+        "ComboList": [
+            1028505,
+            1028506
+        ],
+        "Level": 1,
+        "Magics": [
+            10285010
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 9000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285012,
+        "SkillKey": 1028501,
+        "Name": "掠尘绝意",
+        "Desc": "<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性>{0}点时（当前：{Attr:4}），伤害倍率提高{1}",
+        "ShortDesc": "造成伤害并根据<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性额外提升伤害",
+        "DescParams": [
+            230,
+            "25%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon79.png",
+        "ComboList": [
+            1028505,
+            1028506
+        ],
+        "Level": 2,
+        "Magics": [
+            10285010
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 11000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285013,
+        "SkillKey": 1028501,
+        "Name": "掠尘绝意",
+        "Desc": "<color=#B96716><Icon=IconWrestle|30|30|0.5/>先机</color>属性>{0}点时（当前：{Attr:4}），伤害倍率提高{1}",
+        "ShortDesc": "造成伤害并根据<color=#B96716><Icon=IconWrestleBlack|30|30|0.5/>先机</color>属性额外提升伤害",
+        "DescParams": [
+            230,
+            "30%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon79.png",
+        "ComboList": [
+            1028505,
+            1028506
+        ],
+        "Level": 3,
+        "Magics": [
+            10285010
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 14000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285021,
+        "SkillKey": 1028502,
+        "Name": "锋枢破序",
+        "Desc": "<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>属性>{0}点时（当前：{Attr:5}），伤害倍率提高{1}",
+        "ShortDesc": "造成伤害并根据<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序</color>属性额外提升伤害",
+        "DescParams": [
+            230,
+            "20%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon65.png",
+        "ComboList": [
+            1028513
+        ],
+        "Level": 1,
+        "Magics": [
+            10285020
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 9000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285022,
+        "SkillKey": 1028502,
+        "Name": "锋枢破序",
+        "Desc": "<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>属性>{0}点时（当前：{Attr:5}），伤害倍率提高{1}",
+        "ShortDesc": "造成伤害并根据<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序</color>属性额外提升伤害",
+        "DescParams": [
+            230,
+            "25%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon65.png",
+        "ComboList": [
+            1028513
+        ],
+        "Level": 2,
+        "Magics": [
+            10285020
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 11000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285023,
+        "SkillKey": 1028502,
+        "Name": "锋枢破序",
+        "Desc": "<color=#516797><Icon=IconOverClock|30|30|0.5/>超序</color>属性>{0}点时（当前：{Attr:5}），伤害倍率提高{1}",
+        "ShortDesc": "造成伤害并根据<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序</color>属性额外提升伤害",
+        "DescParams": [
+            230,
+            "30%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon65.png",
+        "ComboList": [
+            1028513
+        ],
+        "Level": 3,
+        "Magics": [
+            10285020
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 14000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285031,
+        "SkillKey": 1028503,
+        "Name": "以身砺刃",
+        "Desc": "<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性>{0}点时（当前：{Attr:3}），伤害倍率提高{1}",
+        "ShortDesc": "造成伤害并根据<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性额外提升伤害",
+        "DescParams": [
+            120,
+            "20%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon60.png",
+        "ComboList": [
+            1028517
+        ],
+        "Level": 1,
+        "Magics": [
+            10285030
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 9000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285032,
+        "SkillKey": 1028503,
+        "Name": "以身砺刃",
+        "Desc": "<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性>{0}点时（当前：{Attr:3}），伤害倍率提高{1}",
+        "ShortDesc": "造成伤害并根据<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性额外提升伤害",
+        "DescParams": [
+            120,
+            "25%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon60.png",
+        "ComboList": [
+            1028517
+        ],
+        "Level": 2,
+        "Magics": [
+            10285030
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 11000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285033,
+        "SkillKey": 1028503,
+        "Name": "以身砺刃",
+        "Desc": "<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意</color>属性>{0}点时（当前：{Attr:3}），伤害倍率提高{1}",
+        "ShortDesc": "造成伤害并根据<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意</color>属性额外提升伤害",
+        "DescParams": [
+            120,
+            "30%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon60.png",
+        "ComboList": [
+            1028517
+        ],
+        "Level": 3,
+        "Magics": [
+            10285030
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 14000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285041,
+        "SkillKey": 1028504,
+        "Name": "迷醉",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "造成伤害，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon68.png",
+        "ComboList": [
+            1028501
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 1,
+        "Magics": [
+            10285040
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 1,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10285042,
+        "SkillKey": 1028504,
+        "Name": "迷醉",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "造成伤害，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon68.png",
+        "ComboList": [
+            1028501
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 2,
+        "Magics": [
+            10285040
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 12500,
+        "TLDam": 1,
+        "Quality": 1,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10285043,
+        "SkillKey": 1028504,
+        "Name": "迷醉",
+        "Desc": "获得{0}点<color=#8A5096><Icon=IconCharm|30|30|0.5/>惑梦</color>",
+        "ShortDesc": "造成伤害，获得<color=#8A5096><Icon=IconCharmBlack|30|30|0.5/>惑梦</color>",
+        "DescParams": [
+            1
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon68.png",
+        "ComboList": [
+            1028501
+        ],
+        "BuildTags": [
+            31
+        ],
+        "Level": 3,
+        "Magics": [
+            10285040
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 15500,
+        "TLDam": 1,
+        "Quality": 1,
+        "KeyWordIds": [
+            32
+        ]
+    },
+    {
+        "Id": 10285051,
+        "SkillKey": 1028505,
+        "Name": "朽坏",
+        "Desc": "每场战斗首次使用此技能时，额外造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>",
+        "ShortDesc": "造成伤害，首次使用时额外造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon15.png",
+        "ComboList": [
+            1028507,
+            1028508
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 1,
+        "Magics": [
+            10285050
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 8000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285052,
+        "SkillKey": 1028505,
+        "Name": "朽坏",
+        "Desc": "每场战斗首次使用此技能时，额外造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>",
+        "ShortDesc": "造成伤害，首次使用时额外造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon15.png",
+        "ComboList": [
+            1028507,
+            1028508
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 2,
+        "Magics": [
+            10285050
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285053,
+        "SkillKey": 1028505,
+        "Name": "朽坏",
+        "Desc": "每场战斗首次使用此技能时，额外造成{0}层<color=#685BA4><Icon=IconPoisoned|30|30|0.5/>暗咒</color>",
+        "ShortDesc": "造成伤害，首次使用时额外造成<color=#685BA4><Icon=IconPoisonedBlack|30|30|0.5/>暗咒</color>",
+        "DescParams": [
+            3
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon15.png",
+        "ComboList": [
+            1028507,
+            1028508
+        ],
+        "BuildTags": [
+            30
+        ],
+        "Level": 3,
+        "Magics": [
+            10285050
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 12500,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285061,
+        "SkillKey": 1028506,
+        "Name": "沉眠夜蛊",
+        "Desc": "每场战斗首次使用此技能时，必定<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>",
+        "ShortDesc": "造成伤害，首次使用时必定<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon32.png",
+        "ComboList": [
+            1028514
+        ],
+        "BuildTags": [
+            16
+        ],
+        "Level": 1,
+        "Magics": [
+            10285060
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285062,
+        "SkillKey": 1028506,
+        "Name": "沉眠夜蛊",
+        "Desc": "每场战斗首次使用此技能时，必定<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>",
+        "ShortDesc": "造成伤害，首次使用时必定<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon32.png",
+        "ComboList": [
+            1028514
+        ],
+        "BuildTags": [
+            16
+        ],
+        "Level": 2,
+        "Magics": [
+            10285060
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 12500,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285063,
+        "SkillKey": 1028506,
+        "Name": "沉眠夜蛊",
+        "Desc": "每场战斗首次使用此技能时，必定<color=#B96716><Icon=IconCrit|30|30|0.5/>暴击</color>",
+        "ShortDesc": "造成伤害，首次使用时必定<color=#B96716><Icon=IconCritBlack|30|30|0.5/>暴击</color>",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon32.png",
+        "ComboList": [
+            1028514
+        ],
+        "BuildTags": [
+            16
+        ],
+        "Level": 3,
+        "Magics": [
+            10285060
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 15500,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285071,
+        "SkillKey": 1028507,
+        "Name": "蓄锐",
+        "Desc": "下一次使用的技能伤害提升{0}",
+        "ShortDesc": "造成伤害，且下次使用技能伤害提升",
+        "DescParams": [
+            "25%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon13.png",
+        "ComboList": [
+            1028502
+        ],
+        "Level": 1,
+        "Magics": [
+            10285070
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 8000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285072,
+        "SkillKey": 1028507,
+        "Name": "蓄锐",
+        "Desc": "下一次使用的技能伤害提升{0}",
+        "ShortDesc": "造成伤害，且下次使用技能伤害提升",
+        "DescParams": [
+            "25%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon13.png",
+        "ComboList": [
+            1028502
+        ],
+        "Level": 2,
+        "Magics": [
+            10285070
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285073,
+        "SkillKey": 1028507,
+        "Name": "蓄锐",
+        "Desc": "下一次使用的技能伤害提升{0}",
+        "ShortDesc": "造成伤害，且下次使用技能伤害提升",
+        "DescParams": [
+            "25%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon13.png",
+        "ComboList": [
+            1028502
+        ],
+        "Level": 3,
+        "Magics": [
+            10285070
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 12500,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285081,
+        "SkillKey": 1028508,
+        "Name": "愈战愈勇",
+        "Desc": "每使用过一次白色稀有度技能，本技能伤害倍率提高{0}",
+        "ShortDesc": "造成伤害，每次使用白色稀有度技能，此技能伤害提高",
+        "DescParams": [
+            "10%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon71.png",
+        "ComboList": [
+            1028518
+        ],
+        "Level": 1,
+        "Magics": [
+            10285080
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 7000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285082,
+        "SkillKey": 1028508,
+        "Name": "愈战愈勇",
+        "Desc": "每使用过一次白色稀有度技能，本技能伤害倍率提高{0}",
+        "ShortDesc": "造成伤害，每次使用白色稀有度技能，此技能伤害提高",
+        "DescParams": [
+            "10%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon71.png",
+        "ComboList": [
+            1028518
+        ],
+        "Level": 2,
+        "Magics": [
+            10285080
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 9000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285083,
+        "SkillKey": 1028508,
+        "Name": "愈战愈勇",
+        "Desc": "每使用过一次白色稀有度技能，本技能伤害倍率提高{0}",
+        "ShortDesc": "造成伤害，每次使用白色稀有度技能，此技能伤害提高",
+        "DescParams": [
+            "10%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon71.png",
+        "ComboList": [
+            1028518
+        ],
+        "Level": 3,
+        "Magics": [
+            10285080
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 11000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285091,
+        "SkillKey": 1028509,
+        "Name": "敛意",
+        "Desc": "下次使用技能后，返还其消耗<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>的{0}",
+        "ShortDesc": "造成伤害，且下次使用技能后返还部分<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>消耗",
+        "DescParams": [
+            "20%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon08.png",
+        "ComboList": [
+            1028509,
+            1028510
+        ],
+        "Level": 1,
+        "Magics": [
+            10285090
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 8000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285092,
+        "SkillKey": 1028509,
+        "Name": "敛意",
+        "Desc": "下次使用技能后，返还其消耗<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>的{0}",
+        "ShortDesc": "造成伤害，且下次使用技能后返还部分<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>消耗",
+        "DescParams": [
+            "20%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon08.png",
+        "ComboList": [
+            1028509,
+            1028510
+        ],
+        "Level": 2,
+        "Magics": [
+            10285090
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285093,
+        "SkillKey": 1028509,
+        "Name": "敛意",
+        "Desc": "下次使用技能后，返还其消耗<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>的{0}",
+        "ShortDesc": "造成伤害，且下次使用技能后返还部分<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>消耗",
+        "DescParams": [
+            "20%"
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon08.png",
+        "ComboList": [
+            1028509,
+            1028510
+        ],
+        "Level": 3,
+        "Magics": [
+            10285090
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 12500,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285101,
+        "SkillKey": 1028510,
+        "Name": "破势掠斩",
+        "Desc": "扣除对手{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "造成伤害，扣除对手<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            10
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon70.png",
+        "ComboList": [
+            1028515
+        ],
+        "Level": 1,
+        "Magics": [
+            10285100
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 6000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285102,
+        "SkillKey": 1028510,
+        "Name": "破势掠斩",
+        "Desc": "扣除对手{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "造成伤害，扣除对手<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            10
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon70.png",
+        "ComboList": [
+            1028515
+        ],
+        "Level": 2,
+        "Magics": [
+            10285100
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 7500,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285103,
+        "SkillKey": 1028510,
+        "Name": "破势掠斩",
+        "Desc": "扣除对手{0}点<color=#6F4877><Icon=IconStamina|30|30|0.5/>战意值</color>",
+        "ShortDesc": "造成伤害，扣除对手<color=#6F4877><Icon=IconStaminaBlack|30|30|0.5/>战意值</color>",
+        "DescParams": [
+            10
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon70.png",
+        "ComboList": [
+            1028515
+        ],
+        "Level": 3,
+        "Magics": [
+            10285100
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 9500,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285111,
+        "SkillKey": 1028511,
+        "Name": "积锋叠锐",
+        "Desc": "获得{0}点<color=#516797><Icon=IconOverClock|30|30|0.5/>超序值</color>",
+        "ShortDesc": "造成伤害，恢复<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序值</color>",
+        "DescParams": [
+            10
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon74.png",
+        "ComboList": [
+            1028503
+        ],
+        "Level": 1,
+        "Magics": [
+            10285110
+        ],
+        "Type": 1,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 8000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285112,
+        "SkillKey": 1028511,
+        "Name": "积锋叠锐",
+        "Desc": "获得{0}点<color=#516797><Icon=IconOverClock|30|30|0.5/>超序值</color>",
+        "ShortDesc": "造成伤害，恢复<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序值</color>",
+        "DescParams": [
+            10
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon74.png",
+        "ComboList": [
+            1028503
+        ],
+        "Level": 2,
+        "Magics": [
+            10285110
+        ],
+        "Type": 1,
+        "SaveScore": 1500,
+        "Character": 5,
+        "BuyPrice": 20,
+        "SellPrice": 10,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285113,
+        "SkillKey": 1028511,
+        "Name": "积锋叠锐",
+        "Desc": "获得{0}点<color=#516797><Icon=IconOverClock|30|30|0.5/>超序值</color>",
+        "ShortDesc": "造成伤害，恢复<color=#516797><Icon=IconOverClockBlack|30|30|0.5/>超序值</color>",
+        "DescParams": [
+            10
+        ],
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6SkillIcon/UiTheatre6SkillIcon74.png",
+        "ComboList": [
+            1028503
+        ],
+        "Level": 3,
+        "Magics": [
+            10285110
+        ],
+        "Type": 1,
+        "SaveScore": 2000,
+        "Character": 5,
+        "BuyPrice": 40,
+        "SellPrice": 20,
+        "CostTL": 20,
+        "CSMag": 12500,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285121,
+        "SkillKey": 1028512,
+        "Name": "普通攻击",
+        "Desc": "造成攻击伤害",
+        "ShortDesc": "造成伤害",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6FightSkillEmptyBg.png",
+        "ComboList": [
+            1028504
+        ],
+        "Level": 1,
+        "Type": 1,
+        "IsOutPool": true,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285131,
+        "SkillKey": 1028513,
+        "Name": "普通攻击",
+        "Desc": "造成攻击伤害",
+        "ShortDesc": "造成伤害",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6FightSkillEmptyBg.png",
+        "ComboList": [
+            1028511,
+            1028512
+        ],
+        "Level": 1,
+        "Type": 1,
+        "IsOutPool": true,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285141,
+        "SkillKey": 1028514,
+        "Name": "普通攻击",
+        "Desc": "造成攻击伤害",
+        "ShortDesc": "造成伤害",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6FightSkillEmptyBg.png",
+        "ComboList": [
+            1028516
+        ],
+        "Level": 1,
+        "Type": 1,
+        "IsOutPool": true,
+        "SaveScore": 1000,
+        "Character": 5,
+        "BuyPrice": 10,
+        "SellPrice": 5,
+        "CostTL": 20,
+        "CSMag": 10000,
+        "TLDam": 1,
+        "Quality": 1
+    },
+    {
+        "Id": 10285151,
+        "SkillKey": 1028515,
+        "Name": "普通攻击",
+        "Desc": "造成攻击伤害",
+        "ShortDesc": "造成伤害",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6FightSkillEmptyBg.png",
+        "ComboList": [
+            1028519
+        ],
+        "Level": 1,
+        "Type": 1,
+        "IsOutPool": true,
+        "SaveScore": 1000,
+        "Character": 5,
         "BuyPrice": 10,
         "SellPrice": 5,
         "CostTL": 20,

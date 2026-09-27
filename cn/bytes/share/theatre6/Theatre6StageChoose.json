@@ -11378,6 +11378,2076 @@
         "IsOutNormalPool": true
     },
     {
+        "Id": 2300,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n花摊老板送来白花，说救下女孩的黑裙女子曾来过这里。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen02.png",
+        "Quality": 5,
+        "LeftDesc": "询问花摊",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "LeftRewardMinNums": [
+            0,
+            16,
+            24
+        ],
+        "LeftRewardMaxNums": [
+            "",
+            36,
+            36
+        ],
+        "RightDesc": "查看花枝",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "RightRewardMinNums": [
+            -10,
+            24,
+            18
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            37,
+            27
+        ],
+        "ChooseLine": 92,
+        "LineNum": 1,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2301,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n花摊老板说她只买了一朵花，却留下了一句听不懂的古语。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen02.png",
+        "Quality": 5,
+        "LeftDesc": "记下古语",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            3,
+            4,
+            10001
+        ],
+        "LeftRewardMinNums": [
+            -15,
+            17,
+            29,
+            1
+        ],
+        "LeftRewardMaxNums": [
+            -10,
+            44,
+            44
+        ],
+        "RightDesc": "追问去向",
+        "RightRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "RightRewardTypeIds": [
+            1,
+            3,
+            4,
+            10002
+        ],
+        "RightRewardMinNums": [
+            -15,
+            28,
+            19,
+            1
+        ],
+        "RightRewardMaxNums": [
+            -10,
+            43,
+            28
+        ],
+        "ChooseLine": 92,
+        "LineNum": 2,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2302,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n古语被辨认与一座古老墓园有关，旧报纸也出现同样花朵。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "调查旧报",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            3
+        ],
+        "LeftRewardMinNums": [
+            0,
+            14,
+            25
+        ],
+        "LeftRewardMaxNums": [
+            "",
+            38,
+            38
+        ],
+        "RightDesc": "调查墓园",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            4
+        ],
+        "RightRewardMinNums": [
+            -10,
+            16,
+            27
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            24,
+            40
+        ],
+        "NeedBuffs": [
+            10001
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2303,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n花摊老板想起，曾有戴兜帽的人取走白花，留下封蜡碎片。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen02.png",
+        "Quality": 5,
+        "LeftDesc": "调查封蜡",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            23,
+            20
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            30,
+            30
+        ],
+        "RightDesc": "调查白花",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "RightRewardMinNums": [
+            -10,
+            19,
+            24
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            28,
+            36
+        ],
+        "NeedBuffs": [
+            10002
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2304,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n花、古语与封蜡指向同一个送葬世家，却没人认得送信者。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "回事务所核对",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "LeftRewardMinNums": [
+            20,
+            16,
+            11
+        ],
+        "LeftRewardMaxNums": [
+            40,
+            16,
+            16
+        ],
+        "RightDesc": "封存线索",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "RightRewardMinNums": [
+            20,
+            14,
+            12
+        ],
+        "RightRewardMaxNums": [
+            40,
+            21,
+            19
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2305,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n侦探把黑色请柬摊在灯下，反复辨认纸面的真伪与落款。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
+        "Quality": 5,
+        "LeftDesc": "查验封蜡",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            4
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            13,
+            29
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            44,
+            44
+        ],
+        "RightDesc": "比对笔迹",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "RightRewardMinNums": [
+            -10,
+            20,
+            23
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            30,
+            34
+        ],
+        "ChooseLine": 93,
+        "LineNum": 1,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2306,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n请柬只印了时间地点，落款处却压着一枚陌生的家徽。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
+        "Quality": 5,
+        "LeftDesc": "记下家徽",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "LeftRewardMinNums": [
+            0,
+            20,
+            19
+        ],
+        "LeftRewardMaxNums": [
+            "",
+            28,
+            28
+        ],
+        "RightDesc": "收好请柬",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            4
+        ],
+        "RightRewardMinNums": [
+            0,
+            22,
+            17
+        ],
+        "RightRewardMaxNums": [
+            "",
+            33,
+            26
+        ],
+        "ChooseLine": 93,
+        "LineNum": 2,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2307,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n准备结束，侦探换上礼服，叮嘱埃琳娜留意接应的暗号。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
+        "Quality": 5,
+        "LeftDesc": "约定暗号",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            3
+        ],
+        "LeftRewardMinNums": [
+            0,
+            15,
+            24
+        ],
+        "LeftRewardMaxNums": [
+            "",
+            37,
+            37
+        ],
+        "RightDesc": "检查装束",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            3
+        ],
+        "RightRewardMinNums": [
+            0,
+            17,
+            22
+        ],
+        "RightRewardMaxNums": [
+            "",
+            26,
+            33
+        ],
+        "ChooseLine": 93,
+        "LineNum": 3,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2400,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n甩开追兵后，你们暂时停在一条封闭走廊前。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "查看墙面",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            2,
+            10001
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            20,
+            22,
+            1
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            33,
+            33
+        ],
+        "RightDesc": "细听脚步",
+        "RightRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            4,
+            10002
+        ],
+        "RightRewardMinNums": [
+            -15,
+            24,
+            22,
+            1
+        ],
+        "RightRewardMaxNums": [
+            -10,
+            37,
+            33
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2401,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n墙面刻着旧画室编号，墨迹从砖缝慢慢渗出。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "拓印编号",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            21,
+            21
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            32,
+            32
+        ],
+        "RightDesc": "堵住砖缝",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "RightRewardMinNums": [
+            -15,
+            25,
+            21
+        ],
+        "RightRewardMaxNums": [
+            -10,
+            38,
+            32
+        ],
+        "NeedBuffs": [
+            10001
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2402,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n追兵脚步又逼近，你们退入废弃画室。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi11.png",
+        "Quality": 5,
+        "LeftDesc": "关上画门",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            18,
+            24
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            37,
+            37
+        ],
+        "RightDesc": "观察墨迹",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "RightRewardMinNums": [
+            -15,
+            22,
+            24
+        ],
+        "RightRewardMaxNums": [
+            -10,
+            33,
+            37
+        ],
+        "NeedBuffs": [
+            10002
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2403,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n两条线索都指向同一扇门，门缝漏出冷光。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "推开画门",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            3,
+            10001
+        ],
+        "LeftRewardMinNums": [
+            -15,
+            19,
+            28,
+            1
+        ],
+        "LeftRewardMaxNums": [
+            -10,
+            43,
+            43
+        ],
+        "RightDesc": "绕到侧面",
+        "RightRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            4,
+            10002
+        ],
+        "RightRewardMinNums": [
+            -10,
+            20,
+            22,
+            1
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            31,
+            33
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2404,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n空白路尽头通向外廊，门外传来仆役搜查的呼喝。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "推门入廊",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            20,
+            23
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            34,
+            34
+        ],
+        "RightDesc": "锁紧大门",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "RightRewardMinNums": [
+            0,
+            13,
+            26
+        ],
+        "RightRewardMaxNums": [
+            "",
+            20,
+            39
+        ],
+        "NeedBuffs": [
+            10001
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2405,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n侧廊尽头没有门，墙脚却留着一道新鲜擦痕。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "沿擦痕调查",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            14,
+            28
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            43,
+            43
+        ],
+        "RightDesc": "查看墙脚",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "RightRewardMinNums": [
+            -15,
+            19,
+            28
+        ],
+        "RightRewardMaxNums": [
+            -10,
+            28,
+            43
+        ],
+        "NeedBuffs": [
+            10002
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2406,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n两条路线最终都通向外廊，追兵的火把光正在逼近。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "循声查看",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            4
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            19,
+            24
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            36,
+            36
+        ],
+        "RightDesc": "屏息避让",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "RightRewardMinNums": [
+            -15,
+            28,
+            19
+        ],
+        "RightRewardMaxNums": [
+            -10,
+            43,
+            28
+        ],
+        "ChooseLine": 94,
+        "LineNum": 1,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2407,
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你们贴着廊柱潜行，尽量不发出一点声响。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
+        "ChooseLine": 94,
+        "LineNum": 2,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2408,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n前方仆役正在封锁外廊，一时难以通行。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "等待时机",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            3,
+            10001
+        ],
+        "LeftRewardMinNums": [
+            0,
+            20,
+            19,
+            1
+        ],
+        "LeftRewardMaxNums": [
+            "",
+            28,
+            28
+        ],
+        "RightDesc": "另寻小路",
+        "RightRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            3,
+            10002
+        ],
+        "RightRewardMinNums": [
+            -10,
+            13,
+            29,
+            1
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            20,
+            44
+        ],
+        "ChooseLine": 94,
+        "LineNum": 3,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2409,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n你正准备推门，走廊的灯忽然同时熄灭。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "摸黑前进",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "LeftRewardMinNums": [
+            -15,
+            19,
+            28
+        ],
+        "LeftRewardMaxNums": [
+            -10,
+            43,
+            43
+        ],
+        "RightDesc": "原地等候",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            4
+        ],
+        "RightRewardMinNums": [
+            -10,
+            16,
+            27
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            24,
+            40
+        ],
+        "NeedBuffs": [
+            10001
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2410,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n你正俯身查看门锁，眼前忽然一黑。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "记住位置",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            23,
+            20
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            30,
+            30
+        ],
+        "RightDesc": "等灯亮起",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "RightRewardMinNums": [
+            0,
+            12,
+            28
+        ],
+        "RightRewardMaxNums": [
+            "",
+            18,
+            42
+        ],
+        "NeedBuffs": [
+            10002
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2411,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n灯灭后追兵乱作一团——是埃琳娜熄灭了灯光。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "趁乱前行",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            24,
+            18
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            27,
+            27
+        ],
+        "RightDesc": "摸黑观察",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "RightRewardMinNums": [
+            -10,
+            20,
+            23
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            30,
+            34
+        ],
+        "ChooseLine": 95,
+        "LineNum": 1,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2412,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n你们绕开搜查的人群，停在一扇侧门前。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "就地停步",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            3
+        ],
+        "LeftRewardMinNums": [
+            0,
+            18,
+            21
+        ],
+        "LeftRewardMaxNums": [
+            "",
+            32,
+            32
+        ],
+        "RightDesc": "查看门侧",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            4
+        ],
+        "RightRewardMinNums": [
+            -10,
+            24,
+            18
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            37,
+            27
+        ],
+        "ChooseLine": 95,
+        "LineNum": 2,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2413,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n门外呼喝渐远，你们在侧门旁暂停，等追兵散开。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "稍作等候",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "LeftRewardMinNums": [
+            20,
+            8,
+            18
+        ],
+        "LeftRewardMaxNums": [
+            40,
+            27,
+            27
+        ],
+        "RightDesc": "整理线索",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "RightRewardMinNums": [
+            20,
+            10,
+            16
+        ],
+        "RightRewardMaxNums": [
+            40,
+            15,
+            25
+        ],
+        "ChooseLine": 95,
+        "LineNum": 3,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2414,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n确认外面的脚步走远，你们继续深入宅邸。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi05.png",
+        "Quality": 5,
+        "LeftDesc": "举步深入",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            24,
+            19
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            28,
+            28
+        ],
+        "RightDesc": "留意退路",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "RightRewardMinNums": [
+            0,
+            14,
+            25
+        ],
+        "RightRewardMaxNums": [
+            "",
+            21,
+            38
+        ],
+        "ChooseLine": 95,
+        "LineNum": 4,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2500,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n禁地栅栏外，白花沿空棺盛开，花下压着被刮花的铁牌。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "查看铁牌",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            4
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            13,
+            29
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            44,
+            44
+        ],
+        "RightDesc": "触碰白花",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "RightRewardMinNums": [
+            -15,
+            19,
+            28
+        ],
+        "RightRewardMaxNums": [
+            -10,
+            28,
+            43
+        ],
+        "ChooseLine": 96,
+        "LineNum": 1,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2501,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n铁牌与花瓣指向同一个编号，名字却被从名单上抹去。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "追查缺行",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            3,
+            4,
+            10001
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            17,
+            26,
+            1
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            39,
+            39
+        ],
+        "RightDesc": "记下年份",
+        "RightRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            4,
+            10002
+        ],
+        "RightRewardMinNums": [
+            0,
+            14,
+            25,
+            1
+        ],
+        "RightRewardMaxNums": [
+            "",
+            21,
+            38
+        ],
+        "ChooseLine": 96,
+        "LineNum": 2,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2502,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n缺行处只剩一截模糊判词，末尾有被仓促刮除的痕迹。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "拓印残痕",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            3
+        ],
+        "LeftRewardMinNums": [
+            -15,
+            16,
+            31
+        ],
+        "LeftRewardMaxNums": [
+            -10,
+            46,
+            46
+        ],
+        "RightDesc": "擦去痕迹",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            3
+        ],
+        "RightRewardMinNums": [
+            -10,
+            17,
+            26
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            26,
+            39
+        ],
+        "NeedBuffs": [
+            10001
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2503,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n年份对应一场古老的葬礼，花根埋着旧墓钉。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "拔出墓钉",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "LeftRewardMinNums": [
+            -15,
+            28,
+            19
+        ],
+        "LeftRewardMaxNums": [
+            -10,
+            28,
+            28
+        ],
+        "RightDesc": "保留原样",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            4
+        ],
+        "RightRewardMinNums": [
+            0,
+            16,
+            23
+        ],
+        "RightRewardMaxNums": [
+            "",
+            25,
+            34
+        ],
+        "NeedBuffs": [
+            10002
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2504,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n涅缇娅按亮引魂灯，白花在光里显出一条通向雾中的窄路。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "并肩入雾",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "LeftRewardMinNums": [
+            20,
+            8,
+            18
+        ],
+        "LeftRewardMaxNums": [
+            40,
+            27,
+            27
+        ],
+        "RightDesc": "让她领路",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "RightRewardMinNums": [
+            20,
+            8,
+            18
+        ],
+        "RightRewardMaxNums": [
+            40,
+            13,
+            27
+        ],
+        "ChooseLine": 97,
+        "LineNum": 1,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2505,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n灯光沿花路前探，远处传来拖拽石棺的声音。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "沿花路走",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "LeftRewardMinNums": [
+            0,
+            14,
+            25
+        ],
+        "LeftRewardMaxNums": [
+            "",
+            38,
+            38
+        ],
+        "RightDesc": "辨认声音",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "RightRewardMinNums": [
+            -15,
+            20,
+            26
+        ],
+        "RightRewardMaxNums": [
+            -10,
+            31,
+            39
+        ],
+        "ChooseLine": 97,
+        "LineNum": 2,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2506,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n雾里的声音停下，光域边缘掠过几道畏光的灰影。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen06.png",
+        "Quality": 5,
+        "LeftDesc": "靠近查看",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            3,
+            10001
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            13,
+            29,
+            1
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            44,
+            44
+        ],
+        "RightDesc": "观察雾墙",
+        "RightRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            4,
+            10002
+        ],
+        "RightRewardMinNums": [
+            -10,
+            15,
+            28,
+            1
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            22,
+            42
+        ],
+        "ChooseLine": 97,
+        "LineNum": 3,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2507,
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你靠近查看，泥地上浮出一串陌生脚印。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
+        "NeedBuffs": [
+            10001
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2508,
+        "Desc": "<color=#CDA05A>【异闻进程】</color>\\n你观察雾墙，墙面映出一道缓慢移动的人影。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen06.png",
+        "Quality": 5,
+        "LeftDesc": "继续",
+        "RightDesc": "继续",
+        "NeedBuffs": [
+            10002
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2509,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n两边线索都指向同一处，雾中的脚步忽然停住。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "辨认脚步",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            4
+        ],
+        "LeftRewardMinNums": [
+            -15,
+            15,
+            32
+        ],
+        "LeftRewardMaxNums": [
+            -10,
+            48,
+            48
+        ],
+        "RightDesc": "保持原地",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "RightRewardMinNums": [
+            -10,
+            18,
+            24
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            27,
+            37
+        ],
+        "ChooseLine": 98,
+        "LineNum": 1,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2510,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n灰影在光域外团团盘踞，不敢近身。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen06.png",
+        "Quality": 5,
+        "LeftDesc": "稳住灯光",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "LeftRewardMinNums": [
+            20,
+            8,
+            18
+        ],
+        "LeftRewardMaxNums": [
+            40,
+            27,
+            27
+        ],
+        "RightDesc": "留在原地",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            4
+        ],
+        "RightRewardMinNums": [
+            -10,
+            17,
+            26
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            26,
+            39
+        ],
+        "ChooseLine": 98,
+        "LineNum": 2,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2511,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n引魂灯的光域撑开，浓雾向两边分退，露出深处的路。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "并肩前行",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            3
+        ],
+        "LeftRewardMinNums": [
+            20,
+            12,
+            14
+        ],
+        "LeftRewardMaxNums": [
+            40,
+            21,
+            21
+        ],
+        "RightDesc": "沿墙探查",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            3
+        ],
+        "RightRewardMinNums": [
+            -10,
+            15,
+            28
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            22,
+            42
+        ],
+        "ChooseLine": 98,
+        "LineNum": 3,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2512,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n白花路尽头，雾墙像被什么从内侧轻轻敲响。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "听清声响",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "LeftRewardMinNums": [
+            -15,
+            19,
+            28
+        ],
+        "LeftRewardMaxNums": [
+            -10,
+            43,
+            43
+        ],
+        "RightDesc": "查看地面",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            4
+        ],
+        "RightRewardMinNums": [
+            -10,
+            24,
+            18
+        ],
+        "RightRewardMaxNums": [
+            -5,
+            37,
+            27
+        ],
+        "ChooseLine": 98,
+        "LineNum": 4,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2513,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n敲击声消失，雾墙露出可供通过的缝隙。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi18.png",
+        "Quality": 5,
+        "LeftDesc": "先行探路",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "LeftRewardMinNums": [
+            -15,
+            28,
+            19
+        ],
+        "LeftRewardMaxNums": [
+            -10,
+            28,
+            28
+        ],
+        "RightDesc": "并肩通过",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "RightRewardMinNums": [
+            20,
+            11,
+            16
+        ],
+        "RightRewardMaxNums": [
+            40,
+            16,
+            25
+        ],
+        "ChooseLine": 98,
+        "LineNum": 5,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2600,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n回城的石板街刚恢复通行，街角面包房亮起暖黄灯火。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi15.png",
+        "Quality": 5,
+        "LeftDesc": "进店取暖",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "LeftRewardMinNums": [
+            20,
+            14,
+            12
+        ],
+        "LeftRewardMaxNums": [
+            40,
+            19,
+            19
+        ],
+        "RightDesc": "带走面包",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "RightRewardMinNums": [
+            20,
+            12,
+            14
+        ],
+        "RightRewardMaxNums": [
+            40,
+            19,
+            21
+        ],
+        "ChooseLine": 99,
+        "LineNum": 1,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2601,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n杂货店老板送来一篮果子，感谢你帮忙找回散落的货物。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen02.png",
+        "Quality": 5,
+        "LeftDesc": "帮忙整理",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            3,
+            10001
+        ],
+        "LeftRewardMinNums": [
+            0,
+            23,
+            16,
+            1
+        ],
+        "LeftRewardMaxNums": [
+            "",
+            25,
+            25
+        ],
+        "RightDesc": "询问价钱",
+        "RightRewardTypes": [
+            2,
+            1,
+            1,
+            4
+        ],
+        "RightRewardTypeIds": [
+            1,
+            1,
+            4,
+            10002
+        ],
+        "RightRewardMinNums": [
+            0,
+            23,
+            16,
+            1
+        ],
+        "RightRewardMaxNums": [
+            "",
+            34,
+            25
+        ],
+        "ChooseLine": 99,
+        "LineNum": 2,
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2602,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n事务所门口堆着坏木箱，里面全是昨夜清点出的杂物。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
+        "Quality": 5,
+        "LeftDesc": "分类收拾",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            19,
+            24
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            36,
+            36
+        ],
+        "RightDesc": "请人搬走",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "RightRewardMinNums": [
+            0,
+            16,
+            24
+        ],
+        "RightRewardMaxNums": [
+            "",
+            24,
+            36
+        ],
+        "NeedBuffs": [
+            10001
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2603,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n忙完小事，面包房挂钟敲响，店主递来刚出炉的小面包。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgRen02.png",
+        "Quality": 5,
+        "LeftDesc": "坐下歇息",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            2
+        ],
+        "LeftRewardMinNums": [
+            20,
+            11,
+            16
+        ],
+        "LeftRewardMaxNums": [
+            40,
+            25,
+            25
+        ],
+        "RightDesc": "带回事务所",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            2,
+            3
+        ],
+        "RightRewardMinNums": [
+            20,
+            10,
+            16
+        ],
+        "RightRewardMaxNums": [
+            40,
+            15,
+            25
+        ],
+        "NeedBuffs": [
+            10002
+        ],
+        "IsOutNormalPool": true
+    },
+    {
+        "Id": 2604,
+        "Desc": "<color=#E74354>【异闻决策】</color>\\n天亮后，事务所门终于推开，账单旁放着一壶刚沏的红茶。",
+        "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi10.png",
+        "Quality": 5,
+        "LeftDesc": "先看账单",
+        "LeftRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "LeftRewardTypeIds": [
+            1,
+            1,
+            4
+        ],
+        "LeftRewardMinNums": [
+            -10,
+            20,
+            22
+        ],
+        "LeftRewardMaxNums": [
+            -5,
+            33,
+            33
+        ],
+        "RightDesc": "先喝红茶",
+        "RightRewardTypes": [
+            2,
+            1,
+            1
+        ],
+        "RightRewardTypeIds": [
+            1,
+            3,
+            4
+        ],
+        "RightRewardMinNums": [
+            20,
+            8,
+            18
+        ],
+        "RightRewardMaxNums": [
+            40,
+            13,
+            27
+        ],
+        "IsOutNormalPool": true
+    },
+    {
         "Id": 3011,
         "Desc": "火场废墟中，残留着尚未被烧毁的肖像画，不论从什么角度观看，画中人都似乎凝视着你。",
         "Image": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitherorBgDi/UiTheatre6RoomEitherorBgDi04.png",

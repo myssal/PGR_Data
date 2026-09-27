@@ -27,13 +27,24 @@ function XUiPBRRoleModel:OnStart()
     end
 end
 
-function XUiPBRRoleModel:InitShowCharacter(cuteModelName)
+function XUiPBRRoleModel:InitShowCharacter(cuteModelName, onLoaded)
     if self._PanelRoleModel then
         self._PanelRoleModel:UpdateCuteModelByModelName(nil, nil, nil, nil, nil,
                 cuteModelName, function()
                     CS.XShadowHelper.AddShadow(self._PanelRoleModel.GameObject, true)
+                    if onLoaded then
+                        onLoaded()
+                    end
                 end, true)
         self._PanelRoleModel:ShowRoleModel()
+    end
+end
+
+function XUiPBRRoleModel:PlayRoleAnimation(animName)
+    if self._PanelRoleModel then
+        if not string.IsNilOrEmpty(animName) then
+            self._PanelRoleModel:PlayAnima(animName)
+        end
     end
 end
 

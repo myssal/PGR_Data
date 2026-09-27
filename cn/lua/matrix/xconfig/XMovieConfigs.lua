@@ -1,6 +1,8 @@
 local TABLE_MOVIE_PATH_PREFIX = "Client/Movie/Movies/Movie%s.tab"
+local TABLE_MOVIE_VOICE_MUTE_LIST_PATH = "Client/Movie/MovieVoiceMuteList.tab"
 local TABLE_MOVIE_ACTOR_PATH = "Client/Movie/MovieActor.tab"
 local TABLE_MOVIE_SPINE_ACTOR_PATH = "Client/Movie/MovieSpineActor.tab"
+local TABLE_MOVIE_SPINE_ACTOR_V2_PATH = "Client/Movie/MovieSpineActorV2.tab"
 local TABLE_MOVIE_ROLE_FACE_PATH = "Client/Movie/MovieRoleFace.tab"
 local TABLE_MOVIE_SKIP_PATH = "Client/Movie/MovieSkips"
 local TABLE_MOVIE_STAFF_PATH = "Client/Movie/MovieStaffs"
@@ -17,11 +19,13 @@ local stringGsub = string.gsub
 local MovieTemplates = {}
 local MovieActorTemplates = {}
 local MovieSpineActorTemplates = {}
+local MovieSpineActorV2Templates = {}
 local MovieRoleFaceTemplates = {}
 local MovieSkipTemplates = {}
 local MovieStaffTemplates = {}
 local MovieSpeedTemplates = {}
 local MovieSkipSummaryTemplates = {}
+local MovieVoiceMuteListTemplates = {}
 
 local IsLoadMovieSkipSummary = false
 
@@ -67,6 +71,13 @@ XMovieConfigs.SpineActorAnim =
     PanelActorDarkDisable = "PanelActorDarkDisable",
 }
 
+XMovieConfigs.SpineActorTrackType =
+{
+    Base = 0,
+    Mouth = 1,
+    Face = 2,
+}
+
 local InitStaffConfigs = function()
     local paths = CS.XTableManager.GetPaths(TABLE_MOVIE_STAFF_PATH)
     XTool.LoopCollection(paths, function(path)
@@ -75,12 +86,33 @@ local InitStaffConfigs = function()
     end)
 end
 
+local InitSpineActorV2Configs = function()
+    MovieSpineActorV2Templates = {}
+
+    if not checkTableExist(TABLE_MOVIE_SPINE_ACTOR_V2_PATH) then
+        return
+    end
+
+    MovieSpineActorV2Templates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPINE_ACTOR_V2_PATH, XTable.XTableMovieSpineActorV2, "RoleId") or {}
+end
+
+local InitMovieVoiceMuteListConfigs = function()
+    MovieVoiceMuteListTemplates = {}
+    if not checkTableExist(TABLE_MOVIE_VOICE_MUTE_LIST_PATH) then
+        return
+    end
+
+    MovieVoiceMuteListTemplates = XTableManager.ReadByStringKey(TABLE_MOVIE_VOICE_MUTE_LIST_PATH, XTable.XTableMovieVoiceMuteList, "MovieTableName") or {}
+end
+
 function XMovieConfigs.Init()
     MovieActorTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_ACTOR_PATH, XTable.XTableMovieActor, "RoleId")
     MovieSpineActorTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPINE_ACTOR_PATH, XTable.XTableMovieSpineActor, "RoleId")
     MovieRoleFaceTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_ROLE_FACE_PATH, XTable.XTableMovieRoleFace, "RoleId")
     MovieSkipTemplates = {}--= XTableManager.ReadByStringKey(TABLE_MOVIE_SKIP_PATH, XTable.XTableMovieSkip, "Id")
     MovieSpeedTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPEED_PATH, XTable.XTableMovieSpeed, "Id")
+    InitMovieVoiceMuteListConfigs()
+    InitSpineActorV2Configs()
     InitStaffConfigs()
 
     IsLoadMovieSkipSummary = false
@@ -98,6 +130,10 @@ end
 function XMovieConfigs.CheckMovieConfigExist(movieId)
     local path = stringFormat(TABLE_MOVIE_PATH_PREFIX, movieId)
     return checkTableExist(path)
+end
+
+function XMovieConfigs.IsMovieVoiceMuted(movieId)
+    return MovieVoiceMuteListTemplates[movieId] ~= nil
 end
 
 function XMovieConfigs.GetMovieCfg(movieId)
@@ -202,6 +238,11 @@ end
 
 function XMovieConfigs.GetSpineActorRoleAnim2(actorId, index)
     local config = MovieSpineActorTemplates[actorId]
+    if not config then
+        XLog.ErrorTableDataNotFound("XMovieConfigs.GetSpineActorRoleAnim2", "MovieSpineActor", TABLE_MOVIE_SPINE_ACTOR_PATH, "actorId", tostring(actorId) .." index:", tostring(index))
+        return
+    end
+
     return config.RoleAnims2[index]
 end
 
@@ -233,6 +274,20 @@ function XMovieConfigs.GetSpineActorTransitionAnim(actorId, index)
     end
 
     return config.TransitionAnims[index]
+end
+
+function XMovieConfigs.IsSpineActorV2(actorId)
+    return MovieSpineActorV2Templates[actorId] ~= nil
+end
+
+function XMovieConfigs.GetSpineActorV2Config(actorId)
+    local config = MovieSpineActorV2Templates[actorId]
+    if not config then
+        XLog.ErrorTableDataNotFound("XMovieConfigs.GetSpineActorV2Config", "MovieSpineActorV2", TABLE_MOVIE_SPINE_ACTOR_V2_PATH, "actorId", tostring(actorId))
+        return
+    end
+
+    return config
 end
 
 local function GetMovieSkipConfig(movieId)

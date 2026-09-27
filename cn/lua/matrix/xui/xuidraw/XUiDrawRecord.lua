@@ -259,7 +259,8 @@ function XUiDrawRecord:RefreshRecordShow()
                 quality = quality or 1
                 fromName = fromGoods.Name
                 if fromGoods.TradeName then
-                    fromName = fromName .. "." .. fromGoods.TradeName
+                    -- 来源为角色时同样读LogName，与普通行保持一致
+                    fromName = XMVCA.XCharacter:GetCharacterLogName(reward.RewardGoods.ConvertFrom)
                 end
                 name = Goods.Name
                 time = TimestampToGameDateTimeString(reward.DrawTime)
@@ -270,11 +271,8 @@ function XUiDrawRecord:RefreshRecordShow()
                 quality = quality or 1
                 name = Goods.Name
                 if Goods.TradeName then
-                    if XOverseaManager.IsENRegion() then
-                        name = string.format("%s:%s", name, Goods.TradeName)
-                    else
-                        name = name .. "." .. Goods.TradeName
-                    end
+                    -- 角色货架才有TradeName：直接用Character.tab的LogName，避免代码拼接分隔符
+                    name = XMVCA.XCharacter:GetCharacterLogName(reward.RewardGoods.TemplateId)
                 end
                 time = TimestampToGameDateTimeString(reward.DrawTime)
                 self:_SetLogData(name, reward.RewardGoods.TemplateId, nil, time, quality)

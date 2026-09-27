@@ -42,10 +42,11 @@ end
 
 function XUiSceneMainPreview:Refresh()
     self.TogPreview.isOn = true
-    local isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
+    local isFirst = XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId)
     if self.BtnSwitch then
         self.BtnSwitch:RefreshSelect(isFirst)
     end
+    self:RefreshHintText()
     -- Todo 角色特效
 end
 
@@ -96,7 +97,7 @@ function XUiSceneMainPreview:AutoSetUi()
     if self.SwitchBtn == nil then return end
     if not XTool.IsTableEmpty(XPhotographConfigs.GetBackgroundSwitchDescById(self.SceneId)) then
         local btn = require("XUi/XUiSceneTip/XUiSwitchBtn")
-        local isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
+        local isFirst = XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId)
         self.BtnSwitch = btn.New(self.SwitchBtn, isFirst, self.SceneId, function ()
             self:OnBtnUiClick()
         end)
@@ -169,4 +170,14 @@ function XUiSceneMainPreview:ClearPreviewData()
         end)
     end
     
-end 
+end
+
+function XUiSceneMainPreview:RefreshHintText()
+    local hintText = XPhotographConfigs.GetBackgroundHintText(self.SceneId)
+    if string.IsNilOrEmpty(hintText) then
+        self.PanelHintText.gameObject:SetActiveEx(false)
+    else
+        self.PanelHintText.gameObject:SetActiveEx(true)
+        self.HintText.text = XUiHelper.ReplaceTextNewLine(hintText)
+    end
+end

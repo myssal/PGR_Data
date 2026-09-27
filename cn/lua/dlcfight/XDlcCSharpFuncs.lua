@@ -2719,6 +2719,20 @@ end
 function XDlcCSharpFuncs:ClearButtonCountDown(npcUUID, opKeyId)
 end
 
+---@desc [获取操作键上当前激活的技能组id](https://www.tapd.cn/tapd_fe/45286624/story/detail/1145286624001148789)
+---@param npcUUID int Npc对象的UUID
+---@param keyId ENpcOperationKey 目标操作键id,参考ENpcOperationKey
+---@return int 
+function XDlcCSharpFuncs:GetSkillGroupByOperationKey(npcUUID, keyId)
+end
+
+---@desc [检查技能组是否处于启用状态](https://www.tapd.cn/tapd_fe/45286624/story/detail/1145286624001148789)
+---@param npcUUID int Npc对象的UUID
+---@param sgId int 目标技能组id
+---@return bool 
+function XDlcCSharpFuncs:CheckSkillGroupEnable(npcUUID, sgId)
+end
+
 ---@desc 获取技能默认CD
 ---@return float 
 function XDlcCSharpFuncs:GetSkillCoolDown()
@@ -4482,8 +4496,9 @@ end
 ---@param npcUUID int 角色UUID
 ---@param nowSkillId int 当前技能ID
 ---@param nextSkillId int 下个技能ID
+---@param skillType int 本次释放的技能类型(ETheatre6SkillType)，决定UI动效
 ---@return void 
-function XDlcCSharpFuncs:Theatre6UpdateSkillUI(npcUUID, nowSkillId, nextSkillId)
+function XDlcCSharpFuncs:Theatre6UpdateSkillUI(npcUUID, nowSkillId, nextSkillId, skillType)
 end
 
 ---@desc 肉鸽6开关连击数UI

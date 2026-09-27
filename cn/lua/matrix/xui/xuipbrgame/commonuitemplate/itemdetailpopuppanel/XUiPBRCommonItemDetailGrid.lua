@@ -37,6 +37,7 @@ function XUiPBRCommonItemDetailGrid:InitComponents()
 
     if self.TxtDetail:GetType() == typeof(CS.XUiComponent.XUiRichTextCustomRender) then
         self.TxtDetail.requestImage = self._Control:GetRichTextImageRequestHandler()
+        self._IsTxtDetailRichText = true
     end
 end
 
@@ -59,7 +60,16 @@ function XUiPBRCommonItemDetailGrid:Refresh(itemId, resetScroll)
     -- 基础信息
     self.TxtName.text = itemCfg.ItemName
     self.TxtDetail.text = XUiHelper.ReplaceTextNewLine(itemCfg.ItemDesc)
-    
+
+    -- 富文本图标在面板 OnDisable(隐藏)→OnEnable(再次打开同一道具) 循环后会卡死：
+    -- OnDisable 回收所有图标(SetActive false)；第二次打开时 text 不变，ParseText 不重置图标重建标志，
+    -- 叠加 text setter 的 RecycleAllIconRender 与 OnPopulateMesh 填充时序冲突，usingIcons 被清空后
+    -- IconRenderShowApply 无对象激活、needReshowIcons 被清 false，后续 OnPopulateMesh 跳过图标定位，图标永久 active=false。
+    -- 设完 text 后主动 ForcePopulateIcons 强制重填 usingIcons 并置 iconShowed=true，绕过时序竞态确保图标激活。
+    if self._IsTxtDetailRichText then
+        self.TxtDetail:ForcePopulateIcons()
+    end
+
     -- 判断类型
     if itemCfg.ItemType == XMVCA.XPBRGame.EnumConst.ItemType.Skill then
         self.GridSkill:Open()
@@ -88,6 +98,7 @@ function XUiPBRCommonItemDetailGrid:Refresh(itemId, resetScroll)
             self.PanelStarBase.gameObject:SetActiveEx(true)
         end
         self:ShowStartByLevel(itemCfg.ItemTier, itemCfg.OrbColor)
+        self:RefreshStartBgShow(itemCfg.OrbColor)
     else
         -- 非技能，详情里不显示额外的星星
         self:ShowStartByLevel(0, 0)
@@ -103,16 +114,33 @@ function XUiPBRCommonItemDetailGrid:Refresh(itemId, resetScroll)
 end
 
 function XUiPBRCommonItemDetailGrid:ShowStartByLevel(level, orbColor)
-    local colorTextList = self._Control:GetClientPBRTextArray('SkillOrbStarColor')
-    local colorStr = colorTextList[orbColor + 1] or ''
+    local iconList = self._Control:GetClientPBRTextArray('SkillOrbStarIcon')
+    local icon = iconList[orbColor] or ''
     
     XUiHelper.RefreshCustomizedList(self.PanelStar, self.ImgStar, level, function(index, go)
         local img = go:GetComponent(typeof(CS.UnityEngine.UI.Image))
 
-        if img and not string.IsNilOrEmpty(colorStr) then
-            img.color = XUiHelper.Hexcolor2Color(string.gsub(colorStr, "#", ""))
+        if img and not string.IsNilOrEmpty(icon) then
+            img:SetSprite(icon)
         end
     end)
+end
+
+function XUiPBRCommonItemDetailGrid:RefreshStartBgShow(orbColor)
+    local iconList = self._Control:GetClientPBRTextArray('SkillOrbStarBgIcon')
+    local icon = iconList[orbColor] or ''
+
+    if not string.IsNilOrEmpty(icon) then
+        for i = 1, 10 do
+            local img = self["ImgStarBg" .. i]
+
+            if img then
+                img:SetSprite(icon)
+            else
+                break
+            end
+        end
+    end
 end
 
 function XUiPBRCommonItemDetailGrid:RefreshTagsShow(tags)

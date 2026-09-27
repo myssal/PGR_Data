@@ -1382,51 +1382,70 @@
         ]
     },
     {
-        "Id": 1401003,
-        "VoiceId": 171103,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3HelentineMd010011.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3HelentineMd010011.prefab",
+        "Id": 1411003,
+        "VoiceId": 173105,
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3KurumiMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3KurumiMd010011.prefab",
         "WeaponPrefabPaths": [
-            "Assets/Product/Role/WeaponPrefab/E2ChainsawMd010011.prefab"
+            "Assets/Product/Role/WeaponPrefab/E3Kurumi_longgunMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3Kurumi_shortgunMd010011.prefab"
         ],
         "WeaponMountBoneNames": [
-            "WeaponCase1"
+            "WeaponCase1",
+            "WeaponCase2"
         ],
-        "CameraPrefabPath": "Assets/Product/Camera/Track/R3HelentineMd010011/Common/CTHelentine03Win.prefab",
+        "CameraPrefabPath": "Assets/Product/Camera/Track/R3KurumiMd010011/CTKurumi03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
         "UiShowTime": 6.4,
         "EffectPrefabPaths": [
-            "Assets/Product/Effect/Prefab/FxR3HelentinePrefab/Common/FxR3HelentineWin.prefab",
-            "Assets/Product/Effect/Prefab/FxR3HelentinePrefab/Common/FxR3HelentineWin01.prefab"
+            "Assets/Product/Effect/Prefab/FxR3KurumiPrefab/FxR3KurumiWin01.prefab",
+            "Assets/Product/Effect/Prefab/FxR3KurumiPrefab/FxR3KurumiWinMat01.prefab",
+            "Assets/Product/Effect/Prefab/FxR3KurumiPrefab/FxR3KurumiWinScene01.prefab",
+            "Assets/Product/Effect/Prefab/FxR3KurumiPrefab/FxR3KurumiWinMat02.prefab",
+            "Assets/Product/Effect/Prefab/FxR3KurumiPrefab/FxR3KurumiWinEye.prefab",
+            "Assets/Product/Effect/Prefab/FxR3KurumiPrefab/FxR3KurumiWinMat04.prefab",
+            "Assets/Product/Effect/Prefab/FxR3KurumiPrefab/FxR3KurumiWin02.prefab",
+            "Assets/Product/Effect/Prefab/FxR3KurumiPrefab/FxR3KurumiWinPingmu01.prefab",
+            "Assets/Product/Effect/Prefab/FxR3KurumiPrefab/FxR3KurumiWinMat03.prefab"
         ],
         "EffectBoneNames": [
             "EffectRoot",
+            "WeaponCase2",
+            "EffectRoot",
+            "EffectRoot",
+            "Bip001Head",
+            "EffectRoot",
+            "EffectRoot",
+            "MainCamera",
             "EffectRoot"
         ]
     },
     {
-        "Id": 1071005,
-        "VoiceId": 172091,
-        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR5KalieninaMd010011.playable",
-        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R5KalieninaMd010011.prefab",
+        "Id": 1421003,
+        "TimelinePath": "Assets/Product/Ui/Animation/DrawCollaboration/UiNewDrawMainPerformance/PerformanceR3AdelaideMd010011.playable",
+        "CharacterPrefabPath": "Assets/Product/Role/CharaterPrefab/R3AdelaideMd010011.prefab",
         "WeaponPrefabPaths": [
-            "Assets/Product/Role/WeaponPrefab/E2AnchorMd010011.prefab"
+            "Assets/Product/Role/WeaponPrefab/E2HeavycrossMd010011.prefab"
         ],
         "WeaponMountBoneNames": [
             "WeaponCase1"
         ],
-        "CameraPrefabPath": "Assets/Product/Camera/Track/R5KalieninaMd010021/Common/CTKalienina05Win.prefab",
+        "CameraPrefabPath": "Assets/Product/Camera/Track/R3AdelaideMd010021/Common/CTAdlaide03Win.prefab",
         "MainCameraPrefabPath": "Assets/Product/Camera/SceneCamera/165.prefab",
-        "UiShowTime": 7.73,
+        "UiShowTime": 6.6999,
         "EffectPrefabPaths": [
-            "Assets/Product/Effect/Prefab/FxR5KalieninaPrefab/Common/FxR5KalieninaWin01.prefab",
-            "Assets/Product/Effect/Prefab/FxR5KalieninaPrefab/Common/FxR5KalieninaWinPingmu.prefab",
-            "Assets/Product/Effect/Prefab/FxR5KalieninaPrefab/Common/FxR5KalieninaWinWeaponCase1.prefab"
+            "Assets/Product/Effect/Prefab/FxR3AdelaidePrefab/Common/FxR3AdelaideWinPingmu01.prefab",
+            "Assets/Product/Effect/Prefab/FxR3AdelaidePrefab/Common/FxR3AdelaideWin.prefab",
+            "Assets/Product/Effect/Prefab/FxR3AdelaidePrefab/Common/FxR3AdelaideWinBip001RForearm.prefab",
+            "Assets/Product/Effect/Prefab/FxR3AdelaidePrefab/Common/FxR3AdelaideWinBip001Head.prefab",
+            "Assets/Product/Effect/Prefab/FxR3AdelaidePrefab/Common/FxR3AdelaideWinPingmu.prefab"
         ],
         "EffectBoneNames": [
-            "EffectRoot",
             "MainCamera",
-            "WeaponCase1"
+            "EffectRoot",
+            "Bip001RForearm",
+            "Bip001Head",
+            "MainCamera"
         ]
     }
 ]

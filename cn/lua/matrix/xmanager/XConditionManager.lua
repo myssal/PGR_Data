@@ -742,6 +742,12 @@ PlayerCondition = {
         local isHistory = XTool.IsNumberValid(tonumber(condition.Params[4]))
         return XDataCenter.StrongholdManager.CheckGroupPassUseElectric(groupId, requireUseElectric, elType, isHistory), condition.Desc
     end,
+    [12104] = function(condition)
+        -- 当前背包内意识装备的共鸣技能数量是否达到要求
+        local requiredCount = condition.Params[1]
+        local resonanceSkillCount = XMVCA.XEquip:GetAwarenessResonanceSkillCount()
+        return resonanceSkillCount >= requiredCount, condition.Desc
+    end,
     [12200] = function(condition)
         local activityId = tonumber(condition.Params[1] or 0)
         local state = tonumber(condition.Params[2] or 0)
@@ -2728,6 +2734,11 @@ PlayerCondition = {
         local isMeet = condition.Params[1] == 1
         return XMVCA.XFangKuai:IsGuideExitFever(isMeet), condition.Desc
     end,
+    [17437] = function(condition)
+        -- 七夕邀请函开包活动 - 检查已开启的信封数量是否达到目标数量
+        local targetCount = condition.Params[1] -- 目标开启的信封数量
+        return XMVCA.XEnvelopeGuessing:CheckOpenEnvelopeCount(targetCount), condition.Desc
+    end,
     
     --region 推箱子
     [64103] = function(condition)  
@@ -2928,6 +2939,55 @@ PlayerCondition = {
         return stageId == XMVCA.XDyeMergeGame:GetCurGamingStageId(), condition.Desc
     end,
     
+    --endregion
+    
+    --region 大巴扎玩法
+    
+    --- 判断局内当前持有金币数量边界
+    [23301] = function(condition)
+        local rightVal = condition.Params[1]
+        local op = condition.Params[2]
+        
+        return XMVCA.XPunishaar:CheckGoldRelation(rightVal, op), condition.Desc
+    end,
+    
+    --- 判断局内当前节点所处区间
+    [23302] = function(condition)
+        local left = condition.Params[1]
+        local right = condition.Params[2]
+        
+        return XMVCA.XPunishaar:CheckNodeInterval(left, right), condition.Desc
+    end,
+
+    --- 判断局内当前节点所处区间[纯客户端，和服务端隔离]
+    [23303] = function(condition)
+        local left = condition.Params[1]
+        local right = condition.Params[2]
+        local stageId = condition.Params[3]
+        local status = condition.Params[4]
+
+        if not XTool.IsNumberValid(stageId) then
+            return false, condition.Desc
+        end
+
+        return XMVCA.XPunishaar:CheckNodeInterval(left, right, stageId, status), condition.Desc
+    end,
+    --endregion
+
+    --region 超限启航
+    [23401] = function(condition)
+        -- 当前是否处于指定塔的选关界面（引导用）
+        local curTowerCfgId = XMVCA.XTransfiniteTower:GetStageUiTowerCfgId()
+        if not XTool.IsNumberValid(curTowerCfgId) then
+            return false, condition.Desc
+        end
+        for _, towerCfgId in ipairs(condition.Params or table.empty) do
+            if curTowerCfgId == towerCfgId then
+                return true, condition.Desc
+            end
+        end
+        return false, condition.Desc
+    end,
     --endregion
 }
 
@@ -3993,6 +4053,10 @@ function XConditionManager.GetConditionTemplate(id)
         return
     end
     return template
+end
+
+function XConditionManager.GetAllConditionTemplate()
+    return ConditionTemplate
 end
 
 local function LCheckCharacterCondition(template, ...)

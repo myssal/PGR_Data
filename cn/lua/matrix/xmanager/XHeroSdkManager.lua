@@ -592,4 +592,17 @@ end
 
 function XHeroSdkManager.OnKRPluginCallback(responseData)
     XPgsAchievementManager.OnKRPluginCallback(responseData)
+ender.IsUseSdk() then
+        if XUserManager.Platform == XUserManager.PLATFORM.IOS then
+            return 'A1348'
+        else
+            return CS.XHeroSdkAgent.GetPkgId()
+        end
+    end
+    
+    return ''
+end
+
+function XHeroSdkManager.OnKRPluginCallback(responseData)
+    XPgsAchievementManager.OnKRPluginCallback(responseData)
 end

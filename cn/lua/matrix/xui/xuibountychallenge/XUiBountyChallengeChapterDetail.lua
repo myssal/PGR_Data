@@ -165,7 +165,9 @@ end
 
 function XUiBountyChallengeChapterDetail:_OnClickTask()
     self.PanelTaskBg.gameObject:SetActiveEx(true)
-    XTool.UpdateDynamicItem(self._GridTasks, self._Data.TaskList, self.GridTask, XUiBountyChallengeChapterDetailTask, self)
+    local data = self._Control:GetUiChapterDetail()
+    self._Data = data
+    XTool.UpdateDynamicItem(self._GridTasks, data.TaskList, self.GridTask, XUiBountyChallengeChapterDetailTask, self)
     self:_PlayGridTaskEnableAnim()
 end
 
@@ -186,7 +188,8 @@ end
 
 function XUiBountyChallengeChapterDetail:UpdateDifficultyUI()
     local currentLevel = self._Control._DifficultyLevel
-    local isLianyuDifficulty = (currentLevel == 4)
+    local maxLevel = self._Control:GetBossMaxDifficultyLevel(self._Control._SelectedBossId)
+    local isLianyuDifficulty = (currentLevel == maxLevel)
 
     self.PanelLianyu.gameObject:SetActiveEx(isLianyuDifficulty)
     self.BtnLianyu.gameObject:SetActiveEx(isLianyuDifficulty)

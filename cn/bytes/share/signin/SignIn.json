@@ -1592,7 +1592,6 @@
     },
     {
         "Id": 111,
-        "TimeId": 47110,
         "Name": "长路归航-签到",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV405.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV405.prefab",
@@ -1608,7 +1607,6 @@
     },
     {
         "Id": 112,
-        "TimeId": 47111,
         "Name": "艾束芳兰-签到",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgDragonBoatFestivalV405.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainDragonBoatFestivalV405.prefab",
@@ -1639,7 +1637,6 @@
     },
     {
         "Id": 114,
-        "TimeId": 48110,
         "Name": "孑念空行-签到",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV406.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV406.prefab",
@@ -1655,7 +1652,6 @@
     },
     {
         "Id": 115,
-        "TimeId": 49110,
         "Name": "歧海循光-签到",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV407.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV407.prefab",
@@ -1668,5 +1664,74 @@
             1110
         ],
         "OpenLevel": 20
+    },
+    {
+        "Id": 116,
+        "TimeId": 50301,
+        "Name": "新客访临",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgBirthday14V400.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainDateALive14V408.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelBirthday14V400.png",
+        "Type": 2,
+        "RoundDays": [
+            7,
+            7
+        ],
+        "SubRoundId": [
+            1111,
+            1112
+        ],
+        "SkipTimeId": 50301,
+        "SkipId": 20361,
+        "SkipRedPointConditions": [
+            "CONDITION_DATEALIVE_CHAPTER_ENTER"
+        ]
+    },
+    {
+        "Id": 117,
+        "TimeId": 50911,
+        "Name": "远信回响-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV408.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV408.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelV408.png",
+        "Type": 2,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1113
+        ],
+        "OpenLevel": 20
+    },
+    {
+        "Id": 118,
+        "TimeId": 50912,
+        "Name": "桂月澄明-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBg2026ZhongQiuV408.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMain2026ZhongQiuV408.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabel2026ZhongQiuV408.png",
+        "Type": 2,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1114
+        ]
+    },
+    {
+        "Id": 119,
+        "TimeId": 24,
+        "Name": "五日赠礼-礼包",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseWeekCardV408.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignWeekCardV408.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelWeekCardV408.png",
+        "Type": 4,
+        "RoundDays": [
+            5
+        ],
+        "SubRoundId": [
+            202
+        ],
+        "IsShowWhenSignOver": true
     }
 ]

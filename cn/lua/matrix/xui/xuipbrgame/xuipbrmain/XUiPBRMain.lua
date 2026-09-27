@@ -9,6 +9,7 @@
 local XUiPBRMain = XLuaUiManager.Register(XLuaUi, "UiPBRMain")
 local XUiPBRRoleModel = require('XUi/XUiPBRGame/XUiPBRCharacterDetail/XUiPBRRoleModel')
 local XUiPanelPBRMainTitle = require("XUi/XUiPBRGame/XUiPBRMain/XUiPanelPBRMainTitle")
+local XUiPBRMainSceneAnim = require("XUi/XUiPBRGame/XUiPBRMain/XUiPBRMainSceneAnim")
 
 function XUiPBRMain:OnAwake()
     self:InitComponents()
@@ -26,13 +27,19 @@ function XUiPBRMain:InitComponents()
     self.BtnGenius:AddEventListener(function() self:OnBtnGeniusClick() end)
     self.BtnFight:AddEventListener(function() self:OnBtnFightClick() end)
     self.BtnContinueFight:AddEventListener(function() self:OnBtnContinueFightClick() end)
+    self.BtnSkin:AddEventListener(function() self:OnBtnSkinClick() end)
     
     ---@type XUiPBRRoleModel
     self.RoleModel = XUiPBRRoleModel.New(self.GameObject, self)
     
     ---@type XUiPanelPBRMainTitle
     self.PanelTitle = XUiPanelPBRMainTitle.New(self.TittleEasterEgg, self)
-    
+
+    if self.UiModelGo then
+        ---@type XUiPBRMainSceneAnim
+        self.SceneAnim = XUiPBRMainSceneAnim.New(self.UiModelGo, self)
+    end
+
     
     self._ContinueHandler = function()
         self._Control.InGameControl:ContinueGame()
@@ -49,13 +56,35 @@ function XUiPBRMain:InitComponents()
     end
 end
 
-function XUiPBRMain:OnStart(...)
+function XUiPBRMain:OnStart()
+    self._IsFirstEnable = true
     self.IsCheckUpdateScene = false
+    self:_ShowSkinPopup()
+end
+
+function XUiPBRMain:OnResume()
+    self._IsResumeOpen = true
 end
 
 function XUiPBRMain:OnEnable()
     self._Control:AddTimeEventListener(self.OnActivityTimeTimerUpdate, self)
     self:RefreshAll()
+    if self.SceneAnim then
+        if self._IsFirstEnable then
+            self._IsFirstEnable = false
+            if self._IsResumeOpen then
+                self._IsResumeOpen = false
+                self.SceneAnim:PlayAnimEnable()
+                self:PlayAnimation("Enable")
+            else
+                self.SceneAnim:PlayAnimStart()
+                self:PlayAnimation("Start")
+            end
+        else
+            self.SceneAnim:PlayAnimEnable()
+            self:PlayAnimation("Enable")
+        end
+    end
 end
 
 function XUiPBRMain:OnDisable()
@@ -70,6 +99,7 @@ function XUiPBRMain:RefreshAll()
     self:RefreshRewardPreview()
     self:RefreshReddot()
     self:RefreshRoleModel()
+    self:_UpdateSkinBtn()
 end
 
 function XUiPBRMain:RefreshFightStatusShow()
@@ -130,6 +160,7 @@ function XUiPBRMain:RefreshRoleModel()
     local cuteModelName = self._Control:GetCuteModelNameShowInMain()
 
     if not string.IsNilOrEmpty(cuteModelName) then
+        -- 主界面不显式播放 IdleAction，任由已加载的动画控制器状态机自由播放默认状态
         self.RoleModel:InitShowCharacter(cuteModelName)
     end
 end
@@ -168,24 +199,34 @@ function XUiPBRMain:OnActivityTimeTimerUpdate(timeId)
     local leftTime = math.max(0, endTime - now)
 
     self.TxtTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+end
+--endregion
 
-    self:CheckUpdateScene()
+--region SkinPopup
+
+function XUiPBRMain:OnBtnSkinClick()
+    XLuaUiManager.OpenWithCloseCallback("UiPBRPopupSkin", function()
+        self:_UpdateSkinBtn()
+    end)
 end
 
--- 检查未退出战斗打开UI，等战斗退出了重新刷新UI场景
-function XUiPBRMain:CheckUpdateScene()
-    if not self.UiSceneInfo then
+function XUiPBRMain:_ShowSkinPopup()
+    if not self._Control:CheckShowSkinPopup() then
         return
     end
-    
-    if not self.IsCheckUpdateScene and XFightUtil.IsFighting() then
-        self.IsCheckUpdateScene = true
-    elseif self.IsCheckUpdateScene and not XFightUtil.IsFighting() then
-        self.UiSceneInfo.GameObject:SetActiveEx(false)
-        self.UiSceneInfo.GameObject:SetActiveEx(true)
-        self.IsCheckUpdateScene = false
+    self:OnBtnSkinClick()
+end
+
+function XUiPBRMain:_UpdateSkinBtn()
+    if self._Control:IsSkinRewardClaimed() then
+        self.BtnSkin:SetButtonState(CS.UiButtonState.Disable)
+        self.BtnSkin:ShowReddot(false)
+    else
+        self.BtnSkin:SetButtonState(CS.UiButtonState.Normal)
+        self.BtnSkin:ShowReddot(true)
     end
 end
+
 --endregion
 
 return XUiPBRMain
