@@ -66,6 +66,7 @@ function XUiPanelCultureConsume:RefreshSpecialTraining(itemId, count)
     self.PanelBreakthroughConsume.gameObject:SetActiveEx(true)
     self.BtnPreview.gameObject:SetActiveEx(false)
     self.TagExchange.gameObject:SetActiveEx(false)
+    self.TagNotEnough.gameObject:SetActiveEx(false)
 
     self:RefreshCostGrids({ { ItemId = itemId, NeedCount = count, ExchangeGain = 0 } })
 end

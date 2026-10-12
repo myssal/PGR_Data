@@ -19,17 +19,20 @@ function XTheatre6HypnoController:Ctor(proxy, npc)
     self.TLCost = 15
     self.TLRecover = 15
 
+    --初始化层数
+    self._maxHypno = 13
 
+    --self:LogError(".....魅惑控制器注册")
+end
+
+function XTheatre6HypnoController:OnEnterLevel(levelId)
+    XTheatre6AffixControllerBase.OnEnterLevel(self, levelId)
+    --获取下特殊拼刀技能
     local PDSkillId = self._proxy:Theatre6GetWrestleDeriveSkill(self._npcUUID)
     if PDSkillId == 10283011 then
         self._maxHypno = 13 - ( self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.WrestlePoint) // 200  )
-
         if self._maxHypno < 9 then self._maxHypno = 9 end
-    else
-        self._maxHypno = 13
     end
-
-    --self:LogError(".....魅惑控制器注册")
 end
 
 function XTheatre6HypnoController:OnLuaSkillStart(eventArgs)

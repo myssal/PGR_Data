@@ -67,9 +67,9 @@ function XTheatre6PoisonedController:AfterDamageCalc(eventArgs)
     --self:LogError(".....看看剧毒层数"..self._buffCount)
     local extraDmg = self._buffCount * attack // 10
     --self:LogError(".....触发了剧毒增伤吗"..extraDmg)
-    local PDSkillId = self._proxy:Theatre6GetWrestleDeriveSkill(self._npcUUID)
+    local PDSkillId = self._proxy:Theatre6GetWrestleDeriveSkill(self._enemyUUID)
     if PDSkillId == 10283021 then
-        extraDmg = extraDmg * (1 + self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.WrestlePoint) * 0.003  )
+        extraDmg = extraDmg * (1 + self._proxy:GetNpcGameplayAttribValue(self._enemyUUID,ETheatre6AttribType.WrestlePoint) * 0.003  )
         --self:LogError(".....触发了携带拼刀技能2的强化剧毒，打印下剧毒伤害倍率"..extraDmg)
     end
     if self._proxy:GetBuffCountByKind(self._npcUUID,1025800) >= 1 then

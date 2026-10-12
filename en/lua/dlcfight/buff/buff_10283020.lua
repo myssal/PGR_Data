@@ -26,7 +26,7 @@ function XBuffScript10283020:OnLuaSkillStart(eventArgs)
     ------------执行------------
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     if eventArgs._skillType == ETheatre6SkillType.Insert then
-        self._proxy:ApplyMagic(self._enemyUUID,self._enemyUUID,1028104,1,1,self.PoisonedTriggerInsert)
+        self._poisonedController:CastDmg()
     end
     if eventArgs._skillId ~= self._skillId then return end
     self._poisonedController:CastStackBuff(self.PoisonedCount, self._enemyUUID)

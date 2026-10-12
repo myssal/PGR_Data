@@ -140,6 +140,12 @@ function XTeamRecommendAgency:GetFormationListByFilter(stageType, formationType)
     return self._Model:GetFormationListByFilter(stageType, formationType)
 end
 
+---@return boolean
+function XTeamRecommendAgency:IsBaseFormationEntryVisible()
+    local values = self._Model:GetTeamRecommendClientConfigValues("ShowBaseFormationEntry")
+    return values ~= nil and tonumber(values[1]) == 1
+end
+
 --- Tab2核心查询：根据筛选条件+角色ID构造完整阵容展示数据
 --- 返回 { Formation=cfg, BaseFormation=cfg|nil, ServerFormation=serverData|nil } 列表
 function XTeamRecommendAgency:BuildFormationGridList(stageType, formationType, characterId)
@@ -148,7 +154,7 @@ function XTeamRecommendAgency:BuildFormationGridList(stageType, formationType, c
     for _, formationCfg in pairs(self:GetTeamRecommendFormation()) do
         -- 3. 每个阵容类型进入统一构建入口
         local gridData = self:BuildFormationGridData(formationCfg.Id, characterId, formationCfg)
-        if gridData then
+        if gridData and (gridData.ServerFormation or self:IsBaseFormationEntryVisible()) then
             table.insert(allGridData, gridData)
         end
     end

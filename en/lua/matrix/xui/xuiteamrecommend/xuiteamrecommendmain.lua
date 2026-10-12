@@ -141,6 +141,20 @@ function XUiTeamRecommendMain:RefreshTabPanel()
     self.UiPanelTeam.gameObject:SetActiveEx(not isCharTab)
 end
 
+--- 取当前应选中的右侧页签：记忆的页签没有阵容条目时取第一个有条目的页签
+function XUiTeamRecommendMain:GetFormationTabSelectIndex()
+    local firstVisibleIndex
+    for index = 1, self.PanelTabRight.TabBtnList.Count do
+        if self:HasFormationData(self.CurStageType, index) then
+            if index == self.CurFormationTabIndex then
+                return index
+            end
+            firstVisibleIndex = firstVisibleIndex or index
+        end
+    end
+    return firstVisibleIndex or self.CurFormationTabIndex
+end
+
 --- 左侧Tab回调（1-2=主Tab, 3-4=玩法StageType子按钮）
 --- 框架行为：点击有子按钮的主Tab2时，框架只展开子按钮并触发第一个子按钮的回调(index=3)，不会触发主Tab自身回调(index=2)；选主Tab1时自动收起子按钮
 function XUiTeamRecommendMain:OnSelectLeftTab(index)
@@ -160,7 +174,8 @@ function XUiTeamRecommendMain:OnSelectLeftTab(index)
         self.CurLeftTabIndex = XEnumConst.TeamRecommend.MainTabIndex.Formation
         self:RefreshTabPanel()
         self.CurStageType = StageTypeBySubTabIndex[index - StageTypeSubTabStartIndex]
-        self.PanelTabRight:SelectIndex(self.CurFormationTabIndex)
+        -- 记忆的页签在当前玩法下没有条目时，选中第一个有条目的页签
+        self.PanelTabRight:SelectIndex(self:GetFormationTabSelectIndex())
         self:RefreshTeamList()
         self.CharDynamicTable:SetActive(false)
         self.TeamDynamicTable:SetActive(true)
@@ -179,9 +194,11 @@ end
 
 --- 右侧二级Tab切换（FormationType: 1=属性, 2=效应）
 function XUiTeamRecommendMain:OnSelectRightTab(index)
+    -- 1 记录当前右侧页签（FormationType业务值和Tab下标一致，直接赋值）
     self.CurFormationTabIndex = index
-    self.CurFormationType = index -- 当前FormationType业务值和Tab下标一致，直接赋值
+    self.CurFormationType = index
     LastTabState.FormationTabIndex = index
+    -- 2 刷新阵容列表数据
     self:RefreshTeamList()
 end
 
@@ -219,8 +236,27 @@ end
 --region ========== Tab2（按阵容）刷新 ==========
 
 function XUiTeamRecommendMain:RefreshTeamList()
+    -- 先按数据刷新右侧页签显隐
+    self:RefreshFormationTabState()
     local gridList = XMVCA.XTeamRecommend:BuildFormationGridList(self.CurStageType, self.CurFormationType, self.CharacterId)
     self:ApplyTeamDataList(gridList)
+end
+
+--- 当前角色在指定玩法+阵容类型下是否有阵容条目stageType BossSingle(囚笼) / Arena(战区)；formationType 1=属性队, 2=效应队
+function XUiTeamRecommendMain:HasFormationData(stageType, formationType)
+    local gridList = XMVCA.XTeamRecommend:BuildFormationGridList(stageType, formationType, self.CharacterId)
+    return not XTool.IsTableEmpty(gridList)
+end
+
+--- 右侧页签显隐：当前玩法+角色下没有阵容条目的页签隐藏
+function XUiTeamRecommendMain:RefreshFormationTabState()
+    for index = 1, self.PanelTabRight.TabBtnList.Count do
+        local button = self.PanelTabRight:GetButtonByIndex(index)
+        if button then
+            -- 普通页签的IsHide停留在默认true（ShowButton会被它挡掉），这里直接控制节点显隐
+            button.gameObject:SetActiveEx(self:HasFormationData(self.CurStageType, index))
+        end
+    end
 end
 
 function XUiTeamRecommendMain:OnTeamDynamicTableEvent(event, index, grid)

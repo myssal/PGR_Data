@@ -243,9 +243,13 @@ function XUiGridTRCharTargetCard:OnBtnHeadClick()
     self:OpenRoleTargetDetail()
 end
 
-local function GetFormationTargetDesc(formationGridData)
+--- 阵容目标描述只依赖阵容配置，不需要角色级卡片数据
+local function GetFormationTargetDesc(formationCfg)
+    if not formationCfg then
+        return nil
+    end
+
     local descList = {}
-    local formationCfg = formationGridData.Formation
     if not string.IsNilOrEmpty(formationCfg.Name) then
         table.insert(descList, formationCfg.Name)
     end
@@ -288,11 +292,11 @@ function XUiGridTRCharTargetCard:OnBtnSetClick()
             local oldTargetData = XMVCA.XTeamRecommend:BuildRoleTargetDetailData(characterId)
             oldTargetDesc = XUiHelper.GetText("TeamRecommendCharacterTargetDesc", oldTargetData.TargetName)
         else
-            oldTargetDesc = GetFormationTargetDesc(XMVCA.XTeamRecommend:BuildFormationTargetGridData(characterId))
+            oldTargetDesc = GetFormationTargetDesc(XMVCA.XTeamRecommend:GetTeamRecommendFormation(oldTarget.TeamCfgId))
         end
         local newTargetDesc
         if self.FormationGridData then
-            newTargetDesc = GetFormationTargetDesc(self.FormationGridData)
+            newTargetDesc = GetFormationTargetDesc(self.FormationGridData.Formation)
         else
             newTargetDesc = XUiHelper.GetText("TeamRecommendCharacterTargetDesc", self.TargetName)
         end

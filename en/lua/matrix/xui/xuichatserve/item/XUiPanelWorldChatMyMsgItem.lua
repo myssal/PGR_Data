@@ -2,6 +2,8 @@ local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
 local XUiPanelWorldChatMyMsgItem = XClass(XUiNode, "XUiPanelWorldChatMyMsgItem")
 local XUiPanelNameplate = require("XUi/XUiNameplate/XUiPanelNameplate")
 
+local DEFAULT_TEXT_COLOR = XUiHelper.Hexcolor2Color("000000")
+
 function XUiPanelWorldChatMyMsgItem:OnStart()
     local prefab = self.PanelMsg:Find("PanelName"):LoadPrefab(XMedalConfigs.XNameplatePanelPath)
     self.UiPanelNameplate = XUiPanelNameplate.New(prefab, self)
@@ -175,10 +177,7 @@ function XUiPanelWorldChatMyMsgItem:Refresh(chatData, longClickCb)
 end
 
 function XUiPanelWorldChatMyMsgItem:RefreshTextColor()
-    local color = self._PanelChatBoard:GetTextColor()
-    if color then
-        self.TxtWord.color = color
-    end
+    self.TxtWord.color = self._PanelChatBoard:GetTextColor() or DEFAULT_TEXT_COLOR
 end
 
 function XUiPanelWorldChatMyMsgItem:GetPlayerId()

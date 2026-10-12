@@ -804,20 +804,25 @@ function XTransfiniteTowerControl:GetCurSettleInfo(towerCfgId)
     return settleInfo or self._Model:GetSettleInfo(towerCfgId)
 end
 
+---取战绩快照
+---@return table[]|nil characters, number|nil mvpFightId
+function XTransfiniteTowerControl:GetSettleSnapshot(towerCfgId, playerId)
+    local show = playerId and self._Model:GetRankShow(playerId)
+    if show then
+        return show.Characters, show.MvpFightId
+    end
+    if playerId and playerId ~= XPlayer.Id then
+        return nil, nil
+    end
+    local settleInfo = self:GetCurSettleInfo(towerCfgId)
+    return settleInfo and settleInfo.Characters, settleInfo and settleInfo.MvpFightId
+end
+
 ---常规队员列表
 ---@param excludeMvp boolean false 可拿到含 MVP 的全量列表（MVP 切换弹窗用）
 function XTransfiniteTowerControl:GetLastSettleMemberList(towerCfgId, playerId, excludeMvp)
     if excludeMvp == nil then excludeMvp = true end
-    local characters, mvpFightId
-    if playerId then
-        local show = self._Model:GetRankShow(playerId)
-        characters = show and show.Characters
-        mvpFightId = show and show.MvpFightId
-    else
-        local settleInfo = self:GetCurSettleInfo(towerCfgId)
-        characters = settleInfo and settleInfo.Characters
-        mvpFightId = settleInfo and settleInfo.MvpFightId
-    end
+    local characters, mvpFightId = self:GetSettleSnapshot(towerCfgId, playerId)
     if XTool.IsTableEmpty(characters) then return table.empty end
     local list = {}
     for _, c in ipairs(characters) do
@@ -852,16 +857,7 @@ end
 ---@param playerId number 可选，他人记录
 ---@return table
 function XTransfiniteTowerControl:GetLastSettleMvpMember(towerCfgId, playerId)
-    local mvpFightId, characters
-    if playerId then
-        local show = self._Model:GetRankShow(playerId)
-        mvpFightId = show and show.MvpFightId
-        characters = show and show.Characters
-    else
-        local settleInfo = self:GetCurSettleInfo(towerCfgId)
-        mvpFightId = settleInfo and settleInfo.MvpFightId
-        characters = settleInfo and settleInfo.Characters
-    end
+    local characters, mvpFightId = self:GetSettleSnapshot(towerCfgId, playerId)
     if not XTool.IsNumberValid(mvpFightId) then return { IsEmpty = true } end
     -- 从角色快照里找 MVP 的品阶与试用标记
     local mvpChar
@@ -876,35 +872,45 @@ function XTransfiniteTowerControl:GetLastSettleMvpMember(towerCfgId, playerId)
     return self:BuildSettleMember(mvpFightId, mvpChar)
 end
 
----通关统计 { MemberCount, TotalPower, ClearedStage, TotalTime, Rank, IsRankNew }
+---通关统计 { MemberCount, TotalPower, ClearedStage, TotalTime, Rank, TotalCount, IsRankNew }
 ---15 层塔结算界面与 3/8 层塔结算弹窗（UiTransfiniteTowerSettlementPopup）共用，改动需同时兼顾两边
----@param playerId number 可选，他人记录（数据来自拉榜缓存的 RankShow）
+---@param playerId number 可选，查看记录（只读）
 ---@return table
 function XTransfiniteTowerControl:GetLastSettleStats(towerCfgId, playerId)
-    if playerId then
-        local show = self._Model:GetRankShow(playerId)
-        if not show then return table.empty end
+    local show = playerId and self._Model:GetRankShow(playerId)
+    if show then
         return {
             MemberCount = show.Characters and #show.Characters or 0,
             TotalPower = show.TotalPower or 0,
             ClearedStage = show.MaxOrder or 0,
             TotalTime = show.TotalSpendTime or 0,
             Rank = show.RankNum or 0,
-            IsRankNew = false,
         }
     end
+    if playerId and playerId ~= XPlayer.Id then return table.empty end
     local settleInfo = self:GetCurSettleInfo(towerCfgId)
     if not settleInfo then return table.empty end
-    local _, rank, totalCount = self._Model:GetCurSettleResult()
-    return {
+    local stats = {
         MemberCount = settleInfo.Characters and #settleInfo.Characters or 0,
         TotalPower = settleInfo.TotalPower or 0,
         ClearedStage = settleInfo.Order or 0,
         TotalTime = settleInfo.TotalSpendTime or 0,
-        Rank = rank,
-        TotalCount = totalCount,
-        IsRankNew = settleInfo.IsNewRecord,
+        Rank = 0,
     }
+    if playerId then
+        local cache = self:GetRankCacheData()
+        local myRankData = cache and cache.myRankData
+        if myRankData then
+            stats.Rank = myRankData.Rank or 0
+            stats.TotalCount = myRankData.TotalCount
+        end
+    else
+        local _, rank, totalCount = self._Model:GetCurSettleResult()
+        stats.Rank = rank
+        stats.TotalCount = totalCount
+        stats.IsRankNew = settleInfo.IsNewRecord
+    end
+    return stats
 end
 
 ---他人玩家信息（头像/头像框/名字），用于查看他人记录

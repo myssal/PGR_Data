@@ -392,10 +392,10 @@ function XUiTeamRecommendRoleTargetDetail:RefreshPartner()
     self.PartnerUiObj.GameObject:SetActiveEx(true)
     self.PartnerUiObj.ImgNone.gameObject:SetActiveEx(not hasPartner)
     self.PartnerUiObj.RImgHeadIcon.gameObject:SetActiveEx(hasPartner)
-    self.PartnerUiObj.RImgQuality.gameObject:SetActiveEx(hasPartner)
     self.PartnerUiObj.TxtWeaponName.gameObject:SetActiveEx(hasPartner)
 
     if not hasPartner then
+        self.PartnerUiObj.RImgQuality.gameObject:SetActiveEx(false)
         self.PartnerUiObj.ImgMedalIconlock.gameObject:SetActiveEx(false)
         self.PartnerUiObj.BtnObtain.gameObject:SetActiveEx(false)
         self.PartnerUiObj.BtnWear.gameObject:SetActiveEx(false)
@@ -412,6 +412,8 @@ function XUiTeamRecommendRoleTargetDetail:RefreshPartner()
     self.PartnerUiObj.TxtWeaponName.text = XPartnerConfigs.GetPartnerTemplateName(partnerId)
     self.PartnerUiObj.RImgHeadIcon:SetRawImage(XPartnerConfigs.GetPartnerTemplateIcon(partnerId))
     self.PartnerUiObj.RImgQuality:SetRawImage(XMVCA.XCharacter:GetCharacterQualityIcon(quality))
+    -- 品质图仅在该辅助机已被当前角色携带时显示
+    self.PartnerUiObj.RImgQuality.gameObject:SetActiveEx(isCarried)
 
     -- 按钮状态
     local isAllCultureMax = isCarried and XMVCA.XPartner:GetOneKeyCultureAgency():IsPartnerAllCultureMax(candidatePartner:GetId())

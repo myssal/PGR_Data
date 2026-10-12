@@ -65,14 +65,15 @@ end
 ----------------------------------------
 -- 共鸣目标查询
 ----------------------------------------
--- 判断共鸣数据是否属于攻击类共鸣
+-- 判断指定意识共鸣槽位的技能是否属于攻击类共鸣。
+---@param resonancePos number 共鸣槽位，取值见 XEnumConst.EQUIP.AWARENESS_RESONANCE_POS
 ---@param resonanceType number 共鸣类型，取值见 XEnumConst.EQUIP.RESONANCE_TYPE
 ---@param skillId number 共鸣技能 Id
 ---@return boolean 是否攻击类共鸣
-function XEquipResonanceControl:IsAttackResonanceSkill(resonanceType, skillId)
-    -- 角色技能都属于攻击类
+function XEquipResonanceControl:IsAttackResonanceSkill(resonancePos, resonanceType, skillId)
+    -- 只有下位角色技能属于攻击类
     if resonanceType == XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL then
-        return true
+        return resonancePos == XEnumConst.EQUIP.AWARENESS_RESONANCE_POS.DOWN
     end
 
     -- 属性技能只有配置的技能才属于攻击类
@@ -120,7 +121,7 @@ function XEquipResonanceControl:IsAwarenessResonanceTargetReached(target, charac
     end
 
     if target.MatchMode == TARGET_MATCH_MODE.ATTACK then
-        return self:IsAttackResonanceSkill(resonanceInfo.Type, resonanceInfo.TemplateId)
+        return self:IsAttackResonanceSkill(target.Pos, resonanceInfo.Type, resonanceInfo.TemplateId)
     end
 
     if target.MatchMode == TARGET_MATCH_MODE.TARGET then
